@@ -77,7 +77,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
               type_ = rawValue;
               break;
             }
-          case -950534086:
+          case 1196949562:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -132,7 +132,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
    * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
    * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
    * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
    * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
    * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -154,22 +154,22 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>ALL_INSTANCES_UNHEALTHY = 404965477;</code> */
-    ALL_INSTANCES_UNHEALTHY(404965477),
+    /** <code>ALL_INSTANCES_UNHEALTHY = 136530021;</code> */
+    ALL_INSTANCES_UNHEALTHY(136530021),
     /** <code>BACKEND_SERVICE_DOES_NOT_EXIST = 191417626;</code> */
     BACKEND_SERVICE_DOES_NOT_EXIST(191417626),
     /** <code>CAPPED_AT_MAX_NUM_REPLICAS = 518617;</code> */
     CAPPED_AT_MAX_NUM_REPLICAS(518617),
-    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code> */
-    CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE(328964659),
+    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 60529203;</code> */
+    CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE(60529203),
     /** <code>CUSTOM_METRIC_INVALID = 204430550;</code> */
     CUSTOM_METRIC_INVALID(204430550),
     /** <code>MIN_EQUALS_MAX = 2821361;</code> */
     MIN_EQUALS_MAX(2821361),
     /** <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code> */
     MISSING_CUSTOM_METRIC_DATA_POINTS(94885086),
-    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code> */
-    MISSING_LOAD_BALANCING_DATA_POINTS(509858898),
+    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 241423442;</code> */
+    MISSING_LOAD_BALANCING_DATA_POINTS(241423442),
     /** <code>MODE_OFF = 164169907;</code> */
     MODE_OFF(164169907),
     /** <code>MODE_ONLY_SCALE_OUT = 3840994;</code> */
@@ -178,16 +178,16 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     MODE_ONLY_UP(100969842),
     /** <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code> */
     MORE_THAN_ONE_BACKEND_SERVICE(151922141),
-    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code> */
-    NOT_ENOUGH_QUOTA_AVAILABLE(403101631),
-    /** <code>REGION_RESOURCE_STOCKOUT = 528622846;</code> */
-    REGION_RESOURCE_STOCKOUT(528622846),
+    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 134666175;</code> */
+    NOT_ENOUGH_QUOTA_AVAILABLE(134666175),
+    /** <code>REGION_RESOURCE_STOCKOUT = 260187390;</code> */
+    REGION_RESOURCE_STOCKOUT(260187390),
     /** <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code> */
     SCALING_TARGET_DOES_NOT_EXIST(122636699),
-    /** <code>UNKNOWN = 433141802;</code> */
-    UNKNOWN(433141802),
-    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code> */
-    UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION(330845009),
+    /** <code>UNKNOWN = 164706346;</code> */
+    UNKNOWN(164706346),
+    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 62409553;</code> */
+    UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION(62409553),
     /** <code>ZONE_RESOURCE_STOCKOUT = 210200502;</code> */
     ZONE_RESOURCE_STOCKOUT(210200502),
     UNRECOGNIZED(-1),
@@ -203,22 +203,22 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>ALL_INSTANCES_UNHEALTHY = 404965477;</code> */
-    public static final int ALL_INSTANCES_UNHEALTHY_VALUE = 404965477;
+    /** <code>ALL_INSTANCES_UNHEALTHY = 136530021;</code> */
+    public static final int ALL_INSTANCES_UNHEALTHY_VALUE = 136530021;
     /** <code>BACKEND_SERVICE_DOES_NOT_EXIST = 191417626;</code> */
     public static final int BACKEND_SERVICE_DOES_NOT_EXIST_VALUE = 191417626;
     /** <code>CAPPED_AT_MAX_NUM_REPLICAS = 518617;</code> */
     public static final int CAPPED_AT_MAX_NUM_REPLICAS_VALUE = 518617;
-    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 328964659;</code> */
-    public static final int CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE_VALUE = 328964659;
+    /** <code>CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE = 60529203;</code> */
+    public static final int CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE_VALUE = 60529203;
     /** <code>CUSTOM_METRIC_INVALID = 204430550;</code> */
     public static final int CUSTOM_METRIC_INVALID_VALUE = 204430550;
     /** <code>MIN_EQUALS_MAX = 2821361;</code> */
     public static final int MIN_EQUALS_MAX_VALUE = 2821361;
     /** <code>MISSING_CUSTOM_METRIC_DATA_POINTS = 94885086;</code> */
     public static final int MISSING_CUSTOM_METRIC_DATA_POINTS_VALUE = 94885086;
-    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 509858898;</code> */
-    public static final int MISSING_LOAD_BALANCING_DATA_POINTS_VALUE = 509858898;
+    /** <code>MISSING_LOAD_BALANCING_DATA_POINTS = 241423442;</code> */
+    public static final int MISSING_LOAD_BALANCING_DATA_POINTS_VALUE = 241423442;
     /** <code>MODE_OFF = 164169907;</code> */
     public static final int MODE_OFF_VALUE = 164169907;
     /** <code>MODE_ONLY_SCALE_OUT = 3840994;</code> */
@@ -227,16 +227,16 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     public static final int MODE_ONLY_UP_VALUE = 100969842;
     /** <code>MORE_THAN_ONE_BACKEND_SERVICE = 151922141;</code> */
     public static final int MORE_THAN_ONE_BACKEND_SERVICE_VALUE = 151922141;
-    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 403101631;</code> */
-    public static final int NOT_ENOUGH_QUOTA_AVAILABLE_VALUE = 403101631;
-    /** <code>REGION_RESOURCE_STOCKOUT = 528622846;</code> */
-    public static final int REGION_RESOURCE_STOCKOUT_VALUE = 528622846;
+    /** <code>NOT_ENOUGH_QUOTA_AVAILABLE = 134666175;</code> */
+    public static final int NOT_ENOUGH_QUOTA_AVAILABLE_VALUE = 134666175;
+    /** <code>REGION_RESOURCE_STOCKOUT = 260187390;</code> */
+    public static final int REGION_RESOURCE_STOCKOUT_VALUE = 260187390;
     /** <code>SCALING_TARGET_DOES_NOT_EXIST = 122636699;</code> */
     public static final int SCALING_TARGET_DOES_NOT_EXIST_VALUE = 122636699;
-    /** <code>UNKNOWN = 433141802;</code> */
-    public static final int UNKNOWN_VALUE = 433141802;
-    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 330845009;</code> */
-    public static final int UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION_VALUE = 330845009;
+    /** <code>UNKNOWN = 164706346;</code> */
+    public static final int UNKNOWN_VALUE = 164706346;
+    /** <code>UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION = 62409553;</code> */
+    public static final int UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION_VALUE = 62409553;
     /** <code>ZONE_RESOURCE_STOCKOUT = 210200502;</code> */
     public static final int ZONE_RESOURCE_STOCKOUT_VALUE = 210200502;
 
@@ -266,13 +266,13 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 404965477:
+        case 136530021:
           return ALL_INSTANCES_UNHEALTHY;
         case 191417626:
           return BACKEND_SERVICE_DOES_NOT_EXIST;
         case 518617:
           return CAPPED_AT_MAX_NUM_REPLICAS;
-        case 328964659:
+        case 60529203:
           return CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE;
         case 204430550:
           return CUSTOM_METRIC_INVALID;
@@ -280,7 +280,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
           return MIN_EQUALS_MAX;
         case 94885086:
           return MISSING_CUSTOM_METRIC_DATA_POINTS;
-        case 509858898:
+        case 241423442:
           return MISSING_LOAD_BALANCING_DATA_POINTS;
         case 164169907:
           return MODE_OFF;
@@ -290,15 +290,15 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
           return MODE_ONLY_UP;
         case 151922141:
           return MORE_THAN_ONE_BACKEND_SERVICE;
-        case 403101631:
+        case 134666175:
           return NOT_ENOUGH_QUOTA_AVAILABLE;
-        case 528622846:
+        case 260187390:
           return REGION_RESOURCE_STOCKOUT;
         case 122636699:
           return SCALING_TARGET_DOES_NOT_EXIST;
-        case 433141802:
+        case 164706346:
           return UNKNOWN;
-        case 330845009:
+        case 62409553:
           return UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION;
         case 210200502:
           return ZONE_RESOURCE_STOCKOUT;
@@ -357,7 +357,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AutoscalerStatusDetails.Type)
   }
 
-  public static final int MESSAGE_FIELD_NUMBER = 418054151;
+  public static final int MESSAGE_FIELD_NUMBER = 149618695;
   private volatile java.lang.Object message_;
   /**
    *
@@ -366,7 +366,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * The status message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>string message = 149618695;</code>
    *
    * @return The message.
    */
@@ -389,7 +389,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * The status message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>string message = 149618695;</code>
    *
    * @return The bytes for message.
    */
@@ -422,7 +422,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
    * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
    * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
    * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
    * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
    * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -453,7 +453,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
    * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
    * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
    * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+   * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
    * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
    * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
    * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -495,7 +495,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       output.writeEnum(3575610, type_);
     }
     if (!getMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 418054151, message_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 149618695, message_);
     }
     unknownFields.writeTo(output);
   }
@@ -511,7 +511,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
     if (!getMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(418054151, message_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(149618695, message_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -818,7 +818,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>string message = 149618695;</code>
      *
      * @return The message.
      */
@@ -840,7 +840,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>string message = 149618695;</code>
      *
      * @return The bytes for message.
      */
@@ -862,7 +862,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>string message = 149618695;</code>
      *
      * @param value The message to set.
      * @return This builder for chaining.
@@ -883,7 +883,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>string message = 149618695;</code>
      *
      * @return This builder for chaining.
      */
@@ -900,7 +900,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * The status message.
      * </pre>
      *
-     * <code>string message = 418054151;</code>
+     * <code>string message = 149618695;</code>
      *
      * @param value The bytes for message to set.
      * @return This builder for chaining.
@@ -931,7 +931,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
      * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
      * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
      * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
      * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
      * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -962,7 +962,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
      * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
      * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
      * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
      * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
      * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -996,7 +996,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
      * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
      * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
      * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
      * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
      * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -1032,7 +1032,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
      * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
      * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
      * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
      * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
      * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.
@@ -1069,7 +1069,7 @@ public final class AutoscalerStatusDetails extends com.google.protobuf.Generated
      * - MISSING_CUSTOM_METRIC_DATA_POINTS (WARNING): The autoscaler did not receive any data from the custom metric configured for autoscaling.
      * - MISSING_LOAD_BALANCING_DATA_POINTS (WARNING): The autoscaler is configured to scale based on a load balancing signal but the instance group has not received any requests from the load balancer.
      * - MODE_OFF (WARNING): Autoscaling is turned off. The number of instances in the group won't change automatically. The autoscaling configuration is preserved.
-     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only up" mode. The autoscaler can add instances but not remove any.
+     * - MODE_ONLY_UP (WARNING): Autoscaling is in the "Autoscale only out" mode. The autoscaler can add instances but not remove any.
      * - MORE_THAN_ONE_BACKEND_SERVICE (ERROR): The instance group cannot be autoscaled because it has more than one backend service attached to it.
      * - NOT_ENOUGH_QUOTA_AVAILABLE (ERROR): There is insufficient quota for the necessary resources, such as CPU or number of instances.
      * - REGION_RESOURCE_STOCKOUT (ERROR): Shown only for regional autoscalers: there is a resource stockout in the chosen region.

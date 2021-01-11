@@ -97,14 +97,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1688448982:
+          case 459034666:
             {
               com.google.cloud.compute.v1.NetworkInterface.Builder subBuilder = null;
               if (networkInterfaceResource_ != null) {
@@ -120,11 +113,18 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
               break;
             }
-          case -1371864254:
+          case 775619394:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               networkInterface_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -210,7 +210,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     }
   }
 
-  public static final int NETWORK_INTERFACE_FIELD_NUMBER = 365387880;
+  public static final int NETWORK_INTERFACE_FIELD_NUMBER = 96952424;
   private volatile java.lang.Object networkInterface_;
   /**
    *
@@ -219,7 +219,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
    * The name of the network interface to update.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The networkInterface.
    */
@@ -242,7 +242,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
    * The name of the network interface to update.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for networkInterface.
    */
@@ -259,10 +259,18 @@ public final class UpdateNetworkInterfaceInstanceRequest
     }
   }
 
-  public static final int NETWORK_INTERFACE_RESOURCE_FIELD_NUMBER = 325814789;
+  public static final int NETWORK_INTERFACE_RESOURCE_FIELD_NUMBER = 57379333;
   private com.google.cloud.compute.v1.NetworkInterface networkInterfaceResource_;
   /**
-   * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the networkInterfaceResource field is set.
    */
@@ -271,7 +279,15 @@ public final class UpdateNetworkInterfaceInstanceRequest
     return networkInterfaceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The networkInterfaceResource.
    */
@@ -282,7 +298,15 @@ public final class UpdateNetworkInterfaceInstanceRequest
         : networkInterfaceResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkInterfaceOrBuilder
@@ -464,14 +488,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
     if (networkInterfaceResource_ != null) {
-      output.writeMessage(325814789, getNetworkInterfaceResource());
+      output.writeMessage(57379333, getNetworkInterfaceResource());
     }
     if (!getNetworkInterfaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 365387880, networkInterface_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 96952424, networkInterface_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     unknownFields.writeTo(output);
   }
@@ -491,17 +515,16 @@ public final class UpdateNetworkInterfaceInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (networkInterfaceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              325814789, getNetworkInterfaceResource());
+              57379333, getNetworkInterfaceResource());
     }
     if (!getNetworkInterfaceBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(365387880, networkInterface_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(96952424, networkInterface_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -975,7 +998,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * The name of the network interface to update.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The networkInterface.
      */
@@ -997,7 +1020,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * The name of the network interface to update.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for networkInterface.
      */
@@ -1019,7 +1042,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * The name of the network interface to update.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The networkInterface to set.
      * @return This builder for chaining.
@@ -1040,7 +1063,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * The name of the network interface to update.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1057,7 +1080,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
      * The name of the network interface to update.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for networkInterface to set.
      * @return This builder for chaining.
@@ -1080,7 +1103,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
             com.google.cloud.compute.v1.NetworkInterfaceOrBuilder>
         networkInterfaceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networkInterfaceResource field is set.
@@ -1089,7 +1119,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return networkInterfaceResourceBuilder_ != null || networkInterfaceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkInterfaceResource.
@@ -1104,7 +1141,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkInterfaceResource(com.google.cloud.compute.v1.NetworkInterface value) {
@@ -1121,7 +1165,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkInterfaceResource(
@@ -1136,7 +1187,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworkInterfaceResource(
@@ -1158,7 +1216,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworkInterfaceResource() {
@@ -1173,7 +1238,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkInterface.Builder
@@ -1183,7 +1255,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return getNetworkInterfaceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkInterfaceOrBuilder
@@ -1197,7 +1276,14 @@ public final class UpdateNetworkInterfaceInstanceRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

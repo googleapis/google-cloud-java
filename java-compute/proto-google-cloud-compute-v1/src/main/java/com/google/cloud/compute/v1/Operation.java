@@ -133,6 +133,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               zone_ = s;
               break;
             }
+          case 230438714:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              clientOperationId_ = s;
+              break;
+            }
+          case 231941586:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusMessage_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -145,6 +159,11 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               startTime_ = s;
+              break;
+            }
+          case 351277920:
+            {
+              httpErrorStatusCode_ = input.readInt32();
               break;
             }
           case 501370690:
@@ -188,6 +207,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1322296474:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              insertTime_ = s;
+              break;
+            }
           case 1421203602:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -202,6 +235,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               status_ = rawValue;
               break;
             }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
           case 1620175562:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -209,54 +249,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               httpErrorMessage_ = s;
               break;
             }
-          case 2065323082:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetId_ = s;
-              break;
-            }
-          case -1917044934:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientOperationId_ = s;
-              break;
-            }
-          case -1915542062:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              statusMessage_ = s;
-              break;
-            }
-          case -1796205728:
-            {
-              httpErrorStatusCode_ = input.readInt32();
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -825187174:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              insertTime_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -310238534:
+          case 1837245114:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>();
@@ -265,6 +258,13 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
               warnings_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.Warnings.parser(), extensionRegistry));
+              break;
+            }
+          case 2065323082:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetId_ = s;
               break;
             }
           default:
@@ -435,7 +435,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Operation.Status)
   }
 
-  public static final int CLIENT_OPERATION_ID_FIELD_NUMBER = 297240295;
+  public static final int CLIENT_OPERATION_ID_FIELD_NUMBER = 28804839;
   private volatile java.lang.Object clientOperationId_;
   /**
    *
@@ -444,7 +444,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>string client_operation_id = 28804839;</code>
    *
    * @return The clientOperationId.
    */
@@ -467,7 +467,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>string client_operation_id = 28804839;</code>
    *
    * @return The bytes for clientOperationId.
    */
@@ -533,7 +533,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -542,7 +542,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -565,7 +565,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -726,7 +726,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int HTTP_ERROR_STATUS_CODE_FIELD_NUMBER = 312345196;
+  public static final int HTTP_ERROR_STATUS_CODE_FIELD_NUMBER = 43909740;
   private int httpErrorStatusCode_;
   /**
    *
@@ -735,7 +735,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196;</code>
+   * <code>int32 http_error_status_code = 43909740;</code>
    *
    * @return The httpErrorStatusCode.
    */
@@ -793,7 +793,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int INSERT_TIME_FIELD_NUMBER = 433722515;
+  public static final int INSERT_TIME_FIELD_NUMBER = 165287059;
   private volatile java.lang.Object insertTime_;
   /**
    *
@@ -802,7 +802,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>string insert_time = 165287059;</code>
    *
    * @return The insertTime.
    */
@@ -825,7 +825,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>string insert_time = 165287059;</code>
    *
    * @return The bytes for insertTime.
    */
@@ -1056,7 +1056,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1065,7 +1065,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1088,7 +1088,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1190,7 +1190,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Operation.Status.UNRECOGNIZED : result;
   }
 
-  public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
+  public static final int STATUS_MESSAGE_FIELD_NUMBER = 28992698;
   private volatile java.lang.Object statusMessage_;
   /**
    *
@@ -1199,7 +1199,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The statusMessage.
    */
@@ -1222,7 +1222,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1386,7 +1386,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int WARNINGS_FIELD_NUMBER = 498091095;
+  public static final int WARNINGS_FIELD_NUMBER = 229655639;
   private java.util.List<com.google.cloud.compute.v1.Warnings> warnings_;
   /**
    *
@@ -1395,7 +1395,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
@@ -1408,7 +1408,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
@@ -1422,7 +1422,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public int getWarningsCount() {
@@ -1435,7 +1435,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
@@ -1448,7 +1448,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index) {
@@ -1533,11 +1533,20 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (!getClientOperationIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28804839, clientOperationId_);
+    }
+    if (!getStatusMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28992698, statusMessage_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
+    }
+    if (httpErrorStatusCode_ != 0) {
+      output.writeInt32(43909740, httpErrorStatusCode_);
     }
     if (!getTargetLinkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 62671336, targetLink_);
@@ -1554,38 +1563,29 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    if (!getInsertTimeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 165287059, insertTime_);
+    }
     if (!getOperationTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177650450, operationType_);
     }
     if (status_ != com.google.cloud.compute.v1.Operation.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
     if (!getHttpErrorMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 202521945, httpErrorMessage_);
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      output.writeMessage(229655639, warnings_.get(i));
+    }
     if (!getTargetIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 258165385, targetId_);
-    }
-    if (!getClientOperationIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 297240295, clientOperationId_);
-    }
-    if (!getStatusMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
-    }
-    if (httpErrorStatusCode_ != 0) {
-      output.writeInt32(312345196, httpErrorStatusCode_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getInsertTimeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 433722515, insertTime_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    for (int i = 0; i < warnings_.size(); i++) {
-      output.writeMessage(498091095, warnings_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -1611,12 +1611,23 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (!getClientOperationIdBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(28804839, clientOperationId_);
+    }
+    if (!getStatusMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28992698, statusMessage_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
+    }
+    if (httpErrorStatusCode_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(43909740, httpErrorStatusCode_);
     }
     if (!getTargetLinkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(62671336, targetLink_);
@@ -1633,41 +1644,30 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (!getInsertTimeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(165287059, insertTime_);
+    }
     if (!getOperationTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177650450, operationType_);
     }
     if (status_ != com.google.cloud.compute.v1.Operation.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
     if (!getHttpErrorMessageBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(202521945, httpErrorMessage_);
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(229655639, warnings_.get(i));
+    }
     if (!getTargetIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(258165385, targetId_);
-    }
-    if (!getClientOperationIdBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(297240295, clientOperationId_);
-    }
-    if (!getStatusMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
-    }
-    if (httpErrorStatusCode_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(312345196, httpErrorStatusCode_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getInsertTimeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(433722515, insertTime_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
-    for (int i = 0; i < warnings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(498091095, warnings_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2241,7 +2241,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>string client_operation_id = 28804839;</code>
      *
      * @return The clientOperationId.
      */
@@ -2263,7 +2263,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>string client_operation_id = 28804839;</code>
      *
      * @return The bytes for clientOperationId.
      */
@@ -2285,7 +2285,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>string client_operation_id = 28804839;</code>
      *
      * @param value The clientOperationId to set.
      * @return This builder for chaining.
@@ -2306,7 +2306,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>string client_operation_id = 28804839;</code>
      *
      * @return This builder for chaining.
      */
@@ -2323,7 +2323,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
      * </pre>
      *
-     * <code>string client_operation_id = 297240295;</code>
+     * <code>string client_operation_id = 28804839;</code>
      *
      * @param value The bytes for clientOperationId to set.
      * @return This builder for chaining.
@@ -2453,7 +2453,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2475,7 +2475,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2497,7 +2497,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2518,7 +2518,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2535,7 +2535,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] A textual description of the operation, which is set when the operation is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2950,7 +2950,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>int32 http_error_status_code = 43909740;</code>
      *
      * @return The httpErrorStatusCode.
      */
@@ -2965,7 +2965,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>int32 http_error_status_code = 43909740;</code>
      *
      * @param value The httpErrorStatusCode to set.
      * @return This builder for chaining.
@@ -2983,7 +2983,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
      * </pre>
      *
-     * <code>int32 http_error_status_code = 312345196;</code>
+     * <code>int32 http_error_status_code = 43909740;</code>
      *
      * @return This builder for chaining.
      */
@@ -3108,7 +3108,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>string insert_time = 165287059;</code>
      *
      * @return The insertTime.
      */
@@ -3130,7 +3130,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>string insert_time = 165287059;</code>
      *
      * @return The bytes for insertTime.
      */
@@ -3152,7 +3152,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>string insert_time = 165287059;</code>
      *
      * @param value The insertTime to set.
      * @return This builder for chaining.
@@ -3173,7 +3173,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>string insert_time = 165287059;</code>
      *
      * @return This builder for chaining.
      */
@@ -3190,7 +3190,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
      * </pre>
      *
-     * <code>string insert_time = 433722515;</code>
+     * <code>string insert_time = 165287059;</code>
      *
      * @param value The bytes for insertTime to set.
      * @return This builder for chaining.
@@ -3690,7 +3690,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3712,7 +3712,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3734,7 +3734,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3755,7 +3755,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3772,7 +3772,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3993,7 +3993,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return The statusMessage.
      */
@@ -4015,7 +4015,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -4037,7 +4037,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -4058,7 +4058,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return This builder for chaining.
      */
@@ -4075,7 +4075,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the current status of the operation.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
@@ -4432,7 +4432,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
       if (warningsBuilder_ == null) {
@@ -4448,7 +4448,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public int getWarningsCount() {
       if (warningsBuilder_ == null) {
@@ -4464,7 +4464,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
       if (warningsBuilder_ == null) {
@@ -4480,7 +4480,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder setWarnings(int index, com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -4502,7 +4502,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder setWarnings(
         int index, com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
@@ -4522,7 +4522,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -4544,7 +4544,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(int index, com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -4566,7 +4566,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
       if (warningsBuilder_ == null) {
@@ -4585,7 +4585,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(
         int index, com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
@@ -4605,7 +4605,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addAllWarnings(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Warnings> values) {
@@ -4625,7 +4625,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
@@ -4644,7 +4644,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder removeWarnings(int index) {
       if (warningsBuilder_ == null) {
@@ -4663,7 +4663,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
@@ -4675,7 +4675,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index) {
       if (warningsBuilder_ == null) {
@@ -4691,7 +4691,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
         getWarningsOrBuilderList() {
@@ -4708,7 +4708,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder addWarningsBuilder() {
       return getWarningsFieldBuilder()
@@ -4721,7 +4721,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder addWarningsBuilder(int index) {
       return getWarningsFieldBuilder()
@@ -4734,7 +4734,7 @@ public final class Operation extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Warnings.Builder> getWarningsBuilderList() {
       return getWarningsFieldBuilder().getBuilderList();

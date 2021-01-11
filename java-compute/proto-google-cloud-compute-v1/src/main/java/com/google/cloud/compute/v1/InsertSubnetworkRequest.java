@@ -297,7 +297,15 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
   public static final int SUBNETWORK_RESOURCE_FIELD_NUMBER = 42233151;
   private com.google.cloud.compute.v1.Subnetwork subnetworkResource_;
   /**
-   * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the subnetworkResource field is set.
    */
@@ -306,7 +314,15 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
     return subnetworkResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The subnetworkResource.
    */
@@ -316,7 +332,17 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.Subnetwork.getDefaultInstance()
         : subnetworkResource_;
   }
-  /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworkResourceOrBuilder() {
     return getSubnetworkResource();
@@ -1037,7 +1063,15 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.SubnetworkOrBuilder>
         subnetworkResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the subnetworkResource field is set.
      */
@@ -1045,7 +1079,15 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
       return subnetworkResourceBuilder_ != null || subnetworkResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The subnetworkResource.
      */
@@ -1058,7 +1100,17 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
         return subnetworkResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSubnetworkResource(com.google.cloud.compute.v1.Subnetwork value) {
       if (subnetworkResourceBuilder_ == null) {
         if (value == null) {
@@ -1072,7 +1124,17 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSubnetworkResource(
         com.google.cloud.compute.v1.Subnetwork.Builder builderForValue) {
       if (subnetworkResourceBuilder_ == null) {
@@ -1084,7 +1146,17 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeSubnetworkResource(com.google.cloud.compute.v1.Subnetwork value) {
       if (subnetworkResourceBuilder_ == null) {
         if (subnetworkResource_ != null) {
@@ -1102,7 +1174,17 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearSubnetworkResource() {
       if (subnetworkResourceBuilder_ == null) {
         subnetworkResource_ = null;
@@ -1114,13 +1196,33 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Subnetwork.Builder getSubnetworkResourceBuilder() {
 
       onChanged();
       return getSubnetworkResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworkResourceOrBuilder() {
       if (subnetworkResourceBuilder_ != null) {
         return subnetworkResourceBuilder_.getMessageOrBuilder();
@@ -1130,7 +1232,17 @@ public final class InsertSubnetworkRequest extends com.google.protobuf.Generated
             : subnetworkResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Subnetwork,
             com.google.cloud.compute.v1.Subnetwork.Builder,

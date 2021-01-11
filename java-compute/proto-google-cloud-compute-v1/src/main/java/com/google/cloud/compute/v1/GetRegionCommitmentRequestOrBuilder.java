@@ -30,7 +30,7 @@ public interface GetRegionCommitmentRequestOrBuilder
    * Name of the commitment to return.
    * </pre>
    *
-   * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The commitment.
    */
@@ -42,7 +42,7 @@ public interface GetRegionCommitmentRequestOrBuilder
    * Name of the commitment to return.
    * </pre>
    *
-   * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for commitment.
    */

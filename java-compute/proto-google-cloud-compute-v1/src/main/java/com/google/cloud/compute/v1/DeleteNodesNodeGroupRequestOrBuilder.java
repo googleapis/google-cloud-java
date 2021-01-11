@@ -30,7 +30,7 @@ public interface DeleteNodesNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource whose nodes will be deleted.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -42,23 +42,35 @@ public interface DeleteNodesNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource whose nodes will be deleted.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
   com.google.protobuf.ByteString getNodeGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupsDeleteNodesRequestResource field is set.
    */
   boolean hasNodeGroupsDeleteNodesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupsDeleteNodesRequestResource.
@@ -66,8 +78,14 @@ public interface DeleteNodesNodeGroupRequestOrBuilder
   com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequest
       getNodeGroupsDeleteNodesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequestOrBuilder

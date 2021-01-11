@@ -96,7 +96,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
               project_ = s;
               break;
             }
-          case -287456422:
+          case 1860027226:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -186,7 +186,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
     }
   }
 
-  public static final int KEY_NAME_FIELD_NUMBER = 500938859;
+  public static final int KEY_NAME_FIELD_NUMBER = 232503403;
   private volatile java.lang.Object keyName_;
   /**
    *
@@ -195,7 +195,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The keyName.
    */
@@ -218,7 +218,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for keyName.
    */
@@ -361,7 +361,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getKeyNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 500938859, keyName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 232503403, keyName_);
     }
     unknownFields.writeTo(output);
   }
@@ -382,7 +382,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getKeyNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(500938859, keyName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232503403, keyName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -826,7 +826,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The keyName.
      */
@@ -848,7 +848,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for keyName.
      */
@@ -870,7 +870,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The keyName to set.
      * @return This builder for chaining.
@@ -891,7 +891,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -908,7 +908,7 @@ public final class DeleteSignedUrlKeyBackendBucketRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for keyName to set.
      * @return This builder for chaining.

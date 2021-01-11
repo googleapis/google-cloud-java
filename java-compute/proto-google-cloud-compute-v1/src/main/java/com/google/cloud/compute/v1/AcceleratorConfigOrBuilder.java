@@ -30,7 +30,7 @@ public interface AcceleratorConfigOrBuilder
    * The number of the guest accelerator cards exposed to this instance.
    * </pre>
    *
-   * <code>int32 accelerator_count = 504879675;</code>
+   * <code>int32 accelerator_count = 236444219;</code>
    *
    * @return The acceleratorCount.
    */

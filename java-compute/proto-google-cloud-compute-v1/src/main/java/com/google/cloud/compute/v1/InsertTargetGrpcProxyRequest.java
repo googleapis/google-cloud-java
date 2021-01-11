@@ -78,14 +78,7 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1663587694:
+          case 483895954:
             {
               com.google.cloud.compute.v1.TargetGrpcProxy.Builder subBuilder = null;
               if (targetGrpcProxyResource_ != null) {
@@ -99,6 +92,13 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
                 targetGrpcProxyResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -237,10 +237,18 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int TARGET_GRPC_PROXY_RESOURCE_FIELD_NUMBER = 328922450;
+  public static final int TARGET_GRPC_PROXY_RESOURCE_FIELD_NUMBER = 60486994;
   private com.google.cloud.compute.v1.TargetGrpcProxy targetGrpcProxyResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetGrpcProxyResource field is set.
    */
@@ -249,7 +257,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     return targetGrpcProxyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetGrpcProxyResource.
    */
@@ -260,7 +276,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
         : targetGrpcProxyResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder
@@ -285,11 +309,11 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (targetGrpcProxyResource_ != null) {
+      output.writeMessage(60486994, getTargetGrpcProxyResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (targetGrpcProxyResource_ != null) {
-      output.writeMessage(328922450, getTargetGrpcProxyResource());
     }
     unknownFields.writeTo(output);
   }
@@ -303,13 +327,13 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (targetGrpcProxyResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              328922450, getTargetGrpcProxyResource());
+              60486994, getTargetGrpcProxyResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -862,7 +886,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder>
         targetGrpcProxyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetGrpcProxyResource field is set.
      */
@@ -870,7 +902,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return targetGrpcProxyResourceBuilder_ != null || targetGrpcProxyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetGrpcProxyResource.
      */
@@ -884,7 +924,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetGrpcProxyResource(com.google.cloud.compute.v1.TargetGrpcProxy value) {
       if (targetGrpcProxyResourceBuilder_ == null) {
@@ -900,7 +948,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetGrpcProxyResource(
         com.google.cloud.compute.v1.TargetGrpcProxy.Builder builderForValue) {
@@ -914,7 +970,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTargetGrpcProxyResource(com.google.cloud.compute.v1.TargetGrpcProxy value) {
       if (targetGrpcProxyResourceBuilder_ == null) {
@@ -934,7 +998,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetGrpcProxyResource() {
       if (targetGrpcProxyResourceBuilder_ == null) {
@@ -948,7 +1020,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetGrpcProxy.Builder getTargetGrpcProxyResourceBuilder() {
 
@@ -956,7 +1036,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       return getTargetGrpcProxyResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder
         getTargetGrpcProxyResourceOrBuilder() {
@@ -969,7 +1057,15 @@ public final class InsertTargetGrpcProxyRequest extends com.google.protobuf.Gene
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetGrpcProxy,

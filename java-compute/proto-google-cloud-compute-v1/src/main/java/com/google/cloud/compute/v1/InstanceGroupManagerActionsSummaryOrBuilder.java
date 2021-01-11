@@ -30,7 +30,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
    * </pre>
    *
-   * <code>int32 abandoning = 440023373;</code>
+   * <code>int32 abandoning = 171587917;</code>
    *
    * @return The abandoning.
    */
@@ -57,7 +57,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
    * </pre>
    *
-   * <code>int32 creating_without_retries = 369916745;</code>
+   * <code>int32 creating_without_retries = 101481289;</code>
    *
    * @return The creatingWithoutRetries.
    */
@@ -70,7 +70,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
    * </pre>
    *
-   * <code>int32 deleting = 282846120;</code>
+   * <code>int32 deleting = 14410664;</code>
    *
    * @return The deleting.
    */
@@ -96,7 +96,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
    * </pre>
    *
-   * <code>int32 recreating = 339057132;</code>
+   * <code>int32 recreating = 70621676;</code>
    *
    * @return The recreating.
    */
@@ -122,7 +122,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
    * </pre>
    *
-   * <code>int32 restarting = 372312947;</code>
+   * <code>int32 restarting = 103877491;</code>
    *
    * @return The restarting.
    */
@@ -135,7 +135,7 @@ public interface InstanceGroupManagerActionsSummaryOrBuilder
    * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
    * </pre>
    *
-   * <code>int32 verifying = 451612873;</code>
+   * <code>int32 verifying = 183177417;</code>
    *
    * @return The verifying.
    */

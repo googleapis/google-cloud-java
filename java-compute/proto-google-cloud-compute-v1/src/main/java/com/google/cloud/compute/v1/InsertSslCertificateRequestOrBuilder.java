@@ -78,17 +78,43 @@ public interface InsertSslCertificateRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sslCertificateResource field is set.
    */
   boolean hasSslCertificateResource();
   /**
-   * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sslCertificateResource.
    */
   com.google.cloud.compute.v1.SslCertificate getSslCertificateResource();
-  /** <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SslCertificateOrBuilder getSslCertificateResourceOrBuilder();
 }

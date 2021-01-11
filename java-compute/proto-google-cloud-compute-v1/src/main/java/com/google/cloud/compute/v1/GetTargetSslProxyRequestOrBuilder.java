@@ -55,7 +55,7 @@ public interface GetTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource to return.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -67,7 +67,7 @@ public interface GetTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource to return.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */

@@ -44,7 +44,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
    * </code>
    *
    * @return The enum numeric value on the wire for collocation.
@@ -58,7 +58,7 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
    * </code>
    *
    * @return The collocation.

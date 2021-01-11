@@ -30,7 +30,7 @@ public interface RawDiskOrBuilder
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
    *
    * @return The enum numeric value on the wire for containerType.
    */
@@ -42,7 +42,7 @@ public interface RawDiskOrBuilder
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
    *
    * @return The containerType.
    */
@@ -55,7 +55,7 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>string sha1_checksum = 46008893;</code>
    *
    * @return The sha1Checksum.
    */
@@ -67,7 +67,7 @@ public interface RawDiskOrBuilder
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>string sha1_checksum = 46008893;</code>
    *
    * @return The bytes for sha1Checksum.
    */

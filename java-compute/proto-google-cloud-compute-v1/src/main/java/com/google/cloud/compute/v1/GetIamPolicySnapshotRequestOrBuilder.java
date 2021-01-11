@@ -30,7 +30,7 @@ public interface GetIamPolicySnapshotRequestOrBuilder
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>int32 options_requested_policy_version = 230784573;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */

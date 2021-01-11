@@ -110,6 +110,16 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
               creationTimestamp_ = s;
               break;
             }
+          case 379087274:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                forwardingRules_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              forwardingRules_.add(s);
+              break;
+            }
           case 836495450:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -127,6 +137,13 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
@@ -134,35 +151,18 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
               status_ = rawValue;
               break;
             }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               network_ = s;
-              break;
-            }
-          case -1768396374:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forwardingRules_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forwardingRules_.add(s);
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -179,11 +179,11 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        tunnels_ = tunnels_.getUnmodifiableView();
-      }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         forwardingRules_ = forwardingRules_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        tunnels_ = tunnels_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -225,12 +225,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
-    CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
-    /** <code>FAILED = 455706685;</code> */
-    FAILED(455706685),
+    /** <code>CREATING = 187129529;</code> */
+    CREATING(187129529),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
+    /** <code>FAILED = 187271229;</code> */
+    FAILED(187271229),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
     UNRECOGNIZED(-1),
@@ -246,12 +246,12 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
-    public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
-    /** <code>FAILED = 455706685;</code> */
-    public static final int FAILED_VALUE = 455706685;
+    /** <code>CREATING = 187129529;</code> */
+    public static final int CREATING_VALUE = 187129529;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
+    /** <code>FAILED = 187271229;</code> */
+    public static final int FAILED_VALUE = 187271229;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
 
@@ -281,11 +281,11 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 455564985:
+        case 187129529:
           return CREATING;
-        case 528602024:
+        case 260166568:
           return DELETING;
-        case 455706685:
+        case 187271229:
           return FAILED;
         case 77848963:
           return READY;
@@ -391,7 +391,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -400,7 +400,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -423,7 +423,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -440,7 +440,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int FORWARDING_RULES_FIELD_NUMBER = 315821365;
+  public static final int FORWARDING_RULES_FIELD_NUMBER = 47385909;
   private com.google.protobuf.LazyStringList forwardingRules_;
   /**
    *
@@ -449,7 +449,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @return A list containing the forwardingRules.
    */
@@ -463,7 +463,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @return The count of forwardingRules.
    */
@@ -477,7 +477,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @param index The index of the element to return.
    * @return The forwardingRules at the given index.
@@ -492,7 +492,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the forwardingRules at the given index.
@@ -746,7 +746,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -755,7 +755,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -778,7 +778,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -920,28 +920,28 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    for (int i = 0; i < forwardingRules_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 47385909, forwardingRules_.getRaw(i));
+    }
     for (int i = 0; i < tunnels_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 104561931, tunnels_.getRaw(i));
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_
         != com.google.cloud.compute.v1.TargetVpnGateway.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
-    }
-    for (int i = 0; i < forwardingRules_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 315821365, forwardingRules_.getRaw(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -967,6 +967,14 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     }
     {
       int dataSize = 0;
+      for (int i = 0; i < forwardingRules_.size(); i++) {
+        dataSize += computeStringSizeNoTag(forwardingRules_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getForwardingRulesList().size();
+    }
+    {
+      int dataSize = 0;
       for (int i = 0; i < tunnels_.size(); i++) {
         dataSize += computeStringSizeNoTag(tunnels_.getRaw(i));
       }
@@ -976,26 +984,18 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (status_
         != com.google.cloud.compute.v1.TargetVpnGateway.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < forwardingRules_.size(); i++) {
-        dataSize += computeStringSizeNoTag(forwardingRules_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getForwardingRulesList().size();
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1525,7 +1525,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1547,7 +1547,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1569,7 +1569,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1590,7 +1590,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1607,7 +1607,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1639,7 +1639,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @return A list containing the forwardingRules.
      */
@@ -1653,7 +1653,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @return The count of forwardingRules.
      */
@@ -1667,7 +1667,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @param index The index of the element to return.
      * @return The forwardingRules at the given index.
@@ -1682,7 +1682,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the forwardingRules at the given index.
@@ -1697,7 +1697,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @param index The index to set the value at.
      * @param value The forwardingRules to set.
@@ -1719,7 +1719,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @param value The forwardingRules to add.
      * @return This builder for chaining.
@@ -1740,7 +1740,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @param values The forwardingRules to add.
      * @return This builder for chaining.
@@ -1758,7 +1758,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @return This builder for chaining.
      */
@@ -1775,7 +1775,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
      * </pre>
      *
-     * <code>repeated string forwarding_rules = 315821365;</code>
+     * <code>repeated string forwarding_rules = 47385909;</code>
      *
      * @param value The bytes of the forwardingRules to add.
      * @return This builder for chaining.
@@ -2329,7 +2329,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2351,7 +2351,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2373,7 +2373,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2394,7 +2394,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2411,7 +2411,7 @@ public final class TargetVpnGateway extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

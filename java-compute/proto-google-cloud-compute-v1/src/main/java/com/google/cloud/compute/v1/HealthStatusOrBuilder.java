@@ -84,7 +84,7 @@ public interface HealthStatusOrBuilder
    * Health state of the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
    *
    * @return The enum numeric value on the wire for healthState.
    */
@@ -96,7 +96,7 @@ public interface HealthStatusOrBuilder
    * Health state of the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>.google.cloud.compute.v1.HealthStatus.HealthState health_state = 55571694;</code>
    *
    * @return The healthState.
    */
@@ -134,7 +134,7 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -146,7 +146,7 @@ public interface HealthStatusOrBuilder
    * A forwarding rule IP address assigned to this instance.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -164,4 +164,30 @@ public interface HealthStatusOrBuilder
    * @return The port.
    */
   int getPort();
+
+  /**
+   * <code>string weight = 13714040;</code>
+   *
+   * @return The weight.
+   */
+  java.lang.String getWeight();
+  /**
+   * <code>string weight = 13714040;</code>
+   *
+   * @return The bytes for weight.
+   */
+  com.google.protobuf.ByteString getWeightBytes();
+
+  /**
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+   *
+   * @return The enum numeric value on the wire for weightError.
+   */
+  int getWeightErrorValue();
+  /**
+   * <code>.google.cloud.compute.v1.HealthStatus.WeightError weight_error = 254066049;</code>
+   *
+   * @return The weightError.
+   */
+  com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError();
 }

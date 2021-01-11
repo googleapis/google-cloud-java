@@ -49,19 +49,43 @@ public interface PatchPacketMirroringRequestOrBuilder
   com.google.protobuf.ByteString getPacketMirroringBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the packetMirroringResource field is set.
    */
   boolean hasPacketMirroringResource();
   /**
-   * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The packetMirroringResource.
    */
   com.google.cloud.compute.v1.PacketMirroring getPacketMirroringResource();
   /**
-   * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.PacketMirroringOrBuilder getPacketMirroringResourceOrBuilder();
 

@@ -80,6 +80,13 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
               requestId_ = s;
               break;
             }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -92,13 +99,6 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
               break;
             }
           default:
@@ -286,7 +286,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -295,7 +295,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
    * Name of the Subnetwork resource to delete.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -318,7 +318,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
    * Name of the Subnetwork resource to delete.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -352,14 +352,14 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     unknownFields.writeTo(output);
   }
@@ -373,14 +373,14 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1037,7 +1037,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
      * Name of the Subnetwork resource to delete.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The subnetwork.
      */
@@ -1059,7 +1059,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
      * Name of the Subnetwork resource to delete.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -1081,7 +1081,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
      * Name of the Subnetwork resource to delete.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -1102,7 +1102,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
      * Name of the Subnetwork resource to delete.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1119,7 +1119,7 @@ public final class DeleteSubnetworkRequest extends com.google.protobuf.Generated
      * Name of the Subnetwork resource to delete.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

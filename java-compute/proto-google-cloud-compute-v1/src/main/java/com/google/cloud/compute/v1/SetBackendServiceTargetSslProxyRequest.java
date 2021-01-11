@@ -81,6 +81,13 @@ public final class SetBackendServiceTargetSslProxyRequest
               requestId_ = s;
               break;
             }
+          case 562883178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetSslProxy_ = s;
+              break;
+            }
           case 1112646946:
             {
               com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.Builder
@@ -104,13 +111,6 @@ public final class SetBackendServiceTargetSslProxyRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1584600470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetSslProxy_ = s;
               break;
             }
           default:
@@ -254,8 +254,14 @@ public final class SetBackendServiceTargetSslProxyRequest
   private com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest
       targetSslProxiesSetBackendServiceRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetSslProxiesSetBackendServiceRequestResource field is set.
@@ -265,8 +271,14 @@ public final class SetBackendServiceTargetSslProxyRequest
     return targetSslProxiesSetBackendServiceRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetSslProxiesSetBackendServiceRequestResource.
@@ -279,8 +291,14 @@ public final class SetBackendServiceTargetSslProxyRequest
         : targetSslProxiesSetBackendServiceRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -289,7 +307,7 @@ public final class SetBackendServiceTargetSslProxyRequest
     return getTargetSslProxiesSetBackendServiceRequestResource();
   }
 
-  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
+  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 70360397;
   private volatile java.lang.Object targetSslProxy_;
   /**
    *
@@ -298,7 +316,7 @@ public final class SetBackendServiceTargetSslProxyRequest
    * Name of the TargetSslProxy resource whose BackendService resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -321,7 +339,7 @@ public final class SetBackendServiceTargetSslProxyRequest
    * Name of the TargetSslProxy resource whose BackendService resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */
@@ -355,14 +373,14 @@ public final class SetBackendServiceTargetSslProxyRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 70360397, targetSslProxy_);
+    }
     if (targetSslProxiesSetBackendServiceRequestResource_ != null) {
       output.writeMessage(139080868, getTargetSslProxiesSetBackendServiceRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 338795853, targetSslProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -376,6 +394,9 @@ public final class SetBackendServiceTargetSslProxyRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(70360397, targetSslProxy_);
+    }
     if (targetSslProxiesSetBackendServiceRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -383,9 +404,6 @@ public final class SetBackendServiceTargetSslProxyRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338795853, targetSslProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -962,8 +980,14 @@ public final class SetBackendServiceTargetSslProxyRequest
             com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequestOrBuilder>
         targetSslProxiesSetBackendServiceRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetSslProxiesSetBackendServiceRequestResource field is set.
@@ -973,8 +997,14 @@ public final class SetBackendServiceTargetSslProxyRequest
           || targetSslProxiesSetBackendServiceRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetSslProxiesSetBackendServiceRequestResource.
@@ -991,8 +1021,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetSslProxiesSetBackendServiceRequestResource(
@@ -1010,8 +1046,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetSslProxiesSetBackendServiceRequestResource(
@@ -1028,8 +1070,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetSslProxiesSetBackendServiceRequestResource(
@@ -1052,8 +1100,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetSslProxiesSetBackendServiceRequestResource() {
@@ -1068,8 +1122,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest.Builder
@@ -1079,8 +1139,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       return getTargetSslProxiesSetBackendServiceRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequestOrBuilder
@@ -1095,8 +1161,14 @@ public final class SetBackendServiceTargetSslProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+     * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1126,7 +1198,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetSslProxy.
      */
@@ -1148,7 +1220,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -1170,7 +1242,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetSslProxy to set.
      * @return This builder for chaining.
@@ -1191,7 +1263,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1208,7 +1280,7 @@ public final class SetBackendServiceTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose BackendService resource is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetSslProxy to set.
      * @return This builder for chaining.

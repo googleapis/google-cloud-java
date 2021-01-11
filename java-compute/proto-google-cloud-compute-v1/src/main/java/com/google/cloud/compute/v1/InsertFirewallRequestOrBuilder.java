@@ -24,18 +24,44 @@ public interface InsertFirewallRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the firewallResource field is set.
    */
   boolean hasFirewallResource();
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The firewallResource.
    */
   com.google.cloud.compute.v1.Firewall getFirewallResource();
-  /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder();
 
   /**

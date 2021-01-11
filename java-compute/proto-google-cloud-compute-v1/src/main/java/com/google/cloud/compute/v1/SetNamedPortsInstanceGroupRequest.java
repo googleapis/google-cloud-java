@@ -95,14 +95,7 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
               instanceGroup_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1213755014:
+          case 933728634:
             {
               com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest.Builder subBuilder =
                   null;
@@ -118,6 +111,13 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
                 instanceGroupsSetNamedPortsRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -203,12 +203,18 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     }
   }
 
-  public static final int INSTANCE_GROUPS_SET_NAMED_PORTS_REQUEST_RESOURCE_FIELD_NUMBER = 385151535;
+  public static final int INSTANCE_GROUPS_SET_NAMED_PORTS_REQUEST_RESOURCE_FIELD_NUMBER = 116716079;
   private com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest
       instanceGroupsSetNamedPortsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsSetNamedPortsRequestResource field is set.
@@ -218,8 +224,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     return instanceGroupsSetNamedPortsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsSetNamedPortsRequestResource.
@@ -232,8 +244,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
         : instanceGroupsSetNamedPortsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -416,11 +434,11 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     if (!getInstanceGroupBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 81095253, instanceGroup_);
     }
+    if (instanceGroupsSetNamedPortsRequestResource_ != null) {
+      output.writeMessage(116716079, getInstanceGroupsSetNamedPortsRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (instanceGroupsSetNamedPortsRequestResource_ != null) {
-      output.writeMessage(385151535, getInstanceGroupsSetNamedPortsRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -440,13 +458,13 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
     if (!getInstanceGroupBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(81095253, instanceGroup_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (instanceGroupsSetNamedPortsRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              385151535, getInstanceGroupsSetNamedPortsRequestResource());
+              116716079, getInstanceGroupsSetNamedPortsRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -912,8 +930,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequestOrBuilder>
         instanceGroupsSetNamedPortsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupsSetNamedPortsRequestResource field is set.
@@ -923,8 +947,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
           || instanceGroupsSetNamedPortsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupsSetNamedPortsRequestResource.
@@ -940,8 +970,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupsSetNamedPortsRequestResource(
@@ -959,8 +995,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupsSetNamedPortsRequestResource(
@@ -975,8 +1017,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupsSetNamedPortsRequestResource(
@@ -999,8 +1047,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupsSetNamedPortsRequestResource() {
@@ -1015,8 +1069,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest.Builder
@@ -1026,8 +1086,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       return getInstanceGroupsSetNamedPortsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequestOrBuilder
@@ -1041,8 +1107,14 @@ public final class SetNamedPortsInstanceGroupRequest extends com.google.protobuf
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+     * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -30,7 +30,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, requests to different hosts will be cached separately.
    * </pre>
    *
-   * <code>bool include_host = 486867679;</code>
+   * <code>bool include_host = 218432223;</code>
    *
    * @return The includeHost.
    */
@@ -43,7 +43,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, http and https requests will be cached separately.
    * </pre>
    *
-   * <code>bool include_protocol = 303507535;</code>
+   * <code>bool include_protocol = 35072079;</code>
    *
    * @return The includeProtocol.
    */
@@ -56,7 +56,7 @@ public interface CacheKeyPolicyOrBuilder
    * If true, include query string parameters in the cache key according to query_string_whitelist and query_string_blacklist. If neither is set, the entire query string will be included. If false, the query string will be excluded from the cache key entirely.
    * </pre>
    *
-   * <code>bool include_query_string = 474036639;</code>
+   * <code>bool include_query_string = 205601183;</code>
    *
    * @return The includeQueryString.
    */
@@ -69,7 +69,7 @@ public interface CacheKeyPolicyOrBuilder
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_blacklist = 86529286;</code>
    *
    * @return A list containing the queryStringBlacklist.
    */
@@ -81,7 +81,7 @@ public interface CacheKeyPolicyOrBuilder
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_blacklist = 86529286;</code>
    *
    * @return The count of queryStringBlacklist.
    */
@@ -93,7 +93,7 @@ public interface CacheKeyPolicyOrBuilder
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_blacklist = 86529286;</code>
    *
    * @param index The index of the element to return.
    * @return The queryStringBlacklist at the given index.
@@ -106,7 +106,7 @@ public interface CacheKeyPolicyOrBuilder
    * Names of query string parameters to exclude in cache keys. All other parameters will be included. Either specify query_string_whitelist or query_string_blacklist, not both. '&amp;' and '=' will be percent encoded and not treated as delimiters.
    * </pre>
    *
-   * <code>repeated string query_string_blacklist = 354964742;</code>
+   * <code>repeated string query_string_blacklist = 86529286;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the queryStringBlacklist at the given index.

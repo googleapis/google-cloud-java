@@ -31,7 +31,7 @@ public interface ReservationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
+   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;
    * </code>
    *
    * @return The enum numeric value on the wire for consumeReservationType.
@@ -45,7 +45,7 @@ public interface ReservationAffinityOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;
+   * .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 32301488;
    * </code>
    *
    * @return The consumeReservationType.

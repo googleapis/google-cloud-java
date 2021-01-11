@@ -143,10 +143,10 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>CONNECTION_REDUNDANCY_MET = 505242907;</code> */
-    CONNECTION_REDUNDANCY_MET(505242907),
-    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code> */
-    CONNECTION_REDUNDANCY_NOT_MET(511863311),
+    /** <code>CONNECTION_REDUNDANCY_MET = 236807451;</code> */
+    CONNECTION_REDUNDANCY_MET(236807451),
+    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 243427855;</code> */
+    CONNECTION_REDUNDANCY_NOT_MET(243427855),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,10 +160,10 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>CONNECTION_REDUNDANCY_MET = 505242907;</code> */
-    public static final int CONNECTION_REDUNDANCY_MET_VALUE = 505242907;
-    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 511863311;</code> */
-    public static final int CONNECTION_REDUNDANCY_NOT_MET_VALUE = 511863311;
+    /** <code>CONNECTION_REDUNDANCY_MET = 236807451;</code> */
+    public static final int CONNECTION_REDUNDANCY_MET_VALUE = 236807451;
+    /** <code>CONNECTION_REDUNDANCY_NOT_MET = 243427855;</code> */
+    public static final int CONNECTION_REDUNDANCY_NOT_MET_VALUE = 243427855;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,9 +191,9 @@ public final class VpnGatewayStatusHighAvailabilityRequirementState
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 505242907:
+        case 236807451:
           return CONNECTION_REDUNDANCY_MET;
-        case 511863311:
+        case 243427855:
           return CONNECTION_REDUNDANCY_NOT_MET;
         default:
           return null;

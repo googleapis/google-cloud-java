@@ -297,7 +297,15 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
   public static final int RESOURCE_POLICY_RESOURCE_FIELD_NUMBER = 76826186;
   private com.google.cloud.compute.v1.ResourcePolicy resourcePolicyResource_;
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the resourcePolicyResource field is set.
    */
@@ -306,7 +314,15 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
     return resourcePolicyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The resourcePolicyResource.
    */
@@ -316,7 +332,17 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.ResourcePolicy.getDefaultInstance()
         : resourcePolicyResource_;
   }
-  /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ResourcePolicyOrBuilder getResourcePolicyResourceOrBuilder() {
     return getResourcePolicyResource();
@@ -1038,7 +1064,15 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.ResourcePolicyOrBuilder>
         resourcePolicyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the resourcePolicyResource field is set.
      */
@@ -1046,7 +1080,15 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
       return resourcePolicyResourceBuilder_ != null || resourcePolicyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The resourcePolicyResource.
      */
@@ -1059,7 +1101,17 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
         return resourcePolicyResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setResourcePolicyResource(com.google.cloud.compute.v1.ResourcePolicy value) {
       if (resourcePolicyResourceBuilder_ == null) {
         if (value == null) {
@@ -1073,7 +1125,17 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setResourcePolicyResource(
         com.google.cloud.compute.v1.ResourcePolicy.Builder builderForValue) {
       if (resourcePolicyResourceBuilder_ == null) {
@@ -1085,7 +1147,17 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeResourcePolicyResource(com.google.cloud.compute.v1.ResourcePolicy value) {
       if (resourcePolicyResourceBuilder_ == null) {
         if (resourcePolicyResource_ != null) {
@@ -1103,7 +1175,17 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearResourcePolicyResource() {
       if (resourcePolicyResourceBuilder_ == null) {
         resourcePolicyResource_ = null;
@@ -1115,13 +1197,33 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.ResourcePolicy.Builder getResourcePolicyResourceBuilder() {
 
       onChanged();
       return getResourcePolicyResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.ResourcePolicyOrBuilder
         getResourcePolicyResourceOrBuilder() {
       if (resourcePolicyResourceBuilder_ != null) {
@@ -1132,7 +1234,17 @@ public final class InsertResourcePolicyRequest extends com.google.protobuf.Gener
             : resourcePolicyResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ResourcePolicy,
             com.google.cloud.compute.v1.ResourcePolicy.Builder,

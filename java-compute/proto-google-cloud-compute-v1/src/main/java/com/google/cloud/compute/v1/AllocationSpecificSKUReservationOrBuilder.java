@@ -55,7 +55,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>string in_use_count = 225023421;</code>
    *
    * @return The inUseCount.
    */
@@ -67,7 +67,7 @@ public interface AllocationSpecificSKUReservationOrBuilder
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>string in_use_count = 225023421;</code>
    *
    * @return The bytes for inUseCount.
    */

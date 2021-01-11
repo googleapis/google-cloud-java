@@ -79,18 +79,18 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
               requestId_ = s;
               break;
             }
+          case 326502178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceTemplate_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1820981470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceTemplate_ = s;
               break;
             }
           default:
@@ -127,7 +127,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.DeleteInstanceTemplateRequest.Builder.class);
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
@@ -136,7 +136,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
    * The name of the instance template to delete.
    * </pre>
    *
-   * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The instanceTemplate.
    */
@@ -159,7 +159,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
    * The name of the instance template to delete.
    * </pre>
    *
-   * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -295,11 +295,11 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getInstanceTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -313,12 +313,11 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getInstanceTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -638,7 +637,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
      * The name of the instance template to delete.
      * </pre>
      *
-     * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The instanceTemplate.
      */
@@ -660,7 +659,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
      * The name of the instance template to delete.
      * </pre>
      *
-     * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -682,7 +681,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
      * The name of the instance template to delete.
      * </pre>
      *
-     * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -703,7 +702,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
      * The name of the instance template to delete.
      * </pre>
      *
-     * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -720,7 +719,7 @@ public final class DeleteInstanceTemplateRequest extends com.google.protobuf.Gen
      * The name of the instance template to delete.
      * </pre>
      *
-     * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.

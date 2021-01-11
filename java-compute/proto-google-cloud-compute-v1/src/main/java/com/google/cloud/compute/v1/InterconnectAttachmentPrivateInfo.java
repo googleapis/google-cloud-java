@@ -69,7 +69,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
           case 0:
             done = true;
             break;
-          case -2120399360:
+          case 27084288:
             {
               tag8021Q_ = input.readUInt32();
               break;
@@ -108,7 +108,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
             com.google.cloud.compute.v1.InterconnectAttachmentPrivateInfo.Builder.class);
   }
 
-  public static final int TAG8021Q_FIELD_NUMBER = 271820992;
+  public static final int TAG8021Q_FIELD_NUMBER = 3385536;
   private int tag8021Q_;
   /**
    *
@@ -117,7 +117,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
    * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
    * </pre>
    *
-   * <code>uint32 tag8021q = 271820992;</code>
+   * <code>uint32 tag8021q = 3385536;</code>
    *
    * @return The tag8021q.
    */
@@ -141,7 +141,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (tag8021Q_ != 0) {
-      output.writeUInt32(271820992, tag8021Q_);
+      output.writeUInt32(3385536, tag8021Q_);
     }
     unknownFields.writeTo(output);
   }
@@ -153,7 +153,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
 
     size = 0;
     if (tag8021Q_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(271820992, tag8021Q_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3385536, tag8021Q_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -455,7 +455,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>uint32 tag8021q = 3385536;</code>
      *
      * @return The tag8021q.
      */
@@ -470,7 +470,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>uint32 tag8021q = 3385536;</code>
      *
      * @param value The tag8021q to set.
      * @return This builder for chaining.
@@ -488,7 +488,7 @@ public final class InterconnectAttachmentPrivateInfo extends com.google.protobuf
      * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer, going to and from this network and region.
      * </pre>
      *
-     * <code>uint32 tag8021q = 271820992;</code>
+     * <code>uint32 tag8021q = 3385536;</code>
      *
      * @return This builder for chaining.
      */

@@ -157,10 +157,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     UNDEFINED_PORT_SPECIFICATION(0),
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
-    USE_NAMED_PORT(349300671),
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
-    USE_SERVING_PORT(362637516),
+    /** <code>USE_NAMED_PORT = 80865215;</code> */
+    USE_NAMED_PORT(80865215),
+    /** <code>USE_SERVING_PORT = 94202060;</code> */
+    USE_SERVING_PORT(94202060),
     UNRECOGNIZED(-1),
     ;
 
@@ -176,10 +176,10 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
-    public static final int USE_NAMED_PORT_VALUE = 349300671;
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
-    public static final int USE_SERVING_PORT_VALUE = 362637516;
+    /** <code>USE_NAMED_PORT = 80865215;</code> */
+    public static final int USE_NAMED_PORT_VALUE = 80865215;
+    /** <code>USE_SERVING_PORT = 94202060;</code> */
+    public static final int USE_SERVING_PORT_VALUE = 94202060;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -209,9 +209,9 @@ public final class GRPCHealthCheck extends com.google.protobuf.GeneratedMessageV
           return UNDEFINED_PORT_SPECIFICATION;
         case 190235748:
           return USE_FIXED_PORT;
-        case 349300671:
+        case 80865215:
           return USE_NAMED_PORT;
-        case 362637516:
+        case 94202060:
           return USE_SERVING_PORT;
         default:
           return null;

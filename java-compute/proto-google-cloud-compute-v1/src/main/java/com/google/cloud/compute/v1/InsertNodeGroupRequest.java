@@ -98,7 +98,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
               project_ = s;
               break;
             }
-          case -252392102:
+          case 1895091546:
             {
               com.google.cloud.compute.v1.NodeGroup.Builder subBuilder = null;
               if (nodeGroupResource_ != null) {
@@ -166,10 +166,18 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     return initialNodeCount_;
   }
 
-  public static final int NODE_GROUP_RESOURCE_FIELD_NUMBER = 505321899;
+  public static final int NODE_GROUP_RESOURCE_FIELD_NUMBER = 236886443;
   private com.google.cloud.compute.v1.NodeGroup nodeGroupResource_;
   /**
-   * <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the nodeGroupResource field is set.
    */
@@ -178,7 +186,15 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     return nodeGroupResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The nodeGroupResource.
    */
@@ -188,7 +204,17 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.NodeGroup.getDefaultInstance()
         : nodeGroupResource_;
   }
-  /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeGroupOrBuilder getNodeGroupResourceOrBuilder() {
     return getNodeGroupResource();
@@ -372,7 +398,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (nodeGroupResource_ != null) {
-      output.writeMessage(505321899, getNodeGroupResource());
+      output.writeMessage(236886443, getNodeGroupResource());
     }
     unknownFields.writeTo(output);
   }
@@ -398,7 +424,7 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (nodeGroupResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              505321899, getNodeGroupResource());
+              236886443, getNodeGroupResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -799,7 +825,15 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.NodeGroupOrBuilder>
         nodeGroupResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the nodeGroupResource field is set.
      */
@@ -807,7 +841,15 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
       return nodeGroupResourceBuilder_ != null || nodeGroupResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The nodeGroupResource.
      */
@@ -820,7 +862,17 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
         return nodeGroupResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setNodeGroupResource(com.google.cloud.compute.v1.NodeGroup value) {
       if (nodeGroupResourceBuilder_ == null) {
         if (value == null) {
@@ -834,7 +886,17 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setNodeGroupResource(
         com.google.cloud.compute.v1.NodeGroup.Builder builderForValue) {
       if (nodeGroupResourceBuilder_ == null) {
@@ -846,7 +908,17 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeNodeGroupResource(com.google.cloud.compute.v1.NodeGroup value) {
       if (nodeGroupResourceBuilder_ == null) {
         if (nodeGroupResource_ != null) {
@@ -864,7 +936,17 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearNodeGroupResource() {
       if (nodeGroupResourceBuilder_ == null) {
         nodeGroupResource_ = null;
@@ -876,13 +958,33 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.NodeGroup.Builder getNodeGroupResourceBuilder() {
 
       onChanged();
       return getNodeGroupResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.NodeGroupOrBuilder getNodeGroupResourceOrBuilder() {
       if (nodeGroupResourceBuilder_ != null) {
         return nodeGroupResourceBuilder_.getMessageOrBuilder();
@@ -892,7 +994,17 @@ public final class InsertNodeGroupRequest extends com.google.protobuf.GeneratedM
             : nodeGroupResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NodeGroup,
             com.google.cloud.compute.v1.NodeGroup.Builder,

@@ -51,16 +51,28 @@ public interface DeleteInstancesInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest instance_group_managers_delete_instances_request_resource = 166421252;
+   * .google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest instance_group_managers_delete_instances_request_resource = 166421252 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersDeleteInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersDeleteInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest instance_group_managers_delete_instances_request_resource = 166421252;
+   * .google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest instance_group_managers_delete_instances_request_resource = 166421252 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersDeleteInstancesRequestResource.
@@ -68,8 +80,14 @@ public interface DeleteInstancesInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest
       getInstanceGroupManagersDeleteInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest instance_group_managers_delete_instances_request_resource = 166421252;
+   * .google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest instance_group_managers_delete_instances_request_resource = 166421252 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequestOrBuilder

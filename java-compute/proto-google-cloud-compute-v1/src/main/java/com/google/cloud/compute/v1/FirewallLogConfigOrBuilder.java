@@ -30,7 +30,7 @@ public interface FirewallLogConfigOrBuilder
    * This field denotes whether to enable logging for a particular firewall rule.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */

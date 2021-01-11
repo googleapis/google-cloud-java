@@ -30,7 +30,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>string dest_range = 112892256;</code>
    *
    * @return The destRange.
    */
@@ -42,7 +42,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>string dest_range = 112892256;</code>
    *
    * @return The bytes for destRange.
    */
@@ -93,7 +93,7 @@ public interface ExchangedPeeringRouteOrBuilder
    * The priority of the peering route.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>uint32 priority = 176716196;</code>
    *
    * @return The priority.
    */

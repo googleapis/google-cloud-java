@@ -74,16 +74,28 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionTargetHttpsProxiesSetSslCertificatesRequestResource field is set.
    */
   boolean hasRegionTargetHttpsProxiesSetSslCertificatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionTargetHttpsProxiesSetSslCertificatesRequestResource.
@@ -91,8 +103,14 @@ public interface SetSslCertificatesRegionTargetHttpsProxyRequestOrBuilder
   com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest
       getRegionTargetHttpsProxiesSetSslCertificatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder

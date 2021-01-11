@@ -70,14 +70,14 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
           case 0:
             done = true;
             break;
-          case -1823954134:
+          case 323529514:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               healthCheck_ = s;
               break;
             }
-          case -211205912:
+          case 1936277736:
             {
               int rawValue = input.readEnum();
 
@@ -138,16 +138,16 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>UNDEFINED_DETAILED_HEALTH_STATE = 0;</code>
      */
     UNDEFINED_DETAILED_HEALTH_STATE(0),
-    /** <code>DRAINING = 480455402;</code> */
-    DRAINING(480455402),
-    /** <code>HEALTHY = 439801213;</code> */
-    HEALTHY(439801213),
-    /** <code>TIMEOUT = 477813057;</code> */
-    TIMEOUT(477813057),
-    /** <code>UNHEALTHY = 462118084;</code> */
-    UNHEALTHY(462118084),
-    /** <code>UNKNOWN = 433141802;</code> */
-    UNKNOWN(433141802),
+    /** <code>DRAINING = 212019946;</code> */
+    DRAINING(212019946),
+    /** <code>HEALTHY = 171365757;</code> */
+    HEALTHY(171365757),
+    /** <code>TIMEOUT = 209377601;</code> */
+    TIMEOUT(209377601),
+    /** <code>UNHEALTHY = 193682628;</code> */
+    UNHEALTHY(193682628),
+    /** <code>UNKNOWN = 164706346;</code> */
+    UNKNOWN(164706346),
     UNRECOGNIZED(-1),
     ;
 
@@ -161,16 +161,16 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * <code>UNDEFINED_DETAILED_HEALTH_STATE = 0;</code>
      */
     public static final int UNDEFINED_DETAILED_HEALTH_STATE_VALUE = 0;
-    /** <code>DRAINING = 480455402;</code> */
-    public static final int DRAINING_VALUE = 480455402;
-    /** <code>HEALTHY = 439801213;</code> */
-    public static final int HEALTHY_VALUE = 439801213;
-    /** <code>TIMEOUT = 477813057;</code> */
-    public static final int TIMEOUT_VALUE = 477813057;
-    /** <code>UNHEALTHY = 462118084;</code> */
-    public static final int UNHEALTHY_VALUE = 462118084;
-    /** <code>UNKNOWN = 433141802;</code> */
-    public static final int UNKNOWN_VALUE = 433141802;
+    /** <code>DRAINING = 212019946;</code> */
+    public static final int DRAINING_VALUE = 212019946;
+    /** <code>HEALTHY = 171365757;</code> */
+    public static final int HEALTHY_VALUE = 171365757;
+    /** <code>TIMEOUT = 209377601;</code> */
+    public static final int TIMEOUT_VALUE = 209377601;
+    /** <code>UNHEALTHY = 193682628;</code> */
+    public static final int UNHEALTHY_VALUE = 193682628;
+    /** <code>UNKNOWN = 164706346;</code> */
+    public static final int UNKNOWN_VALUE = 164706346;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -198,15 +198,15 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
       switch (value) {
         case 0:
           return UNDEFINED_DETAILED_HEALTH_STATE;
-        case 480455402:
+        case 212019946:
           return DRAINING;
-        case 439801213:
+        case 171365757:
           return HEALTHY;
-        case 477813057:
+        case 209377601:
           return TIMEOUT;
-        case 462118084:
+        case 193682628:
           return UNHEALTHY;
-        case 433141802:
+        case 164706346:
           return UNKNOWN;
         default:
           return null;
@@ -266,7 +266,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState)
   }
 
-  public static final int DETAILED_HEALTH_STATE_FIELD_NUMBER = 510470173;
+  public static final int DETAILED_HEALTH_STATE_FIELD_NUMBER = 242034717;
   private int detailedHealthState_;
   /**
    *
@@ -276,7 +276,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
    * </code>
    *
    * @return The enum numeric value on the wire for detailedHealthState.
@@ -293,7 +293,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
    * </code>
    *
    * @return The detailedHealthState.
@@ -310,7 +310,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
         : result;
   }
 
-  public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
+  public static final int HEALTH_CHECK_FIELD_NUMBER = 40441189;
   private volatile java.lang.Object healthCheck_;
   /**
    *
@@ -319,7 +319,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The healthCheck.
    */
@@ -342,7 +342,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -374,13 +374,13 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getHealthCheckBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 308876645, healthCheck_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40441189, healthCheck_);
     }
     if (detailedHealthState_
         != com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState
             .UNDEFINED_DETAILED_HEALTH_STATE
             .getNumber()) {
-      output.writeEnum(510470173, detailedHealthState_);
+      output.writeEnum(242034717, detailedHealthState_);
     }
     unknownFields.writeTo(output);
   }
@@ -392,14 +392,14 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
 
     size = 0;
     if (!getHealthCheckBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308876645, healthCheck_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40441189, healthCheck_);
     }
     if (detailedHealthState_
         != com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState
             .UNDEFINED_DETAILED_HEALTH_STATE
             .getNumber()) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(510470173, detailedHealthState_);
+          com.google.protobuf.CodedOutputStream.computeEnumSize(242034717, detailedHealthState_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -708,7 +708,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
      * </code>
      *
      * @return The enum numeric value on the wire for detailedHealthState.
@@ -725,7 +725,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
      * </code>
      *
      * @param value The enum numeric value on the wire for detailedHealthState to set.
@@ -745,7 +745,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
      * </code>
      *
      * @return The detailedHealthState.
@@ -770,7 +770,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
      * </code>
      *
      * @param value The detailedHealthState to set.
@@ -794,7 +794,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+     * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
      * </code>
      *
      * @return This builder for chaining.
@@ -814,7 +814,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @return The healthCheck.
      */
@@ -836,7 +836,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -858,7 +858,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -879,7 +879,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @return This builder for chaining.
      */
@@ -896,7 +896,7 @@ public final class ManagedInstanceInstanceHealth extends com.google.protobuf.Gen
      * [Output Only] The URL for the health check that verifies whether the instance is healthy.
      * </pre>
      *
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.

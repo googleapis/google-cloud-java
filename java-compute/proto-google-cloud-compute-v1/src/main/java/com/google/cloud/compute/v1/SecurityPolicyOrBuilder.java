@@ -55,7 +55,7 @@ public interface SecurityPolicyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface SecurityPolicyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -234,7 +234,7 @@ public interface SecurityPolicyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -246,7 +246,7 @@ public interface SecurityPolicyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

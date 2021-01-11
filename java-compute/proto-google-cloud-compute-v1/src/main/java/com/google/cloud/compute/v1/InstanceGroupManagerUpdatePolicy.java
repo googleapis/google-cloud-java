@@ -73,6 +73,13 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
           case 0:
             done = true;
             break;
+          case 17052834:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minimalAction_ = s;
+              break;
+            }
           case 28604882:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -80,21 +87,14 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
               type_ = s;
               break;
             }
-          case -2130430814:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minimalAction_ = s;
-              break;
-            }
-          case -1953923902:
+          case 193559746:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               instanceRedistributionType_ = s;
               break;
             }
-          case -1874385766:
+          case 273097882:
             {
               com.google.cloud.compute.v1.FixedOrPercent.Builder subBuilder = null;
               if (maxSurge_ != null) {
@@ -110,7 +110,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
               break;
             }
-          case -1055445078:
+          case 1092038570:
             {
               com.google.cloud.compute.v1.FixedOrPercent.Builder subBuilder = null;
               if (maxUnavailable_ != null) {
@@ -126,7 +126,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
               break;
             }
-          case -247513742:
+          case 1899969906:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -167,7 +167,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
             com.google.cloud.compute.v1.InstanceGroupManagerUpdatePolicy.Builder.class);
   }
 
-  public static final int INSTANCE_REDISTRIBUTION_TYPE_FIELD_NUMBER = 292630424;
+  public static final int INSTANCE_REDISTRIBUTION_TYPE_FIELD_NUMBER = 24194968;
   private volatile java.lang.Object instanceRedistributionType_;
   /**
    *
@@ -178,7 +178,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
    * </pre>
    *
-   * <code>string instance_redistribution_type = 292630424;</code>
+   * <code>string instance_redistribution_type = 24194968;</code>
    *
    * @return The instanceRedistributionType.
    */
@@ -203,7 +203,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
    * </pre>
    *
-   * <code>string instance_redistribution_type = 292630424;</code>
+   * <code>string instance_redistribution_type = 24194968;</code>
    *
    * @return The bytes for instanceRedistributionType.
    */
@@ -220,7 +220,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
   }
 
-  public static final int MAX_SURGE_FIELD_NUMBER = 302572691;
+  public static final int MAX_SURGE_FIELD_NUMBER = 34137235;
   private com.google.cloud.compute.v1.FixedOrPercent maxSurge_;
   /**
    *
@@ -230,7 +230,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
    *
    * @return Whether the maxSurge field is set.
    */
@@ -246,7 +246,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
    *
    * @return The maxSurge.
    */
@@ -264,14 +264,14 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxSurgeOrBuilder() {
     return getMaxSurge();
   }
 
-  public static final int MAX_UNAVAILABLE_FIELD_NUMBER = 404940277;
+  public static final int MAX_UNAVAILABLE_FIELD_NUMBER = 136504821;
   private com.google.cloud.compute.v1.FixedOrPercent maxUnavailable_;
   /**
    *
@@ -283,7 +283,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
    *
    * @return Whether the maxUnavailable field is set.
    */
@@ -301,7 +301,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
    *
    * @return The maxUnavailable.
    */
@@ -321,14 +321,14 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxUnavailableOrBuilder() {
     return getMaxUnavailable();
   }
 
-  public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
+  public static final int MINIMAL_ACTION_FIELD_NUMBER = 2131604;
   private volatile java.lang.Object minimalAction_;
   /**
    *
@@ -337,7 +337,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The minimalAction.
    */
@@ -360,7 +360,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -377,7 +377,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     }
   }
 
-  public static final int REPLACEMENT_METHOD_FIELD_NUMBER = 505931694;
+  public static final int REPLACEMENT_METHOD_FIELD_NUMBER = 237496238;
   private volatile java.lang.Object replacementMethod_;
   /**
    *
@@ -386,7 +386,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * What action should be used to replace instances. See minimal_action.REPLACE
    * </pre>
    *
-   * <code>string replacement_method = 505931694;</code>
+   * <code>string replacement_method = 237496238;</code>
    *
    * @return The replacementMethod.
    */
@@ -409,7 +409,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
    * What action should be used to replace instances. See minimal_action.REPLACE
    * </pre>
    *
-   * <code>string replacement_method = 505931694;</code>
+   * <code>string replacement_method = 237496238;</code>
    *
    * @return The bytes for replacementMethod.
    */
@@ -489,24 +489,24 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getMinimalActionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2131604, minimalAction_);
+    }
     if (!getTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
-    if (!getMinimalActionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 270567060, minimalAction_);
-    }
     if (!getInstanceRedistributionTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 292630424, instanceRedistributionType_);
+          output, 24194968, instanceRedistributionType_);
     }
     if (maxSurge_ != null) {
-      output.writeMessage(302572691, getMaxSurge());
+      output.writeMessage(34137235, getMaxSurge());
     }
     if (maxUnavailable_ != null) {
-      output.writeMessage(404940277, getMaxUnavailable());
+      output.writeMessage(136504821, getMaxUnavailable());
     }
     if (!getReplacementMethodBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 505931694, replacementMethod_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 237496238, replacementMethod_);
     }
     unknownFields.writeTo(output);
   }
@@ -517,27 +517,27 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
+    if (!getMinimalActionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2131604, minimalAction_);
+    }
     if (!getTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
-    }
-    if (!getMinimalActionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(270567060, minimalAction_);
     }
     if (!getInstanceRedistributionTypeBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              292630424, instanceRedistributionType_);
+              24194968, instanceRedistributionType_);
     }
     if (maxSurge_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(302572691, getMaxSurge());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(34137235, getMaxSurge());
     }
     if (maxUnavailable_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(404940277, getMaxUnavailable());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(136504821, getMaxUnavailable());
     }
     if (!getReplacementMethodBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(505931694, replacementMethod_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(237496238, replacementMethod_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -915,7 +915,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
      * </pre>
      *
-     * <code>string instance_redistribution_type = 292630424;</code>
+     * <code>string instance_redistribution_type = 24194968;</code>
      *
      * @return The instanceRedistributionType.
      */
@@ -939,7 +939,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
      * </pre>
      *
-     * <code>string instance_redistribution_type = 292630424;</code>
+     * <code>string instance_redistribution_type = 24194968;</code>
      *
      * @return The bytes for instanceRedistributionType.
      */
@@ -963,7 +963,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
      * </pre>
      *
-     * <code>string instance_redistribution_type = 292630424;</code>
+     * <code>string instance_redistribution_type = 24194968;</code>
      *
      * @param value The instanceRedistributionType to set.
      * @return This builder for chaining.
@@ -986,7 +986,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
      * </pre>
      *
-     * <code>string instance_redistribution_type = 292630424;</code>
+     * <code>string instance_redistribution_type = 24194968;</code>
      *
      * @return This builder for chaining.
      */
@@ -1005,7 +1005,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
      * </pre>
      *
-     * <code>string instance_redistribution_type = 292630424;</code>
+     * <code>string instance_redistribution_type = 24194968;</code>
      *
      * @param value The bytes for instanceRedistributionType to set.
      * @return This builder for chaining.
@@ -1035,7 +1035,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      *
      * @return Whether the maxSurge field is set.
      */
@@ -1050,7 +1050,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      *
      * @return The maxSurge.
      */
@@ -1071,7 +1071,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     public Builder setMaxSurge(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxSurgeBuilder_ == null) {
@@ -1094,7 +1094,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     public Builder setMaxSurge(com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
       if (maxSurgeBuilder_ == null) {
@@ -1114,7 +1114,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     public Builder mergeMaxSurge(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxSurgeBuilder_ == null) {
@@ -1141,7 +1141,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     public Builder clearMaxSurge() {
       if (maxSurgeBuilder_ == null) {
@@ -1162,7 +1162,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercent.Builder getMaxSurgeBuilder() {
 
@@ -1177,7 +1177,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxSurgeOrBuilder() {
       if (maxSurgeBuilder_ != null) {
@@ -1196,7 +1196,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FixedOrPercent,
@@ -1231,7 +1231,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      *
      * @return Whether the maxUnavailable field is set.
      */
@@ -1248,7 +1248,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      *
      * @return The maxUnavailable.
      */
@@ -1271,7 +1271,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     public Builder setMaxUnavailable(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxUnavailableBuilder_ == null) {
@@ -1296,7 +1296,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     public Builder setMaxUnavailable(
         com.google.cloud.compute.v1.FixedOrPercent.Builder builderForValue) {
@@ -1319,7 +1319,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     public Builder mergeMaxUnavailable(com.google.cloud.compute.v1.FixedOrPercent value) {
       if (maxUnavailableBuilder_ == null) {
@@ -1348,7 +1348,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     public Builder clearMaxUnavailable() {
       if (maxUnavailableBuilder_ == null) {
@@ -1371,7 +1371,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercent.Builder getMaxUnavailableBuilder() {
 
@@ -1388,7 +1388,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     public com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxUnavailableOrBuilder() {
       if (maxUnavailableBuilder_ != null) {
@@ -1409,7 +1409,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+     * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.FixedOrPercent,
@@ -1436,7 +1436,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return The minimalAction.
      */
@@ -1458,7 +1458,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return The bytes for minimalAction.
      */
@@ -1480,7 +1480,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @param value The minimalAction to set.
      * @return This builder for chaining.
@@ -1501,7 +1501,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return This builder for chaining.
      */
@@ -1518,7 +1518,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @param value The bytes for minimalAction to set.
      * @return This builder for chaining.
@@ -1542,7 +1542,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * What action should be used to replace instances. See minimal_action.REPLACE
      * </pre>
      *
-     * <code>string replacement_method = 505931694;</code>
+     * <code>string replacement_method = 237496238;</code>
      *
      * @return The replacementMethod.
      */
@@ -1564,7 +1564,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * What action should be used to replace instances. See minimal_action.REPLACE
      * </pre>
      *
-     * <code>string replacement_method = 505931694;</code>
+     * <code>string replacement_method = 237496238;</code>
      *
      * @return The bytes for replacementMethod.
      */
@@ -1586,7 +1586,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * What action should be used to replace instances. See minimal_action.REPLACE
      * </pre>
      *
-     * <code>string replacement_method = 505931694;</code>
+     * <code>string replacement_method = 237496238;</code>
      *
      * @param value The replacementMethod to set.
      * @return This builder for chaining.
@@ -1607,7 +1607,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * What action should be used to replace instances. See minimal_action.REPLACE
      * </pre>
      *
-     * <code>string replacement_method = 505931694;</code>
+     * <code>string replacement_method = 237496238;</code>
      *
      * @return This builder for chaining.
      */
@@ -1624,7 +1624,7 @@ public final class InstanceGroupManagerUpdatePolicy extends com.google.protobuf.
      * What action should be used to replace instances. See minimal_action.REPLACE
      * </pre>
      *
-     * <code>string replacement_method = 505931694;</code>
+     * <code>string replacement_method = 237496238;</code>
      *
      * @param value The bytes for replacementMethod to set.
      * @return This builder for chaining.

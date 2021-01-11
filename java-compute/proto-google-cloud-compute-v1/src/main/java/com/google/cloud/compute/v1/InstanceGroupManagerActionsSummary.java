@@ -73,6 +73,36 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
               none_ = input.readInt32();
               break;
             }
+          case 115285312:
+            {
+              deleting_ = input.readInt32();
+              break;
+            }
+          case 564973408:
+            {
+              recreating_ = input.readInt32();
+              break;
+            }
+          case 811850312:
+            {
+              creatingWithoutRetries_ = input.readInt32();
+              break;
+            }
+          case 831019928:
+            {
+              restarting_ = input.readInt32();
+              break;
+            }
+          case 1372703336:
+            {
+              abandoning_ = input.readInt32();
+              break;
+            }
+          case 1465419336:
+            {
+              verifying_ = input.readInt32();
+              break;
+            }
           case 1678472648:
             {
               creating_ = input.readInt32();
@@ -81,36 +111,6 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
           case 1720359224:
             {
               refreshing_ = input.readInt32();
-              break;
-            }
-          case -2032198336:
-            {
-              deleting_ = input.readInt32();
-              break;
-            }
-          case -1582510240:
-            {
-              recreating_ = input.readInt32();
-              break;
-            }
-          case -1335633336:
-            {
-              creatingWithoutRetries_ = input.readInt32();
-              break;
-            }
-          case -1316463720:
-            {
-              restarting_ = input.readInt32();
-              break;
-            }
-          case -774780312:
-            {
-              abandoning_ = input.readInt32();
-              break;
-            }
-          case -682064312:
-            {
-              verifying_ = input.readInt32();
               break;
             }
           default:
@@ -147,7 +147,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
             com.google.cloud.compute.v1.InstanceGroupManagerActionsSummary.Builder.class);
   }
 
-  public static final int ABANDONING_FIELD_NUMBER = 440023373;
+  public static final int ABANDONING_FIELD_NUMBER = 171587917;
   private int abandoning_;
   /**
    *
@@ -156,7 +156,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
    * </pre>
    *
-   * <code>int32 abandoning = 440023373;</code>
+   * <code>int32 abandoning = 171587917;</code>
    *
    * @return The abandoning.
    */
@@ -184,7 +184,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return creating_;
   }
 
-  public static final int CREATING_WITHOUT_RETRIES_FIELD_NUMBER = 369916745;
+  public static final int CREATING_WITHOUT_RETRIES_FIELD_NUMBER = 101481289;
   private int creatingWithoutRetries_;
   /**
    *
@@ -193,7 +193,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
    * </pre>
    *
-   * <code>int32 creating_without_retries = 369916745;</code>
+   * <code>int32 creating_without_retries = 101481289;</code>
    *
    * @return The creatingWithoutRetries.
    */
@@ -202,7 +202,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return creatingWithoutRetries_;
   }
 
-  public static final int DELETING_FIELD_NUMBER = 282846120;
+  public static final int DELETING_FIELD_NUMBER = 14410664;
   private int deleting_;
   /**
    *
@@ -211,7 +211,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
    * </pre>
    *
-   * <code>int32 deleting = 282846120;</code>
+   * <code>int32 deleting = 14410664;</code>
    *
    * @return The deleting.
    */
@@ -238,7 +238,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return none_;
   }
 
-  public static final int RECREATING_FIELD_NUMBER = 339057132;
+  public static final int RECREATING_FIELD_NUMBER = 70621676;
   private int recreating_;
   /**
    *
@@ -247,7 +247,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
    * </pre>
    *
-   * <code>int32 recreating = 339057132;</code>
+   * <code>int32 recreating = 70621676;</code>
    *
    * @return The recreating.
    */
@@ -274,7 +274,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return refreshing_;
   }
 
-  public static final int RESTARTING_FIELD_NUMBER = 372312947;
+  public static final int RESTARTING_FIELD_NUMBER = 103877491;
   private int restarting_;
   /**
    *
@@ -283,7 +283,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
    * </pre>
    *
-   * <code>int32 restarting = 372312947;</code>
+   * <code>int32 restarting = 103877491;</code>
    *
    * @return The restarting.
    */
@@ -292,7 +292,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     return restarting_;
   }
 
-  public static final int VERIFYING_FIELD_NUMBER = 451612873;
+  public static final int VERIFYING_FIELD_NUMBER = 183177417;
   private int verifying_;
   /**
    *
@@ -301,7 +301,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
    * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
    * </pre>
    *
-   * <code>int32 verifying = 451612873;</code>
+   * <code>int32 verifying = 183177417;</code>
    *
    * @return The verifying.
    */
@@ -327,29 +327,29 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (none_ != 0) {
       output.writeInt32(3387192, none_);
     }
+    if (deleting_ != 0) {
+      output.writeInt32(14410664, deleting_);
+    }
+    if (recreating_ != 0) {
+      output.writeInt32(70621676, recreating_);
+    }
+    if (creatingWithoutRetries_ != 0) {
+      output.writeInt32(101481289, creatingWithoutRetries_);
+    }
+    if (restarting_ != 0) {
+      output.writeInt32(103877491, restarting_);
+    }
+    if (abandoning_ != 0) {
+      output.writeInt32(171587917, abandoning_);
+    }
+    if (verifying_ != 0) {
+      output.writeInt32(183177417, verifying_);
+    }
     if (creating_ != 0) {
       output.writeInt32(209809081, creating_);
     }
     if (refreshing_ != 0) {
       output.writeInt32(215044903, refreshing_);
-    }
-    if (deleting_ != 0) {
-      output.writeInt32(282846120, deleting_);
-    }
-    if (recreating_ != 0) {
-      output.writeInt32(339057132, recreating_);
-    }
-    if (creatingWithoutRetries_ != 0) {
-      output.writeInt32(369916745, creatingWithoutRetries_);
-    }
-    if (restarting_ != 0) {
-      output.writeInt32(372312947, restarting_);
-    }
-    if (abandoning_ != 0) {
-      output.writeInt32(440023373, abandoning_);
-    }
-    if (verifying_ != 0) {
-      output.writeInt32(451612873, verifying_);
     }
     unknownFields.writeTo(output);
   }
@@ -363,31 +363,31 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
     if (none_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3387192, none_);
     }
+    if (deleting_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(14410664, deleting_);
+    }
+    if (recreating_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(70621676, recreating_);
+    }
+    if (creatingWithoutRetries_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              101481289, creatingWithoutRetries_);
+    }
+    if (restarting_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(103877491, restarting_);
+    }
+    if (abandoning_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(171587917, abandoning_);
+    }
+    if (verifying_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(183177417, verifying_);
+    }
     if (creating_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(209809081, creating_);
     }
     if (refreshing_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(215044903, refreshing_);
-    }
-    if (deleting_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(282846120, deleting_);
-    }
-    if (recreating_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(339057132, recreating_);
-    }
-    if (creatingWithoutRetries_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              369916745, creatingWithoutRetries_);
-    }
-    if (restarting_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(372312947, restarting_);
-    }
-    if (abandoning_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(440023373, abandoning_);
-    }
-    if (verifying_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(451612873, verifying_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -760,7 +760,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
      * </pre>
      *
-     * <code>int32 abandoning = 440023373;</code>
+     * <code>int32 abandoning = 171587917;</code>
      *
      * @return The abandoning.
      */
@@ -775,7 +775,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
      * </pre>
      *
-     * <code>int32 abandoning = 440023373;</code>
+     * <code>int32 abandoning = 171587917;</code>
      *
      * @param value The abandoning to set.
      * @return This builder for chaining.
@@ -793,7 +793,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The total number of instances in the managed instance group that are scheduled to be abandoned. Abandoning an instance removes it from the managed instance group without deleting it.
      * </pre>
      *
-     * <code>int32 abandoning = 440023373;</code>
+     * <code>int32 abandoning = 171587917;</code>
      *
      * @return This builder for chaining.
      */
@@ -867,7 +867,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
      * </pre>
      *
-     * <code>int32 creating_without_retries = 369916745;</code>
+     * <code>int32 creating_without_retries = 101481289;</code>
      *
      * @return The creatingWithoutRetries.
      */
@@ -882,7 +882,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
      * </pre>
      *
-     * <code>int32 creating_without_retries = 369916745;</code>
+     * <code>int32 creating_without_retries = 101481289;</code>
      *
      * @param value The creatingWithoutRetries to set.
      * @return This builder for chaining.
@@ -900,7 +900,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances that the managed instance group will attempt to create. The group attempts to create each instance only once. If the group fails to create any of these instances, it decreases the group's targetSize value accordingly.
      * </pre>
      *
-     * <code>int32 creating_without_retries = 369916745;</code>
+     * <code>int32 creating_without_retries = 101481289;</code>
      *
      * @return This builder for chaining.
      */
@@ -919,7 +919,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
-     * <code>int32 deleting = 282846120;</code>
+     * <code>int32 deleting = 14410664;</code>
      *
      * @return The deleting.
      */
@@ -934,7 +934,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
-     * <code>int32 deleting = 282846120;</code>
+     * <code>int32 deleting = 14410664;</code>
      *
      * @param value The deleting to set.
      * @return This builder for chaining.
@@ -952,7 +952,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be deleted or are currently being deleted.
      * </pre>
      *
-     * <code>int32 deleting = 282846120;</code>
+     * <code>int32 deleting = 14410664;</code>
      *
      * @return This builder for chaining.
      */
@@ -1023,7 +1023,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
      * </pre>
      *
-     * <code>int32 recreating = 339057132;</code>
+     * <code>int32 recreating = 70621676;</code>
      *
      * @return The recreating.
      */
@@ -1038,7 +1038,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
      * </pre>
      *
-     * <code>int32 recreating = 339057132;</code>
+     * <code>int32 recreating = 70621676;</code>
      *
      * @param value The recreating to set.
      * @return This builder for chaining.
@@ -1056,7 +1056,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be recreated or are currently being being recreated. Recreating an instance deletes the existing root persistent disk and creates a new disk from the image that is defined in the instance template.
      * </pre>
      *
-     * <code>int32 recreating = 339057132;</code>
+     * <code>int32 recreating = 70621676;</code>
      *
      * @return This builder for chaining.
      */
@@ -1127,7 +1127,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
-     * <code>int32 restarting = 372312947;</code>
+     * <code>int32 restarting = 103877491;</code>
      *
      * @return The restarting.
      */
@@ -1142,7 +1142,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
-     * <code>int32 restarting = 372312947;</code>
+     * <code>int32 restarting = 103877491;</code>
      *
      * @param value The restarting to set.
      * @return This builder for chaining.
@@ -1160,7 +1160,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are scheduled to be restarted or are currently being restarted.
      * </pre>
      *
-     * <code>int32 restarting = 372312947;</code>
+     * <code>int32 restarting = 103877491;</code>
      *
      * @return This builder for chaining.
      */
@@ -1179,7 +1179,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
      * </pre>
      *
-     * <code>int32 verifying = 451612873;</code>
+     * <code>int32 verifying = 183177417;</code>
      *
      * @return The verifying.
      */
@@ -1194,7 +1194,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
      * </pre>
      *
-     * <code>int32 verifying = 451612873;</code>
+     * <code>int32 verifying = 183177417;</code>
      *
      * @param value The verifying to set.
      * @return This builder for chaining.
@@ -1212,7 +1212,7 @@ public final class InstanceGroupManagerActionsSummary extends com.google.protobu
      * [Output Only] The number of instances in the managed instance group that are being verified. See the managedInstances[].currentAction property in the listManagedInstances method documentation.
      * </pre>
      *
-     * <code>int32 verifying = 451612873;</code>
+     * <code>int32 verifying = 183177417;</code>
      *
      * @return This builder for chaining.
      */

@@ -214,8 +214,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest
       instanceGroupManagersSetInstanceTemplateRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersSetInstanceTemplateRequestResource field is set.
@@ -225,8 +231,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
     return instanceGroupManagersSetInstanceTemplateRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersSetInstanceTemplateRequestResource.
@@ -240,8 +252,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
         : instanceGroupManagersSetInstanceTemplateRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -944,8 +962,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequestOrBuilder>
         instanceGroupManagersSetInstanceTemplateRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersSetInstanceTemplateRequestResource field is set.
@@ -955,8 +979,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
           || instanceGroupManagersSetInstanceTemplateRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersSetInstanceTemplateRequestResource.
@@ -973,8 +1003,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersSetInstanceTemplateRequestResource(
@@ -992,8 +1028,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersSetInstanceTemplateRequestResource(
@@ -1010,8 +1052,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersSetInstanceTemplateRequestResource(
@@ -1034,8 +1082,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersSetInstanceTemplateRequestResource() {
@@ -1050,8 +1104,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest.Builder
@@ -1061,8 +1121,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       return getInstanceGroupManagersSetInstanceTemplateRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequestOrBuilder
@@ -1078,8 +1144,14 @@ public final class SetInstanceTemplateInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

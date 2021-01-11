@@ -70,7 +70,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
-          case -780290990:
+          case 1367192658:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 vpnConnections_ =
@@ -121,7 +121,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.VpnGatewayStatus.Builder.class);
   }
 
-  public static final int VPN_CONNECTIONS_FIELD_NUMBER = 439334538;
+  public static final int VPN_CONNECTIONS_FIELD_NUMBER = 170899082;
   private java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection> vpnConnections_;
   /**
    *
@@ -131,7 +131,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   @java.lang.Override
@@ -147,7 +147,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   @java.lang.Override
@@ -164,7 +164,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   @java.lang.Override
@@ -179,7 +179,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   @java.lang.Override
@@ -194,7 +194,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   @java.lang.Override
@@ -218,7 +218,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < vpnConnections_.size(); i++) {
-      output.writeMessage(439334538, vpnConnections_.get(i));
+      output.writeMessage(170899082, vpnConnections_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -232,7 +232,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < vpnConnections_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              439334538, vpnConnections_.get(i));
+              170899082, vpnConnections_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -588,7 +588,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection>
@@ -607,7 +607,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public int getVpnConnectionsCount() {
@@ -625,7 +625,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection getVpnConnections(int index) {
@@ -643,7 +643,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder setVpnConnections(
@@ -668,7 +668,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder setVpnConnections(
@@ -691,7 +691,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder addVpnConnections(
@@ -716,7 +716,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder addVpnConnections(
@@ -741,7 +741,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder addVpnConnections(
@@ -763,7 +763,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder addVpnConnections(
@@ -786,7 +786,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder addAllVpnConnections(
@@ -809,7 +809,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder clearVpnConnections() {
@@ -830,7 +830,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public Builder removeVpnConnections(int index) {
@@ -851,7 +851,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.Builder
@@ -866,7 +866,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnectionOrBuilder
@@ -885,7 +885,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public java.util.List<
@@ -905,7 +905,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.Builder
@@ -922,7 +922,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.Builder
@@ -940,7 +940,7 @@ public final class VpnGatewayStatus extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+     * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection.Builder>

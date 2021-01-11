@@ -89,6 +89,11 @@ public final class SetDeletionProtectionInstanceRequest
               requestId_ = s;
               break;
             }
+          case 1516633936:
+            {
+              deletionProtection_ = input.readBool();
+              break;
+            }
           case 1566449778:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,11 +106,6 @@ public final class SetDeletionProtectionInstanceRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -630849712:
-            {
-              deletionProtection_ = input.readBool();
               break;
             }
           default:
@@ -142,7 +142,7 @@ public final class SetDeletionProtectionInstanceRequest
             com.google.cloud.compute.v1.SetDeletionProtectionInstanceRequest.Builder.class);
   }
 
-  public static final int DELETION_PROTECTION_FIELD_NUMBER = 458014698;
+  public static final int DELETION_PROTECTION_FIELD_NUMBER = 189579242;
   private boolean deletionProtection_;
   /**
    *
@@ -151,7 +151,7 @@ public final class SetDeletionProtectionInstanceRequest
    * Whether the resource should be protected against deletion.
    * </pre>
    *
-   * <code>bool deletion_protection = 458014698;</code>
+   * <code>bool deletion_protection = 189579242;</code>
    *
    * @return The deletionProtection.
    */
@@ -380,14 +380,14 @@ public final class SetDeletionProtectionInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (deletionProtection_ != false) {
+      output.writeBool(189579242, deletionProtection_);
+    }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (deletionProtection_ != false) {
-      output.writeBool(458014698, deletionProtection_);
     }
     unknownFields.writeTo(output);
   }
@@ -404,14 +404,14 @@ public final class SetDeletionProtectionInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (deletionProtection_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(189579242, deletionProtection_);
+    }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (deletionProtection_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(458014698, deletionProtection_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -754,7 +754,7 @@ public final class SetDeletionProtectionInstanceRequest
      * Whether the resource should be protected against deletion.
      * </pre>
      *
-     * <code>bool deletion_protection = 458014698;</code>
+     * <code>bool deletion_protection = 189579242;</code>
      *
      * @return The deletionProtection.
      */
@@ -769,7 +769,7 @@ public final class SetDeletionProtectionInstanceRequest
      * Whether the resource should be protected against deletion.
      * </pre>
      *
-     * <code>bool deletion_protection = 458014698;</code>
+     * <code>bool deletion_protection = 189579242;</code>
      *
      * @param value The deletionProtection to set.
      * @return This builder for chaining.
@@ -787,7 +787,7 @@ public final class SetDeletionProtectionInstanceRequest
      * Whether the resource should be protected against deletion.
      * </pre>
      *
-     * <code>bool deletion_protection = 458014698;</code>
+     * <code>bool deletion_protection = 189579242;</code>
      *
      * @return This builder for chaining.
      */

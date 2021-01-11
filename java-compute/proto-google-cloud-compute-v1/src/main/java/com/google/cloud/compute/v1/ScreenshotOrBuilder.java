@@ -30,7 +30,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The contents.
    */
@@ -42,7 +42,7 @@ public interface ScreenshotOrBuilder
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The bytes for contents.
    */

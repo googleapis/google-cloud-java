@@ -73,6 +73,13 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
+          case 308084818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              backendService_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -85,13 +92,6 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              backendService_ = s;
               break;
             }
           default:
@@ -128,7 +128,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.GetRegionBackendServiceRequest.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -137,7 +137,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
    * Name of the BackendService resource to return.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -160,7 +160,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
    * Name of the BackendService resource to return.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -289,14 +289,14 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getBackendServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
     unknownFields.writeTo(output);
   }
@@ -307,14 +307,14 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
+    if (!getBackendServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -634,7 +634,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
      * Name of the BackendService resource to return.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The backendService.
      */
@@ -656,7 +656,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
      * Name of the BackendService resource to return.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for backendService.
      */
@@ -678,7 +678,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
      * Name of the BackendService resource to return.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -699,7 +699,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
      * Name of the BackendService resource to return.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -716,7 +716,7 @@ public final class GetRegionBackendServiceRequest extends com.google.protobuf.Ge
      * Name of the BackendService resource to return.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.

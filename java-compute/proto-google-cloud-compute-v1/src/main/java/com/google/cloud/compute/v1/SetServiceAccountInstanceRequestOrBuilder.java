@@ -49,16 +49,28 @@ public interface SetServiceAccountInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008;
+   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesSetServiceAccountRequestResource field is set.
    */
   boolean hasInstancesSetServiceAccountRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008;
+   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesSetServiceAccountRequestResource.
@@ -66,8 +78,14 @@ public interface SetServiceAccountInstanceRequestOrBuilder
   com.google.cloud.compute.v1.InstancesSetServiceAccountRequest
       getInstancesSetServiceAccountRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 275550008;
+   * .google.cloud.compute.v1.InstancesSetServiceAccountRequest instances_set_service_account_request_resource = 7114552 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstancesSetServiceAccountRequestOrBuilder

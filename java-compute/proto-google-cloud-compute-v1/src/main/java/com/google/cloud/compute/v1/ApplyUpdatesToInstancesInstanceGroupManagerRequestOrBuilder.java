@@ -51,16 +51,28 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersApplyUpdatesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersApplyUpdatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersApplyUpdatesRequestResource.
@@ -68,8 +80,14 @@ public interface ApplyUpdatesToInstancesInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
       getInstanceGroupManagersApplyUpdatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequestOrBuilder

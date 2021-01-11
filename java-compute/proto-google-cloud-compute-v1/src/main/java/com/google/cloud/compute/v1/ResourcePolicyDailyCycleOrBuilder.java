@@ -30,7 +30,7 @@ public interface ResourcePolicyDailyCycleOrBuilder
    * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 days_in_cycle = 369790004;</code>
+   * <code>int32 days_in_cycle = 101354548;</code>
    *
    * @return The daysInCycle.
    */

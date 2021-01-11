@@ -30,7 +30,7 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * Name of the ForwardingRule resource in which target is to be set.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The forwardingRule.
    */
@@ -42,7 +42,7 @@ public interface SetTargetForwardingRuleRequestOrBuilder
    * Name of the ForwardingRule resource in which target is to be set.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -128,19 +128,43 @@ public interface SetTargetForwardingRuleRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetReferenceResource field is set.
    */
   boolean hasTargetReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetReferenceResource.
    */
   com.google.cloud.compute.v1.TargetReference getTargetReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.TargetReferenceOrBuilder getTargetReferenceResourceOrBuilder();
 }

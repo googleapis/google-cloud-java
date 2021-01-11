@@ -443,7 +443,7 @@ public class AddressesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param addressResource
+   * @param addressResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, Address addressResource) {
@@ -464,9 +464,11 @@ public class AddressesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   Address addressResource = Address.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertAddressRequest request = InsertAddressRequest.newBuilder()
+   *     .setAddressResource(addressResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -489,9 +491,11 @@ public class AddressesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   Address addressResource = Address.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertAddressRequest request = InsertAddressRequest.newBuilder()
+   *     .setAddressResource(addressResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

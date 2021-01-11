@@ -55,7 +55,7 @@ public interface AliasIpRangeOrBuilder
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 387995966;</code>
+   * <code>string subnetwork_range_name = 119560510;</code>
    *
    * @return The subnetworkRangeName.
    */
@@ -67,7 +67,7 @@ public interface AliasIpRangeOrBuilder
    * The name of a subnetwork secondary IP range from which to allocate an IP alias range. If not specified, the primary range of the subnetwork is used.
    * </pre>
    *
-   * <code>string subnetwork_range_name = 387995966;</code>
+   * <code>string subnetwork_range_name = 119560510;</code>
    *
    * @return The bytes for subnetworkRangeName.
    */

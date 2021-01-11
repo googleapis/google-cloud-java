@@ -82,6 +82,13 @@ public final class DeleteInterconnectAttachmentRequest
               requestId_ = s;
               break;
             }
+          case 317598626:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              interconnectAttachment_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -94,13 +101,6 @@ public final class DeleteInterconnectAttachmentRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1829885022:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interconnectAttachment_ = s;
               break;
             }
           default:
@@ -137,7 +137,7 @@ public final class DeleteInterconnectAttachmentRequest
             com.google.cloud.compute.v1.DeleteInterconnectAttachmentRequest.Builder.class);
   }
 
-  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 308135284;
+  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 39699828;
   private volatile java.lang.Object interconnectAttachment_;
   /**
    *
@@ -146,7 +146,7 @@ public final class DeleteInterconnectAttachmentRequest
    * Name of the interconnect attachment to delete.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachment.
@@ -170,7 +170,7 @@ public final class DeleteInterconnectAttachmentRequest
    * Name of the interconnect attachment to delete.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectAttachment.
@@ -356,15 +356,14 @@ public final class DeleteInterconnectAttachmentRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getInterconnectAttachmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39699828, interconnectAttachment_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 308135284, interconnectAttachment_);
     }
     unknownFields.writeTo(output);
   }
@@ -378,16 +377,16 @@ public final class DeleteInterconnectAttachmentRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getInterconnectAttachmentBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              39699828, interconnectAttachment_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              308135284, interconnectAttachment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -721,7 +720,7 @@ public final class DeleteInterconnectAttachmentRequest
      * Name of the interconnect attachment to delete.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The interconnectAttachment.
@@ -744,7 +743,7 @@ public final class DeleteInterconnectAttachmentRequest
      * Name of the interconnect attachment to delete.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for interconnectAttachment.
@@ -767,7 +766,7 @@ public final class DeleteInterconnectAttachmentRequest
      * Name of the interconnect attachment to delete.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The interconnectAttachment to set.
@@ -789,7 +788,7 @@ public final class DeleteInterconnectAttachmentRequest
      * Name of the interconnect attachment to delete.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -807,7 +806,7 @@ public final class DeleteInterconnectAttachmentRequest
      * Name of the interconnect attachment to delete.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for interconnectAttachment to set.

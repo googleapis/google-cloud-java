@@ -93,6 +93,18 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 72814978:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                serviceAccounts_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              serviceAccounts_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry));
+              break;
+            }
           case 102903210:
             {
               com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
@@ -166,6 +178,29 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                       com.google.cloud.compute.v1.AttachedDisk.parser(), extensionRegistry));
               break;
             }
+          case 946023586:
+            {
+              com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
+              if (scheduling_ != null) {
+                subBuilder = scheduling_.toBuilder();
+              }
+              scheduling_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Scheduling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scheduling_);
+                scheduling_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1262805466:
             {
               com.google.cloud.compute.v1.ReservationAffinity.Builder subBuilder = null;
@@ -182,56 +217,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
               break;
             }
-          case 1821688210:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              machineType_ = s;
-              break;
-            }
-          case 1943302074:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minCpuPlatform_ = s;
-              break;
-            }
-          case -2074668670:
-            {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                serviceAccounts_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.ServiceAccount>();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              serviceAccounts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ServiceAccount.parser(), extensionRegistry));
-              break;
-            }
-          case -1201460062:
-            {
-              com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
-              if (scheduling_ != null) {
-                subBuilder = scheduling_.toBuilder();
-              }
-              scheduling_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Scheduling.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduling_);
-                scheduling_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -586206342:
+          case 1561277306:
             {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 guestAccelerators_ =
@@ -243,12 +229,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                       com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry));
               break;
             }
-          case -553116704:
+          case 1594366944:
             {
               canIpForward_ = input.readBool();
               break;
             }
-          case -369865814:
+          case 1777617834:
             {
               com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder subBuilder = null;
               if (confidentialInstanceConfig_ != null) {
@@ -265,7 +251,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
 
               break;
             }
-          case -293404678:
+          case 1821688210:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              machineType_ = s;
+              break;
+            }
+          case 1854078970:
             {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 labels_ =
@@ -276,6 +269,13 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
                   input.readMessage(
                       LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 1943302074:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minCpuPlatform_ = s;
               break;
             }
           default:
@@ -292,6 +292,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
+      }
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         resourcePolicies_ = resourcePolicies_.getUnmodifiableView();
       }
@@ -300,9 +303,6 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         disks_ = java.util.Collections.unmodifiableList(disks_);
-      }
-      if (((mutable_bitField0_ & 0x00000020) != 0)) {
-        serviceAccounts_ = java.util.Collections.unmodifiableList(serviceAccounts_);
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         guestAccelerators_ = java.util.Collections.unmodifiableList(guestAccelerators_);
@@ -321,7 +321,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 500195327:
+      case 231759871:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -358,12 +358,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
-    ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
-    ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
-    INHERIT_FROM_SUBNETWORK(530256959),
+    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code> */
+    ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(159540538),
+    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code> */
+    ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(19774807),
+    /** <code>INHERIT_FROM_SUBNETWORK = 261821503;</code> */
+    INHERIT_FROM_SUBNETWORK(261821503),
     UNRECOGNIZED(-1),
     ;
 
@@ -377,12 +377,12 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
-    public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
-    public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
-    /** <code>INHERIT_FROM_SUBNETWORK = 530256959;</code> */
-    public static final int INHERIT_FROM_SUBNETWORK_VALUE = 530256959;
+    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code> */
+    public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 159540538;
+    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code> */
+    public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 19774807;
+    /** <code>INHERIT_FROM_SUBNETWORK = 261821503;</code> */
+    public static final int INHERIT_FROM_SUBNETWORK_VALUE = 261821503;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -410,11 +410,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 0:
           return UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS;
-        case 427975994:
+        case 159540538:
           return ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE;
-        case 288210263:
+        case 19774807:
           return ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE;
-        case 530256959:
+        case 261821503:
           return INHERIT_FROM_SUBNETWORK;
         default:
           return null;
@@ -472,7 +472,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess)
   }
 
-  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 467731324;
+  public static final int CAN_IP_FORWARD_FIELD_NUMBER = 199295868;
   private boolean canIpForward_;
   /**
    *
@@ -481,7 +481,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>bool can_ip_forward = 199295868;</code>
    *
    * @return The canIpForward.
    */
@@ -490,7 +490,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return canIpForward_;
   }
 
-  public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 490637685;
+  public static final int CONFIDENTIAL_INSTANCE_CONFIG_FIELD_NUMBER = 222202229;
   private com.google.cloud.compute.v1.ConfidentialInstanceConfig confidentialInstanceConfig_;
   /**
    *
@@ -500,7 +500,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
@@ -517,7 +517,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -536,7 +536,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
    * </code>
    */
   @java.lang.Override
@@ -545,7 +545,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return getConfidentialInstanceConfig();
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -554,7 +554,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -577,7 +577,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * An optional text description for the instances that are created from these properties.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -663,7 +663,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return disks_.get(index);
   }
 
-  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
+  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 195159663;
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
   /**
    *
@@ -672,7 +672,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -686,7 +686,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -701,7 +701,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -715,7 +715,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -729,7 +729,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of guest accelerator cards' type and count to use for instances created from these properties.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -738,7 +738,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return guestAccelerators_.get(index);
   }
 
-  public static final int LABELS_FIELD_NUMBER = 500195327;
+  public static final int LABELS_FIELD_NUMBER = 231759871;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -770,7 +770,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -792,7 +792,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -805,7 +805,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -822,7 +822,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Labels to apply to instances that are created from these properties.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1206,7 +1206,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     return resourcePolicies_.getByteString(index);
   }
 
-  public static final int SCHEDULING_FIELD_NUMBER = 386688404;
+  public static final int SCHEDULING_FIELD_NUMBER = 118252948;
   private com.google.cloud.compute.v1.Scheduling scheduling_;
   /**
    *
@@ -1215,7 +1215,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -1230,7 +1230,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
    *
    * @return The scheduling.
    */
@@ -1247,14 +1247,14 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * Specifies the scheduling options for the instances that are created from these properties.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
     return getScheduling();
   }
 
-  public static final int SERVICE_ACCOUNTS_FIELD_NUMBER = 277537328;
+  public static final int SERVICE_ACCOUNTS_FIELD_NUMBER = 9101872;
   private java.util.List<com.google.cloud.compute.v1.ServiceAccount> serviceAccounts_;
   /**
    *
@@ -1263,7 +1263,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList() {
@@ -1276,7 +1276,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
@@ -1290,7 +1290,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   @java.lang.Override
   public int getServiceAccountsCount() {
@@ -1303,7 +1303,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index) {
@@ -1316,7 +1316,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
    * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(
@@ -1421,6 +1421,9 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     if (tags_ != null) {
       output.writeMessage(3552281, getTags());
     }
+    for (int i = 0; i < serviceAccounts_.size(); i++) {
+      output.writeMessage(9101872, serviceAccounts_.get(i));
+    }
     if (shieldedInstanceConfig_ != null) {
       output.writeMessage(12862901, getShieldedInstanceConfig());
     }
@@ -1443,35 +1446,32 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < disks_.size(); i++) {
       output.writeMessage(95594102, disks_.get(i));
     }
+    if (scheduling_ != null) {
+      output.writeMessage(118252948, getScheduling());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (reservationAffinity_ != null) {
       output.writeMessage(157850683, getReservationAffinity());
+    }
+    for (int i = 0; i < guestAccelerators_.size(); i++) {
+      output.writeMessage(195159663, guestAccelerators_.get(i));
+    }
+    if (canIpForward_ != false) {
+      output.writeBool(199295868, canIpForward_);
+    }
+    if (confidentialInstanceConfig_ != null) {
+      output.writeMessage(222202229, getConfidentialInstanceConfig());
     }
     if (!getMachineTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227711026, machineType_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
     if (!getMinCpuPlatformBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 242912759, minCpuPlatform_);
     }
-    for (int i = 0; i < serviceAccounts_.size(); i++) {
-      output.writeMessage(277537328, serviceAccounts_.get(i));
-    }
-    if (scheduling_ != null) {
-      output.writeMessage(386688404, getScheduling());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    for (int i = 0; i < guestAccelerators_.size(); i++) {
-      output.writeMessage(463595119, guestAccelerators_.get(i));
-    }
-    if (canIpForward_ != false) {
-      output.writeBool(467731324, canIpForward_);
-    }
-    if (confidentialInstanceConfig_ != null) {
-      output.writeMessage(490637685, getConfidentialInstanceConfig());
-    }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
     unknownFields.writeTo(output);
   }
 
@@ -1483,6 +1483,11 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (tags_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3552281, getTags());
+    }
+    for (int i = 0; i < serviceAccounts_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9101872, serviceAccounts_.get(i));
     }
     if (shieldedInstanceConfig_ != null) {
       size +=
@@ -1515,40 +1520,32 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < disks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
     }
+    if (scheduling_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(118252948, getScheduling());
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (reservationAffinity_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               157850683, getReservationAffinity());
     }
-    if (!getMachineTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
-    }
-    if (!getMinCpuPlatformBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
-    }
-    for (int i = 0; i < serviceAccounts_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              277537328, serviceAccounts_.get(i));
-    }
-    if (scheduling_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
     for (int i = 0; i < guestAccelerators_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              463595119, guestAccelerators_.get(i));
+              195159663, guestAccelerators_.get(i));
     }
     if (canIpForward_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(467731324, canIpForward_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(199295868, canIpForward_);
     }
     if (confidentialInstanceConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              490637685, getConfidentialInstanceConfig());
+              222202229, getConfidentialInstanceConfig());
+    }
+    if (!getMachineTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227711026, machineType_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -1558,7 +1555,10 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
+    }
+    if (!getMinCpuPlatformBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242912759, minCpuPlatform_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1801,7 +1801,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 500195327:
+        case 231759871:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1811,7 +1811,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 500195327:
+        case 231759871:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -2272,7 +2272,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>bool can_ip_forward = 199295868;</code>
      *
      * @return The canIpForward.
      */
@@ -2287,7 +2287,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>bool can_ip_forward = 199295868;</code>
      *
      * @param value The canIpForward to set.
      * @return This builder for chaining.
@@ -2305,7 +2305,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Enables instances created based on these properties to send packets with source IP addresses other than their own and receive packets with destination IP addresses other than their own. If these instances will be used as an IP gateway or it will be set as the next-hop in a Route resource, specify true. If unsure, leave this set to false. See the Enable IP forwarding documentation for more information.
      * </pre>
      *
-     * <code>bool can_ip_forward = 467731324;</code>
+     * <code>bool can_ip_forward = 199295868;</code>
      *
      * @return This builder for chaining.
      */
@@ -2330,7 +2330,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      *
      * @return Whether the confidentialInstanceConfig field is set.
@@ -2346,7 +2346,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      *
      * @return The confidentialInstanceConfig.
@@ -2368,7 +2368,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     public Builder setConfidentialInstanceConfig(
@@ -2393,7 +2393,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     public Builder setConfidentialInstanceConfig(
@@ -2415,7 +2415,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     public Builder mergeConfidentialInstanceConfig(
@@ -2445,7 +2445,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     public Builder clearConfidentialInstanceConfig() {
@@ -2467,7 +2467,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     public com.google.cloud.compute.v1.ConfidentialInstanceConfig.Builder
@@ -2484,7 +2484,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     public com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -2505,7 +2505,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+     * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2533,7 +2533,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2555,7 +2555,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2577,7 +2577,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2598,7 +2598,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2615,7 +2615,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * An optional text description for the instances that are created from these properties.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3004,7 +3004,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig>
@@ -3022,7 +3022,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public int getGuestAcceleratorsCount() {
@@ -3039,7 +3039,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
@@ -3056,7 +3056,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -3080,7 +3080,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -3101,7 +3101,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(com.google.cloud.compute.v1.AcceleratorConfig value) {
@@ -3124,7 +3124,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -3148,7 +3148,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -3169,7 +3169,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -3190,7 +3190,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addAllGuestAccelerators(
@@ -3211,7 +3211,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder clearGuestAccelerators() {
@@ -3231,7 +3231,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder removeGuestAccelerators(int index) {
@@ -3251,7 +3251,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder getGuestAcceleratorsBuilder(
@@ -3265,7 +3265,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(
@@ -3283,7 +3283,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -3301,7 +3301,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder() {
@@ -3315,7 +3315,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder(
@@ -3330,7 +3330,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of guest accelerator cards' type and count to use for instances created from these properties.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig.Builder>
@@ -3390,7 +3390,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3412,7 +3412,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3425,7 +3425,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -3443,7 +3443,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3468,7 +3468,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3489,7 +3489,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3508,7 +3508,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Labels to apply to instances that are created from these properties.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -4764,7 +4764,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      *
      * @return Whether the scheduling field is set.
      */
@@ -4778,7 +4778,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      *
      * @return The scheduling.
      */
@@ -4798,7 +4798,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     public Builder setScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
@@ -4820,7 +4820,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     public Builder setScheduling(com.google.cloud.compute.v1.Scheduling.Builder builderForValue) {
       if (schedulingBuilder_ == null) {
@@ -4839,7 +4839,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingBuilder_ == null) {
@@ -4865,7 +4865,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     public Builder clearScheduling() {
       if (schedulingBuilder_ == null) {
@@ -4885,7 +4885,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingBuilder() {
 
@@ -4899,7 +4899,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder() {
       if (schedulingBuilder_ != null) {
@@ -4917,7 +4917,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * Specifies the scheduling options for the instances that are created from these properties.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+     * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Scheduling,
@@ -4960,7 +4960,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList() {
       if (serviceAccountsBuilder_ == null) {
@@ -4976,7 +4976,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public int getServiceAccountsCount() {
       if (serviceAccountsBuilder_ == null) {
@@ -4992,7 +4992,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index) {
       if (serviceAccountsBuilder_ == null) {
@@ -5008,7 +5008,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder setServiceAccounts(int index, com.google.cloud.compute.v1.ServiceAccount value) {
       if (serviceAccountsBuilder_ == null) {
@@ -5030,7 +5030,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder setServiceAccounts(
         int index, com.google.cloud.compute.v1.ServiceAccount.Builder builderForValue) {
@@ -5050,7 +5050,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder addServiceAccounts(com.google.cloud.compute.v1.ServiceAccount value) {
       if (serviceAccountsBuilder_ == null) {
@@ -5072,7 +5072,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder addServiceAccounts(int index, com.google.cloud.compute.v1.ServiceAccount value) {
       if (serviceAccountsBuilder_ == null) {
@@ -5094,7 +5094,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder addServiceAccounts(
         com.google.cloud.compute.v1.ServiceAccount.Builder builderForValue) {
@@ -5114,7 +5114,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder addServiceAccounts(
         int index, com.google.cloud.compute.v1.ServiceAccount.Builder builderForValue) {
@@ -5134,7 +5134,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder addAllServiceAccounts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.ServiceAccount> values) {
@@ -5154,7 +5154,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder clearServiceAccounts() {
       if (serviceAccountsBuilder_ == null) {
@@ -5173,7 +5173,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public Builder removeServiceAccounts(int index) {
       if (serviceAccountsBuilder_ == null) {
@@ -5192,7 +5192,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount.Builder getServiceAccountsBuilder(int index) {
       return getServiceAccountsFieldBuilder().getBuilder(index);
@@ -5204,7 +5204,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(
         int index) {
@@ -5221,7 +5221,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
         getServiceAccountsOrBuilderList() {
@@ -5238,7 +5238,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount.Builder addServiceAccountsBuilder() {
       return getServiceAccountsFieldBuilder()
@@ -5251,7 +5251,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public com.google.cloud.compute.v1.ServiceAccount.Builder addServiceAccountsBuilder(int index) {
       return getServiceAccountsFieldBuilder()
@@ -5264,7 +5264,7 @@ public final class InstanceProperties extends com.google.protobuf.GeneratedMessa
      * A list of service accounts with specified scopes. Access tokens for these service accounts are available to the instances that are created from these properties. Use metadata queries to obtain the access tokens for these instances.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+     * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ServiceAccount.Builder>
         getServiceAccountsBuilderList() {

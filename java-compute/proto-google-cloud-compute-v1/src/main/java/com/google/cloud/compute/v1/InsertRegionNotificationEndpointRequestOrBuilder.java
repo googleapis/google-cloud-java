@@ -24,21 +24,42 @@ public interface InsertRegionNotificationEndpointRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the notificationEndpointResource field is set.
    */
   boolean hasNotificationEndpointResource();
   /**
-   * <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The notificationEndpointResource.
    */
   com.google.cloud.compute.v1.NotificationEndpoint getNotificationEndpointResource();
   /**
-   * <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NotificationEndpointOrBuilder

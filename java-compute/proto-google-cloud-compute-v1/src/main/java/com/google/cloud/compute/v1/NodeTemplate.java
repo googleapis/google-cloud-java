@@ -39,9 +39,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   }
 
   private NodeTemplate() {
+    accelerators_ = java.util.Collections.emptyList();
     cpuOvercommitType_ = 0;
     creationTimestamp_ = "";
     description_ = "";
+    disks_ = java.util.Collections.emptyList();
     id_ = "";
     kind_ = "";
     name_ = "";
@@ -89,6 +91,18 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               id_ = s;
               break;
             }
+          case 9132866:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                accelerators_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              accelerators_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.AcceleratorConfig.parser(), extensionRegistry));
+              break;
+            }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -103,11 +117,64 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 231941586:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusMessage_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 374579594:
+            {
+              com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.Builder subBuilder = null;
+              if (nodeTypeFlexibility_ != null) {
+                subBuilder = nodeTypeFlexibility_.toBuilder();
+              }
+              nodeTypeFlexibility_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nodeTypeFlexibility_);
+                nodeTypeFlexibility_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 564573642:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                nodeAffinityLabels_ =
+                    com.google.protobuf.MapField.newMapField(
+                        NodeAffinityLabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                  nodeAffinityLabels__ =
+                      input.readMessage(
+                          NodeAffinityLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              nodeAffinityLabels_
+                  .getMutableMap()
+                  .put(nodeAffinityLabels__.getKey(), nodeAffinityLabels__.getValue());
+              break;
+            }
+          case 764752818:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                disks_ = new java.util.ArrayList<com.google.cloud.compute.v1.LocalDisk>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              disks_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.LocalDisk.parser(), extensionRegistry));
               break;
             }
           case 1111570338:
@@ -117,11 +184,32 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
+          case 1579178682:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeType_ = s;
               break;
             }
           case 1665436746:
@@ -147,69 +235,6 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               cpuOvercommitType_ = rawValue;
               break;
             }
-          case -1915542062:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              statusMessage_ = s;
-              break;
-            }
-          case -1772904054:
-            {
-              com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.Builder subBuilder = null;
-              if (nodeTypeFlexibility_ != null) {
-                subBuilder = nodeTypeFlexibility_.toBuilder();
-              }
-              nodeTypeFlexibility_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nodeTypeFlexibility_);
-                nodeTypeFlexibility_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1582910006:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                nodeAffinityLabels_ =
-                    com.google.protobuf.MapField.newMapField(
-                        NodeAffinityLabelsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                  nodeAffinityLabels__ =
-                      input.readMessage(
-                          NodeAffinityLabelsDefaultEntryHolder.defaultEntry.getParserForType(),
-                          extensionRegistry);
-              nodeAffinityLabels_
-                  .getMutableMap()
-                  .put(nodeAffinityLabels__.getKey(), nodeAffinityLabels__.getValue());
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -568304966:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeType_ = s;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -224,6 +249,12 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        disks_ = java.util.Collections.unmodifiableList(disks_);
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -238,7 +269,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 339007161:
+      case 70571705:
         return internalGetNodeAffinityLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -275,8 +306,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CPU_OVERCOMMIT_TYPE = 0;</code>
      */
     UNDEFINED_CPU_OVERCOMMIT_TYPE(0),
-    /** <code>CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 520665615;</code> */
-    CPU_OVERCOMMIT_TYPE_UNSPECIFIED(520665615),
+    /** <code>CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 252230159;</code> */
+    CPU_OVERCOMMIT_TYPE_UNSPECIFIED(252230159),
     /** <code>ENABLED = 182130465;</code> */
     ENABLED(182130465),
     /** <code>NONE = 2402104;</code> */
@@ -294,8 +325,8 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CPU_OVERCOMMIT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_CPU_OVERCOMMIT_TYPE_VALUE = 0;
-    /** <code>CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 520665615;</code> */
-    public static final int CPU_OVERCOMMIT_TYPE_UNSPECIFIED_VALUE = 520665615;
+    /** <code>CPU_OVERCOMMIT_TYPE_UNSPECIFIED = 252230159;</code> */
+    public static final int CPU_OVERCOMMIT_TYPE_UNSPECIFIED_VALUE = 252230159;
     /** <code>ENABLED = 182130465;</code> */
     public static final int ENABLED_VALUE = 182130465;
     /** <code>NONE = 2402104;</code> */
@@ -327,7 +358,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_CPU_OVERCOMMIT_TYPE;
-        case 520665615:
+        case 252230159:
           return CPU_OVERCOMMIT_TYPE_UNSPECIFIED;
         case 182130465:
           return ENABLED;
@@ -409,12 +440,12 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
-    CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>CREATING = 187129529;</code> */
+    CREATING(187129529),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
     UNRECOGNIZED(-1),
@@ -430,12 +461,12 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
-    public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>CREATING = 187129529;</code> */
+    public static final int CREATING_VALUE = 187129529;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
 
@@ -465,11 +496,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 455564985:
+        case 187129529:
           return CREATING;
-        case 528602024:
+        case 260166568:
           return DELETING;
-        case 530283991:
+        case 261848535:
           return INVALID;
         case 77848963:
           return READY;
@@ -524,6 +555,36 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NodeTemplate.Status)
+  }
+
+  public static final int ACCELERATORS_FIELD_NUMBER = 1141608;
+  private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> accelerators_;
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList() {
+    return accelerators_;
+  }
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+      getAcceleratorsOrBuilderList() {
+    return accelerators_;
+  }
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  @java.lang.Override
+  public int getAcceleratorsCount() {
+    return accelerators_.size();
+  }
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index) {
+    return accelerators_.get(index);
+  }
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
+      int index) {
+    return accelerators_.get(index);
   }
 
   public static final int CPU_OVERCOMMIT_TYPE_FIELD_NUMBER = 247727959;
@@ -615,7 +676,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -624,7 +685,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -647,7 +708,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -662,6 +723,35 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DISKS_FIELD_NUMBER = 95594102;
+  private java.util.List<com.google.cloud.compute.v1.LocalDisk> disks_;
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.compute.v1.LocalDisk> getDisksList() {
+    return disks_;
+  }
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.compute.v1.LocalDiskOrBuilder>
+      getDisksOrBuilderList() {
+    return disks_;
+  }
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  @java.lang.Override
+  public int getDisksCount() {
+    return disks_.size();
+  }
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LocalDisk getDisks(int index) {
+    return disks_.get(index);
+  }
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index) {
+    return disks_.get(index);
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
@@ -811,7 +901,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NODE_AFFINITY_LABELS_FIELD_NUMBER = 339007161;
+  public static final int NODE_AFFINITY_LABELS_FIELD_NUMBER = 70571705;
 
   private static final class NodeAffinityLabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -845,7 +935,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   @java.lang.Override
   public boolean containsNodeAffinityLabels(java.lang.String key) {
@@ -867,7 +957,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getNodeAffinityLabelsMap() {
@@ -880,7 +970,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   @java.lang.Override
   public java.lang.String getNodeAffinityLabelsOrDefault(
@@ -899,7 +989,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   @java.lang.Override
   public java.lang.String getNodeAffinityLabelsOrThrow(java.lang.String key) {
@@ -914,7 +1004,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
-  public static final int NODE_TYPE_FIELD_NUMBER = 465832791;
+  public static final int NODE_TYPE_FIELD_NUMBER = 197397335;
   private volatile java.lang.Object nodeType_;
   /**
    *
@@ -923,7 +1013,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>string node_type = 197397335;</code>
    *
    * @return The nodeType.
    */
@@ -946,7 +1036,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>string node_type = 197397335;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -963,7 +1053,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NODE_TYPE_FLEXIBILITY_FIELD_NUMBER = 315257905;
+  public static final int NODE_TYPE_FLEXIBILITY_FIELD_NUMBER = 46822449;
   private com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility nodeTypeFlexibility_;
   /**
    *
@@ -974,7 +1064,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
    * </code>
    *
    * @return Whether the nodeTypeFlexibility field is set.
@@ -992,7 +1082,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
    * </code>
    *
    * @return The nodeTypeFlexibility.
@@ -1012,7 +1102,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
    * </code>
    */
   @java.lang.Override
@@ -1070,7 +1160,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1079,7 +1169,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1102,7 +1192,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1212,7 +1302,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.NodeTemplate.Status.UNRECOGNIZED : result;
   }
 
-  public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
+  public static final int STATUS_MESSAGE_FIELD_NUMBER = 28992698;
   private volatile java.lang.Object statusMessage_;
   /**
    *
@@ -1221,7 +1311,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The statusMessage.
    */
@@ -1244,7 +1334,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1278,20 +1368,46 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
+    for (int i = 0; i < accelerators_.size(); i++) {
+      output.writeMessage(1141608, accelerators_.get(i));
+    }
     if (!getKindBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (!getStatusMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28992698, statusMessage_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (nodeTypeFlexibility_ != null) {
+      output.writeMessage(46822449, getNodeTypeFlexibility());
+    }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output,
+        internalGetNodeAffinityLabels(),
+        NodeAffinityLabelsDefaultEntryHolder.defaultEntry,
+        70571705);
+    for (int i = 0; i < disks_.size(); i++) {
+      output.writeMessage(95594102, disks_.get(i));
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.NodeTemplate.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (!getNodeTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 197397335, nodeType_);
     }
     if (serverBinding_ != null) {
       output.writeMessage(208179593, getServerBinding());
@@ -1300,26 +1416,6 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNDEFINED_CPU_OVERCOMMIT_TYPE
             .getNumber()) {
       output.writeEnum(247727959, cpuOvercommitType_);
-    }
-    if (!getStatusMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
-    }
-    if (nodeTypeFlexibility_ != null) {
-      output.writeMessage(315257905, getNodeTypeFlexibility());
-    }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output,
-        internalGetNodeAffinityLabels(),
-        NodeAffinityLabelsDefaultEntryHolder.defaultEntry,
-        339007161);
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    if (!getNodeTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 465832791, nodeType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1333,38 +1429,27 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
     }
+    for (int i = 0; i < accelerators_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1141608, accelerators_.get(i));
+    }
     if (!getKindBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (!getStatusMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28992698, statusMessage_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getRegionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (status_ != com.google.cloud.compute.v1.NodeTemplate.Status.UNDEFINED_STATUS.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
-    }
-    if (serverBinding_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(208179593, getServerBinding());
-    }
-    if (cpuOvercommitType_
-        != com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNDEFINED_CPU_OVERCOMMIT_TYPE
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(247727959, cpuOvercommitType_);
-    }
-    if (!getStatusMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
-    }
     if (nodeTypeFlexibility_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              315257905, getNodeTypeFlexibility());
+              46822449, getNodeTypeFlexibility());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetNodeAffinityLabels().getMap().entrySet()) {
@@ -1375,16 +1460,34 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
               .setValue(entry.getValue())
               .build();
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(339007161, nodeAffinityLabels__);
+          com.google.protobuf.CodedOutputStream.computeMessageSize(70571705, nodeAffinityLabels__);
+    }
+    for (int i = 0; i < disks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(95594102, disks_.get(i));
+    }
+    if (!getRegionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (status_ != com.google.cloud.compute.v1.NodeTemplate.Status.UNDEFINED_STATUS.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getNodeTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(465832791, nodeType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(197397335, nodeType_);
+    }
+    if (serverBinding_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(208179593, getServerBinding());
+    }
+    if (cpuOvercommitType_
+        != com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNDEFINED_CPU_OVERCOMMIT_TYPE
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(247727959, cpuOvercommitType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1401,9 +1504,11 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.compute.v1.NodeTemplate other = (com.google.cloud.compute.v1.NodeTemplate) obj;
 
+    if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (cpuOvercommitType_ != other.cpuOvercommitType_) return false;
     if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (!getDisksList().equals(other.getDisksList())) return false;
     if (!getId().equals(other.getId())) return false;
     if (!getKind().equals(other.getKind())) return false;
     if (!getName().equals(other.getName())) return false;
@@ -1433,12 +1538,20 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getAcceleratorsCount() > 0) {
+      hash = (37 * hash) + ACCELERATORS_FIELD_NUMBER;
+      hash = (53 * hash) + getAcceleratorsList().hashCode();
+    }
     hash = (37 * hash) + CPU_OVERCOMMIT_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + cpuOvercommitType_;
     hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
     hash = (53 * hash) + getCreationTimestamp().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (getDisksCount() > 0) {
+      hash = (37 * hash) + DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisksList().hashCode();
+    }
     hash = (37 * hash) + ID_FIELD_NUMBER;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1589,7 +1702,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 339007161:
+        case 70571705:
           return internalGetNodeAffinityLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1599,7 +1712,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 339007161:
+        case 70571705:
           return internalGetMutableNodeAffinityLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -1627,18 +1740,33 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getAcceleratorsFieldBuilder();
+        getDisksFieldBuilder();
+      }
     }
 
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      if (acceleratorsBuilder_ == null) {
+        accelerators_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      } else {
+        acceleratorsBuilder_.clear();
+      }
       cpuOvercommitType_ = 0;
 
       creationTimestamp_ = "";
 
       description_ = "";
 
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      } else {
+        disksBuilder_.clear();
+      }
       id_ = "";
 
       kind_ = "";
@@ -1696,9 +1824,27 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.compute.v1.NodeTemplate result =
           new com.google.cloud.compute.v1.NodeTemplate(this);
       int from_bitField0_ = bitField0_;
+      if (acceleratorsBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.accelerators_ = accelerators_;
+      } else {
+        result.accelerators_ = acceleratorsBuilder_.build();
+      }
       result.cpuOvercommitType_ = cpuOvercommitType_;
       result.creationTimestamp_ = creationTimestamp_;
       result.description_ = description_;
+      if (disksBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          disks_ = java.util.Collections.unmodifiableList(disks_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.disks_ = disks_;
+      } else {
+        result.disks_ = disksBuilder_.build();
+      }
       result.id_ = id_;
       result.kind_ = kind_;
       result.name_ = name_;
@@ -1768,6 +1914,33 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.NodeTemplate other) {
       if (other == com.google.cloud.compute.v1.NodeTemplate.getDefaultInstance()) return this;
+      if (acceleratorsBuilder_ == null) {
+        if (!other.accelerators_.isEmpty()) {
+          if (accelerators_.isEmpty()) {
+            accelerators_ = other.accelerators_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureAcceleratorsIsMutable();
+            accelerators_.addAll(other.accelerators_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.accelerators_.isEmpty()) {
+          if (acceleratorsBuilder_.isEmpty()) {
+            acceleratorsBuilder_.dispose();
+            acceleratorsBuilder_ = null;
+            accelerators_ = other.accelerators_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            acceleratorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAcceleratorsFieldBuilder()
+                    : null;
+          } else {
+            acceleratorsBuilder_.addAllMessages(other.accelerators_);
+          }
+        }
+      }
       if (other.cpuOvercommitType_ != 0) {
         setCpuOvercommitTypeValue(other.getCpuOvercommitTypeValue());
       }
@@ -1778,6 +1951,33 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
+      }
+      if (disksBuilder_ == null) {
+        if (!other.disks_.isEmpty()) {
+          if (disks_.isEmpty()) {
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDisksIsMutable();
+            disks_.addAll(other.disks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.disks_.isEmpty()) {
+          if (disksBuilder_.isEmpty()) {
+            disksBuilder_.dispose();
+            disksBuilder_ = null;
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+            disksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDisksFieldBuilder()
+                    : null;
+          } else {
+            disksBuilder_.addAllMessages(other.disks_);
+          }
+        }
       }
       if (!other.getId().isEmpty()) {
         id_ = other.id_;
@@ -1847,6 +2047,214 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+
+    private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> accelerators_ =
+        java.util.Collections.emptyList();
+
+    private void ensureAcceleratorsIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        accelerators_ =
+            new java.util.ArrayList<com.google.cloud.compute.v1.AcceleratorConfig>(accelerators_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.AcceleratorConfig,
+            com.google.cloud.compute.v1.AcceleratorConfig.Builder,
+            com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+        acceleratorsBuilder_;
+
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList() {
+      if (acceleratorsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(accelerators_);
+      } else {
+        return acceleratorsBuilder_.getMessageList();
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public int getAcceleratorsCount() {
+      if (acceleratorsBuilder_ == null) {
+        return accelerators_.size();
+      } else {
+        return acceleratorsBuilder_.getCount();
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index) {
+      if (acceleratorsBuilder_ == null) {
+        return accelerators_.get(index);
+      } else {
+        return acceleratorsBuilder_.getMessage(index);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder setAccelerators(int index, com.google.cloud.compute.v1.AcceleratorConfig value) {
+      if (acceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorsIsMutable();
+        accelerators_.set(index, value);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder setAccelerators(
+        int index, com.google.cloud.compute.v1.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder addAccelerators(com.google.cloud.compute.v1.AcceleratorConfig value) {
+      if (acceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(value);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder addAccelerators(int index, com.google.cloud.compute.v1.AcceleratorConfig value) {
+      if (acceleratorsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(index, value);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder addAccelerators(
+        com.google.cloud.compute.v1.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder addAccelerators(
+        int index, com.google.cloud.compute.v1.AcceleratorConfig.Builder builderForValue) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder addAllAccelerators(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.AcceleratorConfig> values) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, accelerators_);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder clearAccelerators() {
+      if (acceleratorsBuilder_ == null) {
+        accelerators_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public Builder removeAccelerators(int index) {
+      if (acceleratorsBuilder_ == null) {
+        ensureAcceleratorsIsMutable();
+        accelerators_.remove(index);
+        onChanged();
+      } else {
+        acceleratorsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public com.google.cloud.compute.v1.AcceleratorConfig.Builder getAcceleratorsBuilder(int index) {
+      return getAcceleratorsFieldBuilder().getBuilder(index);
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(
+        int index) {
+      if (acceleratorsBuilder_ == null) {
+        return accelerators_.get(index);
+      } else {
+        return acceleratorsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+        getAcceleratorsOrBuilderList() {
+      if (acceleratorsBuilder_ != null) {
+        return acceleratorsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(accelerators_);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public com.google.cloud.compute.v1.AcceleratorConfig.Builder addAcceleratorsBuilder() {
+      return getAcceleratorsFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public com.google.cloud.compute.v1.AcceleratorConfig.Builder addAcceleratorsBuilder(int index) {
+      return getAcceleratorsFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.AcceleratorConfig.getDefaultInstance());
+    }
+    /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+    public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig.Builder>
+        getAcceleratorsBuilderList() {
+      return getAcceleratorsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.AcceleratorConfig,
+            com.google.cloud.compute.v1.AcceleratorConfig.Builder,
+            com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+        getAcceleratorsFieldBuilder() {
+      if (acceleratorsBuilder_ == null) {
+        acceleratorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.AcceleratorConfig,
+                com.google.cloud.compute.v1.AcceleratorConfig.Builder,
+                com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>(
+                accelerators_, ((bitField0_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        accelerators_ = null;
+      }
+      return acceleratorsBuilder_;
+    }
 
     private int cpuOvercommitType_ = 0;
     /**
@@ -2066,7 +2474,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2088,7 +2496,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2110,7 +2518,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2131,7 +2539,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2148,7 +2556,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2162,6 +2570,210 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
       description_ = value;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.compute.v1.LocalDisk> disks_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDisksIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        disks_ = new java.util.ArrayList<com.google.cloud.compute.v1.LocalDisk>(disks_);
+        bitField0_ |= 0x00000002;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.LocalDisk,
+            com.google.cloud.compute.v1.LocalDisk.Builder,
+            com.google.cloud.compute.v1.LocalDiskOrBuilder>
+        disksBuilder_;
+
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public java.util.List<com.google.cloud.compute.v1.LocalDisk> getDisksList() {
+      if (disksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(disks_);
+      } else {
+        return disksBuilder_.getMessageList();
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public int getDisksCount() {
+      if (disksBuilder_ == null) {
+        return disks_.size();
+      } else {
+        return disksBuilder_.getCount();
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public com.google.cloud.compute.v1.LocalDisk getDisks(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessage(index);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder setDisks(int index, com.google.cloud.compute.v1.LocalDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.set(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder setDisks(
+        int index, com.google.cloud.compute.v1.LocalDisk.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder addDisks(com.google.cloud.compute.v1.LocalDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder addDisks(int index, com.google.cloud.compute.v1.LocalDisk value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder addDisks(com.google.cloud.compute.v1.LocalDisk.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder addDisks(
+        int index, com.google.cloud.compute.v1.LocalDisk.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder addAllDisks(
+        java.lang.Iterable<? extends com.google.cloud.compute.v1.LocalDisk> values) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, disks_);
+        onChanged();
+      } else {
+        disksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder clearDisks() {
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+      } else {
+        disksBuilder_.clear();
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public Builder removeDisks(int index) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.remove(index);
+        onChanged();
+      } else {
+        disksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public com.google.cloud.compute.v1.LocalDisk.Builder getDisksBuilder(int index) {
+      return getDisksFieldBuilder().getBuilder(index);
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public java.util.List<? extends com.google.cloud.compute.v1.LocalDiskOrBuilder>
+        getDisksOrBuilderList() {
+      if (disksBuilder_ != null) {
+        return disksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(disks_);
+      }
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public com.google.cloud.compute.v1.LocalDisk.Builder addDisksBuilder() {
+      return getDisksFieldBuilder()
+          .addBuilder(com.google.cloud.compute.v1.LocalDisk.getDefaultInstance());
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public com.google.cloud.compute.v1.LocalDisk.Builder addDisksBuilder(int index) {
+      return getDisksFieldBuilder()
+          .addBuilder(index, com.google.cloud.compute.v1.LocalDisk.getDefaultInstance());
+    }
+    /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+    public java.util.List<com.google.cloud.compute.v1.LocalDisk.Builder> getDisksBuilderList() {
+      return getDisksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.compute.v1.LocalDisk,
+            com.google.cloud.compute.v1.LocalDisk.Builder,
+            com.google.cloud.compute.v1.LocalDiskOrBuilder>
+        getDisksFieldBuilder() {
+      if (disksBuilder_ == null) {
+        disksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.compute.v1.LocalDisk,
+                com.google.cloud.compute.v1.LocalDisk.Builder,
+                com.google.cloud.compute.v1.LocalDiskOrBuilder>(
+                disks_, ((bitField0_ & 0x00000002) != 0), getParentForChildren(), isClean());
+        disks_ = null;
+      }
+      return disksBuilder_;
     }
 
     private java.lang.Object id_ = "";
@@ -2518,7 +3130,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     @java.lang.Override
     public boolean containsNodeAffinityLabels(java.lang.String key) {
@@ -2540,7 +3152,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getNodeAffinityLabelsMap() {
@@ -2553,7 +3165,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     @java.lang.Override
     public java.lang.String getNodeAffinityLabelsOrDefault(
@@ -2572,7 +3184,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     @java.lang.Override
     public java.lang.String getNodeAffinityLabelsOrThrow(java.lang.String key) {
@@ -2598,7 +3210,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     public Builder removeNodeAffinityLabels(java.lang.String key) {
       if (key == null) {
@@ -2619,7 +3231,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     public Builder putNodeAffinityLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2638,7 +3250,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * Labels to use for node affinity, which will be used in instance scheduling.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+     * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
      */
     public Builder putAllNodeAffinityLabels(
         java.util.Map<java.lang.String, java.lang.String> values) {
@@ -2654,7 +3266,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>string node_type = 197397335;</code>
      *
      * @return The nodeType.
      */
@@ -2676,7 +3288,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>string node_type = 197397335;</code>
      *
      * @return The bytes for nodeType.
      */
@@ -2698,7 +3310,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>string node_type = 197397335;</code>
      *
      * @param value The nodeType to set.
      * @return This builder for chaining.
@@ -2719,7 +3331,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>string node_type = 197397335;</code>
      *
      * @return This builder for chaining.
      */
@@ -2736,7 +3348,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * The node type to use for nodes group that are created from this template.
      * </pre>
      *
-     * <code>string node_type = 465832791;</code>
+     * <code>string node_type = 197397335;</code>
      *
      * @param value The bytes for nodeType to set.
      * @return This builder for chaining.
@@ -2767,7 +3379,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      *
      * @return Whether the nodeTypeFlexibility field is set.
@@ -2784,7 +3396,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      *
      * @return The nodeTypeFlexibility.
@@ -2807,7 +3419,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     public Builder setNodeTypeFlexibility(
@@ -2833,7 +3445,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     public Builder setNodeTypeFlexibility(
@@ -2856,7 +3468,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     public Builder mergeNodeTypeFlexibility(
@@ -2887,7 +3499,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     public Builder clearNodeTypeFlexibility() {
@@ -2910,7 +3522,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility.Builder
@@ -2928,7 +3540,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     public com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibilityOrBuilder
@@ -2950,7 +3562,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+     * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3084,7 +3696,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3106,7 +3718,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3128,7 +3740,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3149,7 +3761,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3166,7 +3778,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3494,7 +4106,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return The statusMessage.
      */
@@ -3516,7 +4128,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -3538,7 +4150,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -3559,7 +4171,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return This builder for chaining.
      */
@@ -3576,7 +4188,7 @@ public final class NodeTemplate extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.

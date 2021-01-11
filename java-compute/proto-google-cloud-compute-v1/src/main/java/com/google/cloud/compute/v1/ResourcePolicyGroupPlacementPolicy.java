@@ -76,16 +76,16 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
               availabilityDomainCount_ = input.readInt32();
               break;
             }
-          case 2091707448:
-            {
-              vmCount_ = input.readInt32();
-              break;
-            }
-          case -205715032:
+          case 1941768616:
             {
               int rawValue = input.readEnum();
 
               collocation_ = rawValue;
+              break;
+            }
+          case 2091707448:
+            {
+              vmCount_ = input.readInt32();
               break;
             }
           default:
@@ -144,8 +144,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     UNDEFINED_COLLOCATION(0),
     /** <code>COLLOCATED = 103257554;</code> */
     COLLOCATED(103257554),
-    /** <code>UNSPECIFIED_COLLOCATION = 464308205;</code> */
-    UNSPECIFIED_COLLOCATION(464308205),
+    /** <code>UNSPECIFIED_COLLOCATION = 195872749;</code> */
+    UNSPECIFIED_COLLOCATION(195872749),
     UNRECOGNIZED(-1),
     ;
 
@@ -161,8 +161,8 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     public static final int UNDEFINED_COLLOCATION_VALUE = 0;
     /** <code>COLLOCATED = 103257554;</code> */
     public static final int COLLOCATED_VALUE = 103257554;
-    /** <code>UNSPECIFIED_COLLOCATION = 464308205;</code> */
-    public static final int UNSPECIFIED_COLLOCATION_VALUE = 464308205;
+    /** <code>UNSPECIFIED_COLLOCATION = 195872749;</code> */
+    public static final int UNSPECIFIED_COLLOCATION_VALUE = 195872749;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -192,7 +192,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
           return UNDEFINED_COLLOCATION;
         case 103257554:
           return COLLOCATED;
-        case 464308205:
+        case 195872749:
           return UNSPECIFIED_COLLOCATION;
         default:
           return null;
@@ -267,7 +267,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     return availabilityDomainCount_;
   }
 
-  public static final int COLLOCATION_FIELD_NUMBER = 511156533;
+  public static final int COLLOCATION_FIELD_NUMBER = 242721077;
   private int collocation_;
   /**
    *
@@ -277,7 +277,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
    * </code>
    *
    * @return The enum numeric value on the wire for collocation.
@@ -294,7 +294,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+   * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
    * </code>
    *
    * @return The collocation.
@@ -346,14 +346,14 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
     if (availabilityDomainCount_ != 0) {
       output.writeInt32(12453432, availabilityDomainCount_);
     }
-    if (vmCount_ != 0) {
-      output.writeInt32(261463431, vmCount_);
-    }
     if (collocation_
         != com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation
             .UNDEFINED_COLLOCATION
             .getNumber()) {
-      output.writeEnum(511156533, collocation_);
+      output.writeEnum(242721077, collocation_);
+    }
+    if (vmCount_ != 0) {
+      output.writeInt32(261463431, vmCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -369,14 +369,14 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               12453432, availabilityDomainCount_);
     }
-    if (vmCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(261463431, vmCount_);
-    }
     if (collocation_
         != com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation
             .UNDEFINED_COLLOCATION
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(511156533, collocation_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(242721077, collocation_);
+    }
+    if (vmCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(261463431, vmCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -749,7 +749,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
      * </code>
      *
      * @return The enum numeric value on the wire for collocation.
@@ -766,7 +766,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
      * </code>
      *
      * @param value The enum numeric value on the wire for collocation to set.
@@ -786,7 +786,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
      * </code>
      *
      * @return The collocation.
@@ -810,7 +810,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
      * </code>
      *
      * @param value The collocation to set.
@@ -834,7 +834,7 @@ public final class ResourcePolicyGroupPlacementPolicy extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;
+     * .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 242721077;
      * </code>
      *
      * @return This builder for chaining.

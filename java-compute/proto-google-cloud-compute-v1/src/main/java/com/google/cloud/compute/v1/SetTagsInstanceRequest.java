@@ -94,14 +94,7 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1643484254:
+          case 503999394:
             {
               com.google.cloud.compute.v1.Tags.Builder subBuilder = null;
               if (tagsResource_ != null) {
@@ -114,6 +107,13 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
                 tagsResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -301,10 +301,18 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int TAGS_RESOURCE_FIELD_NUMBER = 331435380;
+  public static final int TAGS_RESOURCE_FIELD_NUMBER = 62999924;
   private com.google.cloud.compute.v1.Tags tagsResource_;
   /**
-   * <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the tagsResource field is set.
    */
@@ -313,7 +321,15 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     return tagsResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The tagsResource.
    */
@@ -323,7 +339,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.Tags.getDefaultInstance()
         : tagsResource_;
   }
-  /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.TagsOrBuilder getTagsResourceOrBuilder() {
     return getTagsResource();
@@ -401,11 +427,11 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (tagsResource_ != null) {
+      output.writeMessage(62999924, getTagsResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (tagsResource_ != null) {
-      output.writeMessage(331435380, getTagsResource());
     }
     unknownFields.writeTo(output);
   }
@@ -425,12 +451,11 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (tagsResource_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(62999924, getTagsResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (tagsResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(331435380, getTagsResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1108,7 +1133,15 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.TagsOrBuilder>
         tagsResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the tagsResource field is set.
      */
@@ -1116,7 +1149,15 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
       return tagsResourceBuilder_ != null || tagsResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The tagsResource.
      */
@@ -1129,7 +1170,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
         return tagsResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setTagsResource(com.google.cloud.compute.v1.Tags value) {
       if (tagsResourceBuilder_ == null) {
         if (value == null) {
@@ -1143,7 +1194,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setTagsResource(com.google.cloud.compute.v1.Tags.Builder builderForValue) {
       if (tagsResourceBuilder_ == null) {
         tagsResource_ = builderForValue.build();
@@ -1154,7 +1215,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeTagsResource(com.google.cloud.compute.v1.Tags value) {
       if (tagsResourceBuilder_ == null) {
         if (tagsResource_ != null) {
@@ -1172,7 +1243,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearTagsResource() {
       if (tagsResourceBuilder_ == null) {
         tagsResource_ = null;
@@ -1184,13 +1265,33 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Tags.Builder getTagsResourceBuilder() {
 
       onChanged();
       return getTagsResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.TagsOrBuilder getTagsResourceOrBuilder() {
       if (tagsResourceBuilder_ != null) {
         return tagsResourceBuilder_.getMessageOrBuilder();
@@ -1200,7 +1301,17 @@ public final class SetTagsInstanceRequest extends com.google.protobuf.GeneratedM
             : tagsResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Tags,
             com.google.cloud.compute.v1.Tags.Builder,

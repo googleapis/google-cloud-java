@@ -32,7 +32,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
    * </pre>
    *
-   * <code>string instance_redistribution_type = 292630424;</code>
+   * <code>string instance_redistribution_type = 24194968;</code>
    *
    * @return The instanceRedistributionType.
    */
@@ -46,7 +46,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * - NONE: For non-autoscaled groups, proactive redistribution is disabled.
    * </pre>
    *
-   * <code>string instance_redistribution_type = 292630424;</code>
+   * <code>string instance_redistribution_type = 24194968;</code>
    *
    * @return The bytes for instanceRedistributionType.
    */
@@ -60,7 +60,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
    *
    * @return Whether the maxSurge field is set.
    */
@@ -73,7 +73,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
    *
    * @return The maxSurge.
    */
@@ -86,7 +86,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxSurge.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 302572691;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_surge = 34137235;</code>
    */
   com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxSurgeOrBuilder();
 
@@ -100,7 +100,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
    *
    * @return Whether the maxUnavailable field is set.
    */
@@ -115,7 +115,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
    *
    * @return The maxUnavailable.
    */
@@ -130,7 +130,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * At least one of either maxSurge or maxUnavailable must be greater than 0. Learn more about maxUnavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 404940277;</code>
+   * <code>.google.cloud.compute.v1.FixedOrPercent max_unavailable = 136504821;</code>
    */
   com.google.cloud.compute.v1.FixedOrPercentOrBuilder getMaxUnavailableOrBuilder();
 
@@ -141,7 +141,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The minimalAction.
    */
@@ -153,7 +153,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * Minimal action to be taken on an instance. You can specify either RESTART to restart existing instances or REPLACE to delete and create new instances from the target template. If you specify a RESTART, the Updater will attempt to perform that action only. However, if the Updater determines that the minimal action you specify is not enough to perform the update, it might perform a more disruptive action.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -166,7 +166,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * What action should be used to replace instances. See minimal_action.REPLACE
    * </pre>
    *
-   * <code>string replacement_method = 505931694;</code>
+   * <code>string replacement_method = 237496238;</code>
    *
    * @return The replacementMethod.
    */
@@ -178,7 +178,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    * What action should be used to replace instances. See minimal_action.REPLACE
    * </pre>
    *
-   * <code>string replacement_method = 505931694;</code>
+   * <code>string replacement_method = 237496238;</code>
    *
    * @return The bytes for replacementMethod.
    */

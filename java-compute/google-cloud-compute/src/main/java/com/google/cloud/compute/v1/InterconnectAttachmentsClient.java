@@ -453,7 +453,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param interconnectAttachmentResource
+   * @param interconnectAttachmentResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -476,9 +476,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertInterconnectAttachmentRequest request = InsertInterconnectAttachmentRequest.newBuilder()
+   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -502,9 +504,11 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertInterconnectAttachmentRequest request = InsertInterconnectAttachmentRequest.newBuilder()
+   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -655,7 +659,7 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param interconnectAttachment Name of the interconnect attachment to patch.
-   * @param interconnectAttachmentResource
+   * @param interconnectAttachmentResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -683,10 +687,12 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
    *   String interconnectAttachment = "";
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchInterconnectAttachmentRequest request = PatchInterconnectAttachmentRequest.newBuilder()
    *     .setInterconnectAttachment(interconnectAttachment)
+   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -711,10 +717,12 @@ public class InterconnectAttachmentsClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectAttachmentsClient interconnectAttachmentsClient = InterconnectAttachmentsClient.create()) {
    *   String interconnectAttachment = "";
+   *   InterconnectAttachment interconnectAttachmentResource = InterconnectAttachment.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchInterconnectAttachmentRequest request = PatchInterconnectAttachmentRequest.newBuilder()
    *     .setInterconnectAttachment(interconnectAttachment)
+   *     .setInterconnectAttachmentResource(interconnectAttachmentResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

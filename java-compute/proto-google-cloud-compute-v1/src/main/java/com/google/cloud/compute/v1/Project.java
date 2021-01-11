@@ -103,11 +103,34 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 242214186:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              defaultServiceAccount_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 632867346:
+            {
+              com.google.cloud.compute.v1.UsageExportLocation.Builder subBuilder = null;
+              if (usageExportLocation_ != null) {
+                subBuilder = usageExportLocation_.toBuilder();
+              }
+              usageExportLocation_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.UsageExportLocation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(usageExportLocation_);
+                usageExportLocation_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 1002735578:
@@ -118,6 +141,13 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
               }
               quotas_.add(
                   input.readMessage(com.google.cloud.compute.v1.Quota.parser(), extensionRegistry));
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           case 1486352938:
@@ -136,51 +166,14 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case 1827354120:
-            {
-              int rawValue = input.readEnum();
-
-              xpnProjectStatus_ = rawValue;
-              break;
-            }
-          case -1905269462:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              defaultServiceAccount_ = s;
-              break;
-            }
-          case -1514616302:
-            {
-              com.google.cloud.compute.v1.UsageExportLocation.Builder subBuilder = null;
-              if (usageExportLocation_ != null) {
-                subBuilder = usageExportLocation_.toBuilder();
-              }
-              usageExportLocation_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.UsageExportLocation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(usageExportLocation_);
-                usageExportLocation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -542827558:
+          case 1604656090:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -190,11 +183,18 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
               enabledFeatures_.add(s);
               break;
             }
-          case -520940408:
+          case 1626543240:
             {
               int rawValue = input.readEnum();
 
               defaultNetworkTier_ = rawValue;
+              break;
+            }
+          case 1827354120:
+            {
+              int rawValue = input.readEnum();
+
+              xpnProjectStatus_ = rawValue;
               break;
             }
           default:
@@ -257,10 +257,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DEFAULT_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_DEFAULT_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
-    PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
-    STANDARD(484642493),
+    /** <code>PREMIUM = 131095095;</code> */
+    PREMIUM(131095095),
+    /** <code>STANDARD = 216207037;</code> */
+    STANDARD(216207037),
     UNRECOGNIZED(-1),
     ;
 
@@ -274,10 +274,10 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_DEFAULT_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_DEFAULT_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
-    public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
-    public static final int STANDARD_VALUE = 484642493;
+    /** <code>PREMIUM = 131095095;</code> */
+    public static final int PREMIUM_VALUE = 131095095;
+    /** <code>STANDARD = 216207037;</code> */
+    public static final int STANDARD_VALUE = 216207037;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -305,9 +305,9 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_DEFAULT_NETWORK_TIER;
-        case 399530551:
+        case 131095095:
           return PREMIUM;
-        case 484642493:
+        case 216207037:
           return STANDARD;
         default:
           return null;
@@ -387,8 +387,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_XPN_PROJECT_STATUS(0),
     /** <code>HOST = 2223528;</code> */
     HOST(2223528),
-    /** <code>UNSPECIFIED_XPN_PROJECT_STATUS = 340393257;</code> */
-    UNSPECIFIED_XPN_PROJECT_STATUS(340393257),
+    /** <code>UNSPECIFIED_XPN_PROJECT_STATUS = 71957801;</code> */
+    UNSPECIFIED_XPN_PROJECT_STATUS(71957801),
     UNRECOGNIZED(-1),
     ;
 
@@ -404,8 +404,8 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_XPN_PROJECT_STATUS_VALUE = 0;
     /** <code>HOST = 2223528;</code> */
     public static final int HOST_VALUE = 2223528;
-    /** <code>UNSPECIFIED_XPN_PROJECT_STATUS = 340393257;</code> */
-    public static final int UNSPECIFIED_XPN_PROJECT_STATUS_VALUE = 340393257;
+    /** <code>UNSPECIFIED_XPN_PROJECT_STATUS = 71957801;</code> */
+    public static final int UNSPECIFIED_XPN_PROJECT_STATUS_VALUE = 71957801;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -435,7 +435,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_XPN_PROJECT_STATUS;
         case 2223528:
           return HOST;
-        case 340393257:
+        case 71957801:
           return UNSPECIFIED_XPN_PROJECT_STATUS;
         default:
           return null;
@@ -589,7 +589,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEFAULT_NETWORK_TIER_FIELD_NUMBER = 471753361;
+  public static final int DEFAULT_NETWORK_TIER_FIELD_NUMBER = 203317905;
   private int defaultNetworkTier_;
   /**
    *
@@ -598,7 +598,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
    * </code>
    *
    * @return The enum numeric value on the wire for defaultNetworkTier.
@@ -614,7 +614,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
    * </code>
    *
    * @return The defaultNetworkTier.
@@ -629,7 +629,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int DEFAULT_SERVICE_ACCOUNT_FIELD_NUMBER = 298712229;
+  public static final int DEFAULT_SERVICE_ACCOUNT_FIELD_NUMBER = 30276773;
   private volatile java.lang.Object defaultServiceAccount_;
   /**
    *
@@ -638,7 +638,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>string default_service_account = 30276773;</code>
    *
    * @return The defaultServiceAccount.
    */
@@ -661,7 +661,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>string default_service_account = 30276773;</code>
    *
    * @return The bytes for defaultServiceAccount.
    */
@@ -678,7 +678,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -687,7 +687,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -710,7 +710,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -727,7 +727,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ENABLED_FEATURES_FIELD_NUMBER = 469017467;
+  public static final int ENABLED_FEATURES_FIELD_NUMBER = 200582011;
   private com.google.protobuf.LazyStringList enabledFeatures_;
   /**
    *
@@ -736,7 +736,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return A list containing the enabledFeatures.
    */
@@ -750,7 +750,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return The count of enabledFeatures.
    */
@@ -764,7 +764,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the element to return.
    * @return The enabledFeatures at the given index.
@@ -779,7 +779,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the enabledFeatures at the given index.
@@ -1004,7 +1004,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     return quotas_.get(index);
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1013,7 +1013,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1036,7 +1036,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1053,7 +1053,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int USAGE_EXPORT_LOCATION_FIELD_NUMBER = 347543874;
+  public static final int USAGE_EXPORT_LOCATION_FIELD_NUMBER = 79108418;
   private com.google.cloud.compute.v1.UsageExportLocation usageExportLocation_;
   /**
    *
@@ -1062,7 +1062,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
    *
    * @return Whether the usageExportLocation field is set.
    */
@@ -1077,7 +1077,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
    *
    * @return The usageExportLocation.
    */
@@ -1094,7 +1094,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.UsageExportLocationOrBuilder
@@ -1163,40 +1163,40 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (!getDefaultServiceAccountBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 30276773, defaultServiceAccount_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (usageExportLocation_ != null) {
+      output.writeMessage(79108418, getUsageExportLocation());
     }
     for (int i = 0; i < quotas_.size(); i++) {
       output.writeMessage(125341947, quotas_.get(i));
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (commonInstanceMetadata_ != null) {
       output.writeMessage(185794117, getCommonInstanceMetadata());
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    for (int i = 0; i < enabledFeatures_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 200582011, enabledFeatures_.getRaw(i));
+    }
+    if (defaultNetworkTier_
+        != com.google.cloud.compute.v1.Project.DefaultNetworkTier.UNDEFINED_DEFAULT_NETWORK_TIER
+            .getNumber()) {
+      output.writeEnum(203317905, defaultNetworkTier_);
     }
     if (xpnProjectStatus_
         != com.google.cloud.compute.v1.Project.XpnProjectStatus.UNDEFINED_XPN_PROJECT_STATUS
             .getNumber()) {
       output.writeEnum(228419265, xpnProjectStatus_);
-    }
-    if (!getDefaultServiceAccountBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 298712229, defaultServiceAccount_);
-    }
-    if (usageExportLocation_ != null) {
-      output.writeMessage(347543874, getUsageExportLocation());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    for (int i = 0; i < enabledFeatures_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 469017467, enabledFeatures_.getRaw(i));
-    }
-    if (defaultNetworkTier_
-        != com.google.cloud.compute.v1.Project.DefaultNetworkTier.UNDEFINED_DEFAULT_NETWORK_TIER
-            .getNumber()) {
-      output.writeEnum(471753361, defaultNetworkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -1216,38 +1216,33 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (!getDefaultServiceAccountBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              30276773, defaultServiceAccount_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (usageExportLocation_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              79108418, getUsageExportLocation());
+    }
     for (int i = 0; i < quotas_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(125341947, quotas_.get(i));
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (commonInstanceMetadata_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               185794117, getCommonInstanceMetadata());
     }
-    if (xpnProjectStatus_
-        != com.google.cloud.compute.v1.Project.XpnProjectStatus.UNDEFINED_XPN_PROJECT_STATUS
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(228419265, xpnProjectStatus_);
-    }
-    if (!getDefaultServiceAccountBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              298712229, defaultServiceAccount_);
-    }
-    if (usageExportLocation_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              347543874, getUsageExportLocation());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     {
       int dataSize = 0;
@@ -1260,7 +1255,12 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
     if (defaultNetworkTier_
         != com.google.cloud.compute.v1.Project.DefaultNetworkTier.UNDEFINED_DEFAULT_NETWORK_TIER
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(471753361, defaultNetworkTier_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(203317905, defaultNetworkTier_);
+    }
+    if (xpnProjectStatus_
+        != com.google.cloud.compute.v1.Project.XpnProjectStatus.UNDEFINED_XPN_PROJECT_STATUS
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(228419265, xpnProjectStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2043,7 +2043,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
      * </code>
      *
      * @return The enum numeric value on the wire for defaultNetworkTier.
@@ -2059,7 +2059,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
      * </code>
      *
      * @param value The enum numeric value on the wire for defaultNetworkTier to set.
@@ -2078,7 +2078,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
      * </code>
      *
      * @return The defaultNetworkTier.
@@ -2099,7 +2099,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
      * </code>
      *
      * @param value The defaultNetworkTier to set.
@@ -2122,7 +2122,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+     * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
      * </code>
      *
      * @return This builder for chaining.
@@ -2142,7 +2142,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>string default_service_account = 30276773;</code>
      *
      * @return The defaultServiceAccount.
      */
@@ -2164,7 +2164,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>string default_service_account = 30276773;</code>
      *
      * @return The bytes for defaultServiceAccount.
      */
@@ -2186,7 +2186,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>string default_service_account = 30276773;</code>
      *
      * @param value The defaultServiceAccount to set.
      * @return This builder for chaining.
@@ -2207,7 +2207,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>string default_service_account = 30276773;</code>
      *
      * @return This builder for chaining.
      */
@@ -2224,7 +2224,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Default service account used by VMs running in this project.
      * </pre>
      *
-     * <code>string default_service_account = 298712229;</code>
+     * <code>string default_service_account = 30276773;</code>
      *
      * @param value The bytes for defaultServiceAccount to set.
      * @return This builder for chaining.
@@ -2248,7 +2248,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2270,7 +2270,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2292,7 +2292,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2313,7 +2313,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2330,7 +2330,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2362,7 +2362,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @return A list containing the enabledFeatures.
      */
@@ -2376,7 +2376,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @return The count of enabledFeatures.
      */
@@ -2390,7 +2390,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param index The index of the element to return.
      * @return The enabledFeatures at the given index.
@@ -2405,7 +2405,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the enabledFeatures at the given index.
@@ -2420,7 +2420,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param index The index to set the value at.
      * @param value The enabledFeatures to set.
@@ -2442,7 +2442,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param value The enabledFeatures to add.
      * @return This builder for chaining.
@@ -2463,7 +2463,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param values The enabledFeatures to add.
      * @return This builder for chaining.
@@ -2481,7 +2481,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @return This builder for chaining.
      */
@@ -2498,7 +2498,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * Restricted features enabled for use on this project.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param value The bytes of the enabledFeatures to add.
      * @return This builder for chaining.
@@ -3186,7 +3186,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3208,7 +3208,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3230,7 +3230,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3251,7 +3251,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3268,7 +3268,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3297,7 +3297,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      *
      * @return Whether the usageExportLocation field is set.
      */
@@ -3311,7 +3311,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      *
      * @return The usageExportLocation.
      */
@@ -3331,7 +3331,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     public Builder setUsageExportLocation(com.google.cloud.compute.v1.UsageExportLocation value) {
       if (usageExportLocationBuilder_ == null) {
@@ -3353,7 +3353,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     public Builder setUsageExportLocation(
         com.google.cloud.compute.v1.UsageExportLocation.Builder builderForValue) {
@@ -3373,7 +3373,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     public Builder mergeUsageExportLocation(com.google.cloud.compute.v1.UsageExportLocation value) {
       if (usageExportLocationBuilder_ == null) {
@@ -3399,7 +3399,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     public Builder clearUsageExportLocation() {
       if (usageExportLocationBuilder_ == null) {
@@ -3419,7 +3419,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     public com.google.cloud.compute.v1.UsageExportLocation.Builder getUsageExportLocationBuilder() {
 
@@ -3433,7 +3433,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     public com.google.cloud.compute.v1.UsageExportLocationOrBuilder
         getUsageExportLocationOrBuilder() {
@@ -3452,7 +3452,7 @@ public final class Project extends com.google.protobuf.GeneratedMessageV3
      * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UsageExportLocation,

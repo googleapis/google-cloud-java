@@ -30,7 +30,7 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * Name of the BackendService resource for which to get health.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -42,7 +42,7 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
    * Name of the BackendService resource for which to get health.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -87,24 +87,42 @@ public interface GetHealthRegionBackendServiceRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the resourceGroupReferenceResource field is set.
    */
   boolean hasResourceGroupReferenceResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The resourceGroupReferenceResource.
    */
   com.google.cloud.compute.v1.ResourceGroupReference getResourceGroupReferenceResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ResourceGroupReferenceOrBuilder

@@ -24,26 +24,26 @@ public interface UrlMapValidationResultOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>repeated string load_errors = 310147300;</code>
+   * <code>repeated string load_errors = 41711844;</code>
    *
    * @return A list containing the loadErrors.
    */
   java.util.List<java.lang.String> getLoadErrorsList();
   /**
-   * <code>repeated string load_errors = 310147300;</code>
+   * <code>repeated string load_errors = 41711844;</code>
    *
    * @return The count of loadErrors.
    */
   int getLoadErrorsCount();
   /**
-   * <code>repeated string load_errors = 310147300;</code>
+   * <code>repeated string load_errors = 41711844;</code>
    *
    * @param index The index of the element to return.
    * @return The loadErrors at the given index.
    */
   java.lang.String getLoadErrors(int index);
   /**
-   * <code>repeated string load_errors = 310147300;</code>
+   * <code>repeated string load_errors = 41711844;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the loadErrors at the given index.
@@ -63,16 +63,16 @@ public interface UrlMapValidationResultOrBuilder
    */
   boolean getLoadSucceeded();
 
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
   java.util.List<com.google.cloud.compute.v1.TestFailure> getTestFailuresList();
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
   com.google.cloud.compute.v1.TestFailure getTestFailures(int index);
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
   int getTestFailuresCount();
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
   java.util.List<? extends com.google.cloud.compute.v1.TestFailureOrBuilder>
       getTestFailuresOrBuilderList();
-  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 505934134;</code> */
+  /** <code>repeated .google.cloud.compute.v1.TestFailure test_failures = 237498678;</code> */
   com.google.cloud.compute.v1.TestFailureOrBuilder getTestFailuresOrBuilder(int index);
 
   /**

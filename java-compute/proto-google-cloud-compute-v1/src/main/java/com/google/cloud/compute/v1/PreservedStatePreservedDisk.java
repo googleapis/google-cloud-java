@@ -85,7 +85,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
               source_ = s;
               break;
             }
-          case -576876072:
+          case 1570607576:
             {
               int rawValue = input.readEnum();
 
@@ -380,7 +380,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PreservedStatePreservedDisk.Mode)
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
   private int autoDelete_;
   /**
    *
@@ -389,7 +389,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
    * </code>
    *
    * @return The enum numeric value on the wire for autoDelete.
@@ -405,7 +405,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+   * <code>.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
    * </code>
    *
    * @return The autoDelete.
@@ -532,7 +532,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     if (autoDelete_
         != com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.UNDEFINED_AUTO_DELETE
             .getNumber()) {
-      output.writeEnum(464761403, autoDelete_);
+      output.writeEnum(196325947, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -554,7 +554,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
     if (autoDelete_
         != com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.UNDEFINED_AUTO_DELETE
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(464761403, autoDelete_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(196325947, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -872,7 +872,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @return The enum numeric value on the wire for autoDelete.
@@ -889,7 +889,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @param value The enum numeric value on the wire for autoDelete to set.
@@ -909,7 +909,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @return The autoDelete.
@@ -931,7 +931,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @param value The autoDelete to set.
@@ -955,7 +955,7 @@ public final class PreservedStatePreservedDisk extends com.google.protobuf.Gener
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @return This builder for chaining.

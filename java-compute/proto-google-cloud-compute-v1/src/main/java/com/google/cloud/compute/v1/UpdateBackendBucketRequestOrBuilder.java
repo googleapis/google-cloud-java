@@ -49,18 +49,44 @@ public interface UpdateBackendBucketRequestOrBuilder
   com.google.protobuf.ByteString getBackendBucketBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the backendBucketResource field is set.
    */
   boolean hasBackendBucketResource();
   /**
-   * <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The backendBucketResource.
    */
   com.google.cloud.compute.v1.BackendBucket getBackendBucketResource();
-  /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.BackendBucketOrBuilder getBackendBucketResourceOrBuilder();
 
   /**

@@ -79,7 +79,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
               url_ = s;
               break;
             }
-          case -196608734:
+          case 1950874914:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -121,7 +121,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
                 .class);
   }
 
-  public static final int CANONICAL_URL_FIELD_NUMBER = 512294820;
+  public static final int CANONICAL_URL_FIELD_NUMBER = 243859364;
   private volatile java.lang.Object canonicalUrl_;
   /**
    *
@@ -130,7 +130,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
    * [Output Only] Unique identifier for the instance; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>string canonical_url = 243859364;</code>
    *
    * @return The canonicalUrl.
    */
@@ -153,7 +153,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
    * [Output Only] Unique identifier for the instance; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>string canonical_url = 243859364;</code>
    *
    * @return The bytes for canonicalUrl.
    */
@@ -237,7 +237,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
       com.google.protobuf.GeneratedMessageV3.writeString(output, 116079, url_);
     }
     if (!getCanonicalUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 512294820, canonicalUrl_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 243859364, canonicalUrl_);
     }
     unknownFields.writeTo(output);
   }
@@ -252,7 +252,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(116079, url_);
     }
     if (!getCanonicalUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(512294820, canonicalUrl_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(243859364, canonicalUrl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -580,7 +580,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * [Output Only] Unique identifier for the instance; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 512294820;</code>
+     * <code>string canonical_url = 243859364;</code>
      *
      * @return The canonicalUrl.
      */
@@ -602,7 +602,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * [Output Only] Unique identifier for the instance; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 512294820;</code>
+     * <code>string canonical_url = 243859364;</code>
      *
      * @return The bytes for canonicalUrl.
      */
@@ -624,7 +624,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * [Output Only] Unique identifier for the instance; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 512294820;</code>
+     * <code>string canonical_url = 243859364;</code>
      *
      * @param value The canonicalUrl to set.
      * @return This builder for chaining.
@@ -645,7 +645,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * [Output Only] Unique identifier for the instance; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 512294820;</code>
+     * <code>string canonical_url = 243859364;</code>
      *
      * @return This builder for chaining.
      */
@@ -662,7 +662,7 @@ public final class PacketMirroringMirroredResourceInfoInstanceInfo
      * [Output Only] Unique identifier for the instance; defined by the server.
      * </pre>
      *
-     * <code>string canonical_url = 512294820;</code>
+     * <code>string canonical_url = 243859364;</code>
      *
      * @param value The bytes for canonicalUrl to set.
      * @return This builder for chaining.

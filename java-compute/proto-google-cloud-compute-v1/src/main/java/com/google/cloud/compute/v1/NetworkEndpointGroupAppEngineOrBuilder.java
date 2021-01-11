@@ -32,7 +32,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * Example value: "default", "my-service".
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -46,7 +46,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * Example value: "default", "my-service".
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */
@@ -88,7 +88,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * Example value: "v1", "v2".
    * </pre>
    *
-   * <code>string version = 351608024;</code>
+   * <code>string version = 83172568;</code>
    *
    * @return The version.
    */
@@ -102,7 +102,7 @@ public interface NetworkEndpointGroupAppEngineOrBuilder
    * Example value: "v1", "v2".
    * </pre>
    *
-   * <code>string version = 351608024;</code>
+   * <code>string version = 83172568;</code>
    *
    * @return The bytes for version.
    */

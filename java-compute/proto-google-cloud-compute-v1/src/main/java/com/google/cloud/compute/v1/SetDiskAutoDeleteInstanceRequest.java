@@ -103,16 +103,16 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
               deviceName_ = s;
               break;
             }
+          case 1570607576:
+            {
+              autoDelete_ = input.readBool();
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -576876072:
-            {
-              autoDelete_ = input.readBool();
               break;
             }
           default:
@@ -149,7 +149,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.SetDiskAutoDeleteInstanceRequest.Builder.class);
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
   private boolean autoDelete_;
   /**
    *
@@ -158,7 +158,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
    * Whether to auto-delete the disk when the instance is deleted.
    * </pre>
    *
-   * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The autoDelete.
    */
@@ -442,11 +442,11 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     if (!getDeviceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 67541716, deviceName_);
     }
+    if (autoDelete_ != false) {
+      output.writeBool(196325947, autoDelete_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (autoDelete_ != false) {
-      output.writeBool(464761403, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -469,11 +469,11 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
     if (!getDeviceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67541716, deviceName_);
     }
+    if (autoDelete_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(196325947, autoDelete_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (autoDelete_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -824,7 +824,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * Whether to auto-delete the disk when the instance is deleted.
      * </pre>
      *
-     * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The autoDelete.
      */
@@ -839,7 +839,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * Whether to auto-delete the disk when the instance is deleted.
      * </pre>
      *
-     * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The autoDelete to set.
      * @return This builder for chaining.
@@ -857,7 +857,7 @@ public final class SetDiskAutoDeleteInstanceRequest extends com.google.protobuf.
      * Whether to auto-delete the disk when the instance is deleted.
      * </pre>
      *
-     * <code>bool auto_delete = 464761403 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>bool auto_delete = 196325947 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */

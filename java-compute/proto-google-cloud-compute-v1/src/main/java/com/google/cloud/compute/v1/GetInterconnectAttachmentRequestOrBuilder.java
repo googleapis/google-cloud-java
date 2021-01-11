@@ -30,7 +30,7 @@ public interface GetInterconnectAttachmentRequestOrBuilder
    * Name of the interconnect attachment to return.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachment.
@@ -43,7 +43,7 @@ public interface GetInterconnectAttachmentRequestOrBuilder
    * Name of the interconnect attachment to return.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectAttachment.

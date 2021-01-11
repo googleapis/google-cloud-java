@@ -104,18 +104,18 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
 
               break;
             }
+          case 1612181522:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -535302126:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeGroup_ = s;
               break;
             }
           default:
@@ -152,7 +152,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.AddNodesNodeGroupRequest.Builder.class);
   }
 
-  public static final int NODE_GROUP_FIELD_NUMBER = 469958146;
+  public static final int NODE_GROUP_FIELD_NUMBER = 201522690;
   private volatile java.lang.Object nodeGroup_;
   /**
    *
@@ -161,7 +161,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
    * Name of the NodeGroup resource.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -184,7 +184,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
    * Name of the NodeGroup resource.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
@@ -204,8 +204,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
   public static final int NODE_GROUPS_ADD_NODES_REQUEST_RESOURCE_FIELD_NUMBER = 131263288;
   private com.google.cloud.compute.v1.NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupsAddNodesRequestResource field is set.
@@ -215,8 +221,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
     return nodeGroupsAddNodesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupsAddNodesRequestResource.
@@ -229,8 +241,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
         : nodeGroupsAddNodesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -413,11 +431,11 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
     if (nodeGroupsAddNodesRequestResource_ != null) {
       output.writeMessage(131263288, getNodeGroupsAddNodesRequestResource());
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 469958146, nodeGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -439,11 +457,11 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               131263288, getNodeGroupsAddNodesRequestResource());
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(469958146, nodeGroup_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -797,7 +815,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
      * Name of the NodeGroup resource.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeGroup.
      */
@@ -819,7 +837,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
      * Name of the NodeGroup resource.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeGroup.
      */
@@ -841,7 +859,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
      * Name of the NodeGroup resource.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeGroup to set.
      * @return This builder for chaining.
@@ -862,7 +880,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
      * Name of the NodeGroup resource.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -879,7 +897,7 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
      * Name of the NodeGroup resource.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeGroup to set.
      * @return This builder for chaining.
@@ -903,8 +921,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.NodeGroupsAddNodesRequestOrBuilder>
         nodeGroupsAddNodesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the nodeGroupsAddNodesRequestResource field is set.
@@ -914,8 +938,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
           || nodeGroupsAddNodesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The nodeGroupsAddNodesRequestResource.
@@ -931,8 +961,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupsAddNodesRequestResource(
@@ -950,8 +986,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupsAddNodesRequestResource(
@@ -966,8 +1008,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNodeGroupsAddNodesRequestResource(
@@ -990,8 +1038,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNodeGroupsAddNodesRequestResource() {
@@ -1006,8 +1060,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupsAddNodesRequest.Builder
@@ -1017,8 +1077,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       return getNodeGroupsAddNodesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupsAddNodesRequestOrBuilder
@@ -1032,8 +1098,14 @@ public final class AddNodesNodeGroupRequest extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+     * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

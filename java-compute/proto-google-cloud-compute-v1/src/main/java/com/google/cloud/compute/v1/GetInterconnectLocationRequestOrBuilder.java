@@ -30,7 +30,7 @@ public interface GetInterconnectLocationRequestOrBuilder
    * Name of the interconnect location to return.
    * </pre>
    *
-   * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectLocation.
@@ -43,7 +43,7 @@ public interface GetInterconnectLocationRequestOrBuilder
    * Name of the interconnect location to return.
    * </pre>
    *
-   * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectLocation.

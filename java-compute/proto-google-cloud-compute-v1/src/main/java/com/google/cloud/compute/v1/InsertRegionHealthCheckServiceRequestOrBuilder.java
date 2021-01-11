@@ -24,21 +24,42 @@ public interface InsertRegionHealthCheckServiceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the healthCheckServiceResource field is set.
    */
   boolean hasHealthCheckServiceResource();
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The healthCheckServiceResource.
    */
   com.google.cloud.compute.v1.HealthCheckService getHealthCheckServiceResource();
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.HealthCheckServiceOrBuilder getHealthCheckServiceResourceOrBuilder();

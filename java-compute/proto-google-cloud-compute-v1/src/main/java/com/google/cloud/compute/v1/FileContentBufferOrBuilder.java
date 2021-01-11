@@ -30,7 +30,7 @@ public interface FileContentBufferOrBuilder
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>string content = 146224249;</code>
    *
    * @return The content.
    */
@@ -42,7 +42,7 @@ public interface FileContentBufferOrBuilder
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>string content = 146224249;</code>
    *
    * @return The bytes for content.
    */
@@ -55,7 +55,7 @@ public interface FileContentBufferOrBuilder
    * The file type of source file.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
    *
    * @return The enum numeric value on the wire for fileType.
    */
@@ -67,7 +67,7 @@ public interface FileContentBufferOrBuilder
    * The file type of source file.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
    *
    * @return The fileType.
    */

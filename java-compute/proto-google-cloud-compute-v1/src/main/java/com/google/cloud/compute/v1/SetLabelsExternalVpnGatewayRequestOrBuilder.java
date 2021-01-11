@@ -24,24 +24,42 @@ public interface SetLabelsExternalVpnGatewayRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the globalSetLabelsRequestResource field is set.
    */
   boolean hasGlobalSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The globalSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.GlobalSetLabelsRequest getGlobalSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder

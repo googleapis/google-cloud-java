@@ -48,17 +48,17 @@ public interface InstancesSetLabelsRequestOrBuilder
    */
   com.google.protobuf.ByteString getLabelFingerprintBytes();
 
-  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
+  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
   int getLabelsCount();
-  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
+  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
-  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
+  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
-  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
+  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
-  /** <code>map&lt;string, string&gt; labels = 500195327;</code> */
+  /** <code>map&lt;string, string&gt; labels = 231759871;</code> */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 }

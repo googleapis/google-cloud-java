@@ -30,7 +30,7 @@ public interface NodeTypesScopedListOrBuilder
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NodeType> getNodeTypesList();
   /**
@@ -40,7 +40,7 @@ public interface NodeTypesScopedListOrBuilder
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
    */
   com.google.cloud.compute.v1.NodeType getNodeTypes(int index);
   /**
@@ -50,7 +50,7 @@ public interface NodeTypesScopedListOrBuilder
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
    */
   int getNodeTypesCount();
   /**
@@ -60,7 +60,7 @@ public interface NodeTypesScopedListOrBuilder
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NodeTypeOrBuilder>
       getNodeTypesOrBuilderList();
@@ -71,7 +71,7 @@ public interface NodeTypesScopedListOrBuilder
    * [Output Only] A list of node types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 482172924;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeType node_types = 213737468;</code>
    */
   com.google.cloud.compute.v1.NodeTypeOrBuilder getNodeTypesOrBuilder(int index);
 

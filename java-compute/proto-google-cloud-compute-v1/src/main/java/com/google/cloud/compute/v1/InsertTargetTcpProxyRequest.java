@@ -240,7 +240,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
   public static final int TARGET_TCP_PROXY_RESOURCE_FIELD_NUMBER = 145913931;
   private com.google.cloud.compute.v1.TargetTcpProxy targetTcpProxyResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetTcpProxyResource field is set.
    */
@@ -249,7 +257,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
     return targetTcpProxyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetTcpProxyResource.
    */
@@ -259,7 +275,17 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.TargetTcpProxy.getDefaultInstance()
         : targetTcpProxyResource_;
   }
-  /** <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetTcpProxyOrBuilder getTargetTcpProxyResourceOrBuilder() {
     return getTargetTcpProxyResource();
@@ -859,7 +885,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetTcpProxyOrBuilder>
         targetTcpProxyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetTcpProxyResource field is set.
      */
@@ -867,7 +901,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return targetTcpProxyResourceBuilder_ != null || targetTcpProxyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetTcpProxyResource.
      */
@@ -881,7 +923,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetTcpProxyResource(com.google.cloud.compute.v1.TargetTcpProxy value) {
       if (targetTcpProxyResourceBuilder_ == null) {
@@ -897,7 +947,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetTcpProxyResource(
         com.google.cloud.compute.v1.TargetTcpProxy.Builder builderForValue) {
@@ -911,7 +969,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTargetTcpProxyResource(com.google.cloud.compute.v1.TargetTcpProxy value) {
       if (targetTcpProxyResourceBuilder_ == null) {
@@ -931,7 +997,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetTcpProxyResource() {
       if (targetTcpProxyResourceBuilder_ == null) {
@@ -945,7 +1019,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetTcpProxy.Builder getTargetTcpProxyResourceBuilder() {
 
@@ -953,7 +1035,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       return getTargetTcpProxyResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetTcpProxyOrBuilder
         getTargetTcpProxyResourceOrBuilder() {
@@ -966,7 +1056,15 @@ public final class InsertTargetTcpProxyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetTcpProxy target_tcp_proxy_resource = 145913931 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetTcpProxy,

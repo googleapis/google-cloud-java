@@ -79,6 +79,13 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
               requestId_ = s;
               break;
             }
+          case 323529514:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              healthCheck_ = s;
+              break;
+            }
           case 1615400258:
             {
               com.google.cloud.compute.v1.HealthCheck.Builder subBuilder = null;
@@ -100,13 +107,6 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1823954134:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              healthCheck_ = s;
               break;
             }
           default:
@@ -143,7 +143,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.PatchHealthCheckRequest.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
+  public static final int HEALTH_CHECK_FIELD_NUMBER = 40441189;
   private volatile java.lang.Object healthCheck_;
   /**
    *
@@ -152,7 +152,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
    * Name of the HealthCheck resource to patch.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheck.
    */
@@ -175,7 +175,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
    * Name of the HealthCheck resource to patch.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -195,7 +195,15 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
   public static final int HEALTH_CHECK_RESOURCE_FIELD_NUMBER = 201925032;
   private com.google.cloud.compute.v1.HealthCheck healthCheckResource_;
   /**
-   * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the healthCheckResource field is set.
    */
@@ -204,7 +212,15 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     return healthCheckResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The healthCheckResource.
    */
@@ -214,7 +230,17 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.HealthCheck.getDefaultInstance()
         : healthCheckResource_;
   }
-  /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.HealthCheckOrBuilder getHealthCheckResourceOrBuilder() {
     return getHealthCheckResource();
@@ -339,14 +365,14 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getHealthCheckBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40441189, healthCheck_);
+    }
     if (healthCheckResource_ != null) {
       output.writeMessage(201925032, getHealthCheckResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getHealthCheckBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 308876645, healthCheck_);
     }
     unknownFields.writeTo(output);
   }
@@ -360,6 +386,9 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getHealthCheckBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40441189, healthCheck_);
+    }
     if (healthCheckResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -367,9 +396,6 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getHealthCheckBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308876645, healthCheck_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -710,7 +736,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
      * Name of the HealthCheck resource to patch.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The healthCheck.
      */
@@ -732,7 +758,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
      * Name of the HealthCheck resource to patch.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -754,7 +780,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
      * Name of the HealthCheck resource to patch.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -775,7 +801,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
      * Name of the HealthCheck resource to patch.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -792,7 +818,7 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
      * Name of the HealthCheck resource to patch.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.
@@ -815,7 +841,15 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.HealthCheckOrBuilder>
         healthCheckResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the healthCheckResource field is set.
      */
@@ -823,7 +857,15 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
       return healthCheckResourceBuilder_ != null || healthCheckResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The healthCheckResource.
      */
@@ -836,7 +878,17 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
         return healthCheckResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setHealthCheckResource(com.google.cloud.compute.v1.HealthCheck value) {
       if (healthCheckResourceBuilder_ == null) {
         if (value == null) {
@@ -850,7 +902,17 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setHealthCheckResource(
         com.google.cloud.compute.v1.HealthCheck.Builder builderForValue) {
       if (healthCheckResourceBuilder_ == null) {
@@ -862,7 +924,17 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeHealthCheckResource(com.google.cloud.compute.v1.HealthCheck value) {
       if (healthCheckResourceBuilder_ == null) {
         if (healthCheckResource_ != null) {
@@ -880,7 +952,17 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearHealthCheckResource() {
       if (healthCheckResourceBuilder_ == null) {
         healthCheckResource_ = null;
@@ -892,13 +974,33 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.HealthCheck.Builder getHealthCheckResourceBuilder() {
 
       onChanged();
       return getHealthCheckResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.HealthCheckOrBuilder getHealthCheckResourceOrBuilder() {
       if (healthCheckResourceBuilder_ != null) {
         return healthCheckResourceBuilder_.getMessageOrBuilder();
@@ -908,7 +1010,17 @@ public final class PatchHealthCheckRequest extends com.google.protobuf.Generated
             : healthCheckResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HealthCheck,
             com.google.cloud.compute.v1.HealthCheck.Builder,

@@ -82,6 +82,13 @@ public final class DeleteRegionNotificationEndpointRequest
               requestId_ = s;
               break;
             }
+          case 866972490:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notificationEndpoint_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -94,13 +101,6 @@ public final class DeleteRegionNotificationEndpointRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1280511158:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              notificationEndpoint_ = s;
               break;
             }
           default:
@@ -137,7 +137,7 @@ public final class DeleteRegionNotificationEndpointRequest
             com.google.cloud.compute.v1.DeleteRegionNotificationEndpointRequest.Builder.class);
   }
 
-  public static final int NOTIFICATION_ENDPOINT_FIELD_NUMBER = 376807017;
+  public static final int NOTIFICATION_ENDPOINT_FIELD_NUMBER = 108371561;
   private volatile java.lang.Object notificationEndpoint_;
   /**
    *
@@ -146,7 +146,7 @@ public final class DeleteRegionNotificationEndpointRequest
    * Name of the NotificationEndpoint resource to delete.
    * </pre>
    *
-   * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The notificationEndpoint.
@@ -170,7 +170,7 @@ public final class DeleteRegionNotificationEndpointRequest
    * Name of the NotificationEndpoint resource to delete.
    * </pre>
    *
-   * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for notificationEndpoint.
@@ -356,14 +356,14 @@ public final class DeleteRegionNotificationEndpointRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getNotificationEndpointBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 108371561, notificationEndpoint_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNotificationEndpointBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 376807017, notificationEndpoint_);
     }
     unknownFields.writeTo(output);
   }
@@ -377,16 +377,16 @@ public final class DeleteRegionNotificationEndpointRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getNotificationEndpointBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              108371561, notificationEndpoint_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNotificationEndpointBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              376807017, notificationEndpoint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -724,7 +724,7 @@ public final class DeleteRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to delete.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The notificationEndpoint.
@@ -747,7 +747,7 @@ public final class DeleteRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to delete.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for notificationEndpoint.
@@ -770,7 +770,7 @@ public final class DeleteRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to delete.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The notificationEndpoint to set.
@@ -792,7 +792,7 @@ public final class DeleteRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to delete.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -810,7 +810,7 @@ public final class DeleteRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to delete.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for notificationEndpoint to set.

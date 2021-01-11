@@ -96,14 +96,7 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1021611598:
+          case 1125872050:
             {
               com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.Builder subBuilder = null;
               if (shieldedInstanceIntegrityPolicyResource_ != null) {
@@ -118,6 +111,13 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
                 shieldedInstanceIntegrityPolicyResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -306,12 +306,18 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     }
   }
 
-  public static final int SHIELDED_INSTANCE_INTEGRITY_POLICY_RESOURCE_FIELD_NUMBER = 409169462;
+  public static final int SHIELDED_INSTANCE_INTEGRITY_POLICY_RESOURCE_FIELD_NUMBER = 140734006;
   private com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy
       shieldedInstanceIntegrityPolicyResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the shieldedInstanceIntegrityPolicyResource field is set.
@@ -321,8 +327,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     return shieldedInstanceIntegrityPolicyResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The shieldedInstanceIntegrityPolicyResource.
@@ -335,8 +347,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
         : shieldedInstanceIntegrityPolicyResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -417,11 +435,11 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (shieldedInstanceIntegrityPolicyResource_ != null) {
+      output.writeMessage(140734006, getShieldedInstanceIntegrityPolicyResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (shieldedInstanceIntegrityPolicyResource_ != null) {
-      output.writeMessage(409169462, getShieldedInstanceIntegrityPolicyResource());
     }
     unknownFields.writeTo(output);
   }
@@ -441,13 +459,13 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (shieldedInstanceIntegrityPolicyResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              409169462, getShieldedInstanceIntegrityPolicyResource());
+              140734006, getShieldedInstanceIntegrityPolicyResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1151,8 +1169,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
             com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicyOrBuilder>
         shieldedInstanceIntegrityPolicyResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the shieldedInstanceIntegrityPolicyResource field is set.
@@ -1162,8 +1186,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
           || shieldedInstanceIntegrityPolicyResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The shieldedInstanceIntegrityPolicyResource.
@@ -1179,8 +1209,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setShieldedInstanceIntegrityPolicyResource(
@@ -1198,8 +1234,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setShieldedInstanceIntegrityPolicyResource(
@@ -1214,8 +1256,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeShieldedInstanceIntegrityPolicyResource(
@@ -1238,8 +1286,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearShieldedInstanceIntegrityPolicyResource() {
@@ -1254,8 +1308,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy.Builder
@@ -1265,8 +1325,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       return getShieldedInstanceIntegrityPolicyResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicyOrBuilder
@@ -1280,8 +1346,14 @@ public final class SetShieldedInstanceIntegrityPolicyInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+     * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

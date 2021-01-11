@@ -99,17 +99,43 @@ public interface InsertRegionUrlMapRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the urlMapResource field is set.
    */
   boolean hasUrlMapResource();
   /**
-   * <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The urlMapResource.
    */
   com.google.cloud.compute.v1.UrlMap getUrlMapResource();
-  /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.UrlMapOrBuilder getUrlMapResourceOrBuilder();
 }

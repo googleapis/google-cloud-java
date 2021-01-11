@@ -73,7 +73,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
               hasStatefulConfig_ = input.readBool();
               break;
             }
-          case -84847286:
+          case 2062636362:
             {
               com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
                       .Builder
@@ -145,7 +145,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     return hasStatefulConfig_;
   }
 
-  public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 526265001;
+  public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 257829545;
   private com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs
       perInstanceConfigs_;
   /**
@@ -156,7 +156,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
    * </code>
    *
    * @return Whether the perInstanceConfigs field is set.
@@ -173,7 +173,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
    * </code>
    *
    * @return The perInstanceConfigs.
@@ -194,7 +194,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
    * </code>
    */
   @java.lang.Override
@@ -221,7 +221,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
       output.writeBool(110474224, hasStatefulConfig_);
     }
     if (perInstanceConfigs_ != null) {
-      output.writeMessage(526265001, getPerInstanceConfigs());
+      output.writeMessage(257829545, getPerInstanceConfigs());
     }
     unknownFields.writeTo(output);
   }
@@ -238,7 +238,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
     if (perInstanceConfigs_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              526265001, getPerInstanceConfigs());
+              257829545, getPerInstanceConfigs());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -622,7 +622,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      *
      * @return Whether the perInstanceConfigs field is set.
@@ -638,7 +638,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      *
      * @return The perInstanceConfigs.
@@ -662,7 +662,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -687,7 +687,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -710,7 +710,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     public Builder mergePerInstanceConfigs(
@@ -740,7 +740,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     public Builder clearPerInstanceConfigs() {
@@ -762,7 +762,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs.Builder
@@ -779,7 +779,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder
@@ -801,7 +801,7 @@ public final class InstanceGroupManagerStatusStateful extends com.google.protobu
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+     * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

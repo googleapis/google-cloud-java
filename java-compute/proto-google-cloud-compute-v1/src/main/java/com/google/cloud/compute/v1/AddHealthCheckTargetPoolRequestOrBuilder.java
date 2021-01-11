@@ -128,16 +128,28 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
   com.google.protobuf.ByteString getTargetPoolBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412;
+   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetPoolsAddHealthCheckRequestResource field is set.
    */
   boolean hasTargetPoolsAddHealthCheckRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412;
+   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetPoolsAddHealthCheckRequestResource.
@@ -145,8 +157,14 @@ public interface AddHealthCheckTargetPoolRequestOrBuilder
   com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest
       getTargetPoolsAddHealthCheckRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 269573412;
+   * .google.cloud.compute.v1.TargetPoolsAddHealthCheckRequest target_pools_add_health_check_request_resource = 1137956 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetPoolsAddHealthCheckRequestOrBuilder

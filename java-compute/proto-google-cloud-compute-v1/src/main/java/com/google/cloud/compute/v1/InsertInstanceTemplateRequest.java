@@ -138,7 +138,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
   public static final int INSTANCE_TEMPLATE_RESOURCE_FIELD_NUMBER = 10679561;
   private com.google.cloud.compute.v1.InstanceTemplate instanceTemplateResource_;
   /**
-   * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceTemplateResource field is set.
    */
@@ -147,7 +155,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
     return instanceTemplateResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceTemplateResource.
    */
@@ -158,7 +174,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
         : instanceTemplateResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceTemplateOrBuilder
@@ -640,7 +664,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.InstanceTemplateOrBuilder>
         instanceTemplateResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instanceTemplateResource field is set.
      */
@@ -648,7 +680,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return instanceTemplateResourceBuilder_ != null || instanceTemplateResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instanceTemplateResource.
      */
@@ -662,7 +702,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstanceTemplateResource(com.google.cloud.compute.v1.InstanceTemplate value) {
       if (instanceTemplateResourceBuilder_ == null) {
@@ -678,7 +726,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setInstanceTemplateResource(
         com.google.cloud.compute.v1.InstanceTemplate.Builder builderForValue) {
@@ -692,7 +748,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeInstanceTemplateResource(
         com.google.cloud.compute.v1.InstanceTemplate value) {
@@ -713,7 +777,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearInstanceTemplateResource() {
       if (instanceTemplateResourceBuilder_ == null) {
@@ -727,7 +799,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.InstanceTemplate.Builder
         getInstanceTemplateResourceBuilder() {
@@ -736,7 +816,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       return getInstanceTemplateResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.InstanceTemplateOrBuilder
         getInstanceTemplateResourceOrBuilder() {
@@ -749,7 +837,15 @@ public final class InsertInstanceTemplateRequest extends com.google.protobuf.Gen
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.InstanceTemplate,

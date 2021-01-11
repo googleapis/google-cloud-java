@@ -30,7 +30,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>string expected_rtt_ms = 154108410;</code>
    *
    * @return The expectedRttMs.
    */
@@ -42,7 +42,7 @@ public interface InterconnectLocationRegionInfoOrBuilder
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>string expected_rtt_ms = 154108410;</code>
    *
    * @return The bytes for expectedRttMs.
    */

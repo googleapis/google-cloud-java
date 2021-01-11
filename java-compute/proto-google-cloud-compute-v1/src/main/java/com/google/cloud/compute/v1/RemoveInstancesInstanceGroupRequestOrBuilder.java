@@ -49,16 +49,28 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsRemoveInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupsRemoveInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsRemoveInstancesRequestResource.
@@ -66,8 +78,14 @@ public interface RemoveInstancesInstanceGroupRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest
       getInstanceGroupsRemoveInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequestOrBuilder

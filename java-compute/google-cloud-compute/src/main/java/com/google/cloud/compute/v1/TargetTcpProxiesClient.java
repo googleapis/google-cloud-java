@@ -326,7 +326,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetTcpProxyResource
+   * @param targetTcpProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, TargetTcpProxy targetTcpProxyResource) {
@@ -348,8 +348,10 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "";
+   *   TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
    *   InsertTargetTcpProxyRequest request = InsertTargetTcpProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetTcpProxyResource(targetTcpProxyResource)
    *     .build();
    *   Operation response = targetTcpProxiesClient.insert(request);
    * }
@@ -372,8 +374,10 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "";
+   *   TargetTcpProxy targetTcpProxyResource = TargetTcpProxy.newBuilder().build();
    *   InsertTargetTcpProxyRequest request = InsertTargetTcpProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetTcpProxyResource(targetTcpProxyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -507,7 +511,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetTcpProxy Name of the TargetTcpProxy resource whose BackendService resource is to
    *     be set.
-   * @param targetTcpProxiesSetBackendServiceRequestResource
+   * @param targetTcpProxiesSetBackendServiceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setBackendService(
@@ -533,9 +537,11 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "";
+   *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   String targetTcpProxy = "";
    *   SetBackendServiceTargetTcpProxyRequest request = SetBackendServiceTargetTcpProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetTcpProxiesSetBackendServiceRequestResource(targetTcpProxiesSetBackendServiceRequestResource)
    *     .setTargetTcpProxy(targetTcpProxy)
    *     .build();
    *   Operation response = targetTcpProxiesClient.setBackendService(request);
@@ -558,9 +564,11 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "";
+   *   TargetTcpProxiesSetBackendServiceRequest targetTcpProxiesSetBackendServiceRequestResource = TargetTcpProxiesSetBackendServiceRequest.newBuilder().build();
    *   String targetTcpProxy = "";
    *   SetBackendServiceTargetTcpProxyRequest request = SetBackendServiceTargetTcpProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetTcpProxiesSetBackendServiceRequestResource(targetTcpProxiesSetBackendServiceRequestResource)
    *     .setTargetTcpProxy(targetTcpProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.setBackendServiceCallable().futureCall(request);
@@ -591,7 +599,7 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param targetTcpProxy Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
-   * @param targetTcpProxiesSetProxyHeaderRequestResource
+   * @param targetTcpProxiesSetProxyHeaderRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setProxyHeader(
@@ -617,9 +625,11 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "";
+   *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   String targetTcpProxy = "";
    *   SetProxyHeaderTargetTcpProxyRequest request = SetProxyHeaderTargetTcpProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetTcpProxiesSetProxyHeaderRequestResource(targetTcpProxiesSetProxyHeaderRequestResource)
    *     .setTargetTcpProxy(targetTcpProxy)
    *     .build();
    *   Operation response = targetTcpProxiesClient.setProxyHeader(request);
@@ -642,9 +652,11 @@ public class TargetTcpProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetTcpProxiesClient targetTcpProxiesClient = TargetTcpProxiesClient.create()) {
    *   String project = "";
+   *   TargetTcpProxiesSetProxyHeaderRequest targetTcpProxiesSetProxyHeaderRequestResource = TargetTcpProxiesSetProxyHeaderRequest.newBuilder().build();
    *   String targetTcpProxy = "";
    *   SetProxyHeaderTargetTcpProxyRequest request = SetProxyHeaderTargetTcpProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetTcpProxiesSetProxyHeaderRequestResource(targetTcpProxiesSetProxyHeaderRequestResource)
    *     .setTargetTcpProxy(targetTcpProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetTcpProxiesClient.setProxyHeaderCallable().futureCall(request);

@@ -73,21 +73,7 @@ public final class SetIamPolicyInstanceTemplateRequest
           case 0:
             done = true;
             break;
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1598579310:
+          case 548904338:
             {
               com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder subBuilder = null;
               if (globalSetPolicyRequestResource_ != null) {
@@ -102,6 +88,20 @@ public final class SetIamPolicyInstanceTemplateRequest
                 globalSetPolicyRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1566449778:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resource_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -138,11 +138,17 @@ public final class SetIamPolicyInstanceTemplateRequest
             com.google.cloud.compute.v1.SetIamPolicyInstanceTemplateRequest.Builder.class);
   }
 
-  public static final int GLOBAL_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 337048498;
+  public static final int GLOBAL_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 68613042;
   private com.google.cloud.compute.v1.GlobalSetPolicyRequest globalSetPolicyRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the globalSetPolicyRequestResource field is set.
@@ -152,8 +158,14 @@ public final class SetIamPolicyInstanceTemplateRequest
     return globalSetPolicyRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The globalSetPolicyRequestResource.
@@ -165,8 +177,14 @@ public final class SetIamPolicyInstanceTemplateRequest
         : globalSetPolicyRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -287,14 +305,14 @@ public final class SetIamPolicyInstanceTemplateRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (globalSetPolicyRequestResource_ != null) {
+      output.writeMessage(68613042, getGlobalSetPolicyRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (globalSetPolicyRequestResource_ != null) {
-      output.writeMessage(337048498, getGlobalSetPolicyRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -305,16 +323,16 @@ public final class SetIamPolicyInstanceTemplateRequest
     if (size != -1) return size;
 
     size = 0;
+    if (globalSetPolicyRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              68613042, getGlobalSetPolicyRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (globalSetPolicyRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              337048498, getGlobalSetPolicyRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -651,8 +669,14 @@ public final class SetIamPolicyInstanceTemplateRequest
             com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder>
         globalSetPolicyRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the globalSetPolicyRequestResource field is set.
@@ -662,8 +686,14 @@ public final class SetIamPolicyInstanceTemplateRequest
           || globalSetPolicyRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The globalSetPolicyRequestResource.
@@ -678,8 +708,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setGlobalSetPolicyRequestResource(
@@ -697,8 +733,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setGlobalSetPolicyRequestResource(
@@ -713,8 +755,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeGlobalSetPolicyRequestResource(
@@ -737,8 +785,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearGlobalSetPolicyRequestResource() {
@@ -753,8 +807,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.GlobalSetPolicyRequest.Builder
@@ -764,8 +824,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       return getGlobalSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder
@@ -779,8 +845,14 @@ public final class SetIamPolicyInstanceTemplateRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+     * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

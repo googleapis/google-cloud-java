@@ -31,7 +31,7 @@ public interface SchedulingOrBuilder
    * By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
    * </pre>
    *
-   * <code>bool automatic_restart = 350821371;</code>
+   * <code>bool automatic_restart = 82385915;</code>
    *
    * @return The automaticRestart.
    */
@@ -41,10 +41,35 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 82084049;</code>
+   *
+   * @return The locationHint.
+   */
+  java.lang.String getLocationHint();
+  /**
+   *
+   *
+   * <pre>
+   * An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+   * </pre>
+   *
+   * <code>string location_hint = 82084049;</code>
+   *
+   * @return The bytes for locationHint.
+   */
+  com.google.protobuf.ByteString getLocationHintBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
    * </pre>
    *
-   * <code>int32 min_node_cpus = 317231675;</code>
+   * <code>int32 min_node_cpus = 48796219;</code>
    *
    * @return The minNodeCpus.
    */
@@ -57,7 +82,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.SchedulingNodeAffinity> getNodeAffinitiesList();
@@ -68,7 +93,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
    * </code>
    */
   com.google.cloud.compute.v1.SchedulingNodeAffinity getNodeAffinities(int index);
@@ -79,7 +104,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
    * </code>
    */
   int getNodeAffinitiesCount();
@@ -90,7 +115,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>
@@ -102,7 +127,7 @@ public interface SchedulingOrBuilder
    * A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 461799971;
+   * <code>repeated .google.cloud.compute.v1.SchedulingNodeAffinity node_affinities = 193364515;
    * </code>
    */
   com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder getNodeAffinitiesOrBuilder(int index);
@@ -141,7 +166,7 @@ public interface SchedulingOrBuilder
    * Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
    * </pre>
    *
-   * <code>bool preemptible = 324203169;</code>
+   * <code>bool preemptible = 55767713;</code>
    *
    * @return The preemptible.
    */

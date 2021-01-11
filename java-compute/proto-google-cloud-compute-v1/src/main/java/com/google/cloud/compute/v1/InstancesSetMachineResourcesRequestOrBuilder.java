@@ -30,7 +30,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
@@ -41,7 +41,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
@@ -52,7 +52,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   int getGuestAcceleratorsCount();
@@ -63,7 +63,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -75,7 +75,7 @@ public interface InstancesSetMachineResourcesRequestOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(int index);

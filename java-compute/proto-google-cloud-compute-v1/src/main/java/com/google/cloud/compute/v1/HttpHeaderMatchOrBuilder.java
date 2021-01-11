@@ -31,7 +31,7 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>string exact_match = 189205637;</code>
    *
    * @return The exactMatch.
    */
@@ -44,7 +44,7 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>string exact_match = 189205637;</code>
    *
    * @return The bytes for exactMatch.
    */
@@ -89,7 +89,7 @@ public interface HttpHeaderMatchOrBuilder
    * The default setting is false.
    * </pre>
    *
-   * <code>bool invert_match = 501130268;</code>
+   * <code>bool invert_match = 232694812;</code>
    *
    * @return The invertMatch.
    */
@@ -231,7 +231,7 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>string suffix_match = 158053207;</code>
    *
    * @return The suffixMatch.
    */
@@ -244,7 +244,7 @@ public interface HttpHeaderMatchOrBuilder
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>string suffix_match = 158053207;</code>
    *
    * @return The bytes for suffixMatch.
    */

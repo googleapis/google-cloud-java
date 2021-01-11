@@ -38,6 +38,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
 
   private PacketMirroringFilter() {
     cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    direction_ = 0;
     iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -71,7 +72,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
           case 0:
             done = true;
             break;
-          case -1308366926:
+          case 839116722:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -81,7 +82,14 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
               iPProtocols_.add(s);
               break;
             }
-          case -391753718:
+          case 889207800:
+            {
+              int rawValue = input.readEnum();
+
+              direction_ = rawValue;
+              break;
+            }
+          case 1755729930:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -131,7 +139,140 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.PacketMirroringFilter.Builder.class);
   }
 
-  public static final int CIDR_RANGES_FIELD_NUMBER = 487901697;
+  /**
+   *
+   *
+   * <pre>
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.PacketMirroringFilter.Direction}
+   */
+  public enum Direction implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DIRECTION = 0;</code>
+     */
+    UNDEFINED_DIRECTION(0),
+    /** <code>BOTH = 2044801;</code> */
+    BOTH(2044801),
+    /** <code>EGRESS = 164445045;</code> */
+    EGRESS(164445045),
+    /** <code>INGRESS = 248495765;</code> */
+    INGRESS(248495765),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_DIRECTION = 0;</code>
+     */
+    public static final int UNDEFINED_DIRECTION_VALUE = 0;
+    /** <code>BOTH = 2044801;</code> */
+    public static final int BOTH_VALUE = 2044801;
+    /** <code>EGRESS = 164445045;</code> */
+    public static final int EGRESS_VALUE = 164445045;
+    /** <code>INGRESS = 248495765;</code> */
+    public static final int INGRESS_VALUE = 248495765;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Direction valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Direction forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_DIRECTION;
+        case 2044801:
+          return BOTH;
+        case 164445045:
+          return EGRESS;
+        case 248495765:
+          return INGRESS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Direction> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Direction> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Direction>() {
+          public Direction findValueByNumber(int number) {
+            return Direction.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.PacketMirroringFilter.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final Direction[] VALUES = values();
+
+    public static Direction valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Direction(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.PacketMirroringFilter.Direction)
+  }
+
+  public static final int CIDR_RANGES_FIELD_NUMBER = 219466241;
   private com.google.protobuf.LazyStringList cidrRanges_;
   /**
    *
@@ -140,7 +281,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 487901697;</code>
+   * <code>repeated string cidr_ranges = 219466241;</code>
    *
    * @return A list containing the cidrRanges.
    */
@@ -154,7 +295,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 487901697;</code>
+   * <code>repeated string cidr_ranges = 219466241;</code>
    *
    * @return The count of cidrRanges.
    */
@@ -168,7 +309,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 487901697;</code>
+   * <code>repeated string cidr_ranges = 219466241;</code>
    *
    * @param index The index of the element to return.
    * @return The cidrRanges at the given index.
@@ -183,7 +324,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string cidr_ranges = 487901697;</code>
+   * <code>repeated string cidr_ranges = 219466241;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the cidrRanges at the given index.
@@ -192,7 +333,45 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
     return cidrRanges_.getByteString(index);
   }
 
-  public static final int I_P_PROTOCOLS_FIELD_NUMBER = 373325046;
+  public static final int DIRECTION_FIELD_NUMBER = 111150975;
+  private int direction_;
+  /**
+   *
+   *
+   * <pre>
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   *
+   * @return The enum numeric value on the wire for direction.
+   */
+  @java.lang.Override
+  public int getDirectionValue() {
+    return direction_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   *
+   * @return The direction.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.PacketMirroringFilter.Direction getDirection() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.PacketMirroringFilter.Direction result =
+        com.google.cloud.compute.v1.PacketMirroringFilter.Direction.valueOf(direction_);
+    return result == null
+        ? com.google.cloud.compute.v1.PacketMirroringFilter.Direction.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int I_P_PROTOCOLS_FIELD_NUMBER = 104889590;
   private com.google.protobuf.LazyStringList iPProtocols_;
   /**
    *
@@ -201,7 +380,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 373325046;</code>
+   * <code>repeated string i_p_protocols = 104889590;</code>
    *
    * @return A list containing the iPProtocols.
    */
@@ -215,7 +394,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 373325046;</code>
+   * <code>repeated string i_p_protocols = 104889590;</code>
    *
    * @return The count of iPProtocols.
    */
@@ -229,7 +408,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 373325046;</code>
+   * <code>repeated string i_p_protocols = 104889590;</code>
    *
    * @param index The index of the element to return.
    * @return The iPProtocols at the given index.
@@ -244,7 +423,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
    * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
    * </pre>
    *
-   * <code>repeated string i_p_protocols = 373325046;</code>
+   * <code>repeated string i_p_protocols = 104889590;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the iPProtocols at the given index.
@@ -268,10 +447,15 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < iPProtocols_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 373325046, iPProtocols_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 104889590, iPProtocols_.getRaw(i));
+    }
+    if (direction_
+        != com.google.cloud.compute.v1.PacketMirroringFilter.Direction.UNDEFINED_DIRECTION
+            .getNumber()) {
+      output.writeEnum(111150975, direction_);
     }
     for (int i = 0; i < cidrRanges_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 487901697, cidrRanges_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 219466241, cidrRanges_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -289,6 +473,11 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       }
       size += dataSize;
       size += 5 * getIPProtocolsList().size();
+    }
+    if (direction_
+        != com.google.cloud.compute.v1.PacketMirroringFilter.Direction.UNDEFINED_DIRECTION
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(111150975, direction_);
     }
     {
       int dataSize = 0;
@@ -315,6 +504,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         (com.google.cloud.compute.v1.PacketMirroringFilter) obj;
 
     if (!getCidrRangesList().equals(other.getCidrRangesList())) return false;
+    if (direction_ != other.direction_) return false;
     if (!getIPProtocolsList().equals(other.getIPProtocolsList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -331,6 +521,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + CIDR_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getCidrRangesList().hashCode();
     }
+    hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
+    hash = (53 * hash) + direction_;
     if (getIPProtocolsCount() > 0) {
       hash = (37 * hash) + I_P_PROTOCOLS_FIELD_NUMBER;
       hash = (53 * hash) + getIPProtocolsList().hashCode();
@@ -481,6 +673,8 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       super.clear();
       cidrRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      direction_ = 0;
+
       iPProtocols_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
@@ -516,6 +710,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.cidrRanges_ = cidrRanges_;
+      result.direction_ = direction_;
       if (((bitField0_ & 0x00000002) != 0)) {
         iPProtocols_ = iPProtocols_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -581,6 +776,9 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
         }
         onChanged();
       }
+      if (other.direction_ != 0) {
+        setDirectionValue(other.getDirectionValue());
+      }
       if (!other.iPProtocols_.isEmpty()) {
         if (iPProtocols_.isEmpty()) {
           iPProtocols_ = other.iPProtocols_;
@@ -639,7 +837,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @return A list containing the cidrRanges.
      */
@@ -653,7 +851,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @return The count of cidrRanges.
      */
@@ -667,7 +865,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @param index The index of the element to return.
      * @return The cidrRanges at the given index.
@@ -682,7 +880,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the cidrRanges at the given index.
@@ -697,7 +895,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @param index The index to set the value at.
      * @param value The cidrRanges to set.
@@ -719,7 +917,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @param value The cidrRanges to add.
      * @return This builder for chaining.
@@ -740,7 +938,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @param values The cidrRanges to add.
      * @return This builder for chaining.
@@ -758,7 +956,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @return This builder for chaining.
      */
@@ -775,7 +973,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * IP CIDR ranges that apply as filter on the source (ingress) or destination (egress) IP in the IP header. Only IPv4 is supported. If no ranges are specified, all traffic that matches the specified IPProtocols is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string cidr_ranges = 487901697;</code>
+     * <code>repeated string cidr_ranges = 219466241;</code>
      *
      * @param value The bytes of the cidrRanges to add.
      * @return This builder for chaining.
@@ -787,6 +985,99 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       ensureCidrRangesIsMutable();
       cidrRanges_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private int direction_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     *
+     * @return The enum numeric value on the wire for direction.
+     */
+    @java.lang.Override
+    public int getDirectionValue() {
+      return direction_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     *
+     * @param value The enum numeric value on the wire for direction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirectionValue(int value) {
+
+      direction_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     *
+     * @return The direction.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.PacketMirroringFilter.Direction getDirection() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.PacketMirroringFilter.Direction result =
+          com.google.cloud.compute.v1.PacketMirroringFilter.Direction.valueOf(direction_);
+      return result == null
+          ? com.google.cloud.compute.v1.PacketMirroringFilter.Direction.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     *
+     * @param value The direction to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDirection(com.google.cloud.compute.v1.PacketMirroringFilter.Direction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      direction_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDirection() {
+
+      direction_ = 0;
       onChanged();
       return this;
     }
@@ -807,7 +1098,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @return A list containing the iPProtocols.
      */
@@ -821,7 +1112,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @return The count of iPProtocols.
      */
@@ -835,7 +1126,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @param index The index of the element to return.
      * @return The iPProtocols at the given index.
@@ -850,7 +1141,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the iPProtocols at the given index.
@@ -865,7 +1156,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @param index The index to set the value at.
      * @param value The iPProtocols to set.
@@ -887,7 +1178,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @param value The iPProtocols to add.
      * @return This builder for chaining.
@@ -908,7 +1199,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @param values The iPProtocols to add.
      * @return This builder for chaining.
@@ -926,7 +1217,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @return This builder for chaining.
      */
@@ -943,7 +1234,7 @@ public final class PacketMirroringFilter extends com.google.protobuf.GeneratedMe
      * Protocols that apply as filter on mirrored traffic. If no protocols are specified, all traffic that matches the specified CIDR ranges is mirrored. If neither cidrRanges nor IPProtocols is specified, all traffic is mirrored.
      * </pre>
      *
-     * <code>repeated string i_p_protocols = 373325046;</code>
+     * <code>repeated string i_p_protocols = 104889590;</code>
      *
      * @param value The bytes of the iPProtocols to add.
      * @return This builder for chaining.

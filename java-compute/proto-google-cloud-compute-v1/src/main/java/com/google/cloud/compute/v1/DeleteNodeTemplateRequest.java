@@ -80,6 +80,13 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
               requestId_ = s;
               break;
             }
+          case 437751994:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeTemplate_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -92,13 +99,6 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1709731654:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeTemplate_ = s;
               break;
             }
           default:
@@ -135,7 +135,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.DeleteNodeTemplateRequest.Builder.class);
   }
 
-  public static final int NODE_TEMPLATE_FIELD_NUMBER = 323154455;
+  public static final int NODE_TEMPLATE_FIELD_NUMBER = 54718999;
   private volatile java.lang.Object nodeTemplate_;
   /**
    *
@@ -144,7 +144,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
    * Name of the NodeTemplate resource to delete.
    * </pre>
    *
-   * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeTemplate.
    */
@@ -167,7 +167,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
    * Name of the NodeTemplate resource to delete.
    * </pre>
    *
-   * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -352,14 +352,14 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getNodeTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 54718999, nodeTemplate_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -373,14 +373,14 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getNodeTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(54718999, nodeTemplate_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -710,7 +710,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
      * Name of the NodeTemplate resource to delete.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeTemplate.
      */
@@ -732,7 +732,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
      * Name of the NodeTemplate resource to delete.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -754,7 +754,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
      * Name of the NodeTemplate resource to delete.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -775,7 +775,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
      * Name of the NodeTemplate resource to delete.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -792,7 +792,7 @@ public final class DeleteNodeTemplateRequest extends com.google.protobuf.Generat
      * Name of the NodeTemplate resource to delete.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.

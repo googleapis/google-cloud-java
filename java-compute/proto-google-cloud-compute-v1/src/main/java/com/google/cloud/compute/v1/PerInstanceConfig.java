@@ -162,18 +162,18 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>APPLYING = 352003508;</code> */
-    APPLYING(352003508),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
+    /** <code>APPLYING = 83568052;</code> */
+    APPLYING(83568052),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
     /** <code>EFFECTIVE = 244201863;</code> */
     EFFECTIVE(244201863),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>UNAPPLIED = 483935140;</code> */
-    UNAPPLIED(483935140),
-    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
-    UNAPPLIED_DELETION(313956873),
+    /** <code>UNAPPLIED = 215499684;</code> */
+    UNAPPLIED(215499684),
+    /** <code>UNAPPLIED_DELETION = 45521417;</code> */
+    UNAPPLIED_DELETION(45521417),
     UNRECOGNIZED(-1),
     ;
 
@@ -187,18 +187,18 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>APPLYING = 352003508;</code> */
-    public static final int APPLYING_VALUE = 352003508;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
+    /** <code>APPLYING = 83568052;</code> */
+    public static final int APPLYING_VALUE = 83568052;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
     /** <code>EFFECTIVE = 244201863;</code> */
     public static final int EFFECTIVE_VALUE = 244201863;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>UNAPPLIED = 483935140;</code> */
-    public static final int UNAPPLIED_VALUE = 483935140;
-    /** <code>UNAPPLIED_DELETION = 313956873;</code> */
-    public static final int UNAPPLIED_DELETION_VALUE = 313956873;
+    /** <code>UNAPPLIED = 215499684;</code> */
+    public static final int UNAPPLIED_VALUE = 215499684;
+    /** <code>UNAPPLIED_DELETION = 45521417;</code> */
+    public static final int UNAPPLIED_DELETION_VALUE = 45521417;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -226,17 +226,17 @@ public final class PerInstanceConfig extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 352003508:
+        case 83568052:
           return APPLYING;
-        case 528602024:
+        case 260166568:
           return DELETING;
         case 244201863:
           return EFFECTIVE;
         case 2402104:
           return NONE;
-        case 483935140:
+        case 215499684:
           return UNAPPLIED;
-        case 313956873:
+        case 45521417:
           return UNAPPLIED_DELETION;
         default:
           return null;

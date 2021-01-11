@@ -30,7 +30,7 @@ public interface PatchRegionHealthCheckServiceRequestOrBuilder
    * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheckService.
    */
@@ -42,28 +42,49 @@ public interface PatchRegionHealthCheckServiceRequestOrBuilder
    * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheckService.
    */
   com.google.protobuf.ByteString getHealthCheckServiceBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the healthCheckServiceResource field is set.
    */
   boolean hasHealthCheckServiceResource();
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The healthCheckServiceResource.
    */
   com.google.cloud.compute.v1.HealthCheckService getHealthCheckServiceResource();
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.HealthCheckServiceOrBuilder getHealthCheckServiceResourceOrBuilder();

@@ -233,7 +233,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param projectsDisableXpnResourceRequestResource
+   * @param projectsDisableXpnResourceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation disableXpnResource(
@@ -255,8 +255,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
    *   DisableXpnResourceProjectRequest request = DisableXpnResourceProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
    *     .build();
    *   Operation response = projectsClient.disableXpnResource(request);
    * }
@@ -278,8 +280,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsDisableXpnResourceRequest projectsDisableXpnResourceRequestResource = ProjectsDisableXpnResourceRequest.newBuilder().build();
    *   DisableXpnResourceProjectRequest request = DisableXpnResourceProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsDisableXpnResourceRequestResource(projectsDisableXpnResourceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.disableXpnResourceCallable().futureCall(request);
    *   // Do something
@@ -375,7 +379,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param projectsEnableXpnResourceRequestResource
+   * @param projectsEnableXpnResourceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation enableXpnResource(
@@ -398,8 +402,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
    *   EnableXpnResourceProjectRequest request = EnableXpnResourceProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
    *     .build();
    *   Operation response = projectsClient.enableXpnResource(request);
    * }
@@ -422,8 +428,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsEnableXpnResourceRequest projectsEnableXpnResourceRequestResource = ProjectsEnableXpnResourceRequest.newBuilder().build();
    *   EnableXpnResourceProjectRequest request = EnableXpnResourceProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsEnableXpnResourceRequestResource(projectsEnableXpnResourceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.enableXpnResourceCallable().futureCall(request);
    *   // Do something
@@ -693,7 +701,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param projectsListXpnHostsRequestResource
+   * @param projectsListXpnHostsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListXpnHostsPagedResponse listXpnHosts(
@@ -715,8 +723,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
    *   ListXpnHostsProjectsRequest request = ListXpnHostsProjectsRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
    *     .build();
    *   for (Project element : projectsClient.listXpnHosts(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -740,8 +750,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
    *   ListXpnHostsProjectsRequest request = ListXpnHostsProjectsRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
    *     .build();
    *   ApiFuture&lt;ListXpnHostsPagedResponse&gt; future = projectsClient.listXpnHostsPagedCallable().futureCall(request);
    *   // Do something
@@ -765,8 +777,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsListXpnHostsRequest projectsListXpnHostsRequestResource = ProjectsListXpnHostsRequest.newBuilder().build();
    *   ListXpnHostsProjectsRequest request = ListXpnHostsProjectsRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsListXpnHostsRequestResource(projectsListXpnHostsRequestResource)
    *     .build();
    *   while (true) {
    *     XpnHostList response = projectsClient.listXpnHostsCallable().call(request);
@@ -802,7 +816,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param diskMoveRequestResource
+   * @param diskMoveRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation moveDisk(String project, DiskMoveRequest diskMoveRequestResource) {
@@ -822,8 +836,10 @@ public class ProjectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
    *   String project = "";
    *   MoveDiskProjectRequest request = MoveDiskProjectRequest.newBuilder()
+   *     .setDiskMoveRequestResource(diskMoveRequestResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = projectsClient.moveDisk(request);
@@ -845,8 +861,10 @@ public class ProjectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   DiskMoveRequest diskMoveRequestResource = DiskMoveRequest.newBuilder().build();
    *   String project = "";
    *   MoveDiskProjectRequest request = MoveDiskProjectRequest.newBuilder()
+   *     .setDiskMoveRequestResource(diskMoveRequestResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.moveDiskCallable().futureCall(request);
@@ -874,7 +892,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param instanceMoveRequestResource
+   * @param instanceMoveRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation moveInstance(
@@ -895,8 +913,10 @@ public class ProjectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
    *   String project = "";
    *   MoveInstanceProjectRequest request = MoveInstanceProjectRequest.newBuilder()
+   *     .setInstanceMoveRequestResource(instanceMoveRequestResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = projectsClient.moveInstance(request);
@@ -918,8 +938,10 @@ public class ProjectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   InstanceMoveRequest instanceMoveRequestResource = InstanceMoveRequest.newBuilder().build();
    *   String project = "";
    *   MoveInstanceProjectRequest request = MoveInstanceProjectRequest.newBuilder()
+   *     .setInstanceMoveRequestResource(instanceMoveRequestResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.moveInstanceCallable().futureCall(request);
@@ -948,7 +970,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param metadataResource
+   * @param metadataResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setCommonInstanceMetadata(String project, Metadata metadataResource) {
@@ -969,8 +991,10 @@ public class ProjectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   Metadata metadataResource = Metadata.newBuilder().build();
    *   String project = "";
    *   SetCommonInstanceMetadataProjectRequest request = SetCommonInstanceMetadataProjectRequest.newBuilder()
+   *     .setMetadataResource(metadataResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = projectsClient.setCommonInstanceMetadata(request);
@@ -994,8 +1018,10 @@ public class ProjectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
+   *   Metadata metadataResource = Metadata.newBuilder().build();
    *   String project = "";
    *   SetCommonInstanceMetadataProjectRequest request = SetCommonInstanceMetadataProjectRequest.newBuilder()
+   *     .setMetadataResource(metadataResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.setCommonInstanceMetadataCallable().futureCall(request);
@@ -1025,7 +1051,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param projectsSetDefaultNetworkTierRequestResource
+   * @param projectsSetDefaultNetworkTierRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setDefaultNetworkTier(
@@ -1050,8 +1076,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
    *   SetDefaultNetworkTierProjectRequest request = SetDefaultNetworkTierProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsSetDefaultNetworkTierRequestResource(projectsSetDefaultNetworkTierRequestResource)
    *     .build();
    *   Operation response = projectsClient.setDefaultNetworkTier(request);
    * }
@@ -1074,8 +1102,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   ProjectsSetDefaultNetworkTierRequest projectsSetDefaultNetworkTierRequestResource = ProjectsSetDefaultNetworkTierRequest.newBuilder().build();
    *   SetDefaultNetworkTierProjectRequest request = SetDefaultNetworkTierProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setProjectsSetDefaultNetworkTierRequestResource(projectsSetDefaultNetworkTierRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.setDefaultNetworkTierCallable().futureCall(request);
    *   // Do something
@@ -1104,7 +1134,7 @@ public class ProjectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param usageExportLocationResource
+   * @param usageExportLocationResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setUsageExportBucket(
@@ -1127,8 +1157,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   SetUsageExportBucketProjectRequest request = SetUsageExportBucketProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setUsageExportLocationResource(usageExportLocationResource)
    *     .build();
    *   Operation response = projectsClient.setUsageExportBucket(request);
    * }
@@ -1151,8 +1183,10 @@ public class ProjectsClient implements BackgroundResource {
    * <pre><code>
    * try (ProjectsClient projectsClient = ProjectsClient.create()) {
    *   String project = "";
+   *   UsageExportLocation usageExportLocationResource = UsageExportLocation.newBuilder().build();
    *   SetUsageExportBucketProjectRequest request = SetUsageExportBucketProjectRequest.newBuilder()
    *     .setProject(project)
+   *     .setUsageExportLocationResource(usageExportLocationResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = projectsClient.setUsageExportBucketCallable().futureCall(request);
    *   // Do something

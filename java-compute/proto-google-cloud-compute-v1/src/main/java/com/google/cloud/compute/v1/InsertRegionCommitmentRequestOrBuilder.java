@@ -24,18 +24,44 @@ public interface InsertRegionCommitmentRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the commitmentResource field is set.
    */
   boolean hasCommitmentResource();
   /**
-   * <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The commitmentResource.
    */
   com.google.cloud.compute.v1.Commitment getCommitmentResource();
-  /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentResourceOrBuilder();
 
   /**

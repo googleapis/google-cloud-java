@@ -78,19 +78,43 @@ public interface InsertTargetGrpcProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetGrpcProxyResource field is set.
    */
   boolean hasTargetGrpcProxyResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetGrpcProxyResource.
    */
   com.google.cloud.compute.v1.TargetGrpcProxy getTargetGrpcProxyResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 328922450;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetGrpcProxy target_grpc_proxy_resource = 60486994 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.TargetGrpcProxyOrBuilder getTargetGrpcProxyResourceOrBuilder();
 }

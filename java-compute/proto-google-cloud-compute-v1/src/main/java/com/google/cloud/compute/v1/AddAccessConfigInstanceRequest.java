@@ -96,21 +96,14 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1371864254:
+          case 775619394:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               networkInterface_ = s;
               break;
             }
-          case -1192362878:
+          case 955120770:
             {
               com.google.cloud.compute.v1.AccessConfig.Builder subBuilder = null;
               if (accessConfigResource_ != null) {
@@ -124,6 +117,13 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
                 accessConfigResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -160,10 +160,18 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.AddAccessConfigInstanceRequest.Builder.class);
   }
 
-  public static final int ACCESS_CONFIG_RESOURCE_FIELD_NUMBER = 387825552;
+  public static final int ACCESS_CONFIG_RESOURCE_FIELD_NUMBER = 119390096;
   private com.google.cloud.compute.v1.AccessConfig accessConfigResource_;
   /**
-   * <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the accessConfigResource field is set.
    */
@@ -172,7 +180,15 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
     return accessConfigResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The accessConfigResource.
    */
@@ -182,7 +198,17 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
         ? com.google.cloud.compute.v1.AccessConfig.getDefaultInstance()
         : accessConfigResource_;
   }
-  /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.AccessConfigOrBuilder getAccessConfigResourceOrBuilder() {
     return getAccessConfigResource();
@@ -237,7 +263,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
     }
   }
 
-  public static final int NETWORK_INTERFACE_FIELD_NUMBER = 365387880;
+  public static final int NETWORK_INTERFACE_FIELD_NUMBER = 96952424;
   private volatile java.lang.Object networkInterface_;
   /**
    *
@@ -246,7 +272,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
    * The name of the network interface to add to this instance.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The networkInterface.
    */
@@ -269,7 +295,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
    * The name of the network interface to add to this instance.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for networkInterface.
    */
@@ -460,14 +486,14 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
     if (!getNetworkInterfaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 365387880, networkInterface_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 96952424, networkInterface_);
     }
     if (accessConfigResource_ != null) {
-      output.writeMessage(387825552, getAccessConfigResource());
+      output.writeMessage(119390096, getAccessConfigResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     unknownFields.writeTo(output);
   }
@@ -487,17 +513,16 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (!getNetworkInterfaceBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(365387880, networkInterface_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(96952424, networkInterface_);
     }
     if (accessConfigResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              387825552, getAccessConfigResource());
+              119390096, getAccessConfigResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -858,7 +883,15 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.AccessConfigOrBuilder>
         accessConfigResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the accessConfigResource field is set.
      */
@@ -866,7 +899,15 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
       return accessConfigResourceBuilder_ != null || accessConfigResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The accessConfigResource.
      */
@@ -879,7 +920,17 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
         return accessConfigResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAccessConfigResource(com.google.cloud.compute.v1.AccessConfig value) {
       if (accessConfigResourceBuilder_ == null) {
         if (value == null) {
@@ -893,7 +944,17 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAccessConfigResource(
         com.google.cloud.compute.v1.AccessConfig.Builder builderForValue) {
       if (accessConfigResourceBuilder_ == null) {
@@ -905,7 +966,17 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeAccessConfigResource(com.google.cloud.compute.v1.AccessConfig value) {
       if (accessConfigResourceBuilder_ == null) {
         if (accessConfigResource_ != null) {
@@ -923,7 +994,17 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearAccessConfigResource() {
       if (accessConfigResourceBuilder_ == null) {
         accessConfigResource_ = null;
@@ -935,13 +1016,33 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.AccessConfig.Builder getAccessConfigResourceBuilder() {
 
       onChanged();
       return getAccessConfigResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.AccessConfigOrBuilder getAccessConfigResourceOrBuilder() {
       if (accessConfigResourceBuilder_ != null) {
         return accessConfigResourceBuilder_.getMessageOrBuilder();
@@ -951,7 +1052,17 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
             : accessConfigResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.AccessConfig,
             com.google.cloud.compute.v1.AccessConfig.Builder,
@@ -1083,7 +1194,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
      * The name of the network interface to add to this instance.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The networkInterface.
      */
@@ -1105,7 +1216,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
      * The name of the network interface to add to this instance.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for networkInterface.
      */
@@ -1127,7 +1238,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
      * The name of the network interface to add to this instance.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The networkInterface to set.
      * @return This builder for chaining.
@@ -1148,7 +1259,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
      * The name of the network interface to add to this instance.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1165,7 +1276,7 @@ public final class AddAccessConfigInstanceRequest extends com.google.protobuf.Ge
      * The name of the network interface to add to this instance.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for networkInterface to set.
      * @return This builder for chaining.

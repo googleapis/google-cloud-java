@@ -102,7 +102,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
               project_ = s;
               break;
             }
-          case -206837758:
+          case 1940645890:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -143,7 +143,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.UpdateFirewallRequest.Builder.class);
   }
 
-  public static final int FIREWALL_FIELD_NUMBER = 511016192;
+  public static final int FIREWALL_FIELD_NUMBER = 242580736;
   private volatile java.lang.Object firewall_;
   /**
    *
@@ -152,7 +152,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
    * Name of the firewall rule to update.
    * </pre>
    *
-   * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The firewall.
    */
@@ -175,7 +175,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
    * Name of the firewall rule to update.
    * </pre>
    *
-   * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for firewall.
    */
@@ -195,7 +195,15 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
   public static final int FIREWALL_RESOURCE_FIELD_NUMBER = 41425005;
   private com.google.cloud.compute.v1.Firewall firewallResource_;
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the firewallResource field is set.
    */
@@ -204,7 +212,15 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
     return firewallResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The firewallResource.
    */
@@ -214,7 +230,17 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Firewall.getDefaultInstance()
         : firewallResource_;
   }
-  /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder() {
     return getFirewallResource();
@@ -346,7 +372,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getFirewallBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 511016192, firewall_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 242580736, firewall_);
     }
     unknownFields.writeTo(output);
   }
@@ -368,7 +394,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getFirewallBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(511016192, firewall_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(242580736, firewall_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -709,7 +735,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * Name of the firewall rule to update.
      * </pre>
      *
-     * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The firewall.
      */
@@ -731,7 +757,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * Name of the firewall rule to update.
      * </pre>
      *
-     * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for firewall.
      */
@@ -753,7 +779,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * Name of the firewall rule to update.
      * </pre>
      *
-     * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The firewall to set.
      * @return This builder for chaining.
@@ -774,7 +800,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * Name of the firewall rule to update.
      * </pre>
      *
-     * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -791,7 +817,7 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
      * Name of the firewall rule to update.
      * </pre>
      *
-     * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for firewall to set.
      * @return This builder for chaining.
@@ -814,7 +840,15 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.FirewallOrBuilder>
         firewallResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the firewallResource field is set.
      */
@@ -822,7 +856,15 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
       return firewallResourceBuilder_ != null || firewallResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The firewallResource.
      */
@@ -835,7 +877,17 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
         return firewallResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setFirewallResource(com.google.cloud.compute.v1.Firewall value) {
       if (firewallResourceBuilder_ == null) {
         if (value == null) {
@@ -849,7 +901,17 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setFirewallResource(
         com.google.cloud.compute.v1.Firewall.Builder builderForValue) {
       if (firewallResourceBuilder_ == null) {
@@ -861,7 +923,17 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeFirewallResource(com.google.cloud.compute.v1.Firewall value) {
       if (firewallResourceBuilder_ == null) {
         if (firewallResource_ != null) {
@@ -879,7 +951,17 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearFirewallResource() {
       if (firewallResourceBuilder_ == null) {
         firewallResource_ = null;
@@ -891,13 +973,33 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Firewall.Builder getFirewallResourceBuilder() {
 
       onChanged();
       return getFirewallResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder() {
       if (firewallResourceBuilder_ != null) {
         return firewallResourceBuilder_.getMessageOrBuilder();
@@ -907,7 +1009,17 @@ public final class UpdateFirewallRequest extends com.google.protobuf.GeneratedMe
             : firewallResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Firewall,
             com.google.cloud.compute.v1.Firewall.Builder,

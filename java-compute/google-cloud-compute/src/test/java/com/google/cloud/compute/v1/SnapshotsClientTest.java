@@ -179,6 +179,7 @@ public class SnapshotsClientTest {
   @SuppressWarnings("all")
   public void getTest() {
     boolean autoCreated = true;
+    String chainName = "chainName-2078839479";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String diskSizeGb = "diskSizeGb-757478089";
@@ -194,6 +195,7 @@ public class SnapshotsClientTest {
     Snapshot expectedResponse =
         Snapshot.newBuilder()
             .setAutoCreated(autoCreated)
+            .setChainName(chainName)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setDiskSizeGb(diskSizeGb)

@@ -73,14 +73,14 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
               enableSecureBoot_ = input.readBool();
               break;
             }
+          case 1125084592:
+            {
+              enableIntegrityMonitoring_ = input.readBool();
+              break;
+            }
           case 1454871480:
             {
               enableVtpm_ = input.readBool();
-              break;
-            }
-          case -1022399056:
-            {
-              enableIntegrityMonitoring_ = input.readBool();
               break;
             }
           default:
@@ -117,7 +117,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder.class);
   }
 
-  public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 409071030;
+  public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 140635574;
   private boolean enableIntegrityMonitoring_;
   /**
    *
@@ -126,7 +126,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   * <code>bool enable_integrity_monitoring = 140635574;</code>
    *
    * @return The enableIntegrityMonitoring.
    */
@@ -188,11 +188,11 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     if (enableSecureBoot_ != false) {
       output.writeBool(123568638, enableSecureBoot_);
     }
+    if (enableIntegrityMonitoring_ != false) {
+      output.writeBool(140635574, enableIntegrityMonitoring_);
+    }
     if (enableVtpm_ != false) {
       output.writeBool(181858935, enableVtpm_);
-    }
-    if (enableIntegrityMonitoring_ != false) {
-      output.writeBool(409071030, enableIntegrityMonitoring_);
     }
     unknownFields.writeTo(output);
   }
@@ -206,13 +206,13 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
     if (enableSecureBoot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(123568638, enableSecureBoot_);
     }
-    if (enableVtpm_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(181858935, enableVtpm_);
-    }
     if (enableIntegrityMonitoring_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
-              409071030, enableIntegrityMonitoring_);
+              140635574, enableIntegrityMonitoring_);
+    }
+    if (enableVtpm_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(181858935, enableVtpm_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -528,7 +528,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>bool enable_integrity_monitoring = 140635574;</code>
      *
      * @return The enableIntegrityMonitoring.
      */
@@ -543,7 +543,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>bool enable_integrity_monitoring = 140635574;</code>
      *
      * @param value The enableIntegrityMonitoring to set.
      * @return This builder for chaining.
@@ -561,7 +561,7 @@ public final class ShieldedInstanceConfig extends com.google.protobuf.GeneratedM
      * Defines whether the instance has integrity monitoring enabled. Enabled by default.
      * </pre>
      *
-     * <code>bool enable_integrity_monitoring = 409071030;</code>
+     * <code>bool enable_integrity_monitoring = 140635574;</code>
      *
      * @return This builder for chaining.
      */

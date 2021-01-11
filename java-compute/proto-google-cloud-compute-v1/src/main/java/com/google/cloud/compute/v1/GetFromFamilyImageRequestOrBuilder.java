@@ -30,7 +30,7 @@ public interface GetFromFamilyImageRequestOrBuilder
    * Name of the image family to search for.
    * </pre>
    *
-   * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The family.
    */
@@ -42,7 +42,7 @@ public interface GetFromFamilyImageRequestOrBuilder
    * Name of the image family to search for.
    * </pre>
    *
-   * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for family.
    */

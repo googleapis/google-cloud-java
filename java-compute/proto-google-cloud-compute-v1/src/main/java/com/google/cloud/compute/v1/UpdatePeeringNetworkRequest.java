@@ -197,8 +197,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
   private com.google.cloud.compute.v1.NetworksUpdatePeeringRequest
       networksUpdatePeeringRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networksUpdatePeeringRequestResource field is set.
@@ -208,8 +214,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
     return networksUpdatePeeringRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networksUpdatePeeringRequestResource.
@@ -222,8 +234,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
         : networksUpdatePeeringRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -832,8 +850,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.NetworksUpdatePeeringRequestOrBuilder>
         networksUpdatePeeringRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networksUpdatePeeringRequestResource field is set.
@@ -843,8 +867,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
           || networksUpdatePeeringRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networksUpdatePeeringRequestResource.
@@ -860,8 +890,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworksUpdatePeeringRequestResource(
@@ -879,8 +915,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworksUpdatePeeringRequestResource(
@@ -895,8 +937,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworksUpdatePeeringRequestResource(
@@ -919,8 +967,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworksUpdatePeeringRequestResource() {
@@ -935,8 +989,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworksUpdatePeeringRequest.Builder
@@ -946,8 +1006,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       return getNetworksUpdatePeeringRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworksUpdatePeeringRequestOrBuilder
@@ -961,8 +1027,14 @@ public final class UpdatePeeringNetworkRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+     * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

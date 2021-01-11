@@ -74,7 +74,7 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
    * </code>
    *
    * @return Whether the schedule field is set.
@@ -88,7 +88,7 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
    * </code>
    *
    * @return The schedule.
@@ -102,7 +102,7 @@ public interface ResourcePolicySnapshotSchedulePolicyOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
    * </code>
    */
   com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder

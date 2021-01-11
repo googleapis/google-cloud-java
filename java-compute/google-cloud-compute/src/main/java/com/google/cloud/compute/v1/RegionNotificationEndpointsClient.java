@@ -345,7 +345,7 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param notificationEndpointResource
+   * @param notificationEndpointResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -368,9 +368,11 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
+   *   NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionNotificationEndpointRequest request = InsertRegionNotificationEndpointRequest.newBuilder()
+   *     .setNotificationEndpointResource(notificationEndpointResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -394,9 +396,11 @@ public class RegionNotificationEndpointsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionNotificationEndpointsClient regionNotificationEndpointsClient = RegionNotificationEndpointsClient.create()) {
+   *   NotificationEndpoint notificationEndpointResource = NotificationEndpoint.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionNotificationEndpointRequest request = InsertRegionNotificationEndpointRequest.newBuilder()
+   *     .setNotificationEndpointResource(notificationEndpointResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

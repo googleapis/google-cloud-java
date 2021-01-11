@@ -24,13 +24,13 @@ public interface HealthCheckReferenceOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The healthCheck.
    */
   java.lang.String getHealthCheck();
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The bytes for healthCheck.
    */

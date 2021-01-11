@@ -30,7 +30,7 @@ public interface TargetSslProxiesSetBackendServiceRequestOrBuilder
    * The URL of the new BackendService resource for the targetSslProxy.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -42,7 +42,7 @@ public interface TargetSslProxiesSetBackendServiceRequestOrBuilder
    * The URL of the new BackendService resource for the targetSslProxy.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */

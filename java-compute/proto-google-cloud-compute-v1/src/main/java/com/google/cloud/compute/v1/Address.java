@@ -114,11 +114,32 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 212192768:
+            {
+              int rawValue = input.readEnum();
+
+              ipVersion_ = rawValue;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
+          case 383772912:
+            {
+              int rawValue = input.readEnum();
+
+              purpose_ = rawValue;
               break;
             }
           case 892629058:
@@ -138,11 +159,37 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+          case 1481042328:
+            {
+              prefixLength_ = input.readInt32();
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
+          case 1555881890:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
               break;
             }
           case 1862979954:
@@ -152,65 +199,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
               network_ = s;
               break;
             }
+          case 1991699096:
+            {
+              int rawValue = input.readEnum();
+
+              networkTier_ = rawValue;
+              break;
+            }
           case 2114463016:
             {
               int rawValue = input.readEnum();
 
               addressType_ = rawValue;
-              break;
-            }
-          case -1935290880:
-            {
-              int rawValue = input.readEnum();
-
-              ipVersion_ = rawValue;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case -1763710736:
-            {
-              int rawValue = input.readEnum();
-
-              purpose_ = rawValue;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -666441320:
-            {
-              prefixLength_ = input.readInt32();
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -591601758:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
-              break;
-            }
-          case -155784552:
-            {
-              int rawValue = input.readEnum();
-
-              networkTier_ = rawValue;
               break;
             }
           default:
@@ -272,8 +272,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_ADDRESS_TYPE(0),
     /** <code>EXTERNAL = 35607499;</code> */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 279295677;</code> */
-    INTERNAL(279295677),
+    /** <code>INTERNAL = 10860221;</code> */
+    INTERNAL(10860221),
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     UNSPECIFIED_TYPE(53933922),
     UNRECOGNIZED(-1),
@@ -291,8 +291,8 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_ADDRESS_TYPE_VALUE = 0;
     /** <code>EXTERNAL = 35607499;</code> */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 279295677;</code> */
-    public static final int INTERNAL_VALUE = 279295677;
+    /** <code>INTERNAL = 10860221;</code> */
+    public static final int INTERNAL_VALUE = 10860221;
     /** <code>UNSPECIFIED_TYPE = 53933922;</code> */
     public static final int UNSPECIFIED_TYPE_VALUE = 53933922;
 
@@ -324,7 +324,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_ADDRESS_TYPE;
         case 35607499:
           return EXTERNAL;
-        case 279295677:
+        case 10860221:
           return INTERNAL;
         case 53933922:
           return UNSPECIFIED_TYPE;
@@ -533,10 +533,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
-    PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
-    STANDARD(484642493),
+    /** <code>PREMIUM = 131095095;</code> */
+    PREMIUM(131095095),
+    /** <code>STANDARD = 216207037;</code> */
+    STANDARD(216207037),
     UNRECOGNIZED(-1),
     ;
 
@@ -550,10 +550,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
-    public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
-    public static final int STANDARD_VALUE = 484642493;
+    /** <code>PREMIUM = 131095095;</code> */
+    public static final int PREMIUM_VALUE = 131095095;
+    /** <code>STANDARD = 216207037;</code> */
+    public static final int STANDARD_VALUE = 216207037;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -581,9 +581,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
-        case 399530551:
+        case 131095095:
           return PREMIUM;
-        case 484642493:
+        case 216207037:
           return STANDARD;
         default:
           return null;
@@ -647,7 +647,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Address.Purpose}
@@ -663,16 +663,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     UNDEFINED_PURPOSE(0),
-    /** <code>DNS_RESOLVER = 476114556;</code> */
-    DNS_RESOLVER(476114556),
+    /** <code>DNS_RESOLVER = 207679100;</code> */
+    DNS_RESOLVER(207679100),
     /** <code>GCE_ENDPOINT = 230515243;</code> */
     GCE_ENDPOINT(230515243),
     /** <code>NAT_AUTO = 163666477;</code> */
     NAT_AUTO(163666477),
-    /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
-    SHARED_LOADBALANCER_VIP(294447572),
-    /** <code>VPC_PEERING = 400800170;</code> */
-    VPC_PEERING(400800170),
+    /** <code>SHARED_LOADBALANCER_VIP = 26012116;</code> */
+    SHARED_LOADBALANCER_VIP(26012116),
+    /** <code>VPC_PEERING = 132364714;</code> */
+    VPC_PEERING(132364714),
     UNRECOGNIZED(-1),
     ;
 
@@ -686,16 +686,16 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PURPOSE = 0;</code>
      */
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
-    /** <code>DNS_RESOLVER = 476114556;</code> */
-    public static final int DNS_RESOLVER_VALUE = 476114556;
+    /** <code>DNS_RESOLVER = 207679100;</code> */
+    public static final int DNS_RESOLVER_VALUE = 207679100;
     /** <code>GCE_ENDPOINT = 230515243;</code> */
     public static final int GCE_ENDPOINT_VALUE = 230515243;
     /** <code>NAT_AUTO = 163666477;</code> */
     public static final int NAT_AUTO_VALUE = 163666477;
-    /** <code>SHARED_LOADBALANCER_VIP = 294447572;</code> */
-    public static final int SHARED_LOADBALANCER_VIP_VALUE = 294447572;
-    /** <code>VPC_PEERING = 400800170;</code> */
-    public static final int VPC_PEERING_VALUE = 400800170;
+    /** <code>SHARED_LOADBALANCER_VIP = 26012116;</code> */
+    public static final int SHARED_LOADBALANCER_VIP_VALUE = 26012116;
+    /** <code>VPC_PEERING = 132364714;</code> */
+    public static final int VPC_PEERING_VALUE = 132364714;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -723,15 +723,15 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_PURPOSE;
-        case 476114556:
+        case 207679100:
           return DNS_RESOLVER;
         case 230515243:
           return GCE_ENDPOINT;
         case 163666477:
           return NAT_AUTO;
-        case 294447572:
+        case 26012116:
           return SHARED_LOADBALANCER_VIP;
-        case 400800170:
+        case 132364714:
           return VPC_PEERING;
         default:
           return null;
@@ -808,10 +808,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_STATUS(0),
     /** <code>IN_USE = 17393485;</code> */
     IN_USE(17393485),
-    /** <code>RESERVED = 432241448;</code> */
-    RESERVED(432241448),
-    /** <code>RESERVING = 514587225;</code> */
-    RESERVING(514587225),
+    /** <code>RESERVED = 163805992;</code> */
+    RESERVED(163805992),
+    /** <code>RESERVING = 246151769;</code> */
+    RESERVING(246151769),
     UNRECOGNIZED(-1),
     ;
 
@@ -827,10 +827,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_STATUS_VALUE = 0;
     /** <code>IN_USE = 17393485;</code> */
     public static final int IN_USE_VALUE = 17393485;
-    /** <code>RESERVED = 432241448;</code> */
-    public static final int RESERVED_VALUE = 432241448;
-    /** <code>RESERVING = 514587225;</code> */
-    public static final int RESERVING_VALUE = 514587225;
+    /** <code>RESERVED = 163805992;</code> */
+    public static final int RESERVED_VALUE = 163805992;
+    /** <code>RESERVING = 246151769;</code> */
+    public static final int RESERVING_VALUE = 246151769;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -860,9 +860,9 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_STATUS;
         case 17393485:
           return IN_USE;
-        case 432241448:
+        case 163805992:
           return RESERVED;
-        case 514587225:
+        case 246151769:
           return RESERVING;
         default:
           return null;
@@ -917,7 +917,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.Address.Status)
   }
 
-  public static final int ADDRESS_FIELD_NUMBER = 462920692;
+  public static final int ADDRESS_FIELD_NUMBER = 194485236;
   private volatile java.lang.Object address_;
   /**
    *
@@ -926,7 +926,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The address.
    */
@@ -949,7 +949,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The bytes for address.
    */
@@ -1051,7 +1051,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -1060,7 +1060,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -1083,7 +1083,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -1149,7 +1149,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IP_VERSION_FIELD_NUMBER = 294959552;
+  public static final int IP_VERSION_FIELD_NUMBER = 26524096;
   private int ipVersion_;
   /**
    *
@@ -1158,7 +1158,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
    *
    * @return The enum numeric value on the wire for ipVersion.
    */
@@ -1173,7 +1173,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
    *
    * @return The ipVersion.
    */
@@ -1332,7 +1332,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
+  public static final int NETWORK_TIER_FIELD_NUMBER = 248962387;
   private int networkTier_;
   /**
    *
@@ -1342,7 +1342,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -1358,7 +1358,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
    *
    * @return The networkTier.
    */
@@ -1370,7 +1370,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Address.NetworkTier.UNRECOGNIZED : result;
   }
 
-  public static final int PREFIX_LENGTH_FIELD_NUMBER = 453565747;
+  public static final int PREFIX_LENGTH_FIELD_NUMBER = 185130291;
   private int prefixLength_;
   /**
    *
@@ -1379,7 +1379,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The prefix length if the resource reprensents an IP range.
    * </pre>
    *
-   * <code>int32 prefix_length = 453565747;</code>
+   * <code>int32 prefix_length = 185130291;</code>
    *
    * @return The prefixLength.
    */
@@ -1388,7 +1388,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     return prefixLength_;
   }
 
-  public static final int PURPOSE_FIELD_NUMBER = 316407070;
+  public static final int PURPOSE_FIELD_NUMBER = 47971614;
   private int purpose_;
   /**
    *
@@ -1399,10 +1399,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
    *
    * @return The enum numeric value on the wire for purpose.
    */
@@ -1419,10 +1419,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
    *
    * @return The purpose.
    */
@@ -1483,7 +1483,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1492,7 +1492,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1515,7 +1515,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1568,7 +1568,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Address.Status.UNRECOGNIZED : result;
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -1577,7 +1577,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -1600,7 +1600,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -1701,8 +1701,18 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (ipVersion_
+        != com.google.cloud.compute.v1.Address.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
+      output.writeEnum(26524096, ipVersion_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
+    if (purpose_ != com.google.cloud.compute.v1.Address.Purpose.UNDEFINED_PURPOSE.getNumber()) {
+      output.writeEnum(47971614, purpose_);
     }
     for (int i = 0; i < users_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 111578632, users_.getRaw(i));
@@ -1710,41 +1720,31 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.Address.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
+    }
+    if (prefixLength_ != 0) {
+      output.writeInt32(185130291, prefixLength_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (!getAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 194485236, address_);
     }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
+    if (networkTier_
+        != com.google.cloud.compute.v1.Address.NetworkTier.UNDEFINED_NETWORK_TIER.getNumber()) {
+      output.writeEnum(248962387, networkTier_);
+    }
     if (addressType_
         != com.google.cloud.compute.v1.Address.AddressType.UNDEFINED_ADDRESS_TYPE.getNumber()) {
       output.writeEnum(264307877, addressType_);
-    }
-    if (ipVersion_
-        != com.google.cloud.compute.v1.Address.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
-      output.writeEnum(294959552, ipVersion_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (purpose_ != com.google.cloud.compute.v1.Address.Purpose.UNDEFINED_PURPOSE.getNumber()) {
-      output.writeEnum(316407070, purpose_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (prefixLength_ != 0) {
-      output.writeInt32(453565747, prefixLength_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
-    }
-    if (networkTier_
-        != com.google.cloud.compute.v1.Address.NetworkTier.UNDEFINED_NETWORK_TIER.getNumber()) {
-      output.writeEnum(517397843, networkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -1764,9 +1764,19 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (ipVersion_
+        != com.google.cloud.compute.v1.Address.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26524096, ipVersion_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
+    if (purpose_ != com.google.cloud.compute.v1.Address.Purpose.UNDEFINED_PURPOSE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(47971614, purpose_);
     }
     {
       int dataSize = 0;
@@ -1779,41 +1789,31 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.Address.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+    }
+    if (prefixLength_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(185130291, prefixLength_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (!getAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(194485236, address_);
     }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
+    if (networkTier_
+        != com.google.cloud.compute.v1.Address.NetworkTier.UNDEFINED_NETWORK_TIER.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(248962387, networkTier_);
+    }
     if (addressType_
         != com.google.cloud.compute.v1.Address.AddressType.UNDEFINED_ADDRESS_TYPE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(264307877, addressType_);
-    }
-    if (ipVersion_
-        != com.google.cloud.compute.v1.Address.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294959552, ipVersion_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
-    }
-    if (purpose_ != com.google.cloud.compute.v1.Address.Purpose.UNDEFINED_PURPOSE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(316407070, purpose_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (prefixLength_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(453565747, prefixLength_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
-    if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
-    }
-    if (networkTier_
-        != com.google.cloud.compute.v1.Address.NetworkTier.UNDEFINED_NETWORK_TIER.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2283,7 +2283,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @return The address.
      */
@@ -2305,7 +2305,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @return The bytes for address.
      */
@@ -2327,7 +2327,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -2348,7 +2348,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @return This builder for chaining.
      */
@@ -2365,7 +2365,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The static IP address represented by this resource.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
@@ -2586,7 +2586,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2608,7 +2608,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2630,7 +2630,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2651,7 +2651,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2668,7 +2668,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2798,7 +2798,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
      *
      * @return The enum numeric value on the wire for ipVersion.
      */
@@ -2813,7 +2813,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
      *
      * @param value The enum numeric value on the wire for ipVersion to set.
      * @return This builder for chaining.
@@ -2831,7 +2831,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
      *
      * @return The ipVersion.
      */
@@ -2849,7 +2849,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
      *
      * @param value The ipVersion to set.
      * @return This builder for chaining.
@@ -2870,7 +2870,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
      *
      * @return This builder for chaining.
      */
@@ -3208,7 +3208,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
      *
      * @return The enum numeric value on the wire for networkTier.
      */
@@ -3224,7 +3224,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
      *
      * @param value The enum numeric value on the wire for networkTier to set.
      * @return This builder for chaining.
@@ -3243,7 +3243,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
      *
      * @return The networkTier.
      */
@@ -3262,7 +3262,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
      *
      * @param value The networkTier to set.
      * @return This builder for chaining.
@@ -3284,7 +3284,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
      *
      * @return This builder for chaining.
      */
@@ -3303,7 +3303,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource reprensents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>int32 prefix_length = 185130291;</code>
      *
      * @return The prefixLength.
      */
@@ -3318,7 +3318,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource reprensents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>int32 prefix_length = 185130291;</code>
      *
      * @param value The prefixLength to set.
      * @return This builder for chaining.
@@ -3336,7 +3336,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The prefix length if the resource reprensents an IP range.
      * </pre>
      *
-     * <code>int32 prefix_length = 453565747;</code>
+     * <code>int32 prefix_length = 185130291;</code>
      *
      * @return This builder for chaining.
      */
@@ -3357,10 +3357,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      *
      * @return The enum numeric value on the wire for purpose.
      */
@@ -3377,10 +3377,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      *
      * @param value The enum numeric value on the wire for purpose to set.
      * @return This builder for chaining.
@@ -3400,10 +3400,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      *
      * @return The purpose.
      */
@@ -3423,10 +3423,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      *
      * @param value The purpose to set.
      * @return This builder for chaining.
@@ -3449,10 +3449,10 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+     * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
      *
      * @return This builder for chaining.
      */
@@ -3577,7 +3577,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3599,7 +3599,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3621,7 +3621,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3642,7 +3642,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3659,7 +3659,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3774,7 +3774,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The subnetwork.
      */
@@ -3796,7 +3796,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -3818,7 +3818,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -3839,7 +3839,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return This builder for chaining.
      */
@@ -3856,7 +3856,7 @@ public final class Address extends com.google.protobuf.GeneratedMessageV3
      * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

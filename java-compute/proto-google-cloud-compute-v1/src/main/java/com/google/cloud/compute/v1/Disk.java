@@ -110,6 +110,23 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               id_ = s;
               break;
             }
+          case 25801770:
+            {
+              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
+              if (diskEncryptionKey_ != null) {
+                subBuilder = diskEncryptionKey_.toBuilder();
+              }
+              diskEncryptionKey_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(diskEncryptionKey_);
+                diskEncryptionKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -153,6 +170,23 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 281950930:
+            {
+              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
+              if (sourceSnapshotEncryptionKey_ != null) {
+                subBuilder = sourceSnapshotEncryptionKey_.toBuilder();
+              }
+              sourceSnapshotEncryptionKey_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sourceSnapshotEncryptionKey_);
+                sourceSnapshotEncryptionKey_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 337277226:
@@ -203,6 +237,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               lastDetachTimestamp_ = s;
               break;
             }
+          case 553656978:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                licenses_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              licenses_.add(s);
+              break;
+            }
           case 634356362:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -213,6 +257,13 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               guestOsFeatures_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.GuestOsFeature.parser(), extensionRegistry));
+              break;
+            }
+          case 741618930:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              options_ = s;
               break;
             }
           case 791698066:
@@ -232,86 +283,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               users_.add(s);
               break;
             }
-          case 1008495426:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceSnapshot_ = s;
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1424998602:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              labelFingerprint_ = s;
-              break;
-            }
-          case 1450082192:
-            {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-          case -2121681878:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (diskEncryptionKey_ != null) {
-                subBuilder = diskEncryptionKey_.toBuilder();
-              }
-              diskEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(diskEncryptionKey_);
-                diskEncryptionKey_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1865532718:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (sourceSnapshotEncryptionKey_ != null) {
-                subBuilder = sourceSnapshotEncryptionKey_.toBuilder();
-              }
-              sourceSnapshotEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourceSnapshotEncryptionKey_);
-                sourceSnapshotEncryptionKey_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1593826670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                licenses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              licenses_.add(s);
-              break;
-            }
-          case -1405864718:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              options_ = s;
-              break;
-            }
-          case -1242938022:
+          case 904545626:
             {
               com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
               if (sourceImageEncryptionKey_ != null) {
@@ -328,49 +300,77 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -934903750:
+          case 1008495426:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceSnapshot_ = s;
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1212579898:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               physicalBlockSizeBytes_ = s;
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -680936950:
+          case 1424998602:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              labelFingerprint_ = s;
+              break;
+            }
+          case 1450082192:
+            {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+          case 1466546698:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               sourceDisk_ = s;
               break;
             }
-          case -661440822:
+          case 1486042826:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               sourceDiskId_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -335532342:
+          case 1811951306:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               sizeGb_ = s;
               break;
             }
-          case -293404678:
+          case 1854078970:
             {
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                 labels_ =
@@ -406,14 +406,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       if (((mutable_bitField0_ & 0x00000010) != 0)) {
         replicaZones_ = replicaZones_.getUnmodifiableView();
       }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        licenses_ = licenses_.getUnmodifiableView();
+      }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
       }
       if (((mutable_bitField0_ & 0x00000040) != 0)) {
         users_ = users_.getUnmodifiableView();
-      }
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        licenses_ = licenses_.getUnmodifiableView();
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -429,7 +429,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 500195327:
+      case 231759871:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -465,16 +465,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
-    CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
-    /** <code>FAILED = 455706685;</code> */
-    FAILED(455706685),
+    /** <code>CREATING = 187129529;</code> */
+    CREATING(187129529),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
+    /** <code>FAILED = 187271229;</code> */
+    FAILED(187271229),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
-    /** <code>RESTORING = 404263851;</code> */
-    RESTORING(404263851),
+    /** <code>RESTORING = 135828395;</code> */
+    RESTORING(135828395),
     UNRECOGNIZED(-1),
     ;
 
@@ -488,16 +488,16 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
-    public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
-    /** <code>FAILED = 455706685;</code> */
-    public static final int FAILED_VALUE = 455706685;
+    /** <code>CREATING = 187129529;</code> */
+    public static final int CREATING_VALUE = 187129529;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
+    /** <code>FAILED = 187271229;</code> */
+    public static final int FAILED_VALUE = 187271229;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
-    /** <code>RESTORING = 404263851;</code> */
-    public static final int RESTORING_VALUE = 404263851;
+    /** <code>RESTORING = 135828395;</code> */
+    public static final int RESTORING_VALUE = 135828395;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -525,15 +525,15 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 455564985:
+        case 187129529:
           return CREATING;
-        case 528602024:
+        case 260166568:
           return DELETING;
-        case 455706685:
+        case 187271229:
           return FAILED;
         case 77848963:
           return READY;
-        case 404263851:
+        case 135828395:
           return RESTORING;
         default:
           return null;
@@ -637,7 +637,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -646,7 +646,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -669,7 +669,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -686,7 +686,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 271660677;
+  public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 3225221;
   private com.google.cloud.compute.v1.CustomerEncryptionKey diskEncryptionKey_;
   /**
    *
@@ -698,7 +698,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -716,7 +716,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return The diskEncryptionKey.
    */
@@ -736,7 +736,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -963,7 +963,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LABELS_FIELD_NUMBER = 500195327;
+  public static final int LABELS_FIELD_NUMBER = 231759871;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -995,7 +995,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -1017,7 +1017,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1030,7 +1030,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -1047,7 +1047,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1220,7 +1220,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     return licenseCodes_.getByteString(index);
   }
 
-  public static final int LICENSES_FIELD_NUMBER = 337642578;
+  public static final int LICENSES_FIELD_NUMBER = 69207122;
   private com.google.protobuf.LazyStringList licenses_;
   /**
    *
@@ -1229,7 +1229,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return A list containing the licenses.
    */
@@ -1243,7 +1243,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return The count of licenses.
    */
@@ -1257,7 +1257,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -1272,7 +1272,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.
@@ -1330,7 +1330,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int OPTIONS_FIELD_NUMBER = 361137822;
+  public static final int OPTIONS_FIELD_NUMBER = 92702366;
   private volatile java.lang.Object options_;
   /**
    *
@@ -1339,7 +1339,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>string options = 92702366;</code>
    *
    * @return The options.
    */
@@ -1362,7 +1362,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>string options = 92702366;</code>
    *
    * @return The bytes for options.
    */
@@ -1379,7 +1379,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PHYSICAL_BLOCK_SIZE_BYTES_FIELD_NUMBER = 420007943;
+  public static final int PHYSICAL_BLOCK_SIZE_BYTES_FIELD_NUMBER = 151572487;
   private volatile java.lang.Object physicalBlockSizeBytes_;
   /**
    *
@@ -1388,7 +1388,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>string physical_block_size_bytes = 151572487;</code>
    *
    * @return The physicalBlockSizeBytes.
    */
@@ -1411,7 +1411,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>string physical_block_size_bytes = 151572487;</code>
    *
    * @return The bytes for physicalBlockSizeBytes.
    */
@@ -1599,7 +1599,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     return resourcePolicies_.getByteString(index);
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1608,7 +1608,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1631,7 +1631,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1648,7 +1648,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SIZE_GB_FIELD_NUMBER = 494929369;
+  public static final int SIZE_GB_FIELD_NUMBER = 226493913;
   private volatile java.lang.Object sizeGb_;
   /**
    *
@@ -1658,7 +1658,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>string size_gb = 226493913;</code>
    *
    * @return The sizeGb.
    */
@@ -1682,7 +1682,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>string size_gb = 226493913;</code>
    *
    * @return The bytes for sizeGb.
    */
@@ -1699,7 +1699,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SOURCE_DISK_FIELD_NUMBER = 451753793;
+  public static final int SOURCE_DISK_FIELD_NUMBER = 183318337;
   private volatile java.lang.Object sourceDisk_;
   /**
    *
@@ -1711,7 +1711,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>string source_disk = 183318337;</code>
    *
    * @return The sourceDisk.
    */
@@ -1737,7 +1737,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>string source_disk = 183318337;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -1754,7 +1754,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SOURCE_DISK_ID_FIELD_NUMBER = 454190809;
+  public static final int SOURCE_DISK_ID_FIELD_NUMBER = 185755353;
   private volatile java.lang.Object sourceDiskId_;
   /**
    *
@@ -1763,7 +1763,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>string source_disk_id = 185755353;</code>
    *
    * @return The sourceDiskId.
    */
@@ -1786,7 +1786,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>string source_disk_id = 185755353;</code>
    *
    * @return The bytes for sourceDiskId.
    */
@@ -1868,7 +1868,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SOURCE_IMAGE_ENCRYPTION_KEY_FIELD_NUMBER = 381503659;
+  public static final int SOURCE_IMAGE_ENCRYPTION_KEY_FIELD_NUMBER = 113068203;
   private com.google.cloud.compute.v1.CustomerEncryptionKey sourceImageEncryptionKey_;
   /**
    *
@@ -1877,7 +1877,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -1893,7 +1893,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -1911,7 +1911,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
    * </code>
    */
   @java.lang.Override
@@ -2024,7 +2024,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER = 303679322;
+  public static final int SOURCE_SNAPSHOT_ENCRYPTION_KEY_FIELD_NUMBER = 35243866;
   private com.google.cloud.compute.v1.CustomerEncryptionKey sourceSnapshotEncryptionKey_;
   /**
    *
@@ -2033,8 +2033,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -2050,8 +2049,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -2069,8 +2067,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
    * </code>
    */
   @java.lang.Override
@@ -2340,6 +2337,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
+    if (diskEncryptionKey_ != null) {
+      output.writeMessage(3225221, getDiskEncryptionKey());
+    }
     if (!getKindBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
@@ -2359,6 +2359,9 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (sourceSnapshotEncryptionKey_ != null) {
+      output.writeMessage(35243866, getSourceSnapshotEncryptionKey());
+    }
     if (!getLastAttachTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 42159653, lastAttachTimestamp_);
     }
@@ -2377,8 +2380,14 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (!getLastDetachTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 56471027, lastDetachTimestamp_);
     }
+    for (int i = 0; i < licenses_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 69207122, licenses_.getRaw(i));
+    }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       output.writeMessage(79294545, guestOsFeatures_.get(i));
+    }
+    if (!getOptionsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 92702366, options_);
     }
     if (!getSourceSnapshotIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98962258, sourceSnapshotId_);
@@ -2386,11 +2395,21 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < users_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 111578632, users_.getRaw(i));
     }
+    if (sourceImageEncryptionKey_ != null) {
+      output.writeMessage(113068203, getSourceImageEncryptionKey());
+    }
     if (!getSourceSnapshotBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 126061928, sourceSnapshot_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (!getPhysicalBlockSizeBytesBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 151572487, physicalBlockSizeBytes_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getLabelFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
@@ -2398,42 +2417,20 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (status_ != com.google.cloud.compute.v1.Disk.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
     }
-    if (diskEncryptionKey_ != null) {
-      output.writeMessage(271660677, getDiskEncryptionKey());
-    }
-    if (sourceSnapshotEncryptionKey_ != null) {
-      output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
-    }
-    for (int i = 0; i < licenses_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
-    }
-    if (!getOptionsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 361137822, options_);
-    }
-    if (sourceImageEncryptionKey_ != null) {
-      output.writeMessage(381503659, getSourceImageEncryptionKey());
-    }
-    if (!getPhysicalBlockSizeBytesBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 420007943, physicalBlockSizeBytes_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
     if (!getSourceDiskBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 183318337, sourceDisk_);
     }
     if (!getSourceDiskIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 454190809, sourceDiskId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 185755353, sourceDiskId_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 494929369, sizeGb_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 226493913, sizeGb_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
     unknownFields.writeTo(output);
   }
 
@@ -2445,6 +2442,10 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+    }
+    if (diskEncryptionKey_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3225221, getDiskEncryptionKey());
     }
     if (!getKindBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -2469,6 +2470,11 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (sourceSnapshotEncryptionKey_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              35243866, getSourceSnapshotEncryptionKey());
     }
     if (!getLastAttachTimestampBytes().isEmpty()) {
       size +=
@@ -2500,10 +2506,21 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(56471027, lastDetachTimestamp_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < licenses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(licenses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getLicensesList().size();
+    }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               79294545, guestOsFeatures_.get(i));
+    }
+    if (!getOptionsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(92702366, options_);
     }
     if (!getSourceSnapshotIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98962258, sourceSnapshotId_);
@@ -2516,11 +2533,24 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getUsersList().size();
     }
+    if (sourceImageEncryptionKey_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              113068203, getSourceImageEncryptionKey());
+    }
     if (!getSourceSnapshotBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(126061928, sourceSnapshot_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (!getPhysicalBlockSizeBytesBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              151572487, physicalBlockSizeBytes_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getLabelFingerprintBytes().isEmpty()) {
       size +=
@@ -2529,51 +2559,17 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     if (status_ != com.google.cloud.compute.v1.Disk.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (diskEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              271660677, getDiskEncryptionKey());
-    }
-    if (sourceSnapshotEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              303679322, getSourceSnapshotEncryptionKey());
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < licenses_.size(); i++) {
-        dataSize += computeStringSizeNoTag(licenses_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getLicensesList().size();
-    }
-    if (!getOptionsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(361137822, options_);
-    }
-    if (sourceImageEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              381503659, getSourceImageEncryptionKey());
-    }
-    if (!getPhysicalBlockSizeBytesBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              420007943, physicalBlockSizeBytes_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
     if (!getSourceDiskBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(183318337, sourceDisk_);
     }
     if (!getSourceDiskIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(454190809, sourceDiskId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(185755353, sourceDiskId_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getSizeGbBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494929369, sizeGb_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(226493913, sizeGb_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
         internalGetLabels().getMap().entrySet()) {
@@ -2583,7 +2579,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2862,7 +2858,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 500195327:
+        case 231759871:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -2872,7 +2868,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 500195327:
+        case 231759871:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -3455,7 +3451,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -3477,7 +3473,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -3499,7 +3495,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3520,7 +3516,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -3537,7 +3533,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3569,7 +3565,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      *
      * @return Whether the diskEncryptionKey field is set.
      */
@@ -3586,7 +3582,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      *
      * @return The diskEncryptionKey.
      */
@@ -3609,7 +3605,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder setDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -3634,7 +3630,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder setDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
@@ -3657,7 +3653,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder mergeDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -3686,7 +3682,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder clearDiskEncryptionKey() {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -3709,7 +3705,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder getDiskEncryptionKeyBuilder() {
 
@@ -3726,7 +3722,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
         getDiskEncryptionKeyOrBuilder() {
@@ -3748,7 +3744,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -4477,7 +4473,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -4499,7 +4495,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -4512,7 +4508,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -4530,7 +4526,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -4555,7 +4551,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -4576,7 +4572,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -4595,7 +4591,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Labels to apply to this disk. These can be later modified by the setLabels method.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -4998,7 +4994,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @return A list containing the licenses.
      */
@@ -5012,7 +5008,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @return The count of licenses.
      */
@@ -5026,7 +5022,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param index The index of the element to return.
      * @return The licenses at the given index.
@@ -5041,7 +5037,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the licenses at the given index.
@@ -5056,7 +5052,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param index The index to set the value at.
      * @param value The licenses to set.
@@ -5078,7 +5074,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param value The licenses to add.
      * @return This builder for chaining.
@@ -5099,7 +5095,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param values The licenses to add.
      * @return This builder for chaining.
@@ -5117,7 +5113,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @return This builder for chaining.
      */
@@ -5134,7 +5130,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * A list of publicly visible licenses. Reserved for Google's use.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param value The bytes of the licenses to add.
      * @return This builder for chaining.
@@ -5264,7 +5260,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>string options = 92702366;</code>
      *
      * @return The options.
      */
@@ -5286,7 +5282,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>string options = 92702366;</code>
      *
      * @return The bytes for options.
      */
@@ -5308,7 +5304,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>string options = 92702366;</code>
      *
      * @param value The options to set.
      * @return This builder for chaining.
@@ -5329,7 +5325,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>string options = 92702366;</code>
      *
      * @return This builder for chaining.
      */
@@ -5346,7 +5342,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Internal use only.
      * </pre>
      *
-     * <code>string options = 361137822;</code>
+     * <code>string options = 92702366;</code>
      *
      * @param value The bytes for options to set.
      * @return This builder for chaining.
@@ -5370,7 +5366,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>string physical_block_size_bytes = 151572487;</code>
      *
      * @return The physicalBlockSizeBytes.
      */
@@ -5392,7 +5388,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>string physical_block_size_bytes = 151572487;</code>
      *
      * @return The bytes for physicalBlockSizeBytes.
      */
@@ -5414,7 +5410,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>string physical_block_size_bytes = 151572487;</code>
      *
      * @param value The physicalBlockSizeBytes to set.
      * @return This builder for chaining.
@@ -5435,7 +5431,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>string physical_block_size_bytes = 151572487;</code>
      *
      * @return This builder for chaining.
      */
@@ -5452,7 +5448,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
      * </pre>
      *
-     * <code>string physical_block_size_bytes = 420007943;</code>
+     * <code>string physical_block_size_bytes = 151572487;</code>
      *
      * @param value The bytes for physicalBlockSizeBytes to set.
      * @return This builder for chaining.
@@ -5918,7 +5914,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -5940,7 +5936,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -5962,7 +5958,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -5983,7 +5979,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -6000,7 +5996,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -6025,7 +6021,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @return The sizeGb.
      */
@@ -6048,7 +6044,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @return The bytes for sizeGb.
      */
@@ -6071,7 +6067,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
@@ -6093,7 +6089,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @return This builder for chaining.
      */
@@ -6111,7 +6107,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @param value The bytes for sizeGb to set.
      * @return This builder for chaining.
@@ -6138,7 +6134,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>string source_disk = 183318337;</code>
      *
      * @return The sourceDisk.
      */
@@ -6163,7 +6159,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>string source_disk = 183318337;</code>
      *
      * @return The bytes for sourceDisk.
      */
@@ -6188,7 +6184,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>string source_disk = 183318337;</code>
      *
      * @param value The sourceDisk to set.
      * @return This builder for chaining.
@@ -6212,7 +6208,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>string source_disk = 183318337;</code>
      *
      * @return This builder for chaining.
      */
@@ -6232,7 +6228,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * - zones/zone/disks/disk
      * </pre>
      *
-     * <code>string source_disk = 451753793;</code>
+     * <code>string source_disk = 183318337;</code>
      *
      * @param value The bytes for sourceDisk to set.
      * @return This builder for chaining.
@@ -6256,7 +6252,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>string source_disk_id = 185755353;</code>
      *
      * @return The sourceDiskId.
      */
@@ -6278,7 +6274,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>string source_disk_id = 185755353;</code>
      *
      * @return The bytes for sourceDiskId.
      */
@@ -6300,7 +6296,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>string source_disk_id = 185755353;</code>
      *
      * @param value The sourceDiskId to set.
      * @return This builder for chaining.
@@ -6321,7 +6317,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>string source_disk_id = 185755353;</code>
      *
      * @return This builder for chaining.
      */
@@ -6338,7 +6334,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
      * </pre>
      *
-     * <code>string source_disk_id = 454190809;</code>
+     * <code>string source_disk_id = 185755353;</code>
      *
      * @param value The bytes for sourceDiskId to set.
      * @return This builder for chaining.
@@ -6513,7 +6509,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      *
      * @return Whether the sourceImageEncryptionKey field is set.
@@ -6528,7 +6524,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      *
      * @return The sourceImageEncryptionKey.
@@ -6549,7 +6545,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -6573,7 +6569,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     public Builder setSourceImageEncryptionKey(
@@ -6594,7 +6590,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     public Builder mergeSourceImageEncryptionKey(
@@ -6623,7 +6619,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     public Builder clearSourceImageEncryptionKey() {
@@ -6644,7 +6640,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -6660,7 +6656,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -6680,7 +6676,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -6941,7 +6937,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      *
      * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -6957,7 +6953,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      *
      * @return The sourceSnapshotEncryptionKey.
@@ -6979,7 +6975,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -7004,7 +7000,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     public Builder setSourceSnapshotEncryptionKey(
@@ -7026,7 +7022,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     public Builder mergeSourceSnapshotEncryptionKey(
@@ -7056,7 +7052,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     public Builder clearSourceSnapshotEncryptionKey() {
@@ -7078,7 +7074,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder
@@ -7095,7 +7091,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -7116,7 +7112,7 @@ public final class Disk extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+     * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -30,7 +30,7 @@ public interface ExprOrBuilder
    * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -42,7 +42,7 @@ public interface ExprOrBuilder
    * Optional. Description of the expression. This is a longer text which describes the expression, e.g. when hovered over it in a UI.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -55,7 +55,7 @@ public interface ExprOrBuilder
    * Textual representation of an expression in Common Expression Language syntax.
    * </pre>
    *
-   * <code>string expression = 352031384;</code>
+   * <code>string expression = 83595928;</code>
    *
    * @return The expression.
    */
@@ -67,7 +67,7 @@ public interface ExprOrBuilder
    * Textual representation of an expression in Common Expression Language syntax.
    * </pre>
    *
-   * <code>string expression = 352031384;</code>
+   * <code>string expression = 83595928;</code>
    *
    * @return The bytes for expression.
    */
@@ -80,7 +80,7 @@ public interface ExprOrBuilder
    * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>string location = 21995445;</code>
    *
    * @return The location.
    */
@@ -92,7 +92,7 @@ public interface ExprOrBuilder
    * Optional. String indicating the location of the expression for error reporting, e.g. a file name and a position in the file.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>string location = 21995445;</code>
    *
    * @return The bytes for location.
    */

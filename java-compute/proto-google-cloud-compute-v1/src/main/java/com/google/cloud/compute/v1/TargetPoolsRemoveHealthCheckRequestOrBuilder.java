@@ -33,7 +33,7 @@ public interface TargetPoolsRemoveHealthCheckRequestOrBuilder
    * - global/httpHealthChecks/health-check
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 179935150;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthCheckReference> getHealthChecksList();
   /**
@@ -46,7 +46,7 @@ public interface TargetPoolsRemoveHealthCheckRequestOrBuilder
    * - global/httpHealthChecks/health-check
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 179935150;</code>
    */
   com.google.cloud.compute.v1.HealthCheckReference getHealthChecks(int index);
   /**
@@ -59,7 +59,7 @@ public interface TargetPoolsRemoveHealthCheckRequestOrBuilder
    * - global/httpHealthChecks/health-check
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 179935150;</code>
    */
   int getHealthChecksCount();
   /**
@@ -72,7 +72,7 @@ public interface TargetPoolsRemoveHealthCheckRequestOrBuilder
    * - global/httpHealthChecks/health-check
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 179935150;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder>
       getHealthChecksOrBuilderList();
@@ -86,7 +86,7 @@ public interface TargetPoolsRemoveHealthCheckRequestOrBuilder
    * - global/httpHealthChecks/health-check
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheckReference health_checks = 179935150;</code>
    */
   com.google.cloud.compute.v1.HealthCheckReferenceOrBuilder getHealthChecksOrBuilder(int index);
 }

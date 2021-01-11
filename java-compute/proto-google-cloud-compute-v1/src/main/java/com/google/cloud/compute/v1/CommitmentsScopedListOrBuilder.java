@@ -30,7 +30,7 @@ public interface CommitmentsScopedListOrBuilder
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Commitment> getCommitmentsList();
   /**
@@ -40,7 +40,7 @@ public interface CommitmentsScopedListOrBuilder
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
    */
   com.google.cloud.compute.v1.Commitment getCommitments(int index);
   /**
@@ -50,7 +50,7 @@ public interface CommitmentsScopedListOrBuilder
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
    */
   int getCommitmentsCount();
   /**
@@ -60,7 +60,7 @@ public interface CommitmentsScopedListOrBuilder
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.CommitmentOrBuilder>
       getCommitmentsOrBuilderList();
@@ -71,7 +71,7 @@ public interface CommitmentsScopedListOrBuilder
    * [Output Only] A list of commitments contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 450664446;</code>
+   * <code>repeated .google.cloud.compute.v1.Commitment commitments = 182228990;</code>
    */
   com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentsOrBuilder(int index);
 

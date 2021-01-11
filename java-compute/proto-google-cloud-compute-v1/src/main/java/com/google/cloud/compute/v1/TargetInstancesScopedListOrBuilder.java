@@ -30,7 +30,7 @@ public interface TargetInstancesScopedListOrBuilder
    * A list of target instances contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetInstance> getTargetInstancesList();
   /**
@@ -40,7 +40,7 @@ public interface TargetInstancesScopedListOrBuilder
    * A list of target instances contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
    */
   com.google.cloud.compute.v1.TargetInstance getTargetInstances(int index);
   /**
@@ -50,7 +50,7 @@ public interface TargetInstancesScopedListOrBuilder
    * A list of target instances contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
    */
   int getTargetInstancesCount();
   /**
@@ -60,7 +60,7 @@ public interface TargetInstancesScopedListOrBuilder
    * A list of target instances contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetInstanceOrBuilder>
       getTargetInstancesOrBuilderList();
@@ -71,7 +71,7 @@ public interface TargetInstancesScopedListOrBuilder
    * A list of target instances contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 392915280;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetInstance target_instances = 124479824;</code>
    */
   com.google.cloud.compute.v1.TargetInstanceOrBuilder getTargetInstancesOrBuilder(int index);
 

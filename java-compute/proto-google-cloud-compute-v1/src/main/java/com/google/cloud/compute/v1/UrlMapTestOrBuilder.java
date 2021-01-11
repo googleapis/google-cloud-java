@@ -30,7 +30,7 @@ public interface UrlMapTestOrBuilder
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -42,7 +42,7 @@ public interface UrlMapTestOrBuilder
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -106,7 +106,7 @@ public interface UrlMapTestOrBuilder
    * service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -119,7 +119,7 @@ public interface UrlMapTestOrBuilder
    * service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */

@@ -85,6 +85,13 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
 
               break;
             }
+          case 430804456:
+            {
+              int rawValue = input.readEnum();
+
+              versionedExpr_ = rawValue;
+              break;
+            }
           case 2046564882:
             {
               com.google.cloud.compute.v1.SecurityPolicyRuleMatcherConfig.Builder subBuilder = null;
@@ -100,13 +107,6 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
                 config_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1716679192:
-            {
-              int rawValue = input.readEnum();
-
-              versionedExpr_ = rawValue;
               break;
             }
           default:
@@ -358,7 +358,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     return getExpr();
   }
 
-  public static final int VERSIONED_EXPR_FIELD_NUMBER = 322286013;
+  public static final int VERSIONED_EXPR_FIELD_NUMBER = 53850557;
   private int versionedExpr_;
   /**
    *
@@ -368,7 +368,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
    * </code>
    *
    * @return The enum numeric value on the wire for versionedExpr.
@@ -385,7 +385,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+   * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
    * </code>
    *
    * @return The versionedExpr.
@@ -417,14 +417,14 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     if (expr_ != null) {
       output.writeMessage(3127797, getExpr());
     }
-    if (config_ != null) {
-      output.writeMessage(255820610, getConfig());
-    }
     if (versionedExpr_
         != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr
             .UNDEFINED_VERSIONED_EXPR
             .getNumber()) {
-      output.writeEnum(322286013, versionedExpr_);
+      output.writeEnum(53850557, versionedExpr_);
+    }
+    if (config_ != null) {
+      output.writeMessage(255820610, getConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -438,14 +438,14 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
     if (expr_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3127797, getExpr());
     }
-    if (config_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(255820610, getConfig());
-    }
     if (versionedExpr_
         != com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr
             .UNDEFINED_VERSIONED_EXPR
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(322286013, versionedExpr_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(53850557, versionedExpr_);
+    }
+    if (config_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(255820610, getConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1155,7 +1155,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
      * </code>
      *
      * @return The enum numeric value on the wire for versionedExpr.
@@ -1172,7 +1172,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
      * </code>
      *
      * @param value The enum numeric value on the wire for versionedExpr to set.
@@ -1192,7 +1192,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
      * </code>
      *
      * @return The versionedExpr.
@@ -1215,7 +1215,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
      * </code>
      *
      * @param value The versionedExpr to set.
@@ -1239,7 +1239,7 @@ public final class SecurityPolicyRuleMatcher extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;
+     * .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 53850557;
      * </code>
      *
      * @return This builder for chaining.

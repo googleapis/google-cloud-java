@@ -95,14 +95,7 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -444407478:
+          case 1703076170:
             {
               com.google.cloud.compute.v1.Snapshot.Builder subBuilder = null;
               if (snapshotResource_ != null) {
@@ -116,6 +109,13 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
                 snapshotResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -352,10 +352,18 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     }
   }
 
-  public static final int SNAPSHOT_RESOURCE_FIELD_NUMBER = 481319977;
+  public static final int SNAPSHOT_RESOURCE_FIELD_NUMBER = 212884521;
   private com.google.cloud.compute.v1.Snapshot snapshotResource_;
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the snapshotResource field is set.
    */
@@ -364,7 +372,15 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     return snapshotResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The snapshotResource.
    */
@@ -374,7 +390,17 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.Snapshot.getDefaultInstance()
         : snapshotResource_;
   }
-  /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder() {
     return getSnapshotResource();
@@ -403,11 +429,11 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (snapshotResource_ != null) {
+      output.writeMessage(212884521, getSnapshotResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (snapshotResource_ != null) {
-      output.writeMessage(481319977, getSnapshotResource());
     }
     unknownFields.writeTo(output);
   }
@@ -427,13 +453,13 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (snapshotResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              481319977, getSnapshotResource());
+              212884521, getSnapshotResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1218,7 +1244,15 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.SnapshotOrBuilder>
         snapshotResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the snapshotResource field is set.
      */
@@ -1226,7 +1260,15 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
       return snapshotResourceBuilder_ != null || snapshotResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The snapshotResource.
      */
@@ -1239,7 +1281,17 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
         return snapshotResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSnapshotResource(com.google.cloud.compute.v1.Snapshot value) {
       if (snapshotResourceBuilder_ == null) {
         if (value == null) {
@@ -1253,7 +1305,17 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSnapshotResource(
         com.google.cloud.compute.v1.Snapshot.Builder builderForValue) {
       if (snapshotResourceBuilder_ == null) {
@@ -1265,7 +1327,17 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeSnapshotResource(com.google.cloud.compute.v1.Snapshot value) {
       if (snapshotResourceBuilder_ == null) {
         if (snapshotResource_ != null) {
@@ -1283,7 +1355,17 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearSnapshotResource() {
       if (snapshotResourceBuilder_ == null) {
         snapshotResource_ = null;
@@ -1295,13 +1377,33 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Snapshot.Builder getSnapshotResourceBuilder() {
 
       onChanged();
       return getSnapshotResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder() {
       if (snapshotResourceBuilder_ != null) {
         return snapshotResourceBuilder_.getMessageOrBuilder();
@@ -1311,7 +1413,17 @@ public final class CreateSnapshotRegionDiskRequest extends com.google.protobuf.G
             : snapshotResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Snapshot,
             com.google.cloud.compute.v1.Snapshot.Builder,

@@ -74,6 +74,13 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
           case 784938578:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -100,13 +107,6 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
               java.lang.String s = input.readStringRequireUtf8();
 
               network_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
               break;
             }
           default:
@@ -328,7 +328,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     return secondaryIpRanges_.get(index);
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -337,7 +337,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -360,7 +360,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -391,6 +391,9 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
     if (!getIpCidrRangeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
@@ -399,9 +402,6 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     unknownFields.writeTo(output);
   }
@@ -412,6 +412,9 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
     if (!getIpCidrRangeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
@@ -422,9 +425,6 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
     }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1412,7 +1412,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * Subnetwork URL.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The subnetwork.
      */
@@ -1434,7 +1434,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * Subnetwork URL.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -1456,7 +1456,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * Subnetwork URL.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -1477,7 +1477,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * Subnetwork URL.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return This builder for chaining.
      */
@@ -1494,7 +1494,7 @@ public final class UsableSubnetwork extends com.google.protobuf.GeneratedMessage
      * Subnetwork URL.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

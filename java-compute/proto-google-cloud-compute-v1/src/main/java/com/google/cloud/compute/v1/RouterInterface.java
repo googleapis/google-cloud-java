@@ -80,6 +80,13 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
               name_ = s;
               break;
             }
+          case 670891978:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              linkedVpnTunnel_ = s;
+              break;
+            }
           case 1160741162:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -94,14 +101,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
               managementType_ = rawValue;
               break;
             }
-          case -1476591670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              linkedVpnTunnel_ = s;
-              break;
-            }
-          case -286283150:
+          case 1861200498:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -164,10 +164,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     UNDEFINED_MANAGEMENT_TYPE(0),
-    /** <code>MANAGED_BY_ATTACHMENT = 458926411;</code> */
-    MANAGED_BY_ATTACHMENT(458926411),
-    /** <code>MANAGED_BY_USER = 317294067;</code> */
-    MANAGED_BY_USER(317294067),
+    /** <code>MANAGED_BY_ATTACHMENT = 190490955;</code> */
+    MANAGED_BY_ATTACHMENT(190490955),
+    /** <code>MANAGED_BY_USER = 48858611;</code> */
+    MANAGED_BY_USER(48858611),
     UNRECOGNIZED(-1),
     ;
 
@@ -181,10 +181,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * <code>UNDEFINED_MANAGEMENT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_MANAGEMENT_TYPE_VALUE = 0;
-    /** <code>MANAGED_BY_ATTACHMENT = 458926411;</code> */
-    public static final int MANAGED_BY_ATTACHMENT_VALUE = 458926411;
-    /** <code>MANAGED_BY_USER = 317294067;</code> */
-    public static final int MANAGED_BY_USER_VALUE = 317294067;
+    /** <code>MANAGED_BY_ATTACHMENT = 190490955;</code> */
+    public static final int MANAGED_BY_ATTACHMENT_VALUE = 190490955;
+    /** <code>MANAGED_BY_USER = 48858611;</code> */
+    public static final int MANAGED_BY_USER_VALUE = 48858611;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -212,9 +212,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
       switch (value) {
         case 0:
           return UNDEFINED_MANAGEMENT_TYPE;
-        case 458926411:
+        case 190490955:
           return MANAGED_BY_ATTACHMENT;
-        case 317294067:
+        case 48858611:
           return MANAGED_BY_USER;
         default:
           return null;
@@ -318,7 +318,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int LINKED_INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 501085518;
+  public static final int LINKED_INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 232650062;
   private volatile java.lang.Object linkedInterconnectAttachment_;
   /**
    *
@@ -327,7 +327,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_interconnect_attachment = 501085518;</code>
+   * <code>string linked_interconnect_attachment = 232650062;</code>
    *
    * @return The linkedInterconnectAttachment.
    */
@@ -350,7 +350,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_interconnect_attachment = 501085518;</code>
+   * <code>string linked_interconnect_attachment = 232650062;</code>
    *
    * @return The bytes for linkedInterconnectAttachment.
    */
@@ -367,7 +367,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int LINKED_VPN_TUNNEL_FIELD_NUMBER = 352296953;
+  public static final int LINKED_VPN_TUNNEL_FIELD_NUMBER = 83861497;
   private volatile java.lang.Object linkedVpnTunnel_;
   /**
    *
@@ -376,7 +376,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>string linked_vpn_tunnel = 83861497;</code>
    *
    * @return The linkedVpnTunnel.
    */
@@ -399,7 +399,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
    * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>string linked_vpn_tunnel = 83861497;</code>
    *
    * @return The bytes for linkedVpnTunnel.
    */
@@ -526,6 +526,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (!getLinkedVpnTunnelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 83861497, linkedVpnTunnel_);
+    }
     if (!getIpRangeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 145092645, ipRange_);
     }
@@ -534,12 +537,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       output.writeEnum(173703606, managementType_);
     }
-    if (!getLinkedVpnTunnelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 352296953, linkedVpnTunnel_);
-    }
     if (!getLinkedInterconnectAttachmentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 501085518, linkedInterconnectAttachment_);
+          output, 232650062, linkedInterconnectAttachment_);
     }
     unknownFields.writeTo(output);
   }
@@ -553,6 +553,9 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (!getLinkedVpnTunnelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83861497, linkedVpnTunnel_);
+    }
     if (!getIpRangeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(145092645, ipRange_);
     }
@@ -561,13 +564,10 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(173703606, managementType_);
     }
-    if (!getLinkedVpnTunnelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(352296953, linkedVpnTunnel_);
-    }
     if (!getLinkedInterconnectAttachmentBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              501085518, linkedInterconnectAttachment_);
+              232650062, linkedInterconnectAttachment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1009,7 +1009,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_interconnect_attachment = 501085518;</code>
+     * <code>string linked_interconnect_attachment = 232650062;</code>
      *
      * @return The linkedInterconnectAttachment.
      */
@@ -1031,7 +1031,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_interconnect_attachment = 501085518;</code>
+     * <code>string linked_interconnect_attachment = 232650062;</code>
      *
      * @return The bytes for linkedInterconnectAttachment.
      */
@@ -1053,7 +1053,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_interconnect_attachment = 501085518;</code>
+     * <code>string linked_interconnect_attachment = 232650062;</code>
      *
      * @param value The linkedInterconnectAttachment to set.
      * @return This builder for chaining.
@@ -1074,7 +1074,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_interconnect_attachment = 501085518;</code>
+     * <code>string linked_interconnect_attachment = 232650062;</code>
      *
      * @return This builder for chaining.
      */
@@ -1091,7 +1091,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_interconnect_attachment = 501085518;</code>
+     * <code>string linked_interconnect_attachment = 232650062;</code>
      *
      * @param value The bytes for linkedInterconnectAttachment to set.
      * @return This builder for chaining.
@@ -1115,7 +1115,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_vpn_tunnel = 352296953;</code>
+     * <code>string linked_vpn_tunnel = 83861497;</code>
      *
      * @return The linkedVpnTunnel.
      */
@@ -1137,7 +1137,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_vpn_tunnel = 352296953;</code>
+     * <code>string linked_vpn_tunnel = 83861497;</code>
      *
      * @return The bytes for linkedVpnTunnel.
      */
@@ -1159,7 +1159,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_vpn_tunnel = 352296953;</code>
+     * <code>string linked_vpn_tunnel = 83861497;</code>
      *
      * @param value The linkedVpnTunnel to set.
      * @return This builder for chaining.
@@ -1180,7 +1180,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_vpn_tunnel = 352296953;</code>
+     * <code>string linked_vpn_tunnel = 83861497;</code>
      *
      * @return This builder for chaining.
      */
@@ -1197,7 +1197,7 @@ public final class RouterInterface extends com.google.protobuf.GeneratedMessageV
      * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      * </pre>
      *
-     * <code>string linked_vpn_tunnel = 352296953;</code>
+     * <code>string linked_vpn_tunnel = 83861497;</code>
      *
      * @param value The bytes for linkedVpnTunnel to set.
      * @return This builder for chaining.

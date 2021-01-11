@@ -113,14 +113,14 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
               region_ = s;
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645850846:
+          case 1501632802:
             {
               com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.Builder subBuilder =
                   null;
@@ -138,7 +138,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
 
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -228,7 +228,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -237,7 +237,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -260,7 +260,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -277,7 +277,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int GRPC_SETTINGS_FIELD_NUMBER = 456139556;
+  public static final int GRPC_SETTINGS_FIELD_NUMBER = 187704100;
   private com.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpcSettings_;
   /**
    *
@@ -286,7 +286,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
    * </code>
    *
    * @return Whether the grpcSettings field is set.
@@ -302,7 +302,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
    * </code>
    *
    * @return The grpcSettings.
@@ -320,7 +320,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+   * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
    * </code>
    */
   @java.lang.Override
@@ -525,7 +525,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -534,7 +534,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -557,7 +557,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -604,13 +604,13 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (grpcSettings_ != null) {
-      output.writeMessage(456139556, getGrpcSettings());
+      output.writeMessage(187704100, getGrpcSettings());
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -638,14 +638,14 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (grpcSettings_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(456139556, getGrpcSettings());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(187704100, getGrpcSettings());
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1133,7 +1133,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1155,7 +1155,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1177,7 +1177,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1198,7 +1198,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1215,7 +1215,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1244,7 +1244,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      *
      * @return Whether the grpcSettings field is set.
@@ -1259,7 +1259,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      *
      * @return The grpcSettings.
@@ -1280,7 +1280,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     public Builder setGrpcSettings(
@@ -1304,7 +1304,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     public Builder setGrpcSettings(
@@ -1325,7 +1325,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     public Builder mergeGrpcSettings(
@@ -1353,7 +1353,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     public Builder clearGrpcSettings() {
@@ -1374,7 +1374,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     public com.google.cloud.compute.v1.NotificationEndpointGrpcSettings.Builder
@@ -1390,7 +1390,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     public com.google.cloud.compute.v1.NotificationEndpointGrpcSettingsOrBuilder
@@ -1410,7 +1410,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * Settings of the gRPC notification endpoint including the endpoint URL and the retry duration.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 456139556;
+     * <code>.google.cloud.compute.v1.NotificationEndpointGrpcSettings grpc_settings = 187704100;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1862,7 +1862,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1884,7 +1884,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1906,7 +1906,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1927,7 +1927,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1944,7 +1944,7 @@ public final class NotificationEndpoint extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

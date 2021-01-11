@@ -51,16 +51,28 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680;
+   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersDeletePerInstanceConfigsReqResource field is set.
    */
   boolean hasInstanceGroupManagersDeletePerInstanceConfigsReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680;
+   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersDeletePerInstanceConfigsReqResource.
@@ -68,8 +80,14 @@ public interface DeletePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq
       getInstanceGroupManagersDeletePerInstanceConfigsReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 362427680;
+   * .google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReq instance_group_managers_delete_per_instance_configs_req_resource = 93992224 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersDeletePerInstanceConfigsReqOrBuilder

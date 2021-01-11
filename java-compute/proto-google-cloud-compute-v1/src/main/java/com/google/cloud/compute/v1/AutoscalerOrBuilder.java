@@ -93,7 +93,7 @@ public interface AutoscalerOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -105,7 +105,7 @@ public interface AutoscalerOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -190,7 +190,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
    * </pre>
    *
    * <code>int32 recommended_size = 257915749;</code>
@@ -231,7 +231,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -243,7 +243,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -289,7 +289,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> getStatusDetailsList();
@@ -300,7 +300,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalerStatusDetails getStatusDetails(int index);
@@ -311,7 +311,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   int getStatusDetailsCount();
@@ -322,7 +322,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>
@@ -334,7 +334,7 @@ public interface AutoscalerOrBuilder
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder getStatusDetailsOrBuilder(int index);
@@ -343,7 +343,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale.
+   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
    * <code>string target = 192835985;</code>
@@ -355,7 +355,7 @@ public interface AutoscalerOrBuilder
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale.
+   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
    * <code>string target = 192835985;</code>

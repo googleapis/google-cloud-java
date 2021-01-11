@@ -79,18 +79,18 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
               zone_ = s;
               break;
             }
+          case 1579178682:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeType_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -568304966:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeType_ = s;
               break;
             }
           default:
@@ -127,7 +127,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.GetNodeTypeRequest.Builder.class);
   }
 
-  public static final int NODE_TYPE_FIELD_NUMBER = 465832791;
+  public static final int NODE_TYPE_FIELD_NUMBER = 197397335;
   private volatile java.lang.Object nodeType_;
   /**
    *
@@ -136,7 +136,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
    * Name of the node type to return.
    * </pre>
    *
-   * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeType.
    */
@@ -159,7 +159,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
    * Name of the node type to return.
    * </pre>
    *
-   * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeType.
    */
@@ -291,11 +291,11 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (!getNodeTypeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 197397335, nodeType_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeTypeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 465832791, nodeType_);
     }
     unknownFields.writeTo(output);
   }
@@ -309,11 +309,11 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (!getNodeTypeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(197397335, nodeType_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeTypeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(465832791, nodeType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -630,7 +630,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Name of the node type to return.
      * </pre>
      *
-     * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeType.
      */
@@ -652,7 +652,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Name of the node type to return.
      * </pre>
      *
-     * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeType.
      */
@@ -674,7 +674,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Name of the node type to return.
      * </pre>
      *
-     * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeType to set.
      * @return This builder for chaining.
@@ -695,7 +695,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Name of the node type to return.
      * </pre>
      *
-     * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -712,7 +712,7 @@ public final class GetNodeTypeRequest extends com.google.protobuf.GeneratedMessa
      * Name of the node type to return.
      * </pre>
      *
-     * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeType to set.
      * @return This builder for chaining.

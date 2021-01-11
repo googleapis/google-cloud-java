@@ -93,7 +93,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
               expectedService_ = s;
               break;
             }
-          case -771930078:
+          case 1375553570:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -134,7 +134,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.TestFailure.Builder.class);
   }
 
-  public static final int ACTUAL_SERVICE_FIELD_NUMBER = 440379652;
+  public static final int ACTUAL_SERVICE_FIELD_NUMBER = 171944196;
   private volatile java.lang.Object actualService_;
   /**
    *
@@ -143,7 +143,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>string actual_service = 171944196;</code>
    *
    * @return The actualService.
    */
@@ -166,7 +166,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>string actual_service = 171944196;</code>
    *
    * @return The bytes for actualService.
    */
@@ -354,7 +354,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 133987374, expectedService_);
     }
     if (!getActualServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 440379652, actualService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 171944196, actualService_);
     }
     unknownFields.writeTo(output);
   }
@@ -375,7 +375,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(133987374, expectedService_);
     }
     if (!getActualServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(440379652, actualService_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171944196, actualService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -700,7 +700,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 440379652;</code>
+     * <code>string actual_service = 171944196;</code>
      *
      * @return The actualService.
      */
@@ -722,7 +722,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 440379652;</code>
+     * <code>string actual_service = 171944196;</code>
      *
      * @return The bytes for actualService.
      */
@@ -744,7 +744,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 440379652;</code>
+     * <code>string actual_service = 171944196;</code>
      *
      * @param value The actualService to set.
      * @return This builder for chaining.
@@ -765,7 +765,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 440379652;</code>
+     * <code>string actual_service = 171944196;</code>
      *
      * @return This builder for chaining.
      */
@@ -782,7 +782,7 @@ public final class TestFailure extends com.google.protobuf.GeneratedMessageV3
      * BackendService or BackendBucket returned by load balancer.
      * </pre>
      *
-     * <code>string actual_service = 440379652;</code>
+     * <code>string actual_service = 171944196;</code>
      *
      * @param value The bytes for actualService to set.
      * @return This builder for chaining.

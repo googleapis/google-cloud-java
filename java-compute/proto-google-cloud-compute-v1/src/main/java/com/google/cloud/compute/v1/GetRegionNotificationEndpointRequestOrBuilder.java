@@ -30,7 +30,7 @@ public interface GetRegionNotificationEndpointRequestOrBuilder
    * Name of the NotificationEndpoint resource to return.
    * </pre>
    *
-   * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The notificationEndpoint.
@@ -43,7 +43,7 @@ public interface GetRegionNotificationEndpointRequestOrBuilder
    * Name of the NotificationEndpoint resource to return.
    * </pre>
    *
-   * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for notificationEndpoint.

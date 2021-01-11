@@ -87,21 +87,7 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
               requestId_ = s;
               break;
             }
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1375360910:
+          case 772122738:
             {
               com.google.cloud.compute.v1.ZoneSetLabelsRequest.Builder subBuilder = null;
               if (zoneSetLabelsRequestResource_ != null) {
@@ -115,6 +101,20 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
                 zoneSetLabelsRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1566449778:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resource_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -351,11 +351,17 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int ZONE_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 364950798;
+  public static final int ZONE_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 96515342;
   private com.google.cloud.compute.v1.ZoneSetLabelsRequest zoneSetLabelsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the zoneSetLabelsRequestResource field is set.
@@ -365,8 +371,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     return zoneSetLabelsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The zoneSetLabelsRequestResource.
@@ -378,8 +390,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
         : zoneSetLabelsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -408,14 +426,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (zoneSetLabelsRequestResource_ != null) {
+      output.writeMessage(96515342, getZoneSetLabelsRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (zoneSetLabelsRequestResource_ != null) {
-      output.writeMessage(364950798, getZoneSetLabelsRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -432,16 +450,16 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (zoneSetLabelsRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              96515342, getZoneSetLabelsRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (zoneSetLabelsRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              364950798, getZoneSetLabelsRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1225,8 +1243,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.ZoneSetLabelsRequestOrBuilder>
         zoneSetLabelsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the zoneSetLabelsRequestResource field is set.
@@ -1235,8 +1259,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       return zoneSetLabelsRequestResourceBuilder_ != null || zoneSetLabelsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The zoneSetLabelsRequestResource.
@@ -1251,8 +1281,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setZoneSetLabelsRequestResource(
@@ -1270,8 +1306,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setZoneSetLabelsRequestResource(
@@ -1286,8 +1328,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeZoneSetLabelsRequestResource(
@@ -1310,8 +1358,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearZoneSetLabelsRequestResource() {
@@ -1326,8 +1380,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ZoneSetLabelsRequest.Builder
@@ -1337,8 +1397,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       return getZoneSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ZoneSetLabelsRequestOrBuilder
@@ -1352,8 +1418,14 @@ public final class SetLabelsDiskRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+     * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

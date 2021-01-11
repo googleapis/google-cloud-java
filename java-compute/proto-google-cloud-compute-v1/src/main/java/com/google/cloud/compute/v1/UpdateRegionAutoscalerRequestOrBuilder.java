@@ -30,7 +30,7 @@ public interface UpdateRegionAutoscalerRequestOrBuilder
    * Name of the autoscaler to update.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>string autoscaler = 248823511;</code>
    *
    * @return The autoscaler.
    */
@@ -42,25 +42,51 @@ public interface UpdateRegionAutoscalerRequestOrBuilder
    * Name of the autoscaler to update.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>string autoscaler = 248823511;</code>
    *
    * @return The bytes for autoscaler.
    */
   com.google.protobuf.ByteString getAutoscalerBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the autoscalerResource field is set.
    */
   boolean hasAutoscalerResource();
   /**
-   * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The autoscalerResource.
    */
   com.google.cloud.compute.v1.Autoscaler getAutoscalerResource();
-  /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalerResourceOrBuilder();
 
   /**

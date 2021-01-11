@@ -55,7 +55,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -67,7 +67,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -79,7 +79,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -90,7 +90,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -102,7 +102,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -203,7 +203,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -215,7 +215,7 @@ public interface AcceleratorTypeOrBuilder
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

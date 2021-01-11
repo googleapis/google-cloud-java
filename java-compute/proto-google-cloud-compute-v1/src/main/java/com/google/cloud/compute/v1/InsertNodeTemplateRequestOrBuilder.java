@@ -24,18 +24,44 @@ public interface InsertNodeTemplateRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the nodeTemplateResource field is set.
    */
   boolean hasNodeTemplateResource();
   /**
-   * <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The nodeTemplateResource.
    */
   com.google.cloud.compute.v1.NodeTemplate getNodeTemplateResource();
-  /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.NodeTemplateOrBuilder getNodeTemplateResourceOrBuilder();
 
   /**

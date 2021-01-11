@@ -326,7 +326,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param forwardingRuleResource
+   * @param forwardingRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, ForwardingRule forwardingRuleResource) {
@@ -347,8 +347,10 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   String project = "";
    *   InsertGlobalForwardingRuleRequest request = InsertGlobalForwardingRuleRequest.newBuilder()
+   *     .setForwardingRuleResource(forwardingRuleResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = globalForwardingRulesClient.insert(request);
@@ -371,8 +373,10 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   String project = "";
    *   InsertGlobalForwardingRuleRequest request = InsertGlobalForwardingRuleRequest.newBuilder()
+   *     .setForwardingRuleResource(forwardingRuleResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalForwardingRulesClient.insertCallable().futureCall(request);
@@ -509,7 +513,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param forwardingRule Name of the ForwardingRule resource to patch.
-   * @param forwardingRuleResource
+   * @param forwardingRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -534,9 +538,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <pre><code>
    * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
    *   String forwardingRule = "";
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   String project = "";
    *   PatchGlobalForwardingRuleRequest request = PatchGlobalForwardingRuleRequest.newBuilder()
    *     .setForwardingRule(forwardingRule)
+   *     .setForwardingRuleResource(forwardingRuleResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = globalForwardingRulesClient.patch(request);
@@ -561,9 +567,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * <pre><code>
    * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
    *   String forwardingRule = "";
+   *   ForwardingRule forwardingRuleResource = ForwardingRule.newBuilder().build();
    *   String project = "";
    *   PatchGlobalForwardingRuleRequest request = PatchGlobalForwardingRuleRequest.newBuilder()
    *     .setForwardingRule(forwardingRule)
+   *     .setForwardingRuleResource(forwardingRuleResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalForwardingRulesClient.patchCallable().futureCall(request);
@@ -594,7 +602,7 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param forwardingRule Name of the ForwardingRule resource in which target is to be set.
-   * @param targetReferenceResource
+   * @param targetReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setTarget(
@@ -619,9 +627,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
    *   String forwardingRule = "";
    *   String project = "";
+   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetGlobalForwardingRuleRequest request = SetTargetGlobalForwardingRuleRequest.newBuilder()
    *     .setForwardingRule(forwardingRule)
    *     .setProject(project)
+   *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
    *   Operation response = globalForwardingRulesClient.setTarget(request);
    * }
@@ -645,9 +655,11 @@ public class GlobalForwardingRulesClient implements BackgroundResource {
    * try (GlobalForwardingRulesClient globalForwardingRulesClient = GlobalForwardingRulesClient.create()) {
    *   String forwardingRule = "";
    *   String project = "";
+   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetTargetGlobalForwardingRuleRequest request = SetTargetGlobalForwardingRuleRequest.newBuilder()
    *     .setForwardingRule(forwardingRule)
    *     .setProject(project)
+   *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalForwardingRulesClient.setTargetCallable().futureCall(request);
    *   // Do something

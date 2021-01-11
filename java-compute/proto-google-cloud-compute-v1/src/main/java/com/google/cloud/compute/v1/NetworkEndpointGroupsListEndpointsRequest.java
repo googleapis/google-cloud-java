@@ -71,7 +71,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
           case 0:
             done = true;
             break;
-          case -1250600536:
+          case 896883112:
             {
               int rawValue = input.readEnum();
 
@@ -240,7 +240,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus)
   }
 
-  public static final int HEALTH_STATUS_FIELD_NUMBER = 380545845;
+  public static final int HEALTH_STATUS_FIELD_NUMBER = 112110389;
   private int healthStatus_;
   /**
    *
@@ -250,7 +250,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
    * </code>
    *
    * @return The enum numeric value on the wire for healthStatus.
@@ -267,7 +267,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
    * </code>
    *
    * @return The healthStatus.
@@ -303,7 +303,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
         != com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
             .UNDEFINED_HEALTH_STATUS
             .getNumber()) {
-      output.writeEnum(380545845, healthStatus_);
+      output.writeEnum(112110389, healthStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -318,7 +318,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
         != com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus
             .UNDEFINED_HEALTH_STATUS
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(380545845, healthStatus_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(112110389, healthStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -625,7 +625,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
      * </code>
      *
      * @return The enum numeric value on the wire for healthStatus.
@@ -642,7 +642,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
      * </code>
      *
      * @param value The enum numeric value on the wire for healthStatus to set.
@@ -662,7 +662,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
      * </code>
      *
      * @return The healthStatus.
@@ -687,7 +687,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
      * </code>
      *
      * @param value The healthStatus to set.
@@ -711,7 +711,7 @@ public final class NetworkEndpointGroupsListEndpointsRequest
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
      * </code>
      *
      * @return This builder for chaining.

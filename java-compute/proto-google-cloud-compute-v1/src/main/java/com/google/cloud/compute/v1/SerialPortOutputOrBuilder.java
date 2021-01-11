@@ -30,7 +30,7 @@ public interface SerialPortOutputOrBuilder
    * [Output Only] The contents of the console output.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The contents.
    */
@@ -42,7 +42,7 @@ public interface SerialPortOutputOrBuilder
    * [Output Only] The contents of the console output.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The bytes for contents.
    */
@@ -105,7 +105,7 @@ public interface SerialPortOutputOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -117,7 +117,7 @@ public interface SerialPortOutputOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

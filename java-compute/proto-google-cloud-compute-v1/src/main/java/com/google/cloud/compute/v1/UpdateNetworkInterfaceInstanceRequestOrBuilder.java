@@ -55,7 +55,7 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * The name of the network interface to update.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The networkInterface.
    */
@@ -67,26 +67,50 @@ public interface UpdateNetworkInterfaceInstanceRequestOrBuilder
    * The name of the network interface to update.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for networkInterface.
    */
   com.google.protobuf.ByteString getNetworkInterfaceBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the networkInterfaceResource field is set.
    */
   boolean hasNetworkInterfaceResource();
   /**
-   * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The networkInterfaceResource.
    */
   com.google.cloud.compute.v1.NetworkInterface getNetworkInterfaceResource();
   /**
-   * <code>.google.cloud.compute.v1.NetworkInterface network_interface_resource = 325814789;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NetworkInterface network_interface_resource = 57379333 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.NetworkInterfaceOrBuilder getNetworkInterfaceResourceOrBuilder();
 

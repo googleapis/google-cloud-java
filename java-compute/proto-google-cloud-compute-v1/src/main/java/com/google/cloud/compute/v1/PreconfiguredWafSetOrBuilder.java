@@ -30,7 +30,7 @@ public interface PreconfiguredWafSetOrBuilder
    * List of entities that are currently supported for WAF rules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
+   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 205575576;</code>
    */
   java.util.List<com.google.cloud.compute.v1.WafExpressionSet> getExpressionSetsList();
   /**
@@ -40,7 +40,7 @@ public interface PreconfiguredWafSetOrBuilder
    * List of entities that are currently supported for WAF rules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
+   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 205575576;</code>
    */
   com.google.cloud.compute.v1.WafExpressionSet getExpressionSets(int index);
   /**
@@ -50,7 +50,7 @@ public interface PreconfiguredWafSetOrBuilder
    * List of entities that are currently supported for WAF rules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
+   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 205575576;</code>
    */
   int getExpressionSetsCount();
   /**
@@ -60,7 +60,7 @@ public interface PreconfiguredWafSetOrBuilder
    * List of entities that are currently supported for WAF rules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
+   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 205575576;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WafExpressionSetOrBuilder>
       getExpressionSetsOrBuilderList();
@@ -71,7 +71,7 @@ public interface PreconfiguredWafSetOrBuilder
    * List of entities that are currently supported for WAF rules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 474011032;</code>
+   * <code>repeated .google.cloud.compute.v1.WafExpressionSet expression_sets = 205575576;</code>
    */
   com.google.cloud.compute.v1.WafExpressionSetOrBuilder getExpressionSetsOrBuilder(int index);
 }

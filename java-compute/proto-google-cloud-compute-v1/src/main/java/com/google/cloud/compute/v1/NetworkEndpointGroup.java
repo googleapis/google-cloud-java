@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  * <pre>
  * Represents a collection of network endpoints.
- * A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up internet NEGs,  Setting up zonal NEGs, or  Setting up serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
+ * A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up external HTTP(S) Load Balancing with internet NEGs,  Setting up zonal NEGs, or  Setting up external HTTP(S) Load Balancing with serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroup}
@@ -122,6 +122,30 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
               creationTimestamp_ = s;
               break;
             }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
+          case 578826498:
+            {
+              com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder subBuilder = null;
+              if (appEngine_ != null) {
+                subBuilder = appEngine_.toBuilder();
+              }
+              appEngine_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(appEngine_);
+                appEngine_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 888482826:
             {
               com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder subBuilder = null;
@@ -168,6 +192,25 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1239539192:
+            {
+              defaultPort_ = input.readInt32();
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -175,50 +218,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
               network_ = s;
               break;
             }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case -1568657150:
-            {
-              com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder subBuilder = null;
-              if (appEngine_ != null) {
-                subBuilder = appEngine_.toBuilder();
-              }
-              appEngine_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(appEngine_);
-                appEngine_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -907944456:
-            {
-              defaultPort_ = input.readInt32();
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -135817966:
+          case 2011665682:
             {
               com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder subBuilder =
                   null;
@@ -301,16 +301,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     UNDEFINED_NETWORK_ENDPOINT_TYPE(0),
-    /** <code>GCE_VM_IP_PORT = 501838375;</code> */
-    GCE_VM_IP_PORT(501838375),
-    /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
-    INTERNET_FQDN_PORT(404154477),
-    /** <code>INTERNET_IP_PORT = 477719963;</code> */
-    INTERNET_IP_PORT(477719963),
-    /** <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code> */
-    NON_GCP_PRIVATE_IP_PORT(336447968),
-    /** <code>SERVERLESS = 270492508;</code> */
-    SERVERLESS(270492508),
+    /** <code>GCE_VM_IP_PORT = 233402919;</code> */
+    GCE_VM_IP_PORT(233402919),
+    /** <code>INTERNET_FQDN_PORT = 135719021;</code> */
+    INTERNET_FQDN_PORT(135719021),
+    /** <code>INTERNET_IP_PORT = 209284507;</code> */
+    INTERNET_IP_PORT(209284507),
+    /** <code>NON_GCP_PRIVATE_IP_PORT = 68012512;</code> */
+    NON_GCP_PRIVATE_IP_PORT(68012512),
+    /** <code>SERVERLESS = 2057052;</code> */
+    SERVERLESS(2057052),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,16 +324,16 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_NETWORK_ENDPOINT_TYPE = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_ENDPOINT_TYPE_VALUE = 0;
-    /** <code>GCE_VM_IP_PORT = 501838375;</code> */
-    public static final int GCE_VM_IP_PORT_VALUE = 501838375;
-    /** <code>INTERNET_FQDN_PORT = 404154477;</code> */
-    public static final int INTERNET_FQDN_PORT_VALUE = 404154477;
-    /** <code>INTERNET_IP_PORT = 477719963;</code> */
-    public static final int INTERNET_IP_PORT_VALUE = 477719963;
-    /** <code>NON_GCP_PRIVATE_IP_PORT = 336447968;</code> */
-    public static final int NON_GCP_PRIVATE_IP_PORT_VALUE = 336447968;
-    /** <code>SERVERLESS = 270492508;</code> */
-    public static final int SERVERLESS_VALUE = 270492508;
+    /** <code>GCE_VM_IP_PORT = 233402919;</code> */
+    public static final int GCE_VM_IP_PORT_VALUE = 233402919;
+    /** <code>INTERNET_FQDN_PORT = 135719021;</code> */
+    public static final int INTERNET_FQDN_PORT_VALUE = 135719021;
+    /** <code>INTERNET_IP_PORT = 209284507;</code> */
+    public static final int INTERNET_IP_PORT_VALUE = 209284507;
+    /** <code>NON_GCP_PRIVATE_IP_PORT = 68012512;</code> */
+    public static final int NON_GCP_PRIVATE_IP_PORT_VALUE = 68012512;
+    /** <code>SERVERLESS = 2057052;</code> */
+    public static final int SERVERLESS_VALUE = 2057052;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -361,15 +361,15 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_ENDPOINT_TYPE;
-        case 501838375:
+        case 233402919:
           return GCE_VM_IP_PORT;
-        case 404154477:
+        case 135719021:
           return INTERNET_FQDN_PORT;
-        case 477719963:
+        case 209284507:
           return INTERNET_IP_PORT;
-        case 336447968:
+        case 68012512:
           return NON_GCP_PRIVATE_IP_PORT;
-        case 270492508:
+        case 2057052:
           return SERVERLESS;
         default:
           return null;
@@ -527,7 +527,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return map.get(key);
   }
 
-  public static final int APP_ENGINE_FIELD_NUMBER = 340788768;
+  public static final int APP_ENGINE_FIELD_NUMBER = 72353312;
   private com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine appEngine_;
   /**
    *
@@ -536,7 +536,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
    *
    * @return Whether the appEngine field is set.
    */
@@ -551,7 +551,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
    *
    * @return The appEngine.
    */
@@ -568,7 +568,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder
@@ -576,7 +576,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return getAppEngine();
   }
 
-  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 519893666;
+  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 251458210;
   private com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloudFunction_;
   /**
    *
@@ -585,7 +585,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
    * </code>
    *
    * @return Whether the cloudFunction field is set.
@@ -601,7 +601,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
    * </code>
    *
    * @return The cloudFunction.
@@ -619,7 +619,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
    * </code>
    */
   @java.lang.Override
@@ -725,7 +725,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int DEFAULT_PORT_FIELD_NUMBER = 423377855;
+  public static final int DEFAULT_PORT_FIELD_NUMBER = 154942399;
   private int defaultPort_;
   /**
    *
@@ -734,7 +734,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * The default port used if the port number is not specified in the network endpoint.
    * </pre>
    *
-   * <code>int32 default_port = 423377855;</code>
+   * <code>int32 default_port = 154942399;</code>
    *
    * @return The defaultPort.
    */
@@ -743,7 +743,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return defaultPort_;
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -752,7 +752,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -775,7 +775,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -1081,7 +1081,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1090,7 +1090,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1113,7 +1113,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1148,7 +1148,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     return size_;
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -1157,7 +1157,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -1180,7 +1180,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -1278,6 +1278,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
+    if (appEngine_ != null) {
+      output.writeMessage(72353312, getAppEngine());
+    }
     if (cloudRun_ != null) {
       output.writeMessage(111060353, getCloudRun());
     }
@@ -1292,26 +1298,20 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    if (defaultPort_ != 0) {
+      output.writeInt32(154942399, defaultPort_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (appEngine_ != null) {
-      output.writeMessage(340788768, getAppEngine());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (defaultPort_ != 0) {
-      output.writeInt32(423377855, defaultPort_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
     if (cloudFunction_ != null) {
-      output.writeMessage(519893666, getCloudFunction());
+      output.writeMessage(251458210, getCloudFunction());
     }
     unknownFields.writeTo(output);
   }
@@ -1341,6 +1341,12 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
+    if (appEngine_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(72353312, getAppEngine());
+    }
     if (cloudRun_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(111060353, getCloudRun());
     }
@@ -1364,27 +1370,21 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (defaultPort_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(154942399, defaultPort_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
-    }
-    if (appEngine_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(340788768, getAppEngine());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (defaultPort_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(423377855, defaultPort_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
     if (cloudFunction_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(519893666, getCloudFunction());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(251458210, getCloudFunction());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1586,7 +1586,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Represents a collection of network endpoints.
-   * A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up internet NEGs,  Setting up zonal NEGs, or  Setting up serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
+   * A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see  Setting up external HTTP(S) Load Balancing with internet NEGs,  Setting up zonal NEGs, or  Setting up external HTTP(S) Load Balancing with serverless NEGs. (== resource_for {$api_version}.networkEndpointGroups ==) (== resource_for {$api_version}.globalNetworkEndpointGroups ==) (== resource_for {$api_version}.regionNetworkEndpointGroups ==)
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.NetworkEndpointGroup}
@@ -2063,7 +2063,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      *
      * @return Whether the appEngine field is set.
      */
@@ -2077,7 +2077,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      *
      * @return The appEngine.
      */
@@ -2097,7 +2097,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     public Builder setAppEngine(com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine value) {
       if (appEngineBuilder_ == null) {
@@ -2119,7 +2119,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     public Builder setAppEngine(
         com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder builderForValue) {
@@ -2139,7 +2139,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     public Builder mergeAppEngine(com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine value) {
       if (appEngineBuilder_ == null) {
@@ -2165,7 +2165,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     public Builder clearAppEngine() {
       if (appEngineBuilder_ == null) {
@@ -2185,7 +2185,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine.Builder getAppEngineBuilder() {
 
@@ -2199,7 +2199,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder
         getAppEngineOrBuilder() {
@@ -2218,7 +2218,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkEndpointGroupAppEngine,
@@ -2250,7 +2250,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      *
      * @return Whether the cloudFunction field is set.
@@ -2265,7 +2265,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      *
      * @return The cloudFunction.
@@ -2286,7 +2286,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     public Builder setCloudFunction(
@@ -2310,7 +2310,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     public Builder setCloudFunction(
@@ -2331,7 +2331,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     public Builder mergeCloudFunction(
@@ -2360,7 +2360,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     public Builder clearCloudFunction() {
@@ -2381,7 +2381,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder
@@ -2397,7 +2397,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder
@@ -2417,7 +2417,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+     * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2738,7 +2738,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * The default port used if the port number is not specified in the network endpoint.
      * </pre>
      *
-     * <code>int32 default_port = 423377855;</code>
+     * <code>int32 default_port = 154942399;</code>
      *
      * @return The defaultPort.
      */
@@ -2753,7 +2753,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * The default port used if the port number is not specified in the network endpoint.
      * </pre>
      *
-     * <code>int32 default_port = 423377855;</code>
+     * <code>int32 default_port = 154942399;</code>
      *
      * @param value The defaultPort to set.
      * @return This builder for chaining.
@@ -2771,7 +2771,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * The default port used if the port number is not specified in the network endpoint.
      * </pre>
      *
-     * <code>int32 default_port = 423377855;</code>
+     * <code>int32 default_port = 154942399;</code>
      *
      * @return This builder for chaining.
      */
@@ -2790,7 +2790,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2812,7 +2812,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2834,7 +2834,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2855,7 +2855,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2872,7 +2872,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3532,7 +3532,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3554,7 +3554,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3576,7 +3576,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3597,7 +3597,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3614,7 +3614,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3690,7 +3690,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The subnetwork.
      */
@@ -3712,7 +3712,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -3734,7 +3734,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -3755,7 +3755,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return This builder for chaining.
      */
@@ -3772,7 +3772,7 @@ public final class NetworkEndpointGroup extends com.google.protobuf.GeneratedMes
      * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

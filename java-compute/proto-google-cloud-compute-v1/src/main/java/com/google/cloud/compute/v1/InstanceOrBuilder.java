@@ -30,7 +30,7 @@ public interface InstanceOrBuilder
    * Allows this instance to send and receive packets with non-matching destination or source IPs. This is required if you plan to use this instance to forward routes. For more information, see Enabling IP Forwarding.
    * </pre>
    *
-   * <code>bool can_ip_forward = 467731324;</code>
+   * <code>bool can_ip_forward = 199295868;</code>
    *
    * @return The canIpForward.
    */
@@ -38,7 +38,7 @@ public interface InstanceOrBuilder
 
   /**
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
    * </code>
    *
    * @return Whether the confidentialInstanceConfig field is set.
@@ -46,7 +46,7 @@ public interface InstanceOrBuilder
   boolean hasConfidentialInstanceConfig();
   /**
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
    * </code>
    *
    * @return The confidentialInstanceConfig.
@@ -54,7 +54,7 @@ public interface InstanceOrBuilder
   com.google.cloud.compute.v1.ConfidentialInstanceConfig getConfidentialInstanceConfig();
   /**
    * <code>
-   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 490637685;
+   * .google.cloud.compute.v1.ConfidentialInstanceConfig confidential_instance_config = 222202229;
    * </code>
    */
   com.google.cloud.compute.v1.ConfidentialInstanceConfigOrBuilder
@@ -67,7 +67,7 @@ public interface InstanceOrBuilder
    * [Output Only] The CPU platform used by this instance.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>string cpu_platform = 141849898;</code>
    *
    * @return The cpuPlatform.
    */
@@ -79,7 +79,7 @@ public interface InstanceOrBuilder
    * [Output Only] The CPU platform used by this instance.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>string cpu_platform = 141849898;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -117,7 +117,7 @@ public interface InstanceOrBuilder
    * Whether the resource should be protected against deletion.
    * </pre>
    *
-   * <code>bool deletion_protection = 458014698;</code>
+   * <code>bool deletion_protection = 189579242;</code>
    *
    * @return The deletionProtection.
    */
@@ -130,7 +130,7 @@ public interface InstanceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -142,7 +142,7 @@ public interface InstanceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -269,7 +269,7 @@ public interface InstanceOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getGuestAcceleratorsList();
@@ -280,7 +280,7 @@ public interface InstanceOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index);
@@ -291,7 +291,7 @@ public interface InstanceOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   int getGuestAcceleratorsCount();
@@ -302,7 +302,7 @@ public interface InstanceOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -314,7 +314,7 @@ public interface InstanceOrBuilder
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(int index);
@@ -428,7 +428,7 @@ public interface InstanceOrBuilder
    * Labels to apply to this instance. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   int getLabelsCount();
   /**
@@ -438,7 +438,7 @@ public interface InstanceOrBuilder
    * Labels to apply to this instance. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -451,7 +451,7 @@ public interface InstanceOrBuilder
    * Labels to apply to this instance. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -461,7 +461,7 @@ public interface InstanceOrBuilder
    * Labels to apply to this instance. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -471,7 +471,7 @@ public interface InstanceOrBuilder
    * Labels to apply to this instance. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -482,7 +482,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last start timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_timestamp = 443830736;</code>
+   * <code>string last_start_timestamp = 175395280;</code>
    *
    * @return The lastStartTimestamp.
    */
@@ -494,7 +494,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last start timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_start_timestamp = 443830736;</code>
+   * <code>string last_start_timestamp = 175395280;</code>
    *
    * @return The bytes for lastStartTimestamp.
    */
@@ -507,7 +507,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last stop timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_stop_timestamp = 412823010;</code>
+   * <code>string last_stop_timestamp = 144387554;</code>
    *
    * @return The lastStopTimestamp.
    */
@@ -519,7 +519,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last stop timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_stop_timestamp = 412823010;</code>
+   * <code>string last_stop_timestamp = 144387554;</code>
    *
    * @return The bytes for lastStopTimestamp.
    */
@@ -532,7 +532,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last suspended timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_suspended_timestamp = 356275337;</code>
+   * <code>string last_suspended_timestamp = 87839881;</code>
    *
    * @return The lastSuspendedTimestamp.
    */
@@ -544,7 +544,7 @@ public interface InstanceOrBuilder
    * [Output Only] Last suspended timestamp in RFC3339 text format.
    * </pre>
    *
-   * <code>string last_suspended_timestamp = 356275337;</code>
+   * <code>string last_suspended_timestamp = 87839881;</code>
    *
    * @return The bytes for lastSuspendedTimestamp.
    */
@@ -844,7 +844,7 @@ public interface InstanceOrBuilder
    * Sets the scheduling options for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
    *
    * @return Whether the scheduling field is set.
    */
@@ -856,7 +856,7 @@ public interface InstanceOrBuilder
    * Sets the scheduling options for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
    *
    * @return The scheduling.
    */
@@ -868,7 +868,7 @@ public interface InstanceOrBuilder
    * Sets the scheduling options for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Scheduling scheduling = 386688404;</code>
+   * <code>.google.cloud.compute.v1.Scheduling scheduling = 118252948;</code>
    */
   com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingOrBuilder();
 
@@ -879,7 +879,7 @@ public interface InstanceOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -891,7 +891,7 @@ public interface InstanceOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -905,7 +905,7 @@ public interface InstanceOrBuilder
    * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ServiceAccount> getServiceAccountsList();
   /**
@@ -916,7 +916,7 @@ public interface InstanceOrBuilder
    * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   com.google.cloud.compute.v1.ServiceAccount getServiceAccounts(int index);
   /**
@@ -927,7 +927,7 @@ public interface InstanceOrBuilder
    * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   int getServiceAccountsCount();
   /**
@@ -938,7 +938,7 @@ public interface InstanceOrBuilder
    * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ServiceAccountOrBuilder>
       getServiceAccountsOrBuilderList();
@@ -950,7 +950,7 @@ public interface InstanceOrBuilder
    * Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. See Service Accounts for more information.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 277537328;</code>
+   * <code>repeated .google.cloud.compute.v1.ServiceAccount service_accounts = 9101872;</code>
    */
   com.google.cloud.compute.v1.ServiceAccountOrBuilder getServiceAccountsOrBuilder(int index);
 
@@ -1043,7 +1043,7 @@ public interface InstanceOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The statusMessage.
    */
@@ -1055,7 +1055,7 @@ public interface InstanceOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The bytes for statusMessage.
    */

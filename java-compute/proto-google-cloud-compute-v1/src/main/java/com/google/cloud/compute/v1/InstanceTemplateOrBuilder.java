@@ -55,7 +55,7 @@ public interface InstanceTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface InstanceTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -190,7 +190,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -202,7 +202,7 @@ public interface InstanceTemplateOrBuilder
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -217,7 +217,7 @@ public interface InstanceTemplateOrBuilder
    * - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>string source_instance = 127880249;</code>
    *
    * @return The sourceInstance.
    */
@@ -231,7 +231,7 @@ public interface InstanceTemplateOrBuilder
    * - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>string source_instance = 127880249;</code>
    *
    * @return The bytes for sourceInstance.
    */

@@ -30,7 +30,7 @@ public interface GetGlobalForwardingRuleRequestOrBuilder
    * Name of the ForwardingRule resource to return.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The forwardingRule.
    */
@@ -42,7 +42,7 @@ public interface GetGlobalForwardingRuleRequestOrBuilder
    * Name of the ForwardingRule resource to return.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for forwardingRule.
    */

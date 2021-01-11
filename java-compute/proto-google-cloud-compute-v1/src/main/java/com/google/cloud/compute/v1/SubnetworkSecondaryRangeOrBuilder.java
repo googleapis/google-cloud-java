@@ -55,7 +55,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>string range_name = 63780941;</code>
    *
    * @return The rangeName.
    */
@@ -67,7 +67,7 @@ public interface SubnetworkSecondaryRangeOrBuilder
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>string range_name = 63780941;</code>
    *
    * @return The bytes for rangeName.
    */

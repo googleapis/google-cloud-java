@@ -531,7 +531,7 @@ public class ReservationsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param reservationResource
+   * @param reservationResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String zone, Reservation reservationResource) {
@@ -553,9 +553,11 @@ public class ReservationsClient implements BackgroundResource {
    * <pre><code>
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "";
+   *   Reservation reservationResource = Reservation.newBuilder().build();
    *   String zone = "";
    *   InsertReservationRequest request = InsertReservationRequest.newBuilder()
    *     .setProject(project)
+   *     .setReservationResource(reservationResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = reservationsClient.insert(request);
@@ -578,9 +580,11 @@ public class ReservationsClient implements BackgroundResource {
    * <pre><code>
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "";
+   *   Reservation reservationResource = Reservation.newBuilder().build();
    *   String zone = "";
    *   InsertReservationRequest request = InsertReservationRequest.newBuilder()
    *     .setProject(project)
+   *     .setReservationResource(reservationResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = reservationsClient.insertCallable().futureCall(request);
@@ -729,7 +733,7 @@ public class ReservationsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
    * @param reservation Name of the reservation to update.
-   * @param reservationsResizeRequestResource
+   * @param reservationsResizeRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation resize(
@@ -758,10 +762,12 @@ public class ReservationsClient implements BackgroundResource {
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "";
    *   String reservation = "";
+   *   ReservationsResizeRequest reservationsResizeRequestResource = ReservationsResizeRequest.newBuilder().build();
    *   String zone = "";
    *   ResizeReservationRequest request = ResizeReservationRequest.newBuilder()
    *     .setProject(project)
    *     .setReservation(reservation)
+   *     .setReservationsResizeRequestResource(reservationsResizeRequestResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = reservationsClient.resize(request);
@@ -786,10 +792,12 @@ public class ReservationsClient implements BackgroundResource {
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "";
    *   String reservation = "";
+   *   ReservationsResizeRequest reservationsResizeRequestResource = ReservationsResizeRequest.newBuilder().build();
    *   String zone = "";
    *   ResizeReservationRequest request = ResizeReservationRequest.newBuilder()
    *     .setProject(project)
    *     .setReservation(reservation)
+   *     .setReservationsResizeRequestResource(reservationsResizeRequestResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = reservationsClient.resizeCallable().futureCall(request);
@@ -821,7 +829,7 @@ public class ReservationsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param zoneSetPolicyRequestResource
+   * @param zoneSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -850,10 +858,12 @@ public class ReservationsClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyReservationRequest request = SetIamPolicyReservationRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = reservationsClient.setIamPolicy(request);
    * }
@@ -877,10 +887,12 @@ public class ReservationsClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyReservationRequest request = SetIamPolicyReservationRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = reservationsClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -911,7 +923,7 @@ public class ReservationsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -939,10 +951,12 @@ public class ReservationsClient implements BackgroundResource {
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsReservationRequest request = TestIamPermissionsReservationRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   TestPermissionsResponse response = reservationsClient.testIamPermissions(request);
@@ -967,10 +981,12 @@ public class ReservationsClient implements BackgroundResource {
    * try (ReservationsClient reservationsClient = ReservationsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsReservationRequest request = TestIamPermissionsReservationRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = reservationsClient.testIamPermissionsCallable().futureCall(request);

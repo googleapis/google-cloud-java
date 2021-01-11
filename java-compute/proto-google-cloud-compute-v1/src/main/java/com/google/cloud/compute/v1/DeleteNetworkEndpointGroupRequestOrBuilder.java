@@ -30,7 +30,7 @@ public interface DeleteNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group to delete. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -43,7 +43,7 @@ public interface DeleteNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group to delete. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.

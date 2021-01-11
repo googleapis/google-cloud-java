@@ -55,7 +55,7 @@ public interface VpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface VpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -157,7 +157,7 @@ public interface VpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   int getLabelsCount();
   /**
@@ -167,7 +167,7 @@ public interface VpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -180,7 +180,7 @@ public interface VpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -190,7 +190,7 @@ public interface VpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -200,7 +200,7 @@ public interface VpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -286,7 +286,7 @@ public interface VpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -298,7 +298,7 @@ public interface VpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

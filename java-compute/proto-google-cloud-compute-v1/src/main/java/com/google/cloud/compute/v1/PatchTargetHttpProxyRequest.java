@@ -297,7 +297,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
   public static final int TARGET_HTTP_PROXY_RESOURCE_FIELD_NUMBER = 24696744;
   private com.google.cloud.compute.v1.TargetHttpProxy targetHttpProxyResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetHttpProxyResource field is set.
    */
@@ -306,7 +314,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
     return targetHttpProxyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetHttpProxyResource.
    */
@@ -317,7 +333,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
         : targetHttpProxyResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetHttpProxyOrBuilder
@@ -1041,7 +1065,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetHttpProxyOrBuilder>
         targetHttpProxyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetHttpProxyResource field is set.
      */
@@ -1049,7 +1081,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       return targetHttpProxyResourceBuilder_ != null || targetHttpProxyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetHttpProxyResource.
      */
@@ -1063,7 +1103,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetHttpProxyResource(com.google.cloud.compute.v1.TargetHttpProxy value) {
       if (targetHttpProxyResourceBuilder_ == null) {
@@ -1079,7 +1127,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetHttpProxyResource(
         com.google.cloud.compute.v1.TargetHttpProxy.Builder builderForValue) {
@@ -1093,7 +1149,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTargetHttpProxyResource(com.google.cloud.compute.v1.TargetHttpProxy value) {
       if (targetHttpProxyResourceBuilder_ == null) {
@@ -1113,7 +1177,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetHttpProxyResource() {
       if (targetHttpProxyResourceBuilder_ == null) {
@@ -1127,7 +1199,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpProxy.Builder getTargetHttpProxyResourceBuilder() {
 
@@ -1135,7 +1215,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       return getTargetHttpProxyResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpProxyOrBuilder
         getTargetHttpProxyResourceOrBuilder() {
@@ -1148,7 +1236,15 @@ public final class PatchTargetHttpProxyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpProxy target_http_proxy_resource = 24696744 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetHttpProxy,

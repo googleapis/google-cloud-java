@@ -109,7 +109,7 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 415853125;
+   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 147417669;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo>
@@ -123,7 +123,7 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 415853125;
+   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 147417669;
    * </code>
    */
   com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo getSubnetworks(
@@ -137,7 +137,7 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 415853125;
+   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 147417669;
    * </code>
    */
   int getSubnetworksCount();
@@ -150,7 +150,7 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 415853125;
+   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 147417669;
    * </code>
    */
   java.util.List<
@@ -166,7 +166,7 @@ public interface PacketMirroringMirroredResourceInfoOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 415853125;
+   * repeated .google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfo subnetworks = 147417669;
    * </code>
    */
   com.google.cloud.compute.v1.PacketMirroringMirroredResourceInfoSubnetInfoOrBuilder

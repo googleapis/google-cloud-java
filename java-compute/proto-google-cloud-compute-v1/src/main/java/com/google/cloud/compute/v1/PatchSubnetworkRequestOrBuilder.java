@@ -30,7 +30,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * The drain timeout specifies the upper bound in seconds on the amount of time allowed to drain connections from the current ACTIVE subnetwork to the current BACKUP subnetwork. The drain timeout is only applicable when the following conditions are true: - the subnetwork being patched has purpose = INTERNAL_HTTPS_LOAD_BALANCER - the subnetwork being patched has role = BACKUP - the patch request is setting the role to ACTIVE. Note that after this patch operation the roles of the ACTIVE and BACKUP subnetworks will be swapped.
    * </pre>
    *
-   * <code>int32 drain_timeout_seconds = 357707098;</code>
+   * <code>int32 drain_timeout_seconds = 89271642;</code>
    *
    * @return The drainTimeoutSeconds.
    */
@@ -122,7 +122,7 @@ public interface PatchSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource to patch.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -134,24 +134,50 @@ public interface PatchSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource to patch.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the subnetworkResource field is set.
    */
   boolean hasSubnetworkResource();
   /**
-   * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The subnetworkResource.
    */
   com.google.cloud.compute.v1.Subnetwork getSubnetworkResource();
-  /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworkResourceOrBuilder();
 }

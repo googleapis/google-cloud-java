@@ -134,19 +134,14 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case 1701336053:
-            {
-              failoverRatio_ = input.readFloat();
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -708002446:
+          case 1439481202:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -156,18 +151,23 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
               healthChecks_.add(s);
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -583858808:
+          case 1563624840:
             {
               int rawValue = input.readEnum();
 
               sessionAffinity_ = rawValue;
+              break;
+            }
+          case 1701336053:
+            {
+              failoverRatio_ = input.readFloat();
               break;
             }
           default:
@@ -233,18 +233,18 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     UNDEFINED_SESSION_AFFINITY(0),
-    /** <code>CLIENT_IP = 345665051;</code> */
-    CLIENT_IP(345665051),
+    /** <code>CLIENT_IP = 77229595;</code> */
+    CLIENT_IP(77229595),
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     CLIENT_IP_PORT_PROTO(221722926),
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
     CLIENT_IP_PROTO(25322148),
-    /** <code>GENERATED_COOKIE = 370321204;</code> */
-    GENERATED_COOKIE(370321204),
+    /** <code>GENERATED_COOKIE = 101885748;</code> */
+    GENERATED_COOKIE(101885748),
     /** <code>HEADER_FIELD = 200737960;</code> */
     HEADER_FIELD(200737960),
-    /** <code>HTTP_COOKIE = 494981627;</code> */
-    HTTP_COOKIE(494981627),
+    /** <code>HTTP_COOKIE = 226546171;</code> */
+    HTTP_COOKIE(226546171),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
     UNRECOGNIZED(-1),
@@ -260,18 +260,18 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_SESSION_AFFINITY = 0;</code>
      */
     public static final int UNDEFINED_SESSION_AFFINITY_VALUE = 0;
-    /** <code>CLIENT_IP = 345665051;</code> */
-    public static final int CLIENT_IP_VALUE = 345665051;
+    /** <code>CLIENT_IP = 77229595;</code> */
+    public static final int CLIENT_IP_VALUE = 77229595;
     /** <code>CLIENT_IP_PORT_PROTO = 221722926;</code> */
     public static final int CLIENT_IP_PORT_PROTO_VALUE = 221722926;
     /** <code>CLIENT_IP_PROTO = 25322148;</code> */
     public static final int CLIENT_IP_PROTO_VALUE = 25322148;
-    /** <code>GENERATED_COOKIE = 370321204;</code> */
-    public static final int GENERATED_COOKIE_VALUE = 370321204;
+    /** <code>GENERATED_COOKIE = 101885748;</code> */
+    public static final int GENERATED_COOKIE_VALUE = 101885748;
     /** <code>HEADER_FIELD = 200737960;</code> */
     public static final int HEADER_FIELD_VALUE = 200737960;
-    /** <code>HTTP_COOKIE = 494981627;</code> */
-    public static final int HTTP_COOKIE_VALUE = 494981627;
+    /** <code>HTTP_COOKIE = 226546171;</code> */
+    public static final int HTTP_COOKIE_VALUE = 226546171;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
 
@@ -301,17 +301,17 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_SESSION_AFFINITY;
-        case 345665051:
+        case 77229595:
           return CLIENT_IP;
         case 221722926:
           return CLIENT_IP_PORT_PROTO;
         case 25322148:
           return CLIENT_IP_PROTO;
-        case 370321204:
+        case 101885748:
           return GENERATED_COOKIE;
         case 200737960:
           return HEADER_FIELD;
-        case 494981627:
+        case 226546171:
           return HTTP_COOKIE;
         case 2402104:
           return NONE;
@@ -376,7 +376,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+   * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
    * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
    * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
    * </pre>
@@ -401,7 +401,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+   * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
    * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
    * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
    * </pre>
@@ -472,7 +472,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -481,7 +481,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -504,7 +504,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -541,7 +541,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     return failoverRatio_;
   }
 
-  public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
+  public static final int HEALTH_CHECKS_FIELD_NUMBER = 179935150;
   private com.google.protobuf.LazyStringList healthChecks_;
   /**
    *
@@ -550,7 +550,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -564,7 +564,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return The count of healthChecks.
    */
@@ -578,7 +578,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -593,7 +593,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -859,7 +859,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -868,7 +868,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -891,7 +891,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -908,7 +908,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
+  public static final int SESSION_AFFINITY_FIELD_NUMBER = 195453105;
   private int sessionAffinity_;
   /**
    *
@@ -920,7 +920,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;</code>
    *
    * @return The enum numeric value on the wire for sessionAffinity.
    */
@@ -938,7 +938,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
    * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;</code>
    *
    * @return The sessionAffinity.
    */
@@ -987,23 +987,23 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (failoverRatio_ != 0F) {
-      output.writeFloat(212667006, failoverRatio_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     for (int i = 0; i < healthChecks_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 448370606, healthChecks_.getRaw(i));
+          output, 179935150, healthChecks_.getRaw(i));
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (sessionAffinity_
         != com.google.cloud.compute.v1.TargetPool.SessionAffinity.UNDEFINED_SESSION_AFFINITY
             .getNumber()) {
-      output.writeEnum(463888561, sessionAffinity_);
+      output.writeEnum(195453105, sessionAffinity_);
+    }
+    if (failoverRatio_ != 0F) {
+      output.writeFloat(212667006, failoverRatio_);
     }
     unknownFields.writeTo(output);
   }
@@ -1041,11 +1041,8 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (failoverRatio_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(212667006, failoverRatio_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     {
       int dataSize = 0;
@@ -1056,12 +1053,15 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getHealthChecksList().size();
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (sessionAffinity_
         != com.google.cloud.compute.v1.TargetPool.SessionAffinity.UNDEFINED_SESSION_AFFINITY
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(463888561, sessionAffinity_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(195453105, sessionAffinity_);
+    }
+    if (failoverRatio_ != 0F) {
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(212667006, failoverRatio_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1491,7 +1491,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+     * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
      * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
      * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
      * </pre>
@@ -1515,7 +1515,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+     * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
      * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
      * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
      * </pre>
@@ -1539,7 +1539,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+     * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
      * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
      * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
      * </pre>
@@ -1562,7 +1562,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+     * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
      * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
      * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
      * </pre>
@@ -1581,7 +1581,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+     * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
      * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
      * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
      * </pre>
@@ -1716,7 +1716,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1738,7 +1738,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1760,7 +1760,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1781,7 +1781,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1798,7 +1798,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1888,7 +1888,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @return A list containing the healthChecks.
      */
@@ -1902,7 +1902,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @return The count of healthChecks.
      */
@@ -1916,7 +1916,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param index The index of the element to return.
      * @return The healthChecks at the given index.
@@ -1931,7 +1931,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the healthChecks at the given index.
@@ -1946,7 +1946,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param index The index to set the value at.
      * @param value The healthChecks to set.
@@ -1968,7 +1968,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param value The healthChecks to add.
      * @return This builder for chaining.
@@ -1989,7 +1989,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param values The healthChecks to add.
      * @return This builder for chaining.
@@ -2007,7 +2007,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @return This builder for chaining.
      */
@@ -2024,7 +2024,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param value The bytes of the healthChecks to add.
      * @return This builder for chaining.
@@ -2640,7 +2640,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2662,7 +2662,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2684,7 +2684,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2705,7 +2705,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2722,7 +2722,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2749,7 +2749,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
      * </code>
      *
      * @return The enum numeric value on the wire for sessionAffinity.
@@ -2768,7 +2768,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
      * </code>
      *
      * @param value The enum numeric value on the wire for sessionAffinity to set.
@@ -2790,7 +2790,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
      * </code>
      *
      * @return The sessionAffinity.
@@ -2814,7 +2814,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
      * </code>
      *
      * @param value The sessionAffinity to set.
@@ -2840,7 +2840,7 @@ public final class TargetPool extends com.google.protobuf.GeneratedMessageV3
      * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;
+     * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;
      * </code>
      *
      * @return This builder for chaining.

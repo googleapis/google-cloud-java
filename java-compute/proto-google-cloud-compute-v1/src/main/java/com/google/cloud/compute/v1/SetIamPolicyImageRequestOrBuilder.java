@@ -24,24 +24,42 @@ public interface SetIamPolicyImageRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the globalSetPolicyRequestResource field is set.
    */
   boolean hasGlobalSetPolicyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The globalSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.GlobalSetPolicyRequest getGlobalSetPolicyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 337048498;
+   * .google.cloud.compute.v1.GlobalSetPolicyRequest global_set_policy_request_resource = 68613042 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.GlobalSetPolicyRequestOrBuilder

@@ -30,7 +30,7 @@ public interface InterconnectAttachmentOrBuilder
    * Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
    * </pre>
    *
-   * <code>bool admin_enabled = 445675089;</code>
+   * <code>bool admin_enabled = 177239633;</code>
    *
    * @return The adminEnabled.
    */
@@ -143,7 +143,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
    * </pre>
    *
-   * <code>string cloud_router_ip_address = 287392776;</code>
+   * <code>string cloud_router_ip_address = 18957320;</code>
    *
    * @return The cloudRouterIpAddress.
    */
@@ -155,7 +155,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
    * </pre>
    *
-   * <code>string cloud_router_ip_address = 287392776;</code>
+   * <code>string cloud_router_ip_address = 18957320;</code>
    *
    * @return The bytes for cloudRouterIpAddress.
    */
@@ -193,7 +193,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
    * </pre>
    *
-   * <code>string customer_router_ip_address = 332475761;</code>
+   * <code>string customer_router_ip_address = 64040305;</code>
    *
    * @return The customerRouterIpAddress.
    */
@@ -205,7 +205,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
    * </pre>
    *
-   * <code>string customer_router_ip_address = 332475761;</code>
+   * <code>string customer_router_ip_address = 64040305;</code>
    *
    * @return The bytes for customerRouterIpAddress.
    */
@@ -215,10 +215,23 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Dataplane version for this InterconnectAttachment.
+   * </pre>
+   *
+   * <code>int32 dataplane_version = 34920075;</code>
+   *
+   * @return The dataplaneVersion.
+   */
+  int getDataplaneVersion();
+
+  /**
+   *
+   *
+   * <pre>
    * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -230,7 +243,7 @@ public interface InterconnectAttachmentOrBuilder
    * An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -279,7 +292,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    * </pre>
    *
-   * <code>string google_reference_id = 534944469;</code>
+   * <code>string google_reference_id = 266509013;</code>
    *
    * @return The googleReferenceId.
    */
@@ -291,7 +304,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
    * </pre>
    *
-   * <code>string google_reference_id = 534944469;</code>
+   * <code>string google_reference_id = 266509013;</code>
    *
    * @return The bytes for googleReferenceId.
    */
@@ -376,6 +389,19 @@ public interface InterconnectAttachmentOrBuilder
    *
    *
    * <pre>
+   * Maximum Transmission Unit (MTU), in bytes, of packets passing through this interconnect attachment. Only 1440 and 1500 are allowed. If not specified, the value will default to 1440.
+   * </pre>
+   *
+   * <code>int32 mtu = 108462;</code>
+   *
+   * @return The mtu.
+   */
+  int getMtu();
+
+  /**
+   *
+   *
+   * <pre>
    * Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
    * </pre>
    *
@@ -437,7 +463,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
-   * <code>string pairing_key = 439695464;</code>
+   * <code>string pairing_key = 171260008;</code>
    *
    * @return The pairingKey.
    */
@@ -449,7 +475,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of an PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
    * </pre>
    *
-   * <code>string pairing_key = 439695464;</code>
+   * <code>string pairing_key = 171260008;</code>
    *
    * @return The bytes for pairingKey.
    */
@@ -462,7 +488,7 @@ public interface InterconnectAttachmentOrBuilder
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 438166149;</code>
+   * <code>string partner_asn = 169730693;</code>
    *
    * @return The partnerAsn.
    */
@@ -474,7 +500,7 @@ public interface InterconnectAttachmentOrBuilder
    * Optional BGP ASN for the router supplied by a Layer 3 Partner if they configured BGP on behalf of the customer. Output only for PARTNER type, input only for PARTNER_PROVIDER, not available for DEDICATED.
    * </pre>
    *
-   * <code>string partner_asn = 438166149;</code>
+   * <code>string partner_asn = 169730693;</code>
    *
    * @return The bytes for partnerAsn.
    */
@@ -621,7 +647,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -633,7 +659,7 @@ public interface InterconnectAttachmentOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

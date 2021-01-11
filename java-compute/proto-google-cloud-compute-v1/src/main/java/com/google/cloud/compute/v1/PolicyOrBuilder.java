@@ -30,7 +30,7 @@ public interface PolicyOrBuilder
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AuditConfig> getAuditConfigsList();
   /**
@@ -40,7 +40,7 @@ public interface PolicyOrBuilder
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
    */
   com.google.cloud.compute.v1.AuditConfig getAuditConfigs(int index);
   /**
@@ -50,7 +50,7 @@ public interface PolicyOrBuilder
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
    */
   int getAuditConfigsCount();
   /**
@@ -60,7 +60,7 @@ public interface PolicyOrBuilder
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AuditConfigOrBuilder>
       getAuditConfigsOrBuilderList();
@@ -71,7 +71,7 @@ public interface PolicyOrBuilder
    * Specifies cloud audit logging configuration for this policy.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 328080653;</code>
+   * <code>repeated .google.cloud.compute.v1.AuditConfig audit_configs = 59645197;</code>
    */
   com.google.cloud.compute.v1.AuditConfigOrBuilder getAuditConfigsOrBuilder(int index);
 
@@ -82,7 +82,7 @@ public interface PolicyOrBuilder
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList();
   /**
@@ -92,7 +92,7 @@ public interface PolicyOrBuilder
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   com.google.cloud.compute.v1.Binding getBindings(int index);
   /**
@@ -102,7 +102,7 @@ public interface PolicyOrBuilder
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   int getBindingsCount();
   /**
@@ -112,7 +112,7 @@ public interface PolicyOrBuilder
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder> getBindingsOrBuilderList();
   /**
@@ -122,7 +122,7 @@ public interface PolicyOrBuilder
    * Associates a list of `members` to a `role`. Optionally, may specify a `condition` that determines how and when the `bindings` are applied. Each of the `bindings` must contain at least one member.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index);
 
@@ -154,7 +154,7 @@ public interface PolicyOrBuilder
   com.google.protobuf.ByteString getEtagBytes();
 
   /**
-   * <code>bool iam_owned = 450566203;</code>
+   * <code>bool iam_owned = 182130747;</code>
    *
    * @return The iamOwned.
    */
@@ -224,7 +224,7 @@ public interface PolicyOrBuilder
    * To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
    * </pre>
    *
-   * <code>int32 version = 351608024;</code>
+   * <code>int32 version = 83172568;</code>
    *
    * @return The version.
    */

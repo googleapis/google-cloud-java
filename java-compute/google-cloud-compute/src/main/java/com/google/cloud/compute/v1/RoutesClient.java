@@ -316,7 +316,7 @@ public class RoutesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param routeResource
+   * @param routeResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, Route routeResource) {
@@ -334,8 +334,10 @@ public class RoutesClient implements BackgroundResource {
    * <pre><code>
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "";
+   *   Route routeResource = Route.newBuilder().build();
    *   InsertRouteRequest request = InsertRouteRequest.newBuilder()
    *     .setProject(project)
+   *     .setRouteResource(routeResource)
    *     .build();
    *   Operation response = routesClient.insert(request);
    * }
@@ -357,8 +359,10 @@ public class RoutesClient implements BackgroundResource {
    * <pre><code>
    * try (RoutesClient routesClient = RoutesClient.create()) {
    *   String project = "";
+   *   Route routeResource = Route.newBuilder().build();
    *   InsertRouteRequest request = InsertRouteRequest.newBuilder()
    *     .setProject(project)
+   *     .setRouteResource(routeResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routesClient.insertCallable().futureCall(request);
    *   // Do something

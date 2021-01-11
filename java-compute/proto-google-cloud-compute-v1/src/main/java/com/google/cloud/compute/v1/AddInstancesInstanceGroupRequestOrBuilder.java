@@ -49,16 +49,28 @@ public interface AddInstancesInstanceGroupRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 453713246;
+   * .google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsAddInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupsAddInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 453713246;
+   * .google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsAddInstancesRequestResource.
@@ -66,8 +78,14 @@ public interface AddInstancesInstanceGroupRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupsAddInstancesRequest
       getInstanceGroupsAddInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 453713246;
+   * .google.cloud.compute.v1.InstanceGroupsAddInstancesRequest instance_groups_add_instances_request_resource = 185277790 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupsAddInstancesRequestOrBuilder

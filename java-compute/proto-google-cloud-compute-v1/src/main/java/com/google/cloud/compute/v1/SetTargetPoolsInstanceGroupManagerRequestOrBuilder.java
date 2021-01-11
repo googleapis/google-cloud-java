@@ -51,16 +51,28 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersSetTargetPoolsRequestResource field is set.
    */
   boolean hasInstanceGroupManagersSetTargetPoolsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersSetTargetPoolsRequestResource.
@@ -68,8 +80,14 @@ public interface SetTargetPoolsInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest
       getInstanceGroupManagersSetTargetPoolsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequestOrBuilder

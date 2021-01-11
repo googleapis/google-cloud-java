@@ -78,7 +78,7 @@ samples)
 
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
-        pushd {SAMPLES_DIR}
+        pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
           -DtrimStackTrace=false \

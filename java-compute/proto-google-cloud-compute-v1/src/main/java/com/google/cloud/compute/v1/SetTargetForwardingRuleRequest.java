@@ -74,6 +74,13 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
+          case 12228594:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              forwardingRule_ = s;
+              break;
+            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -95,14 +102,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
               project_ = s;
               break;
             }
-          case -2135255054:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              forwardingRule_ = s;
-              break;
-            }
-          case -105193598:
+          case 2042290050:
             {
               com.google.cloud.compute.v1.TargetReference.Builder subBuilder = null;
               if (targetReferenceResource_ != null) {
@@ -152,7 +152,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.SetTargetForwardingRuleRequest.Builder.class);
   }
 
-  public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
+  public static final int FORWARDING_RULE_FIELD_NUMBER = 1528574;
   private volatile java.lang.Object forwardingRule_;
   /**
    *
@@ -161,7 +161,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
    * Name of the ForwardingRule resource in which target is to be set.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The forwardingRule.
    */
@@ -184,7 +184,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
    * Name of the ForwardingRule resource in which target is to be set.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -352,10 +352,18 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     }
   }
 
-  public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 523721712;
+  public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 255286256;
   private com.google.cloud.compute.v1.TargetReference targetReferenceResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetReferenceResource field is set.
    */
@@ -364,7 +372,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     return targetReferenceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetReferenceResource.
    */
@@ -375,7 +391,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
         : targetReferenceResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetReferenceOrBuilder
@@ -397,6 +421,9 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getForwardingRuleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1528574, forwardingRule_);
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
@@ -406,11 +433,8 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getForwardingRuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 269964030, forwardingRule_);
-    }
     if (targetReferenceResource_ != null) {
-      output.writeMessage(523721712, getTargetReferenceResource());
+      output.writeMessage(255286256, getTargetReferenceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -421,6 +445,9 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
+    if (!getForwardingRuleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1528574, forwardingRule_);
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
@@ -430,13 +457,10 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getForwardingRuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269964030, forwardingRule_);
-    }
     if (targetReferenceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              523721712, getTargetReferenceResource());
+              255286256, getTargetReferenceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -788,7 +812,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource in which target is to be set.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The forwardingRule.
      */
@@ -810,7 +834,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource in which target is to be set.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -832,7 +856,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource in which target is to be set.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -853,7 +877,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource in which target is to be set.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -870,7 +894,7 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource in which target is to be set.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.
@@ -1221,7 +1245,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.TargetReferenceOrBuilder>
         targetReferenceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetReferenceResource field is set.
      */
@@ -1229,7 +1261,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return targetReferenceResourceBuilder_ != null || targetReferenceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetReferenceResource.
      */
@@ -1243,7 +1283,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
       if (targetReferenceResourceBuilder_ == null) {
@@ -1259,7 +1307,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetReferenceResource(
         com.google.cloud.compute.v1.TargetReference.Builder builderForValue) {
@@ -1273,7 +1329,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
       if (targetReferenceResourceBuilder_ == null) {
@@ -1293,7 +1357,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetReferenceResource() {
       if (targetReferenceResourceBuilder_ == null) {
@@ -1307,7 +1379,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetReference.Builder getTargetReferenceResourceBuilder() {
 
@@ -1315,7 +1395,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       return getTargetReferenceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetReferenceOrBuilder
         getTargetReferenceResourceOrBuilder() {
@@ -1328,7 +1416,15 @@ public final class SetTargetForwardingRuleRequest extends com.google.protobuf.Ge
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetReference,

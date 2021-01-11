@@ -81,7 +81,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -93,7 +93,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * A description about the purpose of the outage.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -133,7 +133,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
+   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 101203680;
    * </code>
    *
    * @return The enum numeric value on the wire for issueType.
@@ -148,7 +148,7 @@ public interface InterconnectOutageNotificationOrBuilder
    * - PARTIAL_OUTAGE: Some circuits comprising the Interconnect as a whole should remain up, but with reduced bandwidth. Note that the versions of this enum prefixed with "IT_" have been deprecated in favor of the unprefixed values.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 369639136;
+   * <code>.google.cloud.compute.v1.InterconnectOutageNotification.IssueType issue_type = 101203680;
    * </code>
    *
    * @return The issueType.

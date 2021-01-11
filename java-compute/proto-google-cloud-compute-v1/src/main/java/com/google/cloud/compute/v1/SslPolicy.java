@@ -22,8 +22,8 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * Represents a Cloud Armor Security Policy resource.
- * Only external backend services used by HTTP or HTTPS load balancers can reference a Security Policy. For more information, read read  Cloud Armor Security Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+ * Represents an SSL Policy resource.
+ * Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -128,35 +128,21 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
               customFeatures_.add(s);
               break;
             }
-          case 1819561288:
-            {
-              int rawValue = input.readEnum();
-
-              profile_ = rawValue;
-              break;
-            }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -542827558:
+          case 1604656090:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -166,7 +152,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
               enabledFeatures_.add(s);
               break;
             }
-          case -310238534:
+          case 1819561288:
+            {
+              int rawValue = input.readEnum();
+
+              profile_ = rawValue;
+              break;
+            }
+          case 1837245114:
             {
               if (!((mutable_bitField0_ & 0x00000004) != 0)) {
                 warnings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Warnings>();
@@ -175,6 +168,13 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
               warnings_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.Warnings.parser(), extensionRegistry));
+              break;
+            }
+          case 1877428002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fingerprint_ = s;
               break;
             }
           default:
@@ -373,8 +373,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_PROFILE(0),
     /** <code>COMPATIBLE = 179357396;</code> */
     COMPATIBLE(179357396),
-    /** <code>CUSTOM = 388595569;</code> */
-    CUSTOM(388595569),
+    /** <code>CUSTOM = 120160113;</code> */
+    CUSTOM(120160113),
     /** <code>MODERN = 132013855;</code> */
     MODERN(132013855),
     /** <code>RESTRICTED = 261551195;</code> */
@@ -394,8 +394,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_PROFILE_VALUE = 0;
     /** <code>COMPATIBLE = 179357396;</code> */
     public static final int COMPATIBLE_VALUE = 179357396;
-    /** <code>CUSTOM = 388595569;</code> */
-    public static final int CUSTOM_VALUE = 388595569;
+    /** <code>CUSTOM = 120160113;</code> */
+    public static final int CUSTOM_VALUE = 120160113;
     /** <code>MODERN = 132013855;</code> */
     public static final int MODERN_VALUE = 132013855;
     /** <code>RESTRICTED = 261551195;</code> */
@@ -429,7 +429,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_PROFILE;
         case 179357396:
           return COMPATIBLE;
-        case 388595569:
+        case 120160113:
           return CUSTOM;
         case 132013855:
           return MODERN;
@@ -602,7 +602,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     return customFeatures_.getByteString(index);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -611,7 +611,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -634,7 +634,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -651,7 +651,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ENABLED_FEATURES_FIELD_NUMBER = 469017467;
+  public static final int ENABLED_FEATURES_FIELD_NUMBER = 200582011;
   private com.google.protobuf.LazyStringList enabledFeatures_;
   /**
    *
@@ -660,7 +660,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return A list containing the enabledFeatures.
    */
@@ -674,7 +674,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return The count of enabledFeatures.
    */
@@ -688,7 +688,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the element to return.
    * @return The enabledFeatures at the given index.
@@ -703,7 +703,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the enabledFeatures at the given index.
@@ -984,7 +984,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.SslPolicy.Profile.UNRECOGNIZED : result;
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -993,7 +993,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1016,7 +1016,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1033,7 +1033,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int WARNINGS_FIELD_NUMBER = 498091095;
+  public static final int WARNINGS_FIELD_NUMBER = 229655639;
   private java.util.List<com.google.cloud.compute.v1.Warnings> warnings_;
   /**
    *
@@ -1042,7 +1042,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
@@ -1055,7 +1055,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
@@ -1069,7 +1069,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public int getWarningsCount() {
@@ -1082,7 +1082,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
@@ -1095,7 +1095,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index) {
@@ -1137,24 +1137,24 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 34789707, customFeatures_.getRaw(i));
     }
-    if (profile_ != com.google.cloud.compute.v1.SslPolicy.Profile.UNDEFINED_PROFILE.getNumber()) {
-      output.writeEnum(227445161, profile_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     for (int i = 0; i < enabledFeatures_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 469017467, enabledFeatures_.getRaw(i));
+          output, 200582011, enabledFeatures_.getRaw(i));
+    }
+    if (profile_ != com.google.cloud.compute.v1.SslPolicy.Profile.UNDEFINED_PROFILE.getNumber()) {
+      output.writeEnum(227445161, profile_);
     }
     for (int i = 0; i < warnings_.size(); i++) {
-      output.writeMessage(498091095, warnings_.get(i));
+      output.writeMessage(229655639, warnings_.get(i));
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     unknownFields.writeTo(output);
   }
@@ -1191,17 +1191,11 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getCustomFeaturesList().size();
     }
-    if (profile_ != com.google.cloud.compute.v1.SslPolicy.Profile.UNDEFINED_PROFILE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(227445161, profile_);
-    }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     {
       int dataSize = 0;
@@ -1211,8 +1205,14 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getEnabledFeaturesList().size();
     }
+    if (profile_ != com.google.cloud.compute.v1.SslPolicy.Profile.UNDEFINED_PROFILE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(227445161, profile_);
+    }
     for (int i = 0; i < warnings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(498091095, warnings_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(229655639, warnings_.get(i));
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1385,8 +1385,8 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Represents a Cloud Armor Security Policy resource.
-   * Only external backend services used by HTTP or HTTPS load balancers can reference a Security Policy. For more information, read read  Cloud Armor Security Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
+   * Represents an SSL Policy resource.
+   * Use SSL policies to control the SSL features, such as versions and cipher suites, offered by an HTTPS or SSL Proxy load balancer. For more information, read  SSL Policy Concepts. (== resource_for {$api_version}.sslPolicies ==)
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.SslPolicy}
@@ -1965,7 +1965,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1987,7 +1987,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2009,7 +2009,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2030,7 +2030,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2047,7 +2047,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2079,7 +2079,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @return A list containing the enabledFeatures.
      */
@@ -2093,7 +2093,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @return The count of enabledFeatures.
      */
@@ -2107,7 +2107,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param index The index of the element to return.
      * @return The enabledFeatures at the given index.
@@ -2122,7 +2122,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the enabledFeatures at the given index.
@@ -2137,7 +2137,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param index The index to set the value at.
      * @param value The enabledFeatures to set.
@@ -2159,7 +2159,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param value The enabledFeatures to add.
      * @return This builder for chaining.
@@ -2180,7 +2180,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param values The enabledFeatures to add.
      * @return This builder for chaining.
@@ -2198,7 +2198,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @return This builder for chaining.
      */
@@ -2215,7 +2215,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The list of features enabled in the SSL policy.
      * </pre>
      *
-     * <code>repeated string enabled_features = 469017467;</code>
+     * <code>repeated string enabled_features = 200582011;</code>
      *
      * @param value The bytes of the enabledFeatures to add.
      * @return This builder for chaining.
@@ -2852,7 +2852,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2874,7 +2874,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2896,7 +2896,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2917,7 +2917,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2934,7 +2934,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2973,7 +2973,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList() {
       if (warningsBuilder_ == null) {
@@ -2989,7 +2989,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public int getWarningsCount() {
       if (warningsBuilder_ == null) {
@@ -3005,7 +3005,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings getWarnings(int index) {
       if (warningsBuilder_ == null) {
@@ -3021,7 +3021,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder setWarnings(int index, com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -3043,7 +3043,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder setWarnings(
         int index, com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
@@ -3063,7 +3063,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -3085,7 +3085,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(int index, com.google.cloud.compute.v1.Warnings value) {
       if (warningsBuilder_ == null) {
@@ -3107,7 +3107,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
       if (warningsBuilder_ == null) {
@@ -3126,7 +3126,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addWarnings(
         int index, com.google.cloud.compute.v1.Warnings.Builder builderForValue) {
@@ -3146,7 +3146,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder addAllWarnings(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Warnings> values) {
@@ -3166,7 +3166,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder clearWarnings() {
       if (warningsBuilder_ == null) {
@@ -3185,7 +3185,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public Builder removeWarnings(int index) {
       if (warningsBuilder_ == null) {
@@ -3204,7 +3204,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
@@ -3216,7 +3216,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index) {
       if (warningsBuilder_ == null) {
@@ -3232,7 +3232,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
         getWarningsOrBuilderList() {
@@ -3249,7 +3249,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder addWarningsBuilder() {
       return getWarningsFieldBuilder()
@@ -3262,7 +3262,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public com.google.cloud.compute.v1.Warnings.Builder addWarningsBuilder(int index) {
       return getWarningsFieldBuilder()
@@ -3275,7 +3275,7 @@ public final class SslPolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+     * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Warnings.Builder> getWarningsBuilderList() {
       return getWarningsFieldBuilder().getBuilderList();

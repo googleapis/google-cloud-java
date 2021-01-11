@@ -43,7 +43,7 @@ public interface QuotaOrBuilder
    * [Output Only] Name of the quota metric.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
    *
    * @return The enum numeric value on the wire for metric.
    */
@@ -55,7 +55,7 @@ public interface QuotaOrBuilder
    * [Output Only] Name of the quota metric.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
    *
    * @return The metric.
    */

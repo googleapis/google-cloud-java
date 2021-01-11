@@ -119,6 +119,13 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.LogConfig.parser(), extensionRegistry));
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1501295024:
             {
               int rawValue = input.readEnum();
@@ -126,14 +133,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
               action_ = rawValue;
               break;
             }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -147422190:
+          case 2000061458:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000008) != 0)) {
@@ -217,8 +217,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     ALLOW_WITH_LOG(76034177),
     /** <code>DENY = 2094604;</code> */
     DENY(2094604),
-    /** <code>DENY_WITH_LOG = 351433982;</code> */
-    DENY_WITH_LOG(351433982),
+    /** <code>DENY_WITH_LOG = 82998526;</code> */
+    DENY_WITH_LOG(82998526),
     /** <code>LOG = 75556;</code> */
     LOG(75556),
     /** <code>NO_ACTION = 260643444;</code> */
@@ -242,8 +242,8 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     public static final int ALLOW_WITH_LOG_VALUE = 76034177;
     /** <code>DENY = 2094604;</code> */
     public static final int DENY_VALUE = 2094604;
-    /** <code>DENY_WITH_LOG = 351433982;</code> */
-    public static final int DENY_WITH_LOG_VALUE = 351433982;
+    /** <code>DENY_WITH_LOG = 82998526;</code> */
+    public static final int DENY_WITH_LOG_VALUE = 82998526;
     /** <code>LOG = 75556;</code> */
     public static final int LOG_VALUE = 75556;
     /** <code>NO_ACTION = 260643444;</code> */
@@ -281,7 +281,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
           return ALLOW_WITH_LOG;
         case 2094604:
           return DENY;
-        case 351433982:
+        case 82998526:
           return DENY_WITH_LOG;
         case 75556:
           return LOG;
@@ -445,7 +445,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     return conditions_.get(index);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -454,7 +454,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * Human-readable description of the rule.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -477,7 +477,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * Human-readable description of the rule.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -624,7 +624,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     return logConfigs_.get(index);
   }
 
-  public static final int NOT_INS_FIELD_NUMBER = 518443138;
+  public static final int NOT_INS_FIELD_NUMBER = 250007682;
   private com.google.protobuf.LazyStringList notIns_;
   /**
    *
@@ -633,7 +633,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 518443138;</code>
+   * <code>repeated string not_ins = 250007682;</code>
    *
    * @return A list containing the notIns.
    */
@@ -647,7 +647,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 518443138;</code>
+   * <code>repeated string not_ins = 250007682;</code>
    *
    * @return The count of notIns.
    */
@@ -661,7 +661,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 518443138;</code>
+   * <code>repeated string not_ins = 250007682;</code>
    *
    * @param index The index of the element to return.
    * @return The notIns at the given index.
@@ -676,7 +676,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
    * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
    * </pre>
    *
-   * <code>repeated string not_ins = 518443138;</code>
+   * <code>repeated string not_ins = 250007682;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the notIns at the given index.
@@ -772,14 +772,14 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < logConfigs_.size(); i++) {
       output.writeMessage(152873846, logConfigs_.get(i));
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (action_ != com.google.cloud.compute.v1.Rule.Action.UNDEFINED_ACTION.getNumber()) {
       output.writeEnum(187661878, action_);
     }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
     for (int i = 0; i < notIns_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 518443138, notIns_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 250007682, notIns_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -814,11 +814,11 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(152873846, logConfigs_.get(i));
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (action_ != com.google.cloud.compute.v1.Rule.Action.UNDEFINED_ACTION.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(187661878, action_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     {
       int dataSize = 0;
@@ -1735,7 +1735,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1757,7 +1757,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1779,7 +1779,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1800,7 +1800,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1817,7 +1817,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * Human-readable description of the rule.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2365,7 +2365,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @return A list containing the notIns.
      */
@@ -2379,7 +2379,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @return The count of notIns.
      */
@@ -2393,7 +2393,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @param index The index of the element to return.
      * @return The notIns at the given index.
@@ -2408,7 +2408,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the notIns at the given index.
@@ -2423,7 +2423,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @param index The index to set the value at.
      * @param value The notIns to set.
@@ -2445,7 +2445,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @param value The notIns to add.
      * @return This builder for chaining.
@@ -2466,7 +2466,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @param values The notIns to add.
      * @return This builder for chaining.
@@ -2484,7 +2484,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @return This builder for chaining.
      */
@@ -2501,7 +2501,7 @@ public final class Rule extends com.google.protobuf.GeneratedMessageV3
      * If one or more 'not_in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
      * </pre>
      *
-     * <code>repeated string not_ins = 518443138;</code>
+     * <code>repeated string not_ins = 250007682;</code>
      *
      * @param value The bytes of the notIns to add.
      * @return This builder for chaining.

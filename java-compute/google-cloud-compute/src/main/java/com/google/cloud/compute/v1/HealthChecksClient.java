@@ -432,7 +432,7 @@ public class HealthChecksClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param healthCheckResource
+   * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, HealthCheck healthCheckResource) {
@@ -452,8 +452,10 @@ public class HealthChecksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   InsertHealthCheckRequest request = InsertHealthCheckRequest.newBuilder()
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = healthChecksClient.insert(request);
@@ -475,8 +477,10 @@ public class HealthChecksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   InsertHealthCheckRequest request = InsertHealthCheckRequest.newBuilder()
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = healthChecksClient.insertCallable().futureCall(request);
@@ -611,7 +615,7 @@ public class HealthChecksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param healthCheck Name of the HealthCheck resource to patch.
-   * @param healthCheckResource
+   * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -635,9 +639,11 @@ public class HealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   PatchHealthCheckRequest request = PatchHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = healthChecksClient.patch(request);
@@ -661,9 +667,11 @@ public class HealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   PatchHealthCheckRequest request = PatchHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = healthChecksClient.patchCallable().futureCall(request);
@@ -693,7 +701,7 @@ public class HealthChecksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param healthCheck Name of the HealthCheck resource to update.
-   * @param healthCheckResource
+   * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -716,9 +724,11 @@ public class HealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   UpdateHealthCheckRequest request = UpdateHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = healthChecksClient.update(request);
@@ -741,9 +751,11 @@ public class HealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (HealthChecksClient healthChecksClient = HealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   UpdateHealthCheckRequest request = UpdateHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = healthChecksClient.updateCallable().futureCall(request);

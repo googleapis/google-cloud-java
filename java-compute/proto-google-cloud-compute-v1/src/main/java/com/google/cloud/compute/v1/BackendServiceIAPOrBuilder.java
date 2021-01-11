@@ -43,7 +43,7 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>string oauth2_client_id = 45582155;</code>
    *
    * @return The oauth2ClientId.
    */
@@ -55,7 +55,7 @@ public interface BackendServiceIAPOrBuilder
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>string oauth2_client_id = 45582155;</code>
    *
    * @return The bytes for oauth2ClientId.
    */

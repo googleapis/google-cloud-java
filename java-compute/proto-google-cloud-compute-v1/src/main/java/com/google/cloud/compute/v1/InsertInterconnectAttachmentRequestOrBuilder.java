@@ -24,24 +24,42 @@ public interface InsertInterconnectAttachmentRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the interconnectAttachmentResource field is set.
    */
   boolean hasInterconnectAttachmentResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachmentResource.
    */
   com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachmentResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder

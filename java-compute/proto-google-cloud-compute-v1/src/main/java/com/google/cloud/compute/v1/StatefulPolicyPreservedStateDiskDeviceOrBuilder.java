@@ -31,7 +31,7 @@ public interface StatefulPolicyPreservedStateDiskDeviceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
    * </code>
    *
    * @return The enum numeric value on the wire for autoDelete.
@@ -45,7 +45,7 @@ public interface StatefulPolicyPreservedStateDiskDeviceOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
    * </code>
    *
    * @return The autoDelete.

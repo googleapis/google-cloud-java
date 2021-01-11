@@ -24,19 +24,43 @@ public interface InsertInstanceTemplateRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceTemplateResource field is set.
    */
   boolean hasInstanceTemplateResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceTemplateResource.
    */
   com.google.cloud.compute.v1.InstanceTemplate getInstanceTemplateResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceTemplate instance_template_resource = 10679561 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.InstanceTemplateOrBuilder getInstanceTemplateResourceOrBuilder();
 

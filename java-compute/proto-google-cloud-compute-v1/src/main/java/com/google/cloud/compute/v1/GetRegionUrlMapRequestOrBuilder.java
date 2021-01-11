@@ -80,7 +80,7 @@ public interface GetRegionUrlMapRequestOrBuilder
    * Name of the UrlMap resource to return.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -92,7 +92,7 @@ public interface GetRegionUrlMapRequestOrBuilder
    * Name of the UrlMap resource to return.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */

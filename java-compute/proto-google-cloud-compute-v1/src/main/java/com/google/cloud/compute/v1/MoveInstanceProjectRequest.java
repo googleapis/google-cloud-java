@@ -78,14 +78,7 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1801653742:
+          case 345829906:
             {
               com.google.cloud.compute.v1.InstanceMoveRequest.Builder subBuilder = null;
               if (instanceMoveRequestResource_ != null) {
@@ -99,6 +92,13 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
                 instanceMoveRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -135,10 +135,17 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.MoveInstanceProjectRequest.Builder.class);
   }
 
-  public static final int INSTANCE_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 311664194;
+  public static final int INSTANCE_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 43228738;
   private com.google.cloud.compute.v1.InstanceMoveRequest instanceMoveRequestResource_;
   /**
-   * <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceMoveRequestResource field is set.
@@ -148,7 +155,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
     return instanceMoveRequestResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceMoveRequestResource.
@@ -160,7 +174,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
         : instanceMoveRequestResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -288,11 +309,11 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (instanceMoveRequestResource_ != null) {
+      output.writeMessage(43228738, getInstanceMoveRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (instanceMoveRequestResource_ != null) {
-      output.writeMessage(311664194, getInstanceMoveRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -306,13 +327,13 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (instanceMoveRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              311664194, getInstanceMoveRequestResource());
+              43228738, getInstanceMoveRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -644,8 +665,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InstanceMoveRequestOrBuilder>
         instanceMoveRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceMoveRequestResource field is set.
@@ -654,8 +681,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       return instanceMoveRequestResourceBuilder_ != null || instanceMoveRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceMoveRequestResource.
@@ -670,8 +703,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceMoveRequestResource(
@@ -689,8 +728,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceMoveRequestResource(
@@ -705,8 +750,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceMoveRequestResource(
@@ -729,8 +780,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceMoveRequestResource() {
@@ -745,8 +802,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceMoveRequest.Builder
@@ -756,8 +819,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       return getInstanceMoveRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceMoveRequestOrBuilder
@@ -771,8 +840,14 @@ public final class MoveInstanceProjectRequest extends com.google.protobuf.Genera
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+     * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

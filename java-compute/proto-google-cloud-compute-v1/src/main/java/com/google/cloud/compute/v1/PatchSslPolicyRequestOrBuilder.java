@@ -84,7 +84,7 @@ public interface PatchSslPolicyRequestOrBuilder
    * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sslPolicy.
    */
@@ -96,24 +96,50 @@ public interface PatchSslPolicyRequestOrBuilder
    * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for sslPolicy.
    */
   com.google.protobuf.ByteString getSslPolicyBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sslPolicyResource field is set.
    */
   boolean hasSslPolicyResource();
   /**
-   * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sslPolicyResource.
    */
   com.google.cloud.compute.v1.SslPolicy getSslPolicyResource();
-  /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SslPolicyOrBuilder getSslPolicyResourceOrBuilder();
 }

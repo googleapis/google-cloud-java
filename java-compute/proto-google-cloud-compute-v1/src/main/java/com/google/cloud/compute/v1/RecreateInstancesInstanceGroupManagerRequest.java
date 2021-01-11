@@ -212,8 +212,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest
       instanceGroupManagersRecreateInstancesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersRecreateInstancesRequestResource field is set.
@@ -223,8 +229,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
     return instanceGroupManagersRecreateInstancesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersRecreateInstancesRequestResource.
@@ -238,8 +250,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
         : instanceGroupManagersRecreateInstancesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -934,8 +952,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequestOrBuilder>
         instanceGroupManagersRecreateInstancesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersRecreateInstancesRequestResource field is set.
@@ -945,8 +969,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
           || instanceGroupManagersRecreateInstancesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersRecreateInstancesRequestResource.
@@ -963,8 +993,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersRecreateInstancesRequestResource(
@@ -982,8 +1018,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersRecreateInstancesRequestResource(
@@ -1000,8 +1042,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersRecreateInstancesRequestResource(
@@ -1024,8 +1072,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersRecreateInstancesRequestResource() {
@@ -1040,8 +1094,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest.Builder
@@ -1051,8 +1111,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       return getInstanceGroupManagersRecreateInstancesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequestOrBuilder
@@ -1067,8 +1133,14 @@ public final class RecreateInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+     * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

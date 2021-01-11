@@ -74,24 +74,42 @@ public interface TestIamPermissionsNodeGroupRequestOrBuilder
   com.google.protobuf.ByteString getResourceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758;
+   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the testPermissionsRequestResource field is set.
    */
   boolean hasTestPermissionsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758;
+   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The testPermissionsRequestResource.
    */
   com.google.cloud.compute.v1.TestPermissionsRequest getTestPermissionsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 439214758;
+   * .google.cloud.compute.v1.TestPermissionsRequest test_permissions_request_resource = 170779302 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TestPermissionsRequestOrBuilder

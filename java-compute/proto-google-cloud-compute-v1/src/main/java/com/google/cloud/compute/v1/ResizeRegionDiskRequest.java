@@ -94,14 +94,7 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -721901398:
+          case 1425582250:
             {
               com.google.cloud.compute.v1.RegionDisksResizeRequest.Builder subBuilder = null;
               if (regionDisksResizeRequestResource_ != null) {
@@ -116,6 +109,13 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
                 regionDisksResizeRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -299,11 +299,17 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     }
   }
 
-  public static final int REGION_DISKS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 446633237;
+  public static final int REGION_DISKS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 178197781;
   private com.google.cloud.compute.v1.RegionDisksResizeRequest regionDisksResizeRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionDisksResizeRequestResource field is set.
@@ -313,8 +319,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     return regionDisksResizeRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionDisksResizeRequestResource.
@@ -327,8 +339,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
         : regionDisksResizeRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -413,11 +431,11 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (regionDisksResizeRequestResource_ != null) {
+      output.writeMessage(178197781, getRegionDisksResizeRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (regionDisksResizeRequestResource_ != null) {
-      output.writeMessage(446633237, getRegionDisksResizeRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -437,13 +455,13 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (regionDisksResizeRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              446633237, getRegionDisksResizeRequestResource());
+              178197781, getRegionDisksResizeRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1113,8 +1131,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.RegionDisksResizeRequestOrBuilder>
         regionDisksResizeRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionDisksResizeRequestResource field is set.
@@ -1124,8 +1148,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
           || regionDisksResizeRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionDisksResizeRequestResource.
@@ -1141,8 +1171,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionDisksResizeRequestResource(
@@ -1160,8 +1196,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionDisksResizeRequestResource(
@@ -1176,8 +1218,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionDisksResizeRequestResource(
@@ -1200,8 +1248,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionDisksResizeRequestResource() {
@@ -1216,8 +1270,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionDisksResizeRequest.Builder
@@ -1227,8 +1287,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       return getRegionDisksResizeRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionDisksResizeRequestOrBuilder
@@ -1242,8 +1308,14 @@ public final class ResizeRegionDiskRequest extends com.google.protobuf.Generated
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+     * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

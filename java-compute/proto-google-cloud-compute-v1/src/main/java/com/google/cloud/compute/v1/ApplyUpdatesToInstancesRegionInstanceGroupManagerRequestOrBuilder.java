@@ -101,16 +101,28 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersApplyUpdatesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersApplyUpdatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersApplyUpdatesRequestResource.
@@ -118,8 +130,14 @@ public interface ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuild
   com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest
       getRegionInstanceGroupManagersApplyUpdatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest region_instance_group_managers_apply_updates_request_resource = 76248318 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder

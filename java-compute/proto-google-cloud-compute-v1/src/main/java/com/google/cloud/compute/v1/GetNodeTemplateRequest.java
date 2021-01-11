@@ -72,6 +72,13 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
+          case 437751994:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeTemplate_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -84,13 +91,6 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1709731654:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeTemplate_ = s;
               break;
             }
           default:
@@ -127,7 +127,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.GetNodeTemplateRequest.Builder.class);
   }
 
-  public static final int NODE_TEMPLATE_FIELD_NUMBER = 323154455;
+  public static final int NODE_TEMPLATE_FIELD_NUMBER = 54718999;
   private volatile java.lang.Object nodeTemplate_;
   /**
    *
@@ -136,7 +136,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
    * Name of the node template to return.
    * </pre>
    *
-   * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeTemplate.
    */
@@ -159,7 +159,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
    * Name of the node template to return.
    * </pre>
    *
-   * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -288,14 +288,14 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getNodeTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 54718999, nodeTemplate_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -306,14 +306,14 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
     if (size != -1) return size;
 
     size = 0;
+    if (!getNodeTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(54718999, nodeTemplate_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -632,7 +632,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
      * Name of the node template to return.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeTemplate.
      */
@@ -654,7 +654,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
      * Name of the node template to return.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -676,7 +676,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
      * Name of the node template to return.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -697,7 +697,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
      * Name of the node template to return.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -714,7 +714,7 @@ public final class GetNodeTemplateRequest extends com.google.protobuf.GeneratedM
      * Name of the node template to return.
      * </pre>
      *
-     * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.

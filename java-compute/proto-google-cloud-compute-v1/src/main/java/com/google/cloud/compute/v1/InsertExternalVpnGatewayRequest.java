@@ -79,14 +79,7 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -400458686:
+          case 1747024962:
             {
               com.google.cloud.compute.v1.ExternalVpnGateway.Builder subBuilder = null;
               if (externalVpnGatewayResource_ != null) {
@@ -100,6 +93,13 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
                 externalVpnGatewayResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -136,10 +136,17 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.InsertExternalVpnGatewayRequest.Builder.class);
   }
 
-  public static final int EXTERNAL_VPN_GATEWAY_RESOURCE_FIELD_NUMBER = 486813576;
+  public static final int EXTERNAL_VPN_GATEWAY_RESOURCE_FIELD_NUMBER = 218378120;
   private com.google.cloud.compute.v1.ExternalVpnGateway externalVpnGatewayResource_;
   /**
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the externalVpnGatewayResource field is set.
@@ -149,7 +156,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
     return externalVpnGatewayResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The externalVpnGatewayResource.
@@ -161,7 +175,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
         : externalVpnGatewayResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -289,11 +310,11 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (externalVpnGatewayResource_ != null) {
+      output.writeMessage(218378120, getExternalVpnGatewayResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (externalVpnGatewayResource_ != null) {
-      output.writeMessage(486813576, getExternalVpnGatewayResource());
     }
     unknownFields.writeTo(output);
   }
@@ -307,13 +328,13 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (externalVpnGatewayResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              486813576, getExternalVpnGatewayResource());
+              218378120, getExternalVpnGatewayResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -645,7 +666,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.ExternalVpnGatewayOrBuilder>
         externalVpnGatewayResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the externalVpnGatewayResource field is set.
@@ -654,7 +682,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       return externalVpnGatewayResourceBuilder_ != null || externalVpnGatewayResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The externalVpnGatewayResource.
@@ -669,7 +704,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setExternalVpnGatewayResource(
@@ -687,7 +729,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setExternalVpnGatewayResource(
@@ -702,7 +751,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeExternalVpnGatewayResource(
@@ -724,7 +780,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearExternalVpnGatewayResource() {
@@ -739,7 +802,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ExternalVpnGateway.Builder
@@ -749,7 +819,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       return getExternalVpnGatewayResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ExternalVpnGatewayOrBuilder
@@ -763,7 +840,14 @@ public final class InsertExternalVpnGatewayRequest extends com.google.protobuf.G
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

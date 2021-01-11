@@ -89,6 +89,13 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
               requestId_ = s;
               break;
             }
+          case 1323772978:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkEndpointGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -96,14 +103,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
               project_ = s;
               break;
             }
-          case -823710670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              networkEndpointGroup_ = s;
-              break;
-            }
-          case -170097718:
+          case 1977385930:
             {
               com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest.Builder
                   subBuilder = null;
@@ -157,7 +157,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
                 .class);
   }
 
-  public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
+  public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 165471622;
   private volatile java.lang.Object networkEndpointGroup_;
   /**
    *
@@ -166,7 +166,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
    * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -190,7 +190,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
    * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -209,12 +209,18 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
   }
 
   public static final int NETWORK_ENDPOINT_GROUPS_DETACH_ENDPOINTS_REQUEST_RESOURCE_FIELD_NUMBER =
-      515608697;
+      247173241;
   private com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest
       networkEndpointGroupsDetachEndpointsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupsDetachEndpointsRequestResource field is set.
@@ -224,8 +230,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
     return networkEndpointGroupsDetachEndpointsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupsDetachEndpointsRequestResource.
@@ -239,8 +251,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
         : networkEndpointGroupsDetachEndpointsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -420,14 +438,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getNetworkEndpointGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 165471622, networkEndpointGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getNetworkEndpointGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 433907078, networkEndpointGroup_);
-    }
     if (networkEndpointGroupsDetachEndpointsRequestResource_ != null) {
-      output.writeMessage(515608697, getNetworkEndpointGroupsDetachEndpointsRequestResource());
+      output.writeMessage(247173241, getNetworkEndpointGroupsDetachEndpointsRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -444,18 +462,18 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (!getNetworkEndpointGroupBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              433907078, networkEndpointGroup_);
+              165471622, networkEndpointGroup_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (networkEndpointGroupsDetachEndpointsRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              515608697, getNetworkEndpointGroupsDetachEndpointsRequestResource());
+              247173241, getNetworkEndpointGroupsDetachEndpointsRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -832,7 +850,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
      * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkEndpointGroup.
@@ -855,7 +873,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
      * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for networkEndpointGroup.
@@ -878,7 +896,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
      * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The networkEndpointGroup to set.
@@ -900,7 +918,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
      * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -918,7 +936,7 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
      * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for networkEndpointGroup to set.
@@ -943,8 +961,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
             com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequestOrBuilder>
         networkEndpointGroupsDetachEndpointsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networkEndpointGroupsDetachEndpointsRequestResource field is set.
@@ -954,8 +978,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
           || networkEndpointGroupsDetachEndpointsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkEndpointGroupsDetachEndpointsRequestResource.
@@ -972,8 +1002,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkEndpointGroupsDetachEndpointsRequestResource(
@@ -991,8 +1027,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkEndpointGroupsDetachEndpointsRequestResource(
@@ -1009,8 +1051,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworkEndpointGroupsDetachEndpointsRequestResource(
@@ -1033,8 +1081,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworkEndpointGroupsDetachEndpointsRequestResource() {
@@ -1049,8 +1103,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest.Builder
@@ -1060,8 +1120,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       return getNetworkEndpointGroupsDetachEndpointsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequestOrBuilder
@@ -1076,8 +1142,14 @@ public final class DetachNetworkEndpointsNetworkEndpointGroupRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

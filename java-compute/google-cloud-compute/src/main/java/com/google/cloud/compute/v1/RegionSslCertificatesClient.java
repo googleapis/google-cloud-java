@@ -343,7 +343,7 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param sslCertificateResource
+   * @param sslCertificateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -368,9 +368,11 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertRegionSslCertificateRequest request = InsertRegionSslCertificateRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   Operation response = regionSslCertificatesClient.insert(request);
    * }
@@ -394,9 +396,11 @@ public class RegionSslCertificatesClient implements BackgroundResource {
    * try (RegionSslCertificatesClient regionSslCertificatesClient = RegionSslCertificatesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertRegionSslCertificateRequest request = InsertRegionSslCertificateRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionSslCertificatesClient.insertCallable().futureCall(request);
    *   // Do something

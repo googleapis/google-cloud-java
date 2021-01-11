@@ -73,28 +73,14 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
           case 0:
             done = true;
             break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -2135255054:
+          case 12228594:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               forwardingRule_ = s;
               break;
             }
-          case -1885273734:
+          case 262209914:
             {
               com.google.cloud.compute.v1.ForwardingRule.Builder subBuilder = null;
               if (forwardingRuleResource_ != null) {
@@ -108,6 +94,20 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
                 forwardingRuleResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -144,7 +144,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.PatchGlobalForwardingRuleRequest.Builder.class);
   }
 
-  public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
+  public static final int FORWARDING_RULE_FIELD_NUMBER = 1528574;
   private volatile java.lang.Object forwardingRule_;
   /**
    *
@@ -153,7 +153,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
    * Name of the ForwardingRule resource to patch.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The forwardingRule.
    */
@@ -176,7 +176,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
    * Name of the ForwardingRule resource to patch.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -193,10 +193,18 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
     }
   }
 
-  public static final int FORWARDING_RULE_RESOURCE_FIELD_NUMBER = 301211695;
+  public static final int FORWARDING_RULE_RESOURCE_FIELD_NUMBER = 32776239;
   private com.google.cloud.compute.v1.ForwardingRule forwardingRuleResource_;
   /**
-   * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the forwardingRuleResource field is set.
    */
@@ -205,7 +213,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
     return forwardingRuleResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The forwardingRuleResource.
    */
@@ -215,7 +231,17 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
         ? com.google.cloud.compute.v1.ForwardingRule.getDefaultInstance()
         : forwardingRuleResource_;
   }
-  /** <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRuleResourceOrBuilder() {
     return getForwardingRuleResource();
@@ -337,17 +363,17 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getForwardingRuleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1528574, forwardingRule_);
+    }
+    if (forwardingRuleResource_ != null) {
+      output.writeMessage(32776239, getForwardingRuleResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getForwardingRuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 269964030, forwardingRule_);
-    }
-    if (forwardingRuleResource_ != null) {
-      output.writeMessage(301211695, getForwardingRuleResource());
     }
     unknownFields.writeTo(output);
   }
@@ -358,19 +384,19 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
+    if (!getForwardingRuleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1528574, forwardingRule_);
+    }
+    if (forwardingRuleResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              32776239, getForwardingRuleResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getForwardingRuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269964030, forwardingRule_);
-    }
-    if (forwardingRuleResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              301211695, getForwardingRuleResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -714,7 +740,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
      * Name of the ForwardingRule resource to patch.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The forwardingRule.
      */
@@ -736,7 +762,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
      * Name of the ForwardingRule resource to patch.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -758,7 +784,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
      * Name of the ForwardingRule resource to patch.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -779,7 +805,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
      * Name of the ForwardingRule resource to patch.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -796,7 +822,7 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
      * Name of the ForwardingRule resource to patch.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.
@@ -819,7 +845,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.ForwardingRuleOrBuilder>
         forwardingRuleResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the forwardingRuleResource field is set.
      */
@@ -827,7 +861,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       return forwardingRuleResourceBuilder_ != null || forwardingRuleResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The forwardingRuleResource.
      */
@@ -841,7 +883,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setForwardingRuleResource(com.google.cloud.compute.v1.ForwardingRule value) {
       if (forwardingRuleResourceBuilder_ == null) {
@@ -857,7 +907,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setForwardingRuleResource(
         com.google.cloud.compute.v1.ForwardingRule.Builder builderForValue) {
@@ -871,7 +929,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeForwardingRuleResource(com.google.cloud.compute.v1.ForwardingRule value) {
       if (forwardingRuleResourceBuilder_ == null) {
@@ -891,7 +957,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearForwardingRuleResource() {
       if (forwardingRuleResourceBuilder_ == null) {
@@ -905,7 +979,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.ForwardingRule.Builder getForwardingRuleResourceBuilder() {
 
@@ -913,7 +995,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       return getForwardingRuleResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.ForwardingRuleOrBuilder
         getForwardingRuleResourceOrBuilder() {
@@ -926,7 +1016,15 @@ public final class PatchGlobalForwardingRuleRequest extends com.google.protobuf.
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ForwardingRule,

@@ -326,7 +326,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetSslProxyResource
+   * @param targetSslProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, TargetSslProxy targetSslProxyResource) {
@@ -348,8 +348,10 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
    *   InsertTargetSslProxyRequest request = InsertTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxyResource(targetSslProxyResource)
    *     .build();
    *   Operation response = targetSslProxiesClient.insert(request);
    * }
@@ -372,8 +374,10 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxy targetSslProxyResource = TargetSslProxy.newBuilder().build();
    *   InsertTargetSslProxyRequest request = InsertTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxyResource(targetSslProxyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -507,7 +511,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose BackendService resource is to
    *     be set.
-   * @param targetSslProxiesSetBackendServiceRequestResource
+   * @param targetSslProxiesSetBackendServiceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setBackendService(
@@ -533,9 +537,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetBackendServiceTargetSslProxyRequest request = SetBackendServiceTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxiesSetBackendServiceRequestResource(targetSslProxiesSetBackendServiceRequestResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   Operation response = targetSslProxiesClient.setBackendService(request);
@@ -558,9 +564,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxiesSetBackendServiceRequest targetSslProxiesSetBackendServiceRequestResource = TargetSslProxiesSetBackendServiceRequest.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetBackendServiceTargetSslProxyRequest request = SetBackendServiceTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxiesSetBackendServiceRequestResource(targetSslProxiesSetBackendServiceRequestResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setBackendServiceCallable().futureCall(request);
@@ -591,7 +599,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose ProxyHeader is to be set.
-   * @param targetSslProxiesSetProxyHeaderRequestResource
+   * @param targetSslProxiesSetProxyHeaderRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setProxyHeader(
@@ -617,9 +625,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetProxyHeaderTargetSslProxyRequest request = SetProxyHeaderTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxiesSetProxyHeaderRequestResource(targetSslProxiesSetProxyHeaderRequestResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   Operation response = targetSslProxiesClient.setProxyHeader(request);
@@ -642,9 +652,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxiesSetProxyHeaderRequest targetSslProxiesSetProxyHeaderRequestResource = TargetSslProxiesSetProxyHeaderRequest.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetProxyHeaderTargetSslProxyRequest request = SetProxyHeaderTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxiesSetProxyHeaderRequestResource(targetSslProxiesSetProxyHeaderRequestResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setProxyHeaderCallable().futureCall(request);
@@ -676,7 +688,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose SslCertificate resource is to
    *     be set.
-   * @param targetSslProxiesSetSslCertificatesRequestResource
+   * @param targetSslProxiesSetSslCertificatesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setSslCertificates(
@@ -702,9 +714,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetSslCertificatesTargetSslProxyRequest request = SetSslCertificatesTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxiesSetSslCertificatesRequestResource(targetSslProxiesSetSslCertificatesRequestResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   Operation response = targetSslProxiesClient.setSslCertificates(request);
@@ -727,9 +741,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   TargetSslProxiesSetSslCertificatesRequest targetSslProxiesSetSslCertificatesRequestResource = TargetSslProxiesSetSslCertificatesRequest.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetSslCertificatesTargetSslProxyRequest request = SetSslCertificatesTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetSslProxiesSetSslCertificatesRequestResource(targetSslProxiesSetSslCertificatesRequestResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setSslCertificatesCallable().futureCall(request);
@@ -763,7 +779,7 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetSslProxy Name of the TargetSslProxy resource whose SSL policy is to be set. The
    *     name must be 1-63 characters long, and comply with RFC1035.
-   * @param sslPolicyReferenceResource
+   * @param sslPolicyReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setSslPolicy(
@@ -788,9 +804,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetSslPolicyTargetSslProxyRequest request = SetSslPolicyTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   Operation response = targetSslProxiesClient.setSslPolicy(request);
@@ -815,9 +833,11 @@ public class TargetSslProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetSslProxiesClient targetSslProxiesClient = TargetSslProxiesClient.create()) {
    *   String project = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
    *   String targetSslProxy = "";
    *   SetSslPolicyTargetSslProxyRequest request = SetSslPolicyTargetSslProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
    *     .setTargetSslProxy(targetSslProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetSslProxiesClient.setSslPolicyCallable().futureCall(request);

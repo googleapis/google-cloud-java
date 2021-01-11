@@ -110,7 +110,7 @@ public interface SslPolicyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -122,7 +122,7 @@ public interface SslPolicyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -135,7 +135,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return A list containing the enabledFeatures.
    */
@@ -147,7 +147,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return The count of enabledFeatures.
    */
@@ -159,7 +159,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the element to return.
    * @return The enabledFeatures at the given index.
@@ -172,7 +172,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] The list of features enabled in the SSL policy.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the enabledFeatures at the given index.
@@ -338,7 +338,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -350,7 +350,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -363,7 +363,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
   /**
@@ -373,7 +373,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
   /**
@@ -383,7 +383,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   int getWarningsCount();
   /**
@@ -393,7 +393,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
@@ -404,7 +404,7 @@ public interface SslPolicyOrBuilder
    * [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index);
 }

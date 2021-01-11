@@ -49,16 +49,28 @@ public interface RemovePeeringNetworkRequestOrBuilder
   com.google.protobuf.ByteString getNetworkBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networksRemovePeeringRequestResource field is set.
    */
   boolean hasNetworksRemovePeeringRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networksRemovePeeringRequestResource.
@@ -66,8 +78,14 @@ public interface RemovePeeringNetworkRequestOrBuilder
   com.google.cloud.compute.v1.NetworksRemovePeeringRequest
       getNetworksRemovePeeringRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworksRemovePeeringRequestOrBuilder

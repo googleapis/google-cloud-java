@@ -30,7 +30,7 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>string client_operation_id = 28804839;</code>
    *
    * @return The clientOperationId.
    */
@@ -42,7 +42,7 @@ public interface OperationOrBuilder
    * [Output Only] The value of `requestId` if you provided it in the request. Not present otherwise.
    * </pre>
    *
-   * <code>string client_operation_id = 297240295;</code>
+   * <code>string client_operation_id = 28804839;</code>
    *
    * @return The bytes for clientOperationId.
    */
@@ -80,7 +80,7 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -92,7 +92,7 @@ public interface OperationOrBuilder
    * [Output Only] A textual description of the operation, which is set when the operation is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -190,7 +190,7 @@ public interface OperationOrBuilder
    * [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
    * </pre>
    *
-   * <code>int32 http_error_status_code = 312345196;</code>
+   * <code>int32 http_error_status_code = 43909740;</code>
    *
    * @return The httpErrorStatusCode.
    */
@@ -228,7 +228,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>string insert_time = 165287059;</code>
    *
    * @return The insertTime.
    */
@@ -240,7 +240,7 @@ public interface OperationOrBuilder
    * [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
    * </pre>
    *
-   * <code>string insert_time = 433722515;</code>
+   * <code>string insert_time = 165287059;</code>
    *
    * @return The bytes for insertTime.
    */
@@ -366,7 +366,7 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -378,7 +378,7 @@ public interface OperationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -441,7 +441,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The statusMessage.
    */
@@ -453,7 +453,7 @@ public interface OperationOrBuilder
    * [Output Only] An optional textual description of the current status of the operation.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -541,7 +541,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
   /**
@@ -551,7 +551,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
   /**
@@ -561,7 +561,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   int getWarningsCount();
   /**
@@ -571,7 +571,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
@@ -582,7 +582,7 @@ public interface OperationOrBuilder
    * [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index);
 

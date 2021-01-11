@@ -240,7 +240,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
   public static final int SECURITY_POLICY_RESOURCE_FIELD_NUMBER = 216159612;
   private com.google.cloud.compute.v1.SecurityPolicy securityPolicyResource_;
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the securityPolicyResource field is set.
    */
@@ -249,7 +257,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
     return securityPolicyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The securityPolicyResource.
    */
@@ -259,7 +275,17 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.SecurityPolicy.getDefaultInstance()
         : securityPolicyResource_;
   }
-  /** <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SecurityPolicyOrBuilder getSecurityPolicyResourceOrBuilder() {
     return getSecurityPolicyResource();
@@ -859,7 +885,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.SecurityPolicyOrBuilder>
         securityPolicyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the securityPolicyResource field is set.
      */
@@ -867,7 +901,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       return securityPolicyResourceBuilder_ != null || securityPolicyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The securityPolicyResource.
      */
@@ -881,7 +923,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSecurityPolicyResource(com.google.cloud.compute.v1.SecurityPolicy value) {
       if (securityPolicyResourceBuilder_ == null) {
@@ -897,7 +947,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSecurityPolicyResource(
         com.google.cloud.compute.v1.SecurityPolicy.Builder builderForValue) {
@@ -911,7 +969,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSecurityPolicyResource(com.google.cloud.compute.v1.SecurityPolicy value) {
       if (securityPolicyResourceBuilder_ == null) {
@@ -931,7 +997,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSecurityPolicyResource() {
       if (securityPolicyResourceBuilder_ == null) {
@@ -945,7 +1019,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicy.Builder getSecurityPolicyResourceBuilder() {
 
@@ -953,7 +1035,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       return getSecurityPolicyResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyOrBuilder
         getSecurityPolicyResourceOrBuilder() {
@@ -966,7 +1056,15 @@ public final class InsertSecurityPolicyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SecurityPolicy,

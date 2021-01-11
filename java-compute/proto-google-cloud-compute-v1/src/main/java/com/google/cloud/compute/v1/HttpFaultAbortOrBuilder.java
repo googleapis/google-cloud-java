@@ -31,7 +31,7 @@ public interface HttpFaultAbortOrBuilder
    * The value must be between 200 and 599 inclusive.
    * </pre>
    *
-   * <code>uint32 http_status = 468949897;</code>
+   * <code>uint32 http_status = 200514441;</code>
    *
    * @return The httpStatus.
    */

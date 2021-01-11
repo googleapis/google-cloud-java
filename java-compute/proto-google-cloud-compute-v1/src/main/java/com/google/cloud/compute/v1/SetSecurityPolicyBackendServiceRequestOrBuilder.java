@@ -30,7 +30,7 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -42,7 +42,7 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
    * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -103,24 +103,42 @@ public interface SetSecurityPolicyBackendServiceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyReferenceResource field is set.
    */
   boolean hasSecurityPolicyReferenceResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyReference getSecurityPolicyReferenceResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyReferenceOrBuilder

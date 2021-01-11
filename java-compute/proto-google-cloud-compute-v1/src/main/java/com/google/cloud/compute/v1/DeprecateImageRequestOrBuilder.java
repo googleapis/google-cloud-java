@@ -24,21 +24,42 @@ public interface DeprecateImageRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the deprecationStatusResource field is set.
    */
   boolean hasDeprecationStatusResource();
   /**
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The deprecationStatusResource.
    */
   com.google.cloud.compute.v1.DeprecationStatus getDeprecationStatusResource();
   /**
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecationStatusResourceOrBuilder();

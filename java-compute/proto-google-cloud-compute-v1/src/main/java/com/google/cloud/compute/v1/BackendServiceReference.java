@@ -69,7 +69,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
-          case -1839398830:
+          case 308084818:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -110,10 +110,10 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.BackendServiceReference.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The backendService.
    */
@@ -130,7 +130,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
     }
   }
   /**
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The bytes for backendService.
    */
@@ -162,7 +162,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
     }
     unknownFields.writeTo(output);
   }
@@ -174,7 +174,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
 
     size = 0;
     if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -466,7 +466,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
 
     private java.lang.Object backendService_ = "";
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The backendService.
      */
@@ -482,7 +482,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The bytes for backendService.
      */
@@ -498,7 +498,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -513,7 +513,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return This builder for chaining.
      */
@@ -524,7 +524,7 @@ public final class BackendServiceReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.

@@ -43,6 +43,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
   }
 
   private TargetHttpsProxy() {
+    authorizationPolicy_ = "";
     creationTimestamp_ = "";
     description_ = "";
     id_ = "";
@@ -51,6 +52,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     quicOverride_ = 0;
     region_ = "";
     selfLink_ = "";
+    serverTlsPolicy_ = "";
     sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     sslPolicy_ = "";
     urlMap_ = "";
@@ -107,6 +109,25 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
               name_ = s;
               break;
             }
+          case 140721008:
+            {
+              proxyBind_ = input.readBool();
+              break;
+            }
+          case 214038058:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sslPolicy_ = s;
+              break;
+            }
+          case 219118482:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serverTlsPolicy_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -114,21 +135,14 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
               creationTimestamp_ = s;
               break;
             }
-          case 1111570338:
+          case 271564226:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              region_ = s;
+              authorizationPolicy_ = s;
               break;
             }
-          case -1933445590:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sslPolicy_ = s;
-              break;
-            }
-          case -1366914950:
+          case 780568698:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -138,28 +152,35 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
               sslCertificates_.add(s);
               break;
             }
-          case -1358801822:
+          case 788681826:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               urlMap_ = s;
               break;
             }
-          case -911466526:
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -642349720:
+          case 1505133928:
             {
               int rawValue = input.readEnum();
 
@@ -230,8 +251,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     UNDEFINED_QUIC_OVERRIDE(0),
     /** <code>DISABLE = 241807048;</code> */
     DISABLE(241807048),
-    /** <code>ENABLE = 438835587;</code> */
-    ENABLE(438835587),
+    /** <code>ENABLE = 170400131;</code> */
+    ENABLE(170400131),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
     UNRECOGNIZED(-1),
@@ -249,8 +270,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     public static final int UNDEFINED_QUIC_OVERRIDE_VALUE = 0;
     /** <code>DISABLE = 241807048;</code> */
     public static final int DISABLE_VALUE = 241807048;
-    /** <code>ENABLE = 438835587;</code> */
-    public static final int ENABLE_VALUE = 438835587;
+    /** <code>ENABLE = 170400131;</code> */
+    public static final int ENABLE_VALUE = 170400131;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
 
@@ -282,7 +303,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
           return UNDEFINED_QUIC_OVERRIDE;
         case 241807048:
           return DISABLE;
-        case 438835587:
+        case 170400131:
           return ENABLE;
         case 2402104:
           return NONE;
@@ -339,6 +360,61 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.TargetHttpsProxy.QuicOverride)
   }
 
+  public static final int AUTHORIZATION_POLICY_FIELD_NUMBER = 33945528;
+  private volatile java.lang.Object authorizationPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+   * Refer to the AuthorizationPolicy resource for additional details.
+   * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string authorization_policy = 33945528;</code>
+   *
+   * @return The authorizationPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getAuthorizationPolicy() {
+    java.lang.Object ref = authorizationPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      authorizationPolicy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+   * Refer to the AuthorizationPolicy resource for additional details.
+   * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string authorization_policy = 33945528;</code>
+   *
+   * @return The bytes for authorizationPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getAuthorizationPolicyBytes() {
+    java.lang.Object ref = authorizationPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      authorizationPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
   private volatile java.lang.Object creationTimestamp_;
   /**
@@ -388,7 +464,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -397,7 +473,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -420,7 +496,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -584,7 +660,27 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int QUIC_OVERRIDE_FIELD_NUMBER = 456577197;
+  public static final int PROXY_BIND_FIELD_NUMBER = 17590126;
+  private boolean proxyBind_;
+  /**
+   *
+   *
+   * <pre>
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool proxy_bind = 17590126;</code>
+   *
+   * @return The proxyBind.
+   */
+  @java.lang.Override
+  public boolean getProxyBind() {
+    return proxyBind_;
+  }
+
+  public static final int QUIC_OVERRIDE_FIELD_NUMBER = 188141741;
   private int quicOverride_;
   /**
    *
@@ -598,7 +694,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * -
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
    *
    * @return The enum numeric value on the wire for quicOverride.
    */
@@ -618,7 +714,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * -
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+   * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;</code>
    *
    * @return The quicOverride.
    */
@@ -681,7 +777,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -690,7 +786,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -713,7 +809,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -730,7 +826,62 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SSL_CERTIFICATES_FIELD_NUMBER = 366006543;
+  public static final int SERVER_TLS_POLICY_FIELD_NUMBER = 27389810;
+  private volatile java.lang.Object serverTlsPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+   * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * If left blank, communications are not encrypted.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string server_tls_policy = 27389810;</code>
+   *
+   * @return The serverTlsPolicy.
+   */
+  @java.lang.Override
+  public java.lang.String getServerTlsPolicy() {
+    java.lang.Object ref = serverTlsPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serverTlsPolicy_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+   * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * If left blank, communications are not encrypted.
+   * Note: This field currently has no impact.
+   * </pre>
+   *
+   * <code>string server_tls_policy = 27389810;</code>
+   *
+   * @return The bytes for serverTlsPolicy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServerTlsPolicyBytes() {
+    java.lang.Object ref = serverTlsPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serverTlsPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SSL_CERTIFICATES_FIELD_NUMBER = 97571087;
   private com.google.protobuf.LazyStringList sslCertificates_;
   /**
    *
@@ -739,7 +890,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @return A list containing the sslCertificates.
    */
@@ -753,7 +904,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @return The count of sslCertificates.
    */
@@ -767,7 +918,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @param index The index of the element to return.
    * @return The sslCertificates at the given index.
@@ -782,7 +933,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sslCertificates at the given index.
@@ -791,7 +942,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     return sslCertificates_.getByteString(index);
   }
 
-  public static final int SSL_POLICY_FIELD_NUMBER = 295190213;
+  public static final int SSL_POLICY_FIELD_NUMBER = 26754757;
   private volatile java.lang.Object sslPolicy_;
   /**
    *
@@ -800,7 +951,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>string ssl_policy = 26754757;</code>
    *
    * @return The sslPolicy.
    */
@@ -823,7 +974,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>string ssl_policy = 26754757;</code>
    *
    * @return The bytes for sslPolicy.
    */
@@ -840,7 +991,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -852,7 +1003,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * - global/urlMaps/url-map
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The urlMap.
    */
@@ -878,7 +1029,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
    * - global/urlMaps/url-map
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -918,32 +1069,41 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (proxyBind_ != false) {
+      output.writeBool(17590126, proxyBind_);
+    }
+    if (!getSslPolicyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26754757, sslPolicy_);
+    }
+    if (!getServerTlsPolicyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 27389810, serverTlsPolicy_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (!getAuthorizationPolicyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 33945528, authorizationPolicy_);
+    }
+    for (int i = 0; i < sslCertificates_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 97571087, sslCertificates_.getRaw(i));
+    }
+    if (!getUrlMapBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getSslPolicyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 295190213, sslPolicy_);
-    }
-    for (int i = 0; i < sslCertificates_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 366006543, sslCertificates_.getRaw(i));
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (quicOverride_
         != com.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride.UNDEFINED_QUIC_OVERRIDE
             .getNumber()) {
-      output.writeEnum(456577197, quicOverride_);
+      output.writeEnum(188141741, quicOverride_);
     }
     unknownFields.writeTo(output);
   }
@@ -963,15 +1123,22 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (proxyBind_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17590126, proxyBind_);
+    }
+    if (!getSslPolicyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26754757, sslPolicy_);
+    }
+    if (!getServerTlsPolicyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27389810, serverTlsPolicy_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (!getRegionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (!getSslPolicyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(295190213, sslPolicy_);
+    if (!getAuthorizationPolicyBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(33945528, authorizationPolicy_);
     }
     {
       int dataSize = 0;
@@ -982,18 +1149,21 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       size += 5 * getSslCertificatesList().size();
     }
     if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    }
+    if (!getRegionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (quicOverride_
         != com.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride.UNDEFINED_QUIC_OVERRIDE
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(456577197, quicOverride_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(188141741, quicOverride_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1011,14 +1181,17 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     com.google.cloud.compute.v1.TargetHttpsProxy other =
         (com.google.cloud.compute.v1.TargetHttpsProxy) obj;
 
+    if (!getAuthorizationPolicy().equals(other.getAuthorizationPolicy())) return false;
     if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getId().equals(other.getId())) return false;
     if (!getKind().equals(other.getKind())) return false;
     if (!getName().equals(other.getName())) return false;
+    if (getProxyBind() != other.getProxyBind()) return false;
     if (quicOverride_ != other.quicOverride_) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (!getSelfLink().equals(other.getSelfLink())) return false;
+    if (!getServerTlsPolicy().equals(other.getServerTlsPolicy())) return false;
     if (!getSslCertificatesList().equals(other.getSslCertificatesList())) return false;
     if (!getSslPolicy().equals(other.getSslPolicy())) return false;
     if (!getUrlMap().equals(other.getUrlMap())) return false;
@@ -1033,6 +1206,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + AUTHORIZATION_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getAuthorizationPolicy().hashCode();
     hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
     hash = (53 * hash) + getCreationTimestamp().hashCode();
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
@@ -1043,12 +1218,16 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getKind().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PROXY_BIND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProxyBind());
     hash = (37 * hash) + QUIC_OVERRIDE_FIELD_NUMBER;
     hash = (53 * hash) + quicOverride_;
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getSelfLink().hashCode();
+    hash = (37 * hash) + SERVER_TLS_POLICY_FIELD_NUMBER;
+    hash = (53 * hash) + getServerTlsPolicy().hashCode();
     if (getSslCertificatesCount() > 0) {
       hash = (37 * hash) + SSL_CERTIFICATES_FIELD_NUMBER;
       hash = (53 * hash) + getSslCertificatesList().hashCode();
@@ -1207,6 +1386,8 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      authorizationPolicy_ = "";
+
       creationTimestamp_ = "";
 
       description_ = "";
@@ -1217,11 +1398,15 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
 
       name_ = "";
 
+      proxyBind_ = false;
+
       quicOverride_ = 0;
 
       region_ = "";
 
       selfLink_ = "";
+
+      serverTlsPolicy_ = "";
 
       sslCertificates_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -1257,14 +1442,17 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       com.google.cloud.compute.v1.TargetHttpsProxy result =
           new com.google.cloud.compute.v1.TargetHttpsProxy(this);
       int from_bitField0_ = bitField0_;
+      result.authorizationPolicy_ = authorizationPolicy_;
       result.creationTimestamp_ = creationTimestamp_;
       result.description_ = description_;
       result.id_ = id_;
       result.kind_ = kind_;
       result.name_ = name_;
+      result.proxyBind_ = proxyBind_;
       result.quicOverride_ = quicOverride_;
       result.region_ = region_;
       result.selfLink_ = selfLink_;
+      result.serverTlsPolicy_ = serverTlsPolicy_;
       if (((bitField0_ & 0x00000001) != 0)) {
         sslCertificates_ = sslCertificates_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -1321,6 +1509,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
 
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetHttpsProxy other) {
       if (other == com.google.cloud.compute.v1.TargetHttpsProxy.getDefaultInstance()) return this;
+      if (!other.getAuthorizationPolicy().isEmpty()) {
+        authorizationPolicy_ = other.authorizationPolicy_;
+        onChanged();
+      }
       if (!other.getCreationTimestamp().isEmpty()) {
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
@@ -1341,6 +1533,9 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
         name_ = other.name_;
         onChanged();
       }
+      if (other.getProxyBind() != false) {
+        setProxyBind(other.getProxyBind());
+      }
       if (other.quicOverride_ != 0) {
         setQuicOverrideValue(other.getQuicOverrideValue());
       }
@@ -1350,6 +1545,10 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       }
       if (!other.getSelfLink().isEmpty()) {
         selfLink_ = other.selfLink_;
+        onChanged();
+      }
+      if (!other.getServerTlsPolicy().isEmpty()) {
+        serverTlsPolicy_ = other.serverTlsPolicy_;
         onChanged();
       }
       if (!other.sslCertificates_.isEmpty()) {
@@ -1400,6 +1599,127 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
     }
 
     private int bitField0_;
+
+    private java.lang.Object authorizationPolicy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+     * Refer to the AuthorizationPolicy resource for additional details.
+     * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string authorization_policy = 33945528;</code>
+     *
+     * @return The authorizationPolicy.
+     */
+    public java.lang.String getAuthorizationPolicy() {
+      java.lang.Object ref = authorizationPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authorizationPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+     * Refer to the AuthorizationPolicy resource for additional details.
+     * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string authorization_policy = 33945528;</code>
+     *
+     * @return The bytes for authorizationPolicy.
+     */
+    public com.google.protobuf.ByteString getAuthorizationPolicyBytes() {
+      java.lang.Object ref = authorizationPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        authorizationPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+     * Refer to the AuthorizationPolicy resource for additional details.
+     * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string authorization_policy = 33945528;</code>
+     *
+     * @param value The authorizationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizationPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      authorizationPolicy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+     * Refer to the AuthorizationPolicy resource for additional details.
+     * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string authorization_policy = 33945528;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAuthorizationPolicy() {
+
+      authorizationPolicy_ = getDefaultInstance().getAuthorizationPolicy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.AuthorizationPolicy resource that describes how the proxy should authorize inbound traffic. If left blank, access will not be restricted by an authorization policy.
+     * Refer to the AuthorizationPolicy resource for additional details.
+     * authorizationPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string authorization_policy = 33945528;</code>
+     *
+     * @param value The bytes for authorizationPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAuthorizationPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      authorizationPolicy_ = value;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object creationTimestamp_ = "";
     /**
@@ -1515,7 +1835,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1537,7 +1857,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1559,7 +1879,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1580,7 +1900,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1597,7 +1917,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1931,6 +2251,64 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private boolean proxyBind_;
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 17590126;</code>
+     *
+     * @return The proxyBind.
+     */
+    @java.lang.Override
+    public boolean getProxyBind() {
+      return proxyBind_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 17590126;</code>
+     *
+     * @param value The proxyBind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyBind(boolean value) {
+
+      proxyBind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 17590126;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyBind() {
+
+      proxyBind_ = false;
+      onChanged();
+      return this;
+    }
+
     private int quicOverride_ = 0;
     /**
      *
@@ -1944,7 +2322,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * -
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;
+     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;
      * </code>
      *
      * @return The enum numeric value on the wire for quicOverride.
@@ -1965,7 +2343,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * -
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;
+     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;
      * </code>
      *
      * @param value The enum numeric value on the wire for quicOverride to set.
@@ -1989,7 +2367,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * -
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;
+     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;
      * </code>
      *
      * @return The quicOverride.
@@ -2015,7 +2393,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * -
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;
+     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;
      * </code>
      *
      * @param value The quicOverride to set.
@@ -2043,7 +2421,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * -
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;
+     * <code>.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 188141741;
      * </code>
      *
      * @return This builder for chaining.
@@ -2169,7 +2547,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2191,7 +2569,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2213,7 +2591,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2234,7 +2612,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2251,7 +2629,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2263,6 +2641,127 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
 
       selfLink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serverTlsPolicy_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+     * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * If left blank, communications are not encrypted.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string server_tls_policy = 27389810;</code>
+     *
+     * @return The serverTlsPolicy.
+     */
+    public java.lang.String getServerTlsPolicy() {
+      java.lang.Object ref = serverTlsPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serverTlsPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+     * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * If left blank, communications are not encrypted.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string server_tls_policy = 27389810;</code>
+     *
+     * @return The bytes for serverTlsPolicy.
+     */
+    public com.google.protobuf.ByteString getServerTlsPolicyBytes() {
+      java.lang.Object ref = serverTlsPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serverTlsPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+     * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * If left blank, communications are not encrypted.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string server_tls_policy = 27389810;</code>
+     *
+     * @param value The serverTlsPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerTlsPolicy(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      serverTlsPolicy_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+     * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * If left blank, communications are not encrypted.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string server_tls_policy = 27389810;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServerTlsPolicy() {
+
+      serverTlsPolicy_ = getDefaultInstance().getServerTlsPolicy();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic.
+     * serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * If left blank, communications are not encrypted.
+     * Note: This field currently has no impact.
+     * </pre>
+     *
+     * <code>string server_tls_policy = 27389810;</code>
+     *
+     * @param value The bytes for serverTlsPolicy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServerTlsPolicyBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      serverTlsPolicy_ = value;
       onChanged();
       return this;
     }
@@ -2283,7 +2782,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @return A list containing the sslCertificates.
      */
@@ -2297,7 +2796,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @return The count of sslCertificates.
      */
@@ -2311,7 +2810,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @param index The index of the element to return.
      * @return The sslCertificates at the given index.
@@ -2326,7 +2825,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the sslCertificates at the given index.
@@ -2341,7 +2840,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @param index The index to set the value at.
      * @param value The sslCertificates to set.
@@ -2363,7 +2862,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @param value The sslCertificates to add.
      * @return This builder for chaining.
@@ -2384,7 +2883,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @param values The sslCertificates to add.
      * @return This builder for chaining.
@@ -2402,7 +2901,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @return This builder for chaining.
      */
@@ -2419,7 +2918,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
      * </pre>
      *
-     * <code>repeated string ssl_certificates = 366006543;</code>
+     * <code>repeated string ssl_certificates = 97571087;</code>
      *
      * @param value The bytes of the sslCertificates to add.
      * @return This builder for chaining.
@@ -2443,7 +2942,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>string ssl_policy = 26754757;</code>
      *
      * @return The sslPolicy.
      */
@@ -2465,7 +2964,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>string ssl_policy = 26754757;</code>
      *
      * @return The bytes for sslPolicy.
      */
@@ -2487,7 +2986,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>string ssl_policy = 26754757;</code>
      *
      * @param value The sslPolicy to set.
      * @return This builder for chaining.
@@ -2508,7 +3007,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>string ssl_policy = 26754757;</code>
      *
      * @return This builder for chaining.
      */
@@ -2525,7 +3024,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213;</code>
+     * <code>string ssl_policy = 26754757;</code>
      *
      * @param value The bytes for sslPolicy to set.
      * @return This builder for chaining.
@@ -2552,7 +3051,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * - global/urlMaps/url-map
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The urlMap.
      */
@@ -2577,7 +3076,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * - global/urlMaps/url-map
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -2602,7 +3101,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * - global/urlMaps/url-map
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -2626,7 +3125,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * - global/urlMaps/url-map
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return This builder for chaining.
      */
@@ -2646,7 +3145,7 @@ public final class TargetHttpsProxy extends com.google.protobuf.GeneratedMessage
      * - global/urlMaps/url-map
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

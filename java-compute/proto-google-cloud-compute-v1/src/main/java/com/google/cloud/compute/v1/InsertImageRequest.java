@@ -78,19 +78,7 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
               requestId_ = s;
               break;
             }
-          case 1581786752:
-            {
-              forceCreate_ = input.readBool();
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1325591662:
+          case 821891986:
             {
               com.google.cloud.compute.v1.Image.Builder subBuilder = null;
               if (imageResource_ != null) {
@@ -103,6 +91,18 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
                 imageResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1581786752:
+            {
+              forceCreate_ = input.readBool();
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -157,10 +157,18 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     return forceCreate_;
   }
 
-  public static final int IMAGE_RESOURCE_FIELD_NUMBER = 371171954;
+  public static final int IMAGE_RESOURCE_FIELD_NUMBER = 102736498;
   private com.google.cloud.compute.v1.Image imageResource_;
   /**
-   * <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the imageResource field is set.
    */
@@ -169,7 +177,15 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     return imageResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The imageResource.
    */
@@ -179,7 +195,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.Image.getDefaultInstance()
         : imageResource_;
   }
-  /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.ImageOrBuilder getImageResourceOrBuilder() {
     return getImageResource();
@@ -304,14 +330,14 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (imageResource_ != null) {
+      output.writeMessage(102736498, getImageResource());
+    }
     if (forceCreate_ != false) {
       output.writeBool(197723344, forceCreate_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (imageResource_ != null) {
-      output.writeMessage(371171954, getImageResource());
     }
     unknownFields.writeTo(output);
   }
@@ -325,15 +351,15 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (imageResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(102736498, getImageResource());
+    }
     if (forceCreate_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(197723344, forceCreate_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (imageResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(371171954, getImageResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -722,7 +748,15 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.ImageOrBuilder>
         imageResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the imageResource field is set.
      */
@@ -730,7 +764,15 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
       return imageResourceBuilder_ != null || imageResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The imageResource.
      */
@@ -743,7 +785,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
         return imageResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setImageResource(com.google.cloud.compute.v1.Image value) {
       if (imageResourceBuilder_ == null) {
         if (value == null) {
@@ -757,7 +809,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setImageResource(com.google.cloud.compute.v1.Image.Builder builderForValue) {
       if (imageResourceBuilder_ == null) {
         imageResource_ = builderForValue.build();
@@ -768,7 +830,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeImageResource(com.google.cloud.compute.v1.Image value) {
       if (imageResourceBuilder_ == null) {
         if (imageResource_ != null) {
@@ -786,7 +858,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearImageResource() {
       if (imageResourceBuilder_ == null) {
         imageResource_ = null;
@@ -798,13 +880,33 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Image.Builder getImageResourceBuilder() {
 
       onChanged();
       return getImageResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.ImageOrBuilder getImageResourceOrBuilder() {
       if (imageResourceBuilder_ != null) {
         return imageResourceBuilder_.getMessageOrBuilder();
@@ -814,7 +916,17 @@ public final class InsertImageRequest extends com.google.protobuf.GeneratedMessa
             : imageResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Image,
             com.google.cloud.compute.v1.Image.Builder,

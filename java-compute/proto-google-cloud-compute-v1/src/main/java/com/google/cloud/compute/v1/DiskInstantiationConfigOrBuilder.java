@@ -30,7 +30,7 @@ public interface DiskInstantiationConfigOrBuilder
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>bool auto_delete = 196325947;</code>
    *
    * @return The autoDelete.
    */
@@ -99,7 +99,7 @@ public interface DiskInstantiationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
    * </code>
    *
    * @return The enum numeric value on the wire for instantiateFrom.
@@ -118,7 +118,7 @@ public interface DiskInstantiationConfigOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
    * </code>
    *
    * @return The instantiateFrom.

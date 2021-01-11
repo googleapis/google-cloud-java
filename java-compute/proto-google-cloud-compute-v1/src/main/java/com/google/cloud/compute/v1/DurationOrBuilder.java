@@ -43,7 +43,7 @@ public interface DurationOrBuilder
    * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
    * </pre>
    *
-   * <code>string seconds = 359484031;</code>
+   * <code>string seconds = 91048575;</code>
    *
    * @return The seconds.
    */
@@ -55,7 +55,7 @@ public interface DurationOrBuilder
    * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
    * </pre>
    *
-   * <code>string seconds = 359484031;</code>
+   * <code>string seconds = 91048575;</code>
    *
    * @return The bytes for seconds.
    */

@@ -30,7 +30,7 @@ public interface Int64RangeMatchOrBuilder
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_end = 322439897;</code>
+   * <code>string range_end = 54004441;</code>
    *
    * @return The rangeEnd.
    */
@@ -42,7 +42,7 @@ public interface Int64RangeMatchOrBuilder
    * The end of the range (exclusive) in signed long integer format.
    * </pre>
    *
-   * <code>string range_end = 322439897;</code>
+   * <code>string range_end = 54004441;</code>
    *
    * @return The bytes for rangeEnd.
    */

@@ -78,18 +78,44 @@ public interface InsertTargetInstanceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetInstanceResource field is set.
    */
   boolean hasTargetInstanceResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetInstanceResource.
    */
   com.google.cloud.compute.v1.TargetInstance getTargetInstanceResource();
-  /** <code>.google.cloud.compute.v1.TargetInstance target_instance_resource = 430453066;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetInstance target_instance_resource = 162017610 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.TargetInstanceOrBuilder getTargetInstanceResourceOrBuilder();
 
   /**

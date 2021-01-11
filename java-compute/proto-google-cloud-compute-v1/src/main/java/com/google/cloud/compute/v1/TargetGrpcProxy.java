@@ -114,9 +114,30 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
               selfLinkWithId_ = s;
               break;
             }
+          case 788681826:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              urlMap_ = s;
+              break;
+            }
           case 814583104:
             {
               validateForProxyless_ = input.readBool();
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1877428002:
@@ -124,27 +145,6 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
               java.lang.String s = input.readStringRequireUtf8();
 
               fingerprint_ = s;
-              break;
-            }
-          case -1358801822:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              urlMap_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -230,7 +230,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -239,7 +239,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -262,7 +262,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -475,7 +475,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -484,7 +484,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -507,7 +507,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -573,7 +573,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -582,7 +582,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The urlMap.
    */
@@ -605,7 +605,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -669,20 +669,20 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     if (!getSelfLinkWithIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 44520962, selfLinkWithId_);
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
+    }
     if (validateForProxyless_ != false) {
       output.writeBool(101822888, validateForProxyless_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     unknownFields.writeTo(output);
   }
@@ -709,21 +709,21 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
     if (!getSelfLinkWithIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(44520962, selfLinkWithId_);
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    }
     if (validateForProxyless_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(101822888, validateForProxyless_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1216,7 +1216,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1238,7 +1238,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1260,7 +1260,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1281,7 +1281,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1298,7 +1298,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1746,7 +1746,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1768,7 +1768,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1790,7 +1790,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1811,7 +1811,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1828,7 +1828,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1958,7 +1958,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The urlMap.
      */
@@ -1980,7 +1980,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -2002,7 +2002,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -2023,7 +2023,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return This builder for chaining.
      */
@@ -2040,7 +2040,7 @@ public final class TargetGrpcProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

@@ -55,7 +55,7 @@ public interface RouteOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface RouteOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -77,10 +77,10 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>string dest_range = 112892256;</code>
    *
    * @return The destRange.
    */
@@ -89,10 +89,10 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The destination range of outgoing packets that this route applies to. Only IPv4 is supported.
+   * The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>string dest_range = 112892256;</code>
    *
    * @return The bytes for destRange.
    */
@@ -205,7 +205,7 @@ public interface RouteOrBuilder
    * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
-   * <code>string next_hop_gateway = 377175298;</code>
+   * <code>string next_hop_gateway = 108739842;</code>
    *
    * @return The nextHopGateway.
    */
@@ -217,7 +217,7 @@ public interface RouteOrBuilder
    * The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL:  projects/project/global/gateways/default-internet-gateway
    * </pre>
    *
-   * <code>string next_hop_gateway = 377175298;</code>
+   * <code>string next_hop_gateway = 108739842;</code>
    *
    * @return The bytes for nextHopGateway.
    */
@@ -227,7 +227,8 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets. You can only specify the forwarding rule as a partial or full URL. For example, the following are all valid URLs:
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+   * - 10.128.0.56
    * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
    * - regions/region/forwardingRules/forwardingRule
    * </pre>
@@ -241,7 +242,8 @@ public interface RouteOrBuilder
    *
    *
    * <pre>
-   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets. You can only specify the forwarding rule as a partial or full URL. For example, the following are all valid URLs:
+   * The URL to a forwarding rule of type loadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs:
+   * - 10.128.0.56
    * - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule
    * - regions/region/forwardingRules/forwardingRule
    * </pre>
@@ -260,7 +262,7 @@ public interface RouteOrBuilder
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
-   * <code>string next_hop_instance = 393508247;</code>
+   * <code>string next_hop_instance = 125072791;</code>
    *
    * @return The nextHopInstance.
    */
@@ -273,7 +275,7 @@ public interface RouteOrBuilder
    * https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/
    * </pre>
    *
-   * <code>string next_hop_instance = 393508247;</code>
+   * <code>string next_hop_instance = 125072791;</code>
    *
    * @return The bytes for nextHopInstance.
    */
@@ -336,7 +338,7 @@ public interface RouteOrBuilder
    * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string next_hop_peering = 412682750;</code>
+   * <code>string next_hop_peering = 144247294;</code>
    *
    * @return The nextHopPeering.
    */
@@ -348,7 +350,7 @@ public interface RouteOrBuilder
    * [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035.
    * </pre>
    *
-   * <code>string next_hop_peering = 412682750;</code>
+   * <code>string next_hop_peering = 144247294;</code>
    *
    * @return The bytes for nextHopPeering.
    */
@@ -361,7 +363,7 @@ public interface RouteOrBuilder
    * The URL to a VpnTunnel that should handle matching packets.
    * </pre>
    *
-   * <code>string next_hop_vpn_tunnel = 519844501;</code>
+   * <code>string next_hop_vpn_tunnel = 251409045;</code>
    *
    * @return The nextHopVpnTunnel.
    */
@@ -373,7 +375,7 @@ public interface RouteOrBuilder
    * The URL to a VpnTunnel that should handle matching packets.
    * </pre>
    *
-   * <code>string next_hop_vpn_tunnel = 519844501;</code>
+   * <code>string next_hop_vpn_tunnel = 251409045;</code>
    *
    * @return The bytes for nextHopVpnTunnel.
    */
@@ -386,7 +388,7 @@ public interface RouteOrBuilder
    * The priority of this route. Priority is used to break ties in cases where there is more than one matching route of equal prefix length. In cases where multiple routes have equal prefix length, the one with the lowest-numbered priority value wins. The default value is `1000`. The priority value must be from `0` to `65535`, inclusive.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>uint32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -399,7 +401,7 @@ public interface RouteOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -411,7 +413,7 @@ public interface RouteOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -475,7 +477,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
   /**
@@ -485,7 +487,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
   /**
@@ -495,7 +497,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   int getWarningsCount();
   /**
@@ -505,7 +507,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
@@ -516,7 +518,7 @@ public interface RouteOrBuilder
    * [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
+   * <code>repeated .google.cloud.compute.v1.Warnings warnings = 229655639;</code>
    */
   com.google.cloud.compute.v1.WarningsOrBuilder getWarningsOrBuilder(int index);
 }

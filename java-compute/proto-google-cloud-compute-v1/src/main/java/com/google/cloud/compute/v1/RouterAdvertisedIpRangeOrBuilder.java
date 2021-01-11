@@ -30,7 +30,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -42,7 +42,7 @@ public interface RouterAdvertisedIpRangeOrBuilder
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */

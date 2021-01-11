@@ -191,8 +191,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
   private com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest
       projectsDisableXpnResourceRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+   * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the projectsDisableXpnResourceRequestResource field is set.
@@ -202,8 +208,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
     return projectsDisableXpnResourceRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+   * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The projectsDisableXpnResourceRequestResource.
@@ -216,8 +228,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
         : projectsDisableXpnResourceRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+   * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -765,8 +783,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequestOrBuilder>
         projectsDisableXpnResourceRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the projectsDisableXpnResourceRequestResource field is set.
@@ -776,8 +800,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
           || projectsDisableXpnResourceRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The projectsDisableXpnResourceRequestResource.
@@ -793,8 +823,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setProjectsDisableXpnResourceRequestResource(
@@ -812,8 +848,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setProjectsDisableXpnResourceRequestResource(
@@ -828,8 +870,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeProjectsDisableXpnResourceRequestResource(
@@ -852,8 +900,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearProjectsDisableXpnResourceRequestResource() {
@@ -868,8 +922,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequest.Builder
@@ -879,8 +939,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       return getProjectsDisableXpnResourceRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ProjectsDisableXpnResourceRequestOrBuilder
@@ -894,8 +960,14 @@ public final class DisableXpnResourceProjectRequest extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170;
+     * .google.cloud.compute.v1.ProjectsDisableXpnResourceRequest projects_disable_xpn_resource_request_resource = 209136170 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

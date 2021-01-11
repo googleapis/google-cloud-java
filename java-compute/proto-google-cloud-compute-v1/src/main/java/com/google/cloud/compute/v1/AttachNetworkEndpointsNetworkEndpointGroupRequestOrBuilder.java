@@ -30,7 +30,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -43,7 +43,7 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group where you are attaching network endpoints to. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -51,16 +51,28 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
   com.google.protobuf.ByteString getNetworkEndpointGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupsAttachEndpointsRequestResource field is set.
    */
   boolean hasNetworkEndpointGroupsAttachEndpointsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupsAttachEndpointsRequestResource.
@@ -68,8 +80,14 @@ public interface AttachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
   com.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest
       getNetworkEndpointGroupsAttachEndpointsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequest network_endpoint_groups_attach_endpoints_request_resource = 531079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupsAttachEndpointsRequestOrBuilder

@@ -49,18 +49,44 @@ public interface SetMetadataInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the metadataResource field is set.
    */
   boolean hasMetadataResource();
   /**
-   * <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The metadataResource.
    */
   com.google.cloud.compute.v1.Metadata getMetadataResource();
-  /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.MetadataOrBuilder getMetadataResourceOrBuilder();
 
   /**

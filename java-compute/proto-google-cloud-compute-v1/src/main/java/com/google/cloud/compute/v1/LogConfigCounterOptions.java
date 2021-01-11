@@ -98,7 +98,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
                       extensionRegistry));
               break;
             }
-          case -30429822:
+          case 2117053826:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -274,7 +274,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
     }
   }
 
-  public static final int METRIC_FIELD_NUMBER = 533067184;
+  public static final int METRIC_FIELD_NUMBER = 264631728;
   private volatile java.lang.Object metric_;
   /**
    *
@@ -283,7 +283,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>string metric = 264631728;</code>
    *
    * @return The metric.
    */
@@ -306,7 +306,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>string metric = 264631728;</code>
    *
    * @return The bytes for metric.
    */
@@ -344,7 +344,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
       output.writeMessage(249651015, customFields_.get(i));
     }
     if (!getMetricBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 533067184, metric_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264631728, metric_);
     }
     unknownFields.writeTo(output);
   }
@@ -363,7 +363,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(249651015, customFields_.get(i));
     }
     if (!getMetricBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(533067184, metric_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(264631728, metric_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1238,7 +1238,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>string metric = 264631728;</code>
      *
      * @return The metric.
      */
@@ -1260,7 +1260,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>string metric = 264631728;</code>
      *
      * @return The bytes for metric.
      */
@@ -1282,7 +1282,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>string metric = 264631728;</code>
      *
      * @param value The metric to set.
      * @return This builder for chaining.
@@ -1303,7 +1303,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>string metric = 264631728;</code>
      *
      * @return This builder for chaining.
      */
@@ -1320,7 +1320,7 @@ public final class LogConfigCounterOptions extends com.google.protobuf.Generated
      * The metric to update.
      * </pre>
      *
-     * <code>string metric = 533067184;</code>
+     * <code>string metric = 264631728;</code>
      *
      * @param value The bytes for metric to set.
      * @return This builder for chaining.

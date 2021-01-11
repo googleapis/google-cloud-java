@@ -175,7 +175,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param disk The disk name for this request.
-   * @param disksAddResourcePoliciesRequestResource
+   * @param disksAddResourcePoliciesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addResourcePolicies(
@@ -203,10 +203,12 @@ public class DisksClient implements BackgroundResource {
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddResourcePoliciesDiskRequest request = AddResourcePoliciesDiskRequest.newBuilder()
    *     .setDisk(disk)
+   *     .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -231,10 +233,12 @@ public class DisksClient implements BackgroundResource {
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
+   *   DisksAddResourcePoliciesRequest disksAddResourcePoliciesRequestResource = DisksAddResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddResourcePoliciesDiskRequest request = AddResourcePoliciesDiskRequest.newBuilder()
    *     .setDisk(disk)
+   *     .setDisksAddResourcePoliciesRequestResource(disksAddResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -374,7 +378,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param disk Name of the persistent disk to snapshot.
-   * @param snapshotResource
+   * @param snapshotResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createSnapshot(
@@ -399,10 +403,12 @@ public class DisksClient implements BackgroundResource {
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
    *   String project = "";
+   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   String zone = "";
    *   CreateSnapshotDiskRequest request = CreateSnapshotDiskRequest.newBuilder()
    *     .setDisk(disk)
    *     .setProject(project)
+   *     .setSnapshotResource(snapshotResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = disksClient.createSnapshot(request);
@@ -426,10 +432,12 @@ public class DisksClient implements BackgroundResource {
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
    *   String project = "";
+   *   Snapshot snapshotResource = Snapshot.newBuilder().build();
    *   String zone = "";
    *   CreateSnapshotDiskRequest request = CreateSnapshotDiskRequest.newBuilder()
    *     .setDisk(disk)
    *     .setProject(project)
+   *     .setSnapshotResource(snapshotResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = disksClient.createSnapshotCallable().futureCall(request);
@@ -715,7 +723,7 @@ public class DisksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
-   * @param diskResource
+   * @param diskResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String zone, Disk diskResource) {
@@ -739,9 +747,11 @@ public class DisksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
+   *   Disk diskResource = Disk.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertDiskRequest request = InsertDiskRequest.newBuilder()
+   *     .setDiskResource(diskResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -767,9 +777,11 @@ public class DisksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
+   *   Disk diskResource = Disk.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertDiskRequest request = InsertDiskRequest.newBuilder()
+   *     .setDiskResource(diskResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -914,7 +926,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param disk The disk name for this request.
-   * @param disksRemoveResourcePoliciesRequestResource
+   * @param disksRemoveResourcePoliciesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation removeResourcePolicies(
@@ -942,10 +954,12 @@ public class DisksClient implements BackgroundResource {
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RemoveResourcePoliciesDiskRequest request = RemoveResourcePoliciesDiskRequest.newBuilder()
    *     .setDisk(disk)
+   *     .setDisksRemoveResourcePoliciesRequestResource(disksRemoveResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -969,10 +983,12 @@ public class DisksClient implements BackgroundResource {
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
+   *   DisksRemoveResourcePoliciesRequest disksRemoveResourcePoliciesRequestResource = DisksRemoveResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RemoveResourcePoliciesDiskRequest request = RemoveResourcePoliciesDiskRequest.newBuilder()
    *     .setDisk(disk)
+   *     .setDisksRemoveResourcePoliciesRequestResource(disksRemoveResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1006,7 +1022,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param disk The name of the persistent disk.
-   * @param disksResizeRequestResource
+   * @param disksResizeRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation resize(
@@ -1030,10 +1046,12 @@ public class DisksClient implements BackgroundResource {
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
+   *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ResizeDiskRequest request = ResizeDiskRequest.newBuilder()
    *     .setDisk(disk)
+   *     .setDisksResizeRequestResource(disksResizeRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1057,10 +1075,12 @@ public class DisksClient implements BackgroundResource {
    * <pre><code>
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String disk = "";
+   *   DisksResizeRequest disksResizeRequestResource = DisksResizeRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ResizeDiskRequest request = ResizeDiskRequest.newBuilder()
    *     .setDisk(disk)
+   *     .setDisksResizeRequestResource(disksResizeRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1093,7 +1113,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param zoneSetPolicyRequestResource
+   * @param zoneSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -1122,10 +1142,12 @@ public class DisksClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyDiskRequest request = SetIamPolicyDiskRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = disksClient.setIamPolicy(request);
    * }
@@ -1149,10 +1171,12 @@ public class DisksClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyDiskRequest request = SetIamPolicyDiskRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = disksClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -1184,7 +1208,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param zoneSetLabelsRequestResource
+   * @param zoneSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLabels(
@@ -1214,10 +1238,12 @@ public class DisksClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   SetLabelsDiskRequest request = SetLabelsDiskRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
    *     .build();
    *   Operation response = disksClient.setLabels(request);
    * }
@@ -1242,10 +1268,12 @@ public class DisksClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetLabelsRequest zoneSetLabelsRequestResource = ZoneSetLabelsRequest.newBuilder().build();
    *   SetLabelsDiskRequest request = SetLabelsDiskRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetLabelsRequestResource(zoneSetLabelsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = disksClient.setLabelsCallable().futureCall(request);
    *   // Do something
@@ -1276,7 +1304,7 @@ public class DisksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -1304,10 +1332,12 @@ public class DisksClient implements BackgroundResource {
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsDiskRequest request = TestIamPermissionsDiskRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   TestPermissionsResponse response = disksClient.testIamPermissions(request);
@@ -1331,10 +1361,12 @@ public class DisksClient implements BackgroundResource {
    * try (DisksClient disksClient = DisksClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsDiskRequest request = TestIamPermissionsDiskRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = disksClient.testIamPermissionsCallable().futureCall(request);

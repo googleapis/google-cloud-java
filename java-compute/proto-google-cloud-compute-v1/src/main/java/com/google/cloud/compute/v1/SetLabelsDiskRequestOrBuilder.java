@@ -128,24 +128,42 @@ public interface SetLabelsDiskRequestOrBuilder
   com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the zoneSetLabelsRequestResource field is set.
    */
   boolean hasZoneSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The zoneSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.ZoneSetLabelsRequest getZoneSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 364950798;
+   * .google.cloud.compute.v1.ZoneSetLabelsRequest zone_set_labels_request_resource = 96515342 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ZoneSetLabelsRequestOrBuilder

@@ -341,7 +341,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param urlMapResource
+   * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, UrlMap urlMapResource) {
@@ -364,9 +364,11 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   InsertRegionUrlMapRequest request = InsertRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   Operation response = regionUrlMapsClient.insert(request);
    * }
@@ -389,9 +391,11 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   InsertRegionUrlMapRequest request = InsertRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.insertCallable().futureCall(request);
    *   // Do something
@@ -539,7 +543,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param urlMap Name of the UrlMap resource to patch.
-   * @param urlMapResource
+   * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -566,10 +570,12 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchRegionUrlMapRequest request = PatchRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   Operation response = regionUrlMapsClient.patch(request);
    * }
@@ -594,10 +600,12 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchRegionUrlMapRequest request = PatchRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.patchCallable().futureCall(request);
    *   // Do something
@@ -628,7 +636,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param urlMap Name of the UrlMap resource to update.
-   * @param urlMapResource
+   * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -654,10 +662,12 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateRegionUrlMapRequest request = UpdateRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   Operation response = regionUrlMapsClient.update(request);
    * }
@@ -681,10 +691,12 @@ public class RegionUrlMapsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateRegionUrlMapRequest request = UpdateRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionUrlMapsClient.updateCallable().futureCall(request);
    *   // Do something
@@ -716,7 +728,7 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param urlMap Name of the UrlMap resource to be validated as.
-   * @param regionUrlMapsValidateRequestResource
+   * @param regionUrlMapsValidateRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UrlMapsValidateResponse validate(
@@ -745,10 +757,12 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource = RegionUrlMapsValidateRequest.newBuilder().build();
    *   String urlMap = "";
    *   ValidateRegionUrlMapRequest request = ValidateRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionUrlMapsValidateRequestResource(regionUrlMapsValidateRequestResource)
    *     .setUrlMap(urlMap)
    *     .build();
    *   UrlMapsValidateResponse response = regionUrlMapsClient.validate(request);
@@ -773,10 +787,12 @@ public class RegionUrlMapsClient implements BackgroundResource {
    * try (RegionUrlMapsClient regionUrlMapsClient = RegionUrlMapsClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionUrlMapsValidateRequest regionUrlMapsValidateRequestResource = RegionUrlMapsValidateRequest.newBuilder().build();
    *   String urlMap = "";
    *   ValidateRegionUrlMapRequest request = ValidateRegionUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionUrlMapsValidateRequestResource(regionUrlMapsValidateRequestResource)
    *     .setUrlMap(urlMap)
    *     .build();
    *   ApiFuture&lt;UrlMapsValidateResponse&gt; future = regionUrlMapsClient.validateCallable().futureCall(request);

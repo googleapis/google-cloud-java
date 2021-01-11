@@ -104,18 +104,18 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
 
               break;
             }
+          case 1612181522:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -535302126:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeGroup_ = s;
               break;
             }
           default:
@@ -152,7 +152,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.DeleteNodesNodeGroupRequest.Builder.class);
   }
 
-  public static final int NODE_GROUP_FIELD_NUMBER = 469958146;
+  public static final int NODE_GROUP_FIELD_NUMBER = 201522690;
   private volatile java.lang.Object nodeGroup_;
   /**
    *
@@ -161,7 +161,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
    * Name of the NodeGroup resource whose nodes will be deleted.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -184,7 +184,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
    * Name of the NodeGroup resource whose nodes will be deleted.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
@@ -205,8 +205,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
   private com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequest
       nodeGroupsDeleteNodesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupsDeleteNodesRequestResource field is set.
@@ -216,8 +222,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     return nodeGroupsDeleteNodesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupsDeleteNodesRequestResource.
@@ -230,8 +242,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
         : nodeGroupsDeleteNodesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+   * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -414,11 +432,11 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
     if (nodeGroupsDeleteNodesRequestResource_ != null) {
       output.writeMessage(183298962, getNodeGroupsDeleteNodesRequestResource());
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 469958146, nodeGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -440,11 +458,11 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               183298962, getNodeGroupsDeleteNodesRequestResource());
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(469958146, nodeGroup_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -799,7 +817,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
      * Name of the NodeGroup resource whose nodes will be deleted.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeGroup.
      */
@@ -821,7 +839,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
      * Name of the NodeGroup resource whose nodes will be deleted.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeGroup.
      */
@@ -843,7 +861,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
      * Name of the NodeGroup resource whose nodes will be deleted.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeGroup to set.
      * @return This builder for chaining.
@@ -864,7 +882,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
      * Name of the NodeGroup resource whose nodes will be deleted.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -881,7 +899,7 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
      * Name of the NodeGroup resource whose nodes will be deleted.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeGroup to set.
      * @return This builder for chaining.
@@ -905,8 +923,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequestOrBuilder>
         nodeGroupsDeleteNodesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the nodeGroupsDeleteNodesRequestResource field is set.
@@ -916,8 +940,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
           || nodeGroupsDeleteNodesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The nodeGroupsDeleteNodesRequestResource.
@@ -933,8 +963,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupsDeleteNodesRequestResource(
@@ -952,8 +988,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupsDeleteNodesRequestResource(
@@ -968,8 +1010,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNodeGroupsDeleteNodesRequestResource(
@@ -992,8 +1040,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNodeGroupsDeleteNodesRequestResource() {
@@ -1008,8 +1062,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequest.Builder
@@ -1019,8 +1079,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       return getNodeGroupsDeleteNodesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupsDeleteNodesRequestOrBuilder
@@ -1034,8 +1100,14 @@ public final class DeleteNodesNodeGroupRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962;
+     * .google.cloud.compute.v1.NodeGroupsDeleteNodesRequest node_groups_delete_nodes_request_resource = 183298962 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

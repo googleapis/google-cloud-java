@@ -146,7 +146,15 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
   public static final int COMMITMENT_RESOURCE_FIELD_NUMBER = 244240888;
   private com.google.cloud.compute.v1.Commitment commitmentResource_;
   /**
-   * <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the commitmentResource field is set.
    */
@@ -155,7 +163,15 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
     return commitmentResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The commitmentResource.
    */
@@ -165,7 +181,17 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.Commitment.getDefaultInstance()
         : commitmentResource_;
   }
-  /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentResourceOrBuilder() {
     return getCommitmentResource();
@@ -710,7 +736,15 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.CommitmentOrBuilder>
         commitmentResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the commitmentResource field is set.
      */
@@ -718,7 +752,15 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
       return commitmentResourceBuilder_ != null || commitmentResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The commitmentResource.
      */
@@ -731,7 +773,17 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
         return commitmentResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setCommitmentResource(com.google.cloud.compute.v1.Commitment value) {
       if (commitmentResourceBuilder_ == null) {
         if (value == null) {
@@ -745,7 +797,17 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setCommitmentResource(
         com.google.cloud.compute.v1.Commitment.Builder builderForValue) {
       if (commitmentResourceBuilder_ == null) {
@@ -757,7 +819,17 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeCommitmentResource(com.google.cloud.compute.v1.Commitment value) {
       if (commitmentResourceBuilder_ == null) {
         if (commitmentResource_ != null) {
@@ -775,7 +847,17 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearCommitmentResource() {
       if (commitmentResourceBuilder_ == null) {
         commitmentResource_ = null;
@@ -787,13 +869,33 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Commitment.Builder getCommitmentResourceBuilder() {
 
       onChanged();
       return getCommitmentResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.CommitmentOrBuilder getCommitmentResourceOrBuilder() {
       if (commitmentResourceBuilder_ != null) {
         return commitmentResourceBuilder_.getMessageOrBuilder();
@@ -803,7 +905,17 @@ public final class InsertRegionCommitmentRequest extends com.google.protobuf.Gen
             : commitmentResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Commitment commitment_resource = 244240888;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Commitment commitment_resource = 244240888 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Commitment,
             com.google.cloud.compute.v1.Commitment.Builder,

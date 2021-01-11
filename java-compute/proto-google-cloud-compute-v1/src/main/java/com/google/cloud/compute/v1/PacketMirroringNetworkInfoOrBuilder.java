@@ -30,7 +30,7 @@ public interface PacketMirroringNetworkInfoOrBuilder
    * [Output Only] Unique identifier for the network; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>string canonical_url = 243859364;</code>
    *
    * @return The canonicalUrl.
    */
@@ -42,7 +42,7 @@ public interface PacketMirroringNetworkInfoOrBuilder
    * [Output Only] Unique identifier for the network; defined by the server.
    * </pre>
    *
-   * <code>string canonical_url = 512294820;</code>
+   * <code>string canonical_url = 243859364;</code>
    *
    * @return The bytes for canonicalUrl.
    */

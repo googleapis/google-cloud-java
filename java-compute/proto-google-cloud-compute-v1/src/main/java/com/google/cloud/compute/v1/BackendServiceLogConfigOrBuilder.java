@@ -30,7 +30,7 @@ public interface BackendServiceLogConfigOrBuilder
    * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */

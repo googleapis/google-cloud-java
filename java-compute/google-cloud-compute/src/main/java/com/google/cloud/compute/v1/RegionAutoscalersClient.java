@@ -339,7 +339,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param autoscalerResource
+   * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, Autoscaler autoscalerResource) {
@@ -360,9 +360,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionAutoscalerRequest request = InsertRegionAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -385,9 +387,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionAutoscalerRequest request = InsertRegionAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -531,7 +535,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param autoscalerResource
+   * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(String project, String region, Autoscaler autoscalerResource) {
@@ -553,9 +557,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionAutoscalerRequest request = PatchRegionAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -579,9 +585,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionAutoscalerRequest request = PatchRegionAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -612,7 +620,7 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param autoscalerResource
+   * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(String project, String region, Autoscaler autoscalerResource) {
@@ -633,9 +641,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   UpdateRegionAutoscalerRequest request = UpdateRegionAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -658,9 +668,11 @@ public class RegionAutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionAutoscalersClient regionAutoscalersClient = RegionAutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   UpdateRegionAutoscalerRequest request = UpdateRegionAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

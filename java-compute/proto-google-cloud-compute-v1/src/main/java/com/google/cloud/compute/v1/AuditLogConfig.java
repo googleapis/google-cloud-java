@@ -79,6 +79,13 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
               ignoreChildExemptions_ = input.readBool();
               break;
             }
+          case 1077443240:
+            {
+              int rawValue = input.readEnum();
+
+              logType_ = rawValue;
+              break;
+            }
           case 1860924610:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -87,13 +94,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000001;
               }
               exemptedMembers_.add(s);
-              break;
-            }
-          case -1070040408:
-            {
-              int rawValue = input.readEnum();
-
-              logType_ = rawValue;
               break;
             }
           default:
@@ -155,10 +155,10 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_LOG_TYPE(0),
     /** <code>ADMIN_READ = 128951462;</code> */
     ADMIN_READ(128951462),
-    /** <code>DATA_READ = 305224971;</code> */
-    DATA_READ(305224971),
-    /** <code>DATA_WRITE = 340181738;</code> */
-    DATA_WRITE(340181738),
+    /** <code>DATA_READ = 36789515;</code> */
+    DATA_READ(36789515),
+    /** <code>DATA_WRITE = 71746282;</code> */
+    DATA_WRITE(71746282),
     /** <code>LOG_TYPE_UNSPECIFIED = 154527053;</code> */
     LOG_TYPE_UNSPECIFIED(154527053),
     UNRECOGNIZED(-1),
@@ -176,10 +176,10 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_LOG_TYPE_VALUE = 0;
     /** <code>ADMIN_READ = 128951462;</code> */
     public static final int ADMIN_READ_VALUE = 128951462;
-    /** <code>DATA_READ = 305224971;</code> */
-    public static final int DATA_READ_VALUE = 305224971;
-    /** <code>DATA_WRITE = 340181738;</code> */
-    public static final int DATA_WRITE_VALUE = 340181738;
+    /** <code>DATA_READ = 36789515;</code> */
+    public static final int DATA_READ_VALUE = 36789515;
+    /** <code>DATA_WRITE = 71746282;</code> */
+    public static final int DATA_WRITE_VALUE = 71746282;
     /** <code>LOG_TYPE_UNSPECIFIED = 154527053;</code> */
     public static final int LOG_TYPE_UNSPECIFIED_VALUE = 154527053;
 
@@ -211,9 +211,9 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_LOG_TYPE;
         case 128951462:
           return ADMIN_READ;
-        case 305224971:
+        case 36789515:
           return DATA_READ;
-        case 340181738:
+        case 71746282:
           return DATA_WRITE;
         case 154527053:
           return LOG_TYPE_UNSPECIFIED;
@@ -343,7 +343,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     return ignoreChildExemptions_;
   }
 
-  public static final int LOG_TYPE_FIELD_NUMBER = 403115861;
+  public static final int LOG_TYPE_FIELD_NUMBER = 134680405;
   private int logType_;
   /**
    *
@@ -352,7 +352,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    * The log type that this config enables.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
    *
    * @return The enum numeric value on the wire for logType.
    */
@@ -367,7 +367,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
    * The log type that this config enables.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
    *
    * @return The logType.
    */
@@ -398,13 +398,13 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
     if (ignoreChildExemptions_ != false) {
       output.writeBool(70141850, ignoreChildExemptions_);
     }
+    if (logType_
+        != com.google.cloud.compute.v1.AuditLogConfig.LogType.UNDEFINED_LOG_TYPE.getNumber()) {
+      output.writeEnum(134680405, logType_);
+    }
     for (int i = 0; i < exemptedMembers_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 232615576, exemptedMembers_.getRaw(i));
-    }
-    if (logType_
-        != com.google.cloud.compute.v1.AuditLogConfig.LogType.UNDEFINED_LOG_TYPE.getNumber()) {
-      output.writeEnum(403115861, logType_);
     }
     unknownFields.writeTo(output);
   }
@@ -419,6 +419,10 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(70141850, ignoreChildExemptions_);
     }
+    if (logType_
+        != com.google.cloud.compute.v1.AuditLogConfig.LogType.UNDEFINED_LOG_TYPE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(134680405, logType_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < exemptedMembers_.size(); i++) {
@@ -426,10 +430,6 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getExemptedMembersList().size();
-    }
-    if (logType_
-        != com.google.cloud.compute.v1.AuditLogConfig.LogType.UNDEFINED_LOG_TYPE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(403115861, logType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -963,7 +963,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * The log type that this config enables.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      *
      * @return The enum numeric value on the wire for logType.
      */
@@ -978,7 +978,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * The log type that this config enables.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      *
      * @param value The enum numeric value on the wire for logType to set.
      * @return This builder for chaining.
@@ -996,7 +996,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * The log type that this config enables.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      *
      * @return The logType.
      */
@@ -1016,7 +1016,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * The log type that this config enables.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      *
      * @param value The logType to set.
      * @return This builder for chaining.
@@ -1037,7 +1037,7 @@ public final class AuditLogConfig extends com.google.protobuf.GeneratedMessageV3
      * The log type that this config enables.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>.google.cloud.compute.v1.AuditLogConfig.LogType log_type = 134680405;</code>
      *
      * @return This builder for chaining.
      */

@@ -438,7 +438,7 @@ public class SslCertificatesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslCertificateResource
+   * @param sslCertificateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, SslCertificate sslCertificateResource) {
@@ -460,8 +460,10 @@ public class SslCertificatesClient implements BackgroundResource {
    * <pre><code>
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "";
+   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertSslCertificateRequest request = InsertSslCertificateRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   Operation response = sslCertificatesClient.insert(request);
    * }
@@ -484,8 +486,10 @@ public class SslCertificatesClient implements BackgroundResource {
    * <pre><code>
    * try (SslCertificatesClient sslCertificatesClient = SslCertificatesClient.create()) {
    *   String project = "";
+   *   SslCertificate sslCertificateResource = SslCertificate.newBuilder().build();
    *   InsertSslCertificateRequest request = InsertSslCertificateRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslCertificateResource(sslCertificateResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslCertificatesClient.insertCallable().futureCall(request);
    *   // Do something

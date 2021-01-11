@@ -80,7 +80,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The queryPath.
    */
@@ -92,7 +92,7 @@ public interface GetGuestAttributesInstanceRequestOrBuilder
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The bytes for queryPath.
    */

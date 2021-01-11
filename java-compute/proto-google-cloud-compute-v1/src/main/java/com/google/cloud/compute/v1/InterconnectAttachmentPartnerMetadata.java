@@ -74,6 +74,13 @@ public final class InterconnectAttachmentPartnerMetadata
           case 0:
             done = true;
             break;
+          case 5978338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              portalUrl_ = s;
+              break;
+            }
           case 1293982994:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -81,14 +88,7 @@ public final class InterconnectAttachmentPartnerMetadata
               partnerName_ = s;
               break;
             }
-          case -2141505310:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              portalUrl_ = s;
-              break;
-            }
-          case -175260446:
+          case 1972223202:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -129,7 +129,7 @@ public final class InterconnectAttachmentPartnerMetadata
             com.google.cloud.compute.v1.InterconnectAttachmentPartnerMetadata.Builder.class);
   }
 
-  public static final int INTERCONNECT_NAME_FIELD_NUMBER = 514963356;
+  public static final int INTERCONNECT_NAME_FIELD_NUMBER = 246527900;
   private volatile java.lang.Object interconnectName_;
   /**
    *
@@ -138,7 +138,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 514963356;</code>
+   * <code>string interconnect_name = 246527900;</code>
    *
    * @return The interconnectName.
    */
@@ -161,7 +161,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string interconnect_name = 514963356;</code>
+   * <code>string interconnect_name = 246527900;</code>
    *
    * @return The bytes for interconnectName.
    */
@@ -227,7 +227,7 @@ public final class InterconnectAttachmentPartnerMetadata
     }
   }
 
-  public static final int PORTAL_URL_FIELD_NUMBER = 269182748;
+  public static final int PORTAL_URL_FIELD_NUMBER = 747292;
   private volatile java.lang.Object portalUrl_;
   /**
    *
@@ -236,7 +236,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 269182748;</code>
+   * <code>string portal_url = 747292;</code>
    *
    * @return The portalUrl.
    */
@@ -259,7 +259,7 @@ public final class InterconnectAttachmentPartnerMetadata
    * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
    * </pre>
    *
-   * <code>string portal_url = 269182748;</code>
+   * <code>string portal_url = 747292;</code>
    *
    * @return The bytes for portalUrl.
    */
@@ -290,14 +290,14 @@ public final class InterconnectAttachmentPartnerMetadata
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getPortalUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 747292, portalUrl_);
+    }
     if (!getPartnerNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 161747874, partnerName_);
     }
-    if (!getPortalUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 269182748, portalUrl_);
-    }
     if (!getInterconnectNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 514963356, interconnectName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 246527900, interconnectName_);
     }
     unknownFields.writeTo(output);
   }
@@ -308,15 +308,15 @@ public final class InterconnectAttachmentPartnerMetadata
     if (size != -1) return size;
 
     size = 0;
+    if (!getPortalUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(747292, portalUrl_);
+    }
     if (!getPartnerNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(161747874, partnerName_);
     }
-    if (!getPortalUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269182748, portalUrl_);
-    }
     if (!getInterconnectNameBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(514963356, interconnectName_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(246527900, interconnectName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -642,7 +642,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>string interconnect_name = 246527900;</code>
      *
      * @return The interconnectName.
      */
@@ -664,7 +664,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>string interconnect_name = 246527900;</code>
      *
      * @return The bytes for interconnectName.
      */
@@ -686,7 +686,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>string interconnect_name = 246527900;</code>
      *
      * @param value The interconnectName to set.
      * @return This builder for chaining.
@@ -707,7 +707,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>string interconnect_name = 246527900;</code>
      *
      * @return This builder for chaining.
      */
@@ -724,7 +724,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * Plain text name of the Interconnect this attachment is connected to, as displayed in the Partner's portal. For instance "Chicago 1". This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string interconnect_name = 514963356;</code>
+     * <code>string interconnect_name = 246527900;</code>
      *
      * @param value The bytes for interconnectName to set.
      * @return This builder for chaining.
@@ -854,7 +854,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>string portal_url = 747292;</code>
      *
      * @return The portalUrl.
      */
@@ -876,7 +876,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>string portal_url = 747292;</code>
      *
      * @return The bytes for portalUrl.
      */
@@ -898,7 +898,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>string portal_url = 747292;</code>
      *
      * @param value The portalUrl to set.
      * @return This builder for chaining.
@@ -919,7 +919,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>string portal_url = 747292;</code>
      *
      * @return This builder for chaining.
      */
@@ -936,7 +936,7 @@ public final class InterconnectAttachmentPartnerMetadata
      * URL of the Partner's portal for this Attachment. Partners may customise this to be a deep link to the specific resource on the Partner portal. This value may be validated to match approved Partner values.
      * </pre>
      *
-     * <code>string portal_url = 269182748;</code>
+     * <code>string portal_url = 747292;</code>
      *
      * @param value The bytes for portalUrl to set.
      * @return This builder for chaining.

@@ -189,7 +189,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
-   * @param instanceGroupManagersAbandonInstancesRequestResource
+   * @param instanceGroupManagersAbandonInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation abandonInstances(
@@ -230,10 +230,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AbandonInstancesInstanceGroupManagerRequest request = AbandonInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersAbandonInstancesRequestResource(instanceGroupManagersAbandonInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -269,10 +271,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersAbandonInstancesRequest instanceGroupManagersAbandonInstancesRequestResource = InstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AbandonInstancesInstanceGroupManagerRequest request = AbandonInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersAbandonInstancesRequestResource(instanceGroupManagersAbandonInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -417,7 +421,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param zone The name of the zone where the managed instance group is located. Should conform to
    *     RFC1035.
    * @param instanceGroupManager The name of the managed instance group, should conform to RFC1035.
-   * @param instanceGroupManagersApplyUpdatesRequestResource
+   * @param instanceGroupManagersApplyUpdatesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation applyUpdatesToInstances(
@@ -446,10 +450,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersApplyUpdatesRequest instanceGroupManagersApplyUpdatesRequestResource = InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ApplyUpdatesToInstancesInstanceGroupManagerRequest request = ApplyUpdatesToInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersApplyUpdatesRequestResource(instanceGroupManagersApplyUpdatesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -475,10 +481,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersApplyUpdatesRequest instanceGroupManagersApplyUpdatesRequestResource = InstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ApplyUpdatesToInstancesInstanceGroupManagerRequest request = ApplyUpdatesToInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersApplyUpdatesRequestResource(instanceGroupManagersApplyUpdatesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -518,7 +526,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param instanceGroupManagersCreateInstancesRequestResource
+   * @param instanceGroupManagersCreateInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createInstances(
@@ -551,10 +559,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersCreateInstancesRequest instanceGroupManagersCreateInstancesRequestResource = InstanceGroupManagersCreateInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   CreateInstancesInstanceGroupManagerRequest request = CreateInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersCreateInstancesRequestResource(instanceGroupManagersCreateInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -582,10 +592,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersCreateInstancesRequest instanceGroupManagersCreateInstancesRequestResource = InstanceGroupManagersCreateInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   CreateInstancesInstanceGroupManagerRequest request = CreateInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersCreateInstancesRequestResource(instanceGroupManagersCreateInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -719,7 +731,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
-   * @param instanceGroupManagersDeleteInstancesRequestResource
+   * @param instanceGroupManagersDeleteInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteInstances(
@@ -759,10 +771,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DeleteInstancesInstanceGroupManagerRequest request = DeleteInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersDeleteInstancesRequestResource(instanceGroupManagersDeleteInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -797,10 +811,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersDeleteInstancesRequest instanceGroupManagersDeleteInstancesRequestResource = InstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DeleteInstancesInstanceGroupManagerRequest request = DeleteInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersDeleteInstancesRequestResource(instanceGroupManagersDeleteInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -836,7 +852,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param instanceGroupManagersDeletePerInstanceConfigsReqResource
+   * @param instanceGroupManagersDeletePerInstanceConfigsReqResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deletePerInstanceConfigs(
@@ -865,10 +882,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersDeletePerInstanceConfigsReq instanceGroupManagersDeletePerInstanceConfigsReqResource = InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DeletePerInstanceConfigsInstanceGroupManagerRequest request = DeletePerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersDeletePerInstanceConfigsReqResource(instanceGroupManagersDeletePerInstanceConfigsReqResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -893,10 +912,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersDeletePerInstanceConfigsReq instanceGroupManagersDeletePerInstanceConfigsReqResource = InstanceGroupManagersDeletePerInstanceConfigsReq.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DeletePerInstanceConfigsInstanceGroupManagerRequest request = DeletePerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersDeletePerInstanceConfigsReqResource(instanceGroupManagersDeletePerInstanceConfigsReqResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1021,7 +1042,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where you want to create the managed instance group.
-   * @param instanceGroupManagerResource
+   * @param instanceGroupManagerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -1050,9 +1071,11 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertInstanceGroupManagerRequest request = InsertInstanceGroupManagerRequest.newBuilder()
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1082,9 +1105,11 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertInstanceGroupManagerRequest request = InsertInstanceGroupManagerRequest.newBuilder()
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1658,7 +1683,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where you want to create the managed instance group.
    * @param instanceGroupManager The name of the instance group manager.
-   * @param instanceGroupManagerResource
+   * @param instanceGroupManagerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -1689,10 +1714,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchInstanceGroupManagerRequest request = PatchInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1720,10 +1747,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchInstanceGroupManagerRequest request = PatchInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1759,7 +1788,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param instanceGroupManagersPatchPerInstanceConfigsReqResource
+   * @param instanceGroupManagersPatchPerInstanceConfigsReqResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patchPerInstanceConfigs(
@@ -1789,10 +1819,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersPatchPerInstanceConfigsReq instanceGroupManagersPatchPerInstanceConfigsReqResource = InstanceGroupManagersPatchPerInstanceConfigsReq.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchPerInstanceConfigsInstanceGroupManagerRequest request = PatchPerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersPatchPerInstanceConfigsReqResource(instanceGroupManagersPatchPerInstanceConfigsReqResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1818,10 +1850,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersPatchPerInstanceConfigsReq instanceGroupManagersPatchPerInstanceConfigsReqResource = InstanceGroupManagersPatchPerInstanceConfigsReq.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchPerInstanceConfigsInstanceGroupManagerRequest request = PatchPerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersPatchPerInstanceConfigsReqResource(instanceGroupManagersPatchPerInstanceConfigsReqResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1865,7 +1899,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
-   * @param instanceGroupManagersRecreateInstancesRequestResource
+   * @param instanceGroupManagersRecreateInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation recreateInstances(
@@ -1904,10 +1938,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RecreateInstancesInstanceGroupManagerRequest request = RecreateInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersRecreateInstancesRequestResource(instanceGroupManagersRecreateInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1941,10 +1977,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersRecreateInstancesRequest instanceGroupManagersRecreateInstancesRequestResource = InstanceGroupManagersRecreateInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RecreateInstancesInstanceGroupManagerRequest request = RecreateInstancesInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersRecreateInstancesRequestResource(instanceGroupManagersRecreateInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2106,7 +2144,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you recreate them.
+   * for existing instances in the group do not change unless you run recreateInstances, run
+   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
@@ -2123,7 +2162,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
-   * @param instanceGroupManagersSetInstanceTemplateRequestResource
+   * @param instanceGroupManagersSetInstanceTemplateRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setInstanceTemplate(
@@ -2146,17 +2186,20 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you recreate them.
+   * for existing instances in the group do not change unless you run recreateInstances, run
+   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetInstanceTemplateInstanceGroupManagerRequest request = SetInstanceTemplateInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersSetInstanceTemplateRequestResource(instanceGroupManagersSetInstanceTemplateRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2175,17 +2218,20 @@ public class InstanceGroupManagersClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Specifies the instance template to use when creating new instances in this group. The templates
-   * for existing instances in the group do not change unless you recreate them.
+   * for existing instances in the group do not change unless you run recreateInstances, run
+   * applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersSetInstanceTemplateRequest instanceGroupManagersSetInstanceTemplateRequestResource = InstanceGroupManagersSetInstanceTemplateRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetInstanceTemplateInstanceGroupManagerRequest request = SetInstanceTemplateInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersSetInstanceTemplateRequestResource(instanceGroupManagersSetInstanceTemplateRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2223,7 +2269,7 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the managed instance group is located.
    * @param instanceGroupManager The name of the managed instance group.
-   * @param instanceGroupManagersSetTargetPoolsRequestResource
+   * @param instanceGroupManagersSetTargetPoolsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setTargetPools(
@@ -2256,10 +2302,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetTargetPoolsInstanceGroupManagerRequest request = SetTargetPoolsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersSetTargetPoolsRequestResource(instanceGroupManagersSetTargetPoolsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2287,10 +2335,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersSetTargetPoolsRequest instanceGroupManagersSetTargetPoolsRequestResource = InstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetTargetPoolsInstanceGroupManagerRequest request = SetTargetPoolsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersSetTargetPoolsRequestResource(instanceGroupManagersSetTargetPoolsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2327,7 +2377,8 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    *     to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param instanceGroupManagersUpdatePerInstanceConfigsReqResource
+   * @param instanceGroupManagersUpdatePerInstanceConfigsReqResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updatePerInstanceConfigs(
@@ -2357,10 +2408,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersUpdatePerInstanceConfigsReq instanceGroupManagersUpdatePerInstanceConfigsReqResource = InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdatePerInstanceConfigsInstanceGroupManagerRequest request = UpdatePerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersUpdatePerInstanceConfigsReqResource(instanceGroupManagersUpdatePerInstanceConfigsReqResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2386,10 +2439,12 @@ public class InstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupManagersClient instanceGroupManagersClient = InstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManagersUpdatePerInstanceConfigsReq instanceGroupManagersUpdatePerInstanceConfigsReqResource = InstanceGroupManagersUpdatePerInstanceConfigsReq.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdatePerInstanceConfigsInstanceGroupManagerRequest request = UpdatePerInstanceConfigsInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagersUpdatePerInstanceConfigsReqResource(instanceGroupManagersUpdatePerInstanceConfigsReqResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();

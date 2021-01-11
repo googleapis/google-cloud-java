@@ -30,7 +30,7 @@ public interface GetNodeTemplateRequestOrBuilder
    * Name of the node template to return.
    * </pre>
    *
-   * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeTemplate.
    */
@@ -42,7 +42,7 @@ public interface GetNodeTemplateRequestOrBuilder
    * Name of the node template to return.
    * </pre>
    *
-   * <code>string node_template = 323154455 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_template = 54718999 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeTemplate.
    */

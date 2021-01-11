@@ -103,17 +103,43 @@ public interface InsertRouterRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the routerResource field is set.
    */
   boolean hasRouterResource();
   /**
-   * <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The routerResource.
    */
   com.google.cloud.compute.v1.Router getRouterResource();
-  /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.RouterOrBuilder getRouterResourceOrBuilder();
 }

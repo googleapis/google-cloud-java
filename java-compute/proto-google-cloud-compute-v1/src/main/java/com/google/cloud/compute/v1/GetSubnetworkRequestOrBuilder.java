@@ -80,7 +80,7 @@ public interface GetSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource to return.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -92,7 +92,7 @@ public interface GetSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource to return.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */

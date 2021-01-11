@@ -41,6 +41,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
   private BackendBucket() {
     bucketName_ = "";
     creationTimestamp_ = "";
+    customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     description_ = "";
     id_ = "";
     kind_ = "";
@@ -67,6 +68,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -98,11 +100,47 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 116054920:
+            {
+              enableCdn_ = input.readBool();
+              break;
+            }
+          case 121396738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bucketName_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 952829106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                customResponseHeaders_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              customResponseHeaders_.add(s);
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1711811618:
@@ -122,32 +160,6 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -2031428728:
-            {
-              enableCdn_ = input.readBool();
-              break;
-            }
-          case -2026086910:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bucketName_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -162,6 +174,9 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -182,7 +197,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.BackendBucket.Builder.class);
   }
 
-  public static final int BUCKET_NAME_FIELD_NUMBER = 283610048;
+  public static final int BUCKET_NAME_FIELD_NUMBER = 15174592;
   private volatile java.lang.Object bucketName_;
   /**
    *
@@ -191,7 +206,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>string bucket_name = 15174592;</code>
    *
    * @return The bucketName.
    */
@@ -214,7 +229,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * Cloud Storage bucket name.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>string bucket_name = 15174592;</code>
    *
    * @return The bytes for bucketName.
    */
@@ -328,7 +343,68 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER = 119103638;
+  private com.google.protobuf.LazyStringList customResponseHeaders_;
+  /**
+   *
+   *
+   * <pre>
+   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * </pre>
+   *
+   * <code>repeated string custom_response_headers = 119103638;</code>
+   *
+   * @return A list containing the customResponseHeaders.
+   */
+  public com.google.protobuf.ProtocolStringList getCustomResponseHeadersList() {
+    return customResponseHeaders_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * </pre>
+   *
+   * <code>repeated string custom_response_headers = 119103638;</code>
+   *
+   * @return The count of customResponseHeaders.
+   */
+  public int getCustomResponseHeadersCount() {
+    return customResponseHeaders_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * </pre>
+   *
+   * <code>repeated string custom_response_headers = 119103638;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The customResponseHeaders at the given index.
+   */
+  public java.lang.String getCustomResponseHeaders(int index) {
+    return customResponseHeaders_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Headers that the HTTP/S load balancer should add to proxied responses.
+   * </pre>
+   *
+   * <code>repeated string custom_response_headers = 119103638;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the customResponseHeaders at the given index.
+   */
+  public com.google.protobuf.ByteString getCustomResponseHeadersBytes(int index) {
+    return customResponseHeaders_.getByteString(index);
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -337,7 +413,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -360,7 +436,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -377,7 +453,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int ENABLE_CDN_FIELD_NUMBER = 282942321;
+  public static final int ENABLE_CDN_FIELD_NUMBER = 14506865;
   private boolean enableCdn_;
   /**
    *
@@ -386,7 +462,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * If true, enable Cloud CDN for this BackendBucket.
    * </pre>
    *
-   * <code>bool enable_cdn = 282942321;</code>
+   * <code>bool enable_cdn = 14506865;</code>
    *
    * @return The enableCdn.
    */
@@ -542,7 +618,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -551,7 +627,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -574,7 +650,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -614,23 +690,27 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (enableCdn_ != false) {
+      output.writeBool(14506865, enableCdn_);
+    }
+    if (!getBucketNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15174592, bucketName_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (cdnPolicy_ != null) {
-      output.writeMessage(213976452, getCdnPolicy());
-    }
-    if (enableCdn_ != false) {
-      output.writeBool(282942321, enableCdn_);
-    }
-    if (!getBucketNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 283610048, bucketName_);
+    for (int i = 0; i < customResponseHeaders_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 119103638, customResponseHeaders_.getRaw(i));
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (cdnPolicy_ != null) {
+      output.writeMessage(213976452, getCdnPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -650,24 +730,32 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (enableCdn_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14506865, enableCdn_);
+    }
+    if (!getBucketNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15174592, bucketName_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
-    if (cdnPolicy_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
-    }
-    if (enableCdn_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(282942321, enableCdn_);
-    }
-    if (!getBucketNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(283610048, bucketName_);
+    {
+      int dataSize = 0;
+      for (int i = 0; i < customResponseHeaders_.size(); i++) {
+        dataSize += computeStringSizeNoTag(customResponseHeaders_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getCustomResponseHeadersList().size();
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (cdnPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -691,6 +779,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       if (!getCdnPolicy().equals(other.getCdnPolicy())) return false;
     }
     if (!getCreationTimestamp().equals(other.getCreationTimestamp())) return false;
+    if (!getCustomResponseHeadersList().equals(other.getCustomResponseHeadersList())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (getEnableCdn() != other.getEnableCdn()) return false;
     if (!getId().equals(other.getId())) return false;
@@ -716,6 +805,10 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
     hash = (53 * hash) + getCreationTimestamp().hashCode();
+    if (getCustomResponseHeadersCount() > 0) {
+      hash = (37 * hash) + CUSTOM_RESPONSE_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomResponseHeadersList().hashCode();
+    }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + ENABLE_CDN_FIELD_NUMBER;
@@ -884,6 +977,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       }
       creationTimestamp_ = "";
 
+      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
       description_ = "";
 
       enableCdn_ = false;
@@ -923,6 +1018,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.compute.v1.BackendBucket buildPartial() {
       com.google.cloud.compute.v1.BackendBucket result =
           new com.google.cloud.compute.v1.BackendBucket(this);
+      int from_bitField0_ = bitField0_;
       result.bucketName_ = bucketName_;
       if (cdnPolicyBuilder_ == null) {
         result.cdnPolicy_ = cdnPolicy_;
@@ -930,6 +1026,11 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         result.cdnPolicy_ = cdnPolicyBuilder_.build();
       }
       result.creationTimestamp_ = creationTimestamp_;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        customResponseHeaders_ = customResponseHeaders_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000001);
+      }
+      result.customResponseHeaders_ = customResponseHeaders_;
       result.description_ = description_;
       result.enableCdn_ = enableCdn_;
       result.id_ = id_;
@@ -996,6 +1097,16 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
         creationTimestamp_ = other.creationTimestamp_;
         onChanged();
       }
+      if (!other.customResponseHeaders_.isEmpty()) {
+        if (customResponseHeaders_.isEmpty()) {
+          customResponseHeaders_ = other.customResponseHeaders_;
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          ensureCustomResponseHeadersIsMutable();
+          customResponseHeaders_.addAll(other.customResponseHeaders_);
+        }
+        onChanged();
+      }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
         onChanged();
@@ -1048,6 +1159,8 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int bitField0_;
+
     private java.lang.Object bucketName_ = "";
     /**
      *
@@ -1056,7 +1169,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>string bucket_name = 15174592;</code>
      *
      * @return The bucketName.
      */
@@ -1078,7 +1191,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>string bucket_name = 15174592;</code>
      *
      * @return The bytes for bucketName.
      */
@@ -1100,7 +1213,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>string bucket_name = 15174592;</code>
      *
      * @param value The bucketName to set.
      * @return This builder for chaining.
@@ -1121,7 +1234,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>string bucket_name = 15174592;</code>
      *
      * @return This builder for chaining.
      */
@@ -1138,7 +1251,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * Cloud Storage bucket name.
      * </pre>
      *
-     * <code>string bucket_name = 283610048;</code>
+     * <code>string bucket_name = 15174592;</code>
      *
      * @param value The bytes for bucketName to set.
      * @return This builder for chaining.
@@ -1446,6 +1559,175 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringList customResponseHeaders_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureCustomResponseHeadersIsMutable() {
+      if (!((bitField0_ & 0x00000001) != 0)) {
+        customResponseHeaders_ =
+            new com.google.protobuf.LazyStringArrayList(customResponseHeaders_);
+        bitField0_ |= 0x00000001;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @return A list containing the customResponseHeaders.
+     */
+    public com.google.protobuf.ProtocolStringList getCustomResponseHeadersList() {
+      return customResponseHeaders_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @return The count of customResponseHeaders.
+     */
+    public int getCustomResponseHeadersCount() {
+      return customResponseHeaders_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The customResponseHeaders at the given index.
+     */
+    public java.lang.String getCustomResponseHeaders(int index) {
+      return customResponseHeaders_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the customResponseHeaders at the given index.
+     */
+    public com.google.protobuf.ByteString getCustomResponseHeadersBytes(int index) {
+      return customResponseHeaders_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The customResponseHeaders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomResponseHeaders(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCustomResponseHeadersIsMutable();
+      customResponseHeaders_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @param value The customResponseHeaders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCustomResponseHeaders(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureCustomResponseHeadersIsMutable();
+      customResponseHeaders_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @param values The customResponseHeaders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllCustomResponseHeaders(java.lang.Iterable<java.lang.String> values) {
+      ensureCustomResponseHeadersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customResponseHeaders_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomResponseHeaders() {
+      customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Headers that the HTTP/S load balancer should add to proxied responses.
+     * </pre>
+     *
+     * <code>repeated string custom_response_headers = 119103638;</code>
+     *
+     * @param value The bytes of the customResponseHeaders to add.
+     * @return This builder for chaining.
+     */
+    public Builder addCustomResponseHeadersBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureCustomResponseHeadersIsMutable();
+      customResponseHeaders_.add(value);
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object description_ = "";
     /**
      *
@@ -1454,7 +1736,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1476,7 +1758,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1498,7 +1780,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1519,7 +1801,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1536,7 +1818,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1560,7 +1842,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>bool enable_cdn = 14506865;</code>
      *
      * @return The enableCdn.
      */
@@ -1575,7 +1857,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>bool enable_cdn = 14506865;</code>
      *
      * @param value The enableCdn to set.
      * @return This builder for chaining.
@@ -1593,7 +1875,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * If true, enable Cloud CDN for this BackendBucket.
      * </pre>
      *
-     * <code>bool enable_cdn = 282942321;</code>
+     * <code>bool enable_cdn = 14506865;</code>
      *
      * @return This builder for chaining.
      */
@@ -1930,7 +2212,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1952,7 +2234,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1974,7 +2256,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1995,7 +2277,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2012,7 +2294,7 @@ public final class BackendBucket extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

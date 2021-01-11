@@ -144,7 +144,7 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -156,7 +156,7 @@ public interface UsableSubnetworkOrBuilder
    * Subnetwork URL.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */

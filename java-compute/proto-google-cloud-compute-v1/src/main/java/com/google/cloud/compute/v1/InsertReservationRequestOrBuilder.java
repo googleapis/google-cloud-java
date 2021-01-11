@@ -78,18 +78,44 @@ public interface InsertReservationRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Reservation reservation_resource = 285030177;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the reservationResource field is set.
    */
   boolean hasReservationResource();
   /**
-   * <code>.google.cloud.compute.v1.Reservation reservation_resource = 285030177;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The reservationResource.
    */
   com.google.cloud.compute.v1.Reservation getReservationResource();
-  /** <code>.google.cloud.compute.v1.Reservation reservation_resource = 285030177;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Reservation reservation_resource = 16594721 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.ReservationOrBuilder getReservationResourceOrBuilder();
 
   /**

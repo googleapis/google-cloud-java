@@ -30,7 +30,7 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>string certificate = 73351575;</code>
    *
    * @return The certificate.
    */
@@ -42,7 +42,7 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>string certificate = 73351575;</code>
    *
    * @return The bytes for certificate.
    */
@@ -80,7 +80,7 @@ public interface SslCertificateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -92,7 +92,7 @@ public interface SslCertificateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -105,7 +105,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 440691181;</code>
+   * <code>string expire_time = 172255725;</code>
    *
    * @return The expireTime.
    */
@@ -117,7 +117,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Expire time of the certificate. RFC3339
    * </pre>
    *
-   * <code>string expire_time = 440691181;</code>
+   * <code>string expire_time = 172255725;</code>
    *
    * @return The bytes for expireTime.
    */
@@ -180,7 +180,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
+   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 29953951;</code>
    *
    * @return Whether the managed field is set.
    */
@@ -192,7 +192,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
+   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 29953951;</code>
    *
    * @return The managed.
    */
@@ -204,7 +204,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a managed SSL certificate.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 298389407;</code>
+   * <code>.google.cloud.compute.v1.SslCertificateManagedSslCertificate managed = 29953951;</code>
    */
   com.google.cloud.compute.v1.SslCertificateManagedSslCertificateOrBuilder getManagedOrBuilder();
 
@@ -240,7 +240,7 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>string private_key = 92895651;</code>
    *
    * @return The privateKey.
    */
@@ -252,7 +252,7 @@ public interface SslCertificateOrBuilder
    * A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>string private_key = 92895651;</code>
    *
    * @return The bytes for privateKey.
    */
@@ -290,7 +290,7 @@ public interface SslCertificateOrBuilder
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -302,7 +302,7 @@ public interface SslCertificateOrBuilder
    * [Output only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -315,8 +315,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a self-managed SSL certificate.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+   * <code>.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 60848556;
    * </code>
    *
    * @return Whether the selfManaged field is set.
@@ -329,8 +328,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a self-managed SSL certificate.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+   * <code>.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 60848556;
    * </code>
    *
    * @return The selfManaged.
@@ -343,8 +341,7 @@ public interface SslCertificateOrBuilder
    * Configuration and status of a self-managed SSL certificate.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 329284012;
+   * <code>.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate self_managed = 60848556;
    * </code>
    */
   com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificateOrBuilder
@@ -357,7 +354,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 528807907;</code>
+   * <code>repeated string subject_alternative_names = 260372451;</code>
    *
    * @return A list containing the subjectAlternativeNames.
    */
@@ -369,7 +366,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 528807907;</code>
+   * <code>repeated string subject_alternative_names = 260372451;</code>
    *
    * @return The count of subjectAlternativeNames.
    */
@@ -381,7 +378,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 528807907;</code>
+   * <code>repeated string subject_alternative_names = 260372451;</code>
    *
    * @param index The index of the element to return.
    * @return The subjectAlternativeNames at the given index.
@@ -394,7 +391,7 @@ public interface SslCertificateOrBuilder
    * [Output Only] Domains associated with the certificate via Subject Alternative Name.
    * </pre>
    *
-   * <code>repeated string subject_alternative_names = 528807907;</code>
+   * <code>repeated string subject_alternative_names = 260372451;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subjectAlternativeNames at the given index.

@@ -24,21 +24,42 @@ public interface MoveInstanceProjectRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceMoveRequestResource field is set.
    */
   boolean hasInstanceMoveRequestResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceMoveRequestResource.
    */
   com.google.cloud.compute.v1.InstanceMoveRequest getInstanceMoveRequestResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 311664194;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceMoveRequest instance_move_request_resource = 43228738 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceMoveRequestOrBuilder

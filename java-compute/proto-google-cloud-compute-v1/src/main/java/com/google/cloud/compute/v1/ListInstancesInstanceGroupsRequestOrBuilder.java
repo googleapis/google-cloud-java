@@ -33,7 +33,7 @@ public interface ListInstancesInstanceGroupsRequestOrBuilder
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -48,7 +48,7 @@ public interface ListInstancesInstanceGroupsRequestOrBuilder
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The bytes for filter.
    */
@@ -80,16 +80,28 @@ public interface ListInstancesInstanceGroupsRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263;
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsListInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupsListInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263;
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsListInstancesRequestResource.
@@ -97,8 +109,14 @@ public interface ListInstancesInstanceGroupsRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupsListInstancesRequest
       getInstanceGroupsListInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 476255263;
+   * .google.cloud.compute.v1.InstanceGroupsListInstancesRequest instance_groups_list_instances_request_resource = 207819807 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupsListInstancesRequestOrBuilder
@@ -203,7 +221,7 @@ public interface ListInstancesInstanceGroupsRequestOrBuilder
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>bool return_partial_success = 248762934;</code>
    *
    * @return The returnPartialSuccess.
    */

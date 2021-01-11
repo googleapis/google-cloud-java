@@ -27,6 +27,19 @@ public interface RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder
    *
    *
    * <pre>
+   * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+   * </pre>
+   *
+   * <code>bool all_instances = 135241056;</code>
+   *
+   * @return The allInstances.
+   */
+  boolean getAllInstances();
+
+  /**
+   *
+   *
+   * <pre>
    * The list of URLs of one or more instances for which you want to apply updates. Each URL can be a full URL or a partial URL, such as zones/[ZONE]/instances/[INSTANCE_NAME].
    * </pre>
    *
@@ -85,7 +98,7 @@ public interface RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The minimalAction.
    */
@@ -101,7 +114,7 @@ public interface RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The bytes for minimalAction.
    */

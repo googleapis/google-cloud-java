@@ -73,14 +73,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
           case 0:
             done = true;
             break;
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
-              break;
-            }
-          case -874177438:
+          case 1273306210:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
@@ -89,6 +82,13 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
               namedPorts_.add(
                   input.readMessage(
                       com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
+              break;
+            }
+          case 1877428002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fingerprint_ = s;
               break;
             }
           default:
@@ -177,7 +177,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     }
   }
 
-  public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
+  public static final int NAMED_PORTS_FIELD_NUMBER = 159163276;
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -186,7 +186,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
@@ -199,7 +199,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
@@ -213,7 +213,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public int getNamedPortsCount() {
@@ -226,7 +226,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
@@ -239,7 +239,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
@@ -260,11 +260,11 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      output.writeMessage(159163276, namedPorts_.get(i));
+    }
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      output.writeMessage(427598732, namedPorts_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -275,12 +275,12 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
     for (int i = 0; i < namedPorts_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(427598732, namedPorts_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(159163276, namedPorts_.get(i));
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -760,7 +760,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
       if (namedPortsBuilder_ == null) {
@@ -776,7 +776,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public int getNamedPortsCount() {
       if (namedPortsBuilder_ == null) {
@@ -792,7 +792,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -808,7 +808,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder setNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -830,7 +830,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder setNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -850,7 +850,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -872,7 +872,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -894,7 +894,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
       if (namedPortsBuilder_ == null) {
@@ -913,7 +913,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -933,7 +933,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addAllNamedPorts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NamedPort> values) {
@@ -953,7 +953,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder clearNamedPorts() {
       if (namedPortsBuilder_ == null) {
@@ -972,7 +972,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder removeNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -991,7 +991,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
@@ -1003,7 +1003,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
       if (namedPortsBuilder_ == null) {
@@ -1019,7 +1019,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
         getNamedPortsOrBuilderList() {
@@ -1036,7 +1036,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder() {
       return getNamedPortsFieldBuilder()
@@ -1049,7 +1049,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder()
@@ -1062,7 +1062,7 @@ public final class RegionInstanceGroupsSetNamedPortsRequest
      * The list of named ports to set for this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort.Builder>
         getNamedPortsBuilderList() {

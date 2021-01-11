@@ -251,11 +251,13 @@ public class InterconnectAttachmentsClientTest {
     String cloudRouterIpAddress = "cloudRouterIpAddress1361134600";
     String creationTimestamp = "creationTimestamp567396278";
     String customerRouterIpAddress = "customerRouterIpAddress-741266063";
+    int dataplaneVersion = 1645532811;
     String description = "description-1724546052";
     String googleReferenceId = "googleReferenceId534944469";
     String id = "id3355";
     String interconnect = "interconnect-849140594";
     String kind = "kind3292052";
+    int mtu = 108462;
     String name = "name3373707";
     String pairingKey = "pairingKey976566376";
     String partnerAsn = "partnerAsn975037061";
@@ -269,11 +271,13 @@ public class InterconnectAttachmentsClientTest {
             .setCloudRouterIpAddress(cloudRouterIpAddress)
             .setCreationTimestamp(creationTimestamp)
             .setCustomerRouterIpAddress(customerRouterIpAddress)
+            .setDataplaneVersion(dataplaneVersion)
             .setDescription(description)
             .setGoogleReferenceId(googleReferenceId)
             .setId(id)
             .setInterconnect(interconnect)
             .setKind(kind)
+            .setMtu(mtu)
             .setName(name)
             .setPairingKey(pairingKey)
             .setPartnerAsn(partnerAsn)

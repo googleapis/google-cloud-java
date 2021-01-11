@@ -88,14 +88,7 @@ public final class InsertRegionHealthCheckServiceRequest
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -476024942:
+          case 1671458706:
             {
               com.google.cloud.compute.v1.HealthCheckService.Builder subBuilder = null;
               if (healthCheckServiceResource_ != null) {
@@ -109,6 +102,13 @@ public final class InsertRegionHealthCheckServiceRequest
                 healthCheckServiceResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -145,10 +145,17 @@ public final class InsertRegionHealthCheckServiceRequest
             com.google.cloud.compute.v1.InsertRegionHealthCheckServiceRequest.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_SERVICE_RESOURCE_FIELD_NUMBER = 477367794;
+  public static final int HEALTH_CHECK_SERVICE_RESOURCE_FIELD_NUMBER = 208932338;
   private com.google.cloud.compute.v1.HealthCheckService healthCheckServiceResource_;
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the healthCheckServiceResource field is set.
@@ -158,7 +165,14 @@ public final class InsertRegionHealthCheckServiceRequest
     return healthCheckServiceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The healthCheckServiceResource.
@@ -170,7 +184,14 @@ public final class InsertRegionHealthCheckServiceRequest
         : healthCheckServiceResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -350,11 +371,11 @@ public final class InsertRegionHealthCheckServiceRequest
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (healthCheckServiceResource_ != null) {
+      output.writeMessage(208932338, getHealthCheckServiceResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (healthCheckServiceResource_ != null) {
-      output.writeMessage(477367794, getHealthCheckServiceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -371,13 +392,13 @@ public final class InsertRegionHealthCheckServiceRequest
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (healthCheckServiceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              477367794, getHealthCheckServiceResource());
+              208932338, getHealthCheckServiceResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -725,7 +746,14 @@ public final class InsertRegionHealthCheckServiceRequest
             com.google.cloud.compute.v1.HealthCheckServiceOrBuilder>
         healthCheckServiceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the healthCheckServiceResource field is set.
@@ -734,7 +762,14 @@ public final class InsertRegionHealthCheckServiceRequest
       return healthCheckServiceResourceBuilder_ != null || healthCheckServiceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The healthCheckServiceResource.
@@ -749,7 +784,14 @@ public final class InsertRegionHealthCheckServiceRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setHealthCheckServiceResource(
@@ -767,7 +809,14 @@ public final class InsertRegionHealthCheckServiceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setHealthCheckServiceResource(
@@ -782,7 +831,14 @@ public final class InsertRegionHealthCheckServiceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeHealthCheckServiceResource(
@@ -804,7 +860,14 @@ public final class InsertRegionHealthCheckServiceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearHealthCheckServiceResource() {
@@ -819,7 +882,14 @@ public final class InsertRegionHealthCheckServiceRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.HealthCheckService.Builder
@@ -829,7 +899,14 @@ public final class InsertRegionHealthCheckServiceRequest
       return getHealthCheckServiceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.HealthCheckServiceOrBuilder
@@ -843,7 +920,14 @@ public final class InsertRegionHealthCheckServiceRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.HealthCheckService health_check_service_resource = 477367794;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.HealthCheckService health_check_service_resource = 208932338 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

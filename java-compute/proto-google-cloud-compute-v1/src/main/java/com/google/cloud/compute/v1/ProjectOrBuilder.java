@@ -90,7 +90,7 @@ public interface ProjectOrBuilder
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
    * </code>
    *
    * @return The enum numeric value on the wire for defaultNetworkTier.
@@ -103,7 +103,7 @@ public interface ProjectOrBuilder
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;
+   * <code>.google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 203317905;
    * </code>
    *
    * @return The defaultNetworkTier.
@@ -117,7 +117,7 @@ public interface ProjectOrBuilder
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>string default_service_account = 30276773;</code>
    *
    * @return The defaultServiceAccount.
    */
@@ -129,7 +129,7 @@ public interface ProjectOrBuilder
    * [Output Only] Default service account used by VMs running in this project.
    * </pre>
    *
-   * <code>string default_service_account = 298712229;</code>
+   * <code>string default_service_account = 30276773;</code>
    *
    * @return The bytes for defaultServiceAccount.
    */
@@ -142,7 +142,7 @@ public interface ProjectOrBuilder
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -154,7 +154,7 @@ public interface ProjectOrBuilder
    * An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -167,7 +167,7 @@ public interface ProjectOrBuilder
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return A list containing the enabledFeatures.
    */
@@ -179,7 +179,7 @@ public interface ProjectOrBuilder
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @return The count of enabledFeatures.
    */
@@ -191,7 +191,7 @@ public interface ProjectOrBuilder
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the element to return.
    * @return The enabledFeatures at the given index.
@@ -204,7 +204,7 @@ public interface ProjectOrBuilder
    * Restricted features enabled for use on this project.
    * </pre>
    *
-   * <code>repeated string enabled_features = 469017467;</code>
+   * <code>repeated string enabled_features = 200582011;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the enabledFeatures at the given index.
@@ -344,7 +344,7 @@ public interface ProjectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -356,7 +356,7 @@ public interface ProjectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -369,7 +369,7 @@ public interface ProjectOrBuilder
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
    *
    * @return Whether the usageExportLocation field is set.
    */
@@ -381,7 +381,7 @@ public interface ProjectOrBuilder
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
    *
    * @return The usageExportLocation.
    */
@@ -393,7 +393,7 @@ public interface ProjectOrBuilder
    * The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 347543874;</code>
+   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location = 79108418;</code>
    */
   com.google.cloud.compute.v1.UsageExportLocationOrBuilder getUsageExportLocationOrBuilder();
 

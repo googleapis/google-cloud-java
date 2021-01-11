@@ -314,8 +314,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq
       regionInstanceGroupManagerPatchInstanceConfigReqResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagerPatchInstanceConfigReqResource field is set.
@@ -325,8 +331,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagerPatchInstanceConfigReqResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagerPatchInstanceConfigReqResource.
@@ -340,8 +352,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagerPatchInstanceConfigReqResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1170,8 +1188,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder>
         regionInstanceGroupManagerPatchInstanceConfigReqResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagerPatchInstanceConfigReqResource field is set.
@@ -1181,8 +1205,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagerPatchInstanceConfigReqResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagerPatchInstanceConfigReqResource.
@@ -1199,8 +1229,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagerPatchInstanceConfigReqResource(
@@ -1218,8 +1254,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagerPatchInstanceConfigReqResource(
@@ -1236,8 +1278,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagerPatchInstanceConfigReqResource(
@@ -1260,8 +1308,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagerPatchInstanceConfigReqResource() {
@@ -1276,8 +1330,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq.Builder
@@ -1287,8 +1347,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       return getRegionInstanceGroupManagerPatchInstanceConfigReqResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder
@@ -1304,8 +1370,14 @@ public final class PatchPerInstanceConfigsRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

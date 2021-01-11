@@ -146,7 +146,15 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
   public static final int NODE_TEMPLATE_RESOURCE_FIELD_NUMBER = 127364406;
   private com.google.cloud.compute.v1.NodeTemplate nodeTemplateResource_;
   /**
-   * <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the nodeTemplateResource field is set.
    */
@@ -155,7 +163,15 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
     return nodeTemplateResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The nodeTemplateResource.
    */
@@ -165,7 +181,17 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.NodeTemplate.getDefaultInstance()
         : nodeTemplateResource_;
   }
-  /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.NodeTemplateOrBuilder getNodeTemplateResourceOrBuilder() {
     return getNodeTemplateResource();
@@ -710,7 +736,15 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.NodeTemplateOrBuilder>
         nodeTemplateResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the nodeTemplateResource field is set.
      */
@@ -718,7 +752,15 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
       return nodeTemplateResourceBuilder_ != null || nodeTemplateResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The nodeTemplateResource.
      */
@@ -731,7 +773,17 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
         return nodeTemplateResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setNodeTemplateResource(com.google.cloud.compute.v1.NodeTemplate value) {
       if (nodeTemplateResourceBuilder_ == null) {
         if (value == null) {
@@ -745,7 +797,17 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setNodeTemplateResource(
         com.google.cloud.compute.v1.NodeTemplate.Builder builderForValue) {
       if (nodeTemplateResourceBuilder_ == null) {
@@ -757,7 +819,17 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeNodeTemplateResource(com.google.cloud.compute.v1.NodeTemplate value) {
       if (nodeTemplateResourceBuilder_ == null) {
         if (nodeTemplateResource_ != null) {
@@ -775,7 +847,17 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearNodeTemplateResource() {
       if (nodeTemplateResourceBuilder_ == null) {
         nodeTemplateResource_ = null;
@@ -787,13 +869,33 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.NodeTemplate.Builder getNodeTemplateResourceBuilder() {
 
       onChanged();
       return getNodeTemplateResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.NodeTemplateOrBuilder getNodeTemplateResourceOrBuilder() {
       if (nodeTemplateResourceBuilder_ != null) {
         return nodeTemplateResourceBuilder_.getMessageOrBuilder();
@@ -803,7 +905,17 @@ public final class InsertNodeTemplateRequest extends com.google.protobuf.Generat
             : nodeTemplateResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.NodeTemplate node_template_resource = 127364406 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NodeTemplate,
             com.google.cloud.compute.v1.NodeTemplate.Builder,

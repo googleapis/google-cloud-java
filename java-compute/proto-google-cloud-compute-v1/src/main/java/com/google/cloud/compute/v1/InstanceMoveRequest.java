@@ -70,18 +70,18 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
+          case 170671130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetInstance_ = s;
+              break;
+            }
           case 1054837226:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               destinationZone_ = s;
-              break;
-            }
-          case -1976812518:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetInstance_ = s;
               break;
             }
           default:
@@ -173,7 +173,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int TARGET_INSTANCE_FIELD_NUMBER = 289769347;
+  public static final int TARGET_INSTANCE_FIELD_NUMBER = 21333891;
   private volatile java.lang.Object targetInstance_;
   /**
    *
@@ -185,7 +185,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    * - zones/zone/instances/instance
    * </pre>
    *
-   * <code>string target_instance = 289769347;</code>
+   * <code>string target_instance = 21333891;</code>
    *
    * @return The targetInstance.
    */
@@ -211,7 +211,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
    * - zones/zone/instances/instance
    * </pre>
    *
-   * <code>string target_instance = 289769347;</code>
+   * <code>string target_instance = 21333891;</code>
    *
    * @return The bytes for targetInstance.
    */
@@ -242,11 +242,11 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getTargetInstanceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21333891, targetInstance_);
+    }
     if (!getDestinationZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 131854653, destinationZone_);
-    }
-    if (!getTargetInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 289769347, targetInstance_);
     }
     unknownFields.writeTo(output);
   }
@@ -257,11 +257,11 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (!getTargetInstanceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21333891, targetInstance_);
+    }
     if (!getDestinationZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(131854653, destinationZone_);
-    }
-    if (!getTargetInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(289769347, targetInstance_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -692,7 +692,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 289769347;</code>
+     * <code>string target_instance = 21333891;</code>
      *
      * @return The targetInstance.
      */
@@ -717,7 +717,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 289769347;</code>
+     * <code>string target_instance = 21333891;</code>
      *
      * @return The bytes for targetInstance.
      */
@@ -742,7 +742,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 289769347;</code>
+     * <code>string target_instance = 21333891;</code>
      *
      * @param value The targetInstance to set.
      * @return This builder for chaining.
@@ -766,7 +766,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 289769347;</code>
+     * <code>string target_instance = 21333891;</code>
      *
      * @return This builder for chaining.
      */
@@ -786,7 +786,7 @@ public final class InstanceMoveRequest extends com.google.protobuf.GeneratedMess
      * - zones/zone/instances/instance
      * </pre>
      *
-     * <code>string target_instance = 289769347;</code>
+     * <code>string target_instance = 21333891;</code>
      *
      * @param value The bytes for targetInstance to set.
      * @return This builder for chaining.

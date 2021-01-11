@@ -30,7 +30,7 @@ public interface PatchNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource to update.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -42,25 +42,51 @@ public interface PatchNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource to update.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
   com.google.protobuf.ByteString getNodeGroupBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the nodeGroupResource field is set.
    */
   boolean hasNodeGroupResource();
   /**
-   * <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The nodeGroupResource.
    */
   com.google.cloud.compute.v1.NodeGroup getNodeGroupResource();
-  /** <code>.google.cloud.compute.v1.NodeGroup node_group_resource = 505321899;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NodeGroup node_group_resource = 236886443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.NodeGroupOrBuilder getNodeGroupResourceOrBuilder();
 
   /**

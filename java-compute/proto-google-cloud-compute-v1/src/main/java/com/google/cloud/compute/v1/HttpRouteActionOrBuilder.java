@@ -31,7 +31,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
    *
    * @return Whether the corsPolicy field is set.
    */
@@ -44,7 +44,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
    *
    * @return The corsPolicy.
    */
@@ -57,7 +57,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
    */
   com.google.cloud.compute.v1.CorsPolicyOrBuilder getCorsPolicyOrBuilder();
 
@@ -70,7 +70,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
    *
    * @return Whether the faultInjectionPolicy field is set.
    */
@@ -84,7 +84,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
    *
    * @return The faultInjectionPolicy.
    */
@@ -98,7 +98,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
    */
   com.google.cloud.compute.v1.HttpFaultInjectionOrBuilder getFaultInjectionPolicyOrBuilder();
 
@@ -187,7 +187,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+   * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
    *
    * @return Whether the timeout field is set.
    */
@@ -201,7 +201,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+   * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
    *
    * @return The timeout.
    */
@@ -215,7 +215,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+   * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
    */
   com.google.cloud.compute.v1.DurationOrBuilder getTimeoutOrBuilder();
 
@@ -228,7 +228,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
    *
    * @return Whether the urlRewrite field is set.
    */
@@ -242,7 +242,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
    *
    * @return The urlRewrite.
    */
@@ -256,7 +256,7 @@ public interface HttpRouteActionOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
    */
   com.google.cloud.compute.v1.UrlRewriteOrBuilder getUrlRewriteOrBuilder();
 
@@ -269,7 +269,7 @@ public interface HttpRouteActionOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.WeightedBackendService>
@@ -283,7 +283,7 @@ public interface HttpRouteActionOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   com.google.cloud.compute.v1.WeightedBackendService getWeightedBackendServices(int index);
@@ -296,7 +296,7 @@ public interface HttpRouteActionOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   int getWeightedBackendServicesCount();
@@ -309,7 +309,7 @@ public interface HttpRouteActionOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder>
@@ -323,7 +323,7 @@ public interface HttpRouteActionOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder getWeightedBackendServicesOrBuilder(

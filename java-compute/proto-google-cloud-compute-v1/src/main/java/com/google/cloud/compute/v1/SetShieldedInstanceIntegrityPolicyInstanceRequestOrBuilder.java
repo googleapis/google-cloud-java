@@ -103,16 +103,28 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the shieldedInstanceIntegrityPolicyResource field is set.
    */
   boolean hasShieldedInstanceIntegrityPolicyResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The shieldedInstanceIntegrityPolicyResource.
@@ -120,8 +132,14 @@ public interface SetShieldedInstanceIntegrityPolicyInstanceRequestOrBuilder
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy
       getShieldedInstanceIntegrityPolicyResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 409169462;
+   * .google.cloud.compute.v1.ShieldedInstanceIntegrityPolicy shielded_instance_integrity_policy_resource = 140734006 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceIntegrityPolicyOrBuilder

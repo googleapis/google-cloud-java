@@ -30,7 +30,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>string autoscaler = 248823511;</code>
    *
    * @return The autoscaler.
    */
@@ -42,7 +42,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * [Output Only] The URL of the Autoscaler that targets this instance group manager.
    * </pre>
    *
-   * <code>string autoscaler = 517258967;</code>
+   * <code>string autoscaler = 248823511;</code>
    *
    * @return The bytes for autoscaler.
    */
@@ -104,7 +104,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
    * </code>
    *
    * @return Whether the versionTarget field is set.
@@ -118,7 +118,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
    * </code>
    *
    * @return The versionTarget.
@@ -132,7 +132,7 @@ public interface InstanceGroupManagerStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 289386200;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusVersionTarget version_target = 20950744;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusVersionTargetOrBuilder

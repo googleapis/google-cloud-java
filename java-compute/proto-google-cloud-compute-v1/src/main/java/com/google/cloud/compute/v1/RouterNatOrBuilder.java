@@ -30,7 +30,7 @@ public interface RouterNatOrBuilder
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @return A list containing the drainNatIps.
    */
@@ -42,7 +42,7 @@ public interface RouterNatOrBuilder
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @return The count of drainNatIps.
    */
@@ -54,7 +54,7 @@ public interface RouterNatOrBuilder
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @param index The index of the element to return.
    * @return The drainNatIps at the given index.
@@ -67,12 +67,19 @@ public interface RouterNatOrBuilder
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainNatIps at the given index.
    */
   com.google.protobuf.ByteString getDrainNatIpsBytes(int index);
+
+  /**
+   * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+   *
+   * @return The enableEndpointIndependentMapping.
+   */
+  boolean getEnableEndpointIndependentMapping();
 
   /**
    *
@@ -94,7 +101,7 @@ public interface RouterNatOrBuilder
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -106,7 +113,7 @@ public interface RouterNatOrBuilder
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
    *
    * @return The logConfig.
    */
@@ -118,7 +125,7 @@ public interface RouterNatOrBuilder
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
    */
   com.google.cloud.compute.v1.RouterNatLogConfigOrBuilder getLogConfigOrBuilder();
 
@@ -170,7 +177,7 @@ public interface RouterNatOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
    * </code>
    *
    * @return The enum numeric value on the wire for natIpAllocateOption.
@@ -186,7 +193,7 @@ public interface RouterNatOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
    * </code>
    *
    * @return The natIpAllocateOption.
@@ -287,7 +294,7 @@ public interface RouterNatOrBuilder
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat> getSubnetworksList();
@@ -298,7 +305,7 @@ public interface RouterNatOrBuilder
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   com.google.cloud.compute.v1.RouterNatSubnetworkToNat getSubnetworks(int index);
@@ -309,7 +316,7 @@ public interface RouterNatOrBuilder
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   int getSubnetworksCount();
@@ -320,7 +327,7 @@ public interface RouterNatOrBuilder
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder>
@@ -332,7 +339,7 @@ public interface RouterNatOrBuilder
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder getSubnetworksOrBuilder(int index);

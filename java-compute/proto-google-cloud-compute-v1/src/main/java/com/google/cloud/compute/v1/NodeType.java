@@ -113,43 +113,43 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 486416976:
+            {
+              localSsdGb_ = input.readInt32();
+              break;
+            }
           case 928009368:
             {
               memoryMb_ = input.readInt32();
               break;
             }
-          case -1661066672:
-            {
-              localSsdGb_ = input.readInt32();
-              break;
-            }
-          case -1148113264:
+          case 999370384:
             {
               guestCpus_ = input.readInt32();
               break;
             }
-          case -1012684462:
+          case 1134799186:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               cpuPlatform_ = s;
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -173855334:
+          case 1973628314:
             {
               com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
               if (deprecated_ != null) {
@@ -199,7 +199,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.NodeType.Builder.class);
   }
 
-  public static final int CPU_PLATFORM_FIELD_NUMBER = 410285354;
+  public static final int CPU_PLATFORM_FIELD_NUMBER = 141849898;
   private volatile java.lang.Object cpuPlatform_;
   /**
    *
@@ -208,7 +208,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>string cpu_platform = 141849898;</code>
    *
    * @return The cpuPlatform.
    */
@@ -231,7 +231,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>string cpu_platform = 141849898;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -297,7 +297,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEPRECATED_FIELD_NUMBER = 515138995;
+  public static final int DEPRECATED_FIELD_NUMBER = 246703539;
   private com.google.cloud.compute.v1.DeprecationStatus deprecated_;
   /**
    *
@@ -306,7 +306,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -321,7 +321,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -338,14 +338,14 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
     return getDeprecated();
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -354,7 +354,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -377,7 +377,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -394,7 +394,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int GUEST_CPUS_FIELD_NUMBER = 393356754;
+  public static final int GUEST_CPUS_FIELD_NUMBER = 124921298;
   private int guestCpus_;
   /**
    *
@@ -403,7 +403,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>int32 guest_cpus = 124921298;</code>
    *
    * @return The guestCpus.
    */
@@ -510,7 +510,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOCAL_SSD_GB_FIELD_NUMBER = 329237578;
+  public static final int LOCAL_SSD_GB_FIELD_NUMBER = 60802122;
   private int localSsdGb_;
   /**
    *
@@ -519,7 +519,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 329237578;</code>
+   * <code>int32 local_ssd_gb = 60802122;</code>
    *
    * @return The localSsdGb.
    */
@@ -595,7 +595,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -604,7 +604,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -627,7 +627,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -722,26 +722,26 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (localSsdGb_ != 0) {
+      output.writeInt32(60802122, localSsdGb_);
+    }
     if (memoryMb_ != 0) {
       output.writeInt32(116001171, memoryMb_);
     }
-    if (localSsdGb_ != 0) {
-      output.writeInt32(329237578, localSsdGb_);
-    }
     if (guestCpus_ != 0) {
-      output.writeInt32(393356754, guestCpus_);
+      output.writeInt32(124921298, guestCpus_);
     }
     if (!getCpuPlatformBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 410285354, cpuPlatform_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 141849898, cpuPlatform_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (deprecated_ != null) {
-      output.writeMessage(515138995, getDeprecated());
+      output.writeMessage(246703539, getDeprecated());
     }
     unknownFields.writeTo(output);
   }
@@ -768,26 +768,26 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (localSsdGb_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(60802122, localSsdGb_);
+    }
     if (memoryMb_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(116001171, memoryMb_);
     }
-    if (localSsdGb_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(329237578, localSsdGb_);
-    }
     if (guestCpus_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(393356754, guestCpus_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(124921298, guestCpus_);
     }
     if (!getCpuPlatformBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(410285354, cpuPlatform_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(141849898, cpuPlatform_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (deprecated_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(515138995, getDeprecated());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(246703539, getDeprecated());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1201,7 +1201,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>string cpu_platform = 141849898;</code>
      *
      * @return The cpuPlatform.
      */
@@ -1223,7 +1223,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>string cpu_platform = 141849898;</code>
      *
      * @return The bytes for cpuPlatform.
      */
@@ -1245,7 +1245,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>string cpu_platform = 141849898;</code>
      *
      * @param value The cpuPlatform to set.
      * @return This builder for chaining.
@@ -1266,7 +1266,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>string cpu_platform = 141849898;</code>
      *
      * @return This builder for chaining.
      */
@@ -1283,7 +1283,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The CPU platform used by this node type.
      * </pre>
      *
-     * <code>string cpu_platform = 410285354;</code>
+     * <code>string cpu_platform = 141849898;</code>
      *
      * @param value The bytes for cpuPlatform to set.
      * @return This builder for chaining.
@@ -1418,7 +1418,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      *
      * @return Whether the deprecated field is set.
      */
@@ -1432,7 +1432,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      *
      * @return The deprecated.
      */
@@ -1452,7 +1452,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1474,7 +1474,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1494,7 +1494,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1520,7 +1520,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
@@ -1540,7 +1540,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
 
@@ -1554,7 +1554,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1572,7 +1572,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this node type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -1599,7 +1599,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1621,7 +1621,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1643,7 +1643,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1664,7 +1664,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1681,7 +1681,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1705,7 +1705,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>int32 guest_cpus = 124921298;</code>
      *
      * @return The guestCpus.
      */
@@ -1720,7 +1720,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>int32 guest_cpus = 124921298;</code>
      *
      * @param value The guestCpus to set.
      * @return This builder for chaining.
@@ -1738,7 +1738,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The number of virtual CPUs that are available to the node type.
      * </pre>
      *
-     * <code>int32 guest_cpus = 393356754;</code>
+     * <code>int32 guest_cpus = 124921298;</code>
      *
      * @return This builder for chaining.
      */
@@ -1969,7 +1969,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>int32 local_ssd_gb = 60802122;</code>
      *
      * @return The localSsdGb.
      */
@@ -1984,7 +1984,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>int32 local_ssd_gb = 60802122;</code>
      *
      * @param value The localSsdGb to set.
      * @return This builder for chaining.
@@ -2002,7 +2002,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Local SSD available to the node type, defined in GB.
      * </pre>
      *
-     * <code>int32 local_ssd_gb = 329237578;</code>
+     * <code>int32 local_ssd_gb = 60802122;</code>
      *
      * @return This builder for chaining.
      */
@@ -2179,7 +2179,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2201,7 +2201,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2223,7 +2223,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2244,7 +2244,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2261,7 +2261,7 @@ public final class NodeType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

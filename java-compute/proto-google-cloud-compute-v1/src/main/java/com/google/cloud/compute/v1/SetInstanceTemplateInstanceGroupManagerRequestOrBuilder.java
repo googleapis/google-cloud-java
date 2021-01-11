@@ -51,16 +51,28 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersSetInstanceTemplateRequestResource field is set.
    */
   boolean hasInstanceGroupManagersSetInstanceTemplateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersSetInstanceTemplateRequestResource.
@@ -68,8 +80,14 @@ public interface SetInstanceTemplateInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest
       getInstanceGroupManagersSetInstanceTemplateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequest instance_group_managers_set_instance_template_request_resource = 9809093 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersSetInstanceTemplateRequestOrBuilder

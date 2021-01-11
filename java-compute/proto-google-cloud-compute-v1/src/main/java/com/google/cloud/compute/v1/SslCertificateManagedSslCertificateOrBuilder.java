@@ -30,7 +30,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   int getDomainStatusCount();
   /**
@@ -40,7 +40,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   boolean containsDomainStatus(java.lang.String key);
   /** Use {@link #getDomainStatusMap()} instead. */
@@ -53,7 +53,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDomainStatusMap();
   /**
@@ -63,7 +63,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   java.lang.String getDomainStatusOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -73,7 +73,7 @@ public interface SslCertificateManagedSslCertificateOrBuilder
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   java.lang.String getDomainStatusOrThrow(java.lang.String key);
 

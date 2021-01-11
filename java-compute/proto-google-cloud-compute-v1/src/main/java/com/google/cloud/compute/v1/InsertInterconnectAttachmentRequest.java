@@ -154,8 +154,14 @@ public final class InsertInterconnectAttachmentRequest
   public static final int INTERCONNECT_ATTACHMENT_RESOURCE_FIELD_NUMBER = 212341369;
   private com.google.cloud.compute.v1.InterconnectAttachment interconnectAttachmentResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the interconnectAttachmentResource field is set.
@@ -165,8 +171,14 @@ public final class InsertInterconnectAttachmentRequest
     return interconnectAttachmentResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachmentResource.
@@ -178,8 +190,14 @@ public final class InsertInterconnectAttachmentRequest
         : interconnectAttachmentResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -766,8 +784,14 @@ public final class InsertInterconnectAttachmentRequest
             com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder>
         interconnectAttachmentResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the interconnectAttachmentResource field is set.
@@ -777,8 +801,14 @@ public final class InsertInterconnectAttachmentRequest
           || interconnectAttachmentResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The interconnectAttachmentResource.
@@ -793,8 +823,14 @@ public final class InsertInterconnectAttachmentRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInterconnectAttachmentResource(
@@ -812,8 +848,14 @@ public final class InsertInterconnectAttachmentRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInterconnectAttachmentResource(
@@ -828,8 +870,14 @@ public final class InsertInterconnectAttachmentRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInterconnectAttachmentResource(
@@ -852,8 +900,14 @@ public final class InsertInterconnectAttachmentRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInterconnectAttachmentResource() {
@@ -868,8 +922,14 @@ public final class InsertInterconnectAttachmentRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachment.Builder
@@ -879,8 +939,14 @@ public final class InsertInterconnectAttachmentRequest
       return getInterconnectAttachmentResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder
@@ -894,8 +960,14 @@ public final class InsertInterconnectAttachmentRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

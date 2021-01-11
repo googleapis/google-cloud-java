@@ -89,21 +89,7 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
               targetHttpsProxy_ = s;
               break;
             }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1169420230:
+          case 978063418:
             {
               com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest.Builder
                   subBuilder = null;
@@ -121,6 +107,20 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
                     subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -257,12 +257,18 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
   }
 
   public static final int
-      REGION_TARGET_HTTPS_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER = 390693383;
+      REGION_TARGET_HTTPS_PROXIES_SET_SSL_CERTIFICATES_REQUEST_RESOURCE_FIELD_NUMBER = 122257927;
   private com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest
       regionTargetHttpsProxiesSetSslCertificatesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionTargetHttpsProxiesSetSslCertificatesRequestResource field is set.
@@ -272,8 +278,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     return regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionTargetHttpsProxiesSetSslCertificatesRequestResource.
@@ -287,8 +299,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
         : regionTargetHttpsProxiesSetSslCertificatesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+   * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -419,15 +437,15 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     if (!getTargetHttpsProxyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 52336748, targetHttpsProxy_);
     }
+    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
+      output.writeMessage(
+          122257927, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
-      output.writeMessage(
-          390693383, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -444,16 +462,16 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
     if (!getTargetHttpsProxyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(52336748, targetHttpsProxy_);
     }
+    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              122257927, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              390693383, getRegionTargetHttpsProxiesSetSslCertificatesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1045,8 +1063,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
             com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder>
         regionTargetHttpsProxiesSetSslCertificatesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionTargetHttpsProxiesSetSslCertificatesRequestResource field is set.
@@ -1056,8 +1080,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
           || regionTargetHttpsProxiesSetSslCertificatesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionTargetHttpsProxiesSetSslCertificatesRequestResource.
@@ -1074,8 +1104,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1093,8 +1129,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1111,8 +1153,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1135,8 +1183,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionTargetHttpsProxiesSetSslCertificatesRequestResource() {
@@ -1151,8 +1205,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest.Builder
@@ -1163,8 +1223,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
           .getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequestOrBuilder
@@ -1180,8 +1246,14 @@ public final class SetSslCertificatesRegionTargetHttpsProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 390693383;
+     * .google.cloud.compute.v1.RegionTargetHttpsProxiesSetSslCertificatesRequest region_target_https_proxies_set_ssl_certificates_request_resource = 122257927 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

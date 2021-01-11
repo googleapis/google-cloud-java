@@ -78,7 +78,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
               acceleratorType_ = s;
               break;
             }
-          case -255929896:
+          case 1891553752:
             {
               acceleratorCount_ = input.readInt32();
               break;
@@ -117,7 +117,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.AcceleratorConfig.Builder.class);
   }
 
-  public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 504879675;
+  public static final int ACCELERATOR_COUNT_FIELD_NUMBER = 236444219;
   private int acceleratorCount_;
   /**
    *
@@ -126,7 +126,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
    * The number of the guest accelerator cards exposed to this instance.
    * </pre>
    *
-   * <code>int32 accelerator_count = 504879675;</code>
+   * <code>int32 accelerator_count = 236444219;</code>
    *
    * @return The acceleratorCount.
    */
@@ -202,7 +202,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138031246, acceleratorType_);
     }
     if (acceleratorCount_ != 0) {
-      output.writeInt32(504879675, acceleratorCount_);
+      output.writeInt32(236444219, acceleratorCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -217,7 +217,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138031246, acceleratorType_);
     }
     if (acceleratorCount_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(504879675, acceleratorCount_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(236444219, acceleratorCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -524,7 +524,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>int32 accelerator_count = 236444219;</code>
      *
      * @return The acceleratorCount.
      */
@@ -539,7 +539,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>int32 accelerator_count = 236444219;</code>
      *
      * @param value The acceleratorCount to set.
      * @return This builder for chaining.
@@ -557,7 +557,7 @@ public final class AcceleratorConfig extends com.google.protobuf.GeneratedMessag
      * The number of the guest accelerator cards exposed to this instance.
      * </pre>
      *
-     * <code>int32 accelerator_count = 504879675;</code>
+     * <code>int32 accelerator_count = 236444219;</code>
      *
      * @return This builder for chaining.
      */

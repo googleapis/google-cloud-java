@@ -73,6 +73,13 @@ public final class InterconnectDiagnosticsLinkLACPStatus
           case 0:
             done = true;
             break;
+          case 603087090:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              neighborSystemId_ = s;
+              break;
+            }
           case 729683242:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -85,13 +92,6 @@ public final class InterconnectDiagnosticsLinkLACPStatus
               int rawValue = input.readEnum();
 
               state_ = rawValue;
-              break;
-            }
-          case -1544396558:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              neighborSystemId_ = s;
               break;
             }
           default:
@@ -150,8 +150,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
     /** <code>DETACHED = 216562546;</code> */
     DETACHED(216562546),
     UNRECOGNIZED(-1),
@@ -167,8 +167,8 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
     /** <code>DETACHED = 216562546;</code> */
     public static final int DETACHED_VALUE = 216562546;
 
@@ -198,7 +198,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
         case 216562546:
           return DETACHED;
@@ -306,7 +306,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     }
   }
 
-  public static final int NEIGHBOR_SYSTEM_ID_FIELD_NUMBER = 343821342;
+  public static final int NEIGHBOR_SYSTEM_ID_FIELD_NUMBER = 75385886;
   private volatile java.lang.Object neighborSystemId_;
   /**
    *
@@ -315,7 +315,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>string neighbor_system_id = 75385886;</code>
    *
    * @return The neighborSystemId.
    */
@@ -338,7 +338,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>string neighbor_system_id = 75385886;</code>
    *
    * @return The bytes for neighborSystemId.
    */
@@ -413,6 +413,9 @@ public final class InterconnectDiagnosticsLinkLACPStatus
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getNeighborSystemIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 75385886, neighborSystemId_);
+    }
     if (!getGoogleSystemIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 91210405, googleSystemId_);
     }
@@ -420,9 +423,6 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State.UNDEFINED_STATE
             .getNumber()) {
       output.writeEnum(109757585, state_);
-    }
-    if (!getNeighborSystemIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 343821342, neighborSystemId_);
     }
     unknownFields.writeTo(output);
   }
@@ -433,6 +433,9 @@ public final class InterconnectDiagnosticsLinkLACPStatus
     if (size != -1) return size;
 
     size = 0;
+    if (!getNeighborSystemIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(75385886, neighborSystemId_);
+    }
     if (!getGoogleSystemIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91210405, googleSystemId_);
     }
@@ -440,10 +443,6 @@ public final class InterconnectDiagnosticsLinkLACPStatus
         != com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State.UNDEFINED_STATE
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
-    }
-    if (!getNeighborSystemIdBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(343821342, neighborSystemId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -873,7 +872,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 343821342;</code>
+     * <code>string neighbor_system_id = 75385886;</code>
      *
      * @return The neighborSystemId.
      */
@@ -895,7 +894,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 343821342;</code>
+     * <code>string neighbor_system_id = 75385886;</code>
      *
      * @return The bytes for neighborSystemId.
      */
@@ -917,7 +916,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 343821342;</code>
+     * <code>string neighbor_system_id = 75385886;</code>
      *
      * @param value The neighborSystemId to set.
      * @return This builder for chaining.
@@ -938,7 +937,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 343821342;</code>
+     * <code>string neighbor_system_id = 75385886;</code>
      *
      * @return This builder for chaining.
      */
@@ -955,7 +954,7 @@ public final class InterconnectDiagnosticsLinkLACPStatus
      * System ID of the port on the neighbor's side of the LACP exchange.
      * </pre>
      *
-     * <code>string neighbor_system_id = 343821342;</code>
+     * <code>string neighbor_system_id = 75385886;</code>
      *
      * @param value The bytes for neighborSystemId to set.
      * @return This builder for chaining.

@@ -103,17 +103,43 @@ public interface InsertSubnetworkRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the subnetworkResource field is set.
    */
   boolean hasSubnetworkResource();
   /**
-   * <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The subnetworkResource.
    */
   com.google.cloud.compute.v1.Subnetwork getSubnetworkResource();
-  /** <code>.google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Subnetwork subnetwork_resource = 42233151 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworkResourceOrBuilder();
 }

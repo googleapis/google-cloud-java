@@ -70,6 +70,18 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
           case 0:
             done = true;
             break;
+          case 379087274:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                forwardingRules_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.ForwardingRule>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              forwardingRules_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ForwardingRule.parser(), extensionRegistry));
+              break;
+            }
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
@@ -84,18 +96,6 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
                 warning_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1768396374:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forwardingRules_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.ForwardingRule>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forwardingRules_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ForwardingRule.parser(), extensionRegistry));
               break;
             }
           default:
@@ -135,7 +135,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.ForwardingRulesScopedList.Builder.class);
   }
 
-  public static final int FORWARDING_RULES_FIELD_NUMBER = 315821365;
+  public static final int FORWARDING_RULES_FIELD_NUMBER = 47385909;
   private java.util.List<com.google.cloud.compute.v1.ForwardingRule> forwardingRules_;
   /**
    *
@@ -144,7 +144,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.ForwardingRule> getForwardingRulesList() {
@@ -157,7 +157,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.ForwardingRuleOrBuilder>
@@ -171,7 +171,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   @java.lang.Override
   public int getForwardingRulesCount() {
@@ -184,7 +184,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ForwardingRule getForwardingRules(int index) {
@@ -197,7 +197,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRulesOrBuilder(
@@ -265,11 +265,11 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < forwardingRules_.size(); i++) {
+      output.writeMessage(47385909, forwardingRules_.get(i));
+    }
     if (warning_ != null) {
       output.writeMessage(50704284, getWarning());
-    }
-    for (int i = 0; i < forwardingRules_.size(); i++) {
-      output.writeMessage(315821365, forwardingRules_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -280,13 +280,13 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (warning_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
-    }
     for (int i = 0; i < forwardingRules_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              315821365, forwardingRules_.get(i));
+              47385909, forwardingRules_.get(i));
+    }
+    if (warning_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -665,7 +665,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ForwardingRule> getForwardingRulesList() {
       if (forwardingRulesBuilder_ == null) {
@@ -681,7 +681,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public int getForwardingRulesCount() {
       if (forwardingRulesBuilder_ == null) {
@@ -697,7 +697,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRule getForwardingRules(int index) {
       if (forwardingRulesBuilder_ == null) {
@@ -713,7 +713,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder setForwardingRules(int index, com.google.cloud.compute.v1.ForwardingRule value) {
       if (forwardingRulesBuilder_ == null) {
@@ -735,7 +735,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder setForwardingRules(
         int index, com.google.cloud.compute.v1.ForwardingRule.Builder builderForValue) {
@@ -755,7 +755,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder addForwardingRules(com.google.cloud.compute.v1.ForwardingRule value) {
       if (forwardingRulesBuilder_ == null) {
@@ -777,7 +777,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder addForwardingRules(int index, com.google.cloud.compute.v1.ForwardingRule value) {
       if (forwardingRulesBuilder_ == null) {
@@ -799,7 +799,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder addForwardingRules(
         com.google.cloud.compute.v1.ForwardingRule.Builder builderForValue) {
@@ -819,7 +819,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder addForwardingRules(
         int index, com.google.cloud.compute.v1.ForwardingRule.Builder builderForValue) {
@@ -839,7 +839,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder addAllForwardingRules(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.ForwardingRule> values) {
@@ -859,7 +859,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder clearForwardingRules() {
       if (forwardingRulesBuilder_ == null) {
@@ -878,7 +878,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public Builder removeForwardingRules(int index) {
       if (forwardingRulesBuilder_ == null) {
@@ -897,7 +897,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRule.Builder getForwardingRulesBuilder(int index) {
       return getForwardingRulesFieldBuilder().getBuilder(index);
@@ -909,7 +909,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRulesOrBuilder(
         int index) {
@@ -926,7 +926,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.ForwardingRuleOrBuilder>
         getForwardingRulesOrBuilderList() {
@@ -943,7 +943,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRule.Builder addForwardingRulesBuilder() {
       return getForwardingRulesFieldBuilder()
@@ -956,7 +956,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public com.google.cloud.compute.v1.ForwardingRule.Builder addForwardingRulesBuilder(int index) {
       return getForwardingRulesFieldBuilder()
@@ -969,7 +969,7 @@ public final class ForwardingRulesScopedList extends com.google.protobuf.Generat
      * A list of forwarding rules contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+     * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.ForwardingRule.Builder>
         getForwardingRulesBuilderList() {

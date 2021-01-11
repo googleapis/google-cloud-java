@@ -345,7 +345,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param targetHttpsProxyResource
+   * @param targetHttpsProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -370,9 +370,11 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient = RegionTargetHttpsProxiesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   InsertRegionTargetHttpsProxyRequest request = InsertRegionTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
    *     .build();
    *   Operation response = regionTargetHttpsProxiesClient.insert(request);
    * }
@@ -396,9 +398,11 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient = RegionTargetHttpsProxiesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   InsertRegionTargetHttpsProxyRequest request = InsertRegionTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionTargetHttpsProxiesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -551,7 +555,8 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set an SslCertificates
    *     resource for.
-   * @param regionTargetHttpsProxiesSetSslCertificatesRequestResource
+   * @param regionTargetHttpsProxiesSetSslCertificatesRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setSslCertificates(
@@ -581,10 +586,12 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient = RegionTargetHttpsProxiesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionTargetHttpsProxiesSetSslCertificatesRequest regionTargetHttpsProxiesSetSslCertificatesRequestResource = RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetSslCertificatesRegionTargetHttpsProxyRequest request = SetSslCertificatesRegionTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(regionTargetHttpsProxiesSetSslCertificatesRequestResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   Operation response = regionTargetHttpsProxiesClient.setSslCertificates(request);
@@ -609,10 +616,12 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * try (RegionTargetHttpsProxiesClient regionTargetHttpsProxiesClient = RegionTargetHttpsProxiesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionTargetHttpsProxiesSetSslCertificatesRequest regionTargetHttpsProxiesSetSslCertificatesRequestResource = RegionTargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetSslCertificatesRegionTargetHttpsProxyRequest request = SetSslCertificatesRegionTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionTargetHttpsProxiesSetSslCertificatesRequestResource(regionTargetHttpsProxiesSetSslCertificatesRequestResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionTargetHttpsProxiesClient.setSslCertificatesCallable().futureCall(request);
@@ -645,7 +654,7 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param targetHttpsProxy Name of the TargetHttpsProxy to set a URL map for.
-   * @param urlMapReferenceResource
+   * @param urlMapReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setUrlMap(
@@ -674,10 +683,12 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetHttpsProxy = "";
+   *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   SetUrlMapRegionTargetHttpsProxyRequest request = SetUrlMapRegionTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetHttpsProxy(targetHttpsProxy)
+   *     .setUrlMapReferenceResource(urlMapReferenceResource)
    *     .build();
    *   Operation response = regionTargetHttpsProxiesClient.setUrlMap(request);
    * }
@@ -701,10 +712,12 @@ public class RegionTargetHttpsProxiesClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetHttpsProxy = "";
+   *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   SetUrlMapRegionTargetHttpsProxyRequest request = SetUrlMapRegionTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetHttpsProxy(targetHttpsProxy)
+   *     .setUrlMapReferenceResource(urlMapReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionTargetHttpsProxiesClient.setUrlMapCallable().futureCall(request);
    *   // Do something

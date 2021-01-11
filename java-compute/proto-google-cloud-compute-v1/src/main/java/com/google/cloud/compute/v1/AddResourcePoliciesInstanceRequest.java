@@ -95,14 +95,7 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -380151590:
+          case 1767332058:
             {
               com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest.Builder subBuilder =
                   null;
@@ -118,6 +111,13 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
                 instancesAddResourcePoliciesRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -203,12 +203,18 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
     }
   }
 
-  public static final int INSTANCES_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER = 489351963;
+  public static final int INSTANCES_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER = 220916507;
   private com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest
       instancesAddResourcePoliciesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesAddResourcePoliciesRequestResource field is set.
@@ -218,8 +224,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
     return instancesAddResourcePoliciesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesAddResourcePoliciesRequestResource.
@@ -232,8 +244,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
         : instancesAddResourcePoliciesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -416,11 +434,11 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (instancesAddResourcePoliciesRequestResource_ != null) {
+      output.writeMessage(220916507, getInstancesAddResourcePoliciesRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (instancesAddResourcePoliciesRequestResource_ != null) {
-      output.writeMessage(489351963, getInstancesAddResourcePoliciesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -440,13 +458,13 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (instancesAddResourcePoliciesRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              489351963, getInstancesAddResourcePoliciesRequestResource());
+              220916507, getInstancesAddResourcePoliciesRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -912,8 +930,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
             com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequestOrBuilder>
         instancesAddResourcePoliciesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instancesAddResourcePoliciesRequestResource field is set.
@@ -923,8 +947,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
           || instancesAddResourcePoliciesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instancesAddResourcePoliciesRequestResource.
@@ -940,8 +970,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesAddResourcePoliciesRequestResource(
@@ -959,8 +995,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesAddResourcePoliciesRequestResource(
@@ -975,8 +1017,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstancesAddResourcePoliciesRequestResource(
@@ -999,8 +1047,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstancesAddResourcePoliciesRequestResource() {
@@ -1015,8 +1069,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest.Builder
@@ -1026,8 +1086,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       return getInstancesAddResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequestOrBuilder
@@ -1041,8 +1107,14 @@ public final class AddResourcePoliciesInstanceRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+     * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

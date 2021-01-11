@@ -43,7 +43,7 @@ public interface CircuitBreakersOrBuilder
    * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
    * </pre>
    *
-   * <code>int32 max_pending_requests = 375558887;</code>
+   * <code>int32 max_pending_requests = 107123431;</code>
    *
    * @return The maxPendingRequests.
    */
@@ -69,7 +69,7 @@ public interface CircuitBreakersOrBuilder
    * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
    * </pre>
    *
-   * <code>int32 max_requests_per_connection = 361630528;</code>
+   * <code>int32 max_requests_per_connection = 93195072;</code>
    *
    * @return The maxRequestsPerConnection.
    */

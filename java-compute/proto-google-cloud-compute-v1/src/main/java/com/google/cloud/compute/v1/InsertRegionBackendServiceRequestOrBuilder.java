@@ -24,18 +24,44 @@ public interface InsertRegionBackendServiceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the backendServiceResource field is set.
    */
   boolean hasBackendServiceResource();
   /**
-   * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The backendServiceResource.
    */
   com.google.cloud.compute.v1.BackendService getBackendServiceResource();
-  /** <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.BackendServiceOrBuilder getBackendServiceResourceOrBuilder();
 
   /**

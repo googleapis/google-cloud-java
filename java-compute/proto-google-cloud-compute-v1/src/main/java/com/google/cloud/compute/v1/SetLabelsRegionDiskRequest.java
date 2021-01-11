@@ -253,8 +253,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
   public static final int REGION_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 259357782;
   private com.google.cloud.compute.v1.RegionSetLabelsRequest regionSetLabelsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionSetLabelsRequestResource field is set.
@@ -264,8 +270,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
     return regionSetLabelsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionSetLabelsRequestResource.
@@ -277,8 +289,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
         : regionSetLabelsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1007,8 +1025,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.RegionSetLabelsRequestOrBuilder>
         regionSetLabelsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionSetLabelsRequestResource field is set.
@@ -1018,8 +1042,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
           || regionSetLabelsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionSetLabelsRequestResource.
@@ -1034,8 +1064,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionSetLabelsRequestResource(
@@ -1053,8 +1089,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionSetLabelsRequestResource(
@@ -1069,8 +1111,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionSetLabelsRequestResource(
@@ -1093,8 +1141,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionSetLabelsRequestResource() {
@@ -1109,8 +1163,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionSetLabelsRequest.Builder
@@ -1120,8 +1180,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       return getRegionSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionSetLabelsRequestOrBuilder
@@ -1135,8 +1201,14 @@ public final class SetLabelsRegionDiskRequest extends com.google.protobuf.Genera
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+     * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

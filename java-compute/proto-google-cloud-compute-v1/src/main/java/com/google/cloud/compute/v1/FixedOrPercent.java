@@ -73,12 +73,12 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
               fixed_ = input.readInt32();
               break;
             }
-          case -1136451032:
+          case 1011032616:
             {
               percent_ = input.readInt32();
               break;
             }
-          case -518304272:
+          case 1629179376:
             {
               calculated_ = input.readInt32();
               break;
@@ -117,7 +117,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.FixedOrPercent.Builder.class);
   }
 
-  public static final int CALCULATED_FIELD_NUMBER = 472082878;
+  public static final int CALCULATED_FIELD_NUMBER = 203647422;
   private int calculated_;
   /**
    *
@@ -128,7 +128,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
    * </pre>
    *
-   * <code>int32 calculated = 472082878;</code>
+   * <code>int32 calculated = 203647422;</code>
    *
    * @return The calculated.
    */
@@ -155,7 +155,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
     return fixed_;
   }
 
-  public static final int PERCENT_FIELD_NUMBER = 394814533;
+  public static final int PERCENT_FIELD_NUMBER = 126379077;
   private int percent_;
   /**
    *
@@ -164,7 +164,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
    * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
    * </pre>
    *
-   * <code>int32 percent = 394814533;</code>
+   * <code>int32 percent = 126379077;</code>
    *
    * @return The percent.
    */
@@ -191,10 +191,10 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       output.writeInt32(97445748, fixed_);
     }
     if (percent_ != 0) {
-      output.writeInt32(394814533, percent_);
+      output.writeInt32(126379077, percent_);
     }
     if (calculated_ != 0) {
-      output.writeInt32(472082878, calculated_);
+      output.writeInt32(203647422, calculated_);
     }
     unknownFields.writeTo(output);
   }
@@ -209,10 +209,10 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(97445748, fixed_);
     }
     if (percent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(394814533, percent_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(126379077, percent_);
     }
     if (calculated_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(472082878, calculated_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(203647422, calculated_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -528,7 +528,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
      * </pre>
      *
-     * <code>int32 calculated = 472082878;</code>
+     * <code>int32 calculated = 203647422;</code>
      *
      * @return The calculated.
      */
@@ -545,7 +545,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
      * </pre>
      *
-     * <code>int32 calculated = 472082878;</code>
+     * <code>int32 calculated = 203647422;</code>
      *
      * @param value The calculated to set.
      * @return This builder for chaining.
@@ -565,7 +565,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
      * </pre>
      *
-     * <code>int32 calculated = 472082878;</code>
+     * <code>int32 calculated = 203647422;</code>
      *
      * @return This builder for chaining.
      */
@@ -636,7 +636,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
      * </pre>
      *
-     * <code>int32 percent = 394814533;</code>
+     * <code>int32 percent = 126379077;</code>
      *
      * @return The percent.
      */
@@ -651,7 +651,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
      * </pre>
      *
-     * <code>int32 percent = 394814533;</code>
+     * <code>int32 percent = 126379077;</code>
      *
      * @param value The percent to set.
      * @return This builder for chaining.
@@ -669,7 +669,7 @@ public final class FixedOrPercent extends com.google.protobuf.GeneratedMessageV3
      * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
      * </pre>
      *
-     * <code>int32 percent = 394814533;</code>
+     * <code>int32 percent = 126379077;</code>
      *
      * @return This builder for chaining.
      */

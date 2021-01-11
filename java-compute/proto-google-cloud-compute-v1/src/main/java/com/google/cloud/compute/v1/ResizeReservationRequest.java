@@ -94,14 +94,7 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
               reservation_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1180864886:
+          case 966618762:
             {
               com.google.cloud.compute.v1.ReservationsResizeRequest.Builder subBuilder = null;
               if (reservationsResizeRequestResource_ != null) {
@@ -116,6 +109,13 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
                 reservationsResizeRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -303,11 +303,17 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     }
   }
 
-  public static final int RESERVATIONS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 389262801;
+  public static final int RESERVATIONS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 120827345;
   private com.google.cloud.compute.v1.ReservationsResizeRequest reservationsResizeRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the reservationsResizeRequestResource field is set.
@@ -317,8 +323,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     return reservationsResizeRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The reservationsResizeRequestResource.
@@ -331,8 +343,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
         : reservationsResizeRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -413,11 +431,11 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     if (!getReservationBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 47530956, reservation_);
     }
+    if (reservationsResizeRequestResource_ != null) {
+      output.writeMessage(120827345, getReservationsResizeRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (reservationsResizeRequestResource_ != null) {
-      output.writeMessage(389262801, getReservationsResizeRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -437,13 +455,13 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
     if (!getReservationBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47530956, reservation_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (reservationsResizeRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              389262801, getReservationsResizeRequestResource());
+              120827345, getReservationsResizeRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1125,8 +1143,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.ReservationsResizeRequestOrBuilder>
         reservationsResizeRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the reservationsResizeRequestResource field is set.
@@ -1136,8 +1160,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
           || reservationsResizeRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The reservationsResizeRequestResource.
@@ -1153,8 +1183,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setReservationsResizeRequestResource(
@@ -1172,8 +1208,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setReservationsResizeRequestResource(
@@ -1188,8 +1230,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeReservationsResizeRequestResource(
@@ -1212,8 +1260,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearReservationsResizeRequestResource() {
@@ -1228,8 +1282,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ReservationsResizeRequest.Builder
@@ -1239,8 +1299,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       return getReservationsResizeRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ReservationsResizeRequestOrBuilder
@@ -1254,8 +1320,14 @@ public final class ResizeReservationRequest extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+     * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

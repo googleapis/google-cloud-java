@@ -71,18 +71,18 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
           case 0:
             done = true;
             break;
+          case 482532130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              family_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1664951518:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              family_ = s;
               break;
             }
           default:
@@ -119,7 +119,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.GetFromFamilyImageRequest.Builder.class);
   }
 
-  public static final int FAMILY_FIELD_NUMBER = 328751972;
+  public static final int FAMILY_FIELD_NUMBER = 60316516;
   private volatile java.lang.Object family_;
   /**
    *
@@ -128,7 +128,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
    * Name of the image family to search for.
    * </pre>
    *
-   * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The family.
    */
@@ -151,7 +151,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
    * Name of the image family to search for.
    * </pre>
    *
-   * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for family.
    */
@@ -231,11 +231,11 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getFamilyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 60316516, family_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getFamilyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 328751972, family_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +246,11 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
+    if (!getFamilyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(60316516, family_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getFamilyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(328751972, family_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -560,7 +560,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * Name of the image family to search for.
      * </pre>
      *
-     * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The family.
      */
@@ -582,7 +582,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * Name of the image family to search for.
      * </pre>
      *
-     * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for family.
      */
@@ -604,7 +604,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * Name of the image family to search for.
      * </pre>
      *
-     * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The family to set.
      * @return This builder for chaining.
@@ -625,7 +625,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * Name of the image family to search for.
      * </pre>
      *
-     * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -642,7 +642,7 @@ public final class GetFromFamilyImageRequest extends com.google.protobuf.Generat
      * Name of the image family to search for.
      * </pre>
      *
-     * <code>string family = 328751972 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string family = 60316516 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for family to set.
      * @return This builder for chaining.

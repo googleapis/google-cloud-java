@@ -32,7 +32,7 @@ public interface FixedOrPercentOrBuilder
    * - If the value is a percent, then the calculated value is percent/100 * targetSize. For example, the calculated value of a 80% of a managed instance group with 150 instances would be (80/100 * 150) = 120 VM instances. If there is a remainder, the number is rounded up.
    * </pre>
    *
-   * <code>int32 calculated = 472082878;</code>
+   * <code>int32 calculated = 203647422;</code>
    *
    * @return The calculated.
    */
@@ -58,7 +58,7 @@ public interface FixedOrPercentOrBuilder
    * Specifies a percentage of instances between 0 to 100%, inclusive. For example, specify 80 for 80%.
    * </pre>
    *
-   * <code>int32 percent = 394814533;</code>
+   * <code>int32 percent = 126379077;</code>
    *
    * @return The percent.
    */

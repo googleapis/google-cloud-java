@@ -55,7 +55,7 @@ public interface RouterInterfaceOrBuilder
    * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_interconnect_attachment = 501085518;</code>
+   * <code>string linked_interconnect_attachment = 232650062;</code>
    *
    * @return The linkedInterconnectAttachment.
    */
@@ -67,7 +67,7 @@ public interface RouterInterfaceOrBuilder
    * URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_interconnect_attachment = 501085518;</code>
+   * <code>string linked_interconnect_attachment = 232650062;</code>
    *
    * @return The bytes for linkedInterconnectAttachment.
    */
@@ -80,7 +80,7 @@ public interface RouterInterfaceOrBuilder
    * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>string linked_vpn_tunnel = 83861497;</code>
    *
    * @return The linkedVpnTunnel.
    */
@@ -92,7 +92,7 @@ public interface RouterInterfaceOrBuilder
    * URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>string linked_vpn_tunnel = 83861497;</code>
    *
    * @return The bytes for linkedVpnTunnel.
    */

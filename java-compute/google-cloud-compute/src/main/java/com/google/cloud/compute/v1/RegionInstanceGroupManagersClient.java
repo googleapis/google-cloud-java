@@ -191,7 +191,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroupManager Name of the managed instance group.
-   * @param regionInstanceGroupManagersAbandonInstancesRequestResource
+   * @param regionInstanceGroupManagersAbandonInstancesRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation abandonInstances(
@@ -234,10 +235,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesRegionInstanceGroupManagerRequest request = AbandonInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.abandonInstances(request);
    * }
@@ -274,10 +277,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersAbandonInstancesRequest regionInstanceGroupManagersAbandonInstancesRequestResource = RegionInstanceGroupManagersAbandonInstancesRequest.newBuilder().build();
    *   AbandonInstancesRegionInstanceGroupManagerRequest request = AbandonInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersAbandonInstancesRequestResource(regionInstanceGroupManagersAbandonInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.abandonInstancesCallable().futureCall(request);
    *   // Do something
@@ -309,7 +314,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request, should conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group, should conform to RFC1035.
-   * @param regionInstanceGroupManagersApplyUpdatesRequestResource
+   * @param regionInstanceGroupManagersApplyUpdatesRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation applyUpdatesToInstances(
@@ -340,10 +346,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
    *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request = ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersApplyUpdatesRequestResource(regionInstanceGroupManagersApplyUpdatesRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.applyUpdatesToInstances(request);
    * }
@@ -368,10 +376,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersApplyUpdatesRequest regionInstanceGroupManagersApplyUpdatesRequestResource = RegionInstanceGroupManagersApplyUpdatesRequest.newBuilder().build();
    *   ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest request = ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersApplyUpdatesRequestResource(regionInstanceGroupManagersApplyUpdatesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.applyUpdatesToInstancesCallable().futureCall(request);
    *   // Do something
@@ -409,7 +419,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *     conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param regionInstanceGroupManagersCreateInstancesRequestResource
+   * @param regionInstanceGroupManagersCreateInstancesRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation createInstances(
@@ -444,10 +455,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
    *   CreateInstancesRegionInstanceGroupManagerRequest request = CreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersCreateInstancesRequestResource(regionInstanceGroupManagersCreateInstancesRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.createInstances(request);
    * }
@@ -475,10 +488,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersCreateInstancesRequest regionInstanceGroupManagersCreateInstancesRequestResource = RegionInstanceGroupManagersCreateInstancesRequest.newBuilder().build();
    *   CreateInstancesRegionInstanceGroupManagerRequest request = CreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersCreateInstancesRequestResource(regionInstanceGroupManagersCreateInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.createInstancesCallable().futureCall(request);
    *   // Do something
@@ -604,7 +619,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroupManager Name of the managed instance group.
-   * @param regionInstanceGroupManagersDeleteInstancesRequestResource
+   * @param regionInstanceGroupManagersDeleteInstancesRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteInstances(
@@ -646,10 +662,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesRegionInstanceGroupManagerRequest request = DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.deleteInstances(request);
    * }
@@ -684,10 +702,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersDeleteInstancesRequest regionInstanceGroupManagersDeleteInstancesRequestResource = RegionInstanceGroupManagersDeleteInstancesRequest.newBuilder().build();
    *   DeleteInstancesRegionInstanceGroupManagerRequest request = DeleteInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersDeleteInstancesRequestResource(regionInstanceGroupManagersDeleteInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.deleteInstancesCallable().futureCall(request);
    *   // Do something
@@ -720,7 +740,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param region Name of the region scoping this request, should conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param regionInstanceGroupManagerDeleteInstanceConfigReqResource
+   * @param regionInstanceGroupManagerDeleteInstanceConfigReqResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deletePerInstanceConfigs(
@@ -751,10 +772,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
    *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request = DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(regionInstanceGroupManagerDeleteInstanceConfigReqResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.deletePerInstanceConfigs(request);
    * }
@@ -779,10 +802,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagerDeleteInstanceConfigReq regionInstanceGroupManagerDeleteInstanceConfigReqResource = RegionInstanceGroupManagerDeleteInstanceConfigReq.newBuilder().build();
    *   DeletePerInstanceConfigsRegionInstanceGroupManagerRequest request = DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(regionInstanceGroupManagerDeleteInstanceConfigReqResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.deletePerInstanceConfigsCallable().futureCall(request);
    *   // Do something
@@ -903,7 +928,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param instanceGroupManagerResource
+   * @param instanceGroupManagerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -931,9 +956,11 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionInstanceGroupManagerRequest request = InsertRegionInstanceGroupManagerRequest.newBuilder()
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -962,9 +989,11 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionInstanceGroupManagerRequest request = InsertRegionInstanceGroupManagerRequest.newBuilder()
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -1530,7 +1559,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroupManager The name of the instance group manager.
-   * @param instanceGroupManagerResource
+   * @param instanceGroupManagerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -1561,10 +1590,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionInstanceGroupManagerRequest request = PatchRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -1592,10 +1623,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * <pre><code>
    * try (RegionInstanceGroupManagersClient regionInstanceGroupManagersClient = RegionInstanceGroupManagersClient.create()) {
    *   String instanceGroupManager = "";
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionInstanceGroupManagerRequest request = PatchRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -1611,9 +1644,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
-   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
-   * or patch.
+   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
@@ -1631,7 +1663,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param region Name of the region scoping this request, should conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param regionInstanceGroupManagerPatchInstanceConfigReqResource
+   * @param regionInstanceGroupManagerPatchInstanceConfigReqResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patchPerInstanceConfigs(
@@ -1653,9 +1686,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
-   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
-   * or patch.
+   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
@@ -1664,10 +1696,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
    *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request = PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(regionInstanceGroupManagerPatchInstanceConfigReqResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.patchPerInstanceConfigs(request);
    * }
@@ -1683,9 +1717,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Insert or patch (for the ones that already exist) per-instance configs for the managed instance
-   * group. perInstanceConfig.instance serves as a key used to distinguish whether to perform insert
-   * or patch.
+   * Inserts or patches per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
@@ -1694,10 +1727,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagerPatchInstanceConfigReq regionInstanceGroupManagerPatchInstanceConfigReqResource = RegionInstanceGroupManagerPatchInstanceConfigReq.newBuilder().build();
    *   PatchPerInstanceConfigsRegionInstanceGroupManagerRequest request = PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagerPatchInstanceConfigReqResource(regionInstanceGroupManagerPatchInstanceConfigReqResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.patchPerInstanceConfigsCallable().futureCall(request);
    *   // Do something
@@ -1739,7 +1774,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroupManager Name of the managed instance group.
-   * @param regionInstanceGroupManagersRecreateRequestResource
+   * @param regionInstanceGroupManagersRecreateRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation recreateInstances(
@@ -1780,10 +1815,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
    *   RecreateInstancesRegionInstanceGroupManagerRequest request = RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.recreateInstances(request);
    * }
@@ -1818,10 +1855,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersRecreateRequest regionInstanceGroupManagersRecreateRequestResource = RegionInstanceGroupManagersRecreateRequest.newBuilder().build();
    *   RecreateInstancesRegionInstanceGroupManagerRequest request = RecreateInstancesRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersRecreateRequestResource(regionInstanceGroupManagersRecreateRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.recreateInstancesCallable().futureCall(request);
    *   // Do something
@@ -1975,7 +2014,7 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroupManager The name of the managed instance group.
-   * @param regionInstanceGroupManagersSetTemplateRequestResource
+   * @param regionInstanceGroupManagersSetTemplateRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setInstanceTemplate(
@@ -2007,10 +2046,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateRegionInstanceGroupManagerRequest request = SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.setInstanceTemplate(request);
    * }
@@ -2036,10 +2077,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersSetTemplateRequest regionInstanceGroupManagersSetTemplateRequestResource = RegionInstanceGroupManagersSetTemplateRequest.newBuilder().build();
    *   SetInstanceTemplateRegionInstanceGroupManagerRequest request = SetInstanceTemplateRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersSetTemplateRequestResource(regionInstanceGroupManagersSetTemplateRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.setInstanceTemplateCallable().futureCall(request);
    *   // Do something
@@ -2072,7 +2115,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroupManager Name of the managed instance group.
-   * @param regionInstanceGroupManagersSetTargetPoolsRequestResource
+   * @param regionInstanceGroupManagersSetTargetPoolsRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setTargetPools(
@@ -2104,10 +2148,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsRegionInstanceGroupManagerRequest request = SetTargetPoolsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.setTargetPools(request);
    * }
@@ -2132,10 +2178,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagersSetTargetPoolsRequest regionInstanceGroupManagersSetTargetPoolsRequestResource = RegionInstanceGroupManagersSetTargetPoolsRequest.newBuilder().build();
    *   SetTargetPoolsRegionInstanceGroupManagerRequest request = SetTargetPoolsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagersSetTargetPoolsRequestResource(regionInstanceGroupManagersSetTargetPoolsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.setTargetPoolsCallable().futureCall(request);
    *   // Do something
@@ -2150,9 +2198,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Insert or update (for the ones that already exist) per-instance configs for the managed
-   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
-   * perform insert or patch.
+   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
@@ -2170,7 +2217,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    * @param region Name of the region scoping this request, should conform to RFC1035.
    * @param instanceGroupManager The name of the managed instance group. It should conform to
    *     RFC1035.
-   * @param regionInstanceGroupManagerUpdateInstanceConfigReqResource
+   * @param regionInstanceGroupManagerUpdateInstanceConfigReqResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updatePerInstanceConfigs(
@@ -2192,9 +2240,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Insert or update (for the ones that already exist) per-instance configs for the managed
-   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
-   * perform insert or patch.
+   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
@@ -2203,10 +2250,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
    *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request = UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(regionInstanceGroupManagerUpdateInstanceConfigReqResource)
    *     .build();
    *   Operation response = regionInstanceGroupManagersClient.updatePerInstanceConfigs(request);
    * }
@@ -2222,9 +2271,8 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Insert or update (for the ones that already exist) per-instance configs for the managed
-   * instance group. perInstanceConfig.instance serves as a key used to distinguish whether to
-   * perform insert or patch.
+   * Inserts or updates per-instance configs for the managed instance group. perInstanceConfig.name
+   * serves as a key used to distinguish whether to perform insert or patch.
    *
    * <p>Sample code:
    *
@@ -2233,10 +2281,12 @@ public class RegionInstanceGroupManagersClient implements BackgroundResource {
    *   String instanceGroupManager = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupManagerUpdateInstanceConfigReq regionInstanceGroupManagerUpdateInstanceConfigReqResource = RegionInstanceGroupManagerUpdateInstanceConfigReq.newBuilder().build();
    *   UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest request = UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.newBuilder()
    *     .setInstanceGroupManager(instanceGroupManager)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupManagerUpdateInstanceConfigReqResource(regionInstanceGroupManagerUpdateInstanceConfigReqResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupManagersClient.updatePerInstanceConfigsCallable().futureCall(request);
    *   // Do something

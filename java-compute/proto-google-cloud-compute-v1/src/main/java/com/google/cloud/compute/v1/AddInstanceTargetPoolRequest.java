@@ -94,14 +94,7 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -864596062:
+          case 1282887586:
             {
               com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.Builder subBuilder = null;
               if (targetPoolsAddInstanceRequestResource_ != null) {
@@ -116,6 +109,13 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
                 targetPoolsAddInstanceRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -352,12 +352,18 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int TARGET_POOLS_ADD_INSTANCE_REQUEST_RESOURCE_FIELD_NUMBER = 428796404;
+  public static final int TARGET_POOLS_ADD_INSTANCE_REQUEST_RESOURCE_FIELD_NUMBER = 160360948;
   private com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest
       targetPoolsAddInstanceRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetPoolsAddInstanceRequestResource field is set.
@@ -367,8 +373,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     return targetPoolsAddInstanceRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetPoolsAddInstanceRequestResource.
@@ -381,8 +393,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
         : targetPoolsAddInstanceRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -414,11 +432,11 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (targetPoolsAddInstanceRequestResource_ != null) {
+      output.writeMessage(160360948, getTargetPoolsAddInstanceRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (targetPoolsAddInstanceRequestResource_ != null) {
-      output.writeMessage(428796404, getTargetPoolsAddInstanceRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -438,13 +456,13 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (targetPoolsAddInstanceRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              428796404, getTargetPoolsAddInstanceRequestResource());
+              160360948, getTargetPoolsAddInstanceRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1234,8 +1252,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.TargetPoolsAddInstanceRequestOrBuilder>
         targetPoolsAddInstanceRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetPoolsAddInstanceRequestResource field is set.
@@ -1245,8 +1269,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
           || targetPoolsAddInstanceRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetPoolsAddInstanceRequestResource.
@@ -1262,8 +1292,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetPoolsAddInstanceRequestResource(
@@ -1281,8 +1317,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetPoolsAddInstanceRequestResource(
@@ -1297,8 +1339,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetPoolsAddInstanceRequestResource(
@@ -1321,8 +1369,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetPoolsAddInstanceRequestResource() {
@@ -1337,8 +1391,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest.Builder
@@ -1348,8 +1408,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       return getTargetPoolsAddInstanceRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetPoolsAddInstanceRequestOrBuilder
@@ -1363,8 +1429,14 @@ public final class AddInstanceTargetPoolRequest extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+     * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

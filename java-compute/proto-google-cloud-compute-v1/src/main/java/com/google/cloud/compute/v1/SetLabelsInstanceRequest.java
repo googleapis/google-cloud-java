@@ -204,8 +204,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
   public static final int INSTANCES_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 207749344;
   private com.google.cloud.compute.v1.InstancesSetLabelsRequest instancesSetLabelsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesSetLabelsRequestResource field is set.
@@ -215,8 +221,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
     return instancesSetLabelsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesSetLabelsRequestResource.
@@ -229,8 +241,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
         : instancesSetLabelsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -903,8 +921,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.InstancesSetLabelsRequestOrBuilder>
         instancesSetLabelsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instancesSetLabelsRequestResource field is set.
@@ -914,8 +938,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
           || instancesSetLabelsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instancesSetLabelsRequestResource.
@@ -931,8 +961,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesSetLabelsRequestResource(
@@ -950,8 +986,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesSetLabelsRequestResource(
@@ -966,8 +1008,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstancesSetLabelsRequestResource(
@@ -990,8 +1038,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstancesSetLabelsRequestResource() {
@@ -1006,8 +1060,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesSetLabelsRequest.Builder
@@ -1017,8 +1077,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       return getInstancesSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesSetLabelsRequestOrBuilder
@@ -1032,8 +1098,14 @@ public final class SetLabelsInstanceRequest extends com.google.protobuf.Generate
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+     * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

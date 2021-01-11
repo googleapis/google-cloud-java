@@ -128,16 +128,28 @@ public interface RemoveInstanceTargetPoolRequestOrBuilder
   com.google.protobuf.ByteString getTargetPoolBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547;
+   * .google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetPoolsRemoveInstanceRequestResource field is set.
    */
   boolean hasTargetPoolsRemoveInstanceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547;
+   * .google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetPoolsRemoveInstanceRequestResource.
@@ -145,8 +157,14 @@ public interface RemoveInstanceTargetPoolRequestOrBuilder
   com.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest
       getTargetPoolsRemoveInstanceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547;
+   * .google.cloud.compute.v1.TargetPoolsRemoveInstanceRequest target_pools_remove_instance_request_resource = 29548547 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetPoolsRemoveInstanceRequestOrBuilder

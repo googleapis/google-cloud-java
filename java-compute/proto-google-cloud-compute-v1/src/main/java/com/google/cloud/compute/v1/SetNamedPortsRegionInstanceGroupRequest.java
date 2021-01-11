@@ -307,8 +307,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
   private com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest
       regionInstanceGroupsSetNamedPortsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+   * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupsSetNamedPortsRequestResource field is set.
@@ -318,8 +324,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
     return regionInstanceGroupsSetNamedPortsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+   * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupsSetNamedPortsRequestResource.
@@ -332,8 +344,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
         : regionInstanceGroupsSetNamedPortsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+   * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1131,8 +1149,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
             com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequestOrBuilder>
         regionInstanceGroupsSetNamedPortsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupsSetNamedPortsRequestResource field is set.
@@ -1142,8 +1166,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
           || regionInstanceGroupsSetNamedPortsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupsSetNamedPortsRequestResource.
@@ -1160,8 +1190,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupsSetNamedPortsRequestResource(
@@ -1179,8 +1215,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupsSetNamedPortsRequestResource(
@@ -1197,8 +1239,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupsSetNamedPortsRequestResource(
@@ -1221,8 +1269,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupsSetNamedPortsRequestResource() {
@@ -1237,8 +1291,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest.Builder
@@ -1248,8 +1308,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       return getRegionInstanceGroupsSetNamedPortsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequestOrBuilder
@@ -1264,8 +1330,14 @@ public final class SetNamedPortsRegionInstanceGroupRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938;
+     * .google.cloud.compute.v1.RegionInstanceGroupsSetNamedPortsRequest region_instance_groups_set_named_ports_request_resource = 1574938 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

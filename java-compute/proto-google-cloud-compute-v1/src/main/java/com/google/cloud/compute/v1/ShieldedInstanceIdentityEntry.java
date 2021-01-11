@@ -71,14 +71,14 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
           case 0:
             done = true;
             break;
-          case -1823383774:
+          case 324099874:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               ekPub_ = s;
               break;
             }
-          case -693538582:
+          case 1453945066:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -119,7 +119,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.ShieldedInstanceIdentityEntry.Builder.class);
   }
 
-  public static final int EK_CERT_FIELD_NUMBER = 450178589;
+  public static final int EK_CERT_FIELD_NUMBER = 181743133;
   private volatile java.lang.Object ekCert_;
   /**
    *
@@ -128,7 +128,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded X.509 certificate. This field can be empty.
    * </pre>
    *
-   * <code>string ek_cert = 450178589;</code>
+   * <code>string ek_cert = 181743133;</code>
    *
    * @return The ekCert.
    */
@@ -151,7 +151,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded X.509 certificate. This field can be empty.
    * </pre>
    *
-   * <code>string ek_cert = 450178589;</code>
+   * <code>string ek_cert = 181743133;</code>
    *
    * @return The bytes for ekCert.
    */
@@ -168,7 +168,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
     }
   }
 
-  public static final int EK_PUB_FIELD_NUMBER = 308947940;
+  public static final int EK_PUB_FIELD_NUMBER = 40512484;
   private volatile java.lang.Object ekPub_;
   /**
    *
@@ -177,7 +177,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded public key.
    * </pre>
    *
-   * <code>string ek_pub = 308947940;</code>
+   * <code>string ek_pub = 40512484;</code>
    *
    * @return The ekPub.
    */
@@ -200,7 +200,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
    * A PEM-encoded public key.
    * </pre>
    *
-   * <code>string ek_pub = 308947940;</code>
+   * <code>string ek_pub = 40512484;</code>
    *
    * @return The bytes for ekPub.
    */
@@ -232,10 +232,10 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getEkPubBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 308947940, ekPub_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40512484, ekPub_);
     }
     if (!getEkCertBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 450178589, ekCert_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181743133, ekCert_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,10 +247,10 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
 
     size = 0;
     if (!getEkPubBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308947940, ekPub_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40512484, ekPub_);
     }
     if (!getEkCertBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(450178589, ekCert_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181743133, ekCert_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -560,7 +560,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 450178589;</code>
+     * <code>string ek_cert = 181743133;</code>
      *
      * @return The ekCert.
      */
@@ -582,7 +582,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 450178589;</code>
+     * <code>string ek_cert = 181743133;</code>
      *
      * @return The bytes for ekCert.
      */
@@ -604,7 +604,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 450178589;</code>
+     * <code>string ek_cert = 181743133;</code>
      *
      * @param value The ekCert to set.
      * @return This builder for chaining.
@@ -625,7 +625,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 450178589;</code>
+     * <code>string ek_cert = 181743133;</code>
      *
      * @return This builder for chaining.
      */
@@ -642,7 +642,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded X.509 certificate. This field can be empty.
      * </pre>
      *
-     * <code>string ek_cert = 450178589;</code>
+     * <code>string ek_cert = 181743133;</code>
      *
      * @param value The bytes for ekCert to set.
      * @return This builder for chaining.
@@ -666,7 +666,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 308947940;</code>
+     * <code>string ek_pub = 40512484;</code>
      *
      * @return The ekPub.
      */
@@ -688,7 +688,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 308947940;</code>
+     * <code>string ek_pub = 40512484;</code>
      *
      * @return The bytes for ekPub.
      */
@@ -710,7 +710,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 308947940;</code>
+     * <code>string ek_pub = 40512484;</code>
      *
      * @param value The ekPub to set.
      * @return This builder for chaining.
@@ -731,7 +731,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 308947940;</code>
+     * <code>string ek_pub = 40512484;</code>
      *
      * @return This builder for chaining.
      */
@@ -748,7 +748,7 @@ public final class ShieldedInstanceIdentityEntry extends com.google.protobuf.Gen
      * A PEM-encoded public key.
      * </pre>
      *
-     * <code>string ek_pub = 308947940;</code>
+     * <code>string ek_pub = 40512484;</code>
      *
      * @param value The bytes for ekPub to set.
      * @return This builder for chaining.

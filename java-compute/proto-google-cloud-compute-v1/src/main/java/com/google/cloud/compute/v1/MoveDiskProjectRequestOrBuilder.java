@@ -24,19 +24,43 @@ public interface MoveDiskProjectRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the diskMoveRequestResource field is set.
    */
   boolean hasDiskMoveRequestResource();
   /**
-   * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The diskMoveRequestResource.
    */
   com.google.cloud.compute.v1.DiskMoveRequest getDiskMoveRequestResource();
   /**
-   * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.DiskMoveRequestOrBuilder getDiskMoveRequestResourceOrBuilder();
 

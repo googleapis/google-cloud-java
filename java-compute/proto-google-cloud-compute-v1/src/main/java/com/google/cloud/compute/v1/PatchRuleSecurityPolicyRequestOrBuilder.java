@@ -30,7 +30,7 @@ public interface PatchRuleSecurityPolicyRequestOrBuilder
    * The priority of the rule to patch.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>int32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -87,21 +87,42 @@ public interface PatchRuleSecurityPolicyRequestOrBuilder
   com.google.protobuf.ByteString getSecurityPolicyBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyRuleResource field is set.
    */
   boolean hasSecurityPolicyRuleResource();
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyRuleResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyRule getSecurityPolicyRuleResource();
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder getSecurityPolicyRuleResourceOrBuilder();

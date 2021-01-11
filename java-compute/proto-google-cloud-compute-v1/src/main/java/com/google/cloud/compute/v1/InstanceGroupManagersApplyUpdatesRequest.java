@@ -75,6 +75,13 @@ public final class InstanceGroupManagersApplyUpdatesRequest
           case 0:
             done = true;
             break;
+          case 17052834:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minimalAction_ = s;
+              break;
+            }
           case 232780786:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -92,11 +99,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
               mostDisruptiveAllowedAction_ = s;
               break;
             }
-          case -2130430814:
+          case 1081928448:
             {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minimalAction_ = s;
+              allInstances_ = input.readBool();
               break;
             }
           default:
@@ -134,6 +139,24 @@ public final class InstanceGroupManagersApplyUpdatesRequest
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.class,
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.Builder.class);
+  }
+
+  public static final int ALL_INSTANCES_FIELD_NUMBER = 135241056;
+  private boolean allInstances_;
+  /**
+   *
+   *
+   * <pre>
+   * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+   * </pre>
+   *
+   * <code>bool all_instances = 135241056;</code>
+   *
+   * @return The allInstances.
+   */
+  @java.lang.Override
+  public boolean getAllInstances() {
+    return allInstances_;
   }
 
   public static final int INSTANCES_FIELD_NUMBER = 29097598;
@@ -197,7 +220,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     return instances_.getByteString(index);
   }
 
-  public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
+  public static final int MINIMAL_ACTION_FIELD_NUMBER = 2131604;
   private volatile java.lang.Object minimalAction_;
   /**
    *
@@ -210,7 +233,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The minimalAction.
    */
@@ -237,7 +260,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
    * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -325,6 +348,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getMinimalActionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2131604, minimalAction_);
+    }
     for (int i = 0; i < instances_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29097598, instances_.getRaw(i));
     }
@@ -332,8 +358,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 66103053, mostDisruptiveAllowedAction_);
     }
-    if (!getMinimalActionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 270567060, minimalAction_);
+    if (allInstances_ != false) {
+      output.writeBool(135241056, allInstances_);
     }
     unknownFields.writeTo(output);
   }
@@ -344,6 +370,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     if (size != -1) return size;
 
     size = 0;
+    if (!getMinimalActionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2131604, minimalAction_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < instances_.size(); i++) {
@@ -357,8 +386,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               66103053, mostDisruptiveAllowedAction_);
     }
-    if (!getMinimalActionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(270567060, minimalAction_);
+    if (allInstances_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(135241056, allInstances_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -376,6 +405,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest other =
         (com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest) obj;
 
+    if (getAllInstances() != other.getAllInstances()) return false;
     if (!getInstancesList().equals(other.getInstancesList())) return false;
     if (!getMinimalAction().equals(other.getMinimalAction())) return false;
     if (!getMostDisruptiveAllowedAction().equals(other.getMostDisruptiveAllowedAction()))
@@ -391,6 +421,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ALL_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllInstances());
     if (getInstancesCount() > 0) {
       hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
       hash = (53 * hash) + getInstancesList().hashCode();
@@ -547,6 +579,8 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      allInstances_ = false;
+
       instances_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
       minimalAction_ = "";
@@ -583,6 +617,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest result =
           new com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest(this);
       int from_bitField0_ = bitField0_;
+      result.allInstances_ = allInstances_;
       if (((bitField0_ & 0x00000001) != 0)) {
         instances_ = instances_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -643,6 +678,9 @@ public final class InstanceGroupManagersApplyUpdatesRequest
       if (other
           == com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
               .getDefaultInstance()) return this;
+      if (other.getAllInstances() != false) {
+        setAllInstances(other.getAllInstances());
+      }
       if (!other.instances_.isEmpty()) {
         if (instances_.isEmpty()) {
           instances_ = other.instances_;
@@ -693,6 +731,58 @@ public final class InstanceGroupManagersApplyUpdatesRequest
     }
 
     private int bitField0_;
+
+    private boolean allInstances_;
+    /**
+     *
+     *
+     * <pre>
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     * </pre>
+     *
+     * <code>bool all_instances = 135241056;</code>
+     *
+     * @return The allInstances.
+     */
+    @java.lang.Override
+    public boolean getAllInstances() {
+      return allInstances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     * </pre>
+     *
+     * <code>bool all_instances = 135241056;</code>
+     *
+     * @param value The allInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllInstances(boolean value) {
+
+      allInstances_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Flag to update all instances instead of specified list of ?instances?. If the flag is set to true then the instances may not be specified in the request.
+     * </pre>
+     *
+     * <code>bool all_instances = 135241056;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAllInstances() {
+
+      allInstances_ = false;
+      onChanged();
+      return this;
+    }
 
     private com.google.protobuf.LazyStringList instances_ =
         com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -874,7 +964,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return The minimalAction.
      */
@@ -900,7 +990,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return The bytes for minimalAction.
      */
@@ -926,7 +1016,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @param value The minimalAction to set.
      * @return This builder for chaining.
@@ -951,7 +1041,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return This builder for chaining.
      */
@@ -972,7 +1062,7 @@ public final class InstanceGroupManagersApplyUpdatesRequest
      * - NONE: Do not disrupt the instance at all.  By default, the minimum action is NONE. If your update requires a more disruptive action than you set with this flag, the necessary action is performed to execute the update.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @param value The bytes for minimalAction to set.
      * @return This builder for chaining.

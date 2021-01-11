@@ -75,6 +75,13 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
           case 0:
             done = true;
             break;
+          case 17052834:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              minimalAction_ = s;
+              break;
+            }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -124,13 +131,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -2130430814:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              minimalAction_ = s;
               break;
             }
           default:
@@ -219,7 +219,15 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
   public static final int INSTANCE_RESOURCE_FIELD_NUMBER = 215988344;
   private com.google.cloud.compute.v1.Instance instanceResource_;
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceResource field is set.
    */
@@ -228,7 +236,15 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     return instanceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceResource.
    */
@@ -238,13 +254,23 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Instance.getDefaultInstance()
         : instanceResource_;
   }
-  /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceOrBuilder getInstanceResourceOrBuilder() {
     return getInstanceResource();
   }
 
-  public static final int MINIMAL_ACTION_FIELD_NUMBER = 270567060;
+  public static final int MINIMAL_ACTION_FIELD_NUMBER = 2131604;
   private volatile java.lang.Object minimalAction_;
   /**
    *
@@ -253,7 +279,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The minimalAction.
    */
@@ -276,7 +302,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The bytes for minimalAction.
    */
@@ -507,6 +533,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getMinimalActionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2131604, minimalAction_);
+    }
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
@@ -526,9 +555,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getMinimalActionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 270567060, minimalAction_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -538,6 +564,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (!getMinimalActionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2131604, minimalAction_);
+    }
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
@@ -559,9 +588,6 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getMinimalActionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(270567060, minimalAction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1038,7 +1064,15 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.InstanceOrBuilder>
         instanceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instanceResource field is set.
      */
@@ -1046,7 +1080,15 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
       return instanceResourceBuilder_ != null || instanceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instanceResource.
      */
@@ -1059,7 +1101,17 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
         return instanceResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInstanceResource(com.google.cloud.compute.v1.Instance value) {
       if (instanceResourceBuilder_ == null) {
         if (value == null) {
@@ -1073,7 +1125,17 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInstanceResource(
         com.google.cloud.compute.v1.Instance.Builder builderForValue) {
       if (instanceResourceBuilder_ == null) {
@@ -1085,7 +1147,17 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeInstanceResource(com.google.cloud.compute.v1.Instance value) {
       if (instanceResourceBuilder_ == null) {
         if (instanceResource_ != null) {
@@ -1103,7 +1175,17 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearInstanceResource() {
       if (instanceResourceBuilder_ == null) {
         instanceResource_ = null;
@@ -1115,13 +1197,33 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Instance.Builder getInstanceResourceBuilder() {
 
       onChanged();
       return getInstanceResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.InstanceOrBuilder getInstanceResourceOrBuilder() {
       if (instanceResourceBuilder_ != null) {
         return instanceResourceBuilder_.getMessageOrBuilder();
@@ -1131,7 +1233,17 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
             : instanceResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Instance,
             com.google.cloud.compute.v1.Instance.Builder,
@@ -1157,7 +1269,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return The minimalAction.
      */
@@ -1179,7 +1291,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return The bytes for minimalAction.
      */
@@ -1201,7 +1313,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @param value The minimalAction to set.
      * @return This builder for chaining.
@@ -1222,7 +1334,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @return This builder for chaining.
      */
@@ -1239,7 +1351,7 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
      * </pre>
      *
-     * <code>string minimal_action = 270567060;</code>
+     * <code>string minimal_action = 2131604;</code>
      *
      * @param value The bytes for minimalAction to set.
      * @return This builder for chaining.

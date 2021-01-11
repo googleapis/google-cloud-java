@@ -131,11 +131,25 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1745050362:
@@ -154,20 +168,6 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
                 snapshotSchedulePolicy_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -224,12 +224,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
-    CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>CREATING = 187129529;</code> */
+    CREATING(187129529),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
     UNRECOGNIZED(-1),
@@ -245,12 +245,12 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
-    public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>CREATING = 187129529;</code> */
+    public static final int CREATING_VALUE = 187129529;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
 
@@ -280,11 +280,11 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 455564985:
+        case 187129529:
           return CREATING;
-        case 528602024:
+        case 260166568:
           return DELETING;
-        case 530283991:
+        case 261848535:
           return INVALID;
         case 77848963:
           return READY;
@@ -390,10 +390,10 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -410,7 +410,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -433,7 +433,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policy for instacnes for placement configuration.
+   * Resource policy for instances for placement configuration.
    * </pre>
    *
    * <code>
@@ -450,7 +450,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policy for instacnes for placement configuration.
+   * Resource policy for instances for placement configuration.
    * </pre>
    *
    * <code>
@@ -469,7 +469,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource policy for instacnes for placement configuration.
+   * Resource policy for instances for placement configuration.
    * </pre>
    *
    * <code>
@@ -666,7 +666,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -675,7 +675,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -698,7 +698,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -839,17 +839,17 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.ResourcePolicy.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
     if (snapshotSchedulePolicy_ != null) {
       output.writeMessage(218131295, getSnapshotSchedulePolicy());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -881,19 +881,19 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.ResourcePolicy.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (snapshotSchedulePolicy_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               218131295, getSnapshotSchedulePolicy());
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1404,7 +1404,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object description_ = "";
     /**
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1420,7 +1420,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1436,7 +1436,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1451,7 +1451,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1462,7 +1462,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1488,7 +1488,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1504,7 +1504,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1527,7 +1527,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1552,7 +1552,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1574,7 +1574,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1604,7 +1604,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1626,7 +1626,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1643,7 +1643,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -1664,7 +1664,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource policy for instacnes for placement configuration.
+     * Resource policy for instances for placement configuration.
      * </pre>
      *
      * <code>
@@ -2090,7 +2090,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2112,7 +2112,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2134,7 +2134,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2155,7 +2155,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2172,7 +2172,7 @@ public final class ResourcePolicy extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

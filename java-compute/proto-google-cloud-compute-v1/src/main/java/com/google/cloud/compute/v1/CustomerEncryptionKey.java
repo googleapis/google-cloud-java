@@ -79,6 +79,13 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
               sha256_ = s;
               break;
             }
+          case 1446088258:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rawKey_ = s;
+              break;
+            }
           case 1679890090:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -86,14 +93,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
               kmsKeyServiceAccount_ = s;
               break;
             }
-          case -701395390:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rawKey_ = s;
-              break;
-            }
-          case -419975990:
+          case 1727507658:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -134,7 +134,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.CustomerEncryptionKey.Builder.class);
   }
 
-  public static final int KMS_KEY_NAME_FIELD_NUMBER = 484373913;
+  public static final int KMS_KEY_NAME_FIELD_NUMBER = 215938457;
   private volatile java.lang.Object kmsKeyName_;
   /**
    *
@@ -143,7 +143,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * The name of the encryption key that is stored in Google Cloud KMS.
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>string kms_key_name = 215938457;</code>
    *
    * @return The kmsKeyName.
    */
@@ -166,7 +166,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * The name of the encryption key that is stored in Google Cloud KMS.
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>string kms_key_name = 215938457;</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -232,7 +232,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int RAW_KEY_FIELD_NUMBER = 449196488;
+  public static final int RAW_KEY_FIELD_NUMBER = 180761032;
   private volatile java.lang.Object rawKey_;
   /**
    *
@@ -241,7 +241,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>string raw_key = 180761032;</code>
    *
    * @return The rawKey.
    */
@@ -264,7 +264,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
    * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>string raw_key = 180761032;</code>
    *
    * @return The bytes for rawKey.
    */
@@ -347,14 +347,14 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     if (!getSha256Bytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 170112551, sha256_);
     }
+    if (!getRawKeyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 180761032, rawKey_);
+    }
     if (!getKmsKeyServiceAccountBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 209986261, kmsKeyServiceAccount_);
     }
-    if (!getRawKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 449196488, rawKey_);
-    }
     if (!getKmsKeyNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 484373913, kmsKeyName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 215938457, kmsKeyName_);
     }
     unknownFields.writeTo(output);
   }
@@ -368,16 +368,16 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
     if (!getSha256Bytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(170112551, sha256_);
     }
+    if (!getRawKeyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(180761032, rawKey_);
+    }
     if (!getKmsKeyServiceAccountBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               209986261, kmsKeyServiceAccount_);
     }
-    if (!getRawKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(449196488, rawKey_);
-    }
     if (!getKmsKeyNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(484373913, kmsKeyName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(215938457, kmsKeyName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -705,7 +705,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * The name of the encryption key that is stored in Google Cloud KMS.
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>string kms_key_name = 215938457;</code>
      *
      * @return The kmsKeyName.
      */
@@ -727,7 +727,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * The name of the encryption key that is stored in Google Cloud KMS.
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>string kms_key_name = 215938457;</code>
      *
      * @return The bytes for kmsKeyName.
      */
@@ -749,7 +749,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * The name of the encryption key that is stored in Google Cloud KMS.
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>string kms_key_name = 215938457;</code>
      *
      * @param value The kmsKeyName to set.
      * @return This builder for chaining.
@@ -770,7 +770,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * The name of the encryption key that is stored in Google Cloud KMS.
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>string kms_key_name = 215938457;</code>
      *
      * @return This builder for chaining.
      */
@@ -787,7 +787,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * The name of the encryption key that is stored in Google Cloud KMS.
      * </pre>
      *
-     * <code>string kms_key_name = 484373913;</code>
+     * <code>string kms_key_name = 215938457;</code>
      *
      * @param value The bytes for kmsKeyName to set.
      * @return This builder for chaining.
@@ -917,7 +917,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>string raw_key = 180761032;</code>
      *
      * @return The rawKey.
      */
@@ -939,7 +939,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>string raw_key = 180761032;</code>
      *
      * @return The bytes for rawKey.
      */
@@ -961,7 +961,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>string raw_key = 180761032;</code>
      *
      * @param value The rawKey to set.
      * @return This builder for chaining.
@@ -982,7 +982,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>string raw_key = 180761032;</code>
      *
      * @return This builder for chaining.
      */
@@ -999,7 +999,7 @@ public final class CustomerEncryptionKey extends com.google.protobuf.GeneratedMe
      * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
      * </pre>
      *
-     * <code>string raw_key = 449196488;</code>
+     * <code>string raw_key = 180761032;</code>
      *
      * @param value The bytes for rawKey to set.
      * @return This builder for chaining.

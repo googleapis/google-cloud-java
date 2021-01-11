@@ -84,7 +84,7 @@ public interface DeleteUrlMapRequestOrBuilder
    * Name of the UrlMap resource to delete.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -96,7 +96,7 @@ public interface DeleteUrlMapRequestOrBuilder
    * Name of the UrlMap resource to delete.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */

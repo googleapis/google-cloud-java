@@ -81,6 +81,13 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
               requestId_ = s;
               break;
             }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -88,21 +95,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case -478854414:
+          case 1668629234:
             {
               com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest.Builder subBuilder =
                   null;
@@ -118,6 +111,13 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
                 subnetworksExpandIpCidrRangeRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -305,7 +305,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -314,7 +314,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
    * Name of the Subnetwork resource to update.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -337,7 +337,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
    * Name of the Subnetwork resource to update.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -355,12 +355,18 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
   }
 
   public static final int SUBNETWORKS_EXPAND_IP_CIDR_RANGE_REQUEST_RESOURCE_FIELD_NUMBER =
-      477014110;
+      208578654;
   private com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest
       subnetworksExpandIpCidrRangeRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the subnetworksExpandIpCidrRangeRequestResource field is set.
@@ -370,8 +376,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
     return subnetworksExpandIpCidrRangeRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The subnetworksExpandIpCidrRangeRequestResource.
@@ -384,8 +396,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
         : subnetworksExpandIpCidrRangeRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -411,17 +429,17 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (subnetworksExpandIpCidrRangeRequestResource_ != null) {
+      output.writeMessage(208578654, getSubnetworksExpandIpCidrRangeRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (subnetworksExpandIpCidrRangeRequestResource_ != null) {
-      output.writeMessage(477014110, getSubnetworksExpandIpCidrRangeRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -435,19 +453,19 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     if (subnetworksExpandIpCidrRangeRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              477014110, getSubnetworksExpandIpCidrRangeRequestResource());
+              208578654, getSubnetworksExpandIpCidrRangeRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1135,7 +1153,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
      * Name of the Subnetwork resource to update.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The subnetwork.
      */
@@ -1157,7 +1175,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
      * Name of the Subnetwork resource to update.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -1179,7 +1197,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
      * Name of the Subnetwork resource to update.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -1200,7 +1218,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
      * Name of the Subnetwork resource to update.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1217,7 +1235,7 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
      * Name of the Subnetwork resource to update.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -1241,8 +1259,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
             com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequestOrBuilder>
         subnetworksExpandIpCidrRangeRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the subnetworksExpandIpCidrRangeRequestResource field is set.
@@ -1252,8 +1276,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
           || subnetworksExpandIpCidrRangeRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The subnetworksExpandIpCidrRangeRequestResource.
@@ -1269,8 +1299,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSubnetworksExpandIpCidrRangeRequestResource(
@@ -1288,8 +1324,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSubnetworksExpandIpCidrRangeRequestResource(
@@ -1304,8 +1346,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSubnetworksExpandIpCidrRangeRequestResource(
@@ -1328,8 +1376,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSubnetworksExpandIpCidrRangeRequestResource() {
@@ -1344,8 +1398,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest.Builder
@@ -1355,8 +1415,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       return getSubnetworksExpandIpCidrRangeRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequestOrBuilder
@@ -1370,8 +1436,14 @@ public final class ExpandIpCidrRangeSubnetworkRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+     * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

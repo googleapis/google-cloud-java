@@ -103,24 +103,42 @@ public interface UpdateShieldedInstanceConfigInstanceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the shieldedInstanceConfigResource field is set.
    */
   boolean hasShieldedInstanceConfigResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The shieldedInstanceConfigResource.
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfig getShieldedInstanceConfigResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder

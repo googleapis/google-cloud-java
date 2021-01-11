@@ -30,7 +30,7 @@ public interface ManagedInstanceVersionOrBuilder
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The instanceTemplate.
    */
@@ -42,7 +42,7 @@ public interface ManagedInstanceVersionOrBuilder
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The bytes for instanceTemplate.
    */

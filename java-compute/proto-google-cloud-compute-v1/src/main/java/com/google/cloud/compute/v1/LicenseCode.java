@@ -132,14 +132,14 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
               state_ = rawValue;
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -203,14 +203,14 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>DISABLED = 516696700;</code> */
-    DISABLED(516696700),
+    /** <code>DISABLED = 248261244;</code> */
+    DISABLED(248261244),
     /** <code>ENABLED = 182130465;</code> */
     ENABLED(182130465),
     /** <code>RESTRICTED = 261551195;</code> */
     RESTRICTED(261551195),
-    /** <code>STATE_UNSPECIFIED = 470755401;</code> */
-    STATE_UNSPECIFIED(470755401),
+    /** <code>STATE_UNSPECIFIED = 202319945;</code> */
+    STATE_UNSPECIFIED(202319945),
     /** <code>TERMINATED = 250018339;</code> */
     TERMINATED(250018339),
     UNRECOGNIZED(-1),
@@ -226,14 +226,14 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>DISABLED = 516696700;</code> */
-    public static final int DISABLED_VALUE = 516696700;
+    /** <code>DISABLED = 248261244;</code> */
+    public static final int DISABLED_VALUE = 248261244;
     /** <code>ENABLED = 182130465;</code> */
     public static final int ENABLED_VALUE = 182130465;
     /** <code>RESTRICTED = 261551195;</code> */
     public static final int RESTRICTED_VALUE = 261551195;
-    /** <code>STATE_UNSPECIFIED = 470755401;</code> */
-    public static final int STATE_UNSPECIFIED_VALUE = 470755401;
+    /** <code>STATE_UNSPECIFIED = 202319945;</code> */
+    public static final int STATE_UNSPECIFIED_VALUE = 202319945;
     /** <code>TERMINATED = 250018339;</code> */
     public static final int TERMINATED_VALUE = 250018339;
 
@@ -263,13 +263,13 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 516696700:
+        case 248261244:
           return DISABLED;
         case 182130465:
           return ENABLED;
         case 261551195:
           return RESTRICTED;
-        case 470755401:
+        case 202319945:
           return STATE_UNSPECIFIED;
         case 250018339:
           return TERMINATED;
@@ -375,7 +375,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -384,7 +384,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -407,7 +407,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -646,7 +646,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -655,7 +655,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -678,7 +678,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -785,10 +785,10 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       output.writeEnum(109757585, state_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -823,10 +823,10 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1349,7 +1349,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1371,7 +1371,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1393,7 +1393,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1414,7 +1414,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1431,7 +1431,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2150,7 +2150,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2172,7 +2172,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2194,7 +2194,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2215,7 +2215,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2232,7 +2232,7 @@ public final class LicenseCode extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

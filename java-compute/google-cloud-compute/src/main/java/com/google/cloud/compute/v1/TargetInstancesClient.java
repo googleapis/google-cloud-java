@@ -451,7 +451,7 @@ public class TargetInstancesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone scoping this request.
-   * @param targetInstanceResource
+   * @param targetInstanceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -475,9 +475,11 @@ public class TargetInstancesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "";
+   *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   String zone = "";
    *   InsertTargetInstanceRequest request = InsertTargetInstanceRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetInstanceResource(targetInstanceResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = targetInstancesClient.insert(request);
@@ -501,9 +503,11 @@ public class TargetInstancesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetInstancesClient targetInstancesClient = TargetInstancesClient.create()) {
    *   String project = "";
+   *   TargetInstance targetInstanceResource = TargetInstance.newBuilder().build();
    *   String zone = "";
    *   InsertTargetInstanceRequest request = InsertTargetInstanceRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetInstanceResource(targetInstanceResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetInstancesClient.insertCallable().futureCall(request);

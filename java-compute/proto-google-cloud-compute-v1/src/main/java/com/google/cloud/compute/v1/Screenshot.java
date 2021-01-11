@@ -78,7 +78,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
               kind_ = s;
               break;
             }
-          case -243607342:
+          case 1903876306:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -119,7 +119,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Screenshot.Builder.class);
   }
 
-  public static final int CONTENTS_FIELD_NUMBER = 506419994;
+  public static final int CONTENTS_FIELD_NUMBER = 237984538;
   private volatile java.lang.Object contents_;
   /**
    *
@@ -128,7 +128,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The contents.
    */
@@ -151,7 +151,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The Base64-encoded screenshot data.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The bytes for contents.
    */
@@ -235,7 +235,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     if (!getContentsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 506419994, contents_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 237984538, contents_);
     }
     unknownFields.writeTo(output);
   }
@@ -250,7 +250,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     if (!getContentsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(506419994, contents_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(237984538, contents_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -556,7 +556,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @return The contents.
      */
@@ -578,7 +578,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @return The bytes for contents.
      */
@@ -600,7 +600,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @param value The contents to set.
      * @return This builder for chaining.
@@ -621,7 +621,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @return This builder for chaining.
      */
@@ -638,7 +638,7 @@ public final class Screenshot extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The Base64-encoded screenshot data.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @param value The bytes for contents to set.
      * @return This builder for chaining.

@@ -30,7 +30,7 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    * URL of the InstanceTemplate resource from which all new instances will be created.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The instanceTemplate.
    */
@@ -42,7 +42,7 @@ public interface RegionInstanceGroupManagersSetTemplateRequestOrBuilder
    * URL of the InstanceTemplate resource from which all new instances will be created.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The bytes for instanceTemplate.
    */

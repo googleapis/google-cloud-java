@@ -30,7 +30,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of accelerator configurations assigned to this machine type.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Accelerators> getAcceleratorsList();
   /**
@@ -40,7 +40,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of accelerator configurations assigned to this machine type.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
    */
   com.google.cloud.compute.v1.Accelerators getAccelerators(int index);
   /**
@@ -50,7 +50,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of accelerator configurations assigned to this machine type.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
    */
   int getAcceleratorsCount();
   /**
@@ -60,7 +60,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of accelerator configurations assigned to this machine type.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorsOrBuilder>
       getAcceleratorsOrBuilderList();
@@ -71,7 +71,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of accelerator configurations assigned to this machine type.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 269577064;</code>
+   * <code>repeated .google.cloud.compute.v1.Accelerators accelerators = 1141608;</code>
    */
   com.google.cloud.compute.v1.AcceleratorsOrBuilder getAcceleratorsOrBuilder(int index);
 
@@ -107,7 +107,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -119,7 +119,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -131,7 +131,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] The deprecation status associated with this machine type. Only applicable if the machine type is unavailable.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -142,7 +142,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -154,7 +154,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -167,7 +167,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] The number of virtual CPUs that are available to the instance.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>int32 guest_cpus = 124921298;</code>
    *
    * @return The guestCpus.
    */
@@ -218,7 +218,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] Whether this machine type has a shared CPU. See Shared-core machine types for more information.
    * </pre>
    *
-   * <code>bool is_shared_cpu = 521399555;</code>
+   * <code>bool is_shared_cpu = 252964099;</code>
    *
    * @return The isSharedCpu.
    */
@@ -256,7 +256,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] Maximum persistent disks allowed.
    * </pre>
    *
-   * <code>int32 maximum_persistent_disks = 496220941;</code>
+   * <code>int32 maximum_persistent_disks = 227785485;</code>
    *
    * @return The maximumPersistentDisks.
    */
@@ -332,7 +332,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of extended scratch disks assigned to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ScratchDisks> getScratchDisksList();
   /**
@@ -342,7 +342,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of extended scratch disks assigned to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
    */
   com.google.cloud.compute.v1.ScratchDisks getScratchDisks(int index);
   /**
@@ -352,7 +352,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of extended scratch disks assigned to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
    */
   int getScratchDisksCount();
   /**
@@ -362,7 +362,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of extended scratch disks assigned to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ScratchDisksOrBuilder>
       getScratchDisksOrBuilderList();
@@ -373,7 +373,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] A list of extended scratch disks assigned to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 480778481;</code>
+   * <code>repeated .google.cloud.compute.v1.ScratchDisks scratch_disks = 212343025;</code>
    */
   com.google.cloud.compute.v1.ScratchDisksOrBuilder getScratchDisksOrBuilder(int index);
 
@@ -384,7 +384,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -396,7 +396,7 @@ public interface MachineTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

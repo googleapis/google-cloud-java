@@ -427,7 +427,7 @@ public class UrlMapsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param urlMapResource
+   * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, UrlMap urlMapResource) {
@@ -448,8 +448,10 @@ public class UrlMapsClient implements BackgroundResource {
    * <pre><code>
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   InsertUrlMapRequest request = InsertUrlMapRequest.newBuilder()
    *     .setProject(project)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   Operation response = urlMapsClient.insert(request);
    * }
@@ -471,8 +473,10 @@ public class UrlMapsClient implements BackgroundResource {
    * <pre><code>
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   InsertUrlMapRequest request = InsertUrlMapRequest.newBuilder()
    *     .setProject(project)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = urlMapsClient.insertCallable().futureCall(request);
    *   // Do something
@@ -489,6 +493,9 @@ public class UrlMapsClient implements BackgroundResource {
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
    * specified UrlMap.
    *
+   * <p>For more information, see [Invalidating cached
+   * content](/cdn/docs/invalidating-cached-content).
+   *
    * <p>Sample code:
    *
    * <pre><code>
@@ -502,7 +509,7 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap scoping this request.
-   * @param cacheInvalidationRuleResource
+   * @param cacheInvalidationRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation invalidateCache(
@@ -521,13 +528,18 @@ public class UrlMapsClient implements BackgroundResource {
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
    * specified UrlMap.
    *
+   * <p>For more information, see [Invalidating cached
+   * content](/cdn/docs/invalidating-cached-content).
+   *
    * <p>Sample code:
    *
    * <pre><code>
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   String project = "";
    *   String urlMap = "";
    *   InvalidateCacheUrlMapRequest request = InvalidateCacheUrlMapRequest.newBuilder()
+   *     .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
    *     .setProject(project)
    *     .setUrlMap(urlMap)
    *     .build();
@@ -547,13 +559,18 @@ public class UrlMapsClient implements BackgroundResource {
    * Initiates a cache invalidation operation, invalidating the specified path, scoped to the
    * specified UrlMap.
    *
+   * <p>For more information, see [Invalidating cached
+   * content](/cdn/docs/invalidating-cached-content).
+   *
    * <p>Sample code:
    *
    * <pre><code>
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
+   *   CacheInvalidationRule cacheInvalidationRuleResource = CacheInvalidationRule.newBuilder().build();
    *   String project = "";
    *   String urlMap = "";
    *   InvalidateCacheUrlMapRequest request = InvalidateCacheUrlMapRequest.newBuilder()
+   *     .setCacheInvalidationRuleResource(cacheInvalidationRuleResource)
    *     .setProject(project)
    *     .setUrlMap(urlMap)
    *     .build();
@@ -688,7 +705,7 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to patch.
-   * @param urlMapResource
+   * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(String project, String urlMap, UrlMap urlMapResource) {
@@ -712,9 +729,11 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchUrlMapRequest request = PatchUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   Operation response = urlMapsClient.patch(request);
    * }
@@ -738,9 +757,11 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   PatchUrlMapRequest request = PatchUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = urlMapsClient.patchCallable().futureCall(request);
    *   // Do something
@@ -769,7 +790,7 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to update.
-   * @param urlMapResource
+   * @param urlMapResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(String project, String urlMap, UrlMap urlMapResource) {
@@ -792,9 +813,11 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateUrlMapRequest request = UpdateUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   Operation response = urlMapsClient.update(request);
    * }
@@ -817,9 +840,11 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
    *   String urlMap = "";
+   *   UrlMap urlMapResource = UrlMap.newBuilder().build();
    *   UpdateUrlMapRequest request = UpdateUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapResource(urlMapResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = urlMapsClient.updateCallable().futureCall(request);
    *   // Do something
@@ -849,7 +874,7 @@ public class UrlMapsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param urlMap Name of the UrlMap resource to be validated as.
-   * @param urlMapsValidateRequestResource
+   * @param urlMapsValidateRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final UrlMapsValidateResponse validate(
@@ -874,9 +899,11 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
    *   String urlMap = "";
+   *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   ValidateUrlMapRequest request = ValidateUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
    *     .build();
    *   UrlMapsValidateResponse response = urlMapsClient.validate(request);
    * }
@@ -900,9 +927,11 @@ public class UrlMapsClient implements BackgroundResource {
    * try (UrlMapsClient urlMapsClient = UrlMapsClient.create()) {
    *   String project = "";
    *   String urlMap = "";
+   *   UrlMapsValidateRequest urlMapsValidateRequestResource = UrlMapsValidateRequest.newBuilder().build();
    *   ValidateUrlMapRequest request = ValidateUrlMapRequest.newBuilder()
    *     .setProject(project)
    *     .setUrlMap(urlMap)
+   *     .setUrlMapsValidateRequestResource(urlMapsValidateRequestResource)
    *     .build();
    *   ApiFuture&lt;UrlMapsValidateResponse&gt; future = urlMapsClient.validateCallable().futureCall(request);
    *   // Do something

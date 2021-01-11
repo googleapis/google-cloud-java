@@ -31,7 +31,7 @@ public interface ProjectsSetDefaultNetworkTierRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
    * </code>
    *
    * @return The enum numeric value on the wire for networkTier.
@@ -45,7 +45,7 @@ public interface ProjectsSetDefaultNetworkTierRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 248962387;
    * </code>
    *
    * @return The networkTier.

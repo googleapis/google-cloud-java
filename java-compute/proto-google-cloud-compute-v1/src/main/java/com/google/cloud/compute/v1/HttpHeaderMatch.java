@@ -109,30 +109,30 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
               headerName_ = s;
               break;
             }
-          case 2063191746:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              prefixMatch_ = s;
-              break;
-            }
-          case -883057990:
+          case 1264425658:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               suffixMatch_ = s;
               break;
             }
-          case -633838550:
+          case 1513645098:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               exactMatch_ = s;
               break;
             }
-          case -285925152:
+          case 1861558496:
             {
               invertMatch_ = input.readBool();
+              break;
+            }
+          case 2063191746:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              prefixMatch_ = s;
               break;
             }
           default:
@@ -169,7 +169,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.HttpHeaderMatch.Builder.class);
   }
 
-  public static final int EXACT_MATCH_FIELD_NUMBER = 457641093;
+  public static final int EXACT_MATCH_FIELD_NUMBER = 189205637;
   private volatile java.lang.Object exactMatch_;
   /**
    *
@@ -179,7 +179,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>string exact_match = 189205637;</code>
    *
    * @return The exactMatch.
    */
@@ -203,7 +203,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string exact_match = 457641093;</code>
+   * <code>string exact_match = 189205637;</code>
    *
    * @return The bytes for exactMatch.
    */
@@ -275,7 +275,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int INVERT_MATCH_FIELD_NUMBER = 501130268;
+  public static final int INVERT_MATCH_FIELD_NUMBER = 232694812;
   private boolean invertMatch_;
   /**
    *
@@ -285,7 +285,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
    * The default setting is false.
    * </pre>
    *
-   * <code>bool invert_match = 501130268;</code>
+   * <code>bool invert_match = 232694812;</code>
    *
    * @return The invertMatch.
    */
@@ -488,7 +488,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int SUFFIX_MATCH_FIELD_NUMBER = 426488663;
+  public static final int SUFFIX_MATCH_FIELD_NUMBER = 158053207;
   private volatile java.lang.Object suffixMatch_;
   /**
    *
@@ -498,7 +498,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>string suffix_match = 158053207;</code>
    *
    * @return The suffixMatch.
    */
@@ -522,7 +522,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
    * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
    * </pre>
    *
-   * <code>string suffix_match = 426488663;</code>
+   * <code>string suffix_match = 158053207;</code>
    *
    * @return The bytes for suffixMatch.
    */
@@ -565,17 +565,17 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     if (!getHeaderNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 110223613, headerName_);
     }
-    if (!getPrefixMatchBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 257898968, prefixMatch_);
-    }
     if (!getSuffixMatchBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 426488663, suffixMatch_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 158053207, suffixMatch_);
     }
     if (!getExactMatchBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 457641093, exactMatch_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 189205637, exactMatch_);
     }
     if (invertMatch_ != false) {
-      output.writeBool(501130268, invertMatch_);
+      output.writeBool(232694812, invertMatch_);
+    }
+    if (!getPrefixMatchBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 257898968, prefixMatch_);
     }
     unknownFields.writeTo(output);
   }
@@ -598,17 +598,17 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
     if (!getHeaderNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(110223613, headerName_);
     }
-    if (!getPrefixMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(257898968, prefixMatch_);
-    }
     if (!getSuffixMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(426488663, suffixMatch_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(158053207, suffixMatch_);
     }
     if (!getExactMatchBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(457641093, exactMatch_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(189205637, exactMatch_);
     }
     if (invertMatch_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(501130268, invertMatch_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(232694812, invertMatch_);
+    }
+    if (!getPrefixMatchBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(257898968, prefixMatch_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -986,7 +986,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 457641093;</code>
+     * <code>string exact_match = 189205637;</code>
      *
      * @return The exactMatch.
      */
@@ -1009,7 +1009,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 457641093;</code>
+     * <code>string exact_match = 189205637;</code>
      *
      * @return The bytes for exactMatch.
      */
@@ -1032,7 +1032,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 457641093;</code>
+     * <code>string exact_match = 189205637;</code>
      *
      * @param value The exactMatch to set.
      * @return This builder for chaining.
@@ -1054,7 +1054,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 457641093;</code>
+     * <code>string exact_match = 189205637;</code>
      *
      * @return This builder for chaining.
      */
@@ -1072,7 +1072,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string exact_match = 457641093;</code>
+     * <code>string exact_match = 189205637;</code>
      *
      * @param value The bytes for exactMatch to set.
      * @return This builder for chaining.
@@ -1218,7 +1218,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * The default setting is false.
      * </pre>
      *
-     * <code>bool invert_match = 501130268;</code>
+     * <code>bool invert_match = 232694812;</code>
      *
      * @return The invertMatch.
      */
@@ -1234,7 +1234,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * The default setting is false.
      * </pre>
      *
-     * <code>bool invert_match = 501130268;</code>
+     * <code>bool invert_match = 232694812;</code>
      *
      * @param value The invertMatch to set.
      * @return This builder for chaining.
@@ -1253,7 +1253,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * The default setting is false.
      * </pre>
      *
-     * <code>bool invert_match = 501130268;</code>
+     * <code>bool invert_match = 232694812;</code>
      *
      * @return This builder for chaining.
      */
@@ -1809,7 +1809,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string suffix_match = 426488663;</code>
+     * <code>string suffix_match = 158053207;</code>
      *
      * @return The suffixMatch.
      */
@@ -1832,7 +1832,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string suffix_match = 426488663;</code>
+     * <code>string suffix_match = 158053207;</code>
      *
      * @return The bytes for suffixMatch.
      */
@@ -1855,7 +1855,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string suffix_match = 426488663;</code>
+     * <code>string suffix_match = 158053207;</code>
      *
      * @param value The suffixMatch to set.
      * @return This builder for chaining.
@@ -1877,7 +1877,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string suffix_match = 426488663;</code>
+     * <code>string suffix_match = 158053207;</code>
      *
      * @return This builder for chaining.
      */
@@ -1895,7 +1895,7 @@ public final class HttpHeaderMatch extends com.google.protobuf.GeneratedMessageV
      * Only one of exactMatch, prefixMatch, suffixMatch, regexMatch, presentMatch or rangeMatch must be set.
      * </pre>
      *
-     * <code>string suffix_match = 426488663;</code>
+     * <code>string suffix_match = 158053207;</code>
      *
      * @param value The bytes for suffixMatch to set.
      * @return This builder for chaining.

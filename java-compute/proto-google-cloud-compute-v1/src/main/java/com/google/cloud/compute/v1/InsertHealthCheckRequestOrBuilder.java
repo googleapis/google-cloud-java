@@ -24,18 +24,44 @@ public interface InsertHealthCheckRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the healthCheckResource field is set.
    */
   boolean hasHealthCheckResource();
   /**
-   * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The healthCheckResource.
    */
   com.google.cloud.compute.v1.HealthCheck getHealthCheckResource();
-  /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.HealthCheckOrBuilder getHealthCheckResourceOrBuilder();
 
   /**

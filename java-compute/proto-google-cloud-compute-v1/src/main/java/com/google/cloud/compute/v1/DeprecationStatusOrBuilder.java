@@ -30,7 +30,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>string deleted = 208285721;</code>
    *
    * @return The deleted.
    */
@@ -42,7 +42,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>string deleted = 208285721;</code>
    *
    * @return The bytes for deleted.
    */
@@ -55,7 +55,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>string deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -67,7 +67,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>string deprecated = 246703539;</code>
    *
    * @return The bytes for deprecated.
    */
@@ -80,7 +80,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>string obsolete = 89212313;</code>
    *
    * @return The obsolete.
    */
@@ -92,7 +92,7 @@ public interface DeprecationStatusOrBuilder
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>string obsolete = 89212313;</code>
    *
    * @return The bytes for obsolete.
    */
@@ -105,7 +105,7 @@ public interface DeprecationStatusOrBuilder
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>string replacement = 162483730;</code>
    *
    * @return The replacement.
    */
@@ -117,7 +117,7 @@ public interface DeprecationStatusOrBuilder
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>string replacement = 162483730;</code>
    *
    * @return The bytes for replacement.
    */

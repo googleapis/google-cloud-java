@@ -312,8 +312,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest
       regionInstanceGroupManagersSetTemplateRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersSetTemplateRequestResource field is set.
@@ -323,8 +329,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagersSetTemplateRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersSetTemplateRequestResource.
@@ -338,8 +350,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagersSetTemplateRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1163,8 +1181,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequestOrBuilder>
         regionInstanceGroupManagersSetTemplateRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagersSetTemplateRequestResource field is set.
@@ -1174,8 +1198,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagersSetTemplateRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagersSetTemplateRequestResource.
@@ -1192,8 +1222,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersSetTemplateRequestResource(
@@ -1211,8 +1247,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersSetTemplateRequestResource(
@@ -1229,8 +1271,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagersSetTemplateRequestResource(
@@ -1253,8 +1301,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersSetTemplateRequestResource() {
@@ -1269,8 +1323,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest.Builder
@@ -1280,8 +1340,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       return getRegionInstanceGroupManagersSetTemplateRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequestOrBuilder
@@ -1296,8 +1362,14 @@ public final class SetInstanceTemplateRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

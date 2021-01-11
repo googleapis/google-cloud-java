@@ -30,7 +30,7 @@ public interface AddNodesNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -42,31 +42,49 @@ public interface AddNodesNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
   com.google.protobuf.ByteString getNodeGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupsAddNodesRequestResource field is set.
    */
   boolean hasNodeGroupsAddNodesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupsAddNodesRequestResource.
    */
   com.google.cloud.compute.v1.NodeGroupsAddNodesRequest getNodeGroupsAddNodesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288;
+   * .google.cloud.compute.v1.NodeGroupsAddNodesRequest node_groups_add_nodes_request_resource = 131263288 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NodeGroupsAddNodesRequestOrBuilder

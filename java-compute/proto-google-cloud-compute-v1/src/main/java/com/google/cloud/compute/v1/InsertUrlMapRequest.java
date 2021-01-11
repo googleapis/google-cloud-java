@@ -239,7 +239,15 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
   public static final int URL_MAP_RESOURCE_FIELD_NUMBER = 168675425;
   private com.google.cloud.compute.v1.UrlMap urlMapResource_;
   /**
-   * <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the urlMapResource field is set.
    */
@@ -248,7 +256,15 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
     return urlMapResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The urlMapResource.
    */
@@ -258,7 +274,17 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.compute.v1.UrlMap.getDefaultInstance()
         : urlMapResource_;
   }
-  /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.UrlMapOrBuilder getUrlMapResourceOrBuilder() {
     return getUrlMapResource();
@@ -855,7 +881,15 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.UrlMapOrBuilder>
         urlMapResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the urlMapResource field is set.
      */
@@ -863,7 +897,15 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
       return urlMapResourceBuilder_ != null || urlMapResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The urlMapResource.
      */
@@ -876,7 +918,17 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
         return urlMapResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setUrlMapResource(com.google.cloud.compute.v1.UrlMap value) {
       if (urlMapResourceBuilder_ == null) {
         if (value == null) {
@@ -890,7 +942,17 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setUrlMapResource(com.google.cloud.compute.v1.UrlMap.Builder builderForValue) {
       if (urlMapResourceBuilder_ == null) {
         urlMapResource_ = builderForValue.build();
@@ -901,7 +963,17 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeUrlMapResource(com.google.cloud.compute.v1.UrlMap value) {
       if (urlMapResourceBuilder_ == null) {
         if (urlMapResource_ != null) {
@@ -919,7 +991,17 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearUrlMapResource() {
       if (urlMapResourceBuilder_ == null) {
         urlMapResource_ = null;
@@ -931,13 +1013,33 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.UrlMap.Builder getUrlMapResourceBuilder() {
 
       onChanged();
       return getUrlMapResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.UrlMapOrBuilder getUrlMapResourceOrBuilder() {
       if (urlMapResourceBuilder_ != null) {
         return urlMapResourceBuilder_.getMessageOrBuilder();
@@ -947,7 +1049,17 @@ public final class InsertUrlMapRequest extends com.google.protobuf.GeneratedMess
             : urlMapResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.UrlMap url_map_resource = 168675425;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UrlMap url_map_resource = 168675425 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UrlMap,
             com.google.cloud.compute.v1.UrlMap.Builder,

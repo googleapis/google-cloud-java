@@ -31,7 +31,7 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
    * </code>
    *
    * @return The enum numeric value on the wire for healthStatus.
@@ -45,7 +45,7 @@ public interface NetworkEndpointGroupsListEndpointsRequestOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 380545845;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.HealthStatus health_status = 112110389;
    * </code>
    *
    * @return The healthStatus.

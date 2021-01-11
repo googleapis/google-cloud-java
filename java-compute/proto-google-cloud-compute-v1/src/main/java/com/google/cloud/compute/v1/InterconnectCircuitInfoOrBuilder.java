@@ -80,7 +80,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 448196270;</code>
+   * <code>string google_demarc_id = 179760814;</code>
    *
    * @return The googleDemarcId.
    */
@@ -92,7 +92,7 @@ public interface InterconnectCircuitInfoOrBuilder
    * Google-side demarc ID for this circuit. Assigned at circuit turn-up and provided by Google to the customer in the LOA.
    * </pre>
    *
-   * <code>string google_demarc_id = 448196270;</code>
+   * <code>string google_demarc_id = 179760814;</code>
    *
    * @return The bytes for googleDemarcId.
    */

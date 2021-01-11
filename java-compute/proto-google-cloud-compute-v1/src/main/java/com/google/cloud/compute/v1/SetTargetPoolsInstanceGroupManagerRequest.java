@@ -82,6 +82,25 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
               zone_ = s;
               break;
             }
+          case 101718082:
+            {
+              com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest.Builder
+                  subBuilder = null;
+              if (instanceGroupManagersSetTargetPoolsRequestResource_ != null) {
+                subBuilder = instanceGroupManagersSetTargetPoolsRequestResource_.toBuilder();
+              }
+              instanceGroupManagersSetTargetPoolsRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(instanceGroupManagersSetTargetPoolsRequestResource_);
+                instanceGroupManagersSetTargetPoolsRequestResource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,25 +120,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               instanceGroupManager_ = s;
-              break;
-            }
-          case -2045765566:
-            {
-              com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest.Builder
-                  subBuilder = null;
-              if (instanceGroupManagersSetTargetPoolsRequestResource_ != null) {
-                subBuilder = instanceGroupManagersSetTargetPoolsRequestResource_.toBuilder();
-              }
-              instanceGroupManagersSetTargetPoolsRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(instanceGroupManagersSetTargetPoolsRequestResource_);
-                instanceGroupManagersSetTargetPoolsRequestResource_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           default:
@@ -208,12 +208,18 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
   }
 
   public static final int INSTANCE_GROUP_MANAGERS_SET_TARGET_POOLS_REQUEST_RESOURCE_FIELD_NUMBER =
-      281150216;
+      12714760;
   private com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest
       instanceGroupManagersSetTargetPoolsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersSetTargetPoolsRequestResource field is set.
@@ -223,8 +229,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     return instanceGroupManagersSetTargetPoolsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersSetTargetPoolsRequestResource.
@@ -238,8 +250,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
         : instanceGroupManagersSetTargetPoolsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+   * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -416,6 +434,9 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (instanceGroupManagersSetTargetPoolsRequestResource_ != null) {
+      output.writeMessage(12714760, getInstanceGroupManagersSetTargetPoolsRequestResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
@@ -424,9 +445,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     }
     if (!getInstanceGroupManagerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
-    }
-    if (instanceGroupManagersSetTargetPoolsRequestResource_ != null) {
-      output.writeMessage(281150216, getInstanceGroupManagersSetTargetPoolsRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -440,6 +458,11 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (instanceGroupManagersSetTargetPoolsRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12714760, getInstanceGroupManagersSetTargetPoolsRequestResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
@@ -450,11 +473,6 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
-    }
-    if (instanceGroupManagersSetTargetPoolsRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              281150216, getInstanceGroupManagersSetTargetPoolsRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -930,8 +948,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequestOrBuilder>
         instanceGroupManagersSetTargetPoolsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersSetTargetPoolsRequestResource field is set.
@@ -941,8 +965,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
           || instanceGroupManagersSetTargetPoolsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersSetTargetPoolsRequestResource.
@@ -959,8 +989,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -978,8 +1014,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -996,8 +1038,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -1020,8 +1068,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersSetTargetPoolsRequestResource() {
@@ -1036,8 +1090,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest.Builder
@@ -1047,8 +1107,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       return getInstanceGroupManagersSetTargetPoolsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequestOrBuilder
@@ -1063,8 +1129,14 @@ public final class SetTargetPoolsInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 281150216;
+     * .google.cloud.compute.v1.InstanceGroupManagersSetTargetPoolsRequest instance_group_managers_set_target_pools_request_resource = 12714760 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

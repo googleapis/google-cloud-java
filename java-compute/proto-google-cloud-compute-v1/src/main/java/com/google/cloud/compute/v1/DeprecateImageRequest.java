@@ -79,21 +79,7 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
               requestId_ = s;
               break;
             }
-          case 802507482:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              image_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1630918782:
+          case 516564866:
             {
               com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
               if (deprecationStatusResource_ != null) {
@@ -107,6 +93,20 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
                 deprecationStatusResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 802507482:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              image_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -143,10 +143,17 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.DeprecateImageRequest.Builder.class);
   }
 
-  public static final int DEPRECATION_STATUS_RESOURCE_FIELD_NUMBER = 333006064;
+  public static final int DEPRECATION_STATUS_RESOURCE_FIELD_NUMBER = 64570608;
   private com.google.cloud.compute.v1.DeprecationStatus deprecationStatusResource_;
   /**
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the deprecationStatusResource field is set.
@@ -156,7 +163,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
     return deprecationStatusResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The deprecationStatusResource.
@@ -168,7 +182,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
         : deprecationStatusResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -345,14 +366,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (deprecationStatusResource_ != null) {
+      output.writeMessage(64570608, getDeprecationStatusResource());
+    }
     if (!getImageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100313435, image_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (deprecationStatusResource_ != null) {
-      output.writeMessage(333006064, getDeprecationStatusResource());
     }
     unknownFields.writeTo(output);
   }
@@ -366,16 +387,16 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (deprecationStatusResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              64570608, getDeprecationStatusResource());
+    }
     if (!getImageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100313435, image_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (deprecationStatusResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              333006064, getDeprecationStatusResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -716,7 +737,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.DeprecationStatusOrBuilder>
         deprecationStatusResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the deprecationStatusResource field is set.
@@ -725,7 +753,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       return deprecationStatusResourceBuilder_ != null || deprecationStatusResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The deprecationStatusResource.
@@ -740,7 +775,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDeprecationStatusResource(
@@ -758,7 +800,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDeprecationStatusResource(
@@ -773,7 +822,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeDeprecationStatusResource(
@@ -795,7 +851,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearDeprecationStatusResource() {
@@ -810,7 +873,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder
@@ -820,7 +890,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       return getDeprecationStatusResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder
@@ -834,7 +911,14 @@ public final class DeprecateImageRequest extends com.google.protobuf.GeneratedMe
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 333006064;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DeprecationStatus deprecation_status_resource = 64570608 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

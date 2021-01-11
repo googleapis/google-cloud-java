@@ -24,18 +24,44 @@ public interface UpdateDisplayDeviceInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the displayDeviceResource field is set.
    */
   boolean hasDisplayDeviceResource();
   /**
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The displayDeviceResource.
    */
   com.google.cloud.compute.v1.DisplayDevice getDisplayDeviceResource();
-  /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.DisplayDeviceOrBuilder getDisplayDeviceResourceOrBuilder();
 
   /**

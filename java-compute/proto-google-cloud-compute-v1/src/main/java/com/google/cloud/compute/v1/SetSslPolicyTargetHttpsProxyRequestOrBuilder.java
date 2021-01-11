@@ -78,21 +78,42 @@ public interface SetSslPolicyTargetHttpsProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the sslPolicyReferenceResource field is set.
    */
   boolean hasSslPolicyReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The sslPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SslPolicyReference getSslPolicyReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder getSslPolicyReferenceResourceOrBuilder();

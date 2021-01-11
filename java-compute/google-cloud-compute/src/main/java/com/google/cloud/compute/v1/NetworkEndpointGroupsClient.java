@@ -288,7 +288,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     with RFC1035.
    * @param networkEndpointGroup The name of the network endpoint group where you are attaching
    *     network endpoints to. It should comply with RFC1035.
-   * @param networkEndpointGroupsAttachEndpointsRequestResource
+   * @param networkEndpointGroupsAttachEndpointsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation attachNetworkEndpoints(
@@ -317,10 +317,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AttachNetworkEndpointsNetworkEndpointGroupRequest request = AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsAttachEndpointsRequestResource(networkEndpointGroupsAttachEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -345,10 +347,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsAttachEndpointsRequest networkEndpointGroupsAttachEndpointsRequestResource = NetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AttachNetworkEndpointsNetworkEndpointGroupRequest request = AttachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsAttachEndpointsRequestResource(networkEndpointGroupsAttachEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -475,7 +479,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     with RFC1035.
    * @param networkEndpointGroup The name of the network endpoint group where you are removing
    *     network endpoints. It should comply with RFC1035.
-   * @param networkEndpointGroupsDetachEndpointsRequestResource
+   * @param networkEndpointGroupsDetachEndpointsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation detachNetworkEndpoints(
@@ -504,10 +508,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsDetachEndpointsRequest networkEndpointGroupsDetachEndpointsRequestResource = NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DetachNetworkEndpointsNetworkEndpointGroupRequest request = DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsDetachEndpointsRequestResource(networkEndpointGroupsDetachEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -532,10 +538,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsDetachEndpointsRequest networkEndpointGroupsDetachEndpointsRequestResource = NetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DetachNetworkEndpointsNetworkEndpointGroupRequest request = DetachNetworkEndpointsNetworkEndpointGroupRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsDetachEndpointsRequestResource(networkEndpointGroupsDetachEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -657,7 +665,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where you want to create the network endpoint group. It should
    *     comply with RFC1035.
-   * @param networkEndpointGroupResource
+   * @param networkEndpointGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -680,9 +688,11 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
+   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertNetworkEndpointGroupRequest request = InsertNetworkEndpointGroupRequest.newBuilder()
+   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -706,9 +716,11 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
+   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertNetworkEndpointGroupRequest request = InsertNetworkEndpointGroupRequest.newBuilder()
+   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -864,7 +876,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    *     with RFC1035.
    * @param networkEndpointGroup The name of the network endpoint group from which you want to
    *     generate a list of included network endpoints. It should comply with RFC1035.
-   * @param networkEndpointGroupsListEndpointsRequestResource
+   * @param networkEndpointGroupsListEndpointsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListNetworkEndpointsPagedResponse listNetworkEndpoints(
@@ -892,10 +904,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ListNetworkEndpointsNetworkEndpointGroupsRequest request = ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsListEndpointsRequestResource(networkEndpointGroupsListEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -922,10 +936,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ListNetworkEndpointsNetworkEndpointGroupsRequest request = ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsListEndpointsRequestResource(networkEndpointGroupsListEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -952,10 +968,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String networkEndpointGroup = "";
+   *   NetworkEndpointGroupsListEndpointsRequest networkEndpointGroupsListEndpointsRequestResource = NetworkEndpointGroupsListEndpointsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ListNetworkEndpointsNetworkEndpointGroupsRequest request = ListNetworkEndpointsNetworkEndpointGroupsRequest.newBuilder()
    *     .setNetworkEndpointGroup(networkEndpointGroup)
+   *     .setNetworkEndpointGroupsListEndpointsRequestResource(networkEndpointGroupsListEndpointsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1000,7 +1018,7 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -1028,10 +1046,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsNetworkEndpointGroupRequest request = TestIamPermissionsNetworkEndpointGroupRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   TestPermissionsResponse response = networkEndpointGroupsClient.testIamPermissions(request);
@@ -1056,10 +1076,12 @@ public class NetworkEndpointGroupsClient implements BackgroundResource {
    * try (NetworkEndpointGroupsClient networkEndpointGroupsClient = NetworkEndpointGroupsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsNetworkEndpointGroupRequest request = TestIamPermissionsNetworkEndpointGroupRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = networkEndpointGroupsClient.testIamPermissionsCallable().futureCall(request);

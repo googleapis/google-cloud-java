@@ -44,7 +44,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
    * </code>
    *
    * @return Whether the perInstanceConfigs field is set.
@@ -58,7 +58,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
    * </code>
    *
    * @return The perInstanceConfigs.
@@ -73,7 +73,7 @@ public interface InstanceGroupManagerStatusStatefulOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 526265001;
+   * .google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigs per_instance_configs = 257829545;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerStatusStatefulPerInstanceConfigsOrBuilder

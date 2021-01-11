@@ -24,18 +24,44 @@ public interface InsertGlobalForwardingRuleRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the forwardingRuleResource field is set.
    */
   boolean hasForwardingRuleResource();
   /**
-   * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The forwardingRuleResource.
    */
   com.google.cloud.compute.v1.ForwardingRule getForwardingRuleResource();
-  /** <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRuleResourceOrBuilder();
 
   /**

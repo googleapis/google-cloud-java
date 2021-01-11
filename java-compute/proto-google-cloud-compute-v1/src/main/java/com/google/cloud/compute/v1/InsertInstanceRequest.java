@@ -87,6 +87,13 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
               requestId_ = s;
               break;
             }
+          case 511905282:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceInstanceTemplate_ = s;
+              break;
+            }
           case 1727906754:
             {
               com.google.cloud.compute.v1.Instance.Builder subBuilder = null;
@@ -108,13 +115,6 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1635578366:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceInstanceTemplate_ = s;
               break;
             }
           default:
@@ -154,7 +154,15 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
   public static final int INSTANCE_RESOURCE_FIELD_NUMBER = 215988344;
   private com.google.cloud.compute.v1.Instance instanceResource_;
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceResource field is set.
    */
@@ -163,7 +171,15 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     return instanceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceResource.
    */
@@ -173,7 +189,17 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Instance.getDefaultInstance()
         : instanceResource_;
   }
-  /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceOrBuilder getInstanceResourceOrBuilder() {
     return getInstanceResource();
@@ -281,7 +307,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER = 332423616;
+  public static final int SOURCE_INSTANCE_TEMPLATE_FIELD_NUMBER = 63988160;
   private volatile java.lang.Object sourceInstanceTemplate_;
   /**
    *
@@ -294,7 +320,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    * - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>string source_instance_template = 63988160;</code>
    *
    * @return The sourceInstanceTemplate.
    */
@@ -321,7 +347,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
    * - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>string source_instance_template = 63988160;</code>
    *
    * @return The bytes for sourceInstanceTemplate.
    */
@@ -407,15 +433,14 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getSourceInstanceTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 63988160, sourceInstanceTemplate_);
+    }
     if (instanceResource_ != null) {
       output.writeMessage(215988344, getInstanceResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getSourceInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 332423616, sourceInstanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -432,6 +457,11 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getSourceInstanceTemplateBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              63988160, sourceInstanceTemplate_);
+    }
     if (instanceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -439,11 +469,6 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getSourceInstanceTemplateBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              332423616, sourceInstanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -793,7 +818,15 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.InstanceOrBuilder>
         instanceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instanceResource field is set.
      */
@@ -801,7 +834,15 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
       return instanceResourceBuilder_ != null || instanceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instanceResource.
      */
@@ -814,7 +855,17 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
         return instanceResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInstanceResource(com.google.cloud.compute.v1.Instance value) {
       if (instanceResourceBuilder_ == null) {
         if (value == null) {
@@ -828,7 +879,17 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInstanceResource(
         com.google.cloud.compute.v1.Instance.Builder builderForValue) {
       if (instanceResourceBuilder_ == null) {
@@ -840,7 +901,17 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeInstanceResource(com.google.cloud.compute.v1.Instance value) {
       if (instanceResourceBuilder_ == null) {
         if (instanceResource_ != null) {
@@ -858,7 +929,17 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearInstanceResource() {
       if (instanceResourceBuilder_ == null) {
         instanceResource_ = null;
@@ -870,13 +951,33 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Instance.Builder getInstanceResourceBuilder() {
 
       onChanged();
       return getInstanceResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.InstanceOrBuilder getInstanceResourceOrBuilder() {
       if (instanceResourceBuilder_ != null) {
         return instanceResourceBuilder_.getMessageOrBuilder();
@@ -886,7 +987,17 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
             : instanceResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Instance,
             com.google.cloud.compute.v1.Instance.Builder,
@@ -1138,7 +1249,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>string source_instance_template = 63988160;</code>
      *
      * @return The sourceInstanceTemplate.
      */
@@ -1164,7 +1275,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>string source_instance_template = 63988160;</code>
      *
      * @return The bytes for sourceInstanceTemplate.
      */
@@ -1190,7 +1301,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>string source_instance_template = 63988160;</code>
      *
      * @param value The sourceInstanceTemplate to set.
      * @return This builder for chaining.
@@ -1215,7 +1326,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>string source_instance_template = 63988160;</code>
      *
      * @return This builder for chaining.
      */
@@ -1236,7 +1347,7 @@ public final class InsertInstanceRequest extends com.google.protobuf.GeneratedMe
      * - global/instanceTemplates/instanceTemplate
      * </pre>
      *
-     * <code>string source_instance_template = 332423616;</code>
+     * <code>string source_instance_template = 63988160;</code>
      *
      * @param value The bytes for sourceInstanceTemplate to set.
      * @return This builder for chaining.

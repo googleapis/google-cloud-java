@@ -101,16 +101,28 @@ public interface SetTargetPoolsRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersSetTargetPoolsRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersSetTargetPoolsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersSetTargetPoolsRequestResource.
@@ -118,8 +130,14 @@ public interface SetTargetPoolsRegionInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
       getRegionInstanceGroupManagersSetTargetPoolsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder

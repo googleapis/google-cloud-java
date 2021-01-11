@@ -73,7 +73,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
           case 0:
             done = true;
             break;
-          case -1823954134:
+          case 323529514:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -114,10 +114,10 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.HealthCheckReference.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
+  public static final int HEALTH_CHECK_FIELD_NUMBER = 40441189;
   private volatile java.lang.Object healthCheck_;
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The healthCheck.
    */
@@ -134,7 +134,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
     }
   }
   /**
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -166,7 +166,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getHealthCheckBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 308876645, healthCheck_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40441189, healthCheck_);
     }
     unknownFields.writeTo(output);
   }
@@ -178,7 +178,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
 
     size = 0;
     if (!getHealthCheckBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308876645, healthCheck_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40441189, healthCheck_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -473,7 +473,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object healthCheck_ = "";
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @return The healthCheck.
      */
@@ -489,7 +489,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -505,7 +505,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -520,7 +520,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @return This builder for chaining.
      */
@@ -531,7 +531,7 @@ public final class HealthCheckReference extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     * <code>string health_check = 308876645;</code>
+     * <code>string health_check = 40441189;</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.

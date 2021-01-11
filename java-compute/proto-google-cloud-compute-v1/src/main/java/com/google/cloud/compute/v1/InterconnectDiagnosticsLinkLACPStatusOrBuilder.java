@@ -55,7 +55,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>string neighbor_system_id = 75385886;</code>
    *
    * @return The neighborSystemId.
    */
@@ -67,7 +67,7 @@ public interface InterconnectDiagnosticsLinkLACPStatusOrBuilder
    * System ID of the port on the neighbor's side of the LACP exchange.
    * </pre>
    *
-   * <code>string neighbor_system_id = 343821342;</code>
+   * <code>string neighbor_system_id = 75385886;</code>
    *
    * @return The bytes for neighborSystemId.
    */

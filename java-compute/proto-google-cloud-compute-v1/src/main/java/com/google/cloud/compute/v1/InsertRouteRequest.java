@@ -239,7 +239,15 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
   public static final int ROUTE_RESOURCE_FIELD_NUMBER = 225428804;
   private com.google.cloud.compute.v1.Route routeResource_;
   /**
-   * <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the routeResource field is set.
    */
@@ -248,7 +256,15 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
     return routeResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The routeResource.
    */
@@ -258,7 +274,17 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.compute.v1.Route.getDefaultInstance()
         : routeResource_;
   }
-  /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouteOrBuilder getRouteResourceOrBuilder() {
     return getRouteResource();
@@ -854,7 +880,15 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
             com.google.cloud.compute.v1.RouteOrBuilder>
         routeResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the routeResource field is set.
      */
@@ -862,7 +896,15 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
       return routeResourceBuilder_ != null || routeResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The routeResource.
      */
@@ -875,7 +917,17 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
         return routeResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setRouteResource(com.google.cloud.compute.v1.Route value) {
       if (routeResourceBuilder_ == null) {
         if (value == null) {
@@ -889,7 +941,17 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setRouteResource(com.google.cloud.compute.v1.Route.Builder builderForValue) {
       if (routeResourceBuilder_ == null) {
         routeResource_ = builderForValue.build();
@@ -900,7 +962,17 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeRouteResource(com.google.cloud.compute.v1.Route value) {
       if (routeResourceBuilder_ == null) {
         if (routeResource_ != null) {
@@ -918,7 +990,17 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearRouteResource() {
       if (routeResourceBuilder_ == null) {
         routeResource_ = null;
@@ -930,13 +1012,33 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Route.Builder getRouteResourceBuilder() {
 
       onChanged();
       return getRouteResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.RouteOrBuilder getRouteResourceOrBuilder() {
       if (routeResourceBuilder_ != null) {
         return routeResourceBuilder_.getMessageOrBuilder();
@@ -946,7 +1048,17 @@ public final class InsertRouteRequest extends com.google.protobuf.GeneratedMessa
             : routeResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Route,
             com.google.cloud.compute.v1.Route.Builder,

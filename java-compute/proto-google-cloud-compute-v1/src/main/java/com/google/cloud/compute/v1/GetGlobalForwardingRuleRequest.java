@@ -72,18 +72,18 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
+          case 12228594:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              forwardingRule_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -2135255054:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              forwardingRule_ = s;
               break;
             }
           default:
@@ -120,7 +120,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.GetGlobalForwardingRuleRequest.Builder.class);
   }
 
-  public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
+  public static final int FORWARDING_RULE_FIELD_NUMBER = 1528574;
   private volatile java.lang.Object forwardingRule_;
   /**
    *
@@ -129,7 +129,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
    * Name of the ForwardingRule resource to return.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The forwardingRule.
    */
@@ -152,7 +152,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
    * Name of the ForwardingRule resource to return.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -232,11 +232,11 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getForwardingRuleBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1528574, forwardingRule_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getForwardingRuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 269964030, forwardingRule_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,11 +247,11 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
+    if (!getForwardingRuleBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1528574, forwardingRule_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getForwardingRuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269964030, forwardingRule_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -561,7 +561,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource to return.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The forwardingRule.
      */
@@ -583,7 +583,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource to return.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -605,7 +605,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource to return.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -626,7 +626,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource to return.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -643,7 +643,7 @@ public final class GetGlobalForwardingRuleRequest extends com.google.protobuf.Ge
      * Name of the ForwardingRule resource to return.
      * </pre>
      *
-     * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.

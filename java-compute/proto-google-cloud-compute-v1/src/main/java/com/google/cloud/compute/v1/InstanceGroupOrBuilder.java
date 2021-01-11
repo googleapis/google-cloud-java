@@ -55,7 +55,7 @@ public interface InstanceGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface InstanceGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -182,7 +182,7 @@ public interface InstanceGroupOrBuilder
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
   /**
@@ -194,7 +194,7 @@ public interface InstanceGroupOrBuilder
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
   /**
@@ -206,7 +206,7 @@ public interface InstanceGroupOrBuilder
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   int getNamedPortsCount();
   /**
@@ -218,7 +218,7 @@ public interface InstanceGroupOrBuilder
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
@@ -231,7 +231,7 @@ public interface InstanceGroupOrBuilder
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index);
 
@@ -292,7 +292,7 @@ public interface InstanceGroupOrBuilder
    * [Output Only] The URL for this instance group. The server generates this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -304,7 +304,7 @@ public interface InstanceGroupOrBuilder
    * [Output Only] The URL for this instance group. The server generates this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -330,7 +330,7 @@ public interface InstanceGroupOrBuilder
    * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -342,7 +342,7 @@ public interface InstanceGroupOrBuilder
    * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */

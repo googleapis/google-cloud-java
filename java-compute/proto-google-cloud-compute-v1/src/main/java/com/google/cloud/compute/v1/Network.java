@@ -132,19 +132,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.NetworkPeering.parser(), extensionRegistry));
               break;
             }
-          case 1429431018:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gatewayIPv4_ = s;
-              break;
-            }
-          case 2049253520:
-            {
-              autoCreateSubnetworks_ = input.readBool();
-              break;
-            }
-          case -968142294:
+          case 1179341354:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) != 0)) {
@@ -154,21 +142,28 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
               subnetworks_.add(s);
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1429431018:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gatewayIPv4_ = s;
+              break;
+            }
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -106518822:
+          case 2040964826:
             {
               com.google.cloud.compute.v1.NetworkRoutingConfig.Builder subBuilder = null;
               if (routingConfig_ != null) {
@@ -182,6 +177,11 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
                 routingConfig_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 2049253520:
+            {
+              autoCreateSubnetworks_ = input.readBool();
               break;
             }
           default:
@@ -294,7 +294,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -303,7 +303,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -326,7 +326,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -675,7 +675,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     return peerings_.get(index);
   }
 
-  public static final int ROUTING_CONFIG_FIELD_NUMBER = 523556059;
+  public static final int ROUTING_CONFIG_FIELD_NUMBER = 255120603;
   private com.google.cloud.compute.v1.NetworkRoutingConfig routingConfig_;
   /**
    *
@@ -684,7 +684,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
    *
    * @return Whether the routingConfig field is set.
    */
@@ -699,7 +699,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
    *
    * @return The routingConfig.
    */
@@ -716,14 +716,14 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder() {
     return getRoutingConfig();
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -732,7 +732,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -755,7 +755,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -772,7 +772,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
+  public static final int SUBNETWORKS_FIELD_NUMBER = 147417669;
   private com.google.protobuf.LazyStringList subnetworks_;
   /**
    *
@@ -781,7 +781,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @return A list containing the subnetworks.
    */
@@ -795,7 +795,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @return The count of subnetworks.
    */
@@ -809,7 +809,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @param index The index of the element to return.
    * @return The subnetworks at the given index.
@@ -824,7 +824,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subnetworks at the given index.
@@ -868,23 +868,23 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < peerings_.size(); i++) {
       output.writeMessage(69883187, peerings_.get(i));
     }
+    for (int i = 0; i < subnetworks_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 147417669, subnetworks_.getRaw(i));
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (!getGatewayIPv4Bytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178678877, gatewayIPv4_);
     }
-    if (autoCreateSubnetworks_ != false) {
-      output.writeBool(256156690, autoCreateSubnetworks_);
-    }
-    for (int i = 0; i < subnetworks_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 415853125, subnetworks_.getRaw(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (routingConfig_ != null) {
-      output.writeMessage(523556059, getRoutingConfig());
+      output.writeMessage(255120603, getRoutingConfig());
+    }
+    if (autoCreateSubnetworks_ != false) {
+      output.writeBool(256156690, autoCreateSubnetworks_);
     }
     unknownFields.writeTo(output);
   }
@@ -917,13 +917,6 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < peerings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(69883187, peerings_.get(i));
     }
-    if (!getGatewayIPv4Bytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178678877, gatewayIPv4_);
-    }
-    if (autoCreateSubnetworks_ != false) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(256156690, autoCreateSubnetworks_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < subnetworks_.size(); i++) {
@@ -933,14 +926,21 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getSubnetworksList().size();
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (!getGatewayIPv4Bytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178678877, gatewayIPv4_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (routingConfig_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(523556059, getRoutingConfig());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(255120603, getRoutingConfig());
+    }
+    if (autoCreateSubnetworks_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(256156690, autoCreateSubnetworks_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1586,7 +1586,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1608,7 +1608,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1630,7 +1630,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1651,7 +1651,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1668,7 +1668,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this field when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2628,7 +2628,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      *
      * @return Whether the routingConfig field is set.
      */
@@ -2642,7 +2642,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      *
      * @return The routingConfig.
      */
@@ -2662,7 +2662,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     public Builder setRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
@@ -2684,7 +2684,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     public Builder setRoutingConfig(
         com.google.cloud.compute.v1.NetworkRoutingConfig.Builder builderForValue) {
@@ -2704,7 +2704,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     public Builder mergeRoutingConfig(com.google.cloud.compute.v1.NetworkRoutingConfig value) {
       if (routingConfigBuilder_ == null) {
@@ -2730,7 +2730,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     public Builder clearRoutingConfig() {
       if (routingConfigBuilder_ == null) {
@@ -2750,7 +2750,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfig.Builder getRoutingConfigBuilder() {
 
@@ -2764,7 +2764,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     public com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder() {
       if (routingConfigBuilder_ != null) {
@@ -2782,7 +2782,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+     * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.NetworkRoutingConfig,
@@ -2809,7 +2809,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2831,7 +2831,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2853,7 +2853,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2874,7 +2874,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2891,7 +2891,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2923,7 +2923,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @return A list containing the subnetworks.
      */
@@ -2937,7 +2937,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @return The count of subnetworks.
      */
@@ -2951,7 +2951,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @param index The index of the element to return.
      * @return The subnetworks at the given index.
@@ -2966,7 +2966,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the subnetworks at the given index.
@@ -2981,7 +2981,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @param index The index to set the value at.
      * @param value The subnetworks to set.
@@ -3003,7 +3003,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @param value The subnetworks to add.
      * @return This builder for chaining.
@@ -3024,7 +3024,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @param values The subnetworks to add.
      * @return This builder for chaining.
@@ -3042,7 +3042,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @return This builder for chaining.
      */
@@ -3059,7 +3059,7 @@ public final class Network extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
      * </pre>
      *
-     * <code>repeated string subnetworks = 415853125;</code>
+     * <code>repeated string subnetworks = 147417669;</code>
      *
      * @param value The bytes of the subnetworks to add.
      * @return This builder for chaining.

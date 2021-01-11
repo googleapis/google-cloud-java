@@ -342,7 +342,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param healthCheckResource
+   * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, HealthCheck healthCheckResource) {
@@ -363,9 +363,11 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionHealthCheckRequest request = InsertRegionHealthCheckRequest.newBuilder()
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -388,9 +390,11 @@ public class RegionHealthChecksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionHealthCheckRequest request = InsertRegionHealthCheckRequest.newBuilder()
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -536,7 +540,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param healthCheck Name of the HealthCheck resource to patch.
-   * @param healthCheckResource
+   * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -561,10 +565,12 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionHealthCheckRequest request = PatchRegionHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -589,10 +595,12 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionHealthCheckRequest request = PatchRegionHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -625,7 +633,7 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param healthCheck Name of the HealthCheck resource to update.
-   * @param healthCheckResource
+   * @param healthCheckResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -649,10 +657,12 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   UpdateRegionHealthCheckRequest request = UpdateRegionHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -676,10 +686,12 @@ public class RegionHealthChecksClient implements BackgroundResource {
    * <pre><code>
    * try (RegionHealthChecksClient regionHealthChecksClient = RegionHealthChecksClient.create()) {
    *   String healthCheck = "";
+   *   HealthCheck healthCheckResource = HealthCheck.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   UpdateRegionHealthCheckRequest request = UpdateRegionHealthCheckRequest.newBuilder()
    *     .setHealthCheck(healthCheck)
+   *     .setHealthCheckResource(healthCheckResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

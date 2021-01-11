@@ -55,7 +55,7 @@ public interface GuestAttributesOrBuilder
    * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The queryPath.
    */
@@ -67,7 +67,7 @@ public interface GuestAttributesOrBuilder
    * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -115,7 +115,7 @@ public interface GuestAttributesOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -127,7 +127,7 @@ public interface GuestAttributesOrBuilder
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

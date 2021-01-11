@@ -51,16 +51,28 @@ public interface UpdatePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq instance_group_managers_update_per_instance_configs_req_resource = 141402302;
+   * .google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq instance_group_managers_update_per_instance_configs_req_resource = 141402302 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersUpdatePerInstanceConfigsReqResource field is set.
    */
   boolean hasInstanceGroupManagersUpdatePerInstanceConfigsReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq instance_group_managers_update_per_instance_configs_req_resource = 141402302;
+   * .google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq instance_group_managers_update_per_instance_configs_req_resource = 141402302 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersUpdatePerInstanceConfigsReqResource.
@@ -68,8 +80,14 @@ public interface UpdatePerInstanceConfigsInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq
       getInstanceGroupManagersUpdatePerInstanceConfigsReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq instance_group_managers_update_per_instance_configs_req_resource = 141402302;
+   * .google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReq instance_group_managers_update_per_instance_configs_req_resource = 141402302 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder

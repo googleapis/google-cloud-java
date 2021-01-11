@@ -139,8 +139,8 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>PROJECT = 408671993;</code> */
-    PROJECT(408671993),
+    /** <code>PROJECT = 140236537;</code> */
+    PROJECT(140236537),
     /** <code>XPN_RESOURCE_TYPE_UNSPECIFIED = 151607034;</code> */
     XPN_RESOURCE_TYPE_UNSPECIFIED(151607034),
     UNRECOGNIZED(-1),
@@ -156,8 +156,8 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>PROJECT = 408671993;</code> */
-    public static final int PROJECT_VALUE = 408671993;
+    /** <code>PROJECT = 140236537;</code> */
+    public static final int PROJECT_VALUE = 140236537;
     /** <code>XPN_RESOURCE_TYPE_UNSPECIFIED = 151607034;</code> */
     public static final int XPN_RESOURCE_TYPE_UNSPECIFIED_VALUE = 151607034;
 
@@ -187,7 +187,7 @@ public final class XpnResourceId extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 408671993:
+        case 140236537:
           return PROJECT;
         case 151607034:
           return XPN_RESOURCE_TYPE_UNSPECIFIED;

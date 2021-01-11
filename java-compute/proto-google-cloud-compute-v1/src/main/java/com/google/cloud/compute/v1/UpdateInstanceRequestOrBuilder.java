@@ -49,18 +49,44 @@ public interface UpdateInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceResource field is set.
    */
   boolean hasInstanceResource();
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceResource.
    */
   com.google.cloud.compute.v1.Instance getInstanceResource();
-  /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.InstanceOrBuilder getInstanceResourceOrBuilder();
 
   /**
@@ -70,7 +96,7 @@ public interface UpdateInstanceRequestOrBuilder
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The minimalAction.
    */
@@ -82,7 +108,7 @@ public interface UpdateInstanceRequestOrBuilder
    * Specifies the action to take when updating an instance even if the updated properties do not require it. If not specified, then Compute Engine acts based on the minimum action that the updated properties require.
    * </pre>
    *
-   * <code>string minimal_action = 270567060;</code>
+   * <code>string minimal_action = 2131604;</code>
    *
    * @return The bytes for minimalAction.
    */

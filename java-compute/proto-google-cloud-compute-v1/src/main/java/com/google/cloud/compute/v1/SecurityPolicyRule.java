@@ -96,6 +96,18 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
 
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1413729568:
+            {
+              priority_ = input.readInt32();
+              break;
+            }
           case 1501295026:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -106,18 +118,6 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
           case 1749491264:
             {
               preview_ = input.readBool();
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -733754080:
-            {
-              priority_ = input.readInt32();
               break;
             }
           default:
@@ -203,7 +203,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -212,7 +212,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -235,7 +235,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -367,16 +367,16 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     return preview_;
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 445151652;
+  public static final int PRIORITY_FIELD_NUMBER = 176716196;
   private int priority_;
   /**
    *
    *
    * <pre>
-   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+   * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>int32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -405,17 +405,17 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (match_ != null) {
       output.writeMessage(103668165, getMatch());
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    if (priority_ != 0) {
+      output.writeInt32(176716196, priority_);
+    }
     if (!getActionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
     }
     if (preview_ != false) {
       output.writeBool(218686408, preview_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (priority_ != 0) {
-      output.writeInt32(445151652, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -432,17 +432,17 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
     if (match_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(103668165, getMatch());
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (priority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(176716196, priority_);
+    }
     if (!getActionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
     }
     if (preview_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(218686408, preview_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -905,7 +905,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -927,7 +927,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -949,7 +949,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -970,7 +970,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -987,7 +987,7 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1352,10 +1352,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>int32 priority = 176716196;</code>
      *
      * @return The priority.
      */
@@ -1367,10 +1367,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>int32 priority = 176716196;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -1385,10 +1385,10 @@ public final class SecurityPolicyRule extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest prority.
+     * An integer indicating the priority of a rule in the list. The priority must be a positive value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the highest priority and 2147483647 is the lowest priority.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>int32 priority = 176716196;</code>
      *
      * @return This builder for chaining.
      */

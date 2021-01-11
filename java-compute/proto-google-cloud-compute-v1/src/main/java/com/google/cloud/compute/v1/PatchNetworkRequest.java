@@ -195,7 +195,15 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
   public static final int NETWORK_RESOURCE_FIELD_NUMBER = 122105599;
   private com.google.cloud.compute.v1.Network networkResource_;
   /**
-   * <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the networkResource field is set.
    */
@@ -204,7 +212,15 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
     return networkResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The networkResource.
    */
@@ -214,7 +230,17 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.compute.v1.Network.getDefaultInstance()
         : networkResource_;
   }
-  /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.NetworkOrBuilder getNetworkResourceOrBuilder() {
     return getNetworkResource();
@@ -813,7 +839,15 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.NetworkOrBuilder>
         networkResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the networkResource field is set.
      */
@@ -821,7 +855,15 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
       return networkResourceBuilder_ != null || networkResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The networkResource.
      */
@@ -834,7 +876,17 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
         return networkResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setNetworkResource(com.google.cloud.compute.v1.Network value) {
       if (networkResourceBuilder_ == null) {
         if (value == null) {
@@ -848,7 +900,17 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setNetworkResource(com.google.cloud.compute.v1.Network.Builder builderForValue) {
       if (networkResourceBuilder_ == null) {
         networkResource_ = builderForValue.build();
@@ -859,7 +921,17 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeNetworkResource(com.google.cloud.compute.v1.Network value) {
       if (networkResourceBuilder_ == null) {
         if (networkResource_ != null) {
@@ -877,7 +949,17 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearNetworkResource() {
       if (networkResourceBuilder_ == null) {
         networkResource_ = null;
@@ -889,13 +971,33 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Network.Builder getNetworkResourceBuilder() {
 
       onChanged();
       return getNetworkResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.NetworkOrBuilder getNetworkResourceOrBuilder() {
       if (networkResourceBuilder_ != null) {
         return networkResourceBuilder_.getMessageOrBuilder();
@@ -905,7 +1007,17 @@ public final class PatchNetworkRequest extends com.google.protobuf.GeneratedMess
             : networkResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Network,
             com.google.cloud.compute.v1.Network.Builder,

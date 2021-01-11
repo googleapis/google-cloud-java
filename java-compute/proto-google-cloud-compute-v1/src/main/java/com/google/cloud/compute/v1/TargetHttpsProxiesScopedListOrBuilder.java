@@ -30,7 +30,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetHttpsProxy> getTargetHttpsProxiesList();
@@ -41,7 +41,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
    * </code>
    */
   com.google.cloud.compute.v1.TargetHttpsProxy getTargetHttpsProxies(int index);
@@ -52,7 +52,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
    * </code>
    */
   int getTargetHttpsProxiesCount();
@@ -63,7 +63,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder>
@@ -75,7 +75,7 @@ public interface TargetHttpsProxiesScopedListOrBuilder
    * A list of TargetHttpsProxies contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 366607882;
+   * <code>repeated .google.cloud.compute.v1.TargetHttpsProxy target_https_proxies = 98172426;
    * </code>
    */
   com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder getTargetHttpsProxiesOrBuilder(int index);

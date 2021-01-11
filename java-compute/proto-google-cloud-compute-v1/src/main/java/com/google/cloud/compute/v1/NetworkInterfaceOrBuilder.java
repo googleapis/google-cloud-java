@@ -159,7 +159,7 @@ public interface NetworkInterfaceOrBuilder
    * [Output Only] An IPv6 internal network address for this network interface.
    * </pre>
    *
-   * <code>string ipv6_address = 341563804;</code>
+   * <code>string ipv6_address = 73128348;</code>
    *
    * @return The ipv6Address.
    */
@@ -171,7 +171,7 @@ public interface NetworkInterfaceOrBuilder
    * [Output Only] An IPv6 internal network address for this network interface.
    * </pre>
    *
-   * <code>string ipv6_address = 341563804;</code>
+   * <code>string ipv6_address = 73128348;</code>
    *
    * @return The bytes for ipv6Address.
    */
@@ -289,12 +289,37 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
+   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+   *
+   * @return The enum numeric value on the wire for nicType.
+   */
+  int getNicTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+   *
+   * @return The nicType.
+   */
+  com.google.cloud.compute.v1.NetworkInterface.NicType getNicType();
+
+  /**
+   *
+   *
+   * <pre>
    * The URL of the Subnetwork resource for this instance. If the network resource is in legacy mode, do not specify this field. If the network is in auto subnet mode, specifying the subnetwork is optional. If the network is in custom subnet mode, specifying the subnetwork is required. If you specify this field, you can specify the subnetwork as a full or partial URL. For example, the following are all valid URLs:
    * - https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnetwork
    * - regions/region/subnetworks/subnetwork
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -308,7 +333,7 @@ public interface NetworkInterfaceOrBuilder
    * - regions/region/subnetworks/subnetwork
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */

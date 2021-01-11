@@ -55,7 +55,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 270619253;</code>
+   * <code>string default_disk_size_gb = 2183797;</code>
    *
    * @return The defaultDiskSizeGb.
    */
@@ -67,7 +67,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 270619253;</code>
+   * <code>string default_disk_size_gb = 2183797;</code>
    *
    * @return The bytes for defaultDiskSizeGb.
    */
@@ -80,7 +80,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -92,7 +92,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -104,7 +104,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -115,7 +115,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -127,7 +127,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -240,7 +240,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -252,7 +252,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -265,7 +265,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
    * </pre>
    *
-   * <code>string valid_disk_size = 493962464;</code>
+   * <code>string valid_disk_size = 225527008;</code>
    *
    * @return The validDiskSize.
    */
@@ -277,7 +277,7 @@ public interface DiskTypeOrBuilder
    * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
    * </pre>
    *
-   * <code>string valid_disk_size = 493962464;</code>
+   * <code>string valid_disk_size = 225527008;</code>
    *
    * @return The bytes for validDiskSize.
    */

@@ -101,16 +101,28 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersDeleteInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersDeleteInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersDeleteInstancesRequestResource.
@@ -118,8 +130,14 @@ public interface DeleteInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest
       getRegionInstanceGroupManagersDeleteInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequestOrBuilder

@@ -80,7 +80,7 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * The name of the network interface.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The networkInterface.
    */
@@ -92,7 +92,7 @@ public interface DeleteAccessConfigInstanceRequestOrBuilder
    * The name of the network interface.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for networkInterface.
    */

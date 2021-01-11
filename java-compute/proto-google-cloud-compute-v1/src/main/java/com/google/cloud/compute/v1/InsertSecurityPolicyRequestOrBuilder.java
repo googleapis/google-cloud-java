@@ -78,17 +78,43 @@ public interface InsertSecurityPolicyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the securityPolicyResource field is set.
    */
   boolean hasSecurityPolicyResource();
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The securityPolicyResource.
    */
   com.google.cloud.compute.v1.SecurityPolicy getSecurityPolicyResource();
-  /** <code>.google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicy security_policy_resource = 216159612 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SecurityPolicyOrBuilder getSecurityPolicyResourceOrBuilder();
 }

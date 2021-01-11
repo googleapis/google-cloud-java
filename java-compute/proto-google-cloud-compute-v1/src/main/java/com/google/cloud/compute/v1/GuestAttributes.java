@@ -81,6 +81,13 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
               kind_ = s;
               break;
             }
+          case 801245666:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              queryPath_ = s;
+              break;
+            }
           case 996659058:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -111,14 +118,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
               variableKey_ = s;
               break;
             }
-          case -1346237982:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              queryPath_ = s;
-              break;
-            }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -208,7 +208,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int QUERY_PATH_FIELD_NUMBER = 368591164;
+  public static final int QUERY_PATH_FIELD_NUMBER = 100155708;
   private volatile java.lang.Object queryPath_;
   /**
    *
@@ -217,7 +217,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The queryPath.
    */
@@ -240,7 +240,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -305,7 +305,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     return getQueryValue();
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -314,7 +314,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -337,7 +337,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -469,6 +469,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     if (!getKindBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
+    if (!getQueryPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 100155708, queryPath_);
+    }
     if (!getVariableValueBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 124582382, variableValue_);
     }
@@ -478,11 +481,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     if (!getVariableKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 164364828, variableKey_);
     }
-    if (!getQueryPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 368591164, queryPath_);
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -496,6 +496,9 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     if (!getKindBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
+    if (!getQueryPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100155708, queryPath_);
+    }
     if (!getVariableValueBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(124582382, variableValue_);
     }
@@ -505,11 +508,8 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
     if (!getVariableKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(164364828, variableKey_);
     }
-    if (!getQueryPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(368591164, queryPath_);
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -974,7 +974,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @return The queryPath.
      */
@@ -996,7 +996,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @return The bytes for queryPath.
      */
@@ -1018,7 +1018,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @param value The queryPath to set.
      * @return This builder for chaining.
@@ -1039,7 +1039,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @return This builder for chaining.
      */
@@ -1056,7 +1056,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * The path to be queried. This can be the default namespace ('/') or a nested namespace ('/&#92;/') or a specified key ('/&#92;/&#92;')
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @param value The bytes for queryPath to set.
      * @return This builder for chaining.
@@ -1266,7 +1266,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1288,7 +1288,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1310,7 +1310,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1331,7 +1331,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1348,7 +1348,7 @@ public final class GuestAttributes extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

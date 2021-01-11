@@ -103,17 +103,43 @@ public interface InsertVpnTunnelRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the vpnTunnelResource field is set.
    */
   boolean hasVpnTunnelResource();
   /**
-   * <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The vpnTunnelResource.
    */
   com.google.cloud.compute.v1.VpnTunnel getVpnTunnelResource();
-  /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.VpnTunnelOrBuilder getVpnTunnelResourceOrBuilder();
 }

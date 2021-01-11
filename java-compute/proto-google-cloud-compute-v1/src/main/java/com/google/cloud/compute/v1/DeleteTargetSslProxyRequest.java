@@ -79,18 +79,18 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
               requestId_ = s;
               break;
             }
+          case 562883178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetSslProxy_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1584600470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetSslProxy_ = s;
               break;
             }
           default:
@@ -229,7 +229,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
+  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 70360397;
   private volatile java.lang.Object targetSslProxy_;
   /**
    *
@@ -238,7 +238,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
    * Name of the TargetSslProxy resource to delete.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -261,7 +261,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
    * Name of the TargetSslProxy resource to delete.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */
@@ -295,11 +295,11 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 70360397, targetSslProxy_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 338795853, targetSslProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -313,11 +313,11 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(70360397, targetSslProxy_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338795853, targetSslProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -859,7 +859,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
      * Name of the TargetSslProxy resource to delete.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetSslProxy.
      */
@@ -881,7 +881,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
      * Name of the TargetSslProxy resource to delete.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -903,7 +903,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
      * Name of the TargetSslProxy resource to delete.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetSslProxy to set.
      * @return This builder for chaining.
@@ -924,7 +924,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
      * Name of the TargetSslProxy resource to delete.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -941,7 +941,7 @@ public final class DeleteTargetSslProxyRequest extends com.google.protobuf.Gener
      * Name of the TargetSslProxy resource to delete.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetSslProxy to set.
      * @return This builder for chaining.

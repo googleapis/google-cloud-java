@@ -147,14 +147,14 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>ACCELERATOR = 429815371;</code> */
-    ACCELERATOR(429815371),
-    /** <code>LOCAL_SSD = 508934896;</code> */
-    LOCAL_SSD(508934896),
+    /** <code>ACCELERATOR = 161379915;</code> */
+    ACCELERATOR(161379915),
+    /** <code>LOCAL_SSD = 240499440;</code> */
+    LOCAL_SSD(240499440),
     /** <code>MEMORY = 123056385;</code> */
     MEMORY(123056385),
-    /** <code>UNSPECIFIED = 526786327;</code> */
-    UNSPECIFIED(526786327),
+    /** <code>UNSPECIFIED = 258350871;</code> */
+    UNSPECIFIED(258350871),
     /** <code>VCPU = 2628978;</code> */
     VCPU(2628978),
     UNRECOGNIZED(-1),
@@ -170,14 +170,14 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>ACCELERATOR = 429815371;</code> */
-    public static final int ACCELERATOR_VALUE = 429815371;
-    /** <code>LOCAL_SSD = 508934896;</code> */
-    public static final int LOCAL_SSD_VALUE = 508934896;
+    /** <code>ACCELERATOR = 161379915;</code> */
+    public static final int ACCELERATOR_VALUE = 161379915;
+    /** <code>LOCAL_SSD = 240499440;</code> */
+    public static final int LOCAL_SSD_VALUE = 240499440;
     /** <code>MEMORY = 123056385;</code> */
     public static final int MEMORY_VALUE = 123056385;
-    /** <code>UNSPECIFIED = 526786327;</code> */
-    public static final int UNSPECIFIED_VALUE = 526786327;
+    /** <code>UNSPECIFIED = 258350871;</code> */
+    public static final int UNSPECIFIED_VALUE = 258350871;
     /** <code>VCPU = 2628978;</code> */
     public static final int VCPU_VALUE = 2628978;
 
@@ -207,13 +207,13 @@ public final class ResourceCommitment extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 429815371:
+        case 161379915:
           return ACCELERATOR;
-        case 508934896:
+        case 240499440:
           return LOCAL_SSD;
         case 123056385:
           return MEMORY;
-        case 526786327:
+        case 258350871:
           return UNSPECIFIED;
         case 2628978:
           return VCPU;

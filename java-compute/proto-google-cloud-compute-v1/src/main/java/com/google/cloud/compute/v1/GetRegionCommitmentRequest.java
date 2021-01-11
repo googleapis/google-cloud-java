@@ -79,18 +79,18 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
               region_ = s;
               break;
             }
+          case 1709594794:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              commitment_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -437888854:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              commitment_ = s;
               break;
             }
           default:
@@ -127,7 +127,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.GetRegionCommitmentRequest.Builder.class);
   }
 
-  public static final int COMMITMENT_FIELD_NUMBER = 482134805;
+  public static final int COMMITMENT_FIELD_NUMBER = 213699349;
   private volatile java.lang.Object commitment_;
   /**
    *
@@ -136,7 +136,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
    * Name of the commitment to return.
    * </pre>
    *
-   * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The commitment.
    */
@@ -159,7 +159,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
    * Name of the commitment to return.
    * </pre>
    *
-   * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for commitment.
    */
@@ -291,11 +291,11 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getCommitmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 213699349, commitment_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getCommitmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 482134805, commitment_);
     }
     unknownFields.writeTo(output);
   }
@@ -309,11 +309,11 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getCommitmentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(213699349, commitment_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getCommitmentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(482134805, commitment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -633,7 +633,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
      * Name of the commitment to return.
      * </pre>
      *
-     * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The commitment.
      */
@@ -655,7 +655,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
      * Name of the commitment to return.
      * </pre>
      *
-     * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for commitment.
      */
@@ -677,7 +677,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
      * Name of the commitment to return.
      * </pre>
      *
-     * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The commitment to set.
      * @return This builder for chaining.
@@ -698,7 +698,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
      * Name of the commitment to return.
      * </pre>
      *
-     * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -715,7 +715,7 @@ public final class GetRegionCommitmentRequest extends com.google.protobuf.Genera
      * Name of the commitment to return.
      * </pre>
      *
-     * <code>string commitment = 482134805 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string commitment = 213699349 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for commitment to set.
      * @return This builder for chaining.

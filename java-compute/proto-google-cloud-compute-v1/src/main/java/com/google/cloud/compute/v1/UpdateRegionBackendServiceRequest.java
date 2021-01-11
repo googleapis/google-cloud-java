@@ -81,28 +81,14 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
               requestId_ = s;
               break;
             }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1839398830:
+          case 308084818:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               backendService_ = s;
               break;
             }
-          case -1514273510:
+          case 633210138:
             {
               com.google.cloud.compute.v1.BackendService.Builder subBuilder = null;
               if (backendServiceResource_ != null) {
@@ -116,6 +102,20 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
                 backendServiceResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -152,7 +152,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
             com.google.cloud.compute.v1.UpdateRegionBackendServiceRequest.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -161,7 +161,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
    * Name of the BackendService resource to update.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -184,7 +184,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
    * Name of the BackendService resource to update.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -201,10 +201,18 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
     }
   }
 
-  public static final int BACKEND_SERVICE_RESOURCE_FIELD_NUMBER = 347586723;
+  public static final int BACKEND_SERVICE_RESOURCE_FIELD_NUMBER = 79151267;
   private com.google.cloud.compute.v1.BackendService backendServiceResource_;
   /**
-   * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the backendServiceResource field is set.
    */
@@ -213,7 +221,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
     return backendServiceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The backendServiceResource.
    */
@@ -223,7 +239,17 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.BackendService.getDefaultInstance()
         : backendServiceResource_;
   }
-  /** <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendServiceOrBuilder getBackendServiceResourceOrBuilder() {
     return getBackendServiceResource();
@@ -397,17 +423,17 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getBackendServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    }
+    if (backendServiceResource_ != null) {
+      output.writeMessage(79151267, getBackendServiceResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
-    }
-    if (backendServiceResource_ != null) {
-      output.writeMessage(347586723, getBackendServiceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -421,19 +447,19 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getBackendServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    }
+    if (backendServiceResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              79151267, getBackendServiceResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
-    }
-    if (backendServiceResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              347586723, getBackendServiceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -788,7 +814,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
      * Name of the BackendService resource to update.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The backendService.
      */
@@ -810,7 +836,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
      * Name of the BackendService resource to update.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for backendService.
      */
@@ -832,7 +858,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
      * Name of the BackendService resource to update.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -853,7 +879,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
      * Name of the BackendService resource to update.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -870,7 +896,7 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
      * Name of the BackendService resource to update.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -893,7 +919,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
             com.google.cloud.compute.v1.BackendServiceOrBuilder>
         backendServiceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the backendServiceResource field is set.
      */
@@ -901,7 +935,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       return backendServiceResourceBuilder_ != null || backendServiceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The backendServiceResource.
      */
@@ -915,7 +957,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setBackendServiceResource(com.google.cloud.compute.v1.BackendService value) {
       if (backendServiceResourceBuilder_ == null) {
@@ -931,7 +981,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setBackendServiceResource(
         com.google.cloud.compute.v1.BackendService.Builder builderForValue) {
@@ -945,7 +1003,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeBackendServiceResource(com.google.cloud.compute.v1.BackendService value) {
       if (backendServiceResourceBuilder_ == null) {
@@ -965,7 +1031,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearBackendServiceResource() {
       if (backendServiceResourceBuilder_ == null) {
@@ -979,7 +1053,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.BackendService.Builder getBackendServiceResourceBuilder() {
 
@@ -987,7 +1069,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       return getBackendServiceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceOrBuilder
         getBackendServiceResourceOrBuilder() {
@@ -1000,7 +1090,15 @@ public final class UpdateRegionBackendServiceRequest extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendService,

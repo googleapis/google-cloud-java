@@ -72,18 +72,18 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
+          case 1790403122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              interconnectLocation_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -357080526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interconnectLocation_ = s;
               break;
             }
           default:
@@ -120,7 +120,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.GetInterconnectLocationRequest.Builder.class);
   }
 
-  public static final int INTERCONNECT_LOCATION_FIELD_NUMBER = 492235846;
+  public static final int INTERCONNECT_LOCATION_FIELD_NUMBER = 223800390;
   private volatile java.lang.Object interconnectLocation_;
   /**
    *
@@ -129,7 +129,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
    * Name of the interconnect location to return.
    * </pre>
    *
-   * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectLocation.
@@ -153,7 +153,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
    * Name of the interconnect location to return.
    * </pre>
    *
-   * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectLocation.
@@ -234,11 +234,11 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getInterconnectLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 223800390, interconnectLocation_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getInterconnectLocationBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 492235846, interconnectLocation_);
     }
     unknownFields.writeTo(output);
   }
@@ -249,13 +249,13 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (!getInterconnectLocationBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              492235846, interconnectLocation_);
+              223800390, interconnectLocation_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -565,7 +565,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * Name of the interconnect location to return.
      * </pre>
      *
-     * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The interconnectLocation.
@@ -588,7 +588,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * Name of the interconnect location to return.
      * </pre>
      *
-     * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for interconnectLocation.
@@ -611,7 +611,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * Name of the interconnect location to return.
      * </pre>
      *
-     * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The interconnectLocation to set.
@@ -633,7 +633,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * Name of the interconnect location to return.
      * </pre>
      *
-     * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -651,7 +651,7 @@ public final class GetInterconnectLocationRequest extends com.google.protobuf.Ge
      * Name of the interconnect location to return.
      * </pre>
      *
-     * <code>string interconnect_location = 492235846 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_location = 223800390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for interconnectLocation to set.

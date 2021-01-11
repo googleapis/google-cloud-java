@@ -87,14 +87,14 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
               path_ = s;
               break;
             }
-          case -1306643030:
+          case 840840618:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               service_ = s;
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -135,7 +135,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.UrlMapTest.Builder.class);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -144,7 +144,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -167,7 +167,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * Description of this test case.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -282,7 +282,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 373540533;
+  public static final int SERVICE_FIELD_NUMBER = 105105077;
   private volatile java.lang.Object service_;
   /**
    *
@@ -292,7 +292,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -316,7 +316,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
    * service cannot be set if expectedRedirectResponseCode is set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */
@@ -354,10 +354,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3433509, path_);
     }
     if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -375,10 +375,10 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3433509, path_);
     }
     if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -704,7 +704,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -726,7 +726,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -748,7 +748,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -769,7 +769,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -786,7 +786,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * Description of this test case.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1023,7 +1023,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @return The service.
      */
@@ -1046,7 +1046,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @return The bytes for service.
      */
@@ -1069,7 +1069,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -1091,7 +1091,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @return This builder for chaining.
      */
@@ -1109,7 +1109,7 @@ public final class UrlMapTest extends com.google.protobuf.GeneratedMessageV3
      * service cannot be set if expectedRedirectResponseCode is set.
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.

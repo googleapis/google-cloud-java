@@ -55,7 +55,7 @@ public interface DiskOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface DiskOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -83,7 +83,7 @@ public interface DiskOrBuilder
    * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -98,7 +98,7 @@ public interface DiskOrBuilder
    * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return The diskEncryptionKey.
    */
@@ -113,7 +113,7 @@ public interface DiskOrBuilder
    * If you do not provide an encryption key when creating the disk, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the disk later.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getDiskEncryptionKeyOrBuilder();
 
@@ -253,7 +253,7 @@ public interface DiskOrBuilder
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   int getLabelsCount();
   /**
@@ -263,7 +263,7 @@ public interface DiskOrBuilder
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -276,7 +276,7 @@ public interface DiskOrBuilder
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -286,7 +286,7 @@ public interface DiskOrBuilder
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -296,7 +296,7 @@ public interface DiskOrBuilder
    * Labels to apply to this disk. These can be later modified by the setLabels method.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -408,7 +408,7 @@ public interface DiskOrBuilder
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return A list containing the licenses.
    */
@@ -420,7 +420,7 @@ public interface DiskOrBuilder
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return The count of licenses.
    */
@@ -432,7 +432,7 @@ public interface DiskOrBuilder
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -445,7 +445,7 @@ public interface DiskOrBuilder
    * A list of publicly visible licenses. Reserved for Google's use.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.
@@ -484,7 +484,7 @@ public interface DiskOrBuilder
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>string options = 92702366;</code>
    *
    * @return The options.
    */
@@ -496,7 +496,7 @@ public interface DiskOrBuilder
    * Internal use only.
    * </pre>
    *
-   * <code>string options = 361137822;</code>
+   * <code>string options = 92702366;</code>
    *
    * @return The bytes for options.
    */
@@ -509,7 +509,7 @@ public interface DiskOrBuilder
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>string physical_block_size_bytes = 151572487;</code>
    *
    * @return The physicalBlockSizeBytes.
    */
@@ -521,7 +521,7 @@ public interface DiskOrBuilder
    * Physical block size of the persistent disk, in bytes. If not present in a request, a default value is used. The currently supported size is 4096, other sizes may be added in the future. If an unsupported value is requested, the error message will list the supported values for the caller's project.
    * </pre>
    *
-   * <code>string physical_block_size_bytes = 420007943;</code>
+   * <code>string physical_block_size_bytes = 151572487;</code>
    *
    * @return The bytes for physicalBlockSizeBytes.
    */
@@ -661,7 +661,7 @@ public interface DiskOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -673,7 +673,7 @@ public interface DiskOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -687,7 +687,7 @@ public interface DiskOrBuilder
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>string size_gb = 226493913;</code>
    *
    * @return The sizeGb.
    */
@@ -700,7 +700,7 @@ public interface DiskOrBuilder
    * If you specify this field along with a source, the value of sizeGb must not be less than the size of the source. Acceptable values are 1 to 65536, inclusive.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>string size_gb = 226493913;</code>
    *
    * @return The bytes for sizeGb.
    */
@@ -716,7 +716,7 @@ public interface DiskOrBuilder
    * - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>string source_disk = 183318337;</code>
    *
    * @return The sourceDisk.
    */
@@ -731,7 +731,7 @@ public interface DiskOrBuilder
    * - zones/zone/disks/disk
    * </pre>
    *
-   * <code>string source_disk = 451753793;</code>
+   * <code>string source_disk = 183318337;</code>
    *
    * @return The bytes for sourceDisk.
    */
@@ -744,7 +744,7 @@ public interface DiskOrBuilder
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>string source_disk_id = 185755353;</code>
    *
    * @return The sourceDiskId.
    */
@@ -756,7 +756,7 @@ public interface DiskOrBuilder
    * [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
    * </pre>
    *
-   * <code>string source_disk_id = 454190809;</code>
+   * <code>string source_disk_id = 185755353;</code>
    *
    * @return The bytes for sourceDiskId.
    */
@@ -810,7 +810,7 @@ public interface DiskOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
    * </code>
    *
    * @return Whether the sourceImageEncryptionKey field is set.
@@ -823,7 +823,7 @@ public interface DiskOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
    * </code>
    *
    * @return The sourceImageEncryptionKey.
@@ -836,7 +836,7 @@ public interface DiskOrBuilder
    * The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 381503659;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_image_encryption_key = 113068203;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getSourceImageEncryptionKeyOrBuilder();
@@ -904,8 +904,7 @@ public interface DiskOrBuilder
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
    * </code>
    *
    * @return Whether the sourceSnapshotEncryptionKey field is set.
@@ -918,8 +917,7 @@ public interface DiskOrBuilder
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
    * </code>
    *
    * @return The sourceSnapshotEncryptionKey.
@@ -932,8 +930,7 @@ public interface DiskOrBuilder
    * The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
    * </pre>
    *
-   * <code>
-   * .google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 303679322;
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey source_snapshot_encryption_key = 35243866;
    * </code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder

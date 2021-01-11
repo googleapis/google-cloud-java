@@ -30,7 +30,7 @@ public interface RouterBgpOrBuilder
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -42,7 +42,7 @@ public interface RouterBgpOrBuilder
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
    *
    * @return The advertiseMode.
    */

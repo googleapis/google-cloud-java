@@ -49,16 +49,28 @@ public interface UpdatePeeringNetworkRequestOrBuilder
   com.google.protobuf.ByteString getNetworkBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networksUpdatePeeringRequestResource field is set.
    */
   boolean hasNetworksUpdatePeeringRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networksUpdatePeeringRequestResource.
@@ -66,8 +78,14 @@ public interface UpdatePeeringNetworkRequestOrBuilder
   com.google.cloud.compute.v1.NetworksUpdatePeeringRequest
       getNetworksUpdatePeeringRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497;
+   * .google.cloud.compute.v1.NetworksUpdatePeeringRequest networks_update_peering_request_resource = 224433497 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworksUpdatePeeringRequestOrBuilder

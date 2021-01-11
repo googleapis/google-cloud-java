@@ -30,7 +30,7 @@ public interface ErrorOrBuilder
    * [Output Only] The array of errors encountered while processing this operation.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>repeated .google.cloud.compute.v1.Errors errors = 47542123;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Errors> getErrorsList();
   /**
@@ -40,7 +40,7 @@ public interface ErrorOrBuilder
    * [Output Only] The array of errors encountered while processing this operation.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>repeated .google.cloud.compute.v1.Errors errors = 47542123;</code>
    */
   com.google.cloud.compute.v1.Errors getErrors(int index);
   /**
@@ -50,7 +50,7 @@ public interface ErrorOrBuilder
    * [Output Only] The array of errors encountered while processing this operation.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>repeated .google.cloud.compute.v1.Errors errors = 47542123;</code>
    */
   int getErrorsCount();
   /**
@@ -60,7 +60,7 @@ public interface ErrorOrBuilder
    * [Output Only] The array of errors encountered while processing this operation.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>repeated .google.cloud.compute.v1.Errors errors = 47542123;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ErrorsOrBuilder> getErrorsOrBuilderList();
   /**
@@ -70,7 +70,7 @@ public interface ErrorOrBuilder
    * [Output Only] The array of errors encountered while processing this operation.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Errors errors = 315977579;</code>
+   * <code>repeated .google.cloud.compute.v1.Errors errors = 47542123;</code>
    */
   com.google.cloud.compute.v1.ErrorsOrBuilder getErrorsOrBuilder(int index);
 }

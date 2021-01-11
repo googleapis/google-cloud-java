@@ -306,8 +306,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq
       regionInstanceGroupManagerDeleteInstanceConfigReqResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagerDeleteInstanceConfigReqResource field is set.
@@ -317,8 +323,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagerDeleteInstanceConfigReqResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagerDeleteInstanceConfigReqResource.
@@ -332,8 +344,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagerDeleteInstanceConfigReqResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1106,8 +1124,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReqOrBuilder>
         regionInstanceGroupManagerDeleteInstanceConfigReqResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagerDeleteInstanceConfigReqResource field is set.
@@ -1117,8 +1141,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagerDeleteInstanceConfigReqResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagerDeleteInstanceConfigReqResource.
@@ -1135,8 +1165,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
@@ -1154,8 +1190,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
@@ -1172,8 +1214,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagerDeleteInstanceConfigReqResource(
@@ -1196,8 +1244,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagerDeleteInstanceConfigReqResource() {
@@ -1212,8 +1266,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq.Builder
@@ -1224,8 +1284,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
           .getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReqOrBuilder
@@ -1241,8 +1307,14 @@ public final class DeletePerInstanceConfigsRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagerDeleteInstanceConfigReq region_instance_group_manager_delete_instance_config_req_resource = 740741 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

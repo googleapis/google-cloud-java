@@ -175,7 +175,7 @@ public class BackendServicesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to which the Signed URL Key should be
    *     added. The name should conform to RFC1035.
-   * @param signedUrlKeyResource
+   * @param signedUrlKeyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addSignedUrlKey(
@@ -199,9 +199,11 @@ public class BackendServicesClient implements BackgroundResource {
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
    *   String project = "";
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
    *   AddSignedUrlKeyBackendServiceRequest request = AddSignedUrlKeyBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
    *     .setProject(project)
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
    *     .build();
    *   Operation response = backendServicesClient.addSignedUrlKey(request);
    * }
@@ -224,9 +226,11 @@ public class BackendServicesClient implements BackgroundResource {
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
    *   String project = "";
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
    *   AddSignedUrlKeyBackendServiceRequest request = AddSignedUrlKeyBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
    *     .setProject(project)
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServicesClient.addSignedUrlKeyCallable().futureCall(request);
    *   // Do something
@@ -609,7 +613,7 @@ public class BackendServicesClient implements BackgroundResource {
    * @param project
    * @param backendService Name of the BackendService resource to which the queried instance
    *     belongs.
-   * @param resourceGroupReferenceResource
+   * @param resourceGroupReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final BackendServiceGroupHealth getHealth(
@@ -639,9 +643,11 @@ public class BackendServicesClient implements BackgroundResource {
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
    *   String project = "";
+   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
    *   GetHealthBackendServiceRequest request = GetHealthBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
    *     .setProject(project)
+   *     .setResourceGroupReferenceResource(resourceGroupReferenceResource)
    *     .build();
    *   BackendServiceGroupHealth response = backendServicesClient.getHealth(request);
    * }
@@ -668,9 +674,11 @@ public class BackendServicesClient implements BackgroundResource {
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
    *   String project = "";
+   *   ResourceGroupReference resourceGroupReferenceResource = ResourceGroupReference.newBuilder().build();
    *   GetHealthBackendServiceRequest request = GetHealthBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
    *     .setProject(project)
+   *     .setResourceGroupReferenceResource(resourceGroupReferenceResource)
    *     .build();
    *   ApiFuture&lt;BackendServiceGroupHealth&gt; future = backendServicesClient.getHealthCallable().futureCall(request);
    *   // Do something
@@ -699,7 +707,7 @@ public class BackendServicesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param backendServiceResource
+   * @param backendServiceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, BackendService backendServiceResource) {
@@ -720,8 +728,10 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   String project = "";
    *   InsertBackendServiceRequest request = InsertBackendServiceRequest.newBuilder()
+   *     .setBackendServiceResource(backendServiceResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = backendServicesClient.insert(request);
@@ -744,8 +754,10 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
+   *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   String project = "";
    *   InsertBackendServiceRequest request = InsertBackendServiceRequest.newBuilder()
+   *     .setBackendServiceResource(backendServiceResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServicesClient.insertCallable().futureCall(request);
@@ -881,7 +893,7 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to patch.
-   * @param backendServiceResource
+   * @param backendServiceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -906,9 +918,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
+   *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   String project = "";
    *   PatchBackendServiceRequest request = PatchBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
+   *     .setBackendServiceResource(backendServiceResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = backendServicesClient.patch(request);
@@ -933,9 +947,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
+   *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   String project = "";
    *   PatchBackendServiceRequest request = PatchBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
+   *     .setBackendServiceResource(backendServiceResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServicesClient.patchCallable().futureCall(request);
@@ -966,7 +982,7 @@ public class BackendServicesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to which the security policy should
    *     be set. The name should conform to RFC1035.
-   * @param securityPolicyReferenceResource
+   * @param securityPolicyReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setSecurityPolicy(
@@ -992,9 +1008,11 @@ public class BackendServicesClient implements BackgroundResource {
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
    *   String project = "";
+   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
    *   SetSecurityPolicyBackendServiceRequest request = SetSecurityPolicyBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
    *     .setProject(project)
+   *     .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
    *     .build();
    *   Operation response = backendServicesClient.setSecurityPolicy(request);
    * }
@@ -1017,9 +1035,11 @@ public class BackendServicesClient implements BackgroundResource {
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
    *   String project = "";
+   *   SecurityPolicyReference securityPolicyReferenceResource = SecurityPolicyReference.newBuilder().build();
    *   SetSecurityPolicyBackendServiceRequest request = SetSecurityPolicyBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
    *     .setProject(project)
+   *     .setSecurityPolicyReferenceResource(securityPolicyReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServicesClient.setSecurityPolicyCallable().futureCall(request);
    *   // Do something
@@ -1050,7 +1070,7 @@ public class BackendServicesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param backendService Name of the BackendService resource to update.
-   * @param backendServiceResource
+   * @param backendServiceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -1074,9 +1094,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
+   *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   String project = "";
    *   UpdateBackendServiceRequest request = UpdateBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
+   *     .setBackendServiceResource(backendServiceResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = backendServicesClient.update(request);
@@ -1100,9 +1122,11 @@ public class BackendServicesClient implements BackgroundResource {
    * <pre><code>
    * try (BackendServicesClient backendServicesClient = BackendServicesClient.create()) {
    *   String backendService = "";
+   *   BackendService backendServiceResource = BackendService.newBuilder().build();
    *   String project = "";
    *   UpdateBackendServiceRequest request = UpdateBackendServiceRequest.newBuilder()
    *     .setBackendService(backendService)
+   *     .setBackendServiceResource(backendServiceResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendServicesClient.updateCallable().futureCall(request);

@@ -403,7 +403,7 @@ public class InterconnectsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param interconnectResource
+   * @param interconnectResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, Interconnect interconnectResource) {
@@ -423,8 +423,10 @@ public class InterconnectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   String project = "";
    *   InsertInterconnectRequest request = InsertInterconnectRequest.newBuilder()
+   *     .setInterconnectResource(interconnectResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = interconnectsClient.insert(request);
@@ -446,8 +448,10 @@ public class InterconnectsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
+   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   String project = "";
    *   InsertInterconnectRequest request = InsertInterconnectRequest.newBuilder()
+   *     .setInterconnectResource(interconnectResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectsClient.insertCallable().futureCall(request);
@@ -582,7 +586,7 @@ public class InterconnectsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param interconnect Name of the interconnect to update.
-   * @param interconnectResource
+   * @param interconnectResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -606,9 +610,11 @@ public class InterconnectsClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String interconnect = "";
+   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   String project = "";
    *   PatchInterconnectRequest request = PatchInterconnectRequest.newBuilder()
    *     .setInterconnect(interconnect)
+   *     .setInterconnectResource(interconnectResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = interconnectsClient.patch(request);
@@ -632,9 +638,11 @@ public class InterconnectsClient implements BackgroundResource {
    * <pre><code>
    * try (InterconnectsClient interconnectsClient = InterconnectsClient.create()) {
    *   String interconnect = "";
+   *   Interconnect interconnectResource = Interconnect.newBuilder().build();
    *   String project = "";
    *   PatchInterconnectRequest request = PatchInterconnectRequest.newBuilder()
    *     .setInterconnect(interconnect)
+   *     .setInterconnectResource(interconnectResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = interconnectsClient.patchCallable().futureCall(request);

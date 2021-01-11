@@ -103,18 +103,44 @@ public interface SetSchedulingInstanceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the schedulingResource field is set.
    */
   boolean hasSchedulingResource();
   /**
-   * <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The schedulingResource.
    */
   com.google.cloud.compute.v1.Scheduling getSchedulingResource();
-  /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingResourceOrBuilder();
 
   /**

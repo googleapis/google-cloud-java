@@ -153,7 +153,15 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
   public static final int DISK_RESOURCE_FIELD_NUMBER = 25880688;
   private com.google.cloud.compute.v1.Disk diskResource_;
   /**
-   * <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the diskResource field is set.
    */
@@ -162,7 +170,15 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
     return diskResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The diskResource.
    */
@@ -172,7 +188,17 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.compute.v1.Disk.getDefaultInstance()
         : diskResource_;
   }
-  /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.DiskOrBuilder getDiskResourceOrBuilder() {
     return getDiskResource();
@@ -777,7 +803,15 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.DiskOrBuilder>
         diskResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the diskResource field is set.
      */
@@ -785,7 +819,15 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
       return diskResourceBuilder_ != null || diskResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The diskResource.
      */
@@ -798,7 +840,17 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
         return diskResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setDiskResource(com.google.cloud.compute.v1.Disk value) {
       if (diskResourceBuilder_ == null) {
         if (value == null) {
@@ -812,7 +864,17 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setDiskResource(com.google.cloud.compute.v1.Disk.Builder builderForValue) {
       if (diskResourceBuilder_ == null) {
         diskResource_ = builderForValue.build();
@@ -823,7 +885,17 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeDiskResource(com.google.cloud.compute.v1.Disk value) {
       if (diskResourceBuilder_ == null) {
         if (diskResource_ != null) {
@@ -841,7 +913,17 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearDiskResource() {
       if (diskResourceBuilder_ == null) {
         diskResource_ = null;
@@ -853,13 +935,33 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Disk.Builder getDiskResourceBuilder() {
 
       onChanged();
       return getDiskResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.DiskOrBuilder getDiskResourceOrBuilder() {
       if (diskResourceBuilder_ != null) {
         return diskResourceBuilder_.getMessageOrBuilder();
@@ -869,7 +971,17 @@ public final class InsertDiskRequest extends com.google.protobuf.GeneratedMessag
             : diskResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Disk,
             com.google.cloud.compute.v1.Disk.Builder,

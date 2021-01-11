@@ -240,7 +240,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
   public static final int TARGET_SSL_PROXY_RESOURCE_FIELD_NUMBER = 142016192;
   private com.google.cloud.compute.v1.TargetSslProxy targetSslProxyResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetSslProxyResource field is set.
    */
@@ -249,7 +257,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
     return targetSslProxyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetSslProxyResource.
    */
@@ -259,7 +275,17 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
         ? com.google.cloud.compute.v1.TargetSslProxy.getDefaultInstance()
         : targetSslProxyResource_;
   }
-  /** <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetSslProxyOrBuilder getTargetSslProxyResourceOrBuilder() {
     return getTargetSslProxyResource();
@@ -859,7 +885,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.TargetSslProxyOrBuilder>
         targetSslProxyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetSslProxyResource field is set.
      */
@@ -867,7 +901,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       return targetSslProxyResourceBuilder_ != null || targetSslProxyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetSslProxyResource.
      */
@@ -881,7 +923,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetSslProxyResource(com.google.cloud.compute.v1.TargetSslProxy value) {
       if (targetSslProxyResourceBuilder_ == null) {
@@ -897,7 +947,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetSslProxyResource(
         com.google.cloud.compute.v1.TargetSslProxy.Builder builderForValue) {
@@ -911,7 +969,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTargetSslProxyResource(com.google.cloud.compute.v1.TargetSslProxy value) {
       if (targetSslProxyResourceBuilder_ == null) {
@@ -931,7 +997,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetSslProxyResource() {
       if (targetSslProxyResourceBuilder_ == null) {
@@ -945,7 +1019,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetSslProxy.Builder getTargetSslProxyResourceBuilder() {
 
@@ -953,7 +1035,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       return getTargetSslProxyResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetSslProxyOrBuilder
         getTargetSslProxyResourceOrBuilder() {
@@ -966,7 +1056,15 @@ public final class InsertTargetSslProxyRequest extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetSslProxy target_ssl_proxy_resource = 142016192 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetSslProxy,

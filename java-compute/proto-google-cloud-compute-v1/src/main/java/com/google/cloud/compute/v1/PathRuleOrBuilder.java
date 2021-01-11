@@ -83,7 +83,7 @@ public interface PathRuleOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
    *
    * @return Whether the routeAction field is set.
    */
@@ -97,7 +97,7 @@ public interface PathRuleOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
    *
    * @return The routeAction.
    */
@@ -111,7 +111,7 @@ public interface PathRuleOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
    */
   com.google.cloud.compute.v1.HttpRouteActionOrBuilder getRouteActionOrBuilder();
 
@@ -123,7 +123,7 @@ public interface PathRuleOrBuilder
    * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -136,7 +136,7 @@ public interface PathRuleOrBuilder
    * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */
@@ -151,7 +151,7 @@ public interface PathRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
    *
    * @return Whether the urlRedirect field is set.
    */
@@ -165,7 +165,7 @@ public interface PathRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
    *
    * @return The urlRedirect.
    */
@@ -179,7 +179,7 @@ public interface PathRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
    */
   com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getUrlRedirectOrBuilder();
 }

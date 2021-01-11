@@ -30,7 +30,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> getPerInstanceConfigsList();
@@ -41,7 +41,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   com.google.cloud.compute.v1.PerInstanceConfig getPerInstanceConfigs(int index);
@@ -52,7 +52,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   int getPerInstanceConfigsCount();
@@ -63,7 +63,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
@@ -75,7 +75,7 @@ public interface InstanceGroupManagersUpdatePerInstanceConfigsReqOrBuilder
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getPerInstanceConfigsOrBuilder(int index);

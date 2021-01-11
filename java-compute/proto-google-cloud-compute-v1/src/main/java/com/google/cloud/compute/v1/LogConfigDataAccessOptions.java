@@ -70,7 +70,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
-          case -1071788560:
+          case 1075695088:
             {
               int rawValue = input.readEnum();
 
@@ -130,8 +130,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     UNDEFINED_LOG_MODE(0),
-    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
-    LOG_FAIL_CLOSED(360469778),
+    /** <code>LOG_FAIL_CLOSED = 92034322;</code> */
+    LOG_FAIL_CLOSED(92034322),
     /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
     LOG_MODE_UNSPECIFIED(88160822),
     UNRECOGNIZED(-1),
@@ -147,8 +147,8 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_MODE = 0;</code>
      */
     public static final int UNDEFINED_LOG_MODE_VALUE = 0;
-    /** <code>LOG_FAIL_CLOSED = 360469778;</code> */
-    public static final int LOG_FAIL_CLOSED_VALUE = 360469778;
+    /** <code>LOG_FAIL_CLOSED = 92034322;</code> */
+    public static final int LOG_FAIL_CLOSED_VALUE = 92034322;
     /** <code>LOG_MODE_UNSPECIFIED = 88160822;</code> */
     public static final int LOG_MODE_UNSPECIFIED_VALUE = 88160822;
 
@@ -178,7 +178,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_LOG_MODE;
-        case 360469778:
+        case 92034322:
           return LOG_FAIL_CLOSED;
         case 88160822:
           return LOG_MODE_UNSPECIFIED;
@@ -237,10 +237,10 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode)
   }
 
-  public static final int LOG_MODE_FIELD_NUMBER = 402897342;
+  public static final int LOG_MODE_FIELD_NUMBER = 134461886;
   private int logMode_;
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
    *
    * @return The enum numeric value on the wire for logMode.
    */
@@ -249,7 +249,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     return logMode_;
   }
   /**
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;</code>
    *
    * @return The logMode.
    */
@@ -280,7 +280,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     if (logMode_
         != com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.UNDEFINED_LOG_MODE
             .getNumber()) {
-      output.writeEnum(402897342, logMode_);
+      output.writeEnum(134461886, logMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -294,7 +294,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
     if (logMode_
         != com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode.UNDEFINED_LOG_MODE
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(402897342, logMode_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(134461886, logMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -587,7 +587,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
 
     private int logMode_ = 0;
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
      * </code>
      *
      * @return The enum numeric value on the wire for logMode.
@@ -597,7 +597,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return logMode_;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
      * </code>
      *
      * @param value The enum numeric value on the wire for logMode to set.
@@ -610,7 +610,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
      * </code>
      *
      * @return The logMode.
@@ -625,7 +625,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
           : result;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
      * </code>
      *
      * @param value The logMode to set.
@@ -642,7 +642,7 @@ public final class LogConfigDataAccessOptions extends com.google.protobuf.Genera
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 134461886;
      * </code>
      *
      * @return This builder for chaining.

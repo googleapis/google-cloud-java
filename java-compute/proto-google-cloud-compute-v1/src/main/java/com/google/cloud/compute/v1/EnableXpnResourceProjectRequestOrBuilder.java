@@ -49,16 +49,28 @@ public interface EnableXpnResourceProjectRequestOrBuilder
   com.google.protobuf.ByteString getProjectBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 421980207;
+   * .google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 153544751 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the projectsEnableXpnResourceRequestResource field is set.
    */
   boolean hasProjectsEnableXpnResourceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 421980207;
+   * .google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 153544751 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The projectsEnableXpnResourceRequestResource.
@@ -66,8 +78,14 @@ public interface EnableXpnResourceProjectRequestOrBuilder
   com.google.cloud.compute.v1.ProjectsEnableXpnResourceRequest
       getProjectsEnableXpnResourceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 421980207;
+   * .google.cloud.compute.v1.ProjectsEnableXpnResourceRequest projects_enable_xpn_resource_request_resource = 153544751 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ProjectsEnableXpnResourceRequestOrBuilder

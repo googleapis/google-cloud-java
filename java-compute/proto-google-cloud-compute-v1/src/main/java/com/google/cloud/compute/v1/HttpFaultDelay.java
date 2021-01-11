@@ -68,12 +68,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 1215272145:
-            {
-              percentage_ = input.readDouble();
-              break;
-            }
-          case -1758664766:
+          case 388818882:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
               if (fixedDelay_ != null) {
@@ -87,6 +82,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
                 fixedDelay_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1215272145:
+            {
+              percentage_ = input.readDouble();
               break;
             }
           default:
@@ -123,7 +123,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HttpFaultDelay.Builder.class);
   }
 
-  public static final int FIXED_DELAY_FIELD_NUMBER = 317037816;
+  public static final int FIXED_DELAY_FIELD_NUMBER = 48602360;
   private com.google.cloud.compute.v1.Duration fixedDelay_;
   /**
    *
@@ -132,7 +132,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
    *
    * @return Whether the fixedDelay field is set.
    */
@@ -147,7 +147,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
    *
    * @return The fixedDelay.
    */
@@ -164,7 +164,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder() {
@@ -204,11 +204,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (fixedDelay_ != null) {
+      output.writeMessage(48602360, getFixedDelay());
+    }
     if (percentage_ != 0D) {
       output.writeDouble(151909018, percentage_);
-    }
-    if (fixedDelay_ != null) {
-      output.writeMessage(317037816, getFixedDelay());
     }
     unknownFields.writeTo(output);
   }
@@ -219,11 +219,11 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (fixedDelay_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(48602360, getFixedDelay());
+    }
     if (percentage_ != 0D) {
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(151909018, percentage_);
-    }
-    if (fixedDelay_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(317037816, getFixedDelay());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -550,7 +550,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      *
      * @return Whether the fixedDelay field is set.
      */
@@ -564,7 +564,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      *
      * @return The fixedDelay.
      */
@@ -584,7 +584,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration value) {
       if (fixedDelayBuilder_ == null) {
@@ -606,7 +606,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     public Builder setFixedDelay(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (fixedDelayBuilder_ == null) {
@@ -625,7 +625,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     public Builder mergeFixedDelay(com.google.cloud.compute.v1.Duration value) {
       if (fixedDelayBuilder_ == null) {
@@ -651,7 +651,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     public Builder clearFixedDelay() {
       if (fixedDelayBuilder_ == null) {
@@ -671,7 +671,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getFixedDelayBuilder() {
 
@@ -685,7 +685,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder() {
       if (fixedDelayBuilder_ != null) {
@@ -703,7 +703,7 @@ public final class HttpFaultDelay extends com.google.protobuf.GeneratedMessageV3
      * Specifies the value of the fixed delay interval.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+     * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,

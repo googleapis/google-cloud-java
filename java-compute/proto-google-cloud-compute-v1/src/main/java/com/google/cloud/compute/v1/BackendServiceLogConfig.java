@@ -68,14 +68,14 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
+          case 346631192:
+            {
+              enable_ = input.readBool();
+              break;
+            }
           case 1225544365:
             {
               sampleRate_ = input.readFloat();
-              break;
-            }
-          case -1800852456:
-            {
-              enable_ = input.readBool();
               break;
             }
           default:
@@ -112,7 +112,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.BackendServiceLogConfig.Builder.class);
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 311764355;
+  public static final int ENABLE_FIELD_NUMBER = 43328899;
   private boolean enable_;
   /**
    *
@@ -121,7 +121,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
    * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -162,11 +162,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (enable_ != false) {
+      output.writeBool(43328899, enable_);
+    }
     if (sampleRate_ != 0F) {
       output.writeFloat(153193045, sampleRate_);
-    }
-    if (enable_ != false) {
-      output.writeBool(311764355, enable_);
     }
     unknownFields.writeTo(output);
   }
@@ -177,11 +177,11 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
+    if (enable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
+    }
     if (sampleRate_ != 0F) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(153193045, sampleRate_);
-    }
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -489,7 +489,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return The enable.
      */
@@ -504,7 +504,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -522,7 +522,7 @@ public final class BackendServiceLogConfig extends com.google.protobuf.Generated
      * This field denotes whether to enable logging for the load balancer traffic served by this backend service.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return This builder for chaining.
      */

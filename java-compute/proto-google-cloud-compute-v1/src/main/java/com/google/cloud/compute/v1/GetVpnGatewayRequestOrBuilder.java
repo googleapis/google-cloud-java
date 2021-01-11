@@ -80,7 +80,7 @@ public interface GetVpnGatewayRequestOrBuilder
    * Name of the VPN gateway to return.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The vpnGateway.
    */
@@ -92,7 +92,7 @@ public interface GetVpnGatewayRequestOrBuilder
    * Name of the VPN gateway to return.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for vpnGateway.
    */

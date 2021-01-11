@@ -30,7 +30,7 @@ public interface AcceleratorTypesScopedListOrBuilder
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   java.util.List<com.google.cloud.compute.v1.AcceleratorType> getAcceleratorTypesList();
   /**
@@ -40,7 +40,7 @@ public interface AcceleratorTypesScopedListOrBuilder
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   com.google.cloud.compute.v1.AcceleratorType getAcceleratorTypes(int index);
   /**
@@ -50,7 +50,7 @@ public interface AcceleratorTypesScopedListOrBuilder
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   int getAcceleratorTypesCount();
   /**
@@ -60,7 +60,7 @@ public interface AcceleratorTypesScopedListOrBuilder
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AcceleratorTypeOrBuilder>
       getAcceleratorTypesOrBuilderList();
@@ -71,7 +71,7 @@ public interface AcceleratorTypesScopedListOrBuilder
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   com.google.cloud.compute.v1.AcceleratorTypeOrBuilder getAcceleratorTypesOrBuilder(int index);
 

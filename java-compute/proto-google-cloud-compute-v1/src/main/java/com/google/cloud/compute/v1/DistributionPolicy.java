@@ -127,7 +127,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage instances.
+   * Zones where the regional managed instance group will create and manage its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -142,7 +142,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage instances.
+   * Zones where the regional managed instance group will create and manage its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -158,7 +158,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage instances.
+   * Zones where the regional managed instance group will create and manage its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -172,7 +172,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage instances.
+   * Zones where the regional managed instance group will create and manage its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -186,7 +186,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Zones where the regional managed instance group will create and manage instances.
+   * Zones where the regional managed instance group will create and manage its instances.
    * </pre>
    *
    * <code>repeated .google.cloud.compute.v1.DistributionPolicyZoneConfiguration zones = 116085319;
@@ -577,7 +577,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -596,7 +596,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -614,7 +614,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -632,7 +632,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -657,7 +657,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -680,7 +680,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -704,7 +704,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -729,7 +729,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -751,7 +751,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -774,7 +774,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -798,7 +798,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -819,7 +819,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -840,7 +840,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -855,7 +855,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -874,7 +874,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -894,7 +894,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -911,7 +911,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>
@@ -929,7 +929,7 @@ public final class DistributionPolicy extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Zones where the regional managed instance group will create and manage instances.
+     * Zones where the regional managed instance group will create and manage its instances.
      * </pre>
      *
      * <code>

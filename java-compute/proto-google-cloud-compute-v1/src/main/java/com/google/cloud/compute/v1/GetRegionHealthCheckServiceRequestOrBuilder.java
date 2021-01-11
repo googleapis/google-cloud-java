@@ -30,7 +30,7 @@ public interface GetRegionHealthCheckServiceRequestOrBuilder
    * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheckService.
    */
@@ -42,7 +42,7 @@ public interface GetRegionHealthCheckServiceRequestOrBuilder
    * Name of the HealthCheckService to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheckService.
    */

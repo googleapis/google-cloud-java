@@ -55,7 +55,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @return A list containing the targetPools.
    */
@@ -67,7 +67,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @return The count of targetPools.
    */
@@ -79,7 +79,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @param index The index of the element to return.
    * @return The targetPools at the given index.
@@ -92,7 +92,7 @@ public interface RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
    * The URL of all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetPools at the given index.

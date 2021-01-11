@@ -534,7 +534,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param vpnGatewayResource
+   * @param vpnGatewayResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, VpnGateway vpnGatewayResource) {
@@ -558,9 +558,11 @@ public class VpnGatewaysClient implements BackgroundResource {
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   VpnGateway vpnGatewayResource = VpnGateway.newBuilder().build();
    *   InsertVpnGatewayRequest request = InsertVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setVpnGatewayResource(vpnGatewayResource)
    *     .build();
    *   Operation response = vpnGatewaysClient.insert(request);
    * }
@@ -584,9 +586,11 @@ public class VpnGatewaysClient implements BackgroundResource {
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   VpnGateway vpnGatewayResource = VpnGateway.newBuilder().build();
    *   InsertVpnGatewayRequest request = InsertVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setVpnGatewayResource(vpnGatewayResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = vpnGatewaysClient.insertCallable().futureCall(request);
    *   // Do something
@@ -730,7 +734,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param regionSetLabelsRequestResource
+   * @param regionSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLabels(
@@ -759,10 +763,12 @@ public class VpnGatewaysClient implements BackgroundResource {
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
    *   String resource = "";
    *   SetLabelsVpnGatewayRequest request = SetLabelsVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
    *     .setResource(resource)
    *     .build();
    *   Operation response = vpnGatewaysClient.setLabels(request);
@@ -787,10 +793,12 @@ public class VpnGatewaysClient implements BackgroundResource {
    * try (VpnGatewaysClient vpnGatewaysClient = VpnGatewaysClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetLabelsRequest regionSetLabelsRequestResource = RegionSetLabelsRequest.newBuilder().build();
    *   String resource = "";
    *   SetLabelsVpnGatewayRequest request = SetLabelsVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetLabelsRequestResource(regionSetLabelsRequestResource)
    *     .setResource(resource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = vpnGatewaysClient.setLabelsCallable().futureCall(request);
@@ -822,7 +830,7 @@ public class VpnGatewaysClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -851,10 +859,12 @@ public class VpnGatewaysClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsVpnGatewayRequest request = TestIamPermissionsVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = vpnGatewaysClient.testIamPermissions(request);
    * }
@@ -879,10 +889,12 @@ public class VpnGatewaysClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsVpnGatewayRequest request = TestIamPermissionsVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = vpnGatewaysClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

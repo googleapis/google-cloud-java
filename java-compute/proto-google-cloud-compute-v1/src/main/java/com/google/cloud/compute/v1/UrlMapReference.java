@@ -69,7 +69,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case -1358801822:
+          case 788681826:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -110,10 +110,10 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.UrlMapReference.Builder.class);
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The urlMap.
    */
@@ -130,7 +130,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
     }
   }
   /**
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -162,7 +162,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
     }
     unknownFields.writeTo(output);
   }
@@ -174,7 +174,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
 
     size = 0;
     if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -464,7 +464,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
 
     private java.lang.Object urlMap_ = "";
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The urlMap.
      */
@@ -480,7 +480,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -496,7 +496,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       }
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -511,7 +511,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return This builder for chaining.
      */
@@ -522,7 +522,7 @@ public final class UrlMapReference extends com.google.protobuf.GeneratedMessageV
       return this;
     }
     /**
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

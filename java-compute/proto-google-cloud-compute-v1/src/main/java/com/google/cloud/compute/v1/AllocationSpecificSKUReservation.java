@@ -99,7 +99,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
 
               break;
             }
-          case -347296278:
+          case 1800187370:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -189,7 +189,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
     }
   }
 
-  public static final int IN_USE_COUNT_FIELD_NUMBER = 493458877;
+  public static final int IN_USE_COUNT_FIELD_NUMBER = 225023421;
   private volatile java.lang.Object inUseCount_;
   /**
    *
@@ -198,7 +198,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>string in_use_count = 225023421;</code>
    *
    * @return The inUseCount.
    */
@@ -221,7 +221,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
    * [Output Only] Indicates how many instances are in use.
    * </pre>
    *
-   * <code>string in_use_count = 493458877;</code>
+   * <code>string in_use_count = 225023421;</code>
    *
    * @return The bytes for inUseCount.
    */
@@ -318,7 +318,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
       output.writeMessage(215355165, getInstanceProperties());
     }
     if (!getInUseCountBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 493458877, inUseCount_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 225023421, inUseCount_);
     }
     unknownFields.writeTo(output);
   }
@@ -338,7 +338,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
               215355165, getInstanceProperties());
     }
     if (!getInUseCountBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(493458877, inUseCount_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(225023421, inUseCount_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -778,7 +778,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>string in_use_count = 225023421;</code>
      *
      * @return The inUseCount.
      */
@@ -800,7 +800,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>string in_use_count = 225023421;</code>
      *
      * @return The bytes for inUseCount.
      */
@@ -822,7 +822,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>string in_use_count = 225023421;</code>
      *
      * @param value The inUseCount to set.
      * @return This builder for chaining.
@@ -843,7 +843,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>string in_use_count = 225023421;</code>
      *
      * @return This builder for chaining.
      */
@@ -860,7 +860,7 @@ public final class AllocationSpecificSKUReservation extends com.google.protobuf.
      * [Output Only] Indicates how many instances are in use.
      * </pre>
      *
-     * <code>string in_use_count = 493458877;</code>
+     * <code>string in_use_count = 225023421;</code>
      *
      * @param value The bytes for inUseCount to set.
      * @return This builder for chaining.

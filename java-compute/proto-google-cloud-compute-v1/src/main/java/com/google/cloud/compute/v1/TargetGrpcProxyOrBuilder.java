@@ -55,7 +55,7 @@ public interface TargetGrpcProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface TargetGrpcProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -180,7 +180,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -192,7 +192,7 @@ public interface TargetGrpcProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -230,7 +230,7 @@ public interface TargetGrpcProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The urlMap.
    */
@@ -242,7 +242,7 @@ public interface TargetGrpcProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService. The protocol field in the BackendService must be set to GRPC.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The bytes for urlMap.
    */

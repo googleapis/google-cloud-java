@@ -24,18 +24,44 @@ public interface InsertAutoscalerRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the autoscalerResource field is set.
    */
   boolean hasAutoscalerResource();
   /**
-   * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The autoscalerResource.
    */
   com.google.cloud.compute.v1.Autoscaler getAutoscalerResource();
-  /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalerResourceOrBuilder();
 
   /**

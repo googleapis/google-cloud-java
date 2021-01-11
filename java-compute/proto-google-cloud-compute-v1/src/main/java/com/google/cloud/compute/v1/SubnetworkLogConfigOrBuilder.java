@@ -59,7 +59,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -97,7 +97,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
    * </pre>
    *
-   * <code>float flow_sampling = 530150360;</code>
+   * <code>float flow_sampling = 261714904;</code>
    *
    * @return The flowSampling.
    */
@@ -135,7 +135,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @return A list containing the metadataFields.
    */
@@ -147,7 +147,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @return The count of metadataFields.
    */
@@ -159,7 +159,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @param index The index of the element to return.
    * @return The metadataFields at the given index.
@@ -172,7 +172,7 @@ public interface SubnetworkLogConfigOrBuilder
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the metadataFields at the given index.

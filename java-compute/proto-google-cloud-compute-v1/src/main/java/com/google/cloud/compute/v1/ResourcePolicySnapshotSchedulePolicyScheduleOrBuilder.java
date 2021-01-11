@@ -54,19 +54,17 @@ public interface ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
   com.google.cloud.compute.v1.ResourcePolicyHourlyCycleOrBuilder getHourlyScheduleOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
    *
    * @return Whether the weeklySchedule field is set.
    */
   boolean hasWeeklySchedule();
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
+   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code>
    *
    * @return The weeklySchedule.
    */
   com.google.cloud.compute.v1.ResourcePolicyWeeklyCycle getWeeklySchedule();
-  /**
-   * <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 359548053;</code>
-   */
+  /** <code>.google.cloud.compute.v1.ResourcePolicyWeeklyCycle weekly_schedule = 91112597;</code> */
   com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleOrBuilder getWeeklyScheduleOrBuilder();
 }

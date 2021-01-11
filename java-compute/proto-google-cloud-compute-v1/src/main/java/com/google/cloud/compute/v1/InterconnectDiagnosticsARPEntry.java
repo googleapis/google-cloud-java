@@ -72,14 +72,14 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
           case 0:
             done = true;
             break;
-          case -1634645982:
+          case 512837666:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               macAddress_ = s;
               break;
             }
-          case -1044789534:
+          case 1102694114:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -120,7 +120,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
             com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry.Builder.class);
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -129,7 +129,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -152,7 +152,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -169,7 +169,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
     }
   }
 
-  public static final int MAC_ADDRESS_FIELD_NUMBER = 332540164;
+  public static final int MAC_ADDRESS_FIELD_NUMBER = 64104708;
   private volatile java.lang.Object macAddress_;
   /**
    *
@@ -178,7 +178,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>string mac_address = 64104708;</code>
    *
    * @return The macAddress.
    */
@@ -201,7 +201,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>string mac_address = 64104708;</code>
    *
    * @return The bytes for macAddress.
    */
@@ -233,10 +233,10 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getMacAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 332540164, macAddress_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 64104708, macAddress_);
     }
     if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -248,10 +248,10 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
 
     size = 0;
     if (!getMacAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332540164, macAddress_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(64104708, macAddress_);
     }
     if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -561,7 +561,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return The ipAddress.
      */
@@ -583,7 +583,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -605,7 +605,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -626,7 +626,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return This builder for chaining.
      */
@@ -643,7 +643,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The IP address of this ARP neighbor.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.
@@ -667,7 +667,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>string mac_address = 64104708;</code>
      *
      * @return The macAddress.
      */
@@ -689,7 +689,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>string mac_address = 64104708;</code>
      *
      * @return The bytes for macAddress.
      */
@@ -711,7 +711,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>string mac_address = 64104708;</code>
      *
      * @param value The macAddress to set.
      * @return This builder for chaining.
@@ -732,7 +732,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>string mac_address = 64104708;</code>
      *
      * @return This builder for chaining.
      */
@@ -749,7 +749,7 @@ public final class InterconnectDiagnosticsARPEntry extends com.google.protobuf.G
      * The MAC address of this ARP neighbor.
      * </pre>
      *
-     * <code>string mac_address = 332540164;</code>
+     * <code>string mac_address = 64104708;</code>
      *
      * @param value The bytes for macAddress to set.
      * @return This builder for chaining.

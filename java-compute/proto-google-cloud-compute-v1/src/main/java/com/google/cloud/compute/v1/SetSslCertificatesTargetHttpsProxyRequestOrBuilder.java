@@ -78,16 +78,28 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetHttpsProxiesSetSslCertificatesRequestResource field is set.
    */
   boolean hasTargetHttpsProxiesSetSslCertificatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetHttpsProxiesSetSslCertificatesRequestResource.
@@ -95,8 +107,14 @@ public interface SetSslCertificatesTargetHttpsProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest
       getTargetHttpsProxiesSetSslCertificatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequestOrBuilder

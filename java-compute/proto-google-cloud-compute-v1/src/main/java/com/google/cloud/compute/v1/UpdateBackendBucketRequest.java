@@ -86,14 +86,7 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
               backendBucket_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1248905022:
+          case 898578626:
             {
               com.google.cloud.compute.v1.BackendBucket.Builder subBuilder = null;
               if (backendBucketResource_ != null) {
@@ -107,6 +100,13 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
                 backendBucketResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -192,10 +192,18 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
     }
   }
 
-  public static final int BACKEND_BUCKET_RESOURCE_FIELD_NUMBER = 380757784;
+  public static final int BACKEND_BUCKET_RESOURCE_FIELD_NUMBER = 112322328;
   private com.google.cloud.compute.v1.BackendBucket backendBucketResource_;
   /**
-   * <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the backendBucketResource field is set.
    */
@@ -204,7 +212,15 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
     return backendBucketResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The backendBucketResource.
    */
@@ -214,7 +230,17 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.BackendBucket.getDefaultInstance()
         : backendBucketResource_;
   }
-  /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.BackendBucketOrBuilder getBackendBucketResourceOrBuilder() {
     return getBackendBucketResource();
@@ -342,11 +368,11 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
     if (!getBackendBucketBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 91714037, backendBucket_);
     }
+    if (backendBucketResource_ != null) {
+      output.writeMessage(112322328, getBackendBucketResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (backendBucketResource_ != null) {
-      output.writeMessage(380757784, getBackendBucketResource());
     }
     unknownFields.writeTo(output);
   }
@@ -363,13 +389,13 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
     if (!getBackendBucketBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91714037, backendBucket_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (backendBucketResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              380757784, getBackendBucketResource());
+              112322328, getBackendBucketResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -816,7 +842,15 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.BackendBucketOrBuilder>
         backendBucketResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the backendBucketResource field is set.
      */
@@ -824,7 +858,15 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
       return backendBucketResourceBuilder_ != null || backendBucketResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The backendBucketResource.
      */
@@ -837,7 +879,17 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
         return backendBucketResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setBackendBucketResource(com.google.cloud.compute.v1.BackendBucket value) {
       if (backendBucketResourceBuilder_ == null) {
         if (value == null) {
@@ -851,7 +903,17 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setBackendBucketResource(
         com.google.cloud.compute.v1.BackendBucket.Builder builderForValue) {
       if (backendBucketResourceBuilder_ == null) {
@@ -863,7 +925,17 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeBackendBucketResource(com.google.cloud.compute.v1.BackendBucket value) {
       if (backendBucketResourceBuilder_ == null) {
         if (backendBucketResource_ != null) {
@@ -881,7 +953,17 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearBackendBucketResource() {
       if (backendBucketResourceBuilder_ == null) {
         backendBucketResource_ = null;
@@ -893,13 +975,33 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.BackendBucket.Builder getBackendBucketResourceBuilder() {
 
       onChanged();
       return getBackendBucketResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.BackendBucketOrBuilder getBackendBucketResourceOrBuilder() {
       if (backendBucketResourceBuilder_ != null) {
         return backendBucketResourceBuilder_.getMessageOrBuilder();
@@ -909,7 +1011,17 @@ public final class UpdateBackendBucketRequest extends com.google.protobuf.Genera
             : backendBucketResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.BackendBucket backend_bucket_resource = 380757784;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.BackendBucket backend_bucket_resource = 112322328 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendBucket,
             com.google.cloud.compute.v1.BackendBucket.Builder,

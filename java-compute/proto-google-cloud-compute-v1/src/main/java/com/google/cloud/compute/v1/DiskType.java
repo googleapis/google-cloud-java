@@ -91,6 +91,13 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
               id_ = s;
               break;
             }
+          case 17470378:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              defaultDiskSizeGb_ = s;
+              break;
+            }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -126,35 +133,28 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case -2130013270:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              defaultDiskSizeGb_ = s;
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -343267582:
+          case 1804216066:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               validDiskSize_ = s;
               break;
             }
-          case -173855334:
+          case 1973628314:
             {
               com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
               if (deprecated_ != null) {
@@ -253,7 +253,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEFAULT_DISK_SIZE_GB_FIELD_NUMBER = 270619253;
+  public static final int DEFAULT_DISK_SIZE_GB_FIELD_NUMBER = 2183797;
   private volatile java.lang.Object defaultDiskSizeGb_;
   /**
    *
@@ -262,7 +262,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 270619253;</code>
+   * <code>string default_disk_size_gb = 2183797;</code>
    *
    * @return The defaultDiskSizeGb.
    */
@@ -285,7 +285,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined default disk size in GB.
    * </pre>
    *
-   * <code>string default_disk_size_gb = 270619253;</code>
+   * <code>string default_disk_size_gb = 2183797;</code>
    *
    * @return The bytes for defaultDiskSizeGb.
    */
@@ -302,7 +302,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DEPRECATED_FIELD_NUMBER = 515138995;
+  public static final int DEPRECATED_FIELD_NUMBER = 246703539;
   private com.google.cloud.compute.v1.DeprecationStatus deprecated_;
   /**
    *
@@ -311,7 +311,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -326,7 +326,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -343,14 +343,14 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The deprecation status associated with this disk type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
     return getDeprecated();
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -359,7 +359,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -382,7 +382,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional description of this resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -595,7 +595,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -604,7 +604,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -627,7 +627,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -644,7 +644,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int VALID_DISK_SIZE_FIELD_NUMBER = 493962464;
+  public static final int VALID_DISK_SIZE_FIELD_NUMBER = 225527008;
   private volatile java.lang.Object validDiskSize_;
   /**
    *
@@ -653,7 +653,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
    * </pre>
    *
-   * <code>string valid_disk_size = 493962464;</code>
+   * <code>string valid_disk_size = 225527008;</code>
    *
    * @return The validDiskSize.
    */
@@ -676,7 +676,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
    * </pre>
    *
-   * <code>string valid_disk_size = 493962464;</code>
+   * <code>string valid_disk_size = 225527008;</code>
    *
    * @return The bytes for validDiskSize.
    */
@@ -759,6 +759,9 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3355, id_);
     }
+    if (!getDefaultDiskSizeGbBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2183797, defaultDiskSizeGb_);
+    }
     if (!getKindBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
@@ -774,20 +777,17 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getDefaultDiskSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 270619253, defaultDiskSizeGb_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getValidDiskSizeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 493962464, validDiskSize_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 225527008, validDiskSize_);
     }
     if (deprecated_ != null) {
-      output.writeMessage(515138995, getDeprecated());
+      output.writeMessage(246703539, getDeprecated());
     }
     unknownFields.writeTo(output);
   }
@@ -800,6 +800,9 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!getIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3355, id_);
+    }
+    if (!getDefaultDiskSizeGbBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2183797, defaultDiskSizeGb_);
     }
     if (!getKindBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -817,21 +820,17 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getDefaultDiskSizeGbBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(270619253, defaultDiskSizeGb_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getValidDiskSizeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(493962464, validDiskSize_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(225527008, validDiskSize_);
     }
     if (deprecated_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(515138995, getDeprecated());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(246703539, getDeprecated());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1348,7 +1347,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined default disk size in GB.
      * </pre>
      *
-     * <code>string default_disk_size_gb = 270619253;</code>
+     * <code>string default_disk_size_gb = 2183797;</code>
      *
      * @return The defaultDiskSizeGb.
      */
@@ -1370,7 +1369,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined default disk size in GB.
      * </pre>
      *
-     * <code>string default_disk_size_gb = 270619253;</code>
+     * <code>string default_disk_size_gb = 2183797;</code>
      *
      * @return The bytes for defaultDiskSizeGb.
      */
@@ -1392,7 +1391,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined default disk size in GB.
      * </pre>
      *
-     * <code>string default_disk_size_gb = 270619253;</code>
+     * <code>string default_disk_size_gb = 2183797;</code>
      *
      * @param value The defaultDiskSizeGb to set.
      * @return This builder for chaining.
@@ -1413,7 +1412,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined default disk size in GB.
      * </pre>
      *
-     * <code>string default_disk_size_gb = 270619253;</code>
+     * <code>string default_disk_size_gb = 2183797;</code>
      *
      * @return This builder for chaining.
      */
@@ -1430,7 +1429,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined default disk size in GB.
      * </pre>
      *
-     * <code>string default_disk_size_gb = 270619253;</code>
+     * <code>string default_disk_size_gb = 2183797;</code>
      *
      * @param value The bytes for defaultDiskSizeGb to set.
      * @return This builder for chaining.
@@ -1459,7 +1458,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      *
      * @return Whether the deprecated field is set.
      */
@@ -1473,7 +1472,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      *
      * @return The deprecated.
      */
@@ -1493,7 +1492,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1515,7 +1514,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1535,7 +1534,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1561,7 +1560,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
@@ -1581,7 +1580,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
 
@@ -1595,7 +1594,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1613,7 +1612,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The deprecation status associated with this disk type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -1640,7 +1639,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1662,7 +1661,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1684,7 +1683,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1705,7 +1704,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1722,7 +1721,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional description of this resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2170,7 +2169,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2192,7 +2191,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2214,7 +2213,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2235,7 +2234,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2252,7 +2251,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2276,7 +2275,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      * </pre>
      *
-     * <code>string valid_disk_size = 493962464;</code>
+     * <code>string valid_disk_size = 225527008;</code>
      *
      * @return The validDiskSize.
      */
@@ -2298,7 +2297,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      * </pre>
      *
-     * <code>string valid_disk_size = 493962464;</code>
+     * <code>string valid_disk_size = 225527008;</code>
      *
      * @return The bytes for validDiskSize.
      */
@@ -2320,7 +2319,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      * </pre>
      *
-     * <code>string valid_disk_size = 493962464;</code>
+     * <code>string valid_disk_size = 225527008;</code>
      *
      * @param value The validDiskSize to set.
      * @return This builder for chaining.
@@ -2341,7 +2340,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      * </pre>
      *
-     * <code>string valid_disk_size = 493962464;</code>
+     * <code>string valid_disk_size = 225527008;</code>
      *
      * @return This builder for chaining.
      */
@@ -2358,7 +2357,7 @@ public final class DiskType extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
      * </pre>
      *
-     * <code>string valid_disk_size = 493962464;</code>
+     * <code>string valid_disk_size = 225527008;</code>
      *
      * @param value The bytes for validDiskSize to set.
      * @return This builder for chaining.

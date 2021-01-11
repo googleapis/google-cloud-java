@@ -78,21 +78,42 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the sslPolicyReferenceResource field is set.
    */
   boolean hasSslPolicyReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The sslPolicyReferenceResource.
    */
   com.google.cloud.compute.v1.SslPolicyReference getSslPolicyReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder getSslPolicyReferenceResourceOrBuilder();
@@ -104,7 +125,7 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -116,7 +137,7 @@ public interface SetSslPolicyTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */

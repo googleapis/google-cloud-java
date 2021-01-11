@@ -93,7 +93,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
               project_ = s;
               break;
             }
-          case -301207064:
+          case 1846276584:
             {
               optionsRequestedPolicyVersion_ = input.readInt32();
               break;
@@ -132,7 +132,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.GetIamPolicyInstanceRequest.Builder.class);
   }
 
-  public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 499220029;
+  public static final int OPTIONS_REQUESTED_POLICY_VERSION_FIELD_NUMBER = 230784573;
   private int optionsRequestedPolicyVersion_;
   /**
    *
@@ -141,7 +141,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
    * Requested IAM Policy version.
    * </pre>
    *
-   * <code>int32 options_requested_policy_version = 499220029;</code>
+   * <code>int32 options_requested_policy_version = 230784573;</code>
    *
    * @return The optionsRequestedPolicyVersion.
    */
@@ -321,7 +321,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (optionsRequestedPolicyVersion_ != 0) {
-      output.writeInt32(499220029, optionsRequestedPolicyVersion_);
+      output.writeInt32(230784573, optionsRequestedPolicyVersion_);
     }
     unknownFields.writeTo(output);
   }
@@ -344,7 +344,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
     if (optionsRequestedPolicyVersion_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              499220029, optionsRequestedPolicyVersion_);
+              230784573, optionsRequestedPolicyVersion_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -674,7 +674,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>int32 options_requested_policy_version = 230784573;</code>
      *
      * @return The optionsRequestedPolicyVersion.
      */
@@ -689,7 +689,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>int32 options_requested_policy_version = 230784573;</code>
      *
      * @param value The optionsRequestedPolicyVersion to set.
      * @return This builder for chaining.
@@ -707,7 +707,7 @@ public final class GetIamPolicyInstanceRequest extends com.google.protobuf.Gener
      * Requested IAM Policy version.
      * </pre>
      *
-     * <code>int32 options_requested_policy_version = 499220029;</code>
+     * <code>int32 options_requested_policy_version = 230784573;</code>
      *
      * @return This builder for chaining.
      */

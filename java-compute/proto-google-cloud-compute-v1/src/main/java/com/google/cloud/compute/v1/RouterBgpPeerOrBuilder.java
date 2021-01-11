@@ -30,7 +30,7 @@ public interface RouterBgpPeerOrBuilder
    * User-specified flag to indicate which mode to use for advertisement.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -42,7 +42,7 @@ public interface RouterBgpPeerOrBuilder
    * User-specified flag to indicate which mode to use for advertisement.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 43698875;</code>
    *
    * @return The advertiseMode.
    */
@@ -220,7 +220,7 @@ public interface RouterBgpPeerOrBuilder
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
-   * <code>string interface_name = 437854673;</code>
+   * <code>string interface_name = 169419217;</code>
    *
    * @return The interfaceName.
    */
@@ -232,7 +232,7 @@ public interface RouterBgpPeerOrBuilder
    * Name of the interface the BGP peer is associated with.
    * </pre>
    *
-   * <code>string interface_name = 437854673;</code>
+   * <code>string interface_name = 169419217;</code>
    *
    * @return The bytes for interfaceName.
    */
@@ -245,7 +245,7 @@ public interface RouterBgpPeerOrBuilder
    * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -257,7 +257,7 @@ public interface RouterBgpPeerOrBuilder
    * IP address of the interface inside Google Cloud Platform. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */

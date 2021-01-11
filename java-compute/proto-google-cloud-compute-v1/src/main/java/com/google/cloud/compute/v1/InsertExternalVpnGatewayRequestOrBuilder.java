@@ -24,21 +24,42 @@ public interface InsertExternalVpnGatewayRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the externalVpnGatewayResource field is set.
    */
   boolean hasExternalVpnGatewayResource();
   /**
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The externalVpnGatewayResource.
    */
   com.google.cloud.compute.v1.ExternalVpnGateway getExternalVpnGatewayResource();
   /**
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 486813576;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ExternalVpnGateway external_vpn_gateway_resource = 218378120 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ExternalVpnGatewayOrBuilder getExternalVpnGatewayResourceOrBuilder();

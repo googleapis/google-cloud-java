@@ -103,24 +103,42 @@ public interface ResizeReservationRequestOrBuilder
   com.google.protobuf.ByteString getReservationBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the reservationsResizeRequestResource field is set.
    */
   boolean hasReservationsResizeRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The reservationsResizeRequestResource.
    */
   com.google.cloud.compute.v1.ReservationsResizeRequest getReservationsResizeRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 389262801;
+   * .google.cloud.compute.v1.ReservationsResizeRequest reservations_resize_request_resource = 120827345 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ReservationsResizeRequestOrBuilder

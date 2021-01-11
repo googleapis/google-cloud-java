@@ -81,6 +81,13 @@ public final class SetProxyHeaderTargetSslProxyRequest
               requestId_ = s;
               break;
             }
+          case 562883178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetSslProxy_ = s;
+              break;
+            }
           case 1642276210:
             {
               com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.Builder subBuilder =
@@ -104,13 +111,6 @@ public final class SetProxyHeaderTargetSslProxyRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1584600470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetSslProxy_ = s;
               break;
             }
           default:
@@ -254,8 +254,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
   private com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest
       targetSslProxiesSetProxyHeaderRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetSslProxiesSetProxyHeaderRequestResource field is set.
@@ -265,8 +271,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
     return targetSslProxiesSetProxyHeaderRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetSslProxiesSetProxyHeaderRequestResource.
@@ -279,8 +291,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
         : targetSslProxiesSetProxyHeaderRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -289,7 +307,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
     return getTargetSslProxiesSetProxyHeaderRequestResource();
   }
 
-  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
+  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 70360397;
   private volatile java.lang.Object targetSslProxy_;
   /**
    *
@@ -298,7 +316,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
    * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -321,7 +339,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
    * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */
@@ -355,14 +373,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 70360397, targetSslProxy_);
+    }
     if (targetSslProxiesSetProxyHeaderRequestResource_ != null) {
       output.writeMessage(205284526, getTargetSslProxiesSetProxyHeaderRequestResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 338795853, targetSslProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -376,6 +394,9 @@ public final class SetProxyHeaderTargetSslProxyRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(70360397, targetSslProxy_);
+    }
     if (targetSslProxiesSetProxyHeaderRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -383,9 +404,6 @@ public final class SetProxyHeaderTargetSslProxyRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338795853, targetSslProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -958,8 +976,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
             com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequestOrBuilder>
         targetSslProxiesSetProxyHeaderRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetSslProxiesSetProxyHeaderRequestResource field is set.
@@ -969,8 +993,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
           || targetSslProxiesSetProxyHeaderRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetSslProxiesSetProxyHeaderRequestResource.
@@ -986,8 +1016,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetSslProxiesSetProxyHeaderRequestResource(
@@ -1005,8 +1041,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetSslProxiesSetProxyHeaderRequestResource(
@@ -1021,8 +1063,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetSslProxiesSetProxyHeaderRequestResource(
@@ -1045,8 +1093,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetSslProxiesSetProxyHeaderRequestResource() {
@@ -1061,8 +1115,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.Builder
@@ -1072,8 +1132,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       return getTargetSslProxiesSetProxyHeaderRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequestOrBuilder
@@ -1087,8 +1153,14 @@ public final class SetProxyHeaderTargetSslProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+     * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1118,7 +1190,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetSslProxy.
      */
@@ -1140,7 +1212,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -1162,7 +1234,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetSslProxy to set.
      * @return This builder for chaining.
@@ -1183,7 +1255,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1200,7 +1272,7 @@ public final class SetProxyHeaderTargetSslProxyRequest
      * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetSslProxy to set.
      * @return This builder for chaining.

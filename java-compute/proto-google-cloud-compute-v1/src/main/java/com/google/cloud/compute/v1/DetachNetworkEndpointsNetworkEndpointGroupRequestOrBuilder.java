@@ -30,7 +30,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -43,7 +43,7 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
    * The name of the network endpoint group where you are removing network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -51,16 +51,28 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
   com.google.protobuf.ByteString getNetworkEndpointGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupsDetachEndpointsRequestResource field is set.
    */
   boolean hasNetworkEndpointGroupsDetachEndpointsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupsDetachEndpointsRequestResource.
@@ -68,8 +80,14 @@ public interface DetachNetworkEndpointsNetworkEndpointGroupRequestOrBuilder
   com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest
       getNetworkEndpointGroupsDetachEndpointsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 515608697;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequest network_endpoint_groups_detach_endpoints_request_resource = 247173241 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupsDetachEndpointsRequestOrBuilder

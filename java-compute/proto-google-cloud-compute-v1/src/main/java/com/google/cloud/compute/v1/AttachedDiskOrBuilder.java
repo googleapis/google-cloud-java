@@ -30,7 +30,7 @@ public interface AttachedDiskOrBuilder
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>bool auto_delete = 196325947;</code>
    *
    * @return The autoDelete.
    */
@@ -87,7 +87,7 @@ public interface AttachedDiskOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -103,7 +103,7 @@ public interface AttachedDiskOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return The diskEncryptionKey.
    */
@@ -119,7 +119,7 @@ public interface AttachedDiskOrBuilder
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    */
   com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder getDiskEncryptionKeyOrBuilder();
 
@@ -130,7 +130,7 @@ public interface AttachedDiskOrBuilder
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>string disk_size_gb = 47828279;</code>
    *
    * @return The diskSizeGb.
    */
@@ -142,7 +142,7 @@ public interface AttachedDiskOrBuilder
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>string disk_size_gb = 47828279;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -261,7 +261,7 @@ public interface AttachedDiskOrBuilder
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
    *
    * @return The enum numeric value on the wire for interface.
    */
@@ -273,7 +273,7 @@ public interface AttachedDiskOrBuilder
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
    *
    * @return The interface.
    */
@@ -311,7 +311,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return A list containing the licenses.
    */
@@ -323,7 +323,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return The count of licenses.
    */
@@ -335,7 +335,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -348,7 +348,7 @@ public interface AttachedDiskOrBuilder
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.

@@ -30,7 +30,7 @@ public interface InstanceGroupManagerAutoHealingPolicyOrBuilder
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The healthCheck.
    */
@@ -42,7 +42,7 @@ public interface InstanceGroupManagerAutoHealingPolicyOrBuilder
    * The URL for the health check that signals autohealing.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The bytes for healthCheck.
    */

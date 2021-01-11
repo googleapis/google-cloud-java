@@ -33,7 +33,7 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -48,7 +48,7 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The bytes for filter.
    */
@@ -74,7 +74,7 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -87,7 +87,7 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -95,16 +95,28 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
   com.google.protobuf.ByteString getNetworkEndpointGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupsListEndpointsRequestResource field is set.
    */
   boolean hasNetworkEndpointGroupsListEndpointsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupsListEndpointsRequestResource.
@@ -112,8 +124,14 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
   com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest
       getNetworkEndpointGroupsListEndpointsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequestOrBuilder
@@ -205,7 +223,7 @@ public interface ListNetworkEndpointsNetworkEndpointGroupsRequestOrBuilder
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>bool return_partial_success = 248762934;</code>
    *
    * @return The returnPartialSuccess.
    */

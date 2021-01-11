@@ -439,7 +439,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetHttpsProxyResource
+   * @param targetHttpsProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, TargetHttpsProxy targetHttpsProxyResource) {
@@ -461,8 +461,10 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   InsertTargetHttpsProxyRequest request = InsertTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
    *     .build();
    *   Operation response = targetHttpsProxiesClient.insert(request);
    * }
@@ -485,8 +487,10 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   TargetHttpsProxy targetHttpsProxyResource = TargetHttpsProxy.newBuilder().build();
    *   InsertTargetHttpsProxyRequest request = InsertTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetHttpsProxyResource(targetHttpsProxyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxiesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -620,7 +624,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set the QUIC override policy
    *     for. The name should conform to RFC1035.
-   * @param targetHttpsProxiesSetQuicOverrideRequestResource
+   * @param targetHttpsProxiesSetQuicOverrideRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setQuicOverride(
@@ -646,9 +650,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource = TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetQuicOverrideTargetHttpsProxyRequest request = SetQuicOverrideTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetHttpsProxiesSetQuicOverrideRequestResource(targetHttpsProxiesSetQuicOverrideRequestResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   Operation response = targetHttpsProxiesClient.setQuicOverride(request);
@@ -671,9 +677,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   TargetHttpsProxiesSetQuicOverrideRequest targetHttpsProxiesSetQuicOverrideRequestResource = TargetHttpsProxiesSetQuicOverrideRequest.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetQuicOverrideTargetHttpsProxyRequest request = SetQuicOverrideTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetHttpsProxiesSetQuicOverrideRequestResource(targetHttpsProxiesSetQuicOverrideRequestResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxiesClient.setQuicOverrideCallable().futureCall(request);
@@ -705,7 +713,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource to set an SslCertificates
    *     resource for.
-   * @param targetHttpsProxiesSetSslCertificatesRequestResource
+   * @param targetHttpsProxiesSetSslCertificatesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setSslCertificates(
@@ -732,9 +740,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource = TargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetSslCertificatesTargetHttpsProxyRequest request = SetSslCertificatesTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetHttpsProxiesSetSslCertificatesRequestResource(targetHttpsProxiesSetSslCertificatesRequestResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   Operation response = targetHttpsProxiesClient.setSslCertificates(request);
@@ -757,9 +767,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   TargetHttpsProxiesSetSslCertificatesRequest targetHttpsProxiesSetSslCertificatesRequestResource = TargetHttpsProxiesSetSslCertificatesRequest.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetSslCertificatesTargetHttpsProxyRequest request = SetSslCertificatesTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetHttpsProxiesSetSslCertificatesRequestResource(targetHttpsProxiesSetSslCertificatesRequestResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxiesClient.setSslCertificatesCallable().futureCall(request);
@@ -793,7 +805,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource whose SSL policy is to be set.
    *     The name must be 1-63 characters long, and comply with RFC1035.
-   * @param sslPolicyReferenceResource
+   * @param sslPolicyReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setSslPolicy(
@@ -818,9 +830,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetSslPolicyTargetHttpsProxyRequest request = SetSslPolicyTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   Operation response = targetHttpsProxiesClient.setSslPolicy(request);
@@ -845,9 +859,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
+   *   SslPolicyReference sslPolicyReferenceResource = SslPolicyReference.newBuilder().build();
    *   String targetHttpsProxy = "";
    *   SetSslPolicyTargetHttpsProxyRequest request = SetSslPolicyTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslPolicyReferenceResource(sslPolicyReferenceResource)
    *     .setTargetHttpsProxy(targetHttpsProxy)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxiesClient.setSslPolicyCallable().futureCall(request);
@@ -878,7 +894,7 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param targetHttpsProxy Name of the TargetHttpsProxy resource whose URL map is to be set.
-   * @param urlMapReferenceResource
+   * @param urlMapReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setUrlMap(
@@ -902,9 +918,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
    *   String targetHttpsProxy = "";
+   *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   SetUrlMapTargetHttpsProxyRequest request = SetUrlMapTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setTargetHttpsProxy(targetHttpsProxy)
+   *     .setUrlMapReferenceResource(urlMapReferenceResource)
    *     .build();
    *   Operation response = targetHttpsProxiesClient.setUrlMap(request);
    * }
@@ -927,9 +945,11 @@ public class TargetHttpsProxiesClient implements BackgroundResource {
    * try (TargetHttpsProxiesClient targetHttpsProxiesClient = TargetHttpsProxiesClient.create()) {
    *   String project = "";
    *   String targetHttpsProxy = "";
+   *   UrlMapReference urlMapReferenceResource = UrlMapReference.newBuilder().build();
    *   SetUrlMapTargetHttpsProxyRequest request = SetUrlMapTargetHttpsProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setTargetHttpsProxy(targetHttpsProxy)
+   *     .setUrlMapReferenceResource(urlMapReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetHttpsProxiesClient.setUrlMapCallable().futureCall(request);
    *   // Do something

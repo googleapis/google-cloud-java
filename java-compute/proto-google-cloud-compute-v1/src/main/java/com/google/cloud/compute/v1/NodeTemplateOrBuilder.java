@@ -23,6 +23,18 @@ public interface NodeTemplateOrBuilder
     // @@protoc_insertion_point(interface_extends:google.cloud.compute.v1.NodeTemplate)
     com.google.protobuf.MessageOrBuilder {
 
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList();
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index);
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  int getAcceleratorsCount();
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+      getAcceleratorsOrBuilderList();
+  /** <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code> */
+  com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
+
   /**
    *
    *
@@ -82,7 +94,7 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -94,11 +106,22 @@ public interface NodeTemplateOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  java.util.List<com.google.cloud.compute.v1.LocalDisk> getDisksList();
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  com.google.cloud.compute.v1.LocalDisk getDisks(int index);
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  int getDisksCount();
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  java.util.List<? extends com.google.cloud.compute.v1.LocalDiskOrBuilder> getDisksOrBuilderList();
+  /** <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code> */
+  com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index);
 
   /**
    *
@@ -182,7 +205,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   int getNodeAffinityLabelsCount();
   /**
@@ -192,7 +215,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   boolean containsNodeAffinityLabels(java.lang.String key);
   /** Use {@link #getNodeAffinityLabelsMap()} instead. */
@@ -205,7 +228,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getNodeAffinityLabelsMap();
   /**
@@ -215,7 +238,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   java.lang.String getNodeAffinityLabelsOrDefault(
       java.lang.String key, java.lang.String defaultValue);
@@ -226,7 +249,7 @@ public interface NodeTemplateOrBuilder
    * Labels to use for node affinity, which will be used in instance scheduling.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; node_affinity_labels = 339007161;</code>
+   * <code>map&lt;string, string&gt; node_affinity_labels = 70571705;</code>
    */
   java.lang.String getNodeAffinityLabelsOrThrow(java.lang.String key);
 
@@ -237,7 +260,7 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>string node_type = 197397335;</code>
    *
    * @return The nodeType.
    */
@@ -249,7 +272,7 @@ public interface NodeTemplateOrBuilder
    * The node type to use for nodes group that are created from this template.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>string node_type = 197397335;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -264,7 +287,7 @@ public interface NodeTemplateOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
    * </code>
    *
    * @return Whether the nodeTypeFlexibility field is set.
@@ -279,7 +302,7 @@ public interface NodeTemplateOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
    * </code>
    *
    * @return The nodeTypeFlexibility.
@@ -294,7 +317,7 @@ public interface NodeTemplateOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 315257905;
+   * .google.cloud.compute.v1.NodeTemplateNodeTypeFlexibility node_type_flexibility = 46822449;
    * </code>
    */
   com.google.cloud.compute.v1.NodeTemplateNodeTypeFlexibilityOrBuilder
@@ -332,7 +355,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -344,7 +367,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -426,7 +449,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The statusMessage.
    */
@@ -438,7 +461,7 @@ public interface NodeTemplateOrBuilder
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The bytes for statusMessage.
    */

@@ -49,13 +49,13 @@ public interface ResourcePolicyOrBuilder
   com.google.protobuf.ByteString getCreationTimestampBytes();
 
   /**
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
   java.lang.String getDescription();
   /**
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -65,7 +65,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * Resource policy for instacnes for placement configuration.
+   * Resource policy for instances for placement configuration.
    * </pre>
    *
    * <code>
@@ -79,7 +79,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * Resource policy for instacnes for placement configuration.
+   * Resource policy for instances for placement configuration.
    * </pre>
    *
    * <code>
@@ -93,7 +93,7 @@ public interface ResourcePolicyOrBuilder
    *
    *
    * <pre>
-   * Resource policy for instacnes for placement configuration.
+   * Resource policy for instances for placement configuration.
    * </pre>
    *
    * <code>
@@ -198,7 +198,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -210,7 +210,7 @@ public interface ResourcePolicyOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

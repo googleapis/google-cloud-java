@@ -24,18 +24,44 @@ public interface InsertAddressRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the addressResource field is set.
    */
   boolean hasAddressResource();
   /**
-   * <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The addressResource.
    */
   com.google.cloud.compute.v1.Address getAddressResource();
-  /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.AddressOrBuilder getAddressResourceOrBuilder();
 
   /**

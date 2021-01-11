@@ -312,8 +312,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest
       regionInstanceGroupManagersSetTargetPoolsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersSetTargetPoolsRequestResource field is set.
@@ -323,8 +329,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagersSetTargetPoolsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersSetTargetPoolsRequestResource.
@@ -338,8 +350,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagersSetTargetPoolsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1158,8 +1176,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder>
         regionInstanceGroupManagersSetTargetPoolsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagersSetTargetPoolsRequestResource field is set.
@@ -1169,8 +1193,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagersSetTargetPoolsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagersSetTargetPoolsRequestResource.
@@ -1187,8 +1217,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -1206,8 +1242,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -1224,8 +1266,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagersSetTargetPoolsRequestResource(
@@ -1248,8 +1296,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersSetTargetPoolsRequestResource() {
@@ -1264,8 +1318,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest.Builder
@@ -1275,8 +1335,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       return getRegionInstanceGroupManagersSetTargetPoolsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequestOrBuilder
@@ -1292,8 +1358,14 @@ public final class SetTargetPoolsRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTargetPoolsRequest region_instance_group_managers_set_target_pools_request_resource = 78734717 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

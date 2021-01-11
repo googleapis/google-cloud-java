@@ -88,7 +88,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
               usage_ = input.readDouble();
               break;
             }
-          case -30429824:
+          case 2117053824:
             {
               int rawValue = input.readEnum();
 
@@ -153,134 +153,134 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     A2_CPUS(153206585),
     /** <code>AFFINITY_GROUPS = 108303563;</code> */
     AFFINITY_GROUPS(108303563),
-    /** <code>AUTOSCALERS = 471248988;</code> */
-    AUTOSCALERS(471248988),
+    /** <code>AUTOSCALERS = 202813532;</code> */
+    AUTOSCALERS(202813532),
     /** <code>BACKEND_BUCKETS = 137626846;</code> */
     BACKEND_BUCKETS(137626846),
-    /** <code>BACKEND_SERVICES = 269623753;</code> */
-    BACKEND_SERVICES(269623753),
-    /** <code>C2_CPUS = 317601211;</code> */
-    C2_CPUS(317601211),
-    /** <code>COMMITMENTS = 456141790;</code> */
-    COMMITMENTS(456141790),
+    /** <code>BACKEND_SERVICES = 1188297;</code> */
+    BACKEND_SERVICES(1188297),
+    /** <code>C2_CPUS = 49165755;</code> */
+    C2_CPUS(49165755),
+    /** <code>COMMITMENTS = 187706334;</code> */
+    COMMITMENTS(187706334),
     /** <code>COMMITTED_A2_CPUS = 59330902;</code> */
     COMMITTED_A2_CPUS(59330902),
     /** <code>COMMITTED_C2_CPUS = 223725528;</code> */
     COMMITTED_C2_CPUS(223725528),
-    /** <code>COMMITTED_CPUS = 292394702;</code> */
-    COMMITTED_CPUS(292394702),
-    /** <code>COMMITTED_LICENSES = 357606869;</code> */
-    COMMITTED_LICENSES(357606869),
-    /** <code>COMMITTED_LOCAL_SSD_TOTAL_GB = 308393480;</code> */
-    COMMITTED_LOCAL_SSD_TOTAL_GB(308393480),
-    /** <code>COMMITTED_MEMORY_OPTIMIZED_CPUS = 489057886;</code> */
-    COMMITTED_MEMORY_OPTIMIZED_CPUS(489057886),
+    /** <code>COMMITTED_CPUS = 23959246;</code> */
+    COMMITTED_CPUS(23959246),
+    /** <code>COMMITTED_LICENSES = 89171413;</code> */
+    COMMITTED_LICENSES(89171413),
+    /** <code>COMMITTED_LOCAL_SSD_TOTAL_GB = 39958024;</code> */
+    COMMITTED_LOCAL_SSD_TOTAL_GB(39958024),
+    /** <code>COMMITTED_MEMORY_OPTIMIZED_CPUS = 220622430;</code> */
+    COMMITTED_MEMORY_OPTIMIZED_CPUS(220622430),
     /** <code>COMMITTED_N2D_CPUS = 125951757;</code> */
     COMMITTED_N2D_CPUS(125951757),
-    /** <code>COMMITTED_N2_CPUS = 322589603;</code> */
-    COMMITTED_N2_CPUS(322589603),
-    /** <code>COMMITTED_NVIDIA_A100_GPUS = 375799445;</code> */
-    COMMITTED_NVIDIA_A100_GPUS(375799445),
+    /** <code>COMMITTED_N2_CPUS = 54154147;</code> */
+    COMMITTED_N2_CPUS(54154147),
+    /** <code>COMMITTED_NVIDIA_A100_GPUS = 107363989;</code> */
+    COMMITTED_NVIDIA_A100_GPUS(107363989),
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
     COMMITTED_NVIDIA_K80_GPUS(3857188),
     /** <code>COMMITTED_NVIDIA_P100_GPUS = 107528100;</code> */
     COMMITTED_NVIDIA_P100_GPUS(107528100),
-    /** <code>COMMITTED_NVIDIA_P4_GPUS = 347952897;</code> */
-    COMMITTED_NVIDIA_P4_GPUS(347952897),
+    /** <code>COMMITTED_NVIDIA_P4_GPUS = 79517441;</code> */
+    COMMITTED_NVIDIA_P4_GPUS(79517441),
     /** <code>COMMITTED_NVIDIA_T4_GPUS = 139871237;</code> */
     COMMITTED_NVIDIA_T4_GPUS(139871237),
     /** <code>COMMITTED_NVIDIA_V100_GPUS = 219562;</code> */
     COMMITTED_NVIDIA_V100_GPUS(219562),
     /** <code>CPUS = 2075595;</code> */
     CPUS(2075595),
-    /** <code>CPUS_ALL_REGIONS = 470911149;</code> */
-    CPUS_ALL_REGIONS(470911149),
-    /** <code>DISKS_TOTAL_GB = 353520543;</code> */
-    DISKS_TOTAL_GB(353520543),
-    /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 374298265;</code> */
-    EXTERNAL_NETWORK_LB_FORWARDING_RULES(374298265),
+    /** <code>CPUS_ALL_REGIONS = 202475693;</code> */
+    CPUS_ALL_REGIONS(202475693),
+    /** <code>DISKS_TOTAL_GB = 85085087;</code> */
+    DISKS_TOTAL_GB(85085087),
+    /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 105862809;</code> */
+    EXTERNAL_NETWORK_LB_FORWARDING_RULES(105862809),
     /** <code>EXTERNAL_PROTOCOL_FORWARDING_RULES = 63478888;</code> */
     EXTERNAL_PROTOCOL_FORWARDING_RULES(63478888),
-    /** <code>EXTERNAL_VPN_GATEWAYS = 272457134;</code> */
-    EXTERNAL_VPN_GATEWAYS(272457134),
-    /** <code>FIREWALLS = 374485843;</code> */
-    FIREWALLS(374485843),
-    /** <code>FORWARDING_RULES = 432668949;</code> */
-    FORWARDING_RULES(432668949),
+    /** <code>EXTERNAL_VPN_GATEWAYS = 4021678;</code> */
+    EXTERNAL_VPN_GATEWAYS(4021678),
+    /** <code>FIREWALLS = 106050387;</code> */
+    FIREWALLS(106050387),
+    /** <code>FORWARDING_RULES = 164233493;</code> */
+    FORWARDING_RULES(164233493),
     /** <code>GLOBAL_INTERNAL_ADDRESSES = 42738332;</code> */
     GLOBAL_INTERNAL_ADDRESSES(42738332),
     /** <code>GPUS_ALL_REGIONS = 39387177;</code> */
     GPUS_ALL_REGIONS(39387177),
-    /** <code>HEALTH_CHECKS = 289347502;</code> */
-    HEALTH_CHECKS(289347502),
+    /** <code>HEALTH_CHECKS = 20912046;</code> */
+    HEALTH_CHECKS(20912046),
     /** <code>IMAGES = 15562360;</code> */
     IMAGES(15562360),
     /** <code>INSTANCES = 131337822;</code> */
     INSTANCES(131337822),
-    /** <code>INSTANCE_GROUPS = 355919038;</code> */
-    INSTANCE_GROUPS(355919038),
+    /** <code>INSTANCE_GROUPS = 87483582;</code> */
+    INSTANCE_GROUPS(87483582),
     /** <code>INSTANCE_GROUP_MANAGERS = 101798192;</code> */
     INSTANCE_GROUP_MANAGERS(101798192),
     /** <code>INSTANCE_TEMPLATES = 226188271;</code> */
     INSTANCE_TEMPLATES(226188271),
-    /** <code>INTERCONNECTS = 415204741;</code> */
-    INTERCONNECTS(415204741),
+    /** <code>INTERCONNECTS = 146769285;</code> */
+    INTERCONNECTS(146769285),
     /** <code>INTERCONNECT_ATTACHMENTS_PER_REGION = 159968086;</code> */
     INTERCONNECT_ATTACHMENTS_PER_REGION(159968086),
-    /** <code>INTERCONNECT_ATTACHMENTS_TOTAL_MBPS = 425090419;</code> */
-    INTERCONNECT_ATTACHMENTS_TOTAL_MBPS(425090419),
-    /** <code>INTERCONNECT_TOTAL_GBPS = 285341866;</code> */
-    INTERCONNECT_TOTAL_GBPS(285341866),
+    /** <code>INTERCONNECT_ATTACHMENTS_TOTAL_MBPS = 156654963;</code> */
+    INTERCONNECT_ATTACHMENTS_TOTAL_MBPS(156654963),
+    /** <code>INTERCONNECT_TOTAL_GBPS = 16906410;</code> */
+    INTERCONNECT_TOTAL_GBPS(16906410),
     /** <code>INTERNAL_ADDRESSES = 197899392;</code> */
     INTERNAL_ADDRESSES(197899392),
     /** <code>INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES = 266433668;</code> */
     INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES(266433668),
     /** <code>IN_PLACE_SNAPSHOTS = 151359133;</code> */
     IN_PLACE_SNAPSHOTS(151359133),
-    /** <code>IN_USE_ADDRESSES = 402125072;</code> */
-    IN_USE_ADDRESSES(402125072),
+    /** <code>IN_USE_ADDRESSES = 133689616;</code> */
+    IN_USE_ADDRESSES(133689616),
     /** <code>IN_USE_BACKUP_SCHEDULES = 32786705;</code> */
     IN_USE_BACKUP_SCHEDULES(32786705),
-    /** <code>IN_USE_SNAPSHOT_SCHEDULES = 462104083;</code> */
-    IN_USE_SNAPSHOT_SCHEDULES(462104083),
-    /** <code>LOCAL_SSD_TOTAL_GB = 330878021;</code> */
-    LOCAL_SSD_TOTAL_GB(330878021),
+    /** <code>IN_USE_SNAPSHOT_SCHEDULES = 193668627;</code> */
+    IN_USE_SNAPSHOT_SCHEDULES(193668627),
+    /** <code>LOCAL_SSD_TOTAL_GB = 62442565;</code> */
+    LOCAL_SSD_TOTAL_GB(62442565),
     /** <code>M1_CPUS = 37203366;</code> */
     M1_CPUS(37203366),
     /** <code>M2_CPUS = 65832517;</code> */
     M2_CPUS(65832517),
-    /** <code>MACHINE_IMAGES = 446986640;</code> */
-    MACHINE_IMAGES(446986640),
-    /** <code>N2D_CPUS = 351743370;</code> */
-    N2D_CPUS(351743370),
-    /** <code>N2_CPUS = 416465286;</code> */
-    N2_CPUS(416465286),
-    /** <code>NETWORKS = 485481477;</code> */
-    NETWORKS(485481477),
+    /** <code>MACHINE_IMAGES = 178551184;</code> */
+    MACHINE_IMAGES(178551184),
+    /** <code>N2D_CPUS = 83307914;</code> */
+    N2D_CPUS(83307914),
+    /** <code>N2_CPUS = 148029830;</code> */
+    N2_CPUS(148029830),
+    /** <code>NETWORKS = 217046021;</code> */
+    NETWORKS(217046021),
     /** <code>NETWORK_ENDPOINT_GROUPS = 102144909;</code> */
     NETWORK_ENDPOINT_GROUPS(102144909),
     /** <code>NETWORK_FIREWALL_POLICIES = 101117374;</code> */
     NETWORK_FIREWALL_POLICIES(101117374),
     /** <code>NODE_GROUPS = 24624817;</code> */
     NODE_GROUPS(24624817),
-    /** <code>NODE_TEMPLATES = 474896668;</code> */
-    NODE_TEMPLATES(474896668),
-    /** <code>NVIDIA_A100_GPUS = 504872978;</code> */
-    NVIDIA_A100_GPUS(504872978),
+    /** <code>NODE_TEMPLATES = 206461212;</code> */
+    NODE_TEMPLATES(206461212),
+    /** <code>NVIDIA_A100_GPUS = 236437522;</code> */
+    NVIDIA_A100_GPUS(236437522),
     /** <code>NVIDIA_K80_GPUS = 163886599;</code> */
     NVIDIA_K80_GPUS(163886599),
     /** <code>NVIDIA_P100_GPUS = 236601633;</code> */
     NVIDIA_P100_GPUS(236601633),
     /** <code>NVIDIA_P100_VWS_GPUS = 213970574;</code> */
     NVIDIA_P100_VWS_GPUS(213970574),
-    /** <code>NVIDIA_P4_GPUS = 283841470;</code> */
-    NVIDIA_P4_GPUS(283841470),
-    /** <code>NVIDIA_P4_VWS_GPUS = 528296619;</code> */
-    NVIDIA_P4_VWS_GPUS(528296619),
+    /** <code>NVIDIA_P4_GPUS = 15406014;</code> */
+    NVIDIA_P4_GPUS(15406014),
+    /** <code>NVIDIA_P4_VWS_GPUS = 259861163;</code> */
+    NVIDIA_P4_VWS_GPUS(259861163),
     /** <code>NVIDIA_T4_GPUS = 75759810;</code> */
     NVIDIA_T4_GPUS(75759810),
-    /** <code>NVIDIA_T4_VWS_GPUS = 319813039;</code> */
-    NVIDIA_T4_VWS_GPUS(319813039),
+    /** <code>NVIDIA_T4_VWS_GPUS = 51377583;</code> */
+    NVIDIA_T4_VWS_GPUS(51377583),
     /** <code>NVIDIA_V100_GPUS = 129293095;</code> */
     NVIDIA_V100_GPUS(129293095),
     /** <code>PACKET_MIRRORINGS = 15578407;</code> */
@@ -291,14 +291,14 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_LOCAL_SSD_GB(260819336),
     /** <code>PREEMPTIBLE_NVIDIA_A100_GPUS = 68832784;</code> */
     PREEMPTIBLE_NVIDIA_A100_GPUS(68832784),
-    /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
-    PREEMPTIBLE_NVIDIA_K80_GPUS(374960201),
-    /** <code>PREEMPTIBLE_NVIDIA_P100_GPUS = 337432351;</code> */
-    PREEMPTIBLE_NVIDIA_P100_GPUS(337432351),
-    /** <code>PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 313544076;</code> */
-    PREEMPTIBLE_NVIDIA_P100_VWS_GPUS(313544076),
-    /** <code>PREEMPTIBLE_NVIDIA_P4_GPUS = 429197628;</code> */
-    PREEMPTIBLE_NVIDIA_P4_GPUS(429197628),
+    /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 106524745;</code> */
+    PREEMPTIBLE_NVIDIA_K80_GPUS(106524745),
+    /** <code>PREEMPTIBLE_NVIDIA_P100_GPUS = 68996895;</code> */
+    PREEMPTIBLE_NVIDIA_P100_GPUS(68996895),
+    /** <code>PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 45108620;</code> */
+    PREEMPTIBLE_NVIDIA_P100_VWS_GPUS(45108620),
+    /** <code>PREEMPTIBLE_NVIDIA_P4_GPUS = 160762172;</code> */
+    PREEMPTIBLE_NVIDIA_P4_GPUS(160762172),
     /** <code>PREEMPTIBLE_NVIDIA_P4_VWS_GPUS = 252981545;</code> */
     PREEMPTIBLE_NVIDIA_P4_VWS_GPUS(252981545),
     /** <code>PREEMPTIBLE_NVIDIA_T4_GPUS = 221115968;</code> */
@@ -307,10 +307,12 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     PREEMPTIBLE_NVIDIA_T4_VWS_GPUS(44497965),
     /** <code>PREEMPTIBLE_NVIDIA_V100_GPUS = 230123813;</code> */
     PREEMPTIBLE_NVIDIA_V100_GPUS(230123813),
-    /** <code>PUBLIC_ADVERTISED_PREFIXES = 471371980;</code> */
-    PUBLIC_ADVERTISED_PREFIXES(471371980),
-    /** <code>PUBLIC_DELEGATED_PREFIXES = 532465974;</code> */
-    PUBLIC_DELEGATED_PREFIXES(532465974),
+    /** <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code> */
+    PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK(231164291),
+    /** <code>PUBLIC_ADVERTISED_PREFIXES = 202936524;</code> */
+    PUBLIC_ADVERTISED_PREFIXES(202936524),
+    /** <code>PUBLIC_DELEGATED_PREFIXES = 264030518;</code> */
+    PUBLIC_DELEGATED_PREFIXES(264030518),
     /** <code>REGIONAL_AUTOSCALERS = 29363772;</code> */
     REGIONAL_AUTOSCALERS(29363772),
     /** <code>REGIONAL_INSTANCE_GROUP_MANAGERS = 37543696;</code> */
@@ -319,48 +321,50 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     RESERVATIONS(32644647),
     /** <code>RESOURCE_POLICIES = 83955297;</code> */
     RESOURCE_POLICIES(83955297),
-    /** <code>ROUTERS = 493018666;</code> */
-    ROUTERS(493018666),
-    /** <code>ROUTES = 275680074;</code> */
-    ROUTES(275680074),
+    /** <code>ROUTERS = 224583210;</code> */
+    ROUTERS(224583210),
+    /** <code>ROUTES = 7244618;</code> */
+    ROUTES(7244618),
     /** <code>SECURITY_POLICIES = 189518703;</code> */
     SECURITY_POLICIES(189518703),
-    /** <code>SECURITY_POLICY_CEVAL_RULES = 470815689;</code> */
-    SECURITY_POLICY_CEVAL_RULES(470815689),
+    /** <code>SECURITY_POLICY_CEVAL_RULES = 202380233;</code> */
+    SECURITY_POLICY_CEVAL_RULES(202380233),
     /** <code>SECURITY_POLICY_RULES = 203549225;</code> */
     SECURITY_POLICY_RULES(203549225),
-    /** <code>SNAPSHOTS = 343405327;</code> */
-    SNAPSHOTS(343405327),
+    /** <code>SNAPSHOTS = 74969871;</code> */
+    SNAPSHOTS(74969871),
     /** <code>SSD_TOTAL_GB = 161732561;</code> */
     SSD_TOTAL_GB(161732561),
-    /** <code>SSL_CERTIFICATES = 378372399;</code> */
-    SSL_CERTIFICATES(378372399),
+    /** <code>SSL_CERTIFICATES = 109936943;</code> */
+    SSL_CERTIFICATES(109936943),
     /** <code>STATIC_ADDRESSES = 93624049;</code> */
     STATIC_ADDRESSES(93624049),
-    /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
-    STATIC_BYOIP_ADDRESSES(275809649),
-    /** <code>SUBNETWORKS = 421330469;</code> */
-    SUBNETWORKS(421330469),
+    /** <code>STATIC_BYOIP_ADDRESSES = 7374193;</code> */
+    STATIC_BYOIP_ADDRESSES(7374193),
+    /** <code>SUBNETWORKS = 152895013;</code> */
+    SUBNETWORKS(152895013),
     /** <code>TARGET_HTTPS_PROXIES = 219522506;</code> */
     TARGET_HTTPS_PROXIES(219522506),
     /** <code>TARGET_HTTP_PROXIES = 164117155;</code> */
     TARGET_HTTP_PROXIES(164117155),
-    /** <code>TARGET_INSTANCES = 284519728;</code> */
-    TARGET_INSTANCES(284519728),
-    /** <code>TARGET_POOLS = 348261257;</code> */
-    TARGET_POOLS(348261257),
+    /** <code>TARGET_INSTANCES = 16084272;</code> */
+    TARGET_INSTANCES(16084272),
+    /** <code>TARGET_POOLS = 79825801;</code> */
+    TARGET_POOLS(79825801),
     /** <code>TARGET_SSL_PROXIES = 159216235;</code> */
     TARGET_SSL_PROXIES(159216235),
     /** <code>TARGET_TCP_PROXIES = 182243136;</code> */
     TARGET_TCP_PROXIES(182243136),
     /** <code>TARGET_VPN_GATEWAYS = 75029928;</code> */
     TARGET_VPN_GATEWAYS(75029928),
-    /** <code>URL_MAPS = 378660743;</code> */
-    URL_MAPS(378660743),
+    /** <code>URL_MAPS = 110225287;</code> */
+    URL_MAPS(110225287),
     /** <code>VPN_GATEWAYS = 35620282;</code> */
     VPN_GATEWAYS(35620282),
     /** <code>VPN_TUNNELS = 104327296;</code> */
     VPN_TUNNELS(104327296),
+    /** <code>XPN_SERVICE_PROJECTS = 95191981;</code> */
+    XPN_SERVICE_PROJECTS(95191981),
     UNRECOGNIZED(-1),
     ;
 
@@ -378,134 +382,134 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int A2_CPUS_VALUE = 153206585;
     /** <code>AFFINITY_GROUPS = 108303563;</code> */
     public static final int AFFINITY_GROUPS_VALUE = 108303563;
-    /** <code>AUTOSCALERS = 471248988;</code> */
-    public static final int AUTOSCALERS_VALUE = 471248988;
+    /** <code>AUTOSCALERS = 202813532;</code> */
+    public static final int AUTOSCALERS_VALUE = 202813532;
     /** <code>BACKEND_BUCKETS = 137626846;</code> */
     public static final int BACKEND_BUCKETS_VALUE = 137626846;
-    /** <code>BACKEND_SERVICES = 269623753;</code> */
-    public static final int BACKEND_SERVICES_VALUE = 269623753;
-    /** <code>C2_CPUS = 317601211;</code> */
-    public static final int C2_CPUS_VALUE = 317601211;
-    /** <code>COMMITMENTS = 456141790;</code> */
-    public static final int COMMITMENTS_VALUE = 456141790;
+    /** <code>BACKEND_SERVICES = 1188297;</code> */
+    public static final int BACKEND_SERVICES_VALUE = 1188297;
+    /** <code>C2_CPUS = 49165755;</code> */
+    public static final int C2_CPUS_VALUE = 49165755;
+    /** <code>COMMITMENTS = 187706334;</code> */
+    public static final int COMMITMENTS_VALUE = 187706334;
     /** <code>COMMITTED_A2_CPUS = 59330902;</code> */
     public static final int COMMITTED_A2_CPUS_VALUE = 59330902;
     /** <code>COMMITTED_C2_CPUS = 223725528;</code> */
     public static final int COMMITTED_C2_CPUS_VALUE = 223725528;
-    /** <code>COMMITTED_CPUS = 292394702;</code> */
-    public static final int COMMITTED_CPUS_VALUE = 292394702;
-    /** <code>COMMITTED_LICENSES = 357606869;</code> */
-    public static final int COMMITTED_LICENSES_VALUE = 357606869;
-    /** <code>COMMITTED_LOCAL_SSD_TOTAL_GB = 308393480;</code> */
-    public static final int COMMITTED_LOCAL_SSD_TOTAL_GB_VALUE = 308393480;
-    /** <code>COMMITTED_MEMORY_OPTIMIZED_CPUS = 489057886;</code> */
-    public static final int COMMITTED_MEMORY_OPTIMIZED_CPUS_VALUE = 489057886;
+    /** <code>COMMITTED_CPUS = 23959246;</code> */
+    public static final int COMMITTED_CPUS_VALUE = 23959246;
+    /** <code>COMMITTED_LICENSES = 89171413;</code> */
+    public static final int COMMITTED_LICENSES_VALUE = 89171413;
+    /** <code>COMMITTED_LOCAL_SSD_TOTAL_GB = 39958024;</code> */
+    public static final int COMMITTED_LOCAL_SSD_TOTAL_GB_VALUE = 39958024;
+    /** <code>COMMITTED_MEMORY_OPTIMIZED_CPUS = 220622430;</code> */
+    public static final int COMMITTED_MEMORY_OPTIMIZED_CPUS_VALUE = 220622430;
     /** <code>COMMITTED_N2D_CPUS = 125951757;</code> */
     public static final int COMMITTED_N2D_CPUS_VALUE = 125951757;
-    /** <code>COMMITTED_N2_CPUS = 322589603;</code> */
-    public static final int COMMITTED_N2_CPUS_VALUE = 322589603;
-    /** <code>COMMITTED_NVIDIA_A100_GPUS = 375799445;</code> */
-    public static final int COMMITTED_NVIDIA_A100_GPUS_VALUE = 375799445;
+    /** <code>COMMITTED_N2_CPUS = 54154147;</code> */
+    public static final int COMMITTED_N2_CPUS_VALUE = 54154147;
+    /** <code>COMMITTED_NVIDIA_A100_GPUS = 107363989;</code> */
+    public static final int COMMITTED_NVIDIA_A100_GPUS_VALUE = 107363989;
     /** <code>COMMITTED_NVIDIA_K80_GPUS = 3857188;</code> */
     public static final int COMMITTED_NVIDIA_K80_GPUS_VALUE = 3857188;
     /** <code>COMMITTED_NVIDIA_P100_GPUS = 107528100;</code> */
     public static final int COMMITTED_NVIDIA_P100_GPUS_VALUE = 107528100;
-    /** <code>COMMITTED_NVIDIA_P4_GPUS = 347952897;</code> */
-    public static final int COMMITTED_NVIDIA_P4_GPUS_VALUE = 347952897;
+    /** <code>COMMITTED_NVIDIA_P4_GPUS = 79517441;</code> */
+    public static final int COMMITTED_NVIDIA_P4_GPUS_VALUE = 79517441;
     /** <code>COMMITTED_NVIDIA_T4_GPUS = 139871237;</code> */
     public static final int COMMITTED_NVIDIA_T4_GPUS_VALUE = 139871237;
     /** <code>COMMITTED_NVIDIA_V100_GPUS = 219562;</code> */
     public static final int COMMITTED_NVIDIA_V100_GPUS_VALUE = 219562;
     /** <code>CPUS = 2075595;</code> */
     public static final int CPUS_VALUE = 2075595;
-    /** <code>CPUS_ALL_REGIONS = 470911149;</code> */
-    public static final int CPUS_ALL_REGIONS_VALUE = 470911149;
-    /** <code>DISKS_TOTAL_GB = 353520543;</code> */
-    public static final int DISKS_TOTAL_GB_VALUE = 353520543;
-    /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 374298265;</code> */
-    public static final int EXTERNAL_NETWORK_LB_FORWARDING_RULES_VALUE = 374298265;
+    /** <code>CPUS_ALL_REGIONS = 202475693;</code> */
+    public static final int CPUS_ALL_REGIONS_VALUE = 202475693;
+    /** <code>DISKS_TOTAL_GB = 85085087;</code> */
+    public static final int DISKS_TOTAL_GB_VALUE = 85085087;
+    /** <code>EXTERNAL_NETWORK_LB_FORWARDING_RULES = 105862809;</code> */
+    public static final int EXTERNAL_NETWORK_LB_FORWARDING_RULES_VALUE = 105862809;
     /** <code>EXTERNAL_PROTOCOL_FORWARDING_RULES = 63478888;</code> */
     public static final int EXTERNAL_PROTOCOL_FORWARDING_RULES_VALUE = 63478888;
-    /** <code>EXTERNAL_VPN_GATEWAYS = 272457134;</code> */
-    public static final int EXTERNAL_VPN_GATEWAYS_VALUE = 272457134;
-    /** <code>FIREWALLS = 374485843;</code> */
-    public static final int FIREWALLS_VALUE = 374485843;
-    /** <code>FORWARDING_RULES = 432668949;</code> */
-    public static final int FORWARDING_RULES_VALUE = 432668949;
+    /** <code>EXTERNAL_VPN_GATEWAYS = 4021678;</code> */
+    public static final int EXTERNAL_VPN_GATEWAYS_VALUE = 4021678;
+    /** <code>FIREWALLS = 106050387;</code> */
+    public static final int FIREWALLS_VALUE = 106050387;
+    /** <code>FORWARDING_RULES = 164233493;</code> */
+    public static final int FORWARDING_RULES_VALUE = 164233493;
     /** <code>GLOBAL_INTERNAL_ADDRESSES = 42738332;</code> */
     public static final int GLOBAL_INTERNAL_ADDRESSES_VALUE = 42738332;
     /** <code>GPUS_ALL_REGIONS = 39387177;</code> */
     public static final int GPUS_ALL_REGIONS_VALUE = 39387177;
-    /** <code>HEALTH_CHECKS = 289347502;</code> */
-    public static final int HEALTH_CHECKS_VALUE = 289347502;
+    /** <code>HEALTH_CHECKS = 20912046;</code> */
+    public static final int HEALTH_CHECKS_VALUE = 20912046;
     /** <code>IMAGES = 15562360;</code> */
     public static final int IMAGES_VALUE = 15562360;
     /** <code>INSTANCES = 131337822;</code> */
     public static final int INSTANCES_VALUE = 131337822;
-    /** <code>INSTANCE_GROUPS = 355919038;</code> */
-    public static final int INSTANCE_GROUPS_VALUE = 355919038;
+    /** <code>INSTANCE_GROUPS = 87483582;</code> */
+    public static final int INSTANCE_GROUPS_VALUE = 87483582;
     /** <code>INSTANCE_GROUP_MANAGERS = 101798192;</code> */
     public static final int INSTANCE_GROUP_MANAGERS_VALUE = 101798192;
     /** <code>INSTANCE_TEMPLATES = 226188271;</code> */
     public static final int INSTANCE_TEMPLATES_VALUE = 226188271;
-    /** <code>INTERCONNECTS = 415204741;</code> */
-    public static final int INTERCONNECTS_VALUE = 415204741;
+    /** <code>INTERCONNECTS = 146769285;</code> */
+    public static final int INTERCONNECTS_VALUE = 146769285;
     /** <code>INTERCONNECT_ATTACHMENTS_PER_REGION = 159968086;</code> */
     public static final int INTERCONNECT_ATTACHMENTS_PER_REGION_VALUE = 159968086;
-    /** <code>INTERCONNECT_ATTACHMENTS_TOTAL_MBPS = 425090419;</code> */
-    public static final int INTERCONNECT_ATTACHMENTS_TOTAL_MBPS_VALUE = 425090419;
-    /** <code>INTERCONNECT_TOTAL_GBPS = 285341866;</code> */
-    public static final int INTERCONNECT_TOTAL_GBPS_VALUE = 285341866;
+    /** <code>INTERCONNECT_ATTACHMENTS_TOTAL_MBPS = 156654963;</code> */
+    public static final int INTERCONNECT_ATTACHMENTS_TOTAL_MBPS_VALUE = 156654963;
+    /** <code>INTERCONNECT_TOTAL_GBPS = 16906410;</code> */
+    public static final int INTERCONNECT_TOTAL_GBPS_VALUE = 16906410;
     /** <code>INTERNAL_ADDRESSES = 197899392;</code> */
     public static final int INTERNAL_ADDRESSES_VALUE = 197899392;
     /** <code>INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES = 266433668;</code> */
     public static final int INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES_VALUE = 266433668;
     /** <code>IN_PLACE_SNAPSHOTS = 151359133;</code> */
     public static final int IN_PLACE_SNAPSHOTS_VALUE = 151359133;
-    /** <code>IN_USE_ADDRESSES = 402125072;</code> */
-    public static final int IN_USE_ADDRESSES_VALUE = 402125072;
+    /** <code>IN_USE_ADDRESSES = 133689616;</code> */
+    public static final int IN_USE_ADDRESSES_VALUE = 133689616;
     /** <code>IN_USE_BACKUP_SCHEDULES = 32786705;</code> */
     public static final int IN_USE_BACKUP_SCHEDULES_VALUE = 32786705;
-    /** <code>IN_USE_SNAPSHOT_SCHEDULES = 462104083;</code> */
-    public static final int IN_USE_SNAPSHOT_SCHEDULES_VALUE = 462104083;
-    /** <code>LOCAL_SSD_TOTAL_GB = 330878021;</code> */
-    public static final int LOCAL_SSD_TOTAL_GB_VALUE = 330878021;
+    /** <code>IN_USE_SNAPSHOT_SCHEDULES = 193668627;</code> */
+    public static final int IN_USE_SNAPSHOT_SCHEDULES_VALUE = 193668627;
+    /** <code>LOCAL_SSD_TOTAL_GB = 62442565;</code> */
+    public static final int LOCAL_SSD_TOTAL_GB_VALUE = 62442565;
     /** <code>M1_CPUS = 37203366;</code> */
     public static final int M1_CPUS_VALUE = 37203366;
     /** <code>M2_CPUS = 65832517;</code> */
     public static final int M2_CPUS_VALUE = 65832517;
-    /** <code>MACHINE_IMAGES = 446986640;</code> */
-    public static final int MACHINE_IMAGES_VALUE = 446986640;
-    /** <code>N2D_CPUS = 351743370;</code> */
-    public static final int N2D_CPUS_VALUE = 351743370;
-    /** <code>N2_CPUS = 416465286;</code> */
-    public static final int N2_CPUS_VALUE = 416465286;
-    /** <code>NETWORKS = 485481477;</code> */
-    public static final int NETWORKS_VALUE = 485481477;
+    /** <code>MACHINE_IMAGES = 178551184;</code> */
+    public static final int MACHINE_IMAGES_VALUE = 178551184;
+    /** <code>N2D_CPUS = 83307914;</code> */
+    public static final int N2D_CPUS_VALUE = 83307914;
+    /** <code>N2_CPUS = 148029830;</code> */
+    public static final int N2_CPUS_VALUE = 148029830;
+    /** <code>NETWORKS = 217046021;</code> */
+    public static final int NETWORKS_VALUE = 217046021;
     /** <code>NETWORK_ENDPOINT_GROUPS = 102144909;</code> */
     public static final int NETWORK_ENDPOINT_GROUPS_VALUE = 102144909;
     /** <code>NETWORK_FIREWALL_POLICIES = 101117374;</code> */
     public static final int NETWORK_FIREWALL_POLICIES_VALUE = 101117374;
     /** <code>NODE_GROUPS = 24624817;</code> */
     public static final int NODE_GROUPS_VALUE = 24624817;
-    /** <code>NODE_TEMPLATES = 474896668;</code> */
-    public static final int NODE_TEMPLATES_VALUE = 474896668;
-    /** <code>NVIDIA_A100_GPUS = 504872978;</code> */
-    public static final int NVIDIA_A100_GPUS_VALUE = 504872978;
+    /** <code>NODE_TEMPLATES = 206461212;</code> */
+    public static final int NODE_TEMPLATES_VALUE = 206461212;
+    /** <code>NVIDIA_A100_GPUS = 236437522;</code> */
+    public static final int NVIDIA_A100_GPUS_VALUE = 236437522;
     /** <code>NVIDIA_K80_GPUS = 163886599;</code> */
     public static final int NVIDIA_K80_GPUS_VALUE = 163886599;
     /** <code>NVIDIA_P100_GPUS = 236601633;</code> */
     public static final int NVIDIA_P100_GPUS_VALUE = 236601633;
     /** <code>NVIDIA_P100_VWS_GPUS = 213970574;</code> */
     public static final int NVIDIA_P100_VWS_GPUS_VALUE = 213970574;
-    /** <code>NVIDIA_P4_GPUS = 283841470;</code> */
-    public static final int NVIDIA_P4_GPUS_VALUE = 283841470;
-    /** <code>NVIDIA_P4_VWS_GPUS = 528296619;</code> */
-    public static final int NVIDIA_P4_VWS_GPUS_VALUE = 528296619;
+    /** <code>NVIDIA_P4_GPUS = 15406014;</code> */
+    public static final int NVIDIA_P4_GPUS_VALUE = 15406014;
+    /** <code>NVIDIA_P4_VWS_GPUS = 259861163;</code> */
+    public static final int NVIDIA_P4_VWS_GPUS_VALUE = 259861163;
     /** <code>NVIDIA_T4_GPUS = 75759810;</code> */
     public static final int NVIDIA_T4_GPUS_VALUE = 75759810;
-    /** <code>NVIDIA_T4_VWS_GPUS = 319813039;</code> */
-    public static final int NVIDIA_T4_VWS_GPUS_VALUE = 319813039;
+    /** <code>NVIDIA_T4_VWS_GPUS = 51377583;</code> */
+    public static final int NVIDIA_T4_VWS_GPUS_VALUE = 51377583;
     /** <code>NVIDIA_V100_GPUS = 129293095;</code> */
     public static final int NVIDIA_V100_GPUS_VALUE = 129293095;
     /** <code>PACKET_MIRRORINGS = 15578407;</code> */
@@ -516,14 +520,14 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int PREEMPTIBLE_LOCAL_SSD_GB_VALUE = 260819336;
     /** <code>PREEMPTIBLE_NVIDIA_A100_GPUS = 68832784;</code> */
     public static final int PREEMPTIBLE_NVIDIA_A100_GPUS_VALUE = 68832784;
-    /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 374960201;</code> */
-    public static final int PREEMPTIBLE_NVIDIA_K80_GPUS_VALUE = 374960201;
-    /** <code>PREEMPTIBLE_NVIDIA_P100_GPUS = 337432351;</code> */
-    public static final int PREEMPTIBLE_NVIDIA_P100_GPUS_VALUE = 337432351;
-    /** <code>PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 313544076;</code> */
-    public static final int PREEMPTIBLE_NVIDIA_P100_VWS_GPUS_VALUE = 313544076;
-    /** <code>PREEMPTIBLE_NVIDIA_P4_GPUS = 429197628;</code> */
-    public static final int PREEMPTIBLE_NVIDIA_P4_GPUS_VALUE = 429197628;
+    /** <code>PREEMPTIBLE_NVIDIA_K80_GPUS = 106524745;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_K80_GPUS_VALUE = 106524745;
+    /** <code>PREEMPTIBLE_NVIDIA_P100_GPUS = 68996895;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_P100_GPUS_VALUE = 68996895;
+    /** <code>PREEMPTIBLE_NVIDIA_P100_VWS_GPUS = 45108620;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_P100_VWS_GPUS_VALUE = 45108620;
+    /** <code>PREEMPTIBLE_NVIDIA_P4_GPUS = 160762172;</code> */
+    public static final int PREEMPTIBLE_NVIDIA_P4_GPUS_VALUE = 160762172;
     /** <code>PREEMPTIBLE_NVIDIA_P4_VWS_GPUS = 252981545;</code> */
     public static final int PREEMPTIBLE_NVIDIA_P4_VWS_GPUS_VALUE = 252981545;
     /** <code>PREEMPTIBLE_NVIDIA_T4_GPUS = 221115968;</code> */
@@ -532,10 +536,13 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int PREEMPTIBLE_NVIDIA_T4_VWS_GPUS_VALUE = 44497965;
     /** <code>PREEMPTIBLE_NVIDIA_V100_GPUS = 230123813;</code> */
     public static final int PREEMPTIBLE_NVIDIA_V100_GPUS_VALUE = 230123813;
-    /** <code>PUBLIC_ADVERTISED_PREFIXES = 471371980;</code> */
-    public static final int PUBLIC_ADVERTISED_PREFIXES_VALUE = 471371980;
-    /** <code>PUBLIC_DELEGATED_PREFIXES = 532465974;</code> */
-    public static final int PUBLIC_DELEGATED_PREFIXES_VALUE = 532465974;
+    /** <code>PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK = 231164291;</code> */
+    public static final int PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK_VALUE =
+        231164291;
+    /** <code>PUBLIC_ADVERTISED_PREFIXES = 202936524;</code> */
+    public static final int PUBLIC_ADVERTISED_PREFIXES_VALUE = 202936524;
+    /** <code>PUBLIC_DELEGATED_PREFIXES = 264030518;</code> */
+    public static final int PUBLIC_DELEGATED_PREFIXES_VALUE = 264030518;
     /** <code>REGIONAL_AUTOSCALERS = 29363772;</code> */
     public static final int REGIONAL_AUTOSCALERS_VALUE = 29363772;
     /** <code>REGIONAL_INSTANCE_GROUP_MANAGERS = 37543696;</code> */
@@ -544,48 +551,50 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     public static final int RESERVATIONS_VALUE = 32644647;
     /** <code>RESOURCE_POLICIES = 83955297;</code> */
     public static final int RESOURCE_POLICIES_VALUE = 83955297;
-    /** <code>ROUTERS = 493018666;</code> */
-    public static final int ROUTERS_VALUE = 493018666;
-    /** <code>ROUTES = 275680074;</code> */
-    public static final int ROUTES_VALUE = 275680074;
+    /** <code>ROUTERS = 224583210;</code> */
+    public static final int ROUTERS_VALUE = 224583210;
+    /** <code>ROUTES = 7244618;</code> */
+    public static final int ROUTES_VALUE = 7244618;
     /** <code>SECURITY_POLICIES = 189518703;</code> */
     public static final int SECURITY_POLICIES_VALUE = 189518703;
-    /** <code>SECURITY_POLICY_CEVAL_RULES = 470815689;</code> */
-    public static final int SECURITY_POLICY_CEVAL_RULES_VALUE = 470815689;
+    /** <code>SECURITY_POLICY_CEVAL_RULES = 202380233;</code> */
+    public static final int SECURITY_POLICY_CEVAL_RULES_VALUE = 202380233;
     /** <code>SECURITY_POLICY_RULES = 203549225;</code> */
     public static final int SECURITY_POLICY_RULES_VALUE = 203549225;
-    /** <code>SNAPSHOTS = 343405327;</code> */
-    public static final int SNAPSHOTS_VALUE = 343405327;
+    /** <code>SNAPSHOTS = 74969871;</code> */
+    public static final int SNAPSHOTS_VALUE = 74969871;
     /** <code>SSD_TOTAL_GB = 161732561;</code> */
     public static final int SSD_TOTAL_GB_VALUE = 161732561;
-    /** <code>SSL_CERTIFICATES = 378372399;</code> */
-    public static final int SSL_CERTIFICATES_VALUE = 378372399;
+    /** <code>SSL_CERTIFICATES = 109936943;</code> */
+    public static final int SSL_CERTIFICATES_VALUE = 109936943;
     /** <code>STATIC_ADDRESSES = 93624049;</code> */
     public static final int STATIC_ADDRESSES_VALUE = 93624049;
-    /** <code>STATIC_BYOIP_ADDRESSES = 275809649;</code> */
-    public static final int STATIC_BYOIP_ADDRESSES_VALUE = 275809649;
-    /** <code>SUBNETWORKS = 421330469;</code> */
-    public static final int SUBNETWORKS_VALUE = 421330469;
+    /** <code>STATIC_BYOIP_ADDRESSES = 7374193;</code> */
+    public static final int STATIC_BYOIP_ADDRESSES_VALUE = 7374193;
+    /** <code>SUBNETWORKS = 152895013;</code> */
+    public static final int SUBNETWORKS_VALUE = 152895013;
     /** <code>TARGET_HTTPS_PROXIES = 219522506;</code> */
     public static final int TARGET_HTTPS_PROXIES_VALUE = 219522506;
     /** <code>TARGET_HTTP_PROXIES = 164117155;</code> */
     public static final int TARGET_HTTP_PROXIES_VALUE = 164117155;
-    /** <code>TARGET_INSTANCES = 284519728;</code> */
-    public static final int TARGET_INSTANCES_VALUE = 284519728;
-    /** <code>TARGET_POOLS = 348261257;</code> */
-    public static final int TARGET_POOLS_VALUE = 348261257;
+    /** <code>TARGET_INSTANCES = 16084272;</code> */
+    public static final int TARGET_INSTANCES_VALUE = 16084272;
+    /** <code>TARGET_POOLS = 79825801;</code> */
+    public static final int TARGET_POOLS_VALUE = 79825801;
     /** <code>TARGET_SSL_PROXIES = 159216235;</code> */
     public static final int TARGET_SSL_PROXIES_VALUE = 159216235;
     /** <code>TARGET_TCP_PROXIES = 182243136;</code> */
     public static final int TARGET_TCP_PROXIES_VALUE = 182243136;
     /** <code>TARGET_VPN_GATEWAYS = 75029928;</code> */
     public static final int TARGET_VPN_GATEWAYS_VALUE = 75029928;
-    /** <code>URL_MAPS = 378660743;</code> */
-    public static final int URL_MAPS_VALUE = 378660743;
+    /** <code>URL_MAPS = 110225287;</code> */
+    public static final int URL_MAPS_VALUE = 110225287;
     /** <code>VPN_GATEWAYS = 35620282;</code> */
     public static final int VPN_GATEWAYS_VALUE = 35620282;
     /** <code>VPN_TUNNELS = 104327296;</code> */
     public static final int VPN_TUNNELS_VALUE = 104327296;
+    /** <code>XPN_SERVICE_PROJECTS = 95191981;</code> */
+    public static final int XPN_SERVICE_PROJECTS_VALUE = 95191981;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -617,39 +626,39 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return A2_CPUS;
         case 108303563:
           return AFFINITY_GROUPS;
-        case 471248988:
+        case 202813532:
           return AUTOSCALERS;
         case 137626846:
           return BACKEND_BUCKETS;
-        case 269623753:
+        case 1188297:
           return BACKEND_SERVICES;
-        case 317601211:
+        case 49165755:
           return C2_CPUS;
-        case 456141790:
+        case 187706334:
           return COMMITMENTS;
         case 59330902:
           return COMMITTED_A2_CPUS;
         case 223725528:
           return COMMITTED_C2_CPUS;
-        case 292394702:
+        case 23959246:
           return COMMITTED_CPUS;
-        case 357606869:
+        case 89171413:
           return COMMITTED_LICENSES;
-        case 308393480:
+        case 39958024:
           return COMMITTED_LOCAL_SSD_TOTAL_GB;
-        case 489057886:
+        case 220622430:
           return COMMITTED_MEMORY_OPTIMIZED_CPUS;
         case 125951757:
           return COMMITTED_N2D_CPUS;
-        case 322589603:
+        case 54154147:
           return COMMITTED_N2_CPUS;
-        case 375799445:
+        case 107363989:
           return COMMITTED_NVIDIA_A100_GPUS;
         case 3857188:
           return COMMITTED_NVIDIA_K80_GPUS;
         case 107528100:
           return COMMITTED_NVIDIA_P100_GPUS;
-        case 347952897:
+        case 79517441:
           return COMMITTED_NVIDIA_P4_GPUS;
         case 139871237:
           return COMMITTED_NVIDIA_T4_GPUS;
@@ -657,43 +666,43 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return COMMITTED_NVIDIA_V100_GPUS;
         case 2075595:
           return CPUS;
-        case 470911149:
+        case 202475693:
           return CPUS_ALL_REGIONS;
-        case 353520543:
+        case 85085087:
           return DISKS_TOTAL_GB;
-        case 374298265:
+        case 105862809:
           return EXTERNAL_NETWORK_LB_FORWARDING_RULES;
         case 63478888:
           return EXTERNAL_PROTOCOL_FORWARDING_RULES;
-        case 272457134:
+        case 4021678:
           return EXTERNAL_VPN_GATEWAYS;
-        case 374485843:
+        case 106050387:
           return FIREWALLS;
-        case 432668949:
+        case 164233493:
           return FORWARDING_RULES;
         case 42738332:
           return GLOBAL_INTERNAL_ADDRESSES;
         case 39387177:
           return GPUS_ALL_REGIONS;
-        case 289347502:
+        case 20912046:
           return HEALTH_CHECKS;
         case 15562360:
           return IMAGES;
         case 131337822:
           return INSTANCES;
-        case 355919038:
+        case 87483582:
           return INSTANCE_GROUPS;
         case 101798192:
           return INSTANCE_GROUP_MANAGERS;
         case 226188271:
           return INSTANCE_TEMPLATES;
-        case 415204741:
+        case 146769285:
           return INTERCONNECTS;
         case 159968086:
           return INTERCONNECT_ATTACHMENTS_PER_REGION;
-        case 425090419:
+        case 156654963:
           return INTERCONNECT_ATTACHMENTS_TOTAL_MBPS;
-        case 285341866:
+        case 16906410:
           return INTERCONNECT_TOTAL_GBPS;
         case 197899392:
           return INTERNAL_ADDRESSES;
@@ -701,25 +710,25 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return INTERNAL_TRAFFIC_DIRECTOR_FORWARDING_RULES;
         case 151359133:
           return IN_PLACE_SNAPSHOTS;
-        case 402125072:
+        case 133689616:
           return IN_USE_ADDRESSES;
         case 32786705:
           return IN_USE_BACKUP_SCHEDULES;
-        case 462104083:
+        case 193668627:
           return IN_USE_SNAPSHOT_SCHEDULES;
-        case 330878021:
+        case 62442565:
           return LOCAL_SSD_TOTAL_GB;
         case 37203366:
           return M1_CPUS;
         case 65832517:
           return M2_CPUS;
-        case 446986640:
+        case 178551184:
           return MACHINE_IMAGES;
-        case 351743370:
+        case 83307914:
           return N2D_CPUS;
-        case 416465286:
+        case 148029830:
           return N2_CPUS;
-        case 485481477:
+        case 217046021:
           return NETWORKS;
         case 102144909:
           return NETWORK_ENDPOINT_GROUPS;
@@ -727,9 +736,9 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return NETWORK_FIREWALL_POLICIES;
         case 24624817:
           return NODE_GROUPS;
-        case 474896668:
+        case 206461212:
           return NODE_TEMPLATES;
-        case 504872978:
+        case 236437522:
           return NVIDIA_A100_GPUS;
         case 163886599:
           return NVIDIA_K80_GPUS;
@@ -737,13 +746,13 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return NVIDIA_P100_GPUS;
         case 213970574:
           return NVIDIA_P100_VWS_GPUS;
-        case 283841470:
+        case 15406014:
           return NVIDIA_P4_GPUS;
-        case 528296619:
+        case 259861163:
           return NVIDIA_P4_VWS_GPUS;
         case 75759810:
           return NVIDIA_T4_GPUS;
-        case 319813039:
+        case 51377583:
           return NVIDIA_T4_VWS_GPUS;
         case 129293095:
           return NVIDIA_V100_GPUS;
@@ -755,13 +764,13 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_LOCAL_SSD_GB;
         case 68832784:
           return PREEMPTIBLE_NVIDIA_A100_GPUS;
-        case 374960201:
+        case 106524745:
           return PREEMPTIBLE_NVIDIA_K80_GPUS;
-        case 337432351:
+        case 68996895:
           return PREEMPTIBLE_NVIDIA_P100_GPUS;
-        case 313544076:
+        case 45108620:
           return PREEMPTIBLE_NVIDIA_P100_VWS_GPUS;
-        case 429197628:
+        case 160762172:
           return PREEMPTIBLE_NVIDIA_P4_GPUS;
         case 252981545:
           return PREEMPTIBLE_NVIDIA_P4_VWS_GPUS;
@@ -771,9 +780,11 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return PREEMPTIBLE_NVIDIA_T4_VWS_GPUS;
         case 230123813:
           return PREEMPTIBLE_NVIDIA_V100_GPUS;
-        case 471371980:
+        case 231164291:
+          return PSC_ILB_CONSUMER_FORWARDING_RULES_PER_PRODUCER_NETWORK;
+        case 202936524:
           return PUBLIC_ADVERTISED_PREFIXES;
-        case 532465974:
+        case 264030518:
           return PUBLIC_DELEGATED_PREFIXES;
         case 29363772:
           return REGIONAL_AUTOSCALERS;
@@ -783,35 +794,35 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return RESERVATIONS;
         case 83955297:
           return RESOURCE_POLICIES;
-        case 493018666:
+        case 224583210:
           return ROUTERS;
-        case 275680074:
+        case 7244618:
           return ROUTES;
         case 189518703:
           return SECURITY_POLICIES;
-        case 470815689:
+        case 202380233:
           return SECURITY_POLICY_CEVAL_RULES;
         case 203549225:
           return SECURITY_POLICY_RULES;
-        case 343405327:
+        case 74969871:
           return SNAPSHOTS;
         case 161732561:
           return SSD_TOTAL_GB;
-        case 378372399:
+        case 109936943:
           return SSL_CERTIFICATES;
         case 93624049:
           return STATIC_ADDRESSES;
-        case 275809649:
+        case 7374193:
           return STATIC_BYOIP_ADDRESSES;
-        case 421330469:
+        case 152895013:
           return SUBNETWORKS;
         case 219522506:
           return TARGET_HTTPS_PROXIES;
         case 164117155:
           return TARGET_HTTP_PROXIES;
-        case 284519728:
+        case 16084272:
           return TARGET_INSTANCES;
-        case 348261257:
+        case 79825801:
           return TARGET_POOLS;
         case 159216235:
           return TARGET_SSL_PROXIES;
@@ -819,12 +830,14 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
           return TARGET_TCP_PROXIES;
         case 75029928:
           return TARGET_VPN_GATEWAYS;
-        case 378660743:
+        case 110225287:
           return URL_MAPS;
         case 35620282:
           return VPN_GATEWAYS;
         case 104327296:
           return VPN_TUNNELS;
+        case 95191981:
+          return XPN_SERVICE_PROJECTS;
         default:
           return null;
       }
@@ -896,7 +909,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
     return limit_;
   }
 
-  public static final int METRIC_FIELD_NUMBER = 533067184;
+  public static final int METRIC_FIELD_NUMBER = 264631728;
   private int metric_;
   /**
    *
@@ -905,7 +918,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the quota metric.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
    *
    * @return The enum numeric value on the wire for metric.
    */
@@ -920,7 +933,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Name of the quota metric.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
    *
    * @return The metric.
    */
@@ -1023,7 +1036,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       output.writeDouble(111574433, usage_);
     }
     if (metric_ != com.google.cloud.compute.v1.Quota.Metric.UNDEFINED_METRIC.getNumber()) {
-      output.writeEnum(533067184, metric_);
+      output.writeEnum(264631728, metric_);
     }
     unknownFields.writeTo(output);
   }
@@ -1044,7 +1057,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(111574433, usage_);
     }
     if (metric_ != com.google.cloud.compute.v1.Quota.Metric.UNDEFINED_METRIC.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(533067184, metric_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(264631728, metric_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1423,7 +1436,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the quota metric.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      *
      * @return The enum numeric value on the wire for metric.
      */
@@ -1438,7 +1451,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the quota metric.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      *
      * @param value The enum numeric value on the wire for metric to set.
      * @return This builder for chaining.
@@ -1456,7 +1469,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the quota metric.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      *
      * @return The metric.
      */
@@ -1474,7 +1487,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the quota metric.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      *
      * @param value The metric to set.
      * @return This builder for chaining.
@@ -1495,7 +1508,7 @@ public final class Quota extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Name of the quota metric.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>.google.cloud.compute.v1.Quota.Metric metric = 264631728;</code>
      *
      * @return This builder for chaining.
      */

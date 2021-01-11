@@ -103,17 +103,43 @@ public interface InsertResourcePolicyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the resourcePolicyResource field is set.
    */
   boolean hasResourcePolicyResource();
   /**
-   * <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The resourcePolicyResource.
    */
   com.google.cloud.compute.v1.ResourcePolicy getResourcePolicyResource();
-  /** <code>.google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ResourcePolicy resource_policy_resource = 76826186 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.ResourcePolicyOrBuilder getResourcePolicyResourceOrBuilder();
 }

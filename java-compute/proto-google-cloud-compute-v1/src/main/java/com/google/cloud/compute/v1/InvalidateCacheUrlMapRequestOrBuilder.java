@@ -24,24 +24,42 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the cacheInvalidationRuleResource field is set.
    */
   boolean hasCacheInvalidationRuleResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The cacheInvalidationRuleResource.
    */
   com.google.cloud.compute.v1.CacheInvalidationRule getCacheInvalidationRuleResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.CacheInvalidationRuleOrBuilder
@@ -108,7 +126,7 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * Name of the UrlMap scoping this request.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -120,7 +138,7 @@ public interface InvalidateCacheUrlMapRequestOrBuilder
    * Name of the UrlMap scoping this request.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */

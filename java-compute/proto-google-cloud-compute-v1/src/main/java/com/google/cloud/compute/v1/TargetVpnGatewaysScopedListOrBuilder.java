@@ -30,7 +30,7 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetVpnGateway> getTargetVpnGatewaysList();
@@ -41,7 +41,7 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
    * </code>
    */
   com.google.cloud.compute.v1.TargetVpnGateway getTargetVpnGateways(int index);
@@ -52,7 +52,7 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
    * </code>
    */
   int getTargetVpnGatewaysCount();
@@ -63,7 +63,7 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetVpnGatewayOrBuilder>
@@ -75,7 +75,7 @@ public interface TargetVpnGatewaysScopedListOrBuilder
    * [Output Only] A list of target VPN gateways contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 401770888;
+   * <code>repeated .google.cloud.compute.v1.TargetVpnGateway target_vpn_gateways = 133335432;
    * </code>
    */
   com.google.cloud.compute.v1.TargetVpnGatewayOrBuilder getTargetVpnGatewaysOrBuilder(int index);

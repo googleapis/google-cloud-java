@@ -72,6 +72,13 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
+          case 1105989578:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vpnGateway_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -84,13 +91,6 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1041494070:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vpnGateway_ = s;
               break;
             }
           default:
@@ -225,7 +225,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
     }
   }
 
-  public static final int VPN_GATEWAY_FIELD_NUMBER = 406684153;
+  public static final int VPN_GATEWAY_FIELD_NUMBER = 138248697;
   private volatile java.lang.Object vpnGateway_;
   /**
    *
@@ -234,7 +234,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
    * Name of the VPN gateway to return.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The vpnGateway.
    */
@@ -257,7 +257,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
    * Name of the VPN gateway to return.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for vpnGateway.
    */
@@ -288,14 +288,14 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getVpnGatewayBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138248697, vpnGateway_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getVpnGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 406684153, vpnGateway_);
     }
     unknownFields.writeTo(output);
   }
@@ -306,14 +306,14 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
+    if (!getVpnGatewayBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138248697, vpnGateway_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getVpnGatewayBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406684153, vpnGateway_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -845,7 +845,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
      * Name of the VPN gateway to return.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The vpnGateway.
      */
@@ -867,7 +867,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
      * Name of the VPN gateway to return.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for vpnGateway.
      */
@@ -889,7 +889,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
      * Name of the VPN gateway to return.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The vpnGateway to set.
      * @return This builder for chaining.
@@ -910,7 +910,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
      * Name of the VPN gateway to return.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -927,7 +927,7 @@ public final class GetStatusVpnGatewayRequest extends com.google.protobuf.Genera
      * Name of the VPN gateway to return.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string vpn_gateway = 138248697 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for vpnGateway to set.
      * @return This builder for chaining.

@@ -55,7 +55,7 @@ public interface ValidateUrlMapRequestOrBuilder
    * Name of the UrlMap resource to be validated as.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -67,31 +67,49 @@ public interface ValidateUrlMapRequestOrBuilder
    * Name of the UrlMap resource to be validated as.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */
   com.google.protobuf.ByteString getUrlMapBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 395913455;
+   * .google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the urlMapsValidateRequestResource field is set.
    */
   boolean hasUrlMapsValidateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 395913455;
+   * .google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The urlMapsValidateRequestResource.
    */
   com.google.cloud.compute.v1.UrlMapsValidateRequest getUrlMapsValidateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 395913455;
+   * .google.cloud.compute.v1.UrlMapsValidateRequest url_maps_validate_request_resource = 127477999 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.UrlMapsValidateRequestOrBuilder

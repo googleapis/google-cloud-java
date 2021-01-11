@@ -30,7 +30,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;</code>
+   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 219833251;</code>
    *
    * @return Whether the encryptionKey field is set.
    */
@@ -42,7 +42,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;</code>
+   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 219833251;</code>
    *
    * @return The encryptionKey.
    */
@@ -54,7 +54,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * An Endorsement Key (EK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 488268707;</code>
+   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry encryption_key = 219833251;</code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder getEncryptionKeyOrBuilder();
 
@@ -90,7 +90,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 52512805;</code>
    *
    * @return Whether the signingKey field is set.
    */
@@ -102,7 +102,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 52512805;</code>
    *
    * @return The signingKey.
    */
@@ -114,7 +114,7 @@ public interface ShieldedInstanceIdentityOrBuilder
    * An Attestation Key (AK) made by the RSA 2048 algorithm issued to the Shielded Instance's vTPM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 320948261;</code>
+   * <code>.google.cloud.compute.v1.ShieldedInstanceIdentityEntry signing_key = 52512805;</code>
    */
   com.google.cloud.compute.v1.ShieldedInstanceIdentityEntryOrBuilder getSigningKeyOrBuilder();
 }

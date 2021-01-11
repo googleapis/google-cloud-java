@@ -99,24 +99,42 @@ public interface ResizeRegionDiskRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionDisksResizeRequestResource field is set.
    */
   boolean hasRegionDisksResizeRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionDisksResizeRequestResource.
    */
   com.google.cloud.compute.v1.RegionDisksResizeRequest getRegionDisksResizeRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 446633237;
+   * .google.cloud.compute.v1.RegionDisksResizeRequest region_disks_resize_request_resource = 178197781 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionDisksResizeRequestOrBuilder

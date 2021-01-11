@@ -55,7 +55,7 @@ public interface ResourcePolicyHourlyCycleOrBuilder
    * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 hours_in_cycle = 526763132;</code>
+   * <code>int32 hours_in_cycle = 258327676;</code>
    *
    * @return The hoursInCycle.
    */

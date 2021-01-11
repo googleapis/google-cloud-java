@@ -82,7 +82,7 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>string referrer = 82738207;</code>
    *
    * @return The referrer.
    */
@@ -94,7 +94,7 @@ public interface ReferenceOrBuilder
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>string referrer = 82738207;</code>
    *
    * @return The bytes for referrer.
    */

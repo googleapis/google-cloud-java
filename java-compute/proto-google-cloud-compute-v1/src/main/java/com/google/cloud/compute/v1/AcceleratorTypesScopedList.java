@@ -86,7 +86,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
 
               break;
             }
-          case -127988438:
+          case 2019495210:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 acceleratorTypes_ =
@@ -135,7 +135,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.AcceleratorTypesScopedList.Builder.class);
   }
 
-  public static final int ACCELERATOR_TYPES_FIELD_NUMBER = 520872357;
+  public static final int ACCELERATOR_TYPES_FIELD_NUMBER = 252436901;
   private java.util.List<com.google.cloud.compute.v1.AcceleratorType> acceleratorTypes_;
   /**
    *
@@ -144,7 +144,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.AcceleratorType> getAcceleratorTypesList() {
@@ -157,7 +157,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorTypeOrBuilder>
@@ -171,7 +171,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   @java.lang.Override
   public int getAcceleratorTypesCount() {
@@ -184,7 +184,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AcceleratorType getAcceleratorTypes(int index) {
@@ -197,7 +197,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
    * [Output Only] A list of accelerator types contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+   * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AcceleratorTypeOrBuilder getAcceleratorTypesOrBuilder(
@@ -269,7 +269,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < acceleratorTypes_.size(); i++) {
-      output.writeMessage(520872357, acceleratorTypes_.get(i));
+      output.writeMessage(252436901, acceleratorTypes_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -286,7 +286,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
     for (int i = 0; i < acceleratorTypes_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              520872357, acceleratorTypes_.get(i));
+              252436901, acceleratorTypes_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -665,7 +665,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorType> getAcceleratorTypesList() {
       if (acceleratorTypesBuilder_ == null) {
@@ -681,7 +681,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public int getAcceleratorTypesCount() {
       if (acceleratorTypesBuilder_ == null) {
@@ -697,7 +697,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public com.google.cloud.compute.v1.AcceleratorType getAcceleratorTypes(int index) {
       if (acceleratorTypesBuilder_ == null) {
@@ -713,7 +713,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder setAcceleratorTypes(
         int index, com.google.cloud.compute.v1.AcceleratorType value) {
@@ -736,7 +736,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder setAcceleratorTypes(
         int index, com.google.cloud.compute.v1.AcceleratorType.Builder builderForValue) {
@@ -756,7 +756,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder addAcceleratorTypes(com.google.cloud.compute.v1.AcceleratorType value) {
       if (acceleratorTypesBuilder_ == null) {
@@ -778,7 +778,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder addAcceleratorTypes(
         int index, com.google.cloud.compute.v1.AcceleratorType value) {
@@ -801,7 +801,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder addAcceleratorTypes(
         com.google.cloud.compute.v1.AcceleratorType.Builder builderForValue) {
@@ -821,7 +821,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder addAcceleratorTypes(
         int index, com.google.cloud.compute.v1.AcceleratorType.Builder builderForValue) {
@@ -841,7 +841,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder addAllAcceleratorTypes(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.AcceleratorType> values) {
@@ -861,7 +861,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder clearAcceleratorTypes() {
       if (acceleratorTypesBuilder_ == null) {
@@ -880,7 +880,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public Builder removeAcceleratorTypes(int index) {
       if (acceleratorTypesBuilder_ == null) {
@@ -899,7 +899,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public com.google.cloud.compute.v1.AcceleratorType.Builder getAcceleratorTypesBuilder(
         int index) {
@@ -912,7 +912,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public com.google.cloud.compute.v1.AcceleratorTypeOrBuilder getAcceleratorTypesOrBuilder(
         int index) {
@@ -929,7 +929,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorTypeOrBuilder>
         getAcceleratorTypesOrBuilderList() {
@@ -946,7 +946,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public com.google.cloud.compute.v1.AcceleratorType.Builder addAcceleratorTypesBuilder() {
       return getAcceleratorTypesFieldBuilder()
@@ -959,7 +959,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public com.google.cloud.compute.v1.AcceleratorType.Builder addAcceleratorTypesBuilder(
         int index) {
@@ -973,7 +973,7 @@ public final class AcceleratorTypesScopedList extends com.google.protobuf.Genera
      * [Output Only] A list of accelerator types contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 520872357;</code>
+     * <code>repeated .google.cloud.compute.v1.AcceleratorType accelerator_types = 252436901;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorType.Builder>
         getAcceleratorTypesBuilderList() {

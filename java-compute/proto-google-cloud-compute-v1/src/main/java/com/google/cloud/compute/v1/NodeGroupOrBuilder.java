@@ -93,7 +93,7 @@ public interface NodeGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -105,7 +105,7 @@ public interface NodeGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -181,7 +181,7 @@ public interface NodeGroupOrBuilder
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
    * </code>
    *
    * @return The enum numeric value on the wire for maintenancePolicy.
@@ -194,12 +194,32 @@ public interface NodeGroupOrBuilder
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
    * </code>
    *
    * @return The maintenancePolicy.
    */
   com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy getMaintenancePolicy();
+
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * </code>
+   *
+   * @return Whether the maintenanceWindow field is set.
+   */
+  boolean hasMaintenanceWindow();
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * </code>
+   *
+   * @return The maintenanceWindow.
+   */
+  com.google.cloud.compute.v1.NodeGroupMaintenanceWindow getMaintenanceWindow();
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder getMaintenanceWindowOrBuilder();
 
   /**
    *
@@ -233,7 +253,7 @@ public interface NodeGroupOrBuilder
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>string node_template = 54718999;</code>
    *
    * @return The nodeTemplate.
    */
@@ -245,7 +265,7 @@ public interface NodeGroupOrBuilder
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>string node_template = 54718999;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -258,7 +278,7 @@ public interface NodeGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -270,7 +290,7 @@ public interface NodeGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

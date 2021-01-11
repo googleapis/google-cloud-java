@@ -82,6 +82,26 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
               requestId_ = s;
               break;
             }
+          case 724630594:
+            {
+              com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest.Builder
+                  subBuilder = null;
+              if (regionInstanceGroupManagersCreateInstancesRequestResource_ != null) {
+                subBuilder = regionInstanceGroupManagersCreateInstancesRequestResource_.toBuilder();
+              }
+              regionInstanceGroupManagersCreateInstancesRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(regionInstanceGroupManagersCreateInstancesRequestResource_);
+                regionInstanceGroupManagersCreateInstancesRequestResource_ =
+                    subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,26 +121,6 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               instanceGroupManager_ = s;
-              break;
-            }
-          case -1422853054:
-            {
-              com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest.Builder
-                  subBuilder = null;
-              if (regionInstanceGroupManagersCreateInstancesRequestResource_ != null) {
-                subBuilder = regionInstanceGroupManagersCreateInstancesRequestResource_.toBuilder();
-              }
-              regionInstanceGroupManagersCreateInstancesRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(regionInstanceGroupManagersCreateInstancesRequestResource_);
-                regionInstanceGroupManagersCreateInstancesRequestResource_ =
-                    subBuilder.buildPartial();
-              }
-
               break;
             }
           default:
@@ -308,12 +308,18 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int
-      REGION_INSTANCE_GROUP_MANAGERS_CREATE_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 359014280;
+      REGION_INSTANCE_GROUP_MANAGERS_CREATE_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 90578824;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest
       regionInstanceGroupManagersCreateInstancesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersCreateInstancesRequestResource field is set.
@@ -323,8 +329,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagersCreateInstancesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersCreateInstancesRequestResource.
@@ -338,8 +350,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagersCreateInstancesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -418,6 +436,9 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (regionInstanceGroupManagersCreateInstancesRequestResource_ != null) {
+      output.writeMessage(90578824, getRegionInstanceGroupManagersCreateInstancesRequestResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
@@ -426,10 +447,6 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
     }
     if (!getInstanceGroupManagerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
-    }
-    if (regionInstanceGroupManagersCreateInstancesRequestResource_ != null) {
-      output.writeMessage(
-          359014280, getRegionInstanceGroupManagersCreateInstancesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -443,6 +460,11 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (regionInstanceGroupManagersCreateInstancesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              90578824, getRegionInstanceGroupManagersCreateInstancesRequestResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
@@ -453,11 +475,6 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
-    }
-    if (regionInstanceGroupManagersCreateInstancesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              359014280, getRegionInstanceGroupManagersCreateInstancesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1160,8 +1177,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequestOrBuilder>
         regionInstanceGroupManagersCreateInstancesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagersCreateInstancesRequestResource field is set.
@@ -1171,8 +1194,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagersCreateInstancesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagersCreateInstancesRequestResource.
@@ -1189,8 +1218,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersCreateInstancesRequestResource(
@@ -1208,8 +1243,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersCreateInstancesRequestResource(
@@ -1226,8 +1267,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagersCreateInstancesRequestResource(
@@ -1250,8 +1297,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersCreateInstancesRequestResource() {
@@ -1266,8 +1319,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest.Builder
@@ -1278,8 +1337,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
           .getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequestOrBuilder
@@ -1295,8 +1360,14 @@ public final class CreateInstancesRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

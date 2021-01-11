@@ -71,7 +71,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
           case 0:
             done = true;
             break;
-          case -576876072:
+          case 1570607576:
             {
               int rawValue = input.readEnum();
 
@@ -239,7 +239,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete)
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
   private int autoDelete_;
   /**
    *
@@ -249,7 +249,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
    * </code>
    *
    * @return The enum numeric value on the wire for autoDelete.
@@ -266,7 +266,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+   * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
    * </code>
    *
    * @return The autoDelete.
@@ -301,7 +301,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
         != com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete
             .UNDEFINED_AUTO_DELETE
             .getNumber()) {
-      output.writeEnum(464761403, autoDelete_);
+      output.writeEnum(196325947, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -316,7 +316,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
         != com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete
             .UNDEFINED_AUTO_DELETE
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(464761403, autoDelete_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(196325947, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -623,7 +623,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @return The enum numeric value on the wire for autoDelete.
@@ -640,7 +640,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @param value The enum numeric value on the wire for autoDelete to set.
@@ -660,7 +660,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @return The autoDelete.
@@ -685,7 +685,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @param value The autoDelete to set.
@@ -709,7 +709,7 @@ public final class StatefulPolicyPreservedStateDiskDevice
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;
+     * .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 196325947;
      * </code>
      *
      * @return This builder for chaining.

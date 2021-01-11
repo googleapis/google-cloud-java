@@ -73,21 +73,7 @@ public final class SetCommonInstanceMetadataProjectRequest
           case 0:
             done = true;
             break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1966278414:
+          case 181205234:
             {
               com.google.cloud.compute.v1.Metadata.Builder subBuilder = null;
               if (metadataResource_ != null) {
@@ -101,6 +87,20 @@ public final class SetCommonInstanceMetadataProjectRequest
                 metadataResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -137,10 +137,18 @@ public final class SetCommonInstanceMetadataProjectRequest
             com.google.cloud.compute.v1.SetCommonInstanceMetadataProjectRequest.Builder.class);
   }
 
-  public static final int METADATA_RESOURCE_FIELD_NUMBER = 291086110;
+  public static final int METADATA_RESOURCE_FIELD_NUMBER = 22650654;
   private com.google.cloud.compute.v1.Metadata metadataResource_;
   /**
-   * <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the metadataResource field is set.
    */
@@ -149,7 +157,15 @@ public final class SetCommonInstanceMetadataProjectRequest
     return metadataResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The metadataResource.
    */
@@ -159,7 +175,17 @@ public final class SetCommonInstanceMetadataProjectRequest
         ? com.google.cloud.compute.v1.Metadata.getDefaultInstance()
         : metadataResource_;
   }
-  /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataResourceOrBuilder() {
     return getMetadataResource();
@@ -281,14 +307,14 @@ public final class SetCommonInstanceMetadataProjectRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (metadataResource_ != null) {
+      output.writeMessage(22650654, getMetadataResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (metadataResource_ != null) {
-      output.writeMessage(291086110, getMetadataResource());
     }
     unknownFields.writeTo(output);
   }
@@ -299,16 +325,15 @@ public final class SetCommonInstanceMetadataProjectRequest
     if (size != -1) return size;
 
     size = 0;
+    if (metadataResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(22650654, getMetadataResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (metadataResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              291086110, getMetadataResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -647,7 +672,15 @@ public final class SetCommonInstanceMetadataProjectRequest
             com.google.cloud.compute.v1.MetadataOrBuilder>
         metadataResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the metadataResource field is set.
      */
@@ -655,7 +688,15 @@ public final class SetCommonInstanceMetadataProjectRequest
       return metadataResourceBuilder_ != null || metadataResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The metadataResource.
      */
@@ -668,7 +709,17 @@ public final class SetCommonInstanceMetadataProjectRequest
         return metadataResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setMetadataResource(com.google.cloud.compute.v1.Metadata value) {
       if (metadataResourceBuilder_ == null) {
         if (value == null) {
@@ -682,7 +733,17 @@ public final class SetCommonInstanceMetadataProjectRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setMetadataResource(
         com.google.cloud.compute.v1.Metadata.Builder builderForValue) {
       if (metadataResourceBuilder_ == null) {
@@ -694,7 +755,17 @@ public final class SetCommonInstanceMetadataProjectRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeMetadataResource(com.google.cloud.compute.v1.Metadata value) {
       if (metadataResourceBuilder_ == null) {
         if (metadataResource_ != null) {
@@ -712,7 +783,17 @@ public final class SetCommonInstanceMetadataProjectRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearMetadataResource() {
       if (metadataResourceBuilder_ == null) {
         metadataResource_ = null;
@@ -724,13 +805,33 @@ public final class SetCommonInstanceMetadataProjectRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Metadata.Builder getMetadataResourceBuilder() {
 
       onChanged();
       return getMetadataResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.MetadataOrBuilder getMetadataResourceOrBuilder() {
       if (metadataResourceBuilder_ != null) {
         return metadataResourceBuilder_.getMessageOrBuilder();
@@ -740,7 +841,17 @@ public final class SetCommonInstanceMetadataProjectRequest
             : metadataResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Metadata metadata_resource = 291086110;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Metadata metadata_resource = 22650654 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Metadata,
             com.google.cloud.compute.v1.Metadata.Builder,

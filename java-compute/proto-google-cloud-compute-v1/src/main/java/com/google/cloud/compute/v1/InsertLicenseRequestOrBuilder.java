@@ -24,18 +24,44 @@ public interface InsertLicenseRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the licenseResource field is set.
    */
   boolean hasLicenseResource();
   /**
-   * <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The licenseResource.
    */
   com.google.cloud.compute.v1.License getLicenseResource();
-  /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.LicenseOrBuilder getLicenseResourceOrBuilder();
 
   /**

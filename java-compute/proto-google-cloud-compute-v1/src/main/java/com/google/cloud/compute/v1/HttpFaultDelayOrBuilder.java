@@ -30,7 +30,7 @@ public interface HttpFaultDelayOrBuilder
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
    *
    * @return Whether the fixedDelay field is set.
    */
@@ -42,7 +42,7 @@ public interface HttpFaultDelayOrBuilder
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
    *
    * @return The fixedDelay.
    */
@@ -54,7 +54,7 @@ public interface HttpFaultDelayOrBuilder
    * Specifies the value of the fixed delay interval.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration fixed_delay = 317037816;</code>
+   * <code>.google.cloud.compute.v1.Duration fixed_delay = 48602360;</code>
    */
   com.google.cloud.compute.v1.DurationOrBuilder getFixedDelayOrBuilder();
 

@@ -177,7 +177,8 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group where you are attaching
    *     network endpoints to. It should comply with RFC1035.
-   * @param globalNetworkEndpointGroupsAttachEndpointsRequestResource
+   * @param globalNetworkEndpointGroupsAttachEndpointsRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation attachNetworkEndpoints(
@@ -203,9 +204,11 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
+   *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
    *   String networkEndpointGroup = "";
    *   String project = "";
    *   AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *     .setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(globalNetworkEndpointGroupsAttachEndpointsRequestResource)
    *     .setNetworkEndpointGroup(networkEndpointGroup)
    *     .setProject(project)
    *     .build();
@@ -229,9 +232,11 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
+   *   GlobalNetworkEndpointGroupsAttachEndpointsRequest globalNetworkEndpointGroupsAttachEndpointsRequestResource = GlobalNetworkEndpointGroupsAttachEndpointsRequest.newBuilder().build();
    *   String networkEndpointGroup = "";
    *   String project = "";
    *   AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = AttachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *     .setGlobalNetworkEndpointGroupsAttachEndpointsRequestResource(globalNetworkEndpointGroupsAttachEndpointsRequestResource)
    *     .setNetworkEndpointGroup(networkEndpointGroup)
    *     .setProject(project)
    *     .build();
@@ -344,7 +349,8 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param networkEndpointGroup The name of the network endpoint group where you are removing
    *     network endpoints. It should comply with RFC1035.
-   * @param globalNetworkEndpointGroupsDetachEndpointsRequestResource
+   * @param globalNetworkEndpointGroupsDetachEndpointsRequestResource The body resource for this
+   *     request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation detachNetworkEndpoints(
@@ -370,9 +376,11 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
+   *   GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource = GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
    *   String networkEndpointGroup = "";
    *   String project = "";
    *   DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *     .setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(globalNetworkEndpointGroupsDetachEndpointsRequestResource)
    *     .setNetworkEndpointGroup(networkEndpointGroup)
    *     .setProject(project)
    *     .build();
@@ -396,9 +404,11 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
+   *   GlobalNetworkEndpointGroupsDetachEndpointsRequest globalNetworkEndpointGroupsDetachEndpointsRequestResource = GlobalNetworkEndpointGroupsDetachEndpointsRequest.newBuilder().build();
    *   String networkEndpointGroup = "";
    *   String project = "";
    *   DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest request = DetachNetworkEndpointsGlobalNetworkEndpointGroupRequest.newBuilder()
+   *     .setGlobalNetworkEndpointGroupsDetachEndpointsRequestResource(globalNetworkEndpointGroupsDetachEndpointsRequestResource)
    *     .setNetworkEndpointGroup(networkEndpointGroup)
    *     .setProject(project)
    *     .build();
@@ -510,7 +520,7 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param networkEndpointGroupResource
+   * @param networkEndpointGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, NetworkEndpointGroup networkEndpointGroupResource) {
@@ -531,8 +541,10 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
+   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   String project = "";
    *   InsertGlobalNetworkEndpointGroupRequest request = InsertGlobalNetworkEndpointGroupRequest.newBuilder()
+   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = globalNetworkEndpointGroupsClient.insert(request);
@@ -555,8 +567,10 @@ public class GlobalNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalNetworkEndpointGroupsClient globalNetworkEndpointGroupsClient = GlobalNetworkEndpointGroupsClient.create()) {
+   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   String project = "";
    *   InsertGlobalNetworkEndpointGroupRequest request = InsertGlobalNetworkEndpointGroupRequest.newBuilder()
+   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalNetworkEndpointGroupsClient.insertCallable().futureCall(request);

@@ -99,16 +99,28 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest region_disks_remove_resource_policies_request_resource = 8741283;
+   * .google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest region_disks_remove_resource_policies_request_resource = 8741283 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionDisksRemoveResourcePoliciesRequestResource field is set.
    */
   boolean hasRegionDisksRemoveResourcePoliciesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest region_disks_remove_resource_policies_request_resource = 8741283;
+   * .google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest region_disks_remove_resource_policies_request_resource = 8741283 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionDisksRemoveResourcePoliciesRequestResource.
@@ -116,8 +128,14 @@ public interface RemoveResourcePoliciesRegionDiskRequestOrBuilder
   com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest
       getRegionDisksRemoveResourcePoliciesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest region_disks_remove_resource_policies_request_resource = 8741283;
+   * .google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequest region_disks_remove_resource_policies_request_resource = 8741283 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionDisksRemoveResourcePoliciesRequestOrBuilder

@@ -128,11 +128,43 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               region_ = s;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1273306210:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              namedPorts_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1862979954:
@@ -147,38 +179,6 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               fingerprint_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -874177438:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              namedPorts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -267,7 +267,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -276,7 +276,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -299,7 +299,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -512,7 +512,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
+  public static final int NAMED_PORTS_FIELD_NUMBER = 159163276;
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -523,7 +523,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
@@ -538,7 +538,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
@@ -554,7 +554,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public int getNamedPortsCount() {
@@ -569,7 +569,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
@@ -584,7 +584,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * Named ports apply to all instances in this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
@@ -689,7 +689,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -698,7 +698,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL for this instance group. The server generates this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -721,7 +721,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL for this instance group. The server generates this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -756,7 +756,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     return size_;
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -765,7 +765,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -788,7 +788,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -886,26 +886,26 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      output.writeMessage(159163276, namedPorts_.get(i));
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      output.writeMessage(427598732, namedPorts_.get(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -935,27 +935,27 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(159163276, namedPorts_.get(i));
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (!getFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(427598732, namedPorts_.get(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1525,7 +1525,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1547,7 +1547,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1569,7 +1569,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1590,7 +1590,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1607,7 +1607,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2072,7 +2072,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
       if (namedPortsBuilder_ == null) {
@@ -2090,7 +2090,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public int getNamedPortsCount() {
       if (namedPortsBuilder_ == null) {
@@ -2108,7 +2108,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -2126,7 +2126,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder setNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -2150,7 +2150,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder setNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -2172,7 +2172,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -2196,7 +2196,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -2220,7 +2220,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
       if (namedPortsBuilder_ == null) {
@@ -2241,7 +2241,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -2263,7 +2263,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addAllNamedPorts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NamedPort> values) {
@@ -2285,7 +2285,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder clearNamedPorts() {
       if (namedPortsBuilder_ == null) {
@@ -2306,7 +2306,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder removeNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -2327,7 +2327,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
@@ -2341,7 +2341,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
       if (namedPortsBuilder_ == null) {
@@ -2359,7 +2359,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
         getNamedPortsOrBuilderList() {
@@ -2378,7 +2378,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder() {
       return getNamedPortsFieldBuilder()
@@ -2393,7 +2393,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder()
@@ -2408,7 +2408,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * Named ports apply to all instances in this instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort.Builder>
         getNamedPortsBuilderList() {
@@ -2652,7 +2652,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2674,7 +2674,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2696,7 +2696,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2717,7 +2717,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2734,7 +2734,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL for this instance group. The server generates this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2810,7 +2810,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The subnetwork.
      */
@@ -2832,7 +2832,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -2854,7 +2854,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -2875,7 +2875,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return This builder for chaining.
      */
@@ -2892,7 +2892,7 @@ public final class InstanceGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The URL of the subnetwork to which all instances in the instance group belong. If your instance has multiple network interfaces, then the network and subnetwork fields only refer to the network and subnet used by your primary interface (nic0).
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

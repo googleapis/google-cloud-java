@@ -80,6 +80,13 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
               requestId_ = s;
               break;
             }
+          case 562883178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetSslProxy_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,13 +108,6 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
                 sslPolicyReferenceResource_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1584600470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetSslProxy_ = s;
               break;
             }
           default:
@@ -249,7 +249,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
   public static final int SSL_POLICY_REFERENCE_RESOURCE_FIELD_NUMBER = 235403836;
   private com.google.cloud.compute.v1.SslPolicyReference sslPolicyReferenceResource_;
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the sslPolicyReferenceResource field is set.
@@ -259,7 +266,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     return sslPolicyReferenceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The sslPolicyReferenceResource.
@@ -271,7 +285,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
         : sslPolicyReferenceResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -280,7 +301,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     return getSslPolicyReferenceResource();
   }
 
-  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 338795853;
+  public static final int TARGET_SSL_PROXY_FIELD_NUMBER = 70360397;
   private volatile java.lang.Object targetSslProxy_;
   /**
    *
@@ -289,7 +310,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
    * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -312,7 +333,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
    * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */
@@ -346,14 +367,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 70360397, targetSslProxy_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (sslPolicyReferenceResource_ != null) {
       output.writeMessage(235403836, getSslPolicyReferenceResource());
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 338795853, targetSslProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -367,6 +388,9 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getTargetSslProxyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(70360397, targetSslProxy_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
@@ -374,9 +398,6 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               235403836, getSslPolicyReferenceResource());
-    }
-    if (!getTargetSslProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338795853, targetSslProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -943,7 +964,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
             com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder>
         sslPolicyReferenceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the sslPolicyReferenceResource field is set.
@@ -952,7 +980,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       return sslPolicyReferenceResourceBuilder_ != null || sslPolicyReferenceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The sslPolicyReferenceResource.
@@ -967,7 +1002,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSslPolicyReferenceResource(
@@ -985,7 +1027,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSslPolicyReferenceResource(
@@ -1000,7 +1049,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSslPolicyReferenceResource(
@@ -1022,7 +1078,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSslPolicyReferenceResource() {
@@ -1037,7 +1100,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicyReference.Builder
@@ -1047,7 +1117,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       return getSslPolicyReferenceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder
@@ -1061,7 +1138,14 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1089,7 +1173,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetSslProxy.
      */
@@ -1111,7 +1195,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetSslProxy.
      */
@@ -1133,7 +1217,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetSslProxy to set.
      * @return This builder for chaining.
@@ -1154,7 +1238,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1171,7 +1255,7 @@ public final class SetSslPolicyTargetSslProxyRequest extends com.google.protobuf
      * Name of the TargetSslProxy resource whose SSL policy is to be set. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetSslProxy to set.
      * @return This builder for chaining.

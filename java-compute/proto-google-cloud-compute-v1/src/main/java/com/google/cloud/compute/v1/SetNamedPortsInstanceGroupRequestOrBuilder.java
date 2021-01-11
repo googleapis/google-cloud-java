@@ -49,16 +49,28 @@ public interface SetNamedPortsInstanceGroupRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsSetNamedPortsRequestResource field is set.
    */
   boolean hasInstanceGroupsSetNamedPortsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsSetNamedPortsRequestResource.
@@ -66,8 +78,14 @@ public interface SetNamedPortsInstanceGroupRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest
       getInstanceGroupsSetNamedPortsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 385151535;
+   * .google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequest instance_groups_set_named_ports_request_resource = 116716079 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupsSetNamedPortsRequestOrBuilder

@@ -24,18 +24,44 @@ public interface InsertInstanceGroupRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceGroupResource field is set.
    */
   boolean hasInstanceGroupResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceGroupResource.
    */
   com.google.cloud.compute.v1.InstanceGroup getInstanceGroupResource();
-  /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupResourceOrBuilder();
 
   /**

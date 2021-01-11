@@ -77,7 +77,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
               labelFingerprint_ = s;
               break;
             }
-          case -293404678:
+          case 1854078970:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 labels_ =
@@ -118,7 +118,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 500195327:
+      case 231759871:
         return internalGetLabels();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -184,7 +184,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int LABELS_FIELD_NUMBER = 500195327;
+  public static final int LABELS_FIELD_NUMBER = 231759871;
 
   private static final class LabelsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -216,7 +216,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
    * The labels to set for this resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -238,7 +238,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
    * The labels to set for this resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -251,7 +251,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
    * The labels to set for this resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
@@ -268,7 +268,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
    * The labels to set for this resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -300,7 +300,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 500195327);
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 231759871);
     unknownFields.writeTo(output);
   }
 
@@ -322,7 +322,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
               .setKey(entry.getKey())
               .setValue(entry.getValue())
               .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(500195327, labels__);
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(231759871, labels__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -479,7 +479,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 500195327:
+        case 231759871:
           return internalGetLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -489,7 +489,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 500195327:
+        case 231759871:
           return internalGetMutableLabels();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -782,7 +782,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -804,7 +804,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -817,7 +817,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrDefault(
@@ -835,7 +835,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -860,7 +860,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -881,7 +881,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -900,7 +900,7 @@ public final class RegionSetLabelsRequest extends com.google.protobuf.GeneratedM
      * The labels to set for this resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 500195327;</code>
+     * <code>map&lt;string, string&gt; labels = 231759871;</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

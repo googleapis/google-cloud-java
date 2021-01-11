@@ -30,7 +30,7 @@ public interface TargetPoolsScopedListOrBuilder
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
    */
   java.util.List<com.google.cloud.compute.v1.TargetPool> getTargetPoolsList();
   /**
@@ -40,7 +40,7 @@ public interface TargetPoolsScopedListOrBuilder
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
    */
   com.google.cloud.compute.v1.TargetPool getTargetPools(int index);
   /**
@@ -50,7 +50,7 @@ public interface TargetPoolsScopedListOrBuilder
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
    */
   int getTargetPoolsCount();
   /**
@@ -60,7 +60,7 @@ public interface TargetPoolsScopedListOrBuilder
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.TargetPoolOrBuilder>
       getTargetPoolsOrBuilderList();
@@ -71,7 +71,7 @@ public interface TargetPoolsScopedListOrBuilder
    * A list of target pools contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 336072617;</code>
+   * <code>repeated .google.cloud.compute.v1.TargetPool target_pools = 67637161;</code>
    */
   com.google.cloud.compute.v1.TargetPoolOrBuilder getTargetPoolsOrBuilder(int index);
 

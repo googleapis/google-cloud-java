@@ -87,7 +87,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
 
               break;
             }
-          case -891859974:
+          case 1255623674:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 interconnectAttachments_ =
@@ -137,7 +137,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
             com.google.cloud.compute.v1.InterconnectAttachmentsScopedList.Builder.class);
   }
 
-  public static final int INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 425388415;
+  public static final int INTERCONNECT_ATTACHMENTS_FIELD_NUMBER = 156952959;
   private java.util.List<com.google.cloud.compute.v1.InterconnectAttachment>
       interconnectAttachments_;
   /**
@@ -148,7 +148,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   @java.lang.Override
@@ -164,7 +164,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   @java.lang.Override
@@ -180,7 +180,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   @java.lang.Override
@@ -195,7 +195,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   @java.lang.Override
@@ -210,7 +210,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   @java.lang.Override
@@ -283,7 +283,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < interconnectAttachments_.size(); i++) {
-      output.writeMessage(425388415, interconnectAttachments_.get(i));
+      output.writeMessage(156952959, interconnectAttachments_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -300,7 +300,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
     for (int i = 0; i < interconnectAttachments_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              425388415, interconnectAttachments_.get(i));
+              156952959, interconnectAttachments_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -686,7 +686,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectAttachment>
@@ -705,7 +705,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public int getInterconnectAttachmentsCount() {
@@ -723,7 +723,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachments(
@@ -742,7 +742,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder setInterconnectAttachments(
@@ -767,7 +767,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder setInterconnectAttachments(
@@ -789,7 +789,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder addInterconnectAttachments(
@@ -814,7 +814,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder addInterconnectAttachments(
@@ -839,7 +839,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder addInterconnectAttachments(
@@ -861,7 +861,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder addInterconnectAttachments(
@@ -883,7 +883,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder addAllInterconnectAttachments(
@@ -905,7 +905,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder clearInterconnectAttachments() {
@@ -926,7 +926,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public Builder removeInterconnectAttachments(int index) {
@@ -947,7 +947,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachment.Builder
@@ -962,7 +962,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder
@@ -981,7 +981,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder>
@@ -1000,7 +1000,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachment.Builder
@@ -1016,7 +1016,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachment.Builder
@@ -1033,7 +1033,7 @@ public final class InterconnectAttachmentsScopedList extends com.google.protobuf
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+     * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectAttachment.Builder>

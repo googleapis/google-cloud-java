@@ -55,7 +55,7 @@ public interface TargetHttpProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface TargetHttpProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -177,6 +177,21 @@ public interface TargetHttpProxyOrBuilder
    *
    *
    * <pre>
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool proxy_bind = 17590126;</code>
+   *
+   * @return The proxyBind.
+   */
+  boolean getProxyBind();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] URL of the region where the regional Target HTTP Proxy resides. This field is not applicable to global Target HTTP Proxies.
    * </pre>
    *
@@ -205,7 +220,7 @@ public interface TargetHttpProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -217,7 +232,7 @@ public interface TargetHttpProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -230,7 +245,7 @@ public interface TargetHttpProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The urlMap.
    */
@@ -242,7 +257,7 @@ public interface TargetHttpProxyOrBuilder
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The bytes for urlMap.
    */

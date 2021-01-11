@@ -78,14 +78,7 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1790899630:
+          case 356584018:
             {
               com.google.cloud.compute.v1.DiskMoveRequest.Builder subBuilder = null;
               if (diskMoveRequestResource_ != null) {
@@ -99,6 +92,13 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
                 diskMoveRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -135,10 +135,18 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.MoveDiskProjectRequest.Builder.class);
   }
 
-  public static final int DISK_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 313008458;
+  public static final int DISK_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 44573002;
   private com.google.cloud.compute.v1.DiskMoveRequest diskMoveRequestResource_;
   /**
-   * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the diskMoveRequestResource field is set.
    */
@@ -147,7 +155,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     return diskMoveRequestResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The diskMoveRequestResource.
    */
@@ -158,7 +174,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
         : diskMoveRequestResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DiskMoveRequestOrBuilder
@@ -285,11 +309,11 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (diskMoveRequestResource_ != null) {
+      output.writeMessage(44573002, getDiskMoveRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (diskMoveRequestResource_ != null) {
-      output.writeMessage(313008458, getDiskMoveRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -303,13 +327,13 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (diskMoveRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              313008458, getDiskMoveRequestResource());
+              44573002, getDiskMoveRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -639,7 +663,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.DiskMoveRequestOrBuilder>
         diskMoveRequestResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the diskMoveRequestResource field is set.
      */
@@ -647,7 +679,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return diskMoveRequestResourceBuilder_ != null || diskMoveRequestResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The diskMoveRequestResource.
      */
@@ -661,7 +701,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDiskMoveRequestResource(com.google.cloud.compute.v1.DiskMoveRequest value) {
       if (diskMoveRequestResourceBuilder_ == null) {
@@ -677,7 +725,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setDiskMoveRequestResource(
         com.google.cloud.compute.v1.DiskMoveRequest.Builder builderForValue) {
@@ -691,7 +747,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeDiskMoveRequestResource(com.google.cloud.compute.v1.DiskMoveRequest value) {
       if (diskMoveRequestResourceBuilder_ == null) {
@@ -711,7 +775,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearDiskMoveRequestResource() {
       if (diskMoveRequestResourceBuilder_ == null) {
@@ -725,7 +797,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.DiskMoveRequest.Builder getDiskMoveRequestResourceBuilder() {
 
@@ -733,7 +813,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       return getDiskMoveRequestResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.DiskMoveRequestOrBuilder
         getDiskMoveRequestResourceOrBuilder() {
@@ -746,7 +834,15 @@ public final class MoveDiskProjectRequest extends com.google.protobuf.GeneratedM
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 313008458;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DiskMoveRequest disk_move_request_resource = 44573002 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DiskMoveRequest,

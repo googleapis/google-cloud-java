@@ -112,26 +112,21 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
               creationTimestamp_ = s;
               break;
             }
-          case 2110515856:
-            {
-              maximumCardsPerInstance_ = input.readInt32();
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -173855334:
+          case 1973628314:
             {
               com.google.cloud.compute.v1.DeprecationStatus.Builder subBuilder = null;
               if (deprecated_ != null) {
@@ -145,6 +140,11 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
                 deprecated_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 2110515856:
+            {
+              maximumCardsPerInstance_ = input.readInt32();
               break;
             }
           default:
@@ -230,7 +230,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int DEPRECATED_FIELD_NUMBER = 515138995;
+  public static final int DEPRECATED_FIELD_NUMBER = 246703539;
   private com.google.cloud.compute.v1.DeprecationStatus deprecated_;
   /**
    *
@@ -239,7 +239,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -254,7 +254,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -271,14 +271,14 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] The deprecation status associated with this accelerator type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
     return getDeprecated();
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -287,7 +287,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -310,7 +310,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -492,7 +492,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -501,7 +501,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -524,7 +524,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined, fully qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -619,17 +619,17 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (maximumCardsPerInstance_ != 0) {
-      output.writeInt32(263814482, maximumCardsPerInstance_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (deprecated_ != null) {
-      output.writeMessage(515138995, getDeprecated());
+      output.writeMessage(246703539, getDeprecated());
+    }
+    if (maximumCardsPerInstance_ != 0) {
+      output.writeInt32(263814482, maximumCardsPerInstance_);
     }
     unknownFields.writeTo(output);
   }
@@ -656,19 +656,19 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (deprecated_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(246703539, getDeprecated());
+    }
     if (maximumCardsPerInstance_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               263814482, maximumCardsPerInstance_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
-    if (deprecated_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(515138995, getDeprecated());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1168,7 +1168,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      *
      * @return Whether the deprecated field is set.
      */
@@ -1182,7 +1182,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      *
      * @return The deprecated.
      */
@@ -1202,7 +1202,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder setDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1224,7 +1224,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder setDeprecated(
         com.google.cloud.compute.v1.DeprecationStatus.Builder builderForValue) {
@@ -1244,7 +1244,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder mergeDeprecated(com.google.cloud.compute.v1.DeprecationStatus value) {
       if (deprecatedBuilder_ == null) {
@@ -1270,7 +1270,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public Builder clearDeprecated() {
       if (deprecatedBuilder_ == null) {
@@ -1290,7 +1290,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatus.Builder getDeprecatedBuilder() {
 
@@ -1304,7 +1304,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     public com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder() {
       if (deprecatedBuilder_ != null) {
@@ -1322,7 +1322,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] The deprecation status associated with this accelerator type.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+     * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DeprecationStatus,
@@ -1349,7 +1349,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1371,7 +1371,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1393,7 +1393,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1414,7 +1414,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1431,7 +1431,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] An optional textual description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1825,7 +1825,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1847,7 +1847,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1869,7 +1869,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1890,7 +1890,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1907,7 +1907,7 @@ public final class AcceleratorType extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined, fully qualified URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

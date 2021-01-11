@@ -320,7 +320,7 @@ public class SslPoliciesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param sslPolicyResource
+   * @param sslPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, SslPolicy sslPolicyResource) {
@@ -342,8 +342,10 @@ public class SslPoliciesClient implements BackgroundResource {
    * <pre><code>
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "";
+   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   InsertSslPolicyRequest request = InsertSslPolicyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
    *   Operation response = sslPoliciesClient.insert(request);
    * }
@@ -366,8 +368,10 @@ public class SslPoliciesClient implements BackgroundResource {
    * <pre><code>
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "";
+   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   InsertSslPolicyRequest request = InsertSslPolicyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslPoliciesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -571,7 +575,7 @@ public class SslPoliciesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param sslPolicy Name of the SSL policy to update. The name must be 1-63 characters long, and
    *     comply with RFC1035.
-   * @param sslPolicyResource
+   * @param sslPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(String project, String sslPolicy, SslPolicy sslPolicyResource) {
@@ -594,9 +598,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "";
    *   String sslPolicy = "";
+   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   PatchSslPolicyRequest request = PatchSslPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSslPolicy(sslPolicy)
+   *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
    *   Operation response = sslPoliciesClient.patch(request);
    * }
@@ -619,9 +625,11 @@ public class SslPoliciesClient implements BackgroundResource {
    * try (SslPoliciesClient sslPoliciesClient = SslPoliciesClient.create()) {
    *   String project = "";
    *   String sslPolicy = "";
+   *   SslPolicy sslPolicyResource = SslPolicy.newBuilder().build();
    *   PatchSslPolicyRequest request = PatchSslPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSslPolicy(sslPolicy)
+   *     .setSslPolicyResource(sslPolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = sslPoliciesClient.patchCallable().futureCall(request);
    *   // Do something

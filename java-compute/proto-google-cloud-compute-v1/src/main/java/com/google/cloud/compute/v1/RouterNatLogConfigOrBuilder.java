@@ -30,7 +30,7 @@ public interface RouterNatLogConfigOrBuilder
    * Indicates whether or not to export logs. This is false by default.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -46,7 +46,7 @@ public interface RouterNatLogConfigOrBuilder
    * - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
    *
    * @return The enum numeric value on the wire for filter.
    */
@@ -61,7 +61,7 @@ public interface RouterNatLogConfigOrBuilder
    * - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
    *
    * @return The filter.
    */

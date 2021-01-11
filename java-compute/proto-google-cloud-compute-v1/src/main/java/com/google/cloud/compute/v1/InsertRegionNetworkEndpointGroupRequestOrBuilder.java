@@ -24,24 +24,42 @@ public interface InsertRegionNetworkEndpointGroupRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupResource field is set.
    */
   boolean hasNetworkEndpointGroupResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupResource.
    */
   com.google.cloud.compute.v1.NetworkEndpointGroup getNetworkEndpointGroupResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder

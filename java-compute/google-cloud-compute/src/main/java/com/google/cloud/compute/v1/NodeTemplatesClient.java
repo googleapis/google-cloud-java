@@ -536,7 +536,7 @@ public class NodeTemplatesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
-   * @param nodeTemplateResource
+   * @param nodeTemplateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, NodeTemplate nodeTemplateResource) {
@@ -558,9 +558,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
+   *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertNodeTemplateRequest request = InsertNodeTemplateRequest.newBuilder()
+   *     .setNodeTemplateResource(nodeTemplateResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -584,9 +586,11 @@ public class NodeTemplatesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
+   *   NodeTemplate nodeTemplateResource = NodeTemplate.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertNodeTemplateRequest request = InsertNodeTemplateRequest.newBuilder()
+   *     .setNodeTemplateResource(nodeTemplateResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -731,7 +735,7 @@ public class NodeTemplatesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param regionSetPolicyRequestResource
+   * @param regionSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -759,10 +763,12 @@ public class NodeTemplatesClient implements BackgroundResource {
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   String resource = "";
    *   SetIamPolicyNodeTemplateRequest request = SetIamPolicyNodeTemplateRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .setResource(resource)
    *     .build();
    *   Policy response = nodeTemplatesClient.setIamPolicy(request);
@@ -786,10 +792,12 @@ public class NodeTemplatesClient implements BackgroundResource {
    * try (NodeTemplatesClient nodeTemplatesClient = NodeTemplatesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   String resource = "";
    *   SetIamPolicyNodeTemplateRequest request = SetIamPolicyNodeTemplateRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .setResource(resource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeTemplatesClient.setIamPolicyCallable().futureCall(request);
@@ -821,7 +829,7 @@ public class NodeTemplatesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -850,10 +858,12 @@ public class NodeTemplatesClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsNodeTemplateRequest request = TestIamPermissionsNodeTemplateRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = nodeTemplatesClient.testIamPermissions(request);
    * }
@@ -878,10 +888,12 @@ public class NodeTemplatesClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsNodeTemplateRequest request = TestIamPermissionsNodeTemplateRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeTemplatesClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

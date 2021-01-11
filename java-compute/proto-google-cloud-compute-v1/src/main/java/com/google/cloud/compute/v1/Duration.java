@@ -70,16 +70,16 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 836690424:
-            {
-              nanos_ = input.readInt32();
-              break;
-            }
-          case -1419095046:
+          case 728388602:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               seconds_ = s;
+              break;
+            }
+          case 836690424:
+            {
+              nanos_ = input.readInt32();
               break;
             }
           default:
@@ -134,7 +134,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     return nanos_;
   }
 
-  public static final int SECONDS_FIELD_NUMBER = 359484031;
+  public static final int SECONDS_FIELD_NUMBER = 91048575;
   private volatile java.lang.Object seconds_;
   /**
    *
@@ -143,7 +143,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
    * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
    * </pre>
    *
-   * <code>string seconds = 359484031;</code>
+   * <code>string seconds = 91048575;</code>
    *
    * @return The seconds.
    */
@@ -166,7 +166,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
    * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
    * </pre>
    *
-   * <code>string seconds = 359484031;</code>
+   * <code>string seconds = 91048575;</code>
    *
    * @return The bytes for seconds.
    */
@@ -197,11 +197,11 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getSecondsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 91048575, seconds_);
+    }
     if (nanos_ != 0) {
       output.writeInt32(104586303, nanos_);
-    }
-    if (!getSecondsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 359484031, seconds_);
     }
     unknownFields.writeTo(output);
   }
@@ -212,11 +212,11 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (!getSecondsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91048575, seconds_);
+    }
     if (nanos_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(104586303, nanos_);
-    }
-    if (!getSecondsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359484031, seconds_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -571,7 +571,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>string seconds = 91048575;</code>
      *
      * @return The seconds.
      */
@@ -593,7 +593,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>string seconds = 91048575;</code>
      *
      * @return The bytes for seconds.
      */
@@ -615,7 +615,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>string seconds = 91048575;</code>
      *
      * @param value The seconds to set.
      * @return This builder for chaining.
@@ -636,7 +636,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>string seconds = 91048575;</code>
      *
      * @return This builder for chaining.
      */
@@ -653,7 +653,7 @@ public final class Duration extends com.google.protobuf.GeneratedMessageV3
      * Span of time at a resolution of a second. Must be from 0 to 315,576,000,000 inclusive. Note: these bounds are computed from: 60 sec/min * 60 min/hr * 24 hr/day * 365.25 days/year * 10000 years
      * </pre>
      *
-     * <code>string seconds = 359484031;</code>
+     * <code>string seconds = 91048575;</code>
      *
      * @param value The bytes for seconds to set.
      * @return This builder for chaining.

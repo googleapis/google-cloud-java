@@ -103,17 +103,43 @@ public interface AddSignedUrlKeyBackendBucketRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the signedUrlKeyResource field is set.
    */
   boolean hasSignedUrlKeyResource();
   /**
-   * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The signedUrlKeyResource.
    */
   com.google.cloud.compute.v1.SignedUrlKey getSignedUrlKeyResource();
-  /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SignedUrlKeyOrBuilder getSignedUrlKeyResourceOrBuilder();
 }

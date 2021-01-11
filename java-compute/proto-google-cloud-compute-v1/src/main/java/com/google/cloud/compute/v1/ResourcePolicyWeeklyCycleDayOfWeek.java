@@ -147,22 +147,22 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * <code>UNDEFINED_DAY = 0;</code>
      */
     UNDEFINED_DAY(0),
-    /** <code>FRIDAY = 471398751;</code> */
-    FRIDAY(471398751),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>FRIDAY = 202963295;</code> */
+    FRIDAY(202963295),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     /** <code>MONDAY = 132310288;</code> */
     MONDAY(132310288),
-    /** <code>SATURDAY = 279037881;</code> */
-    SATURDAY(279037881),
-    /** <code>SUNDAY = 309626320;</code> */
-    SUNDAY(309626320),
+    /** <code>SATURDAY = 10602425;</code> */
+    SATURDAY(10602425),
+    /** <code>SUNDAY = 41190864;</code> */
+    SUNDAY(41190864),
     /** <code>THURSDAY = 207198682;</code> */
     THURSDAY(207198682),
-    /** <code>TUESDAY = 277509677;</code> */
-    TUESDAY(277509677),
-    /** <code>WEDNESDAY = 422029110;</code> */
-    WEDNESDAY(422029110),
+    /** <code>TUESDAY = 9074221;</code> */
+    TUESDAY(9074221),
+    /** <code>WEDNESDAY = 153593654;</code> */
+    WEDNESDAY(153593654),
     UNRECOGNIZED(-1),
     ;
 
@@ -176,22 +176,22 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
      * <code>UNDEFINED_DAY = 0;</code>
      */
     public static final int UNDEFINED_DAY_VALUE = 0;
-    /** <code>FRIDAY = 471398751;</code> */
-    public static final int FRIDAY_VALUE = 471398751;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>FRIDAY = 202963295;</code> */
+    public static final int FRIDAY_VALUE = 202963295;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
     /** <code>MONDAY = 132310288;</code> */
     public static final int MONDAY_VALUE = 132310288;
-    /** <code>SATURDAY = 279037881;</code> */
-    public static final int SATURDAY_VALUE = 279037881;
-    /** <code>SUNDAY = 309626320;</code> */
-    public static final int SUNDAY_VALUE = 309626320;
+    /** <code>SATURDAY = 10602425;</code> */
+    public static final int SATURDAY_VALUE = 10602425;
+    /** <code>SUNDAY = 41190864;</code> */
+    public static final int SUNDAY_VALUE = 41190864;
     /** <code>THURSDAY = 207198682;</code> */
     public static final int THURSDAY_VALUE = 207198682;
-    /** <code>TUESDAY = 277509677;</code> */
-    public static final int TUESDAY_VALUE = 277509677;
-    /** <code>WEDNESDAY = 422029110;</code> */
-    public static final int WEDNESDAY_VALUE = 422029110;
+    /** <code>TUESDAY = 9074221;</code> */
+    public static final int TUESDAY_VALUE = 9074221;
+    /** <code>WEDNESDAY = 153593654;</code> */
+    public static final int WEDNESDAY_VALUE = 153593654;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -219,21 +219,21 @@ public final class ResourcePolicyWeeklyCycleDayOfWeek extends com.google.protobu
       switch (value) {
         case 0:
           return UNDEFINED_DAY;
-        case 471398751:
+        case 202963295:
           return FRIDAY;
-        case 530283991:
+        case 261848535:
           return INVALID;
         case 132310288:
           return MONDAY;
-        case 279037881:
+        case 10602425:
           return SATURDAY;
-        case 309626320:
+        case 41190864:
           return SUNDAY;
         case 207198682:
           return THURSDAY;
-        case 277509677:
+        case 9074221:
           return TUESDAY;
-        case 422029110:
+        case 153593654:
           return WEDNESDAY;
         default:
           return null;

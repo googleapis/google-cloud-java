@@ -87,18 +87,18 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
               requestId_ = s;
               break;
             }
+          case 1612181522:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -535302126:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeGroup_ = s;
               break;
             }
           default:
@@ -135,7 +135,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.DeleteNodeGroupRequest.Builder.class);
   }
 
-  public static final int NODE_GROUP_FIELD_NUMBER = 469958146;
+  public static final int NODE_GROUP_FIELD_NUMBER = 201522690;
   private volatile java.lang.Object nodeGroup_;
   /**
    *
@@ -144,7 +144,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
    * Name of the NodeGroup resource to delete.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -167,7 +167,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
    * Name of the NodeGroup resource to delete.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
@@ -355,11 +355,11 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 469958146, nodeGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -376,11 +376,11 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(469958146, nodeGroup_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -709,7 +709,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
      * Name of the NodeGroup resource to delete.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeGroup.
      */
@@ -731,7 +731,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
      * Name of the NodeGroup resource to delete.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeGroup.
      */
@@ -753,7 +753,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
      * Name of the NodeGroup resource to delete.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeGroup to set.
      * @return This builder for chaining.
@@ -774,7 +774,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
      * Name of the NodeGroup resource to delete.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -791,7 +791,7 @@ public final class DeleteNodeGroupRequest extends com.google.protobuf.GeneratedM
      * Name of the NodeGroup resource to delete.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeGroup to set.
      * @return This builder for chaining.

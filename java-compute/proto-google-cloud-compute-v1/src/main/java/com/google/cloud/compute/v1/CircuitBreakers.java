@@ -78,19 +78,19 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
               maxRetries_ = input.readInt32();
               break;
             }
-          case 885217232:
-            {
-              maxConnections_ = input.readInt32();
-              break;
-            }
-          case -1401923072:
+          case 745560576:
             {
               maxRequestsPerConnection_ = input.readInt32();
               break;
             }
-          case -1290496200:
+          case 856987448:
             {
               maxPendingRequests_ = input.readInt32();
+              break;
+            }
+          case 885217232:
+            {
+              maxConnections_ = input.readInt32();
               break;
             }
           default:
@@ -145,7 +145,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     return maxConnections_;
   }
 
-  public static final int MAX_PENDING_REQUESTS_FIELD_NUMBER = 375558887;
+  public static final int MAX_PENDING_REQUESTS_FIELD_NUMBER = 107123431;
   private int maxPendingRequests_;
   /**
    *
@@ -154,7 +154,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
    * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
    * </pre>
    *
-   * <code>int32 max_pending_requests = 375558887;</code>
+   * <code>int32 max_pending_requests = 107123431;</code>
    *
    * @return The maxPendingRequests.
    */
@@ -181,7 +181,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     return maxRequests_;
   }
 
-  public static final int MAX_REQUESTS_PER_CONNECTION_FIELD_NUMBER = 361630528;
+  public static final int MAX_REQUESTS_PER_CONNECTION_FIELD_NUMBER = 93195072;
   private int maxRequestsPerConnection_;
   /**
    *
@@ -190,7 +190,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
    * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
    * </pre>
    *
-   * <code>int32 max_requests_per_connection = 361630528;</code>
+   * <code>int32 max_requests_per_connection = 93195072;</code>
    *
    * @return The maxRequestsPerConnection.
    */
@@ -237,14 +237,14 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     if (maxRetries_ != 0) {
       output.writeInt32(55546219, maxRetries_);
     }
-    if (maxConnections_ != 0) {
-      output.writeInt32(110652154, maxConnections_);
-    }
     if (maxRequestsPerConnection_ != 0) {
-      output.writeInt32(361630528, maxRequestsPerConnection_);
+      output.writeInt32(93195072, maxRequestsPerConnection_);
     }
     if (maxPendingRequests_ != 0) {
-      output.writeInt32(375558887, maxPendingRequests_);
+      output.writeInt32(107123431, maxPendingRequests_);
+    }
+    if (maxConnections_ != 0) {
+      output.writeInt32(110652154, maxConnections_);
     }
     unknownFields.writeTo(output);
   }
@@ -261,17 +261,17 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
     if (maxRetries_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(55546219, maxRetries_);
     }
-    if (maxConnections_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(110652154, maxConnections_);
-    }
     if (maxRequestsPerConnection_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              361630528, maxRequestsPerConnection_);
+              93195072, maxRequestsPerConnection_);
     }
     if (maxPendingRequests_ != 0) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(375558887, maxPendingRequests_);
+          com.google.protobuf.CodedOutputStream.computeInt32Size(107123431, maxPendingRequests_);
+    }
+    if (maxConnections_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(110652154, maxConnections_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -655,7 +655,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
      * </pre>
      *
-     * <code>int32 max_pending_requests = 375558887;</code>
+     * <code>int32 max_pending_requests = 107123431;</code>
      *
      * @return The maxPendingRequests.
      */
@@ -670,7 +670,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
      * </pre>
      *
-     * <code>int32 max_pending_requests = 375558887;</code>
+     * <code>int32 max_pending_requests = 107123431;</code>
      *
      * @param value The maxPendingRequests to set.
      * @return This builder for chaining.
@@ -688,7 +688,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * The maximum number of pending requests allowed to the backend service. If not specified, there is no limit.
      * </pre>
      *
-     * <code>int32 max_pending_requests = 375558887;</code>
+     * <code>int32 max_pending_requests = 107123431;</code>
      *
      * @return This builder for chaining.
      */
@@ -759,7 +759,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
      * </pre>
      *
-     * <code>int32 max_requests_per_connection = 361630528;</code>
+     * <code>int32 max_requests_per_connection = 93195072;</code>
      *
      * @return The maxRequestsPerConnection.
      */
@@ -774,7 +774,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
      * </pre>
      *
-     * <code>int32 max_requests_per_connection = 361630528;</code>
+     * <code>int32 max_requests_per_connection = 93195072;</code>
      *
      * @param value The maxRequestsPerConnection to set.
      * @return This builder for chaining.
@@ -792,7 +792,7 @@ public final class CircuitBreakers extends com.google.protobuf.GeneratedMessageV
      * Maximum requests for a single connection to the backend service. This parameter is respected by both the HTTP/1.1 and HTTP/2 implementations. If not specified, there is no limit. Setting this parameter to 1 will effectively disable keep alive.
      * </pre>
      *
-     * <code>int32 max_requests_per_connection = 361630528;</code>
+     * <code>int32 max_requests_per_connection = 93195072;</code>
      *
      * @return This builder for chaining.
      */

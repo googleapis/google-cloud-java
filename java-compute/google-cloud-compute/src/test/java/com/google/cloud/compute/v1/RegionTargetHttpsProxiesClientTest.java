@@ -179,24 +179,30 @@ public class RegionTargetHttpsProxiesClientTest {
   @Test
   @SuppressWarnings("all")
   public void getTest() {
+    String authorizationPolicy = "authorizationPolicy-1576667208";
     String creationTimestamp = "creationTimestamp567396278";
     String description = "description-1724546052";
     String id = "id3355";
     String kind = "kind3292052";
     String name = "name3373707";
+    boolean proxyBind = true;
     String region2 = "region2-690338393";
     String selfLink = "selfLink-1691268851";
+    String serverTlsPolicy = "serverTlsPolicy1906438002";
     String sslPolicy = "sslPolicy-1852293435";
     String urlMap = "urlMap-169850228";
     TargetHttpsProxy expectedResponse =
         TargetHttpsProxy.newBuilder()
+            .setAuthorizationPolicy(authorizationPolicy)
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
             .setId(id)
             .setKind(kind)
             .setName(name)
+            .setProxyBind(proxyBind)
             .setRegion(region2)
             .setSelfLink(selfLink)
+            .setServerTlsPolicy(serverTlsPolicy)
             .setSslPolicy(sslPolicy)
             .setUrlMap(urlMap)
             .build();

@@ -81,21 +81,7 @@ public final class InsertRegionNotificationEndpointRequest
               requestId_ = s;
               break;
             }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1587287774:
+          case 560195874:
             {
               com.google.cloud.compute.v1.NotificationEndpoint.Builder subBuilder = null;
               if (notificationEndpointResource_ != null) {
@@ -109,6 +95,20 @@ public final class InsertRegionNotificationEndpointRequest
                 notificationEndpointResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -145,10 +145,17 @@ public final class InsertRegionNotificationEndpointRequest
             com.google.cloud.compute.v1.InsertRegionNotificationEndpointRequest.Builder.class);
   }
 
-  public static final int NOTIFICATION_ENDPOINT_RESOURCE_FIELD_NUMBER = 338459940;
+  public static final int NOTIFICATION_ENDPOINT_RESOURCE_FIELD_NUMBER = 70024484;
   private com.google.cloud.compute.v1.NotificationEndpoint notificationEndpointResource_;
   /**
-   * <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the notificationEndpointResource field is set.
@@ -158,7 +165,14 @@ public final class InsertRegionNotificationEndpointRequest
     return notificationEndpointResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The notificationEndpointResource.
@@ -170,7 +184,14 @@ public final class InsertRegionNotificationEndpointRequest
         : notificationEndpointResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -347,14 +368,14 @@ public final class InsertRegionNotificationEndpointRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (notificationEndpointResource_ != null) {
+      output.writeMessage(70024484, getNotificationEndpointResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (notificationEndpointResource_ != null) {
-      output.writeMessage(338459940, getNotificationEndpointResource());
     }
     unknownFields.writeTo(output);
   }
@@ -368,16 +389,16 @@ public final class InsertRegionNotificationEndpointRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (notificationEndpointResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              70024484, getNotificationEndpointResource());
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (notificationEndpointResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              338459940, getNotificationEndpointResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -727,8 +748,14 @@ public final class InsertRegionNotificationEndpointRequest
             com.google.cloud.compute.v1.NotificationEndpointOrBuilder>
         notificationEndpointResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the notificationEndpointResource field is set.
@@ -737,8 +764,14 @@ public final class InsertRegionNotificationEndpointRequest
       return notificationEndpointResourceBuilder_ != null || notificationEndpointResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The notificationEndpointResource.
@@ -753,8 +786,14 @@ public final class InsertRegionNotificationEndpointRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNotificationEndpointResource(
@@ -772,8 +811,14 @@ public final class InsertRegionNotificationEndpointRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNotificationEndpointResource(
@@ -788,8 +833,14 @@ public final class InsertRegionNotificationEndpointRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNotificationEndpointResource(
@@ -812,8 +863,14 @@ public final class InsertRegionNotificationEndpointRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNotificationEndpointResource() {
@@ -828,8 +885,14 @@ public final class InsertRegionNotificationEndpointRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NotificationEndpoint.Builder
@@ -839,8 +902,14 @@ public final class InsertRegionNotificationEndpointRequest
       return getNotificationEndpointResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NotificationEndpointOrBuilder
@@ -854,8 +923,14 @@ public final class InsertRegionNotificationEndpointRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 338459940;
+     * .google.cloud.compute.v1.NotificationEndpoint notification_endpoint_resource = 70024484 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

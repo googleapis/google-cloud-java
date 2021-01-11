@@ -31,7 +31,7 @@ public interface VpnGatewayStatusOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection> getVpnConnectionsList();
@@ -43,7 +43,7 @@ public interface VpnGatewayStatusOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   com.google.cloud.compute.v1.VpnGatewayStatusVpnConnection getVpnConnections(int index);
@@ -55,7 +55,7 @@ public interface VpnGatewayStatusOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   int getVpnConnectionsCount();
@@ -67,7 +67,7 @@ public interface VpnGatewayStatusOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.VpnGatewayStatusVpnConnectionOrBuilder>
@@ -80,7 +80,7 @@ public interface VpnGatewayStatusOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 439334538;
+   * repeated .google.cloud.compute.v1.VpnGatewayStatusVpnConnection vpn_connections = 170899082;
    * </code>
    */
   com.google.cloud.compute.v1.VpnGatewayStatusVpnConnectionOrBuilder getVpnConnectionsOrBuilder(

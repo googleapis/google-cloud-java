@@ -79,21 +79,7 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
               requestId_ = s;
               break;
             }
-          case 1796809842:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interconnect_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1114077958:
+          case 1033405690:
             {
               com.google.cloud.compute.v1.Interconnect.Builder subBuilder = null;
               if (interconnectResource_ != null) {
@@ -107,6 +93,20 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
                 interconnectResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1796809842:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              interconnect_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -192,10 +192,18 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
     }
   }
 
-  public static final int INTERCONNECT_RESOURCE_FIELD_NUMBER = 397611167;
+  public static final int INTERCONNECT_RESOURCE_FIELD_NUMBER = 129175711;
   private com.google.cloud.compute.v1.Interconnect interconnectResource_;
   /**
-   * <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the interconnectResource field is set.
    */
@@ -204,7 +212,15 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
     return interconnectResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The interconnectResource.
    */
@@ -214,7 +230,17 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.Interconnect.getDefaultInstance()
         : interconnectResource_;
   }
-  /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.InterconnectOrBuilder getInterconnectResourceOrBuilder() {
     return getInterconnectResource();
@@ -339,14 +365,14 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (interconnectResource_ != null) {
+      output.writeMessage(129175711, getInterconnectResource());
+    }
     if (!getInterconnectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 224601230, interconnect_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (interconnectResource_ != null) {
-      output.writeMessage(397611167, getInterconnectResource());
     }
     unknownFields.writeTo(output);
   }
@@ -360,16 +386,16 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (interconnectResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              129175711, getInterconnectResource());
+    }
     if (!getInterconnectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(224601230, interconnect_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (interconnectResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              397611167, getInterconnectResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -815,7 +841,15 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.InterconnectOrBuilder>
         interconnectResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the interconnectResource field is set.
      */
@@ -823,7 +857,15 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
       return interconnectResourceBuilder_ != null || interconnectResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The interconnectResource.
      */
@@ -836,7 +878,17 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
         return interconnectResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInterconnectResource(com.google.cloud.compute.v1.Interconnect value) {
       if (interconnectResourceBuilder_ == null) {
         if (value == null) {
@@ -850,7 +902,17 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInterconnectResource(
         com.google.cloud.compute.v1.Interconnect.Builder builderForValue) {
       if (interconnectResourceBuilder_ == null) {
@@ -862,7 +924,17 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeInterconnectResource(com.google.cloud.compute.v1.Interconnect value) {
       if (interconnectResourceBuilder_ == null) {
         if (interconnectResource_ != null) {
@@ -880,7 +952,17 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearInterconnectResource() {
       if (interconnectResourceBuilder_ == null) {
         interconnectResource_ = null;
@@ -892,13 +974,33 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Interconnect.Builder getInterconnectResourceBuilder() {
 
       onChanged();
       return getInterconnectResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.InterconnectOrBuilder getInterconnectResourceOrBuilder() {
       if (interconnectResourceBuilder_ != null) {
         return interconnectResourceBuilder_.getMessageOrBuilder();
@@ -908,7 +1010,17 @@ public final class PatchInterconnectRequest extends com.google.protobuf.Generate
             : interconnectResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Interconnect,
             com.google.cloud.compute.v1.Interconnect.Builder,

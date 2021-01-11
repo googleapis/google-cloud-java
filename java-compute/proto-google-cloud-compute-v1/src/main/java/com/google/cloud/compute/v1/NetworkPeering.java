@@ -190,10 +190,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
-    /** <code>INACTIVE = 270421099;</code> */
-    INACTIVE(270421099),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
+    /** <code>INACTIVE = 1985643;</code> */
+    INACTIVE(1985643),
     UNRECOGNIZED(-1),
     ;
 
@@ -207,10 +207,10 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
-    /** <code>INACTIVE = 270421099;</code> */
-    public static final int INACTIVE_VALUE = 270421099;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>INACTIVE = 1985643;</code> */
+    public static final int INACTIVE_VALUE = 1985643;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -238,9 +238,9 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
-        case 270421099:
+        case 1985643:
           return INACTIVE;
         default:
           return null;

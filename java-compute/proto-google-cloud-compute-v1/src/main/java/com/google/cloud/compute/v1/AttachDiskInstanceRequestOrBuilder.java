@@ -24,18 +24,44 @@ public interface AttachDiskInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the attachedDiskResource field is set.
    */
   boolean hasAttachedDiskResource();
   /**
-   * <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The attachedDiskResource.
    */
   com.google.cloud.compute.v1.AttachedDisk getAttachedDiskResource();
-  /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.AttachedDiskOrBuilder getAttachedDiskResourceOrBuilder();
 
   /**

@@ -124,7 +124,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.ManagedInstanceInstanceHealth> getInstanceHealthList();
@@ -136,7 +136,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
    * </code>
    */
   com.google.cloud.compute.v1.ManagedInstanceInstanceHealth getInstanceHealth(int index);
@@ -148,7 +148,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
    * </code>
    */
   int getInstanceHealthCount();
@@ -160,7 +160,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder>
@@ -173,7 +173,7 @@ public interface ManagedInstanceOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 382667078;
+   * repeated .google.cloud.compute.v1.ManagedInstanceInstanceHealth instance_health = 114231622;
    * </code>
    */
   com.google.cloud.compute.v1.ManagedInstanceInstanceHealthOrBuilder getInstanceHealthOrBuilder(
@@ -213,7 +213,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
    *
    * @return Whether the lastAttempt field is set.
    */
@@ -225,7 +225,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
    *
    * @return The lastAttempt.
    */
@@ -237,7 +237,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Information about the last attempt to create or delete the instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 434771492;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceLastAttempt last_attempt = 166336036;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceLastAttemptOrBuilder getLastAttemptOrBuilder();
 
@@ -283,7 +283,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
    *
    * @return Whether the preservedStateFromPolicy field is set.
    */
@@ -295,7 +295,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
    *
    * @return The preservedStateFromPolicy.
    */
@@ -307,7 +307,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Preserved state generated based on stateful policy for this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 470783954;</code>
+   * <code>.google.cloud.compute.v1.PreservedState preserved_state_from_policy = 202348498;</code>
    */
   com.google.cloud.compute.v1.PreservedStateOrBuilder getPreservedStateFromPolicyOrBuilder();
 
@@ -318,7 +318,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
    *
    * @return Whether the version field is set.
    */
@@ -330,7 +330,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
    *
    * @return The version.
    */
@@ -342,7 +342,7 @@ public interface ManagedInstanceOrBuilder
    * [Output Only] Intended version of this instance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 351608024;</code>
+   * <code>.google.cloud.compute.v1.ManagedInstanceVersion version = 83172568;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceVersionOrBuilder getVersionOrBuilder();
 }

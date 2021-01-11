@@ -101,16 +101,28 @@ public interface CreateInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersCreateInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersCreateInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersCreateInstancesRequestResource.
@@ -118,8 +130,14 @@ public interface CreateInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest
       getRegionInstanceGroupManagersCreateInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 359014280;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequest region_instance_group_managers_create_instances_request_resource = 90578824 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersCreateInstancesRequestOrBuilder

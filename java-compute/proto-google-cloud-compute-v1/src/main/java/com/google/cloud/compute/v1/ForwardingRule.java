@@ -118,11 +118,53 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 212192768:
+            {
+              int rawValue = input.readEnum();
+
+              ipVersion_ = rawValue;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 308084818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              backendService_ = s;
+              break;
+            }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
+          case 442710248:
+            {
+              int rawValue = input.readEnum();
+
+              iPProtocol_ = rawValue;
+              break;
+            }
+          case 731557546:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceName_ = s;
+              break;
+            }
+          case 763638304:
+            {
+              int rawValue = input.readEnum();
+
+              loadBalancingScheme_ = rawValue;
               break;
             }
           case 854835346:
@@ -147,6 +189,32 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
+          case 1188587346:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              serviceLabel_ = s;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1413922720:
+            {
+              allPorts_ = input.readBool();
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -154,11 +222,28 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               target_ = s;
               break;
             }
+          case 1570322266:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                metadataFilters_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              metadataFilters_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
+              break;
+            }
           case 1740144634:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               portRange_ = s;
+              break;
+            }
+          case 1847793744:
+            {
+              allowGlobalAccess_ = input.readBool();
               break;
             }
           case 1862979954:
@@ -175,99 +260,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
               fingerprint_ = s;
               break;
             }
-          case -1935290880:
-            {
-              int rawValue = input.readEnum();
-
-              ipVersion_ = rawValue;
-              break;
-            }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              backendService_ = s;
-              break;
-            }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case -1704773400:
-            {
-              int rawValue = input.readEnum();
-
-              iPProtocol_ = rawValue;
-              break;
-            }
-          case -1415926102:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceName_ = s;
-              break;
-            }
-          case -1383845344:
-            {
-              int rawValue = input.readEnum();
-
-              loadBalancingScheme_ = rawValue;
-              break;
-            }
-          case -958896302:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serviceLabel_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -733560928:
-            {
-              allPorts_ = input.readBool();
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -577161382:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                metadataFilters_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.MetadataFilter>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              metadataFilters_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
-              break;
-            }
-          case -299689904:
-            {
-              allowGlobalAccess_ = input.readBool();
-              break;
-            }
-          case -155784552:
+          case 1991699096:
             {
               int rawValue = input.readEnum();
 
               networkTier_ = rawValue;
               break;
             }
-          case -114231686:
+          case 2033251962:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -318,8 +318,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-   * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.ForwardingRule.IPProtocol}
@@ -603,12 +609,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * - EXTERNAL is used for:
    * - Classic Cloud VPN gateways
    * - Protocol forwarding to VMs from an external IP address
-   * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+   * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
    * - INTERNAL is used for:
    * - Protocol forwarding to VMs from an internal IP address
-   * - Internal TCP/UDP load balancers
+   * - Internal TCP/UDP Load Balancing
    * - INTERNAL_MANAGED is used for:
-   * - Internal HTTP(S) load balancers
+   * - Internal HTTP(S) Load Balancing
    * - INTERNAL_SELF_MANAGED is used for:
    * - Traffic Director
    * For more information about forwarding rules, refer to Forwarding rule concepts.
@@ -629,14 +635,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_LOAD_BALANCING_SCHEME(0),
     /** <code>EXTERNAL = 35607499;</code> */
     EXTERNAL(35607499),
-    /** <code>INTERNAL = 279295677;</code> */
-    INTERNAL(279295677),
+    /** <code>INTERNAL = 10860221;</code> */
+    INTERNAL(10860221),
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
     INTERNAL_MANAGED(37350397),
     /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
     INTERNAL_SELF_MANAGED(236211150),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     UNRECOGNIZED(-1),
     ;
 
@@ -652,14 +658,14 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_LOAD_BALANCING_SCHEME_VALUE = 0;
     /** <code>EXTERNAL = 35607499;</code> */
     public static final int EXTERNAL_VALUE = 35607499;
-    /** <code>INTERNAL = 279295677;</code> */
-    public static final int INTERNAL_VALUE = 279295677;
+    /** <code>INTERNAL = 10860221;</code> */
+    public static final int INTERNAL_VALUE = 10860221;
     /** <code>INTERNAL_MANAGED = 37350397;</code> */
     public static final int INTERNAL_MANAGED_VALUE = 37350397;
     /** <code>INTERNAL_SELF_MANAGED = 236211150;</code> */
     public static final int INTERNAL_SELF_MANAGED_VALUE = 236211150;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -689,13 +695,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_LOAD_BALANCING_SCHEME;
         case 35607499:
           return EXTERNAL;
-        case 279295677:
+        case 10860221:
           return INTERNAL;
         case 37350397:
           return INTERNAL_MANAGED;
         case 236211150:
           return INTERNAL_SELF_MANAGED;
-        case 530283991:
+        case 261848535:
           return INVALID;
         default:
           return null;
@@ -775,10 +781,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     UNDEFINED_NETWORK_TIER(0),
-    /** <code>PREMIUM = 399530551;</code> */
-    PREMIUM(399530551),
-    /** <code>STANDARD = 484642493;</code> */
-    STANDARD(484642493),
+    /** <code>PREMIUM = 131095095;</code> */
+    PREMIUM(131095095),
+    /** <code>STANDARD = 216207037;</code> */
+    STANDARD(216207037),
     UNRECOGNIZED(-1),
     ;
 
@@ -792,10 +798,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_NETWORK_TIER = 0;</code>
      */
     public static final int UNDEFINED_NETWORK_TIER_VALUE = 0;
-    /** <code>PREMIUM = 399530551;</code> */
-    public static final int PREMIUM_VALUE = 399530551;
-    /** <code>STANDARD = 484642493;</code> */
-    public static final int STANDARD_VALUE = 484642493;
+    /** <code>PREMIUM = 131095095;</code> */
+    public static final int PREMIUM_VALUE = 131095095;
+    /** <code>STANDARD = 216207037;</code> */
+    public static final int STANDARD_VALUE = 216207037;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -823,9 +829,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_NETWORK_TIER;
-        case 399530551:
+        case 131095095:
           return PREMIUM;
-        case 484642493:
+        case 216207037:
           return STANDARD;
         default:
           return null;
@@ -880,7 +886,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ForwardingRule.NetworkTier)
   }
 
-  public static final int ALL_PORTS_FIELD_NUMBER = 445175796;
+  public static final int ALL_PORTS_FIELD_NUMBER = 176740340;
   private boolean allPorts_;
   /**
    *
@@ -890,7 +896,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
    * </pre>
    *
-   * <code>bool all_ports = 445175796;</code>
+   * <code>bool all_ports = 176740340;</code>
    *
    * @return The allPorts.
    */
@@ -899,7 +905,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     return allPorts_;
   }
 
-  public static final int ALLOW_GLOBAL_ACCESS_FIELD_NUMBER = 499409674;
+  public static final int ALLOW_GLOBAL_ACCESS_FIELD_NUMBER = 230974218;
   private boolean allowGlobalAccess_;
   /**
    *
@@ -908,7 +914,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
    * </pre>
    *
-   * <code>bool allow_global_access = 499409674;</code>
+   * <code>bool allow_global_access = 230974218;</code>
    *
    * @return The allowGlobalAccess.
    */
@@ -917,17 +923,16 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     return allowGlobalAccess_;
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
    *
    * <pre>
-   * This field is only used for INTERNAL load balancing.
-   * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+   * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The backendService.
    */
@@ -947,11 +952,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is only used for INTERNAL load balancing.
-   * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+   * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The bytes for backendService.
    */
@@ -1017,7 +1021,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -1026,7 +1030,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -1049,7 +1053,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -1117,7 +1121,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int I_P_ADDRESS_FIELD_NUMBER = 522591951;
+  public static final int I_P_ADDRESS_FIELD_NUMBER = 254156495;
   private volatile java.lang.Object iPAddress_;
   /**
    *
@@ -1125,12 +1129,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
    * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
    * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
    * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
    * </pre>
    *
-   * <code>string i_p_address = 522591951;</code>
+   * <code>string i_p_address = 254156495;</code>
    *
    * @return The iPAddress.
    */
@@ -1152,12 +1161,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
    * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+   * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+   * - projects/project_id/regions/region/addresses/address-name
+   * - regions/region/addresses/address-name
+   * - global/addresses/address-name
+   * - address-name
    * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
    * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
    * </pre>
    *
-   * <code>string i_p_address = 522591951;</code>
+   * <code>string i_p_address = 254156495;</code>
    *
    * @return The bytes for iPAddress.
    */
@@ -1174,17 +1188,23 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int I_P_PROTOCOL_FIELD_NUMBER = 323774237;
+  public static final int I_P_PROTOCOL_FIELD_NUMBER = 55338781;
   private int iPProtocol_;
   /**
    *
    *
    * <pre>
-   * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-   * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
    *
    * @return The enum numeric value on the wire for iPProtocol.
    */
@@ -1196,11 +1216,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-   * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+   * The IP protocol to which this rule applies.
+   * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+   * The valid IP protocols are different for different load balancing products:
+   * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+   * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+   * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+   * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+   * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
    *
    * @return The iPProtocol.
    */
@@ -1263,7 +1289,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IP_VERSION_FIELD_NUMBER = 294959552;
+  public static final int IP_VERSION_FIELD_NUMBER = 26524096;
   private int ipVersion_;
   /**
    *
@@ -1272,7 +1298,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
    *
    * @return The enum numeric value on the wire for ipVersion.
    */
@@ -1287,7 +1313,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
    *
    * @return The ipVersion.
    */
@@ -1368,7 +1394,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
+  public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 95454788;
   private int loadBalancingScheme_;
   /**
    *
@@ -1378,19 +1404,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * - EXTERNAL is used for:
    * - Classic Cloud VPN gateways
    * - Protocol forwarding to VMs from an external IP address
-   * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+   * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
    * - INTERNAL is used for:
    * - Protocol forwarding to VMs from an internal IP address
-   * - Internal TCP/UDP load balancers
+   * - Internal TCP/UDP Load Balancing
    * - INTERNAL_MANAGED is used for:
-   * - Internal HTTP(S) load balancers
+   * - Internal HTTP(S) Load Balancing
    * - INTERNAL_SELF_MANAGED is used for:
    * - Traffic Director
    * For more information about forwarding rules, refer to Forwarding rule concepts.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
    * </code>
    *
    * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -1407,19 +1433,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * - EXTERNAL is used for:
    * - Classic Cloud VPN gateways
    * - Protocol forwarding to VMs from an external IP address
-   * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+   * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
    * - INTERNAL is used for:
    * - Protocol forwarding to VMs from an internal IP address
-   * - Internal TCP/UDP load balancers
+   * - Internal TCP/UDP Load Balancing
    * - INTERNAL_MANAGED is used for:
-   * - Internal HTTP(S) load balancers
+   * - Internal HTTP(S) Load Balancing
    * - INTERNAL_SELF_MANAGED is used for:
    * - Traffic Director
    * For more information about forwarding rules, refer to Forwarding rule concepts.
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+   * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
    * </code>
    *
    * @return The loadBalancingScheme.
@@ -1435,7 +1461,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int METADATA_FILTERS_FIELD_NUMBER = 464725739;
+  public static final int METADATA_FILTERS_FIELD_NUMBER = 196290283;
   private java.util.List<com.google.cloud.compute.v1.MetadataFilter> metadataFilters_;
   /**
    *
@@ -1447,7 +1473,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList() {
@@ -1463,7 +1489,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
@@ -1480,7 +1506,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
    */
   @java.lang.Override
   public int getMetadataFiltersCount() {
@@ -1496,7 +1522,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index) {
@@ -1512,7 +1538,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+   * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(
@@ -1576,7 +1602,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field is not used for external load balancing.
-   * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+   * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -1600,7 +1627,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This field is not used for external load balancing.
-   * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+   * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
    * </pre>
    *
    * <code>string network = 232872494;</code>
@@ -1620,7 +1648,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
+  public static final int NETWORK_TIER_FIELD_NUMBER = 248962387;
   private int networkTier_;
   /**
    *
@@ -1631,7 +1659,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -1648,7 +1676,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
    *
    * @return The networkTier.
    */
@@ -1668,12 +1696,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-   * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+   * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+   * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
    * Some types of forwarding target have constraints on the acceptable ports:
    * - TargetHttpProxy: 80, 8080
    * - TargetHttpsProxy: 443
-   * - TargetGrpcProxy: Any ports
+   * - TargetGrpcProxy: no constraints
    * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
    * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
    * - TargetVpnGateway: 500, 4500
@@ -1699,12 +1727,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-   * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+   * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+   * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
    * Some types of forwarding target have constraints on the acceptable ports:
    * - TargetHttpProxy: 80, 8080
    * - TargetHttpsProxy: 443
-   * - TargetGrpcProxy: Any ports
+   * - TargetGrpcProxy: no constraints
    * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
    * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
    * - TargetVpnGateway: 500, 4500
@@ -1733,10 +1761,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing.
-   * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-   * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-   * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+   * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+   * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+   * You can specify a list of up to five ports, which can be non-contiguous.
+   * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+   * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -1750,10 +1779,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing.
-   * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-   * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-   * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+   * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+   * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+   * You can specify a list of up to five ports, which can be non-contiguous.
+   * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+   * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -1767,10 +1797,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing.
-   * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-   * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-   * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+   * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+   * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+   * You can specify a list of up to five ports, which can be non-contiguous.
+   * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+   * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -1785,10 +1816,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is used along with the backend_service field for internal load balancing.
-   * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-   * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-   * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+   * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+   * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+   * You can specify a list of up to five ports, which can be non-contiguous.
+   * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+   * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
    * </pre>
    *
    * <code>repeated string ports = 106854418;</code>
@@ -1849,7 +1881,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1858,7 +1890,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1881,7 +1913,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1898,7 +1930,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SERVICE_LABEL_FIELD_NUMBER = 417008874;
+  public static final int SERVICE_LABEL_FIELD_NUMBER = 148573418;
   private volatile java.lang.Object serviceLabel_;
   /**
    *
@@ -1909,7 +1941,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_label = 417008874;</code>
+   * <code>string service_label = 148573418;</code>
    *
    * @return The serviceLabel.
    */
@@ -1934,7 +1966,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_label = 417008874;</code>
+   * <code>string service_label = 148573418;</code>
    *
    * @return The bytes for serviceLabel.
    */
@@ -1951,7 +1983,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SERVICE_NAME_FIELD_NUMBER = 359880149;
+  public static final int SERVICE_NAME_FIELD_NUMBER = 91444693;
   private volatile java.lang.Object serviceName_;
   /**
    *
@@ -1961,7 +1993,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_name = 359880149;</code>
+   * <code>string service_name = 91444693;</code>
    *
    * @return The serviceName.
    */
@@ -1985,7 +2017,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * This field is only used for internal load balancing.
    * </pre>
    *
-   * <code>string service_name = 359880149;</code>
+   * <code>string service_name = 91444693;</code>
    *
    * @return The bytes for serviceName.
    */
@@ -2002,7 +2034,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -2013,7 +2045,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -2038,7 +2070,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -2062,6 +2094,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+   * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+   * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
    * </pre>
    *
    * <code>string target = 192835985;</code>
@@ -2085,6 +2120,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+   * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+   * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+   * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
    * </pre>
    *
    * <code>string target = 192835985;</code>
@@ -2127,8 +2165,32 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (ipVersion_
+        != com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
+      output.writeEnum(26524096, ipVersion_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (!getBackendServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
+    if (iPProtocol_
+        != com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNDEFINED_I_P_PROTOCOL
+            .getNumber()) {
+      output.writeEnum(55338781, iPProtocol_);
+    }
+    if (!getServiceNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 91444693, serviceName_);
+    }
+    if (loadBalancingScheme_
+        != com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme
+            .UNDEFINED_LOAD_BALANCING_SCHEME
+            .getNumber()) {
+      output.writeEnum(95454788, loadBalancingScheme_);
     }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106854418, ports_.getRaw(i));
@@ -2139,11 +2201,29 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getServiceLabelBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 148573418, serviceLabel_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    if (allPorts_ != false) {
+      output.writeBool(176740340, allPorts_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
     if (!getTargetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
+    for (int i = 0; i < metadataFilters_.size(); i++) {
+      output.writeMessage(196290283, metadataFilters_.get(i));
+    }
     if (!getPortRangeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 217518079, portRange_);
+    }
+    if (allowGlobalAccess_ != false) {
+      output.writeBool(230974218, allowGlobalAccess_);
     }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
@@ -2151,55 +2231,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (ipVersion_
-        != com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
-      output.writeEnum(294959552, ipVersion_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (iPProtocol_
-        != com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNDEFINED_I_P_PROTOCOL
-            .getNumber()) {
-      output.writeEnum(323774237, iPProtocol_);
-    }
-    if (!getServiceNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 359880149, serviceName_);
-    }
-    if (loadBalancingScheme_
-        != com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme
-            .UNDEFINED_LOAD_BALANCING_SCHEME
-            .getNumber()) {
-      output.writeEnum(363890244, loadBalancingScheme_);
-    }
-    if (!getServiceLabelBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 417008874, serviceLabel_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (allPorts_ != false) {
-      output.writeBool(445175796, allPorts_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    for (int i = 0; i < metadataFilters_.size(); i++) {
-      output.writeMessage(464725739, metadataFilters_.get(i));
-    }
-    if (allowGlobalAccess_ != false) {
-      output.writeBool(499409674, allowGlobalAccess_);
-    }
     if (networkTier_
         != com.google.cloud.compute.v1.ForwardingRule.NetworkTier.UNDEFINED_NETWORK_TIER
             .getNumber()) {
-      output.writeEnum(517397843, networkTier_);
+      output.writeEnum(248962387, networkTier_);
     }
     if (!getIPAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 522591951, iPAddress_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 254156495, iPAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -2219,9 +2257,33 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (ipVersion_
+        != com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(26524096, ipVersion_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (!getBackendServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
+    if (iPProtocol_
+        != com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNDEFINED_I_P_PROTOCOL
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(55338781, iPProtocol_);
+    }
+    if (!getServiceNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91444693, serviceName_);
+    }
+    if (loadBalancingScheme_
+        != com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme
+            .UNDEFINED_LOAD_BALANCING_SCHEME
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(95454788, loadBalancingScheme_);
     }
     {
       int dataSize = 0;
@@ -2238,11 +2300,31 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getServiceLabelBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148573418, serviceLabel_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (allPorts_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(176740340, allPorts_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
     if (!getTargetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
+    for (int i = 0; i < metadataFilters_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              196290283, metadataFilters_.get(i));
+    }
     if (!getPortRangeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(217518079, portRange_);
+    }
+    if (allowGlobalAccess_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(230974218, allowGlobalAccess_);
     }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
@@ -2250,58 +2332,13 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
     if (!getFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (ipVersion_
-        != com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNDEFINED_IP_VERSION.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294959552, ipVersion_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
-    }
-    if (iPProtocol_
-        != com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNDEFINED_I_P_PROTOCOL
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(323774237, iPProtocol_);
-    }
-    if (!getServiceNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359880149, serviceName_);
-    }
-    if (loadBalancingScheme_
-        != com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme
-            .UNDEFINED_LOAD_BALANCING_SCHEME
-            .getNumber()) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(363890244, loadBalancingScheme_);
-    }
-    if (!getServiceLabelBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(417008874, serviceLabel_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (allPorts_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(445175796, allPorts_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
-    for (int i = 0; i < metadataFilters_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              464725739, metadataFilters_.get(i));
-    }
-    if (allowGlobalAccess_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(499409674, allowGlobalAccess_);
-    }
     if (networkTier_
         != com.google.cloud.compute.v1.ForwardingRule.NetworkTier.UNDEFINED_NETWORK_TIER
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(517397843, networkTier_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(248962387, networkTier_);
     }
     if (!getIPAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(522591951, iPAddress_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(254156495, iPAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2891,7 +2928,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
      * </pre>
      *
-     * <code>bool all_ports = 445175796;</code>
+     * <code>bool all_ports = 176740340;</code>
      *
      * @return The allPorts.
      */
@@ -2907,7 +2944,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
      * </pre>
      *
-     * <code>bool all_ports = 445175796;</code>
+     * <code>bool all_ports = 176740340;</code>
      *
      * @param value The allPorts to set.
      * @return This builder for chaining.
@@ -2926,7 +2963,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to allow packets addressed to any ports will be forwarded to the backends configured with this forwarding rule.
      * </pre>
      *
-     * <code>bool all_ports = 445175796;</code>
+     * <code>bool all_ports = 176740340;</code>
      *
      * @return This builder for chaining.
      */
@@ -2945,7 +2982,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
      * </pre>
      *
-     * <code>bool allow_global_access = 499409674;</code>
+     * <code>bool allow_global_access = 230974218;</code>
      *
      * @return The allowGlobalAccess.
      */
@@ -2960,7 +2997,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
      * </pre>
      *
-     * <code>bool allow_global_access = 499409674;</code>
+     * <code>bool allow_global_access = 230974218;</code>
      *
      * @param value The allowGlobalAccess to set.
      * @return This builder for chaining.
@@ -2978,7 +3015,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is used along with the backend_service field for internal load balancing or with the target field for internal TargetInstance. If the field is set to TRUE, clients can access ILB from all regions. Otherwise only allows access from clients in the same region as the internal load balancer.
      * </pre>
      *
-     * <code>bool allow_global_access = 499409674;</code>
+     * <code>bool allow_global_access = 230974218;</code>
      *
      * @return This builder for chaining.
      */
@@ -2994,11 +3031,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is only used for INTERNAL load balancing.
-     * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+     * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The backendService.
      */
@@ -3017,11 +3053,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is only used for INTERNAL load balancing.
-     * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+     * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The bytes for backendService.
      */
@@ -3040,11 +3075,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is only used for INTERNAL load balancing.
-     * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+     * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -3062,11 +3096,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is only used for INTERNAL load balancing.
-     * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+     * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return This builder for chaining.
      */
@@ -3080,11 +3113,10 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is only used for INTERNAL load balancing.
-     * For internal load balancing, this field identifies the BackendService resource to receive the matched traffic.
+     * Identifies the backend service to which the forwarding rule sends traffic. Required for Internal TCP/UDP Load Balancing and Network Load Balancing; must be omitted for all other load balancer types.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -3214,7 +3246,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -3236,7 +3268,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -3258,7 +3290,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3279,7 +3311,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -3296,7 +3328,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3430,12 +3462,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
      * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
      * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 522591951;</code>
+     * <code>string i_p_address = 254156495;</code>
      *
      * @return The iPAddress.
      */
@@ -3456,12 +3493,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
      * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
      * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 522591951;</code>
+     * <code>string i_p_address = 254156495;</code>
      *
      * @return The bytes for iPAddress.
      */
@@ -3482,12 +3524,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
      * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
      * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 522591951;</code>
+     * <code>string i_p_address = 254156495;</code>
      *
      * @param value The iPAddress to set.
      * @return This builder for chaining.
@@ -3507,12 +3554,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
      * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
      * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 522591951;</code>
+     * <code>string i_p_address = 254156495;</code>
      *
      * @return This builder for chaining.
      */
@@ -3528,12 +3580,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule.
      * If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address:
-     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in: * projects/project_id/regions/region/addresses/address-name * regions/region/addresses/address-name * global/addresses/address-name * address-name
+     * * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region/addresses/address-name * Partial URL or by name, as in:
+     * - projects/project_id/regions/region/addresses/address-name
+     * - regions/region/addresses/address-name
+     * - global/addresses/address-name
+     * - address-name
      * The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, refer to [IP address specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
      * Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
      * </pre>
      *
-     * <code>string i_p_address = 522591951;</code>
+     * <code>string i_p_address = 254156495;</code>
      *
      * @param value The bytes for iPAddress to set.
      * @return This builder for chaining.
@@ -3554,11 +3611,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-     * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
      *
      * @return The enum numeric value on the wire for iPProtocol.
      */
@@ -3570,11 +3633,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-     * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
      *
      * @param value The enum numeric value on the wire for iPProtocol to set.
      * @return This builder for chaining.
@@ -3589,11 +3658,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-     * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
      *
      * @return The iPProtocol.
      */
@@ -3610,11 +3685,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-     * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
      *
      * @param value The iPProtocol to set.
      * @return This builder for chaining.
@@ -3632,11 +3713,17 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP or ICMP.
-     * For Internal TCP/UDP Load Balancing, the load balancing scheme is INTERNAL, and one of TCP or UDP are valid. For Traffic Director, the load balancing scheme is INTERNAL_SELF_MANAGED, and only TCPis valid. For Internal HTTP(S) Load Balancing, the load balancing scheme is INTERNAL_MANAGED, and only TCP is valid. For HTTP(S), SSL Proxy, and TCP Proxy Load Balancing, the load balancing scheme is EXTERNAL and only TCP is valid. For Network TCP/UDP Load Balancing, the load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
+     * The IP protocol to which this rule applies.
+     * For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP and ICMP.
+     * The valid IP protocols are different for different load balancing products:
+     * - Internal TCP/UDP Load Balancing: The load balancing scheme is INTERNAL, and one of TCP, UDP or ALL is valid.
+     * - Traffic Director: The load balancing scheme is INTERNAL_SELF_MANAGED, and only TCP is valid.
+     * - Internal HTTP(S) Load Balancing: The load balancing scheme is INTERNAL_MANAGED, and only TCP is valid.
+     * - HTTP(S), SSL Proxy, and TCP Proxy Load Balancing: The load balancing scheme is EXTERNAL and only TCP is valid.
+     * - Network Load Balancing: The load balancing scheme is EXTERNAL, and one of TCP or UDP is valid.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 323774237;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IPProtocol i_p_protocol = 55338781;</code>
      *
      * @return This builder for chaining.
      */
@@ -3761,7 +3848,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
      *
      * @return The enum numeric value on the wire for ipVersion.
      */
@@ -3776,7 +3863,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
      *
      * @param value The enum numeric value on the wire for ipVersion to set.
      * @return This builder for chaining.
@@ -3794,7 +3881,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
      *
      * @return The ipVersion.
      */
@@ -3814,7 +3901,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
      *
      * @param value The ipVersion to set.
      * @return This builder for chaining.
@@ -3835,7 +3922,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 26524096;</code>
      *
      * @return This builder for chaining.
      */
@@ -4013,19 +4100,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - EXTERNAL is used for:
      * - Classic Cloud VPN gateways
      * - Protocol forwarding to VMs from an external IP address
-     * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+     * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
      * - INTERNAL is used for:
      * - Protocol forwarding to VMs from an internal IP address
-     * - Internal TCP/UDP load balancers
+     * - Internal TCP/UDP Load Balancing
      * - INTERNAL_MANAGED is used for:
-     * - Internal HTTP(S) load balancers
+     * - Internal HTTP(S) Load Balancing
      * - INTERNAL_SELF_MANAGED is used for:
      * - Traffic Director
      * For more information about forwarding rules, refer to Forwarding rule concepts.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
      * </code>
      *
      * @return The enum numeric value on the wire for loadBalancingScheme.
@@ -4042,19 +4129,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - EXTERNAL is used for:
      * - Classic Cloud VPN gateways
      * - Protocol forwarding to VMs from an external IP address
-     * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+     * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
      * - INTERNAL is used for:
      * - Protocol forwarding to VMs from an internal IP address
-     * - Internal TCP/UDP load balancers
+     * - Internal TCP/UDP Load Balancing
      * - INTERNAL_MANAGED is used for:
-     * - Internal HTTP(S) load balancers
+     * - Internal HTTP(S) Load Balancing
      * - INTERNAL_SELF_MANAGED is used for:
      * - Traffic Director
      * For more information about forwarding rules, refer to Forwarding rule concepts.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
      * </code>
      *
      * @param value The enum numeric value on the wire for loadBalancingScheme to set.
@@ -4074,19 +4161,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - EXTERNAL is used for:
      * - Classic Cloud VPN gateways
      * - Protocol forwarding to VMs from an external IP address
-     * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+     * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
      * - INTERNAL is used for:
      * - Protocol forwarding to VMs from an internal IP address
-     * - Internal TCP/UDP load balancers
+     * - Internal TCP/UDP Load Balancing
      * - INTERNAL_MANAGED is used for:
-     * - Internal HTTP(S) load balancers
+     * - Internal HTTP(S) Load Balancing
      * - INTERNAL_SELF_MANAGED is used for:
      * - Traffic Director
      * For more information about forwarding rules, refer to Forwarding rule concepts.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
      * </code>
      *
      * @return The loadBalancingScheme.
@@ -4109,19 +4196,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - EXTERNAL is used for:
      * - Classic Cloud VPN gateways
      * - Protocol forwarding to VMs from an external IP address
-     * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+     * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
      * - INTERNAL is used for:
      * - Protocol forwarding to VMs from an internal IP address
-     * - Internal TCP/UDP load balancers
+     * - Internal TCP/UDP Load Balancing
      * - INTERNAL_MANAGED is used for:
-     * - Internal HTTP(S) load balancers
+     * - Internal HTTP(S) Load Balancing
      * - INTERNAL_SELF_MANAGED is used for:
      * - Traffic Director
      * For more information about forwarding rules, refer to Forwarding rule concepts.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
      * </code>
      *
      * @param value The loadBalancingScheme to set.
@@ -4145,19 +4232,19 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * - EXTERNAL is used for:
      * - Classic Cloud VPN gateways
      * - Protocol forwarding to VMs from an external IP address
-     * - The following load balancers: HTTP(S), SSL Proxy, TCP Proxy, and Network TCP/UDP
+     * - HTTP(S), SSL Proxy, TCP Proxy, and Network Load Balancing
      * - INTERNAL is used for:
      * - Protocol forwarding to VMs from an internal IP address
-     * - Internal TCP/UDP load balancers
+     * - Internal TCP/UDP Load Balancing
      * - INTERNAL_MANAGED is used for:
-     * - Internal HTTP(S) load balancers
+     * - Internal HTTP(S) Load Balancing
      * - INTERNAL_SELF_MANAGED is used for:
      * - Traffic Director
      * For more information about forwarding rules, refer to Forwarding rule concepts.
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;
+     * .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 95454788;
      * </code>
      *
      * @return This builder for chaining.
@@ -4196,7 +4283,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilter> getMetadataFiltersList() {
       if (metadataFiltersBuilder_ == null) {
@@ -4215,7 +4302,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public int getMetadataFiltersCount() {
       if (metadataFiltersBuilder_ == null) {
@@ -4234,7 +4321,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter getMetadataFilters(int index) {
       if (metadataFiltersBuilder_ == null) {
@@ -4253,7 +4340,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder setMetadataFilters(int index, com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -4278,7 +4365,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder setMetadataFilters(
         int index, com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -4301,7 +4388,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder addMetadataFilters(com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -4326,7 +4413,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder addMetadataFilters(int index, com.google.cloud.compute.v1.MetadataFilter value) {
       if (metadataFiltersBuilder_ == null) {
@@ -4351,7 +4438,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder addMetadataFilters(
         com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -4374,7 +4461,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder addMetadataFilters(
         int index, com.google.cloud.compute.v1.MetadataFilter.Builder builderForValue) {
@@ -4397,7 +4484,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder addAllMetadataFilters(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.MetadataFilter> values) {
@@ -4420,7 +4507,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder clearMetadataFilters() {
       if (metadataFiltersBuilder_ == null) {
@@ -4442,7 +4529,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public Builder removeMetadataFilters(int index) {
       if (metadataFiltersBuilder_ == null) {
@@ -4464,7 +4551,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder getMetadataFiltersBuilder(int index) {
       return getMetadataFiltersFieldBuilder().getBuilder(index);
@@ -4479,7 +4566,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilterOrBuilder getMetadataFiltersOrBuilder(
         int index) {
@@ -4499,7 +4586,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.MetadataFilterOrBuilder>
         getMetadataFiltersOrBuilderList() {
@@ -4519,7 +4606,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder addMetadataFiltersBuilder() {
       return getMetadataFiltersFieldBuilder()
@@ -4535,7 +4622,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public com.google.cloud.compute.v1.MetadataFilter.Builder addMetadataFiltersBuilder(int index) {
       return getMetadataFiltersFieldBuilder()
@@ -4551,7 +4638,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 464725739;</code>
+     * <code>repeated .google.cloud.compute.v1.MetadataFilter metadata_filters = 196290283;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.MetadataFilter.Builder>
         getMetadataFiltersBuilderList() {
@@ -4690,7 +4777,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is not used for external load balancing.
-     * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4713,7 +4801,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is not used for external load balancing.
-     * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4736,7 +4825,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is not used for external load balancing.
-     * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4758,7 +4848,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is not used for external load balancing.
-     * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4776,7 +4867,8 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This field is not used for external load balancing.
-     * For internal load balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used.
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
      * </pre>
      *
      * <code>string network = 232872494;</code>
@@ -4805,7 +4897,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
      *
      * @return The enum numeric value on the wire for networkTier.
      */
@@ -4822,7 +4914,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
      *
      * @param value The enum numeric value on the wire for networkTier to set.
      * @return This builder for chaining.
@@ -4842,7 +4934,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
      *
      * @return The networkTier.
      */
@@ -4864,7 +4956,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
      *
      * @param value The networkTier to set.
      * @return This builder for chaining.
@@ -4887,7 +4979,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>.google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 248962387;</code>
      *
      * @return This builder for chaining.
      */
@@ -4903,12 +4995,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+     * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+     * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
      * Some types of forwarding target have constraints on the acceptable ports:
      * - TargetHttpProxy: 80, 8080
      * - TargetHttpsProxy: 443
-     * - TargetGrpcProxy: Any ports
+     * - TargetGrpcProxy: no constraints
      * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetVpnGateway: 500, 4500
@@ -4933,12 +5025,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+     * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+     * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
      * Some types of forwarding target have constraints on the acceptable ports:
      * - TargetHttpProxy: 80, 8080
      * - TargetHttpsProxy: 443
-     * - TargetGrpcProxy: Any ports
+     * - TargetGrpcProxy: no constraints
      * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetVpnGateway: 500, 4500
@@ -4963,12 +5055,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+     * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+     * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
      * Some types of forwarding target have constraints on the acceptable ports:
      * - TargetHttpProxy: 80, 8080
      * - TargetHttpsProxy: 443
-     * - TargetGrpcProxy: Any ports
+     * - TargetGrpcProxy: no constraints
      * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetVpnGateway: 500, 4500
@@ -4992,12 +5084,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+     * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+     * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
      * Some types of forwarding target have constraints on the acceptable ports:
      * - TargetHttpProxy: 80, 8080
      * - TargetHttpsProxy: 443
-     * - TargetGrpcProxy: Any ports
+     * - TargetGrpcProxy: no constraints
      * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetVpnGateway: 500, 4500
@@ -5017,12 +5109,12 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * When the load balancing scheme is EXTERNAL, INTERNAL_SELF_MANAGED and INTERNAL_MANAGED, you can specify a port_range. Use with a forwarding rule that points to a target proxy or a target pool. Do not use with a forwarding rule that points to a backend service. This field is used along with the target field for TargetHttpProxy, TargetHttpsProxy, TargetSslProxy, TargetTcpProxy, TargetGrpcProxy, TargetVpnGateway, TargetPool, TargetInstance.
-     * Applicable only when IPProtocol is TCP, UDP, or SCTP, only packets addressed to ports in the specified range will be forwarded to target. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
+     * This field can be used only if: * Load balancing scheme is one of EXTERNAL,  INTERNAL_SELF_MANAGED or INTERNAL_MANAGED, and * IPProtocol is one of TCP, UDP, or SCTP.
+     * Packets addressed to ports in the specified range will be forwarded to target or  backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint port ranges.
      * Some types of forwarding target have constraints on the acceptable ports:
      * - TargetHttpProxy: 80, 8080
      * - TargetHttpsProxy: 443
-     * - TargetGrpcProxy: Any ports
+     * - TargetGrpcProxy: no constraints
      * - TargetTcpProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetSslProxy: 25, 43, 110, 143, 195, 443, 465, 587, 700, 993, 995, 1688, 1883, 5222
      * - TargetVpnGateway: 500, 4500
@@ -5057,10 +5149,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5074,10 +5167,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5091,10 +5185,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5109,10 +5204,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5127,10 +5223,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5152,10 +5249,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5176,10 +5274,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5197,10 +5296,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5217,10 +5317,11 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is used along with the backend_service field for internal load balancing.
-     * When the load balancing scheme is INTERNAL, a list of ports can be configured, for example, ['80'], ['8000','9000']. Only packets addressed to these ports are forwarded to the backends configured with the forwarding rule.
-     * If the forwarding rule's loadBalancingScheme is INTERNAL, you can specify ports in one of the following ways:
-     * * A list of up to five ports, which can be non-contiguous * Keyword ALL, which causes the forwarding rule to forward traffic on any port of the forwarding rule's protocol.
+     * The ports field is only supported when the forwarding rule references a backend_service directly. Supported load balancing products are Internal TCP/UDP Load Balancing and Network Load Balancing. Only packets addressed to the specified list of ports are forwarded to backends.
+     * You can only use one of ports and port_range, or allPorts. The three are mutually exclusive.
+     * You can specify a list of up to five ports, which can be non-contiguous.
+     * For Internal TCP/UDP Load Balancing, if you specify allPorts, you should not specify ports.
+     * For more information, see [Port specifications](/load-balancing/docs/forwarding-rule-concepts#port_specifications).
      * </pre>
      *
      * <code>repeated string ports = 106854418;</code>
@@ -5353,7 +5454,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -5375,7 +5476,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -5397,7 +5498,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -5418,7 +5519,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -5435,7 +5536,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -5461,7 +5562,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 417008874;</code>
+     * <code>string service_label = 148573418;</code>
      *
      * @return The serviceLabel.
      */
@@ -5485,7 +5586,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 417008874;</code>
+     * <code>string service_label = 148573418;</code>
      *
      * @return The bytes for serviceLabel.
      */
@@ -5509,7 +5610,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 417008874;</code>
+     * <code>string service_label = 148573418;</code>
      *
      * @param value The serviceLabel to set.
      * @return This builder for chaining.
@@ -5532,7 +5633,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 417008874;</code>
+     * <code>string service_label = 148573418;</code>
      *
      * @return This builder for chaining.
      */
@@ -5551,7 +5652,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_label = 417008874;</code>
+     * <code>string service_label = 148573418;</code>
      *
      * @param value The bytes for serviceLabel to set.
      * @return This builder for chaining.
@@ -5576,7 +5677,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 359880149;</code>
+     * <code>string service_name = 91444693;</code>
      *
      * @return The serviceName.
      */
@@ -5599,7 +5700,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 359880149;</code>
+     * <code>string service_name = 91444693;</code>
      *
      * @return The bytes for serviceName.
      */
@@ -5622,7 +5723,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 359880149;</code>
+     * <code>string service_name = 91444693;</code>
      *
      * @param value The serviceName to set.
      * @return This builder for chaining.
@@ -5644,7 +5745,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 359880149;</code>
+     * <code>string service_name = 91444693;</code>
      *
      * @return This builder for chaining.
      */
@@ -5662,7 +5763,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * This field is only used for internal load balancing.
      * </pre>
      *
-     * <code>string service_name = 359880149;</code>
+     * <code>string service_name = 91444693;</code>
      *
      * @param value The bytes for serviceName to set.
      * @return This builder for chaining.
@@ -5688,7 +5789,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The subnetwork.
      */
@@ -5712,7 +5813,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -5736,7 +5837,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -5759,7 +5860,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return This builder for chaining.
      */
@@ -5778,7 +5879,7 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      * If the network specified is in auto subnet mode, this field is optional. However, if the network is in custom subnet mode, a subnetwork must be specified.
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -5800,6 +5901,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+     * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+     * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -5822,6 +5926,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+     * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+     * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -5844,6 +5951,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+     * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+     * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -5865,6 +5975,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+     * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+     * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -5882,6 +5995,9 @@ public final class ForwardingRule extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules, this target must be in the same region as the forwarding rule. For global forwarding rules, this target must be a global load balancing resource. The forwarded traffic must be of a type appropriate to the target object. For more information, see the "Target" column in [Port specifications](/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications).
+     * For Private Service Connect forwarding rules that forward traffic to Google APIs, provide the name of a supported Google API bundle. Currently, the supported Google API bundles include:
+     * - vpc-sc - GCP APIs that support VPC Service Controls. For more information about which APIs support VPC Service Controls, refer to VPC-SC supported products and limitations.
+     * - all-apis - All GCP APIs. For more information about which APIs are supported with this bundle, refer to Private Google Access-specific domains and VIPs.
      * </pre>
      *
      * <code>string target = 192835985;</code>

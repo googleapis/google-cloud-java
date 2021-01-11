@@ -70,7 +70,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
           case 0:
             done = true;
             break;
-          case -1709731654:
+          case 437751994:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -111,7 +111,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.Builder.class);
   }
 
-  public static final int NODE_TEMPLATE_FIELD_NUMBER = 323154455;
+  public static final int NODE_TEMPLATE_FIELD_NUMBER = 54718999;
   private volatile java.lang.Object nodeTemplate_;
   /**
    *
@@ -120,7 +120,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>string node_template = 54718999;</code>
    *
    * @return The nodeTemplate.
    */
@@ -143,7 +143,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
    * Full or partial URL of the node template resource to be updated for this node group.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>string node_template = 54718999;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -175,7 +175,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNodeTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 54718999, nodeTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -187,7 +187,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
 
     size = 0;
     if (!getNodeTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(54718999, nodeTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -488,7 +488,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @return The nodeTemplate.
      */
@@ -510,7 +510,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -532,7 +532,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -553,7 +553,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @return This builder for chaining.
      */
@@ -570,7 +570,7 @@ public final class NodeGroupsSetNodeTemplateRequest extends com.google.protobuf.
      * Full or partial URL of the node template resource to be updated for this node group.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.

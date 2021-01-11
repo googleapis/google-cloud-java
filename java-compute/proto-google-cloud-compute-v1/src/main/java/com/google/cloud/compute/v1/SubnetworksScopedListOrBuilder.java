@@ -30,7 +30,7 @@ public interface SubnetworksScopedListOrBuilder
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Subnetwork> getSubnetworksList();
   /**
@@ -40,7 +40,7 @@ public interface SubnetworksScopedListOrBuilder
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
    */
   com.google.cloud.compute.v1.Subnetwork getSubnetworks(int index);
   /**
@@ -50,7 +50,7 @@ public interface SubnetworksScopedListOrBuilder
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
    */
   int getSubnetworksCount();
   /**
@@ -60,7 +60,7 @@ public interface SubnetworksScopedListOrBuilder
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.SubnetworkOrBuilder>
       getSubnetworksOrBuilderList();
@@ -71,7 +71,7 @@ public interface SubnetworksScopedListOrBuilder
    * A list of subnetworks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 415853125;</code>
+   * <code>repeated .google.cloud.compute.v1.Subnetwork subnetworks = 147417669;</code>
    */
   com.google.cloud.compute.v1.SubnetworkOrBuilder getSubnetworksOrBuilder(int index);
 

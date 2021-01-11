@@ -79,14 +79,14 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
               cpus_ = s;
               break;
             }
-          case -1049036414:
+          case 1098447234:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               localSsd_ = s;
               break;
             }
-          case -32118774:
+          case 2115364874:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -164,10 +164,10 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
 
-  public static final int LOCAL_SSD_FIELD_NUMBER = 405741360;
+  public static final int LOCAL_SSD_FIELD_NUMBER = 137305904;
   private volatile java.lang.Object localSsd_;
   /**
-   * <code>string local_ssd = 405741360;</code>
+   * <code>string local_ssd = 137305904;</code>
    *
    * @return The localSsd.
    */
@@ -184,7 +184,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string local_ssd = 405741360;</code>
+   * <code>string local_ssd = 137305904;</code>
    *
    * @return The bytes for localSsd.
    */
@@ -201,10 +201,10 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
 
-  public static final int MEMORY_FIELD_NUMBER = 532856065;
+  public static final int MEMORY_FIELD_NUMBER = 264420609;
   private volatile java.lang.Object memory_;
   /**
-   * <code>string memory = 532856065;</code>
+   * <code>string memory = 264420609;</code>
    *
    * @return The memory.
    */
@@ -221,7 +221,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
     }
   }
   /**
-   * <code>string memory = 532856065;</code>
+   * <code>string memory = 264420609;</code>
    *
    * @return The bytes for memory.
    */
@@ -256,10 +256,10 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3060683, cpus_);
     }
     if (!getLocalSsdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 405741360, localSsd_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 137305904, localSsd_);
     }
     if (!getMemoryBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 532856065, memory_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264420609, memory_);
     }
     unknownFields.writeTo(output);
   }
@@ -274,10 +274,10 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3060683, cpus_);
     }
     if (!getLocalSsdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(405741360, localSsd_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137305904, localSsd_);
     }
     if (!getMemoryBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(532856065, memory_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(264420609, memory_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -666,7 +666,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object localSsd_ = "";
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>string local_ssd = 137305904;</code>
      *
      * @return The localSsd.
      */
@@ -682,7 +682,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>string local_ssd = 137305904;</code>
      *
      * @return The bytes for localSsd.
      */
@@ -698,7 +698,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>string local_ssd = 137305904;</code>
      *
      * @param value The localSsd to set.
      * @return This builder for chaining.
@@ -713,7 +713,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>string local_ssd = 137305904;</code>
      *
      * @return This builder for chaining.
      */
@@ -724,7 +724,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string local_ssd = 405741360;</code>
+     * <code>string local_ssd = 137305904;</code>
      *
      * @param value The bytes for localSsd to set.
      * @return This builder for chaining.
@@ -742,7 +742,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
 
     private java.lang.Object memory_ = "";
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>string memory = 264420609;</code>
      *
      * @return The memory.
      */
@@ -758,7 +758,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>string memory = 264420609;</code>
      *
      * @return The bytes for memory.
      */
@@ -774,7 +774,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       }
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>string memory = 264420609;</code>
      *
      * @param value The memory to set.
      * @return This builder for chaining.
@@ -789,7 +789,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>string memory = 264420609;</code>
      *
      * @return This builder for chaining.
      */
@@ -800,7 +800,7 @@ public final class NodeTemplateNodeTypeFlexibility extends com.google.protobuf.G
       return this;
     }
     /**
-     * <code>string memory = 532856065;</code>
+     * <code>string memory = 264420609;</code>
      *
      * @param value The bytes for memory to set.
      * @return This builder for chaining.

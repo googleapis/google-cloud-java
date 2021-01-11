@@ -96,14 +96,7 @@ public final class RemoveInstancesInstanceGroupRequest
               instanceGroup_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1167112758:
+          case 980370890:
             {
               com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest.Builder subBuilder =
                   null;
@@ -119,6 +112,13 @@ public final class RemoveInstancesInstanceGroupRequest
                 instanceGroupsRemoveInstancesRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -205,12 +205,18 @@ public final class RemoveInstancesInstanceGroupRequest
   }
 
   public static final int INSTANCE_GROUPS_REMOVE_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER =
-      390981817;
+      122546361;
   private com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest
       instanceGroupsRemoveInstancesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupsRemoveInstancesRequestResource field is set.
@@ -220,8 +226,14 @@ public final class RemoveInstancesInstanceGroupRequest
     return instanceGroupsRemoveInstancesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupsRemoveInstancesRequestResource.
@@ -234,8 +246,14 @@ public final class RemoveInstancesInstanceGroupRequest
         : instanceGroupsRemoveInstancesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+   * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -418,11 +436,11 @@ public final class RemoveInstancesInstanceGroupRequest
     if (!getInstanceGroupBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 81095253, instanceGroup_);
     }
+    if (instanceGroupsRemoveInstancesRequestResource_ != null) {
+      output.writeMessage(122546361, getInstanceGroupsRemoveInstancesRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (instanceGroupsRemoveInstancesRequestResource_ != null) {
-      output.writeMessage(390981817, getInstanceGroupsRemoveInstancesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -442,13 +460,13 @@ public final class RemoveInstancesInstanceGroupRequest
     if (!getInstanceGroupBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(81095253, instanceGroup_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (instanceGroupsRemoveInstancesRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              390981817, getInstanceGroupsRemoveInstancesRequestResource());
+              122546361, getInstanceGroupsRemoveInstancesRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -915,8 +933,14 @@ public final class RemoveInstancesInstanceGroupRequest
             com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequestOrBuilder>
         instanceGroupsRemoveInstancesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupsRemoveInstancesRequestResource field is set.
@@ -926,8 +950,14 @@ public final class RemoveInstancesInstanceGroupRequest
           || instanceGroupsRemoveInstancesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupsRemoveInstancesRequestResource.
@@ -943,8 +973,14 @@ public final class RemoveInstancesInstanceGroupRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupsRemoveInstancesRequestResource(
@@ -962,8 +998,14 @@ public final class RemoveInstancesInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupsRemoveInstancesRequestResource(
@@ -978,8 +1020,14 @@ public final class RemoveInstancesInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupsRemoveInstancesRequestResource(
@@ -1002,8 +1050,14 @@ public final class RemoveInstancesInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupsRemoveInstancesRequestResource() {
@@ -1018,8 +1072,14 @@ public final class RemoveInstancesInstanceGroupRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest.Builder
@@ -1029,8 +1089,14 @@ public final class RemoveInstancesInstanceGroupRequest
       return getInstanceGroupsRemoveInstancesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequestOrBuilder
@@ -1044,8 +1110,14 @@ public final class RemoveInstancesInstanceGroupRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 390981817;
+     * .google.cloud.compute.v1.InstanceGroupsRemoveInstancesRequest instance_groups_remove_instances_request_resource = 122546361 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -104,11 +104,23 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
               name_ = s;
               break;
             }
+          case 140721008:
+            {
+              proxyBind_ = input.readBool();
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               creationTimestamp_ = s;
+              break;
+            }
+          case 788681826:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              urlMap_ = s;
               break;
             }
           case 1111570338:
@@ -118,32 +130,25 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
               region_ = s;
               break;
             }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
-              break;
-            }
-          case -1358801822:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              urlMap_ = s;
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
+              break;
+            }
+          case 1877428002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fingerprint_ = s;
               break;
             }
           default:
@@ -229,7 +234,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -238,7 +243,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -261,7 +266,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -474,6 +479,26 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int PROXY_BIND_FIELD_NUMBER = 17590126;
+  private boolean proxyBind_;
+  /**
+   *
+   *
+   * <pre>
+   * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+   * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+   * The default is false.
+   * </pre>
+   *
+   * <code>bool proxy_bind = 17590126;</code>
+   *
+   * @return The proxyBind.
+   */
+  @java.lang.Override
+  public boolean getProxyBind() {
+    return proxyBind_;
+  }
+
   public static final int REGION_FIELD_NUMBER = 138946292;
   private volatile java.lang.Object region_;
   /**
@@ -523,7 +548,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -532,7 +557,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -555,7 +580,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -572,7 +597,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -581,7 +606,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The urlMap.
    */
@@ -604,7 +629,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
    * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
    * </pre>
    *
-   * <code>string url_map = 367020684;</code>
+   * <code>string url_map = 98585228;</code>
    *
    * @return The bytes for urlMap.
    */
@@ -644,23 +669,26 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (proxyBind_ != false) {
+      output.writeBool(17590126, proxyBind_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (!getUrlMapBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     unknownFields.writeTo(output);
   }
@@ -680,24 +708,27 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (proxyBind_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17590126, proxyBind_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -721,6 +752,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     if (!getId().equals(other.getId())) return false;
     if (!getKind().equals(other.getKind())) return false;
     if (!getName().equals(other.getName())) return false;
+    if (getProxyBind() != other.getProxyBind()) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (!getSelfLink().equals(other.getSelfLink())) return false;
     if (!getUrlMap().equals(other.getUrlMap())) return false;
@@ -747,6 +779,8 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
     hash = (53 * hash) + getKind().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PROXY_BIND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProxyBind());
     hash = (37 * hash) + REGION_FIELD_NUMBER;
     hash = (53 * hash) + getRegion().hashCode();
     hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -915,6 +949,8 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
 
       name_ = "";
 
+      proxyBind_ = false;
+
       region_ = "";
 
       selfLink_ = "";
@@ -954,6 +990,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       result.id_ = id_;
       result.kind_ = kind_;
       result.name_ = name_;
+      result.proxyBind_ = proxyBind_;
       result.region_ = region_;
       result.selfLink_ = selfLink_;
       result.urlMap_ = urlMap_;
@@ -1029,6 +1066,9 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getProxyBind() != false) {
+        setProxyBind(other.getProxyBind());
       }
       if (!other.getRegion().isEmpty()) {
         region_ = other.region_;
@@ -1185,7 +1225,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1207,7 +1247,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1229,7 +1269,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1250,7 +1290,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1267,7 +1307,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1707,6 +1747,64 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private boolean proxyBind_;
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 17590126;</code>
+     *
+     * @return The proxyBind.
+     */
+    @java.lang.Override
+    public boolean getProxyBind() {
+      return proxyBind_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 17590126;</code>
+     *
+     * @param value The proxyBind to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProxyBind(boolean value) {
+
+      proxyBind_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED.
+     * When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them.
+     * The default is false.
+     * </pre>
+     *
+     * <code>bool proxy_bind = 17590126;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProxyBind() {
+
+      proxyBind_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object region_ = "";
     /**
      *
@@ -1821,7 +1919,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1843,7 +1941,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1865,7 +1963,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1886,7 +1984,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1903,7 +2001,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1927,7 +2025,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The urlMap.
      */
@@ -1949,7 +2047,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return The bytes for urlMap.
      */
@@ -1971,7 +2069,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -1992,7 +2090,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @return This builder for chaining.
      */
@@ -2009,7 +2107,7 @@ public final class TargetHttpProxy extends com.google.protobuf.GeneratedMessageV
      * URL to the UrlMap resource that defines the mapping from URL to the BackendService.
      * </pre>
      *
-     * <code>string url_map = 367020684;</code>
+     * <code>string url_map = 98585228;</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

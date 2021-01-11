@@ -206,8 +206,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
   public static final int INSTANCE_GROUP_MANAGER_RESOURCE_FIELD_NUMBER = 261063946;
   private com.google.cloud.compute.v1.InstanceGroupManager instanceGroupManagerResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagerResource field is set.
@@ -217,8 +223,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
     return instanceGroupManagerResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagerResource.
@@ -230,8 +242,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
         : instanceGroupManagerResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -911,8 +929,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.InstanceGroupManagerOrBuilder>
         instanceGroupManagerResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagerResource field is set.
@@ -921,8 +945,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return instanceGroupManagerResourceBuilder_ != null || instanceGroupManagerResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagerResource.
@@ -937,8 +967,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagerResource(
@@ -956,8 +992,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagerResource(
@@ -972,8 +1014,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagerResource(
@@ -996,8 +1044,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagerResource() {
@@ -1012,8 +1066,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManager.Builder
@@ -1023,8 +1083,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       return getInstanceGroupManagerResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerOrBuilder
@@ -1038,8 +1104,14 @@ public final class PatchInstanceGroupManagerRequest extends com.google.protobuf.
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+     * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

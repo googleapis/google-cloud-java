@@ -82,6 +82,13 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
               requestId_ = s;
               break;
             }
+          case 308084818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              backendService_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -89,14 +96,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
               project_ = s;
               break;
             }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              backendService_ = s;
-              break;
-            }
-          case -287456422:
+          case 1860027226:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -137,7 +137,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
             com.google.cloud.compute.v1.DeleteSignedUrlKeyBackendServiceRequest.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -146,7 +146,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -169,7 +169,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -186,7 +186,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
     }
   }
 
-  public static final int KEY_NAME_FIELD_NUMBER = 500938859;
+  public static final int KEY_NAME_FIELD_NUMBER = 232503403;
   private volatile java.lang.Object keyName_;
   /**
    *
@@ -195,7 +195,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The keyName.
    */
@@ -218,7 +218,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for keyName.
    */
@@ -354,14 +354,14 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getBackendServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
-    }
     if (!getKeyNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 500938859, keyName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 232503403, keyName_);
     }
     unknownFields.writeTo(output);
   }
@@ -375,14 +375,14 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getBackendServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
-    }
     if (!getKeyNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(500938859, keyName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232503403, keyName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -720,7 +720,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The backendService.
      */
@@ -742,7 +742,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for backendService.
      */
@@ -764,7 +764,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -785,7 +785,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -802,7 +802,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -826,7 +826,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The keyName.
      */
@@ -848,7 +848,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for keyName.
      */
@@ -870,7 +870,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The keyName to set.
      * @return This builder for chaining.
@@ -891,7 +891,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -908,7 +908,7 @@ public final class DeleteSignedUrlKeyBackendServiceRequest
      * The name of the Signed URL Key to delete.
      * </pre>
      *
-     * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for keyName to set.
      * @return This builder for chaining.

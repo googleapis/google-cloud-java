@@ -174,7 +174,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param nodeGroup Name of the NodeGroup resource.
-   * @param nodeGroupsAddNodesRequestResource
+   * @param nodeGroupsAddNodesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addNodes(
@@ -201,10 +201,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddNodesNodeGroupRequest request = AddNodesNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupsAddNodesRequestResource(nodeGroupsAddNodesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -228,10 +230,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroupsAddNodesRequest nodeGroupsAddNodesRequestResource = NodeGroupsAddNodesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddNodesNodeGroupRequest request = AddNodesNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupsAddNodesRequestResource(nodeGroupsAddNodesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -457,7 +461,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param nodeGroup Name of the NodeGroup resource whose nodes will be deleted.
-   * @param nodeGroupsDeleteNodesRequestResource
+   * @param nodeGroupsDeleteNodesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deleteNodes(
@@ -484,10 +488,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DeleteNodesNodeGroupRequest request = DeleteNodesNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupsDeleteNodesRequestResource(nodeGroupsDeleteNodesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -511,10 +517,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroupsDeleteNodesRequest nodeGroupsDeleteNodesRequestResource = NodeGroupsDeleteNodesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   DeleteNodesNodeGroupRequest request = DeleteNodesNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupsDeleteNodesRequestResource(nodeGroupsDeleteNodesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -719,7 +727,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param initialNodeCount Initial count of nodes in the node group.
-   * @param nodeGroupResource
+   * @param nodeGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -743,10 +751,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   int initialNodeCount = 0;
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertNodeGroupRequest request = InsertNodeGroupRequest.newBuilder()
    *     .setInitialNodeCount(initialNodeCount)
+   *     .setNodeGroupResource(nodeGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -770,10 +780,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   int initialNodeCount = 0;
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertNodeGroupRequest request = InsertNodeGroupRequest.newBuilder()
    *     .setInitialNodeCount(initialNodeCount)
+   *     .setNodeGroupResource(nodeGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1047,7 +1059,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param nodeGroup Name of the NodeGroup resource to update.
-   * @param nodeGroupResource
+   * @param nodeGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -1071,10 +1083,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchNodeGroupRequest request = PatchNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupResource(nodeGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1098,10 +1112,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroup nodeGroupResource = NodeGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchNodeGroupRequest request = PatchNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupResource(nodeGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1134,7 +1150,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param zoneSetPolicyRequestResource
+   * @param zoneSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -1163,10 +1179,12 @@ public class NodeGroupsClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyNodeGroupRequest request = SetIamPolicyNodeGroupRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = nodeGroupsClient.setIamPolicy(request);
    * }
@@ -1190,10 +1208,12 @@ public class NodeGroupsClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyNodeGroupRequest request = SetIamPolicyNodeGroupRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = nodeGroupsClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -1224,7 +1244,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param nodeGroup Name of the NodeGroup resource to update.
-   * @param nodeGroupsSetNodeTemplateRequestResource
+   * @param nodeGroupsSetNodeTemplateRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setNodeTemplate(
@@ -1251,10 +1271,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetNodeTemplateNodeGroupRequest request = SetNodeTemplateNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupsSetNodeTemplateRequestResource(nodeGroupsSetNodeTemplateRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1278,10 +1300,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String nodeGroup = "";
+   *   NodeGroupsSetNodeTemplateRequest nodeGroupsSetNodeTemplateRequestResource = NodeGroupsSetNodeTemplateRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetNodeTemplateNodeGroupRequest request = SetNodeTemplateNodeGroupRequest.newBuilder()
    *     .setNodeGroup(nodeGroup)
+   *     .setNodeGroupsSetNodeTemplateRequestResource(nodeGroupsSetNodeTemplateRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1314,7 +1338,7 @@ public class NodeGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -1342,10 +1366,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsNodeGroupRequest request = TestIamPermissionsNodeGroupRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   TestPermissionsResponse response = nodeGroupsClient.testIamPermissions(request);
@@ -1370,10 +1396,12 @@ public class NodeGroupsClient implements BackgroundResource {
    * try (NodeGroupsClient nodeGroupsClient = NodeGroupsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsNodeGroupRequest request = TestIamPermissionsNodeGroupRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = nodeGroupsClient.testIamPermissionsCallable().futureCall(request);

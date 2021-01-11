@@ -212,8 +212,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest
       instanceGroupManagersCreateInstancesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersCreateInstancesRequestResource field is set.
@@ -223,8 +229,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
     return instanceGroupManagersCreateInstancesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersCreateInstancesRequestResource.
@@ -238,8 +250,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
         : instanceGroupManagersCreateInstancesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -931,8 +949,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequestOrBuilder>
         instanceGroupManagersCreateInstancesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersCreateInstancesRequestResource field is set.
@@ -942,8 +966,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
           || instanceGroupManagersCreateInstancesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersCreateInstancesRequestResource.
@@ -960,8 +990,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersCreateInstancesRequestResource(
@@ -979,8 +1015,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersCreateInstancesRequestResource(
@@ -997,8 +1039,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersCreateInstancesRequestResource(
@@ -1021,8 +1069,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersCreateInstancesRequestResource() {
@@ -1037,8 +1091,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest.Builder
@@ -1048,8 +1108,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       return getInstanceGroupManagersCreateInstancesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequestOrBuilder
@@ -1064,8 +1130,14 @@ public final class CreateInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+     * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

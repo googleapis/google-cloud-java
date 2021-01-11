@@ -448,7 +448,7 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource
+   * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String zone, Autoscaler autoscalerResource) {
@@ -469,9 +469,11 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertAutoscalerRequest request = InsertAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -494,9 +496,11 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertAutoscalerRequest request = InsertAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -640,7 +644,7 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource
+   * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(String project, String zone, Autoscaler autoscalerResource) {
@@ -662,9 +666,11 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchAutoscalerRequest request = PatchAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -688,9 +694,11 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   PatchAutoscalerRequest request = PatchAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -721,7 +729,7 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone Name of the zone for this request.
-   * @param autoscalerResource
+   * @param autoscalerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(String project, String zone, Autoscaler autoscalerResource) {
@@ -742,9 +750,11 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdateAutoscalerRequest request = UpdateAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -767,9 +777,11 @@ public class AutoscalersClient implements BackgroundResource {
    *
    * <pre><code>
    * try (AutoscalersClient autoscalersClient = AutoscalersClient.create()) {
+   *   Autoscaler autoscalerResource = Autoscaler.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdateAutoscalerRequest request = UpdateAutoscalerRequest.newBuilder()
+   *     .setAutoscalerResource(autoscalerResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();

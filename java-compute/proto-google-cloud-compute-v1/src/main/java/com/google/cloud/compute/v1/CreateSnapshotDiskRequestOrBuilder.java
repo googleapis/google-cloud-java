@@ -55,7 +55,7 @@ public interface CreateSnapshotDiskRequestOrBuilder
    * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
    * </pre>
    *
-   * <code>bool guest_flush = 385550813;</code>
+   * <code>bool guest_flush = 117115357;</code>
    *
    * @return The guestFlush.
    */
@@ -116,18 +116,44 @@ public interface CreateSnapshotDiskRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the snapshotResource field is set.
    */
   boolean hasSnapshotResource();
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The snapshotResource.
    */
   com.google.cloud.compute.v1.Snapshot getSnapshotResource();
-  /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder();
 
   /**

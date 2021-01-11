@@ -103,17 +103,43 @@ public interface InsertVpnGatewayRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.VpnGateway vpn_gateway_resource = 182688660;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGateway vpn_gateway_resource = 182688660 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the vpnGatewayResource field is set.
    */
   boolean hasVpnGatewayResource();
   /**
-   * <code>.google.cloud.compute.v1.VpnGateway vpn_gateway_resource = 182688660;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGateway vpn_gateway_resource = 182688660 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The vpnGatewayResource.
    */
   com.google.cloud.compute.v1.VpnGateway getVpnGatewayResource();
-  /** <code>.google.cloud.compute.v1.VpnGateway vpn_gateway_resource = 182688660;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnGateway vpn_gateway_resource = 182688660 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.VpnGatewayOrBuilder getVpnGatewayResourceOrBuilder();
 }

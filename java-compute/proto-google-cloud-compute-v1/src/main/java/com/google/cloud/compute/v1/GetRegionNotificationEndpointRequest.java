@@ -74,6 +74,13 @@ public final class GetRegionNotificationEndpointRequest
           case 0:
             done = true;
             break;
+          case 866972490:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              notificationEndpoint_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -86,13 +93,6 @@ public final class GetRegionNotificationEndpointRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1280511158:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              notificationEndpoint_ = s;
               break;
             }
           default:
@@ -129,7 +129,7 @@ public final class GetRegionNotificationEndpointRequest
             com.google.cloud.compute.v1.GetRegionNotificationEndpointRequest.Builder.class);
   }
 
-  public static final int NOTIFICATION_ENDPOINT_FIELD_NUMBER = 376807017;
+  public static final int NOTIFICATION_ENDPOINT_FIELD_NUMBER = 108371561;
   private volatile java.lang.Object notificationEndpoint_;
   /**
    *
@@ -138,7 +138,7 @@ public final class GetRegionNotificationEndpointRequest
    * Name of the NotificationEndpoint resource to return.
    * </pre>
    *
-   * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The notificationEndpoint.
@@ -162,7 +162,7 @@ public final class GetRegionNotificationEndpointRequest
    * Name of the NotificationEndpoint resource to return.
    * </pre>
    *
-   * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for notificationEndpoint.
@@ -292,14 +292,14 @@ public final class GetRegionNotificationEndpointRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getNotificationEndpointBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 108371561, notificationEndpoint_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNotificationEndpointBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 376807017, notificationEndpoint_);
     }
     unknownFields.writeTo(output);
   }
@@ -310,16 +310,16 @@ public final class GetRegionNotificationEndpointRequest
     if (size != -1) return size;
 
     size = 0;
+    if (!getNotificationEndpointBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              108371561, notificationEndpoint_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNotificationEndpointBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              376807017, notificationEndpoint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -643,7 +643,7 @@ public final class GetRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to return.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The notificationEndpoint.
@@ -666,7 +666,7 @@ public final class GetRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to return.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for notificationEndpoint.
@@ -689,7 +689,7 @@ public final class GetRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to return.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The notificationEndpoint to set.
@@ -711,7 +711,7 @@ public final class GetRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to return.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -729,7 +729,7 @@ public final class GetRegionNotificationEndpointRequest
      * Name of the NotificationEndpoint resource to return.
      * </pre>
      *
-     * <code>string notification_endpoint = 376807017 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string notification_endpoint = 108371561 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for notificationEndpoint to set.

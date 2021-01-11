@@ -173,7 +173,7 @@ public class BackendBucketsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to which the Signed URL Key should be
    *     added. The name should conform to RFC1035.
-   * @param signedUrlKeyResource
+   * @param signedUrlKeyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addSignedUrlKey(
@@ -197,9 +197,11 @@ public class BackendBucketsClient implements BackgroundResource {
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String backendBucket = "";
    *   String project = "";
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
    *   AddSignedUrlKeyBackendBucketRequest request = AddSignedUrlKeyBackendBucketRequest.newBuilder()
    *     .setBackendBucket(backendBucket)
    *     .setProject(project)
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
    *     .build();
    *   Operation response = backendBucketsClient.addSignedUrlKey(request);
    * }
@@ -222,9 +224,11 @@ public class BackendBucketsClient implements BackgroundResource {
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String backendBucket = "";
    *   String project = "";
+   *   SignedUrlKey signedUrlKeyResource = SignedUrlKey.newBuilder().build();
    *   AddSignedUrlKeyBackendBucketRequest request = AddSignedUrlKeyBackendBucketRequest.newBuilder()
    *     .setBackendBucket(backendBucket)
    *     .setProject(project)
+   *     .setSignedUrlKeyResource(signedUrlKeyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.addSignedUrlKeyCallable().futureCall(request);
    *   // Do something
@@ -493,7 +497,7 @@ public class BackendBucketsClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param backendBucketResource
+   * @param backendBucketResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, BackendBucket backendBucketResource) {
@@ -514,8 +518,10 @@ public class BackendBucketsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   String project = "";
    *   InsertBackendBucketRequest request = InsertBackendBucketRequest.newBuilder()
+   *     .setBackendBucketResource(backendBucketResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = backendBucketsClient.insert(request);
@@ -538,8 +544,10 @@ public class BackendBucketsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
+   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   String project = "";
    *   InsertBackendBucketRequest request = InsertBackendBucketRequest.newBuilder()
+   *     .setBackendBucketResource(backendBucketResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.insertCallable().futureCall(request);
@@ -674,7 +682,7 @@ public class BackendBucketsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to patch.
-   * @param backendBucketResource
+   * @param backendBucketResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -698,9 +706,11 @@ public class BackendBucketsClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String backendBucket = "";
+   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   String project = "";
    *   PatchBackendBucketRequest request = PatchBackendBucketRequest.newBuilder()
    *     .setBackendBucket(backendBucket)
+   *     .setBackendBucketResource(backendBucketResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = backendBucketsClient.patch(request);
@@ -724,9 +734,11 @@ public class BackendBucketsClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String backendBucket = "";
+   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   String project = "";
    *   PatchBackendBucketRequest request = PatchBackendBucketRequest.newBuilder()
    *     .setBackendBucket(backendBucket)
+   *     .setBackendBucketResource(backendBucketResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.patchCallable().futureCall(request);
@@ -756,7 +768,7 @@ public class BackendBucketsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param backendBucket Name of the BackendBucket resource to update.
-   * @param backendBucketResource
+   * @param backendBucketResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -779,9 +791,11 @@ public class BackendBucketsClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String backendBucket = "";
+   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   String project = "";
    *   UpdateBackendBucketRequest request = UpdateBackendBucketRequest.newBuilder()
    *     .setBackendBucket(backendBucket)
+   *     .setBackendBucketResource(backendBucketResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = backendBucketsClient.update(request);
@@ -804,9 +818,11 @@ public class BackendBucketsClient implements BackgroundResource {
    * <pre><code>
    * try (BackendBucketsClient backendBucketsClient = BackendBucketsClient.create()) {
    *   String backendBucket = "";
+   *   BackendBucket backendBucketResource = BackendBucket.newBuilder().build();
    *   String project = "";
    *   UpdateBackendBucketRequest request = UpdateBackendBucketRequest.newBuilder()
    *     .setBackendBucket(backendBucket)
+   *     .setBackendBucketResource(backendBucketResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = backendBucketsClient.updateCallable().futureCall(request);

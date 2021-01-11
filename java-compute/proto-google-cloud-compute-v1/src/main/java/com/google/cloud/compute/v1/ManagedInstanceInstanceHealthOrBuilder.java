@@ -31,7 +31,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
    * </code>
    *
    * @return The enum numeric value on the wire for detailedHealthState.
@@ -45,7 +45,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;
+   * .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 242034717;
    * </code>
    *
    * @return The detailedHealthState.
@@ -60,7 +60,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The healthCheck.
    */
@@ -72,7 +72,7 @@ public interface ManagedInstanceInstanceHealthOrBuilder
    * [Output Only] The URL for the health check that verifies whether the instance is healthy.
    * </pre>
    *
-   * <code>string health_check = 308876645;</code>
+   * <code>string health_check = 40441189;</code>
    *
    * @return The bytes for healthCheck.
    */

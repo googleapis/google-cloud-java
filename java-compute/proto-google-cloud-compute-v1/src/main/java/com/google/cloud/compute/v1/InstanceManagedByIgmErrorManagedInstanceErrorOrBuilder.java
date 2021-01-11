@@ -55,7 +55,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>string message = 149618695;</code>
    *
    * @return The message.
    */
@@ -67,7 +67,7 @@ public interface InstanceManagedByIgmErrorManagedInstanceErrorOrBuilder
    * [Output Only] Error message.
    * </pre>
    *
-   * <code>string message = 418054151;</code>
+   * <code>string message = 149618695;</code>
    *
    * @return The bytes for message.
    */

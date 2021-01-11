@@ -72,14 +72,14 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
           case 0:
             done = true;
             break;
-          case -1719323064:
+          case 428160584:
             {
               int rawValue = input.readEnum();
 
               onSourceDiskDelete_ = rawValue;
               break;
             }
-          case -1700591464:
+          case 446892184:
             {
               maxRetentionDays_ = input.readInt32();
               break;
@@ -140,8 +140,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * <code>UNDEFINED_ON_SOURCE_DISK_DELETE = 0;</code>
      */
     UNDEFINED_ON_SOURCE_DISK_DELETE(0),
-    /** <code>APPLY_RETENTION_POLICY = 535071332;</code> */
-    APPLY_RETENTION_POLICY(535071332),
+    /** <code>APPLY_RETENTION_POLICY = 266635876;</code> */
+    APPLY_RETENTION_POLICY(266635876),
     /** <code>KEEP_AUTO_SNAPSHOTS = 258925689;</code> */
     KEEP_AUTO_SNAPSHOTS(258925689),
     /** <code>UNSPECIFIED_ON_SOURCE_DISK_DELETE = 239140769;</code> */
@@ -159,8 +159,8 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * <code>UNDEFINED_ON_SOURCE_DISK_DELETE = 0;</code>
      */
     public static final int UNDEFINED_ON_SOURCE_DISK_DELETE_VALUE = 0;
-    /** <code>APPLY_RETENTION_POLICY = 535071332;</code> */
-    public static final int APPLY_RETENTION_POLICY_VALUE = 535071332;
+    /** <code>APPLY_RETENTION_POLICY = 266635876;</code> */
+    public static final int APPLY_RETENTION_POLICY_VALUE = 266635876;
     /** <code>KEEP_AUTO_SNAPSHOTS = 258925689;</code> */
     public static final int KEEP_AUTO_SNAPSHOTS_VALUE = 258925689;
     /** <code>UNSPECIFIED_ON_SOURCE_DISK_DELETE = 239140769;</code> */
@@ -192,7 +192,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
       switch (value) {
         case 0:
           return UNDEFINED_ON_SOURCE_DISK_DELETE;
-        case 535071332:
+        case 266635876:
           return APPLY_RETENTION_POLICY;
         case 258925689:
           return KEEP_AUTO_SNAPSHOTS;
@@ -257,7 +257,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete)
   }
 
-  public static final int MAX_RETENTION_DAYS_FIELD_NUMBER = 324296979;
+  public static final int MAX_RETENTION_DAYS_FIELD_NUMBER = 55861523;
   private int maxRetentionDays_;
   /**
    *
@@ -266,7 +266,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    * Maximum age of the snapshot that is allowed to be kept.
    * </pre>
    *
-   * <code>int32 max_retention_days = 324296979;</code>
+   * <code>int32 max_retention_days = 55861523;</code>
    *
    * @return The maxRetentionDays.
    */
@@ -275,7 +275,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
     return maxRetentionDays_;
   }
 
-  public static final int ON_SOURCE_DISK_DELETE_FIELD_NUMBER = 321955529;
+  public static final int ON_SOURCE_DISK_DELETE_FIELD_NUMBER = 53520073;
   private int onSourceDiskDelete_;
   /**
    *
@@ -285,7 +285,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
    * </code>
    *
    * @return The enum numeric value on the wire for onSourceDiskDelete.
@@ -302,7 +302,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
    * </code>
    *
    * @return The onSourceDiskDelete.
@@ -341,10 +341,10 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
             .OnSourceDiskDelete.UNDEFINED_ON_SOURCE_DISK_DELETE
             .getNumber()) {
-      output.writeEnum(321955529, onSourceDiskDelete_);
+      output.writeEnum(53520073, onSourceDiskDelete_);
     }
     if (maxRetentionDays_ != 0) {
-      output.writeInt32(324296979, maxRetentionDays_);
+      output.writeInt32(55861523, maxRetentionDays_);
     }
     unknownFields.writeTo(output);
   }
@@ -359,10 +359,10 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
         != com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy
             .OnSourceDiskDelete.UNDEFINED_ON_SOURCE_DISK_DELETE
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(321955529, onSourceDiskDelete_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(53520073, onSourceDiskDelete_);
     }
     if (maxRetentionDays_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(324296979, maxRetentionDays_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(55861523, maxRetentionDays_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -693,7 +693,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * Maximum age of the snapshot that is allowed to be kept.
      * </pre>
      *
-     * <code>int32 max_retention_days = 324296979;</code>
+     * <code>int32 max_retention_days = 55861523;</code>
      *
      * @return The maxRetentionDays.
      */
@@ -708,7 +708,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * Maximum age of the snapshot that is allowed to be kept.
      * </pre>
      *
-     * <code>int32 max_retention_days = 324296979;</code>
+     * <code>int32 max_retention_days = 55861523;</code>
      *
      * @param value The maxRetentionDays to set.
      * @return This builder for chaining.
@@ -726,7 +726,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * Maximum age of the snapshot that is allowed to be kept.
      * </pre>
      *
-     * <code>int32 max_retention_days = 324296979;</code>
+     * <code>int32 max_retention_days = 55861523;</code>
      *
      * @return This builder for chaining.
      */
@@ -746,7 +746,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
      * </code>
      *
      * @return The enum numeric value on the wire for onSourceDiskDelete.
@@ -763,7 +763,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
      * </code>
      *
      * @param value The enum numeric value on the wire for onSourceDiskDelete to set.
@@ -783,7 +783,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
      * </code>
      *
      * @return The onSourceDiskDelete.
@@ -811,7 +811,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
      * </code>
      *
      * @param value The onSourceDiskDelete to set.
@@ -837,7 +837,7 @@ public final class ResourcePolicySnapshotSchedulePolicyRetentionPolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 53520073;
      * </code>
      *
      * @return This builder for chaining.

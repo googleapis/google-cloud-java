@@ -73,7 +73,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
           case 0:
             done = true;
             break;
-          case -84847286:
+          case 2062636362:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 perInstanceConfigs_ =
@@ -123,7 +123,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
                 .class);
   }
 
-  public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 526265001;
+  public static final int PER_INSTANCE_CONFIGS_FIELD_NUMBER = 257829545;
   private java.util.List<com.google.cloud.compute.v1.PerInstanceConfig> perInstanceConfigs_;
   /**
    *
@@ -132,7 +132,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   @java.lang.Override
@@ -146,7 +146,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   @java.lang.Override
@@ -161,7 +161,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   @java.lang.Override
@@ -175,7 +175,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   @java.lang.Override
@@ -189,7 +189,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
    * The list of per-instance configs to insert or patch on this managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+   * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
    * </code>
    */
   @java.lang.Override
@@ -213,7 +213,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < perInstanceConfigs_.size(); i++) {
-      output.writeMessage(526265001, perInstanceConfigs_.get(i));
+      output.writeMessage(257829545, perInstanceConfigs_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -227,7 +227,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
     for (int i = 0; i < perInstanceConfigs_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              526265001, perInstanceConfigs_.get(i));
+              257829545, perInstanceConfigs_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -606,7 +606,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig>
@@ -624,7 +624,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public int getPerInstanceConfigsCount() {
@@ -641,7 +641,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.PerInstanceConfig getPerInstanceConfigs(int index) {
@@ -658,7 +658,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -682,7 +682,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder setPerInstanceConfigs(
@@ -703,7 +703,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder addPerInstanceConfigs(com.google.cloud.compute.v1.PerInstanceConfig value) {
@@ -726,7 +726,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder addPerInstanceConfigs(
@@ -750,7 +750,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder addPerInstanceConfigs(
@@ -771,7 +771,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder addPerInstanceConfigs(
@@ -792,7 +792,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder addAllPerInstanceConfigs(
@@ -813,7 +813,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder clearPerInstanceConfigs() {
@@ -833,7 +833,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public Builder removePerInstanceConfigs(int index) {
@@ -853,7 +853,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.PerInstanceConfig.Builder getPerInstanceConfigsBuilder(
@@ -867,7 +867,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.PerInstanceConfigOrBuilder getPerInstanceConfigsOrBuilder(
@@ -885,7 +885,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.PerInstanceConfigOrBuilder>
@@ -903,7 +903,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.PerInstanceConfig.Builder addPerInstanceConfigsBuilder() {
@@ -917,7 +917,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public com.google.cloud.compute.v1.PerInstanceConfig.Builder addPerInstanceConfigsBuilder(
@@ -932,7 +932,7 @@ public final class RegionInstanceGroupManagerUpdateInstanceConfigReq
      * The list of per-instance configs to insert or patch on this managed instance group.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 526265001;
+     * <code>repeated .google.cloud.compute.v1.PerInstanceConfig per_instance_configs = 257829545;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.PerInstanceConfig.Builder>

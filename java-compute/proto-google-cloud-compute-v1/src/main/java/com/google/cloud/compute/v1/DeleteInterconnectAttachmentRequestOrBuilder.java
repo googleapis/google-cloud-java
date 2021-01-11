@@ -30,7 +30,7 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * Name of the interconnect attachment to delete.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachment.
@@ -43,7 +43,7 @@ public interface DeleteInterconnectAttachmentRequestOrBuilder
    * Name of the interconnect attachment to delete.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectAttachment.

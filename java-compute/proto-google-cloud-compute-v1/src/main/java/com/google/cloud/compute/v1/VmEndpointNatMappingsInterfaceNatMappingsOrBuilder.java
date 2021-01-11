@@ -30,7 +30,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
    *
    * @return A list containing the drainNatIpPortRanges.
    */
@@ -42,7 +42,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
    *
    * @return The count of drainNatIpPortRanges.
    */
@@ -54,7 +54,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
    *
    * @param index The index of the element to return.
    * @return The drainNatIpPortRanges at the given index.
@@ -67,7 +67,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * List of all drain IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string drain_nat_ip_port_ranges = 395440577;</code>
+   * <code>repeated string drain_nat_ip_port_ranges = 127005121;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainNatIpPortRanges at the given index.
@@ -81,7 +81,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
+   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
    *
    * @return A list containing the natIpPortRanges.
    */
@@ -93,7 +93,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
+   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
    *
    * @return The count of natIpPortRanges.
    */
@@ -105,7 +105,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
+   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
    *
    * @param index The index of the element to return.
    * @return The natIpPortRanges at the given index.
@@ -118,7 +118,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * A list of all IP:port-range mappings assigned to this interface. These ranges are inclusive, that is, both the first and the last ports can be used for NAT. Example: ["2.2.2.2:12345-12355", "1.1.1.1:2234-2234"].
    * </pre>
    *
-   * <code>repeated string nat_ip_port_ranges = 531830810;</code>
+   * <code>repeated string nat_ip_port_ranges = 263395354;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the natIpPortRanges at the given index.
@@ -132,7 +132,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * Total number of drain ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field drain_nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_drain_nat_ports = 335532793;</code>
+   * <code>int32 num_total_drain_nat_ports = 67097337;</code>
    *
    * @return The numTotalDrainNatPorts.
    */
@@ -145,7 +145,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * Total number of ports across all NAT IPs allocated to this interface. It equals to the aggregated port number in the field nat_ip_port_ranges.
    * </pre>
    *
-   * <code>int32 num_total_nat_ports = 299904384;</code>
+   * <code>int32 num_total_nat_ports = 31468928;</code>
    *
    * @return The numTotalNatPorts.
    */
@@ -158,7 +158,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 440340952;</code>
+   * <code>string source_alias_ip_range = 171905496;</code>
    *
    * @return The sourceAliasIpRange.
    */
@@ -170,7 +170,7 @@ public interface VmEndpointNatMappingsInterfaceNatMappingsOrBuilder
    * Alias IP range for this interface endpoint. It will be a private (RFC 1918) IP range. Examples: "10.33.4.55/32", or "192.168.5.0/24".
    * </pre>
    *
-   * <code>string source_alias_ip_range = 440340952;</code>
+   * <code>string source_alias_ip_range = 171905496;</code>
    *
    * @return The bytes for sourceAliasIpRange.
    */

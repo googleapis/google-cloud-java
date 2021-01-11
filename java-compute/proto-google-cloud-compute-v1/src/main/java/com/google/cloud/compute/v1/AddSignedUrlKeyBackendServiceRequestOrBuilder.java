@@ -30,7 +30,7 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -42,7 +42,7 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -103,17 +103,43 @@ public interface AddSignedUrlKeyBackendServiceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the signedUrlKeyResource field is set.
    */
   boolean hasSignedUrlKeyResource();
   /**
-   * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The signedUrlKeyResource.
    */
   com.google.cloud.compute.v1.SignedUrlKey getSignedUrlKeyResource();
-  /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SignedUrlKeyOrBuilder getSignedUrlKeyResourceOrBuilder();
 }

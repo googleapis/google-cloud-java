@@ -107,7 +107,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
               annotations_.getMutableMap().put(annotations__.getKey(), annotations__.getValue());
               break;
             }
-          case -1044789534:
+          case 1102694114:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -359,7 +359,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     }
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -368,7 +368,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -391,7 +391,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
    * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -452,7 +452,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 112032548);
     if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -483,7 +483,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(112032548, annotations__);
     }
     if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1218,7 +1218,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return The ipAddress.
      */
@@ -1240,7 +1240,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -1262,7 +1262,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -1283,7 +1283,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return This builder for chaining.
      */
@@ -1300,7 +1300,7 @@ public final class NetworkEndpoint extends com.google.protobuf.GeneratedMessageV
      * Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.

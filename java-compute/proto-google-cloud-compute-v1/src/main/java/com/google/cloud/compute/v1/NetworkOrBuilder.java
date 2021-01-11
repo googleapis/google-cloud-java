@@ -71,7 +71,7 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -83,7 +83,7 @@ public interface NetworkOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -286,7 +286,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
    *
    * @return Whether the routingConfig field is set.
    */
@@ -298,7 +298,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
    *
    * @return The routingConfig.
    */
@@ -310,7 +310,7 @@ public interface NetworkOrBuilder
    * The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 523556059;</code>
+   * <code>.google.cloud.compute.v1.NetworkRoutingConfig routing_config = 255120603;</code>
    */
   com.google.cloud.compute.v1.NetworkRoutingConfigOrBuilder getRoutingConfigOrBuilder();
 
@@ -321,7 +321,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -333,7 +333,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -346,7 +346,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @return A list containing the subnetworks.
    */
@@ -358,7 +358,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @return The count of subnetworks.
    */
@@ -370,7 +370,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @param index The index of the element to return.
    * @return The subnetworks at the given index.
@@ -383,7 +383,7 @@ public interface NetworkOrBuilder
    * [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
    * </pre>
    *
-   * <code>repeated string subnetworks = 415853125;</code>
+   * <code>repeated string subnetworks = 147417669;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the subnetworks at the given index.

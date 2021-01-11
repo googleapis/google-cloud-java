@@ -74,24 +74,42 @@ public interface SetLabelsRegionDiskRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionSetLabelsRequestResource field is set.
    */
   boolean hasRegionSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.RegionSetLabelsRequest getRegionSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782;
+   * .google.cloud.compute.v1.RegionSetLabelsRequest region_set_labels_request_resource = 259357782 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionSetLabelsRequestOrBuilder

@@ -30,7 +30,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
    *
    * @return A list containing the autoAllocatedNatIps.
    */
@@ -42,7 +42,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
    *
    * @return The count of autoAllocatedNatIps.
    */
@@ -54,7 +54,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
    *
    * @param index The index of the element to return.
    * @return The autoAllocatedNatIps at the given index.
@@ -67,7 +67,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT. Example: ["1.1.1.1", "129.2.16.89"]
    * </pre>
    *
-   * <code>repeated string auto_allocated_nat_ips = 510794246;</code>
+   * <code>repeated string auto_allocated_nat_ips = 242358790;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the autoAllocatedNatIps at the given index.
@@ -81,7 +81,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
    *
    * @return A list containing the drainAutoAllocatedNatIps.
    */
@@ -93,7 +93,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
    *
    * @return The count of drainAutoAllocatedNatIps.
    */
@@ -105,7 +105,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
    *
    * @param index The index of the element to return.
    * @return The drainAutoAllocatedNatIps at the given index.
@@ -118,7 +118,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs auto-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_auto_allocated_nat_ips = 309184557;</code>
+   * <code>repeated string drain_auto_allocated_nat_ips = 40749101;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainAutoAllocatedNatIps at the given index.
@@ -132,7 +132,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
    *
    * @return A list containing the drainUserAllocatedNatIps.
    */
@@ -144,7 +144,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
    *
    * @return The count of drainUserAllocatedNatIps.
    */
@@ -156,7 +156,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
    *
    * @param index The index of the element to return.
    * @return The drainUserAllocatedNatIps at the given index.
@@ -169,7 +169,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT that are in drain mode. Example: ["1.1.1.1", "179.12.26.133"].
    * </pre>
    *
-   * <code>repeated string drain_user_allocated_nat_ips = 305268553;</code>
+   * <code>repeated string drain_user_allocated_nat_ips = 36833097;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainUserAllocatedNatIps at the given index.
@@ -183,7 +183,7 @@ public interface RouterStatusNatStatusOrBuilder
    * The number of extra IPs to allocate. This will be greater than 0 only if user-specified IPs are NOT enough to allow all configured VMs to use NAT. This value is meaningful only when auto-allocation of NAT IPs is *not* used.
    * </pre>
    *
-   * <code>int32 min_extra_nat_ips_needed = 365786338;</code>
+   * <code>int32 min_extra_nat_ips_needed = 97350882;</code>
    *
    * @return The minExtraNatIpsNeeded.
    */
@@ -221,7 +221,7 @@ public interface RouterStatusNatStatusOrBuilder
    * Number of VM endpoints (i.e., Nics) that can use NAT.
    * </pre>
    *
-   * <code>int32 num_vm_endpoints_with_nat_mappings = 512367468;</code>
+   * <code>int32 num_vm_endpoints_with_nat_mappings = 243932012;</code>
    *
    * @return The numVmEndpointsWithNatMappings.
    */
@@ -285,7 +285,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
+   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
    *
    * @return A list containing the userAllocatedNatIps.
    */
@@ -297,7 +297,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
+   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
    *
    * @return The count of userAllocatedNatIps.
    */
@@ -309,7 +309,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
+   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
    *
    * @param index The index of the element to return.
    * @return The userAllocatedNatIps at the given index.
@@ -322,7 +322,7 @@ public interface RouterStatusNatStatusOrBuilder
    * A list of IPs user-allocated for NAT. They will be raw IP strings like "179.12.26.133".
    * </pre>
    *
-   * <code>repeated string user_allocated_nat_ips = 506878242;</code>
+   * <code>repeated string user_allocated_nat_ips = 238442786;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the userAllocatedNatIps at the given index.

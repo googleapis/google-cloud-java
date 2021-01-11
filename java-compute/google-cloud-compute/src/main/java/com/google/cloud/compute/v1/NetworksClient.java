@@ -170,7 +170,7 @@ public class NetworksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param network Name of the network resource to add peering to.
-   * @param networksAddPeeringRequestResource
+   * @param networksAddPeeringRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addPeering(
@@ -193,9 +193,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   String project = "";
    *   AddPeeringNetworkRequest request = AddPeeringNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = networksClient.addPeering(request);
@@ -218,9 +220,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   NetworksAddPeeringRequest networksAddPeeringRequestResource = NetworksAddPeeringRequest.newBuilder().build();
    *   String project = "";
    *   AddPeeringNetworkRequest request = AddPeeringNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworksAddPeeringRequestResource(networksAddPeeringRequestResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networksClient.addPeeringCallable().futureCall(request);
@@ -394,7 +398,7 @@ public class NetworksClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param networkResource
+   * @param networkResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, Network networkResource) {
@@ -414,8 +418,10 @@ public class NetworksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   Network networkResource = Network.newBuilder().build();
    *   String project = "";
    *   InsertNetworkRequest request = InsertNetworkRequest.newBuilder()
+   *     .setNetworkResource(networkResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = networksClient.insert(request);
@@ -437,8 +443,10 @@ public class NetworksClient implements BackgroundResource {
    *
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
+   *   Network networkResource = Network.newBuilder().build();
    *   String project = "";
    *   InsertNetworkRequest request = InsertNetworkRequest.newBuilder()
+   *     .setNetworkResource(networkResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networksClient.insertCallable().futureCall(request);
@@ -690,7 +698,7 @@ public class NetworksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param network Name of the network to update.
-   * @param networkResource
+   * @param networkResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(String project, String network, Network networkResource) {
@@ -713,9 +721,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   Network networkResource = Network.newBuilder().build();
    *   String project = "";
    *   PatchNetworkRequest request = PatchNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworkResource(networkResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = networksClient.patch(request);
@@ -739,9 +749,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   Network networkResource = Network.newBuilder().build();
    *   String project = "";
    *   PatchNetworkRequest request = PatchNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworkResource(networkResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networksClient.patchCallable().futureCall(request);
@@ -771,7 +783,7 @@ public class NetworksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param network Name of the network resource to remove peering from.
-   * @param networksRemovePeeringRequestResource
+   * @param networksRemovePeeringRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation removePeering(
@@ -796,9 +808,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   String project = "";
    *   RemovePeeringNetworkRequest request = RemovePeeringNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = networksClient.removePeering(request);
@@ -821,9 +835,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   NetworksRemovePeeringRequest networksRemovePeeringRequestResource = NetworksRemovePeeringRequest.newBuilder().build();
    *   String project = "";
    *   RemovePeeringNetworkRequest request = RemovePeeringNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworksRemovePeeringRequestResource(networksRemovePeeringRequestResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networksClient.removePeeringCallable().futureCall(request);
@@ -932,7 +948,7 @@ public class NetworksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param network Name of the network resource which the updated peering is belonging to.
-   * @param networksUpdatePeeringRequestResource
+   * @param networksUpdatePeeringRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updatePeering(
@@ -959,9 +975,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
    *   String project = "";
    *   UpdatePeeringNetworkRequest request = UpdatePeeringNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = networksClient.updatePeering(request);
@@ -986,9 +1004,11 @@ public class NetworksClient implements BackgroundResource {
    * <pre><code>
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   String network = "";
+   *   NetworksUpdatePeeringRequest networksUpdatePeeringRequestResource = NetworksUpdatePeeringRequest.newBuilder().build();
    *   String project = "";
    *   UpdatePeeringNetworkRequest request = UpdatePeeringNetworkRequest.newBuilder()
    *     .setNetwork(network)
+   *     .setNetworksUpdatePeeringRequestResource(networksUpdatePeeringRequestResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = networksClient.updatePeeringCallable().futureCall(request);

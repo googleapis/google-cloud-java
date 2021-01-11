@@ -71,18 +71,18 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
+          case 1555881890:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -591601758:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              address_ = s;
               break;
             }
           default:
@@ -119,7 +119,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.GetGlobalAddressRequest.Builder.class);
   }
 
-  public static final int ADDRESS_FIELD_NUMBER = 462920692;
+  public static final int ADDRESS_FIELD_NUMBER = 194485236;
   private volatile java.lang.Object address_;
   /**
    *
@@ -128,7 +128,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
    * Name of the address resource to return.
    * </pre>
    *
-   * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The address.
    */
@@ -151,7 +151,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
    * Name of the address resource to return.
    * </pre>
    *
-   * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for address.
    */
@@ -231,11 +231,11 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 194485236, address_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +246,11 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
+    if (!getAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(194485236, address_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -559,7 +559,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * Name of the address resource to return.
      * </pre>
      *
-     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The address.
      */
@@ -581,7 +581,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * Name of the address resource to return.
      * </pre>
      *
-     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for address.
      */
@@ -603,7 +603,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * Name of the address resource to return.
      * </pre>
      *
-     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -624,7 +624,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * Name of the address resource to return.
      * </pre>
      *
-     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -641,7 +641,7 @@ public final class GetGlobalAddressRequest extends com.google.protobuf.Generated
      * Name of the address resource to return.
      * </pre>
      *
-     * <code>string address = 462920692 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string address = 194485236 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.

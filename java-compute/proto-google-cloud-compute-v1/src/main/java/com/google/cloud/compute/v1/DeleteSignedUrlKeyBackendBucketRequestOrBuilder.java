@@ -55,7 +55,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The keyName.
    */
@@ -67,7 +67,7 @@ public interface DeleteSignedUrlKeyBackendBucketRequestOrBuilder
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for keyName.
    */

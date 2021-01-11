@@ -70,6 +70,38 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
+          case 39187938:
+            {
+              com.google.cloud.compute.v1.UrlRewrite.Builder subBuilder = null;
+              if (urlRewrite_ != null) {
+                subBuilder = urlRewrite_.toBuilder();
+              }
+              urlRewrite_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.UrlRewrite.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(urlRewrite_);
+                urlRewrite_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 226126602:
+            {
+              com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
+              if (timeout_ != null) {
+                subBuilder = timeout_.toBuilder();
+              }
+              timeout_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(timeout_);
+                timeout_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 454399306:
             {
               com.google.cloud.compute.v1.HttpRetryPolicy.Builder subBuilder = null;
@@ -86,55 +118,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
-          case 1761574930:
-            {
-              com.google.cloud.compute.v1.RequestMirrorPolicy.Builder subBuilder = null;
-              if (requestMirrorPolicy_ != null) {
-                subBuilder = requestMirrorPolicy_.toBuilder();
-              }
-              requestMirrorPolicy_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RequestMirrorPolicy.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(requestMirrorPolicy_);
-                requestMirrorPolicy_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -2108295710:
-            {
-              com.google.cloud.compute.v1.UrlRewrite.Builder subBuilder = null;
-              if (urlRewrite_ != null) {
-                subBuilder = urlRewrite_.toBuilder();
-              }
-              urlRewrite_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.UrlRewrite.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(urlRewrite_);
-                urlRewrite_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1921357046:
-            {
-              com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
-              if (timeout_ != null) {
-                subBuilder = timeout_.toBuilder();
-              }
-              timeout_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Duration.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(timeout_);
-                timeout_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1598742902:
+          case 548740746:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 weightedBackendServices_ =
@@ -147,7 +131,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
                       extensionRegistry));
               break;
             }
-          case -1103417310:
+          case 1044066338:
             {
               com.google.cloud.compute.v1.CorsPolicy.Builder subBuilder = null;
               if (corsPolicy_ != null) {
@@ -163,7 +147,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
-          case -992718662:
+          case 1154764986:
             {
               com.google.cloud.compute.v1.HttpFaultInjection.Builder subBuilder = null;
               if (faultInjectionPolicy_ != null) {
@@ -175,6 +159,22 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
               if (subBuilder != null) {
                 subBuilder.mergeFrom(faultInjectionPolicy_);
                 faultInjectionPolicy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 1761574930:
+            {
+              com.google.cloud.compute.v1.RequestMirrorPolicy.Builder subBuilder = null;
+              if (requestMirrorPolicy_ != null) {
+                subBuilder = requestMirrorPolicy_.toBuilder();
+              }
+              requestMirrorPolicy_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RequestMirrorPolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(requestMirrorPolicy_);
+                requestMirrorPolicy_ = subBuilder.buildPartial();
               }
 
               break;
@@ -216,7 +216,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.compute.v1.HttpRouteAction.Builder.class);
   }
 
-  public static final int CORS_POLICY_FIELD_NUMBER = 398943748;
+  public static final int CORS_POLICY_FIELD_NUMBER = 130508292;
   private com.google.cloud.compute.v1.CorsPolicy corsPolicy_;
   /**
    *
@@ -226,7 +226,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
    *
    * @return Whether the corsPolicy field is set.
    */
@@ -242,7 +242,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
    *
    * @return The corsPolicy.
    */
@@ -260,14 +260,14 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+   * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CorsPolicyOrBuilder getCorsPolicyOrBuilder() {
     return getCorsPolicy();
   }
 
-  public static final int FAULT_INJECTION_POLICY_FIELD_NUMBER = 412781079;
+  public static final int FAULT_INJECTION_POLICY_FIELD_NUMBER = 144345623;
   private com.google.cloud.compute.v1.HttpFaultInjection faultInjectionPolicy_;
   /**
    *
@@ -278,7 +278,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
    *
    * @return Whether the faultInjectionPolicy field is set.
    */
@@ -295,7 +295,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
    *
    * @return The faultInjectionPolicy.
    */
@@ -314,7 +314,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+   * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpFaultInjectionOrBuilder
@@ -425,7 +425,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     return getRetryPolicy();
   }
 
-  public static final int TIMEOUT_FIELD_NUMBER = 296701281;
+  public static final int TIMEOUT_FIELD_NUMBER = 28265825;
   private com.google.cloud.compute.v1.Duration timeout_;
   /**
    *
@@ -436,7 +436,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+   * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
    *
    * @return Whether the timeout field is set.
    */
@@ -453,7 +453,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+   * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
    *
    * @return The timeout.
    */
@@ -470,14 +470,14 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+   * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getTimeoutOrBuilder() {
     return getTimeout();
   }
 
-  public static final int URL_REWRITE_FIELD_NUMBER = 273333948;
+  public static final int URL_REWRITE_FIELD_NUMBER = 4898492;
   private com.google.cloud.compute.v1.UrlRewrite urlRewrite_;
   /**
    *
@@ -488,7 +488,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
    *
    * @return Whether the urlRewrite field is set.
    */
@@ -505,7 +505,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
    *
    * @return The urlRewrite.
    */
@@ -524,14 +524,14 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+   * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.UrlRewriteOrBuilder getUrlRewriteOrBuilder() {
     return getUrlRewrite();
   }
 
-  public static final int WEIGHTED_BACKEND_SERVICES_FIELD_NUMBER = 337028049;
+  public static final int WEIGHTED_BACKEND_SERVICES_FIELD_NUMBER = 68592593;
   private java.util.List<com.google.cloud.compute.v1.WeightedBackendService>
       weightedBackendServices_;
   /**
@@ -543,7 +543,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   @java.lang.Override
@@ -560,7 +560,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   @java.lang.Override
@@ -577,7 +577,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   @java.lang.Override
@@ -593,7 +593,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   @java.lang.Override
@@ -609,7 +609,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+   * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
    * </code>
    */
   @java.lang.Override
@@ -632,26 +632,26 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (urlRewrite_ != null) {
+      output.writeMessage(4898492, getUrlRewrite());
+    }
+    if (timeout_ != null) {
+      output.writeMessage(28265825, getTimeout());
+    }
     if (retryPolicy_ != null) {
       output.writeMessage(56799913, getRetryPolicy());
     }
-    if (requestMirrorPolicy_ != null) {
-      output.writeMessage(220196866, getRequestMirrorPolicy());
-    }
-    if (urlRewrite_ != null) {
-      output.writeMessage(273333948, getUrlRewrite());
-    }
-    if (timeout_ != null) {
-      output.writeMessage(296701281, getTimeout());
-    }
     for (int i = 0; i < weightedBackendServices_.size(); i++) {
-      output.writeMessage(337028049, weightedBackendServices_.get(i));
+      output.writeMessage(68592593, weightedBackendServices_.get(i));
     }
     if (corsPolicy_ != null) {
-      output.writeMessage(398943748, getCorsPolicy());
+      output.writeMessage(130508292, getCorsPolicy());
     }
     if (faultInjectionPolicy_ != null) {
-      output.writeMessage(412781079, getFaultInjectionPolicy());
+      output.writeMessage(144345623, getFaultInjectionPolicy());
+    }
+    if (requestMirrorPolicy_ != null) {
+      output.writeMessage(220196866, getRequestMirrorPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -662,32 +662,32 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
+    if (urlRewrite_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4898492, getUrlRewrite());
+    }
+    if (timeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(28265825, getTimeout());
+    }
     if (retryPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(56799913, getRetryPolicy());
+    }
+    for (int i = 0; i < weightedBackendServices_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              68592593, weightedBackendServices_.get(i));
+    }
+    if (corsPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(130508292, getCorsPolicy());
+    }
+    if (faultInjectionPolicy_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              144345623, getFaultInjectionPolicy());
     }
     if (requestMirrorPolicy_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               220196866, getRequestMirrorPolicy());
-    }
-    if (urlRewrite_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(273333948, getUrlRewrite());
-    }
-    if (timeout_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(296701281, getTimeout());
-    }
-    for (int i = 0; i < weightedBackendServices_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              337028049, weightedBackendServices_.get(i));
-    }
-    if (corsPolicy_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(398943748, getCorsPolicy());
-    }
-    if (faultInjectionPolicy_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              412781079, getFaultInjectionPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1165,7 +1165,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      *
      * @return Whether the corsPolicy field is set.
      */
@@ -1180,7 +1180,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      *
      * @return The corsPolicy.
      */
@@ -1201,7 +1201,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     public Builder setCorsPolicy(com.google.cloud.compute.v1.CorsPolicy value) {
       if (corsPolicyBuilder_ == null) {
@@ -1224,7 +1224,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     public Builder setCorsPolicy(com.google.cloud.compute.v1.CorsPolicy.Builder builderForValue) {
       if (corsPolicyBuilder_ == null) {
@@ -1244,7 +1244,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     public Builder mergeCorsPolicy(com.google.cloud.compute.v1.CorsPolicy value) {
       if (corsPolicyBuilder_ == null) {
@@ -1271,7 +1271,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     public Builder clearCorsPolicy() {
       if (corsPolicyBuilder_ == null) {
@@ -1292,7 +1292,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     public com.google.cloud.compute.v1.CorsPolicy.Builder getCorsPolicyBuilder() {
 
@@ -1307,7 +1307,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     public com.google.cloud.compute.v1.CorsPolicyOrBuilder getCorsPolicyOrBuilder() {
       if (corsPolicyBuilder_ != null) {
@@ -1326,7 +1326,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 398943748;</code>
+     * <code>.google.cloud.compute.v1.CorsPolicy cors_policy = 130508292;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CorsPolicy,
@@ -1360,7 +1360,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      *
      * @return Whether the faultInjectionPolicy field is set.
      */
@@ -1376,7 +1376,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      *
      * @return The faultInjectionPolicy.
      */
@@ -1398,7 +1398,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     public Builder setFaultInjectionPolicy(com.google.cloud.compute.v1.HttpFaultInjection value) {
       if (faultInjectionPolicyBuilder_ == null) {
@@ -1422,7 +1422,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     public Builder setFaultInjectionPolicy(
         com.google.cloud.compute.v1.HttpFaultInjection.Builder builderForValue) {
@@ -1444,7 +1444,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     public Builder mergeFaultInjectionPolicy(com.google.cloud.compute.v1.HttpFaultInjection value) {
       if (faultInjectionPolicyBuilder_ == null) {
@@ -1472,7 +1472,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     public Builder clearFaultInjectionPolicy() {
       if (faultInjectionPolicyBuilder_ == null) {
@@ -1494,7 +1494,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     public com.google.cloud.compute.v1.HttpFaultInjection.Builder getFaultInjectionPolicyBuilder() {
 
@@ -1510,7 +1510,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     public com.google.cloud.compute.v1.HttpFaultInjectionOrBuilder
         getFaultInjectionPolicyOrBuilder() {
@@ -1531,7 +1531,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 412781079;</code>
+     * <code>.google.cloud.compute.v1.HttpFaultInjection fault_injection_policy = 144345623;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpFaultInjection,
@@ -1956,7 +1956,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      *
      * @return Whether the timeout field is set.
      */
@@ -1972,7 +1972,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      *
      * @return The timeout.
      */
@@ -1994,7 +1994,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     public Builder setTimeout(com.google.cloud.compute.v1.Duration value) {
       if (timeoutBuilder_ == null) {
@@ -2018,7 +2018,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     public Builder setTimeout(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (timeoutBuilder_ == null) {
@@ -2039,7 +2039,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     public Builder mergeTimeout(com.google.cloud.compute.v1.Duration value) {
       if (timeoutBuilder_ == null) {
@@ -2067,7 +2067,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     public Builder clearTimeout() {
       if (timeoutBuilder_ == null) {
@@ -2089,7 +2089,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getTimeoutBuilder() {
 
@@ -2105,7 +2105,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getTimeoutOrBuilder() {
       if (timeoutBuilder_ != null) {
@@ -2125,7 +2125,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration timeout = 296701281;</code>
+     * <code>.google.cloud.compute.v1.Duration timeout = 28265825;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,
@@ -2159,7 +2159,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      *
      * @return Whether the urlRewrite field is set.
      */
@@ -2175,7 +2175,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      *
      * @return The urlRewrite.
      */
@@ -2197,7 +2197,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     public Builder setUrlRewrite(com.google.cloud.compute.v1.UrlRewrite value) {
       if (urlRewriteBuilder_ == null) {
@@ -2221,7 +2221,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     public Builder setUrlRewrite(com.google.cloud.compute.v1.UrlRewrite.Builder builderForValue) {
       if (urlRewriteBuilder_ == null) {
@@ -2242,7 +2242,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     public Builder mergeUrlRewrite(com.google.cloud.compute.v1.UrlRewrite value) {
       if (urlRewriteBuilder_ == null) {
@@ -2270,7 +2270,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     public Builder clearUrlRewrite() {
       if (urlRewriteBuilder_ == null) {
@@ -2292,7 +2292,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     public com.google.cloud.compute.v1.UrlRewrite.Builder getUrlRewriteBuilder() {
 
@@ -2308,7 +2308,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     public com.google.cloud.compute.v1.UrlRewriteOrBuilder getUrlRewriteOrBuilder() {
       if (urlRewriteBuilder_ != null) {
@@ -2328,7 +2328,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 273333948;</code>
+     * <code>.google.cloud.compute.v1.UrlRewrite url_rewrite = 4898492;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.UrlRewrite,
@@ -2374,7 +2374,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.WeightedBackendService>
@@ -2394,7 +2394,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public int getWeightedBackendServicesCount() {
@@ -2413,7 +2413,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public com.google.cloud.compute.v1.WeightedBackendService getWeightedBackendServices(
@@ -2433,7 +2433,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder setWeightedBackendServices(
@@ -2459,7 +2459,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder setWeightedBackendServices(
@@ -2482,7 +2482,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder addWeightedBackendServices(
@@ -2508,7 +2508,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder addWeightedBackendServices(
@@ -2534,7 +2534,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder addWeightedBackendServices(
@@ -2557,7 +2557,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder addWeightedBackendServices(
@@ -2580,7 +2580,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder addAllWeightedBackendServices(
@@ -2603,7 +2603,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder clearWeightedBackendServices() {
@@ -2625,7 +2625,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public Builder removeWeightedBackendServices(int index) {
@@ -2647,7 +2647,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public com.google.cloud.compute.v1.WeightedBackendService.Builder
@@ -2663,7 +2663,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder
@@ -2683,7 +2683,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.WeightedBackendServiceOrBuilder>
@@ -2703,7 +2703,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public com.google.cloud.compute.v1.WeightedBackendService.Builder
@@ -2720,7 +2720,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public com.google.cloud.compute.v1.WeightedBackendService.Builder
@@ -2738,7 +2738,7 @@ public final class HttpRouteAction extends com.google.protobuf.GeneratedMessageV
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 337028049;
+     * repeated .google.cloud.compute.v1.WeightedBackendService weighted_backend_services = 68592593;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.WeightedBackendService.Builder>

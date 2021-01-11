@@ -241,7 +241,7 @@ public class LicenseCodesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -266,9 +266,11 @@ public class LicenseCodesClient implements BackgroundResource {
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsLicenseCodeRequest request = TestIamPermissionsLicenseCodeRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = licenseCodesClient.testIamPermissions(request);
    * }
@@ -293,9 +295,11 @@ public class LicenseCodesClient implements BackgroundResource {
    * try (LicenseCodesClient licenseCodesClient = LicenseCodesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsLicenseCodeRequest request = TestIamPermissionsLicenseCodeRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = licenseCodesClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

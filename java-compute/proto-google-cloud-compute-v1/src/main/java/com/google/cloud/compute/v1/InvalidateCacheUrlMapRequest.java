@@ -79,14 +79,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1792602774:
+          case 354880874:
             {
               com.google.cloud.compute.v1.CacheInvalidationRule.Builder subBuilder = null;
               if (cacheInvalidationRuleResource_ != null) {
@@ -103,11 +96,18 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
 
               break;
             }
-          case -1358801822:
+          case 788681826:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               urlMap_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -144,11 +144,17 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.InvalidateCacheUrlMapRequest.Builder.class);
   }
 
-  public static final int CACHE_INVALIDATION_RULE_RESOURCE_FIELD_NUMBER = 312795565;
+  public static final int CACHE_INVALIDATION_RULE_RESOURCE_FIELD_NUMBER = 44360109;
   private com.google.cloud.compute.v1.CacheInvalidationRule cacheInvalidationRuleResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the cacheInvalidationRuleResource field is set.
@@ -158,8 +164,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     return cacheInvalidationRuleResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The cacheInvalidationRuleResource.
@@ -171,8 +183,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
         : cacheInvalidationRuleResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+   * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -283,7 +301,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -292,7 +310,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
    * Name of the UrlMap scoping this request.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -315,7 +333,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
    * Name of the UrlMap scoping this request.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */
@@ -349,14 +367,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
     if (cacheInvalidationRuleResource_ != null) {
-      output.writeMessage(312795565, getCacheInvalidationRuleResource());
+      output.writeMessage(44360109, getCacheInvalidationRuleResource());
     }
     if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     unknownFields.writeTo(output);
   }
@@ -370,16 +388,16 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (cacheInvalidationRuleResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              312795565, getCacheInvalidationRuleResource());
+              44360109, getCacheInvalidationRuleResource());
     }
     if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -722,8 +740,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.CacheInvalidationRuleOrBuilder>
         cacheInvalidationRuleResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the cacheInvalidationRuleResource field is set.
@@ -733,8 +757,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
           || cacheInvalidationRuleResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The cacheInvalidationRuleResource.
@@ -749,8 +779,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setCacheInvalidationRuleResource(
@@ -768,8 +804,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setCacheInvalidationRuleResource(
@@ -784,8 +826,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeCacheInvalidationRuleResource(
@@ -808,8 +856,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearCacheInvalidationRuleResource() {
@@ -824,8 +878,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.CacheInvalidationRule.Builder
@@ -835,8 +895,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       return getCacheInvalidationRuleResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.CacheInvalidationRuleOrBuilder
@@ -850,8 +916,14 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 312795565;
+     * .google.cloud.compute.v1.CacheInvalidationRule cache_invalidation_rule_resource = 44360109 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1101,7 +1173,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * Name of the UrlMap scoping this request.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The urlMap.
      */
@@ -1123,7 +1195,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * Name of the UrlMap scoping this request.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for urlMap.
      */
@@ -1145,7 +1217,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * Name of the UrlMap scoping this request.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -1166,7 +1238,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * Name of the UrlMap scoping this request.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1183,7 +1255,7 @@ public final class InvalidateCacheUrlMapRequest extends com.google.protobuf.Gene
      * Name of the UrlMap scoping this request.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

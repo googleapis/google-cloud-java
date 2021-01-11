@@ -78,7 +78,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
               range_ = s;
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -119,7 +119,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.RouterAdvertisedIpRange.Builder.class);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -128,7 +128,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -151,7 +151,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
    * User-specified description for the IP range.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -235,7 +235,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       com.google.protobuf.GeneratedMessageV3.writeString(output, 108280125, range_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     unknownFields.writeTo(output);
   }
@@ -250,7 +250,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(108280125, range_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -559,7 +559,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -581,7 +581,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -603,7 +603,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -624,7 +624,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -641,7 +641,7 @@ public final class RouterAdvertisedIpRange extends com.google.protobuf.Generated
      * User-specified description for the IP range.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.

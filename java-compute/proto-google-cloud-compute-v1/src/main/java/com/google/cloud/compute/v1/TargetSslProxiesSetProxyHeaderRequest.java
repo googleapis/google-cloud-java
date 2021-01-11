@@ -134,8 +134,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     UNDEFINED_PROXY_HEADER(0),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>PROXY_V1 = 334352940;</code> */
-    PROXY_V1(334352940),
+    /** <code>PROXY_V1 = 65917484;</code> */
+    PROXY_V1(65917484),
     UNRECOGNIZED(-1),
     ;
 
@@ -151,8 +151,8 @@ public final class TargetSslProxiesSetProxyHeaderRequest
     public static final int UNDEFINED_PROXY_HEADER_VALUE = 0;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>PROXY_V1 = 334352940;</code> */
-    public static final int PROXY_V1_VALUE = 334352940;
+    /** <code>PROXY_V1 = 65917484;</code> */
+    public static final int PROXY_V1_VALUE = 65917484;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -182,7 +182,7 @@ public final class TargetSslProxiesSetProxyHeaderRequest
           return UNDEFINED_PROXY_HEADER;
         case 2402104:
           return NONE;
-        case 334352940:
+        case 65917484:
           return PROXY_V1;
         default:
           return null;

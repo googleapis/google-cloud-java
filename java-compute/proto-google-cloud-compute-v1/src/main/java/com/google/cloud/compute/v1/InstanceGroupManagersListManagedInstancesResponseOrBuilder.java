@@ -30,7 +30,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ManagedInstance> getManagedInstancesList();
   /**
@@ -40,7 +40,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
    */
   com.google.cloud.compute.v1.ManagedInstance getManagedInstances(int index);
   /**
@@ -50,7 +50,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
    */
   int getManagedInstancesCount();
   /**
@@ -60,7 +60,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ManagedInstanceOrBuilder>
       getManagedInstancesOrBuilderList();
@@ -71,7 +71,7 @@ public interface InstanceGroupManagersListManagedInstancesResponseOrBuilder
    * [Output Only] The list of instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 336219614;</code>
+   * <code>repeated .google.cloud.compute.v1.ManagedInstance managed_instances = 67784158;</code>
    */
   com.google.cloud.compute.v1.ManagedInstanceOrBuilder getManagedInstancesOrBuilder(int index);
 

@@ -30,7 +30,7 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
-   * <code>repeated string src_ip_ranges = 432128083;</code>
+   * <code>repeated string src_ip_ranges = 163692627;</code>
    *
    * @return A list containing the srcIpRanges.
    */
@@ -42,7 +42,7 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
-   * <code>repeated string src_ip_ranges = 432128083;</code>
+   * <code>repeated string src_ip_ranges = 163692627;</code>
    *
    * @return The count of srcIpRanges.
    */
@@ -54,7 +54,7 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
-   * <code>repeated string src_ip_ranges = 432128083;</code>
+   * <code>repeated string src_ip_ranges = 163692627;</code>
    *
    * @param index The index of the element to return.
    * @return The srcIpRanges at the given index.
@@ -67,7 +67,7 @@ public interface SecurityPolicyRuleMatcherConfigOrBuilder
    * CIDR IP address range. Maximum number of src_ip_ranges allowed is 10.
    * </pre>
    *
-   * <code>repeated string src_ip_ranges = 432128083;</code>
+   * <code>repeated string src_ip_ranges = 163692627;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the srcIpRanges at the given index.

@@ -30,7 +30,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -42,7 +42,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The IP address of this ARP neighbor.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -55,7 +55,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>string mac_address = 64104708;</code>
    *
    * @return The macAddress.
    */
@@ -67,7 +67,7 @@ public interface InterconnectDiagnosticsARPEntryOrBuilder
    * The MAC address of this ARP neighbor.
    * </pre>
    *
-   * <code>string mac_address = 332540164;</code>
+   * <code>string mac_address = 64104708;</code>
    *
    * @return The bytes for macAddress.
    */

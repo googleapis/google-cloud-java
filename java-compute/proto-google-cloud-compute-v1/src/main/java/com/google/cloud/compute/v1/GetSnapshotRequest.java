@@ -71,18 +71,18 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
+          case 131509794:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              snapshot_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -2015973854:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              snapshot_ = s;
               break;
             }
           default:
@@ -168,7 +168,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int SNAPSHOT_FIELD_NUMBER = 284874180;
+  public static final int SNAPSHOT_FIELD_NUMBER = 16438724;
   private volatile java.lang.Object snapshot_;
   /**
    *
@@ -177,7 +177,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    * Name of the Snapshot resource to return.
    * </pre>
    *
-   * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The snapshot.
    */
@@ -200,7 +200,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
    * Name of the Snapshot resource to return.
    * </pre>
    *
-   * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for snapshot.
    */
@@ -231,11 +231,11 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getSnapshotBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 16438724, snapshot_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getSnapshotBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 284874180, snapshot_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +246,11 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
+    if (!getSnapshotBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16438724, snapshot_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getSnapshotBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(284874180, snapshot_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -663,7 +663,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * Name of the Snapshot resource to return.
      * </pre>
      *
-     * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The snapshot.
      */
@@ -685,7 +685,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * Name of the Snapshot resource to return.
      * </pre>
      *
-     * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for snapshot.
      */
@@ -707,7 +707,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * Name of the Snapshot resource to return.
      * </pre>
      *
-     * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The snapshot to set.
      * @return This builder for chaining.
@@ -728,7 +728,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * Name of the Snapshot resource to return.
      * </pre>
      *
-     * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -745,7 +745,7 @@ public final class GetSnapshotRequest extends com.google.protobuf.GeneratedMessa
      * Name of the Snapshot resource to return.
      * </pre>
      *
-     * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for snapshot to set.
      * @return This builder for chaining.

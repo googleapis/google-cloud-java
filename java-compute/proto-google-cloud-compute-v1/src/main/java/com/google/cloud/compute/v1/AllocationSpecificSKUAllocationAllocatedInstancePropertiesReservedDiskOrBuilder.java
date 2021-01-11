@@ -30,7 +30,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>string disk_size_gb = 47828279;</code>
    *
    * @return The diskSizeGb.
    */
@@ -42,7 +42,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * Specifies the size of the disk in base-2 GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>string disk_size_gb = 47828279;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -56,7 +56,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
    * </code>
    *
    * @return The enum numeric value on the wire for interface.
@@ -70,7 +70,7 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;
+   * .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 234188089;
    * </code>
    *
    * @return The interface.

@@ -30,7 +30,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Route> getAdvertisedRoutesList();
   /**
@@ -40,7 +40,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
    */
   com.google.cloud.compute.v1.Route getAdvertisedRoutes(int index);
   /**
@@ -50,7 +50,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
    */
   int getAdvertisedRoutesCount();
   /**
@@ -60,7 +60,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteOrBuilder>
       getAdvertisedRoutesOrBuilderList();
@@ -71,7 +71,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * Routes that were advertised to the remote BGP peer
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 333393068;</code>
+   * <code>repeated .google.cloud.compute.v1.Route advertised_routes = 64957612;</code>
    */
   com.google.cloud.compute.v1.RouteOrBuilder getAdvertisedRoutesOrBuilder(int index);
 
@@ -82,7 +82,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -94,7 +94,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * IP address of the local BGP interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -107,7 +107,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>string linked_vpn_tunnel = 83861497;</code>
    *
    * @return The linkedVpnTunnel.
    */
@@ -119,7 +119,7 @@ public interface RouterStatusBgpPeerStatusOrBuilder
    * URL of the VPN tunnel that this BGP peer controls.
    * </pre>
    *
-   * <code>string linked_vpn_tunnel = 352296953;</code>
+   * <code>string linked_vpn_tunnel = 83861497;</code>
    *
    * @return The bytes for linkedVpnTunnel.
    */

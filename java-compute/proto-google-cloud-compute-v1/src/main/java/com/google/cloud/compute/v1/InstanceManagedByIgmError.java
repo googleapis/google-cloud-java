@@ -69,6 +69,25 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
           case 0:
             done = true;
             break;
+          case 190312730:
+            {
+              com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
+                  subBuilder = null;
+              if (instanceActionDetails_ != null) {
+                subBuilder = instanceActionDetails_.toBuilder();
+              }
+              instanceActionDetails_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(instanceActionDetails_);
+                instanceActionDetails_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 441010354:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -91,25 +110,6 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
               if (subBuilder != null) {
                 subBuilder.mergeFrom(error_);
                 error_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1957170918:
-            {
-              com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
-                  subBuilder = null;
-              if (instanceActionDetails_ != null) {
-                subBuilder = instanceActionDetails_.toBuilder();
-              }
-              instanceActionDetails_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(instanceActionDetails_);
-                instanceActionDetails_ = subBuilder.buildPartial();
               }
 
               break;
@@ -201,7 +201,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     return getError();
   }
 
-  public static final int INSTANCE_ACTION_DETAILS_FIELD_NUMBER = 292224547;
+  public static final int INSTANCE_ACTION_DETAILS_FIELD_NUMBER = 23789091;
   private com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails
       instanceActionDetails_;
   /**
@@ -212,7 +212,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
    * </code>
    *
    * @return Whether the instanceActionDetails field is set.
@@ -229,7 +229,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
    * </code>
    *
    * @return The instanceActionDetails.
@@ -250,7 +250,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
    * </code>
    */
   @java.lang.Override
@@ -322,14 +322,14 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (instanceActionDetails_ != null) {
+      output.writeMessage(23789091, getInstanceActionDetails());
+    }
     if (!getTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 55126294, timestamp_);
     }
     if (error_ != null) {
       output.writeMessage(96784904, getError());
-    }
-    if (instanceActionDetails_ != null) {
-      output.writeMessage(292224547, getInstanceActionDetails());
     }
     unknownFields.writeTo(output);
   }
@@ -340,16 +340,16 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
+    if (instanceActionDetails_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              23789091, getInstanceActionDetails());
+    }
     if (!getTimestampBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55126294, timestamp_);
     }
     if (error_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(96784904, getError());
-    }
-    if (instanceActionDetails_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              292224547, getInstanceActionDetails());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -911,7 +911,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      *
      * @return Whether the instanceActionDetails field is set.
@@ -927,7 +927,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      *
      * @return The instanceActionDetails.
@@ -951,7 +951,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     public Builder setInstanceActionDetails(
@@ -976,7 +976,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     public Builder setInstanceActionDetails(
@@ -999,7 +999,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     public Builder mergeInstanceActionDetails(
@@ -1029,7 +1029,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     public Builder clearInstanceActionDetails() {
@@ -1051,7 +1051,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Builder
@@ -1068,7 +1068,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder
@@ -1090,7 +1090,7 @@ public final class InstanceManagedByIgmError extends com.google.protobuf.Generat
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+     * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

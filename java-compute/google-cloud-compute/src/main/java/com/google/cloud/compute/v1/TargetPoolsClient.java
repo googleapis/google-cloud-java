@@ -175,7 +175,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param targetPool Name of the target pool to add a health check to.
-   * @param targetPoolsAddHealthCheckRequestResource
+   * @param targetPoolsAddHealthCheckRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addHealthCheck(
@@ -204,10 +204,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
    *   AddHealthCheckTargetPoolRequest request = AddHealthCheckTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
    *     .build();
    *   Operation response = targetPoolsClient.addHealthCheck(request);
    * }
@@ -231,10 +233,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsAddHealthCheckRequest targetPoolsAddHealthCheckRequestResource = TargetPoolsAddHealthCheckRequest.newBuilder().build();
    *   AddHealthCheckTargetPoolRequest request = AddHealthCheckTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsAddHealthCheckRequestResource(targetPoolsAddHealthCheckRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.addHealthCheckCallable().futureCall(request);
    *   // Do something
@@ -265,7 +269,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param targetPool Name of the TargetPool resource to add instances to.
-   * @param targetPoolsAddInstanceRequestResource
+   * @param targetPoolsAddInstanceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addInstance(
@@ -294,10 +298,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
    *   AddInstanceTargetPoolRequest request = AddInstanceTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
    *     .build();
    *   Operation response = targetPoolsClient.addInstance(request);
    * }
@@ -321,10 +327,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsAddInstanceRequest targetPoolsAddInstanceRequestResource = TargetPoolsAddInstanceRequest.newBuilder().build();
    *   AddInstanceTargetPoolRequest request = AddInstanceTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsAddInstanceRequestResource(targetPoolsAddInstanceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.addInstanceCallable().futureCall(request);
    *   // Do something
@@ -632,7 +640,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param targetPool Name of the TargetPool resource to which the queried instance belongs.
-   * @param instanceReferenceResource
+   * @param instanceReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TargetPoolInstanceHealth getHealth(
@@ -659,10 +667,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
    *   GetHealthTargetPoolRequest request = GetHealthTargetPoolRequest.newBuilder()
+   *     .setInstanceReferenceResource(instanceReferenceResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
@@ -687,10 +697,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
+   *   InstanceReference instanceReferenceResource = InstanceReference.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
    *   GetHealthTargetPoolRequest request = GetHealthTargetPoolRequest.newBuilder()
+   *     .setInstanceReferenceResource(instanceReferenceResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
@@ -724,7 +736,7 @@ public class TargetPoolsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param targetPoolResource
+   * @param targetPoolResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, TargetPool targetPoolResource) {
@@ -748,9 +760,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   InsertTargetPoolRequest request = InsertTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setTargetPoolResource(targetPoolResource)
    *     .build();
    *   Operation response = targetPoolsClient.insert(request);
    * }
@@ -774,9 +788,11 @@ public class TargetPoolsClient implements BackgroundResource {
    * try (TargetPoolsClient targetPoolsClient = TargetPoolsClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   TargetPool targetPoolResource = TargetPool.newBuilder().build();
    *   InsertTargetPoolRequest request = InsertTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setTargetPoolResource(targetPoolResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.insertCallable().futureCall(request);
    *   // Do something
@@ -919,7 +935,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
    * @param targetPool Name of the target pool to remove health checks from.
-   * @param targetPoolsRemoveHealthCheckRequestResource
+   * @param targetPoolsRemoveHealthCheckRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation removeHealthCheck(
@@ -949,10 +965,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
    *   RemoveHealthCheckTargetPoolRequest request = RemoveHealthCheckTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
    *     .build();
    *   Operation response = targetPoolsClient.removeHealthCheck(request);
    * }
@@ -976,10 +994,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsRemoveHealthCheckRequest targetPoolsRemoveHealthCheckRequestResource = TargetPoolsRemoveHealthCheckRequest.newBuilder().build();
    *   RemoveHealthCheckTargetPoolRequest request = RemoveHealthCheckTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsRemoveHealthCheckRequestResource(targetPoolsRemoveHealthCheckRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.removeHealthCheckCallable().futureCall(request);
    *   // Do something
@@ -1011,7 +1031,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param targetPool Name of the TargetPool resource to remove instances from.
-   * @param targetPoolsRemoveInstanceRequestResource
+   * @param targetPoolsRemoveInstanceRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation removeInstance(
@@ -1040,10 +1060,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
    *   RemoveInstanceTargetPoolRequest request = RemoveInstanceTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
    *     .build();
    *   Operation response = targetPoolsClient.removeInstance(request);
    * }
@@ -1067,10 +1089,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetPoolsRemoveInstanceRequest targetPoolsRemoveInstanceRequestResource = TargetPoolsRemoveInstanceRequest.newBuilder().build();
    *   RemoveInstanceTargetPoolRequest request = RemoveInstanceTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetPoolsRemoveInstanceRequestResource(targetPoolsRemoveInstanceRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.removeInstanceCallable().futureCall(request);
    *   // Do something
@@ -1101,7 +1125,7 @@ public class TargetPoolsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param targetPool Name of the TargetPool resource to set a backup pool for.
-   * @param targetReferenceResource
+   * @param targetReferenceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setBackup(
@@ -1127,10 +1151,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetBackupTargetPoolRequest request = SetBackupTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
    *   Operation response = targetPoolsClient.setBackup(request);
    * }
@@ -1154,10 +1180,12 @@ public class TargetPoolsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String targetPool = "";
+   *   TargetReference targetReferenceResource = TargetReference.newBuilder().build();
    *   SetBackupTargetPoolRequest request = SetBackupTargetPoolRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setTargetPool(targetPool)
+   *     .setTargetReferenceResource(targetReferenceResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetPoolsClient.setBackupCallable().futureCall(request);
    *   // Do something

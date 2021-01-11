@@ -30,7 +30,7 @@ public interface DeleteRegionAutoscalerRequestOrBuilder
    * Name of the autoscaler to delete.
    * </pre>
    *
-   * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The autoscaler.
    */
@@ -42,7 +42,7 @@ public interface DeleteRegionAutoscalerRequestOrBuilder
    * Name of the autoscaler to delete.
    * </pre>
    *
-   * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for autoscaler.
    */

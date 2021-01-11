@@ -72,7 +72,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    * The log_name to populate in the Cloud Audit Record.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
    *
    * @return The enum numeric value on the wire for logName.
    */
@@ -84,7 +84,7 @@ public interface LogConfigCloudAuditOptionsOrBuilder
    * The log_name to populate in the Cloud Audit Record.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
    *
    * @return The logName.
    */

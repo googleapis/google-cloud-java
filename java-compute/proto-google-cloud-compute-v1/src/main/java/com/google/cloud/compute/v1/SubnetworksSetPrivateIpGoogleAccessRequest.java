@@ -69,7 +69,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
           case 0:
             done = true;
             break;
-          case -923032976:
+          case 1224450672:
             {
               privateIpGoogleAccess_ = input.readBool();
               break;
@@ -108,10 +108,10 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
             com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest.Builder.class);
   }
 
-  public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
+  public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 153056334;
   private boolean privateIpGoogleAccess_;
   /**
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>bool private_ip_google_access = 153056334;</code>
    *
    * @return The privateIpGoogleAccess.
    */
@@ -135,7 +135,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (privateIpGoogleAccess_ != false) {
-      output.writeBool(421491790, privateIpGoogleAccess_);
+      output.writeBool(153056334, privateIpGoogleAccess_);
     }
     unknownFields.writeTo(output);
   }
@@ -148,7 +148,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
     size = 0;
     if (privateIpGoogleAccess_ != false) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(421491790, privateIpGoogleAccess_);
+          com.google.protobuf.CodedOutputStream.computeBoolSize(153056334, privateIpGoogleAccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -449,7 +449,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
 
     private boolean privateIpGoogleAccess_;
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>bool private_ip_google_access = 153056334;</code>
      *
      * @return The privateIpGoogleAccess.
      */
@@ -458,7 +458,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return privateIpGoogleAccess_;
     }
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>bool private_ip_google_access = 153056334;</code>
      *
      * @param value The privateIpGoogleAccess to set.
      * @return This builder for chaining.
@@ -470,7 +470,7 @@ public final class SubnetworksSetPrivateIpGoogleAccessRequest
       return this;
     }
     /**
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>bool private_ip_google_access = 153056334;</code>
      *
      * @return This builder for chaining.
      */

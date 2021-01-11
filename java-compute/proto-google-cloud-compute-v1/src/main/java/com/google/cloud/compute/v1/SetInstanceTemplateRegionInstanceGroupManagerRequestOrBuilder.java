@@ -101,16 +101,28 @@ public interface SetInstanceTemplateRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersSetTemplateRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersSetTemplateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersSetTemplateRequestResource.
@@ -118,8 +130,14 @@ public interface SetInstanceTemplateRegionInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest
       getRegionInstanceGroupManagersSetTemplateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequest region_instance_group_managers_set_template_request_resource = 187310412 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersSetTemplateRequestOrBuilder

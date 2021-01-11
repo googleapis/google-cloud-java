@@ -364,7 +364,7 @@ public class SubnetworksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param subnetwork Name of the Subnetwork resource to update.
-   * @param subnetworksExpandIpCidrRangeRequestResource
+   * @param subnetworksExpandIpCidrRangeRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation expandIpCidrRange(
@@ -394,10 +394,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String subnetwork = "";
+   *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
    *   ExpandIpCidrRangeSubnetworkRequest request = ExpandIpCidrRangeSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setSubnetwork(subnetwork)
+   *     .setSubnetworksExpandIpCidrRangeRequestResource(subnetworksExpandIpCidrRangeRequestResource)
    *     .build();
    *   Operation response = subnetworksClient.expandIpCidrRange(request);
    * }
@@ -421,10 +423,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String subnetwork = "";
+   *   SubnetworksExpandIpCidrRangeRequest subnetworksExpandIpCidrRangeRequestResource = SubnetworksExpandIpCidrRangeRequest.newBuilder().build();
    *   ExpandIpCidrRangeSubnetworkRequest request = ExpandIpCidrRangeSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setSubnetwork(subnetwork)
+   *     .setSubnetworksExpandIpCidrRangeRequestResource(subnetworksExpandIpCidrRangeRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = subnetworksClient.expandIpCidrRangeCallable().futureCall(request);
    *   // Do something
@@ -623,7 +627,7 @@ public class SubnetworksClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param subnetworkResource
+   * @param subnetworkResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, Subnetwork subnetworkResource) {
@@ -646,9 +650,11 @@ public class SubnetworksClient implements BackgroundResource {
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   InsertSubnetworkRequest request = InsertSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setSubnetworkResource(subnetworkResource)
    *     .build();
    *   Operation response = subnetworksClient.insert(request);
    * }
@@ -671,9 +677,11 @@ public class SubnetworksClient implements BackgroundResource {
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   InsertSubnetworkRequest request = InsertSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setSubnetworkResource(subnetworkResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = subnetworksClient.insertCallable().futureCall(request);
    *   // Do something
@@ -906,7 +914,7 @@ public class SubnetworksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
-   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * be updated with a patch request as indicated in the field descriptions. You must specify the
    * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
@@ -924,7 +932,7 @@ public class SubnetworksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param subnetwork Name of the Subnetwork resource to patch.
-   * @param subnetworkResource
+   * @param subnetworkResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -942,7 +950,7 @@ public class SubnetworksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
-   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * be updated with a patch request as indicated in the field descriptions. You must specify the
    * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
@@ -952,10 +960,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String subnetwork = "";
+   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   PatchSubnetworkRequest request = PatchSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setSubnetwork(subnetwork)
+   *     .setSubnetworkResource(subnetworkResource)
    *     .build();
    *   Operation response = subnetworksClient.patch(request);
    * }
@@ -971,7 +981,7 @@ public class SubnetworksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Patches the specified subnetwork with the data included in the request. Only certain fields can
-   * up updated with a patch request as indicated in the field descriptions. You must specify the
+   * be updated with a patch request as indicated in the field descriptions. You must specify the
    * current fingerprint of the subnetwork resource being patched.
    *
    * <p>Sample code:
@@ -981,10 +991,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String subnetwork = "";
+   *   Subnetwork subnetworkResource = Subnetwork.newBuilder().build();
    *   PatchSubnetworkRequest request = PatchSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setSubnetwork(subnetwork)
+   *     .setSubnetworkResource(subnetworkResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = subnetworksClient.patchCallable().futureCall(request);
    *   // Do something
@@ -1015,7 +1027,7 @@ public class SubnetworksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param regionSetPolicyRequestResource
+   * @param regionSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -1043,10 +1055,12 @@ public class SubnetworksClient implements BackgroundResource {
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   String resource = "";
    *   SetIamPolicySubnetworkRequest request = SetIamPolicySubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .setResource(resource)
    *     .build();
    *   Policy response = subnetworksClient.setIamPolicy(request);
@@ -1070,10 +1084,12 @@ public class SubnetworksClient implements BackgroundResource {
    * try (SubnetworksClient subnetworksClient = SubnetworksClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   String resource = "";
    *   SetIamPolicySubnetworkRequest request = SetIamPolicySubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .setResource(resource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = subnetworksClient.setIamPolicyCallable().futureCall(request);
@@ -1106,7 +1122,7 @@ public class SubnetworksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param subnetwork Name of the Subnetwork resource.
-   * @param subnetworksSetPrivateIpGoogleAccessRequestResource
+   * @param subnetworksSetPrivateIpGoogleAccessRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setPrivateIpGoogleAccess(
@@ -1138,10 +1154,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String subnetwork = "";
+   *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
    *   SetPrivateIpGoogleAccessSubnetworkRequest request = SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setSubnetwork(subnetwork)
+   *     .setSubnetworksSetPrivateIpGoogleAccessRequestResource(subnetworksSetPrivateIpGoogleAccessRequestResource)
    *     .build();
    *   Operation response = subnetworksClient.setPrivateIpGoogleAccess(request);
    * }
@@ -1167,10 +1185,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String subnetwork = "";
+   *   SubnetworksSetPrivateIpGoogleAccessRequest subnetworksSetPrivateIpGoogleAccessRequestResource = SubnetworksSetPrivateIpGoogleAccessRequest.newBuilder().build();
    *   SetPrivateIpGoogleAccessSubnetworkRequest request = SetPrivateIpGoogleAccessSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setSubnetwork(subnetwork)
+   *     .setSubnetworksSetPrivateIpGoogleAccessRequestResource(subnetworksSetPrivateIpGoogleAccessRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = subnetworksClient.setPrivateIpGoogleAccessCallable().futureCall(request);
    *   // Do something
@@ -1202,7 +1222,7 @@ public class SubnetworksClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -1231,10 +1251,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsSubnetworkRequest request = TestIamPermissionsSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = subnetworksClient.testIamPermissions(request);
    * }
@@ -1259,10 +1281,12 @@ public class SubnetworksClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsSubnetworkRequest request = TestIamPermissionsSubnetworkRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = subnetworksClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

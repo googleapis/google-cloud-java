@@ -24,25 +24,13 @@ public interface BindingOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   *
-   *
-   * <pre>
-   * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-   * </pre>
-   *
-   * <code>string binding_id = 441088277;</code>
+   * <code>string binding_id = 172652821;</code>
    *
    * @return The bindingId.
    */
   java.lang.String getBindingId();
   /**
-   *
-   *
-   * <pre>
-   * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-   * </pre>
-   *
-   * <code>string binding_id = 441088277;</code>
+   * <code>string binding_id = 172652821;</code>
    *
    * @return The bytes for bindingId.
    */
@@ -108,7 +96,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @return A list containing the members.
    */
@@ -129,7 +117,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @return The count of members.
    */
@@ -150,7 +138,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @param index The index of the element to return.
    * @return The members at the given index.
@@ -172,7 +160,7 @@ public interface BindingOrBuilder
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the members at the given index.

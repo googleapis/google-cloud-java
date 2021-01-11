@@ -78,21 +78,42 @@ public interface SetUsageExportBucketProjectRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the usageExportLocationResource field is set.
    */
   boolean hasUsageExportLocationResource();
   /**
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The usageExportLocationResource.
    */
   com.google.cloud.compute.v1.UsageExportLocation getUsageExportLocationResource();
   /**
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.UsageExportLocationOrBuilder

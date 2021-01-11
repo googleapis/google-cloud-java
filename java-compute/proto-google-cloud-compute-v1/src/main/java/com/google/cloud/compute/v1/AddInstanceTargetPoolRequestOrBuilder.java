@@ -128,16 +128,28 @@ public interface AddInstanceTargetPoolRequestOrBuilder
   com.google.protobuf.ByteString getTargetPoolBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetPoolsAddInstanceRequestResource field is set.
    */
   boolean hasTargetPoolsAddInstanceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetPoolsAddInstanceRequestResource.
@@ -145,8 +157,14 @@ public interface AddInstanceTargetPoolRequestOrBuilder
   com.google.cloud.compute.v1.TargetPoolsAddInstanceRequest
       getTargetPoolsAddInstanceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 428796404;
+   * .google.cloud.compute.v1.TargetPoolsAddInstanceRequest target_pools_add_instance_request_resource = 160360948 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetPoolsAddInstanceRequestOrBuilder

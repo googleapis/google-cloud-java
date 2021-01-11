@@ -55,7 +55,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList();
   /**
@@ -65,7 +65,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   com.google.cloud.compute.v1.NamedPort getNamedPorts(int index);
   /**
@@ -75,7 +75,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   int getNamedPortsCount();
   /**
@@ -85,7 +85,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
       getNamedPortsOrBuilderList();
@@ -96,7 +96,7 @@ public interface RegionInstanceGroupsSetNamedPortsRequestOrBuilder
    * The list of named ports to set for this instance group.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index);
 }

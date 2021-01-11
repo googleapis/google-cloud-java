@@ -30,7 +30,7 @@ public interface UsageExportLocationOrBuilder
    * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>string bucket_name = 15174592;</code>
    *
    * @return The bucketName.
    */
@@ -42,7 +42,7 @@ public interface UsageExportLocationOrBuilder
    * The name of an existing bucket in Cloud Storage where the usage report object is stored. The Google Service Account is granted write access to this bucket. This can either be the bucket name by itself, such as example-bucket, or the bucket name with gs:// or https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
    * </pre>
    *
-   * <code>string bucket_name = 283610048;</code>
+   * <code>string bucket_name = 15174592;</code>
    *
    * @return The bytes for bucketName.
    */
@@ -55,7 +55,7 @@ public interface UsageExportLocationOrBuilder
    * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
    * </pre>
    *
-   * <code>string report_name_prefix = 320198715;</code>
+   * <code>string report_name_prefix = 51763259;</code>
    *
    * @return The reportNamePrefix.
    */
@@ -67,7 +67,7 @@ public interface UsageExportLocationOrBuilder
    * An optional prefix for the name of the usage report object stored in bucketName. If not supplied, defaults to usage. The report is stored as a CSV file named report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
    * </pre>
    *
-   * <code>string report_name_prefix = 320198715;</code>
+   * <code>string report_name_prefix = 51763259;</code>
    *
    * @return The bytes for reportNamePrefix.
    */

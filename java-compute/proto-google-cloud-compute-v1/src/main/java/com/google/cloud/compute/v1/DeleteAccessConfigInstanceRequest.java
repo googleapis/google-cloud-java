@@ -104,18 +104,18 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
               accessConfig_ = s;
               break;
             }
+          case 775619394:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkInterface_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1371864254:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              networkInterface_ = s;
               break;
             }
           default:
@@ -250,7 +250,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
     }
   }
 
-  public static final int NETWORK_INTERFACE_FIELD_NUMBER = 365387880;
+  public static final int NETWORK_INTERFACE_FIELD_NUMBER = 96952424;
   private volatile java.lang.Object networkInterface_;
   /**
    *
@@ -259,7 +259,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
    * The name of the network interface.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The networkInterface.
    */
@@ -282,7 +282,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
    * The name of the network interface.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for networkInterface.
    */
@@ -476,11 +476,11 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
     if (!getAccessConfigBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 72856189, accessConfig_);
     }
+    if (!getNetworkInterfaceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 96952424, networkInterface_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNetworkInterfaceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 365387880, networkInterface_);
     }
     unknownFields.writeTo(output);
   }
@@ -503,12 +503,11 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
     if (!getAccessConfigBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(72856189, accessConfig_);
     }
+    if (!getNetworkInterfaceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(96952424, networkInterface_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNetworkInterfaceBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(365387880, networkInterface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1073,7 +1072,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * The name of the network interface.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The networkInterface.
      */
@@ -1095,7 +1094,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * The name of the network interface.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for networkInterface.
      */
@@ -1117,7 +1116,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * The name of the network interface.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The networkInterface to set.
      * @return This builder for chaining.
@@ -1138,7 +1137,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * The name of the network interface.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1155,7 +1154,7 @@ public final class DeleteAccessConfigInstanceRequest extends com.google.protobuf
      * The name of the network interface.
      * </pre>
      *
-     * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for networkInterface to set.
      * @return This builder for chaining.

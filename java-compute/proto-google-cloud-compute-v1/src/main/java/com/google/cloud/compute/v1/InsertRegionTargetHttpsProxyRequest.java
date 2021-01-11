@@ -88,14 +88,7 @@ public final class InsertRegionTargetHttpsProxyRequest
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -825707510:
+          case 1321776138:
             {
               com.google.cloud.compute.v1.TargetHttpsProxy.Builder subBuilder = null;
               if (targetHttpsProxyResource_ != null) {
@@ -109,6 +102,13 @@ public final class InsertRegionTargetHttpsProxyRequest
                 targetHttpsProxyResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -296,10 +296,18 @@ public final class InsertRegionTargetHttpsProxyRequest
     }
   }
 
-  public static final int TARGET_HTTPS_PROXY_RESOURCE_FIELD_NUMBER = 433657473;
+  public static final int TARGET_HTTPS_PROXY_RESOURCE_FIELD_NUMBER = 165222017;
   private com.google.cloud.compute.v1.TargetHttpsProxy targetHttpsProxyResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetHttpsProxyResource field is set.
    */
@@ -308,7 +316,15 @@ public final class InsertRegionTargetHttpsProxyRequest
     return targetHttpsProxyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetHttpsProxyResource.
    */
@@ -319,7 +335,15 @@ public final class InsertRegionTargetHttpsProxyRequest
         : targetHttpsProxyResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder
@@ -347,11 +371,11 @@ public final class InsertRegionTargetHttpsProxyRequest
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (targetHttpsProxyResource_ != null) {
+      output.writeMessage(165222017, getTargetHttpsProxyResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (targetHttpsProxyResource_ != null) {
-      output.writeMessage(433657473, getTargetHttpsProxyResource());
     }
     unknownFields.writeTo(output);
   }
@@ -368,13 +392,13 @@ public final class InsertRegionTargetHttpsProxyRequest
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (targetHttpsProxyResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              433657473, getTargetHttpsProxyResource());
+              165222017, getTargetHttpsProxyResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1047,7 +1071,14 @@ public final class InsertRegionTargetHttpsProxyRequest
             com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder>
         targetHttpsProxyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetHttpsProxyResource field is set.
@@ -1056,7 +1087,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       return targetHttpsProxyResourceBuilder_ != null || targetHttpsProxyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetHttpsProxyResource.
@@ -1071,7 +1109,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetHttpsProxyResource(com.google.cloud.compute.v1.TargetHttpsProxy value) {
@@ -1088,7 +1133,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetHttpsProxyResource(
@@ -1103,7 +1155,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetHttpsProxyResource(
@@ -1125,7 +1184,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetHttpsProxyResource() {
@@ -1140,7 +1206,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxy.Builder
@@ -1150,7 +1223,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       return getTargetHttpsProxyResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder
@@ -1164,7 +1244,14 @@ public final class InsertRegionTargetHttpsProxyRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

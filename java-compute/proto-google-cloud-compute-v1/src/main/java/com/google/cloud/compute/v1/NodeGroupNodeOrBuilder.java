@@ -27,6 +27,58 @@ public interface NodeGroupNodeOrBuilder
    *
    *
    * <pre>
+   * Accelerators for this node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> getAcceleratorsList();
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators for this node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   */
+  com.google.cloud.compute.v1.AcceleratorConfig getAccelerators(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators for this node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   */
+  int getAcceleratorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators for this node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
+      getAcceleratorsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Accelerators for this node.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig accelerators = 1141608;</code>
+   */
+  com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getAcceleratorsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * CPU overcommit.
    * </pre>
    *
@@ -49,6 +101,57 @@ public interface NodeGroupNodeOrBuilder
    * @return The cpuOvercommitType.
    */
   com.google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType getCpuOvercommitType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Local disk configurations.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+   */
+  java.util.List<com.google.cloud.compute.v1.LocalDisk> getDisksList();
+  /**
+   *
+   *
+   * <pre>
+   * Local disk configurations.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+   */
+  com.google.cloud.compute.v1.LocalDisk getDisks(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Local disk configurations.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+   */
+  int getDisksCount();
+  /**
+   *
+   *
+   * <pre>
+   * Local disk configurations.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+   */
+  java.util.List<? extends com.google.cloud.compute.v1.LocalDiskOrBuilder> getDisksOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Local disk configurations.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.compute.v1.LocalDisk disks = 95594102;</code>
+   */
+  com.google.cloud.compute.v1.LocalDiskOrBuilder getDisksOrBuilder(int index);
 
   /**
    *
@@ -133,7 +236,7 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>string node_type = 197397335;</code>
    *
    * @return The nodeType.
    */
@@ -145,7 +248,7 @@ public interface NodeGroupNodeOrBuilder
    * The type of this node.
    * </pre>
    *
-   * <code>string node_type = 465832791;</code>
+   * <code>string node_type = 197397335;</code>
    *
    * @return The bytes for nodeType.
    */
@@ -193,7 +296,7 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 339433367;</code>
+   * <code>string server_id = 70997911;</code>
    *
    * @return The serverId.
    */
@@ -205,7 +308,7 @@ public interface NodeGroupNodeOrBuilder
    * Server ID associated with this node.
    * </pre>
    *
-   * <code>string server_id = 339433367;</code>
+   * <code>string server_id = 70997911;</code>
    *
    * @return The bytes for serverId.
    */

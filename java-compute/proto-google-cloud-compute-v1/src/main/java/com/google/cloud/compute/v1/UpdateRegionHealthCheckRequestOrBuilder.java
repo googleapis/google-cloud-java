@@ -30,7 +30,7 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * Name of the HealthCheck resource to update.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheck.
    */
@@ -42,25 +42,51 @@ public interface UpdateRegionHealthCheckRequestOrBuilder
    * Name of the HealthCheck resource to update.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheck.
    */
   com.google.protobuf.ByteString getHealthCheckBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the healthCheckResource field is set.
    */
   boolean hasHealthCheckResource();
   /**
-   * <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The healthCheckResource.
    */
   com.google.cloud.compute.v1.HealthCheck getHealthCheckResource();
-  /** <code>.google.cloud.compute.v1.HealthCheck health_check_resource = 201925032;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.HealthCheck health_check_resource = 201925032 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.HealthCheckOrBuilder getHealthCheckResourceOrBuilder();
 
   /**

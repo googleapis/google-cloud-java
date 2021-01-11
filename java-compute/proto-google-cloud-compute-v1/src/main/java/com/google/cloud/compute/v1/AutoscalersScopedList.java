@@ -86,7 +86,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
 
               break;
             }
-          case -568794142:
+          case 1578689506:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 autoscalers_ = new java.util.ArrayList<com.google.cloud.compute.v1.Autoscaler>();
@@ -134,7 +134,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.AutoscalersScopedList.Builder.class);
   }
 
-  public static final int AUTOSCALERS_FIELD_NUMBER = 465771644;
+  public static final int AUTOSCALERS_FIELD_NUMBER = 197336188;
   private java.util.List<com.google.cloud.compute.v1.Autoscaler> autoscalers_;
   /**
    *
@@ -143,7 +143,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Autoscaler> getAutoscalersList() {
@@ -156,7 +156,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.AutoscalerOrBuilder>
@@ -170,7 +170,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   @java.lang.Override
   public int getAutoscalersCount() {
@@ -183,7 +183,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Autoscaler getAutoscalers(int index) {
@@ -196,7 +196,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalersOrBuilder(int index) {
@@ -267,7 +267,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < autoscalers_.size(); i++) {
-      output.writeMessage(465771644, autoscalers_.get(i));
+      output.writeMessage(197336188, autoscalers_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -283,7 +283,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
     }
     for (int i = 0; i < autoscalers_.size(); i++) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(465771644, autoscalers_.get(i));
+          com.google.protobuf.CodedOutputStream.computeMessageSize(197336188, autoscalers_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -661,7 +661,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Autoscaler> getAutoscalersList() {
       if (autoscalersBuilder_ == null) {
@@ -677,7 +677,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public int getAutoscalersCount() {
       if (autoscalersBuilder_ == null) {
@@ -693,7 +693,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public com.google.cloud.compute.v1.Autoscaler getAutoscalers(int index) {
       if (autoscalersBuilder_ == null) {
@@ -709,7 +709,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder setAutoscalers(int index, com.google.cloud.compute.v1.Autoscaler value) {
       if (autoscalersBuilder_ == null) {
@@ -731,7 +731,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder setAutoscalers(
         int index, com.google.cloud.compute.v1.Autoscaler.Builder builderForValue) {
@@ -751,7 +751,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder addAutoscalers(com.google.cloud.compute.v1.Autoscaler value) {
       if (autoscalersBuilder_ == null) {
@@ -773,7 +773,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder addAutoscalers(int index, com.google.cloud.compute.v1.Autoscaler value) {
       if (autoscalersBuilder_ == null) {
@@ -795,7 +795,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder addAutoscalers(com.google.cloud.compute.v1.Autoscaler.Builder builderForValue) {
       if (autoscalersBuilder_ == null) {
@@ -814,7 +814,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder addAutoscalers(
         int index, com.google.cloud.compute.v1.Autoscaler.Builder builderForValue) {
@@ -834,7 +834,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder addAllAutoscalers(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Autoscaler> values) {
@@ -854,7 +854,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder clearAutoscalers() {
       if (autoscalersBuilder_ == null) {
@@ -873,7 +873,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public Builder removeAutoscalers(int index) {
       if (autoscalersBuilder_ == null) {
@@ -892,7 +892,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public com.google.cloud.compute.v1.Autoscaler.Builder getAutoscalersBuilder(int index) {
       return getAutoscalersFieldBuilder().getBuilder(index);
@@ -904,7 +904,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalersOrBuilder(int index) {
       if (autoscalersBuilder_ == null) {
@@ -920,7 +920,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AutoscalerOrBuilder>
         getAutoscalersOrBuilderList() {
@@ -937,7 +937,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public com.google.cloud.compute.v1.Autoscaler.Builder addAutoscalersBuilder() {
       return getAutoscalersFieldBuilder()
@@ -950,7 +950,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public com.google.cloud.compute.v1.Autoscaler.Builder addAutoscalersBuilder(int index) {
       return getAutoscalersFieldBuilder()
@@ -963,7 +963,7 @@ public final class AutoscalersScopedList extends com.google.protobuf.GeneratedMe
      * [Output Only] A list of autoscalers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+     * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Autoscaler.Builder>
         getAutoscalersBuilderList() {

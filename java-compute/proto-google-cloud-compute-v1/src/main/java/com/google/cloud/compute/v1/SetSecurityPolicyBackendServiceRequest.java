@@ -81,6 +81,13 @@ public final class SetSecurityPolicyBackendServiceRequest
               requestId_ = s;
               break;
             }
+          case 308084818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              backendService_ = s;
+              break;
+            }
           case 1633080194:
             {
               com.google.cloud.compute.v1.SecurityPolicyReference.Builder subBuilder = null;
@@ -103,13 +110,6 @@ public final class SetSecurityPolicyBackendServiceRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              backendService_ = s;
               break;
             }
           default:
@@ -146,7 +146,7 @@ public final class SetSecurityPolicyBackendServiceRequest
             com.google.cloud.compute.v1.SetSecurityPolicyBackendServiceRequest.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -155,7 +155,7 @@ public final class SetSecurityPolicyBackendServiceRequest
    * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -178,7 +178,7 @@ public final class SetSecurityPolicyBackendServiceRequest
    * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -300,8 +300,14 @@ public final class SetSecurityPolicyBackendServiceRequest
   public static final int SECURITY_POLICY_REFERENCE_RESOURCE_FIELD_NUMBER = 204135024;
   private com.google.cloud.compute.v1.SecurityPolicyReference securityPolicyReferenceResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyReferenceResource field is set.
@@ -311,8 +317,14 @@ public final class SetSecurityPolicyBackendServiceRequest
     return securityPolicyReferenceResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyReferenceResource.
@@ -324,8 +336,14 @@ public final class SetSecurityPolicyBackendServiceRequest
         : securityPolicyReferenceResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+   * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -351,14 +369,14 @@ public final class SetSecurityPolicyBackendServiceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getBackendServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    }
     if (securityPolicyReferenceResource_ != null) {
       output.writeMessage(204135024, getSecurityPolicyReferenceResource());
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
     unknownFields.writeTo(output);
   }
@@ -372,6 +390,9 @@ public final class SetSecurityPolicyBackendServiceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getBackendServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    }
     if (securityPolicyReferenceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -379,9 +400,6 @@ public final class SetSecurityPolicyBackendServiceRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -733,7 +751,7 @@ public final class SetSecurityPolicyBackendServiceRequest
      * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The backendService.
      */
@@ -755,7 +773,7 @@ public final class SetSecurityPolicyBackendServiceRequest
      * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for backendService.
      */
@@ -777,7 +795,7 @@ public final class SetSecurityPolicyBackendServiceRequest
      * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -798,7 +816,7 @@ public final class SetSecurityPolicyBackendServiceRequest
      * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -815,7 +833,7 @@ public final class SetSecurityPolicyBackendServiceRequest
      * Name of the BackendService resource to which the security policy should be set. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -1060,8 +1078,14 @@ public final class SetSecurityPolicyBackendServiceRequest
             com.google.cloud.compute.v1.SecurityPolicyReferenceOrBuilder>
         securityPolicyReferenceResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the securityPolicyReferenceResource field is set.
@@ -1071,8 +1095,14 @@ public final class SetSecurityPolicyBackendServiceRequest
           || securityPolicyReferenceResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The securityPolicyReferenceResource.
@@ -1088,8 +1118,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSecurityPolicyReferenceResource(
@@ -1107,8 +1143,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSecurityPolicyReferenceResource(
@@ -1123,8 +1165,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSecurityPolicyReferenceResource(
@@ -1147,8 +1195,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSecurityPolicyReferenceResource() {
@@ -1163,8 +1217,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyReference.Builder
@@ -1174,8 +1234,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       return getSecurityPolicyReferenceResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SecurityPolicyReferenceOrBuilder
@@ -1189,8 +1255,14 @@ public final class SetSecurityPolicyBackendServiceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024;
+     * .google.cloud.compute.v1.SecurityPolicyReference security_policy_reference_resource = 204135024 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

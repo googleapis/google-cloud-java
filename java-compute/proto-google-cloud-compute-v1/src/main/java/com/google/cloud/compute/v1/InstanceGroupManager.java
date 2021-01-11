@@ -124,6 +124,13 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
               creationTimestamp_ = s;
               break;
             }
+          case 326502178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceTemplate_ = s;
+              break;
+            }
           case 380308522:
             {
               com.google.cloud.compute.v1.StatefulPolicy.Builder subBuilder = null;
@@ -145,6 +152,16 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
               targetSize_ = input.readInt32();
               break;
             }
+          case 541097290:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                targetPools_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              targetPools_.add(s);
+              break;
+            }
           case 648762026:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -152,11 +169,36 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
               instanceGroup_ = s;
               break;
             }
+          case 965367866:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              baseInstanceName_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               region_ = s;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1273306210:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              namedPorts_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
               break;
             }
           case 1299444954:
@@ -226,63 +268,14 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
 
               break;
             }
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
-              break;
-            }
-          case -1820981470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceTemplate_ = s;
-              break;
-            }
-          case -1606386358:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                targetPools_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              targetPools_.add(s);
-              break;
-            }
-          case -1182115782:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              baseInstanceName_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -874177438:
-            {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                namedPorts_ = new java.util.ArrayList<com.google.cloud.compute.v1.NamedPort>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              namedPorts_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.NamedPort.parser(), extensionRegistry));
-              break;
-            }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -640574422:
+          case 1506909226:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 autoHealingPolicies_ =
@@ -296,7 +289,14 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
                       extensionRegistry));
               break;
             }
-          case -18498966:
+          case 1877428002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fingerprint_ = s;
+              break;
+            }
+          case 2128984682:
             {
               com.google.cloud.compute.v1.DistributionPolicy.Builder subBuilder = null;
               if (distributionPolicy_ != null) {
@@ -326,14 +326,14 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000008) != 0)) {
-        versions_ = java.util.Collections.unmodifiableList(versions_);
-      }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         targetPools_ = targetPools_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         namedPorts_ = java.util.Collections.unmodifiableList(namedPorts_);
+      }
+      if (((mutable_bitField0_ & 0x00000008) != 0)) {
+        versions_ = java.util.Collections.unmodifiableList(versions_);
       }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         autoHealingPolicies_ = java.util.Collections.unmodifiableList(autoHealingPolicies_);
@@ -358,7 +358,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.InstanceGroupManager.Builder.class);
   }
 
-  public static final int AUTO_HEALING_POLICIES_FIELD_NUMBER = 456799109;
+  public static final int AUTO_HEALING_POLICIES_FIELD_NUMBER = 188363653;
   private java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy>
       autoHealingPolicies_;
   /**
@@ -369,7 +369,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
    * </code>
    */
   @java.lang.Override
@@ -385,7 +385,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
    * </code>
    */
   @java.lang.Override
@@ -402,7 +402,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
    * </code>
    */
   @java.lang.Override
@@ -417,7 +417,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
    * </code>
    */
   @java.lang.Override
@@ -433,7 +433,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+   * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
    * </code>
    */
   @java.lang.Override
@@ -442,7 +442,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     return autoHealingPolicies_.get(index);
   }
 
-  public static final int BASE_INSTANCE_NAME_FIELD_NUMBER = 389106439;
+  public static final int BASE_INSTANCE_NAME_FIELD_NUMBER = 120670983;
   private volatile java.lang.Object baseInstanceName_;
   /**
    *
@@ -451,7 +451,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>string base_instance_name = 120670983;</code>
    *
    * @return The baseInstanceName.
    */
@@ -474,7 +474,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
    * </pre>
    *
-   * <code>string base_instance_name = 389106439;</code>
+   * <code>string base_instance_name = 120670983;</code>
    *
    * @return The bytes for baseInstanceName.
    */
@@ -592,7 +592,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     return getCurrentActions();
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -601,7 +601,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -624,7 +624,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -641,16 +641,16 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int DISTRIBUTION_POLICY_FIELD_NUMBER = 534558541;
+  public static final int DISTRIBUTION_POLICY_FIELD_NUMBER = 266123085;
   private com.google.cloud.compute.v1.DistributionPolicy distributionPolicy_;
   /**
    *
    *
    * <pre>
-   * Policy specifying intended distribution of instances in regional managed instance group.
+   * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
    *
    * @return Whether the distributionPolicy field is set.
    */
@@ -662,10 +662,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Policy specifying intended distribution of instances in regional managed instance group.
+   * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
    *
    * @return The distributionPolicy.
    */
@@ -679,10 +679,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Policy specifying intended distribution of instances in regional managed instance group.
+   * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+   * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DistributionPolicyOrBuilder getDistributionPolicyOrBuilder() {
@@ -838,16 +838,16 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The instanceTemplate.
    */
@@ -867,10 +867,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -985,7 +985,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int NAMED_PORTS_FIELD_NUMBER = 427598732;
+  public static final int NAMED_PORTS_FIELD_NUMBER = 159163276;
   private java.util.List<com.google.cloud.compute.v1.NamedPort> namedPorts_;
   /**
    *
@@ -994,7 +994,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
@@ -1007,7 +1007,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
@@ -1021,7 +1021,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public int getNamedPortsCount() {
@@ -1034,7 +1034,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
@@ -1047,7 +1047,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+   * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
@@ -1103,7 +1103,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1112,7 +1112,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1135,7 +1135,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * [Output Only] The URL for this managed instance group. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1248,7 +1248,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     return getStatus();
   }
 
-  public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
+  public static final int TARGET_POOLS_FIELD_NUMBER = 67637161;
   private com.google.protobuf.LazyStringList targetPools_;
   /**
    *
@@ -1257,7 +1257,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @return A list containing the targetPools.
    */
@@ -1271,7 +1271,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @return The count of targetPools.
    */
@@ -1285,7 +1285,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @param index The index of the element to return.
    * @return The targetPools at the given index.
@@ -1300,7 +1300,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetPools at the given index.
@@ -1465,7 +1465,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+   * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
    * <code>string zone = 3744684;</code>
@@ -1488,7 +1488,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+   * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
    * </pre>
    *
    * <code>string zone = 3744684;</code>
@@ -1537,17 +1537,32 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (!getInstanceTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
+    }
     if (statefulPolicy_ != null) {
       output.writeMessage(47538565, getStatefulPolicy());
     }
     if (targetSize_ != 0) {
       output.writeInt32(62880239, targetSize_);
     }
+    for (int i = 0; i < targetPools_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 67637161, targetPools_.getRaw(i));
+    }
     if (!getInstanceGroupBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 81095253, instanceGroup_);
     }
+    if (!getBaseInstanceNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 120670983, baseInstanceName_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      output.writeMessage(159163276, namedPorts_.get(i));
     }
     for (int i = 0; i < versions_.size(); i++) {
       output.writeMessage(162430619, versions_.get(i));
@@ -1561,32 +1576,17 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     if (status_ != null) {
       output.writeMessage(181260274, getStatus());
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    for (int i = 0; i < autoHealingPolicies_.size(); i++) {
+      output.writeMessage(188363653, autoHealingPolicies_.get(i));
+    }
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
-    }
-    for (int i = 0; i < targetPools_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 336072617, targetPools_.getRaw(i));
-    }
-    if (!getBaseInstanceNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 389106439, baseInstanceName_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      output.writeMessage(427598732, namedPorts_.get(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    for (int i = 0; i < autoHealingPolicies_.size(); i++) {
-      output.writeMessage(456799109, autoHealingPolicies_.get(i));
-    }
     if (distributionPolicy_ != null) {
-      output.writeMessage(534558541, getDistributionPolicy());
+      output.writeMessage(266123085, getDistributionPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -1613,6 +1613,9 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getInstanceTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
+    }
     if (statefulPolicy_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(47538565, getStatefulPolicy());
@@ -1620,11 +1623,30 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     if (targetSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(62880239, targetSize_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < targetPools_.size(); i++) {
+        dataSize += computeStringSizeNoTag(targetPools_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getTargetPoolsList().size();
+    }
     if (!getInstanceGroupBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(81095253, instanceGroup_);
     }
+    if (!getBaseInstanceNameBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(120670983, baseInstanceName_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    for (int i = 0; i < namedPorts_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(159163276, namedPorts_.get(i));
     }
     for (int i = 0; i < versions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(162430619, versions_.get(i));
@@ -1640,44 +1662,21 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
     if (status_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(181260274, getStatus());
     }
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < targetPools_.size(); i++) {
-        dataSize += computeStringSizeNoTag(targetPools_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getTargetPoolsList().size();
-    }
-    if (!getBaseInstanceNameBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(389106439, baseInstanceName_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    for (int i = 0; i < namedPorts_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(427598732, namedPorts_.get(i));
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     for (int i = 0; i < autoHealingPolicies_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              456799109, autoHealingPolicies_.get(i));
+              188363653, autoHealingPolicies_.get(i));
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     if (distributionPolicy_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              534558541, getDistributionPolicy());
+              266123085, getDistributionPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2396,7 +2395,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy>
@@ -2415,7 +2414,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public int getAutoHealingPoliciesCount() {
@@ -2433,7 +2432,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy getAutoHealingPolicies(
@@ -2452,7 +2451,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder setAutoHealingPolicies(
@@ -2477,7 +2476,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder setAutoHealingPolicies(
@@ -2500,7 +2499,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder addAutoHealingPolicies(
@@ -2525,7 +2524,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder addAutoHealingPolicies(
@@ -2550,7 +2549,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder addAutoHealingPolicies(
@@ -2572,7 +2571,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder addAutoHealingPolicies(
@@ -2595,7 +2594,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder addAllAutoHealingPolicies(
@@ -2619,7 +2618,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder clearAutoHealingPolicies() {
@@ -2640,7 +2639,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public Builder removeAutoHealingPolicies(int index) {
@@ -2661,7 +2660,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.Builder
@@ -2676,7 +2675,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicyOrBuilder
@@ -2695,7 +2694,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public java.util.List<
@@ -2715,7 +2714,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.Builder
@@ -2733,7 +2732,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.Builder
@@ -2752,7 +2751,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 456799109;
+     * repeated .google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy auto_healing_policies = 188363653;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy.Builder>
@@ -2788,7 +2787,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>string base_instance_name = 120670983;</code>
      *
      * @return The baseInstanceName.
      */
@@ -2810,7 +2809,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>string base_instance_name = 120670983;</code>
      *
      * @return The bytes for baseInstanceName.
      */
@@ -2832,7 +2831,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>string base_instance_name = 120670983;</code>
      *
      * @param value The baseInstanceName to set.
      * @return This builder for chaining.
@@ -2853,7 +2852,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>string base_instance_name = 120670983;</code>
      *
      * @return This builder for chaining.
      */
@@ -2870,7 +2869,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
      * </pre>
      *
-     * <code>string base_instance_name = 389106439;</code>
+     * <code>string base_instance_name = 120670983;</code>
      *
      * @param value The bytes for baseInstanceName to set.
      * @return This builder for chaining.
@@ -3209,7 +3208,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -3231,7 +3230,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -3253,7 +3252,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -3274,7 +3273,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -3291,7 +3290,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3317,10 +3316,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      *
      * @return Whether the distributionPolicy field is set.
      */
@@ -3331,10 +3330,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      *
      * @return The distributionPolicy.
      */
@@ -3351,10 +3350,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     public Builder setDistributionPolicy(com.google.cloud.compute.v1.DistributionPolicy value) {
       if (distributionPolicyBuilder_ == null) {
@@ -3373,10 +3372,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     public Builder setDistributionPolicy(
         com.google.cloud.compute.v1.DistributionPolicy.Builder builderForValue) {
@@ -3393,10 +3392,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     public Builder mergeDistributionPolicy(com.google.cloud.compute.v1.DistributionPolicy value) {
       if (distributionPolicyBuilder_ == null) {
@@ -3419,10 +3418,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     public Builder clearDistributionPolicy() {
       if (distributionPolicyBuilder_ == null) {
@@ -3439,10 +3438,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     public com.google.cloud.compute.v1.DistributionPolicy.Builder getDistributionPolicyBuilder() {
 
@@ -3453,10 +3452,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     public com.google.cloud.compute.v1.DistributionPolicyOrBuilder
         getDistributionPolicyOrBuilder() {
@@ -3472,10 +3471,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Policy specifying intended distribution of instances in regional managed instance group.
+     * Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 534558541;</code>
+     * <code>.google.cloud.compute.v1.DistributionPolicy distribution_policy = 266123085;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DistributionPolicy,
@@ -3822,10 +3821,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return The instanceTemplate.
      */
@@ -3844,10 +3843,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -3866,10 +3865,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -3887,10 +3886,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return This builder for chaining.
      */
@@ -3904,10 +3903,10 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.
@@ -4158,7 +4157,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort> getNamedPortsList() {
       if (namedPortsBuilder_ == null) {
@@ -4174,7 +4173,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public int getNamedPortsCount() {
       if (namedPortsBuilder_ == null) {
@@ -4190,7 +4189,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort getNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -4206,7 +4205,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder setNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -4228,7 +4227,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder setNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -4248,7 +4247,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -4270,7 +4269,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(int index, com.google.cloud.compute.v1.NamedPort value) {
       if (namedPortsBuilder_ == null) {
@@ -4292,7 +4291,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
       if (namedPortsBuilder_ == null) {
@@ -4311,7 +4310,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addNamedPorts(
         int index, com.google.cloud.compute.v1.NamedPort.Builder builderForValue) {
@@ -4331,7 +4330,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder addAllNamedPorts(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.NamedPort> values) {
@@ -4351,7 +4350,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder clearNamedPorts() {
       if (namedPortsBuilder_ == null) {
@@ -4370,7 +4369,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public Builder removeNamedPorts(int index) {
       if (namedPortsBuilder_ == null) {
@@ -4389,7 +4388,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder getNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder().getBuilder(index);
@@ -4401,7 +4400,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPortOrBuilder getNamedPortsOrBuilder(int index) {
       if (namedPortsBuilder_ == null) {
@@ -4417,7 +4416,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.NamedPortOrBuilder>
         getNamedPortsOrBuilderList() {
@@ -4434,7 +4433,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder() {
       return getNamedPortsFieldBuilder()
@@ -4447,7 +4446,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public com.google.cloud.compute.v1.NamedPort.Builder addNamedPortsBuilder(int index) {
       return getNamedPortsFieldBuilder()
@@ -4460,7 +4459,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * Named ports configured for the Instance Groups complementary to this Instance Group Manager.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 427598732;</code>
+     * <code>repeated .google.cloud.compute.v1.NamedPort named_ports = 159163276;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.NamedPort.Builder>
         getNamedPortsBuilderList() {
@@ -4598,7 +4597,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -4620,7 +4619,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4642,7 +4641,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4663,7 +4662,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -4680,7 +4679,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * [Output Only] The URL for this managed instance group. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -5084,7 +5083,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @return A list containing the targetPools.
      */
@@ -5098,7 +5097,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @return The count of targetPools.
      */
@@ -5112,7 +5111,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param index The index of the element to return.
      * @return The targetPools at the given index.
@@ -5127,7 +5126,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the targetPools at the given index.
@@ -5142,7 +5141,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param index The index to set the value at.
      * @param value The targetPools to set.
@@ -5164,7 +5163,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param value The targetPools to add.
      * @return This builder for chaining.
@@ -5185,7 +5184,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param values The targetPools to add.
      * @return This builder for chaining.
@@ -5203,7 +5202,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @return This builder for chaining.
      */
@@ -5220,7 +5219,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      * The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param value The bytes of the targetPools to add.
      * @return This builder for chaining.
@@ -5891,7 +5890,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+     * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
      * <code>string zone = 3744684;</code>
@@ -5913,7 +5912,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+     * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
      * <code>string zone = 3744684;</code>
@@ -5935,7 +5934,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+     * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
      * <code>string zone = 3744684;</code>
@@ -5956,7 +5955,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+     * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
      * <code>string zone = 3744684;</code>
@@ -5973,7 +5972,7 @@ public final class InstanceGroupManager extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * [Output Only] The URL of the zone where the managed instance group is located (for zonal resources).
+     * [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
      * </pre>
      *
      * <code>string zone = 3744684;</code>

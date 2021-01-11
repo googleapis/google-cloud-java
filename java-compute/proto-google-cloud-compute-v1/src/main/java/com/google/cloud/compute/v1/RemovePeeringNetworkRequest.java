@@ -79,21 +79,7 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 1862979954:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case -925667342:
+          case 1221816306:
             {
               com.google.cloud.compute.v1.NetworksRemovePeeringRequest.Builder subBuilder = null;
               if (networksRemovePeeringRequestResource_ != null) {
@@ -108,6 +94,20 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
                 networksRemovePeeringRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case 1862979954:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              network_ = s;
               break;
             }
           default:
@@ -193,12 +193,18 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int NETWORKS_REMOVE_PEERING_REQUEST_RESOURCE_FIELD_NUMBER = 421162494;
+  public static final int NETWORKS_REMOVE_PEERING_REQUEST_RESOURCE_FIELD_NUMBER = 152727038;
   private com.google.cloud.compute.v1.NetworksRemovePeeringRequest
       networksRemovePeeringRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networksRemovePeeringRequestResource field is set.
@@ -208,8 +214,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     return networksRemovePeeringRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networksRemovePeeringRequestResource.
@@ -222,8 +234,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
         : networksRemovePeeringRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+   * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -351,14 +369,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (networksRemovePeeringRequestResource_ != null) {
+      output.writeMessage(152727038, getNetworksRemovePeeringRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
-    }
-    if (networksRemovePeeringRequestResource_ != null) {
-      output.writeMessage(421162494, getNetworksRemovePeeringRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -372,16 +390,16 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (networksRemovePeeringRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              152727038, getNetworksRemovePeeringRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
-    if (networksRemovePeeringRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              421162494, getNetworksRemovePeeringRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -832,8 +850,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.NetworksRemovePeeringRequestOrBuilder>
         networksRemovePeeringRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networksRemovePeeringRequestResource field is set.
@@ -843,8 +867,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
           || networksRemovePeeringRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networksRemovePeeringRequestResource.
@@ -860,8 +890,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworksRemovePeeringRequestResource(
@@ -879,8 +915,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworksRemovePeeringRequestResource(
@@ -895,8 +937,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworksRemovePeeringRequestResource(
@@ -919,8 +967,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworksRemovePeeringRequestResource() {
@@ -935,8 +989,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworksRemovePeeringRequest.Builder
@@ -946,8 +1006,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       return getNetworksRemovePeeringRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworksRemovePeeringRequestOrBuilder
@@ -961,8 +1027,14 @@ public final class RemovePeeringNetworkRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 421162494;
+     * .google.cloud.compute.v1.NetworksRemovePeeringRequest networks_remove_peering_request_resource = 152727038 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -30,7 +30,7 @@ public interface DeleteSignedUrlKeyBackendServiceRequestOrBuilder
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -42,7 +42,7 @@ public interface DeleteSignedUrlKeyBackendServiceRequestOrBuilder
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -55,7 +55,7 @@ public interface DeleteSignedUrlKeyBackendServiceRequestOrBuilder
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The keyName.
    */
@@ -67,7 +67,7 @@ public interface DeleteSignedUrlKeyBackendServiceRequestOrBuilder
    * The name of the Signed URL Key to delete.
    * </pre>
    *
-   * <code>string key_name = 500938859 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string key_name = 232503403 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for keyName.
    */

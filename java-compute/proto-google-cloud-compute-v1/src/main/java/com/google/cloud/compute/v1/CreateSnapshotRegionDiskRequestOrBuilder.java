@@ -128,17 +128,43 @@ public interface CreateSnapshotRegionDiskRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the snapshotResource field is set.
    */
   boolean hasSnapshotResource();
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The snapshotResource.
    */
   com.google.cloud.compute.v1.Snapshot getSnapshotResource();
-  /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder();
 }

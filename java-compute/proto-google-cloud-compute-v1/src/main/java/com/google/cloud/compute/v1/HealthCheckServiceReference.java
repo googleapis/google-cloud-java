@@ -73,7 +73,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
           case 0:
             done = true;
             break;
-          case -1027969318:
+          case 1119514330:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -114,10 +114,10 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.HealthCheckServiceReference.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
+  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 139939291;
   private volatile java.lang.Object healthCheckService_;
   /**
-   * <code>string health_check_service = 408374747;</code>
+   * <code>string health_check_service = 139939291;</code>
    *
    * @return The healthCheckService.
    */
@@ -134,7 +134,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     }
   }
   /**
-   * <code>string health_check_service = 408374747;</code>
+   * <code>string health_check_service = 139939291;</code>
    *
    * @return The bytes for healthCheckService.
    */
@@ -166,7 +166,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getHealthCheckServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 408374747, healthCheckService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 139939291, healthCheckService_);
     }
     unknownFields.writeTo(output);
   }
@@ -179,7 +179,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
     size = 0;
     if (!getHealthCheckServiceBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(408374747, healthCheckService_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(139939291, healthCheckService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -476,7 +476,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
 
     private java.lang.Object healthCheckService_ = "";
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>string health_check_service = 139939291;</code>
      *
      * @return The healthCheckService.
      */
@@ -492,7 +492,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>string health_check_service = 139939291;</code>
      *
      * @return The bytes for healthCheckService.
      */
@@ -508,7 +508,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       }
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>string health_check_service = 139939291;</code>
      *
      * @param value The healthCheckService to set.
      * @return This builder for chaining.
@@ -523,7 +523,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>string health_check_service = 139939291;</code>
      *
      * @return This builder for chaining.
      */
@@ -534,7 +534,7 @@ public final class HealthCheckServiceReference extends com.google.protobuf.Gener
       return this;
     }
     /**
-     * <code>string health_check_service = 408374747;</code>
+     * <code>string health_check_service = 139939291;</code>
      *
      * @param value The bytes for healthCheckService to set.
      * @return This builder for chaining.

@@ -31,7 +31,7 @@ public interface HttpRouteRuleOrBuilder
    * The description can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -44,7 +44,7 @@ public interface HttpRouteRuleOrBuilder
    * The description can have a maximum length of 1024 characters.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -60,7 +60,7 @@ public interface HttpRouteRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -75,7 +75,7 @@ public interface HttpRouteRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return The headerAction.
    */
@@ -90,7 +90,7 @@ public interface HttpRouteRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder();
 
@@ -101,7 +101,7 @@ public interface HttpRouteRuleOrBuilder
    * The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 107765245;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpRouteRuleMatch> getMatchRulesList();
   /**
@@ -111,7 +111,7 @@ public interface HttpRouteRuleOrBuilder
    * The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 107765245;</code>
    */
   com.google.cloud.compute.v1.HttpRouteRuleMatch getMatchRules(int index);
   /**
@@ -121,7 +121,7 @@ public interface HttpRouteRuleOrBuilder
    * The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 107765245;</code>
    */
   int getMatchRulesCount();
   /**
@@ -131,7 +131,7 @@ public interface HttpRouteRuleOrBuilder
    * The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 107765245;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpRouteRuleMatchOrBuilder>
       getMatchRulesOrBuilderList();
@@ -142,7 +142,7 @@ public interface HttpRouteRuleOrBuilder
    * The list of criteria for matching attributes of a request to this routeRule. This list has OR semantics: the request matches this routeRule when any of the matchRules are satisfied. However predicates within a given matchRule have AND semantics. All predicates within a matchRule must match for the request to match the rule.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 376200701;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRuleMatch match_rules = 107765245;</code>
    */
   com.google.cloud.compute.v1.HttpRouteRuleMatchOrBuilder getMatchRulesOrBuilder(int index);
 
@@ -155,7 +155,7 @@ public interface HttpRouteRuleOrBuilder
    * Priority numbers can have gaps, which enable you to add or remove rules in the future without affecting the rest of the rules. For example, 1, 2, 3, 4, 5, 9, 12, 16 is a valid series of priority numbers to which you could add rules numbered from 6 to 8, 10 to 11, and 13 to 15 in the future without any impact on existing rules.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>int32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -170,7 +170,7 @@ public interface HttpRouteRuleOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a routeRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
    *
    * @return Whether the routeAction field is set.
    */
@@ -184,7 +184,7 @@ public interface HttpRouteRuleOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a routeRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
    *
    * @return The routeAction.
    */
@@ -198,7 +198,7 @@ public interface HttpRouteRuleOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a routeRule's routeAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 424563948;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction route_action = 156128492;</code>
    */
   com.google.cloud.compute.v1.HttpRouteActionOrBuilder getRouteActionOrBuilder();
 
@@ -210,7 +210,7 @@ public interface HttpRouteRuleOrBuilder
    * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -223,7 +223,7 @@ public interface HttpRouteRuleOrBuilder
    * Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */
@@ -238,7 +238,7 @@ public interface HttpRouteRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
    *
    * @return Whether the urlRedirect field is set.
    */
@@ -252,7 +252,7 @@ public interface HttpRouteRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
    *
    * @return The urlRedirect.
    */
@@ -266,7 +266,7 @@ public interface HttpRouteRuleOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 405147820;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction url_redirect = 136712364;</code>
    */
   com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getUrlRedirectOrBuilder();
 }

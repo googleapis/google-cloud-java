@@ -90,6 +90,25 @@ public final class ResourcePolicySnapshotSchedulePolicy
 
               break;
             }
+          case 859083962:
+            {
+              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
+                  subBuilder = null;
+              if (schedule_ != null) {
+                subBuilder = schedule_.toBuilder();
+              }
+              schedule_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(schedule_);
+                schedule_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 1482970226:
             {
               com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySnapshotProperties
@@ -106,25 +125,6 @@ public final class ResourcePolicySnapshotSchedulePolicy
               if (subBuilder != null) {
                 subBuilder.mergeFrom(snapshotProperties_);
                 snapshotProperties_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1288399686:
-            {
-              com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
-                  subBuilder = null;
-              if (schedule_ != null) {
-                subBuilder = schedule_.toBuilder();
-              }
-              schedule_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule
-                          .parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(schedule_);
-                schedule_ = subBuilder.buildPartial();
               }
 
               break;
@@ -221,7 +221,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
     return getRetentionPolicy();
   }
 
-  public static final int SCHEDULE_FIELD_NUMBER = 375820951;
+  public static final int SCHEDULE_FIELD_NUMBER = 107385495;
   private com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule_;
   /**
    *
@@ -231,7 +231,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
    * </code>
    *
    * @return Whether the schedule field is set.
@@ -248,7 +248,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
    * </code>
    *
    * @return The schedule.
@@ -268,7 +268,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+   * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
    * </code>
    */
   @java.lang.Override
@@ -352,11 +352,11 @@ public final class ResourcePolicySnapshotSchedulePolicy
     if (retentionPolicy_ != null) {
       output.writeMessage(68625779, getRetentionPolicy());
     }
+    if (schedule_ != null) {
+      output.writeMessage(107385495, getSchedule());
+    }
     if (snapshotProperties_ != null) {
       output.writeMessage(185371278, getSnapshotProperties());
-    }
-    if (schedule_ != null) {
-      output.writeMessage(375820951, getSchedule());
     }
     unknownFields.writeTo(output);
   }
@@ -371,13 +371,13 @@ public final class ResourcePolicySnapshotSchedulePolicy
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(68625779, getRetentionPolicy());
     }
+    if (schedule_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(107385495, getSchedule());
+    }
     if (snapshotProperties_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               185371278, getSnapshotProperties());
-    }
-    if (schedule_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(375820951, getSchedule());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -961,7 +961,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      *
      * @return Whether the schedule field is set.
@@ -977,7 +977,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      *
      * @return The schedule.
@@ -1000,7 +1000,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     public Builder setSchedule(
@@ -1025,7 +1025,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     public Builder setSchedule(
@@ -1048,7 +1048,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     public Builder mergeSchedule(
@@ -1078,7 +1078,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     public Builder clearSchedule() {
@@ -1100,7 +1100,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule.Builder
@@ -1117,7 +1117,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyScheduleOrBuilder
@@ -1139,7 +1139,7 @@ public final class ResourcePolicySnapshotSchedulePolicy
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 375820951;
+     * .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicySchedule schedule = 107385495;
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

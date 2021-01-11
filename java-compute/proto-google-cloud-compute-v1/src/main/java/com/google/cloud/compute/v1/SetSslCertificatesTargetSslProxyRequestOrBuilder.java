@@ -78,16 +78,28 @@ public interface SetSslCertificatesTargetSslProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest target_ssl_proxies_set_ssl_certificates_request_resource = 147940797;
+   * .google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest target_ssl_proxies_set_ssl_certificates_request_resource = 147940797 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetSslProxiesSetSslCertificatesRequestResource field is set.
    */
   boolean hasTargetSslProxiesSetSslCertificatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest target_ssl_proxies_set_ssl_certificates_request_resource = 147940797;
+   * .google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest target_ssl_proxies_set_ssl_certificates_request_resource = 147940797 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetSslProxiesSetSslCertificatesRequestResource.
@@ -95,8 +107,14 @@ public interface SetSslCertificatesTargetSslProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest
       getTargetSslProxiesSetSslCertificatesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest target_ssl_proxies_set_ssl_certificates_request_resource = 147940797;
+   * .google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequest target_ssl_proxies_set_ssl_certificates_request_resource = 147940797 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetSslProxiesSetSslCertificatesRequestOrBuilder
@@ -109,7 +127,7 @@ public interface SetSslCertificatesTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -121,7 +139,7 @@ public interface SetSslCertificatesTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose SslCertificate resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */

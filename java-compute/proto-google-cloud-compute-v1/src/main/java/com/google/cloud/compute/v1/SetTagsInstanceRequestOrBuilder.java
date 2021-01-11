@@ -103,18 +103,44 @@ public interface SetTagsInstanceRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the tagsResource field is set.
    */
   boolean hasTagsResource();
   /**
-   * <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The tagsResource.
    */
   com.google.cloud.compute.v1.Tags getTagsResource();
-  /** <code>.google.cloud.compute.v1.Tags tags_resource = 331435380;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Tags tags_resource = 62999924 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.TagsOrBuilder getTagsResourceOrBuilder();
 
   /**

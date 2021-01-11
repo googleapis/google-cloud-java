@@ -73,7 +73,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
               percentage_ = input.readDouble();
               break;
             }
-          case -543368120:
+          case 1604115528:
             {
               httpStatus_ = input.readUInt32();
               break;
@@ -112,7 +112,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HttpFaultAbort.Builder.class);
   }
 
-  public static final int HTTP_STATUS_FIELD_NUMBER = 468949897;
+  public static final int HTTP_STATUS_FIELD_NUMBER = 200514441;
   private int httpStatus_;
   /**
    *
@@ -122,7 +122,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
    * The value must be between 200 and 599 inclusive.
    * </pre>
    *
-   * <code>uint32 http_status = 468949897;</code>
+   * <code>uint32 http_status = 200514441;</code>
    *
    * @return The httpStatus.
    */
@@ -168,7 +168,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
       output.writeDouble(151909018, percentage_);
     }
     if (httpStatus_ != 0) {
-      output.writeUInt32(468949897, httpStatus_);
+      output.writeUInt32(200514441, httpStatus_);
     }
     unknownFields.writeTo(output);
   }
@@ -183,7 +183,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
       size += com.google.protobuf.CodedOutputStream.computeDoubleSize(151909018, percentage_);
     }
     if (httpStatus_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(468949897, httpStatus_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(200514441, httpStatus_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -493,7 +493,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * The value must be between 200 and 599 inclusive.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>uint32 http_status = 200514441;</code>
      *
      * @return The httpStatus.
      */
@@ -509,7 +509,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * The value must be between 200 and 599 inclusive.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>uint32 http_status = 200514441;</code>
      *
      * @param value The httpStatus to set.
      * @return This builder for chaining.
@@ -528,7 +528,7 @@ public final class HttpFaultAbort extends com.google.protobuf.GeneratedMessageV3
      * The value must be between 200 and 599 inclusive.
      * </pre>
      *
-     * <code>uint32 http_status = 468949897;</code>
+     * <code>uint32 http_status = 200514441;</code>
      *
      * @return This builder for chaining.
      */

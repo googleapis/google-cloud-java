@@ -102,7 +102,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
               project_ = s;
               break;
             }
-          case -323100390:
+          case 1824383258:
             {
               com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.Builder subBuilder = null;
               if (disksAddResourcePoliciesRequestResource_ != null) {
@@ -202,12 +202,18 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     }
   }
 
-  public static final int DISKS_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER = 496483363;
+  public static final int DISKS_ADD_RESOURCE_POLICIES_REQUEST_RESOURCE_FIELD_NUMBER = 228047907;
   private com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest
       disksAddResourcePoliciesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the disksAddResourcePoliciesRequestResource field is set.
@@ -217,8 +223,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     return disksAddResourcePoliciesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The disksAddResourcePoliciesRequestResource.
@@ -231,8 +243,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
         : disksAddResourcePoliciesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -419,7 +437,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (disksAddResourcePoliciesRequestResource_ != null) {
-      output.writeMessage(496483363, getDisksAddResourcePoliciesRequestResource());
+      output.writeMessage(228047907, getDisksAddResourcePoliciesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -445,7 +463,7 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
     if (disksAddResourcePoliciesRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              496483363, getDisksAddResourcePoliciesRequestResource());
+              228047907, getDisksAddResourcePoliciesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -907,8 +925,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
             com.google.cloud.compute.v1.DisksAddResourcePoliciesRequestOrBuilder>
         disksAddResourcePoliciesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the disksAddResourcePoliciesRequestResource field is set.
@@ -918,8 +942,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
           || disksAddResourcePoliciesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The disksAddResourcePoliciesRequestResource.
@@ -935,8 +965,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDisksAddResourcePoliciesRequestResource(
@@ -954,8 +990,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDisksAddResourcePoliciesRequestResource(
@@ -970,8 +1012,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeDisksAddResourcePoliciesRequestResource(
@@ -994,8 +1042,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearDisksAddResourcePoliciesRequestResource() {
@@ -1010,8 +1064,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest.Builder
@@ -1021,8 +1081,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       return getDisksAddResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DisksAddResourcePoliciesRequestOrBuilder
@@ -1036,8 +1102,14 @@ public final class AddResourcePoliciesDiskRequest extends com.google.protobuf.Ge
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+     * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

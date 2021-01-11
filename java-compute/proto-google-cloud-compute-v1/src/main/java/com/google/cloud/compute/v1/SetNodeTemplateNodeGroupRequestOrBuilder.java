@@ -30,7 +30,7 @@ public interface SetNodeTemplateNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource to update.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -42,23 +42,35 @@ public interface SetNodeTemplateNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource to update.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
   com.google.protobuf.ByteString getNodeGroupBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupsSetNodeTemplateRequestResource field is set.
    */
   boolean hasNodeGroupsSetNodeTemplateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupsSetNodeTemplateRequestResource.
@@ -66,8 +78,14 @@ public interface SetNodeTemplateNodeGroupRequestOrBuilder
   com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest
       getNodeGroupsSetNodeTemplateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequestOrBuilder

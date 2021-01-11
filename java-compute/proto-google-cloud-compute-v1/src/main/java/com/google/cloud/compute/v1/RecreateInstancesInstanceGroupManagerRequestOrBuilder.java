@@ -51,16 +51,28 @@ public interface RecreateInstancesInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersRecreateInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersRecreateInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersRecreateInstancesRequestResource.
@@ -68,8 +80,14 @@ public interface RecreateInstancesInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest
       getInstanceGroupManagersRecreateInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952;
+   * .google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequest instance_group_managers_recreate_instances_request_resource = 21405952 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersRecreateInstancesRequestOrBuilder

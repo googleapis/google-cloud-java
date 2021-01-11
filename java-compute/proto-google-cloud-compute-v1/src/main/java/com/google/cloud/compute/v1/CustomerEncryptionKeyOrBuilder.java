@@ -30,7 +30,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * The name of the encryption key that is stored in Google Cloud KMS.
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>string kms_key_name = 215938457;</code>
    *
    * @return The kmsKeyName.
    */
@@ -42,7 +42,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * The name of the encryption key that is stored in Google Cloud KMS.
    * </pre>
    *
-   * <code>string kms_key_name = 484373913;</code>
+   * <code>string kms_key_name = 215938457;</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -80,7 +80,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>string raw_key = 180761032;</code>
    *
    * @return The rawKey.
    */
@@ -92,7 +92,7 @@ public interface CustomerEncryptionKeyOrBuilder
    * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either encrypt or decrypt this resource.
    * </pre>
    *
-   * <code>string raw_key = 449196488;</code>
+   * <code>string raw_key = 180761032;</code>
    *
    * @return The bytes for rawKey.
    */

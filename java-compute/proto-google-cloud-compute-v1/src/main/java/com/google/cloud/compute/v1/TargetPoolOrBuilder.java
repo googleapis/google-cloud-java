@@ -27,7 +27,7 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
-   * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+   * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
    * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
    * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
    * </pre>
@@ -41,7 +41,7 @@ public interface TargetPoolOrBuilder
    *
    *
    * <pre>
-   * This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
+   * The server-defined URL for the resource. This field is applicable only when the containing target pool is serving a forwarding rule as the primary pool, and its failoverRatio field is properly set to a value between [0, 1].
    * backupPool and failoverRatio together define the fallback behavior of the primary target pool: if the ratio of the healthy instances in the primary pool is at or below failoverRatio, traffic arriving at the load-balanced IP will be directed to the backup pool.
    * In case where failoverRatio and backupPool are not set, or all the instances in the backup pool are unhealthy, the traffic will be directed back to the primary pool in the "force" mode, where traffic will be spread to the healthy instances with the best effort, or to all instances when no instance is healthy.
    * </pre>
@@ -84,7 +84,7 @@ public interface TargetPoolOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -96,7 +96,7 @@ public interface TargetPoolOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -124,7 +124,7 @@ public interface TargetPoolOrBuilder
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -136,7 +136,7 @@ public interface TargetPoolOrBuilder
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return The count of healthChecks.
    */
@@ -148,7 +148,7 @@ public interface TargetPoolOrBuilder
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -161,7 +161,7 @@ public interface TargetPoolOrBuilder
    * The URL of the HttpHealthCheck resource. A member instance in this pool is considered healthy if and only if the health checks pass. An empty list means all member instances will be considered healthy at all times. Only legacy HttpHealthChecks are supported. Only one health check may be specified.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -326,7 +326,7 @@ public interface TargetPoolOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -338,7 +338,7 @@ public interface TargetPoolOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -354,7 +354,7 @@ public interface TargetPoolOrBuilder
    * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;</code>
    *
    * @return The enum numeric value on the wire for sessionAffinity.
    */
@@ -369,7 +369,7 @@ public interface TargetPoolOrBuilder
    * CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   * <code>.google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 195453105;</code>
    *
    * @return The sessionAffinity.
    */

@@ -30,7 +30,7 @@ public interface GetInstanceTemplateRequestOrBuilder
    * The name of the instance template.
    * </pre>
    *
-   * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The instanceTemplate.
    */
@@ -42,7 +42,7 @@ public interface GetInstanceTemplateRequestOrBuilder
    * The name of the instance template.
    * </pre>
    *
-   * <code>string instance_template = 309248228 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string instance_template = 40812772 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for instanceTemplate.
    */

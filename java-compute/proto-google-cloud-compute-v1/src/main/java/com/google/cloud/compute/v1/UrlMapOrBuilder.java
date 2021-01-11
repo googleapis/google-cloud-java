@@ -58,7 +58,7 @@ public interface UrlMapOrBuilder
    * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
    *
    * @return Whether the defaultRouteAction field is set.
    */
@@ -73,7 +73,7 @@ public interface UrlMapOrBuilder
    * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
    *
    * @return The defaultRouteAction.
    */
@@ -88,7 +88,7 @@ public interface UrlMapOrBuilder
    * defaultRouteAction has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
    */
   com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder();
 
@@ -101,7 +101,7 @@ public interface UrlMapOrBuilder
    * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>string default_service = 101806775;</code>
    *
    * @return The defaultService.
    */
@@ -115,7 +115,7 @@ public interface UrlMapOrBuilder
    * defaultService has no effect when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>string default_service = 101806775;</code>
    *
    * @return The bytes for defaultService.
    */
@@ -130,7 +130,7 @@ public interface UrlMapOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
    *
    * @return Whether the defaultUrlRedirect field is set.
    */
@@ -144,7 +144,7 @@ public interface UrlMapOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
    *
    * @return The defaultUrlRedirect.
    */
@@ -158,7 +158,7 @@ public interface UrlMapOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
    */
   com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getDefaultUrlRedirectOrBuilder();
 
@@ -169,7 +169,7 @@ public interface UrlMapOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -181,7 +181,7 @@ public interface UrlMapOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -224,7 +224,7 @@ public interface UrlMapOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -239,7 +239,7 @@ public interface UrlMapOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return The headerAction.
    */
@@ -254,7 +254,7 @@ public interface UrlMapOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder();
 
@@ -265,7 +265,7 @@ public interface UrlMapOrBuilder
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HostRule> getHostRulesList();
   /**
@@ -275,7 +275,7 @@ public interface UrlMapOrBuilder
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
    */
   com.google.cloud.compute.v1.HostRule getHostRules(int index);
   /**
@@ -285,7 +285,7 @@ public interface UrlMapOrBuilder
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
    */
   int getHostRulesCount();
   /**
@@ -295,7 +295,7 @@ public interface UrlMapOrBuilder
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HostRuleOrBuilder>
       getHostRulesOrBuilderList();
@@ -306,7 +306,7 @@ public interface UrlMapOrBuilder
    * The list of HostRules to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 311804832;</code>
+   * <code>repeated .google.cloud.compute.v1.HostRule host_rules = 43369376;</code>
    */
   com.google.cloud.compute.v1.HostRuleOrBuilder getHostRulesOrBuilder(int index);
 
@@ -392,7 +392,7 @@ public interface UrlMapOrBuilder
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
    */
   java.util.List<com.google.cloud.compute.v1.PathMatcher> getPathMatchersList();
   /**
@@ -402,7 +402,7 @@ public interface UrlMapOrBuilder
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
    */
   com.google.cloud.compute.v1.PathMatcher getPathMatchers(int index);
   /**
@@ -412,7 +412,7 @@ public interface UrlMapOrBuilder
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
    */
   int getPathMatchersCount();
   /**
@@ -422,7 +422,7 @@ public interface UrlMapOrBuilder
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.PathMatcherOrBuilder>
       getPathMatchersOrBuilderList();
@@ -433,7 +433,7 @@ public interface UrlMapOrBuilder
    * The list of named PathMatchers to use against the URL.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 271664219;</code>
+   * <code>repeated .google.cloud.compute.v1.PathMatcher path_matchers = 3228763;</code>
    */
   com.google.cloud.compute.v1.PathMatcherOrBuilder getPathMatchersOrBuilder(int index);
 
@@ -469,7 +469,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -481,7 +481,7 @@ public interface UrlMapOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

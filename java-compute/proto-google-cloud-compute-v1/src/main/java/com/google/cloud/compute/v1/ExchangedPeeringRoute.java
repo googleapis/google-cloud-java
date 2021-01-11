@@ -78,6 +78,13 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
               type_ = rawValue;
               break;
             }
+          case 903138050:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              destRange_ = s;
+              break;
+            }
           case 916019232:
             {
               imported_ = input.readBool();
@@ -90,14 +97,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
               nextHopRegion_ = s;
               break;
             }
-          case -1244345598:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              destRange_ = s;
-              break;
-            }
-          case -733754080:
+          case 1413729568:
             {
               priority_ = input.readUInt32();
               break;
@@ -156,12 +156,12 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>DYNAMIC_PEERING_ROUTE = 469794858;</code> */
-    DYNAMIC_PEERING_ROUTE(469794858),
-    /** <code>STATIC_PEERING_ROUTE = 473407545;</code> */
-    STATIC_PEERING_ROUTE(473407545),
-    /** <code>SUBNET_PEERING_ROUTE = 465782504;</code> */
-    SUBNET_PEERING_ROUTE(465782504),
+    /** <code>DYNAMIC_PEERING_ROUTE = 201359402;</code> */
+    DYNAMIC_PEERING_ROUTE(201359402),
+    /** <code>STATIC_PEERING_ROUTE = 204972089;</code> */
+    STATIC_PEERING_ROUTE(204972089),
+    /** <code>SUBNET_PEERING_ROUTE = 197347048;</code> */
+    SUBNET_PEERING_ROUTE(197347048),
     UNRECOGNIZED(-1),
     ;
 
@@ -175,12 +175,12 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>DYNAMIC_PEERING_ROUTE = 469794858;</code> */
-    public static final int DYNAMIC_PEERING_ROUTE_VALUE = 469794858;
-    /** <code>STATIC_PEERING_ROUTE = 473407545;</code> */
-    public static final int STATIC_PEERING_ROUTE_VALUE = 473407545;
-    /** <code>SUBNET_PEERING_ROUTE = 465782504;</code> */
-    public static final int SUBNET_PEERING_ROUTE_VALUE = 465782504;
+    /** <code>DYNAMIC_PEERING_ROUTE = 201359402;</code> */
+    public static final int DYNAMIC_PEERING_ROUTE_VALUE = 201359402;
+    /** <code>STATIC_PEERING_ROUTE = 204972089;</code> */
+    public static final int STATIC_PEERING_ROUTE_VALUE = 204972089;
+    /** <code>SUBNET_PEERING_ROUTE = 197347048;</code> */
+    public static final int SUBNET_PEERING_ROUTE_VALUE = 197347048;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -208,11 +208,11 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 469794858:
+        case 201359402:
           return DYNAMIC_PEERING_ROUTE;
-        case 473407545:
+        case 204972089:
           return STATIC_PEERING_ROUTE;
-        case 465782504:
+        case 197347048:
           return SUBNET_PEERING_ROUTE;
         default:
           return null;
@@ -269,7 +269,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ExchangedPeeringRoute.Type)
   }
 
-  public static final int DEST_RANGE_FIELD_NUMBER = 381327712;
+  public static final int DEST_RANGE_FIELD_NUMBER = 112892256;
   private volatile java.lang.Object destRange_;
   /**
    *
@@ -278,7 +278,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>string dest_range = 112892256;</code>
    *
    * @return The destRange.
    */
@@ -301,7 +301,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
    * The destination range of the route.
    * </pre>
    *
-   * <code>string dest_range = 381327712;</code>
+   * <code>string dest_range = 112892256;</code>
    *
    * @return The bytes for destRange.
    */
@@ -385,7 +385,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 445151652;
+  public static final int PRIORITY_FIELD_NUMBER = 176716196;
   private int priority_;
   /**
    *
@@ -394,7 +394,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
    * The priority of the peering route.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>uint32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -459,17 +459,17 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         != com.google.cloud.compute.v1.ExchangedPeeringRoute.Type.UNDEFINED_TYPE.getNumber()) {
       output.writeEnum(3575610, type_);
     }
+    if (!getDestRangeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 112892256, destRange_);
+    }
     if (imported_ != false) {
       output.writeBool(114502404, imported_);
     }
     if (!getNextHopRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 122577014, nextHopRegion_);
     }
-    if (!getDestRangeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 381327712, destRange_);
-    }
     if (priority_ != 0) {
-      output.writeUInt32(445151652, priority_);
+      output.writeUInt32(176716196, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -484,17 +484,17 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
         != com.google.cloud.compute.v1.ExchangedPeeringRoute.Type.UNDEFINED_TYPE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3575610, type_);
     }
+    if (!getDestRangeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(112892256, destRange_);
+    }
     if (imported_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(114502404, imported_);
     }
     if (!getNextHopRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(122577014, nextHopRegion_);
     }
-    if (!getDestRangeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(381327712, destRange_);
-    }
     if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(445151652, priority_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(176716196, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -829,7 +829,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The destination range of the route.
      * </pre>
      *
-     * <code>string dest_range = 381327712;</code>
+     * <code>string dest_range = 112892256;</code>
      *
      * @return The destRange.
      */
@@ -851,7 +851,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The destination range of the route.
      * </pre>
      *
-     * <code>string dest_range = 381327712;</code>
+     * <code>string dest_range = 112892256;</code>
      *
      * @return The bytes for destRange.
      */
@@ -873,7 +873,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The destination range of the route.
      * </pre>
      *
-     * <code>string dest_range = 381327712;</code>
+     * <code>string dest_range = 112892256;</code>
      *
      * @param value The destRange to set.
      * @return This builder for chaining.
@@ -894,7 +894,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The destination range of the route.
      * </pre>
      *
-     * <code>string dest_range = 381327712;</code>
+     * <code>string dest_range = 112892256;</code>
      *
      * @return This builder for chaining.
      */
@@ -911,7 +911,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The destination range of the route.
      * </pre>
      *
-     * <code>string dest_range = 381327712;</code>
+     * <code>string dest_range = 112892256;</code>
      *
      * @param value The bytes for destRange to set.
      * @return This builder for chaining.
@@ -1093,7 +1093,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The priority of the peering route.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>uint32 priority = 176716196;</code>
      *
      * @return The priority.
      */
@@ -1108,7 +1108,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The priority of the peering route.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>uint32 priority = 176716196;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -1126,7 +1126,7 @@ public final class ExchangedPeeringRoute extends com.google.protobuf.GeneratedMe
      * The priority of the peering route.
      * </pre>
      *
-     * <code>uint32 priority = 445151652;</code>
+     * <code>uint32 priority = 176716196;</code>
      *
      * @return This builder for chaining.
      */

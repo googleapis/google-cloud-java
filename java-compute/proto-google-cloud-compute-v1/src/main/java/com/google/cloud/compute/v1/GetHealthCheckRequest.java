@@ -71,18 +71,18 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
           case 0:
             done = true;
             break;
+          case 323529514:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              healthCheck_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1823954134:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              healthCheck_ = s;
               break;
             }
           default:
@@ -119,7 +119,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.GetHealthCheckRequest.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
+  public static final int HEALTH_CHECK_FIELD_NUMBER = 40441189;
   private volatile java.lang.Object healthCheck_;
   /**
    *
@@ -128,7 +128,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
    * Name of the HealthCheck resource to return.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheck.
    */
@@ -151,7 +151,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
    * Name of the HealthCheck resource to return.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheck.
    */
@@ -231,11 +231,11 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getHealthCheckBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40441189, healthCheck_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getHealthCheckBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 308876645, healthCheck_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,11 +246,11 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (!getHealthCheckBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40441189, healthCheck_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getHealthCheckBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308876645, healthCheck_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -559,7 +559,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * Name of the HealthCheck resource to return.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The healthCheck.
      */
@@ -581,7 +581,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * Name of the HealthCheck resource to return.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for healthCheck.
      */
@@ -603,7 +603,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * Name of the HealthCheck resource to return.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The healthCheck to set.
      * @return This builder for chaining.
@@ -624,7 +624,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * Name of the HealthCheck resource to return.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -641,7 +641,7 @@ public final class GetHealthCheckRequest extends com.google.protobuf.GeneratedMe
      * Name of the HealthCheck resource to return.
      * </pre>
      *
-     * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for healthCheck to set.
      * @return This builder for chaining.

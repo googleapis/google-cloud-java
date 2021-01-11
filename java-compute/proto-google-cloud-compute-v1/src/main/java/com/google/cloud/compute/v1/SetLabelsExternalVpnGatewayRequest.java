@@ -72,21 +72,7 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
           case 0:
             done = true;
             break;
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1735629782:
+          case 411853866:
             {
               com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder subBuilder = null;
               if (globalSetLabelsRequestResource_ != null) {
@@ -101,6 +87,20 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
                 globalSetLabelsRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1566449778:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resource_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -137,11 +137,17 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
             com.google.cloud.compute.v1.SetLabelsExternalVpnGatewayRequest.Builder.class);
   }
 
-  public static final int GLOBAL_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 319917189;
+  public static final int GLOBAL_SET_LABELS_REQUEST_RESOURCE_FIELD_NUMBER = 51481733;
   private com.google.cloud.compute.v1.GlobalSetLabelsRequest globalSetLabelsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the globalSetLabelsRequestResource field is set.
@@ -151,8 +157,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
     return globalSetLabelsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The globalSetLabelsRequestResource.
@@ -164,8 +176,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
         : globalSetLabelsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+   * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -286,14 +304,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (globalSetLabelsRequestResource_ != null) {
+      output.writeMessage(51481733, getGlobalSetLabelsRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (globalSetLabelsRequestResource_ != null) {
-      output.writeMessage(319917189, getGlobalSetLabelsRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -304,16 +322,16 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
+    if (globalSetLabelsRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              51481733, getGlobalSetLabelsRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (globalSetLabelsRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              319917189, getGlobalSetLabelsRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -649,8 +667,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
             com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder>
         globalSetLabelsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the globalSetLabelsRequestResource field is set.
@@ -660,8 +684,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
           || globalSetLabelsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The globalSetLabelsRequestResource.
@@ -676,8 +706,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setGlobalSetLabelsRequestResource(
@@ -695,8 +731,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setGlobalSetLabelsRequestResource(
@@ -711,8 +753,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeGlobalSetLabelsRequestResource(
@@ -735,8 +783,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearGlobalSetLabelsRequestResource() {
@@ -751,8 +805,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.GlobalSetLabelsRequest.Builder
@@ -762,8 +822,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       return getGlobalSetLabelsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.GlobalSetLabelsRequestOrBuilder
@@ -777,8 +843,14 @@ public final class SetLabelsExternalVpnGatewayRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 319917189;
+     * .google.cloud.compute.v1.GlobalSetLabelsRequest global_set_labels_request_resource = 51481733 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

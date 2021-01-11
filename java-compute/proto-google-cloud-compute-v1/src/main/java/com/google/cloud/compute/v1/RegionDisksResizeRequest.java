@@ -69,7 +69,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
           case 0:
             done = true;
             break;
-          case -335532342:
+          case 1811951306:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -110,7 +110,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.RegionDisksResizeRequest.Builder.class);
   }
 
-  public static final int SIZE_GB_FIELD_NUMBER = 494929369;
+  public static final int SIZE_GB_FIELD_NUMBER = 226493913;
   private volatile java.lang.Object sizeGb_;
   /**
    *
@@ -119,7 +119,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>string size_gb = 226493913;</code>
    *
    * @return The sizeGb.
    */
@@ -142,7 +142,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
    * The new size of the regional persistent disk, which is specified in GB.
    * </pre>
    *
-   * <code>string size_gb = 494929369;</code>
+   * <code>string size_gb = 226493913;</code>
    *
    * @return The bytes for sizeGb.
    */
@@ -174,7 +174,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 494929369, sizeGb_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 226493913, sizeGb_);
     }
     unknownFields.writeTo(output);
   }
@@ -186,7 +186,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
 
     size = 0;
     if (!getSizeGbBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494929369, sizeGb_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(226493913, sizeGb_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -484,7 +484,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @return The sizeGb.
      */
@@ -506,7 +506,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @return The bytes for sizeGb.
      */
@@ -528,7 +528,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @param value The sizeGb to set.
      * @return This builder for chaining.
@@ -549,7 +549,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @return This builder for chaining.
      */
@@ -566,7 +566,7 @@ public final class RegionDisksResizeRequest extends com.google.protobuf.Generate
      * The new size of the regional persistent disk, which is specified in GB.
      * </pre>
      *
-     * <code>string size_gb = 494929369;</code>
+     * <code>string size_gb = 226493913;</code>
      *
      * @param value The bytes for sizeGb to set.
      * @return This builder for chaining.

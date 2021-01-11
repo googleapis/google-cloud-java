@@ -30,7 +30,7 @@ public interface SetDeletionProtectionInstanceRequestOrBuilder
    * Whether the resource should be protected against deletion.
    * </pre>
    *
-   * <code>bool deletion_protection = 458014698;</code>
+   * <code>bool deletion_protection = 189579242;</code>
    *
    * @return The deletionProtection.
    */

@@ -70,14 +70,14 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -118,7 +118,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.LicenseCodeLicenseAlias.Builder.class);
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -127,7 +127,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -150,7 +150,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    * [Output Only] Description of this License Code.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -167,7 +167,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -176,7 +176,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    * [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -199,7 +199,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
    * [Output Only] URL of license corresponding to this License Code.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -231,10 +231,10 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -246,10 +246,10 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
 
     size = 0;
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -557,7 +557,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -579,7 +579,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -601,7 +601,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -622,7 +622,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -639,7 +639,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] Description of this License Code.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -663,7 +663,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -685,7 +685,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -707,7 +707,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -728,7 +728,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -745,7 +745,7 @@ public final class LicenseCodeLicenseAlias extends com.google.protobuf.Generated
      * [Output Only] URL of license corresponding to this License Code.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

@@ -55,7 +55,7 @@ public interface HealthCheckServiceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface HealthCheckServiceOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -105,7 +105,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -117,7 +117,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return The count of healthChecks.
    */
@@ -129,7 +129,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -142,7 +142,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -316,7 +316,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @return A list containing the notificationEndpoints.
    */
@@ -328,7 +328,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @return The count of notificationEndpoints.
    */
@@ -340,7 +340,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @param index The index of the element to return.
    * @return The notificationEndpoints at the given index.
@@ -353,7 +353,7 @@ public interface HealthCheckServiceOrBuilder
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the notificationEndpoints at the given index.
@@ -392,7 +392,7 @@ public interface HealthCheckServiceOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -404,7 +404,7 @@ public interface HealthCheckServiceOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

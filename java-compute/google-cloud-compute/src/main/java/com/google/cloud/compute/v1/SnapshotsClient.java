@@ -512,7 +512,7 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param globalSetPolicyRequestResource
+   * @param globalSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -534,9 +534,11 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetIamPolicySnapshotRequest request = SetIamPolicySnapshotRequest.newBuilder()
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -559,9 +561,11 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetIamPolicySnapshotRequest request = SetIamPolicySnapshotRequest.newBuilder()
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -593,7 +597,7 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param globalSetLabelsRequestResource
+   * @param globalSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLabels(
@@ -616,9 +620,11 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetLabelsSnapshotRequest request = SetLabelsSnapshotRequest.newBuilder()
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -642,9 +648,11 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetLabelsSnapshotRequest request = SetLabelsSnapshotRequest.newBuilder()
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -675,7 +683,7 @@ public class SnapshotsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -699,9 +707,11 @@ public class SnapshotsClient implements BackgroundResource {
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsSnapshotRequest request = TestIamPermissionsSnapshotRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = snapshotsClient.testIamPermissions(request);
    * }
@@ -725,9 +735,11 @@ public class SnapshotsClient implements BackgroundResource {
    * try (SnapshotsClient snapshotsClient = SnapshotsClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsSnapshotRequest request = TestIamPermissionsSnapshotRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = snapshotsClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

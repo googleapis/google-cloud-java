@@ -51,24 +51,42 @@ public interface PatchRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagerResource field is set.
    */
   boolean hasInstanceGroupManagerResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagerResource.
    */
   com.google.cloud.compute.v1.InstanceGroupManager getInstanceGroupManagerResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946;
+   * .google.cloud.compute.v1.InstanceGroupManager instance_group_manager_resource = 261063946 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagerOrBuilder

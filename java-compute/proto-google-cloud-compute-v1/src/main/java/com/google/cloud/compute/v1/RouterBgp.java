@@ -115,7 +115,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
                       extensionRegistry));
               break;
             }
-          case -1797892648:
+          case 349591000:
             {
               int rawValue = input.readEnum();
 
@@ -182,8 +182,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     UNDEFINED_ADVERTISE_MODE(0),
-    /** <code>CUSTOM = 388595569;</code> */
-    CUSTOM(388595569),
+    /** <code>CUSTOM = 120160113;</code> */
+    CUSTOM(120160113),
     /** <code>DEFAULT = 115302945;</code> */
     DEFAULT(115302945),
     UNRECOGNIZED(-1),
@@ -199,8 +199,8 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ADVERTISE_MODE = 0;</code>
      */
     public static final int UNDEFINED_ADVERTISE_MODE_VALUE = 0;
-    /** <code>CUSTOM = 388595569;</code> */
-    public static final int CUSTOM_VALUE = 388595569;
+    /** <code>CUSTOM = 120160113;</code> */
+    public static final int CUSTOM_VALUE = 120160113;
     /** <code>DEFAULT = 115302945;</code> */
     public static final int DEFAULT_VALUE = 115302945;
 
@@ -230,7 +230,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_ADVERTISE_MODE;
-        case 388595569:
+        case 120160113:
           return CUSTOM;
         case 115302945:
           return DEFAULT;
@@ -407,7 +407,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterBgp.AdvertisedGroups)
   }
 
-  public static final int ADVERTISE_MODE_FIELD_NUMBER = 312134331;
+  public static final int ADVERTISE_MODE_FIELD_NUMBER = 43698875;
   private int advertiseMode_;
   /**
    *
@@ -416,7 +416,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
    *
    * @return The enum numeric value on the wire for advertiseMode.
    */
@@ -431,7 +431,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
    * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
    *
    * @return The advertiseMode.
    */
@@ -685,7 +685,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (advertiseMode_
         != com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.UNDEFINED_ADVERTISE_MODE
             .getNumber()) {
-      output.writeEnum(312134331, advertiseMode_);
+      output.writeEnum(43698875, advertiseMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -720,7 +720,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
     if (advertiseMode_
         != com.google.cloud.compute.v1.RouterBgp.AdvertiseMode.UNDEFINED_ADVERTISE_MODE
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(312134331, advertiseMode_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(43698875, advertiseMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1096,7 +1096,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      *
      * @return The enum numeric value on the wire for advertiseMode.
      */
@@ -1111,7 +1111,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      *
      * @param value The enum numeric value on the wire for advertiseMode to set.
      * @return This builder for chaining.
@@ -1129,7 +1129,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      *
      * @return The advertiseMode.
      */
@@ -1149,7 +1149,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      *
      * @param value The advertiseMode to set.
      * @return This builder for chaining.
@@ -1170,7 +1170,7 @@ public final class RouterBgp extends com.google.protobuf.GeneratedMessageV3
      * User-specified flag to indicate which mode to use for advertisement. The options are DEFAULT or CUSTOM.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>.google.cloud.compute.v1.RouterBgp.AdvertiseMode advertise_mode = 43698875;</code>
      *
      * @return This builder for chaining.
      */

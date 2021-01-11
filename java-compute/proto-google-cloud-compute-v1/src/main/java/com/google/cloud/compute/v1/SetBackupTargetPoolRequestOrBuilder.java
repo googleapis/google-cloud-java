@@ -141,19 +141,43 @@ public interface SetBackupTargetPoolRequestOrBuilder
   com.google.protobuf.ByteString getTargetPoolBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetReferenceResource field is set.
    */
   boolean hasTargetReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetReferenceResource.
    */
   com.google.cloud.compute.v1.TargetReference getTargetReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.TargetReferenceOrBuilder getTargetReferenceResourceOrBuilder();
 }

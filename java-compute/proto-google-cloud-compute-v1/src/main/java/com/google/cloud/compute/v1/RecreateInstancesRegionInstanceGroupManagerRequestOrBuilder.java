@@ -101,16 +101,28 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersRecreateRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersRecreateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersRecreateRequestResource.
@@ -118,8 +130,14 @@ public interface RecreateInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest
       getRegionInstanceGroupManagersRecreateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequestOrBuilder

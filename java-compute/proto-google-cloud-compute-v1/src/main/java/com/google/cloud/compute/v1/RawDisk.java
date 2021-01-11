@@ -72,25 +72,25 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case 1417887962:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              source_ = s;
-              break;
-            }
-          case -1779412502:
+          case 368071146:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               sha1Checksum_ = s;
               break;
             }
-          case -1744494144:
+          case 402989504:
             {
               int rawValue = input.readEnum();
 
               containerType_ = rawValue;
+              break;
+            }
+          case 1417887962:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              source_ = s;
               break;
             }
           default:
@@ -246,7 +246,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RawDisk.ContainerType)
   }
 
-  public static final int CONTAINER_TYPE_FIELD_NUMBER = 318809144;
+  public static final int CONTAINER_TYPE_FIELD_NUMBER = 50373688;
   private int containerType_;
   /**
    *
@@ -255,7 +255,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
    *
    * @return The enum numeric value on the wire for containerType.
    */
@@ -270,7 +270,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
    *
    * @return The containerType.
    */
@@ -282,7 +282,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.RawDisk.ContainerType.UNRECOGNIZED : result;
   }
 
-  public static final int SHA1_CHECKSUM_FIELD_NUMBER = 314444349;
+  public static final int SHA1_CHECKSUM_FIELD_NUMBER = 46008893;
   private volatile java.lang.Object sha1Checksum_;
   /**
    *
@@ -291,7 +291,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>string sha1_checksum = 46008893;</code>
    *
    * @return The sha1Checksum.
    */
@@ -314,7 +314,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
    * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
    * </pre>
    *
-   * <code>string sha1_checksum = 314444349;</code>
+   * <code>string sha1_checksum = 46008893;</code>
    *
    * @return The bytes for sha1Checksum.
    */
@@ -394,15 +394,15 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!getSourceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
-    }
     if (!getSha1ChecksumBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 314444349, sha1Checksum_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 46008893, sha1Checksum_);
     }
     if (containerType_
         != com.google.cloud.compute.v1.RawDisk.ContainerType.UNDEFINED_CONTAINER_TYPE.getNumber()) {
-      output.writeEnum(318809144, containerType_);
+      output.writeEnum(50373688, containerType_);
+    }
+    if (!getSourceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
     }
     unknownFields.writeTo(output);
   }
@@ -413,15 +413,15 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (!getSourceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
-    }
     if (!getSha1ChecksumBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(314444349, sha1Checksum_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(46008893, sha1Checksum_);
     }
     if (containerType_
         != com.google.cloud.compute.v1.RawDisk.ContainerType.UNDEFINED_CONTAINER_TYPE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(318809144, containerType_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(50373688, containerType_);
+    }
+    if (!getSourceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -734,7 +734,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      *
      * @return The enum numeric value on the wire for containerType.
      */
@@ -749,7 +749,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      *
      * @param value The enum numeric value on the wire for containerType to set.
      * @return This builder for chaining.
@@ -767,7 +767,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      *
      * @return The containerType.
      */
@@ -787,7 +787,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      *
      * @param value The containerType to set.
      * @return This builder for chaining.
@@ -808,7 +808,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>.google.cloud.compute.v1.RawDisk.ContainerType container_type = 50373688;</code>
      *
      * @return This builder for chaining.
      */
@@ -827,7 +827,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 314444349;</code>
+     * <code>string sha1_checksum = 46008893;</code>
      *
      * @return The sha1Checksum.
      */
@@ -849,7 +849,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 314444349;</code>
+     * <code>string sha1_checksum = 46008893;</code>
      *
      * @return The bytes for sha1Checksum.
      */
@@ -871,7 +871,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 314444349;</code>
+     * <code>string sha1_checksum = 46008893;</code>
      *
      * @param value The sha1Checksum to set.
      * @return This builder for chaining.
@@ -892,7 +892,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 314444349;</code>
+     * <code>string sha1_checksum = 46008893;</code>
      *
      * @return This builder for chaining.
      */
@@ -909,7 +909,7 @@ public final class RawDisk extends com.google.protobuf.GeneratedMessageV3
      * [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      * </pre>
      *
-     * <code>string sha1_checksum = 314444349;</code>
+     * <code>string sha1_checksum = 46008893;</code>
      *
      * @param value The bytes for sha1Checksum to set.
      * @return This builder for chaining.

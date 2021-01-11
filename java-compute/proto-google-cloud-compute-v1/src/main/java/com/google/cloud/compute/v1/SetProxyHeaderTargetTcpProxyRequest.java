@@ -106,7 +106,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
               project_ = s;
               break;
             }
-          case -270443758:
+          case 1877039890:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -254,8 +254,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
   private com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest
       targetTcpProxiesSetProxyHeaderRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetTcpProxiesSetProxyHeaderRequestResource field is set.
@@ -265,8 +271,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     return targetTcpProxiesSetProxyHeaderRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetTcpProxiesSetProxyHeaderRequestResource.
@@ -279,8 +291,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
         : targetTcpProxiesSetProxyHeaderRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -289,7 +307,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
     return getTargetTcpProxiesSetProxyHeaderRequestResource();
   }
 
-  public static final int TARGET_TCP_PROXY_FIELD_NUMBER = 503065442;
+  public static final int TARGET_TCP_PROXY_FIELD_NUMBER = 234629986;
   private volatile java.lang.Object targetTcpProxy_;
   /**
    *
@@ -298,7 +316,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
    * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetTcpProxy.
    */
@@ -321,7 +339,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
    * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetTcpProxy.
    */
@@ -362,7 +380,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getTargetTcpProxyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 503065442, targetTcpProxy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 234629986, targetTcpProxy_);
     }
     unknownFields.writeTo(output);
   }
@@ -385,7 +403,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getTargetTcpProxyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(503065442, targetTcpProxy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234629986, targetTcpProxy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -958,8 +976,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
             com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequestOrBuilder>
         targetTcpProxiesSetProxyHeaderRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetTcpProxiesSetProxyHeaderRequestResource field is set.
@@ -969,8 +993,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
           || targetTcpProxiesSetProxyHeaderRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetTcpProxiesSetProxyHeaderRequestResource.
@@ -986,8 +1016,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetTcpProxiesSetProxyHeaderRequestResource(
@@ -1005,8 +1041,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetTcpProxiesSetProxyHeaderRequestResource(
@@ -1021,8 +1063,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetTcpProxiesSetProxyHeaderRequestResource(
@@ -1045,8 +1093,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetTcpProxiesSetProxyHeaderRequestResource() {
@@ -1061,8 +1115,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest.Builder
@@ -1072,8 +1132,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       return getTargetTcpProxiesSetProxyHeaderRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequestOrBuilder
@@ -1087,8 +1153,14 @@ public final class SetProxyHeaderTargetTcpProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+     * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1118,7 +1190,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetTcpProxy.
      */
@@ -1140,7 +1212,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetTcpProxy.
      */
@@ -1162,7 +1234,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetTcpProxy to set.
      * @return This builder for chaining.
@@ -1183,7 +1255,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1200,7 +1272,7 @@ public final class SetProxyHeaderTargetTcpProxyRequest
      * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
      * </pre>
      *
-     * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetTcpProxy to set.
      * @return This builder for chaining.

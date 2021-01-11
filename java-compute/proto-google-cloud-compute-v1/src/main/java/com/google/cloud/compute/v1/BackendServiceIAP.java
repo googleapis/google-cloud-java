@@ -77,6 +77,13 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
               enabled_ = input.readBool();
               break;
             }
+          case 364657242:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              oauth2ClientId_ = s;
+              break;
+            }
           case 407996162:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -89,13 +96,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
               java.lang.String s = input.readStringRequireUtf8();
 
               oauth2ClientSecretSha256_ = s;
-              break;
-            }
-          case -1782826406:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              oauth2ClientId_ = s;
               break;
             }
           default:
@@ -150,7 +150,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     return enabled_;
   }
 
-  public static final int OAUTH2_CLIENT_ID_FIELD_NUMBER = 314017611;
+  public static final int OAUTH2_CLIENT_ID_FIELD_NUMBER = 45582155;
   private volatile java.lang.Object oauth2ClientId_;
   /**
    *
@@ -159,7 +159,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>string oauth2_client_id = 45582155;</code>
    *
    * @return The oauth2ClientId.
    */
@@ -182,7 +182,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
    * OAuth2 client ID to use for the authentication flow.
    * </pre>
    *
-   * <code>string oauth2_client_id = 314017611;</code>
+   * <code>string oauth2_client_id = 45582155;</code>
    *
    * @return The bytes for oauth2ClientId.
    */
@@ -314,15 +314,15 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     if (enabled_ != false) {
       output.writeBool(1018689, enabled_);
     }
+    if (!getOauth2ClientIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 45582155, oauth2ClientId_);
+    }
     if (!getOauth2ClientSecretBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 50999520, oauth2ClientSecret_);
     }
     if (!getOauth2ClientSecretSha256Bytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 112903782, oauth2ClientSecretSha256_);
-    }
-    if (!getOauth2ClientIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 314017611, oauth2ClientId_);
     }
     unknownFields.writeTo(output);
   }
@@ -336,6 +336,9 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
     if (enabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(1018689, enabled_);
     }
+    if (!getOauth2ClientIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(45582155, oauth2ClientId_);
+    }
     if (!getOauth2ClientSecretBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(50999520, oauth2ClientSecret_);
@@ -344,9 +347,6 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               112903782, oauth2ClientSecretSha256_);
-    }
-    if (!getOauth2ClientIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(314017611, oauth2ClientId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -724,7 +724,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * OAuth2 client ID to use for the authentication flow.
      * </pre>
      *
-     * <code>string oauth2_client_id = 314017611;</code>
+     * <code>string oauth2_client_id = 45582155;</code>
      *
      * @return The oauth2ClientId.
      */
@@ -746,7 +746,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * OAuth2 client ID to use for the authentication flow.
      * </pre>
      *
-     * <code>string oauth2_client_id = 314017611;</code>
+     * <code>string oauth2_client_id = 45582155;</code>
      *
      * @return The bytes for oauth2ClientId.
      */
@@ -768,7 +768,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * OAuth2 client ID to use for the authentication flow.
      * </pre>
      *
-     * <code>string oauth2_client_id = 314017611;</code>
+     * <code>string oauth2_client_id = 45582155;</code>
      *
      * @param value The oauth2ClientId to set.
      * @return This builder for chaining.
@@ -789,7 +789,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * OAuth2 client ID to use for the authentication flow.
      * </pre>
      *
-     * <code>string oauth2_client_id = 314017611;</code>
+     * <code>string oauth2_client_id = 45582155;</code>
      *
      * @return This builder for chaining.
      */
@@ -806,7 +806,7 @@ public final class BackendServiceIAP extends com.google.protobuf.GeneratedMessag
      * OAuth2 client ID to use for the authentication flow.
      * </pre>
      *
-     * <code>string oauth2_client_id = 314017611;</code>
+     * <code>string oauth2_client_id = 45582155;</code>
      *
      * @param value The bytes for oauth2ClientId to set.
      * @return This builder for chaining.

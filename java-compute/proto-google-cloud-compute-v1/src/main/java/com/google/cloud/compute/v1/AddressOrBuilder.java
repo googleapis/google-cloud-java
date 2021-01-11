@@ -30,7 +30,7 @@ public interface AddressOrBuilder
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The address.
    */
@@ -42,7 +42,7 @@ public interface AddressOrBuilder
    * The static IP address represented by this resource.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The bytes for address.
    */
@@ -105,7 +105,7 @@ public interface AddressOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -117,7 +117,7 @@ public interface AddressOrBuilder
    * An optional description of this resource. Provide this field when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -155,7 +155,7 @@ public interface AddressOrBuilder
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
    *
    * @return The enum numeric value on the wire for ipVersion.
    */
@@ -167,7 +167,7 @@ public interface AddressOrBuilder
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>.google.cloud.compute.v1.Address.IpVersion ip_version = 26524096;</code>
    *
    * @return The ipVersion.
    */
@@ -256,7 +256,7 @@ public interface AddressOrBuilder
    * If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -269,7 +269,7 @@ public interface AddressOrBuilder
    * If this field is not specified, it is assumed to be PREMIUM.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.Address.NetworkTier network_tier = 248962387;</code>
    *
    * @return The networkTier.
    */
@@ -282,7 +282,7 @@ public interface AddressOrBuilder
    * The prefix length if the resource reprensents an IP range.
    * </pre>
    *
-   * <code>int32 prefix_length = 453565747;</code>
+   * <code>int32 prefix_length = 185130291;</code>
    *
    * @return The prefixLength.
    */
@@ -297,10 +297,10 @@ public interface AddressOrBuilder
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
    *
    * @return The enum numeric value on the wire for purpose.
    */
@@ -314,10 +314,10 @@ public interface AddressOrBuilder
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range reserved for a VLAN attachment in an IPsec over Interconnect configuration. These addresses are regional resources.
+   * - `IPSEC_INTERCONNECT` for addresses created from a private IP range that are reserved for a VLAN attachment in an IPsec encrypted Interconnect configuration. These addresses are regional resources.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Address.Purpose purpose = 47971614;</code>
    *
    * @return The purpose.
    */
@@ -355,7 +355,7 @@ public interface AddressOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -367,7 +367,7 @@ public interface AddressOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -405,7 +405,7 @@ public interface AddressOrBuilder
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -417,7 +417,7 @@ public interface AddressOrBuilder
    * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */

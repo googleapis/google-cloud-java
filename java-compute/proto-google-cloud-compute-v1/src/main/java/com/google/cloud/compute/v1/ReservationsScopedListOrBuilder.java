@@ -30,7 +30,7 @@ public interface ReservationsScopedListOrBuilder
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList();
   /**
@@ -40,7 +40,7 @@ public interface ReservationsScopedListOrBuilder
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   com.google.cloud.compute.v1.Reservation getReservations(int index);
   /**
@@ -50,7 +50,7 @@ public interface ReservationsScopedListOrBuilder
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   int getReservationsCount();
   /**
@@ -60,7 +60,7 @@ public interface ReservationsScopedListOrBuilder
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
       getReservationsOrBuilderList();
@@ -71,7 +71,7 @@ public interface ReservationsScopedListOrBuilder
    * A list of reservations contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   com.google.cloud.compute.v1.ReservationOrBuilder getReservationsOrBuilder(int index);
 

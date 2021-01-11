@@ -95,14 +95,14 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
               start_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -243607342:
+          case 1903876306:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -143,7 +143,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.SerialPortOutput.Builder.class);
   }
 
-  public static final int CONTENTS_FIELD_NUMBER = 506419994;
+  public static final int CONTENTS_FIELD_NUMBER = 237984538;
   private volatile java.lang.Object contents_;
   /**
    *
@@ -152,7 +152,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] The contents of the console output.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The contents.
    */
@@ -175,7 +175,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] The contents of the console output.
    * </pre>
    *
-   * <code>string contents = 506419994;</code>
+   * <code>string contents = 237984538;</code>
    *
    * @return The bytes for contents.
    */
@@ -290,7 +290,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -299,7 +299,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -322,7 +322,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -412,10 +412,10 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757538, start_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getContentsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 506419994, contents_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 237984538, contents_);
     }
     unknownFields.writeTo(output);
   }
@@ -436,10 +436,10 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757538, start_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getContentsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(506419994, contents_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(237984538, contents_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -776,7 +776,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @return The contents.
      */
@@ -798,7 +798,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @return The bytes for contents.
      */
@@ -820,7 +820,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @param value The contents to set.
      * @return This builder for chaining.
@@ -841,7 +841,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @return This builder for chaining.
      */
@@ -858,7 +858,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] The contents of the console output.
      * </pre>
      *
-     * <code>string contents = 506419994;</code>
+     * <code>string contents = 237984538;</code>
      *
      * @param value The bytes for contents to set.
      * @return This builder for chaining.
@@ -1094,7 +1094,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1116,7 +1116,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1138,7 +1138,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1159,7 +1159,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1176,7 +1176,7 @@ public final class SerialPortOutput extends com.google.protobuf.GeneratedMessage
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

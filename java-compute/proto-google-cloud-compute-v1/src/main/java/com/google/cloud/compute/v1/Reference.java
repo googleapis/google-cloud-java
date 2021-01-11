@@ -80,6 +80,13 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
               kind_ = s;
               break;
             }
+          case 661905658:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              referrer_ = s;
+              break;
+            }
           case 1542687882:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -92,13 +99,6 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               referenceType_ = s;
-              break;
-            }
-          case -1485577990:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              referrer_ = s;
               break;
             }
           default:
@@ -235,7 +235,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int REFERRER_FIELD_NUMBER = 351173663;
+  public static final int REFERRER_FIELD_NUMBER = 82738207;
   private volatile java.lang.Object referrer_;
   /**
    *
@@ -244,7 +244,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>string referrer = 82738207;</code>
    *
    * @return The referrer.
    */
@@ -267,7 +267,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
    * URL of the resource which refers to the target.
    * </pre>
    *
-   * <code>string referrer = 351173663;</code>
+   * <code>string referrer = 82738207;</code>
    *
    * @return The bytes for referrer.
    */
@@ -350,14 +350,14 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     if (!getKindBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
+    if (!getReferrerBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 82738207, referrer_);
+    }
     if (!getTargetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
     }
     if (!getReferenceTypeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 247521198, referenceType_);
-    }
-    if (!getReferrerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 351173663, referrer_);
     }
     unknownFields.writeTo(output);
   }
@@ -371,14 +371,14 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
     if (!getKindBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
+    if (!getReferrerBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(82738207, referrer_);
+    }
     if (!getTargetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
     }
     if (!getReferenceTypeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(247521198, referenceType_);
-    }
-    if (!getReferrerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(351173663, referrer_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -920,7 +920,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>string referrer = 82738207;</code>
      *
      * @return The referrer.
      */
@@ -942,7 +942,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>string referrer = 82738207;</code>
      *
      * @return The bytes for referrer.
      */
@@ -964,7 +964,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>string referrer = 82738207;</code>
      *
      * @param value The referrer to set.
      * @return This builder for chaining.
@@ -985,7 +985,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>string referrer = 82738207;</code>
      *
      * @return This builder for chaining.
      */
@@ -1002,7 +1002,7 @@ public final class Reference extends com.google.protobuf.GeneratedMessageV3
      * URL of the resource which refers to the target.
      * </pre>
      *
-     * <code>string referrer = 351173663;</code>
+     * <code>string referrer = 82738207;</code>
      *
      * @param value The bytes for referrer to set.
      * @return This builder for chaining.

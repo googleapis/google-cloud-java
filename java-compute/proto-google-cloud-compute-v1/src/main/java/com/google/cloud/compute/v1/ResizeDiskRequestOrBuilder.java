@@ -49,21 +49,42 @@ public interface ResizeDiskRequestOrBuilder
   com.google.protobuf.ByteString getDiskBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the disksResizeRequestResource field is set.
    */
   boolean hasDisksResizeRequestResource();
   /**
-   * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The disksResizeRequestResource.
    */
   com.google.cloud.compute.v1.DisksResizeRequest getDisksResizeRequestResource();
   /**
-   * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.DisksResizeRequestOrBuilder getDisksResizeRequestResourceOrBuilder();

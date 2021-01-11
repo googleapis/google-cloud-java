@@ -101,16 +101,28 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq region_instance_group_manager_update_instance_config_req_resource = 89036583;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq region_instance_group_manager_update_instance_config_req_resource = 89036583 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagerUpdateInstanceConfigReqResource field is set.
    */
   boolean hasRegionInstanceGroupManagerUpdateInstanceConfigReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq region_instance_group_manager_update_instance_config_req_resource = 89036583;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq region_instance_group_manager_update_instance_config_req_resource = 89036583 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagerUpdateInstanceConfigReqResource.
@@ -118,8 +130,14 @@ public interface UpdatePerInstanceConfigsRegionInstanceGroupManagerRequestOrBuil
   com.google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq
       getRegionInstanceGroupManagerUpdateInstanceConfigReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq region_instance_group_manager_update_instance_config_req_resource = 89036583;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReq region_instance_group_manager_update_instance_config_req_resource = 89036583 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagerUpdateInstanceConfigReqOrBuilder

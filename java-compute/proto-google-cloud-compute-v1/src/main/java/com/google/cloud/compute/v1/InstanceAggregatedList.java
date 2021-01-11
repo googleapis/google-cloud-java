@@ -127,6 +127,13 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
               items_.getMutableMap().put(items__.getKey(), items__.getValue());
               break;
             }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
           case 1946976506:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -135,13 +142,6 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
                 mutable_bitField0_ |= 0x00000002;
               }
               unreachables_.add(s);
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -450,7 +450,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -459,7 +459,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -482,7 +482,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -634,12 +634,12 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetItems(), ItemsDefaultEntryHolder.defaultEntry, 100526016);
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
     for (int i = 0; i < unreachables_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 243372063, unreachables_.getRaw(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -674,6 +674,9 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100526016, items__);
     }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < unreachables_.size(); i++) {
@@ -681,9 +684,6 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
       }
       size += dataSize;
       size += 5 * getUnreachablesList().size();
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1581,7 +1581,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1603,7 +1603,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1625,7 +1625,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1646,7 +1646,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1663,7 +1663,7 @@ public final class InstanceAggregatedList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

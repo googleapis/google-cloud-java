@@ -250,7 +250,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
   public static final int SSL_POLICY_REFERENCE_RESOURCE_FIELD_NUMBER = 235403836;
   private com.google.cloud.compute.v1.SslPolicyReference sslPolicyReferenceResource_;
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the sslPolicyReferenceResource field is set.
@@ -260,7 +267,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
     return sslPolicyReferenceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The sslPolicyReferenceResource.
@@ -272,7 +286,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
         : sslPolicyReferenceResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -945,7 +966,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
             com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder>
         sslPolicyReferenceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the sslPolicyReferenceResource field is set.
@@ -954,7 +982,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return sslPolicyReferenceResourceBuilder_ != null || sslPolicyReferenceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The sslPolicyReferenceResource.
@@ -969,7 +1004,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSslPolicyReferenceResource(
@@ -987,7 +1029,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSslPolicyReferenceResource(
@@ -1002,7 +1051,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSslPolicyReferenceResource(
@@ -1024,7 +1080,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSslPolicyReferenceResource() {
@@ -1039,7 +1102,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicyReference.Builder
@@ -1049,7 +1119,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       return getSslPolicyReferenceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SslPolicyReferenceOrBuilder
@@ -1063,7 +1140,14 @@ public final class SetSslPolicyTargetHttpsProxyRequest
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicyReference ssl_policy_reference_resource = 235403836 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

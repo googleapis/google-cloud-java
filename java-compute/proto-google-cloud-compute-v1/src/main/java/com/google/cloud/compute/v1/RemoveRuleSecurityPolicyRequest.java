@@ -79,16 +79,16 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
               securityPolicy_ = s;
               break;
             }
+          case 1413729568:
+            {
+              priority_ = input.readInt32();
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -733754080:
-            {
-              priority_ = input.readInt32();
               break;
             }
           default:
@@ -125,7 +125,7 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.RemoveRuleSecurityPolicyRequest.Builder.class);
   }
 
-  public static final int PRIORITY_FIELD_NUMBER = 445151652;
+  public static final int PRIORITY_FIELD_NUMBER = 176716196;
   private int priority_;
   /**
    *
@@ -134,7 +134,7 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
    * The priority of the rule to remove from the security policy.
    * </pre>
    *
-   * <code>int32 priority = 445151652;</code>
+   * <code>int32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -258,11 +258,11 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
     if (!getSecurityPolicyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
+    if (priority_ != 0) {
+      output.writeInt32(176716196, priority_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (priority_ != 0) {
-      output.writeInt32(445151652, priority_);
     }
     unknownFields.writeTo(output);
   }
@@ -276,11 +276,11 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
     if (!getSecurityPolicyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
+    if (priority_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(176716196, priority_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (priority_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(445151652, priority_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -599,7 +599,7 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
      * The priority of the rule to remove from the security policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>int32 priority = 176716196;</code>
      *
      * @return The priority.
      */
@@ -614,7 +614,7 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
      * The priority of the rule to remove from the security policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>int32 priority = 176716196;</code>
      *
      * @param value The priority to set.
      * @return This builder for chaining.
@@ -632,7 +632,7 @@ public final class RemoveRuleSecurityPolicyRequest extends com.google.protobuf.G
      * The priority of the rule to remove from the security policy.
      * </pre>
      *
-     * <code>int32 priority = 445151652;</code>
+     * <code>int32 priority = 176716196;</code>
      *
      * @return This builder for chaining.
      */

@@ -24,7 +24,7 @@ package com.google.cloud.compute.v1;
  * <pre>
  * Represents an Autoscaler resource.
  * Google Compute Engine has two Autoscaler resources:
- * * [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
+ * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
  * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
  * For zonal managed instance groups resource, use the autoscaler resource.
  * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
@@ -121,6 +121,19 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 759347114:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                statusDetails_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              statusDetails_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.AutoscalerStatusDetails.parser(),
+                      extensionRegistry));
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -128,11 +141,25 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1542687882:
@@ -161,33 +188,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
           case 2063325992:
             {
               recommendedSize_ = input.readInt32();
-              break;
-            }
-          case -1388136534:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                statusDetails_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.AutoscalerStatusDetails>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              statusDetails_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.AutoscalerStatusDetails.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -251,10 +251,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
     /** <code>ERROR = 66247144;</code> */
     ERROR(66247144),
     /** <code>PENDING = 35394935;</code> */
@@ -272,10 +272,10 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
     /** <code>ERROR = 66247144;</code> */
     public static final int ERROR_VALUE = 66247144;
     /** <code>PENDING = 35394935;</code> */
@@ -307,9 +307,9 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
-        case 528602024:
+        case 260166568:
           return DELETING;
         case 66247144:
           return ERROR;
@@ -468,7 +468,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -477,7 +477,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -500,7 +500,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -670,7 +670,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+   * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
    * </pre>
    *
    * <code>int32 recommended_size = 257915749;</code>
@@ -731,7 +731,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -740,7 +740,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -763,7 +763,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -824,7 +824,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Autoscaler.Status.UNRECOGNIZED : result;
   }
 
-  public static final int STATUS_DETAILS_FIELD_NUMBER = 363353845;
+  public static final int STATUS_DETAILS_FIELD_NUMBER = 94918389;
   private java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails> statusDetails_;
   /**
    *
@@ -833,7 +833,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   @java.lang.Override
@@ -848,7 +848,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   @java.lang.Override
@@ -863,7 +863,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   @java.lang.Override
@@ -877,7 +877,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   @java.lang.Override
@@ -891,7 +891,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+   * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
    * </code>
    */
   @java.lang.Override
@@ -906,7 +906,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale.
+   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
    * <code>string target = 192835985;</code>
@@ -929,7 +929,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URL of the managed instance group that this autoscaler will scale.
+   * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
    * </pre>
    *
    * <code>string target = 192835985;</code>
@@ -1027,11 +1027,20 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    for (int i = 0; i < statusDetails_.size(); i++) {
+      output.writeMessage(94918389, statusDetails_.get(i));
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.Autoscaler.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getTargetBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
@@ -1041,15 +1050,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
     if (recommendedSize_ != 0) {
       output.writeInt32(257915749, recommendedSize_);
-    }
-    for (int i = 0; i < statusDetails_.size(); i++) {
-      output.writeMessage(363353845, statusDetails_.get(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -1076,11 +1076,21 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    for (int i = 0; i < statusDetails_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(94918389, statusDetails_.get(i));
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.Autoscaler.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getTargetBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
@@ -1092,17 +1102,6 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
     }
     if (recommendedSize_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(257915749, recommendedSize_);
-    }
-    for (int i = 0; i < statusDetails_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              363353845, statusDetails_.get(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1282,7 +1281,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Represents an Autoscaler resource.
    * Google Compute Engine has two Autoscaler resources:
-   * * [Global](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
+   * * [Zonal](/compute/docs/reference/rest/{$api_version}/autoscalers) * [Regional](/compute/docs/reference/rest/{$api_version}/regionAutoscalers)
    * Use autoscalers to automatically add or delete instances from a managed instance group according to your defined autoscaling policy. For more information, read Autoscaling Groups of Instances.
    * For zonal managed instance groups resource, use the autoscaler resource.
    * For regional managed instance groups, use the regionAutoscalers resource. (== resource_for {$api_version}.autoscalers ==) (== resource_for {$api_version}.regionAutoscalers ==)
@@ -1876,7 +1875,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1898,7 +1897,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1920,7 +1919,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1941,7 +1940,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1958,7 +1957,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2297,7 +2296,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
      * <code>int32 recommended_size = 257915749;</code>
@@ -2312,7 +2311,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
      * <code>int32 recommended_size = 257915749;</code>
@@ -2330,7 +2329,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates recommended MIG size even when autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to the existing managed instance group or autoscaler did not generate its prediction.
+     * [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
      * </pre>
      *
      * <code>int32 recommended_size = 257915749;</code>
@@ -2458,7 +2457,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2480,7 +2479,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2502,7 +2501,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2523,7 +2522,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2540,7 +2539,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -2692,7 +2691,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails>
@@ -2710,7 +2709,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public int getStatusDetailsCount() {
@@ -2727,7 +2726,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails getStatusDetails(int index) {
@@ -2744,7 +2743,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder setStatusDetails(
@@ -2768,7 +2767,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder setStatusDetails(
@@ -2789,7 +2788,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder addStatusDetails(com.google.cloud.compute.v1.AutoscalerStatusDetails value) {
@@ -2812,7 +2811,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder addStatusDetails(
@@ -2836,7 +2835,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder addStatusDetails(
@@ -2857,7 +2856,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder addStatusDetails(
@@ -2878,7 +2877,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder addAllStatusDetails(
@@ -2899,7 +2898,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder clearStatusDetails() {
@@ -2919,7 +2918,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public Builder removeStatusDetails(int index) {
@@ -2939,7 +2938,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder getStatusDetailsBuilder(
@@ -2953,7 +2952,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder getStatusDetailsOrBuilder(
@@ -2971,7 +2970,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AutoscalerStatusDetailsOrBuilder>
@@ -2989,7 +2988,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder addStatusDetailsBuilder() {
@@ -3003,7 +3002,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder addStatusDetailsBuilder(
@@ -3019,7 +3018,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 363353845;
+     * <code>repeated .google.cloud.compute.v1.AutoscalerStatusDetails status_details = 94918389;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AutoscalerStatusDetails.Builder>
@@ -3052,7 +3051,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -3074,7 +3073,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -3096,7 +3095,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -3117,7 +3116,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
      * <code>string target = 192835985;</code>
@@ -3134,7 +3133,7 @@ public final class Autoscaler extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URL of the managed instance group that this autoscaler will scale.
+     * URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
      * </pre>
      *
      * <code>string target = 192835985;</code>

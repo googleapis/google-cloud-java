@@ -79,21 +79,7 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
               zone_ = s;
               break;
             }
-          case 1566449778:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              resource_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1238310438:
+          case 909173210:
             {
               com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder subBuilder = null;
               if (zoneSetPolicyRequestResource_ != null) {
@@ -107,6 +93,20 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
                 zoneSetPolicyRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1566449778:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resource_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -290,11 +290,17 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int ZONE_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 382082107;
+  public static final int ZONE_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 113646651;
   private com.google.cloud.compute.v1.ZoneSetPolicyRequest zoneSetPolicyRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the zoneSetPolicyRequestResource field is set.
@@ -304,8 +310,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     return zoneSetPolicyRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The zoneSetPolicyRequestResource.
@@ -317,8 +329,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
         : zoneSetPolicyRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -344,14 +362,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (zoneSetPolicyRequestResource_ != null) {
+      output.writeMessage(113646651, getZoneSetPolicyRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (zoneSetPolicyRequestResource_ != null) {
-      output.writeMessage(382082107, getZoneSetPolicyRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -365,16 +383,16 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (zoneSetPolicyRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              113646651, getZoneSetPolicyRequestResource());
+    }
     if (!getResourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(195806222, resource_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (zoneSetPolicyRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              382082107, getZoneSetPolicyRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1034,8 +1052,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder>
         zoneSetPolicyRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the zoneSetPolicyRequestResource field is set.
@@ -1044,8 +1068,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return zoneSetPolicyRequestResourceBuilder_ != null || zoneSetPolicyRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The zoneSetPolicyRequestResource.
@@ -1060,8 +1090,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setZoneSetPolicyRequestResource(
@@ -1079,8 +1115,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setZoneSetPolicyRequestResource(
@@ -1095,8 +1137,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeZoneSetPolicyRequestResource(
@@ -1119,8 +1167,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearZoneSetPolicyRequestResource() {
@@ -1135,8 +1189,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder
@@ -1146,8 +1206,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       return getZoneSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder
@@ -1161,8 +1227,14 @@ public final class SetIamPolicyNodeGroupRequest extends com.google.protobuf.Gene
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+     * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

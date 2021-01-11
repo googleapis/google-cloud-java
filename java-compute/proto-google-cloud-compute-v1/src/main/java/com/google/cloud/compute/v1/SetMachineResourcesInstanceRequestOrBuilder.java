@@ -49,16 +49,28 @@ public interface SetMachineResourcesInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetMachineResourcesRequest instances_set_machine_resources_request_resource = 196286318;
+   * .google.cloud.compute.v1.InstancesSetMachineResourcesRequest instances_set_machine_resources_request_resource = 196286318 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesSetMachineResourcesRequestResource field is set.
    */
   boolean hasInstancesSetMachineResourcesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetMachineResourcesRequest instances_set_machine_resources_request_resource = 196286318;
+   * .google.cloud.compute.v1.InstancesSetMachineResourcesRequest instances_set_machine_resources_request_resource = 196286318 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesSetMachineResourcesRequestResource.
@@ -66,8 +78,14 @@ public interface SetMachineResourcesInstanceRequestOrBuilder
   com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest
       getInstancesSetMachineResourcesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetMachineResourcesRequest instances_set_machine_resources_request_resource = 196286318;
+   * .google.cloud.compute.v1.InstancesSetMachineResourcesRequest instances_set_machine_resources_request_resource = 196286318 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstancesSetMachineResourcesRequestOrBuilder

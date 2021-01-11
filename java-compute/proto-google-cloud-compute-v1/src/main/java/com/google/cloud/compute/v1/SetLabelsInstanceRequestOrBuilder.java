@@ -49,24 +49,42 @@ public interface SetLabelsInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesSetLabelsRequestResource field is set.
    */
   boolean hasInstancesSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesSetLabelsRequestResource.
    */
   com.google.cloud.compute.v1.InstancesSetLabelsRequest getInstancesSetLabelsRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344;
+   * .google.cloud.compute.v1.InstancesSetLabelsRequest instances_set_labels_request_resource = 207749344 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstancesSetLabelsRequestOrBuilder

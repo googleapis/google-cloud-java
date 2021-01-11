@@ -177,7 +177,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
    * @param instanceGroup The name of the instance group where you are adding instances.
-   * @param instanceGroupsAddInstancesRequestResource
+   * @param instanceGroupsAddInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addInstances(
@@ -205,10 +205,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddInstancesInstanceGroupRequest request = AddInstancesInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -233,10 +235,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsAddInstancesRequest instanceGroupsAddInstancesRequestResource = InstanceGroupsAddInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddInstancesInstanceGroupRequest request = AddInstancesInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsAddInstancesRequestResource(instanceGroupsAddInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -559,7 +563,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone where you want to create the instance group.
-   * @param instanceGroupResource
+   * @param instanceGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String zone, InstanceGroup instanceGroupResource) {
@@ -581,9 +585,11 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertInstanceGroupRequest request = InsertInstanceGroupRequest.newBuilder()
+   *     .setInstanceGroupResource(instanceGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -607,9 +613,11 @@ public class InstanceGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
+   *   InstanceGroup instanceGroupResource = InstanceGroup.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertInstanceGroupRequest request = InsertInstanceGroupRequest.newBuilder()
+   *     .setInstanceGroupResource(instanceGroupResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -770,7 +778,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param zone The name of the zone where the instance group is located.
    * @param instanceGroup The name of the instance group from which you want to generate a list of
    *     included instances.
-   * @param instanceGroupsListInstancesRequestResource
+   * @param instanceGroupsListInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(
@@ -799,10 +807,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ListInstancesInstanceGroupsRequest request = ListInstancesInstanceGroupsRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -830,10 +840,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ListInstancesInstanceGroupsRequest request = ListInstancesInstanceGroupsRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -860,10 +872,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsListInstancesRequest instanceGroupsListInstancesRequestResource = InstanceGroupsListInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   ListInstancesInstanceGroupsRequest request = ListInstancesInstanceGroupsRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsListInstancesRequestResource(instanceGroupsListInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -912,7 +926,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param zone The name of the zone where the instance group is located.
    * @param instanceGroup The name of the instance group where the specified instances will be
    *     removed.
-   * @param instanceGroupsRemoveInstancesRequestResource
+   * @param instanceGroupsRemoveInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation removeInstances(
@@ -945,10 +959,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RemoveInstancesInstanceGroupRequest request = RemoveInstancesInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -977,10 +993,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsRemoveInstancesRequest instanceGroupsRemoveInstancesRequestResource = InstanceGroupsRemoveInstancesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RemoveInstancesInstanceGroupRequest request = RemoveInstancesInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsRemoveInstancesRequestResource(instanceGroupsRemoveInstancesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1014,7 +1032,7 @@ public class InstanceGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone where the instance group is located.
    * @param instanceGroup The name of the instance group where the named ports are updated.
-   * @param instanceGroupsSetNamedPortsRequestResource
+   * @param instanceGroupsSetNamedPortsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setNamedPorts(
@@ -1042,10 +1060,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetNamedPortsInstanceGroupRequest request = SetNamedPortsInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1069,10 +1089,12 @@ public class InstanceGroupsClient implements BackgroundResource {
    * <pre><code>
    * try (InstanceGroupsClient instanceGroupsClient = InstanceGroupsClient.create()) {
    *   String instanceGroup = "";
+   *   InstanceGroupsSetNamedPortsRequest instanceGroupsSetNamedPortsRequestResource = InstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetNamedPortsInstanceGroupRequest request = SetNamedPortsInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
+   *     .setInstanceGroupsSetNamedPortsRequestResource(instanceGroupsSetNamedPortsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();

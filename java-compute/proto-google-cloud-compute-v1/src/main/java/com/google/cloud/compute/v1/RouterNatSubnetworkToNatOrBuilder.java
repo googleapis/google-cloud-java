@@ -107,7 +107,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
    * </code>
    *
    * @return A list containing the sourceIpRangesToNat.
@@ -122,7 +122,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
    * </code>
    *
    * @return The count of sourceIpRangesToNat.
@@ -136,7 +136,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
    * </code>
    *
    * @param index The index of the element to return.
@@ -152,7 +152,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
    * </code>
    *
    * @return A list containing the enum numeric values on the wire for sourceIpRangesToNat.
@@ -166,7 +166,7 @@ public interface RouterNatSubnetworkToNatOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 388310386;
+   * repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat.SourceIpRangesToNat source_ip_ranges_to_nat = 119874930;
    * </code>
    *
    * @param index The index of the value to return.

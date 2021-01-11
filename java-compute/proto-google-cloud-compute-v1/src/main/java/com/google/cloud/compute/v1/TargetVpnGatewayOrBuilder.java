@@ -55,7 +55,7 @@ public interface TargetVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface TargetVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -80,7 +80,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @return A list containing the forwardingRules.
    */
@@ -92,7 +92,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @return The count of forwardingRules.
    */
@@ -104,7 +104,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @param index The index of the element to return.
    * @return The forwardingRules at the given index.
@@ -117,7 +117,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] A list of URLs to the ForwardingRule resources. ForwardingRules are created using compute.forwardingRules.insert and associated with a VPN gateway.
    * </pre>
    *
-   * <code>repeated string forwarding_rules = 315821365;</code>
+   * <code>repeated string forwarding_rules = 47385909;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the forwardingRules at the given index.
@@ -256,7 +256,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -268,7 +268,7 @@ public interface TargetVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

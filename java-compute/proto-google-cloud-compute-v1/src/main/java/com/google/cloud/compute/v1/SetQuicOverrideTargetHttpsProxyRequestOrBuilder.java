@@ -78,16 +78,28 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest target_https_proxies_set_quic_override_request_resource = 72940258;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest target_https_proxies_set_quic_override_request_resource = 72940258 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetHttpsProxiesSetQuicOverrideRequestResource field is set.
    */
   boolean hasTargetHttpsProxiesSetQuicOverrideRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest target_https_proxies_set_quic_override_request_resource = 72940258;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest target_https_proxies_set_quic_override_request_resource = 72940258 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetHttpsProxiesSetQuicOverrideRequestResource.
@@ -95,8 +107,14 @@ public interface SetQuicOverrideTargetHttpsProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest
       getTargetHttpsProxiesSetQuicOverrideRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest target_https_proxies_set_quic_override_request_resource = 72940258;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequest target_https_proxies_set_quic_override_request_resource = 72940258 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetHttpsProxiesSetQuicOverrideRequestOrBuilder

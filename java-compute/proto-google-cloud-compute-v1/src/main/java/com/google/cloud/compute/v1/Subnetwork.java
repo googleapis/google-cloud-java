@@ -116,6 +116,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
               role_ = rawValue;
               break;
             }
+          case 37646418:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ipv6CidrRange_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -123,11 +130,34 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 383772912:
+            {
+              int rawValue = input.readEnum();
+
+              purpose_ = rawValue;
+              break;
+            }
           case 386216048:
             {
               int rawValue = input.readEnum();
 
               privateIpv6GoogleAccess_ = rawValue;
+              break;
+            }
+          case 662914282:
+            {
+              com.google.cloud.compute.v1.SubnetworkLogConfig.Builder subBuilder = null;
+              if (logConfig_ != null) {
+                subBuilder = logConfig_.toBuilder();
+              }
+              logConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SubnetworkLogConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logConfig_);
+                logConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 784938578:
@@ -169,6 +199,32 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
               enableFlowLogs_ = input.readBool();
               break;
             }
+          case 1224450672:
+            {
+              privateIpGoogleAccess_ = input.readBool();
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
+          case 1531455434:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              gatewayAddress_ = s;
+              break;
+            }
           case 1862979954:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -181,62 +237,6 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               fingerprint_ = s;
-              break;
-            }
-          case -2109837230:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ipv6CidrRange_ = s;
-              break;
-            }
-          case -1763710736:
-            {
-              int rawValue = input.readEnum();
-
-              purpose_ = rawValue;
-              break;
-            }
-          case -1484569366:
-            {
-              com.google.cloud.compute.v1.SubnetworkLogConfig.Builder subBuilder = null;
-              if (logConfig_ != null) {
-                subBuilder = logConfig_.toBuilder();
-              }
-              logConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SubnetworkLogConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logConfig_);
-                logConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -923032976:
-            {
-              privateIpGoogleAccess_ = input.readBool();
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -616028214:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gatewayAddress_ = s;
               break;
             }
           default:
@@ -297,12 +297,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS(0),
-    /** <code>DISABLE_GOOGLE_ACCESS = 450958579;</code> */
-    DISABLE_GOOGLE_ACCESS(450958579),
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
-    ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(427975994),
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
-    ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(288210263),
+    /** <code>DISABLE_GOOGLE_ACCESS = 182523123;</code> */
+    DISABLE_GOOGLE_ACCESS(182523123),
+    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code> */
+    ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE(159540538),
+    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code> */
+    ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE(19774807),
     UNRECOGNIZED(-1),
     ;
 
@@ -316,12 +316,12 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS_VALUE = 0;
-    /** <code>DISABLE_GOOGLE_ACCESS = 450958579;</code> */
-    public static final int DISABLE_GOOGLE_ACCESS_VALUE = 450958579;
-    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 427975994;</code> */
-    public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 427975994;
-    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 288210263;</code> */
-    public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 288210263;
+    /** <code>DISABLE_GOOGLE_ACCESS = 182523123;</code> */
+    public static final int DISABLE_GOOGLE_ACCESS_VALUE = 182523123;
+    /** <code>ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE = 159540538;</code> */
+    public static final int ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE_VALUE = 159540538;
+    /** <code>ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE = 19774807;</code> */
+    public static final int ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE_VALUE = 19774807;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -349,11 +349,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS;
-        case 450958579:
+        case 182523123:
           return DISABLE_GOOGLE_ACCESS;
-        case 427975994:
+        case 159540538:
           return ENABLE_BIDIRECTIONAL_ACCESS_TO_GOOGLE;
-        case 288210263:
+        case 19774807:
           return ENABLE_OUTBOUND_VM_ACCESS_TO_GOOGLE;
         default:
           return null;
@@ -433,8 +433,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_PURPOSE(0),
     /** <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code> */
     INTERNAL_HTTPS_LOAD_BALANCER(248748889),
-    /** <code>PRIVATE = 403485027;</code> */
-    PRIVATE(403485027),
+    /** <code>PRIVATE = 135049571;</code> */
+    PRIVATE(135049571),
     /** <code>PRIVATE_RFC_1918 = 254902107;</code> */
     PRIVATE_RFC_1918(254902107),
     UNRECOGNIZED(-1),
@@ -452,8 +452,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_PURPOSE_VALUE = 0;
     /** <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code> */
     public static final int INTERNAL_HTTPS_LOAD_BALANCER_VALUE = 248748889;
-    /** <code>PRIVATE = 403485027;</code> */
-    public static final int PRIVATE_VALUE = 403485027;
+    /** <code>PRIVATE = 135049571;</code> */
+    public static final int PRIVATE_VALUE = 135049571;
     /** <code>PRIVATE_RFC_1918 = 254902107;</code> */
     public static final int PRIVATE_RFC_1918_VALUE = 254902107;
 
@@ -485,7 +485,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_PURPOSE;
         case 248748889:
           return INTERNAL_HTTPS_LOAD_BALANCER;
-        case 403485027:
+        case 135049571:
           return PRIVATE;
         case 254902107:
           return PRIVATE_RFC_1918;
@@ -562,10 +562,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ROLE = 0;</code>
      */
     UNDEFINED_ROLE(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
-    /** <code>BACKUP = 341010882;</code> */
-    BACKUP(341010882),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
+    /** <code>BACKUP = 72575426;</code> */
+    BACKUP(72575426),
     UNRECOGNIZED(-1),
     ;
 
@@ -579,10 +579,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_ROLE = 0;</code>
      */
     public static final int UNDEFINED_ROLE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
-    /** <code>BACKUP = 341010882;</code> */
-    public static final int BACKUP_VALUE = 341010882;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>BACKUP = 72575426;</code> */
+    public static final int BACKUP_VALUE = 72575426;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -610,9 +610,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_ROLE;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
-        case 341010882:
+        case 72575426:
           return BACKUP;
         default:
           return null;
@@ -671,7 +671,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.Subnetwork.State}
@@ -687,8 +687,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>DRAINING = 480455402;</code> */
-    DRAINING(480455402),
+    /** <code>DRAINING = 212019946;</code> */
+    DRAINING(212019946),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
     UNRECOGNIZED(-1),
@@ -704,8 +704,8 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>DRAINING = 480455402;</code> */
-    public static final int DRAINING_VALUE = 480455402;
+    /** <code>DRAINING = 212019946;</code> */
+    public static final int DRAINING_VALUE = 212019946;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
 
@@ -735,7 +735,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 480455402:
+        case 212019946:
           return DRAINING;
         case 77848963:
           return READY;
@@ -841,7 +841,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -850,7 +850,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -873,7 +873,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -959,7 +959,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int GATEWAY_ADDRESS_FIELD_NUMBER = 459867385;
+  public static final int GATEWAY_ADDRESS_FIELD_NUMBER = 191431929;
   private volatile java.lang.Object gatewayAddress_;
   /**
    *
@@ -968,7 +968,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>string gateway_address = 191431929;</code>
    *
    * @return The gatewayAddress.
    */
@@ -991,7 +991,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>string gateway_address = 191431929;</code>
    *
    * @return The bytes for gatewayAddress.
    */
@@ -1106,7 +1106,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int IPV6_CIDR_RANGE_FIELD_NUMBER = 273141258;
+  public static final int IPV6_CIDR_RANGE_FIELD_NUMBER = 4705802;
   private volatile java.lang.Object ipv6CidrRange_;
   /**
    *
@@ -1115,7 +1115,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>string ipv6_cidr_range = 4705802;</code>
    *
    * @return The ipv6CidrRange.
    */
@@ -1138,7 +1138,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>string ipv6_cidr_range = 4705802;</code>
    *
    * @return The bytes for ipv6CidrRange.
    */
@@ -1204,7 +1204,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
+  public static final int LOG_CONFIG_FIELD_NUMBER = 82864285;
   private com.google.cloud.compute.v1.SubnetworkLogConfig logConfig_;
   /**
    *
@@ -1213,7 +1213,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -1228,7 +1228,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
    *
    * @return The logConfig.
    */
@@ -1245,7 +1245,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.SubnetworkLogConfigOrBuilder getLogConfigOrBuilder() {
@@ -1350,7 +1350,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 421491790;
+  public static final int PRIVATE_IP_GOOGLE_ACCESS_FIELD_NUMBER = 153056334;
   private boolean privateIpGoogleAccess_;
   /**
    *
@@ -1359,7 +1359,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>bool private_ip_google_access = 153056334;</code>
    *
    * @return The privateIpGoogleAccess.
    */
@@ -1414,7 +1414,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int PURPOSE_FIELD_NUMBER = 316407070;
+  public static final int PURPOSE_FIELD_NUMBER = 47971614;
   private int purpose_;
   /**
    *
@@ -1423,7 +1423,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
    *
    * @return The enum numeric value on the wire for purpose.
    */
@@ -1438,7 +1438,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
    *
    * @return The purpose.
    */
@@ -1616,7 +1616,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     return secondaryIpRanges_.get(index);
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1625,7 +1625,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1648,7 +1648,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1671,7 +1671,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -1686,7 +1686,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -1727,14 +1727,23 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (role_ != com.google.cloud.compute.v1.Subnetwork.Role.UNDEFINED_ROLE.getNumber()) {
       output.writeEnum(3506294, role_);
     }
+    if (!getIpv6CidrRangeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4705802, ipv6CidrRange_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (purpose_ != com.google.cloud.compute.v1.Subnetwork.Purpose.UNDEFINED_PURPOSE.getNumber()) {
+      output.writeEnum(47971614, purpose_);
     }
     if (privateIpv6GoogleAccess_
         != com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess
             .UNDEFINED_PRIVATE_IPV6_GOOGLE_ACCESS
             .getNumber()) {
       output.writeEnum(48277006, privateIpv6GoogleAccess_);
+    }
+    if (logConfig_ != null) {
+      output.writeMessage(82864285, getLogConfig());
     }
     if (!getIpCidrRangeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
@@ -1751,32 +1760,23 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (enableFlowLogs_ != false) {
       output.writeBool(151544420, enableFlowLogs_);
     }
+    if (privateIpGoogleAccess_ != false) {
+      output.writeBool(153056334, privateIpGoogleAccess_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (!getGatewayAddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 191431929, gatewayAddress_);
+    }
     if (!getNetworkBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
-    if (!getIpv6CidrRangeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 273141258, ipv6CidrRange_);
-    }
-    if (purpose_ != com.google.cloud.compute.v1.Subnetwork.Purpose.UNDEFINED_PURPOSE.getNumber()) {
-      output.writeEnum(316407070, purpose_);
-    }
-    if (logConfig_ != null) {
-      output.writeMessage(351299741, getLogConfig());
-    }
-    if (privateIpGoogleAccess_ != false) {
-      output.writeBool(421491790, privateIpGoogleAccess_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
-    if (!getGatewayAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 459867385, gatewayAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -1799,9 +1799,15 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (role_ != com.google.cloud.compute.v1.Subnetwork.Role.UNDEFINED_ROLE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3506294, role_);
     }
+    if (!getIpv6CidrRangeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4705802, ipv6CidrRange_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
+    }
+    if (purpose_ != com.google.cloud.compute.v1.Subnetwork.Purpose.UNDEFINED_PURPOSE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(47971614, purpose_);
     }
     if (privateIpv6GoogleAccess_
         != com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess
@@ -1809,6 +1815,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(48277006, privateIpv6GoogleAccess_);
+    }
+    if (logConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(82864285, getLogConfig());
     }
     if (!getIpCidrRangeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
@@ -1827,33 +1836,24 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (enableFlowLogs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(151544420, enableFlowLogs_);
     }
+    if (privateIpGoogleAccess_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(153056334, privateIpGoogleAccess_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (!getGatewayAddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(191431929, gatewayAddress_);
+    }
     if (!getNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (!getFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (!getIpv6CidrRangeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(273141258, ipv6CidrRange_);
-    }
-    if (purpose_ != com.google.cloud.compute.v1.Subnetwork.Purpose.UNDEFINED_PURPOSE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(316407070, purpose_);
-    }
-    if (logConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
-    }
-    if (privateIpGoogleAccess_ != false) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(421491790, privateIpGoogleAccess_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
-    if (!getGatewayAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(459867385, gatewayAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2494,7 +2494,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2516,7 +2516,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2538,7 +2538,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2559,7 +2559,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2576,7 +2576,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2763,7 +2763,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      * </pre>
      *
-     * <code>string gateway_address = 459867385;</code>
+     * <code>string gateway_address = 191431929;</code>
      *
      * @return The gatewayAddress.
      */
@@ -2785,7 +2785,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      * </pre>
      *
-     * <code>string gateway_address = 459867385;</code>
+     * <code>string gateway_address = 191431929;</code>
      *
      * @return The bytes for gatewayAddress.
      */
@@ -2807,7 +2807,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      * </pre>
      *
-     * <code>string gateway_address = 459867385;</code>
+     * <code>string gateway_address = 191431929;</code>
      *
      * @param value The gatewayAddress to set.
      * @return This builder for chaining.
@@ -2828,7 +2828,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      * </pre>
      *
-     * <code>string gateway_address = 459867385;</code>
+     * <code>string gateway_address = 191431929;</code>
      *
      * @return This builder for chaining.
      */
@@ -2845,7 +2845,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
      * </pre>
      *
-     * <code>string gateway_address = 459867385;</code>
+     * <code>string gateway_address = 191431929;</code>
      *
      * @param value The bytes for gatewayAddress to set.
      * @return This builder for chaining.
@@ -3081,7 +3081,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      * </pre>
      *
-     * <code>string ipv6_cidr_range = 273141258;</code>
+     * <code>string ipv6_cidr_range = 4705802;</code>
      *
      * @return The ipv6CidrRange.
      */
@@ -3103,7 +3103,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      * </pre>
      *
-     * <code>string ipv6_cidr_range = 273141258;</code>
+     * <code>string ipv6_cidr_range = 4705802;</code>
      *
      * @return The bytes for ipv6CidrRange.
      */
@@ -3125,7 +3125,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      * </pre>
      *
-     * <code>string ipv6_cidr_range = 273141258;</code>
+     * <code>string ipv6_cidr_range = 4705802;</code>
      *
      * @param value The ipv6CidrRange to set.
      * @return This builder for chaining.
@@ -3146,7 +3146,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      * </pre>
      *
-     * <code>string ipv6_cidr_range = 273141258;</code>
+     * <code>string ipv6_cidr_range = 4705802;</code>
      *
      * @return This builder for chaining.
      */
@@ -3163,7 +3163,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      * </pre>
      *
-     * <code>string ipv6_cidr_range = 273141258;</code>
+     * <code>string ipv6_cidr_range = 4705802;</code>
      *
      * @param value The bytes for ipv6CidrRange to set.
      * @return This builder for chaining.
@@ -3298,7 +3298,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      *
      * @return Whether the logConfig field is set.
      */
@@ -3312,7 +3312,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      *
      * @return The logConfig.
      */
@@ -3332,7 +3332,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     public Builder setLogConfig(com.google.cloud.compute.v1.SubnetworkLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -3354,7 +3354,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     public Builder setLogConfig(
         com.google.cloud.compute.v1.SubnetworkLogConfig.Builder builderForValue) {
@@ -3374,7 +3374,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.SubnetworkLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -3400,7 +3400,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     public Builder clearLogConfig() {
       if (logConfigBuilder_ == null) {
@@ -3420,7 +3420,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     public com.google.cloud.compute.v1.SubnetworkLogConfig.Builder getLogConfigBuilder() {
 
@@ -3434,7 +3434,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     public com.google.cloud.compute.v1.SubnetworkLogConfigOrBuilder getLogConfigOrBuilder() {
       if (logConfigBuilder_ != null) {
@@ -3452,7 +3452,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SubnetworkLogConfig,
@@ -3691,7 +3691,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>bool private_ip_google_access = 153056334;</code>
      *
      * @return The privateIpGoogleAccess.
      */
@@ -3706,7 +3706,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>bool private_ip_google_access = 153056334;</code>
      *
      * @param value The privateIpGoogleAccess to set.
      * @return This builder for chaining.
@@ -3724,7 +3724,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
      * </pre>
      *
-     * <code>bool private_ip_google_access = 421491790;</code>
+     * <code>bool private_ip_google_access = 153056334;</code>
      *
      * @return This builder for chaining.
      */
@@ -3854,7 +3854,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      *
      * @return The enum numeric value on the wire for purpose.
      */
@@ -3869,7 +3869,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      *
      * @param value The enum numeric value on the wire for purpose to set.
      * @return This builder for chaining.
@@ -3887,7 +3887,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      *
      * @return The purpose.
      */
@@ -3905,7 +3905,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      *
      * @param value The purpose to set.
      * @return This builder for chaining.
@@ -3926,7 +3926,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
      *
      * @return This builder for chaining.
      */
@@ -4542,7 +4542,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -4564,7 +4564,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -4586,7 +4586,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -4607,7 +4607,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -4624,7 +4624,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4645,7 +4645,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -4660,7 +4660,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -4678,7 +4678,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -4696,7 +4696,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -4717,7 +4717,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
      * </pre>
      *
      * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>

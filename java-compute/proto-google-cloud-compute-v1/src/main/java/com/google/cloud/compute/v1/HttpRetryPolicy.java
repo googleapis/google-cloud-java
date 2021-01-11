@@ -71,22 +71,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
           case 0:
             done = true;
             break;
-          case 230524282:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                retryConditions_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              retryConditions_.add(s);
-              break;
-            }
-          case 2013441128:
-            {
-              numRetries_ = input.readUInt32();
-              break;
-            }
-          case -2054638118:
+          case 92845530:
             {
               com.google.cloud.compute.v1.Duration.Builder subBuilder = null;
               if (perTryTimeout_ != null) {
@@ -100,6 +85,21 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
                 perTryTimeout_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 230524282:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                retryConditions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              retryConditions_.add(s);
+              break;
+            }
+          case 2013441128:
+            {
+              numRetries_ = input.readUInt32();
               break;
             }
           default:
@@ -157,7 +157,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     return numRetries_;
   }
 
-  public static final int PER_TRY_TIMEOUT_FIELD_NUMBER = 280041147;
+  public static final int PER_TRY_TIMEOUT_FIELD_NUMBER = 11605691;
   private com.google.cloud.compute.v1.Duration perTryTimeout_;
   /**
    *
@@ -167,7 +167,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
    *
    * @return Whether the perTryTimeout field is set.
    */
@@ -183,7 +183,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
    *
    * @return The perTryTimeout.
    */
@@ -201,7 +201,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
    * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+   * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.DurationOrBuilder getPerTryTimeoutOrBuilder() {
@@ -323,15 +323,15 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (perTryTimeout_ != null) {
+      output.writeMessage(11605691, getPerTryTimeout());
+    }
     for (int i = 0; i < retryConditions_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 28815535, retryConditions_.getRaw(i));
     }
     if (numRetries_ != 0) {
       output.writeUInt32(251680141, numRetries_);
-    }
-    if (perTryTimeout_ != null) {
-      output.writeMessage(280041147, getPerTryTimeout());
     }
     unknownFields.writeTo(output);
   }
@@ -342,6 +342,10 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     if (size != -1) return size;
 
     size = 0;
+    if (perTryTimeout_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11605691, getPerTryTimeout());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < retryConditions_.size(); i++) {
@@ -352,10 +356,6 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
     }
     if (numRetries_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(251680141, numRetries_);
-    }
-    if (perTryTimeout_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(280041147, getPerTryTimeout());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -756,7 +756,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      *
      * @return Whether the perTryTimeout field is set.
      */
@@ -771,7 +771,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      *
      * @return The perTryTimeout.
      */
@@ -792,7 +792,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     public Builder setPerTryTimeout(com.google.cloud.compute.v1.Duration value) {
       if (perTryTimeoutBuilder_ == null) {
@@ -815,7 +815,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     public Builder setPerTryTimeout(com.google.cloud.compute.v1.Duration.Builder builderForValue) {
       if (perTryTimeoutBuilder_ == null) {
@@ -835,7 +835,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     public Builder mergePerTryTimeout(com.google.cloud.compute.v1.Duration value) {
       if (perTryTimeoutBuilder_ == null) {
@@ -862,7 +862,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     public Builder clearPerTryTimeout() {
       if (perTryTimeoutBuilder_ == null) {
@@ -883,7 +883,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getPerTryTimeoutBuilder() {
 
@@ -898,7 +898,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     public com.google.cloud.compute.v1.DurationOrBuilder getPerTryTimeoutOrBuilder() {
       if (perTryTimeoutBuilder_ != null) {
@@ -917,7 +917,7 @@ public final class HttpRetryPolicy extends com.google.protobuf.GeneratedMessageV
      * If not specified, will use the timeout set in HttpRouteAction. If timeout in HttpRouteAction is not set, will use the largest timeout among all backend services associated with the route.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 280041147;</code>
+     * <code>.google.cloud.compute.v1.Duration per_try_timeout = 11605691;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Duration,

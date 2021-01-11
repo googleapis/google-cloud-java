@@ -89,18 +89,18 @@ public final class DeleteRegionHealthCheckServiceRequest
               region_ = s;
               break;
             }
+          case 1119514330:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              healthCheckService_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1027969318:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              healthCheckService_ = s;
               break;
             }
           default:
@@ -137,7 +137,7 @@ public final class DeleteRegionHealthCheckServiceRequest
             com.google.cloud.compute.v1.DeleteRegionHealthCheckServiceRequest.Builder.class);
   }
 
-  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 408374747;
+  public static final int HEALTH_CHECK_SERVICE_FIELD_NUMBER = 139939291;
   private volatile java.lang.Object healthCheckService_;
   /**
    *
@@ -146,7 +146,7 @@ public final class DeleteRegionHealthCheckServiceRequest
    * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheckService.
    */
@@ -169,7 +169,7 @@ public final class DeleteRegionHealthCheckServiceRequest
    * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheckService.
    */
@@ -357,11 +357,11 @@ public final class DeleteRegionHealthCheckServiceRequest
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getHealthCheckServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 139939291, healthCheckService_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getHealthCheckServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 408374747, healthCheckService_);
     }
     unknownFields.writeTo(output);
   }
@@ -378,12 +378,12 @@ public final class DeleteRegionHealthCheckServiceRequest
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (!getHealthCheckServiceBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(408374747, healthCheckService_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(139939291, healthCheckService_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -719,7 +719,7 @@ public final class DeleteRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The healthCheckService.
@@ -742,7 +742,7 @@ public final class DeleteRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for healthCheckService.
@@ -765,7 +765,7 @@ public final class DeleteRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The healthCheckService to set.
@@ -787,7 +787,7 @@ public final class DeleteRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -805,7 +805,7 @@ public final class DeleteRegionHealthCheckServiceRequest
      * Name of the HealthCheckService to delete. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string health_check_service = 408374747 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string health_check_service = 139939291 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for healthCheckService to set.

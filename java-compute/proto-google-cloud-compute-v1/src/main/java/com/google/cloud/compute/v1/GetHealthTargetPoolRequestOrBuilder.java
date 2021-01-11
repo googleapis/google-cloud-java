@@ -24,21 +24,42 @@ public interface GetHealthTargetPoolRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceReferenceResource field is set.
    */
   boolean hasInstanceReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceReferenceResource.
    */
   com.google.cloud.compute.v1.InstanceReference getInstanceReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.InstanceReference instance_reference_resource = 292926060;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceReference instance_reference_resource = 24490604 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceReferenceOrBuilder getInstanceReferenceResourceOrBuilder();

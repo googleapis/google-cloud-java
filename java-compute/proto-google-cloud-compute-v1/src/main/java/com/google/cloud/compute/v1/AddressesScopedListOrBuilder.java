@@ -30,7 +30,7 @@ public interface AddressesScopedListOrBuilder
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Address> getAddressesList();
   /**
@@ -40,7 +40,7 @@ public interface AddressesScopedListOrBuilder
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   com.google.cloud.compute.v1.Address getAddresses(int index);
   /**
@@ -50,7 +50,7 @@ public interface AddressesScopedListOrBuilder
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   int getAddressesCount();
   /**
@@ -60,7 +60,7 @@ public interface AddressesScopedListOrBuilder
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AddressOrBuilder>
       getAddressesOrBuilderList();
@@ -71,7 +71,7 @@ public interface AddressesScopedListOrBuilder
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   com.google.cloud.compute.v1.AddressOrBuilder getAddressesOrBuilder(int index);
 

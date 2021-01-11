@@ -178,7 +178,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
    *
    *
    * <pre>
-   * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+   * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
    * </pre>
    *
    * <code>int32 time_window_sec = 36405300;</code>
@@ -729,7 +729,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      *
      *
      * <pre>
-     * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
      * <code>int32 time_window_sec = 36405300;</code>
@@ -744,7 +744,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      *
      *
      * <pre>
-     * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
      * <code>int32 time_window_sec = 36405300;</code>
@@ -762,7 +762,7 @@ public final class AutoscalingPolicyScaleInControl extends com.google.protobuf.G
      *
      *
      * <pre>
-     * How long back autoscaling should look when computing recommendations to include directives regarding slower scale in, as described above.
+     * How far back autoscaling looks when computing recommendations to include directives regarding slower scale in, as described above.
      * </pre>
      *
      * <code>int32 time_window_sec = 36405300;</code>

@@ -43,7 +43,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -55,7 +55,7 @@ public interface VpnGatewayVpnGatewayInterfaceOrBuilder
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */

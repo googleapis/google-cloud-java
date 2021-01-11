@@ -49,16 +49,28 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesStartWithEncryptionKeyRequestResource field is set.
    */
   boolean hasInstancesStartWithEncryptionKeyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesStartWithEncryptionKeyRequestResource.
@@ -66,8 +78,14 @@ public interface StartWithEncryptionKeyInstanceRequestOrBuilder
   com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest
       getInstancesStartWithEncryptionKeyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequestOrBuilder

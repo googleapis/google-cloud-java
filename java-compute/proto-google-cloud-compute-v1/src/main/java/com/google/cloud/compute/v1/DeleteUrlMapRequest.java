@@ -79,18 +79,18 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
               requestId_ = s;
               break;
             }
+          case 788681826:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              urlMap_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1358801822:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              urlMap_ = s;
               break;
             }
           default:
@@ -229,7 +229,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -238,7 +238,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
    * Name of the UrlMap resource to delete.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -261,7 +261,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
    * Name of the UrlMap resource to delete.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */
@@ -295,11 +295,11 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     unknownFields.writeTo(output);
   }
@@ -313,11 +313,11 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -857,7 +857,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
      * Name of the UrlMap resource to delete.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The urlMap.
      */
@@ -879,7 +879,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
      * Name of the UrlMap resource to delete.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for urlMap.
      */
@@ -901,7 +901,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
      * Name of the UrlMap resource to delete.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -922,7 +922,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
      * Name of the UrlMap resource to delete.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -939,7 +939,7 @@ public final class DeleteUrlMapRequest extends com.google.protobuf.GeneratedMess
      * Name of the UrlMap resource to delete.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

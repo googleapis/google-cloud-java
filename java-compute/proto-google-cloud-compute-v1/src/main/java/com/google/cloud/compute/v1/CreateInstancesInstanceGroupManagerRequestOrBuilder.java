@@ -51,16 +51,28 @@ public interface CreateInstancesInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersCreateInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersCreateInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersCreateInstancesRequestResource.
@@ -68,8 +80,14 @@ public interface CreateInstancesInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest
       getInstanceGroupManagersCreateInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867;
+   * .google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequest instance_group_managers_create_instances_request_resource = 24558867 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersCreateInstancesRequestOrBuilder

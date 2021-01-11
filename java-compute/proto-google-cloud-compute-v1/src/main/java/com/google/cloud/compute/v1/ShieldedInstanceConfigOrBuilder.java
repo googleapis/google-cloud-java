@@ -30,7 +30,7 @@ public interface ShieldedInstanceConfigOrBuilder
    * Defines whether the instance has integrity monitoring enabled. Enabled by default.
    * </pre>
    *
-   * <code>bool enable_integrity_monitoring = 409071030;</code>
+   * <code>bool enable_integrity_monitoring = 140635574;</code>
    *
    * @return The enableIntegrityMonitoring.
    */

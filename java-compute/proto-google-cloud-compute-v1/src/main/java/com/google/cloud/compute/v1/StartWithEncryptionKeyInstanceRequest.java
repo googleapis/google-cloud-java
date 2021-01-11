@@ -96,14 +96,7 @@ public final class StartWithEncryptionKeyInstanceRequest
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -761267206:
+          case 1386216442:
             {
               com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.Builder
                   subBuilder = null;
@@ -119,6 +112,13 @@ public final class StartWithEncryptionKeyInstanceRequest
                 instancesStartWithEncryptionKeyRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -205,12 +205,18 @@ public final class StartWithEncryptionKeyInstanceRequest
   }
 
   public static final int INSTANCES_START_WITH_ENCRYPTION_KEY_REQUEST_RESOURCE_FIELD_NUMBER =
-      441712511;
+      173277055;
   private com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest
       instancesStartWithEncryptionKeyRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesStartWithEncryptionKeyRequestResource field is set.
@@ -220,8 +226,14 @@ public final class StartWithEncryptionKeyInstanceRequest
     return instancesStartWithEncryptionKeyRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesStartWithEncryptionKeyRequestResource.
@@ -234,8 +246,14 @@ public final class StartWithEncryptionKeyInstanceRequest
         : instancesStartWithEncryptionKeyRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+   * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -418,11 +436,11 @@ public final class StartWithEncryptionKeyInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (instancesStartWithEncryptionKeyRequestResource_ != null) {
+      output.writeMessage(173277055, getInstancesStartWithEncryptionKeyRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (instancesStartWithEncryptionKeyRequestResource_ != null) {
-      output.writeMessage(441712511, getInstancesStartWithEncryptionKeyRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -442,13 +460,13 @@ public final class StartWithEncryptionKeyInstanceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (instancesStartWithEncryptionKeyRequestResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              441712511, getInstancesStartWithEncryptionKeyRequestResource());
+              173277055, getInstancesStartWithEncryptionKeyRequestResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -917,8 +935,14 @@ public final class StartWithEncryptionKeyInstanceRequest
             com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequestOrBuilder>
         instancesStartWithEncryptionKeyRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instancesStartWithEncryptionKeyRequestResource field is set.
@@ -928,8 +952,14 @@ public final class StartWithEncryptionKeyInstanceRequest
           || instancesStartWithEncryptionKeyRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instancesStartWithEncryptionKeyRequestResource.
@@ -946,8 +976,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesStartWithEncryptionKeyRequestResource(
@@ -965,8 +1001,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesStartWithEncryptionKeyRequestResource(
@@ -982,8 +1024,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstancesStartWithEncryptionKeyRequestResource(
@@ -1006,8 +1054,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstancesStartWithEncryptionKeyRequestResource() {
@@ -1022,8 +1076,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest.Builder
@@ -1033,8 +1093,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       return getInstancesStartWithEncryptionKeyRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequestOrBuilder
@@ -1049,8 +1115,14 @@ public final class StartWithEncryptionKeyInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 441712511;
+     * .google.cloud.compute.v1.InstancesStartWithEncryptionKeyRequest instances_start_with_encryption_key_request_resource = 173277055 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

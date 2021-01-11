@@ -30,7 +30,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>string peer_external_gateway = 116520717;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -42,7 +42,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer external VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>string peer_external_gateway = 116520717;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -55,7 +55,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>string peer_gcp_gateway = 13431996;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -67,7 +67,7 @@ public interface VpnGatewayStatusVpnConnectionOrBuilder
    * URL reference to the peer side VPN gateways to which the VPN tunnels in this VPN connection are connected. This field is mutually exclusive with peer_gcp_gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>string peer_gcp_gateway = 13431996;</code>
    *
    * @return The bytes for peerGcpGateway.
    */

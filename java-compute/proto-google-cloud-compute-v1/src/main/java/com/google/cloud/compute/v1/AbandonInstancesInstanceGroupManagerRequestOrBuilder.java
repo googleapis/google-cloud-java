@@ -51,16 +51,28 @@ public interface AbandonInstancesInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersAbandonInstancesRequestResource field is set.
    */
   boolean hasInstanceGroupManagersAbandonInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersAbandonInstancesRequestResource.
@@ -68,8 +80,14 @@ public interface AbandonInstancesInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest
       getInstanceGroupManagersAbandonInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequestOrBuilder

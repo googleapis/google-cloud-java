@@ -49,16 +49,28 @@ public interface SetMinCpuPlatformInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368;
+   * .google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesSetMinCpuPlatformRequestResource field is set.
    */
   boolean hasInstancesSetMinCpuPlatformRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368;
+   * .google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesSetMinCpuPlatformRequestResource.
@@ -66,8 +78,14 @@ public interface SetMinCpuPlatformInstanceRequestOrBuilder
   com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest
       getInstancesSetMinCpuPlatformRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368;
+   * .google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest instances_set_min_cpu_platform_request_resource = 148459368 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstancesSetMinCpuPlatformRequestOrBuilder

@@ -77,7 +77,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
               name_ = s;
               break;
             }
-          case -1820981470:
+          case 326502178:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -118,7 +118,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.ManagedInstanceVersion.Builder.class);
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
@@ -127,7 +127,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The instanceTemplate.
    */
@@ -150,7 +150,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
    * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -234,7 +234,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -249,8 +249,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (!getInstanceTemplateBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -558,7 +557,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return The instanceTemplate.
      */
@@ -580,7 +579,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -602,7 +601,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -623,7 +622,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return This builder for chaining.
      */
@@ -640,7 +639,7 @@ public final class ManagedInstanceVersion extends com.google.protobuf.GeneratedM
      * [Output Only] The intended template of the instance. This field is empty when current_action is one of { DELETING, ABANDONING }.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.

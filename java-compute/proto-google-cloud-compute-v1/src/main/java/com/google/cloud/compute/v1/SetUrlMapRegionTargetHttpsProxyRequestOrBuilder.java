@@ -128,19 +128,43 @@ public interface SetUrlMapRegionTargetHttpsProxyRequestOrBuilder
   com.google.protobuf.ByteString getTargetHttpsProxyBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the urlMapReferenceResource field is set.
    */
   boolean hasUrlMapReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The urlMapReferenceResource.
    */
   com.google.cloud.compute.v1.UrlMapReference getUrlMapReferenceResource();
   /**
-   * <code>.google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 398701333;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UrlMapReference url_map_reference_resource = 130265877 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.UrlMapReferenceOrBuilder getUrlMapReferenceResourceOrBuilder();
 }

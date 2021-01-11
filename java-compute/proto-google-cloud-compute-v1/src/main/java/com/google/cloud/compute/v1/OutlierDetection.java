@@ -68,6 +68,11 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
           case 0:
             done = true;
             break;
+          case 103919208:
+            {
+              successRateRequestVolume_ = input.readInt32();
+              break;
+            }
           case 147495104:
             {
               maxEjectionPercent_ = input.readInt32();
@@ -105,6 +110,21 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
 
               break;
             }
+          case 950062336:
+            {
+              consecutiveErrors_ = input.readInt32();
+              break;
+            }
+          case 1008041680:
+            {
+              enforcingConsecutiveGatewayFailure_ = input.readInt32();
+              break;
+            }
+          case 1192550352:
+            {
+              consecutiveGatewayFailure_ = input.readInt32();
+              break;
+            }
           case 1397886184:
             {
               successRateStdevFactor_ = input.readInt32();
@@ -120,27 +140,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
               enforcingConsecutiveErrors_ = input.readInt32();
               break;
             }
-          case -2043564440:
-            {
-              successRateRequestVolume_ = input.readInt32();
-              break;
-            }
-          case -1197421312:
-            {
-              consecutiveErrors_ = input.readInt32();
-              break;
-            }
-          case -1139441968:
-            {
-              enforcingConsecutiveGatewayFailure_ = input.readInt32();
-              break;
-            }
-          case -954933296:
-            {
-              consecutiveGatewayFailure_ = input.readInt32();
-              break;
-            }
-          case -88832072:
+          case 2058651576:
             {
               successRateMinimumHosts_ = input.readInt32();
               break;
@@ -227,7 +227,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return getBaseEjectionTime();
   }
 
-  public static final int CONSECUTIVE_ERRORS_FIELD_NUMBER = 387193248;
+  public static final int CONSECUTIVE_ERRORS_FIELD_NUMBER = 118757792;
   private int consecutiveErrors_;
   /**
    *
@@ -236,7 +236,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
    * </pre>
    *
-   * <code>int32 consecutive_errors = 387193248;</code>
+   * <code>int32 consecutive_errors = 118757792;</code>
    *
    * @return The consecutiveErrors.
    */
@@ -245,7 +245,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return consecutiveErrors_;
   }
 
-  public static final int CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 417504250;
+  public static final int CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 149068794;
   private int consecutiveGatewayFailure_;
   /**
    *
@@ -254,7 +254,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
    * </pre>
    *
-   * <code>int32 consecutive_gateway_failure = 417504250;</code>
+   * <code>int32 consecutive_gateway_failure = 149068794;</code>
    *
    * @return The consecutiveGatewayFailure.
    */
@@ -281,7 +281,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return enforcingConsecutiveErrors_;
   }
 
-  public static final int ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 394440666;
+  public static final int ENFORCING_CONSECUTIVE_GATEWAY_FAILURE_FIELD_NUMBER = 126005210;
   private int enforcingConsecutiveGatewayFailure_;
   /**
    *
@@ -290,7 +290,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
    * </pre>
    *
-   * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+   * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
    *
    * @return The enforcingConsecutiveGatewayFailure.
    */
@@ -383,7 +383,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return maxEjectionPercent_;
   }
 
-  public static final int SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER = 525766903;
+  public static final int SUCCESS_RATE_MINIMUM_HOSTS_FIELD_NUMBER = 257331447;
   private int successRateMinimumHosts_;
   /**
    *
@@ -392,7 +392,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
    * </pre>
    *
-   * <code>int32 success_rate_minimum_hosts = 525766903;</code>
+   * <code>int32 success_rate_minimum_hosts = 257331447;</code>
    *
    * @return The successRateMinimumHosts.
    */
@@ -401,7 +401,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     return successRateMinimumHosts_;
   }
 
-  public static final int SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER = 281425357;
+  public static final int SUCCESS_RATE_REQUEST_VOLUME_FIELD_NUMBER = 12989901;
   private int successRateRequestVolume_;
   /**
    *
@@ -410,7 +410,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
    * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
    * </pre>
    *
-   * <code>int32 success_rate_request_volume = 281425357;</code>
+   * <code>int32 success_rate_request_volume = 12989901;</code>
    *
    * @return The successRateRequestVolume.
    */
@@ -451,6 +451,9 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (successRateRequestVolume_ != 0) {
+      output.writeInt32(12989901, successRateRequestVolume_);
+    }
     if (maxEjectionPercent_ != 0) {
       output.writeInt32(18436888, maxEjectionPercent_);
     }
@@ -459,6 +462,15 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     }
     if (baseEjectionTime_ != null) {
       output.writeMessage(80997255, getBaseEjectionTime());
+    }
+    if (consecutiveErrors_ != 0) {
+      output.writeInt32(118757792, consecutiveErrors_);
+    }
+    if (enforcingConsecutiveGatewayFailure_ != 0) {
+      output.writeInt32(126005210, enforcingConsecutiveGatewayFailure_);
+    }
+    if (consecutiveGatewayFailure_ != 0) {
+      output.writeInt32(149068794, consecutiveGatewayFailure_);
     }
     if (successRateStdevFactor_ != 0) {
       output.writeInt32(174735773, successRateStdevFactor_);
@@ -469,20 +481,8 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     if (enforcingConsecutiveErrors_ != 0) {
       output.writeInt32(213133760, enforcingConsecutiveErrors_);
     }
-    if (successRateRequestVolume_ != 0) {
-      output.writeInt32(281425357, successRateRequestVolume_);
-    }
-    if (consecutiveErrors_ != 0) {
-      output.writeInt32(387193248, consecutiveErrors_);
-    }
-    if (enforcingConsecutiveGatewayFailure_ != 0) {
-      output.writeInt32(394440666, enforcingConsecutiveGatewayFailure_);
-    }
-    if (consecutiveGatewayFailure_ != 0) {
-      output.writeInt32(417504250, consecutiveGatewayFailure_);
-    }
     if (successRateMinimumHosts_ != 0) {
-      output.writeInt32(525766903, successRateMinimumHosts_);
+      output.writeInt32(257331447, successRateMinimumHosts_);
     }
     unknownFields.writeTo(output);
   }
@@ -493,6 +493,11 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     if (size != -1) return size;
 
     size = 0;
+    if (successRateRequestVolume_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              12989901, successRateRequestVolume_);
+    }
     if (maxEjectionPercent_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(18436888, maxEjectionPercent_);
     }
@@ -502,6 +507,19 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
     if (baseEjectionTime_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(80997255, getBaseEjectionTime());
+    }
+    if (consecutiveErrors_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(118757792, consecutiveErrors_);
+    }
+    if (enforcingConsecutiveGatewayFailure_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              126005210, enforcingConsecutiveGatewayFailure_);
+    }
+    if (consecutiveGatewayFailure_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              149068794, consecutiveGatewayFailure_);
     }
     if (successRateStdevFactor_ != 0) {
       size +=
@@ -517,28 +535,10 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               213133760, enforcingConsecutiveErrors_);
     }
-    if (successRateRequestVolume_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              281425357, successRateRequestVolume_);
-    }
-    if (consecutiveErrors_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(387193248, consecutiveErrors_);
-    }
-    if (enforcingConsecutiveGatewayFailure_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              394440666, enforcingConsecutiveGatewayFailure_);
-    }
-    if (consecutiveGatewayFailure_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(
-              417504250, consecutiveGatewayFailure_);
-    }
     if (successRateMinimumHosts_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              525766903, successRateMinimumHosts_);
+              257331447, successRateMinimumHosts_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1137,7 +1137,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      * </pre>
      *
-     * <code>int32 consecutive_errors = 387193248;</code>
+     * <code>int32 consecutive_errors = 118757792;</code>
      *
      * @return The consecutiveErrors.
      */
@@ -1152,7 +1152,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      * </pre>
      *
-     * <code>int32 consecutive_errors = 387193248;</code>
+     * <code>int32 consecutive_errors = 118757792;</code>
      *
      * @param value The consecutiveErrors to set.
      * @return This builder for chaining.
@@ -1170,7 +1170,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * Number of errors before a host is ejected from the connection pool. When the backend host is accessed over HTTP, a 5xx return code qualifies as an error. Defaults to 5.
      * </pre>
      *
-     * <code>int32 consecutive_errors = 387193248;</code>
+     * <code>int32 consecutive_errors = 118757792;</code>
      *
      * @return This builder for chaining.
      */
@@ -1189,7 +1189,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      * </pre>
      *
-     * <code>int32 consecutive_gateway_failure = 417504250;</code>
+     * <code>int32 consecutive_gateway_failure = 149068794;</code>
      *
      * @return The consecutiveGatewayFailure.
      */
@@ -1204,7 +1204,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      * </pre>
      *
-     * <code>int32 consecutive_gateway_failure = 417504250;</code>
+     * <code>int32 consecutive_gateway_failure = 149068794;</code>
      *
      * @param value The consecutiveGatewayFailure to set.
      * @return This builder for chaining.
@@ -1222,7 +1222,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of consecutive gateway failures (502, 503, 504 status or connection errors that are mapped to one of those status codes) before a consecutive gateway failure ejection occurs. Defaults to 3.
      * </pre>
      *
-     * <code>int32 consecutive_gateway_failure = 417504250;</code>
+     * <code>int32 consecutive_gateway_failure = 149068794;</code>
      *
      * @return This builder for chaining.
      */
@@ -1293,7 +1293,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      * </pre>
      *
-     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
      *
      * @return The enforcingConsecutiveGatewayFailure.
      */
@@ -1308,7 +1308,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      * </pre>
      *
-     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
      *
      * @param value The enforcingConsecutiveGatewayFailure to set.
      * @return This builder for chaining.
@@ -1326,7 +1326,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The percentage chance that a host will be actually ejected when an outlier status is detected through consecutive gateway failures. This setting can be used to disable ejection or to ramp it up slowly. Defaults to 100.
      * </pre>
      *
-     * <code>int32 enforcing_consecutive_gateway_failure = 394440666;</code>
+     * <code>int32 enforcing_consecutive_gateway_failure = 126005210;</code>
      *
      * @return This builder for chaining.
      */
@@ -1634,7 +1634,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      * </pre>
      *
-     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     * <code>int32 success_rate_minimum_hosts = 257331447;</code>
      *
      * @return The successRateMinimumHosts.
      */
@@ -1649,7 +1649,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      * </pre>
      *
-     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     * <code>int32 success_rate_minimum_hosts = 257331447;</code>
      *
      * @param value The successRateMinimumHosts to set.
      * @return This builder for chaining.
@@ -1667,7 +1667,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The number of hosts in a cluster that must have enough request volume to detect success rate outliers. If the number of hosts is less than this setting, outlier detection via success rate statistics is not performed for any host in the cluster. Defaults to 5.
      * </pre>
      *
-     * <code>int32 success_rate_minimum_hosts = 525766903;</code>
+     * <code>int32 success_rate_minimum_hosts = 257331447;</code>
      *
      * @return This builder for chaining.
      */
@@ -1686,7 +1686,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      * </pre>
      *
-     * <code>int32 success_rate_request_volume = 281425357;</code>
+     * <code>int32 success_rate_request_volume = 12989901;</code>
      *
      * @return The successRateRequestVolume.
      */
@@ -1701,7 +1701,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      * </pre>
      *
-     * <code>int32 success_rate_request_volume = 281425357;</code>
+     * <code>int32 success_rate_request_volume = 12989901;</code>
      *
      * @param value The successRateRequestVolume to set.
      * @return This builder for chaining.
@@ -1719,7 +1719,7 @@ public final class OutlierDetection extends com.google.protobuf.GeneratedMessage
      * The minimum number of total requests that must be collected in one interval (as defined by the interval duration above) to include this host in success rate based outlier detection. If the volume is lower than this setting, outlier detection via success rate statistics is not performed for that host. Defaults to 100.
      * </pre>
      *
-     * <code>int32 success_rate_request_volume = 281425357;</code>
+     * <code>int32 success_rate_request_volume = 12989901;</code>
      *
      * @return This builder for chaining.
      */

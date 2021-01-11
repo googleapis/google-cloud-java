@@ -69,7 +69,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
-          case -2135255054:
+          case 12228594:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -110,10 +110,10 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.ForwardingRuleReference.Builder.class);
   }
 
-  public static final int FORWARDING_RULE_FIELD_NUMBER = 269964030;
+  public static final int FORWARDING_RULE_FIELD_NUMBER = 1528574;
   private volatile java.lang.Object forwardingRule_;
   /**
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>string forwarding_rule = 1528574;</code>
    *
    * @return The forwardingRule.
    */
@@ -130,7 +130,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
     }
   }
   /**
-   * <code>string forwarding_rule = 269964030;</code>
+   * <code>string forwarding_rule = 1528574;</code>
    *
    * @return The bytes for forwardingRule.
    */
@@ -162,7 +162,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getForwardingRuleBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 269964030, forwardingRule_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1528574, forwardingRule_);
     }
     unknownFields.writeTo(output);
   }
@@ -174,7 +174,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
 
     size = 0;
     if (!getForwardingRuleBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(269964030, forwardingRule_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1528574, forwardingRule_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -466,7 +466,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
 
     private java.lang.Object forwardingRule_ = "";
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>string forwarding_rule = 1528574;</code>
      *
      * @return The forwardingRule.
      */
@@ -482,7 +482,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>string forwarding_rule = 1528574;</code>
      *
      * @return The bytes for forwardingRule.
      */
@@ -498,7 +498,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       }
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>string forwarding_rule = 1528574;</code>
      *
      * @param value The forwardingRule to set.
      * @return This builder for chaining.
@@ -513,7 +513,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>string forwarding_rule = 1528574;</code>
      *
      * @return This builder for chaining.
      */
@@ -524,7 +524,7 @@ public final class ForwardingRuleReference extends com.google.protobuf.Generated
       return this;
     }
     /**
-     * <code>string forwarding_rule = 269964030;</code>
+     * <code>string forwarding_rule = 1528574;</code>
      *
      * @param value The bytes for forwardingRule to set.
      * @return This builder for chaining.

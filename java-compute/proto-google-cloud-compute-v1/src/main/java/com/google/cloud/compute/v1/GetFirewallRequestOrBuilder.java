@@ -30,7 +30,7 @@ public interface GetFirewallRequestOrBuilder
    * Name of the firewall rule to return.
    * </pre>
    *
-   * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The firewall.
    */
@@ -42,7 +42,7 @@ public interface GetFirewallRequestOrBuilder
    * Name of the firewall rule to return.
    * </pre>
    *
-   * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for firewall.
    */

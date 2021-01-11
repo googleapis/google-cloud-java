@@ -74,7 +74,7 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>string path_redirect = 3907254;</code>
    *
    * @return The pathRedirect.
    */
@@ -88,7 +88,7 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>string path_redirect = 3907254;</code>
    *
    * @return The bytes for pathRedirect.
    */
@@ -103,7 +103,7 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>string prefix_redirect = 177748713;</code>
    *
    * @return The prefixRedirect.
    */
@@ -117,7 +117,7 @@ public interface HttpRedirectActionOrBuilder
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>string prefix_redirect = 177748713;</code>
    *
    * @return The bytes for prefixRedirect.
    */
@@ -137,7 +137,7 @@ public interface HttpRedirectActionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
    * </code>
    *
    * @return The enum numeric value on the wire for redirectResponseCode.
@@ -157,7 +157,7 @@ public interface HttpRedirectActionOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
    * </code>
    *
    * @return The redirectResponseCode.

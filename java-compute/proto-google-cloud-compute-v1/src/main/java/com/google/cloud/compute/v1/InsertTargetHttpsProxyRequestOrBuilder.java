@@ -78,19 +78,43 @@ public interface InsertTargetHttpsProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetHttpsProxyResource field is set.
    */
   boolean hasTargetHttpsProxyResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetHttpsProxyResource.
    */
   com.google.cloud.compute.v1.TargetHttpsProxy getTargetHttpsProxyResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 433657473;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetHttpsProxy target_https_proxy_resource = 165222017 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.cloud.compute.v1.TargetHttpsProxyOrBuilder getTargetHttpsProxyResourceOrBuilder();
 }

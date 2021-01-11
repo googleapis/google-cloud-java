@@ -30,7 +30,7 @@ public interface LicenseOrBuilder
    * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
    * </pre>
    *
-   * <code>bool charges_use_fee = 372412622;</code>
+   * <code>bool charges_use_fee = 103977166;</code>
    *
    * @return The chargesUseFee.
    */
@@ -68,7 +68,7 @@ public interface LicenseOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -80,7 +80,7 @@ public interface LicenseOrBuilder
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -214,7 +214,7 @@ public interface LicenseOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -226,7 +226,7 @@ public interface LicenseOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

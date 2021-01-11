@@ -31,7 +31,7 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectAttachment>
@@ -44,7 +44,7 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectAttachment getInterconnectAttachments(int index);
@@ -56,7 +56,7 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   int getInterconnectAttachmentsCount();
@@ -68,7 +68,7 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder>
@@ -81,7 +81,7 @@ public interface InterconnectAttachmentsScopedListOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 425388415;
+   * repeated .google.cloud.compute.v1.InterconnectAttachment interconnect_attachments = 156952959;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder getInterconnectAttachmentsOrBuilder(

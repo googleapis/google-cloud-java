@@ -86,7 +86,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
 
               break;
             }
-          case -1593582318:
+          case 553901330:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 addresses_ = new java.util.ArrayList<com.google.cloud.compute.v1.Address>();
@@ -134,7 +134,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.AddressesScopedList.Builder.class);
   }
 
-  public static final int ADDRESSES_FIELD_NUMBER = 337673122;
+  public static final int ADDRESSES_FIELD_NUMBER = 69237666;
   private java.util.List<com.google.cloud.compute.v1.Address> addresses_;
   /**
    *
@@ -143,7 +143,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Address> getAddressesList() {
@@ -156,7 +156,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.AddressOrBuilder>
@@ -170,7 +170,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   @java.lang.Override
   public int getAddressesCount() {
@@ -183,7 +183,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Address getAddresses(int index) {
@@ -196,7 +196,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
    * [Output Only] A list of addresses contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+   * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.AddressOrBuilder getAddressesOrBuilder(int index) {
@@ -267,7 +267,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < addresses_.size(); i++) {
-      output.writeMessage(337673122, addresses_.get(i));
+      output.writeMessage(69237666, addresses_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -282,8 +282,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
     }
     for (int i = 0; i < addresses_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(337673122, addresses_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(69237666, addresses_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -659,7 +658,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Address> getAddressesList() {
       if (addressesBuilder_ == null) {
@@ -675,7 +674,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public int getAddressesCount() {
       if (addressesBuilder_ == null) {
@@ -691,7 +690,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public com.google.cloud.compute.v1.Address getAddresses(int index) {
       if (addressesBuilder_ == null) {
@@ -707,7 +706,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder setAddresses(int index, com.google.cloud.compute.v1.Address value) {
       if (addressesBuilder_ == null) {
@@ -729,7 +728,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder setAddresses(
         int index, com.google.cloud.compute.v1.Address.Builder builderForValue) {
@@ -749,7 +748,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder addAddresses(com.google.cloud.compute.v1.Address value) {
       if (addressesBuilder_ == null) {
@@ -771,7 +770,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder addAddresses(int index, com.google.cloud.compute.v1.Address value) {
       if (addressesBuilder_ == null) {
@@ -793,7 +792,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder addAddresses(com.google.cloud.compute.v1.Address.Builder builderForValue) {
       if (addressesBuilder_ == null) {
@@ -812,7 +811,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder addAddresses(
         int index, com.google.cloud.compute.v1.Address.Builder builderForValue) {
@@ -832,7 +831,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder addAllAddresses(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Address> values) {
@@ -852,7 +851,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder clearAddresses() {
       if (addressesBuilder_ == null) {
@@ -871,7 +870,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public Builder removeAddresses(int index) {
       if (addressesBuilder_ == null) {
@@ -890,7 +889,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public com.google.cloud.compute.v1.Address.Builder getAddressesBuilder(int index) {
       return getAddressesFieldBuilder().getBuilder(index);
@@ -902,7 +901,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public com.google.cloud.compute.v1.AddressOrBuilder getAddressesOrBuilder(int index) {
       if (addressesBuilder_ == null) {
@@ -918,7 +917,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AddressOrBuilder>
         getAddressesOrBuilderList() {
@@ -935,7 +934,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public com.google.cloud.compute.v1.Address.Builder addAddressesBuilder() {
       return getAddressesFieldBuilder()
@@ -948,7 +947,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public com.google.cloud.compute.v1.Address.Builder addAddressesBuilder(int index) {
       return getAddressesFieldBuilder()
@@ -961,7 +960,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
      * [Output Only] A list of addresses contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Address addresses = 337673122;</code>
+     * <code>repeated .google.cloud.compute.v1.Address addresses = 69237666;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Address.Builder> getAddressesBuilderList() {
       return getAddressesFieldBuilder().getBuilderList();

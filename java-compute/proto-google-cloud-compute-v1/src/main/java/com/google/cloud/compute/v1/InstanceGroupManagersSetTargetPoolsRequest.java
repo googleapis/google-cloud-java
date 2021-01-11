@@ -73,14 +73,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
           case 0:
             done = true;
             break;
-          case 1877428002:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
-              break;
-            }
-          case -1606386358:
+          case 541097290:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -88,6 +81,13 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
                 mutable_bitField0_ |= 0x00000001;
               }
               targetPools_.add(s);
+              break;
+            }
+          case 1877428002:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fingerprint_ = s;
               break;
             }
           default:
@@ -176,7 +176,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
     }
   }
 
-  public static final int TARGET_POOLS_FIELD_NUMBER = 336072617;
+  public static final int TARGET_POOLS_FIELD_NUMBER = 67637161;
   private com.google.protobuf.LazyStringList targetPools_;
   /**
    *
@@ -185,7 +185,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @return A list containing the targetPools.
    */
@@ -199,7 +199,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @return The count of targetPools.
    */
@@ -213,7 +213,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @param index The index of the element to return.
    * @return The targetPools at the given index.
@@ -228,7 +228,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
    * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
    * </pre>
    *
-   * <code>repeated string target_pools = 336072617;</code>
+   * <code>repeated string target_pools = 67637161;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the targetPools at the given index.
@@ -251,11 +251,11 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < targetPools_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 67637161, targetPools_.getRaw(i));
+    }
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
-    }
-    for (int i = 0; i < targetPools_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 336072617, targetPools_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
@@ -266,9 +266,6 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
     if (size != -1) return size;
 
     size = 0;
-    if (!getFingerprintBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < targetPools_.size(); i++) {
@@ -276,6 +273,9 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
       }
       size += dataSize;
       size += 5 * getTargetPoolsList().size();
+    }
+    if (!getFingerprintBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -722,7 +722,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @return A list containing the targetPools.
      */
@@ -736,7 +736,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @return The count of targetPools.
      */
@@ -750,7 +750,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param index The index of the element to return.
      * @return The targetPools at the given index.
@@ -765,7 +765,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the targetPools at the given index.
@@ -780,7 +780,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param index The index to set the value at.
      * @param value The targetPools to set.
@@ -802,7 +802,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param value The targetPools to add.
      * @return This builder for chaining.
@@ -823,7 +823,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param values The targetPools to add.
      * @return This builder for chaining.
@@ -841,7 +841,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @return This builder for chaining.
      */
@@ -858,7 +858,7 @@ public final class InstanceGroupManagersSetTargetPoolsRequest
      * The list of target pool URLs that instances in this managed instance group belong to. The managed instance group applies these target pools to all of the instances in the group. Existing instances and new instances in the group all receive these target pool settings.
      * </pre>
      *
-     * <code>repeated string target_pools = 336072617;</code>
+     * <code>repeated string target_pools = 67637161;</code>
      *
      * @param value The bytes of the targetPools to add.
      * @return This builder for chaining.

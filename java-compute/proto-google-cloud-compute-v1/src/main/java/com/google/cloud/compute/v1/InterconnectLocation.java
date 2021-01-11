@@ -121,6 +121,20 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
               creationTimestamp_ = s;
               break;
             }
+          case 350069714:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                regionInfos_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.compute.v1.InterconnectLocationRegionInfo>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              regionInfos_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.InterconnectLocationRegionInfo.parser(),
+                      extensionRegistry));
+              break;
+            }
           case 698153002:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -133,6 +147,13 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
               int rawValue = input.readEnum();
 
               continent_ = rawValue;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           case 1267679362:
@@ -149,49 +170,28 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
               status_ = rawValue;
               break;
             }
-          case -1797413934:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                regionInfos_ =
-                    new java.util.ArrayList<
-                        com.google.cloud.compute.v1.InterconnectLocationRegionInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              regionInfos_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.InterconnectLocationRegionInfo.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -591601758:
+          case 1555881890:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               address_ = s;
               break;
             }
-          case -28540822:
+          case 2118942826:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               facilityProvider_ = s;
               break;
             }
-          case -2430542:
+          case 2145053106:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -260,24 +260,24 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_CONTINENT = 0;</code>
      */
     UNDEFINED_CONTINENT(0),
-    /** <code>AFRICA = 317443706;</code> */
-    AFRICA(317443706),
+    /** <code>AFRICA = 49008250;</code> */
+    AFRICA(49008250),
     /** <code>ASIA_PAC = 119782269;</code> */
     ASIA_PAC(119782269),
     /** <code>C_AFRICA = 71993846;</code> */
     C_AFRICA(71993846),
-    /** <code>C_ASIA_PAC = 465668089;</code> */
-    C_ASIA_PAC(465668089),
+    /** <code>C_ASIA_PAC = 197232633;</code> */
+    C_ASIA_PAC(197232633),
     /** <code>C_EUROPE = 200369438;</code> */
     C_EUROPE(200369438),
-    /** <code>C_NORTH_AMERICA = 275697048;</code> */
-    C_NORTH_AMERICA(275697048),
-    /** <code>C_SOUTH_AMERICA = 397149792;</code> */
-    C_SOUTH_AMERICA(397149792),
-    /** <code>EUROPE = 445819298;</code> */
-    EUROPE(445819298),
-    /** <code>NORTH_AMERICA = 448015508;</code> */
-    NORTH_AMERICA(448015508),
+    /** <code>C_NORTH_AMERICA = 7261592;</code> */
+    C_NORTH_AMERICA(7261592),
+    /** <code>C_SOUTH_AMERICA = 128714336;</code> */
+    C_SOUTH_AMERICA(128714336),
+    /** <code>EUROPE = 177383842;</code> */
+    EUROPE(177383842),
+    /** <code>NORTH_AMERICA = 179580052;</code> */
+    NORTH_AMERICA(179580052),
     /** <code>SOUTH_AMERICA = 32597340;</code> */
     SOUTH_AMERICA(32597340),
     UNRECOGNIZED(-1),
@@ -293,24 +293,24 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_CONTINENT = 0;</code>
      */
     public static final int UNDEFINED_CONTINENT_VALUE = 0;
-    /** <code>AFRICA = 317443706;</code> */
-    public static final int AFRICA_VALUE = 317443706;
+    /** <code>AFRICA = 49008250;</code> */
+    public static final int AFRICA_VALUE = 49008250;
     /** <code>ASIA_PAC = 119782269;</code> */
     public static final int ASIA_PAC_VALUE = 119782269;
     /** <code>C_AFRICA = 71993846;</code> */
     public static final int C_AFRICA_VALUE = 71993846;
-    /** <code>C_ASIA_PAC = 465668089;</code> */
-    public static final int C_ASIA_PAC_VALUE = 465668089;
+    /** <code>C_ASIA_PAC = 197232633;</code> */
+    public static final int C_ASIA_PAC_VALUE = 197232633;
     /** <code>C_EUROPE = 200369438;</code> */
     public static final int C_EUROPE_VALUE = 200369438;
-    /** <code>C_NORTH_AMERICA = 275697048;</code> */
-    public static final int C_NORTH_AMERICA_VALUE = 275697048;
-    /** <code>C_SOUTH_AMERICA = 397149792;</code> */
-    public static final int C_SOUTH_AMERICA_VALUE = 397149792;
-    /** <code>EUROPE = 445819298;</code> */
-    public static final int EUROPE_VALUE = 445819298;
-    /** <code>NORTH_AMERICA = 448015508;</code> */
-    public static final int NORTH_AMERICA_VALUE = 448015508;
+    /** <code>C_NORTH_AMERICA = 7261592;</code> */
+    public static final int C_NORTH_AMERICA_VALUE = 7261592;
+    /** <code>C_SOUTH_AMERICA = 128714336;</code> */
+    public static final int C_SOUTH_AMERICA_VALUE = 128714336;
+    /** <code>EUROPE = 177383842;</code> */
+    public static final int EUROPE_VALUE = 177383842;
+    /** <code>NORTH_AMERICA = 179580052;</code> */
+    public static final int NORTH_AMERICA_VALUE = 179580052;
     /** <code>SOUTH_AMERICA = 32597340;</code> */
     public static final int SOUTH_AMERICA_VALUE = 32597340;
 
@@ -340,23 +340,23 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 0:
           return UNDEFINED_CONTINENT;
-        case 317443706:
+        case 49008250:
           return AFRICA;
         case 119782269:
           return ASIA_PAC;
         case 71993846:
           return C_AFRICA;
-        case 465668089:
+        case 197232633:
           return C_ASIA_PAC;
         case 200369438:
           return C_EUROPE;
-        case 275697048:
+        case 7261592:
           return C_NORTH_AMERICA;
-        case 397149792:
+        case 128714336:
           return C_SOUTH_AMERICA;
-        case 445819298:
+        case 177383842:
           return EUROPE;
-        case 448015508:
+        case 179580052:
           return NORTH_AMERICA;
         case 32597340:
           return SOUTH_AMERICA;
@@ -435,10 +435,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>AVAILABLE = 442079913;</code> */
-    AVAILABLE(442079913),
-    /** <code>CLOSED = 380163436;</code> */
-    CLOSED(380163436),
+    /** <code>AVAILABLE = 173644457;</code> */
+    AVAILABLE(173644457),
+    /** <code>CLOSED = 111727980;</code> */
+    CLOSED(111727980),
     UNRECOGNIZED(-1),
     ;
 
@@ -452,10 +452,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>AVAILABLE = 442079913;</code> */
-    public static final int AVAILABLE_VALUE = 442079913;
-    /** <code>CLOSED = 380163436;</code> */
-    public static final int CLOSED_VALUE = 380163436;
+    /** <code>AVAILABLE = 173644457;</code> */
+    public static final int AVAILABLE_VALUE = 173644457;
+    /** <code>CLOSED = 111727980;</code> */
+    public static final int CLOSED_VALUE = 111727980;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -483,9 +483,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 442079913:
+        case 173644457:
           return AVAILABLE;
-        case 380163436:
+        case 111727980:
           return CLOSED;
         default:
           return null;
@@ -540,7 +540,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectLocation.Status)
   }
 
-  public static final int ADDRESS_FIELD_NUMBER = 462920692;
+  public static final int ADDRESS_FIELD_NUMBER = 194485236;
   private volatile java.lang.Object address_;
   /**
    *
@@ -549,7 +549,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The address.
    */
@@ -572,7 +572,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The bytes for address.
    */
@@ -784,7 +784,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -793,7 +793,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -816,7 +816,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -833,7 +833,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int FACILITY_PROVIDER_FIELD_NUMBER = 533303309;
+  public static final int FACILITY_PROVIDER_FIELD_NUMBER = 264867853;
   private volatile java.lang.Object facilityProvider_;
   /**
    *
@@ -842,7 +842,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>string facility_provider = 264867853;</code>
    *
    * @return The facilityProvider.
    */
@@ -865,7 +865,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>string facility_provider = 264867853;</code>
    *
    * @return The bytes for facilityProvider.
    */
@@ -1078,7 +1078,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int PEERINGDB_FACILITY_ID_FIELD_NUMBER = 536567094;
+  public static final int PEERINGDB_FACILITY_ID_FIELD_NUMBER = 268131638;
   private volatile java.lang.Object peeringdbFacilityId_;
   /**
    *
@@ -1087,7 +1087,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>string peeringdb_facility_id = 268131638;</code>
    *
    * @return The peeringdbFacilityId.
    */
@@ -1110,7 +1110,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>string peeringdb_facility_id = 268131638;</code>
    *
    * @return The bytes for peeringdbFacilityId.
    */
@@ -1127,7 +1127,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
   }
 
-  public static final int REGION_INFOS_FIELD_NUMBER = 312194170;
+  public static final int REGION_INFOS_FIELD_NUMBER = 43758714;
   private java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo> regionInfos_;
   /**
    *
@@ -1136,8 +1136,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   @java.lang.Override
@@ -1152,8 +1151,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   @java.lang.Override
@@ -1169,8 +1167,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   @java.lang.Override
@@ -1184,8 +1181,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   @java.lang.Override
@@ -1199,8 +1195,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   @java.lang.Override
@@ -1209,7 +1204,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     return regionInfos_.get(index);
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1218,7 +1213,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1241,7 +1236,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1329,6 +1324,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    for (int i = 0; i < regionInfos_.size(); i++) {
+      output.writeMessage(43758714, regionInfos_.get(i));
+    }
     if (!getFacilityProviderFacilityIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 87269125, facilityProviderFacilityId_);
@@ -1338,6 +1336,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       output.writeEnum(133442996, continent_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (!getAvailabilityZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 158459920, availabilityZone_);
     }
@@ -1345,23 +1346,17 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         != com.google.cloud.compute.v1.InterconnectLocation.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
     }
-    for (int i = 0; i < regionInfos_.size(); i++) {
-      output.writeMessage(312194170, regionInfos_.get(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 194485236, address_);
     }
     if (!getFacilityProviderBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 533303309, facilityProvider_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264867853, facilityProvider_);
     }
     if (!getPeeringdbFacilityIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 536567094, peeringdbFacilityId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 268131638, peeringdbFacilityId_);
     }
     unknownFields.writeTo(output);
   }
@@ -1388,6 +1383,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    for (int i = 0; i < regionInfos_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(43758714, regionInfos_.get(i));
+    }
     if (!getFacilityProviderFacilityIdBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
@@ -1398,6 +1397,9 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(133442996, continent_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (!getAvailabilityZoneBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(158459920, availabilityZone_);
@@ -1406,26 +1408,19 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         != com.google.cloud.compute.v1.InterconnectLocation.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    for (int i = 0; i < regionInfos_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(312194170, regionInfos_.get(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(194485236, address_);
     }
     if (!getFacilityProviderBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(533303309, facilityProvider_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(264867853, facilityProvider_);
     }
     if (!getPeeringdbFacilityIdBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(536567094, peeringdbFacilityId_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(268131638, peeringdbFacilityId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1905,7 +1900,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @return The address.
      */
@@ -1927,7 +1922,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @return The bytes for address.
      */
@@ -1949,7 +1944,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @param value The address to set.
      * @return This builder for chaining.
@@ -1970,7 +1965,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @return This builder for chaining.
      */
@@ -1987,7 +1982,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
      * </pre>
      *
-     * <code>string address = 462920692;</code>
+     * <code>string address = 194485236;</code>
      *
      * @param value The bytes for address to set.
      * @return This builder for chaining.
@@ -2447,7 +2442,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] An optional description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2469,7 +2464,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] An optional description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2491,7 +2486,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] An optional description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2512,7 +2507,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] An optional description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2529,7 +2524,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] An optional description of the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2553,7 +2548,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
-     * <code>string facility_provider = 533303309;</code>
+     * <code>string facility_provider = 264867853;</code>
      *
      * @return The facilityProvider.
      */
@@ -2575,7 +2570,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
-     * <code>string facility_provider = 533303309;</code>
+     * <code>string facility_provider = 264867853;</code>
      *
      * @return The bytes for facilityProvider.
      */
@@ -2597,7 +2592,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
-     * <code>string facility_provider = 533303309;</code>
+     * <code>string facility_provider = 264867853;</code>
      *
      * @param value The facilityProvider to set.
      * @return This builder for chaining.
@@ -2618,7 +2613,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
-     * <code>string facility_provider = 533303309;</code>
+     * <code>string facility_provider = 264867853;</code>
      *
      * @return This builder for chaining.
      */
@@ -2635,7 +2630,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
      * </pre>
      *
-     * <code>string facility_provider = 533303309;</code>
+     * <code>string facility_provider = 264867853;</code>
      *
      * @param value The bytes for facilityProvider to set.
      * @return This builder for chaining.
@@ -3083,7 +3078,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      * </pre>
      *
-     * <code>string peeringdb_facility_id = 536567094;</code>
+     * <code>string peeringdb_facility_id = 268131638;</code>
      *
      * @return The peeringdbFacilityId.
      */
@@ -3105,7 +3100,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      * </pre>
      *
-     * <code>string peeringdb_facility_id = 536567094;</code>
+     * <code>string peeringdb_facility_id = 268131638;</code>
      *
      * @return The bytes for peeringdbFacilityId.
      */
@@ -3127,7 +3122,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      * </pre>
      *
-     * <code>string peeringdb_facility_id = 536567094;</code>
+     * <code>string peeringdb_facility_id = 268131638;</code>
      *
      * @param value The peeringdbFacilityId to set.
      * @return This builder for chaining.
@@ -3148,7 +3143,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      * </pre>
      *
-     * <code>string peeringdb_facility_id = 536567094;</code>
+     * <code>string peeringdb_facility_id = 268131638;</code>
      *
      * @return This builder for chaining.
      */
@@ -3165,7 +3160,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
      * </pre>
      *
-     * <code>string peeringdb_facility_id = 536567094;</code>
+     * <code>string peeringdb_facility_id = 268131638;</code>
      *
      * @param value The bytes for peeringdbFacilityId to set.
      * @return This builder for chaining.
@@ -3207,7 +3202,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo>
@@ -3226,7 +3221,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public int getRegionInfosCount() {
@@ -3244,7 +3239,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfo getRegionInfos(int index) {
@@ -3262,7 +3257,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder setRegionInfos(
@@ -3287,7 +3282,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder setRegionInfos(
@@ -3310,7 +3305,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder addRegionInfos(
@@ -3335,7 +3330,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder addRegionInfos(
@@ -3360,7 +3355,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder addRegionInfos(
@@ -3382,7 +3377,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder addRegionInfos(
@@ -3405,7 +3400,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder addAllRegionInfos(
@@ -3428,7 +3423,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder clearRegionInfos() {
@@ -3449,7 +3444,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public Builder removeRegionInfos(int index) {
@@ -3470,7 +3465,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfo.Builder getRegionInfosBuilder(
@@ -3485,7 +3480,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfoOrBuilder
@@ -3504,7 +3499,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public java.util.List<
@@ -3524,7 +3519,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfo.Builder
@@ -3541,7 +3536,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectLocationRegionInfo.Builder addRegionInfosBuilder(
@@ -3559,7 +3554,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+     * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo.Builder>
@@ -3592,7 +3587,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3614,7 +3609,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3636,7 +3631,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3657,7 +3652,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3674,7 +3669,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

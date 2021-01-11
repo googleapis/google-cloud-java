@@ -89,6 +89,13 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
 
               break;
             }
+          case 788681826:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              urlMap_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,13 +108,6 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1358801822:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              urlMap_ = s;
               break;
             }
           default:
@@ -246,8 +246,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
   private com.google.cloud.compute.v1.RegionUrlMapsValidateRequest
       regionUrlMapsValidateRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionUrlMapsValidateRequestResource field is set.
@@ -257,8 +263,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     return regionUrlMapsValidateRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionUrlMapsValidateRequestResource.
@@ -271,8 +283,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
         : regionUrlMapsValidateRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -281,7 +299,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     return getRegionUrlMapsValidateRequestResource();
   }
 
-  public static final int URL_MAP_FIELD_NUMBER = 367020684;
+  public static final int URL_MAP_FIELD_NUMBER = 98585228;
   private volatile java.lang.Object urlMap_;
   /**
    *
@@ -290,7 +308,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
    * Name of the UrlMap resource to be validated as.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -313,7 +331,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
    * Name of the UrlMap resource to be validated as.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */
@@ -347,14 +365,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
     if (regionUrlMapsValidateRequestResource_ != null) {
       output.writeMessage(56632858, getRegionUrlMapsValidateRequestResource());
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 98585228, urlMap_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 367020684, urlMap_);
     }
     unknownFields.writeTo(output);
   }
@@ -370,14 +388,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               56632858, getRegionUrlMapsValidateRequestResource());
     }
+    if (!getUrlMapBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98585228, urlMap_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getUrlMapBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(367020684, urlMap_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -934,8 +952,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.RegionUrlMapsValidateRequestOrBuilder>
         regionUrlMapsValidateRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionUrlMapsValidateRequestResource field is set.
@@ -945,8 +969,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
           || regionUrlMapsValidateRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionUrlMapsValidateRequestResource.
@@ -962,8 +992,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionUrlMapsValidateRequestResource(
@@ -981,8 +1017,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionUrlMapsValidateRequestResource(
@@ -997,8 +1039,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionUrlMapsValidateRequestResource(
@@ -1021,8 +1069,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionUrlMapsValidateRequestResource() {
@@ -1037,8 +1091,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionUrlMapsValidateRequest.Builder
@@ -1048,8 +1108,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       return getRegionUrlMapsValidateRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionUrlMapsValidateRequestOrBuilder
@@ -1063,8 +1129,14 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+     * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1092,7 +1164,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
      * Name of the UrlMap resource to be validated as.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The urlMap.
      */
@@ -1114,7 +1186,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
      * Name of the UrlMap resource to be validated as.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for urlMap.
      */
@@ -1136,7 +1208,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
      * Name of the UrlMap resource to be validated as.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The urlMap to set.
      * @return This builder for chaining.
@@ -1157,7 +1229,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
      * Name of the UrlMap resource to be validated as.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1174,7 +1246,7 @@ public final class ValidateRegionUrlMapRequest extends com.google.protobuf.Gener
      * Name of the UrlMap resource to be validated as.
      * </pre>
      *
-     * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for urlMap to set.
      * @return This builder for chaining.

@@ -255,8 +255,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
   private com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest
       targetHttpsProxiesSetSslCertificatesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetHttpsProxiesSetSslCertificatesRequestResource field is set.
@@ -266,8 +272,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
     return targetHttpsProxiesSetSslCertificatesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetHttpsProxiesSetSslCertificatesRequestResource.
@@ -281,8 +293,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
         : targetHttpsProxiesSetSslCertificatesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+   * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -964,8 +982,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
             com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequestOrBuilder>
         targetHttpsProxiesSetSslCertificatesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetHttpsProxiesSetSslCertificatesRequestResource field is set.
@@ -975,8 +999,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
           || targetHttpsProxiesSetSslCertificatesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetHttpsProxiesSetSslCertificatesRequestResource.
@@ -993,8 +1023,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1012,8 +1048,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1030,8 +1072,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetHttpsProxiesSetSslCertificatesRequestResource(
@@ -1054,8 +1102,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetHttpsProxiesSetSslCertificatesRequestResource() {
@@ -1070,8 +1124,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest.Builder
@@ -1081,8 +1141,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       return getTargetHttpsProxiesSetSslCertificatesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequestOrBuilder
@@ -1097,8 +1163,14 @@ public final class SetSslCertificatesTargetHttpsProxyRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908;
+     * .google.cloud.compute.v1.TargetHttpsProxiesSetSslCertificatesRequest target_https_proxies_set_ssl_certificates_request_resource = 223122908 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

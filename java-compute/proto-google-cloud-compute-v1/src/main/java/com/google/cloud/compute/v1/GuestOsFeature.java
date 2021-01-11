@@ -131,20 +131,22 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
-    FEATURE_TYPE_UNSPECIFIED(531767259),
+    /** <code>FEATURE_TYPE_UNSPECIFIED = 263331803;</code> */
+    FEATURE_TYPE_UNSPECIFIED(263331803),
+    /** <code>GVNIC = 68209305;</code> */
+    GVNIC(68209305),
     /** <code>MULTI_IP_SUBNET = 151776719;</code> */
     MULTI_IP_SUBNET(151776719),
-    /** <code>SECURE_BOOT = 376811194;</code> */
-    SECURE_BOOT(376811194),
+    /** <code>SECURE_BOOT = 108375738;</code> */
+    SECURE_BOOT(108375738),
     /** <code>SEV_CAPABLE = 87083793;</code> */
     SEV_CAPABLE(87083793),
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
     UEFI_COMPATIBLE(195865408),
     /** <code>VIRTIO_SCSI_MULTIQUEUE = 201597069;</code> */
     VIRTIO_SCSI_MULTIQUEUE(201597069),
-    /** <code>WINDOWS = 456863331;</code> */
-    WINDOWS(456863331),
+    /** <code>WINDOWS = 188427875;</code> */
+    WINDOWS(188427875),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,20 +160,22 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>FEATURE_TYPE_UNSPECIFIED = 531767259;</code> */
-    public static final int FEATURE_TYPE_UNSPECIFIED_VALUE = 531767259;
+    /** <code>FEATURE_TYPE_UNSPECIFIED = 263331803;</code> */
+    public static final int FEATURE_TYPE_UNSPECIFIED_VALUE = 263331803;
+    /** <code>GVNIC = 68209305;</code> */
+    public static final int GVNIC_VALUE = 68209305;
     /** <code>MULTI_IP_SUBNET = 151776719;</code> */
     public static final int MULTI_IP_SUBNET_VALUE = 151776719;
-    /** <code>SECURE_BOOT = 376811194;</code> */
-    public static final int SECURE_BOOT_VALUE = 376811194;
+    /** <code>SECURE_BOOT = 108375738;</code> */
+    public static final int SECURE_BOOT_VALUE = 108375738;
     /** <code>SEV_CAPABLE = 87083793;</code> */
     public static final int SEV_CAPABLE_VALUE = 87083793;
     /** <code>UEFI_COMPATIBLE = 195865408;</code> */
     public static final int UEFI_COMPATIBLE_VALUE = 195865408;
     /** <code>VIRTIO_SCSI_MULTIQUEUE = 201597069;</code> */
     public static final int VIRTIO_SCSI_MULTIQUEUE_VALUE = 201597069;
-    /** <code>WINDOWS = 456863331;</code> */
-    public static final int WINDOWS_VALUE = 456863331;
+    /** <code>WINDOWS = 188427875;</code> */
+    public static final int WINDOWS_VALUE = 188427875;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -199,11 +203,13 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 531767259:
+        case 263331803:
           return FEATURE_TYPE_UNSPECIFIED;
+        case 68209305:
+          return GVNIC;
         case 151776719:
           return MULTI_IP_SUBNET;
-        case 376811194:
+        case 108375738:
           return SECURE_BOOT;
         case 87083793:
           return SEV_CAPABLE;
@@ -211,7 +217,7 @@ public final class GuestOsFeature extends com.google.protobuf.GeneratedMessageV3
           return UEFI_COMPATIBLE;
         case 201597069:
           return VIRTIO_SCSI_MULTIQUEUE;
-        case 456863331:
+        case 188427875:
           return WINDOWS;
         default:
           return null;

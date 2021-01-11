@@ -75,6 +75,16 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 20042720:
+            {
+              disabled_ = input.readBool();
+              break;
+            }
+          case 312991008:
+            {
+              maxAge_ = input.readInt32();
+              break;
+            }
           case 361432194:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -105,6 +115,11 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
               allowMethods_.add(s);
               break;
             }
+          case 1702623280:
+            {
+              allowCredentials_ = input.readBool();
+              break;
+            }
           case 1723086482:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -123,21 +138,6 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000010;
               }
               exposeHeaders_.add(s);
-              break;
-            }
-          case -2127440928:
-            {
-              disabled_ = input.readBool();
-              break;
-            }
-          case -1834492640:
-            {
-              maxAge_ = input.readInt32();
-              break;
-            }
-          case -444860368:
-            {
-              allowCredentials_ = input.readBool();
               break;
             }
           default:
@@ -189,7 +189,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.CorsPolicy.Builder.class);
   }
 
-  public static final int ALLOW_CREDENTIALS_FIELD_NUMBER = 481263366;
+  public static final int ALLOW_CREDENTIALS_FIELD_NUMBER = 212827910;
   private boolean allowCredentials_;
   /**
    *
@@ -199,7 +199,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * Default is false.
    * </pre>
    *
-   * <code>bool allow_credentials = 481263366;</code>
+   * <code>bool allow_credentials = 212827910;</code>
    *
    * @return The allowCredentials.
    */
@@ -460,7 +460,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     return allowOrigins_.getByteString(index);
   }
 
-  public static final int DISABLED_FIELD_NUMBER = 270940796;
+  public static final int DISABLED_FIELD_NUMBER = 2505340;
   private boolean disabled_;
   /**
    *
@@ -469,7 +469,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>bool disabled = 2505340;</code>
    *
    * @return The disabled.
    */
@@ -539,7 +539,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     return exposeHeaders_.getByteString(index);
   }
 
-  public static final int MAX_AGE_FIELD_NUMBER = 307559332;
+  public static final int MAX_AGE_FIELD_NUMBER = 39123876;
   private int maxAge_;
   /**
    *
@@ -548,7 +548,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
    * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
    * </pre>
    *
-   * <code>int32 max_age = 307559332;</code>
+   * <code>int32 max_age = 39123876;</code>
    *
    * @return The maxAge.
    */
@@ -571,6 +571,12 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (disabled_ != false) {
+      output.writeBool(2505340, disabled_);
+    }
+    if (maxAge_ != 0) {
+      output.writeInt32(39123876, maxAge_);
+    }
     for (int i = 0; i < allowHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 45179024, allowHeaders_.getRaw(i));
     }
@@ -582,6 +588,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 205405372, allowMethods_.getRaw(i));
     }
+    if (allowCredentials_ != false) {
+      output.writeBool(212827910, allowCredentials_);
+    }
     for (int i = 0; i < allowOriginRegexes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 215385810, allowOriginRegexes_.getRaw(i));
@@ -589,15 +598,6 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < exposeHeaders_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 247604747, exposeHeaders_.getRaw(i));
-    }
-    if (disabled_ != false) {
-      output.writeBool(270940796, disabled_);
-    }
-    if (maxAge_ != 0) {
-      output.writeInt32(307559332, maxAge_);
-    }
-    if (allowCredentials_ != false) {
-      output.writeBool(481263366, allowCredentials_);
     }
     unknownFields.writeTo(output);
   }
@@ -608,6 +608,12 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (disabled_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2505340, disabled_);
+    }
+    if (maxAge_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(39123876, maxAge_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < allowHeaders_.size(); i++) {
@@ -632,6 +638,9 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getAllowMethodsList().size();
     }
+    if (allowCredentials_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(212827910, allowCredentials_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < allowOriginRegexes_.size(); i++) {
@@ -647,15 +656,6 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getExposeHeadersList().size();
-    }
-    if (disabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(270940796, disabled_);
-    }
-    if (maxAge_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(307559332, maxAge_);
-    }
-    if (allowCredentials_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(481263366, allowCredentials_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1082,7 +1082,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>bool allow_credentials = 212827910;</code>
      *
      * @return The allowCredentials.
      */
@@ -1098,7 +1098,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>bool allow_credentials = 212827910;</code>
      *
      * @param value The allowCredentials to set.
      * @return This builder for chaining.
@@ -1117,7 +1117,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Default is false.
      * </pre>
      *
-     * <code>bool allow_credentials = 481263366;</code>
+     * <code>bool allow_credentials = 212827910;</code>
      *
      * @return This builder for chaining.
      */
@@ -1826,7 +1826,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>bool disabled = 2505340;</code>
      *
      * @return The disabled.
      */
@@ -1841,7 +1841,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>bool disabled = 2505340;</code>
      *
      * @param value The disabled to set.
      * @return This builder for chaining.
@@ -1859,7 +1859,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
      * </pre>
      *
-     * <code>bool disabled = 270940796;</code>
+     * <code>bool disabled = 2505340;</code>
      *
      * @return This builder for chaining.
      */
@@ -2046,7 +2046,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>int32 max_age = 39123876;</code>
      *
      * @return The maxAge.
      */
@@ -2061,7 +2061,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>int32 max_age = 39123876;</code>
      *
      * @param value The maxAge to set.
      * @return This builder for chaining.
@@ -2079,7 +2079,7 @@ public final class CorsPolicy extends com.google.protobuf.GeneratedMessageV3
      * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
      * </pre>
      *
-     * <code>int32 max_age = 307559332;</code>
+     * <code>int32 max_age = 39123876;</code>
      *
      * @return This builder for chaining.
      */

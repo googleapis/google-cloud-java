@@ -85,7 +85,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
               duration_ = s;
               break;
             }
-          case -80862240:
+          case 2066621408:
             {
               hoursInCycle_ = input.readInt32();
               break;
@@ -173,7 +173,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
     }
   }
 
-  public static final int HOURS_IN_CYCLE_FIELD_NUMBER = 526763132;
+  public static final int HOURS_IN_CYCLE_FIELD_NUMBER = 258327676;
   private int hoursInCycle_;
   /**
    *
@@ -182,7 +182,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
    * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 hours_in_cycle = 526763132;</code>
+   * <code>int32 hours_in_cycle = 258327676;</code>
    *
    * @return The hoursInCycle.
    */
@@ -261,7 +261,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
       com.google.protobuf.GeneratedMessageV3.writeString(output, 155471252, duration_);
     }
     if (hoursInCycle_ != 0) {
-      output.writeInt32(526763132, hoursInCycle_);
+      output.writeInt32(258327676, hoursInCycle_);
     }
     unknownFields.writeTo(output);
   }
@@ -279,7 +279,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(155471252, duration_);
     }
     if (hoursInCycle_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(526763132, hoursInCycle_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(258327676, hoursInCycle_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -704,7 +704,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 hours_in_cycle = 526763132;</code>
+     * <code>int32 hours_in_cycle = 258327676;</code>
      *
      * @return The hoursInCycle.
      */
@@ -719,7 +719,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 hours_in_cycle = 526763132;</code>
+     * <code>int32 hours_in_cycle = 258327676;</code>
      *
      * @param value The hoursInCycle to set.
      * @return This builder for chaining.
@@ -737,7 +737,7 @@ public final class ResourcePolicyHourlyCycle extends com.google.protobuf.Generat
      * Defines a schedule with units measured in hours. The value determines how many hours pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 hours_in_cycle = 526763132;</code>
+     * <code>int32 hours_in_cycle = 258327676;</code>
      *
      * @return This builder for chaining.
      */

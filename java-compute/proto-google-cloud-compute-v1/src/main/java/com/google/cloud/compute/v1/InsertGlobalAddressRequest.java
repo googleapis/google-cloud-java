@@ -78,14 +78,7 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -423862326:
+          case 1723621322:
             {
               com.google.cloud.compute.v1.Address.Builder subBuilder = null;
               if (addressResource_ != null) {
@@ -99,6 +92,13 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
                 addressResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -135,10 +135,18 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InsertGlobalAddressRequest.Builder.class);
   }
 
-  public static final int ADDRESS_RESOURCE_FIELD_NUMBER = 483888121;
+  public static final int ADDRESS_RESOURCE_FIELD_NUMBER = 215452665;
   private com.google.cloud.compute.v1.Address addressResource_;
   /**
-   * <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the addressResource field is set.
    */
@@ -147,7 +155,15 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     return addressResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The addressResource.
    */
@@ -157,7 +173,17 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.Address.getDefaultInstance()
         : addressResource_;
   }
-  /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.AddressOrBuilder getAddressResourceOrBuilder() {
     return getAddressResource();
@@ -282,11 +308,11 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (addressResource_ != null) {
+      output.writeMessage(215452665, getAddressResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (addressResource_ != null) {
-      output.writeMessage(483888121, getAddressResource());
     }
     unknownFields.writeTo(output);
   }
@@ -300,12 +326,12 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (addressResource_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(483888121, getAddressResource());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(215452665, getAddressResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -636,7 +662,15 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.AddressOrBuilder>
         addressResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the addressResource field is set.
      */
@@ -644,7 +678,15 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
       return addressResourceBuilder_ != null || addressResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The addressResource.
      */
@@ -657,7 +699,17 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
         return addressResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAddressResource(com.google.cloud.compute.v1.Address value) {
       if (addressResourceBuilder_ == null) {
         if (value == null) {
@@ -671,7 +723,17 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAddressResource(com.google.cloud.compute.v1.Address.Builder builderForValue) {
       if (addressResourceBuilder_ == null) {
         addressResource_ = builderForValue.build();
@@ -682,7 +744,17 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeAddressResource(com.google.cloud.compute.v1.Address value) {
       if (addressResourceBuilder_ == null) {
         if (addressResource_ != null) {
@@ -700,7 +772,17 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearAddressResource() {
       if (addressResourceBuilder_ == null) {
         addressResource_ = null;
@@ -712,13 +794,33 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Address.Builder getAddressResourceBuilder() {
 
       onChanged();
       return getAddressResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.AddressOrBuilder getAddressResourceOrBuilder() {
       if (addressResourceBuilder_ != null) {
         return addressResourceBuilder_.getMessageOrBuilder();
@@ -728,7 +830,17 @@ public final class InsertGlobalAddressRequest extends com.google.protobuf.Genera
             : addressResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Address address_resource = 483888121;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Address address_resource = 215452665 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Address,
             com.google.cloud.compute.v1.Address.Builder,

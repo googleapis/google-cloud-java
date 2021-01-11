@@ -30,7 +30,7 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently exactly one ssl certificate must be specified.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @return A list containing the sslCertificates.
    */
@@ -42,7 +42,7 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently exactly one ssl certificate must be specified.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @return The count of sslCertificates.
    */
@@ -54,7 +54,7 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently exactly one ssl certificate must be specified.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @param index The index of the element to return.
    * @return The sslCertificates at the given index.
@@ -67,7 +67,7 @@ public interface TargetSslProxiesSetSslCertificatesRequestOrBuilder
    * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently exactly one ssl certificate must be specified.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sslCertificates at the given index.

@@ -30,7 +30,7 @@ public interface GetNodeTypeRequestOrBuilder
    * Name of the node type to return.
    * </pre>
    *
-   * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeType.
    */
@@ -42,7 +42,7 @@ public interface GetNodeTypeRequestOrBuilder
    * Name of the node type to return.
    * </pre>
    *
-   * <code>string node_type = 465832791 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_type = 197397335 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeType.
    */

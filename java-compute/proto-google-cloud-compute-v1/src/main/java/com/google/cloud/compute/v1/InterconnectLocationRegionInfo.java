@@ -87,7 +87,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
               region_ = s;
               break;
             }
-          case -914616366:
+          case 1232867282:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -148,14 +148,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * <code>UNDEFINED_LOCATION_PRESENCE = 0;</code>
      */
     UNDEFINED_LOCATION_PRESENCE(0),
-    /** <code>GLOBAL = 494663587;</code> */
-    GLOBAL(494663587),
-    /** <code>LOCAL_REGION = 403535464;</code> */
-    LOCAL_REGION(403535464),
-    /** <code>LP_GLOBAL = 429584062;</code> */
-    LP_GLOBAL(429584062),
-    /** <code>LP_LOCAL_REGION = 488598851;</code> */
-    LP_LOCAL_REGION(488598851),
+    /** <code>GLOBAL = 226228131;</code> */
+    GLOBAL(226228131),
+    /** <code>LOCAL_REGION = 135100008;</code> */
+    LOCAL_REGION(135100008),
+    /** <code>LP_GLOBAL = 161148606;</code> */
+    LP_GLOBAL(161148606),
+    /** <code>LP_LOCAL_REGION = 220163395;</code> */
+    LP_LOCAL_REGION(220163395),
     UNRECOGNIZED(-1),
     ;
 
@@ -169,14 +169,14 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * <code>UNDEFINED_LOCATION_PRESENCE = 0;</code>
      */
     public static final int UNDEFINED_LOCATION_PRESENCE_VALUE = 0;
-    /** <code>GLOBAL = 494663587;</code> */
-    public static final int GLOBAL_VALUE = 494663587;
-    /** <code>LOCAL_REGION = 403535464;</code> */
-    public static final int LOCAL_REGION_VALUE = 403535464;
-    /** <code>LP_GLOBAL = 429584062;</code> */
-    public static final int LP_GLOBAL_VALUE = 429584062;
-    /** <code>LP_LOCAL_REGION = 488598851;</code> */
-    public static final int LP_LOCAL_REGION_VALUE = 488598851;
+    /** <code>GLOBAL = 226228131;</code> */
+    public static final int GLOBAL_VALUE = 226228131;
+    /** <code>LOCAL_REGION = 135100008;</code> */
+    public static final int LOCAL_REGION_VALUE = 135100008;
+    /** <code>LP_GLOBAL = 161148606;</code> */
+    public static final int LP_GLOBAL_VALUE = 161148606;
+    /** <code>LP_LOCAL_REGION = 220163395;</code> */
+    public static final int LP_LOCAL_REGION_VALUE = 220163395;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -204,13 +204,13 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       switch (value) {
         case 0:
           return UNDEFINED_LOCATION_PRESENCE;
-        case 494663587:
+        case 226228131:
           return GLOBAL;
-        case 403535464:
+        case 135100008:
           return LOCAL_REGION;
-        case 429584062:
+        case 161148606:
           return LP_GLOBAL;
-        case 488598851:
+        case 220163395:
           return LP_LOCAL_REGION;
         default:
           return null;
@@ -269,7 +269,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence)
   }
 
-  public static final int EXPECTED_RTT_MS_FIELD_NUMBER = 422543866;
+  public static final int EXPECTED_RTT_MS_FIELD_NUMBER = 154108410;
   private volatile java.lang.Object expectedRttMs_;
   /**
    *
@@ -278,7 +278,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>string expected_rtt_ms = 154108410;</code>
    *
    * @return The expectedRttMs.
    */
@@ -301,7 +301,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
    * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
    * </pre>
    *
-   * <code>string expected_rtt_ms = 422543866;</code>
+   * <code>string expected_rtt_ms = 154108410;</code>
    *
    * @return The bytes for expectedRttMs.
    */
@@ -435,7 +435,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getExpectedRttMsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422543866, expectedRttMs_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154108410, expectedRttMs_);
     }
     unknownFields.writeTo(output);
   }
@@ -456,7 +456,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getExpectedRttMsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422543866, expectedRttMs_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154108410, expectedRttMs_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -775,7 +775,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>string expected_rtt_ms = 154108410;</code>
      *
      * @return The expectedRttMs.
      */
@@ -797,7 +797,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>string expected_rtt_ms = 154108410;</code>
      *
      * @return The bytes for expectedRttMs.
      */
@@ -819,7 +819,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>string expected_rtt_ms = 154108410;</code>
      *
      * @param value The expectedRttMs to set.
      * @return This builder for chaining.
@@ -840,7 +840,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>string expected_rtt_ms = 154108410;</code>
      *
      * @return This builder for chaining.
      */
@@ -857,7 +857,7 @@ public final class InterconnectLocationRegionInfo extends com.google.protobuf.Ge
      * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this region.
      * </pre>
      *
-     * <code>string expected_rtt_ms = 422543866;</code>
+     * <code>string expected_rtt_ms = 154108410;</code>
      *
      * @param value The bytes for expectedRttMs to set.
      * @return This builder for chaining.

@@ -413,7 +413,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param instanceTemplateResource
+   * @param instanceTemplateResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, InstanceTemplate instanceTemplateResource) {
@@ -436,8 +436,10 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   String project = "";
    *   InsertInstanceTemplateRequest request = InsertInstanceTemplateRequest.newBuilder()
+   *     .setInstanceTemplateResource(instanceTemplateResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = instanceTemplatesClient.insert(request);
@@ -462,8 +464,10 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   InstanceTemplate instanceTemplateResource = InstanceTemplate.newBuilder().build();
    *   String project = "";
    *   InsertInstanceTemplateRequest request = InsertInstanceTemplateRequest.newBuilder()
+   *     .setInstanceTemplateResource(instanceTemplateResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instanceTemplatesClient.insertCallable().futureCall(request);
@@ -597,7 +601,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param globalSetPolicyRequestResource
+   * @param globalSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -619,9 +623,11 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetIamPolicyInstanceTemplateRequest request = SetIamPolicyInstanceTemplateRequest.newBuilder()
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -644,9 +650,11 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetIamPolicyInstanceTemplateRequest request = SetIamPolicyInstanceTemplateRequest.newBuilder()
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -677,7 +685,7 @@ public class InstanceTemplatesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -701,9 +709,11 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsInstanceTemplateRequest request = TestIamPermissionsInstanceTemplateRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = instanceTemplatesClient.testIamPermissions(request);
    * }
@@ -727,9 +737,11 @@ public class InstanceTemplatesClient implements BackgroundResource {
    * try (InstanceTemplatesClient instanceTemplatesClient = InstanceTemplatesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsInstanceTemplateRequest request = TestIamPermissionsInstanceTemplateRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = instanceTemplatesClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

@@ -30,7 +30,7 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * Name of the ForwardingRule resource to patch.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The forwardingRule.
    */
@@ -42,25 +42,51 @@ public interface PatchGlobalForwardingRuleRequestOrBuilder
    * Name of the ForwardingRule resource to patch.
    * </pre>
    *
-   * <code>string forwarding_rule = 269964030 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string forwarding_rule = 1528574 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for forwardingRule.
    */
   com.google.protobuf.ByteString getForwardingRuleBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the forwardingRuleResource field is set.
    */
   boolean hasForwardingRuleResource();
   /**
-   * <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The forwardingRuleResource.
    */
   com.google.cloud.compute.v1.ForwardingRule getForwardingRuleResource();
-  /** <code>.google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 301211695;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.ForwardingRule forwarding_rule_resource = 32776239 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRuleResourceOrBuilder();
 
   /**

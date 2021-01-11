@@ -129,8 +129,8 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>RESTART_NODE_ON_ANY_SERVER = 502950985;</code> */
-    RESTART_NODE_ON_ANY_SERVER(502950985),
+    /** <code>RESTART_NODE_ON_ANY_SERVER = 234515529;</code> */
+    RESTART_NODE_ON_ANY_SERVER(234515529),
     /** <code>RESTART_NODE_ON_MINIMAL_SERVERS = 204166495;</code> */
     RESTART_NODE_ON_MINIMAL_SERVERS(204166495),
     /** <code>SERVER_BINDING_TYPE_UNSPECIFIED = 180825512;</code> */
@@ -148,8 +148,8 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>RESTART_NODE_ON_ANY_SERVER = 502950985;</code> */
-    public static final int RESTART_NODE_ON_ANY_SERVER_VALUE = 502950985;
+    /** <code>RESTART_NODE_ON_ANY_SERVER = 234515529;</code> */
+    public static final int RESTART_NODE_ON_ANY_SERVER_VALUE = 234515529;
     /** <code>RESTART_NODE_ON_MINIMAL_SERVERS = 204166495;</code> */
     public static final int RESTART_NODE_ON_MINIMAL_SERVERS_VALUE = 204166495;
     /** <code>SERVER_BINDING_TYPE_UNSPECIFIED = 180825512;</code> */
@@ -181,7 +181,7 @@ public final class ServerBinding extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 502950985:
+        case 234515529:
           return RESTART_NODE_ON_ANY_SERVER;
         case 204166495:
           return RESTART_NODE_ON_MINIMAL_SERVERS;

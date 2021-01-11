@@ -70,12 +70,12 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
-          case -1800852456:
+          case 346631192:
             {
               enable_ = input.readBool();
               break;
             }
-          case -1606001728:
+          case 541481920:
             {
               int rawValue = input.readEnum();
 
@@ -141,10 +141,10 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     UNDEFINED_FILTER(0),
     /** <code>ALL = 64897;</code> */
     ALL(64897),
-    /** <code>ERRORS_ONLY = 307484672;</code> */
-    ERRORS_ONLY(307484672),
-    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
-    TRANSLATIONS_ONLY(357212649),
+    /** <code>ERRORS_ONLY = 39049216;</code> */
+    ERRORS_ONLY(39049216),
+    /** <code>TRANSLATIONS_ONLY = 88777193;</code> */
+    TRANSLATIONS_ONLY(88777193),
     UNRECOGNIZED(-1),
     ;
 
@@ -160,10 +160,10 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     public static final int UNDEFINED_FILTER_VALUE = 0;
     /** <code>ALL = 64897;</code> */
     public static final int ALL_VALUE = 64897;
-    /** <code>ERRORS_ONLY = 307484672;</code> */
-    public static final int ERRORS_ONLY_VALUE = 307484672;
-    /** <code>TRANSLATIONS_ONLY = 357212649;</code> */
-    public static final int TRANSLATIONS_ONLY_VALUE = 357212649;
+    /** <code>ERRORS_ONLY = 39049216;</code> */
+    public static final int ERRORS_ONLY_VALUE = 39049216;
+    /** <code>TRANSLATIONS_ONLY = 88777193;</code> */
+    public static final int TRANSLATIONS_ONLY_VALUE = 88777193;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -193,9 +193,9 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
           return UNDEFINED_FILTER;
         case 64897:
           return ALL;
-        case 307484672:
+        case 39049216:
           return ERRORS_ONLY;
-        case 357212649:
+        case 88777193:
           return TRANSLATIONS_ONLY;
         default:
           return null;
@@ -250,7 +250,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterNatLogConfig.Filter)
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 311764355;
+  public static final int ENABLE_FIELD_NUMBER = 43328899;
   private boolean enable_;
   /**
    *
@@ -259,7 +259,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * Indicates whether or not to export logs. This is false by default.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -268,7 +268,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
     return enable_;
   }
 
-  public static final int FILTER_FIELD_NUMBER = 336120696;
+  public static final int FILTER_FIELD_NUMBER = 67685240;
   private int filter_;
   /**
    *
@@ -280,7 +280,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
    *
    * @return The enum numeric value on the wire for filter.
    */
@@ -298,7 +298,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
    * - ALL: Export logs for all connections, successful and unsuccessful.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -327,11 +327,11 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (enable_ != false) {
-      output.writeBool(311764355, enable_);
+      output.writeBool(43328899, enable_);
     }
     if (filter_
         != com.google.cloud.compute.v1.RouterNatLogConfig.Filter.UNDEFINED_FILTER.getNumber()) {
-      output.writeEnum(336120696, filter_);
+      output.writeEnum(67685240, filter_);
     }
     unknownFields.writeTo(output);
   }
@@ -343,11 +343,11 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
 
     size = 0;
     if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
     }
     if (filter_
         != com.google.cloud.compute.v1.RouterNatLogConfig.Filter.UNDEFINED_FILTER.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(336120696, filter_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(67685240, filter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -652,7 +652,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return The enable.
      */
@@ -667,7 +667,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -685,7 +685,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * Indicates whether or not to export logs. This is false by default.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return This builder for chaining.
      */
@@ -707,7 +707,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      *
      * @return The enum numeric value on the wire for filter.
      */
@@ -725,7 +725,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      *
      * @param value The enum numeric value on the wire for filter to set.
      * @return This builder for chaining.
@@ -746,7 +746,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      *
      * @return The filter.
      */
@@ -769,7 +769,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -793,7 +793,7 @@ public final class RouterNatLogConfig extends com.google.protobuf.GeneratedMessa
      * - ALL: Export logs for all connections, successful and unsuccessful.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 67685240;</code>
      *
      * @return This builder for chaining.
      */

@@ -146,7 +146,15 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
   public static final int AUTOSCALER_RESOURCE_FIELD_NUMBER = 207616118;
   private com.google.cloud.compute.v1.Autoscaler autoscalerResource_;
   /**
-   * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the autoscalerResource field is set.
    */
@@ -155,7 +163,15 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
     return autoscalerResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The autoscalerResource.
    */
@@ -165,7 +181,17 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
         ? com.google.cloud.compute.v1.Autoscaler.getDefaultInstance()
         : autoscalerResource_;
   }
-  /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalerResourceOrBuilder() {
     return getAutoscalerResource();
@@ -710,7 +736,15 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.AutoscalerOrBuilder>
         autoscalerResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the autoscalerResource field is set.
      */
@@ -718,7 +752,15 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
       return autoscalerResourceBuilder_ != null || autoscalerResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The autoscalerResource.
      */
@@ -731,7 +773,17 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
         return autoscalerResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAutoscalerResource(com.google.cloud.compute.v1.Autoscaler value) {
       if (autoscalerResourceBuilder_ == null) {
         if (value == null) {
@@ -745,7 +797,17 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAutoscalerResource(
         com.google.cloud.compute.v1.Autoscaler.Builder builderForValue) {
       if (autoscalerResourceBuilder_ == null) {
@@ -757,7 +819,17 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeAutoscalerResource(com.google.cloud.compute.v1.Autoscaler value) {
       if (autoscalerResourceBuilder_ == null) {
         if (autoscalerResource_ != null) {
@@ -775,7 +847,17 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearAutoscalerResource() {
       if (autoscalerResourceBuilder_ == null) {
         autoscalerResource_ = null;
@@ -787,13 +869,33 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Autoscaler.Builder getAutoscalerResourceBuilder() {
 
       onChanged();
       return getAutoscalerResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalerResourceOrBuilder() {
       if (autoscalerResourceBuilder_ != null) {
         return autoscalerResourceBuilder_.getMessageOrBuilder();
@@ -803,7 +905,17 @@ public final class InsertRegionAutoscalerRequest extends com.google.protobuf.Gen
             : autoscalerResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Autoscaler autoscaler_resource = 207616118 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Autoscaler,
             com.google.cloud.compute.v1.Autoscaler.Builder,

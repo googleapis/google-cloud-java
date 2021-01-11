@@ -30,7 +30,7 @@ public interface PacketMirroringOrBuilder
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
    * </code>
    *
    * @return Whether the collectorIlb field is set.
@@ -43,7 +43,7 @@ public interface PacketMirroringOrBuilder
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
    * </code>
    *
    * @return The collectorIlb.
@@ -56,7 +56,7 @@ public interface PacketMirroringOrBuilder
    * The Forwarding Rule resource of type loadBalancingScheme=INTERNAL that will be used as collector for mirrored traffic. The specified forwarding rule must have isMirroringCollector set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 426607853;
+   * <code>.google.cloud.compute.v1.PacketMirroringForwardingRuleInfo collector_ilb = 158172397;
    * </code>
    */
   com.google.cloud.compute.v1.PacketMirroringForwardingRuleInfoOrBuilder getCollectorIlbOrBuilder();
@@ -93,7 +93,7 @@ public interface PacketMirroringOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -105,7 +105,7 @@ public interface PacketMirroringOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -119,7 +119,7 @@ public interface PacketMirroringOrBuilder
    * The default is TRUE.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
    *
    * @return The enum numeric value on the wire for enable.
    */
@@ -132,7 +132,7 @@ public interface PacketMirroringOrBuilder
    * The default is TRUE.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroring.Enable enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -145,7 +145,7 @@ public interface PacketMirroringOrBuilder
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
    *
    * @return Whether the filter field is set.
    */
@@ -157,7 +157,7 @@ public interface PacketMirroringOrBuilder
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -169,7 +169,7 @@ public interface PacketMirroringOrBuilder
    * Filter for mirrored traffic. If unspecified, all traffic is mirrored.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 336120696;</code>
+   * <code>.google.cloud.compute.v1.PacketMirroringFilter filter = 67685240;</code>
    */
   com.google.cloud.compute.v1.PacketMirroringFilterOrBuilder getFilterOrBuilder();
 
@@ -333,7 +333,7 @@ public interface PacketMirroringOrBuilder
    * Default value is 1000. Valid range is 0 through 65535.
    * </pre>
    *
-   * <code>uint32 priority = 445151652;</code>
+   * <code>uint32 priority = 176716196;</code>
    *
    * @return The priority.
    */
@@ -371,7 +371,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -383,7 +383,7 @@ public interface PacketMirroringOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

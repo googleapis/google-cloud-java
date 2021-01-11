@@ -78,16 +78,16 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
               startTime_ = s;
               break;
             }
+          case 810836384:
+            {
+              daysInCycle_ = input.readInt32();
+              break;
+            }
           case 1243770018:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               duration_ = s;
-              break;
-            }
-          case -1336647264:
-            {
-              daysInCycle_ = input.readInt32();
               break;
             }
           default:
@@ -124,7 +124,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.ResourcePolicyDailyCycle.Builder.class);
   }
 
-  public static final int DAYS_IN_CYCLE_FIELD_NUMBER = 369790004;
+  public static final int DAYS_IN_CYCLE_FIELD_NUMBER = 101354548;
   private int daysInCycle_;
   /**
    *
@@ -133,7 +133,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
    * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
    * </pre>
    *
-   * <code>int32 days_in_cycle = 369790004;</code>
+   * <code>int32 days_in_cycle = 101354548;</code>
    *
    * @return The daysInCycle.
    */
@@ -257,11 +257,11 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37467274, startTime_);
     }
+    if (daysInCycle_ != 0) {
+      output.writeInt32(101354548, daysInCycle_);
+    }
     if (!getDurationBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 155471252, duration_);
-    }
-    if (daysInCycle_ != 0) {
-      output.writeInt32(369790004, daysInCycle_);
     }
     unknownFields.writeTo(output);
   }
@@ -275,11 +275,11 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37467274, startTime_);
     }
+    if (daysInCycle_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(101354548, daysInCycle_);
+    }
     if (!getDurationBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(155471252, duration_);
-    }
-    if (daysInCycle_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(369790004, daysInCycle_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -597,7 +597,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 days_in_cycle = 369790004;</code>
+     * <code>int32 days_in_cycle = 101354548;</code>
      *
      * @return The daysInCycle.
      */
@@ -612,7 +612,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 days_in_cycle = 369790004;</code>
+     * <code>int32 days_in_cycle = 101354548;</code>
      *
      * @param value The daysInCycle to set.
      * @return This builder for chaining.
@@ -630,7 +630,7 @@ public final class ResourcePolicyDailyCycle extends com.google.protobuf.Generate
      * Defines a schedule with units measured in months. The value determines how many months pass between the start of each cycle.
      * </pre>
      *
-     * <code>int32 days_in_cycle = 369790004;</code>
+     * <code>int32 days_in_cycle = 101354548;</code>
      *
      * @return This builder for chaining.
      */

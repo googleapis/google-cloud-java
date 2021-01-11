@@ -93,6 +93,22 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
               udpIdleTimeoutSec_ = input.readInt32();
               break;
             }
+          case 662914282:
+            {
+              com.google.cloud.compute.v1.RouterNatLogConfig.Builder subBuilder = null;
+              if (logConfig_ != null) {
+                subBuilder = logConfig_.toBuilder();
+              }
+              logConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RouterNatLogConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logConfig_);
+                logConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 941080690:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,6 +117,26 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000002;
               }
               natIps_.add(s);
+              break;
+            }
+          case 1179341354:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                subnetworks_ =
+                    new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              subnetworks_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.RouterNatSubnetworkToNat.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 1290331112:
+            {
+              int rawValue = input.readEnum();
+
+              natIpAllocateOption_ = rawValue;
               break;
             }
           case 1489548696:
@@ -118,50 +154,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
               tcpEstablishedIdleTimeoutSec_ = input.readInt32();
               break;
             }
-          case 2017705688:
-            {
-              int rawValue = input.readEnum();
-
-              sourceSubnetworkIpRangesToNat_ = rawValue;
-              break;
-            }
-          case -1484569366:
-            {
-              com.google.cloud.compute.v1.RouterNatLogConfig.Builder subBuilder = null;
-              if (logConfig_ != null) {
-                subBuilder = logConfig_.toBuilder();
-              }
-              logConfig_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterNatLogConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(logConfig_);
-                logConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -968142294:
-            {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                subnetworks_ =
-                    new java.util.ArrayList<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              subnetworks_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.RouterNatSubnetworkToNat.parser(),
-                      extensionRegistry));
-              break;
-            }
-          case -857152536:
-            {
-              int rawValue = input.readEnum();
-
-              natIpAllocateOption_ = rawValue;
-              break;
-            }
-          case -262339014:
+          case 1885144634:
             {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -169,6 +162,18 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000001;
               }
               drainNatIps_.add(s);
+              break;
+            }
+          case 2017705688:
+            {
+              int rawValue = input.readEnum();
+
+              sourceSubnetworkIpRangesToNat_ = rawValue;
+              break;
+            }
+          case 2075534552:
+            {
+              enableEndpointIndependentMapping_ = input.readBool();
               break;
             }
           default:
@@ -371,8 +376,8 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     ALL_SUBNETWORKS_ALL_IP_RANGES(179964376),
     /** <code>ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES = 185573819;</code> */
     ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES(185573819),
-    /** <code>LIST_OF_SUBNETWORKS = 517542270;</code> */
-    LIST_OF_SUBNETWORKS(517542270),
+    /** <code>LIST_OF_SUBNETWORKS = 249106814;</code> */
+    LIST_OF_SUBNETWORKS(249106814),
     UNRECOGNIZED(-1),
     ;
 
@@ -390,8 +395,8 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     public static final int ALL_SUBNETWORKS_ALL_IP_RANGES_VALUE = 179964376;
     /** <code>ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES = 185573819;</code> */
     public static final int ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES_VALUE = 185573819;
-    /** <code>LIST_OF_SUBNETWORKS = 517542270;</code> */
-    public static final int LIST_OF_SUBNETWORKS_VALUE = 517542270;
+    /** <code>LIST_OF_SUBNETWORKS = 249106814;</code> */
+    public static final int LIST_OF_SUBNETWORKS_VALUE = 249106814;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -423,7 +428,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
           return ALL_SUBNETWORKS_ALL_IP_RANGES;
         case 185573819:
           return ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES;
-        case 517542270:
+        case 249106814:
           return LIST_OF_SUBNETWORKS;
         default:
           return null;
@@ -481,7 +486,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat)
   }
 
-  public static final int DRAIN_NAT_IPS_FIELD_NUMBER = 504078535;
+  public static final int DRAIN_NAT_IPS_FIELD_NUMBER = 235643079;
   private com.google.protobuf.LazyStringList drainNatIps_;
   /**
    *
@@ -490,7 +495,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @return A list containing the drainNatIps.
    */
@@ -504,7 +509,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @return The count of drainNatIps.
    */
@@ -518,7 +523,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @param index The index of the element to return.
    * @return The drainNatIps at the given index.
@@ -533,13 +538,25 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
    * </pre>
    *
-   * <code>repeated string drain_nat_ips = 504078535;</code>
+   * <code>repeated string drain_nat_ips = 235643079;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the drainNatIps at the given index.
    */
   public com.google.protobuf.ByteString getDrainNatIpsBytes(int index) {
     return drainNatIps_.getByteString(index);
+  }
+
+  public static final int ENABLE_ENDPOINT_INDEPENDENT_MAPPING_FIELD_NUMBER = 259441819;
+  private boolean enableEndpointIndependentMapping_;
+  /**
+   * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+   *
+   * @return The enableEndpointIndependentMapping.
+   */
+  @java.lang.Override
+  public boolean getEnableEndpointIndependentMapping() {
+    return enableEndpointIndependentMapping_;
   }
 
   public static final int ICMP_IDLE_TIMEOUT_SEC_FIELD_NUMBER = 3647562;
@@ -560,7 +577,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     return icmpIdleTimeoutSec_;
   }
 
-  public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
+  public static final int LOG_CONFIG_FIELD_NUMBER = 82864285;
   private com.google.cloud.compute.v1.RouterNatLogConfig logConfig_;
   /**
    *
@@ -569,7 +586,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -584,7 +601,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
    *
    * @return The logConfig.
    */
@@ -601,7 +618,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * Configure logging on this NAT.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterNatLogConfigOrBuilder getLogConfigOrBuilder() {
@@ -675,7 +692,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NAT_IP_ALLOCATE_OPTION_FIELD_NUMBER = 429726845;
+  public static final int NAT_IP_ALLOCATE_OPTION_FIELD_NUMBER = 161291389;
   private int natIpAllocateOption_;
   /**
    *
@@ -687,7 +704,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
    * </code>
    *
    * @return The enum numeric value on the wire for natIpAllocateOption.
@@ -706,7 +723,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+   * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
    * </code>
    *
    * @return The natIpAllocateOption.
@@ -832,7 +849,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
-  public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
+  public static final int SUBNETWORKS_FIELD_NUMBER = 147417669;
   private java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat> subnetworks_;
   /**
    *
@@ -841,7 +858,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   @java.lang.Override
@@ -855,7 +872,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   @java.lang.Override
@@ -870,7 +887,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   @java.lang.Override
@@ -884,7 +901,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   @java.lang.Override
@@ -898,7 +915,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
    * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+   * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
    * </code>
    */
   @java.lang.Override
@@ -984,8 +1001,20 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (udpIdleTimeoutSec_ != 0) {
       output.writeInt32(64919878, udpIdleTimeoutSec_);
     }
+    if (logConfig_ != null) {
+      output.writeMessage(82864285, getLogConfig());
+    }
     for (int i = 0; i < natIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 117635086, natIps_.getRaw(i));
+    }
+    for (int i = 0; i < subnetworks_.size(); i++) {
+      output.writeMessage(147417669, subnetworks_.get(i));
+    }
+    if (natIpAllocateOption_
+        != com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption
+            .UNDEFINED_NAT_IP_ALLOCATE_OPTION
+            .getNumber()) {
+      output.writeEnum(161291389, natIpAllocateOption_);
     }
     if (minPortsPerVm_ != 0) {
       output.writeInt32(186193587, minPortsPerVm_);
@@ -996,26 +1025,17 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (tcpEstablishedIdleTimeoutSec_ != 0) {
       output.writeInt32(223098349, tcpEstablishedIdleTimeoutSec_);
     }
+    for (int i = 0; i < drainNatIps_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 235643079, drainNatIps_.getRaw(i));
+    }
     if (sourceSubnetworkIpRangesToNat_
         != com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat
             .UNDEFINED_SOURCE_SUBNETWORK_IP_RANGES_TO_NAT
             .getNumber()) {
       output.writeEnum(252213211, sourceSubnetworkIpRangesToNat_);
     }
-    if (logConfig_ != null) {
-      output.writeMessage(351299741, getLogConfig());
-    }
-    for (int i = 0; i < subnetworks_.size(); i++) {
-      output.writeMessage(415853125, subnetworks_.get(i));
-    }
-    if (natIpAllocateOption_
-        != com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption
-            .UNDEFINED_NAT_IP_ALLOCATE_OPTION
-            .getNumber()) {
-      output.writeEnum(429726845, natIpAllocateOption_);
-    }
-    for (int i = 0; i < drainNatIps_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 504078535, drainNatIps_.getRaw(i));
+    if (enableEndpointIndependentMapping_ != false) {
+      output.writeBool(259441819, enableEndpointIndependentMapping_);
     }
     unknownFields.writeTo(output);
   }
@@ -1035,6 +1055,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     if (udpIdleTimeoutSec_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(64919878, udpIdleTimeoutSec_);
     }
+    if (logConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(82864285, getLogConfig());
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < natIps_.size(); i++) {
@@ -1042,6 +1065,17 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getNatIpsList().size();
+    }
+    for (int i = 0; i < subnetworks_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(147417669, subnetworks_.get(i));
+    }
+    if (natIpAllocateOption_
+        != com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption
+            .UNDEFINED_NAT_IP_ALLOCATE_OPTION
+            .getNumber()) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(161291389, natIpAllocateOption_);
     }
     if (minPortsPerVm_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(186193587, minPortsPerVm_);
@@ -1056,6 +1090,14 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               223098349, tcpEstablishedIdleTimeoutSec_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < drainNatIps_.size(); i++) {
+        dataSize += computeStringSizeNoTag(drainNatIps_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getDrainNatIpsList().size();
+    }
     if (sourceSubnetworkIpRangesToNat_
         != com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat
             .UNDEFINED_SOURCE_SUBNETWORK_IP_RANGES_TO_NAT
@@ -1064,27 +1106,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               252213211, sourceSubnetworkIpRangesToNat_);
     }
-    if (logConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
-    }
-    for (int i = 0; i < subnetworks_.size(); i++) {
+    if (enableEndpointIndependentMapping_ != false) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(415853125, subnetworks_.get(i));
-    }
-    if (natIpAllocateOption_
-        != com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption
-            .UNDEFINED_NAT_IP_ALLOCATE_OPTION
-            .getNumber()) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(429726845, natIpAllocateOption_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < drainNatIps_.size(); i++) {
-        dataSize += computeStringSizeNoTag(drainNatIps_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getDrainNatIpsList().size();
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              259441819, enableEndpointIndependentMapping_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1102,6 +1127,8 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.RouterNat other = (com.google.cloud.compute.v1.RouterNat) obj;
 
     if (!getDrainNatIpsList().equals(other.getDrainNatIpsList())) return false;
+    if (getEnableEndpointIndependentMapping() != other.getEnableEndpointIndependentMapping())
+      return false;
     if (getIcmpIdleTimeoutSec() != other.getIcmpIdleTimeoutSec()) return false;
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
@@ -1131,6 +1158,10 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DRAIN_NAT_IPS_FIELD_NUMBER;
       hash = (53 * hash) + getDrainNatIpsList().hashCode();
     }
+    hash = (37 * hash) + ENABLE_ENDPOINT_INDEPENDENT_MAPPING_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashBoolean(getEnableEndpointIndependentMapping());
     hash = (37 * hash) + ICMP_IDLE_TIMEOUT_SEC_FIELD_NUMBER;
     hash = (53 * hash) + getIcmpIdleTimeoutSec();
     if (hasLogConfig()) {
@@ -1307,6 +1338,8 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      enableEndpointIndependentMapping_ = false;
+
       icmpIdleTimeoutSec_ = 0;
 
       if (logConfigBuilder_ == null) {
@@ -1370,6 +1403,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.drainNatIps_ = drainNatIps_;
+      result.enableEndpointIndependentMapping_ = enableEndpointIndependentMapping_;
       result.icmpIdleTimeoutSec_ = icmpIdleTimeoutSec_;
       if (logConfigBuilder_ == null) {
         result.logConfig_ = logConfig_;
@@ -1455,6 +1489,9 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
           drainNatIps_.addAll(other.drainNatIps_);
         }
         onChanged();
+      }
+      if (other.getEnableEndpointIndependentMapping() != false) {
+        setEnableEndpointIndependentMapping(other.getEnableEndpointIndependentMapping());
       }
       if (other.getIcmpIdleTimeoutSec() != 0) {
         setIcmpIdleTimeoutSec(other.getIcmpIdleTimeoutSec());
@@ -1568,7 +1605,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @return A list containing the drainNatIps.
      */
@@ -1582,7 +1619,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @return The count of drainNatIps.
      */
@@ -1596,7 +1633,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @param index The index of the element to return.
      * @return The drainNatIps at the given index.
@@ -1611,7 +1648,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the drainNatIps at the given index.
@@ -1626,7 +1663,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @param index The index to set the value at.
      * @param value The drainNatIps to set.
@@ -1648,7 +1685,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @param value The drainNatIps to add.
      * @return This builder for chaining.
@@ -1669,7 +1706,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @param values The drainNatIps to add.
      * @return This builder for chaining.
@@ -1687,7 +1724,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @return This builder for chaining.
      */
@@ -1704,7 +1741,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
      * </pre>
      *
-     * <code>repeated string drain_nat_ips = 504078535;</code>
+     * <code>repeated string drain_nat_ips = 235643079;</code>
      *
      * @param value The bytes of the drainNatIps to add.
      * @return This builder for chaining.
@@ -1716,6 +1753,40 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDrainNatIpsIsMutable();
       drainNatIps_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private boolean enableEndpointIndependentMapping_;
+    /**
+     * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+     *
+     * @return The enableEndpointIndependentMapping.
+     */
+    @java.lang.Override
+    public boolean getEnableEndpointIndependentMapping() {
+      return enableEndpointIndependentMapping_;
+    }
+    /**
+     * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+     *
+     * @param value The enableEndpointIndependentMapping to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableEndpointIndependentMapping(boolean value) {
+
+      enableEndpointIndependentMapping_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool enable_endpoint_independent_mapping = 259441819;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableEndpointIndependentMapping() {
+
+      enableEndpointIndependentMapping_ = false;
       onChanged();
       return this;
     }
@@ -1785,7 +1856,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      *
      * @return Whether the logConfig field is set.
      */
@@ -1799,7 +1870,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      *
      * @return The logConfig.
      */
@@ -1819,7 +1890,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     public Builder setLogConfig(com.google.cloud.compute.v1.RouterNatLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -1841,7 +1912,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     public Builder setLogConfig(
         com.google.cloud.compute.v1.RouterNatLogConfig.Builder builderForValue) {
@@ -1861,7 +1932,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.RouterNatLogConfig value) {
       if (logConfigBuilder_ == null) {
@@ -1887,7 +1958,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     public Builder clearLogConfig() {
       if (logConfigBuilder_ == null) {
@@ -1907,7 +1978,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     public com.google.cloud.compute.v1.RouterNatLogConfig.Builder getLogConfigBuilder() {
 
@@ -1921,7 +1992,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     public com.google.cloud.compute.v1.RouterNatLogConfigOrBuilder getLogConfigOrBuilder() {
       if (logConfigBuilder_ != null) {
@@ -1939,7 +2010,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * Configure logging on this NAT.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 351299741;</code>
+     * <code>.google.cloud.compute.v1.RouterNatLogConfig log_config = 82864285;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.RouterNatLogConfig,
@@ -2127,7 +2198,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
      * </code>
      *
      * @return The enum numeric value on the wire for natIpAllocateOption.
@@ -2146,7 +2217,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
      * </code>
      *
      * @param value The enum numeric value on the wire for natIpAllocateOption to set.
@@ -2168,7 +2239,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
      * </code>
      *
      * @return The natIpAllocateOption.
@@ -2192,7 +2263,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
      * </code>
      *
      * @param value The natIpAllocateOption to set.
@@ -2218,7 +2289,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;
+     * .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 161291389;
      * </code>
      *
      * @return This builder for chaining.
@@ -2544,7 +2615,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat>
@@ -2562,7 +2633,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public int getSubnetworksCount() {
@@ -2579,7 +2650,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNat getSubnetworks(int index) {
@@ -2596,7 +2667,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder setSubnetworks(
@@ -2620,7 +2691,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder setSubnetworks(
@@ -2641,7 +2712,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder addSubnetworks(com.google.cloud.compute.v1.RouterNatSubnetworkToNat value) {
@@ -2664,7 +2735,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder addSubnetworks(
@@ -2688,7 +2759,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder addSubnetworks(
@@ -2709,7 +2780,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder addSubnetworks(
@@ -2730,7 +2801,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder addAllSubnetworks(
@@ -2751,7 +2822,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder clearSubnetworks() {
@@ -2771,7 +2842,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public Builder removeSubnetworks(int index) {
@@ -2791,7 +2862,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNat.Builder getSubnetworksBuilder(
@@ -2805,7 +2876,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder getSubnetworksOrBuilder(
@@ -2823,7 +2894,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.RouterNatSubnetworkToNatOrBuilder>
@@ -2841,7 +2912,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNat.Builder addSubnetworksBuilder() {
@@ -2855,7 +2926,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public com.google.cloud.compute.v1.RouterNatSubnetworkToNat.Builder addSubnetworksBuilder(
@@ -2871,7 +2942,7 @@ public final class RouterNat extends com.google.protobuf.GeneratedMessageV3
      * A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 415853125;
+     * <code>repeated .google.cloud.compute.v1.RouterNatSubnetworkToNat subnetworks = 147417669;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.RouterNatSubnetworkToNat.Builder>

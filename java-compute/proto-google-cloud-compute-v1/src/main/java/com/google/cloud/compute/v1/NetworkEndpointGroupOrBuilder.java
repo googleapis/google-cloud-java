@@ -84,7 +84,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
    *
    * @return Whether the appEngine field is set.
    */
@@ -96,7 +96,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
    *
    * @return The appEngine.
    */
@@ -108,7 +108,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 340788768;</code>
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupAppEngine app_engine = 72353312;</code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupAppEngineOrBuilder getAppEngineOrBuilder();
 
@@ -119,7 +119,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
    * </code>
    *
    * @return Whether the cloudFunction field is set.
@@ -132,7 +132,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
    * </code>
    *
    * @return The cloudFunction.
@@ -145,7 +145,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 519893666;
+   * <code>.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction cloud_function = 251458210;
    * </code>
    */
   com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunctionOrBuilder
@@ -218,7 +218,7 @@ public interface NetworkEndpointGroupOrBuilder
    * The default port used if the port number is not specified in the network endpoint.
    * </pre>
    *
-   * <code>int32 default_port = 423377855;</code>
+   * <code>int32 default_port = 154942399;</code>
    *
    * @return The defaultPort.
    */
@@ -231,7 +231,7 @@ public interface NetworkEndpointGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -243,7 +243,7 @@ public interface NetworkEndpointGroupOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -410,7 +410,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -422,7 +422,7 @@ public interface NetworkEndpointGroupOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -448,7 +448,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -460,7 +460,7 @@ public interface NetworkEndpointGroupOrBuilder
    * Optional URL of the subnetwork to which all network endpoints in the NEG belong.
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */

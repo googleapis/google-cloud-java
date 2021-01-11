@@ -94,14 +94,7 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -589516086:
+          case 1557967562:
             {
               com.google.cloud.compute.v1.Scheduling.Builder subBuilder = null;
               if (schedulingResource_ != null) {
@@ -115,6 +108,13 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
                 schedulingResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -302,10 +302,18 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
     }
   }
 
-  public static final int SCHEDULING_RESOURCE_FIELD_NUMBER = 463181401;
+  public static final int SCHEDULING_RESOURCE_FIELD_NUMBER = 194745945;
   private com.google.cloud.compute.v1.Scheduling schedulingResource_;
   /**
-   * <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the schedulingResource field is set.
    */
@@ -314,7 +322,15 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
     return schedulingResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The schedulingResource.
    */
@@ -324,7 +340,17 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.Scheduling.getDefaultInstance()
         : schedulingResource_;
   }
-  /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingResourceOrBuilder() {
     return getSchedulingResource();
@@ -402,11 +428,11 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (schedulingResource_ != null) {
+      output.writeMessage(194745945, getSchedulingResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (schedulingResource_ != null) {
-      output.writeMessage(463181401, getSchedulingResource());
     }
     unknownFields.writeTo(output);
   }
@@ -426,13 +452,13 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (schedulingResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              463181401, getSchedulingResource());
+              194745945, getSchedulingResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1111,7 +1137,15 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.SchedulingOrBuilder>
         schedulingResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the schedulingResource field is set.
      */
@@ -1119,7 +1153,15 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
       return schedulingResourceBuilder_ != null || schedulingResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The schedulingResource.
      */
@@ -1132,7 +1174,17 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
         return schedulingResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSchedulingResource(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingResourceBuilder_ == null) {
         if (value == null) {
@@ -1146,7 +1198,17 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSchedulingResource(
         com.google.cloud.compute.v1.Scheduling.Builder builderForValue) {
       if (schedulingResourceBuilder_ == null) {
@@ -1158,7 +1220,17 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeSchedulingResource(com.google.cloud.compute.v1.Scheduling value) {
       if (schedulingResourceBuilder_ == null) {
         if (schedulingResource_ != null) {
@@ -1176,7 +1248,17 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearSchedulingResource() {
       if (schedulingResourceBuilder_ == null) {
         schedulingResource_ = null;
@@ -1188,13 +1270,33 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Scheduling.Builder getSchedulingResourceBuilder() {
 
       onChanged();
       return getSchedulingResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SchedulingOrBuilder getSchedulingResourceOrBuilder() {
       if (schedulingResourceBuilder_ != null) {
         return schedulingResourceBuilder_.getMessageOrBuilder();
@@ -1204,7 +1306,17 @@ public final class SetSchedulingInstanceRequest extends com.google.protobuf.Gene
             : schedulingResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Scheduling scheduling_resource = 463181401;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Scheduling scheduling_resource = 194745945 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Scheduling,
             com.google.cloud.compute.v1.Scheduling.Builder,

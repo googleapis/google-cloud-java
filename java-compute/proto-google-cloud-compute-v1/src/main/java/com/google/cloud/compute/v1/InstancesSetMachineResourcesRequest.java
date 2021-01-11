@@ -72,7 +72,7 @@ public final class InstancesSetMachineResourcesRequest
           case 0:
             done = true;
             break;
-          case -586206342:
+          case 1561277306:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 guestAccelerators_ =
@@ -121,7 +121,7 @@ public final class InstancesSetMachineResourcesRequest
             com.google.cloud.compute.v1.InstancesSetMachineResourcesRequest.Builder.class);
   }
 
-  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 463595119;
+  public static final int GUEST_ACCELERATORS_FIELD_NUMBER = 195159663;
   private java.util.List<com.google.cloud.compute.v1.AcceleratorConfig> guestAccelerators_;
   /**
    *
@@ -130,7 +130,7 @@ public final class InstancesSetMachineResourcesRequest
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -144,7 +144,7 @@ public final class InstancesSetMachineResourcesRequest
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -159,7 +159,7 @@ public final class InstancesSetMachineResourcesRequest
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -173,7 +173,7 @@ public final class InstancesSetMachineResourcesRequest
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -187,7 +187,7 @@ public final class InstancesSetMachineResourcesRequest
    * A list of the type and count of accelerator cards attached to the instance.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+   * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
    * </code>
    */
   @java.lang.Override
@@ -211,7 +211,7 @@ public final class InstancesSetMachineResourcesRequest
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < guestAccelerators_.size(); i++) {
-      output.writeMessage(463595119, guestAccelerators_.get(i));
+      output.writeMessage(195159663, guestAccelerators_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -225,7 +225,7 @@ public final class InstancesSetMachineResourcesRequest
     for (int i = 0; i < guestAccelerators_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              463595119, guestAccelerators_.get(i));
+              195159663, guestAccelerators_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -587,7 +587,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig>
@@ -605,7 +605,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public int getGuestAcceleratorsCount() {
@@ -622,7 +622,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig getGuestAccelerators(int index) {
@@ -639,7 +639,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -663,7 +663,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder setGuestAccelerators(
@@ -684,7 +684,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(com.google.cloud.compute.v1.AcceleratorConfig value) {
@@ -707,7 +707,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -731,7 +731,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -752,7 +752,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addGuestAccelerators(
@@ -773,7 +773,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder addAllGuestAccelerators(
@@ -794,7 +794,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder clearGuestAccelerators() {
@@ -814,7 +814,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public Builder removeGuestAccelerators(int index) {
@@ -834,7 +834,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder getGuestAcceleratorsBuilder(
@@ -848,7 +848,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfigOrBuilder getGuestAcceleratorsOrBuilder(
@@ -866,7 +866,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.AcceleratorConfigOrBuilder>
@@ -884,7 +884,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder() {
@@ -898,7 +898,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public com.google.cloud.compute.v1.AcceleratorConfig.Builder addGuestAcceleratorsBuilder(
@@ -913,7 +913,7 @@ public final class InstancesSetMachineResourcesRequest
      * A list of the type and count of accelerator cards attached to the instance.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 463595119;
+     * <code>repeated .google.cloud.compute.v1.AcceleratorConfig guest_accelerators = 195159663;
      * </code>
      */
     public java.util.List<com.google.cloud.compute.v1.AcceleratorConfig.Builder>

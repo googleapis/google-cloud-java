@@ -73,6 +73,13 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
           case 0:
             done = true;
             break;
+          case 31258034:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              pathRedirect_ = s;
+              break;
+            }
           case 418277128:
             {
               stripQuery_ = input.readBool();
@@ -85,26 +92,19 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
               hostRedirect_ = s;
               break;
             }
-          case 1362085248:
-            {
-              httpsRedirect_ = input.readBool();
-              break;
-            }
-          case -2116225614:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pathRedirect_ = s;
-              break;
-            }
-          case -801284032:
+          case 1346199616:
             {
               int rawValue = input.readEnum();
 
               redirectResponseCode_ = rawValue;
               break;
             }
-          case -725493942:
+          case 1362085248:
+            {
+              httpsRedirect_ = input.readBool();
+              break;
+            }
+          case 1421989706:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -173,14 +173,14 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     UNDEFINED_REDIRECT_RESPONSE_CODE(0),
     /** <code>FOUND = 67084130;</code> */
     FOUND(67084130),
-    /** <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code> */
-    MOVED_PERMANENTLY_DEFAULT(386698449),
-    /** <code>PERMANENT_REDIRECT = 382006381;</code> */
-    PERMANENT_REDIRECT(382006381),
-    /** <code>SEE_OTHER = 445380580;</code> */
-    SEE_OTHER(445380580),
-    /** <code>TEMPORARY_REDIRECT = 489550378;</code> */
-    TEMPORARY_REDIRECT(489550378),
+    /** <code>MOVED_PERMANENTLY_DEFAULT = 118262993;</code> */
+    MOVED_PERMANENTLY_DEFAULT(118262993),
+    /** <code>PERMANENT_REDIRECT = 113570925;</code> */
+    PERMANENT_REDIRECT(113570925),
+    /** <code>SEE_OTHER = 176945124;</code> */
+    SEE_OTHER(176945124),
+    /** <code>TEMPORARY_REDIRECT = 221114922;</code> */
+    TEMPORARY_REDIRECT(221114922),
     UNRECOGNIZED(-1),
     ;
 
@@ -196,14 +196,14 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     public static final int UNDEFINED_REDIRECT_RESPONSE_CODE_VALUE = 0;
     /** <code>FOUND = 67084130;</code> */
     public static final int FOUND_VALUE = 67084130;
-    /** <code>MOVED_PERMANENTLY_DEFAULT = 386698449;</code> */
-    public static final int MOVED_PERMANENTLY_DEFAULT_VALUE = 386698449;
-    /** <code>PERMANENT_REDIRECT = 382006381;</code> */
-    public static final int PERMANENT_REDIRECT_VALUE = 382006381;
-    /** <code>SEE_OTHER = 445380580;</code> */
-    public static final int SEE_OTHER_VALUE = 445380580;
-    /** <code>TEMPORARY_REDIRECT = 489550378;</code> */
-    public static final int TEMPORARY_REDIRECT_VALUE = 489550378;
+    /** <code>MOVED_PERMANENTLY_DEFAULT = 118262993;</code> */
+    public static final int MOVED_PERMANENTLY_DEFAULT_VALUE = 118262993;
+    /** <code>PERMANENT_REDIRECT = 113570925;</code> */
+    public static final int PERMANENT_REDIRECT_VALUE = 113570925;
+    /** <code>SEE_OTHER = 176945124;</code> */
+    public static final int SEE_OTHER_VALUE = 176945124;
+    /** <code>TEMPORARY_REDIRECT = 221114922;</code> */
+    public static final int TEMPORARY_REDIRECT_VALUE = 221114922;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -233,13 +233,13 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
           return UNDEFINED_REDIRECT_RESPONSE_CODE;
         case 67084130:
           return FOUND;
-        case 386698449:
+        case 118262993:
           return MOVED_PERMANENTLY_DEFAULT;
-        case 382006381:
+        case 113570925:
           return PERMANENT_REDIRECT;
-        case 445380580:
+        case 176945124:
           return SEE_OTHER;
-        case 489550378:
+        case 221114922:
           return TEMPORARY_REDIRECT;
         default:
           return null;
@@ -368,7 +368,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     return httpsRedirect_;
   }
 
-  public static final int PATH_REDIRECT_FIELD_NUMBER = 272342710;
+  public static final int PATH_REDIRECT_FIELD_NUMBER = 3907254;
   private volatile java.lang.Object pathRedirect_;
   /**
    *
@@ -379,7 +379,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>string path_redirect = 3907254;</code>
    *
    * @return The pathRedirect.
    */
@@ -404,7 +404,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string path_redirect = 272342710;</code>
+   * <code>string path_redirect = 3907254;</code>
    *
    * @return The bytes for pathRedirect.
    */
@@ -421,7 +421,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int PREFIX_REDIRECT_FIELD_NUMBER = 446184169;
+  public static final int PREFIX_REDIRECT_FIELD_NUMBER = 177748713;
   private volatile java.lang.Object prefixRedirect_;
   /**
    *
@@ -432,7 +432,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>string prefix_redirect = 177748713;</code>
    *
    * @return The prefixRedirect.
    */
@@ -457,7 +457,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    * The value must be between 1 and 1024 characters.
    * </pre>
    *
-   * <code>string prefix_redirect = 446184169;</code>
+   * <code>string prefix_redirect = 177748713;</code>
    *
    * @return The bytes for prefixRedirect.
    */
@@ -474,7 +474,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 436710408;
+  public static final int REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 168274952;
   private int redirectResponseCode_;
   /**
    *
@@ -490,7 +490,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
    * </code>
    *
    * @return The enum numeric value on the wire for redirectResponseCode.
@@ -513,7 +513,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+   * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
    * </code>
    *
    * @return The redirectResponseCode.
@@ -563,26 +563,26 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getPathRedirectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3907254, pathRedirect_);
+    }
     if (stripQuery_ != false) {
       output.writeBool(52284641, stripQuery_);
     }
     if (!getHostRedirectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 107417747, hostRedirect_);
     }
-    if (httpsRedirect_ != false) {
-      output.writeBool(170260656, httpsRedirect_);
-    }
-    if (!getPathRedirectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 272342710, pathRedirect_);
-    }
     if (redirectResponseCode_
         != com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode
             .UNDEFINED_REDIRECT_RESPONSE_CODE
             .getNumber()) {
-      output.writeEnum(436710408, redirectResponseCode_);
+      output.writeEnum(168274952, redirectResponseCode_);
+    }
+    if (httpsRedirect_ != false) {
+      output.writeBool(170260656, httpsRedirect_);
     }
     if (!getPrefixRedirectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 446184169, prefixRedirect_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 177748713, prefixRedirect_);
     }
     unknownFields.writeTo(output);
   }
@@ -593,27 +593,27 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
     if (size != -1) return size;
 
     size = 0;
+    if (!getPathRedirectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3907254, pathRedirect_);
+    }
     if (stripQuery_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(52284641, stripQuery_);
     }
     if (!getHostRedirectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(107417747, hostRedirect_);
     }
-    if (httpsRedirect_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(170260656, httpsRedirect_);
-    }
-    if (!getPathRedirectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(272342710, pathRedirect_);
-    }
     if (redirectResponseCode_
         != com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode
             .UNDEFINED_REDIRECT_RESPONSE_CODE
             .getNumber()) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeEnumSize(436710408, redirectResponseCode_);
+          com.google.protobuf.CodedOutputStream.computeEnumSize(168274952, redirectResponseCode_);
+    }
+    if (httpsRedirect_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(170260656, httpsRedirect_);
     }
     if (!getPrefixRedirectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(446184169, prefixRedirect_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177748713, prefixRedirect_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1128,7 +1128,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>string path_redirect = 3907254;</code>
      *
      * @return The pathRedirect.
      */
@@ -1152,7 +1152,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>string path_redirect = 3907254;</code>
      *
      * @return The bytes for pathRedirect.
      */
@@ -1176,7 +1176,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>string path_redirect = 3907254;</code>
      *
      * @param value The pathRedirect to set.
      * @return This builder for chaining.
@@ -1199,7 +1199,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>string path_redirect = 3907254;</code>
      *
      * @return This builder for chaining.
      */
@@ -1218,7 +1218,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string path_redirect = 272342710;</code>
+     * <code>string path_redirect = 3907254;</code>
      *
      * @param value The bytes for pathRedirect to set.
      * @return This builder for chaining.
@@ -1244,7 +1244,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>string prefix_redirect = 177748713;</code>
      *
      * @return The prefixRedirect.
      */
@@ -1268,7 +1268,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>string prefix_redirect = 177748713;</code>
      *
      * @return The bytes for prefixRedirect.
      */
@@ -1292,7 +1292,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>string prefix_redirect = 177748713;</code>
      *
      * @param value The prefixRedirect to set.
      * @return This builder for chaining.
@@ -1315,7 +1315,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>string prefix_redirect = 177748713;</code>
      *
      * @return This builder for chaining.
      */
@@ -1334,7 +1334,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * The value must be between 1 and 1024 characters.
      * </pre>
      *
-     * <code>string prefix_redirect = 446184169;</code>
+     * <code>string prefix_redirect = 177748713;</code>
      *
      * @param value The bytes for prefixRedirect to set.
      * @return This builder for chaining.
@@ -1365,7 +1365,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
      * </code>
      *
      * @return The enum numeric value on the wire for redirectResponseCode.
@@ -1388,7 +1388,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
      * </code>
      *
      * @param value The enum numeric value on the wire for redirectResponseCode to set.
@@ -1414,7 +1414,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
      * </code>
      *
      * @return The redirectResponseCode.
@@ -1444,7 +1444,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
      * </code>
      *
      * @param value The redirectResponseCode to set.
@@ -1474,7 +1474,7 @@ public final class HttpRedirectAction extends com.google.protobuf.GeneratedMessa
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;
+     * .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 168274952;
      * </code>
      *
      * @return This builder for chaining.

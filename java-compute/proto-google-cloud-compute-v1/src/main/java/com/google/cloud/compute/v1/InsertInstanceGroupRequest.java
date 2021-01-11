@@ -79,21 +79,7 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
               zone_ = s;
               break;
             }
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -2002070078:
+          case 145413570:
             {
               com.google.cloud.compute.v1.InstanceGroup.Builder subBuilder = null;
               if (instanceGroupResource_ != null) {
@@ -107,6 +93,20 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
                 instanceGroupResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -143,10 +143,18 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InsertInstanceGroupRequest.Builder.class);
   }
 
-  public static final int INSTANCE_GROUP_RESOURCE_FIELD_NUMBER = 286612152;
+  public static final int INSTANCE_GROUP_RESOURCE_FIELD_NUMBER = 18176696;
   private com.google.cloud.compute.v1.InstanceGroup instanceGroupResource_;
   /**
-   * <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceGroupResource field is set.
    */
@@ -155,7 +163,15 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
     return instanceGroupResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceGroupResource.
    */
@@ -165,7 +181,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
         ? com.google.cloud.compute.v1.InstanceGroup.getDefaultInstance()
         : instanceGroupResource_;
   }
-  /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupResourceOrBuilder() {
     return getInstanceGroupResource();
@@ -339,14 +365,14 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (instanceGroupResource_ != null) {
+      output.writeMessage(18176696, getInstanceGroupResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (instanceGroupResource_ != null) {
-      output.writeMessage(286612152, getInstanceGroupResource());
     }
     unknownFields.writeTo(output);
   }
@@ -360,16 +386,16 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (instanceGroupResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18176696, getInstanceGroupResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (instanceGroupResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              286612152, getInstanceGroupResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -710,7 +736,15 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.InstanceGroupOrBuilder>
         instanceGroupResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the instanceGroupResource field is set.
      */
@@ -718,7 +752,15 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
       return instanceGroupResourceBuilder_ != null || instanceGroupResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The instanceGroupResource.
      */
@@ -731,7 +773,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
         return instanceGroupResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInstanceGroupResource(com.google.cloud.compute.v1.InstanceGroup value) {
       if (instanceGroupResourceBuilder_ == null) {
         if (value == null) {
@@ -745,7 +797,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setInstanceGroupResource(
         com.google.cloud.compute.v1.InstanceGroup.Builder builderForValue) {
       if (instanceGroupResourceBuilder_ == null) {
@@ -757,7 +819,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeInstanceGroupResource(com.google.cloud.compute.v1.InstanceGroup value) {
       if (instanceGroupResourceBuilder_ == null) {
         if (instanceGroupResource_ != null) {
@@ -775,7 +847,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearInstanceGroupResource() {
       if (instanceGroupResourceBuilder_ == null) {
         instanceGroupResource_ = null;
@@ -787,13 +869,33 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.InstanceGroup.Builder getInstanceGroupResourceBuilder() {
 
       onChanged();
       return getInstanceGroupResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupResourceOrBuilder() {
       if (instanceGroupResourceBuilder_ != null) {
         return instanceGroupResourceBuilder_.getMessageOrBuilder();
@@ -803,7 +905,17 @@ public final class InsertInstanceGroupRequest extends com.google.protobuf.Genera
             : instanceGroupResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.InstanceGroup instance_group_resource = 286612152;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.InstanceGroup instance_group_resource = 18176696 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.InstanceGroup,
             com.google.cloud.compute.v1.InstanceGroup.Builder,

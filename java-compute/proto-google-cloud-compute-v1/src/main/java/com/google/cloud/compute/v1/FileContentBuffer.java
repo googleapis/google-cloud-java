@@ -70,14 +70,14 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
-          case -1940193048:
+          case 207290600:
             {
               int rawValue = input.readEnum();
 
               fileType_ = rawValue;
               break;
             }
-          case -977689654:
+          case 1169793994:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -249,7 +249,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FileContentBuffer.FileType)
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 414659705;
+  public static final int CONTENT_FIELD_NUMBER = 146224249;
   private volatile java.lang.Object content_;
   /**
    *
@@ -258,7 +258,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>string content = 146224249;</code>
    *
    * @return The content.
    */
@@ -281,7 +281,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The raw content in the secure keys file.
    * </pre>
    *
-   * <code>string content = 414659705;</code>
+   * <code>string content = 146224249;</code>
    *
    * @return The bytes for content.
    */
@@ -298,7 +298,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int FILE_TYPE_FIELD_NUMBER = 294346781;
+  public static final int FILE_TYPE_FIELD_NUMBER = 25911325;
   private int fileType_;
   /**
    *
@@ -307,7 +307,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The file type of source file.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
    *
    * @return The enum numeric value on the wire for fileType.
    */
@@ -322,7 +322,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
    * The file type of source file.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
    *
    * @return The fileType.
    */
@@ -352,10 +352,10 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (fileType_
         != com.google.cloud.compute.v1.FileContentBuffer.FileType.UNDEFINED_FILE_TYPE.getNumber()) {
-      output.writeEnum(294346781, fileType_);
+      output.writeEnum(25911325, fileType_);
     }
     if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 414659705, content_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 146224249, content_);
     }
     unknownFields.writeTo(output);
   }
@@ -368,10 +368,10 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     size = 0;
     if (fileType_
         != com.google.cloud.compute.v1.FileContentBuffer.FileType.UNDEFINED_FILE_TYPE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(294346781, fileType_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(25911325, fileType_);
     }
     if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(414659705, content_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(146224249, content_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -676,7 +676,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>string content = 146224249;</code>
      *
      * @return The content.
      */
@@ -698,7 +698,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>string content = 146224249;</code>
      *
      * @return The bytes for content.
      */
@@ -720,7 +720,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>string content = 146224249;</code>
      *
      * @param value The content to set.
      * @return This builder for chaining.
@@ -741,7 +741,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>string content = 146224249;</code>
      *
      * @return This builder for chaining.
      */
@@ -758,7 +758,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The raw content in the secure keys file.
      * </pre>
      *
-     * <code>string content = 414659705;</code>
+     * <code>string content = 146224249;</code>
      *
      * @param value The bytes for content to set.
      * @return This builder for chaining.
@@ -782,7 +782,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      *
      * @return The enum numeric value on the wire for fileType.
      */
@@ -797,7 +797,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      *
      * @param value The enum numeric value on the wire for fileType to set.
      * @return This builder for chaining.
@@ -815,7 +815,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      *
      * @return The fileType.
      */
@@ -835,7 +835,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      *
      * @param value The fileType to set.
      * @return This builder for chaining.
@@ -856,7 +856,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * The file type of source file.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+     * <code>.google.cloud.compute.v1.FileContentBuffer.FileType file_type = 25911325;</code>
      *
      * @return This builder for chaining.
      */

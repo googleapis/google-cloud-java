@@ -55,7 +55,7 @@ public interface SubnetworkOrBuilder
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface SubnetworkOrBuilder
    * An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -120,7 +120,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>string gateway_address = 191431929;</code>
    *
    * @return The gatewayAddress.
    */
@@ -132,7 +132,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
    * </pre>
    *
-   * <code>string gateway_address = 459867385;</code>
+   * <code>string gateway_address = 191431929;</code>
    *
    * @return The bytes for gatewayAddress.
    */
@@ -195,7 +195,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>string ipv6_cidr_range = 4705802;</code>
    *
    * @return The ipv6CidrRange.
    */
@@ -207,7 +207,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
    * </pre>
    *
-   * <code>string ipv6_cidr_range = 273141258;</code>
+   * <code>string ipv6_cidr_range = 4705802;</code>
    *
    * @return The bytes for ipv6CidrRange.
    */
@@ -245,7 +245,7 @@ public interface SubnetworkOrBuilder
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
    *
    * @return Whether the logConfig field is set.
    */
@@ -257,7 +257,7 @@ public interface SubnetworkOrBuilder
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
    *
    * @return The logConfig.
    */
@@ -269,7 +269,7 @@ public interface SubnetworkOrBuilder
    * This field denotes the VPC flow logging options for this subnetwork. If logging is enabled, logs are exported to Cloud Logging.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 351299741;</code>
+   * <code>.google.cloud.compute.v1.SubnetworkLogConfig log_config = 82864285;</code>
    */
   com.google.cloud.compute.v1.SubnetworkLogConfigOrBuilder getLogConfigOrBuilder();
 
@@ -330,7 +330,7 @@ public interface SubnetworkOrBuilder
    * Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
    * </pre>
    *
-   * <code>bool private_ip_google_access = 421491790;</code>
+   * <code>bool private_ip_google_access = 153056334;</code>
    *
    * @return The privateIpGoogleAccess.
    */
@@ -374,7 +374,7 @@ public interface SubnetworkOrBuilder
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
    *
    * @return The enum numeric value on the wire for purpose.
    */
@@ -386,7 +386,7 @@ public interface SubnetworkOrBuilder
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>.google.cloud.compute.v1.Subnetwork.Purpose purpose = 47971614;</code>
    *
    * @return The purpose.
    */
@@ -512,7 +512,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -524,7 +524,7 @@ public interface SubnetworkOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -534,7 +534,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
@@ -546,7 +546,7 @@ public interface SubnetworkOrBuilder
    *
    *
    * <pre>
-   * [Output Only] The state of the subnetwork, which can be one of READY or DRAINING. A subnetwork that is READY is ready to be used. The state of DRAINING is only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY.
+   * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY CREATING: Subnetwork is provisioning DELETING: Subnetwork is being deleted UPDATING: Subnetwork is being updated
    * </pre>
    *
    * <code>.google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>

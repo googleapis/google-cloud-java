@@ -101,16 +101,28 @@ public interface PatchPerInstanceConfigsRegionInstanceGroupManagerRequestOrBuild
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagerPatchInstanceConfigReqResource field is set.
    */
   boolean hasRegionInstanceGroupManagerPatchInstanceConfigReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagerPatchInstanceConfigReqResource.
@@ -118,8 +130,14 @@ public interface PatchPerInstanceConfigsRegionInstanceGroupManagerRequestOrBuild
   com.google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq
       getRegionInstanceGroupManagerPatchInstanceConfigReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReq region_instance_group_manager_patch_instance_config_req_resource = 197682890 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagerPatchInstanceConfigReqOrBuilder

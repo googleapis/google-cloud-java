@@ -70,7 +70,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
    * </code>
    *
    * @return Whether the instanceActionDetails field is set.
@@ -84,7 +84,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
    * </code>
    *
    * @return The instanceActionDetails.
@@ -99,7 +99,7 @@ public interface InstanceManagedByIgmErrorOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 292224547;
+   * .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails instance_action_details = 23789091;
    * </code>
    */
   com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder

@@ -183,6 +183,7 @@ public class RegionTargetHttpProxiesClientTest {
     String id = "id3355";
     String kind = "kind3292052";
     String name = "name3373707";
+    boolean proxyBind = true;
     String region2 = "region2-690338393";
     String selfLink = "selfLink-1691268851";
     String urlMap = "urlMap-169850228";
@@ -194,6 +195,7 @@ public class RegionTargetHttpProxiesClientTest {
             .setId(id)
             .setKind(kind)
             .setName(name)
+            .setProxyBind(proxyBind)
             .setRegion(region2)
             .setSelfLink(selfLink)
             .setUrlMap(urlMap)

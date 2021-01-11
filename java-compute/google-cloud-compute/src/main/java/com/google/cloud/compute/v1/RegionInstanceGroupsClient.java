@@ -377,7 +377,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param instanceGroup Name of the regional instance group for which we want to list the
    *     instances.
-   * @param regionInstanceGroupsListInstancesRequestResource
+   * @param regionInstanceGroupsListInstancesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListInstancesPagedResponse listInstances(
@@ -409,10 +409,12 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *   String instanceGroup = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
    *   ListInstancesRegionInstanceGroupsRequest request = ListInstancesRegionInstanceGroupsRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
    *     .build();
    *   for (InstanceWithNamedPorts element : regionInstanceGroupsClient.listInstances(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -441,10 +443,12 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *   String instanceGroup = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
    *   ListInstancesRegionInstanceGroupsRequest request = ListInstancesRegionInstanceGroupsRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
    *     .build();
    *   ApiFuture&lt;ListInstancesPagedResponse&gt; future = regionInstanceGroupsClient.listInstancesPagedCallable().futureCall(request);
    *   // Do something
@@ -472,10 +476,12 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *   String instanceGroup = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupsListInstancesRequest regionInstanceGroupsListInstancesRequestResource = RegionInstanceGroupsListInstancesRequest.newBuilder().build();
    *   ListInstancesRegionInstanceGroupsRequest request = ListInstancesRegionInstanceGroupsRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupsListInstancesRequestResource(regionInstanceGroupsListInstancesRequestResource)
    *     .build();
    *   while (true) {
    *     RegionInstanceGroupsListInstances response = regionInstanceGroupsClient.listInstancesCallable().call(request);
@@ -517,7 +523,7 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
    * @param instanceGroup The name of the regional instance group where the named ports are updated.
-   * @param regionInstanceGroupsSetNamedPortsRequestResource
+   * @param regionInstanceGroupsSetNamedPortsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setNamedPorts(
@@ -547,10 +553,12 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *   String instanceGroup = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource = RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   SetNamedPortsRegionInstanceGroupRequest request = SetNamedPortsRegionInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupsSetNamedPortsRequestResource(regionInstanceGroupsSetNamedPortsRequestResource)
    *     .build();
    *   Operation response = regionInstanceGroupsClient.setNamedPorts(request);
    * }
@@ -574,10 +582,12 @@ public class RegionInstanceGroupsClient implements BackgroundResource {
    *   String instanceGroup = "";
    *   String project = "";
    *   String region = "";
+   *   RegionInstanceGroupsSetNamedPortsRequest regionInstanceGroupsSetNamedPortsRequestResource = RegionInstanceGroupsSetNamedPortsRequest.newBuilder().build();
    *   SetNamedPortsRegionInstanceGroupRequest request = SetNamedPortsRegionInstanceGroupRequest.newBuilder()
    *     .setInstanceGroup(instanceGroup)
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionInstanceGroupsSetNamedPortsRequestResource(regionInstanceGroupsSetNamedPortsRequestResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = regionInstanceGroupsClient.setNamedPortsCallable().futureCall(request);
    *   // Do something

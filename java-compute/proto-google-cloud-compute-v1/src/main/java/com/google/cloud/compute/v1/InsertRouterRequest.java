@@ -296,7 +296,15 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
   public static final int ROUTER_RESOURCE_FIELD_NUMBER = 155222084;
   private com.google.cloud.compute.v1.Router routerResource_;
   /**
-   * <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the routerResource field is set.
    */
@@ -305,7 +313,15 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
     return routerResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The routerResource.
    */
@@ -315,7 +331,17 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.compute.v1.Router.getDefaultInstance()
         : routerResource_;
   }
-  /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterOrBuilder getRouterResourceOrBuilder() {
     return getRouterResource();
@@ -1034,7 +1060,15 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.RouterOrBuilder>
         routerResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the routerResource field is set.
      */
@@ -1042,7 +1076,15 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
       return routerResourceBuilder_ != null || routerResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The routerResource.
      */
@@ -1055,7 +1097,17 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
         return routerResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setRouterResource(com.google.cloud.compute.v1.Router value) {
       if (routerResourceBuilder_ == null) {
         if (value == null) {
@@ -1069,7 +1121,17 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setRouterResource(com.google.cloud.compute.v1.Router.Builder builderForValue) {
       if (routerResourceBuilder_ == null) {
         routerResource_ = builderForValue.build();
@@ -1080,7 +1142,17 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeRouterResource(com.google.cloud.compute.v1.Router value) {
       if (routerResourceBuilder_ == null) {
         if (routerResource_ != null) {
@@ -1098,7 +1170,17 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearRouterResource() {
       if (routerResourceBuilder_ == null) {
         routerResource_ = null;
@@ -1110,13 +1192,33 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Router.Builder getRouterResourceBuilder() {
 
       onChanged();
       return getRouterResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.RouterOrBuilder getRouterResourceOrBuilder() {
       if (routerResourceBuilder_ != null) {
         return routerResourceBuilder_.getMessageOrBuilder();
@@ -1126,7 +1228,17 @@ public final class InsertRouterRequest extends com.google.protobuf.GeneratedMess
             : routerResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Router router_resource = 155222084;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Router router_resource = 155222084 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Router,
             com.google.cloud.compute.v1.Router.Builder,

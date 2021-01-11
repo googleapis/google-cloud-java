@@ -55,7 +55,7 @@ public interface ExternalVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface ExternalVpnGatewayOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -215,7 +215,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   int getLabelsCount();
   /**
@@ -225,7 +225,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -238,7 +238,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
@@ -248,7 +248,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
@@ -258,7 +258,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 500195327;</code>
+   * <code>map&lt;string, string&gt; labels = 231759871;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -294,7 +294,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Indicates the user-supplied redundancy type of this external VPN gateway.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
+   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
    * </code>
    *
    * @return The enum numeric value on the wire for redundancyType.
@@ -307,7 +307,7 @@ public interface ExternalVpnGatewayOrBuilder
    * Indicates the user-supplied redundancy type of this external VPN gateway.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;
+   * <code>.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 3008284;
    * </code>
    *
    * @return The redundancyType.
@@ -321,7 +321,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -333,7 +333,7 @@ public interface ExternalVpnGatewayOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

@@ -49,18 +49,44 @@ public interface PatchInterconnectRequestOrBuilder
   com.google.protobuf.ByteString getInterconnectBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the interconnectResource field is set.
    */
   boolean hasInterconnectResource();
   /**
-   * <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The interconnectResource.
    */
   com.google.cloud.compute.v1.Interconnect getInterconnectResource();
-  /** <code>.google.cloud.compute.v1.Interconnect interconnect_resource = 397611167;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Interconnect interconnect_resource = 129175711 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.InterconnectOrBuilder getInterconnectResourceOrBuilder();
 
   /**

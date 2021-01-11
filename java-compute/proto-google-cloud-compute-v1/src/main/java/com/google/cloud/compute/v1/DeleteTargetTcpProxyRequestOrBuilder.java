@@ -84,7 +84,7 @@ public interface DeleteTargetTcpProxyRequestOrBuilder
    * Name of the TargetTcpProxy resource to delete.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetTcpProxy.
    */
@@ -96,7 +96,7 @@ public interface DeleteTargetTcpProxyRequestOrBuilder
    * Name of the TargetTcpProxy resource to delete.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetTcpProxy.
    */

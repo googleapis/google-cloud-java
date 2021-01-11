@@ -33,7 +33,7 @@ public interface ListNodesNodeGroupsRequestOrBuilder
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -48,7 +48,7 @@ public interface ListNodesNodeGroupsRequestOrBuilder
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The bytes for filter.
    */
@@ -74,7 +74,7 @@ public interface ListNodesNodeGroupsRequestOrBuilder
    * Name of the NodeGroup resource whose nodes you want to list.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -86,7 +86,7 @@ public interface ListNodesNodeGroupsRequestOrBuilder
    * Name of the NodeGroup resource whose nodes you want to list.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
@@ -178,7 +178,7 @@ public interface ListNodesNodeGroupsRequestOrBuilder
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>bool return_partial_success = 248762934;</code>
    *
    * @return The returnPartialSuccess.
    */

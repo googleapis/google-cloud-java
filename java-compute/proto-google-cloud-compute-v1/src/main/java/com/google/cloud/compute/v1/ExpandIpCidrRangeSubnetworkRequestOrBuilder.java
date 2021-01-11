@@ -109,7 +109,7 @@ public interface ExpandIpCidrRangeSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource to update.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -121,23 +121,35 @@ public interface ExpandIpCidrRangeSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource to update.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the subnetworksExpandIpCidrRangeRequestResource field is set.
    */
   boolean hasSubnetworksExpandIpCidrRangeRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The subnetworksExpandIpCidrRangeRequestResource.
@@ -145,8 +157,14 @@ public interface ExpandIpCidrRangeSubnetworkRequestOrBuilder
   com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest
       getSubnetworksExpandIpCidrRangeRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 477014110;
+   * .google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequest subnetworks_expand_ip_cidr_range_request_resource = 208578654 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SubnetworksExpandIpCidrRangeRequestOrBuilder

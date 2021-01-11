@@ -30,7 +30,7 @@ public interface SslCertificatesScopedListOrBuilder
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SslCertificate> getSslCertificatesList();
   /**
@@ -40,7 +40,7 @@ public interface SslCertificatesScopedListOrBuilder
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
    */
   com.google.cloud.compute.v1.SslCertificate getSslCertificates(int index);
   /**
@@ -50,7 +50,7 @@ public interface SslCertificatesScopedListOrBuilder
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
    */
   int getSslCertificatesCount();
   /**
@@ -60,7 +60,7 @@ public interface SslCertificatesScopedListOrBuilder
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.SslCertificateOrBuilder>
       getSslCertificatesOrBuilderList();
@@ -71,7 +71,7 @@ public interface SslCertificatesScopedListOrBuilder
    * List of SslCertificates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 366006543;</code>
+   * <code>repeated .google.cloud.compute.v1.SslCertificate ssl_certificates = 97571087;</code>
    */
   com.google.cloud.compute.v1.SslCertificateOrBuilder getSslCertificatesOrBuilder(int index);
 

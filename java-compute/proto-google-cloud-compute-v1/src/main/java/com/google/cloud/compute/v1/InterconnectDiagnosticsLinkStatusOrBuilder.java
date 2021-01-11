@@ -30,7 +30,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry> getArpCachesList();
@@ -41,7 +41,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntry getArpCaches(int index);
@@ -52,7 +52,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
    * </code>
    */
   int getArpCachesCount();
@@ -63,7 +63,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder>
@@ -75,7 +75,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * A list of InterconnectDiagnostics.ARPEntry objects, describing the ARP neighbor entries seen on this link. This will be empty if the link is bundled
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 414591761;
+   * <code>repeated .google.cloud.compute.v1.InterconnectDiagnosticsARPEntry arp_caches = 146156305;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsARPEntryOrBuilder getArpCachesOrBuilder(
@@ -132,21 +132,21 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
   com.google.protobuf.ByteString getGoogleDemarcBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
    * </code>
    *
    * @return Whether the lacpStatus field is set.
    */
   boolean hasLacpStatus();
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
    * </code>
    *
    * @return The lacpStatus.
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus getLacpStatus();
   /**
-   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 361210415;
+   * <code>.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus lacp_status = 92774959;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatusOrBuilder
@@ -202,7 +202,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
    * </code>
    *
    * @return Whether the transmittingOpticalPower field is set.
@@ -216,7 +216,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
    * </code>
    *
    * @return The transmittingOpticalPower.
@@ -230,7 +230,7 @@ public interface InterconnectDiagnosticsLinkStatusOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 459431197;
+   * .google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPower transmitting_optical_power = 190995741;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectDiagnosticsLinkOpticalPowerOrBuilder

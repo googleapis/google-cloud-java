@@ -204,8 +204,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest
       instanceGroupManagersApplyUpdatesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersApplyUpdatesRequestResource field is set.
@@ -215,8 +221,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
     return instanceGroupManagersApplyUpdatesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersApplyUpdatesRequestResource.
@@ -229,8 +241,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
         : instanceGroupManagersApplyUpdatesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+   * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -866,8 +884,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequestOrBuilder>
         instanceGroupManagersApplyUpdatesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersApplyUpdatesRequestResource field is set.
@@ -877,8 +901,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
           || instanceGroupManagersApplyUpdatesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersApplyUpdatesRequestResource.
@@ -895,8 +925,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersApplyUpdatesRequestResource(
@@ -914,8 +950,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersApplyUpdatesRequestResource(
@@ -932,8 +974,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersApplyUpdatesRequestResource(
@@ -956,8 +1004,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersApplyUpdatesRequestResource() {
@@ -972,8 +1026,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest.Builder
@@ -983,8 +1043,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       return getInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequestOrBuilder
@@ -999,8 +1065,14 @@ public final class ApplyUpdatesToInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835;
+     * .google.cloud.compute.v1.InstanceGroupManagersApplyUpdatesRequest instance_group_managers_apply_updates_request_resource = 259242835 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

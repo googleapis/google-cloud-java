@@ -89,21 +89,7 @@ public final class AbandonInstancesInstanceGroupManagerRequest
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 1994907162:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceGroupManager_ = s;
-              break;
-            }
-          case -1727535166:
+          case 419948482:
             {
               com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest.Builder
                   subBuilder = null;
@@ -120,6 +106,20 @@ public final class AbandonInstancesInstanceGroupManagerRequest
                 instanceGroupManagersAbandonInstancesRequestResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case 1994907162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceGroupManager_ = s;
               break;
             }
           default:
@@ -208,12 +208,18 @@ public final class AbandonInstancesInstanceGroupManagerRequest
   }
 
   public static final int INSTANCE_GROUP_MANAGERS_ABANDON_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER =
-      320929016;
+      52493560;
   private com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest
       instanceGroupManagersAbandonInstancesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersAbandonInstancesRequestResource field is set.
@@ -223,8 +229,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
     return instanceGroupManagersAbandonInstancesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersAbandonInstancesRequestResource.
@@ -238,8 +250,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
         : instanceGroupManagersAbandonInstancesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+   * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -419,14 +437,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (instanceGroupManagersAbandonInstancesRequestResource_ != null) {
+      output.writeMessage(52493560, getInstanceGroupManagersAbandonInstancesRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getInstanceGroupManagerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
-    }
-    if (instanceGroupManagersAbandonInstancesRequestResource_ != null) {
-      output.writeMessage(320929016, getInstanceGroupManagersAbandonInstancesRequestResource());
     }
     unknownFields.writeTo(output);
   }
@@ -443,6 +461,11 @@ public final class AbandonInstancesInstanceGroupManagerRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (instanceGroupManagersAbandonInstancesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              52493560, getInstanceGroupManagersAbandonInstancesRequestResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
@@ -450,11 +473,6 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
-    }
-    if (instanceGroupManagersAbandonInstancesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              320929016, getInstanceGroupManagersAbandonInstancesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -933,8 +951,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequestOrBuilder>
         instanceGroupManagersAbandonInstancesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersAbandonInstancesRequestResource field is set.
@@ -944,8 +968,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
           || instanceGroupManagersAbandonInstancesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersAbandonInstancesRequestResource.
@@ -962,8 +992,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersAbandonInstancesRequestResource(
@@ -981,8 +1017,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersAbandonInstancesRequestResource(
@@ -999,8 +1041,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersAbandonInstancesRequestResource(
@@ -1023,8 +1071,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersAbandonInstancesRequestResource() {
@@ -1039,8 +1093,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest.Builder
@@ -1050,8 +1110,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       return getInstanceGroupManagersAbandonInstancesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequestOrBuilder
@@ -1066,8 +1132,14 @@ public final class AbandonInstancesInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 320929016;
+     * .google.cloud.compute.v1.InstanceGroupManagersAbandonInstancesRequest instance_group_managers_abandon_instances_request_resource = 52493560 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

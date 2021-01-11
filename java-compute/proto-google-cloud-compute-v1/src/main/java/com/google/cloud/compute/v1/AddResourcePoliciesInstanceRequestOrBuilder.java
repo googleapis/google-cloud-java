@@ -49,16 +49,28 @@ public interface AddResourcePoliciesInstanceRequestOrBuilder
   com.google.protobuf.ByteString getInstanceBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesAddResourcePoliciesRequestResource field is set.
    */
   boolean hasInstancesAddResourcePoliciesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesAddResourcePoliciesRequestResource.
@@ -66,8 +78,14 @@ public interface AddResourcePoliciesInstanceRequestOrBuilder
   com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequest
       getInstancesAddResourcePoliciesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 489351963;
+   * .google.cloud.compute.v1.InstancesAddResourcePoliciesRequest instances_add_resource_policies_request_resource = 220916507 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstancesAddResourcePoliciesRequestOrBuilder

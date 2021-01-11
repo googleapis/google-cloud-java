@@ -30,7 +30,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource to delete.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -42,7 +42,7 @@ public interface DeleteNodeGroupRequestOrBuilder
    * Name of the NodeGroup resource to delete.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */

@@ -109,7 +109,7 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -121,23 +121,35 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
    * Name of the Subnetwork resource.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the subnetworksSetPrivateIpGoogleAccessRequestResource field is set.
    */
   boolean hasSubnetworksSetPrivateIpGoogleAccessRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The subnetworksSetPrivateIpGoogleAccessRequestResource.
@@ -145,8 +157,14 @@ public interface SetPrivateIpGoogleAccessSubnetworkRequestOrBuilder
   com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest
       getSubnetworksSetPrivateIpGoogleAccessRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequestOrBuilder

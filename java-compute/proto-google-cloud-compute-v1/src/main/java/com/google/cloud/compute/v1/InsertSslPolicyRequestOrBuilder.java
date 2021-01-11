@@ -78,17 +78,43 @@ public interface InsertSslPolicyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sslPolicyResource field is set.
    */
   boolean hasSslPolicyResource();
   /**
-   * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sslPolicyResource.
    */
   com.google.cloud.compute.v1.SslPolicy getSslPolicyResource();
-  /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.SslPolicyOrBuilder getSslPolicyResourceOrBuilder();
 }

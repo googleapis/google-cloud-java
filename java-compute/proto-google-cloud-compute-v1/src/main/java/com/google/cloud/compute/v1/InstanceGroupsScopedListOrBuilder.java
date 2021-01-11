@@ -30,7 +30,7 @@ public interface InstanceGroupsScopedListOrBuilder
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   java.util.List<com.google.cloud.compute.v1.InstanceGroup> getInstanceGroupsList();
   /**
@@ -40,7 +40,7 @@ public interface InstanceGroupsScopedListOrBuilder
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   com.google.cloud.compute.v1.InstanceGroup getInstanceGroups(int index);
   /**
@@ -50,7 +50,7 @@ public interface InstanceGroupsScopedListOrBuilder
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   int getInstanceGroupsCount();
   /**
@@ -60,7 +60,7 @@ public interface InstanceGroupsScopedListOrBuilder
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupOrBuilder>
       getInstanceGroupsOrBuilderList();
@@ -71,7 +71,7 @@ public interface InstanceGroupsScopedListOrBuilder
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupsOrBuilder(int index);
 

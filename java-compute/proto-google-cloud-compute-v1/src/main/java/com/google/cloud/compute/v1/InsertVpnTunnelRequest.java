@@ -297,7 +297,15 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
   public static final int VPN_TUNNEL_RESOURCE_FIELD_NUMBER = 86839482;
   private com.google.cloud.compute.v1.VpnTunnel vpnTunnelResource_;
   /**
-   * <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the vpnTunnelResource field is set.
    */
@@ -306,7 +314,15 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
     return vpnTunnelResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The vpnTunnelResource.
    */
@@ -316,7 +332,17 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
         ? com.google.cloud.compute.v1.VpnTunnel.getDefaultInstance()
         : vpnTunnelResource_;
   }
-  /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.VpnTunnelOrBuilder getVpnTunnelResourceOrBuilder() {
     return getVpnTunnelResource();
@@ -1037,7 +1063,15 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.VpnTunnelOrBuilder>
         vpnTunnelResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the vpnTunnelResource field is set.
      */
@@ -1045,7 +1079,15 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
       return vpnTunnelResourceBuilder_ != null || vpnTunnelResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The vpnTunnelResource.
      */
@@ -1058,7 +1100,17 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
         return vpnTunnelResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setVpnTunnelResource(com.google.cloud.compute.v1.VpnTunnel value) {
       if (vpnTunnelResourceBuilder_ == null) {
         if (value == null) {
@@ -1072,7 +1124,17 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setVpnTunnelResource(
         com.google.cloud.compute.v1.VpnTunnel.Builder builderForValue) {
       if (vpnTunnelResourceBuilder_ == null) {
@@ -1084,7 +1146,17 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeVpnTunnelResource(com.google.cloud.compute.v1.VpnTunnel value) {
       if (vpnTunnelResourceBuilder_ == null) {
         if (vpnTunnelResource_ != null) {
@@ -1102,7 +1174,17 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearVpnTunnelResource() {
       if (vpnTunnelResourceBuilder_ == null) {
         vpnTunnelResource_ = null;
@@ -1114,13 +1196,33 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.VpnTunnel.Builder getVpnTunnelResourceBuilder() {
 
       onChanged();
       return getVpnTunnelResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.VpnTunnelOrBuilder getVpnTunnelResourceOrBuilder() {
       if (vpnTunnelResourceBuilder_ != null) {
         return vpnTunnelResourceBuilder_.getMessageOrBuilder();
@@ -1130,7 +1232,17 @@ public final class InsertVpnTunnelRequest extends com.google.protobuf.GeneratedM
             : vpnTunnelResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.VpnTunnel vpn_tunnel_resource = 86839482 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.VpnTunnel,
             com.google.cloud.compute.v1.VpnTunnel.Builder,

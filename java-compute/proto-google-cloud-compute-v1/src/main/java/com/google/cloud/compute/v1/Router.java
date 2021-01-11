@@ -156,21 +156,14 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case 1862979954:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              network_ = s;
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -673401110:
+          case 1474082538:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bgpPeers_ = new java.util.ArrayList<com.google.cloud.compute.v1.RouterBgpPeer>();
@@ -181,11 +174,18 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.RouterBgpPeer.parser(), extensionRegistry));
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
+              break;
+            }
+          case 1862979954:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              network_ = s;
               break;
             }
           default:
@@ -277,7 +277,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     return getBgp();
   }
 
-  public static final int BGP_PEERS_FIELD_NUMBER = 452695773;
+  public static final int BGP_PEERS_FIELD_NUMBER = 184260317;
   private java.util.List<com.google.cloud.compute.v1.RouterBgpPeer> bgpPeers_;
   /**
    *
@@ -286,7 +286,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.RouterBgpPeer> getBgpPeersList() {
@@ -299,7 +299,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.RouterBgpPeerOrBuilder>
@@ -313,7 +313,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   @java.lang.Override
   public int getBgpPeersCount() {
@@ -326,7 +326,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterBgpPeer getBgpPeers(int index) {
@@ -339,7 +339,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterBgpPeerOrBuilder getBgpPeersOrBuilder(int index) {
@@ -395,7 +395,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -404,7 +404,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -427,7 +427,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -827,7 +827,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -836,7 +836,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -859,7 +859,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -914,17 +914,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (!getNetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     for (int i = 0; i < bgpPeers_.size(); i++) {
-      output.writeMessage(452695773, bgpPeers_.get(i));
+      output.writeMessage(184260317, bgpPeers_.get(i));
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     unknownFields.writeTo(output);
   }
@@ -961,17 +961,17 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getNetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     for (int i = 0; i < bgpPeers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(452695773, bgpPeers_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(184260317, bgpPeers_.get(i));
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (!getNetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1702,7 +1702,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.RouterBgpPeer> getBgpPeersList() {
       if (bgpPeersBuilder_ == null) {
@@ -1718,7 +1718,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public int getBgpPeersCount() {
       if (bgpPeersBuilder_ == null) {
@@ -1734,7 +1734,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public com.google.cloud.compute.v1.RouterBgpPeer getBgpPeers(int index) {
       if (bgpPeersBuilder_ == null) {
@@ -1750,7 +1750,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder setBgpPeers(int index, com.google.cloud.compute.v1.RouterBgpPeer value) {
       if (bgpPeersBuilder_ == null) {
@@ -1772,7 +1772,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder setBgpPeers(
         int index, com.google.cloud.compute.v1.RouterBgpPeer.Builder builderForValue) {
@@ -1792,7 +1792,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder addBgpPeers(com.google.cloud.compute.v1.RouterBgpPeer value) {
       if (bgpPeersBuilder_ == null) {
@@ -1814,7 +1814,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder addBgpPeers(int index, com.google.cloud.compute.v1.RouterBgpPeer value) {
       if (bgpPeersBuilder_ == null) {
@@ -1836,7 +1836,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder addBgpPeers(com.google.cloud.compute.v1.RouterBgpPeer.Builder builderForValue) {
       if (bgpPeersBuilder_ == null) {
@@ -1855,7 +1855,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder addBgpPeers(
         int index, com.google.cloud.compute.v1.RouterBgpPeer.Builder builderForValue) {
@@ -1875,7 +1875,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder addAllBgpPeers(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.RouterBgpPeer> values) {
@@ -1895,7 +1895,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder clearBgpPeers() {
       if (bgpPeersBuilder_ == null) {
@@ -1914,7 +1914,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public Builder removeBgpPeers(int index) {
       if (bgpPeersBuilder_ == null) {
@@ -1933,7 +1933,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public com.google.cloud.compute.v1.RouterBgpPeer.Builder getBgpPeersBuilder(int index) {
       return getBgpPeersFieldBuilder().getBuilder(index);
@@ -1945,7 +1945,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public com.google.cloud.compute.v1.RouterBgpPeerOrBuilder getBgpPeersOrBuilder(int index) {
       if (bgpPeersBuilder_ == null) {
@@ -1961,7 +1961,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.RouterBgpPeerOrBuilder>
         getBgpPeersOrBuilderList() {
@@ -1978,7 +1978,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public com.google.cloud.compute.v1.RouterBgpPeer.Builder addBgpPeersBuilder() {
       return getBgpPeersFieldBuilder()
@@ -1991,7 +1991,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public com.google.cloud.compute.v1.RouterBgpPeer.Builder addBgpPeersBuilder(int index) {
       return getBgpPeersFieldBuilder()
@@ -2004,7 +2004,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.RouterBgpPeer.Builder>
         getBgpPeersBuilderList() {
@@ -2142,7 +2142,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2164,7 +2164,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2186,7 +2186,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2207,7 +2207,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2224,7 +2224,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -3477,7 +3477,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3499,7 +3499,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3521,7 +3521,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3542,7 +3542,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3559,7 +3559,7 @@ public final class Router extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

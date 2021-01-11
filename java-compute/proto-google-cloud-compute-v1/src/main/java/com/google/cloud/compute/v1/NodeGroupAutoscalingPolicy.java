@@ -76,12 +76,12 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
               mode_ = rawValue;
               break;
             }
-          case -1912864592:
+          case 234619056:
             {
               maxNodes_ = input.readInt32();
               break;
             }
-          case -28003296:
+          case 2119480352:
             {
               minNodes_ = input.readInt32();
               break;
@@ -140,8 +140,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * <code>UNDEFINED_MODE = 0;</code>
      */
     UNDEFINED_MODE(0),
-    /** <code>MODE_UNSPECIFIED = 371348091;</code> */
-    MODE_UNSPECIFIED(371348091),
+    /** <code>MODE_UNSPECIFIED = 102912635;</code> */
+    MODE_UNSPECIFIED(102912635),
     /** <code>OFF = 78159;</code> */
     OFF(78159),
     /** <code>ON = 2527;</code> */
@@ -161,8 +161,8 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * <code>UNDEFINED_MODE = 0;</code>
      */
     public static final int UNDEFINED_MODE_VALUE = 0;
-    /** <code>MODE_UNSPECIFIED = 371348091;</code> */
-    public static final int MODE_UNSPECIFIED_VALUE = 371348091;
+    /** <code>MODE_UNSPECIFIED = 102912635;</code> */
+    public static final int MODE_UNSPECIFIED_VALUE = 102912635;
     /** <code>OFF = 78159;</code> */
     public static final int OFF_VALUE = 78159;
     /** <code>ON = 2527;</code> */
@@ -196,7 +196,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_MODE;
-        case 371348091:
+        case 102912635:
           return MODE_UNSPECIFIED;
         case 78159:
           return OFF;
@@ -259,7 +259,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode)
   }
 
-  public static final int MAX_NODES_FIELD_NUMBER = 297762838;
+  public static final int MAX_NODES_FIELD_NUMBER = 29327382;
   private int maxNodes_;
   /**
    *
@@ -268,7 +268,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
-   * <code>int32 max_nodes = 297762838;</code>
+   * <code>int32 max_nodes = 29327382;</code>
    *
    * @return The maxNodes.
    */
@@ -277,7 +277,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
     return maxNodes_;
   }
 
-  public static final int MIN_NODES_FIELD_NUMBER = 533370500;
+  public static final int MIN_NODES_FIELD_NUMBER = 264935044;
   private int minNodes_;
   /**
    *
@@ -286,7 +286,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
    * The minimum number of nodes that the group should have.
    * </pre>
    *
-   * <code>int32 min_nodes = 533370500;</code>
+   * <code>int32 min_nodes = 264935044;</code>
    *
    * @return The minNodes.
    */
@@ -352,10 +352,10 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
       output.writeEnum(3357091, mode_);
     }
     if (maxNodes_ != 0) {
-      output.writeInt32(297762838, maxNodes_);
+      output.writeInt32(29327382, maxNodes_);
     }
     if (minNodes_ != 0) {
-      output.writeInt32(533370500, minNodes_);
+      output.writeInt32(264935044, minNodes_);
     }
     unknownFields.writeTo(output);
   }
@@ -371,10 +371,10 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3357091, mode_);
     }
     if (maxNodes_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(297762838, maxNodes_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(29327382, maxNodes_);
     }
     if (minNodes_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(533370500, minNodes_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(264935044, minNodes_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -690,7 +690,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
-     * <code>int32 max_nodes = 297762838;</code>
+     * <code>int32 max_nodes = 29327382;</code>
      *
      * @return The maxNodes.
      */
@@ -705,7 +705,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
-     * <code>int32 max_nodes = 297762838;</code>
+     * <code>int32 max_nodes = 29327382;</code>
      *
      * @param value The maxNodes to set.
      * @return This builder for chaining.
@@ -723,7 +723,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
      * </pre>
      *
-     * <code>int32 max_nodes = 297762838;</code>
+     * <code>int32 max_nodes = 29327382;</code>
      *
      * @return This builder for chaining.
      */
@@ -742,7 +742,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * The minimum number of nodes that the group should have.
      * </pre>
      *
-     * <code>int32 min_nodes = 533370500;</code>
+     * <code>int32 min_nodes = 264935044;</code>
      *
      * @return The minNodes.
      */
@@ -757,7 +757,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * The minimum number of nodes that the group should have.
      * </pre>
      *
-     * <code>int32 min_nodes = 533370500;</code>
+     * <code>int32 min_nodes = 264935044;</code>
      *
      * @param value The minNodes to set.
      * @return This builder for chaining.
@@ -775,7 +775,7 @@ public final class NodeGroupAutoscalingPolicy extends com.google.protobuf.Genera
      * The minimum number of nodes that the group should have.
      * </pre>
      *
-     * <code>int32 min_nodes = 533370500;</code>
+     * <code>int32 min_nodes = 264935044;</code>
      *
      * @return This builder for chaining.
      */

@@ -96,14 +96,7 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
               project_ = s;
               break;
             }
-          case 1994907162:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceGroupManager_ = s;
-              break;
-            }
-          case -287953974:
+          case 1859529674:
             {
               com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest.Builder
                   subBuilder = null;
@@ -121,6 +114,13 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
                     subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1994907162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceGroupManager_ = s;
               break;
             }
           default:
@@ -308,12 +308,18 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
   }
 
   public static final int
-      REGION_INSTANCE_GROUP_MANAGERS_DELETE_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 500876665;
+      REGION_INSTANCE_GROUP_MANAGERS_DELETE_INSTANCES_REQUEST_RESOURCE_FIELD_NUMBER = 232441209;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest
       regionInstanceGroupManagersDeleteInstancesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersDeleteInstancesRequestResource field is set.
@@ -323,8 +329,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagersDeleteInstancesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersDeleteInstancesRequestResource.
@@ -338,8 +350,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagersDeleteInstancesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -424,12 +442,12 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getInstanceGroupManagerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
-    }
     if (regionInstanceGroupManagersDeleteInstancesRequestResource_ != null) {
       output.writeMessage(
-          500876665, getRegionInstanceGroupManagersDeleteInstancesRequestResource());
+          232441209, getRegionInstanceGroupManagersDeleteInstancesRequestResource());
+    }
+    if (!getInstanceGroupManagerBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
     }
     unknownFields.writeTo(output);
   }
@@ -449,15 +467,15 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
+    if (regionInstanceGroupManagersDeleteInstancesRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              232441209, getRegionInstanceGroupManagersDeleteInstancesRequestResource());
+    }
     if (!getInstanceGroupManagerBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
-    }
-    if (regionInstanceGroupManagersDeleteInstancesRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              500876665, getRegionInstanceGroupManagersDeleteInstancesRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1160,8 +1178,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequestOrBuilder>
         regionInstanceGroupManagersDeleteInstancesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagersDeleteInstancesRequestResource field is set.
@@ -1171,8 +1195,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagersDeleteInstancesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagersDeleteInstancesRequestResource.
@@ -1189,8 +1219,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1208,8 +1244,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1226,8 +1268,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagersDeleteInstancesRequestResource(
@@ -1250,8 +1298,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersDeleteInstancesRequestResource() {
@@ -1266,8 +1320,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest.Builder
@@ -1278,8 +1338,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
           .getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequestOrBuilder
@@ -1295,8 +1361,14 @@ public final class DeleteInstancesRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 500876665;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersDeleteInstancesRequest region_instance_group_managers_delete_instances_request_resource = 232441209 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -74,6 +74,13 @@ public final class GetHealthRegionBackendServiceRequest
           case 0:
             done = true;
             break;
+          case 308084818:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              backendService_ = s;
+              break;
+            }
           case 903608986:
             {
               com.google.cloud.compute.v1.ResourceGroupReference.Builder subBuilder = null;
@@ -103,13 +110,6 @@ public final class GetHealthRegionBackendServiceRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1839398830:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              backendService_ = s;
               break;
             }
           default:
@@ -146,7 +146,7 @@ public final class GetHealthRegionBackendServiceRequest
             com.google.cloud.compute.v1.GetHealthRegionBackendServiceRequest.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -155,7 +155,7 @@ public final class GetHealthRegionBackendServiceRequest
    * Name of the BackendService resource for which to get health.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -178,7 +178,7 @@ public final class GetHealthRegionBackendServiceRequest
    * Name of the BackendService resource for which to get health.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -284,8 +284,14 @@ public final class GetHealthRegionBackendServiceRequest
   public static final int RESOURCE_GROUP_REFERENCE_RESOURCE_FIELD_NUMBER = 112951123;
   private com.google.cloud.compute.v1.ResourceGroupReference resourceGroupReferenceResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the resourceGroupReferenceResource field is set.
@@ -295,8 +301,14 @@ public final class GetHealthRegionBackendServiceRequest
     return resourceGroupReferenceResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The resourceGroupReferenceResource.
@@ -308,8 +320,14 @@ public final class GetHealthRegionBackendServiceRequest
         : resourceGroupReferenceResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+   * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -332,6 +350,9 @@ public final class GetHealthRegionBackendServiceRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getBackendServiceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
+    }
     if (resourceGroupReferenceResource_ != null) {
       output.writeMessage(112951123, getResourceGroupReferenceResource());
     }
@@ -340,9 +361,6 @@ public final class GetHealthRegionBackendServiceRequest
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
     }
     unknownFields.writeTo(output);
   }
@@ -353,6 +371,9 @@ public final class GetHealthRegionBackendServiceRequest
     if (size != -1) return size;
 
     size = 0;
+    if (!getBackendServiceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
+    }
     if (resourceGroupReferenceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -363,9 +384,6 @@ public final class GetHealthRegionBackendServiceRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -713,7 +731,7 @@ public final class GetHealthRegionBackendServiceRequest
      * Name of the BackendService resource for which to get health.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The backendService.
      */
@@ -735,7 +753,7 @@ public final class GetHealthRegionBackendServiceRequest
      * Name of the BackendService resource for which to get health.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for backendService.
      */
@@ -757,7 +775,7 @@ public final class GetHealthRegionBackendServiceRequest
      * Name of the BackendService resource for which to get health.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -778,7 +796,7 @@ public final class GetHealthRegionBackendServiceRequest
      * Name of the BackendService resource for which to get health.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -795,7 +813,7 @@ public final class GetHealthRegionBackendServiceRequest
      * Name of the BackendService resource for which to get health.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -1000,8 +1018,14 @@ public final class GetHealthRegionBackendServiceRequest
             com.google.cloud.compute.v1.ResourceGroupReferenceOrBuilder>
         resourceGroupReferenceResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the resourceGroupReferenceResource field is set.
@@ -1011,8 +1035,14 @@ public final class GetHealthRegionBackendServiceRequest
           || resourceGroupReferenceResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The resourceGroupReferenceResource.
@@ -1027,8 +1057,14 @@ public final class GetHealthRegionBackendServiceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setResourceGroupReferenceResource(
@@ -1046,8 +1082,14 @@ public final class GetHealthRegionBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setResourceGroupReferenceResource(
@@ -1062,8 +1104,14 @@ public final class GetHealthRegionBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeResourceGroupReferenceResource(
@@ -1086,8 +1134,14 @@ public final class GetHealthRegionBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearResourceGroupReferenceResource() {
@@ -1102,8 +1156,14 @@ public final class GetHealthRegionBackendServiceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ResourceGroupReference.Builder
@@ -1113,8 +1173,14 @@ public final class GetHealthRegionBackendServiceRequest
       return getResourceGroupReferenceResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ResourceGroupReferenceOrBuilder
@@ -1128,8 +1194,14 @@ public final class GetHealthRegionBackendServiceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123;
+     * .google.cloud.compute.v1.ResourceGroupReference resource_group_reference_resource = 112951123 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

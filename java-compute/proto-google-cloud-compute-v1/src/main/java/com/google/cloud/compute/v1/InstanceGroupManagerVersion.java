@@ -77,6 +77,13 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
               name_ = s;
               break;
             }
+          case 326502178:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceTemplate_ = s;
+              break;
+            }
           case 503041914:
             {
               com.google.cloud.compute.v1.FixedOrPercent.Builder subBuilder = null;
@@ -91,13 +98,6 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
                 targetSize_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1820981470:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceTemplate_ = s;
               break;
             }
           default:
@@ -134,16 +134,16 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.InstanceGroupManagerVersion.Builder.class);
   }
 
-  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 309248228;
+  public static final int INSTANCE_TEMPLATE_FIELD_NUMBER = 40812772;
   private volatile java.lang.Object instanceTemplate_;
   /**
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The instanceTemplate.
    */
@@ -163,10 +163,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+   * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
    * </pre>
    *
-   * <code>string instance_template = 309248228;</code>
+   * <code>string instance_template = 40812772;</code>
    *
    * @return The bytes for instanceTemplate.
    */
@@ -303,11 +303,11 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (!getInstanceTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 40812772, instanceTemplate_);
+    }
     if (targetSize_ != null) {
       output.writeMessage(62880239, getTargetSize());
-    }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 309248228, instanceTemplate_);
     }
     unknownFields.writeTo(output);
   }
@@ -321,12 +321,11 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (!getInstanceTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(40812772, instanceTemplate_);
+    }
     if (targetSize_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(62880239, getTargetSize());
-    }
-    if (!getInstanceTemplateBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(309248228, instanceTemplate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -654,10 +653,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return The instanceTemplate.
      */
@@ -676,10 +675,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return The bytes for instanceTemplate.
      */
@@ -698,10 +697,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @param value The instanceTemplate to set.
      * @return This builder for chaining.
@@ -719,10 +718,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @return This builder for chaining.
      */
@@ -736,10 +735,10 @@ public final class InstanceGroupManagerVersion extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached.
+     * The URL of the instance template that is specified for this managed instance group. The group uses this template to create new instances in the managed instance group until the `targetSize` for this version is reached. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE; in those cases, existing instances are updated until the `targetSize` for this version is reached.
      * </pre>
      *
-     * <code>string instance_template = 309248228;</code>
+     * <code>string instance_template = 40812772;</code>
      *
      * @param value The bytes for instanceTemplate to set.
      * @return This builder for chaining.

@@ -30,7 +30,7 @@ public interface ForwardingRulesScopedListOrBuilder
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   java.util.List<com.google.cloud.compute.v1.ForwardingRule> getForwardingRulesList();
   /**
@@ -40,7 +40,7 @@ public interface ForwardingRulesScopedListOrBuilder
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   com.google.cloud.compute.v1.ForwardingRule getForwardingRules(int index);
   /**
@@ -50,7 +50,7 @@ public interface ForwardingRulesScopedListOrBuilder
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   int getForwardingRulesCount();
   /**
@@ -60,7 +60,7 @@ public interface ForwardingRulesScopedListOrBuilder
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.ForwardingRuleOrBuilder>
       getForwardingRulesOrBuilderList();
@@ -71,7 +71,7 @@ public interface ForwardingRulesScopedListOrBuilder
    * A list of forwarding rules contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 315821365;</code>
+   * <code>repeated .google.cloud.compute.v1.ForwardingRule forwarding_rules = 47385909;</code>
    */
   com.google.cloud.compute.v1.ForwardingRuleOrBuilder getForwardingRulesOrBuilder(int index);
 

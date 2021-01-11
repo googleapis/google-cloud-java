@@ -30,7 +30,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 401868611;</code>
+   * <code>string authority = 133433155;</code>
    *
    * @return The authority.
    */
@@ -42,7 +42,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to set the authority header by the sender of notifications. See https://tools.ietf.org/html/rfc7540#section-8.1.2.3
    * </pre>
    *
-   * <code>string authority = 401868611;</code>
+   * <code>string authority = 133433155;</code>
    *
    * @return The bytes for authority.
    */
@@ -80,7 +80,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 300358300;</code>
+   * <code>string payload_name = 31922844;</code>
    *
    * @return The payloadName.
    */
@@ -92,7 +92,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. If specified, this field is used to populate the "name" field in gRPC requests.
    * </pre>
    *
-   * <code>string payload_name = 300358300;</code>
+   * <code>string payload_name = 31922844;</code>
    *
    * @return The bytes for payloadName.
    */
@@ -105,7 +105,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
+   * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
    *
    * @return Whether the resendInterval field is set.
    */
@@ -117,7 +117,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
+   * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
    *
    * @return The resendInterval.
    */
@@ -129,7 +129,7 @@ public interface NotificationEndpointGrpcSettingsOrBuilder
    * Optional. This field is used to configure how often to send a full update of all non-healthy backends. If unspecified, full updates are not sent. If specified, must be in the range between 600 seconds to 3600 seconds. Nanos are disallowed.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Duration resend_interval = 478288969;</code>
+   * <code>.google.cloud.compute.v1.Duration resend_interval = 209853513;</code>
    */
   com.google.cloud.compute.v1.DurationOrBuilder getResendIntervalOrBuilder();
 

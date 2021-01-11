@@ -73,14 +73,14 @@ public final class SslCertificateSelfManagedSslCertificate
           case 0:
             done = true;
             break;
-          case -1560671046:
+          case 586812602:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               certificate_ = s;
               break;
             }
-          case -1404318438:
+          case 743165210:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -121,7 +121,7 @@ public final class SslCertificateSelfManagedSslCertificate
             com.google.cloud.compute.v1.SslCertificateSelfManagedSslCertificate.Builder.class);
   }
 
-  public static final int CERTIFICATE_FIELD_NUMBER = 341787031;
+  public static final int CERTIFICATE_FIELD_NUMBER = 73351575;
   private volatile java.lang.Object certificate_;
   /**
    *
@@ -130,7 +130,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>string certificate = 73351575;</code>
    *
    * @return The certificate.
    */
@@ -153,7 +153,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>string certificate = 73351575;</code>
    *
    * @return The bytes for certificate.
    */
@@ -170,7 +170,7 @@ public final class SslCertificateSelfManagedSslCertificate
     }
   }
 
-  public static final int PRIVATE_KEY_FIELD_NUMBER = 361331107;
+  public static final int PRIVATE_KEY_FIELD_NUMBER = 92895651;
   private volatile java.lang.Object privateKey_;
   /**
    *
@@ -179,7 +179,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>string private_key = 92895651;</code>
    *
    * @return The privateKey.
    */
@@ -202,7 +202,7 @@ public final class SslCertificateSelfManagedSslCertificate
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>string private_key = 92895651;</code>
    *
    * @return The bytes for privateKey.
    */
@@ -234,10 +234,10 @@ public final class SslCertificateSelfManagedSslCertificate
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getCertificateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 341787031, certificate_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 73351575, certificate_);
     }
     if (!getPrivateKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 361331107, privateKey_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 92895651, privateKey_);
     }
     unknownFields.writeTo(output);
   }
@@ -249,10 +249,10 @@ public final class SslCertificateSelfManagedSslCertificate
 
     size = 0;
     if (!getCertificateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341787031, certificate_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(73351575, certificate_);
     }
     if (!getPrivateKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(361331107, privateKey_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(92895651, privateKey_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -570,7 +570,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>string certificate = 73351575;</code>
      *
      * @return The certificate.
      */
@@ -592,7 +592,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>string certificate = 73351575;</code>
      *
      * @return The bytes for certificate.
      */
@@ -614,7 +614,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>string certificate = 73351575;</code>
      *
      * @param value The certificate to set.
      * @return This builder for chaining.
@@ -635,7 +635,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>string certificate = 73351575;</code>
      *
      * @return This builder for chaining.
      */
@@ -652,7 +652,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
      * </pre>
      *
-     * <code>string certificate = 341787031;</code>
+     * <code>string certificate = 73351575;</code>
      *
      * @param value The bytes for certificate to set.
      * @return This builder for chaining.
@@ -676,7 +676,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>string private_key = 92895651;</code>
      *
      * @return The privateKey.
      */
@@ -698,7 +698,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>string private_key = 92895651;</code>
      *
      * @return The bytes for privateKey.
      */
@@ -720,7 +720,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>string private_key = 92895651;</code>
      *
      * @param value The privateKey to set.
      * @return This builder for chaining.
@@ -741,7 +741,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>string private_key = 92895651;</code>
      *
      * @return This builder for chaining.
      */
@@ -758,7 +758,7 @@ public final class SslCertificateSelfManagedSslCertificate
      * A write-only private key in PEM format. Only insert requests will include this field.
      * </pre>
      *
-     * <code>string private_key = 361331107;</code>
+     * <code>string private_key = 92895651;</code>
      *
      * @param value The bytes for privateKey to set.
      * @return This builder for chaining.

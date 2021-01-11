@@ -32,7 +32,7 @@ public interface PathMatcherOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathMatcher's defaultRouteAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
    *
    * @return Whether the defaultRouteAction field is set.
    */
@@ -46,7 +46,7 @@ public interface PathMatcherOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathMatcher's defaultRouteAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
    *
    * @return The defaultRouteAction.
    */
@@ -60,7 +60,7 @@ public interface PathMatcherOrBuilder
    * UrlMaps for external HTTP(S) load balancers support only the urlRewrite action within a pathMatcher's defaultRouteAction.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 378919466;</code>
+   * <code>.google.cloud.compute.v1.HttpRouteAction default_route_action = 110484010;</code>
    */
   com.google.cloud.compute.v1.HttpRouteActionOrBuilder getDefaultRouteActionOrBuilder();
 
@@ -78,7 +78,7 @@ public interface PathMatcherOrBuilder
    * - compute.backendServices.use
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>string default_service = 101806775;</code>
    *
    * @return The defaultService.
    */
@@ -97,7 +97,7 @@ public interface PathMatcherOrBuilder
    * - compute.backendServices.use
    * </pre>
    *
-   * <code>string default_service = 370242231;</code>
+   * <code>string default_service = 101806775;</code>
    *
    * @return The bytes for defaultService.
    */
@@ -112,7 +112,7 @@ public interface PathMatcherOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
    *
    * @return Whether the defaultUrlRedirect field is set.
    */
@@ -126,7 +126,7 @@ public interface PathMatcherOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
    *
    * @return The defaultUrlRedirect.
    */
@@ -140,7 +140,7 @@ public interface PathMatcherOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 359503338;</code>
+   * <code>.google.cloud.compute.v1.HttpRedirectAction default_url_redirect = 91067882;</code>
    */
   com.google.cloud.compute.v1.HttpRedirectActionOrBuilder getDefaultUrlRedirectOrBuilder();
 
@@ -151,7 +151,7 @@ public interface PathMatcherOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -163,7 +163,7 @@ public interface PathMatcherOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -179,7 +179,7 @@ public interface PathMatcherOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -194,7 +194,7 @@ public interface PathMatcherOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return The headerAction.
    */
@@ -209,7 +209,7 @@ public interface PathMatcherOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder();
 
@@ -308,7 +308,7 @@ public interface PathMatcherOrBuilder
    * Within a given pathMatcher, you can set only one of pathRules or routeRules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 107856769;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HttpRouteRule> getRouteRulesList();
   /**
@@ -319,7 +319,7 @@ public interface PathMatcherOrBuilder
    * Within a given pathMatcher, you can set only one of pathRules or routeRules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 107856769;</code>
    */
   com.google.cloud.compute.v1.HttpRouteRule getRouteRules(int index);
   /**
@@ -330,7 +330,7 @@ public interface PathMatcherOrBuilder
    * Within a given pathMatcher, you can set only one of pathRules or routeRules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 107856769;</code>
    */
   int getRouteRulesCount();
   /**
@@ -341,7 +341,7 @@ public interface PathMatcherOrBuilder
    * Within a given pathMatcher, you can set only one of pathRules or routeRules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 107856769;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HttpRouteRuleOrBuilder>
       getRouteRulesOrBuilderList();
@@ -353,7 +353,7 @@ public interface PathMatcherOrBuilder
    * Within a given pathMatcher, you can set only one of pathRules or routeRules.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 376292225;</code>
+   * <code>repeated .google.cloud.compute.v1.HttpRouteRule route_rules = 107856769;</code>
    */
   com.google.cloud.compute.v1.HttpRouteRuleOrBuilder getRouteRulesOrBuilder(int index);
 }

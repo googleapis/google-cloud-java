@@ -30,7 +30,7 @@ public interface HealthCheckOrBuilder
    * How often (in seconds) to send a health check. The default value is 5 seconds.
    * </pre>
    *
-   * <code>int32 check_interval_sec = 345561006;</code>
+   * <code>int32 check_interval_sec = 77125550;</code>
    *
    * @return The checkIntervalSec.
    */
@@ -68,7 +68,7 @@ public interface HealthCheckOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -80,7 +80,7 @@ public interface HealthCheckOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -108,7 +108,7 @@ public interface HealthCheckOrBuilder
    * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
    * </pre>
    *
-   * <code>int32 healthy_threshold = 403212361;</code>
+   * <code>int32 healthy_threshold = 134776905;</code>
    *
    * @return The healthyThreshold.
    */
@@ -130,33 +130,33 @@ public interface HealthCheckOrBuilder
   com.google.cloud.compute.v1.HTTP2HealthCheckOrBuilder getHttp2HealthCheckOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
    *
    * @return Whether the httpHealthCheck field is set.
    */
   boolean hasHttpHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
    *
    * @return The httpHealthCheck.
    */
   com.google.cloud.compute.v1.HTTPHealthCheck getHttpHealthCheck();
-  /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+  /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
   com.google.cloud.compute.v1.HTTPHealthCheckOrBuilder getHttpHealthCheckOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
    *
    * @return Whether the httpsHealthCheck field is set.
    */
   boolean hasHttpsHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
    *
    * @return The httpsHealthCheck.
    */
   com.google.cloud.compute.v1.HTTPSHealthCheck getHttpsHealthCheck();
-  /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+  /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
   com.google.cloud.compute.v1.HTTPSHealthCheckOrBuilder getHttpsHealthCheckOrBuilder();
 
   /**
@@ -208,6 +208,41 @@ public interface HealthCheckOrBuilder
    * @return The bytes for kind.
    */
   com.google.protobuf.ByteString getKindBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configure logging on this health check.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+   *
+   * @return Whether the logConfig field is set.
+   */
+  boolean hasLogConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configure logging on this health check.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+   *
+   * @return The logConfig.
+   */
+  com.google.cloud.compute.v1.HealthCheckLogConfig getLogConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configure logging on this health check.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+   */
+  com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder getLogConfigOrBuilder();
 
   /**
    *
@@ -266,7 +301,7 @@ public interface HealthCheckOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -278,40 +313,40 @@ public interface HealthCheckOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
   com.google.protobuf.ByteString getSelfLinkBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
    *
    * @return Whether the sslHealthCheck field is set.
    */
   boolean hasSslHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
    *
    * @return The sslHealthCheck.
    */
   com.google.cloud.compute.v1.SSLHealthCheck getSslHealthCheck();
-  /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+  /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
   com.google.cloud.compute.v1.SSLHealthCheckOrBuilder getSslHealthCheckOrBuilder();
 
   /**
-   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
    *
    * @return Whether the tcpHealthCheck field is set.
    */
   boolean hasTcpHealthCheck();
   /**
-   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
    *
    * @return The tcpHealthCheck.
    */
   com.google.cloud.compute.v1.TCPHealthCheck getTcpHealthCheck();
-  /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+  /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
   com.google.cloud.compute.v1.TCPHealthCheckOrBuilder getTcpHealthCheckOrBuilder();
 
   /**

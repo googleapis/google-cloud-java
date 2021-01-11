@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-shared-config</artifactId>
-    <version>0.9.3</version>
+    <version>0.9.4</version>
   </parent>
 
   <name>Google Compute Engine BOM</name>
@@ -38,10 +38,6 @@
     <developerConnection>scm:git:git@github.com:googleapis/java-compute.git</developerConnection>
     <url>https://github.com/googleapis/java-compute</url>
   </scm>
-
-  <properties>
-    <maven.antrun.skip>true</maven.antrun.skip>
-  </properties>
 
   <distributionManagement>
     <snapshotRepository>

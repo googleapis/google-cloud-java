@@ -78,16 +78,28 @@ public interface SetProxyHeaderTargetTcpProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetTcpProxiesSetProxyHeaderRequestResource field is set.
    */
   boolean hasTargetTcpProxiesSetProxyHeaderRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetTcpProxiesSetProxyHeaderRequestResource.
@@ -95,8 +107,14 @@ public interface SetProxyHeaderTargetTcpProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest
       getTargetTcpProxiesSetProxyHeaderRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequest target_tcp_proxies_set_proxy_header_request_resource = 219958339 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetTcpProxiesSetProxyHeaderRequestOrBuilder
@@ -109,7 +127,7 @@ public interface SetProxyHeaderTargetTcpProxyRequestOrBuilder
    * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetTcpProxy.
    */
@@ -121,7 +139,7 @@ public interface SetProxyHeaderTargetTcpProxyRequestOrBuilder
    * Name of the TargetTcpProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetTcpProxy.
    */

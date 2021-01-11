@@ -173,10 +173,10 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_PORT_SPECIFICATION(0),
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     USE_FIXED_PORT(190235748),
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
-    USE_NAMED_PORT(349300671),
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
-    USE_SERVING_PORT(362637516),
+    /** <code>USE_NAMED_PORT = 80865215;</code> */
+    USE_NAMED_PORT(80865215),
+    /** <code>USE_SERVING_PORT = 94202060;</code> */
+    USE_SERVING_PORT(94202060),
     UNRECOGNIZED(-1),
     ;
 
@@ -192,10 +192,10 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_PORT_SPECIFICATION_VALUE = 0;
     /** <code>USE_FIXED_PORT = 190235748;</code> */
     public static final int USE_FIXED_PORT_VALUE = 190235748;
-    /** <code>USE_NAMED_PORT = 349300671;</code> */
-    public static final int USE_NAMED_PORT_VALUE = 349300671;
-    /** <code>USE_SERVING_PORT = 362637516;</code> */
-    public static final int USE_SERVING_PORT_VALUE = 362637516;
+    /** <code>USE_NAMED_PORT = 80865215;</code> */
+    public static final int USE_NAMED_PORT_VALUE = 80865215;
+    /** <code>USE_SERVING_PORT = 94202060;</code> */
+    public static final int USE_SERVING_PORT_VALUE = 94202060;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -225,9 +225,9 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_PORT_SPECIFICATION;
         case 190235748:
           return USE_FIXED_PORT;
-        case 349300671:
+        case 80865215:
           return USE_NAMED_PORT;
-        case 362637516:
+        case 94202060:
           return USE_SERVING_PORT;
         default:
           return null;
@@ -307,8 +307,8 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     UNDEFINED_PROXY_HEADER(0),
     /** <code>NONE = 2402104;</code> */
     NONE(2402104),
-    /** <code>PROXY_V1 = 334352940;</code> */
-    PROXY_V1(334352940),
+    /** <code>PROXY_V1 = 65917484;</code> */
+    PROXY_V1(65917484),
     UNRECOGNIZED(-1),
     ;
 
@@ -324,8 +324,8 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
     public static final int UNDEFINED_PROXY_HEADER_VALUE = 0;
     /** <code>NONE = 2402104;</code> */
     public static final int NONE_VALUE = 2402104;
-    /** <code>PROXY_V1 = 334352940;</code> */
-    public static final int PROXY_V1_VALUE = 334352940;
+    /** <code>PROXY_V1 = 65917484;</code> */
+    public static final int PROXY_V1_VALUE = 65917484;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -355,7 +355,7 @@ public final class SSLHealthCheck extends com.google.protobuf.GeneratedMessageV3
           return UNDEFINED_PROXY_HEADER;
         case 2402104:
           return NONE;
-        case 334352940:
+        case 65917484:
           return PROXY_V1;
         default:
           return null;

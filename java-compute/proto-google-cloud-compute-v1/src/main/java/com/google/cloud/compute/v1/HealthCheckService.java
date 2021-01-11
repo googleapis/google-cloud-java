@@ -121,11 +121,45 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
               creationTimestamp_ = s;
               break;
             }
+          case 1106344274:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                notificationEndpoints_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              notificationEndpoints_.add(s);
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               region_ = s;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1439481202:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                healthChecks_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              healthChecks_.add(s);
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1877428002:
@@ -140,40 +174,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
               int rawValue = input.readEnum();
 
               healthStatusAggregationPolicy_ = rawValue;
-              break;
-            }
-          case -1041139374:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                notificationEndpoints_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              notificationEndpoints_.add(s);
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -708002446:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                healthChecks_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              healthChecks_.add(s);
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -243,8 +243,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY(0),
     /** <code>AND = 64951;</code> */
     AND(64951),
-    /** <code>NO_AGGREGATION = 426445124;</code> */
-    NO_AGGREGATION(426445124),
+    /** <code>NO_AGGREGATION = 158009668;</code> */
+    NO_AGGREGATION(158009668),
     UNRECOGNIZED(-1),
     ;
 
@@ -260,8 +260,8 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     public static final int UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY_VALUE = 0;
     /** <code>AND = 64951;</code> */
     public static final int AND_VALUE = 64951;
-    /** <code>NO_AGGREGATION = 426445124;</code> */
-    public static final int NO_AGGREGATION_VALUE = 426445124;
+    /** <code>NO_AGGREGATION = 158009668;</code> */
+    public static final int NO_AGGREGATION_VALUE = 158009668;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -291,7 +291,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
           return UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY;
         case 64951:
           return AND;
-        case 426445124:
+        case 158009668:
           return NO_AGGREGATION;
         default:
           return null;
@@ -398,7 +398,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -407,7 +407,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -430,7 +430,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -496,7 +496,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int HEALTH_CHECKS_FIELD_NUMBER = 448370606;
+  public static final int HEALTH_CHECKS_FIELD_NUMBER = 179935150;
   private com.google.protobuf.LazyStringList healthChecks_;
   /**
    *
@@ -505,7 +505,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return A list containing the healthChecks.
    */
@@ -519,7 +519,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @return The count of healthChecks.
    */
@@ -533,7 +533,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the element to return.
    * @return The healthChecks at the given index.
@@ -548,7 +548,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
    * </pre>
    *
-   * <code>repeated string health_checks = 448370606;</code>
+   * <code>repeated string health_checks = 179935150;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the healthChecks at the given index.
@@ -813,7 +813,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     return networkEndpointGroups_.getByteString(index);
   }
 
-  public static final int NOTIFICATION_ENDPOINTS_FIELD_NUMBER = 406728490;
+  public static final int NOTIFICATION_ENDPOINTS_FIELD_NUMBER = 138293034;
   private com.google.protobuf.LazyStringList notificationEndpoints_;
   /**
    *
@@ -822,7 +822,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @return A list containing the notificationEndpoints.
    */
@@ -836,7 +836,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @return The count of notificationEndpoints.
    */
@@ -850,7 +850,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @param index The index of the element to return.
    * @return The notificationEndpoints at the given index.
@@ -865,7 +865,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
    * </pre>
    *
-   * <code>repeated string notification_endpoints = 406728490;</code>
+   * <code>repeated string notification_endpoints = 138293034;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the notificationEndpoints at the given index.
@@ -923,7 +923,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -932,7 +932,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -955,7 +955,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1002,8 +1002,22 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    for (int i = 0; i < notificationEndpoints_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 138293034, notificationEndpoints_.getRaw(i));
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
+    for (int i = 0; i < healthChecks_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 179935150, healthChecks_.getRaw(i));
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
@@ -1013,20 +1027,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
             .UNDEFINED_HEALTH_STATUS_AGGREGATION_POLICY
             .getNumber()) {
       output.writeEnum(253163129, healthStatusAggregationPolicy_);
-    }
-    for (int i = 0; i < notificationEndpoints_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 406728490, notificationEndpoints_.getRaw(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    for (int i = 0; i < healthChecks_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 448370606, healthChecks_.getRaw(i));
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -1058,8 +1058,30 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < notificationEndpoints_.size(); i++) {
+        dataSize += computeStringSizeNoTag(notificationEndpoints_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getNotificationEndpointsList().size();
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < healthChecks_.size(); i++) {
+        dataSize += computeStringSizeNoTag(healthChecks_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getHealthChecksList().size();
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
@@ -1071,28 +1093,6 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               253163129, healthStatusAggregationPolicy_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < notificationEndpoints_.size(); i++) {
-        dataSize += computeStringSizeNoTag(notificationEndpoints_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getNotificationEndpointsList().size();
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < healthChecks_.size(); i++) {
-        dataSize += computeStringSizeNoTag(healthChecks_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getHealthChecksList().size();
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1644,7 +1644,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1666,7 +1666,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1688,7 +1688,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1709,7 +1709,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1726,7 +1726,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1864,7 +1864,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @return A list containing the healthChecks.
      */
@@ -1878,7 +1878,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @return The count of healthChecks.
      */
@@ -1892,7 +1892,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param index The index of the element to return.
      * @return The healthChecks at the given index.
@@ -1907,7 +1907,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the healthChecks at the given index.
@@ -1922,7 +1922,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param index The index to set the value at.
      * @param value The healthChecks to set.
@@ -1944,7 +1944,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param value The healthChecks to add.
      * @return This builder for chaining.
@@ -1965,7 +1965,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param values The healthChecks to add.
      * @return This builder for chaining.
@@ -1983,7 +1983,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @return This builder for chaining.
      */
@@ -2000,7 +2000,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks&lt;/code? must belong to the same region as zones of NEGs.
      * </pre>
      *
-     * <code>repeated string health_checks = 448370606;</code>
+     * <code>repeated string health_checks = 179935150;</code>
      *
      * @param value The bytes of the healthChecks to add.
      * @return This builder for chaining.
@@ -2637,7 +2637,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @return A list containing the notificationEndpoints.
      */
@@ -2651,7 +2651,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @return The count of notificationEndpoints.
      */
@@ -2665,7 +2665,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @param index The index of the element to return.
      * @return The notificationEndpoints at the given index.
@@ -2680,7 +2680,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the notificationEndpoints at the given index.
@@ -2695,7 +2695,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @param index The index to set the value at.
      * @param value The notificationEndpoints to set.
@@ -2717,7 +2717,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @param value The notificationEndpoints to add.
      * @return This builder for chaining.
@@ -2738,7 +2738,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @param values The notificationEndpoints to add.
      * @return This builder for chaining.
@@ -2756,7 +2756,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @return This builder for chaining.
      */
@@ -2773,7 +2773,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * List of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regional HealthCheckService, NotificationEndpoint must be regional and in the same region. For global HealthCheckService, NotificationEndpoint must be global.
      * </pre>
      *
-     * <code>repeated string notification_endpoints = 406728490;</code>
+     * <code>repeated string notification_endpoints = 138293034;</code>
      *
      * @param value The bytes of the notificationEndpoints to add.
      * @return This builder for chaining.
@@ -2903,7 +2903,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2925,7 +2925,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2947,7 +2947,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2968,7 +2968,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2985,7 +2985,7 @@ public final class HealthCheckService extends com.google.protobuf.GeneratedMessa
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

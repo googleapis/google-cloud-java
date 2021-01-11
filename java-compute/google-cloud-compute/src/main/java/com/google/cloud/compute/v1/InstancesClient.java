@@ -177,7 +177,7 @@ public class InstancesClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to add to this instance.
-   * @param accessConfigResource
+   * @param accessConfigResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addAccessConfig(
@@ -205,11 +205,13 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   String instance = "";
    *   String networkInterface = "";
    *   String project = "";
    *   String zone = "";
    *   AddAccessConfigInstanceRequest request = AddAccessConfigInstanceRequest.newBuilder()
+   *     .setAccessConfigResource(accessConfigResource)
    *     .setInstance(instance)
    *     .setNetworkInterface(networkInterface)
    *     .setProject(project)
@@ -234,11 +236,13 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   String instance = "";
    *   String networkInterface = "";
    *   String project = "";
    *   String zone = "";
    *   AddAccessConfigInstanceRequest request = AddAccessConfigInstanceRequest.newBuilder()
+   *     .setAccessConfigResource(accessConfigResource)
    *     .setInstance(instance)
    *     .setNetworkInterface(networkInterface)
    *     .setProject(project)
@@ -274,7 +278,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance The instance name for this request.
-   * @param instancesAddResourcePoliciesRequestResource
+   * @param instancesAddResourcePoliciesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addResourcePolicies(
@@ -303,10 +307,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddResourcePoliciesInstanceRequest request = AddResourcePoliciesInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesAddResourcePoliciesRequestResource(instancesAddResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -331,10 +337,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesAddResourcePoliciesRequest instancesAddResourcePoliciesRequestResource = InstancesAddResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   AddResourcePoliciesInstanceRequest request = AddResourcePoliciesInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesAddResourcePoliciesRequestResource(instancesAddResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -476,7 +484,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance The instance name for this request.
-   * @param attachedDiskResource
+   * @param attachedDiskResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation attachDisk(
@@ -501,10 +509,12 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   String instance = "";
    *   String project = "";
    *   String zone = "";
    *   AttachDiskInstanceRequest request = AttachDiskInstanceRequest.newBuilder()
+   *     .setAttachedDiskResource(attachedDiskResource)
    *     .setInstance(instance)
    *     .setProject(project)
    *     .setZone(zone)
@@ -530,10 +540,12 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AttachedDisk attachedDiskResource = AttachedDisk.newBuilder().build();
    *   String instance = "";
    *   String project = "";
    *   String zone = "";
    *   AttachDiskInstanceRequest request = AttachDiskInstanceRequest.newBuilder()
+   *     .setAttachedDiskResource(attachedDiskResource)
    *     .setInstance(instance)
    *     .setProject(project)
    *     .setZone(zone)
@@ -1351,7 +1363,7 @@ public class InstancesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
-   * @param instanceResource
+   * @param instanceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String zone, Instance instanceResource) {
@@ -1372,9 +1384,11 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   Instance instanceResource = Instance.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertInstanceRequest request = InsertInstanceRequest.newBuilder()
+   *     .setInstanceResource(instanceResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1397,9 +1411,11 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   Instance instanceResource = Instance.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   InsertInstanceRequest request = InsertInstanceRequest.newBuilder()
+   *     .setInstanceResource(instanceResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1680,7 +1696,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance The instance name for this request.
-   * @param instancesRemoveResourcePoliciesRequestResource
+   * @param instancesRemoveResourcePoliciesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation removeResourcePolicies(
@@ -1708,10 +1724,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RemoveResourcePoliciesInstanceRequest request = RemoveResourcePoliciesInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesRemoveResourcePoliciesRequestResource(instancesRemoveResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -1735,10 +1753,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesRemoveResourcePoliciesRequest instancesRemoveResourcePoliciesRequestResource = InstancesRemoveResourcePoliciesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   RemoveResourcePoliciesInstanceRequest request = RemoveResourcePoliciesInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesRemoveResourcePoliciesRequestResource(instancesRemoveResourcePoliciesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2042,7 +2062,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param zoneSetPolicyRequestResource
+   * @param zoneSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -2071,10 +2091,12 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyInstanceRequest request = SetIamPolicyInstanceRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   Policy response = instancesClient.setIamPolicy(request);
    * }
@@ -2098,10 +2120,12 @@ public class InstancesClient implements BackgroundResource {
    *   String project = "";
    *   String resource = "";
    *   String zone = "";
+   *   ZoneSetPolicyRequest zoneSetPolicyRequestResource = ZoneSetPolicyRequest.newBuilder().build();
    *   SetIamPolicyInstanceRequest request = SetIamPolicyInstanceRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
    *     .setZone(zone)
+   *     .setZoneSetPolicyRequestResource(zoneSetPolicyRequestResource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = instancesClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
@@ -2133,7 +2157,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param instancesSetLabelsRequestResource
+   * @param instancesSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLabels(
@@ -2161,10 +2185,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetLabelsInstanceRequest request = SetLabelsInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2189,10 +2215,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetLabelsRequest instancesSetLabelsRequestResource = InstancesSetLabelsRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetLabelsInstanceRequest request = SetLabelsInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetLabelsRequestResource(instancesSetLabelsRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2226,7 +2254,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param instancesSetMachineResourcesRequestResource
+   * @param instancesSetMachineResourcesRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setMachineResources(
@@ -2255,10 +2283,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMachineResourcesInstanceRequest request = SetMachineResourcesInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2283,10 +2313,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetMachineResourcesRequest instancesSetMachineResourcesRequestResource = InstancesSetMachineResourcesRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMachineResourcesInstanceRequest request = SetMachineResourcesInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetMachineResourcesRequestResource(instancesSetMachineResourcesRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2320,7 +2352,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param instancesSetMachineTypeRequestResource
+   * @param instancesSetMachineTypeRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setMachineType(
@@ -2347,10 +2379,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMachineTypeInstanceRequest request = SetMachineTypeInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2374,10 +2408,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetMachineTypeRequest instancesSetMachineTypeRequestResource = InstancesSetMachineTypeRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMachineTypeInstanceRequest request = SetMachineTypeInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetMachineTypeRequestResource(instancesSetMachineTypeRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2410,7 +2446,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param metadataResource
+   * @param metadataResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setMetadata(
@@ -2434,10 +2470,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   Metadata metadataResource = Metadata.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMetadataInstanceRequest request = SetMetadataInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setMetadataResource(metadataResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2461,10 +2499,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   Metadata metadataResource = Metadata.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMetadataInstanceRequest request = SetMetadataInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setMetadataResource(metadataResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2498,7 +2538,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param instancesSetMinCpuPlatformRequestResource
+   * @param instancesSetMinCpuPlatformRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setMinCpuPlatform(
@@ -2526,10 +2566,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMinCpuPlatformInstanceRequest request = SetMinCpuPlatformInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2554,10 +2596,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetMinCpuPlatformRequest instancesSetMinCpuPlatformRequestResource = InstancesSetMinCpuPlatformRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetMinCpuPlatformInstanceRequest request = SetMinCpuPlatformInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetMinCpuPlatformRequestResource(instancesSetMinCpuPlatformRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2593,7 +2637,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Instance name for this request.
-   * @param schedulingResource
+   * @param schedulingResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setScheduling(
@@ -2620,10 +2664,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   String zone = "";
    *   SetSchedulingInstanceRequest request = SetSchedulingInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setSchedulingResource(schedulingResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = instancesClient.setScheduling(request);
@@ -2649,10 +2695,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   Scheduling schedulingResource = Scheduling.newBuilder().build();
    *   String zone = "";
    *   SetSchedulingInstanceRequest request = SetSchedulingInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setSchedulingResource(schedulingResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instancesClient.setSchedulingCallable().futureCall(request);
@@ -2685,7 +2733,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance resource to start.
-   * @param instancesSetServiceAccountRequestResource
+   * @param instancesSetServiceAccountRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setServiceAccount(
@@ -2713,10 +2761,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetServiceAccountInstanceRequest request = SetServiceAccountInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2741,10 +2791,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesSetServiceAccountRequest instancesSetServiceAccountRequestResource = InstancesSetServiceAccountRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   SetServiceAccountInstanceRequest request = SetServiceAccountInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesSetServiceAccountRequestResource(instancesSetServiceAccountRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -2780,7 +2832,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name or id of the instance scoping this request.
-   * @param shieldedInstanceIntegrityPolicyResource
+   * @param shieldedInstanceIntegrityPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setShieldedInstanceIntegrityPolicy(
@@ -2810,10 +2862,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
    *   String zone = "";
    *   SetShieldedInstanceIntegrityPolicyInstanceRequest request = SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = instancesClient.setShieldedInstanceIntegrityPolicy(request);
@@ -2840,10 +2894,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   ShieldedInstanceIntegrityPolicy shieldedInstanceIntegrityPolicyResource = ShieldedInstanceIntegrityPolicy.newBuilder().build();
    *   String zone = "";
    *   SetShieldedInstanceIntegrityPolicyInstanceRequest request = SetShieldedInstanceIntegrityPolicyInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setShieldedInstanceIntegrityPolicyResource(shieldedInstanceIntegrityPolicyResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instancesClient.setShieldedInstanceIntegrityPolicyCallable().futureCall(request);
@@ -2876,7 +2932,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param tagsResource
+   * @param tagsResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setTags(String project, String zone, String instance, Tags tagsResource) {
@@ -2900,10 +2956,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   Tags tagsResource = Tags.newBuilder().build();
    *   String zone = "";
    *   SetTagsInstanceRequest request = SetTagsInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setTagsResource(tagsResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = instancesClient.setTags(request);
@@ -2927,10 +2985,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   Tags tagsResource = Tags.newBuilder().build();
    *   String zone = "";
    *   SetTagsInstanceRequest request = SetTagsInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setTagsResource(tagsResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instancesClient.setTagsCallable().futureCall(request);
@@ -3133,7 +3193,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance resource to start.
-   * @param instancesStartWithEncryptionKeyRequestResource
+   * @param instancesStartWithEncryptionKeyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation startWithEncryptionKey(
@@ -3162,10 +3222,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   StartWithEncryptionKeyInstanceRequest request = StartWithEncryptionKeyInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -3190,10 +3252,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   InstancesStartWithEncryptionKeyRequest instancesStartWithEncryptionKeyRequestResource = InstancesStartWithEncryptionKeyRequest.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   StartWithEncryptionKeyInstanceRequest request = StartWithEncryptionKeyInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstancesStartWithEncryptionKeyRequestResource(instancesStartWithEncryptionKeyRequestResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -3319,7 +3383,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -3347,10 +3411,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsInstanceRequest request = TestIamPermissionsInstanceRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   TestPermissionsResponse response = instancesClient.testIamPermissions(request);
@@ -3375,10 +3441,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   String zone = "";
    *   TestIamPermissionsInstanceRequest request = TestIamPermissionsInstanceRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = instancesClient.testIamPermissionsCallable().futureCall(request);
@@ -3413,7 +3481,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance resource to update.
-   * @param instanceResource
+   * @param instanceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -3439,10 +3507,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   Instance instanceResource = Instance.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstanceResource(instanceResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -3468,10 +3538,12 @@ public class InstancesClient implements BackgroundResource {
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
+   *   Instance instanceResource = Instance.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdateInstanceRequest request = UpdateInstanceRequest.newBuilder()
    *     .setInstance(instance)
+   *     .setInstanceResource(instanceResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -3508,7 +3580,7 @@ public class InstancesClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface where the access config is attached.
-   * @param accessConfigResource
+   * @param accessConfigResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updateAccessConfig(
@@ -3538,11 +3610,13 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   String instance = "";
    *   String networkInterface = "";
    *   String project = "";
    *   String zone = "";
    *   UpdateAccessConfigInstanceRequest request = UpdateAccessConfigInstanceRequest.newBuilder()
+   *     .setAccessConfigResource(accessConfigResource)
    *     .setInstance(instance)
    *     .setNetworkInterface(networkInterface)
    *     .setProject(project)
@@ -3569,11 +3643,13 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AccessConfig accessConfigResource = AccessConfig.newBuilder().build();
    *   String instance = "";
    *   String networkInterface = "";
    *   String project = "";
    *   String zone = "";
    *   UpdateAccessConfigInstanceRequest request = UpdateAccessConfigInstanceRequest.newBuilder()
+   *     .setAccessConfigResource(accessConfigResource)
    *     .setInstance(instance)
    *     .setNetworkInterface(networkInterface)
    *     .setProject(project)
@@ -3611,7 +3687,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name of the instance scoping this request.
-   * @param displayDeviceResource
+   * @param displayDeviceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updateDisplayDevice(
@@ -3636,10 +3712,12 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
    *   String instance = "";
    *   String project = "";
    *   String zone = "";
    *   UpdateDisplayDeviceInstanceRequest request = UpdateDisplayDeviceInstanceRequest.newBuilder()
+   *     .setDisplayDeviceResource(displayDeviceResource)
    *     .setInstance(instance)
    *     .setProject(project)
    *     .setZone(zone)
@@ -3665,10 +3743,12 @@ public class InstancesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DisplayDevice displayDeviceResource = DisplayDevice.newBuilder().build();
    *   String instance = "";
    *   String project = "";
    *   String zone = "";
    *   UpdateDisplayDeviceInstanceRequest request = UpdateDisplayDeviceInstanceRequest.newBuilder()
+   *     .setDisplayDeviceResource(displayDeviceResource)
    *     .setInstance(instance)
    *     .setProject(project)
    *     .setZone(zone)
@@ -3705,7 +3785,7 @@ public class InstancesClient implements BackgroundResource {
    * @param zone The name of the zone for this request.
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
-   * @param networkInterfaceResource
+   * @param networkInterfaceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updateNetworkInterface(
@@ -3735,11 +3815,13 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String networkInterface = "";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdateNetworkInterfaceInstanceRequest request = UpdateNetworkInterfaceInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setNetworkInterface(networkInterface)
+   *     .setNetworkInterfaceResource(networkInterfaceResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -3764,11 +3846,13 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String networkInterface = "";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
    *   String project = "";
    *   String zone = "";
    *   UpdateNetworkInterfaceInstanceRequest request = UpdateNetworkInterfaceInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setNetworkInterface(networkInterface)
+   *     .setNetworkInterfaceResource(networkInterfaceResource)
    *     .setProject(project)
    *     .setZone(zone)
    *     .build();
@@ -3804,7 +3888,7 @@ public class InstancesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param zone The name of the zone for this request.
    * @param instance Name or id of the instance scoping this request.
-   * @param shieldedInstanceConfigResource
+   * @param shieldedInstanceConfigResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation updateShieldedInstanceConfig(
@@ -3834,10 +3918,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
    *   String zone = "";
    *   UpdateShieldedInstanceConfigInstanceRequest request = UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
    *     .setZone(zone)
    *     .build();
    *   Operation response = instancesClient.updateShieldedInstanceConfig(request);
@@ -3864,10 +3950,12 @@ public class InstancesClient implements BackgroundResource {
    * try (InstancesClient instancesClient = InstancesClient.create()) {
    *   String instance = "";
    *   String project = "";
+   *   ShieldedInstanceConfig shieldedInstanceConfigResource = ShieldedInstanceConfig.newBuilder().build();
    *   String zone = "";
    *   UpdateShieldedInstanceConfigInstanceRequest request = UpdateShieldedInstanceConfigInstanceRequest.newBuilder()
    *     .setInstance(instance)
    *     .setProject(project)
+   *     .setShieldedInstanceConfigResource(shieldedInstanceConfigResource)
    *     .setZone(zone)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = instancesClient.updateShieldedInstanceConfigCallable().futureCall(request);

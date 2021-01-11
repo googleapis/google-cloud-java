@@ -30,7 +30,7 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>string actual_service = 171944196;</code>
    *
    * @return The actualService.
    */
@@ -42,7 +42,7 @@ public interface TestFailureOrBuilder
    * BackendService or BackendBucket returned by load balancer.
    * </pre>
    *
-   * <code>string actual_service = 440379652;</code>
+   * <code>string actual_service = 171944196;</code>
    *
    * @return The bytes for actualService.
    */

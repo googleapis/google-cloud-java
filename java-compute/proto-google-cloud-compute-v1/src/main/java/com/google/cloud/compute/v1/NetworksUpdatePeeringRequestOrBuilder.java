@@ -24,17 +24,17 @@ public interface NetworksUpdatePeeringRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
    *
    * @return Whether the networkPeering field is set.
    */
   boolean hasNetworkPeering();
   /**
-   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code>
+   * <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code>
    *
    * @return The networkPeering.
    */
   com.google.cloud.compute.v1.NetworkPeering getNetworkPeering();
-  /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 328926767;</code> */
+  /** <code>.google.cloud.compute.v1.NetworkPeering network_peering = 60491311;</code> */
   com.google.cloud.compute.v1.NetworkPeeringOrBuilder getNetworkPeeringOrBuilder();
 }

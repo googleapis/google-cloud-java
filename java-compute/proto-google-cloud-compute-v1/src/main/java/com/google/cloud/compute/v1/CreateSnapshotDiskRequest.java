@@ -94,19 +94,12 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1210560792:
+          case 936922856:
             {
               guestFlush_ = input.readBool();
               break;
             }
-          case -444407478:
+          case 1703076170:
             {
               com.google.cloud.compute.v1.Snapshot.Builder subBuilder = null;
               if (snapshotResource_ != null) {
@@ -120,6 +113,13 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
                 snapshotResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -205,7 +205,7 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
     }
   }
 
-  public static final int GUEST_FLUSH_FIELD_NUMBER = 385550813;
+  public static final int GUEST_FLUSH_FIELD_NUMBER = 117115357;
   private boolean guestFlush_;
   /**
    *
@@ -214,7 +214,7 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
    * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
    * </pre>
    *
-   * <code>bool guest_flush = 385550813;</code>
+   * <code>bool guest_flush = 117115357;</code>
    *
    * @return The guestFlush.
    */
@@ -325,10 +325,18 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
     }
   }
 
-  public static final int SNAPSHOT_RESOURCE_FIELD_NUMBER = 481319977;
+  public static final int SNAPSHOT_RESOURCE_FIELD_NUMBER = 212884521;
   private com.google.cloud.compute.v1.Snapshot snapshotResource_;
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the snapshotResource field is set.
    */
@@ -337,7 +345,15 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
     return snapshotResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The snapshotResource.
    */
@@ -347,7 +363,17 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.Snapshot.getDefaultInstance()
         : snapshotResource_;
   }
-  /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder() {
     return getSnapshotResource();
@@ -425,14 +451,14 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
     if (guestFlush_ != false) {
-      output.writeBool(385550813, guestFlush_);
+      output.writeBool(117115357, guestFlush_);
     }
     if (snapshotResource_ != null) {
-      output.writeMessage(481319977, getSnapshotResource());
+      output.writeMessage(212884521, getSnapshotResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     unknownFields.writeTo(output);
   }
@@ -452,16 +478,16 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (guestFlush_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(385550813, guestFlush_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(117115357, guestFlush_);
     }
     if (snapshotResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              481319977, getSnapshotResource());
+              212884521, getSnapshotResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -928,7 +954,7 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
      * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>bool guest_flush = 117115357;</code>
      *
      * @return The guestFlush.
      */
@@ -943,7 +969,7 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
      * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>bool guest_flush = 117115357;</code>
      *
      * @param value The guestFlush to set.
      * @return This builder for chaining.
@@ -961,7 +987,7 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
      * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process. Currently only supported on Windows instances using the Volume Shadow Copy Service (VSS).
      * </pre>
      *
-     * <code>bool guest_flush = 385550813;</code>
+     * <code>bool guest_flush = 117115357;</code>
      *
      * @return This builder for chaining.
      */
@@ -1201,7 +1227,15 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.SnapshotOrBuilder>
         snapshotResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the snapshotResource field is set.
      */
@@ -1209,7 +1243,15 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
       return snapshotResourceBuilder_ != null || snapshotResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The snapshotResource.
      */
@@ -1222,7 +1264,17 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
         return snapshotResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSnapshotResource(com.google.cloud.compute.v1.Snapshot value) {
       if (snapshotResourceBuilder_ == null) {
         if (value == null) {
@@ -1236,7 +1288,17 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSnapshotResource(
         com.google.cloud.compute.v1.Snapshot.Builder builderForValue) {
       if (snapshotResourceBuilder_ == null) {
@@ -1248,7 +1310,17 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeSnapshotResource(com.google.cloud.compute.v1.Snapshot value) {
       if (snapshotResourceBuilder_ == null) {
         if (snapshotResource_ != null) {
@@ -1266,7 +1338,17 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearSnapshotResource() {
       if (snapshotResourceBuilder_ == null) {
         snapshotResource_ = null;
@@ -1278,13 +1360,33 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Snapshot.Builder getSnapshotResourceBuilder() {
 
       onChanged();
       return getSnapshotResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SnapshotOrBuilder getSnapshotResourceOrBuilder() {
       if (snapshotResourceBuilder_ != null) {
         return snapshotResourceBuilder_.getMessageOrBuilder();
@@ -1294,7 +1396,17 @@ public final class CreateSnapshotDiskRequest extends com.google.protobuf.Generat
             : snapshotResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Snapshot snapshot_resource = 481319977;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Snapshot snapshot_resource = 212884521 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Snapshot,
             com.google.cloud.compute.v1.Snapshot.Builder,

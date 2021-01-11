@@ -81,6 +81,13 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
               requestId_ = s;
               break;
             }
+          case 317598626:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              interconnectAttachment_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -110,13 +117,6 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1829885022:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interconnectAttachment_ = s;
               break;
             }
           default:
@@ -153,7 +153,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
             com.google.cloud.compute.v1.PatchInterconnectAttachmentRequest.Builder.class);
   }
 
-  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 308135284;
+  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 39699828;
   private volatile java.lang.Object interconnectAttachment_;
   /**
    *
@@ -162,7 +162,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
    * Name of the interconnect attachment to patch.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachment.
@@ -186,7 +186,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
    * Name of the interconnect attachment to patch.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectAttachment.
@@ -207,8 +207,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
   public static final int INTERCONNECT_ATTACHMENT_RESOURCE_FIELD_NUMBER = 212341369;
   private com.google.cloud.compute.v1.InterconnectAttachment interconnectAttachmentResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the interconnectAttachmentResource field is set.
@@ -218,8 +224,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     return interconnectAttachmentResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachmentResource.
@@ -231,8 +243,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
         : interconnectAttachmentResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+   * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -409,6 +427,9 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (!getInterconnectAttachmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39699828, interconnectAttachment_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
@@ -417,10 +438,6 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 308135284, interconnectAttachment_);
     }
     unknownFields.writeTo(output);
   }
@@ -434,6 +451,11 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (!getInterconnectAttachmentBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              39699828, interconnectAttachment_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
@@ -444,11 +466,6 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              308135284, interconnectAttachment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -805,7 +822,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
      * Name of the interconnect attachment to patch.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The interconnectAttachment.
@@ -828,7 +845,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
      * Name of the interconnect attachment to patch.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for interconnectAttachment.
@@ -851,7 +868,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
      * Name of the interconnect attachment to patch.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The interconnectAttachment to set.
@@ -873,7 +890,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
      * Name of the interconnect attachment to patch.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -891,7 +908,7 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
      * Name of the interconnect attachment to patch.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for interconnectAttachment to set.
@@ -915,8 +932,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
             com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder>
         interconnectAttachmentResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the interconnectAttachmentResource field is set.
@@ -926,8 +949,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
           || interconnectAttachmentResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The interconnectAttachmentResource.
@@ -942,8 +971,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInterconnectAttachmentResource(
@@ -961,8 +996,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInterconnectAttachmentResource(
@@ -977,8 +1018,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInterconnectAttachmentResource(
@@ -1001,8 +1048,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInterconnectAttachmentResource() {
@@ -1017,8 +1070,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachment.Builder
@@ -1028,8 +1087,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       return getInterconnectAttachmentResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InterconnectAttachmentOrBuilder
@@ -1043,8 +1108,14 @@ public final class PatchInterconnectAttachmentRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369;
+     * .google.cloud.compute.v1.InterconnectAttachment interconnect_attachment_resource = 212341369 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

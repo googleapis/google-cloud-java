@@ -344,7 +344,7 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region scoping this request.
-   * @param healthCheckServiceResource
+   * @param healthCheckServiceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -367,9 +367,11 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient = RegionHealthCheckServicesClient.create()) {
+   *   HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionHealthCheckServiceRequest request = InsertRegionHealthCheckServiceRequest.newBuilder()
+   *     .setHealthCheckServiceResource(healthCheckServiceResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -393,9 +395,11 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient = RegionHealthCheckServicesClient.create()) {
+   *   HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionHealthCheckServiceRequest request = InsertRegionHealthCheckServiceRequest.newBuilder()
+   *     .setHealthCheckServiceResource(healthCheckServiceResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -552,7 +556,7 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    * @param region Name of the region scoping this request.
    * @param healthCheckService Name of the HealthCheckService to update. The name must be 1-63
    *     characters long, and comply with RFC1035.
-   * @param healthCheckServiceResource
+   * @param healthCheckServiceResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -581,10 +585,12 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    * <pre><code>
    * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient = RegionHealthCheckServicesClient.create()) {
    *   String healthCheckService = "";
+   *   HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionHealthCheckServiceRequest request = PatchRegionHealthCheckServiceRequest.newBuilder()
    *     .setHealthCheckService(healthCheckService)
+   *     .setHealthCheckServiceResource(healthCheckServiceResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -610,10 +616,12 @@ public class RegionHealthCheckServicesClient implements BackgroundResource {
    * <pre><code>
    * try (RegionHealthCheckServicesClient regionHealthCheckServicesClient = RegionHealthCheckServicesClient.create()) {
    *   String healthCheckService = "";
+   *   HealthCheckService healthCheckServiceResource = HealthCheckService.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchRegionHealthCheckServiceRequest request = PatchRegionHealthCheckServiceRequest.newBuilder()
    *     .setHealthCheckService(healthCheckService)
+   *     .setHealthCheckServiceResource(healthCheckServiceResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

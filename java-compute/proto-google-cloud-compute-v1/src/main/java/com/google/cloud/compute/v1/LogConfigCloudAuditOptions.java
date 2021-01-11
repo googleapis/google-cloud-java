@@ -70,6 +70,13 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
           case 0:
             done = true;
             break;
+          case 1075828016:
+            {
+              int rawValue = input.readEnum();
+
+              logName_ = rawValue;
+              break;
+            }
           case 1742892994:
             {
               com.google.cloud.compute.v1.AuthorizationLoggingOptions.Builder subBuilder = null;
@@ -85,13 +92,6 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
                 authorizationLoggingOptions_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1071655632:
-            {
-              int rawValue = input.readEnum();
-
-              logName_ = rawValue;
               break;
             }
           default:
@@ -148,12 +148,12 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     UNDEFINED_LOG_NAME(0),
-    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
-    ADMIN_ACTIVITY(427503135),
+    /** <code>ADMIN_ACTIVITY = 159067679;</code> */
+    ADMIN_ACTIVITY(159067679),
     /** <code>DATA_ACCESS = 238070681;</code> */
     DATA_ACCESS(238070681),
-    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
-    UNSPECIFIED_LOG_NAME(410515182),
+    /** <code>UNSPECIFIED_LOG_NAME = 142079726;</code> */
+    UNSPECIFIED_LOG_NAME(142079726),
     UNRECOGNIZED(-1),
     ;
 
@@ -167,12 +167,12 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * <code>UNDEFINED_LOG_NAME = 0;</code>
      */
     public static final int UNDEFINED_LOG_NAME_VALUE = 0;
-    /** <code>ADMIN_ACTIVITY = 427503135;</code> */
-    public static final int ADMIN_ACTIVITY_VALUE = 427503135;
+    /** <code>ADMIN_ACTIVITY = 159067679;</code> */
+    public static final int ADMIN_ACTIVITY_VALUE = 159067679;
     /** <code>DATA_ACCESS = 238070681;</code> */
     public static final int DATA_ACCESS_VALUE = 238070681;
-    /** <code>UNSPECIFIED_LOG_NAME = 410515182;</code> */
-    public static final int UNSPECIFIED_LOG_NAME_VALUE = 410515182;
+    /** <code>UNSPECIFIED_LOG_NAME = 142079726;</code> */
+    public static final int UNSPECIFIED_LOG_NAME_VALUE = 142079726;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -200,11 +200,11 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
       switch (value) {
         case 0:
           return UNDEFINED_LOG_NAME;
-        case 427503135:
+        case 159067679:
           return ADMIN_ACTIVITY;
         case 238070681:
           return DATA_ACCESS;
-        case 410515182:
+        case 142079726:
           return UNSPECIFIED_LOG_NAME;
         default:
           return null;
@@ -316,7 +316,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     return getAuthorizationLoggingOptions();
   }
 
-  public static final int LOG_NAME_FIELD_NUMBER = 402913958;
+  public static final int LOG_NAME_FIELD_NUMBER = 134478502;
   private int logName_;
   /**
    *
@@ -325,7 +325,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    * The log_name to populate in the Cloud Audit Record.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
    *
    * @return The enum numeric value on the wire for logName.
    */
@@ -340,7 +340,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
    * The log_name to populate in the Cloud Audit Record.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;</code>
    *
    * @return The logName.
    */
@@ -368,13 +368,13 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (authorizationLoggingOptions_ != null) {
-      output.writeMessage(217861624, getAuthorizationLoggingOptions());
-    }
     if (logName_
         != com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNDEFINED_LOG_NAME
             .getNumber()) {
-      output.writeEnum(402913958, logName_);
+      output.writeEnum(134478502, logName_);
+    }
+    if (authorizationLoggingOptions_ != null) {
+      output.writeMessage(217861624, getAuthorizationLoggingOptions());
     }
     unknownFields.writeTo(output);
   }
@@ -385,15 +385,15 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
+    if (logName_
+        != com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNDEFINED_LOG_NAME
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(134478502, logName_);
+    }
     if (authorizationLoggingOptions_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               217861624, getAuthorizationLoggingOptions());
-    }
-    if (logName_
-        != com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNDEFINED_LOG_NAME
-            .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(402913958, logName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -925,7 +925,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
      * </code>
      *
      * @return The enum numeric value on the wire for logName.
@@ -941,7 +941,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
      * </code>
      *
      * @param value The enum numeric value on the wire for logName to set.
@@ -960,7 +960,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
      * </code>
      *
      * @return The logName.
@@ -981,7 +981,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
      * </code>
      *
      * @param value The logName to set.
@@ -1004,7 +1004,7 @@ public final class LogConfigCloudAuditOptions extends com.google.protobuf.Genera
      * The log_name to populate in the Cloud Audit Record.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 134478502;
      * </code>
      *
      * @return This builder for chaining.

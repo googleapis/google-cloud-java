@@ -94,7 +94,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
               project_ = s;
               break;
             }
-          case -34864550:
+          case 2112619098:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -286,7 +286,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
   }
 
-  public static final int TARGET_VPN_GATEWAY_FIELD_NUMBER = 532512843;
+  public static final int TARGET_VPN_GATEWAY_FIELD_NUMBER = 264077387;
   private volatile java.lang.Object targetVpnGateway_;
   /**
    *
@@ -295,7 +295,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
    * Name of the target VPN gateway to delete.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetVpnGateway.
    */
@@ -318,7 +318,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
    * Name of the target VPN gateway to delete.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetVpnGateway.
    */
@@ -359,7 +359,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getTargetVpnGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 532512843, targetVpnGateway_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264077387, targetVpnGateway_);
     }
     unknownFields.writeTo(output);
   }
@@ -381,7 +381,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
     }
     if (!getTargetVpnGatewayBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(532512843, targetVpnGateway_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(264077387, targetVpnGateway_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1039,7 +1039,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
      * Name of the target VPN gateway to delete.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetVpnGateway.
      */
@@ -1061,7 +1061,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
      * Name of the target VPN gateway to delete.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetVpnGateway.
      */
@@ -1083,7 +1083,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
      * Name of the target VPN gateway to delete.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetVpnGateway to set.
      * @return This builder for chaining.
@@ -1104,7 +1104,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
      * Name of the target VPN gateway to delete.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1121,7 +1121,7 @@ public final class DeleteTargetVpnGatewayRequest extends com.google.protobuf.Gen
      * Name of the target VPN gateway to delete.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_vpn_gateway = 264077387 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetVpnGateway to set.
      * @return This builder for chaining.

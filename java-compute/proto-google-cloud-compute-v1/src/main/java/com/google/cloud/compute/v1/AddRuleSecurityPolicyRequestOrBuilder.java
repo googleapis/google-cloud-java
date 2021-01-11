@@ -74,21 +74,42 @@ public interface AddRuleSecurityPolicyRequestOrBuilder
   com.google.protobuf.ByteString getSecurityPolicyBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the securityPolicyRuleResource field is set.
    */
   boolean hasSecurityPolicyRuleResource();
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The securityPolicyRuleResource.
    */
   com.google.cloud.compute.v1.SecurityPolicyRule getSecurityPolicyRuleResource();
   /**
-   * <code>.google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 402693443;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SecurityPolicyRule security_policy_rule_resource = 134257987 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.SecurityPolicyRuleOrBuilder getSecurityPolicyRuleResourceOrBuilder();

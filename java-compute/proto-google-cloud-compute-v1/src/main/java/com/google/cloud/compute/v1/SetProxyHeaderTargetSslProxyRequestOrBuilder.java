@@ -78,16 +78,28 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetSslProxiesSetProxyHeaderRequestResource field is set.
    */
   boolean hasTargetSslProxiesSetProxyHeaderRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetSslProxiesSetProxyHeaderRequestResource.
@@ -95,8 +107,14 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest
       getTargetSslProxiesSetProxyHeaderRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526;
+   * .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest target_ssl_proxies_set_proxy_header_request_resource = 205284526 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequestOrBuilder
@@ -109,7 +127,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -121,7 +139,7 @@ public interface SetProxyHeaderTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose ProxyHeader is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */

@@ -70,7 +70,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
-          case -1839398830:
+          case 308084818:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -111,7 +111,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.RequestMirrorPolicy.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -120,7 +120,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The backendService.
    */
@@ -143,7 +143,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The bytes for backendService.
    */
@@ -175,7 +175,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
     }
     unknownFields.writeTo(output);
   }
@@ -187,7 +187,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
 
     size = 0;
     if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -485,7 +485,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The backendService.
      */
@@ -507,7 +507,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The bytes for backendService.
      */
@@ -529,7 +529,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -550,7 +550,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return This builder for chaining.
      */
@@ -567,7 +567,7 @@ public final class RequestMirrorPolicy extends com.google.protobuf.GeneratedMess
      * The full or partial URL to the BackendService resource being mirrored to.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.

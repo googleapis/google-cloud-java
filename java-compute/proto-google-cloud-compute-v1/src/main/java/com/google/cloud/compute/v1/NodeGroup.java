@@ -121,11 +121,49 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 437751994:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeTemplate_ = s;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
 
               status_ = rawValue;
+              break;
+            }
+          case 1490998498:
+            {
+              com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder subBuilder = null;
+              if (maintenanceWindow_ != null) {
+                subBuilder = maintenanceWindow_.toBuilder();
+              }
+              maintenanceWindow_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maintenanceWindow_);
+                maintenanceWindow_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
               break;
             }
           case 1775600330:
@@ -152,28 +190,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
               fingerprint_ = s;
               break;
             }
-          case -1709731654:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeTemplate_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
-              break;
-            }
-          case -68346128:
+          case 2079137520:
             {
               int rawValue = input.readEnum();
 
@@ -373,12 +390,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>CREATING = 455564985;</code> */
-    CREATING(455564985),
-    /** <code>DELETING = 528602024;</code> */
-    DELETING(528602024),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>CREATING = 187129529;</code> */
+    CREATING(187129529),
+    /** <code>DELETING = 260166568;</code> */
+    DELETING(260166568),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     /** <code>READY = 77848963;</code> */
     READY(77848963),
     UNRECOGNIZED(-1),
@@ -394,12 +411,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>CREATING = 455564985;</code> */
-    public static final int CREATING_VALUE = 455564985;
-    /** <code>DELETING = 528602024;</code> */
-    public static final int DELETING_VALUE = 528602024;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>CREATING = 187129529;</code> */
+    public static final int CREATING_VALUE = 187129529;
+    /** <code>DELETING = 260166568;</code> */
+    public static final int DELETING_VALUE = 260166568;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
     /** <code>READY = 77848963;</code> */
     public static final int READY_VALUE = 77848963;
 
@@ -429,11 +446,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 455564985:
+        case 187129529:
           return CREATING;
-        case 528602024:
+        case 260166568:
           return DELETING;
-        case 530283991:
+        case 261848535:
           return INVALID;
         case 77848963:
           return READY;
@@ -591,7 +608,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -600,7 +617,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -623,7 +640,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -775,7 +792,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 528327646;
+  public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 259892190;
   private int maintenancePolicy_;
   /**
    *
@@ -784,7 +801,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
    * </code>
    *
    * @return The enum numeric value on the wire for maintenancePolicy.
@@ -800,7 +817,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+   * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
    * </code>
    *
    * @return The maintenancePolicy.
@@ -813,6 +830,40 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNRECOGNIZED
         : result;
+  }
+
+  public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 186374812;
+  private com.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenanceWindow_;
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * </code>
+   *
+   * @return Whether the maintenanceWindow field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaintenanceWindow() {
+    return maintenanceWindow_ != null;
+  }
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * </code>
+   *
+   * @return The maintenanceWindow.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow getMaintenanceWindow() {
+    return maintenanceWindow_ == null
+        ? com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.getDefaultInstance()
+        : maintenanceWindow_;
+  }
+  /**
+   * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder
+      getMaintenanceWindowOrBuilder() {
+    return getMaintenanceWindow();
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -864,7 +915,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int NODE_TEMPLATE_FIELD_NUMBER = 323154455;
+  public static final int NODE_TEMPLATE_FIELD_NUMBER = 54718999;
   private volatile java.lang.Object nodeTemplate_;
   /**
    *
@@ -873,7 +924,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>string node_template = 54718999;</code>
    *
    * @return The nodeTemplate.
    */
@@ -896,7 +947,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * URL of the node template to create the node group from.
    * </pre>
    *
-   * <code>string node_template = 323154455;</code>
+   * <code>string node_template = 54718999;</code>
    *
    * @return The bytes for nodeTemplate.
    */
@@ -913,7 +964,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -922,7 +973,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -945,7 +996,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1085,8 +1136,20 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (!getNodeTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 54718999, nodeTemplate_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.NodeGroup.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
+    }
+    if (maintenanceWindow_ != null) {
+      output.writeMessage(186374812, getMaintenanceWindow());
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (autoscalingPolicy_ != null) {
       output.writeMessage(221950041, getAutoscalingPolicy());
@@ -1094,19 +1157,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (!getNodeTemplateBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 323154455, nodeTemplate_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
     if (maintenancePolicy_
         != com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNDEFINED_MAINTENANCE_POLICY
             .getNumber()) {
-      output.writeEnum(528327646, maintenancePolicy_);
+      output.writeEnum(259892190, maintenancePolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -1136,8 +1190,22 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getNodeTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(54718999, nodeTemplate_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.NodeGroup.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
+    }
+    if (maintenanceWindow_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              186374812, getMaintenanceWindow());
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (autoscalingPolicy_ != null) {
       size +=
@@ -1147,19 +1215,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (!getNodeTemplateBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323154455, nodeTemplate_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
-    }
     if (maintenancePolicy_
         != com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNDEFINED_MAINTENANCE_POLICY
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(528327646, maintenancePolicy_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(259892190, maintenancePolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1186,6 +1245,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     if (!getId().equals(other.getId())) return false;
     if (!getKind().equals(other.getKind())) return false;
     if (maintenancePolicy_ != other.maintenancePolicy_) return false;
+    if (hasMaintenanceWindow() != other.hasMaintenanceWindow()) return false;
+    if (hasMaintenanceWindow()) {
+      if (!getMaintenanceWindow().equals(other.getMaintenanceWindow())) return false;
+    }
     if (!getName().equals(other.getName())) return false;
     if (!getNodeTemplate().equals(other.getNodeTemplate())) return false;
     if (!getSelfLink().equals(other.getSelfLink())) return false;
@@ -1219,6 +1282,10 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getKind().hashCode();
     hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
     hash = (53 * hash) + maintenancePolicy_;
+    if (hasMaintenanceWindow()) {
+      hash = (37 * hash) + MAINTENANCE_WINDOW_FIELD_NUMBER;
+      hash = (53 * hash) + getMaintenanceWindow().hashCode();
+    }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + NODE_TEMPLATE_FIELD_NUMBER;
@@ -1394,6 +1461,12 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
 
       maintenancePolicy_ = 0;
 
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = null;
+      } else {
+        maintenanceWindow_ = null;
+        maintenanceWindowBuilder_ = null;
+      }
       name_ = "";
 
       nodeTemplate_ = "";
@@ -1444,6 +1517,11 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       result.id_ = id_;
       result.kind_ = kind_;
       result.maintenancePolicy_ = maintenancePolicy_;
+      if (maintenanceWindowBuilder_ == null) {
+        result.maintenanceWindow_ = maintenanceWindow_;
+      } else {
+        result.maintenanceWindow_ = maintenanceWindowBuilder_.build();
+      }
       result.name_ = name_;
       result.nodeTemplate_ = nodeTemplate_;
       result.selfLink_ = selfLink_;
@@ -1524,6 +1602,9 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.maintenancePolicy_ != 0) {
         setMaintenancePolicyValue(other.getMaintenancePolicyValue());
+      }
+      if (other.hasMaintenanceWindow()) {
+        mergeMaintenanceWindow(other.getMaintenanceWindow());
       }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
@@ -1889,7 +1970,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1911,7 +1992,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1933,7 +2014,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1954,7 +2035,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1971,7 +2052,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2283,7 +2364,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
      * </code>
      *
      * @return The enum numeric value on the wire for maintenancePolicy.
@@ -2299,7 +2380,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
      * </code>
      *
      * @param value The enum numeric value on the wire for maintenancePolicy to set.
@@ -2318,7 +2399,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
      * </code>
      *
      * @return The maintenancePolicy.
@@ -2339,7 +2420,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
      * </code>
      *
      * @param value The maintenancePolicy to set.
@@ -2362,7 +2443,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see  Maintenance policies.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;
+     * <code>.google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 259892190;
      * </code>
      *
      * @return This builder for chaining.
@@ -2372,6 +2453,151 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
       maintenancePolicy_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenanceWindow_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NodeGroupMaintenanceWindow,
+            com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder,
+            com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder>
+        maintenanceWindowBuilder_;
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     *
+     * @return Whether the maintenanceWindow field is set.
+     */
+    public boolean hasMaintenanceWindow() {
+      return maintenanceWindowBuilder_ != null || maintenanceWindow_ != null;
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     *
+     * @return The maintenanceWindow.
+     */
+    public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow getMaintenanceWindow() {
+      if (maintenanceWindowBuilder_ == null) {
+        return maintenanceWindow_ == null
+            ? com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.getDefaultInstance()
+            : maintenanceWindow_;
+      } else {
+        return maintenanceWindowBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    public Builder setMaintenanceWindow(
+        com.google.cloud.compute.v1.NodeGroupMaintenanceWindow value) {
+      if (maintenanceWindowBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        maintenanceWindow_ = value;
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    public Builder setMaintenanceWindow(
+        com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder builderForValue) {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = builderForValue.build();
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    public Builder mergeMaintenanceWindow(
+        com.google.cloud.compute.v1.NodeGroupMaintenanceWindow value) {
+      if (maintenanceWindowBuilder_ == null) {
+        if (maintenanceWindow_ != null) {
+          maintenanceWindow_ =
+              com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.newBuilder(maintenanceWindow_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          maintenanceWindow_ = value;
+        }
+        onChanged();
+      } else {
+        maintenanceWindowBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    public Builder clearMaintenanceWindow() {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindow_ = null;
+        onChanged();
+      } else {
+        maintenanceWindow_ = null;
+        maintenanceWindowBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder
+        getMaintenanceWindowBuilder() {
+
+      onChanged();
+      return getMaintenanceWindowFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder
+        getMaintenanceWindowOrBuilder() {
+      if (maintenanceWindowBuilder_ != null) {
+        return maintenanceWindowBuilder_.getMessageOrBuilder();
+      } else {
+        return maintenanceWindow_ == null
+            ? com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.getDefaultInstance()
+            : maintenanceWindow_;
+      }
+    }
+    /**
+     * <code>.google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.NodeGroupMaintenanceWindow,
+            com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder,
+            com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder>
+        getMaintenanceWindowFieldBuilder() {
+      if (maintenanceWindowBuilder_ == null) {
+        maintenanceWindowBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.NodeGroupMaintenanceWindow,
+                com.google.cloud.compute.v1.NodeGroupMaintenanceWindow.Builder,
+                com.google.cloud.compute.v1.NodeGroupMaintenanceWindowOrBuilder>(
+                getMaintenanceWindow(), getParentForChildren(), isClean());
+        maintenanceWindow_ = null;
+      }
+      return maintenanceWindowBuilder_;
     }
 
     private java.lang.Object name_ = "";
@@ -2488,7 +2714,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @return The nodeTemplate.
      */
@@ -2510,7 +2736,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @return The bytes for nodeTemplate.
      */
@@ -2532,7 +2758,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @param value The nodeTemplate to set.
      * @return This builder for chaining.
@@ -2553,7 +2779,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @return This builder for chaining.
      */
@@ -2570,7 +2796,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * URL of the node template to create the node group from.
      * </pre>
      *
-     * <code>string node_template = 323154455;</code>
+     * <code>string node_template = 54718999;</code>
      *
      * @param value The bytes for nodeTemplate to set.
      * @return This builder for chaining.
@@ -2594,7 +2820,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2616,7 +2842,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -2638,7 +2864,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -2659,7 +2885,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -2676,7 +2902,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

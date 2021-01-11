@@ -51,16 +51,28 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getInstanceGroupManagerBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersPatchPerInstanceConfigsReqResource field is set.
    */
   boolean hasInstanceGroupManagersPatchPerInstanceConfigsReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersPatchPerInstanceConfigsReqResource.
@@ -68,8 +80,14 @@ public interface PatchPerInstanceConfigsInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq
       getInstanceGroupManagersPatchPerInstanceConfigsReqResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReqOrBuilder

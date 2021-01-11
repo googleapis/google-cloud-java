@@ -74,16 +74,28 @@ public interface ValidateRegionUrlMapRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionUrlMapsValidateRequestResource field is set.
    */
   boolean hasRegionUrlMapsValidateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionUrlMapsValidateRequestResource.
@@ -91,8 +103,14 @@ public interface ValidateRegionUrlMapRequestOrBuilder
   com.google.cloud.compute.v1.RegionUrlMapsValidateRequest
       getRegionUrlMapsValidateRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858;
+   * .google.cloud.compute.v1.RegionUrlMapsValidateRequest region_url_maps_validate_request_resource = 56632858 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionUrlMapsValidateRequestOrBuilder
@@ -105,7 +123,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    * Name of the UrlMap resource to be validated as.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The urlMap.
    */
@@ -117,7 +135,7 @@ public interface ValidateRegionUrlMapRequestOrBuilder
    * Name of the UrlMap resource to be validated as.
    * </pre>
    *
-   * <code>string url_map = 367020684 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string url_map = 98585228 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for urlMap.
    */

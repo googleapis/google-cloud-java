@@ -241,7 +241,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
   public static final int USAGE_EXPORT_LOCATION_RESOURCE_FIELD_NUMBER = 20260459;
   private com.google.cloud.compute.v1.UsageExportLocation usageExportLocationResource_;
   /**
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the usageExportLocationResource field is set.
@@ -251,7 +258,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
     return usageExportLocationResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The usageExportLocationResource.
@@ -263,7 +277,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
         : usageExportLocationResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -870,7 +891,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
             com.google.cloud.compute.v1.UsageExportLocationOrBuilder>
         usageExportLocationResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the usageExportLocationResource field is set.
@@ -879,7 +907,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       return usageExportLocationResourceBuilder_ != null || usageExportLocationResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The usageExportLocationResource.
@@ -894,7 +929,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setUsageExportLocationResource(
@@ -912,7 +954,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setUsageExportLocationResource(
@@ -927,7 +976,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeUsageExportLocationResource(
@@ -950,7 +1006,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearUsageExportLocationResource() {
@@ -965,7 +1028,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.UsageExportLocation.Builder
@@ -975,7 +1045,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       return getUsageExportLocationResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.UsageExportLocationOrBuilder
@@ -989,7 +1066,14 @@ public final class SetUsageExportBucketProjectRequest extends com.google.protobu
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.UsageExportLocation usage_export_location_resource = 20260459 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

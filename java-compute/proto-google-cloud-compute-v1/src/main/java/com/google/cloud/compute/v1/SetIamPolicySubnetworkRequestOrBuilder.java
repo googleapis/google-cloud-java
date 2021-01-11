@@ -74,24 +74,42 @@ public interface SetIamPolicySubnetworkRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091;
+   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionSetPolicyRequestResource field is set.
    */
   boolean hasRegionSetPolicyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091;
+   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.RegionSetPolicyRequest getRegionSetPolicyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 276489091;
+   * .google.cloud.compute.v1.RegionSetPolicyRequest region_set_policy_request_resource = 8053635 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionSetPolicyRequestOrBuilder

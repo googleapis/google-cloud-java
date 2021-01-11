@@ -85,6 +85,13 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
               maxResults_ = input.readUInt32();
               break;
             }
+          case 541481922:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
           case 1284503362:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -116,14 +123,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
 
               break;
             }
-          case -1606001726:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
-              break;
-            }
-          case -157380176:
+          case 1990103472:
             {
               returnPartialSuccess_ = input.readBool();
               break;
@@ -162,7 +162,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.ListXpnHostsProjectsRequest.Builder.class);
   }
 
-  public static final int FILTER_FIELD_NUMBER = 336120696;
+  public static final int FILTER_FIELD_NUMBER = 67685240;
   private volatile java.lang.Object filter_;
   /**
    *
@@ -174,7 +174,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -200,7 +200,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The bytes for filter.
    */
@@ -390,8 +390,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
   private com.google.cloud.compute.v1.ProjectsListXpnHostsRequest
       projectsListXpnHostsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+   * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the projectsListXpnHostsRequestResource field is set.
@@ -401,8 +407,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
     return projectsListXpnHostsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+   * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The projectsListXpnHostsRequestResource.
@@ -415,8 +427,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
         : projectsListXpnHostsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+   * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -425,7 +443,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
     return getProjectsListXpnHostsRequestResource();
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 248762934;
   private boolean returnPartialSuccess_;
   /**
    *
@@ -434,7 +452,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>bool return_partial_success = 248762934;</code>
    *
    * @return The returnPartialSuccess.
    */
@@ -463,6 +481,9 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
     if (maxResults_ != 0) {
       output.writeUInt32(54715419, maxResults_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 67685240, filter_);
+    }
     if (!getOrderByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
     }
@@ -472,11 +493,8 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
     if (projectsListXpnHostsRequestResource_ != null) {
       output.writeMessage(238266391, getProjectsListXpnHostsRequestResource());
     }
-    if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
-    }
     if (returnPartialSuccess_ != false) {
-      output.writeBool(517198390, returnPartialSuccess_);
+      output.writeBool(248762934, returnPartialSuccess_);
     }
     unknownFields.writeTo(output);
   }
@@ -493,6 +511,9 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
     if (maxResults_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(54715419, maxResults_);
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67685240, filter_);
+    }
     if (!getOrderByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
     }
@@ -504,12 +525,9 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               238266391, getProjectsListXpnHostsRequestResource());
     }
-    if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
-    }
     if (returnPartialSuccess_ != false) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
+          com.google.protobuf.CodedOutputStream.computeBoolSize(248762934, returnPartialSuccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -885,7 +903,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @return The filter.
      */
@@ -910,7 +928,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @return The bytes for filter.
      */
@@ -935,7 +953,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -959,7 +977,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @return This builder for chaining.
      */
@@ -979,7 +997,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1383,8 +1401,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
             com.google.cloud.compute.v1.ProjectsListXpnHostsRequestOrBuilder>
         projectsListXpnHostsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the projectsListXpnHostsRequestResource field is set.
@@ -1394,8 +1418,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
           || projectsListXpnHostsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The projectsListXpnHostsRequestResource.
@@ -1411,8 +1441,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setProjectsListXpnHostsRequestResource(
@@ -1430,8 +1466,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setProjectsListXpnHostsRequestResource(
@@ -1446,8 +1488,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeProjectsListXpnHostsRequestResource(
@@ -1470,8 +1518,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearProjectsListXpnHostsRequestResource() {
@@ -1486,8 +1540,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ProjectsListXpnHostsRequest.Builder
@@ -1497,8 +1557,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       return getProjectsListXpnHostsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ProjectsListXpnHostsRequestOrBuilder
@@ -1512,8 +1578,14 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391;
+     * .google.cloud.compute.v1.ProjectsListXpnHostsRequest projects_list_xpn_hosts_request_resource = 238266391 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1541,7 +1613,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>bool return_partial_success = 248762934;</code>
      *
      * @return The returnPartialSuccess.
      */
@@ -1556,7 +1628,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>bool return_partial_success = 248762934;</code>
      *
      * @param value The returnPartialSuccess to set.
      * @return This builder for chaining.
@@ -1574,7 +1646,7 @@ public final class ListXpnHostsProjectsRequest extends com.google.protobuf.Gener
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>bool return_partial_success = 248762934;</code>
      *
      * @return This builder for chaining.
      */

@@ -24,18 +24,44 @@ public interface AddAccessConfigInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the accessConfigResource field is set.
    */
   boolean hasAccessConfigResource();
   /**
-   * <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The accessConfigResource.
    */
   com.google.cloud.compute.v1.AccessConfig getAccessConfigResource();
-  /** <code>.google.cloud.compute.v1.AccessConfig access_config_resource = 387825552;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AccessConfig access_config_resource = 119390096 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.AccessConfigOrBuilder getAccessConfigResourceOrBuilder();
 
   /**
@@ -70,7 +96,7 @@ public interface AddAccessConfigInstanceRequestOrBuilder
    * The name of the network interface to add to this instance.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The networkInterface.
    */
@@ -82,7 +108,7 @@ public interface AddAccessConfigInstanceRequestOrBuilder
    * The name of the network interface to add to this instance.
    * </pre>
    *
-   * <code>string network_interface = 365387880 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string network_interface = 96952424 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for networkInterface.
    */

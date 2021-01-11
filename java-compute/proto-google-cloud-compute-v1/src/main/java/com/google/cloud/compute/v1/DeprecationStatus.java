@@ -74,6 +74,13 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
+          case 713698506:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              obsolete_ = s;
+              break;
+            }
           case 878060680:
             {
               int rawValue = input.readEnum();
@@ -81,28 +88,21 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
               state_ = rawValue;
               break;
             }
-          case -1433785142:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              obsolete_ = s;
-              break;
-            }
-          case -847613806:
+          case 1299869842:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               replacement_ = s;
               break;
             }
-          case -481197878:
+          case 1666285770:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               deleted_ = s;
               break;
             }
-          case -173855334:
+          case 1973628314:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -163,12 +163,12 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
     /** <code>DELETED = 120962041;</code> */
     DELETED(120962041),
-    /** <code>DEPRECATED = 463360435;</code> */
-    DEPRECATED(463360435),
+    /** <code>DEPRECATED = 194924979;</code> */
+    DEPRECATED(194924979),
     /** <code>OBSOLETE = 66532761;</code> */
     OBSOLETE(66532761),
     UNRECOGNIZED(-1),
@@ -184,12 +184,12 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
     /** <code>DELETED = 120962041;</code> */
     public static final int DELETED_VALUE = 120962041;
-    /** <code>DEPRECATED = 463360435;</code> */
-    public static final int DEPRECATED_VALUE = 463360435;
+    /** <code>DEPRECATED = 194924979;</code> */
+    public static final int DEPRECATED_VALUE = 194924979;
     /** <code>OBSOLETE = 66532761;</code> */
     public static final int OBSOLETE_VALUE = 66532761;
 
@@ -219,11 +219,11 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
         case 120962041:
           return DELETED;
-        case 463360435:
+        case 194924979:
           return DEPRECATED;
         case 66532761:
           return OBSOLETE;
@@ -280,7 +280,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.DeprecationStatus.State)
   }
 
-  public static final int DELETED_FIELD_NUMBER = 476721177;
+  public static final int DELETED_FIELD_NUMBER = 208285721;
   private volatile java.lang.Object deleted_;
   /**
    *
@@ -289,7 +289,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>string deleted = 208285721;</code>
    *
    * @return The deleted.
    */
@@ -312,7 +312,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deleted = 476721177;</code>
+   * <code>string deleted = 208285721;</code>
    *
    * @return The bytes for deleted.
    */
@@ -329,7 +329,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int DEPRECATED_FIELD_NUMBER = 515138995;
+  public static final int DEPRECATED_FIELD_NUMBER = 246703539;
   private volatile java.lang.Object deprecated_;
   /**
    *
@@ -338,7 +338,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>string deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -361,7 +361,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string deprecated = 515138995;</code>
+   * <code>string deprecated = 246703539;</code>
    *
    * @return The bytes for deprecated.
    */
@@ -378,7 +378,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int OBSOLETE_FIELD_NUMBER = 357647769;
+  public static final int OBSOLETE_FIELD_NUMBER = 89212313;
   private volatile java.lang.Object obsolete_;
   /**
    *
@@ -387,7 +387,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>string obsolete = 89212313;</code>
    *
    * @return The obsolete.
    */
@@ -410,7 +410,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
    * </pre>
    *
-   * <code>string obsolete = 357647769;</code>
+   * <code>string obsolete = 89212313;</code>
    *
    * @return The bytes for obsolete.
    */
@@ -427,7 +427,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     }
   }
 
-  public static final int REPLACEMENT_FIELD_NUMBER = 430919186;
+  public static final int REPLACEMENT_FIELD_NUMBER = 162483730;
   private volatile java.lang.Object replacement_;
   /**
    *
@@ -436,7 +436,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>string replacement = 162483730;</code>
    *
    * @return The replacement.
    */
@@ -459,7 +459,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
    * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
    * </pre>
    *
-   * <code>string replacement = 430919186;</code>
+   * <code>string replacement = 162483730;</code>
    *
    * @return The bytes for replacement.
    */
@@ -528,20 +528,20 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getObsoleteBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 89212313, obsolete_);
+    }
     if (state_ != com.google.cloud.compute.v1.DeprecationStatus.State.UNDEFINED_STATE.getNumber()) {
       output.writeEnum(109757585, state_);
     }
-    if (!getObsoleteBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 357647769, obsolete_);
-    }
     if (!getReplacementBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 430919186, replacement_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 162483730, replacement_);
     }
     if (!getDeletedBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 476721177, deleted_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 208285721, deleted_);
     }
     if (!getDeprecatedBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 515138995, deprecated_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 246703539, deprecated_);
     }
     unknownFields.writeTo(output);
   }
@@ -552,20 +552,20 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
+    if (!getObsoleteBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(89212313, obsolete_);
+    }
     if (state_ != com.google.cloud.compute.v1.DeprecationStatus.State.UNDEFINED_STATE.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(109757585, state_);
     }
-    if (!getObsoleteBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(357647769, obsolete_);
-    }
     if (!getReplacementBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(430919186, replacement_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(162483730, replacement_);
     }
     if (!getDeletedBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(476721177, deleted_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(208285721, deleted_);
     }
     if (!getDeprecatedBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(515138995, deprecated_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(246703539, deprecated_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -901,7 +901,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deleted = 476721177;</code>
+     * <code>string deleted = 208285721;</code>
      *
      * @return The deleted.
      */
@@ -923,7 +923,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deleted = 476721177;</code>
+     * <code>string deleted = 208285721;</code>
      *
      * @return The bytes for deleted.
      */
@@ -945,7 +945,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deleted = 476721177;</code>
+     * <code>string deleted = 208285721;</code>
      *
      * @param value The deleted to set.
      * @return This builder for chaining.
@@ -966,7 +966,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deleted = 476721177;</code>
+     * <code>string deleted = 208285721;</code>
      *
      * @return This builder for chaining.
      */
@@ -983,7 +983,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DELETED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deleted = 476721177;</code>
+     * <code>string deleted = 208285721;</code>
      *
      * @param value The bytes for deleted to set.
      * @return This builder for chaining.
@@ -1007,7 +1007,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deprecated = 515138995;</code>
+     * <code>string deprecated = 246703539;</code>
      *
      * @return The deprecated.
      */
@@ -1029,7 +1029,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deprecated = 515138995;</code>
+     * <code>string deprecated = 246703539;</code>
      *
      * @return The bytes for deprecated.
      */
@@ -1051,7 +1051,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deprecated = 515138995;</code>
+     * <code>string deprecated = 246703539;</code>
      *
      * @param value The deprecated to set.
      * @return This builder for chaining.
@@ -1072,7 +1072,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deprecated = 515138995;</code>
+     * <code>string deprecated = 246703539;</code>
      *
      * @return This builder for chaining.
      */
@@ -1089,7 +1089,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to DEPRECATED. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string deprecated = 515138995;</code>
+     * <code>string deprecated = 246703539;</code>
      *
      * @param value The bytes for deprecated to set.
      * @return This builder for chaining.
@@ -1113,7 +1113,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string obsolete = 357647769;</code>
+     * <code>string obsolete = 89212313;</code>
      *
      * @return The obsolete.
      */
@@ -1135,7 +1135,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string obsolete = 357647769;</code>
+     * <code>string obsolete = 89212313;</code>
      *
      * @return The bytes for obsolete.
      */
@@ -1157,7 +1157,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string obsolete = 357647769;</code>
+     * <code>string obsolete = 89212313;</code>
      *
      * @param value The obsolete to set.
      * @return This builder for chaining.
@@ -1178,7 +1178,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string obsolete = 357647769;</code>
+     * <code>string obsolete = 89212313;</code>
      *
      * @return This builder for chaining.
      */
@@ -1195,7 +1195,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * An optional RFC3339 timestamp on or after which the state of this resource is intended to change to OBSOLETE. This is only informational and the status will not change unless the client explicitly changes it.
      * </pre>
      *
-     * <code>string obsolete = 357647769;</code>
+     * <code>string obsolete = 89212313;</code>
      *
      * @param value The bytes for obsolete to set.
      * @return This builder for chaining.
@@ -1219,7 +1219,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      * </pre>
      *
-     * <code>string replacement = 430919186;</code>
+     * <code>string replacement = 162483730;</code>
      *
      * @return The replacement.
      */
@@ -1241,7 +1241,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      * </pre>
      *
-     * <code>string replacement = 430919186;</code>
+     * <code>string replacement = 162483730;</code>
      *
      * @return The bytes for replacement.
      */
@@ -1263,7 +1263,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      * </pre>
      *
-     * <code>string replacement = 430919186;</code>
+     * <code>string replacement = 162483730;</code>
      *
      * @param value The replacement to set.
      * @return This builder for chaining.
@@ -1284,7 +1284,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      * </pre>
      *
-     * <code>string replacement = 430919186;</code>
+     * <code>string replacement = 162483730;</code>
      *
      * @return This builder for chaining.
      */
@@ -1301,7 +1301,7 @@ public final class DeprecationStatus extends com.google.protobuf.GeneratedMessag
      * The URL of the suggested replacement for a deprecated resource. The suggested replacement resource must be the same kind of resource as the deprecated resource.
      * </pre>
      *
-     * <code>string replacement = 430919186;</code>
+     * <code>string replacement = 162483730;</code>
      *
      * @param value The bytes for replacement to set.
      * @return This builder for chaining.

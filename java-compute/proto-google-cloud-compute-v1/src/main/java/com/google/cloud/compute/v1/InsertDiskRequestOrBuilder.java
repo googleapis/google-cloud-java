@@ -24,18 +24,44 @@ public interface InsertDiskRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the diskResource field is set.
    */
   boolean hasDiskResource();
   /**
-   * <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The diskResource.
    */
   com.google.cloud.compute.v1.Disk getDiskResource();
-  /** <code>.google.cloud.compute.v1.Disk disk_resource = 25880688;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Disk disk_resource = 25880688 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.DiskOrBuilder getDiskResourceOrBuilder();
 
   /**

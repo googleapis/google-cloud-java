@@ -356,7 +356,7 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region where you want to create the network endpoint group. It
    *     should comply with RFC1035.
-   * @param networkEndpointGroupResource
+   * @param networkEndpointGroupResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -379,9 +379,11 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient = RegionNetworkEndpointGroupsClient.create()) {
+   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionNetworkEndpointGroupRequest request = InsertRegionNetworkEndpointGroupRequest.newBuilder()
+   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -405,9 +407,11 @@ public class RegionNetworkEndpointGroupsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionNetworkEndpointGroupsClient regionNetworkEndpointGroupsClient = RegionNetworkEndpointGroupsClient.create()) {
+   *   NetworkEndpointGroup networkEndpointGroupResource = NetworkEndpointGroup.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionNetworkEndpointGroupRequest request = InsertRegionNetworkEndpointGroupRequest.newBuilder()
+   *     .setNetworkEndpointGroupResource(networkEndpointGroupResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

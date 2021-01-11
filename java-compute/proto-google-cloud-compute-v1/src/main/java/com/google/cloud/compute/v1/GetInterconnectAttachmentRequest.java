@@ -73,6 +73,13 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
           case 0:
             done = true;
             break;
+          case 317598626:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              interconnectAttachment_ = s;
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -85,13 +92,6 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1829885022:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              interconnectAttachment_ = s;
               break;
             }
           default:
@@ -128,7 +128,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.GetInterconnectAttachmentRequest.Builder.class);
   }
 
-  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 308135284;
+  public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 39699828;
   private volatile java.lang.Object interconnectAttachment_;
   /**
    *
@@ -137,7 +137,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
    * Name of the interconnect attachment to return.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The interconnectAttachment.
@@ -161,7 +161,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
    * Name of the interconnect attachment to return.
    * </pre>
    *
-   * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for interconnectAttachment.
@@ -291,15 +291,14 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getInterconnectAttachmentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39699828, interconnectAttachment_);
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 308135284, interconnectAttachment_);
     }
     unknownFields.writeTo(output);
   }
@@ -310,16 +309,16 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
     if (size != -1) return size;
 
     size = 0;
+    if (!getInterconnectAttachmentBytes().isEmpty()) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              39699828, interconnectAttachment_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getInterconnectAttachmentBytes().isEmpty()) {
-      size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              308135284, interconnectAttachment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -641,7 +640,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
      * Name of the interconnect attachment to return.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The interconnectAttachment.
@@ -664,7 +663,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
      * Name of the interconnect attachment to return.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for interconnectAttachment.
@@ -687,7 +686,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
      * Name of the interconnect attachment to return.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The interconnectAttachment to set.
@@ -709,7 +708,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
      * Name of the interconnect attachment to return.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -727,7 +726,7 @@ public final class GetInterconnectAttachmentRequest extends com.google.protobuf.
      * Name of the interconnect attachment to return.
      * </pre>
      *
-     * <code>string interconnect_attachment = 308135284 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string interconnect_attachment = 39699828 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for interconnectAttachment to set.

@@ -30,7 +30,7 @@ public interface UpdateFirewallRequestOrBuilder
    * Name of the firewall rule to update.
    * </pre>
    *
-   * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The firewall.
    */
@@ -42,25 +42,51 @@ public interface UpdateFirewallRequestOrBuilder
    * Name of the firewall rule to update.
    * </pre>
    *
-   * <code>string firewall = 511016192 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string firewall = 242580736 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for firewall.
    */
   com.google.protobuf.ByteString getFirewallBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the firewallResource field is set.
    */
   boolean hasFirewallResource();
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The firewallResource.
    */
   com.google.cloud.compute.v1.Firewall getFirewallResource();
-  /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder();
 
   /**

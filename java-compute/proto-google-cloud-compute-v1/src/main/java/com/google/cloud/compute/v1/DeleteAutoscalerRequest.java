@@ -94,7 +94,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
               project_ = s;
               break;
             }
-          case -156895558:
+          case 1990588090:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -135,7 +135,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.DeleteAutoscalerRequest.Builder.class);
   }
 
-  public static final int AUTOSCALER_FIELD_NUMBER = 517258967;
+  public static final int AUTOSCALER_FIELD_NUMBER = 248823511;
   private volatile java.lang.Object autoscaler_;
   /**
    *
@@ -144,7 +144,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
    * Name of the autoscaler to delete.
    * </pre>
    *
-   * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The autoscaler.
    */
@@ -167,7 +167,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
    * Name of the autoscaler to delete.
    * </pre>
    *
-   * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for autoscaler.
    */
@@ -359,7 +359,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getAutoscalerBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 517258967, autoscaler_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 248823511, autoscaler_);
     }
     unknownFields.writeTo(output);
   }
@@ -380,7 +380,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (!getAutoscalerBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517258967, autoscaler_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(248823511, autoscaler_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -709,7 +709,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
      * Name of the autoscaler to delete.
      * </pre>
      *
-     * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The autoscaler.
      */
@@ -731,7 +731,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
      * Name of the autoscaler to delete.
      * </pre>
      *
-     * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for autoscaler.
      */
@@ -753,7 +753,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
      * Name of the autoscaler to delete.
      * </pre>
      *
-     * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The autoscaler to set.
      * @return This builder for chaining.
@@ -774,7 +774,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
      * Name of the autoscaler to delete.
      * </pre>
      *
-     * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -791,7 +791,7 @@ public final class DeleteAutoscalerRequest extends com.google.protobuf.Generated
      * Name of the autoscaler to delete.
      * </pre>
      *
-     * <code>string autoscaler = 517258967 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string autoscaler = 248823511 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for autoscaler to set.
      * @return This builder for chaining.

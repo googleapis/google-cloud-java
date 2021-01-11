@@ -93,7 +93,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
 
               break;
             }
-          case -1068952462:
+          case 1078531186:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 bindings_ = new java.util.ArrayList<com.google.cloud.compute.v1.Binding>();
@@ -141,7 +141,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.ZoneSetPolicyRequest.Builder.class);
   }
 
-  public static final int BINDINGS_FIELD_NUMBER = 403251854;
+  public static final int BINDINGS_FIELD_NUMBER = 134816398;
   private java.util.List<com.google.cloud.compute.v1.Binding> bindings_;
   /**
    *
@@ -150,7 +150,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
@@ -163,7 +163,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder>
@@ -177,7 +177,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   @java.lang.Override
   public int getBindingsCount() {
@@ -190,7 +190,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Binding getBindings(int index) {
@@ -203,7 +203,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
    * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+   * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
@@ -326,7 +326,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
       output.writeMessage(91071794, getPolicy());
     }
     for (int i = 0; i < bindings_.size(); i++) {
-      output.writeMessage(403251854, bindings_.get(i));
+      output.writeMessage(134816398, bindings_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -344,7 +344,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(91071794, getPolicy());
     }
     for (int i = 0; i < bindings_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(403251854, bindings_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(134816398, bindings_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -730,7 +730,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Binding> getBindingsList() {
       if (bindingsBuilder_ == null) {
@@ -746,7 +746,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public int getBindingsCount() {
       if (bindingsBuilder_ == null) {
@@ -762,7 +762,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public com.google.cloud.compute.v1.Binding getBindings(int index) {
       if (bindingsBuilder_ == null) {
@@ -778,7 +778,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder setBindings(int index, com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -800,7 +800,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder setBindings(
         int index, com.google.cloud.compute.v1.Binding.Builder builderForValue) {
@@ -820,7 +820,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder addBindings(com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -842,7 +842,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder addBindings(int index, com.google.cloud.compute.v1.Binding value) {
       if (bindingsBuilder_ == null) {
@@ -864,7 +864,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder addBindings(com.google.cloud.compute.v1.Binding.Builder builderForValue) {
       if (bindingsBuilder_ == null) {
@@ -883,7 +883,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder addBindings(
         int index, com.google.cloud.compute.v1.Binding.Builder builderForValue) {
@@ -903,7 +903,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder addAllBindings(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Binding> values) {
@@ -923,7 +923,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder clearBindings() {
       if (bindingsBuilder_ == null) {
@@ -942,7 +942,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public Builder removeBindings(int index) {
       if (bindingsBuilder_ == null) {
@@ -961,7 +961,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder getBindingsBuilder(int index) {
       return getBindingsFieldBuilder().getBuilder(index);
@@ -973,7 +973,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public com.google.cloud.compute.v1.BindingOrBuilder getBindingsOrBuilder(int index) {
       if (bindingsBuilder_ == null) {
@@ -989,7 +989,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.BindingOrBuilder>
         getBindingsOrBuilderList() {
@@ -1006,7 +1006,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder addBindingsBuilder() {
       return getBindingsFieldBuilder()
@@ -1019,7 +1019,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public com.google.cloud.compute.v1.Binding.Builder addBindingsBuilder(int index) {
       return getBindingsFieldBuilder()
@@ -1032,7 +1032,7 @@ public final class ZoneSetPolicyRequest extends com.google.protobuf.GeneratedMes
      * Flatten Policy to create a backwacd compatible wire-format. Deprecated. Use 'policy' to specify bindings.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Binding bindings = 403251854;</code>
+     * <code>repeated .google.cloud.compute.v1.Binding bindings = 134816398;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Binding.Builder> getBindingsBuilderList() {
       return getBindingsFieldBuilder().getBuilderList();

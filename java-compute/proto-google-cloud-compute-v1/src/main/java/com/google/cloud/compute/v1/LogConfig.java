@@ -68,7 +68,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
-          case -2001896246:
+          case 145587402:
             {
               com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder subBuilder = null;
               if (dataAccess_ != null) {
@@ -85,7 +85,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -992146806:
+          case 1155336842:
             {
               com.google.cloud.compute.v1.LogConfigCloudAuditOptions.Builder subBuilder = null;
               if (cloudAudit_ != null) {
@@ -102,7 +102,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -927289374:
+          case 1220194274:
             {
               com.google.cloud.compute.v1.LogConfigCounterOptions.Builder subBuilder = null;
               if (counter_ != null) {
@@ -153,7 +153,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.LogConfig.Builder.class);
   }
 
-  public static final int CLOUD_AUDIT_FIELD_NUMBER = 412852561;
+  public static final int CLOUD_AUDIT_FIELD_NUMBER = 144417105;
   private com.google.cloud.compute.v1.LogConfigCloudAuditOptions cloudAudit_;
   /**
    *
@@ -162,7 +162,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Cloud audit options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
    *
    * @return Whether the cloudAudit field is set.
    */
@@ -177,7 +177,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Cloud audit options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
    *
    * @return The cloudAudit.
    */
@@ -194,14 +194,14 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Cloud audit options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LogConfigCloudAuditOptionsOrBuilder getCloudAuditOrBuilder() {
     return getCloudAudit();
   }
 
-  public static final int COUNTER_FIELD_NUMBER = 420959740;
+  public static final int COUNTER_FIELD_NUMBER = 152524284;
   private com.google.cloud.compute.v1.LogConfigCounterOptions counter_;
   /**
    *
@@ -210,7 +210,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Counter options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
    *
    * @return Whether the counter field is set.
    */
@@ -225,7 +225,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Counter options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
    *
    * @return The counter.
    */
@@ -242,14 +242,14 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Counter options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LogConfigCounterOptionsOrBuilder getCounterOrBuilder() {
     return getCounter();
   }
 
-  public static final int DATA_ACCESS_FIELD_NUMBER = 286633881;
+  public static final int DATA_ACCESS_FIELD_NUMBER = 18198425;
   private com.google.cloud.compute.v1.LogConfigDataAccessOptions dataAccess_;
   /**
    *
@@ -258,7 +258,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Data access options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
    *
    * @return Whether the dataAccess field is set.
    */
@@ -273,7 +273,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Data access options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
    *
    * @return The dataAccess.
    */
@@ -290,7 +290,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
    * Data access options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder getDataAccessOrBuilder() {
@@ -312,13 +312,13 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (dataAccess_ != null) {
-      output.writeMessage(286633881, getDataAccess());
+      output.writeMessage(18198425, getDataAccess());
     }
     if (cloudAudit_ != null) {
-      output.writeMessage(412852561, getCloudAudit());
+      output.writeMessage(144417105, getCloudAudit());
     }
     if (counter_ != null) {
-      output.writeMessage(420959740, getCounter());
+      output.writeMessage(152524284, getCounter());
     }
     unknownFields.writeTo(output);
   }
@@ -330,13 +330,13 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
 
     size = 0;
     if (dataAccess_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(286633881, getDataAccess());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18198425, getDataAccess());
     }
     if (cloudAudit_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(412852561, getCloudAudit());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(144417105, getCloudAudit());
     }
     if (counter_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(420959740, getCounter());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(152524284, getCounter());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -692,7 +692,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      *
      * @return Whether the cloudAudit field is set.
      */
@@ -706,7 +706,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      *
      * @return The cloudAudit.
      */
@@ -726,7 +726,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     public Builder setCloudAudit(com.google.cloud.compute.v1.LogConfigCloudAuditOptions value) {
       if (cloudAuditBuilder_ == null) {
@@ -748,7 +748,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     public Builder setCloudAudit(
         com.google.cloud.compute.v1.LogConfigCloudAuditOptions.Builder builderForValue) {
@@ -768,7 +768,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     public Builder mergeCloudAudit(com.google.cloud.compute.v1.LogConfigCloudAuditOptions value) {
       if (cloudAuditBuilder_ == null) {
@@ -794,7 +794,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     public Builder clearCloudAudit() {
       if (cloudAuditBuilder_ == null) {
@@ -814,7 +814,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     public com.google.cloud.compute.v1.LogConfigCloudAuditOptions.Builder getCloudAuditBuilder() {
 
@@ -828,7 +828,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     public com.google.cloud.compute.v1.LogConfigCloudAuditOptionsOrBuilder
         getCloudAuditOrBuilder() {
@@ -847,7 +847,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Cloud audit options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LogConfigCloudAuditOptions,
@@ -879,7 +879,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      *
      * @return Whether the counter field is set.
      */
@@ -893,7 +893,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      *
      * @return The counter.
      */
@@ -913,7 +913,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     public Builder setCounter(com.google.cloud.compute.v1.LogConfigCounterOptions value) {
       if (counterBuilder_ == null) {
@@ -935,7 +935,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     public Builder setCounter(
         com.google.cloud.compute.v1.LogConfigCounterOptions.Builder builderForValue) {
@@ -955,7 +955,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     public Builder mergeCounter(com.google.cloud.compute.v1.LogConfigCounterOptions value) {
       if (counterBuilder_ == null) {
@@ -981,7 +981,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     public Builder clearCounter() {
       if (counterBuilder_ == null) {
@@ -1001,7 +1001,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     public com.google.cloud.compute.v1.LogConfigCounterOptions.Builder getCounterBuilder() {
 
@@ -1015,7 +1015,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     public com.google.cloud.compute.v1.LogConfigCounterOptionsOrBuilder getCounterOrBuilder() {
       if (counterBuilder_ != null) {
@@ -1033,7 +1033,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Counter options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+     * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LogConfigCounterOptions,
@@ -1065,7 +1065,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      *
      * @return Whether the dataAccess field is set.
      */
@@ -1079,7 +1079,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      *
      * @return The dataAccess.
      */
@@ -1099,7 +1099,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     public Builder setDataAccess(com.google.cloud.compute.v1.LogConfigDataAccessOptions value) {
       if (dataAccessBuilder_ == null) {
@@ -1121,7 +1121,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     public Builder setDataAccess(
         com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder builderForValue) {
@@ -1141,7 +1141,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     public Builder mergeDataAccess(com.google.cloud.compute.v1.LogConfigDataAccessOptions value) {
       if (dataAccessBuilder_ == null) {
@@ -1167,7 +1167,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     public Builder clearDataAccess() {
       if (dataAccessBuilder_ == null) {
@@ -1187,7 +1187,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     public com.google.cloud.compute.v1.LogConfigDataAccessOptions.Builder getDataAccessBuilder() {
 
@@ -1201,7 +1201,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     public com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder
         getDataAccessOrBuilder() {
@@ -1220,7 +1220,7 @@ public final class LogConfig extends com.google.protobuf.GeneratedMessageV3
      * Data access options.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+     * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LogConfigDataAccessOptions,

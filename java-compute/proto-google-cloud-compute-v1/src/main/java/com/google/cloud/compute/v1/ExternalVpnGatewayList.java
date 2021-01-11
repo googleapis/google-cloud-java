@@ -131,7 +131,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
                       com.google.cloud.compute.v1.ExternalVpnGateway.parser(), extensionRegistry));
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -428,7 +428,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -437,7 +437,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -460,7 +460,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
    * [Output Only] Server-defined URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -556,7 +556,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       output.writeMessage(100526016, items_.get(i));
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -586,7 +586,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(100526016, items_.get(i));
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1743,7 +1743,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1765,7 +1765,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1787,7 +1787,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1808,7 +1808,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1825,7 +1825,7 @@ public final class ExternalVpnGatewayList extends com.google.protobuf.GeneratedM
      * [Output Only] Server-defined URL for this resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

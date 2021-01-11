@@ -55,7 +55,7 @@ public interface TargetSslProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface TargetSslProxyOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -180,7 +180,7 @@ public interface TargetSslProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -192,7 +192,7 @@ public interface TargetSslProxyOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -205,7 +205,7 @@ public interface TargetSslProxyOrBuilder
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -217,7 +217,7 @@ public interface TargetSslProxyOrBuilder
    * URL to the BackendService resource.
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */
@@ -230,7 +230,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @return A list containing the sslCertificates.
    */
@@ -242,7 +242,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @return The count of sslCertificates.
    */
@@ -254,7 +254,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @param index The index of the element to return.
    * @return The sslCertificates at the given index.
@@ -267,7 +267,7 @@ public interface TargetSslProxyOrBuilder
    * URLs to SslCertificate resources that are used to authenticate connections to Backends. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates.
    * </pre>
    *
-   * <code>repeated string ssl_certificates = 366006543;</code>
+   * <code>repeated string ssl_certificates = 97571087;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the sslCertificates at the given index.
@@ -281,7 +281,7 @@ public interface TargetSslProxyOrBuilder
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>string ssl_policy = 26754757;</code>
    *
    * @return The sslPolicy.
    */
@@ -293,7 +293,7 @@ public interface TargetSslProxyOrBuilder
    * URL of SslPolicy resource that will be associated with the TargetSslProxy resource. If not set, the TargetSslProxy resource will not have any SSL policy configured.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213;</code>
+   * <code>string ssl_policy = 26754757;</code>
    *
    * @return The bytes for sslPolicy.
    */

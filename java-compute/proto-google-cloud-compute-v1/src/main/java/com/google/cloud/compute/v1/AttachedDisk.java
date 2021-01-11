@@ -84,6 +84,23 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
               boot_ = input.readBool();
               break;
             }
+          case 25801770:
+            {
+              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
+              if (diskEncryptionKey_ != null) {
+                subBuilder = diskEncryptionKey_.toBuilder();
+              }
+              diskEncryptionKey_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(diskEncryptionKey_);
+                diskEncryptionKey_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 26336418:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -122,11 +139,28 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 382626234:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              diskSizeGb_ = s;
+              break;
+            }
           case 540333730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               deviceName_ = s;
+              break;
+            }
+          case 553656978:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                licenses_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              licenses_.add(s);
               break;
             }
           case 634356362:
@@ -169,46 +203,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -2121681878:
-            {
-              com.google.cloud.compute.v1.CustomerEncryptionKey.Builder subBuilder = null;
-              if (diskEncryptionKey_ != null) {
-                subBuilder = diskEncryptionKey_.toBuilder();
-              }
-              diskEncryptionKey_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.CustomerEncryptionKey.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(diskEncryptionKey_);
-                diskEncryptionKey_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1764857414:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              diskSizeGb_ = s;
-              break;
-            }
-          case -1593826670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                licenses_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              licenses_.add(s);
-              break;
-            }
-          case -576876072:
+          case 1570607576:
             {
               autoDelete_ = input.readBool();
               break;
             }
-          case -273978936:
+          case 1873504712:
             {
               int rawValue = input.readEnum();
 
@@ -229,11 +229,11 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000001) != 0)) {
-        guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
-      }
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
         licenses_ = licenses_.getUnmodifiableView();
+      }
+      if (((mutable_bitField0_ & 0x00000001) != 0)) {
+        guestOsFeatures_ = java.util.Collections.unmodifiableList(guestOsFeatures_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -525,10 +525,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     UNDEFINED_TYPE(0),
-    /** <code>PERSISTENT = 460683927;</code> */
-    PERSISTENT(460683927),
-    /** <code>SCRATCH = 496778970;</code> */
-    SCRATCH(496778970),
+    /** <code>PERSISTENT = 192248471;</code> */
+    PERSISTENT(192248471),
+    /** <code>SCRATCH = 228343514;</code> */
+    SCRATCH(228343514),
     UNRECOGNIZED(-1),
     ;
 
@@ -542,10 +542,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_TYPE = 0;</code>
      */
     public static final int UNDEFINED_TYPE_VALUE = 0;
-    /** <code>PERSISTENT = 460683927;</code> */
-    public static final int PERSISTENT_VALUE = 460683927;
-    /** <code>SCRATCH = 496778970;</code> */
-    public static final int SCRATCH_VALUE = 496778970;
+    /** <code>PERSISTENT = 192248471;</code> */
+    public static final int PERSISTENT_VALUE = 192248471;
+    /** <code>SCRATCH = 228343514;</code> */
+    public static final int SCRATCH_VALUE = 228343514;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -573,9 +573,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_TYPE;
-        case 460683927:
+        case 192248471:
           return PERSISTENT;
-        case 496778970:
+        case 228343514:
           return SCRATCH;
         default:
           return null;
@@ -630,7 +630,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.AttachedDisk.Type)
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
   private boolean autoDelete_;
   /**
    *
@@ -639,7 +639,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>bool auto_delete = 196325947;</code>
    *
    * @return The autoDelete.
    */
@@ -717,7 +717,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 271660677;
+  public static final int DISK_ENCRYPTION_KEY_FIELD_NUMBER = 3225221;
   private com.google.cloud.compute.v1.CustomerEncryptionKey diskEncryptionKey_;
   /**
    *
@@ -730,7 +730,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return Whether the diskEncryptionKey field is set.
    */
@@ -749,7 +749,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    *
    * @return The diskEncryptionKey.
    */
@@ -770,7 +770,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+   * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
@@ -778,7 +778,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     return getDiskEncryptionKey();
   }
 
-  public static final int DISK_SIZE_GB_FIELD_NUMBER = 316263735;
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 47828279;
   private volatile java.lang.Object diskSizeGb_;
   /**
    *
@@ -787,7 +787,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>string disk_size_gb = 47828279;</code>
    *
    * @return The diskSizeGb.
    */
@@ -810,7 +810,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * The size of the disk in GB.
    * </pre>
    *
-   * <code>string disk_size_gb = 316263735;</code>
+   * <code>string disk_size_gb = 47828279;</code>
    *
    * @return The bytes for diskSizeGb.
    */
@@ -970,7 +970,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     return getInitializeParams();
   }
 
-  public static final int INTERFACE_FIELD_NUMBER = 502623545;
+  public static final int INTERFACE_FIELD_NUMBER = 234188089;
   private int interface_;
   /**
    *
@@ -979,7 +979,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
    *
    * @return The enum numeric value on the wire for interface.
    */
@@ -994,7 +994,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
    *
    * @return The interface.
    */
@@ -1057,7 +1057,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LICENSES_FIELD_NUMBER = 337642578;
+  public static final int LICENSES_FIELD_NUMBER = 69207122;
   private com.google.protobuf.LazyStringList licenses_;
   /**
    *
@@ -1066,7 +1066,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return A list containing the licenses.
    */
@@ -1080,7 +1080,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @return The count of licenses.
    */
@@ -1094,7 +1094,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the element to return.
    * @return The licenses at the given index.
@@ -1109,7 +1109,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Any valid publicly visible licenses.
    * </pre>
    *
-   * <code>repeated string licenses = 337642578;</code>
+   * <code>repeated string licenses = 69207122;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the licenses at the given index.
@@ -1312,6 +1312,9 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (boot_ != false) {
       output.writeBool(3029746, boot_);
     }
+    if (diskEncryptionKey_ != null) {
+      output.writeMessage(3225221, getDiskEncryptionKey());
+    }
     if (!getKindBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
@@ -1324,8 +1327,14 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (initializeParams_ != null) {
       output.writeMessage(17697045, getInitializeParams());
     }
+    if (!getDiskSizeGbBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 47828279, diskSizeGb_);
+    }
     if (!getDeviceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 67541716, deviceName_);
+    }
+    for (int i = 0; i < licenses_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 69207122, licenses_.getRaw(i));
     }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       output.writeMessage(79294545, guestOsFeatures_.get(i));
@@ -1339,21 +1348,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     if (shieldedInstanceInitialState_ != null) {
       output.writeMessage(192356867, getShieldedInstanceInitialState());
     }
-    if (diskEncryptionKey_ != null) {
-      output.writeMessage(271660677, getDiskEncryptionKey());
-    }
-    if (!getDiskSizeGbBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 316263735, diskSizeGb_);
-    }
-    for (int i = 0; i < licenses_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 337642578, licenses_.getRaw(i));
-    }
     if (autoDelete_ != false) {
-      output.writeBool(464761403, autoDelete_);
+      output.writeBool(196325947, autoDelete_);
     }
     if (interface_
         != com.google.cloud.compute.v1.AttachedDisk.Interface.UNDEFINED_INTERFACE.getNumber()) {
-      output.writeEnum(502623545, interface_);
+      output.writeEnum(234188089, interface_);
     }
     unknownFields.writeTo(output);
   }
@@ -1366,6 +1366,10 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (boot_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3029746, boot_);
+    }
+    if (diskEncryptionKey_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3225221, getDiskEncryptionKey());
     }
     if (!getKindBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
@@ -1380,8 +1384,19 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(17697045, getInitializeParams());
     }
+    if (!getDiskSizeGbBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(47828279, diskSizeGb_);
+    }
     if (!getDeviceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67541716, deviceName_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < licenses_.size(); i++) {
+        dataSize += computeStringSizeNoTag(licenses_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getLicensesList().size();
     }
     for (int i = 0; i < guestOsFeatures_.size(); i++) {
       size +=
@@ -1399,28 +1414,12 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               192356867, getShieldedInstanceInitialState());
     }
-    if (diskEncryptionKey_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              271660677, getDiskEncryptionKey());
-    }
-    if (!getDiskSizeGbBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316263735, diskSizeGb_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < licenses_.size(); i++) {
-        dataSize += computeStringSizeNoTag(licenses_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getLicensesList().size();
-    }
     if (autoDelete_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(196325947, autoDelete_);
     }
     if (interface_
         != com.google.cloud.compute.v1.AttachedDisk.Interface.UNDEFINED_INTERFACE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(502623545, interface_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(234188089, interface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1941,7 +1940,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>bool auto_delete = 196325947;</code>
      *
      * @return The autoDelete.
      */
@@ -1956,7 +1955,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>bool auto_delete = 196325947;</code>
      *
      * @param value The autoDelete to set.
      * @return This builder for chaining.
@@ -1974,7 +1973,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>bool auto_delete = 196325947;</code>
      *
      * @return This builder for chaining.
      */
@@ -2165,7 +2164,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      *
      * @return Whether the diskEncryptionKey field is set.
      */
@@ -2183,7 +2182,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      *
      * @return The diskEncryptionKey.
      */
@@ -2207,7 +2206,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder setDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -2233,7 +2232,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder setDiskEncryptionKey(
         com.google.cloud.compute.v1.CustomerEncryptionKey.Builder builderForValue) {
@@ -2257,7 +2256,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder mergeDiskEncryptionKey(com.google.cloud.compute.v1.CustomerEncryptionKey value) {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -2287,7 +2286,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public Builder clearDiskEncryptionKey() {
       if (diskEncryptionKeyBuilder_ == null) {
@@ -2311,7 +2310,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKey.Builder getDiskEncryptionKeyBuilder() {
 
@@ -2329,7 +2328,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     public com.google.cloud.compute.v1.CustomerEncryptionKeyOrBuilder
         getDiskEncryptionKeyOrBuilder() {
@@ -2352,7 +2351,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Instance templates do not store customer-supplied encryption keys, so you cannot use your own keys to encrypt disks in a managed instance group.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 271660677;</code>
+     * <code>.google.cloud.compute.v1.CustomerEncryptionKey disk_encryption_key = 3225221;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.CustomerEncryptionKey,
@@ -2379,7 +2378,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>string disk_size_gb = 47828279;</code>
      *
      * @return The diskSizeGb.
      */
@@ -2401,7 +2400,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>string disk_size_gb = 47828279;</code>
      *
      * @return The bytes for diskSizeGb.
      */
@@ -2423,7 +2422,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>string disk_size_gb = 47828279;</code>
      *
      * @param value The diskSizeGb to set.
      * @return This builder for chaining.
@@ -2444,7 +2443,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>string disk_size_gb = 47828279;</code>
      *
      * @return This builder for chaining.
      */
@@ -2461,7 +2460,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * The size of the disk in GB.
      * </pre>
      *
-     * <code>string disk_size_gb = 316263735;</code>
+     * <code>string disk_size_gb = 47828279;</code>
      *
      * @param value The bytes for diskSizeGb to set.
      * @return This builder for chaining.
@@ -3100,7 +3099,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      *
      * @return The enum numeric value on the wire for interface.
      */
@@ -3115,7 +3114,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      *
      * @param value The enum numeric value on the wire for interface to set.
      * @return This builder for chaining.
@@ -3133,7 +3132,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      *
      * @return The interface.
      */
@@ -3153,7 +3152,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      *
      * @param value The interface to set.
      * @return This builder for chaining.
@@ -3174,7 +3173,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>.google.cloud.compute.v1.AttachedDisk.Interface interface = 234188089;</code>
      *
      * @return This builder for chaining.
      */
@@ -3307,7 +3306,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @return A list containing the licenses.
      */
@@ -3321,7 +3320,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @return The count of licenses.
      */
@@ -3335,7 +3334,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param index The index of the element to return.
      * @return The licenses at the given index.
@@ -3350,7 +3349,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the licenses at the given index.
@@ -3365,7 +3364,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param index The index to set the value at.
      * @param value The licenses to set.
@@ -3387,7 +3386,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param value The licenses to add.
      * @return This builder for chaining.
@@ -3408,7 +3407,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param values The licenses to add.
      * @return This builder for chaining.
@@ -3426,7 +3425,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @return This builder for chaining.
      */
@@ -3443,7 +3442,7 @@ public final class AttachedDisk extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Any valid publicly visible licenses.
      * </pre>
      *
-     * <code>repeated string licenses = 337642578;</code>
+     * <code>repeated string licenses = 69207122;</code>
      *
      * @param value The bytes of the licenses to add.
      * @return This builder for chaining.

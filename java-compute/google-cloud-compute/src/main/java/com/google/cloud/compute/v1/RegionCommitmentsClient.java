@@ -367,7 +367,7 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param commitmentResource
+   * @param commitmentResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, Commitment commitmentResource) {
@@ -388,9 +388,11 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionCommitmentRequest request = InsertRegionCommitmentRequest.newBuilder()
+   *     .setCommitmentResource(commitmentResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -413,9 +415,11 @@ public class RegionCommitmentsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (RegionCommitmentsClient regionCommitmentsClient = RegionCommitmentsClient.create()) {
+   *   Commitment commitmentResource = Commitment.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertRegionCommitmentRequest request = InsertRegionCommitmentRequest.newBuilder()
+   *     .setCommitmentResource(commitmentResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();

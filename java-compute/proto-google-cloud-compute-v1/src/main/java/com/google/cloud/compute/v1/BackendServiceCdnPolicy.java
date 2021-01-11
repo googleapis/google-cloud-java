@@ -38,6 +38,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
   }
 
   private BackendServiceCdnPolicy() {
+    cacheMode_ = 0;
     signedUrlCacheMaxAgeSec_ = "";
     signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -72,6 +73,45 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
           case 0:
             done = true;
             break;
+          case 7512626:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              signedUrlCacheMaxAgeSec_ = s;
+              break;
+            }
+          case 231023104:
+            {
+              int rawValue = input.readEnum();
+
+              cacheMode_ = rawValue;
+              break;
+            }
+          case 232274880:
+            {
+              clientTtl_ = input.readInt32();
+              break;
+            }
+          case 313140360:
+            {
+              maxTtl_ = input.readInt32();
+              break;
+            }
+          case 802027376:
+            {
+              defaultTtl_ = input.readInt32();
+              break;
+            }
+          case 827307434:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              signedUrlKeyNames_.add(s);
+              break;
+            }
           case 1274109818:
             {
               com.google.cloud.compute.v1.CacheKeyPolicy.Builder subBuilder = null;
@@ -86,23 +126,6 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
                 cacheKeyPolicy_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -2139971022:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              signedUrlCacheMaxAgeSec_ = s;
-              break;
-            }
-          case -1320176214:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                signedUrlKeyNames_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              signedUrlKeyNames_.add(s);
               break;
             }
           default:
@@ -140,6 +163,148 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.BackendServiceCdnPolicy.class,
             com.google.cloud.compute.v1.BackendServiceCdnPolicy.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache setting for all responses from this backend. The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode}
+   */
+  public enum CacheMode implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_CACHE_MODE = 0;</code>
+     */
+    UNDEFINED_CACHE_MODE(0),
+    /** <code>CACHE_ALL_STATIC = 86592489;</code> */
+    CACHE_ALL_STATIC(86592489),
+    /** <code>FORCE_CACHE_ALL = 217591472;</code> */
+    FORCE_CACHE_ALL(217591472),
+    /** <code>INVALID_CACHE_MODE = 112860104;</code> */
+    INVALID_CACHE_MODE(112860104),
+    /** <code>USE_ORIGIN_HEADERS = 55380261;</code> */
+    USE_ORIGIN_HEADERS(55380261),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_CACHE_MODE = 0;</code>
+     */
+    public static final int UNDEFINED_CACHE_MODE_VALUE = 0;
+    /** <code>CACHE_ALL_STATIC = 86592489;</code> */
+    public static final int CACHE_ALL_STATIC_VALUE = 86592489;
+    /** <code>FORCE_CACHE_ALL = 217591472;</code> */
+    public static final int FORCE_CACHE_ALL_VALUE = 217591472;
+    /** <code>INVALID_CACHE_MODE = 112860104;</code> */
+    public static final int INVALID_CACHE_MODE_VALUE = 112860104;
+    /** <code>USE_ORIGIN_HEADERS = 55380261;</code> */
+    public static final int USE_ORIGIN_HEADERS_VALUE = 55380261;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CacheMode valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CacheMode forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_CACHE_MODE;
+        case 86592489:
+          return CACHE_ALL_STATIC;
+        case 217591472:
+          return FORCE_CACHE_ALL;
+        case 112860104:
+          return INVALID_CACHE_MODE;
+        case 55380261:
+          return USE_ORIGIN_HEADERS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CacheMode> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CacheMode> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<CacheMode>() {
+          public CacheMode findValueByNumber(int number) {
+            return CacheMode.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.BackendServiceCdnPolicy.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final CacheMode[] VALUES = values();
+
+    public static CacheMode valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CacheMode(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode)
   }
 
   public static final int CACHE_KEY_POLICY_FIELD_NUMBER = 159263727;
@@ -190,7 +355,105 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     return getCacheKeyPolicy();
   }
 
-  public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 269374534;
+  public static final int CACHE_MODE_FIELD_NUMBER = 28877888;
+  private int cacheMode_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache setting for all responses from this backend. The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
+   *
+   * @return The enum numeric value on the wire for cacheMode.
+   */
+  @java.lang.Override
+  public int getCacheModeValue() {
+    return cacheMode_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache setting for all responses from this backend. The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
+   *
+   * @return The cacheMode.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode getCacheMode() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode result =
+        com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.valueOf(cacheMode_);
+    return result == null
+        ? com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int CLIENT_TTL_FIELD_NUMBER = 29034360;
+  private int clientTtl_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * </pre>
+   *
+   * <code>int32 client_ttl = 29034360;</code>
+   *
+   * @return The clientTtl.
+   */
+  @java.lang.Override
+  public int getClientTtl() {
+    return clientTtl_;
+  }
+
+  public static final int DEFAULT_TTL_FIELD_NUMBER = 100253422;
+  private int defaultTtl_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * </pre>
+   *
+   * <code>int32 default_ttl = 100253422;</code>
+   *
+   * @return The defaultTtl.
+   */
+  @java.lang.Override
+  public int getDefaultTtl() {
+    return defaultTtl_;
+  }
+
+  public static final int MAX_TTL_FIELD_NUMBER = 39142545;
+  private int maxTtl_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * </pre>
+   *
+   * <code>int32 max_ttl = 39142545;</code>
+   *
+   * @return The maxTtl.
+   */
+  @java.lang.Override
+  public int getMaxTtl() {
+    return maxTtl_;
+  }
+
+  public static final int SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER = 939078;
   private volatile java.lang.Object signedUrlCacheMaxAgeSec_;
   /**
    *
@@ -199,7 +462,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>string signed_url_cache_max_age_sec = 939078;</code>
    *
    * @return The signedUrlCacheMaxAgeSec.
    */
@@ -222,7 +485,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>string signed_url_cache_max_age_sec = 939078;</code>
    *
    * @return The bytes for signedUrlCacheMaxAgeSec.
    */
@@ -239,7 +502,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     }
   }
 
-  public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 371848885;
+  public static final int SIGNED_URL_KEY_NAMES_FIELD_NUMBER = 103413429;
   private com.google.protobuf.LazyStringList signedUrlKeyNames_;
   /**
    *
@@ -248,7 +511,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @return A list containing the signedUrlKeyNames.
    */
@@ -262,7 +525,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @return The count of signedUrlKeyNames.
    */
@@ -276,7 +539,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @param index The index of the element to return.
    * @return The signedUrlKeyNames at the given index.
@@ -291,7 +554,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the signedUrlKeyNames at the given index.
@@ -314,16 +577,29 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (cacheKeyPolicy_ != null) {
-      output.writeMessage(159263727, getCacheKeyPolicy());
-    }
     if (!getSignedUrlCacheMaxAgeSecBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 269374534, signedUrlCacheMaxAgeSec_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 939078, signedUrlCacheMaxAgeSec_);
+    }
+    if (cacheMode_
+        != com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.UNDEFINED_CACHE_MODE
+            .getNumber()) {
+      output.writeEnum(28877888, cacheMode_);
+    }
+    if (clientTtl_ != 0) {
+      output.writeInt32(29034360, clientTtl_);
+    }
+    if (maxTtl_ != 0) {
+      output.writeInt32(39142545, maxTtl_);
+    }
+    if (defaultTtl_ != 0) {
+      output.writeInt32(100253422, defaultTtl_);
     }
     for (int i = 0; i < signedUrlKeyNames_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 371848885, signedUrlKeyNames_.getRaw(i));
+          output, 103413429, signedUrlKeyNames_.getRaw(i));
+    }
+    if (cacheKeyPolicy_ != null) {
+      output.writeMessage(159263727, getCacheKeyPolicy());
     }
     unknownFields.writeTo(output);
   }
@@ -334,14 +610,24 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     if (size != -1) return size;
 
     size = 0;
-    if (cacheKeyPolicy_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(159263727, getCacheKeyPolicy());
-    }
     if (!getSignedUrlCacheMaxAgeSecBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              269374534, signedUrlCacheMaxAgeSec_);
+              939078, signedUrlCacheMaxAgeSec_);
+    }
+    if (cacheMode_
+        != com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.UNDEFINED_CACHE_MODE
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(28877888, cacheMode_);
+    }
+    if (clientTtl_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(29034360, clientTtl_);
+    }
+    if (maxTtl_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(39142545, maxTtl_);
+    }
+    if (defaultTtl_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(100253422, defaultTtl_);
     }
     {
       int dataSize = 0;
@@ -350,6 +636,10 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       }
       size += dataSize;
       size += 5 * getSignedUrlKeyNamesList().size();
+    }
+    if (cacheKeyPolicy_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(159263727, getCacheKeyPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -371,6 +661,10 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
     if (hasCacheKeyPolicy()) {
       if (!getCacheKeyPolicy().equals(other.getCacheKeyPolicy())) return false;
     }
+    if (cacheMode_ != other.cacheMode_) return false;
+    if (getClientTtl() != other.getClientTtl()) return false;
+    if (getDefaultTtl() != other.getDefaultTtl()) return false;
+    if (getMaxTtl() != other.getMaxTtl()) return false;
     if (!getSignedUrlCacheMaxAgeSec().equals(other.getSignedUrlCacheMaxAgeSec())) return false;
     if (!getSignedUrlKeyNamesList().equals(other.getSignedUrlKeyNamesList())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -388,6 +682,14 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       hash = (37 * hash) + CACHE_KEY_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getCacheKeyPolicy().hashCode();
     }
+    hash = (37 * hash) + CACHE_MODE_FIELD_NUMBER;
+    hash = (53 * hash) + cacheMode_;
+    hash = (37 * hash) + CLIENT_TTL_FIELD_NUMBER;
+    hash = (53 * hash) + getClientTtl();
+    hash = (37 * hash) + DEFAULT_TTL_FIELD_NUMBER;
+    hash = (53 * hash) + getDefaultTtl();
+    hash = (37 * hash) + MAX_TTL_FIELD_NUMBER;
+    hash = (53 * hash) + getMaxTtl();
     hash = (37 * hash) + SIGNED_URL_CACHE_MAX_AGE_SEC_FIELD_NUMBER;
     hash = (53 * hash) + getSignedUrlCacheMaxAgeSec().hashCode();
     if (getSignedUrlKeyNamesCount() > 0) {
@@ -545,6 +847,14 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         cacheKeyPolicy_ = null;
         cacheKeyPolicyBuilder_ = null;
       }
+      cacheMode_ = 0;
+
+      clientTtl_ = 0;
+
+      defaultTtl_ = 0;
+
+      maxTtl_ = 0;
+
       signedUrlCacheMaxAgeSec_ = "";
 
       signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -582,6 +892,10 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       } else {
         result.cacheKeyPolicy_ = cacheKeyPolicyBuilder_.build();
       }
+      result.cacheMode_ = cacheMode_;
+      result.clientTtl_ = clientTtl_;
+      result.defaultTtl_ = defaultTtl_;
+      result.maxTtl_ = maxTtl_;
       result.signedUrlCacheMaxAgeSec_ = signedUrlCacheMaxAgeSec_;
       if (((bitField0_ & 0x00000001) != 0)) {
         signedUrlKeyNames_ = signedUrlKeyNames_.getUnmodifiableView();
@@ -640,6 +954,18 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
         return this;
       if (other.hasCacheKeyPolicy()) {
         mergeCacheKeyPolicy(other.getCacheKeyPolicy());
+      }
+      if (other.cacheMode_ != 0) {
+        setCacheModeValue(other.getCacheModeValue());
+      }
+      if (other.getClientTtl() != 0) {
+        setClientTtl(other.getClientTtl());
+      }
+      if (other.getDefaultTtl() != 0) {
+        setDefaultTtl(other.getDefaultTtl());
+      }
+      if (other.getMaxTtl() != 0) {
+        setMaxTtl(other.getMaxTtl());
       }
       if (!other.getSignedUrlCacheMaxAgeSec().isEmpty()) {
         signedUrlCacheMaxAgeSec_ = other.signedUrlCacheMaxAgeSec_;
@@ -873,6 +1199,276 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
       return cacheKeyPolicyBuilder_;
     }
 
+    private int cacheMode_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for cacheMode.
+     */
+    @java.lang.Override
+    public int getCacheModeValue() {
+      return cacheMode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for cacheMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCacheModeValue(int value) {
+
+      cacheMode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;
+     * </code>
+     *
+     * @return The cacheMode.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode getCacheMode() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode result =
+          com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.valueOf(cacheMode_);
+      return result == null
+          ? com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;
+     * </code>
+     *
+     * @param value The cacheMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCacheMode(
+        com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      cacheMode_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are:
+     * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+     * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+     * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCacheMode() {
+
+      cacheMode_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int clientTtl_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * </pre>
+     *
+     * <code>int32 client_ttl = 29034360;</code>
+     *
+     * @return The clientTtl.
+     */
+    @java.lang.Override
+    public int getClientTtl() {
+      return clientTtl_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * </pre>
+     *
+     * <code>int32 client_ttl = 29034360;</code>
+     *
+     * @param value The clientTtl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClientTtl(int value) {
+
+      clientTtl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+     * </pre>
+     *
+     * <code>int32 client_ttl = 29034360;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClientTtl() {
+
+      clientTtl_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int defaultTtl_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 default_ttl = 100253422;</code>
+     *
+     * @return The defaultTtl.
+     */
+    @java.lang.Override
+    public int getDefaultTtl() {
+      return defaultTtl_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 default_ttl = 100253422;</code>
+     *
+     * @param value The defaultTtl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDefaultTtl(int value) {
+
+      defaultTtl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 default_ttl = 100253422;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDefaultTtl() {
+
+      defaultTtl_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int maxTtl_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 max_ttl = 39142545;</code>
+     *
+     * @return The maxTtl.
+     */
+    @java.lang.Override
+    public int getMaxTtl() {
+      return maxTtl_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 max_ttl = 39142545;</code>
+     *
+     * @param value The maxTtl to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxTtl(int value) {
+
+      maxTtl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+     * </pre>
+     *
+     * <code>int32 max_ttl = 39142545;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxTtl() {
+
+      maxTtl_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object signedUrlCacheMaxAgeSec_ = "";
     /**
      *
@@ -881,7 +1477,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>string signed_url_cache_max_age_sec = 939078;</code>
      *
      * @return The signedUrlCacheMaxAgeSec.
      */
@@ -903,7 +1499,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>string signed_url_cache_max_age_sec = 939078;</code>
      *
      * @return The bytes for signedUrlCacheMaxAgeSec.
      */
@@ -925,7 +1521,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>string signed_url_cache_max_age_sec = 939078;</code>
      *
      * @param value The signedUrlCacheMaxAgeSec to set.
      * @return This builder for chaining.
@@ -946,7 +1542,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>string signed_url_cache_max_age_sec = 939078;</code>
      *
      * @return This builder for chaining.
      */
@@ -963,7 +1559,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
      * </pre>
      *
-     * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+     * <code>string signed_url_cache_max_age_sec = 939078;</code>
      *
      * @param value The bytes for signedUrlCacheMaxAgeSec to set.
      * @return This builder for chaining.
@@ -995,7 +1591,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @return A list containing the signedUrlKeyNames.
      */
@@ -1009,7 +1605,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @return The count of signedUrlKeyNames.
      */
@@ -1023,7 +1619,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @param index The index of the element to return.
      * @return The signedUrlKeyNames at the given index.
@@ -1038,7 +1634,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the signedUrlKeyNames at the given index.
@@ -1053,7 +1649,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @param index The index to set the value at.
      * @param value The signedUrlKeyNames to set.
@@ -1075,7 +1671,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @param value The signedUrlKeyNames to add.
      * @return This builder for chaining.
@@ -1096,7 +1692,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @param values The signedUrlKeyNames to add.
      * @return This builder for chaining.
@@ -1114,7 +1710,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @return This builder for chaining.
      */
@@ -1131,7 +1727,7 @@ public final class BackendServiceCdnPolicy extends com.google.protobuf.Generated
      * [Output Only] Names of the keys for signing request URLs.
      * </pre>
      *
-     * <code>repeated string signed_url_key_names = 371848885;</code>
+     * <code>repeated string signed_url_key_names = 103413429;</code>
      *
      * @param value The bytes of the signedUrlKeyNames to add.
      * @return This builder for chaining.

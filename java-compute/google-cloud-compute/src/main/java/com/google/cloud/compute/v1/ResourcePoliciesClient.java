@@ -533,7 +533,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param resourcePolicyResource
+   * @param resourcePolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -557,9 +557,11 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
    *   InsertResourcePolicyRequest request = InsertResourcePolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setResourcePolicyResource(resourcePolicyResource)
    *     .build();
    *   Operation response = resourcePoliciesClient.insert(request);
    * }
@@ -582,9 +584,11 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   ResourcePolicy resourcePolicyResource = ResourcePolicy.newBuilder().build();
    *   InsertResourcePolicyRequest request = InsertResourcePolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setResourcePolicyResource(resourcePolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = resourcePoliciesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -731,7 +735,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param regionSetPolicyRequestResource
+   * @param regionSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -759,10 +763,12 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   String resource = "";
    *   SetIamPolicyResourcePolicyRequest request = SetIamPolicyResourcePolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .setResource(resource)
    *     .build();
    *   Policy response = resourcePoliciesClient.setIamPolicy(request);
@@ -786,10 +792,12 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * try (ResourcePoliciesClient resourcePoliciesClient = ResourcePoliciesClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   RegionSetPolicyRequest regionSetPolicyRequestResource = RegionSetPolicyRequest.newBuilder().build();
    *   String resource = "";
    *   SetIamPolicyResourcePolicyRequest request = SetIamPolicyResourcePolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRegionSetPolicyRequestResource(regionSetPolicyRequestResource)
    *     .setResource(resource)
    *     .build();
    *   ApiFuture&lt;Policy&gt; future = resourcePoliciesClient.setIamPolicyCallable().futureCall(request);
@@ -821,7 +829,7 @@ public class ResourcePoliciesClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -850,10 +858,12 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsResourcePolicyRequest request = TestIamPermissionsResourcePolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = resourcePoliciesClient.testIamPermissions(request);
    * }
@@ -878,10 +888,12 @@ public class ResourcePoliciesClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsResourcePolicyRequest request = TestIamPermissionsResourcePolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = resourcePoliciesClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

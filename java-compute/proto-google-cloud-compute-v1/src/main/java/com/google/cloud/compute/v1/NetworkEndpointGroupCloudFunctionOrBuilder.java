@@ -32,7 +32,7 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    * Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>string function = 38761432;</code>
    *
    * @return The function.
    */
@@ -46,7 +46,7 @@ public interface NetworkEndpointGroupCloudFunctionOrBuilder
    * Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>string function = 38761432;</code>
    *
    * @return The bytes for function.
    */

@@ -30,7 +30,7 @@ public interface AutoscalersScopedListOrBuilder
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Autoscaler> getAutoscalersList();
   /**
@@ -40,7 +40,7 @@ public interface AutoscalersScopedListOrBuilder
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   com.google.cloud.compute.v1.Autoscaler getAutoscalers(int index);
   /**
@@ -50,7 +50,7 @@ public interface AutoscalersScopedListOrBuilder
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   int getAutoscalersCount();
   /**
@@ -60,7 +60,7 @@ public interface AutoscalersScopedListOrBuilder
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.AutoscalerOrBuilder>
       getAutoscalersOrBuilderList();
@@ -71,7 +71,7 @@ public interface AutoscalersScopedListOrBuilder
    * [Output Only] A list of autoscalers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
+   * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 197336188;</code>
    */
   com.google.cloud.compute.v1.AutoscalerOrBuilder getAutoscalersOrBuilder(int index);
 

@@ -80,6 +80,13 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
               zone_ = s;
               break;
             }
+          case 170671130:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              targetInstance_ = s;
+              break;
+            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -92,13 +99,6 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1976812518:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              targetInstance_ = s;
               break;
             }
           default:
@@ -237,7 +237,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     }
   }
 
-  public static final int TARGET_INSTANCE_FIELD_NUMBER = 289769347;
+  public static final int TARGET_INSTANCE_FIELD_NUMBER = 21333891;
   private volatile java.lang.Object targetInstance_;
   /**
    *
@@ -246,7 +246,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
    * Name of the TargetInstance resource to delete.
    * </pre>
    *
-   * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetInstance.
    */
@@ -269,7 +269,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
    * Name of the TargetInstance resource to delete.
    * </pre>
    *
-   * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetInstance.
    */
@@ -352,14 +352,14 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (!getTargetInstanceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21333891, targetInstance_);
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getTargetInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 289769347, targetInstance_);
     }
     unknownFields.writeTo(output);
   }
@@ -373,14 +373,14 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (!getTargetInstanceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21333891, targetInstance_);
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getTargetInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(289769347, targetInstance_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -932,7 +932,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The targetInstance.
      */
@@ -954,7 +954,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for targetInstance.
      */
@@ -976,7 +976,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The targetInstance to set.
      * @return This builder for chaining.
@@ -997,7 +997,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1014,7 +1014,7 @@ public final class DeleteTargetInstanceRequest extends com.google.protobuf.Gener
      * Name of the TargetInstance resource to delete.
      * </pre>
      *
-     * <code>string target_instance = 289769347 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string target_instance = 21333891 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for targetInstance to set.
      * @return This builder for chaining.

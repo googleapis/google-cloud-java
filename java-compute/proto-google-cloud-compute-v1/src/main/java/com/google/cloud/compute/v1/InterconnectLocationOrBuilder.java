@@ -30,7 +30,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The address.
    */
@@ -42,7 +42,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
    * </pre>
    *
-   * <code>string address = 462920692;</code>
+   * <code>string address = 194485236;</code>
    *
    * @return The bytes for address.
    */
@@ -165,7 +165,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -177,7 +177,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] An optional description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -190,7 +190,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>string facility_provider = 264867853;</code>
    *
    * @return The facilityProvider.
    */
@@ -202,7 +202,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The name of the provider for this facility (e.g., EQUINIX).
    * </pre>
    *
-   * <code>string facility_provider = 533303309;</code>
+   * <code>string facility_provider = 264867853;</code>
    *
    * @return The bytes for facilityProvider.
    */
@@ -315,7 +315,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>string peeringdb_facility_id = 268131638;</code>
    *
    * @return The peeringdbFacilityId.
    */
@@ -327,7 +327,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] The peeringdb identifier for this facility (corresponding with a netfac type in peeringdb).
    * </pre>
    *
-   * <code>string peeringdb_facility_id = 536567094;</code>
+   * <code>string peeringdb_facility_id = 268131638;</code>
    *
    * @return The bytes for peeringdbFacilityId.
    */
@@ -340,8 +340,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   java.util.List<com.google.cloud.compute.v1.InterconnectLocationRegionInfo> getRegionInfosList();
@@ -352,8 +351,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectLocationRegionInfo getRegionInfos(int index);
@@ -364,8 +362,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   int getRegionInfosCount();
@@ -376,8 +373,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.InterconnectLocationRegionInfoOrBuilder>
@@ -389,8 +385,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
    * </pre>
    *
-   * <code>
-   * repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 312194170;
+   * <code>repeated .google.cloud.compute.v1.InterconnectLocationRegionInfo region_infos = 43758714;
    * </code>
    */
   com.google.cloud.compute.v1.InterconnectLocationRegionInfoOrBuilder getRegionInfosOrBuilder(
@@ -403,7 +398,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -415,7 +410,7 @@ public interface InterconnectLocationOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

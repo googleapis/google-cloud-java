@@ -451,7 +451,7 @@ public class TargetVpnGatewaysClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param targetVpnGatewayResource
+   * @param targetVpnGatewayResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -476,9 +476,11 @@ public class TargetVpnGatewaysClient implements BackgroundResource {
    * try (TargetVpnGatewaysClient targetVpnGatewaysClient = TargetVpnGatewaysClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
    *   InsertTargetVpnGatewayRequest request = InsertTargetVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setTargetVpnGatewayResource(targetVpnGatewayResource)
    *     .build();
    *   Operation response = targetVpnGatewaysClient.insert(request);
    * }
@@ -502,9 +504,11 @@ public class TargetVpnGatewaysClient implements BackgroundResource {
    * try (TargetVpnGatewaysClient targetVpnGatewaysClient = TargetVpnGatewaysClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   TargetVpnGateway targetVpnGatewayResource = TargetVpnGateway.newBuilder().build();
    *   InsertTargetVpnGatewayRequest request = InsertTargetVpnGatewayRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setTargetVpnGatewayResource(targetVpnGatewayResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetVpnGatewaysClient.insertCallable().futureCall(request);
    *   // Do something

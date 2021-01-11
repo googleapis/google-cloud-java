@@ -78,17 +78,43 @@ public interface InsertRouteRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the routeResource field is set.
    */
   boolean hasRouteResource();
   /**
-   * <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The routeResource.
    */
   com.google.cloud.compute.v1.Route getRouteResource();
-  /** <code>.google.cloud.compute.v1.Route route_resource = 225428804;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Route route_resource = 225428804 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.RouteOrBuilder getRouteResourceOrBuilder();
 }

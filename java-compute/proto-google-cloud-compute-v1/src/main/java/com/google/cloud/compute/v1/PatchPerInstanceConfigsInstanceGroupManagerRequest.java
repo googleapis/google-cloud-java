@@ -89,21 +89,7 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case 1994907162:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              instanceGroupManager_ = s;
-              break;
-            }
-          case -1441763334:
+          case 705720314:
             {
               com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq.Builder
                   subBuilder = null;
@@ -121,6 +107,20 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
                     subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
+              break;
+            }
+          case 1994907162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              instanceGroupManager_ = s;
               break;
             }
           default:
@@ -210,12 +210,18 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
   }
 
   public static final int
-      INSTANCE_GROUP_MANAGERS_PATCH_PER_INSTANCE_CONFIGS_REQ_RESOURCE_FIELD_NUMBER = 356650495;
+      INSTANCE_GROUP_MANAGERS_PATCH_PER_INSTANCE_CONFIGS_REQ_RESOURCE_FIELD_NUMBER = 88215039;
   private com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq
       instanceGroupManagersPatchPerInstanceConfigsReqResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instanceGroupManagersPatchPerInstanceConfigsReqResource field is set.
@@ -225,8 +231,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
     return instanceGroupManagersPatchPerInstanceConfigsReqResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instanceGroupManagersPatchPerInstanceConfigsReqResource.
@@ -240,8 +252,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
         : instanceGroupManagersPatchPerInstanceConfigsReqResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+   * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -421,14 +439,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (instanceGroupManagersPatchPerInstanceConfigsReqResource_ != null) {
+      output.writeMessage(88215039, getInstanceGroupManagersPatchPerInstanceConfigsReqResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (!getInstanceGroupManagerBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249363395, instanceGroupManager_);
-    }
-    if (instanceGroupManagersPatchPerInstanceConfigsReqResource_ != null) {
-      output.writeMessage(356650495, getInstanceGroupManagersPatchPerInstanceConfigsReqResource());
     }
     unknownFields.writeTo(output);
   }
@@ -445,6 +463,11 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
+    if (instanceGroupManagersPatchPerInstanceConfigsReqResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              88215039, getInstanceGroupManagersPatchPerInstanceConfigsReqResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
@@ -452,11 +475,6 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               249363395, instanceGroupManager_);
-    }
-    if (instanceGroupManagersPatchPerInstanceConfigsReqResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              356650495, getInstanceGroupManagersPatchPerInstanceConfigsReqResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -948,8 +966,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReqOrBuilder>
         instanceGroupManagersPatchPerInstanceConfigsReqResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instanceGroupManagersPatchPerInstanceConfigsReqResource field is set.
@@ -959,8 +983,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
           || instanceGroupManagersPatchPerInstanceConfigsReqResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instanceGroupManagersPatchPerInstanceConfigsReqResource.
@@ -977,8 +1007,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersPatchPerInstanceConfigsReqResource(
@@ -996,8 +1032,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstanceGroupManagersPatchPerInstanceConfigsReqResource(
@@ -1014,8 +1056,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstanceGroupManagersPatchPerInstanceConfigsReqResource(
@@ -1038,8 +1086,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstanceGroupManagersPatchPerInstanceConfigsReqResource() {
@@ -1054,8 +1108,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq.Builder
@@ -1065,8 +1125,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       return getInstanceGroupManagersPatchPerInstanceConfigsReqResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReqOrBuilder
@@ -1082,8 +1148,14 @@ public final class PatchPerInstanceConfigsInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 356650495;
+     * .google.cloud.compute.v1.InstanceGroupManagersPatchPerInstanceConfigsReq instance_group_managers_patch_per_instance_configs_req_resource = 88215039 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

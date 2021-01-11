@@ -87,7 +87,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
               urlMask_ = s;
               break;
             }
-          case -1306643030:
+          case 840840618:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -128,7 +128,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudRun.Builder.class);
   }
 
-  public static final int SERVICE_FIELD_NUMBER = 373540533;
+  public static final int SERVICE_FIELD_NUMBER = 105105077;
   private volatile java.lang.Object service_;
   /**
    *
@@ -139,7 +139,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
    * Example value: "run-service".
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The service.
    */
@@ -164,7 +164,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
    * Example value: "run-service".
    * </pre>
    *
-   * <code>string service = 373540533;</code>
+   * <code>string service = 105105077;</code>
    *
    * @return The bytes for service.
    */
@@ -306,7 +306,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103352252, urlMask_);
     }
     if (!getServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 373540533, service_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 105105077, service_);
     }
     unknownFields.writeTo(output);
   }
@@ -324,7 +324,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103352252, urlMask_);
     }
     if (!getServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(373540533, service_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105105077, service_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -647,7 +647,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @return The service.
      */
@@ -671,7 +671,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @return The bytes for service.
      */
@@ -695,7 +695,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @param value The service to set.
      * @return This builder for chaining.
@@ -718,7 +718,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @return This builder for chaining.
      */
@@ -737,7 +737,7 @@ public final class NetworkEndpointGroupCloudRun extends com.google.protobuf.Gene
      * Example value: "run-service".
      * </pre>
      *
-     * <code>string service = 373540533;</code>
+     * <code>string service = 105105077;</code>
      *
      * @param value The bytes for service to set.
      * @return This builder for chaining.

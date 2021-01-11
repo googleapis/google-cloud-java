@@ -75,6 +75,23 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
           case 0:
             done = true;
             break;
+          case 28990146:
+            {
+              com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
+              if (shieldedInstanceConfigResource_ != null) {
+                subBuilder = shieldedInstanceConfigResource_.toBuilder();
+              }
+              shieldedInstanceConfigResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.ShieldedInstanceConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(shieldedInstanceConfigResource_);
+                shieldedInstanceConfigResource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 29957474:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,23 +118,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -2118493502:
-            {
-              com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder subBuilder = null;
-              if (shieldedInstanceConfigResource_ != null) {
-                subBuilder = shieldedInstanceConfigResource_.toBuilder();
-              }
-              shieldedInstanceConfigResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.ShieldedInstanceConfig.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shieldedInstanceConfigResource_);
-                shieldedInstanceConfigResource_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           default:
@@ -305,11 +305,17 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     }
   }
 
-  public static final int SHIELDED_INSTANCE_CONFIG_RESOURCE_FIELD_NUMBER = 272059224;
+  public static final int SHIELDED_INSTANCE_CONFIG_RESOURCE_FIELD_NUMBER = 3623768;
   private com.google.cloud.compute.v1.ShieldedInstanceConfig shieldedInstanceConfigResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the shieldedInstanceConfigResource field is set.
@@ -319,8 +325,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     return shieldedInstanceConfigResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The shieldedInstanceConfigResource.
@@ -332,8 +344,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
         : shieldedInstanceConfigResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+   * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -405,6 +423,9 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (shieldedInstanceConfigResource_ != null) {
+      output.writeMessage(3623768, getShieldedInstanceConfigResource());
+    }
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
@@ -417,9 +438,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (shieldedInstanceConfigResource_ != null) {
-      output.writeMessage(272059224, getShieldedInstanceConfigResource());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -429,6 +447,11 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     if (size != -1) return size;
 
     size = 0;
+    if (shieldedInstanceConfigResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3623768, getShieldedInstanceConfigResource());
+    }
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
@@ -440,11 +463,6 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (shieldedInstanceConfigResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              272059224, getShieldedInstanceConfigResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1136,8 +1154,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
             com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder>
         shieldedInstanceConfigResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the shieldedInstanceConfigResource field is set.
@@ -1147,8 +1171,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
           || shieldedInstanceConfigResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The shieldedInstanceConfigResource.
@@ -1163,8 +1193,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setShieldedInstanceConfigResource(
@@ -1182,8 +1218,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setShieldedInstanceConfigResource(
@@ -1198,8 +1240,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeShieldedInstanceConfigResource(
@@ -1222,8 +1270,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearShieldedInstanceConfigResource() {
@@ -1238,8 +1292,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfig.Builder
@@ -1249,8 +1309,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       return getShieldedInstanceConfigResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ShieldedInstanceConfigOrBuilder
@@ -1264,8 +1330,14 @@ public final class UpdateShieldedInstanceConfigInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 272059224;
+     * .google.cloud.compute.v1.ShieldedInstanceConfig shielded_instance_config_resource = 3623768 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -81,18 +81,18 @@ public final class GetRegionNetworkEndpointGroupRequest
               region_ = s;
               break;
             }
+          case 1323772978:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkEndpointGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -823710670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              networkEndpointGroup_ = s;
               break;
             }
           default:
@@ -129,7 +129,7 @@ public final class GetRegionNetworkEndpointGroupRequest
             com.google.cloud.compute.v1.GetRegionNetworkEndpointGroupRequest.Builder.class);
   }
 
-  public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
+  public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 165471622;
   private volatile java.lang.Object networkEndpointGroup_;
   /**
    *
@@ -138,7 +138,7 @@ public final class GetRegionNetworkEndpointGroupRequest
    * The name of the network endpoint group. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -162,7 +162,7 @@ public final class GetRegionNetworkEndpointGroupRequest
    * The name of the network endpoint group. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -295,11 +295,11 @@ public final class GetRegionNetworkEndpointGroupRequest
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (!getNetworkEndpointGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 165471622, networkEndpointGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNetworkEndpointGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 433907078, networkEndpointGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -313,13 +313,13 @@ public final class GetRegionNetworkEndpointGroupRequest
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (!getNetworkEndpointGroupBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              433907078, networkEndpointGroup_);
+              165471622, networkEndpointGroup_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -643,7 +643,7 @@ public final class GetRegionNetworkEndpointGroupRequest
      * The name of the network endpoint group. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkEndpointGroup.
@@ -666,7 +666,7 @@ public final class GetRegionNetworkEndpointGroupRequest
      * The name of the network endpoint group. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for networkEndpointGroup.
@@ -689,7 +689,7 @@ public final class GetRegionNetworkEndpointGroupRequest
      * The name of the network endpoint group. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The networkEndpointGroup to set.
@@ -711,7 +711,7 @@ public final class GetRegionNetworkEndpointGroupRequest
      * The name of the network endpoint group. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -729,7 +729,7 @@ public final class GetRegionNetworkEndpointGroupRequest
      * The name of the network endpoint group. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for networkEndpointGroup to set.

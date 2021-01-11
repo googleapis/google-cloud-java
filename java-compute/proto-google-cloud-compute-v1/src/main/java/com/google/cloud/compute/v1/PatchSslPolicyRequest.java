@@ -72,21 +72,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
           case 0:
             done = true;
             break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -2095832510:
+          case 51651138:
             {
               com.google.cloud.compute.v1.SslPolicy.Builder subBuilder = null;
               if (sslPolicyResource_ != null) {
@@ -102,11 +88,25 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
-          case -1933445590:
+          case 214038058:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               sslPolicy_ = s;
+              break;
+            }
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -245,7 +245,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int SSL_POLICY_FIELD_NUMBER = 295190213;
+  public static final int SSL_POLICY_FIELD_NUMBER = 26754757;
   private volatile java.lang.Object sslPolicy_;
   /**
    *
@@ -254,7 +254,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
    * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The sslPolicy.
    */
@@ -277,7 +277,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
    * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
    * </pre>
    *
-   * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for sslPolicy.
    */
@@ -294,10 +294,18 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     }
   }
 
-  public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 274891848;
+  public static final int SSL_POLICY_RESOURCE_FIELD_NUMBER = 6456392;
   private com.google.cloud.compute.v1.SslPolicy sslPolicyResource_;
   /**
-   * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sslPolicyResource field is set.
    */
@@ -306,7 +314,15 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     return sslPolicyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sslPolicyResource.
    */
@@ -316,7 +332,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.SslPolicy.getDefaultInstance()
         : sslPolicyResource_;
   }
-  /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SslPolicyOrBuilder getSslPolicyResourceOrBuilder() {
     return getSslPolicyResource();
@@ -336,17 +362,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (sslPolicyResource_ != null) {
+      output.writeMessage(6456392, getSslPolicyResource());
+    }
+    if (!getSslPolicyBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26754757, sslPolicy_);
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (sslPolicyResource_ != null) {
-      output.writeMessage(274891848, getSslPolicyResource());
-    }
-    if (!getSslPolicyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 295190213, sslPolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -357,19 +383,18 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
     if (size != -1) return size;
 
     size = 0;
+    if (sslPolicyResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6456392, getSslPolicyResource());
+    }
+    if (!getSslPolicyBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26754757, sslPolicy_);
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (sslPolicyResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              274891848, getSslPolicyResource());
-    }
-    if (!getSslPolicyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(295190213, sslPolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -932,7 +957,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
      * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The sslPolicy.
      */
@@ -954,7 +979,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
      * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for sslPolicy.
      */
@@ -976,7 +1001,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
      * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The sslPolicy to set.
      * @return This builder for chaining.
@@ -997,7 +1022,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
      * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1014,7 +1039,7 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
      * Name of the SSL policy to update. The name must be 1-63 characters long, and comply with RFC1035.
      * </pre>
      *
-     * <code>string ssl_policy = 295190213 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string ssl_policy = 26754757 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for sslPolicy to set.
      * @return This builder for chaining.
@@ -1037,7 +1062,15 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.SslPolicyOrBuilder>
         sslPolicyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the sslPolicyResource field is set.
      */
@@ -1045,7 +1078,15 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
       return sslPolicyResourceBuilder_ != null || sslPolicyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The sslPolicyResource.
      */
@@ -1058,7 +1099,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
         return sslPolicyResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSslPolicyResource(com.google.cloud.compute.v1.SslPolicy value) {
       if (sslPolicyResourceBuilder_ == null) {
         if (value == null) {
@@ -1072,7 +1123,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSslPolicyResource(
         com.google.cloud.compute.v1.SslPolicy.Builder builderForValue) {
       if (sslPolicyResourceBuilder_ == null) {
@@ -1084,7 +1145,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeSslPolicyResource(com.google.cloud.compute.v1.SslPolicy value) {
       if (sslPolicyResourceBuilder_ == null) {
         if (sslPolicyResource_ != null) {
@@ -1102,7 +1173,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearSslPolicyResource() {
       if (sslPolicyResourceBuilder_ == null) {
         sslPolicyResource_ = null;
@@ -1114,13 +1195,33 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SslPolicy.Builder getSslPolicyResourceBuilder() {
 
       onChanged();
       return getSslPolicyResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SslPolicyOrBuilder getSslPolicyResourceOrBuilder() {
       if (sslPolicyResourceBuilder_ != null) {
         return sslPolicyResourceBuilder_.getMessageOrBuilder();
@@ -1130,7 +1231,17 @@ public final class PatchSslPolicyRequest extends com.google.protobuf.GeneratedMe
             : sslPolicyResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.SslPolicy ssl_policy_resource = 274891848;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslPolicy ssl_policy_resource = 6456392 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SslPolicy,
             com.google.cloud.compute.v1.SslPolicy.Builder,

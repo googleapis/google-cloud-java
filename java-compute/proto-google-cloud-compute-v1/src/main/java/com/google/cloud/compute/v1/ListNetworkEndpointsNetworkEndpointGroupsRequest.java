@@ -115,11 +115,25 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
 
               break;
             }
+          case 541481922:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              filter_ = s;
+              break;
+            }
           case 1284503362:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               orderBy_ = s;
+              break;
+            }
+          case 1323772978:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              networkEndpointGroup_ = s;
               break;
             }
           case 1820481738:
@@ -129,21 +143,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
               project_ = s;
               break;
             }
-          case -1606001726:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              filter_ = s;
-              break;
-            }
-          case -823710670:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              networkEndpointGroup_ = s;
-              break;
-            }
-          case -157380176:
+          case 1990103472:
             {
               returnPartialSuccess_ = input.readBool();
               break;
@@ -183,7 +183,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
                 .class);
   }
 
-  public static final int FILTER_FIELD_NUMBER = 336120696;
+  public static final int FILTER_FIELD_NUMBER = 67685240;
   private volatile java.lang.Object filter_;
   /**
    *
@@ -195,7 +195,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The filter.
    */
@@ -221,7 +221,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
    * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
    * </pre>
    *
-   * <code>string filter = 336120696;</code>
+   * <code>string filter = 67685240;</code>
    *
    * @return The bytes for filter.
    */
@@ -256,7 +256,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
     return maxResults_;
   }
 
-  public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 433907078;
+  public static final int NETWORK_ENDPOINT_GROUP_FIELD_NUMBER = 165471622;
   private volatile java.lang.Object networkEndpointGroup_;
   /**
    *
@@ -265,7 +265,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
    * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroup.
@@ -289,7 +289,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
    * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
    * </pre>
    *
-   * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+   * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The bytes for networkEndpointGroup.
@@ -312,8 +312,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
   private com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest
       networkEndpointGroupsListEndpointsRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupsListEndpointsRequestResource field is set.
@@ -323,8 +329,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
     return networkEndpointGroupsListEndpointsRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupsListEndpointsRequestResource.
@@ -337,8 +349,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
         : networkEndpointGroupsListEndpointsRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+   * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -498,7 +516,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
     }
   }
 
-  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 517198390;
+  public static final int RETURN_PARTIAL_SUCCESS_FIELD_NUMBER = 248762934;
   private boolean returnPartialSuccess_;
   /**
    *
@@ -507,7 +525,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
    * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
    * </pre>
    *
-   * <code>bool return_partial_success = 517198390;</code>
+   * <code>bool return_partial_success = 248762934;</code>
    *
    * @return The returnPartialSuccess.
    */
@@ -591,20 +609,20 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
     if (networkEndpointGroupsListEndpointsRequestResource_ != null) {
       output.writeMessage(59493390, getNetworkEndpointGroupsListEndpointsRequestResource());
     }
+    if (!getFilterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 67685240, filter_);
+    }
     if (!getOrderByBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 160562920, orderBy_);
+    }
+    if (!getNetworkEndpointGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 165471622, networkEndpointGroup_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (!getFilterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
-    }
-    if (!getNetworkEndpointGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 433907078, networkEndpointGroup_);
-    }
     if (returnPartialSuccess_ != false) {
-      output.writeBool(517198390, returnPartialSuccess_);
+      output.writeBool(248762934, returnPartialSuccess_);
     }
     unknownFields.writeTo(output);
   }
@@ -629,23 +647,23 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               59493390, getNetworkEndpointGroupsListEndpointsRequestResource());
     }
+    if (!getFilterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67685240, filter_);
+    }
     if (!getOrderByBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160562920, orderBy_);
-    }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getFilterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
     }
     if (!getNetworkEndpointGroupBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
-              433907078, networkEndpointGroup_);
+              165471622, networkEndpointGroup_);
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     if (returnPartialSuccess_ != false) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(517198390, returnPartialSuccess_);
+          com.google.protobuf.CodedOutputStream.computeBoolSize(248762934, returnPartialSuccess_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1062,7 +1080,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @return The filter.
      */
@@ -1087,7 +1105,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @return The bytes for filter.
      */
@@ -1112,7 +1130,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1136,7 +1154,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @return This builder for chaining.
      */
@@ -1156,7 +1174,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      * </pre>
      *
-     * <code>string filter = 336120696;</code>
+     * <code>string filter = 67685240;</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1232,7 +1250,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkEndpointGroup.
@@ -1255,7 +1273,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The bytes for networkEndpointGroup.
@@ -1278,7 +1296,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The networkEndpointGroup to set.
@@ -1300,7 +1318,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return This builder for chaining.
@@ -1318,7 +1336,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
      * </pre>
      *
-     * <code>string network_endpoint_group = 433907078 [(.google.api.field_behavior) = REQUIRED];
+     * <code>string network_endpoint_group = 165471622 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @param value The bytes for networkEndpointGroup to set.
@@ -1343,8 +1361,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
             com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequestOrBuilder>
         networkEndpointGroupsListEndpointsRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networkEndpointGroupsListEndpointsRequestResource field is set.
@@ -1354,8 +1378,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
           || networkEndpointGroupsListEndpointsRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkEndpointGroupsListEndpointsRequestResource.
@@ -1372,8 +1402,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkEndpointGroupsListEndpointsRequestResource(
@@ -1391,8 +1427,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkEndpointGroupsListEndpointsRequestResource(
@@ -1409,8 +1451,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworkEndpointGroupsListEndpointsRequestResource(
@@ -1433,8 +1481,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworkEndpointGroupsListEndpointsRequestResource() {
@@ -1449,8 +1503,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest.Builder
@@ -1460,8 +1520,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       return getNetworkEndpointGroupsListEndpointsRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequestOrBuilder
@@ -1476,8 +1542,14 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390;
+     * .google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest network_endpoint_groups_list_endpoints_request_resource = 59493390 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1835,7 +1907,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>bool return_partial_success = 248762934;</code>
      *
      * @return The returnPartialSuccess.
      */
@@ -1850,7 +1922,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>bool return_partial_success = 248762934;</code>
      *
      * @param value The returnPartialSuccess to set.
      * @return This builder for chaining.
@@ -1868,7 +1940,7 @@ public final class ListNetworkEndpointsNetworkEndpointGroupsRequest
      * Opt-in for partial success behavior which provides partial results in case of failure. The default value is false and the logic is the same as today.
      * </pre>
      *
-     * <code>bool return_partial_success = 517198390;</code>
+     * <code>bool return_partial_success = 248762934;</code>
      *
      * @return This builder for chaining.
      */

@@ -73,18 +73,18 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
           case 0:
             done = true;
             break;
+          case 310091458:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              function_ = s;
+              break;
+            }
           case 826818018:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               urlMask_ = s;
-              break;
-            }
-          case -1837392190:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              function_ = s;
               break;
             }
           default:
@@ -121,7 +121,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
             com.google.cloud.compute.v1.NetworkEndpointGroupCloudFunction.Builder.class);
   }
 
-  public static final int FUNCTION_FIELD_NUMBER = 307196888;
+  public static final int FUNCTION_FIELD_NUMBER = 38761432;
   private volatile java.lang.Object function_;
   /**
    *
@@ -132,7 +132,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    * Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>string function = 38761432;</code>
    *
    * @return The function.
    */
@@ -157,7 +157,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
    * Example value: "func1".
    * </pre>
    *
-   * <code>string function = 307196888;</code>
+   * <code>string function = 38761432;</code>
    *
    * @return The bytes for function.
    */
@@ -239,11 +239,11 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getFunctionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38761432, function_);
+    }
     if (!getUrlMaskBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 103352252, urlMask_);
-    }
-    if (!getFunctionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307196888, function_);
     }
     unknownFields.writeTo(output);
   }
@@ -254,11 +254,11 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
     if (size != -1) return size;
 
     size = 0;
+    if (!getFunctionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38761432, function_);
+    }
     if (!getUrlMaskBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(103352252, urlMask_);
-    }
-    if (!getFunctionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307196888, function_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -574,7 +574,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>string function = 38761432;</code>
      *
      * @return The function.
      */
@@ -598,7 +598,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>string function = 38761432;</code>
      *
      * @return The bytes for function.
      */
@@ -622,7 +622,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>string function = 38761432;</code>
      *
      * @param value The function to set.
      * @return This builder for chaining.
@@ -645,7 +645,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>string function = 38761432;</code>
      *
      * @return This builder for chaining.
      */
@@ -664,7 +664,7 @@ public final class NetworkEndpointGroupCloudFunction extends com.google.protobuf
      * Example value: "func1".
      * </pre>
      *
-     * <code>string function = 307196888;</code>
+     * <code>string function = 38761432;</code>
      *
      * @param value The bytes for function to set.
      * @return This builder for chaining.

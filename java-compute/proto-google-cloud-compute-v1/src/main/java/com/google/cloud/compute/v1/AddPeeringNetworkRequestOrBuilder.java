@@ -49,24 +49,42 @@ public interface AddPeeringNetworkRequestOrBuilder
   com.google.protobuf.ByteString getNetworkBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421;
+   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networksAddPeeringRequestResource field is set.
    */
   boolean hasNetworksAddPeeringRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421;
+   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networksAddPeeringRequestResource.
    */
   com.google.cloud.compute.v1.NetworksAddPeeringRequest getNetworksAddPeeringRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 388810421;
+   * .google.cloud.compute.v1.NetworksAddPeeringRequest networks_add_peering_request_resource = 120374965 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.NetworksAddPeeringRequestOrBuilder

@@ -86,7 +86,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
 
               break;
             }
-          case -1363212814:
+          case 784270834:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
                 instanceGroups_ =
@@ -135,7 +135,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.InstanceGroupsScopedList.Builder.class);
   }
 
-  public static final int INSTANCE_GROUPS_FIELD_NUMBER = 366469310;
+  public static final int INSTANCE_GROUPS_FIELD_NUMBER = 98033854;
   private java.util.List<com.google.cloud.compute.v1.InstanceGroup> instanceGroups_;
   /**
    *
@@ -144,7 +144,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.InstanceGroup> getInstanceGroupsList() {
@@ -157,7 +157,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupOrBuilder>
@@ -171,7 +171,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   @java.lang.Override
   public int getInstanceGroupsCount() {
@@ -184,7 +184,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroup getInstanceGroups(int index) {
@@ -197,7 +197,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
    * [Output Only] The list of instance groups that are contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+   * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupsOrBuilder(int index) {
@@ -268,7 +268,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
       output.writeMessage(50704284, getWarning());
     }
     for (int i = 0; i < instanceGroups_.size(); i++) {
-      output.writeMessage(366469310, instanceGroups_.get(i));
+      output.writeMessage(98033854, instanceGroups_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -285,7 +285,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
     for (int i = 0; i < instanceGroups_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              366469310, instanceGroups_.get(i));
+              98033854, instanceGroups_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -663,7 +663,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.InstanceGroup> getInstanceGroupsList() {
       if (instanceGroupsBuilder_ == null) {
@@ -679,7 +679,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public int getInstanceGroupsCount() {
       if (instanceGroupsBuilder_ == null) {
@@ -695,7 +695,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroup getInstanceGroups(int index) {
       if (instanceGroupsBuilder_ == null) {
@@ -711,7 +711,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder setInstanceGroups(int index, com.google.cloud.compute.v1.InstanceGroup value) {
       if (instanceGroupsBuilder_ == null) {
@@ -733,7 +733,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder setInstanceGroups(
         int index, com.google.cloud.compute.v1.InstanceGroup.Builder builderForValue) {
@@ -753,7 +753,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder addInstanceGroups(com.google.cloud.compute.v1.InstanceGroup value) {
       if (instanceGroupsBuilder_ == null) {
@@ -775,7 +775,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder addInstanceGroups(int index, com.google.cloud.compute.v1.InstanceGroup value) {
       if (instanceGroupsBuilder_ == null) {
@@ -797,7 +797,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder addInstanceGroups(
         com.google.cloud.compute.v1.InstanceGroup.Builder builderForValue) {
@@ -817,7 +817,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder addInstanceGroups(
         int index, com.google.cloud.compute.v1.InstanceGroup.Builder builderForValue) {
@@ -837,7 +837,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder addAllInstanceGroups(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.InstanceGroup> values) {
@@ -857,7 +857,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder clearInstanceGroups() {
       if (instanceGroupsBuilder_ == null) {
@@ -876,7 +876,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public Builder removeInstanceGroups(int index) {
       if (instanceGroupsBuilder_ == null) {
@@ -895,7 +895,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroup.Builder getInstanceGroupsBuilder(int index) {
       return getInstanceGroupsFieldBuilder().getBuilder(index);
@@ -907,7 +907,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroupOrBuilder getInstanceGroupsOrBuilder(
         int index) {
@@ -924,7 +924,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.InstanceGroupOrBuilder>
         getInstanceGroupsOrBuilderList() {
@@ -941,7 +941,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroup.Builder addInstanceGroupsBuilder() {
       return getInstanceGroupsFieldBuilder()
@@ -954,7 +954,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public com.google.cloud.compute.v1.InstanceGroup.Builder addInstanceGroupsBuilder(int index) {
       return getInstanceGroupsFieldBuilder()
@@ -967,7 +967,7 @@ public final class InstanceGroupsScopedList extends com.google.protobuf.Generate
      * [Output Only] The list of instance groups that are contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 366469310;</code>
+     * <code>repeated .google.cloud.compute.v1.InstanceGroup instance_groups = 98033854;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.InstanceGroup.Builder>
         getInstanceGroupsBuilderList() {

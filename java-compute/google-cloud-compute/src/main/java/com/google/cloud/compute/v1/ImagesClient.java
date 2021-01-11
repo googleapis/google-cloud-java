@@ -244,7 +244,7 @@ public class ImagesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param image Image name.
-   * @param deprecationStatusResource
+   * @param deprecationStatusResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation deprecate(
@@ -268,9 +268,11 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   String image = "";
    *   String project = "";
    *   DeprecateImageRequest request = DeprecateImageRequest.newBuilder()
+   *     .setDeprecationStatusResource(deprecationStatusResource)
    *     .setImage(image)
    *     .setProject(project)
    *     .build();
@@ -295,9 +297,11 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   DeprecationStatus deprecationStatusResource = DeprecationStatus.newBuilder().build();
    *   String image = "";
    *   String project = "";
    *   DeprecateImageRequest request = DeprecateImageRequest.newBuilder()
+   *     .setDeprecationStatusResource(deprecationStatusResource)
    *     .setImage(image)
    *     .setProject(project)
    *     .build();
@@ -548,7 +552,7 @@ public class ImagesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param imageResource
+   * @param imageResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, Image imageResource) {
@@ -565,8 +569,10 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   Image imageResource = Image.newBuilder().build();
    *   String project = "";
    *   InsertImageRequest request = InsertImageRequest.newBuilder()
+   *     .setImageResource(imageResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = imagesClient.insert(request);
@@ -588,8 +594,10 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   Image imageResource = Image.newBuilder().build();
    *   String project = "";
    *   InsertImageRequest request = InsertImageRequest.newBuilder()
+   *     .setImageResource(imageResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = imagesClient.insertCallable().futureCall(request);
@@ -739,7 +747,7 @@ public class ImagesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param image Name of the image resource to patch.
-   * @param imageResource
+   * @param imageResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(String project, String image, Image imageResource) {
@@ -762,9 +770,11 @@ public class ImagesClient implements BackgroundResource {
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
    *   String image = "";
+   *   Image imageResource = Image.newBuilder().build();
    *   String project = "";
    *   PatchImageRequest request = PatchImageRequest.newBuilder()
    *     .setImage(image)
+   *     .setImageResource(imageResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = imagesClient.patch(request);
@@ -788,9 +798,11 @@ public class ImagesClient implements BackgroundResource {
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
    *   String image = "";
+   *   Image imageResource = Image.newBuilder().build();
    *   String project = "";
    *   PatchImageRequest request = PatchImageRequest.newBuilder()
    *     .setImage(image)
+   *     .setImageResource(imageResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = imagesClient.patchCallable().futureCall(request);
@@ -820,7 +832,7 @@ public class ImagesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param globalSetPolicyRequestResource
+   * @param globalSetPolicyRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(
@@ -842,9 +854,11 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetIamPolicyImageRequest request = SetIamPolicyImageRequest.newBuilder()
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -867,9 +881,11 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetIamPolicyImageRequest request = SetIamPolicyImageRequest.newBuilder()
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -901,7 +917,7 @@ public class ImagesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param globalSetLabelsRequestResource
+   * @param globalSetLabelsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation setLabels(
@@ -924,9 +940,11 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetLabelsImageRequest request = SetLabelsImageRequest.newBuilder()
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -950,9 +968,11 @@ public class ImagesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (ImagesClient imagesClient = ImagesClient.create()) {
+   *   GlobalSetLabelsRequest globalSetLabelsRequestResource = GlobalSetLabelsRequest.newBuilder().build();
    *   String project = "";
    *   String resource = "";
    *   SetLabelsImageRequest request = SetLabelsImageRequest.newBuilder()
+   *     .setGlobalSetLabelsRequestResource(globalSetLabelsRequestResource)
    *     .setProject(project)
    *     .setResource(resource)
    *     .build();
@@ -983,7 +1003,7 @@ public class ImagesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -1007,9 +1027,11 @@ public class ImagesClient implements BackgroundResource {
    * try (ImagesClient imagesClient = ImagesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsImageRequest request = TestIamPermissionsImageRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = imagesClient.testIamPermissions(request);
    * }
@@ -1032,9 +1054,11 @@ public class ImagesClient implements BackgroundResource {
    * try (ImagesClient imagesClient = ImagesClient.create()) {
    *   String project = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsImageRequest request = TestIamPermissionsImageRequest.newBuilder()
    *     .setProject(project)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = imagesClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

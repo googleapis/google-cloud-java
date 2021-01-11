@@ -78,16 +78,28 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetSslProxiesSetBackendServiceRequestResource field is set.
    */
   boolean hasTargetSslProxiesSetBackendServiceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetSslProxiesSetBackendServiceRequestResource.
@@ -95,8 +107,14 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest
       getTargetSslProxiesSetBackendServiceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868;
+   * .google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequest target_ssl_proxies_set_backend_service_request_resource = 139080868 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetSslProxiesSetBackendServiceRequestOrBuilder
@@ -109,7 +127,7 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose BackendService resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetSslProxy.
    */
@@ -121,7 +139,7 @@ public interface SetBackendServiceTargetSslProxyRequestOrBuilder
    * Name of the TargetSslProxy resource whose BackendService resource is to be set.
    * </pre>
    *
-   * <code>string target_ssl_proxy = 338795853 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_ssl_proxy = 70360397 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetSslProxy.
    */

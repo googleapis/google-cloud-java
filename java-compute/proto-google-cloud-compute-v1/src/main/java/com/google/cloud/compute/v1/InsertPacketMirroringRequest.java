@@ -86,14 +86,7 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
               region_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -346951414:
+          case 1800532234:
             {
               com.google.cloud.compute.v1.PacketMirroring.Builder subBuilder = null;
               if (packetMirroringResource_ != null) {
@@ -107,6 +100,13 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
                 packetMirroringResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -143,10 +143,18 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.InsertPacketMirroringRequest.Builder.class);
   }
 
-  public static final int PACKET_MIRRORING_RESOURCE_FIELD_NUMBER = 493501985;
+  public static final int PACKET_MIRRORING_RESOURCE_FIELD_NUMBER = 225066529;
   private com.google.cloud.compute.v1.PacketMirroring packetMirroringResource_;
   /**
-   * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the packetMirroringResource field is set.
    */
@@ -155,7 +163,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     return packetMirroringResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The packetMirroringResource.
    */
@@ -166,7 +182,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
         : packetMirroringResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.PacketMirroringOrBuilder
@@ -345,11 +369,11 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
+    if (packetMirroringResource_ != null) {
+      output.writeMessage(225066529, getPacketMirroringResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (packetMirroringResource_ != null) {
-      output.writeMessage(493501985, getPacketMirroringResource());
     }
     unknownFields.writeTo(output);
   }
@@ -366,13 +390,13 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (packetMirroringResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              493501985, getPacketMirroringResource());
+              225066529, getPacketMirroringResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -713,7 +737,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.PacketMirroringOrBuilder>
         packetMirroringResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the packetMirroringResource field is set.
      */
@@ -721,7 +753,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return packetMirroringResourceBuilder_ != null || packetMirroringResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The packetMirroringResource.
      */
@@ -735,7 +775,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPacketMirroringResource(com.google.cloud.compute.v1.PacketMirroring value) {
       if (packetMirroringResourceBuilder_ == null) {
@@ -751,7 +799,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setPacketMirroringResource(
         com.google.cloud.compute.v1.PacketMirroring.Builder builderForValue) {
@@ -765,7 +821,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergePacketMirroringResource(com.google.cloud.compute.v1.PacketMirroring value) {
       if (packetMirroringResourceBuilder_ == null) {
@@ -785,7 +849,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearPacketMirroringResource() {
       if (packetMirroringResourceBuilder_ == null) {
@@ -799,7 +871,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroring.Builder getPacketMirroringResourceBuilder() {
 
@@ -807,7 +887,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       return getPacketMirroringResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.PacketMirroringOrBuilder
         getPacketMirroringResourceOrBuilder() {
@@ -820,7 +908,15 @@ public final class InsertPacketMirroringRequest extends com.google.protobuf.Gene
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 493501985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.PacketMirroring packet_mirroring_resource = 225066529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.PacketMirroring,

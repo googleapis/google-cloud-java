@@ -49,16 +49,28 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
   com.google.protobuf.ByteString getDiskBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the disksAddResourcePoliciesRequestResource field is set.
    */
   boolean hasDisksAddResourcePoliciesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The disksAddResourcePoliciesRequestResource.
@@ -66,8 +78,14 @@ public interface AddResourcePoliciesDiskRequestOrBuilder
   com.google.cloud.compute.v1.DisksAddResourcePoliciesRequest
       getDisksAddResourcePoliciesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 496483363;
+   * .google.cloud.compute.v1.DisksAddResourcePoliciesRequest disks_add_resource_policies_request_resource = 228047907 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.DisksAddResourcePoliciesRequestOrBuilder

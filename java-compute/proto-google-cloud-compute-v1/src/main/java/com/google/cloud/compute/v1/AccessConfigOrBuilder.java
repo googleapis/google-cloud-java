@@ -107,7 +107,7 @@ public interface AccessConfigOrBuilder
    * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
    *
    * @return The enum numeric value on the wire for networkTier.
    */
@@ -121,7 +121,7 @@ public interface AccessConfigOrBuilder
    * If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>.google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 248962387;</code>
    *
    * @return The networkTier.
    */
@@ -134,7 +134,7 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 316599167;</code>
+   * <code>string public_ptr_domain_name = 48163711;</code>
    *
    * @return The publicPtrDomainName.
    */
@@ -146,7 +146,7 @@ public interface AccessConfigOrBuilder
    * The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
    * </pre>
    *
-   * <code>string public_ptr_domain_name = 316599167;</code>
+   * <code>string public_ptr_domain_name = 48163711;</code>
    *
    * @return The bytes for publicPtrDomainName.
    */
@@ -159,7 +159,7 @@ public interface AccessConfigOrBuilder
    * Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
    * </pre>
    *
-   * <code>bool set_public_ptr = 523870229;</code>
+   * <code>bool set_public_ptr = 255434773;</code>
    *
    * @return The setPublicPtr.
    */

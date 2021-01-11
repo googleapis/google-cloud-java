@@ -256,6 +256,22 @@
  * </code>
  * </pre>
  *
+ * ================================== GlobalOrganizationOperationsClient
+ * ==================================
+ *
+ * <p>Service Description: The GlobalOrganizationOperations API.
+ *
+ * <p>Sample for GlobalOrganizationOperationsClient:
+ *
+ * <pre>
+ * <code>
+ * try (GlobalOrganizationOperationsClient globalOrganizationOperationsClient = GlobalOrganizationOperationsClient.create()) {
+ *   String operation = "";
+ *   DeleteGlobalOrganizationOperationResponse response = globalOrganizationOperationsClient.delete(operation);
+ * }
+ * </code>
+ * </pre>
+ *
  * ================== HealthChecksClient ==================
  *
  * <p>Service Description: The HealthChecks API.
@@ -268,38 +284,6 @@
  *   String project = "";
  *   String healthCheck = "";
  *   Operation response = healthChecksClient.delete(project, healthCheck);
- * }
- * </code>
- * </pre>
- *
- * ====================== HttpHealthChecksClient ======================
- *
- * <p>Service Description: The HttpHealthChecks API.
- *
- * <p>Sample for HttpHealthChecksClient:
- *
- * <pre>
- * <code>
- * try (HttpHealthChecksClient httpHealthChecksClient = HttpHealthChecksClient.create()) {
- *   String project = "";
- *   String httpHealthCheck = "";
- *   Operation response = httpHealthChecksClient.delete(project, httpHealthCheck);
- * }
- * </code>
- * </pre>
- *
- * ======================= HttpsHealthChecksClient =======================
- *
- * <p>Service Description: The HttpsHealthChecks API.
- *
- * <p>Sample for HttpsHealthChecksClient:
- *
- * <pre>
- * <code>
- * try (HttpsHealthChecksClient httpsHealthChecksClient = HttpsHealthChecksClient.create()) {
- *   String project = "";
- *   String httpsHealthCheck = "";
- *   Operation response = httpsHealthChecksClient.delete(project, httpsHealthCheck);
  * }
  * </code>
  * </pre>

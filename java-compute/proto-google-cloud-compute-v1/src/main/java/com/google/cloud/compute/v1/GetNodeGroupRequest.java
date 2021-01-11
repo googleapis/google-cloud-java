@@ -79,18 +79,18 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
               zone_ = s;
               break;
             }
+          case 1612181522:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -535302126:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeGroup_ = s;
               break;
             }
           default:
@@ -127,7 +127,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.GetNodeGroupRequest.Builder.class);
   }
 
-  public static final int NODE_GROUP_FIELD_NUMBER = 469958146;
+  public static final int NODE_GROUP_FIELD_NUMBER = 201522690;
   private volatile java.lang.Object nodeGroup_;
   /**
    *
@@ -136,7 +136,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
    * Name of the node group to return.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -159,7 +159,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
    * Name of the node group to return.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
@@ -291,11 +291,11 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
     if (!getZoneBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 469958146, nodeGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -309,11 +309,11 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
     if (!getZoneBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(469958146, nodeGroup_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -631,7 +631,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
      * Name of the node group to return.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeGroup.
      */
@@ -653,7 +653,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
      * Name of the node group to return.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeGroup.
      */
@@ -675,7 +675,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
      * Name of the node group to return.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeGroup to set.
      * @return This builder for chaining.
@@ -696,7 +696,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
      * Name of the node group to return.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -713,7 +713,7 @@ public final class GetNodeGroupRequest extends com.google.protobuf.GeneratedMess
      * Name of the node group to return.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeGroup to set.
      * @return This builder for chaining.

@@ -74,6 +74,21 @@ public final class SslCertificateManagedSslCertificate
           case 0:
             done = true;
             break;
+          case 734961258:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                domainStatus_ =
+                    com.google.protobuf.MapField.newMapField(
+                        DomainStatusDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000001;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> domainStatus__ =
+                  input.readMessage(
+                      DomainStatusDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              domainStatus_.getMutableMap().put(domainStatus__.getKey(), domainStatus__.getValue());
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
@@ -89,21 +104,6 @@ public final class SslCertificateManagedSslCertificate
                 mutable_bitField0_ |= 0x00000002;
               }
               domains_.add(s);
-              break;
-            }
-          case -1412522390:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                domainStatus_ =
-                    com.google.protobuf.MapField.newMapField(
-                        DomainStatusDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> domainStatus__ =
-                  input.readMessage(
-                      DomainStatusDefaultEntryHolder.defaultEntry.getParserForType(),
-                      extensionRegistry);
-              domainStatus_.getMutableMap().put(domainStatus__.getKey(), domainStatus__.getValue());
               break;
             }
           default:
@@ -137,7 +137,7 @@ public final class SslCertificateManagedSslCertificate
   @java.lang.Override
   protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
-      case 360305613:
+      case 91870157:
         return internalGetDomainStatus();
       default:
         throw new RuntimeException("Invalid map field number: " + number);
@@ -174,18 +174,18 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
-    /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
-    MANAGED_CERTIFICATE_STATUS_UNSPECIFIED(474800850),
-    /** <code>PROVISIONING = 290896621;</code> */
-    PROVISIONING(290896621),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
+    /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 206365394;</code> */
+    MANAGED_CERTIFICATE_STATUS_UNSPECIFIED(206365394),
+    /** <code>PROVISIONING = 22461165;</code> */
+    PROVISIONING(22461165),
     /** <code>PROVISIONING_FAILED = 76813775;</code> */
     PROVISIONING_FAILED(76813775),
-    /** <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code> */
-    PROVISIONING_FAILED_PERMANENTLY(275036203),
-    /** <code>RENEWAL_FAILED = 434659076;</code> */
-    RENEWAL_FAILED(434659076),
+    /** <code>PROVISIONING_FAILED_PERMANENTLY = 6600747;</code> */
+    PROVISIONING_FAILED_PERMANENTLY(6600747),
+    /** <code>RENEWAL_FAILED = 166223620;</code> */
+    RENEWAL_FAILED(166223620),
     UNRECOGNIZED(-1),
     ;
 
@@ -199,18 +199,18 @@ public final class SslCertificateManagedSslCertificate
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
-    /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 474800850;</code> */
-    public static final int MANAGED_CERTIFICATE_STATUS_UNSPECIFIED_VALUE = 474800850;
-    /** <code>PROVISIONING = 290896621;</code> */
-    public static final int PROVISIONING_VALUE = 290896621;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>MANAGED_CERTIFICATE_STATUS_UNSPECIFIED = 206365394;</code> */
+    public static final int MANAGED_CERTIFICATE_STATUS_UNSPECIFIED_VALUE = 206365394;
+    /** <code>PROVISIONING = 22461165;</code> */
+    public static final int PROVISIONING_VALUE = 22461165;
     /** <code>PROVISIONING_FAILED = 76813775;</code> */
     public static final int PROVISIONING_FAILED_VALUE = 76813775;
-    /** <code>PROVISIONING_FAILED_PERMANENTLY = 275036203;</code> */
-    public static final int PROVISIONING_FAILED_PERMANENTLY_VALUE = 275036203;
-    /** <code>RENEWAL_FAILED = 434659076;</code> */
-    public static final int RENEWAL_FAILED_VALUE = 434659076;
+    /** <code>PROVISIONING_FAILED_PERMANENTLY = 6600747;</code> */
+    public static final int PROVISIONING_FAILED_PERMANENTLY_VALUE = 6600747;
+    /** <code>RENEWAL_FAILED = 166223620;</code> */
+    public static final int RENEWAL_FAILED_VALUE = 166223620;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -238,17 +238,17 @@ public final class SslCertificateManagedSslCertificate
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
-        case 474800850:
+        case 206365394:
           return MANAGED_CERTIFICATE_STATUS_UNSPECIFIED;
-        case 290896621:
+        case 22461165:
           return PROVISIONING;
         case 76813775:
           return PROVISIONING_FAILED;
-        case 275036203:
+        case 6600747:
           return PROVISIONING_FAILED_PERMANENTLY;
-        case 434659076:
+        case 166223620:
           return RENEWAL_FAILED;
         default:
           return null;
@@ -305,7 +305,7 @@ public final class SslCertificateManagedSslCertificate
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status)
   }
 
-  public static final int DOMAIN_STATUS_FIELD_NUMBER = 360305613;
+  public static final int DOMAIN_STATUS_FIELD_NUMBER = 91870157;
 
   private static final class DomainStatusDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
@@ -339,7 +339,7 @@ public final class SslCertificateManagedSslCertificate
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   @java.lang.Override
   public boolean containsDomainStatus(java.lang.String key) {
@@ -361,7 +361,7 @@ public final class SslCertificateManagedSslCertificate
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getDomainStatusMap() {
@@ -374,7 +374,7 @@ public final class SslCertificateManagedSslCertificate
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   @java.lang.Override
   public java.lang.String getDomainStatusOrDefault(
@@ -392,7 +392,7 @@ public final class SslCertificateManagedSslCertificate
    * [Output only] Detailed statuses of the domains specified for managed certificate resource.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+   * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
    */
   @java.lang.Override
   public java.lang.String getDomainStatusOrThrow(java.lang.String key) {
@@ -521,6 +521,8 @@ public final class SslCertificateManagedSslCertificate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetDomainStatus(), DomainStatusDefaultEntryHolder.defaultEntry, 91870157);
     if (status_
         != com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status.UNDEFINED_STATUS
             .getNumber()) {
@@ -529,8 +531,6 @@ public final class SslCertificateManagedSslCertificate
     for (int i = 0; i < domains_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 226935855, domains_.getRaw(i));
     }
-    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
-        output, internalGetDomainStatus(), DomainStatusDefaultEntryHolder.defaultEntry, 360305613);
     unknownFields.writeTo(output);
   }
 
@@ -540,6 +540,16 @@ public final class SslCertificateManagedSslCertificate
     if (size != -1) return size;
 
     size = 0;
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetDomainStatus().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> domainStatus__ =
+          DomainStatusDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(91870157, domainStatus__);
+    }
     if (status_
         != com.google.cloud.compute.v1.SslCertificateManagedSslCertificate.Status.UNDEFINED_STATUS
             .getNumber()) {
@@ -552,16 +562,6 @@ public final class SslCertificateManagedSslCertificate
       }
       size += dataSize;
       size += 5 * getDomainsList().size();
-    }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
-        internalGetDomainStatus().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> domainStatus__ =
-          DomainStatusDefaultEntryHolder.defaultEntry
-              .newBuilderForType()
-              .setKey(entry.getKey())
-              .setValue(entry.getValue())
-              .build();
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(360305613, domainStatus__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -725,7 +725,7 @@ public final class SslCertificateManagedSslCertificate
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
-        case 360305613:
+        case 91870157:
           return internalGetDomainStatus();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -735,7 +735,7 @@ public final class SslCertificateManagedSslCertificate
     @SuppressWarnings({"rawtypes"})
     protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
-        case 360305613:
+        case 91870157:
           return internalGetMutableDomainStatus();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
@@ -945,7 +945,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     @java.lang.Override
     public boolean containsDomainStatus(java.lang.String key) {
@@ -967,7 +967,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getDomainStatusMap() {
@@ -980,7 +980,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     @java.lang.Override
     public java.lang.String getDomainStatusOrDefault(
@@ -998,7 +998,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     @java.lang.Override
     public java.lang.String getDomainStatusOrThrow(java.lang.String key) {
@@ -1023,7 +1023,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     public Builder removeDomainStatus(java.lang.String key) {
       if (key == null) {
@@ -1044,7 +1044,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     public Builder putDomainStatus(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1063,7 +1063,7 @@ public final class SslCertificateManagedSslCertificate
      * [Output only] Detailed statuses of the domains specified for managed certificate resource.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; domain_status = 360305613;</code>
+     * <code>map&lt;string, string&gt; domain_status = 91870157;</code>
      */
     public Builder putAllDomainStatus(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableDomainStatus().getMutableMap().putAll(values);

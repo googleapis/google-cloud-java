@@ -138,7 +138,15 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
   public static final int FIREWALL_RESOURCE_FIELD_NUMBER = 41425005;
   private com.google.cloud.compute.v1.Firewall firewallResource_;
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the firewallResource field is set.
    */
@@ -147,7 +155,15 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
     return firewallResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The firewallResource.
    */
@@ -157,7 +173,17 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.compute.v1.Firewall.getDefaultInstance()
         : firewallResource_;
   }
-  /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder() {
     return getFirewallResource();
@@ -635,7 +661,15 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.compute.v1.FirewallOrBuilder>
         firewallResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the firewallResource field is set.
      */
@@ -643,7 +677,15 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
       return firewallResourceBuilder_ != null || firewallResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The firewallResource.
      */
@@ -656,7 +698,17 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
         return firewallResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setFirewallResource(com.google.cloud.compute.v1.Firewall value) {
       if (firewallResourceBuilder_ == null) {
         if (value == null) {
@@ -670,7 +722,17 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setFirewallResource(
         com.google.cloud.compute.v1.Firewall.Builder builderForValue) {
       if (firewallResourceBuilder_ == null) {
@@ -682,7 +744,17 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeFirewallResource(com.google.cloud.compute.v1.Firewall value) {
       if (firewallResourceBuilder_ == null) {
         if (firewallResource_ != null) {
@@ -700,7 +772,17 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearFirewallResource() {
       if (firewallResourceBuilder_ == null) {
         firewallResource_ = null;
@@ -712,13 +794,33 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.Firewall.Builder getFirewallResourceBuilder() {
 
       onChanged();
       return getFirewallResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.FirewallOrBuilder getFirewallResourceOrBuilder() {
       if (firewallResourceBuilder_ != null) {
         return firewallResourceBuilder_.getMessageOrBuilder();
@@ -728,7 +830,17 @@ public final class InsertFirewallRequest extends com.google.protobuf.GeneratedMe
             : firewallResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.Firewall firewall_resource = 41425005;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.Firewall firewall_resource = 41425005 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.Firewall,
             com.google.cloud.compute.v1.Firewall.Builder,

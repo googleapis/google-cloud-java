@@ -72,18 +72,18 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
           case 0:
             done = true;
             break;
+          case 510247530:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              rangeName_ = s;
+              break;
+            }
           case 784938578:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               ipCidrRange_ = s;
-              break;
-            }
-          case -1637236118:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              rangeName_ = s;
               break;
             }
           default:
@@ -169,7 +169,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     }
   }
 
-  public static final int RANGE_NAME_FIELD_NUMBER = 332216397;
+  public static final int RANGE_NAME_FIELD_NUMBER = 63780941;
   private volatile java.lang.Object rangeName_;
   /**
    *
@@ -178,7 +178,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>string range_name = 63780941;</code>
    *
    * @return The rangeName.
    */
@@ -201,7 +201,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
    * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
    * </pre>
    *
-   * <code>string range_name = 332216397;</code>
+   * <code>string range_name = 63780941;</code>
    *
    * @return The bytes for rangeName.
    */
@@ -232,11 +232,11 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getRangeNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 63780941, rangeName_);
+    }
     if (!getIpCidrRangeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
-    }
-    if (!getRangeNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 332216397, rangeName_);
     }
     unknownFields.writeTo(output);
   }
@@ -247,11 +247,11 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
     if (size != -1) return size;
 
     size = 0;
+    if (!getRangeNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(63780941, rangeName_);
+    }
     if (!getIpCidrRangeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
-    }
-    if (!getRangeNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(332216397, rangeName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -667,7 +667,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>string range_name = 63780941;</code>
      *
      * @return The rangeName.
      */
@@ -689,7 +689,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>string range_name = 63780941;</code>
      *
      * @return The bytes for rangeName.
      */
@@ -711,7 +711,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>string range_name = 63780941;</code>
      *
      * @param value The rangeName to set.
      * @return This builder for chaining.
@@ -732,7 +732,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>string range_name = 63780941;</code>
      *
      * @return This builder for chaining.
      */
@@ -749,7 +749,7 @@ public final class UsableSubnetworkSecondaryRange extends com.google.protobuf.Ge
      * The name associated with this subnetwork secondary range, used when adding an alias IP range to a VM instance. The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the subnetwork.
      * </pre>
      *
-     * <code>string range_name = 332216397;</code>
+     * <code>string range_name = 63780941;</code>
      *
      * @param value The bytes for rangeName to set.
      * @return This builder for chaining.

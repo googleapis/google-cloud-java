@@ -209,8 +209,14 @@ public final class RemoveResourcePoliciesInstanceRequest
   private com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest
       instancesRemoveResourcePoliciesRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+   * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the instancesRemoveResourcePoliciesRequestResource field is set.
@@ -220,8 +226,14 @@ public final class RemoveResourcePoliciesInstanceRequest
     return instancesRemoveResourcePoliciesRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+   * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The instancesRemoveResourcePoliciesRequestResource.
@@ -234,8 +246,14 @@ public final class RemoveResourcePoliciesInstanceRequest
         : instancesRemoveResourcePoliciesRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+   * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -917,8 +935,14 @@ public final class RemoveResourcePoliciesInstanceRequest
             com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequestOrBuilder>
         instancesRemoveResourcePoliciesRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the instancesRemoveResourcePoliciesRequestResource field is set.
@@ -928,8 +952,14 @@ public final class RemoveResourcePoliciesInstanceRequest
           || instancesRemoveResourcePoliciesRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The instancesRemoveResourcePoliciesRequestResource.
@@ -946,8 +976,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesRemoveResourcePoliciesRequestResource(
@@ -965,8 +1001,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setInstancesRemoveResourcePoliciesRequestResource(
@@ -982,8 +1024,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeInstancesRemoveResourcePoliciesRequestResource(
@@ -1006,8 +1054,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearInstancesRemoveResourcePoliciesRequestResource() {
@@ -1022,8 +1076,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest.Builder
@@ -1033,8 +1093,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       return getInstancesRemoveResourcePoliciesRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequestOrBuilder
@@ -1049,8 +1115,14 @@ public final class RemoveResourcePoliciesInstanceRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558;
+     * .google.cloud.compute.v1.InstancesRemoveResourcePoliciesRequest instances_remove_resource_policies_request_resource = 49229558 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

@@ -319,7 +319,7 @@ public class GlobalAddressesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param addressResource
+   * @param addressResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, Address addressResource) {
@@ -339,8 +339,10 @@ public class GlobalAddressesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   Address addressResource = Address.newBuilder().build();
    *   String project = "";
    *   InsertGlobalAddressRequest request = InsertGlobalAddressRequest.newBuilder()
+   *     .setAddressResource(addressResource)
    *     .setProject(project)
    *     .build();
    *   Operation response = globalAddressesClient.insert(request);
@@ -362,8 +364,10 @@ public class GlobalAddressesClient implements BackgroundResource {
    *
    * <pre><code>
    * try (GlobalAddressesClient globalAddressesClient = GlobalAddressesClient.create()) {
+   *   Address addressResource = Address.newBuilder().build();
    *   String project = "";
    *   InsertGlobalAddressRequest request = InsertGlobalAddressRequest.newBuilder()
+   *     .setAddressResource(addressResource)
    *     .setProject(project)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = globalAddressesClient.insertCallable().futureCall(request);

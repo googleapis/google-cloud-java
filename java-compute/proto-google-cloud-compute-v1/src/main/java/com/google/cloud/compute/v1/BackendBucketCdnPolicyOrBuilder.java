@@ -27,10 +27,80 @@ public interface BackendBucketCdnPolicyOrBuilder
    *
    *
    * <pre>
+   * Specifies the cache setting for all responses from this backend. The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode cache_mode = 28877888;</code>
+   *
+   * @return The enum numeric value on the wire for cacheMode.
+   */
+  int getCacheModeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the cache setting for all responses from this backend. The possible values are:
+   * USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server.
+   * FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content.
+   * CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode cache_mode = 28877888;</code>
+   *
+   * @return The cacheMode.
+   */
+  com.google.cloud.compute.v1.BackendBucketCdnPolicy.CacheMode getCacheMode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies a separate client (e.g. browser client) TTL, separate from the TTL for Cloud CDN's edge caches. Leaving this empty will use the same cache TTL for both Cloud CDN and the client-facing response. The maximum allowed value is 86400s (1 day).
+   * </pre>
+   *
+   * <code>int32 client_ttl = 29034360;</code>
+   *
+   * @return The clientTtl.
+   */
+  int getClientTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the default TTL for cached content served by this origin for responses that do not have an existing valid TTL (max-age or s-max-age). Setting a TTL of "0" means "always revalidate". The value of defaultTTL cannot be set to a value greater than that of maxTTL, but can be equal. When the cacheMode is set to FORCE_CACHE_ALL, the defaultTTL will overwrite the TTL set in all responses. The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * </pre>
+   *
+   * <code>int32 default_ttl = 100253422;</code>
+   *
+   * @return The defaultTtl.
+   */
+  int getDefaultTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum allowed TTL for cached content served by this origin. Cache directives that attempt to set a max-age or s-maxage higher than this, or an Expires header more than maxTTL seconds in the future will be capped at the value of maxTTL, as if it were the value of an s-maxage Cache-Control directive. Headers sent to the client will not be modified. Setting a TTL of "0" means "always revalidate". The maximum allowed value is 31,622,400s (1 year), noting that infrequently accessed objects may be evicted from the cache before the defined TTL.
+   * </pre>
+   *
+   * <code>int32 max_ttl = 39142545;</code>
+   *
+   * @return The maxTtl.
+   */
+  int getMaxTtl();
+
+  /**
+   *
+   *
+   * <pre>
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>string signed_url_cache_max_age_sec = 939078;</code>
    *
    * @return The signedUrlCacheMaxAgeSec.
    */
@@ -42,7 +112,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * Maximum number of seconds the response to a signed URL request will be considered fresh. After this time period, the response will be revalidated before being served. Defaults to 1hr (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header, regardless of any existing Cache-Control header. The actual headers served in responses will not be altered.
    * </pre>
    *
-   * <code>string signed_url_cache_max_age_sec = 269374534;</code>
+   * <code>string signed_url_cache_max_age_sec = 939078;</code>
    *
    * @return The bytes for signedUrlCacheMaxAgeSec.
    */
@@ -55,7 +125,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @return A list containing the signedUrlKeyNames.
    */
@@ -67,7 +137,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @return The count of signedUrlKeyNames.
    */
@@ -79,7 +149,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @param index The index of the element to return.
    * @return The signedUrlKeyNames at the given index.
@@ -92,7 +162,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * [Output Only] Names of the keys for signing request URLs.
    * </pre>
    *
-   * <code>repeated string signed_url_key_names = 371848885;</code>
+   * <code>repeated string signed_url_key_names = 103413429;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the signedUrlKeyNames at the given index.

@@ -30,7 +30,7 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>string commitment = 213699349;</code>
    *
    * @return The commitment.
    */
@@ -42,7 +42,7 @@ public interface ReservationOrBuilder
    * [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
    * </pre>
    *
-   * <code>string commitment = 482134805;</code>
+   * <code>string commitment = 213699349;</code>
    *
    * @return The bytes for commitment.
    */
@@ -80,7 +80,7 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -92,7 +92,7 @@ public interface ReservationOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -180,7 +180,7 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -192,7 +192,7 @@ public interface ReservationOrBuilder
    * [Output Only] Server-defined fully-qualified URL for this resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -206,7 +206,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;
    * </code>
    *
    * @return Whether the specificReservation field is set.
@@ -220,7 +220,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;
    * </code>
    *
    * @return The specificReservation.
@@ -234,7 +234,7 @@ public interface ReservationOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 404901951;
+   * .google.cloud.compute.v1.AllocationSpecificSKUReservation specific_reservation = 136466495;
    * </code>
    */
   com.google.cloud.compute.v1.AllocationSpecificSKUReservationOrBuilder

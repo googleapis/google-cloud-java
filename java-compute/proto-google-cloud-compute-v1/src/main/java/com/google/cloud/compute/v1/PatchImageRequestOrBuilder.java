@@ -49,18 +49,44 @@ public interface PatchImageRequestOrBuilder
   com.google.protobuf.ByteString getImageBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the imageResource field is set.
    */
   boolean hasImageResource();
   /**
-   * <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The imageResource.
    */
   com.google.cloud.compute.v1.Image getImageResource();
-  /** <code>.google.cloud.compute.v1.Image image_resource = 371171954;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Image image_resource = 102736498 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.ImageOrBuilder getImageResourceOrBuilder();
 
   /**

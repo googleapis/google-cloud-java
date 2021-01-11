@@ -193,8 +193,14 @@ public final class SetDefaultNetworkTierProjectRequest
   private com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest
       projectsSetDefaultNetworkTierRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the projectsSetDefaultNetworkTierRequestResource field is set.
@@ -204,8 +210,14 @@ public final class SetDefaultNetworkTierProjectRequest
     return projectsSetDefaultNetworkTierRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The projectsSetDefaultNetworkTierRequestResource.
@@ -218,8 +230,14 @@ public final class SetDefaultNetworkTierProjectRequest
         : projectsSetDefaultNetworkTierRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+   * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -769,8 +787,14 @@ public final class SetDefaultNetworkTierProjectRequest
             com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequestOrBuilder>
         projectsSetDefaultNetworkTierRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the projectsSetDefaultNetworkTierRequestResource field is set.
@@ -780,8 +804,14 @@ public final class SetDefaultNetworkTierProjectRequest
           || projectsSetDefaultNetworkTierRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The projectsSetDefaultNetworkTierRequestResource.
@@ -797,8 +827,14 @@ public final class SetDefaultNetworkTierProjectRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setProjectsSetDefaultNetworkTierRequestResource(
@@ -816,8 +852,14 @@ public final class SetDefaultNetworkTierProjectRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setProjectsSetDefaultNetworkTierRequestResource(
@@ -832,8 +874,14 @@ public final class SetDefaultNetworkTierProjectRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeProjectsSetDefaultNetworkTierRequestResource(
@@ -856,8 +904,14 @@ public final class SetDefaultNetworkTierProjectRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearProjectsSetDefaultNetworkTierRequestResource() {
@@ -872,8 +926,14 @@ public final class SetDefaultNetworkTierProjectRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.Builder
@@ -883,8 +943,14 @@ public final class SetDefaultNetworkTierProjectRequest
       return getProjectsSetDefaultNetworkTierRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequestOrBuilder
@@ -898,8 +964,14 @@ public final class SetDefaultNetworkTierProjectRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762;
+     * .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest projects_set_default_network_tier_request_resource = 126410762 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

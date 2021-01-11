@@ -65,7 +65,7 @@ public interface RouterOrBuilder
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RouterBgpPeer> getBgpPeersList();
   /**
@@ -75,7 +75,7 @@ public interface RouterOrBuilder
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   com.google.cloud.compute.v1.RouterBgpPeer getBgpPeers(int index);
   /**
@@ -85,7 +85,7 @@ public interface RouterOrBuilder
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   int getBgpPeersCount();
   /**
@@ -95,7 +95,7 @@ public interface RouterOrBuilder
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterBgpPeerOrBuilder>
       getBgpPeersOrBuilderList();
@@ -106,7 +106,7 @@ public interface RouterOrBuilder
    * BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer to RFC4273.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 452695773;</code>
+   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer bgp_peers = 184260317;</code>
    */
   com.google.cloud.compute.v1.RouterBgpPeerOrBuilder getBgpPeersOrBuilder(int index);
 
@@ -142,7 +142,7 @@ public interface RouterOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -154,7 +154,7 @@ public interface RouterOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -395,7 +395,7 @@ public interface RouterOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -407,7 +407,7 @@ public interface RouterOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

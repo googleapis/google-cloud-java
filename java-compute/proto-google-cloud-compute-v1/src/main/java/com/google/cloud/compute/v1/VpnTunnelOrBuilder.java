@@ -55,7 +55,7 @@ public interface VpnTunnelOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -67,7 +67,7 @@ public interface VpnTunnelOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -80,7 +80,7 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>string detailed_status = 65065569;</code>
    *
    * @return The detailedStatus.
    */
@@ -92,7 +92,7 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>string detailed_status = 65065569;</code>
    *
    * @return The bytes for detailedStatus.
    */
@@ -168,7 +168,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @return A list containing the localTrafficSelector.
    */
@@ -180,7 +180,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @return The count of localTrafficSelector.
    */
@@ -192,7 +192,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @param index The index of the element to return.
    * @return The localTrafficSelector at the given index.
@@ -205,7 +205,7 @@ public interface VpnTunnelOrBuilder
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the localTrafficSelector at the given index.
@@ -244,7 +244,7 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>string peer_external_gateway = 116520717;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -256,7 +256,7 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>string peer_external_gateway = 116520717;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -269,7 +269,7 @@ public interface VpnTunnelOrBuilder
    * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>int32 peer_external_gateway_interface = 452768391;</code>
+   * <code>int32 peer_external_gateway_interface = 184332935;</code>
    *
    * @return The peerExternalGatewayInterface.
    */
@@ -282,7 +282,7 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>string peer_gcp_gateway = 13431996;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -294,7 +294,7 @@ public interface VpnTunnelOrBuilder
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>string peer_gcp_gateway = 13431996;</code>
    *
    * @return The bytes for peerGcpGateway.
    */
@@ -307,7 +307,7 @@ public interface VpnTunnelOrBuilder
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>string peer_ip = 114814244;</code>
    *
    * @return The peerIp.
    */
@@ -319,7 +319,7 @@ public interface VpnTunnelOrBuilder
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>string peer_ip = 114814244;</code>
    *
    * @return The bytes for peerIp.
    */
@@ -357,7 +357,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @return A list containing the remoteTrafficSelector.
    */
@@ -369,7 +369,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @return The count of remoteTrafficSelector.
    */
@@ -381,7 +381,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @param index The index of the element to return.
    * @return The remoteTrafficSelector at the given index.
@@ -394,7 +394,7 @@ public interface VpnTunnelOrBuilder
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the remoteTrafficSelector at the given index.
@@ -433,7 +433,7 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -445,7 +445,7 @@ public interface VpnTunnelOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -458,7 +458,7 @@ public interface VpnTunnelOrBuilder
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>string shared_secret = 113497034;</code>
    *
    * @return The sharedSecret.
    */
@@ -470,7 +470,7 @@ public interface VpnTunnelOrBuilder
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>string shared_secret = 113497034;</code>
    *
    * @return The bytes for sharedSecret.
    */
@@ -483,7 +483,7 @@ public interface VpnTunnelOrBuilder
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>string shared_secret_hash = 130446435;</code>
    *
    * @return The sharedSecretHash.
    */
@@ -495,7 +495,7 @@ public interface VpnTunnelOrBuilder
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>string shared_secret_hash = 130446435;</code>
    *
    * @return The bytes for sharedSecretHash.
    */
@@ -563,7 +563,7 @@ public interface VpnTunnelOrBuilder
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>string target_vpn_gateway = 264077387;</code>
    *
    * @return The targetVpnGateway.
    */
@@ -575,7 +575,7 @@ public interface VpnTunnelOrBuilder
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>string target_vpn_gateway = 264077387;</code>
    *
    * @return The bytes for targetVpnGateway.
    */
@@ -588,7 +588,7 @@ public interface VpnTunnelOrBuilder
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>string vpn_gateway = 138248697;</code>
    *
    * @return The vpnGateway.
    */
@@ -600,7 +600,7 @@ public interface VpnTunnelOrBuilder
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>string vpn_gateway = 138248697;</code>
    *
    * @return The bytes for vpnGateway.
    */

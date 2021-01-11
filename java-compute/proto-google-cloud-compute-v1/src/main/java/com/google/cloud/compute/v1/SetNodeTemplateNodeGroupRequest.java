@@ -106,18 +106,18 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
 
               break;
             }
+          case 1612181522:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nodeGroup_ = s;
+              break;
+            }
           case 1820481738:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -535302126:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nodeGroup_ = s;
               break;
             }
           default:
@@ -154,7 +154,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.SetNodeTemplateNodeGroupRequest.Builder.class);
   }
 
-  public static final int NODE_GROUP_FIELD_NUMBER = 469958146;
+  public static final int NODE_GROUP_FIELD_NUMBER = 201522690;
   private volatile java.lang.Object nodeGroup_;
   /**
    *
@@ -163,7 +163,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
    * Name of the NodeGroup resource to update.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The nodeGroup.
    */
@@ -186,7 +186,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
    * Name of the NodeGroup resource to update.
    * </pre>
    *
-   * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for nodeGroup.
    */
@@ -207,8 +207,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
   private com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest
       nodeGroupsSetNodeTemplateRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the nodeGroupsSetNodeTemplateRequestResource field is set.
@@ -218,8 +224,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     return nodeGroupsSetNodeTemplateRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The nodeGroupsSetNodeTemplateRequestResource.
@@ -232,8 +244,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
         : nodeGroupsSetNodeTemplateRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+   * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -416,11 +434,11 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
     if (nodeGroupsSetNodeTemplateRequestResource_ != null) {
       output.writeMessage(117382321, getNodeGroupsSetNodeTemplateRequestResource());
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 469958146, nodeGroup_);
     }
     unknownFields.writeTo(output);
   }
@@ -442,11 +460,11 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               117382321, getNodeGroupsSetNodeTemplateRequestResource());
     }
+    if (!getNodeGroupBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(201522690, nodeGroup_);
+    }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getNodeGroupBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(469958146, nodeGroup_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -803,7 +821,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * Name of the NodeGroup resource to update.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The nodeGroup.
      */
@@ -825,7 +843,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * Name of the NodeGroup resource to update.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for nodeGroup.
      */
@@ -847,7 +865,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * Name of the NodeGroup resource to update.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The nodeGroup to set.
      * @return This builder for chaining.
@@ -868,7 +886,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * Name of the NodeGroup resource to update.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -885,7 +903,7 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
      * Name of the NodeGroup resource to update.
      * </pre>
      *
-     * <code>string node_group = 469958146 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string node_group = 201522690 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for nodeGroup to set.
      * @return This builder for chaining.
@@ -909,8 +927,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequestOrBuilder>
         nodeGroupsSetNodeTemplateRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the nodeGroupsSetNodeTemplateRequestResource field is set.
@@ -920,8 +944,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
           || nodeGroupsSetNodeTemplateRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The nodeGroupsSetNodeTemplateRequestResource.
@@ -937,8 +967,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupsSetNodeTemplateRequestResource(
@@ -956,8 +992,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNodeGroupsSetNodeTemplateRequestResource(
@@ -972,8 +1014,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNodeGroupsSetNodeTemplateRequestResource(
@@ -996,8 +1044,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNodeGroupsSetNodeTemplateRequestResource() {
@@ -1012,8 +1066,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest.Builder
@@ -1023,8 +1083,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       return getNodeGroupsSetNodeTemplateRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequestOrBuilder
@@ -1038,8 +1104,14 @@ public final class SetNodeTemplateNodeGroupRequest extends com.google.protobuf.G
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321;
+     * .google.cloud.compute.v1.NodeGroupsSetNodeTemplateRequest node_groups_set_node_template_request_resource = 117382321 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

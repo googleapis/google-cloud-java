@@ -94,7 +94,7 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
               project_ = s;
               break;
             }
-          case -88656582:
+          case 2058827066:
             {
               com.google.cloud.compute.v1.NetworkEndpointGroup.Builder subBuilder = null;
               if (networkEndpointGroupResource_ != null) {
@@ -144,11 +144,17 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
             com.google.cloud.compute.v1.InsertNetworkEndpointGroupRequest.Builder.class);
   }
 
-  public static final int NETWORK_ENDPOINT_GROUP_RESOURCE_FIELD_NUMBER = 525788839;
+  public static final int NETWORK_ENDPOINT_GROUP_RESOURCE_FIELD_NUMBER = 257353383;
   private com.google.cloud.compute.v1.NetworkEndpointGroup networkEndpointGroupResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the networkEndpointGroupResource field is set.
@@ -158,8 +164,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
     return networkEndpointGroupResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The networkEndpointGroupResource.
@@ -171,8 +183,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
         : networkEndpointGroupResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+   * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -356,7 +374,7 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (networkEndpointGroupResource_ != null) {
-      output.writeMessage(525788839, getNetworkEndpointGroupResource());
+      output.writeMessage(257353383, getNetworkEndpointGroupResource());
     }
     unknownFields.writeTo(output);
   }
@@ -379,7 +397,7 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
     if (networkEndpointGroupResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              525788839, getNetworkEndpointGroupResource());
+              257353383, getNetworkEndpointGroupResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -724,8 +742,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
             com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder>
         networkEndpointGroupResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the networkEndpointGroupResource field is set.
@@ -734,8 +758,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       return networkEndpointGroupResourceBuilder_ != null || networkEndpointGroupResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The networkEndpointGroupResource.
@@ -750,8 +780,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkEndpointGroupResource(
@@ -769,8 +805,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setNetworkEndpointGroupResource(
@@ -785,8 +827,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeNetworkEndpointGroupResource(
@@ -809,8 +857,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearNetworkEndpointGroupResource() {
@@ -825,8 +879,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroup.Builder
@@ -836,8 +896,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       return getNetworkEndpointGroupResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder
@@ -851,8 +917,14 @@ public final class InsertNetworkEndpointGroupRequest extends com.google.protobuf
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 525788839;
+     * .google.cloud.compute.v1.NetworkEndpointGroup network_endpoint_group_resource = 257353383 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

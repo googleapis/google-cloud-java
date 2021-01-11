@@ -88,21 +88,7 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
               instance_ = s;
               break;
             }
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1977478446:
+          case 170005202:
             {
               com.google.cloud.compute.v1.DisplayDevice.Builder subBuilder = null;
               if (displayDeviceResource_ != null) {
@@ -116,6 +102,20 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
                 displayDeviceResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -152,10 +152,18 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
             com.google.cloud.compute.v1.UpdateDisplayDeviceInstanceRequest.Builder.class);
   }
 
-  public static final int DISPLAY_DEVICE_RESOURCE_FIELD_NUMBER = 289686106;
+  public static final int DISPLAY_DEVICE_RESOURCE_FIELD_NUMBER = 21250650;
   private com.google.cloud.compute.v1.DisplayDevice displayDeviceResource_;
   /**
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the displayDeviceResource field is set.
    */
@@ -164,7 +172,15 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
     return displayDeviceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The displayDeviceResource.
    */
@@ -174,7 +190,17 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
         ? com.google.cloud.compute.v1.DisplayDevice.getDefaultInstance()
         : displayDeviceResource_;
   }
-  /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.DisplayDeviceOrBuilder getDisplayDeviceResourceOrBuilder() {
     return getDisplayDeviceResource();
@@ -400,14 +426,14 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
+    if (displayDeviceResource_ != null) {
+      output.writeMessage(21250650, getDisplayDeviceResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (displayDeviceResource_ != null) {
-      output.writeMessage(289686106, getDisplayDeviceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -424,16 +450,16 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
+    if (displayDeviceResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21250650, getDisplayDeviceResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (displayDeviceResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              289686106, getDisplayDeviceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -787,7 +813,15 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
             com.google.cloud.compute.v1.DisplayDeviceOrBuilder>
         displayDeviceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the displayDeviceResource field is set.
      */
@@ -795,7 +829,15 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
       return displayDeviceResourceBuilder_ != null || displayDeviceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The displayDeviceResource.
      */
@@ -808,7 +850,17 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
         return displayDeviceResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setDisplayDeviceResource(com.google.cloud.compute.v1.DisplayDevice value) {
       if (displayDeviceResourceBuilder_ == null) {
         if (value == null) {
@@ -822,7 +874,17 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setDisplayDeviceResource(
         com.google.cloud.compute.v1.DisplayDevice.Builder builderForValue) {
       if (displayDeviceResourceBuilder_ == null) {
@@ -834,7 +896,17 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeDisplayDeviceResource(com.google.cloud.compute.v1.DisplayDevice value) {
       if (displayDeviceResourceBuilder_ == null) {
         if (displayDeviceResource_ != null) {
@@ -852,7 +924,17 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearDisplayDeviceResource() {
       if (displayDeviceResourceBuilder_ == null) {
         displayDeviceResource_ = null;
@@ -864,13 +946,33 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.DisplayDevice.Builder getDisplayDeviceResourceBuilder() {
 
       onChanged();
       return getDisplayDeviceResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.DisplayDeviceOrBuilder getDisplayDeviceResourceOrBuilder() {
       if (displayDeviceResourceBuilder_ != null) {
         return displayDeviceResourceBuilder_.getMessageOrBuilder();
@@ -880,7 +982,17 @@ public final class UpdateDisplayDeviceInstanceRequest extends com.google.protobu
             : displayDeviceResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.DisplayDevice display_device_resource = 289686106;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisplayDevice display_device_resource = 21250650 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.DisplayDevice,
             com.google.cloud.compute.v1.DisplayDevice.Builder,

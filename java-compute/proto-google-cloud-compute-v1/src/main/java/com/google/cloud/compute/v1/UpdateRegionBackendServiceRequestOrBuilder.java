@@ -30,7 +30,7 @@ public interface UpdateRegionBackendServiceRequestOrBuilder
    * Name of the BackendService resource to update.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -42,25 +42,51 @@ public interface UpdateRegionBackendServiceRequestOrBuilder
    * Name of the BackendService resource to update.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
   com.google.protobuf.ByteString getBackendServiceBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the backendServiceResource field is set.
    */
   boolean hasBackendServiceResource();
   /**
-   * <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The backendServiceResource.
    */
   com.google.cloud.compute.v1.BackendService getBackendServiceResource();
-  /** <code>.google.cloud.compute.v1.BackendService backend_service_resource = 347586723;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.BackendService backend_service_resource = 79151267 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.BackendServiceOrBuilder getBackendServiceResourceOrBuilder();
 
   /**

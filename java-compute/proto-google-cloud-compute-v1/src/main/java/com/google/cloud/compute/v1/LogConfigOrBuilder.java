@@ -30,7 +30,7 @@ public interface LogConfigOrBuilder
    * Cloud audit options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
    *
    * @return Whether the cloudAudit field is set.
    */
@@ -42,7 +42,7 @@ public interface LogConfigOrBuilder
    * Cloud audit options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
    *
    * @return The cloudAudit.
    */
@@ -54,7 +54,7 @@ public interface LogConfigOrBuilder
    * Cloud audit options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 412852561;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCloudAuditOptions cloud_audit = 144417105;</code>
    */
   com.google.cloud.compute.v1.LogConfigCloudAuditOptionsOrBuilder getCloudAuditOrBuilder();
 
@@ -65,7 +65,7 @@ public interface LogConfigOrBuilder
    * Counter options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
    *
    * @return Whether the counter field is set.
    */
@@ -77,7 +77,7 @@ public interface LogConfigOrBuilder
    * Counter options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
    *
    * @return The counter.
    */
@@ -89,7 +89,7 @@ public interface LogConfigOrBuilder
    * Counter options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 420959740;</code>
+   * <code>.google.cloud.compute.v1.LogConfigCounterOptions counter = 152524284;</code>
    */
   com.google.cloud.compute.v1.LogConfigCounterOptionsOrBuilder getCounterOrBuilder();
 
@@ -100,7 +100,7 @@ public interface LogConfigOrBuilder
    * Data access options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
    *
    * @return Whether the dataAccess field is set.
    */
@@ -112,7 +112,7 @@ public interface LogConfigOrBuilder
    * Data access options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
    *
    * @return The dataAccess.
    */
@@ -124,7 +124,7 @@ public interface LogConfigOrBuilder
    * Data access options.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 286633881;</code>
+   * <code>.google.cloud.compute.v1.LogConfigDataAccessOptions data_access = 18198425;</code>
    */
   com.google.cloud.compute.v1.LogConfigDataAccessOptionsOrBuilder getDataAccessOrBuilder();
 }

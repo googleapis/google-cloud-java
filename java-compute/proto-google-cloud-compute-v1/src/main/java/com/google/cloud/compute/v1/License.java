@@ -117,6 +117,25 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 831817328:
+            {
+              chargesUseFee_ = input.readBool();
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
+          case 1502234730:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              selfLink_ = s;
+              break;
+            }
           case 1714342154:
             {
               com.google.cloud.compute.v1.LicenseResourceRequirements.Builder subBuilder = null;
@@ -132,25 +151,6 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
                 resourceRequirements_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1315666320:
-            {
-              chargesUseFee_ = input.readBool();
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -645248918:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              selfLink_ = s;
               break;
             }
           default:
@@ -187,7 +187,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.License.Builder.class);
   }
 
-  public static final int CHARGES_USE_FEE_FIELD_NUMBER = 372412622;
+  public static final int CHARGES_USE_FEE_FIELD_NUMBER = 103977166;
   private boolean chargesUseFee_;
   /**
    *
@@ -196,7 +196,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
    * </pre>
    *
-   * <code>bool charges_use_fee = 372412622;</code>
+   * <code>bool charges_use_fee = 103977166;</code>
    *
    * @return The chargesUseFee.
    */
@@ -254,7 +254,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -263,7 +263,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -286,7 +286,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * An optional textual description of the resource; provided by the client when the resource is created.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -533,7 +533,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     return getResourceRequirements();
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -542,7 +542,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -565,7 +565,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -632,17 +632,17 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
-    if (resourceRequirements_ != null) {
-      output.writeMessage(214292769, getResourceRequirements());
-    }
     if (chargesUseFee_ != false) {
-      output.writeBool(372412622, chargesUseFee_);
+      output.writeBool(103977166, chargesUseFee_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
+    }
+    if (resourceRequirements_ != null) {
+      output.writeMessage(214292769, getResourceRequirements());
     }
     unknownFields.writeTo(output);
   }
@@ -672,19 +672,19 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (chargesUseFee_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(103977166, chargesUseFee_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
     if (resourceRequirements_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               214292769, getResourceRequirements());
-    }
-    if (chargesUseFee_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(372412622, chargesUseFee_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1079,7 +1079,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>bool charges_use_fee = 103977166;</code>
      *
      * @return The chargesUseFee.
      */
@@ -1094,7 +1094,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>bool charges_use_fee = 103977166;</code>
      *
      * @param value The chargesUseFee to set.
      * @return This builder for chaining.
@@ -1112,7 +1112,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
      * </pre>
      *
-     * <code>bool charges_use_fee = 372412622;</code>
+     * <code>bool charges_use_fee = 103977166;</code>
      *
      * @return This builder for chaining.
      */
@@ -1237,7 +1237,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1259,7 +1259,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1281,7 +1281,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1302,7 +1302,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1319,7 +1319,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * An optional textual description of the resource; provided by the client when the resource is created.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1913,7 +1913,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1935,7 +1935,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1957,7 +1957,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1978,7 +1978,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1995,7 +1995,7 @@ public final class License extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.

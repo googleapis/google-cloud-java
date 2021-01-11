@@ -49,18 +49,44 @@ public interface PatchNetworkRequestOrBuilder
   com.google.protobuf.ByteString getNetworkBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the networkResource field is set.
    */
   boolean hasNetworkResource();
   /**
-   * <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The networkResource.
    */
   com.google.cloud.compute.v1.Network getNetworkResource();
-  /** <code>.google.cloud.compute.v1.Network network_resource = 122105599;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Network network_resource = 122105599 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.NetworkOrBuilder getNetworkResourceOrBuilder();
 
   /**

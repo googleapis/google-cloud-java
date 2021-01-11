@@ -70,19 +70,19 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
           case 0:
             done = true;
             break;
-          case -2037771328:
+          case 109712320:
             {
               weight_ = input.readUInt32();
               break;
             }
-          case -1839398830:
+          case 308084818:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               backendService_ = s;
               break;
             }
-          case -1670348478:
+          case 477135170:
             {
               com.google.cloud.compute.v1.HttpHeaderAction.Builder subBuilder = null;
               if (headerAction_ != null) {
@@ -132,7 +132,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
             com.google.cloud.compute.v1.WeightedBackendService.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -141,7 +141,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The backendService.
    */
@@ -164,7 +164,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The bytes for backendService.
    */
@@ -181,7 +181,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
     }
   }
 
-  public static final int HEADER_ACTION_FIELD_NUMBER = 328077352;
+  public static final int HEADER_ACTION_FIELD_NUMBER = 59641896;
   private com.google.cloud.compute.v1.HttpHeaderAction headerAction_;
   /**
    *
@@ -193,7 +193,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -211,7 +211,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return The headerAction.
    */
@@ -231,14 +231,14 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder() {
     return getHeaderAction();
   }
 
-  public static final int WEIGHT_FIELD_NUMBER = 282149496;
+  public static final int WEIGHT_FIELD_NUMBER = 13714040;
   private int weight_;
   /**
    *
@@ -249,7 +249,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
    * The value must be between 0 and 1000
    * </pre>
    *
-   * <code>uint32 weight = 282149496;</code>
+   * <code>uint32 weight = 13714040;</code>
    *
    * @return The weight.
    */
@@ -273,13 +273,13 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (weight_ != 0) {
-      output.writeUInt32(282149496, weight_);
+      output.writeUInt32(13714040, weight_);
     }
     if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
     }
     if (headerAction_ != null) {
-      output.writeMessage(328077352, getHeaderAction());
+      output.writeMessage(59641896, getHeaderAction());
     }
     unknownFields.writeTo(output);
   }
@@ -291,14 +291,13 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
 
     size = 0;
     if (weight_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(282149496, weight_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt32Size(13714040, weight_);
     }
     if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
     }
     if (headerAction_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(328077352, getHeaderAction());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(59641896, getHeaderAction());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -628,7 +627,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The backendService.
      */
@@ -650,7 +649,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return The bytes for backendService.
      */
@@ -672,7 +671,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -693,7 +692,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @return This builder for chaining.
      */
@@ -710,7 +709,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
      * </pre>
      *
-     * <code>string backend_service = 306946058;</code>
+     * <code>string backend_service = 38510602;</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -742,7 +741,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      *
      * @return Whether the headerAction field is set.
      */
@@ -759,7 +758,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      *
      * @return The headerAction.
      */
@@ -782,7 +781,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     public Builder setHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
@@ -807,7 +806,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     public Builder setHeaderAction(
         com.google.cloud.compute.v1.HttpHeaderAction.Builder builderForValue) {
@@ -830,7 +829,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     public Builder mergeHeaderAction(com.google.cloud.compute.v1.HttpHeaderAction value) {
       if (headerActionBuilder_ == null) {
@@ -859,7 +858,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     public Builder clearHeaderAction() {
       if (headerActionBuilder_ == null) {
@@ -882,7 +881,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderAction.Builder getHeaderActionBuilder() {
 
@@ -899,7 +898,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     public com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder() {
       if (headerActionBuilder_ != null) {
@@ -920,7 +919,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+     * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HttpHeaderAction,
@@ -949,7 +948,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The value must be between 0 and 1000
      * </pre>
      *
-     * <code>uint32 weight = 282149496;</code>
+     * <code>uint32 weight = 13714040;</code>
      *
      * @return The weight.
      */
@@ -966,7 +965,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The value must be between 0 and 1000
      * </pre>
      *
-     * <code>uint32 weight = 282149496;</code>
+     * <code>uint32 weight = 13714040;</code>
      *
      * @param value The weight to set.
      * @return This builder for chaining.
@@ -986,7 +985,7 @@ public final class WeightedBackendService extends com.google.protobuf.GeneratedM
      * The value must be between 0 and 1000
      * </pre>
      *
-     * <code>uint32 weight = 282149496;</code>
+     * <code>uint32 weight = 13714040;</code>
      *
      * @return This builder for chaining.
      */

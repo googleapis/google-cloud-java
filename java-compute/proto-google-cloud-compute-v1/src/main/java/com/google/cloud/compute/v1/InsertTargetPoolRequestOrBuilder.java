@@ -103,17 +103,43 @@ public interface InsertTargetPoolRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
-   * <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetPoolResource field is set.
    */
   boolean hasTargetPoolResource();
   /**
-   * <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetPoolResource.
    */
   com.google.cloud.compute.v1.TargetPool getTargetPoolResource();
-  /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.TargetPoolOrBuilder getTargetPoolResourceOrBuilder();
 }

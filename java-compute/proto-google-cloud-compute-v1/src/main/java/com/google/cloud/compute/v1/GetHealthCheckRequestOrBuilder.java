@@ -30,7 +30,7 @@ public interface GetHealthCheckRequestOrBuilder
    * Name of the HealthCheck resource to return.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The healthCheck.
    */
@@ -42,7 +42,7 @@ public interface GetHealthCheckRequestOrBuilder
    * Name of the HealthCheck resource to return.
    * </pre>
    *
-   * <code>string health_check = 308876645 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string health_check = 40441189 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for healthCheck.
    */

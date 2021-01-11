@@ -75,7 +75,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
               id_ = input.readUInt32();
               break;
             }
-          case -1044789534:
+          case 1102694114:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -134,7 +134,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
     return id_;
   }
 
-  public static final int IP_ADDRESS_FIELD_NUMBER = 406272220;
+  public static final int IP_ADDRESS_FIELD_NUMBER = 137836764;
   private volatile java.lang.Object ipAddress_;
   /**
    *
@@ -143,7 +143,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The ipAddress.
    */
@@ -166,7 +166,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
    * [Output Only] The external IP address for this VPN gateway interface.
    * </pre>
    *
-   * <code>string ip_address = 406272220;</code>
+   * <code>string ip_address = 137836764;</code>
    *
    * @return The bytes for ipAddress.
    */
@@ -201,7 +201,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       output.writeUInt32(3355, id_);
     }
     if (!getIpAddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 137836764, ipAddress_);
     }
     unknownFields.writeTo(output);
   }
@@ -216,7 +216,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
       size += com.google.protobuf.CodedOutputStream.computeUInt32Size(3355, id_);
     }
     if (!getIpAddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(137836764, ipAddress_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -577,7 +577,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return The ipAddress.
      */
@@ -599,7 +599,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return The bytes for ipAddress.
      */
@@ -621,7 +621,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @param value The ipAddress to set.
      * @return This builder for chaining.
@@ -642,7 +642,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @return This builder for chaining.
      */
@@ -659,7 +659,7 @@ public final class VpnGatewayVpnGatewayInterface extends com.google.protobuf.Gen
      * [Output Only] The external IP address for this VPN gateway interface.
      * </pre>
      *
-     * <code>string ip_address = 406272220;</code>
+     * <code>string ip_address = 137836764;</code>
      *
      * @param value The bytes for ipAddress to set.
      * @return This builder for chaining.

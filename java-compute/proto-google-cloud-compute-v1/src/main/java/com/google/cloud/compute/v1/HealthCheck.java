@@ -129,6 +129,22 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 92775874:
+            {
+              com.google.cloud.compute.v1.SSLHealthCheck.Builder subBuilder = null;
+              if (sslHealthCheck_ != null) {
+                subBuilder = sslHealthCheck_.toBuilder();
+              }
+              sslHealthCheck_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.SSLHealthCheck.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sslHealthCheck_);
+                sslHealthCheck_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -136,9 +152,30 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 617004400:
+            {
+              checkIntervalSec_ = input.readInt32();
+              break;
+            }
           case 639959960:
             {
               timeoutSec_ = input.readInt32();
+              break;
+            }
+          case 662914282:
+            {
+              com.google.cloud.compute.v1.HealthCheckLogConfig.Builder subBuilder = null;
+              if (logConfig_ != null) {
+                subBuilder = logConfig_.toBuilder();
+              }
+              logConfig_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.HealthCheckLogConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(logConfig_);
+                logConfig_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           case 684236594:
@@ -157,6 +194,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 1078215240:
+            {
+              healthyThreshold_ = input.readInt32();
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -164,38 +206,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
               region_ = s;
               break;
             }
-          case 1823667840:
-            {
-              unhealthyThreshold_ = input.readInt32();
-              break;
-            }
-          case -2054707774:
-            {
-              com.google.cloud.compute.v1.SSLHealthCheck.Builder subBuilder = null;
-              if (sslHealthCheck_ != null) {
-                subBuilder = sslHealthCheck_.toBuilder();
-              }
-              sslHealthCheck_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.SSLHealthCheck.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sslHealthCheck_);
-                sslHealthCheck_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-          case -1530479248:
-            {
-              checkIntervalSec_ = input.readInt32();
-              break;
-            }
-          case -1069268408:
-            {
-              healthyThreshold_ = input.readInt32();
-              break;
-            }
-          case -994271774:
+          case 1153211874:
             {
               com.google.cloud.compute.v1.HTTPHealthCheck.Builder subBuilder = null;
               if (httpHealthCheck_ != null) {
@@ -211,14 +222,14 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -806592054:
+          case 1340891594:
             {
               com.google.cloud.compute.v1.HTTPSHealthCheck.Builder subBuilder = null;
               if (httpsHealthCheck_ != null) {
@@ -234,14 +245,14 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -535123942:
+          case 1612359706:
             {
               com.google.cloud.compute.v1.TCPHealthCheck.Builder subBuilder = null;
               if (tcpHealthCheck_ != null) {
@@ -255,6 +266,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
                 tcpHealthCheck_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1823667840:
+            {
+              unhealthyThreshold_ = input.readInt32();
               break;
             }
           default:
@@ -319,8 +335,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     HTTP2(69079210),
     /** <code>HTTPS = 69079243;</code> */
     HTTPS(69079243),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     /** <code>SSL = 82412;</code> */
     SSL(82412),
     /** <code>TCP = 82881;</code> */
@@ -346,8 +362,8 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     public static final int HTTP2_VALUE = 69079210;
     /** <code>HTTPS = 69079243;</code> */
     public static final int HTTPS_VALUE = 69079243;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
     /** <code>SSL = 82412;</code> */
     public static final int SSL_VALUE = 82412;
     /** <code>TCP = 82881;</code> */
@@ -387,7 +403,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
           return HTTP2;
         case 69079243:
           return HTTPS;
-        case 530283991:
+        case 261848535:
           return INVALID;
         case 82412:
           return SSL;
@@ -446,7 +462,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.HealthCheck.Type)
   }
 
-  public static final int CHECK_INTERVAL_SEC_FIELD_NUMBER = 345561006;
+  public static final int CHECK_INTERVAL_SEC_FIELD_NUMBER = 77125550;
   private int checkIntervalSec_;
   /**
    *
@@ -455,7 +471,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    * How often (in seconds) to send a health check. The default value is 5 seconds.
    * </pre>
    *
-   * <code>int32 check_interval_sec = 345561006;</code>
+   * <code>int32 check_interval_sec = 77125550;</code>
    *
    * @return The checkIntervalSec.
    */
@@ -513,7 +529,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -522,7 +538,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -545,7 +561,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -590,7 +606,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return getGrpcHealthCheck();
   }
 
-  public static final int HEALTHY_THRESHOLD_FIELD_NUMBER = 403212361;
+  public static final int HEALTHY_THRESHOLD_FIELD_NUMBER = 134776905;
   private int healthyThreshold_;
   /**
    *
@@ -599,7 +615,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
    * </pre>
    *
-   * <code>int32 healthy_threshold = 403212361;</code>
+   * <code>int32 healthy_threshold = 134776905;</code>
    *
    * @return The healthyThreshold.
    */
@@ -636,10 +652,10 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return getHttp2HealthCheck();
   }
 
-  public static final int HTTP_HEALTH_CHECK_FIELD_NUMBER = 412586940;
+  public static final int HTTP_HEALTH_CHECK_FIELD_NUMBER = 144151484;
   private com.google.cloud.compute.v1.HTTPHealthCheck httpHealthCheck_;
   /**
-   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
    *
    * @return Whether the httpHealthCheck field is set.
    */
@@ -648,7 +664,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return httpHealthCheck_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+   * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
    *
    * @return The httpHealthCheck.
    */
@@ -658,16 +674,16 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.HTTPHealthCheck.getDefaultInstance()
         : httpHealthCheck_;
   }
-  /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+  /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.HTTPHealthCheckOrBuilder getHttpHealthCheckOrBuilder() {
     return getHttpHealthCheck();
   }
 
-  public static final int HTTPS_HEALTH_CHECK_FIELD_NUMBER = 436046905;
+  public static final int HTTPS_HEALTH_CHECK_FIELD_NUMBER = 167611449;
   private com.google.cloud.compute.v1.HTTPSHealthCheck httpsHealthCheck_;
   /**
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
    *
    * @return Whether the httpsHealthCheck field is set.
    */
@@ -676,7 +692,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return httpsHealthCheck_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+   * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
    *
    * @return The httpsHealthCheck.
    */
@@ -686,7 +702,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.HTTPSHealthCheck.getDefaultInstance()
         : httpsHealthCheck_;
   }
-  /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+  /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.HTTPSHealthCheckOrBuilder getHttpsHealthCheckOrBuilder() {
     return getHttpsHealthCheck();
@@ -790,6 +806,54 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LOG_CONFIG_FIELD_NUMBER = 82864285;
+  private com.google.cloud.compute.v1.HealthCheckLogConfig logConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Configure logging on this health check.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+   *
+   * @return Whether the logConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasLogConfig() {
+    return logConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configure logging on this health check.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+   *
+   * @return The logConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.HealthCheckLogConfig getLogConfig() {
+    return logConfig_ == null
+        ? com.google.cloud.compute.v1.HealthCheckLogConfig.getDefaultInstance()
+        : logConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Configure logging on this health check.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder getLogConfigOrBuilder() {
+    return getLogConfig();
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
   private volatile java.lang.Object name_;
   /**
@@ -888,7 +952,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -897,7 +961,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -920,7 +984,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -937,10 +1001,10 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SSL_HEALTH_CHECK_FIELD_NUMBER = 280032440;
+  public static final int SSL_HEALTH_CHECK_FIELD_NUMBER = 11596984;
   private com.google.cloud.compute.v1.SSLHealthCheck sslHealthCheck_;
   /**
-   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
    *
    * @return Whether the sslHealthCheck field is set.
    */
@@ -949,7 +1013,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return sslHealthCheck_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+   * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
    *
    * @return The sslHealthCheck.
    */
@@ -959,16 +1023,16 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.SSLHealthCheck.getDefaultInstance()
         : sslHealthCheck_;
   }
-  /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+  /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.SSLHealthCheckOrBuilder getSslHealthCheckOrBuilder() {
     return getSslHealthCheck();
   }
 
-  public static final int TCP_HEALTH_CHECK_FIELD_NUMBER = 469980419;
+  public static final int TCP_HEALTH_CHECK_FIELD_NUMBER = 201544963;
   private com.google.cloud.compute.v1.TCPHealthCheck tcpHealthCheck_;
   /**
-   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
    *
    * @return Whether the tcpHealthCheck field is set.
    */
@@ -977,7 +1041,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     return tcpHealthCheck_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+   * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
    *
    * @return The tcpHealthCheck.
    */
@@ -987,7 +1051,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.compute.v1.TCPHealthCheck.getDefaultInstance()
         : tcpHealthCheck_;
   }
-  /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+  /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.TCPHealthCheckOrBuilder getTcpHealthCheckOrBuilder() {
     return getTcpHealthCheck();
@@ -1094,44 +1158,47 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     if (http2HealthCheck_ != null) {
       output.writeMessage(11360986, getHttp2HealthCheck());
     }
+    if (sslHealthCheck_ != null) {
+      output.writeMessage(11596984, getSslHealthCheck());
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
+    }
+    if (checkIntervalSec_ != 0) {
+      output.writeInt32(77125550, checkIntervalSec_);
     }
     if (timeoutSec_ != 0) {
       output.writeInt32(79994995, timeoutSec_);
     }
+    if (logConfig_ != null) {
+      output.writeMessage(82864285, getLogConfig());
+    }
     if (grpcHealthCheck_ != null) {
       output.writeMessage(85529574, getGrpcHealthCheck());
+    }
+    if (healthyThreshold_ != 0) {
+      output.writeInt32(134776905, healthyThreshold_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
-    if (unhealthyThreshold_ != 0) {
-      output.writeInt32(227958480, unhealthyThreshold_);
-    }
-    if (sslHealthCheck_ != null) {
-      output.writeMessage(280032440, getSslHealthCheck());
-    }
-    if (checkIntervalSec_ != 0) {
-      output.writeInt32(345561006, checkIntervalSec_);
-    }
-    if (healthyThreshold_ != 0) {
-      output.writeInt32(403212361, healthyThreshold_);
-    }
     if (httpHealthCheck_ != null) {
-      output.writeMessage(412586940, getHttpHealthCheck());
+      output.writeMessage(144151484, getHttpHealthCheck());
     }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (httpsHealthCheck_ != null) {
-      output.writeMessage(436046905, getHttpsHealthCheck());
+      output.writeMessage(167611449, getHttpsHealthCheck());
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (tcpHealthCheck_ != null) {
-      output.writeMessage(469980419, getTcpHealthCheck());
+      output.writeMessage(201544963, getTcpHealthCheck());
+    }
+    if (unhealthyThreshold_ != 0) {
+      output.writeInt32(227958480, unhealthyThreshold_);
     }
     unknownFields.writeTo(output);
   }
@@ -1158,52 +1225,55 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11360986, getHttp2HealthCheck());
     }
+    if (sslHealthCheck_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11596984, getSslHealthCheck());
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (checkIntervalSec_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(77125550, checkIntervalSec_);
+    }
     if (timeoutSec_ != 0) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
+    }
+    if (logConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(82864285, getLogConfig());
     }
     if (grpcHealthCheck_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(85529574, getGrpcHealthCheck());
     }
+    if (healthyThreshold_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(134776905, healthyThreshold_);
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
-    if (unhealthyThreshold_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(227958480, unhealthyThreshold_);
-    }
-    if (sslHealthCheck_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(280032440, getSslHealthCheck());
-    }
-    if (checkIntervalSec_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(345561006, checkIntervalSec_);
-    }
-    if (healthyThreshold_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(403212361, healthyThreshold_);
-    }
     if (httpHealthCheck_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(412586940, getHttpHealthCheck());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(144151484, getHttpHealthCheck());
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (httpsHealthCheck_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              436046905, getHttpsHealthCheck());
+              167611449, getHttpsHealthCheck());
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (tcpHealthCheck_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(469980419, getTcpHealthCheck());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(201544963, getTcpHealthCheck());
+    }
+    if (unhealthyThreshold_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(227958480, unhealthyThreshold_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1242,6 +1312,10 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getId().equals(other.getId())) return false;
     if (!getKind().equals(other.getKind())) return false;
+    if (hasLogConfig() != other.hasLogConfig()) return false;
+    if (hasLogConfig()) {
+      if (!getLogConfig().equals(other.getLogConfig())) return false;
+    }
     if (!getName().equals(other.getName())) return false;
     if (!getRegion().equals(other.getRegion())) return false;
     if (!getSelfLink().equals(other.getSelfLink())) return false;
@@ -1295,6 +1369,10 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + KIND_FIELD_NUMBER;
     hash = (53 * hash) + getKind().hashCode();
+    if (hasLogConfig()) {
+      hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getLogConfig().hashCode();
+    }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1504,6 +1582,12 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       kind_ = "";
 
+      if (logConfigBuilder_ == null) {
+        logConfig_ = null;
+      } else {
+        logConfig_ = null;
+        logConfigBuilder_ = null;
+      }
       name_ = "";
 
       region_ = "";
@@ -1581,6 +1665,11 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       }
       result.id_ = id_;
       result.kind_ = kind_;
+      if (logConfigBuilder_ == null) {
+        result.logConfig_ = logConfig_;
+      } else {
+        result.logConfig_ = logConfigBuilder_.build();
+      }
       result.name_ = name_;
       result.region_ = region_;
       result.selfLink_ = selfLink_;
@@ -1680,6 +1769,9 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         kind_ = other.kind_;
         onChanged();
       }
+      if (other.hasLogConfig()) {
+        mergeLogConfig(other.getLogConfig());
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1744,7 +1836,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * How often (in seconds) to send a health check. The default value is 5 seconds.
      * </pre>
      *
-     * <code>int32 check_interval_sec = 345561006;</code>
+     * <code>int32 check_interval_sec = 77125550;</code>
      *
      * @return The checkIntervalSec.
      */
@@ -1759,7 +1851,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * How often (in seconds) to send a health check. The default value is 5 seconds.
      * </pre>
      *
-     * <code>int32 check_interval_sec = 345561006;</code>
+     * <code>int32 check_interval_sec = 77125550;</code>
      *
      * @param value The checkIntervalSec to set.
      * @return This builder for chaining.
@@ -1777,7 +1869,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * How often (in seconds) to send a health check. The default value is 5 seconds.
      * </pre>
      *
-     * <code>int32 check_interval_sec = 345561006;</code>
+     * <code>int32 check_interval_sec = 77125550;</code>
      *
      * @return This builder for chaining.
      */
@@ -1902,7 +1994,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1924,7 +2016,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1946,7 +2038,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1967,7 +2059,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1984,7 +2076,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2126,7 +2218,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
      * </pre>
      *
-     * <code>int32 healthy_threshold = 403212361;</code>
+     * <code>int32 healthy_threshold = 134776905;</code>
      *
      * @return The healthyThreshold.
      */
@@ -2141,7 +2233,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
      * </pre>
      *
-     * <code>int32 healthy_threshold = 403212361;</code>
+     * <code>int32 healthy_threshold = 134776905;</code>
      *
      * @param value The healthyThreshold to set.
      * @return This builder for chaining.
@@ -2159,7 +2251,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
      * </pre>
      *
-     * <code>int32 healthy_threshold = 403212361;</code>
+     * <code>int32 healthy_threshold = 134776905;</code>
      *
      * @return This builder for chaining.
      */
@@ -2295,7 +2387,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HTTPHealthCheckOrBuilder>
         httpHealthCheckBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+     * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
      *
      * @return Whether the httpHealthCheck field is set.
      */
@@ -2303,7 +2395,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       return httpHealthCheckBuilder_ != null || httpHealthCheck_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code>
+     * <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code>
      *
      * @return The httpHealthCheck.
      */
@@ -2316,7 +2408,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         return httpHealthCheckBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     public Builder setHttpHealthCheck(com.google.cloud.compute.v1.HTTPHealthCheck value) {
       if (httpHealthCheckBuilder_ == null) {
         if (value == null) {
@@ -2330,7 +2422,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     public Builder setHttpHealthCheck(
         com.google.cloud.compute.v1.HTTPHealthCheck.Builder builderForValue) {
       if (httpHealthCheckBuilder_ == null) {
@@ -2342,7 +2434,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     public Builder mergeHttpHealthCheck(com.google.cloud.compute.v1.HTTPHealthCheck value) {
       if (httpHealthCheckBuilder_ == null) {
         if (httpHealthCheck_ != null) {
@@ -2360,7 +2452,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     public Builder clearHttpHealthCheck() {
       if (httpHealthCheckBuilder_ == null) {
         httpHealthCheck_ = null;
@@ -2372,13 +2464,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     public com.google.cloud.compute.v1.HTTPHealthCheck.Builder getHttpHealthCheckBuilder() {
 
       onChanged();
       return getHttpHealthCheckFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     public com.google.cloud.compute.v1.HTTPHealthCheckOrBuilder getHttpHealthCheckOrBuilder() {
       if (httpHealthCheckBuilder_ != null) {
         return httpHealthCheckBuilder_.getMessageOrBuilder();
@@ -2388,7 +2480,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             : httpHealthCheck_;
       }
     }
-    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 412586940;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPHealthCheck http_health_check = 144151484;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HTTPHealthCheck,
             com.google.cloud.compute.v1.HTTPHealthCheck.Builder,
@@ -2413,7 +2505,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.HTTPSHealthCheckOrBuilder>
         httpsHealthCheckBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+     * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
      *
      * @return Whether the httpsHealthCheck field is set.
      */
@@ -2421,7 +2513,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       return httpsHealthCheckBuilder_ != null || httpsHealthCheck_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code>
+     * <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code>
      *
      * @return The httpsHealthCheck.
      */
@@ -2434,7 +2526,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         return httpsHealthCheckBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     public Builder setHttpsHealthCheck(com.google.cloud.compute.v1.HTTPSHealthCheck value) {
       if (httpsHealthCheckBuilder_ == null) {
         if (value == null) {
@@ -2448,7 +2540,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     public Builder setHttpsHealthCheck(
         com.google.cloud.compute.v1.HTTPSHealthCheck.Builder builderForValue) {
       if (httpsHealthCheckBuilder_ == null) {
@@ -2460,7 +2552,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     public Builder mergeHttpsHealthCheck(com.google.cloud.compute.v1.HTTPSHealthCheck value) {
       if (httpsHealthCheckBuilder_ == null) {
         if (httpsHealthCheck_ != null) {
@@ -2478,7 +2570,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     public Builder clearHttpsHealthCheck() {
       if (httpsHealthCheckBuilder_ == null) {
         httpsHealthCheck_ = null;
@@ -2490,13 +2582,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     public com.google.cloud.compute.v1.HTTPSHealthCheck.Builder getHttpsHealthCheckBuilder() {
 
       onChanged();
       return getHttpsHealthCheckFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     public com.google.cloud.compute.v1.HTTPSHealthCheckOrBuilder getHttpsHealthCheckOrBuilder() {
       if (httpsHealthCheckBuilder_ != null) {
         return httpsHealthCheckBuilder_.getMessageOrBuilder();
@@ -2506,7 +2598,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             : httpsHealthCheck_;
       }
     }
-    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 436046905;</code> */
+    /** <code>.google.cloud.compute.v1.HTTPSHealthCheck https_health_check = 167611449;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.HTTPSHealthCheck,
             com.google.cloud.compute.v1.HTTPSHealthCheck.Builder,
@@ -2736,6 +2828,192 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.HealthCheckLogConfig logConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.HealthCheckLogConfig,
+            com.google.cloud.compute.v1.HealthCheckLogConfig.Builder,
+            com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder>
+        logConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     *
+     * @return Whether the logConfig field is set.
+     */
+    public boolean hasLogConfig() {
+      return logConfigBuilder_ != null || logConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     *
+     * @return The logConfig.
+     */
+    public com.google.cloud.compute.v1.HealthCheckLogConfig getLogConfig() {
+      if (logConfigBuilder_ == null) {
+        return logConfig_ == null
+            ? com.google.cloud.compute.v1.HealthCheckLogConfig.getDefaultInstance()
+            : logConfig_;
+      } else {
+        return logConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    public Builder setLogConfig(com.google.cloud.compute.v1.HealthCheckLogConfig value) {
+      if (logConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        logConfig_ = value;
+        onChanged();
+      } else {
+        logConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    public Builder setLogConfig(
+        com.google.cloud.compute.v1.HealthCheckLogConfig.Builder builderForValue) {
+      if (logConfigBuilder_ == null) {
+        logConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        logConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    public Builder mergeLogConfig(com.google.cloud.compute.v1.HealthCheckLogConfig value) {
+      if (logConfigBuilder_ == null) {
+        if (logConfig_ != null) {
+          logConfig_ =
+              com.google.cloud.compute.v1.HealthCheckLogConfig.newBuilder(logConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          logConfig_ = value;
+        }
+        onChanged();
+      } else {
+        logConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    public Builder clearLogConfig() {
+      if (logConfigBuilder_ == null) {
+        logConfig_ = null;
+        onChanged();
+      } else {
+        logConfig_ = null;
+        logConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    public com.google.cloud.compute.v1.HealthCheckLogConfig.Builder getLogConfigBuilder() {
+
+      onChanged();
+      return getLogConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    public com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder getLogConfigOrBuilder() {
+      if (logConfigBuilder_ != null) {
+        return logConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return logConfig_ == null
+            ? com.google.cloud.compute.v1.HealthCheckLogConfig.getDefaultInstance()
+            : logConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Configure logging on this health check.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.HealthCheckLogConfig log_config = 82864285;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.HealthCheckLogConfig,
+            com.google.cloud.compute.v1.HealthCheckLogConfig.Builder,
+            com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder>
+        getLogConfigFieldBuilder() {
+      if (logConfigBuilder_ == null) {
+        logConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.HealthCheckLogConfig,
+                com.google.cloud.compute.v1.HealthCheckLogConfig.Builder,
+                com.google.cloud.compute.v1.HealthCheckLogConfigOrBuilder>(
+                getLogConfig(), getParentForChildren(), isClean());
+        logConfig_ = null;
+      }
+      return logConfigBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -2956,7 +3234,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -2978,7 +3256,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3000,7 +3278,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3021,7 +3299,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3038,7 +3316,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3061,7 +3339,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.SSLHealthCheckOrBuilder>
         sslHealthCheckBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+     * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
      *
      * @return Whether the sslHealthCheck field is set.
      */
@@ -3069,7 +3347,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       return sslHealthCheckBuilder_ != null || sslHealthCheck_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code>
+     * <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code>
      *
      * @return The sslHealthCheck.
      */
@@ -3082,7 +3360,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         return sslHealthCheckBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     public Builder setSslHealthCheck(com.google.cloud.compute.v1.SSLHealthCheck value) {
       if (sslHealthCheckBuilder_ == null) {
         if (value == null) {
@@ -3096,7 +3374,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     public Builder setSslHealthCheck(
         com.google.cloud.compute.v1.SSLHealthCheck.Builder builderForValue) {
       if (sslHealthCheckBuilder_ == null) {
@@ -3108,7 +3386,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     public Builder mergeSslHealthCheck(com.google.cloud.compute.v1.SSLHealthCheck value) {
       if (sslHealthCheckBuilder_ == null) {
         if (sslHealthCheck_ != null) {
@@ -3126,7 +3404,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     public Builder clearSslHealthCheck() {
       if (sslHealthCheckBuilder_ == null) {
         sslHealthCheck_ = null;
@@ -3138,13 +3416,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     public com.google.cloud.compute.v1.SSLHealthCheck.Builder getSslHealthCheckBuilder() {
 
       onChanged();
       return getSslHealthCheckFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     public com.google.cloud.compute.v1.SSLHealthCheckOrBuilder getSslHealthCheckOrBuilder() {
       if (sslHealthCheckBuilder_ != null) {
         return sslHealthCheckBuilder_.getMessageOrBuilder();
@@ -3154,7 +3432,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             : sslHealthCheck_;
       }
     }
-    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 280032440;</code> */
+    /** <code>.google.cloud.compute.v1.SSLHealthCheck ssl_health_check = 11596984;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SSLHealthCheck,
             com.google.cloud.compute.v1.SSLHealthCheck.Builder,
@@ -3179,7 +3457,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.TCPHealthCheckOrBuilder>
         tcpHealthCheckBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+     * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
      *
      * @return Whether the tcpHealthCheck field is set.
      */
@@ -3187,7 +3465,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
       return tcpHealthCheckBuilder_ != null || tcpHealthCheck_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code>
+     * <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code>
      *
      * @return The tcpHealthCheck.
      */
@@ -3200,7 +3478,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
         return tcpHealthCheckBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     public Builder setTcpHealthCheck(com.google.cloud.compute.v1.TCPHealthCheck value) {
       if (tcpHealthCheckBuilder_ == null) {
         if (value == null) {
@@ -3214,7 +3492,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     public Builder setTcpHealthCheck(
         com.google.cloud.compute.v1.TCPHealthCheck.Builder builderForValue) {
       if (tcpHealthCheckBuilder_ == null) {
@@ -3226,7 +3504,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     public Builder mergeTcpHealthCheck(com.google.cloud.compute.v1.TCPHealthCheck value) {
       if (tcpHealthCheckBuilder_ == null) {
         if (tcpHealthCheck_ != null) {
@@ -3244,7 +3522,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     public Builder clearTcpHealthCheck() {
       if (tcpHealthCheckBuilder_ == null) {
         tcpHealthCheck_ = null;
@@ -3256,13 +3534,13 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     public com.google.cloud.compute.v1.TCPHealthCheck.Builder getTcpHealthCheckBuilder() {
 
       onChanged();
       return getTcpHealthCheckFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     public com.google.cloud.compute.v1.TCPHealthCheckOrBuilder getTcpHealthCheckOrBuilder() {
       if (tcpHealthCheckBuilder_ != null) {
         return tcpHealthCheckBuilder_.getMessageOrBuilder();
@@ -3272,7 +3550,7 @@ public final class HealthCheck extends com.google.protobuf.GeneratedMessageV3
             : tcpHealthCheck_;
       }
     }
-    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 469980419;</code> */
+    /** <code>.google.cloud.compute.v1.TCPHealthCheck tcp_health_check = 201544963;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TCPHealthCheck,
             com.google.cloud.compute.v1.TCPHealthCheck.Builder,

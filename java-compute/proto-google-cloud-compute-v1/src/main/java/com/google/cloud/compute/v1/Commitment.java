@@ -114,6 +114,13 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
               plan_ = rawValue;
               break;
             }
+          case 231941586:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusMessage_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -135,11 +142,29 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
               startTimestamp_ = s;
               break;
             }
+          case 1050259770:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                reservations_ = new java.util.ArrayList<com.google.cloud.compute.v1.Reservation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              reservations_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Reservation.parser(), extensionRegistry));
+              break;
+            }
           case 1111570338:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               region_ = s;
+              break;
+            }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           case 1315303722:
@@ -154,39 +179,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.compute.v1.ResourceCommitment.parser(), extensionRegistry));
               break;
             }
-          case 1450082192:
-            {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-          case -1915542062:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              statusMessage_ = s;
-              break;
-            }
-          case -1097223878:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                reservations_ = new java.util.ArrayList<com.google.cloud.compute.v1.Reservation>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              reservations_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Reservation.parser(), extensionRegistry));
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -791326110:
+          case 1356157538:
             {
               com.google.cloud.compute.v1.LicenseResourceCommitment.Builder subBuilder = null;
               if (licenseResource_ != null) {
@@ -203,14 +196,21 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
-          case -645248918:
+          case 1450082192:
+            {
+              int rawValue = input.readEnum();
+
+              status_ = rawValue;
+              break;
+            }
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -550193774:
+          case 1597289874:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -231,11 +231,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
-      if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        resources_ = java.util.Collections.unmodifiableList(resources_);
-      }
       if (((mutable_bitField0_ & 0x00000001) != 0)) {
         reservations_ = java.util.Collections.unmodifiableList(reservations_);
+      }
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        resources_ = java.util.Collections.unmodifiableList(resources_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -277,12 +277,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CATEGORY = 0;</code>
      */
     UNDEFINED_CATEGORY(0),
-    /** <code>CATEGORY_UNSPECIFIED = 509189462;</code> */
-    CATEGORY_UNSPECIFIED(509189462),
-    /** <code>LICENSE = 347869217;</code> */
-    LICENSE(347869217),
-    /** <code>MACHINE = 469553191;</code> */
-    MACHINE(469553191),
+    /** <code>CATEGORY_UNSPECIFIED = 240754006;</code> */
+    CATEGORY_UNSPECIFIED(240754006),
+    /** <code>LICENSE = 79433761;</code> */
+    LICENSE(79433761),
+    /** <code>MACHINE = 201117735;</code> */
+    MACHINE(201117735),
     UNRECOGNIZED(-1),
     ;
 
@@ -296,12 +296,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_CATEGORY = 0;</code>
      */
     public static final int UNDEFINED_CATEGORY_VALUE = 0;
-    /** <code>CATEGORY_UNSPECIFIED = 509189462;</code> */
-    public static final int CATEGORY_UNSPECIFIED_VALUE = 509189462;
-    /** <code>LICENSE = 347869217;</code> */
-    public static final int LICENSE_VALUE = 347869217;
-    /** <code>MACHINE = 469553191;</code> */
-    public static final int MACHINE_VALUE = 469553191;
+    /** <code>CATEGORY_UNSPECIFIED = 240754006;</code> */
+    public static final int CATEGORY_UNSPECIFIED_VALUE = 240754006;
+    /** <code>LICENSE = 79433761;</code> */
+    public static final int LICENSE_VALUE = 79433761;
+    /** <code>MACHINE = 201117735;</code> */
+    public static final int MACHINE_VALUE = 201117735;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -329,11 +329,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_CATEGORY;
-        case 509189462:
+        case 240754006:
           return CATEGORY_UNSPECIFIED;
-        case 347869217:
+        case 79433761:
           return LICENSE;
-        case 469553191:
+        case 201117735:
           return MACHINE;
         default:
           return null;
@@ -408,8 +408,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PLAN = 0;</code>
      */
     UNDEFINED_PLAN(0),
-    /** <code>INVALID = 530283991;</code> */
-    INVALID(530283991),
+    /** <code>INVALID = 261848535;</code> */
+    INVALID(261848535),
     /** <code>THIRTY_SIX_MONTH = 266295942;</code> */
     THIRTY_SIX_MONTH(266295942),
     /** <code>TWELVE_MONTH = 173083962;</code> */
@@ -427,8 +427,8 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_PLAN = 0;</code>
      */
     public static final int UNDEFINED_PLAN_VALUE = 0;
-    /** <code>INVALID = 530283991;</code> */
-    public static final int INVALID_VALUE = 530283991;
+    /** <code>INVALID = 261848535;</code> */
+    public static final int INVALID_VALUE = 261848535;
     /** <code>THIRTY_SIX_MONTH = 266295942;</code> */
     public static final int THIRTY_SIX_MONTH_VALUE = 266295942;
     /** <code>TWELVE_MONTH = 173083962;</code> */
@@ -460,7 +460,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_PLAN;
-        case 530283991:
+        case 261848535:
           return INVALID;
         case 266295942:
           return THIRTY_SIX_MONTH;
@@ -539,12 +539,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ACTIVE = 314733318;</code> */
-    ACTIVE(314733318),
-    /** <code>CREATING = 455564985;</code> */
-    CREATING(455564985),
-    /** <code>EXPIRED = 482489093;</code> */
-    EXPIRED(482489093),
+    /** <code>ACTIVE = 46297862;</code> */
+    ACTIVE(46297862),
+    /** <code>CREATING = 187129529;</code> */
+    CREATING(187129529),
+    /** <code>EXPIRED = 214053637;</code> */
+    EXPIRED(214053637),
     /** <code>NOT_YET_ACTIVE = 20607337;</code> */
     NOT_YET_ACTIVE(20607337),
     UNRECOGNIZED(-1),
@@ -560,12 +560,12 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ACTIVE = 314733318;</code> */
-    public static final int ACTIVE_VALUE = 314733318;
-    /** <code>CREATING = 455564985;</code> */
-    public static final int CREATING_VALUE = 455564985;
-    /** <code>EXPIRED = 482489093;</code> */
-    public static final int EXPIRED_VALUE = 482489093;
+    /** <code>ACTIVE = 46297862;</code> */
+    public static final int ACTIVE_VALUE = 46297862;
+    /** <code>CREATING = 187129529;</code> */
+    public static final int CREATING_VALUE = 187129529;
+    /** <code>EXPIRED = 214053637;</code> */
+    public static final int EXPIRED_VALUE = 214053637;
     /** <code>NOT_YET_ACTIVE = 20607337;</code> */
     public static final int NOT_YET_ACTIVE_VALUE = 20607337;
 
@@ -595,11 +595,11 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 314733318:
+        case 46297862:
           return ACTIVE;
-        case 455564985:
+        case 187129529:
           return CREATING;
-        case 482489093:
+        case 214053637:
           return EXPIRED;
         case 20607337:
           return NOT_YET_ACTIVE;
@@ -741,7 +741,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -750,7 +750,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -773,7 +773,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -790,7 +790,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int END_TIMESTAMP_FIELD_NUMBER = 468096690;
+  public static final int END_TIMESTAMP_FIELD_NUMBER = 199661234;
   private volatile java.lang.Object endTimestamp_;
   /**
    *
@@ -799,7 +799,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>string end_timestamp = 199661234;</code>
    *
    * @return The endTimestamp.
    */
@@ -822,7 +822,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Commitment end time in RFC3339 text format.
    * </pre>
    *
-   * <code>string end_timestamp = 468096690;</code>
+   * <code>string end_timestamp = 199661234;</code>
    *
    * @return The bytes for endTimestamp.
    */
@@ -937,7 +937,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LICENSE_RESOURCE_FIELD_NUMBER = 437955148;
+  public static final int LICENSE_RESOURCE_FIELD_NUMBER = 169519692;
   private com.google.cloud.compute.v1.LicenseResourceCommitment licenseResource_;
   /**
    *
@@ -946,7 +946,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
    *
    * @return Whether the licenseResource field is set.
    */
@@ -961,7 +961,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
    *
    * @return The licenseResource.
    */
@@ -978,7 +978,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * The license specification required as part of a license commitment.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+   * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.LicenseResourceCommitmentOrBuilder
@@ -1120,7 +1120,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int RESERVATIONS_FIELD_NUMBER = 399717927;
+  public static final int RESERVATIONS_FIELD_NUMBER = 131282471;
   private java.util.List<com.google.cloud.compute.v1.Reservation> reservations_;
   /**
    *
@@ -1129,7 +1129,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * List of reservations in this commitment.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList() {
@@ -1142,7 +1142,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * List of reservations in this commitment.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
@@ -1156,7 +1156,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * List of reservations in this commitment.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   @java.lang.Override
   public int getReservationsCount() {
@@ -1169,7 +1169,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * List of reservations in this commitment.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Reservation getReservations(int index) {
@@ -1182,7 +1182,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * List of reservations in this commitment.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+   * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.ReservationOrBuilder getReservationsOrBuilder(int index) {
@@ -1258,7 +1258,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     return resources_.get(index);
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1267,7 +1267,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1290,7 +1290,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1392,7 +1392,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.Commitment.Status.UNRECOGNIZED : result;
   }
 
-  public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
+  public static final int STATUS_MESSAGE_FIELD_NUMBER = 28992698;
   private volatile java.lang.Object statusMessage_;
   /**
    *
@@ -1401,7 +1401,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The statusMessage.
    */
@@ -1424,7 +1424,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] An optional, human-readable explanation of the status.
    * </pre>
    *
-   * <code>string status_message = 297428154;</code>
+   * <code>string status_message = 28992698;</code>
    *
    * @return The bytes for statusMessage.
    */
@@ -1467,6 +1467,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (plan_ != com.google.cloud.compute.v1.Commitment.Plan.UNDEFINED_PLAN.getNumber()) {
       output.writeEnum(3443497, plan_);
     }
+    if (!getStatusMessageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28992698, statusMessage_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
@@ -1477,32 +1480,29 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (!getStartTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 83645817, startTimestamp_);
     }
+    for (int i = 0; i < reservations_.size(); i++) {
+      output.writeMessage(131282471, reservations_.get(i));
+    }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     for (int i = 0; i < resources_.size(); i++) {
       output.writeMessage(164412965, resources_.get(i));
     }
+    if (licenseResource_ != null) {
+      output.writeMessage(169519692, getLicenseResource());
+    }
     if (status_ != com.google.cloud.compute.v1.Commitment.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
-    }
-    for (int i = 0; i < reservations_.size(); i++) {
-      output.writeMessage(399717927, reservations_.get(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (licenseResource_ != null) {
-      output.writeMessage(437955148, getLicenseResource());
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (!getEndTimestampBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 468096690, endTimestamp_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 199661234, endTimestamp_);
     }
     unknownFields.writeTo(output);
   }
@@ -1525,6 +1525,9 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (plan_ != com.google.cloud.compute.v1.Commitment.Plan.UNDEFINED_PLAN.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(3443497, plan_);
     }
+    if (!getStatusMessageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28992698, statusMessage_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
@@ -1536,35 +1539,32 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
     if (!getStartTimestampBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83645817, startTimestamp_);
     }
+    for (int i = 0; i < reservations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(131282471, reservations_.get(i));
+    }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     for (int i = 0; i < resources_.size(); i++) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(164412965, resources_.get(i));
     }
+    if (licenseResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(169519692, getLicenseResource());
+    }
     if (status_ != com.google.cloud.compute.v1.Commitment.Status.UNDEFINED_STATUS.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
-    if (!getStatusMessageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
-    }
-    for (int i = 0; i < reservations_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(399717927, reservations_.get(i));
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
-    }
-    if (licenseResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(437955148, getLicenseResource());
-    }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     if (!getEndTimestampBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(468096690, endTimestamp_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(199661234, endTimestamp_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2297,7 +2297,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2319,7 +2319,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2341,7 +2341,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2362,7 +2362,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2379,7 +2379,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2403,7 +2403,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>string end_timestamp = 199661234;</code>
      *
      * @return The endTimestamp.
      */
@@ -2425,7 +2425,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>string end_timestamp = 199661234;</code>
      *
      * @return The bytes for endTimestamp.
      */
@@ -2447,7 +2447,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>string end_timestamp = 199661234;</code>
      *
      * @param value The endTimestamp to set.
      * @return This builder for chaining.
@@ -2468,7 +2468,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>string end_timestamp = 199661234;</code>
      *
      * @return This builder for chaining.
      */
@@ -2485,7 +2485,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Commitment end time in RFC3339 text format.
      * </pre>
      *
-     * <code>string end_timestamp = 468096690;</code>
+     * <code>string end_timestamp = 199661234;</code>
      *
      * @param value The bytes for endTimestamp to set.
      * @return This builder for chaining.
@@ -2726,7 +2726,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      *
      * @return Whether the licenseResource field is set.
      */
@@ -2740,7 +2740,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      *
      * @return The licenseResource.
      */
@@ -2760,7 +2760,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     public Builder setLicenseResource(com.google.cloud.compute.v1.LicenseResourceCommitment value) {
       if (licenseResourceBuilder_ == null) {
@@ -2782,7 +2782,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     public Builder setLicenseResource(
         com.google.cloud.compute.v1.LicenseResourceCommitment.Builder builderForValue) {
@@ -2802,7 +2802,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     public Builder mergeLicenseResource(
         com.google.cloud.compute.v1.LicenseResourceCommitment value) {
@@ -2829,7 +2829,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     public Builder clearLicenseResource() {
       if (licenseResourceBuilder_ == null) {
@@ -2849,7 +2849,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     public com.google.cloud.compute.v1.LicenseResourceCommitment.Builder
         getLicenseResourceBuilder() {
@@ -2864,7 +2864,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     public com.google.cloud.compute.v1.LicenseResourceCommitmentOrBuilder
         getLicenseResourceOrBuilder() {
@@ -2883,7 +2883,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * The license specification required as part of a license commitment.
      * </pre>
      *
-     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 437955148;</code>
+     * <code>.google.cloud.compute.v1.LicenseResourceCommitment license_resource = 169519692;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.LicenseResourceCommitment,
@@ -3229,7 +3229,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Reservation> getReservationsList() {
       if (reservationsBuilder_ == null) {
@@ -3245,7 +3245,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public int getReservationsCount() {
       if (reservationsBuilder_ == null) {
@@ -3261,7 +3261,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public com.google.cloud.compute.v1.Reservation getReservations(int index) {
       if (reservationsBuilder_ == null) {
@@ -3277,7 +3277,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder setReservations(int index, com.google.cloud.compute.v1.Reservation value) {
       if (reservationsBuilder_ == null) {
@@ -3299,7 +3299,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder setReservations(
         int index, com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
@@ -3319,7 +3319,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder addReservations(com.google.cloud.compute.v1.Reservation value) {
       if (reservationsBuilder_ == null) {
@@ -3341,7 +3341,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder addReservations(int index, com.google.cloud.compute.v1.Reservation value) {
       if (reservationsBuilder_ == null) {
@@ -3363,7 +3363,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder addReservations(
         com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
@@ -3383,7 +3383,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder addReservations(
         int index, com.google.cloud.compute.v1.Reservation.Builder builderForValue) {
@@ -3403,7 +3403,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder addAllReservations(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Reservation> values) {
@@ -3423,7 +3423,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder clearReservations() {
       if (reservationsBuilder_ == null) {
@@ -3442,7 +3442,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public Builder removeReservations(int index) {
       if (reservationsBuilder_ == null) {
@@ -3461,7 +3461,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder getReservationsBuilder(int index) {
       return getReservationsFieldBuilder().getBuilder(index);
@@ -3473,7 +3473,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public com.google.cloud.compute.v1.ReservationOrBuilder getReservationsOrBuilder(int index) {
       if (reservationsBuilder_ == null) {
@@ -3489,7 +3489,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.ReservationOrBuilder>
         getReservationsOrBuilderList() {
@@ -3506,7 +3506,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder addReservationsBuilder() {
       return getReservationsFieldBuilder()
@@ -3519,7 +3519,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public com.google.cloud.compute.v1.Reservation.Builder addReservationsBuilder(int index) {
       return getReservationsFieldBuilder()
@@ -3532,7 +3532,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * List of reservations in this commitment.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 399717927;</code>
+     * <code>repeated .google.cloud.compute.v1.Reservation reservations = 131282471;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Reservation.Builder>
         getReservationsBuilderList() {
@@ -3916,7 +3916,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3938,7 +3938,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3960,7 +3960,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3981,7 +3981,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3998,7 +3998,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -4219,7 +4219,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return The statusMessage.
      */
@@ -4241,7 +4241,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return The bytes for statusMessage.
      */
@@ -4263,7 +4263,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @param value The statusMessage to set.
      * @return This builder for chaining.
@@ -4284,7 +4284,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @return This builder for chaining.
      */
@@ -4301,7 +4301,7 @@ public final class Commitment extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] An optional, human-readable explanation of the status.
      * </pre>
      *
-     * <code>string status_message = 297428154;</code>
+     * <code>string status_message = 28992698;</code>
      *
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.

@@ -203,7 +203,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
   public static final int DISKS_RESIZE_REQUEST_RESOURCE_FIELD_NUMBER = 78307616;
   private com.google.cloud.compute.v1.DisksResizeRequest disksResizeRequestResource_;
   /**
-   * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the disksResizeRequestResource field is set.
@@ -213,7 +220,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
     return disksResizeRequestResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The disksResizeRequestResource.
@@ -225,7 +239,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
         : disksResizeRequestResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -893,7 +914,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.DisksResizeRequestOrBuilder>
         disksResizeRequestResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the disksResizeRequestResource field is set.
@@ -902,7 +930,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return disksResizeRequestResourceBuilder_ != null || disksResizeRequestResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The disksResizeRequestResource.
@@ -917,7 +952,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDisksResizeRequestResource(
@@ -935,7 +977,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setDisksResizeRequestResource(
@@ -950,7 +999,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeDisksResizeRequestResource(
@@ -972,7 +1028,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearDisksResizeRequestResource() {
@@ -987,7 +1050,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DisksResizeRequest.Builder
@@ -997,7 +1067,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       return getDisksResizeRequestResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.DisksResizeRequestOrBuilder
@@ -1011,7 +1088,14 @@ public final class ResizeDiskRequest extends com.google.protobuf.GeneratedMessag
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616;
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.DisksResizeRequest disks_resize_request_resource = 78307616 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

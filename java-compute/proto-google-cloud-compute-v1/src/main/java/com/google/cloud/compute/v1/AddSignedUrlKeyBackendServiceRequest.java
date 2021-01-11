@@ -81,21 +81,14 @@ public final class AddSignedUrlKeyBackendServiceRequest
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -1839398830:
+          case 308084818:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               backendService_ = s;
               break;
             }
-          case -633959414:
+          case 1513524234:
             {
               com.google.cloud.compute.v1.SignedUrlKey.Builder subBuilder = null;
               if (signedUrlKeyResource_ != null) {
@@ -109,6 +102,13 @@ public final class AddSignedUrlKeyBackendServiceRequest
                 signedUrlKeyResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -145,7 +145,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
             com.google.cloud.compute.v1.AddSignedUrlKeyBackendServiceRequest.Builder.class);
   }
 
-  public static final int BACKEND_SERVICE_FIELD_NUMBER = 306946058;
+  public static final int BACKEND_SERVICE_FIELD_NUMBER = 38510602;
   private volatile java.lang.Object backendService_;
   /**
    *
@@ -154,7 +154,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The backendService.
    */
@@ -177,7 +177,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
    * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
    * </pre>
    *
-   * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for backendService.
    */
@@ -296,10 +296,18 @@ public final class AddSignedUrlKeyBackendServiceRequest
     }
   }
 
-  public static final int SIGNED_URL_KEY_RESOURCE_FIELD_NUMBER = 457625985;
+  public static final int SIGNED_URL_KEY_RESOURCE_FIELD_NUMBER = 189190529;
   private com.google.cloud.compute.v1.SignedUrlKey signedUrlKeyResource_;
   /**
-   * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the signedUrlKeyResource field is set.
    */
@@ -308,7 +316,15 @@ public final class AddSignedUrlKeyBackendServiceRequest
     return signedUrlKeyResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The signedUrlKeyResource.
    */
@@ -318,7 +334,17 @@ public final class AddSignedUrlKeyBackendServiceRequest
         ? com.google.cloud.compute.v1.SignedUrlKey.getDefaultInstance()
         : signedUrlKeyResource_;
   }
-  /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SignedUrlKeyOrBuilder getSignedUrlKeyResourceOrBuilder() {
     return getSignedUrlKeyResource();
@@ -341,14 +367,14 @@ public final class AddSignedUrlKeyBackendServiceRequest
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
     if (!getBackendServiceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 38510602, backendService_);
     }
     if (signedUrlKeyResource_ != null) {
-      output.writeMessage(457625985, getSignedUrlKeyResource());
+      output.writeMessage(189190529, getSignedUrlKeyResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     unknownFields.writeTo(output);
   }
@@ -362,16 +388,16 @@ public final class AddSignedUrlKeyBackendServiceRequest
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (!getBackendServiceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(38510602, backendService_);
     }
     if (signedUrlKeyResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              457625985, getSignedUrlKeyResource());
+              189190529, getSignedUrlKeyResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -717,7 +743,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The backendService.
      */
@@ -739,7 +765,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for backendService.
      */
@@ -761,7 +787,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The backendService to set.
      * @return This builder for chaining.
@@ -782,7 +808,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -799,7 +825,7 @@ public final class AddSignedUrlKeyBackendServiceRequest
      * Name of the BackendService resource to which the Signed URL Key should be added. The name should conform to RFC1035.
      * </pre>
      *
-     * <code>string backend_service = 306946058 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string backend_service = 38510602 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for backendService to set.
      * @return This builder for chaining.
@@ -1044,7 +1070,15 @@ public final class AddSignedUrlKeyBackendServiceRequest
             com.google.cloud.compute.v1.SignedUrlKeyOrBuilder>
         signedUrlKeyResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the signedUrlKeyResource field is set.
      */
@@ -1052,7 +1086,15 @@ public final class AddSignedUrlKeyBackendServiceRequest
       return signedUrlKeyResourceBuilder_ != null || signedUrlKeyResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The signedUrlKeyResource.
      */
@@ -1065,7 +1107,17 @@ public final class AddSignedUrlKeyBackendServiceRequest
         return signedUrlKeyResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSignedUrlKeyResource(com.google.cloud.compute.v1.SignedUrlKey value) {
       if (signedUrlKeyResourceBuilder_ == null) {
         if (value == null) {
@@ -1079,7 +1131,17 @@ public final class AddSignedUrlKeyBackendServiceRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setSignedUrlKeyResource(
         com.google.cloud.compute.v1.SignedUrlKey.Builder builderForValue) {
       if (signedUrlKeyResourceBuilder_ == null) {
@@ -1091,7 +1153,17 @@ public final class AddSignedUrlKeyBackendServiceRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeSignedUrlKeyResource(com.google.cloud.compute.v1.SignedUrlKey value) {
       if (signedUrlKeyResourceBuilder_ == null) {
         if (signedUrlKeyResource_ != null) {
@@ -1109,7 +1181,17 @@ public final class AddSignedUrlKeyBackendServiceRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearSignedUrlKeyResource() {
       if (signedUrlKeyResourceBuilder_ == null) {
         signedUrlKeyResource_ = null;
@@ -1121,13 +1203,33 @@ public final class AddSignedUrlKeyBackendServiceRequest
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SignedUrlKey.Builder getSignedUrlKeyResourceBuilder() {
 
       onChanged();
       return getSignedUrlKeyResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.SignedUrlKeyOrBuilder getSignedUrlKeyResourceOrBuilder() {
       if (signedUrlKeyResourceBuilder_ != null) {
         return signedUrlKeyResourceBuilder_.getMessageOrBuilder();
@@ -1137,7 +1239,17 @@ public final class AddSignedUrlKeyBackendServiceRequest
             : signedUrlKeyResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 457625985;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SignedUrlKey signed_url_key_resource = 189190529 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SignedUrlKey,
             com.google.cloud.compute.v1.SignedUrlKey.Builder,

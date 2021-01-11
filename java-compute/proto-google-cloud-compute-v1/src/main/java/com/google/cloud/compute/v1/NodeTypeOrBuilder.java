@@ -30,7 +30,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>string cpu_platform = 141849898;</code>
    *
    * @return The cpuPlatform.
    */
@@ -42,7 +42,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The CPU platform used by this node type.
    * </pre>
    *
-   * <code>string cpu_platform = 410285354;</code>
+   * <code>string cpu_platform = 141849898;</code>
    *
    * @return The bytes for cpuPlatform.
    */
@@ -80,7 +80,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return Whether the deprecated field is set.
    */
@@ -92,7 +92,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    *
    * @return The deprecated.
    */
@@ -104,7 +104,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The deprecation status associated with this node type.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 515138995;</code>
+   * <code>.google.cloud.compute.v1.DeprecationStatus deprecated = 246703539;</code>
    */
   com.google.cloud.compute.v1.DeprecationStatusOrBuilder getDeprecatedOrBuilder();
 
@@ -115,7 +115,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -127,7 +127,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] An optional textual description of the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -140,7 +140,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] The number of virtual CPUs that are available to the node type.
    * </pre>
    *
-   * <code>int32 guest_cpus = 393356754;</code>
+   * <code>int32 guest_cpus = 124921298;</code>
    *
    * @return The guestCpus.
    */
@@ -203,7 +203,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Local SSD available to the node type, defined in GB.
    * </pre>
    *
-   * <code>int32 local_ssd_gb = 329237578;</code>
+   * <code>int32 local_ssd_gb = 60802122;</code>
    *
    * @return The localSsdGb.
    */
@@ -254,7 +254,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -266,7 +266,7 @@ public interface NodeTypeOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

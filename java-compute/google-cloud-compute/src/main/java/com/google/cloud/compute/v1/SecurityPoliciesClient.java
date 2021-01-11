@@ -173,7 +173,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
-   * @param securityPolicyRuleResource
+   * @param securityPolicyRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation addRule(
@@ -197,9 +197,11 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
    *   String securityPolicy = "";
+   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   AddRuleSecurityPolicyRequest request = AddRuleSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSecurityPolicy(securityPolicy)
+   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   Operation response = securityPoliciesClient.addRule(request);
    * }
@@ -222,9 +224,11 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
    *   String securityPolicy = "";
+   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   AddRuleSecurityPolicyRequest request = AddRuleSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSecurityPolicy(securityPolicy)
+   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.addRuleCallable().futureCall(request);
    *   // Do something
@@ -479,7 +483,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param securityPolicyResource
+   * @param securityPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, SecurityPolicy securityPolicyResource) {
@@ -500,8 +504,10 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
+   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   InsertSecurityPolicyRequest request = InsertSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSecurityPolicyResource(securityPolicyResource)
    *     .build();
    *   Operation response = securityPoliciesClient.insert(request);
    * }
@@ -523,8 +529,10 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
+   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   InsertSecurityPolicyRequest request = InsertSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
+   *     .setSecurityPolicyResource(securityPolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -717,7 +725,9 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *
@@ -732,7 +742,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
-   * @param securityPolicyResource
+   * @param securityPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -748,7 +758,9 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *
@@ -756,9 +768,11 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
    *   String securityPolicy = "";
+   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   PatchSecurityPolicyRequest request = PatchSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSecurityPolicy(securityPolicy)
+   *     .setSecurityPolicyResource(securityPolicyResource)
    *     .build();
    *   Operation response = securityPoliciesClient.patch(request);
    * }
@@ -773,7 +787,9 @@ public class SecurityPoliciesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Patches the specified policy with the data included in the request.
+   * Patches the specified policy with the data included in the request. This cannot be used to be
+   * update the rules in the policy. Please use the per rule methods like addRule, patchRule, and
+   * removeRule instead.
    *
    * <p>Sample code:
    *
@@ -781,9 +797,11 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
    *   String securityPolicy = "";
+   *   SecurityPolicy securityPolicyResource = SecurityPolicy.newBuilder().build();
    *   PatchSecurityPolicyRequest request = PatchSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSecurityPolicy(securityPolicy)
+   *     .setSecurityPolicyResource(securityPolicyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.patchCallable().futureCall(request);
    *   // Do something
@@ -812,7 +830,7 @@ public class SecurityPoliciesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param securityPolicy Name of the security policy to update.
-   * @param securityPolicyRuleResource
+   * @param securityPolicyRuleResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patchRule(
@@ -836,9 +854,11 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
    *   String securityPolicy = "";
+   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   PatchRuleSecurityPolicyRequest request = PatchRuleSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSecurityPolicy(securityPolicy)
+   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   Operation response = securityPoliciesClient.patchRule(request);
    * }
@@ -861,9 +881,11 @@ public class SecurityPoliciesClient implements BackgroundResource {
    * try (SecurityPoliciesClient securityPoliciesClient = SecurityPoliciesClient.create()) {
    *   String project = "";
    *   String securityPolicy = "";
+   *   SecurityPolicyRule securityPolicyRuleResource = SecurityPolicyRule.newBuilder().build();
    *   PatchRuleSecurityPolicyRequest request = PatchRuleSecurityPolicyRequest.newBuilder()
    *     .setProject(project)
    *     .setSecurityPolicy(securityPolicy)
+   *     .setSecurityPolicyRuleResource(securityPolicyRuleResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = securityPoliciesClient.patchRuleCallable().futureCall(request);
    *   // Do something

@@ -80,6 +80,23 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
               role_ = s;
               break;
             }
+          case 1148602570:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                members_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              members_.add(s);
+              break;
+            }
+          case 1381222570:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              bindingId_ = s;
+              break;
+            }
           case 1699440858:
             {
               com.google.cloud.compute.v1.Expr.Builder subBuilder = null;
@@ -93,23 +110,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
                 condition_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -998881078:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                members_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              members_.add(s);
-              break;
-            }
-          case -766261078:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              bindingId_ = s;
               break;
             }
           default:
@@ -149,16 +149,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Binding.Builder.class);
   }
 
-  public static final int BINDING_ID_FIELD_NUMBER = 441088277;
+  public static final int BINDING_ID_FIELD_NUMBER = 172652821;
   private volatile java.lang.Object bindingId_;
   /**
-   *
-   *
-   * <pre>
-   * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-   * </pre>
-   *
-   * <code>string binding_id = 441088277;</code>
+   * <code>string binding_id = 172652821;</code>
    *
    * @return The bindingId.
    */
@@ -175,13 +169,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     }
   }
   /**
-   *
-   *
-   * <pre>
-   * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-   * </pre>
-   *
-   * <code>string binding_id = 441088277;</code>
+   * <code>string binding_id = 172652821;</code>
    *
    * @return The bytes for bindingId.
    */
@@ -253,7 +241,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     return getCondition();
   }
 
-  public static final int MEMBERS_FIELD_NUMBER = 412010777;
+  public static final int MEMBERS_FIELD_NUMBER = 143575321;
   private com.google.protobuf.LazyStringList members_;
   /**
    *
@@ -271,7 +259,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @return A list containing the members.
    */
@@ -294,7 +282,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @return The count of members.
    */
@@ -317,7 +305,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @param index The index of the element to return.
    * @return The members at the given index.
@@ -341,7 +329,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
    * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
    * </pre>
    *
-   * <code>repeated string members = 412010777;</code>
+   * <code>repeated string members = 143575321;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the members at the given index.
@@ -416,14 +404,14 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     if (!getRoleBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3506294, role_);
     }
-    if (condition_ != null) {
-      output.writeMessage(212430107, getCondition());
-    }
     for (int i = 0; i < members_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 412010777, members_.getRaw(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 143575321, members_.getRaw(i));
     }
     if (!getBindingIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 441088277, bindingId_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 172652821, bindingId_);
+    }
+    if (condition_ != null) {
+      output.writeMessage(212430107, getCondition());
     }
     unknownFields.writeTo(output);
   }
@@ -437,9 +425,6 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
     if (!getRoleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3506294, role_);
     }
-    if (condition_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(212430107, getCondition());
-    }
     {
       int dataSize = 0;
       for (int i = 0; i < members_.size(); i++) {
@@ -449,7 +434,10 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getMembersList().size();
     }
     if (!getBindingIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(441088277, bindingId_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(172652821, bindingId_);
+    }
+    if (condition_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(212430107, getCondition());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -794,13 +782,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
 
     private java.lang.Object bindingId_ = "";
     /**
-     *
-     *
-     * <pre>
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     * </pre>
-     *
-     * <code>string binding_id = 441088277;</code>
+     * <code>string binding_id = 172652821;</code>
      *
      * @return The bindingId.
      */
@@ -816,13 +798,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     * </pre>
-     *
-     * <code>string binding_id = 441088277;</code>
+     * <code>string binding_id = 172652821;</code>
      *
      * @return The bytes for bindingId.
      */
@@ -838,13 +814,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     * </pre>
-     *
-     * <code>string binding_id = 441088277;</code>
+     * <code>string binding_id = 172652821;</code>
      *
      * @param value The bindingId to set.
      * @return This builder for chaining.
@@ -859,13 +829,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     * </pre>
-     *
-     * <code>string binding_id = 441088277;</code>
+     * <code>string binding_id = 172652821;</code>
      *
      * @return This builder for chaining.
      */
@@ -876,13 +840,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * A client-specified ID for this binding. Expected to be globally unique to support the internal bindings-by-ID API.
-     * </pre>
-     *
-     * <code>string binding_id = 441088277;</code>
+     * <code>string binding_id = 172652821;</code>
      *
      * @param value The bytes for bindingId to set.
      * @return This builder for chaining.
@@ -1135,7 +1093,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @return A list containing the members.
      */
@@ -1158,7 +1116,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @return The count of members.
      */
@@ -1181,7 +1139,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @param index The index of the element to return.
      * @return The members at the given index.
@@ -1205,7 +1163,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the members at the given index.
@@ -1229,7 +1187,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @param index The index to set the value at.
      * @param value The members to set.
@@ -1260,7 +1218,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @param value The members to add.
      * @return This builder for chaining.
@@ -1290,7 +1248,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @param values The members to add.
      * @return This builder for chaining.
@@ -1317,7 +1275,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @return This builder for chaining.
      */
@@ -1343,7 +1301,7 @@ public final class Binding extends com.google.protobuf.GeneratedMessageV3
      * * `domain:{domain}`: The G Suite domain (primary) that represents all the users of that domain. For example, `google.com` or `example.com`.
      * </pre>
      *
-     * <code>repeated string members = 412010777;</code>
+     * <code>repeated string members = 143575321;</code>
      *
      * @param value The bytes of the members to add.
      * @return This builder for chaining.

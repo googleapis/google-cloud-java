@@ -30,7 +30,7 @@ public interface InterconnectOrBuilder
    * Administrative status of the interconnect. When this is set to true, the Interconnect is functional and can carry traffic. When set to false, no packets can be carried over the interconnect and no BGP routes are exchanged over it. By default, the status is set to true.
    * </pre>
    *
-   * <code>bool admin_enabled = 445675089;</code>
+   * <code>bool admin_enabled = 177239633;</code>
    *
    * @return The adminEnabled.
    */
@@ -150,7 +150,7 @@ public interface InterconnectOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -162,7 +162,7 @@ public interface InterconnectOrBuilder
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -239,7 +239,7 @@ public interface InterconnectOrBuilder
    * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
    * </pre>
    *
-   * <code>string google_ip_address = 443105954;</code>
+   * <code>string google_ip_address = 174670498;</code>
    *
    * @return The googleIpAddress.
    */
@@ -251,7 +251,7 @@ public interface InterconnectOrBuilder
    * [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
    * </pre>
    *
-   * <code>string google_ip_address = 443105954;</code>
+   * <code>string google_ip_address = 174670498;</code>
    *
    * @return The bytes for googleIpAddress.
    */
@@ -264,7 +264,7 @@ public interface InterconnectOrBuilder
    * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
-   * <code>string google_reference_id = 534944469;</code>
+   * <code>string google_reference_id = 266509013;</code>
    *
    * @return The googleReferenceId.
    */
@@ -276,7 +276,7 @@ public interface InterconnectOrBuilder
    * [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
    * </pre>
    *
-   * <code>string google_reference_id = 534944469;</code>
+   * <code>string google_reference_id = 266509013;</code>
    *
    * @return The bytes for googleReferenceId.
    */
@@ -314,7 +314,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 425388415;</code>
+   * <code>repeated string interconnect_attachments = 156952959;</code>
    *
    * @return A list containing the interconnectAttachments.
    */
@@ -326,7 +326,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 425388415;</code>
+   * <code>repeated string interconnect_attachments = 156952959;</code>
    *
    * @return The count of interconnectAttachments.
    */
@@ -338,7 +338,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 425388415;</code>
+   * <code>repeated string interconnect_attachments = 156952959;</code>
    *
    * @param index The index of the element to return.
    * @return The interconnectAttachments at the given index.
@@ -351,7 +351,7 @@ public interface InterconnectOrBuilder
    * [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
    * </pre>
    *
-   * <code>repeated string interconnect_attachments = 425388415;</code>
+   * <code>repeated string interconnect_attachments = 156952959;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the interconnectAttachments at the given index.
@@ -367,7 +367,7 @@ public interface InterconnectOrBuilder
    * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
+   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;
    * </code>
    *
    * @return The enum numeric value on the wire for interconnectType.
@@ -382,7 +382,7 @@ public interface InterconnectOrBuilder
    * - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;
+   * <code>.google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 246729803;
    * </code>
    *
    * @return The interconnectType.
@@ -423,7 +423,7 @@ public interface InterconnectOrBuilder
    * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
    *
    * @return The enum numeric value on the wire for linkType.
    */
@@ -437,7 +437,7 @@ public interface InterconnectOrBuilder
    * - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+   * <code>.google.cloud.compute.v1.Interconnect.LinkType link_type = 254772319;</code>
    *
    * @return The linkType.
    */
@@ -450,7 +450,7 @@ public interface InterconnectOrBuilder
    * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>string location = 21995445;</code>
    *
    * @return The location.
    */
@@ -462,7 +462,7 @@ public interface InterconnectOrBuilder
    * URL of the InterconnectLocation object that represents where this connection is to be provisioned.
    * </pre>
    *
-   * <code>string location = 290430901;</code>
+   * <code>string location = 21995445;</code>
    *
    * @return The bytes for location.
    */
@@ -583,7 +583,7 @@ public interface InterconnectOrBuilder
    * [Output Only] Number of links actually provisioned in this interconnect.
    * </pre>
    *
-   * <code>int32 provisioned_link_count = 410888565;</code>
+   * <code>int32 provisioned_link_count = 142453109;</code>
    *
    * @return The provisionedLinkCount.
    */
@@ -609,7 +609,7 @@ public interface InterconnectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -621,7 +621,7 @@ public interface InterconnectOrBuilder
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */

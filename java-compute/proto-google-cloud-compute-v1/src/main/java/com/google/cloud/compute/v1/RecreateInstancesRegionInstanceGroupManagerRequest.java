@@ -311,8 +311,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest
       regionInstanceGroupManagersRecreateRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersRecreateRequestResource field is set.
@@ -322,8 +328,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
     return regionInstanceGroupManagersRecreateRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersRecreateRequestResource.
@@ -337,8 +349,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
         : regionInstanceGroupManagersRecreateRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -1157,8 +1175,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequestOrBuilder>
         regionInstanceGroupManagersRecreateRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the regionInstanceGroupManagersRecreateRequestResource field is set.
@@ -1168,8 +1192,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
           || regionInstanceGroupManagersRecreateRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The regionInstanceGroupManagersRecreateRequestResource.
@@ -1186,8 +1216,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersRecreateRequestResource(
@@ -1205,8 +1241,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setRegionInstanceGroupManagersRecreateRequestResource(
@@ -1223,8 +1265,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeRegionInstanceGroupManagersRecreateRequestResource(
@@ -1247,8 +1295,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearRegionInstanceGroupManagersRecreateRequestResource() {
@@ -1263,8 +1317,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest.Builder
@@ -1274,8 +1334,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       return getRegionInstanceGroupManagersRecreateRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequestOrBuilder
@@ -1290,8 +1356,14 @@ public final class RecreateInstancesRegionInstanceGroupManagerRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316;
+     * .google.cloud.compute.v1.RegionInstanceGroupManagersRecreateRequest region_instance_group_managers_recreate_request_resource = 170999316 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

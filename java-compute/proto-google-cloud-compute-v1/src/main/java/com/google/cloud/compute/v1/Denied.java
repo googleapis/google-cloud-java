@@ -71,6 +71,13 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
           case 0:
             done = true;
             break;
+          case 442710250:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              iPProtocol_ = s;
+              break;
+            }
           case 854835346:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -79,13 +86,6 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
                 mutable_bitField0_ |= 0x00000001;
               }
               ports_.add(s);
-              break;
-            }
-          case -1704773398:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              iPProtocol_ = s;
               break;
             }
           default:
@@ -125,7 +125,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.compute.v1.Denied.Builder.class);
   }
 
-  public static final int I_P_PROTOCOL_FIELD_NUMBER = 323774237;
+  public static final int I_P_PROTOCOL_FIELD_NUMBER = 55338781;
   private volatile java.lang.Object iPProtocol_;
   /**
    *
@@ -134,7 +134,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 323774237;</code>
+   * <code>string i_p_protocol = 55338781;</code>
    *
    * @return The iPProtocol.
    */
@@ -157,7 +157,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
    * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
    * </pre>
    *
-   * <code>string i_p_protocol = 323774237;</code>
+   * <code>string i_p_protocol = 55338781;</code>
    *
    * @return The bytes for iPProtocol.
    */
@@ -253,11 +253,11 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!getIPProtocolBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 55338781, iPProtocol_);
+    }
     for (int i = 0; i < ports_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106854418, ports_.getRaw(i));
-    }
-    if (!getIPProtocolBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 323774237, iPProtocol_);
     }
     unknownFields.writeTo(output);
   }
@@ -268,6 +268,9 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (!getIPProtocolBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(55338781, iPProtocol_);
+    }
     {
       int dataSize = 0;
       for (int i = 0; i < ports_.size(); i++) {
@@ -275,9 +278,6 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 5 * getPortsList().size();
-    }
-    if (!getIPProtocolBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(323774237, iPProtocol_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -595,7 +595,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 323774237;</code>
+     * <code>string i_p_protocol = 55338781;</code>
      *
      * @return The iPProtocol.
      */
@@ -617,7 +617,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 323774237;</code>
+     * <code>string i_p_protocol = 55338781;</code>
      *
      * @return The bytes for iPProtocol.
      */
@@ -639,7 +639,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 323774237;</code>
+     * <code>string i_p_protocol = 55338781;</code>
      *
      * @param value The iPProtocol to set.
      * @return This builder for chaining.
@@ -660,7 +660,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 323774237;</code>
+     * <code>string i_p_protocol = 55338781;</code>
      *
      * @return This builder for chaining.
      */
@@ -677,7 +677,7 @@ public final class Denied extends com.google.protobuf.GeneratedMessageV3
      * The IP protocol to which this rule applies. The protocol type is required when creating a firewall rule. This value can either be one of the following well known protocol strings (tcp, udp, icmp, esp, ah, ipip, sctp) or the IP protocol number.
      * </pre>
      *
-     * <code>string i_p_protocol = 323774237;</code>
+     * <code>string i_p_protocol = 55338781;</code>
      *
      * @param value The bytes for iPProtocol to set.
      * @return This builder for chaining.

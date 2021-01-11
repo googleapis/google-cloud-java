@@ -105,6 +105,13 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
               creationTimestamp_ = s;
               break;
             }
+          case 1023041994:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sourceInstance_ = s;
+              break;
+            }
           case 1082737250:
             {
               com.google.cloud.compute.v1.SourceInstanceParams.Builder subBuilder = null;
@@ -137,21 +144,14 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
 
               break;
             }
-          case -1124441654:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sourceInstance_ = s;
-              break;
-            }
-          case -911466526:
+          case 1236017122:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -241,7 +241,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -250,7 +250,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -273,7 +273,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -485,7 +485,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     return getProperties();
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -494,7 +494,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -517,7 +517,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * [Output Only] The URL for this instance template. The server defines this URL.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -534,7 +534,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SOURCE_INSTANCE_FIELD_NUMBER = 396315705;
+  public static final int SOURCE_INSTANCE_FIELD_NUMBER = 127880249;
   private volatile java.lang.Object sourceInstance_;
   /**
    *
@@ -545,7 +545,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>string source_instance = 127880249;</code>
    *
    * @return The sourceInstance.
    */
@@ -570,7 +570,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
    * - projects/project/zones/zone/instances/instance
    * </pre>
    *
-   * <code>string source_instance = 396315705;</code>
+   * <code>string source_instance = 127880249;</code>
    *
    * @return The bytes for sourceInstance.
    */
@@ -662,20 +662,20 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    if (!getSourceInstanceBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 127880249, sourceInstance_);
+    }
     if (sourceInstanceParams_ != null) {
       output.writeMessage(135342156, getSourceInstanceParams());
     }
     if (properties_ != null) {
       output.writeMessage(147688755, getProperties());
     }
-    if (!getSourceInstanceBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 396315705, sourceInstance_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     unknownFields.writeTo(output);
   }
@@ -699,6 +699,9 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
+    if (!getSourceInstanceBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(127880249, sourceInstance_);
+    }
     if (sourceInstanceParams_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -707,14 +710,11 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
     if (properties_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(147688755, getProperties());
     }
-    if (!getSourceInstanceBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(396315705, sourceInstance_);
-    }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1222,7 +1222,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -1244,7 +1244,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -1266,7 +1266,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -1287,7 +1287,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -1304,7 +1304,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -1832,7 +1832,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -1854,7 +1854,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -1876,7 +1876,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -1897,7 +1897,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -1914,7 +1914,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * [Output Only] The URL for this instance template. The server defines this URL.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -1940,7 +1940,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 396315705;</code>
+     * <code>string source_instance = 127880249;</code>
      *
      * @return The sourceInstance.
      */
@@ -1964,7 +1964,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 396315705;</code>
+     * <code>string source_instance = 127880249;</code>
      *
      * @return The bytes for sourceInstance.
      */
@@ -1988,7 +1988,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 396315705;</code>
+     * <code>string source_instance = 127880249;</code>
      *
      * @param value The sourceInstance to set.
      * @return This builder for chaining.
@@ -2011,7 +2011,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 396315705;</code>
+     * <code>string source_instance = 127880249;</code>
      *
      * @return This builder for chaining.
      */
@@ -2030,7 +2030,7 @@ public final class InstanceTemplate extends com.google.protobuf.GeneratedMessage
      * - projects/project/zones/zone/instances/instance
      * </pre>
      *
-     * <code>string source_instance = 396315705;</code>
+     * <code>string source_instance = 127880249;</code>
      *
      * @param value The bytes for sourceInstance to set.
      * @return This builder for chaining.

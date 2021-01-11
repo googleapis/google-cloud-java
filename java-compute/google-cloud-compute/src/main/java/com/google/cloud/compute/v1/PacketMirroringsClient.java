@@ -448,7 +448,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param packetMirroringResource
+   * @param packetMirroringResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(
@@ -471,9 +471,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
+   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertPacketMirroringRequest request = InsertPacketMirroringRequest.newBuilder()
+   *     .setPacketMirroringResource(packetMirroringResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -497,9 +499,11 @@ public class PacketMirroringsClient implements BackgroundResource {
    *
    * <pre><code>
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
+   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   InsertPacketMirroringRequest request = InsertPacketMirroringRequest.newBuilder()
+   *     .setPacketMirroringResource(packetMirroringResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -645,7 +649,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
    * @param packetMirroring Name of the PacketMirroring resource to patch.
-   * @param packetMirroringResource
+   * @param packetMirroringResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -673,10 +677,12 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <pre><code>
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String packetMirroring = "";
+   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchPacketMirroringRequest request = PatchPacketMirroringRequest.newBuilder()
    *     .setPacketMirroring(packetMirroring)
+   *     .setPacketMirroringResource(packetMirroringResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -701,10 +707,12 @@ public class PacketMirroringsClient implements BackgroundResource {
    * <pre><code>
    * try (PacketMirroringsClient packetMirroringsClient = PacketMirroringsClient.create()) {
    *   String packetMirroring = "";
+   *   PacketMirroring packetMirroringResource = PacketMirroring.newBuilder().build();
    *   String project = "";
    *   String region = "";
    *   PatchPacketMirroringRequest request = PatchPacketMirroringRequest.newBuilder()
    *     .setPacketMirroring(packetMirroring)
+   *     .setPacketMirroringResource(packetMirroringResource)
    *     .setProject(project)
    *     .setRegion(region)
    *     .build();
@@ -737,7 +745,7 @@ public class PacketMirroringsClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region The name of the region for this request.
    * @param resource Name or id of the resource for this request.
-   * @param testPermissionsRequestResource
+   * @param testPermissionsRequestResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TestPermissionsResponse testIamPermissions(
@@ -766,10 +774,12 @@ public class PacketMirroringsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsPacketMirroringRequest request = TestIamPermissionsPacketMirroringRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   TestPermissionsResponse response = packetMirroringsClient.testIamPermissions(request);
    * }
@@ -794,10 +804,12 @@ public class PacketMirroringsClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String resource = "";
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
    *   TestIamPermissionsPacketMirroringRequest request = TestIamPermissionsPacketMirroringRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setResource(resource)
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
    *     .build();
    *   ApiFuture&lt;TestPermissionsResponse&gt; future = packetMirroringsClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something

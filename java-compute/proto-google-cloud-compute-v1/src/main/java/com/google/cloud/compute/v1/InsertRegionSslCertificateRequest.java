@@ -298,7 +298,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
   public static final int SSL_CERTIFICATE_RESOURCE_FIELD_NUMBER = 180709897;
   private com.google.cloud.compute.v1.SslCertificate sslCertificateResource_;
   /**
-   * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the sslCertificateResource field is set.
    */
@@ -307,7 +315,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
     return sslCertificateResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The sslCertificateResource.
    */
@@ -317,7 +333,17 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
         ? com.google.cloud.compute.v1.SslCertificate.getDefaultInstance()
         : sslCertificateResource_;
   }
-  /** <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.SslCertificateOrBuilder getSslCertificateResourceOrBuilder() {
     return getSslCertificateResource();
@@ -1042,7 +1068,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
             com.google.cloud.compute.v1.SslCertificateOrBuilder>
         sslCertificateResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the sslCertificateResource field is set.
      */
@@ -1050,7 +1084,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       return sslCertificateResourceBuilder_ != null || sslCertificateResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The sslCertificateResource.
      */
@@ -1064,7 +1106,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSslCertificateResource(com.google.cloud.compute.v1.SslCertificate value) {
       if (sslCertificateResourceBuilder_ == null) {
@@ -1080,7 +1130,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setSslCertificateResource(
         com.google.cloud.compute.v1.SslCertificate.Builder builderForValue) {
@@ -1094,7 +1152,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeSslCertificateResource(com.google.cloud.compute.v1.SslCertificate value) {
       if (sslCertificateResourceBuilder_ == null) {
@@ -1114,7 +1180,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearSslCertificateResource() {
       if (sslCertificateResourceBuilder_ == null) {
@@ -1128,7 +1202,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.SslCertificate.Builder getSslCertificateResourceBuilder() {
 
@@ -1136,7 +1218,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       return getSslCertificateResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.SslCertificateOrBuilder
         getSslCertificateResourceOrBuilder() {
@@ -1149,7 +1239,15 @@ public final class InsertRegionSslCertificateRequest extends com.google.protobuf
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.SslCertificate ssl_certificate_resource = 180709897 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.SslCertificate,

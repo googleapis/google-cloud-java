@@ -84,7 +84,7 @@ public interface DeleteSnapshotRequestOrBuilder
    * Name of the Snapshot resource to delete.
    * </pre>
    *
-   * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The snapshot.
    */
@@ -96,7 +96,7 @@ public interface DeleteSnapshotRequestOrBuilder
    * Name of the Snapshot resource to delete.
    * </pre>
    *
-   * <code>string snapshot = 284874180 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string snapshot = 16438724 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for snapshot.
    */

@@ -30,7 +30,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
    * </pre>
    *
-   * <code>int32 max_nodes = 297762838;</code>
+   * <code>int32 max_nodes = 29327382;</code>
    *
    * @return The maxNodes.
    */
@@ -43,7 +43,7 @@ public interface NodeGroupAutoscalingPolicyOrBuilder
    * The minimum number of nodes that the group should have.
    * </pre>
    *
-   * <code>int32 min_nodes = 533370500;</code>
+   * <code>int32 min_nodes = 264935044;</code>
    *
    * @return The minNodes.
    */

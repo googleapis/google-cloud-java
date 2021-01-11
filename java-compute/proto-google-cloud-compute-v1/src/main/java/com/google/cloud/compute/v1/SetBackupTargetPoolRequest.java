@@ -106,7 +106,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
               project_ = s;
               break;
             }
-          case -105193598:
+          case 2042290050:
             {
               com.google.cloud.compute.v1.TargetReference.Builder subBuilder = null;
               if (targetReferenceResource_ != null) {
@@ -374,10 +374,18 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     }
   }
 
-  public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 523721712;
+  public static final int TARGET_REFERENCE_RESOURCE_FIELD_NUMBER = 255286256;
   private com.google.cloud.compute.v1.TargetReference targetReferenceResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetReferenceResource field is set.
    */
@@ -386,7 +394,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     return targetReferenceResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetReferenceResource.
    */
@@ -397,7 +413,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
         : targetReferenceResource_;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetReferenceOrBuilder
@@ -435,7 +459,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
     if (targetReferenceResource_ != null) {
-      output.writeMessage(523721712, getTargetReferenceResource());
+      output.writeMessage(255286256, getTargetReferenceResource());
     }
     unknownFields.writeTo(output);
   }
@@ -464,7 +488,7 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
     if (targetReferenceResource_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
-              523721712, getTargetReferenceResource());
+              255286256, getTargetReferenceResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1311,7 +1335,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.TargetReferenceOrBuilder>
         targetReferenceResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetReferenceResource field is set.
      */
@@ -1319,7 +1351,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return targetReferenceResourceBuilder_ != null || targetReferenceResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetReferenceResource.
      */
@@ -1333,7 +1373,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
       if (targetReferenceResourceBuilder_ == null) {
@@ -1349,7 +1397,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setTargetReferenceResource(
         com.google.cloud.compute.v1.TargetReference.Builder builderForValue) {
@@ -1363,7 +1419,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeTargetReferenceResource(com.google.cloud.compute.v1.TargetReference value) {
       if (targetReferenceResourceBuilder_ == null) {
@@ -1383,7 +1447,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearTargetReferenceResource() {
       if (targetReferenceResourceBuilder_ == null) {
@@ -1397,7 +1469,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return this;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetReference.Builder getTargetReferenceResourceBuilder() {
 
@@ -1405,7 +1485,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       return getTargetReferenceResourceFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.cloud.compute.v1.TargetReferenceOrBuilder
         getTargetReferenceResourceOrBuilder() {
@@ -1418,7 +1506,15 @@ public final class SetBackupTargetPoolRequest extends com.google.protobuf.Genera
       }
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetReference target_reference_resource = 523721712;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetReference target_reference_resource = 255286256 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetReference,

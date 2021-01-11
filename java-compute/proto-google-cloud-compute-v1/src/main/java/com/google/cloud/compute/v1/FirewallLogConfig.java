@@ -70,16 +70,16 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
+          case 346631192:
+            {
+              enable_ = input.readBool();
+              break;
+            }
           case 694933880:
             {
               int rawValue = input.readEnum();
 
               metadata_ = rawValue;
-              break;
-            }
-          case -1800852456:
-            {
-              enable_ = input.readBool();
               break;
             }
           default:
@@ -136,8 +136,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_METADATA = 0;</code>
      */
     UNDEFINED_METADATA(0),
-    /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
-    EXCLUDE_ALL_METADATA(334519954),
+    /** <code>EXCLUDE_ALL_METADATA = 66084498;</code> */
+    EXCLUDE_ALL_METADATA(66084498),
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     INCLUDE_ALL_METADATA(164619908),
     UNRECOGNIZED(-1),
@@ -153,8 +153,8 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_METADATA = 0;</code>
      */
     public static final int UNDEFINED_METADATA_VALUE = 0;
-    /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
-    public static final int EXCLUDE_ALL_METADATA_VALUE = 334519954;
+    /** <code>EXCLUDE_ALL_METADATA = 66084498;</code> */
+    public static final int EXCLUDE_ALL_METADATA_VALUE = 66084498;
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     public static final int INCLUDE_ALL_METADATA_VALUE = 164619908;
 
@@ -184,7 +184,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 0:
           return UNDEFINED_METADATA;
-        case 334519954:
+        case 66084498:
           return EXCLUDE_ALL_METADATA;
         case 164619908:
           return INCLUDE_ALL_METADATA;
@@ -241,7 +241,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.FirewallLogConfig.Metadata)
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 311764355;
+  public static final int ENABLE_FIELD_NUMBER = 43328899;
   private boolean enable_;
   /**
    *
@@ -250,7 +250,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
    * This field denotes whether to enable logging for a particular firewall rule.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -311,12 +311,12 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (enable_ != false) {
+      output.writeBool(43328899, enable_);
+    }
     if (metadata_
         != com.google.cloud.compute.v1.FirewallLogConfig.Metadata.UNDEFINED_METADATA.getNumber()) {
       output.writeEnum(86866735, metadata_);
-    }
-    if (enable_ != false) {
-      output.writeBool(311764355, enable_);
     }
     unknownFields.writeTo(output);
   }
@@ -327,12 +327,12 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
+    if (enable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
+    }
     if (metadata_
         != com.google.cloud.compute.v1.FirewallLogConfig.Metadata.UNDEFINED_METADATA.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(86866735, metadata_);
-    }
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -637,7 +637,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * This field denotes whether to enable logging for a particular firewall rule.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return The enable.
      */
@@ -652,7 +652,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * This field denotes whether to enable logging for a particular firewall rule.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -670,7 +670,7 @@ public final class FirewallLogConfig extends com.google.protobuf.GeneratedMessag
      * This field denotes whether to enable logging for a particular firewall rule.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return This builder for chaining.
      */

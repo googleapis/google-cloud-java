@@ -75,28 +75,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
           case 0:
             done = true;
             break;
-          case 296879706:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              requestId_ = s;
-              break;
-            }
-          case 1111570338:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -2143601726:
+          case 3881922:
             {
               com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest.Builder
                   subBuilder = null;
@@ -115,11 +94,32 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
 
               break;
             }
-          case -1832345742:
+          case 296879706:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              requestId_ = s;
+              break;
+            }
+          case 315137906:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               subnetwork_ = s;
+              break;
+            }
+          case 1111570338:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              region_ = s;
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -307,7 +307,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -316,7 +316,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
    * Name of the Subnetwork resource.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The subnetwork.
    */
@@ -339,7 +339,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
    * Name of the Subnetwork resource.
    * </pre>
    *
-   * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -357,12 +357,18 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
   }
 
   public static final int SUBNETWORKS_SET_PRIVATE_IP_GOOGLE_ACCESS_REQUEST_RESOURCE_FIELD_NUMBER =
-      268920696;
+      485240;
   private com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest
       subnetworksSetPrivateIpGoogleAccessRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the subnetworksSetPrivateIpGoogleAccessRequestResource field is set.
@@ -372,8 +378,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
     return subnetworksSetPrivateIpGoogleAccessRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The subnetworksSetPrivateIpGoogleAccessRequestResource.
@@ -387,8 +399,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
         : subnetworksSetPrivateIpGoogleAccessRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+   * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -411,20 +429,20 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (subnetworksSetPrivateIpGoogleAccessRequestResource_ != null) {
+      output.writeMessage(485240, getSubnetworksSetPrivateIpGoogleAccessRequestResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (subnetworksSetPrivateIpGoogleAccessRequestResource_ != null) {
-      output.writeMessage(268920696, getSubnetworksSetPrivateIpGoogleAccessRequestResource());
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     unknownFields.writeTo(output);
   }
@@ -435,22 +453,22 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
     if (size != -1) return size;
 
     size = 0;
+    if (subnetworksSetPrivateIpGoogleAccessRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              485240, getSubnetworksSetPrivateIpGoogleAccessRequestResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
     }
     if (!getRegionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (subnetworksSetPrivateIpGoogleAccessRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              268920696, getSubnetworksSetPrivateIpGoogleAccessRequestResource());
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1143,7 +1161,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
      * Name of the Subnetwork resource.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The subnetwork.
      */
@@ -1165,7 +1183,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
      * Name of the Subnetwork resource.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -1187,7 +1205,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
      * Name of the Subnetwork resource.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -1208,7 +1226,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
      * Name of the Subnetwork resource.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1225,7 +1243,7 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
      * Name of the Subnetwork resource.
      * </pre>
      *
-     * <code>string subnetwork = 307827694 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string subnetwork = 39392238 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -1249,8 +1267,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
             com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequestOrBuilder>
         subnetworksSetPrivateIpGoogleAccessRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the subnetworksSetPrivateIpGoogleAccessRequestResource field is set.
@@ -1260,8 +1284,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
           || subnetworksSetPrivateIpGoogleAccessRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The subnetworksSetPrivateIpGoogleAccessRequestResource.
@@ -1278,8 +1308,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSubnetworksSetPrivateIpGoogleAccessRequestResource(
@@ -1297,8 +1333,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setSubnetworksSetPrivateIpGoogleAccessRequestResource(
@@ -1315,8 +1357,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeSubnetworksSetPrivateIpGoogleAccessRequestResource(
@@ -1339,8 +1387,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearSubnetworksSetPrivateIpGoogleAccessRequestResource() {
@@ -1355,8 +1409,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest.Builder
@@ -1366,8 +1426,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       return getSubnetworksSetPrivateIpGoogleAccessRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequestOrBuilder
@@ -1382,8 +1448,14 @@ public final class SetPrivateIpGoogleAccessSubnetworkRequest
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 268920696;
+     * .google.cloud.compute.v1.SubnetworksSetPrivateIpGoogleAccessRequest subnetworks_set_private_ip_google_access_request_resource = 485240 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

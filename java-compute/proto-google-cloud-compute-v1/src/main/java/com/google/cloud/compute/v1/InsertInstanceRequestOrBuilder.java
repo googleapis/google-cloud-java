@@ -24,18 +24,44 @@ public interface InsertInstanceRequestOrBuilder
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the instanceResource field is set.
    */
   boolean hasInstanceResource();
   /**
-   * <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The instanceResource.
    */
   com.google.cloud.compute.v1.Instance getInstanceResource();
-  /** <code>.google.cloud.compute.v1.Instance instance_resource = 215988344;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.Instance instance_resource = 215988344 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   com.google.cloud.compute.v1.InstanceOrBuilder getInstanceResourceOrBuilder();
 
   /**
@@ -103,7 +129,7 @@ public interface InsertInstanceRequestOrBuilder
    * - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>string source_instance_template = 63988160;</code>
    *
    * @return The sourceInstanceTemplate.
    */
@@ -119,7 +145,7 @@ public interface InsertInstanceRequestOrBuilder
    * - global/instanceTemplates/instanceTemplate
    * </pre>
    *
-   * <code>string source_instance_template = 332423616;</code>
+   * <code>string source_instance_template = 63988160;</code>
    *
    * @return The bytes for sourceInstanceTemplate.
    */

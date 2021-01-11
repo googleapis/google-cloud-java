@@ -99,24 +99,42 @@ public interface SetIamPolicyReservationRequestOrBuilder
   com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the zoneSetPolicyRequestResource field is set.
    */
   boolean hasZoneSetPolicyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The zoneSetPolicyRequestResource.
    */
   com.google.cloud.compute.v1.ZoneSetPolicyRequest getZoneSetPolicyRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 382082107;
+   * .google.cloud.compute.v1.ZoneSetPolicyRequest zone_set_policy_request_resource = 113646651 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.ZoneSetPolicyRequestOrBuilder

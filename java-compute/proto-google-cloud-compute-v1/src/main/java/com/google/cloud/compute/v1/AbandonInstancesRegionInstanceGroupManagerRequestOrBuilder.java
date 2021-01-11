@@ -101,16 +101,28 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the regionInstanceGroupManagersAbandonInstancesRequestResource field is set.
    */
   boolean hasRegionInstanceGroupManagersAbandonInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The regionInstanceGroupManagersAbandonInstancesRequestResource.
@@ -118,8 +130,14 @@ public interface AbandonInstancesRegionInstanceGroupManagerRequestOrBuilder
   com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest
       getRegionInstanceGroupManagersAbandonInstancesRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 488499491;
+   * .google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequest region_instance_group_managers_abandon_instances_request_resource = 220064035 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.RegionInstanceGroupManagersAbandonInstancesRequestOrBuilder

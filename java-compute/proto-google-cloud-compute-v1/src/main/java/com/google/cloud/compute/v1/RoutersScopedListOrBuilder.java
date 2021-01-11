@@ -30,7 +30,7 @@ public interface RoutersScopedListOrBuilder
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Router> getRoutersList();
   /**
@@ -40,7 +40,7 @@ public interface RoutersScopedListOrBuilder
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   com.google.cloud.compute.v1.Router getRouters(int index);
   /**
@@ -50,7 +50,7 @@ public interface RoutersScopedListOrBuilder
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   int getRoutersCount();
   /**
@@ -60,7 +60,7 @@ public interface RoutersScopedListOrBuilder
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterOrBuilder> getRoutersOrBuilderList();
   /**
@@ -70,7 +70,7 @@ public interface RoutersScopedListOrBuilder
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   com.google.cloud.compute.v1.RouterOrBuilder getRoutersOrBuilder(int index);
 

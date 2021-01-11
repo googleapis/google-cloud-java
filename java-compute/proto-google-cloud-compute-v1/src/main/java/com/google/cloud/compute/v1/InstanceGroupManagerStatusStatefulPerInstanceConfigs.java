@@ -70,7 +70,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
           case 0:
             done = true;
             break;
-          case -162642872:
+          case 1984840776:
             {
               allEffective_ = input.readBool();
               break;
@@ -110,7 +110,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
                 .class);
   }
 
-  public static final int ALL_EFFECTIVE_FIELD_NUMBER = 516540553;
+  public static final int ALL_EFFECTIVE_FIELD_NUMBER = 248105097;
   private boolean allEffective_;
   /**
    *
@@ -119,7 +119,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
    * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
    * </pre>
    *
-   * <code>bool all_effective = 516540553;</code>
+   * <code>bool all_effective = 248105097;</code>
    *
    * @return The allEffective.
    */
@@ -143,7 +143,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (allEffective_ != false) {
-      output.writeBool(516540553, allEffective_);
+      output.writeBool(248105097, allEffective_);
     }
     unknownFields.writeTo(output);
   }
@@ -155,7 +155,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
 
     size = 0;
     if (allEffective_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(516540553, allEffective_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(248105097, allEffective_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -479,7 +479,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
-     * <code>bool all_effective = 516540553;</code>
+     * <code>bool all_effective = 248105097;</code>
      *
      * @return The allEffective.
      */
@@ -494,7 +494,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
-     * <code>bool all_effective = 516540553;</code>
+     * <code>bool all_effective = 248105097;</code>
      *
      * @param value The allEffective to set.
      * @return This builder for chaining.
@@ -512,7 +512,7 @@ public final class InstanceGroupManagerStatusStatefulPerInstanceConfigs
      * A bit indicating if all of the group's per-instance configs (listed in the output of a listPerInstanceConfigs API call) have status EFFECTIVE or there are no per-instance-configs.
      * </pre>
      *
-     * <code>bool all_effective = 516540553;</code>
+     * <code>bool all_effective = 248105097;</code>
      *
      * @return This builder for chaining.
      */

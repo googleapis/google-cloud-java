@@ -79,6 +79,13 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
               deviceName_ = s;
               break;
             }
+          case 999587576:
+            {
+              int rawValue = input.readEnum();
+
+              instantiateFrom_ = rawValue;
+              break;
+            }
           case 1472985194:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -86,14 +93,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
               customImage_ = s;
               break;
             }
-          case -1147896072:
-            {
-              int rawValue = input.readEnum();
-
-              instantiateFrom_ = rawValue;
-              break;
-            }
-          case -576876072:
+          case 1570607576:
             {
               autoDelete_ = input.readBool();
               break;
@@ -157,8 +157,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>UNDEFINED_INSTANTIATE_FROM = 0;</code>
      */
     UNDEFINED_INSTANTIATE_FROM(0),
-    /** <code>ATTACH_READ_ONLY = 513775419;</code> */
-    ATTACH_READ_ONLY(513775419),
+    /** <code>ATTACH_READ_ONLY = 245339963;</code> */
+    ATTACH_READ_ONLY(245339963),
     /** <code>BLANK = 63281460;</code> */
     BLANK(63281460),
     /** <code>CUSTOM_IMAGE = 196311789;</code> */
@@ -184,8 +184,8 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * <code>UNDEFINED_INSTANTIATE_FROM = 0;</code>
      */
     public static final int UNDEFINED_INSTANTIATE_FROM_VALUE = 0;
-    /** <code>ATTACH_READ_ONLY = 513775419;</code> */
-    public static final int ATTACH_READ_ONLY_VALUE = 513775419;
+    /** <code>ATTACH_READ_ONLY = 245339963;</code> */
+    public static final int ATTACH_READ_ONLY_VALUE = 245339963;
     /** <code>BLANK = 63281460;</code> */
     public static final int BLANK_VALUE = 63281460;
     /** <code>CUSTOM_IMAGE = 196311789;</code> */
@@ -225,7 +225,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
       switch (value) {
         case 0:
           return UNDEFINED_INSTANTIATE_FROM;
-        case 513775419:
+        case 245339963:
           return ATTACH_READ_ONLY;
         case 63281460:
           return BLANK;
@@ -296,7 +296,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom)
   }
 
-  public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
+  public static final int AUTO_DELETE_FIELD_NUMBER = 196325947;
   private boolean autoDelete_;
   /**
    *
@@ -305,7 +305,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
    * </pre>
    *
-   * <code>bool auto_delete = 464761403;</code>
+   * <code>bool auto_delete = 196325947;</code>
    *
    * @return The autoDelete.
    */
@@ -412,7 +412,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     }
   }
 
-  public static final int INSTANTIATE_FROM_FIELD_NUMBER = 393383903;
+  public static final int INSTANTIATE_FROM_FIELD_NUMBER = 124948447;
   private int instantiateFrom_;
   /**
    *
@@ -427,7 +427,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
    * </code>
    *
    * @return The enum numeric value on the wire for instantiateFrom.
@@ -449,7 +449,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
    * </pre>
    *
    * <code>
-   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+   * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
    * </code>
    *
    * @return The instantiateFrom.
@@ -482,17 +482,17 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     if (!getDeviceNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 67541716, deviceName_);
     }
-    if (!getCustomImageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 184123149, customImage_);
-    }
     if (instantiateFrom_
         != com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom
             .UNDEFINED_INSTANTIATE_FROM
             .getNumber()) {
-      output.writeEnum(393383903, instantiateFrom_);
+      output.writeEnum(124948447, instantiateFrom_);
+    }
+    if (!getCustomImageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 184123149, customImage_);
     }
     if (autoDelete_ != false) {
-      output.writeBool(464761403, autoDelete_);
+      output.writeBool(196325947, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -506,17 +506,17 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
     if (!getDeviceNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(67541716, deviceName_);
     }
-    if (!getCustomImageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(184123149, customImage_);
-    }
     if (instantiateFrom_
         != com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom
             .UNDEFINED_INSTANTIATE_FROM
             .getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(393383903, instantiateFrom_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(124948447, instantiateFrom_);
+    }
+    if (!getCustomImageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(184123149, customImage_);
     }
     if (autoDelete_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(464761403, autoDelete_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(196325947, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -843,7 +843,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>bool auto_delete = 196325947;</code>
      *
      * @return The autoDelete.
      */
@@ -858,7 +858,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>bool auto_delete = 196325947;</code>
      *
      * @param value The autoDelete to set.
      * @return This builder for chaining.
@@ -876,7 +876,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * Specifies whether the disk will be auto-deleted when the instance is deleted (but not when the disk is detached from the instance).
      * </pre>
      *
-     * <code>bool auto_delete = 464761403;</code>
+     * <code>bool auto_delete = 196325947;</code>
      *
      * @return This builder for chaining.
      */
@@ -1113,7 +1113,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
      * </code>
      *
      * @return The enum numeric value on the wire for instantiateFrom.
@@ -1135,7 +1135,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
      * </code>
      *
      * @param value The enum numeric value on the wire for instantiateFrom to set.
@@ -1160,7 +1160,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
      * </code>
      *
      * @return The instantiateFrom.
@@ -1189,7 +1189,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
      * </code>
      *
      * @param value The instantiateFrom to set.
@@ -1218,7 +1218,7 @@ public final class DiskInstantiationConfig extends com.google.protobuf.Generated
      * </pre>
      *
      * <code>
-     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;
+     * .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 124948447;
      * </code>
      *
      * @return This builder for chaining.

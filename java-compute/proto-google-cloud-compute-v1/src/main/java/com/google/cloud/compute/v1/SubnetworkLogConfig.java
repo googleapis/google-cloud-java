@@ -74,11 +74,26 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
           case 0:
             done = true;
             break;
+          case 346631192:
+            {
+              enable_ = input.readBool();
+              break;
+            }
           case 694933880:
             {
               int rawValue = input.readEnum();
 
               metadata_ = rawValue;
+              break;
+            }
+          case 880209482:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                metadataFields_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              metadataFields_.add(s);
               break;
             }
           case 1399352336:
@@ -95,22 +110,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
               filterExpr_ = s;
               break;
             }
-          case -1800852456:
-            {
-              enable_ = input.readBool();
-              break;
-            }
-          case -1267274166:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                metadataFields_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              metadataFields_.add(s);
-              break;
-            }
-          case -53764411:
+          case 2093719237:
             {
               flowSampling_ = input.readFloat();
               break;
@@ -172,10 +172,10 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_AGGREGATION_INTERVAL = 0;</code>
      */
     UNDEFINED_AGGREGATION_INTERVAL(0),
-    /** <code>INTERVAL_10_MIN = 487155916;</code> */
-    INTERVAL_10_MIN(487155916),
-    /** <code>INTERVAL_15_MIN = 491773521;</code> */
-    INTERVAL_15_MIN(491773521),
+    /** <code>INTERVAL_10_MIN = 218720460;</code> */
+    INTERVAL_10_MIN(218720460),
+    /** <code>INTERVAL_15_MIN = 223338065;</code> */
+    INTERVAL_15_MIN(223338065),
     /** <code>INTERVAL_1_MIN = 69052714;</code> */
     INTERVAL_1_MIN(69052714),
     /** <code>INTERVAL_30_SEC = 7548937;</code> */
@@ -197,10 +197,10 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * <code>UNDEFINED_AGGREGATION_INTERVAL = 0;</code>
      */
     public static final int UNDEFINED_AGGREGATION_INTERVAL_VALUE = 0;
-    /** <code>INTERVAL_10_MIN = 487155916;</code> */
-    public static final int INTERVAL_10_MIN_VALUE = 487155916;
-    /** <code>INTERVAL_15_MIN = 491773521;</code> */
-    public static final int INTERVAL_15_MIN_VALUE = 491773521;
+    /** <code>INTERVAL_10_MIN = 218720460;</code> */
+    public static final int INTERVAL_10_MIN_VALUE = 218720460;
+    /** <code>INTERVAL_15_MIN = 223338065;</code> */
+    public static final int INTERVAL_15_MIN_VALUE = 223338065;
     /** <code>INTERVAL_1_MIN = 69052714;</code> */
     public static final int INTERVAL_1_MIN_VALUE = 69052714;
     /** <code>INTERVAL_30_SEC = 7548937;</code> */
@@ -236,9 +236,9 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
       switch (value) {
         case 0:
           return UNDEFINED_AGGREGATION_INTERVAL;
-        case 487155916:
+        case 218720460:
           return INTERVAL_10_MIN;
-        case 491773521:
+        case 223338065:
           return INTERVAL_15_MIN;
         case 69052714:
           return INTERVAL_1_MIN;
@@ -326,8 +326,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     UNDEFINED_METADATA(0),
     /** <code>CUSTOM_METADATA = 62450749;</code> */
     CUSTOM_METADATA(62450749),
-    /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
-    EXCLUDE_ALL_METADATA(334519954),
+    /** <code>EXCLUDE_ALL_METADATA = 66084498;</code> */
+    EXCLUDE_ALL_METADATA(66084498),
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     INCLUDE_ALL_METADATA(164619908),
     UNRECOGNIZED(-1),
@@ -345,8 +345,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     public static final int UNDEFINED_METADATA_VALUE = 0;
     /** <code>CUSTOM_METADATA = 62450749;</code> */
     public static final int CUSTOM_METADATA_VALUE = 62450749;
-    /** <code>EXCLUDE_ALL_METADATA = 334519954;</code> */
-    public static final int EXCLUDE_ALL_METADATA_VALUE = 334519954;
+    /** <code>EXCLUDE_ALL_METADATA = 66084498;</code> */
+    public static final int EXCLUDE_ALL_METADATA_VALUE = 66084498;
     /** <code>INCLUDE_ALL_METADATA = 164619908;</code> */
     public static final int INCLUDE_ALL_METADATA_VALUE = 164619908;
 
@@ -378,7 +378,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
           return UNDEFINED_METADATA;
         case 62450749:
           return CUSTOM_METADATA;
-        case 334519954:
+        case 66084498:
           return EXCLUDE_ALL_METADATA;
         case 164619908:
           return INCLUDE_ALL_METADATA;
@@ -479,7 +479,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         : result;
   }
 
-  public static final int ENABLE_FIELD_NUMBER = 311764355;
+  public static final int ENABLE_FIELD_NUMBER = 43328899;
   private boolean enable_;
   /**
    *
@@ -488,7 +488,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
    * </pre>
    *
-   * <code>bool enable = 311764355;</code>
+   * <code>bool enable = 43328899;</code>
    *
    * @return The enable.
    */
@@ -546,7 +546,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     }
   }
 
-  public static final int FLOW_SAMPLING_FIELD_NUMBER = 530150360;
+  public static final int FLOW_SAMPLING_FIELD_NUMBER = 261714904;
   private float flowSampling_;
   /**
    *
@@ -555,7 +555,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
    * </pre>
    *
-   * <code>float flow_sampling = 530150360;</code>
+   * <code>float flow_sampling = 261714904;</code>
    *
    * @return The flowSampling.
    */
@@ -602,7 +602,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
         : result;
   }
 
-  public static final int METADATA_FIELDS_FIELD_NUMBER = 378461641;
+  public static final int METADATA_FIELDS_FIELD_NUMBER = 110026185;
   private com.google.protobuf.LazyStringList metadataFields_;
   /**
    *
@@ -611,7 +611,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @return A list containing the metadataFields.
    */
@@ -625,7 +625,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @return The count of metadataFields.
    */
@@ -639,7 +639,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @param index The index of the element to return.
    * @return The metadataFields at the given index.
@@ -654,7 +654,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
    * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
    * </pre>
    *
-   * <code>repeated string metadata_fields = 378461641;</code>
+   * <code>repeated string metadata_fields = 110026185;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the metadataFields at the given index.
@@ -677,10 +677,17 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (enable_ != false) {
+      output.writeBool(43328899, enable_);
+    }
     if (metadata_
         != com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.UNDEFINED_METADATA
             .getNumber()) {
       output.writeEnum(86866735, metadata_);
+    }
+    for (int i = 0; i < metadataFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 110026185, metadataFields_.getRaw(i));
     }
     if (aggregationInterval_
         != com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval
@@ -691,15 +698,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     if (!getFilterExprBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 183374428, filterExpr_);
     }
-    if (enable_ != false) {
-      output.writeBool(311764355, enable_);
-    }
-    for (int i = 0; i < metadataFields_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 378461641, metadataFields_.getRaw(i));
-    }
     if (flowSampling_ != 0F) {
-      output.writeFloat(530150360, flowSampling_);
+      output.writeFloat(261714904, flowSampling_);
     }
     unknownFields.writeTo(output);
   }
@@ -710,10 +710,21 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     if (size != -1) return size;
 
     size = 0;
+    if (enable_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(43328899, enable_);
+    }
     if (metadata_
         != com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.UNDEFINED_METADATA
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(86866735, metadata_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < metadataFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(metadataFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getMetadataFieldsList().size();
     }
     if (aggregationInterval_
         != com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval
@@ -725,19 +736,8 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
     if (!getFilterExprBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(183374428, filterExpr_);
     }
-    if (enable_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(311764355, enable_);
-    }
-    {
-      int dataSize = 0;
-      for (int i = 0; i < metadataFields_.size(); i++) {
-        dataSize += computeStringSizeNoTag(metadataFields_.getRaw(i));
-      }
-      size += dataSize;
-      size += 5 * getMetadataFieldsList().size();
-    }
     if (flowSampling_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream.computeFloatSize(530150360, flowSampling_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(261714904, flowSampling_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1203,7 +1203,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return The enable.
      */
@@ -1218,7 +1218,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @param value The enable to set.
      * @return This builder for chaining.
@@ -1236,7 +1236,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is to disable flow logging.
      * </pre>
      *
-     * <code>bool enable = 311764355;</code>
+     * <code>bool enable = 43328899;</code>
      *
      * @return This builder for chaining.
      */
@@ -1361,7 +1361,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>float flow_sampling = 261714904;</code>
      *
      * @return The flowSampling.
      */
@@ -1376,7 +1376,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>float flow_sampling = 261714904;</code>
      *
      * @param value The flowSampling to set.
      * @return This builder for chaining.
@@ -1394,7 +1394,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logging for this subnetwork is enabled. The value of the field must be in [0, 1]. Set the sampling rate of VPC flow logs within the subnetwork where 1.0 means all collected logs are reported and 0.0 means no logs are reported. Default is 0.5, which means half of all collected logs are reported.
      * </pre>
      *
-     * <code>float flow_sampling = 530150360;</code>
+     * <code>float flow_sampling = 261714904;</code>
      *
      * @return This builder for chaining.
      */
@@ -1514,7 +1514,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @return A list containing the metadataFields.
      */
@@ -1528,7 +1528,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @return The count of metadataFields.
      */
@@ -1542,7 +1542,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @param index The index of the element to return.
      * @return The metadataFields at the given index.
@@ -1557,7 +1557,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the metadataFields at the given index.
@@ -1572,7 +1572,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @param index The index to set the value at.
      * @param value The metadataFields to set.
@@ -1594,7 +1594,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @param value The metadataFields to add.
      * @return This builder for chaining.
@@ -1615,7 +1615,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @param values The metadataFields to add.
      * @return This builder for chaining.
@@ -1633,7 +1633,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @return This builder for chaining.
      */
@@ -1650,7 +1650,7 @@ public final class SubnetworkLogConfig extends com.google.protobuf.GeneratedMess
      * Can only be specified if VPC flow logs for this subnetwork is enabled and "metadata" was set to CUSTOM_METADATA.
      * </pre>
      *
-     * <code>repeated string metadata_fields = 378461641;</code>
+     * <code>repeated string metadata_fields = 110026185;</code>
      *
      * @param value The bytes of the metadataFields to add.
      * @return This builder for chaining.

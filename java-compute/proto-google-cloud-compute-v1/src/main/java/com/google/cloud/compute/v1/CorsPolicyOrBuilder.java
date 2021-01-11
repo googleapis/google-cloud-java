@@ -31,7 +31,7 @@ public interface CorsPolicyOrBuilder
    * Default is false.
    * </pre>
    *
-   * <code>bool allow_credentials = 481263366;</code>
+   * <code>bool allow_credentials = 212827910;</code>
    *
    * @return The allowCredentials.
    */
@@ -256,7 +256,7 @@ public interface CorsPolicyOrBuilder
    * If true, specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
    * </pre>
    *
-   * <code>bool disabled = 270940796;</code>
+   * <code>bool disabled = 2505340;</code>
    *
    * @return The disabled.
    */
@@ -320,7 +320,7 @@ public interface CorsPolicyOrBuilder
    * Specifies how long results of a preflight request can be cached in seconds. This translates to the Access-Control-Max-Age header.
    * </pre>
    *
-   * <code>int32 max_age = 307559332;</code>
+   * <code>int32 max_age = 39123876;</code>
    *
    * @return The maxAge.
    */

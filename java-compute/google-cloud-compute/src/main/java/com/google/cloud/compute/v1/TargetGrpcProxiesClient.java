@@ -323,7 +323,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * </code></pre>
    *
    * @param project Project ID for this request.
-   * @param targetGrpcProxyResource
+   * @param targetGrpcProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, TargetGrpcProxy targetGrpcProxyResource) {
@@ -345,8 +345,10 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "";
+   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
    *   InsertTargetGrpcProxyRequest request = InsertTargetGrpcProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
    *     .build();
    *   Operation response = targetGrpcProxiesClient.insert(request);
    * }
@@ -369,8 +371,10 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * <pre><code>
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "";
+   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
    *   InsertTargetGrpcProxyRequest request = InsertTargetGrpcProxyRequest.newBuilder()
    *     .setProject(project)
+   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetGrpcProxiesClient.insertCallable().futureCall(request);
    *   // Do something
@@ -504,7 +508,7 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param targetGrpcProxy Name of the TargetGrpcProxy resource to patch.
-   * @param targetGrpcProxyResource
+   * @param targetGrpcProxyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -529,9 +533,11 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "";
    *   String targetGrpcProxy = "";
+   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
    *   PatchTargetGrpcProxyRequest request = PatchTargetGrpcProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setTargetGrpcProxy(targetGrpcProxy)
+   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
    *     .build();
    *   Operation response = targetGrpcProxiesClient.patch(request);
    * }
@@ -555,9 +561,11 @@ public class TargetGrpcProxiesClient implements BackgroundResource {
    * try (TargetGrpcProxiesClient targetGrpcProxiesClient = TargetGrpcProxiesClient.create()) {
    *   String project = "";
    *   String targetGrpcProxy = "";
+   *   TargetGrpcProxy targetGrpcProxyResource = TargetGrpcProxy.newBuilder().build();
    *   PatchTargetGrpcProxyRequest request = PatchTargetGrpcProxyRequest.newBuilder()
    *     .setProject(project)
    *     .setTargetGrpcProxy(targetGrpcProxy)
+   *     .setTargetGrpcProxyResource(targetGrpcProxyResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = targetGrpcProxiesClient.patchCallable().futureCall(request);
    *   // Do something

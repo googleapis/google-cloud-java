@@ -159,7 +159,15 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
   public static final int ATTACHED_DISK_RESOURCE_FIELD_NUMBER = 90605845;
   private com.google.cloud.compute.v1.AttachedDisk attachedDiskResource_;
   /**
-   * <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the attachedDiskResource field is set.
    */
@@ -168,7 +176,15 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
     return attachedDiskResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The attachedDiskResource.
    */
@@ -178,7 +194,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         ? com.google.cloud.compute.v1.AttachedDisk.getDefaultInstance()
         : attachedDiskResource_;
   }
-  /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.AttachedDiskOrBuilder getAttachedDiskResourceOrBuilder() {
     return getAttachedDiskResource();
@@ -821,7 +847,15 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
             com.google.cloud.compute.v1.AttachedDiskOrBuilder>
         attachedDiskResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the attachedDiskResource field is set.
      */
@@ -829,7 +863,15 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
       return attachedDiskResourceBuilder_ != null || attachedDiskResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The attachedDiskResource.
      */
@@ -842,7 +884,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
         return attachedDiskResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAttachedDiskResource(com.google.cloud.compute.v1.AttachedDisk value) {
       if (attachedDiskResourceBuilder_ == null) {
         if (value == null) {
@@ -856,7 +908,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setAttachedDiskResource(
         com.google.cloud.compute.v1.AttachedDisk.Builder builderForValue) {
       if (attachedDiskResourceBuilder_ == null) {
@@ -868,7 +930,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeAttachedDiskResource(com.google.cloud.compute.v1.AttachedDisk value) {
       if (attachedDiskResourceBuilder_ == null) {
         if (attachedDiskResource_ != null) {
@@ -886,7 +958,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearAttachedDiskResource() {
       if (attachedDiskResourceBuilder_ == null) {
         attachedDiskResource_ = null;
@@ -898,13 +980,33 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.AttachedDisk.Builder getAttachedDiskResourceBuilder() {
 
       onChanged();
       return getAttachedDiskResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.AttachedDiskOrBuilder getAttachedDiskResourceOrBuilder() {
       if (attachedDiskResourceBuilder_ != null) {
         return attachedDiskResourceBuilder_.getMessageOrBuilder();
@@ -914,7 +1016,17 @@ public final class AttachDiskInstanceRequest extends com.google.protobuf.Generat
             : attachedDiskResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.AttachedDisk attached_disk_resource = 90605845 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.AttachedDisk,
             com.google.cloud.compute.v1.AttachedDisk.Builder,

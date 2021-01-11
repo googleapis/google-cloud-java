@@ -142,14 +142,14 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     UNDEFINED_STATE(0),
-    /** <code>HIGH_ALARM = 305363284;</code> */
-    HIGH_ALARM(305363284),
+    /** <code>HIGH_ALARM = 36927828;</code> */
+    HIGH_ALARM(36927828),
     /** <code>HIGH_WARNING = 220984799;</code> */
     HIGH_WARNING(220984799),
-    /** <code>LOW_ALARM = 316659046;</code> */
-    LOW_ALARM(316659046),
-    /** <code>LOW_WARNING = 338793841;</code> */
-    LOW_WARNING(338793841),
+    /** <code>LOW_ALARM = 48223590;</code> */
+    LOW_ALARM(48223590),
+    /** <code>LOW_WARNING = 70358385;</code> */
+    LOW_WARNING(70358385),
     /** <code>OK = 2524;</code> */
     OK(2524),
     UNRECOGNIZED(-1),
@@ -165,14 +165,14 @@ public final class InterconnectDiagnosticsLinkOpticalPower
      * <code>UNDEFINED_STATE = 0;</code>
      */
     public static final int UNDEFINED_STATE_VALUE = 0;
-    /** <code>HIGH_ALARM = 305363284;</code> */
-    public static final int HIGH_ALARM_VALUE = 305363284;
+    /** <code>HIGH_ALARM = 36927828;</code> */
+    public static final int HIGH_ALARM_VALUE = 36927828;
     /** <code>HIGH_WARNING = 220984799;</code> */
     public static final int HIGH_WARNING_VALUE = 220984799;
-    /** <code>LOW_ALARM = 316659046;</code> */
-    public static final int LOW_ALARM_VALUE = 316659046;
-    /** <code>LOW_WARNING = 338793841;</code> */
-    public static final int LOW_WARNING_VALUE = 338793841;
+    /** <code>LOW_ALARM = 48223590;</code> */
+    public static final int LOW_ALARM_VALUE = 48223590;
+    /** <code>LOW_WARNING = 70358385;</code> */
+    public static final int LOW_WARNING_VALUE = 70358385;
     /** <code>OK = 2524;</code> */
     public static final int OK_VALUE = 2524;
 
@@ -202,13 +202,13 @@ public final class InterconnectDiagnosticsLinkOpticalPower
       switch (value) {
         case 0:
           return UNDEFINED_STATE;
-        case 305363284:
+        case 36927828:
           return HIGH_ALARM;
         case 220984799:
           return HIGH_WARNING;
-        case 316659046:
+        case 48223590:
           return LOW_ALARM;
-        case 338793841:
+        case 70358385:
           return LOW_WARNING;
         case 2524:
           return OK;

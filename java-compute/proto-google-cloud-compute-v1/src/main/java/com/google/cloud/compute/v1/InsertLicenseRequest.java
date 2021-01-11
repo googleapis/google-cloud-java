@@ -78,14 +78,7 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
               requestId_ = s;
               break;
             }
-          case 1820481738:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              project_ = s;
-              break;
-            }
-          case -791326110:
+          case 1356157538:
             {
               com.google.cloud.compute.v1.License.Builder subBuilder = null;
               if (licenseResource_ != null) {
@@ -99,6 +92,13 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
                 licenseResource_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+          case 1820481738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              project_ = s;
               break;
             }
           default:
@@ -135,10 +135,18 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.InsertLicenseRequest.Builder.class);
   }
 
-  public static final int LICENSE_RESOURCE_FIELD_NUMBER = 437955148;
+  public static final int LICENSE_RESOURCE_FIELD_NUMBER = 169519692;
   private com.google.cloud.compute.v1.License licenseResource_;
   /**
-   * <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the licenseResource field is set.
    */
@@ -147,7 +155,15 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     return licenseResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The licenseResource.
    */
@@ -157,7 +173,17 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.License.getDefaultInstance()
         : licenseResource_;
   }
-  /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.LicenseOrBuilder getLicenseResourceOrBuilder() {
     return getLicenseResource();
@@ -282,11 +308,11 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
+    if (licenseResource_ != null) {
+      output.writeMessage(169519692, getLicenseResource());
+    }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (licenseResource_ != null) {
-      output.writeMessage(437955148, getLicenseResource());
     }
     unknownFields.writeTo(output);
   }
@@ -300,12 +326,12 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
-    if (!getProjectBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
     if (licenseResource_ != null) {
       size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(437955148, getLicenseResource());
+          com.google.protobuf.CodedOutputStream.computeMessageSize(169519692, getLicenseResource());
+    }
+    if (!getProjectBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -634,7 +660,15 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.LicenseOrBuilder>
         licenseResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the licenseResource field is set.
      */
@@ -642,7 +676,15 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
       return licenseResourceBuilder_ != null || licenseResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.License license_resource = 437955148;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The licenseResource.
      */
@@ -655,7 +697,17 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
         return licenseResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setLicenseResource(com.google.cloud.compute.v1.License value) {
       if (licenseResourceBuilder_ == null) {
         if (value == null) {
@@ -669,7 +721,17 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setLicenseResource(com.google.cloud.compute.v1.License.Builder builderForValue) {
       if (licenseResourceBuilder_ == null) {
         licenseResource_ = builderForValue.build();
@@ -680,7 +742,17 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeLicenseResource(com.google.cloud.compute.v1.License value) {
       if (licenseResourceBuilder_ == null) {
         if (licenseResource_ != null) {
@@ -698,7 +770,17 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearLicenseResource() {
       if (licenseResourceBuilder_ == null) {
         licenseResource_ = null;
@@ -710,13 +792,33 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.License.Builder getLicenseResourceBuilder() {
 
       onChanged();
       return getLicenseResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.LicenseOrBuilder getLicenseResourceOrBuilder() {
       if (licenseResourceBuilder_ != null) {
         return licenseResourceBuilder_.getMessageOrBuilder();
@@ -726,7 +828,17 @@ public final class InsertLicenseRequest extends com.google.protobuf.GeneratedMes
             : licenseResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.License license_resource = 437955148;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.License license_resource = 169519692 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.License,
             com.google.cloud.compute.v1.License.Builder,

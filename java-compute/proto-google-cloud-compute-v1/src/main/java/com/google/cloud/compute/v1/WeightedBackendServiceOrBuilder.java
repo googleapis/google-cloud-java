@@ -30,7 +30,7 @@ public interface WeightedBackendServiceOrBuilder
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The backendService.
    */
@@ -42,7 +42,7 @@ public interface WeightedBackendServiceOrBuilder
    * The full or partial URL to the default BackendService resource. Before forwarding the request to backendService, the loadbalancer applies any relevant headerActions specified as part of this backendServiceWeight.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The bytes for backendService.
    */
@@ -58,7 +58,7 @@ public interface WeightedBackendServiceOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return Whether the headerAction field is set.
    */
@@ -73,7 +73,7 @@ public interface WeightedBackendServiceOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    *
    * @return The headerAction.
    */
@@ -88,7 +88,7 @@ public interface WeightedBackendServiceOrBuilder
    * Not supported when the URL map is bound to target gRPC proxy that has validateForProxyless field set to true.
    * </pre>
    *
-   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 328077352;</code>
+   * <code>.google.cloud.compute.v1.HttpHeaderAction header_action = 59641896;</code>
    */
   com.google.cloud.compute.v1.HttpHeaderActionOrBuilder getHeaderActionOrBuilder();
 
@@ -101,7 +101,7 @@ public interface WeightedBackendServiceOrBuilder
    * The value must be between 0 and 1000
    * </pre>
    *
-   * <code>uint32 weight = 282149496;</code>
+   * <code>uint32 weight = 13714040;</code>
    *
    * @return The weight.
    */

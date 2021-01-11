@@ -297,7 +297,15 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
   public static final int TARGET_POOL_RESOURCE_FIELD_NUMBER = 101281443;
   private com.google.cloud.compute.v1.TargetPool targetPoolResource_;
   /**
-   * <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the targetPoolResource field is set.
    */
@@ -306,7 +314,15 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
     return targetPoolResource_ != null;
   }
   /**
-   * <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The targetPoolResource.
    */
@@ -316,7 +332,17 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         ? com.google.cloud.compute.v1.TargetPool.getDefaultInstance()
         : targetPoolResource_;
   }
-  /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+  /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
+   */
   @java.lang.Override
   public com.google.cloud.compute.v1.TargetPoolOrBuilder getTargetPoolResourceOrBuilder() {
     return getTargetPoolResource();
@@ -1037,7 +1063,15 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
             com.google.cloud.compute.v1.TargetPoolOrBuilder>
         targetPoolResourceBuilder_;
     /**
-     * <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the targetPoolResource field is set.
      */
@@ -1045,7 +1079,15 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
       return targetPoolResourceBuilder_ != null || targetPoolResource_ != null;
     }
     /**
-     * <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code>
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The targetPoolResource.
      */
@@ -1058,7 +1100,17 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
         return targetPoolResourceBuilder_.getMessage();
       }
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setTargetPoolResource(com.google.cloud.compute.v1.TargetPool value) {
       if (targetPoolResourceBuilder_ == null) {
         if (value == null) {
@@ -1072,7 +1124,17 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder setTargetPoolResource(
         com.google.cloud.compute.v1.TargetPool.Builder builderForValue) {
       if (targetPoolResourceBuilder_ == null) {
@@ -1084,7 +1146,17 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder mergeTargetPoolResource(com.google.cloud.compute.v1.TargetPool value) {
       if (targetPoolResourceBuilder_ == null) {
         if (targetPoolResource_ != null) {
@@ -1102,7 +1174,17 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public Builder clearTargetPoolResource() {
       if (targetPoolResourceBuilder_ == null) {
         targetPoolResource_ = null;
@@ -1114,13 +1196,33 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
 
       return this;
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.TargetPool.Builder getTargetPoolResourceBuilder() {
 
       onChanged();
       return getTargetPoolResourceFieldBuilder().getBuilder();
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     public com.google.cloud.compute.v1.TargetPoolOrBuilder getTargetPoolResourceOrBuilder() {
       if (targetPoolResourceBuilder_ != null) {
         return targetPoolResourceBuilder_.getMessageOrBuilder();
@@ -1130,7 +1232,17 @@ public final class InsertTargetPoolRequest extends com.google.protobuf.Generated
             : targetPoolResource_;
       }
     }
-    /** <code>.google.cloud.compute.v1.TargetPool target_pool_resource = 101281443;</code> */
+    /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.compute.v1.TargetPool target_pool_resource = 101281443 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.TargetPool,
             com.google.cloud.compute.v1.TargetPool.Builder,

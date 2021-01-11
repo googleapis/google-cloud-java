@@ -30,7 +30,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
    */
   java.util.List<com.google.cloud.compute.v1.NodeTemplate> getNodeTemplatesList();
   /**
@@ -40,7 +40,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
    */
   com.google.cloud.compute.v1.NodeTemplate getNodeTemplates(int index);
   /**
@@ -50,7 +50,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
    */
   int getNodeTemplatesCount();
   /**
@@ -60,7 +60,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.NodeTemplateOrBuilder>
       getNodeTemplatesOrBuilderList();
@@ -71,7 +71,7 @@ public interface NodeTemplatesScopedListOrBuilder
    * [Output Only] A list of node templates contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 354111804;</code>
+   * <code>repeated .google.cloud.compute.v1.NodeTemplate node_templates = 85676348;</code>
    */
   com.google.cloud.compute.v1.NodeTemplateOrBuilder getNodeTemplatesOrBuilder(int index);
 

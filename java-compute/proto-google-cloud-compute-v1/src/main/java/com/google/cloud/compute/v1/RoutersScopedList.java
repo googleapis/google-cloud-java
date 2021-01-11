@@ -70,6 +70,17 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
           case 0:
             done = true;
             break;
+          case 347771474:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                routers_ = new java.util.ArrayList<com.google.cloud.compute.v1.Router>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              routers_.add(
+                  input.readMessage(
+                      com.google.cloud.compute.v1.Router.parser(), extensionRegistry));
+              break;
+            }
           case 405634274:
             {
               com.google.cloud.compute.v1.Warning.Builder subBuilder = null;
@@ -84,17 +95,6 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
                 warning_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-          case -1799712174:
-            {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                routers_ = new java.util.ArrayList<com.google.cloud.compute.v1.Router>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              routers_.add(
-                  input.readMessage(
-                      com.google.cloud.compute.v1.Router.parser(), extensionRegistry));
               break;
             }
           default:
@@ -134,7 +134,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
             com.google.cloud.compute.v1.RoutersScopedList.Builder.class);
   }
 
-  public static final int ROUTERS_FIELD_NUMBER = 311906890;
+  public static final int ROUTERS_FIELD_NUMBER = 43471434;
   private java.util.List<com.google.cloud.compute.v1.Router> routers_;
   /**
    *
@@ -143,7 +143,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.compute.v1.Router> getRoutersList() {
@@ -156,7 +156,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.compute.v1.RouterOrBuilder>
@@ -170,7 +170,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   @java.lang.Override
   public int getRoutersCount() {
@@ -183,7 +183,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.Router getRouters(int index) {
@@ -196,7 +196,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
    * A list of routers contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+   * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
    */
   @java.lang.Override
   public com.google.cloud.compute.v1.RouterOrBuilder getRoutersOrBuilder(int index) {
@@ -263,11 +263,11 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    for (int i = 0; i < routers_.size(); i++) {
+      output.writeMessage(43471434, routers_.get(i));
+    }
     if (warning_ != null) {
       output.writeMessage(50704284, getWarning());
-    }
-    for (int i = 0; i < routers_.size(); i++) {
-      output.writeMessage(311906890, routers_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -278,11 +278,11 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
     if (size != -1) return size;
 
     size = 0;
+    for (int i = 0; i < routers_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(43471434, routers_.get(i));
+    }
     if (warning_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(50704284, getWarning());
-    }
-    for (int i = 0; i < routers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(311906890, routers_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -657,7 +657,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Router> getRoutersList() {
       if (routersBuilder_ == null) {
@@ -673,7 +673,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public int getRoutersCount() {
       if (routersBuilder_ == null) {
@@ -689,7 +689,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public com.google.cloud.compute.v1.Router getRouters(int index) {
       if (routersBuilder_ == null) {
@@ -705,7 +705,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder setRouters(int index, com.google.cloud.compute.v1.Router value) {
       if (routersBuilder_ == null) {
@@ -727,7 +727,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder setRouters(
         int index, com.google.cloud.compute.v1.Router.Builder builderForValue) {
@@ -747,7 +747,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder addRouters(com.google.cloud.compute.v1.Router value) {
       if (routersBuilder_ == null) {
@@ -769,7 +769,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder addRouters(int index, com.google.cloud.compute.v1.Router value) {
       if (routersBuilder_ == null) {
@@ -791,7 +791,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder addRouters(com.google.cloud.compute.v1.Router.Builder builderForValue) {
       if (routersBuilder_ == null) {
@@ -810,7 +810,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder addRouters(
         int index, com.google.cloud.compute.v1.Router.Builder builderForValue) {
@@ -830,7 +830,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder addAllRouters(
         java.lang.Iterable<? extends com.google.cloud.compute.v1.Router> values) {
@@ -850,7 +850,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder clearRouters() {
       if (routersBuilder_ == null) {
@@ -869,7 +869,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public Builder removeRouters(int index) {
       if (routersBuilder_ == null) {
@@ -888,7 +888,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public com.google.cloud.compute.v1.Router.Builder getRoutersBuilder(int index) {
       return getRoutersFieldBuilder().getBuilder(index);
@@ -900,7 +900,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public com.google.cloud.compute.v1.RouterOrBuilder getRoutersOrBuilder(int index) {
       if (routersBuilder_ == null) {
@@ -916,7 +916,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public java.util.List<? extends com.google.cloud.compute.v1.RouterOrBuilder>
         getRoutersOrBuilderList() {
@@ -933,7 +933,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public com.google.cloud.compute.v1.Router.Builder addRoutersBuilder() {
       return getRoutersFieldBuilder()
@@ -946,7 +946,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public com.google.cloud.compute.v1.Router.Builder addRoutersBuilder(int index) {
       return getRoutersFieldBuilder()
@@ -959,7 +959,7 @@ public final class RoutersScopedList extends com.google.protobuf.GeneratedMessag
      * A list of routers contained in this scope.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.Router routers = 311906890;</code>
+     * <code>repeated .google.cloud.compute.v1.Router routers = 43471434;</code>
      */
     public java.util.List<com.google.cloud.compute.v1.Router.Builder> getRoutersBuilderList() {
       return getRoutersFieldBuilder().getBuilderList();

@@ -74,6 +74,24 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
           case 0:
             done = true;
             break;
+          case 292396442:
+            {
+              com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.Builder subBuilder =
+                  null;
+              if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
+                subBuilder = targetPoolsRemoveHealthCheckRequestResource_.toBuilder();
+              }
+              targetPoolsRemoveHealthCheckRequestResource_ =
+                  input.readMessage(
+                      com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(targetPoolsRemoveHealthCheckRequestResource_);
+                targetPoolsRemoveHealthCheckRequestResource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           case 296879706:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -100,24 +118,6 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1855087206:
-            {
-              com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.Builder subBuilder =
-                  null;
-              if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
-                subBuilder = targetPoolsRemoveHealthCheckRequestResource_.toBuilder();
-              }
-              targetPoolsRemoveHealthCheckRequestResource_ =
-                  input.readMessage(
-                      com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetPoolsRemoveHealthCheckRequestResource_);
-                targetPoolsRemoveHealthCheckRequestResource_ = subBuilder.buildPartial();
-              }
-
               break;
             }
           default:
@@ -354,13 +354,18 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     }
   }
 
-  public static final int TARGET_POOLS_REMOVE_HEALTH_CHECK_REQUEST_RESOURCE_FIELD_NUMBER =
-      304985011;
+  public static final int TARGET_POOLS_REMOVE_HEALTH_CHECK_REQUEST_RESOURCE_FIELD_NUMBER = 36549555;
   private com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest
       targetPoolsRemoveHealthCheckRequestResource_;
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+   * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetPoolsRemoveHealthCheckRequestResource field is set.
@@ -370,8 +375,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     return targetPoolsRemoveHealthCheckRequestResource_ != null;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+   * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetPoolsRemoveHealthCheckRequestResource.
@@ -384,8 +395,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
         : targetPoolsRemoveHealthCheckRequestResource_;
   }
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+   * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   @java.lang.Override
@@ -408,6 +425,9 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
+      output.writeMessage(36549555, getTargetPoolsRemoveHealthCheckRequestResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 37109963, requestId_);
     }
@@ -420,9 +440,6 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
     }
-    if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
-      output.writeMessage(304985011, getTargetPoolsRemoveHealthCheckRequestResource());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -432,6 +449,11 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     if (size != -1) return size;
 
     size = 0;
+    if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              36549555, getTargetPoolsRemoveHealthCheckRequestResource());
+    }
     if (!getRequestIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37109963, requestId_);
     }
@@ -443,11 +465,6 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (targetPoolsRemoveHealthCheckRequestResource_ != null) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              304985011, getTargetPoolsRemoveHealthCheckRequestResource());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1241,8 +1258,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
             com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequestOrBuilder>
         targetPoolsRemoveHealthCheckRequestResourceBuilder_;
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return Whether the targetPoolsRemoveHealthCheckRequestResource field is set.
@@ -1252,8 +1275,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
           || targetPoolsRemoveHealthCheckRequestResource_ != null;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      *
      * @return The targetPoolsRemoveHealthCheckRequestResource.
@@ -1269,8 +1298,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetPoolsRemoveHealthCheckRequestResource(
@@ -1288,8 +1323,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder setTargetPoolsRemoveHealthCheckRequestResource(
@@ -1304,8 +1345,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder mergeTargetPoolsRemoveHealthCheckRequestResource(
@@ -1328,8 +1375,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public Builder clearTargetPoolsRemoveHealthCheckRequestResource() {
@@ -1344,8 +1397,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       return this;
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest.Builder
@@ -1355,8 +1414,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       return getTargetPoolsRemoveHealthCheckRequestResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     public com.google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequestOrBuilder
@@ -1370,8 +1435,14 @@ public final class RemoveHealthCheckTargetPoolRequest extends com.google.protobu
       }
     }
     /**
+     *
+     *
+     * <pre>
+     * The body resource for this request
+     * </pre>
+     *
      * <code>
-     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 304985011;
+     * .google.cloud.compute.v1.TargetPoolsRemoveHealthCheckRequest target_pools_remove_health_check_request_resource = 36549555 [(.google.api.field_behavior) = REQUIRED];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

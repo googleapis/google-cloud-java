@@ -119,7 +119,7 @@ public interface LogConfigCounterOptionsOrBuilder
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>string metric = 264631728;</code>
    *
    * @return The metric.
    */
@@ -131,7 +131,7 @@ public interface LogConfigCounterOptionsOrBuilder
    * The metric to update.
    * </pre>
    *
-   * <code>string metric = 533067184;</code>
+   * <code>string metric = 264631728;</code>
    *
    * @return The bytes for metric.
    */

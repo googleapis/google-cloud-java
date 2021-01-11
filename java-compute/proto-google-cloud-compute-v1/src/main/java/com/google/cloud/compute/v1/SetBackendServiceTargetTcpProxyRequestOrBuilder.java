@@ -78,16 +78,28 @@ public interface SetBackendServiceTargetTcpProxyRequestOrBuilder
   com.google.protobuf.ByteString getRequestIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 273721583;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the targetTcpProxiesSetBackendServiceRequestResource field is set.
    */
   boolean hasTargetTcpProxiesSetBackendServiceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 273721583;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The targetTcpProxiesSetBackendServiceRequestResource.
@@ -95,8 +107,14 @@ public interface SetBackendServiceTargetTcpProxyRequestOrBuilder
   com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest
       getTargetTcpProxiesSetBackendServiceRequestResource();
   /**
+   *
+   *
+   * <pre>
+   * The body resource for this request
+   * </pre>
+   *
    * <code>
-   * .google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 273721583;
+   * .google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequest target_tcp_proxies_set_backend_service_request_resource = 5286127 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.compute.v1.TargetTcpProxiesSetBackendServiceRequestOrBuilder
@@ -109,7 +127,7 @@ public interface SetBackendServiceTargetTcpProxyRequestOrBuilder
    * Name of the TargetTcpProxy resource whose BackendService resource is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The targetTcpProxy.
    */
@@ -121,7 +139,7 @@ public interface SetBackendServiceTargetTcpProxyRequestOrBuilder
    * Name of the TargetTcpProxy resource whose BackendService resource is to be set.
    * </pre>
    *
-   * <code>string target_tcp_proxy = 503065442 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string target_tcp_proxy = 234629986 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for targetTcpProxy.
    */

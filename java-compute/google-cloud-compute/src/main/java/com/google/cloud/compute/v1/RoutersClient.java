@@ -659,7 +659,7 @@ public class RoutersClient implements BackgroundResource {
    *
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
-   * @param routerResource
+   * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation insert(String project, String region, Router routerResource) {
@@ -683,9 +683,11 @@ public class RoutersClient implements BackgroundResource {
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterRequest request = InsertRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   Operation response = routersClient.insert(request);
    * }
@@ -709,9 +711,11 @@ public class RoutersClient implements BackgroundResource {
    * try (RoutersClient routersClient = RoutersClient.create()) {
    *   String project = "";
    *   String region = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   InsertRouterRequest request = InsertRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routersClient.insertCallable().futureCall(request);
    *   // Do something
@@ -855,7 +859,7 @@ public class RoutersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
    * @param router Name of the Router resource to patch.
-   * @param routerResource
+   * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation patch(
@@ -882,10 +886,12 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String router = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   PatchRouterRequest request = PatchRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setRouter(router)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   Operation response = routersClient.patch(request);
    * }
@@ -910,10 +916,12 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String router = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   PatchRouterRequest request = PatchRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setRouter(router)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routersClient.patchCallable().futureCall(request);
    *   // Do something
@@ -945,7 +953,7 @@ public class RoutersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
    * @param router Name of the Router resource to query.
-   * @param routerResource
+   * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final RoutersPreviewResponse preview(
@@ -972,10 +980,12 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String router = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   PreviewRouterRequest request = PreviewRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setRouter(router)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   RoutersPreviewResponse response = routersClient.preview(request);
    * }
@@ -1000,10 +1010,12 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String router = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   PreviewRouterRequest request = PreviewRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setRouter(router)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;RoutersPreviewResponse&gt; future = routersClient.previewCallable().futureCall(request);
    *   // Do something
@@ -1036,7 +1048,7 @@ public class RoutersClient implements BackgroundResource {
    * @param project Project ID for this request.
    * @param region Name of the region for this request.
    * @param router Name of the Router resource to update.
-   * @param routerResource
+   * @param routerResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Operation update(
@@ -1064,10 +1076,12 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String router = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   UpdateRouterRequest request = UpdateRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setRouter(router)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   Operation response = routersClient.update(request);
    * }
@@ -1093,10 +1107,12 @@ public class RoutersClient implements BackgroundResource {
    *   String project = "";
    *   String region = "";
    *   String router = "";
+   *   Router routerResource = Router.newBuilder().build();
    *   UpdateRouterRequest request = UpdateRouterRequest.newBuilder()
    *     .setProject(project)
    *     .setRegion(region)
    *     .setRouter(router)
+   *     .setRouterResource(routerResource)
    *     .build();
    *   ApiFuture&lt;Operation&gt; future = routersClient.updateCallable().futureCall(request);
    *   // Do something

@@ -30,7 +30,7 @@ public interface HealthChecksScopedListOrBuilder
    * A list of HealthChecks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 179935150;</code>
    */
   java.util.List<com.google.cloud.compute.v1.HealthCheck> getHealthChecksList();
   /**
@@ -40,7 +40,7 @@ public interface HealthChecksScopedListOrBuilder
    * A list of HealthChecks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 179935150;</code>
    */
   com.google.cloud.compute.v1.HealthCheck getHealthChecks(int index);
   /**
@@ -50,7 +50,7 @@ public interface HealthChecksScopedListOrBuilder
    * A list of HealthChecks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 179935150;</code>
    */
   int getHealthChecksCount();
   /**
@@ -60,7 +60,7 @@ public interface HealthChecksScopedListOrBuilder
    * A list of HealthChecks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 179935150;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.HealthCheckOrBuilder>
       getHealthChecksOrBuilderList();
@@ -71,7 +71,7 @@ public interface HealthChecksScopedListOrBuilder
    * A list of HealthChecks contained in this scope.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 448370606;</code>
+   * <code>repeated .google.cloud.compute.v1.HealthCheck health_checks = 179935150;</code>
    */
   com.google.cloud.compute.v1.HealthCheckOrBuilder getHealthChecksOrBuilder(int index);
 

@@ -46,6 +46,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     name_ = "";
     network_ = "";
     networkIP_ = "";
+    nicType_ = 0;
     subnetwork_ = "";
   }
 
@@ -93,6 +94,27 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
               name_ = s;
               break;
             }
+          case 315137906:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              subnetwork_ = s;
+              break;
+            }
+          case 478484616:
+            {
+              int rawValue = input.readEnum();
+
+              nicType_ = rawValue;
+              break;
+            }
+          case 585026786:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ipv6Address_ = s;
+              break;
+            }
           case 888466610:
             {
               if (!((mutable_bitField0_ & 0x00000001) != 0)) {
@@ -138,20 +160,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
               fingerprint_ = s;
               break;
             }
-          case -1832345742:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subnetwork_ = s;
-              break;
-            }
-          case -1562456862:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              ipv6Address_ = s;
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -190,6 +198,137 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         .ensureFieldAccessorsInitialized(
             com.google.cloud.compute.v1.NetworkInterface.class,
             com.google.cloud.compute.v1.NetworkInterface.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.NetworkInterface.NicType}
+   */
+  public enum NicType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_NIC_TYPE = 0;</code>
+     */
+    UNDEFINED_NIC_TYPE(0),
+    /** <code>GVNIC = 68209305;</code> */
+    GVNIC(68209305),
+    /** <code>UNSPECIFIED_NIC_TYPE = 67411801;</code> */
+    UNSPECIFIED_NIC_TYPE(67411801),
+    /** <code>VIRTIO_NET = 183688025;</code> */
+    VIRTIO_NET(183688025),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_NIC_TYPE = 0;</code>
+     */
+    public static final int UNDEFINED_NIC_TYPE_VALUE = 0;
+    /** <code>GVNIC = 68209305;</code> */
+    public static final int GVNIC_VALUE = 68209305;
+    /** <code>UNSPECIFIED_NIC_TYPE = 67411801;</code> */
+    public static final int UNSPECIFIED_NIC_TYPE_VALUE = 67411801;
+    /** <code>VIRTIO_NET = 183688025;</code> */
+    public static final int VIRTIO_NET_VALUE = 183688025;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static NicType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static NicType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_NIC_TYPE;
+        case 68209305:
+          return GVNIC;
+        case 67411801:
+          return UNSPECIFIED_NIC_TYPE;
+        case 183688025:
+          return VIRTIO_NET;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<NicType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<NicType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<NicType>() {
+          public NicType findValueByNumber(int number) {
+            return NicType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.NetworkInterface.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final NicType[] VALUES = values();
+
+    public static NicType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private NicType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.NetworkInterface.NicType)
   }
 
   public static final int ACCESS_CONFIGS_FIELD_NUMBER = 111058326;
@@ -379,7 +518,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int IPV6_ADDRESS_FIELD_NUMBER = 341563804;
+  public static final int IPV6_ADDRESS_FIELD_NUMBER = 73128348;
   private volatile java.lang.Object ipv6Address_;
   /**
    *
@@ -388,7 +527,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * [Output Only] An IPv6 internal network address for this network interface.
    * </pre>
    *
-   * <code>string ipv6_address = 341563804;</code>
+   * <code>string ipv6_address = 73128348;</code>
    *
    * @return The ipv6Address.
    */
@@ -411,7 +550,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * [Output Only] An IPv6 internal network address for this network interface.
    * </pre>
    *
-   * <code>string ipv6_address = 341563804;</code>
+   * <code>string ipv6_address = 73128348;</code>
    *
    * @return The bytes for ipv6Address.
    */
@@ -632,7 +771,45 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
   }
 
-  public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
+  public static final int NIC_TYPE_FIELD_NUMBER = 59810577;
+  private int nicType_;
+  /**
+   *
+   *
+   * <pre>
+   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+   *
+   * @return The enum numeric value on the wire for nicType.
+   */
+  @java.lang.Override
+  public int getNicTypeValue() {
+    return nicType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * </pre>
+   *
+   * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+   *
+   * @return The nicType.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.NetworkInterface.NicType getNicType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.compute.v1.NetworkInterface.NicType result =
+        com.google.cloud.compute.v1.NetworkInterface.NicType.valueOf(nicType_);
+    return result == null
+        ? com.google.cloud.compute.v1.NetworkInterface.NicType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int SUBNETWORK_FIELD_NUMBER = 39392238;
   private volatile java.lang.Object subnetwork_;
   /**
    *
@@ -643,7 +820,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * - regions/region/subnetworks/subnetwork
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The subnetwork.
    */
@@ -668,7 +845,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    * - regions/region/subnetworks/subnetwork
    * </pre>
    *
-   * <code>string subnetwork = 307827694;</code>
+   * <code>string subnetwork = 39392238;</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -705,6 +882,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (!getSubnetworkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 39392238, subnetwork_);
+    }
+    if (nicType_
+        != com.google.cloud.compute.v1.NetworkInterface.NicType.UNDEFINED_NIC_TYPE.getNumber()) {
+      output.writeEnum(59810577, nicType_);
+    }
+    if (!getIpv6AddressBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 73128348, ipv6Address_);
+    }
     for (int i = 0; i < accessConfigs_.size(); i++) {
       output.writeMessage(111058326, accessConfigs_.get(i));
     }
@@ -720,12 +907,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (!getFingerprintBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (!getSubnetworkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
-    }
-    if (!getIpv6AddressBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -740,6 +921,16 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
+    }
+    if (!getSubnetworkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(39392238, subnetwork_);
+    }
+    if (nicType_
+        != com.google.cloud.compute.v1.NetworkInterface.NicType.UNDEFINED_NIC_TYPE.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(59810577, nicType_);
+    }
+    if (!getIpv6AddressBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(73128348, ipv6Address_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
       size +=
@@ -759,12 +950,6 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     }
     if (!getFingerprintBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
-    }
-    if (!getSubnetworkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
-    }
-    if (!getIpv6AddressBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -790,6 +975,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (!getName().equals(other.getName())) return false;
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (!getNetworkIP().equals(other.getNetworkIP())) return false;
+    if (nicType_ != other.nicType_) return false;
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -822,6 +1008,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + NETWORK_I_P_FIELD_NUMBER;
     hash = (53 * hash) + getNetworkIP().hashCode();
+    hash = (37 * hash) + NIC_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + nicType_;
     hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetwork().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -996,6 +1184,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
 
       networkIP_ = "";
 
+      nicType_ = 0;
+
       subnetwork_ = "";
 
       return this;
@@ -1050,6 +1240,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       result.name_ = name_;
       result.network_ = network_;
       result.networkIP_ = networkIP_;
+      result.nicType_ = nicType_;
       result.subnetwork_ = subnetwork_;
       onBuilt();
       return result;
@@ -1177,6 +1368,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       if (!other.getNetworkIP().isEmpty()) {
         networkIP_ = other.networkIP_;
         onChanged();
+      }
+      if (other.nicType_ != 0) {
+        setNicTypeValue(other.getNicTypeValue());
       }
       if (!other.getSubnetwork().isEmpty()) {
         subnetwork_ = other.subnetwork_;
@@ -2035,7 +2229,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * [Output Only] An IPv6 internal network address for this network interface.
      * </pre>
      *
-     * <code>string ipv6_address = 341563804;</code>
+     * <code>string ipv6_address = 73128348;</code>
      *
      * @return The ipv6Address.
      */
@@ -2057,7 +2251,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * [Output Only] An IPv6 internal network address for this network interface.
      * </pre>
      *
-     * <code>string ipv6_address = 341563804;</code>
+     * <code>string ipv6_address = 73128348;</code>
      *
      * @return The bytes for ipv6Address.
      */
@@ -2079,7 +2273,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * [Output Only] An IPv6 internal network address for this network interface.
      * </pre>
      *
-     * <code>string ipv6_address = 341563804;</code>
+     * <code>string ipv6_address = 73128348;</code>
      *
      * @param value The ipv6Address to set.
      * @return This builder for chaining.
@@ -2100,7 +2294,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * [Output Only] An IPv6 internal network address for this network interface.
      * </pre>
      *
-     * <code>string ipv6_address = 341563804;</code>
+     * <code>string ipv6_address = 73128348;</code>
      *
      * @return This builder for chaining.
      */
@@ -2117,7 +2311,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * [Output Only] An IPv6 internal network address for this network interface.
      * </pre>
      *
-     * <code>string ipv6_address = 341563804;</code>
+     * <code>string ipv6_address = 73128348;</code>
      *
      * @param value The bytes for ipv6Address to set.
      * @return This builder for chaining.
@@ -2577,6 +2771,99 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
+    private int nicType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     *
+     * @return The enum numeric value on the wire for nicType.
+     */
+    @java.lang.Override
+    public int getNicTypeValue() {
+      return nicType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     *
+     * @param value The enum numeric value on the wire for nicType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNicTypeValue(int value) {
+
+      nicType_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     *
+     * @return The nicType.
+     */
+    @java.lang.Override
+    public com.google.cloud.compute.v1.NetworkInterface.NicType getNicType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.compute.v1.NetworkInterface.NicType result =
+          com.google.cloud.compute.v1.NetworkInterface.NicType.valueOf(nicType_);
+      return result == null
+          ? com.google.cloud.compute.v1.NetworkInterface.NicType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     *
+     * @param value The nicType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNicType(com.google.cloud.compute.v1.NetworkInterface.NicType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      nicType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * </pre>
+     *
+     * <code>.google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNicType() {
+
+      nicType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object subnetwork_ = "";
     /**
      *
@@ -2587,7 +2874,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * - regions/region/subnetworks/subnetwork
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The subnetwork.
      */
@@ -2611,7 +2898,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * - regions/region/subnetworks/subnetwork
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -2635,7 +2922,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * - regions/region/subnetworks/subnetwork
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -2658,7 +2945,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * - regions/region/subnetworks/subnetwork
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @return This builder for chaining.
      */
@@ -2677,7 +2964,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      * - regions/region/subnetworks/subnetwork
      * </pre>
      *
-     * <code>string subnetwork = 307827694;</code>
+     * <code>string subnetwork = 39392238;</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.

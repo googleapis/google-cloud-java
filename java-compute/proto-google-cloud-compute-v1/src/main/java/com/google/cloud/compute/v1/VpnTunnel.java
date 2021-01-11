@@ -111,6 +111,13 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
               name_ = s;
               break;
             }
+          case 107455970:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              peerGcpGateway_ = s;
+              break;
+            }
           case 244202930:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -118,9 +125,71 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
               creationTimestamp_ = s;
               break;
             }
+          case 391033258:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                localTrafficSelector_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              localTrafficSelector_.add(s);
+              break;
+            }
+          case 520524554:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              detailedStatus_ = s;
+              break;
+            }
+          case 723613138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                remoteTrafficSelector_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              remoteTrafficSelector_.add(s);
+              break;
+            }
           case 767832984:
             {
               vpnGatewayInterface_ = input.readInt32();
+              break;
+            }
+          case 907976274:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sharedSecret_ = s;
+              break;
+            }
+          case 918513954:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              peerIp_ = s;
+              break;
+            }
+          case 932165738:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              peerExternalGateway_ = s;
+              break;
+            }
+          case 1043571482:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sharedSecretHash_ = s;
+              break;
+            }
+          case 1105989578:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              vpnGateway_ = s;
               break;
             }
           case 1111570338:
@@ -137,6 +206,13 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
               router_ = s;
               break;
             }
+          case 1236017122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
+              break;
+            }
           case 1450082192:
             {
               int rawValue = input.readEnum();
@@ -144,100 +220,24 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
               status_ = rawValue;
               break;
             }
-          case 1747009760:
-            {
-              ikeVersion_ = input.readInt32();
-              break;
-            }
-          case -2040027678:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              peerGcpGateway_ = s;
-              break;
-            }
-          case -1756450390:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                localTrafficSelector_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              localTrafficSelector_.add(s);
-              break;
-            }
-          case -1626959094:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              detailedStatus_ = s;
-              break;
-            }
-          case -1423870510:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                remoteTrafficSelector_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              remoteTrafficSelector_.add(s);
-              break;
-            }
-          case -1239507374:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sharedSecret_ = s;
-              break;
-            }
-          case -1228969694:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              peerIp_ = s;
-              break;
-            }
-          case -1215317910:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              peerExternalGateway_ = s;
-              break;
-            }
-          case -1103912166:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sharedSecretHash_ = s;
-              break;
-            }
-          case -1041494070:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              vpnGateway_ = s;
-              break;
-            }
-          case -911466526:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
-          case -672820168:
+          case 1474663480:
             {
               peerExternalGatewayInterface_ = input.readInt32();
               break;
             }
-          case -645248918:
+          case 1502234730:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
               selfLink_ = s;
               break;
             }
-          case -34864550:
+          case 1747009760:
+            {
+              ikeVersion_ = input.readInt32();
+              break;
+            }
+          case 2112619098:
             {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -319,30 +319,30 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     UNDEFINED_STATUS(0),
-    /** <code>ALLOCATING_RESOURCES = 320922816;</code> */
-    ALLOCATING_RESOURCES(320922816),
+    /** <code>ALLOCATING_RESOURCES = 52487360;</code> */
+    ALLOCATING_RESOURCES(52487360),
     /** <code>AUTHORIZATION_ERROR = 23580290;</code> */
     AUTHORIZATION_ERROR(23580290),
-    /** <code>DEPROVISIONING = 428935662;</code> */
-    DEPROVISIONING(428935662),
+    /** <code>DEPROVISIONING = 160500206;</code> */
+    DEPROVISIONING(160500206),
     /** <code>ESTABLISHED = 88852344;</code> */
     ESTABLISHED(88852344),
-    /** <code>FAILED = 455706685;</code> */
-    FAILED(455706685),
+    /** <code>FAILED = 187271229;</code> */
+    FAILED(187271229),
     /** <code>FIRST_HANDSHAKE = 191393000;</code> */
     FIRST_HANDSHAKE(191393000),
-    /** <code>NEGOTIATION_FAILURE = 360325868;</code> */
-    NEGOTIATION_FAILURE(360325868),
+    /** <code>NEGOTIATION_FAILURE = 91890412;</code> */
+    NEGOTIATION_FAILURE(91890412),
     /** <code>NETWORK_ERROR = 193912951;</code> */
     NETWORK_ERROR(193912951),
     /** <code>NO_INCOMING_PACKETS = 119983216;</code> */
     NO_INCOMING_PACKETS(119983216),
-    /** <code>PROVISIONING = 290896621;</code> */
-    PROVISIONING(290896621),
+    /** <code>PROVISIONING = 22461165;</code> */
+    PROVISIONING(22461165),
     /** <code>REJECTED = 174130302;</code> */
     REJECTED(174130302),
-    /** <code>STOPPED = 444276141;</code> */
-    STOPPED(444276141),
+    /** <code>STOPPED = 175840685;</code> */
+    STOPPED(175840685),
     /** <code>WAITING_FOR_FULL_CONFIG = 41640522;</code> */
     WAITING_FOR_FULL_CONFIG(41640522),
     UNRECOGNIZED(-1),
@@ -358,30 +358,30 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
-    /** <code>ALLOCATING_RESOURCES = 320922816;</code> */
-    public static final int ALLOCATING_RESOURCES_VALUE = 320922816;
+    /** <code>ALLOCATING_RESOURCES = 52487360;</code> */
+    public static final int ALLOCATING_RESOURCES_VALUE = 52487360;
     /** <code>AUTHORIZATION_ERROR = 23580290;</code> */
     public static final int AUTHORIZATION_ERROR_VALUE = 23580290;
-    /** <code>DEPROVISIONING = 428935662;</code> */
-    public static final int DEPROVISIONING_VALUE = 428935662;
+    /** <code>DEPROVISIONING = 160500206;</code> */
+    public static final int DEPROVISIONING_VALUE = 160500206;
     /** <code>ESTABLISHED = 88852344;</code> */
     public static final int ESTABLISHED_VALUE = 88852344;
-    /** <code>FAILED = 455706685;</code> */
-    public static final int FAILED_VALUE = 455706685;
+    /** <code>FAILED = 187271229;</code> */
+    public static final int FAILED_VALUE = 187271229;
     /** <code>FIRST_HANDSHAKE = 191393000;</code> */
     public static final int FIRST_HANDSHAKE_VALUE = 191393000;
-    /** <code>NEGOTIATION_FAILURE = 360325868;</code> */
-    public static final int NEGOTIATION_FAILURE_VALUE = 360325868;
+    /** <code>NEGOTIATION_FAILURE = 91890412;</code> */
+    public static final int NEGOTIATION_FAILURE_VALUE = 91890412;
     /** <code>NETWORK_ERROR = 193912951;</code> */
     public static final int NETWORK_ERROR_VALUE = 193912951;
     /** <code>NO_INCOMING_PACKETS = 119983216;</code> */
     public static final int NO_INCOMING_PACKETS_VALUE = 119983216;
-    /** <code>PROVISIONING = 290896621;</code> */
-    public static final int PROVISIONING_VALUE = 290896621;
+    /** <code>PROVISIONING = 22461165;</code> */
+    public static final int PROVISIONING_VALUE = 22461165;
     /** <code>REJECTED = 174130302;</code> */
     public static final int REJECTED_VALUE = 174130302;
-    /** <code>STOPPED = 444276141;</code> */
-    public static final int STOPPED_VALUE = 444276141;
+    /** <code>STOPPED = 175840685;</code> */
+    public static final int STOPPED_VALUE = 175840685;
     /** <code>WAITING_FOR_FULL_CONFIG = 41640522;</code> */
     public static final int WAITING_FOR_FULL_CONFIG_VALUE = 41640522;
 
@@ -411,29 +411,29 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 0:
           return UNDEFINED_STATUS;
-        case 320922816:
+        case 52487360:
           return ALLOCATING_RESOURCES;
         case 23580290:
           return AUTHORIZATION_ERROR;
-        case 428935662:
+        case 160500206:
           return DEPROVISIONING;
         case 88852344:
           return ESTABLISHED;
-        case 455706685:
+        case 187271229:
           return FAILED;
         case 191393000:
           return FIRST_HANDSHAKE;
-        case 360325868:
+        case 91890412:
           return NEGOTIATION_FAILURE;
         case 193912951:
           return NETWORK_ERROR;
         case 119983216:
           return NO_INCOMING_PACKETS;
-        case 290896621:
+        case 22461165:
           return PROVISIONING;
         case 174130302:
           return REJECTED;
-        case 444276141:
+        case 175840685:
           return STOPPED;
         case 41640522:
           return WAITING_FOR_FULL_CONFIG;
@@ -539,7 +539,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DESCRIPTION_FIELD_NUMBER = 422937596;
+  public static final int DESCRIPTION_FIELD_NUMBER = 154502140;
   private volatile java.lang.Object description_;
   /**
    *
@@ -548,7 +548,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The description.
    */
@@ -571,7 +571,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
-   * <code>string description = 422937596;</code>
+   * <code>string description = 154502140;</code>
    *
    * @return The bytes for description.
    */
@@ -588,7 +588,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int DETAILED_STATUS_FIELD_NUMBER = 333501025;
+  public static final int DETAILED_STATUS_FIELD_NUMBER = 65065569;
   private volatile java.lang.Object detailedStatus_;
   /**
    *
@@ -597,7 +597,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>string detailed_status = 65065569;</code>
    *
    * @return The detailedStatus.
    */
@@ -620,7 +620,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Detailed status message for the VPN tunnel.
    * </pre>
    *
-   * <code>string detailed_status = 333501025;</code>
+   * <code>string detailed_status = 65065569;</code>
    *
    * @return The bytes for detailedStatus.
    */
@@ -753,7 +753,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int LOCAL_TRAFFIC_SELECTOR_FIELD_NUMBER = 317314613;
+  public static final int LOCAL_TRAFFIC_SELECTOR_FIELD_NUMBER = 48879157;
   private com.google.protobuf.LazyStringList localTrafficSelector_;
   /**
    *
@@ -762,7 +762,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @return A list containing the localTrafficSelector.
    */
@@ -776,7 +776,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @return The count of localTrafficSelector.
    */
@@ -790,7 +790,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @param index The index of the element to return.
    * @return The localTrafficSelector at the given index.
@@ -805,7 +805,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string local_traffic_selector = 317314613;</code>
+   * <code>repeated string local_traffic_selector = 48879157;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the localTrafficSelector at the given index.
@@ -863,7 +863,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PEER_EXTERNAL_GATEWAY_FIELD_NUMBER = 384956173;
+  public static final int PEER_EXTERNAL_GATEWAY_FIELD_NUMBER = 116520717;
   private volatile java.lang.Object peerExternalGateway_;
   /**
    *
@@ -872,7 +872,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>string peer_external_gateway = 116520717;</code>
    *
    * @return The peerExternalGateway.
    */
@@ -895,7 +895,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
    * </pre>
    *
-   * <code>string peer_external_gateway = 384956173;</code>
+   * <code>string peer_external_gateway = 116520717;</code>
    *
    * @return The bytes for peerExternalGateway.
    */
@@ -912,7 +912,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PEER_EXTERNAL_GATEWAY_INTERFACE_FIELD_NUMBER = 452768391;
+  public static final int PEER_EXTERNAL_GATEWAY_INTERFACE_FIELD_NUMBER = 184332935;
   private int peerExternalGatewayInterface_;
   /**
    *
@@ -921,7 +921,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>int32 peer_external_gateway_interface = 452768391;</code>
+   * <code>int32 peer_external_gateway_interface = 184332935;</code>
    *
    * @return The peerExternalGatewayInterface.
    */
@@ -930,7 +930,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     return peerExternalGatewayInterface_;
   }
 
-  public static final int PEER_GCP_GATEWAY_FIELD_NUMBER = 281867452;
+  public static final int PEER_GCP_GATEWAY_FIELD_NUMBER = 13431996;
   private volatile java.lang.Object peerGcpGateway_;
   /**
    *
@@ -939,7 +939,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>string peer_gcp_gateway = 13431996;</code>
    *
    * @return The peerGcpGateway.
    */
@@ -962,7 +962,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
    * </pre>
    *
-   * <code>string peer_gcp_gateway = 281867452;</code>
+   * <code>string peer_gcp_gateway = 13431996;</code>
    *
    * @return The bytes for peerGcpGateway.
    */
@@ -979,7 +979,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int PEER_IP_FIELD_NUMBER = 383249700;
+  public static final int PEER_IP_FIELD_NUMBER = 114814244;
   private volatile java.lang.Object peerIp_;
   /**
    *
@@ -988,7 +988,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>string peer_ip = 114814244;</code>
    *
    * @return The peerIp.
    */
@@ -1011,7 +1011,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * IP address of the peer VPN gateway. Only IPv4 is supported.
    * </pre>
    *
-   * <code>string peer_ip = 383249700;</code>
+   * <code>string peer_ip = 114814244;</code>
    *
    * @return The bytes for peerIp.
    */
@@ -1077,7 +1077,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int REMOTE_TRAFFIC_SELECTOR_FIELD_NUMBER = 358887098;
+  public static final int REMOTE_TRAFFIC_SELECTOR_FIELD_NUMBER = 90451642;
   private com.google.protobuf.LazyStringList remoteTrafficSelector_;
   /**
    *
@@ -1086,7 +1086,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @return A list containing the remoteTrafficSelector.
    */
@@ -1100,7 +1100,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @return The count of remoteTrafficSelector.
    */
@@ -1114,7 +1114,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @param index The index of the element to return.
    * @return The remoteTrafficSelector at the given index.
@@ -1129,7 +1129,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
    * </pre>
    *
-   * <code>repeated string remote_traffic_selector = 358887098;</code>
+   * <code>repeated string remote_traffic_selector = 90451642;</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the remoteTrafficSelector at the given index.
@@ -1187,7 +1187,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SELF_LINK_FIELD_NUMBER = 456214797;
+  public static final int SELF_LINK_FIELD_NUMBER = 187779341;
   private volatile java.lang.Object selfLink_;
   /**
    *
@@ -1196,7 +1196,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The selfLink.
    */
@@ -1219,7 +1219,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *
-   * <code>string self_link = 456214797;</code>
+   * <code>string self_link = 187779341;</code>
    *
    * @return The bytes for selfLink.
    */
@@ -1236,7 +1236,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SHARED_SECRET_FIELD_NUMBER = 381932490;
+  public static final int SHARED_SECRET_FIELD_NUMBER = 113497034;
   private volatile java.lang.Object sharedSecret_;
   /**
    *
@@ -1245,7 +1245,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>string shared_secret = 113497034;</code>
    *
    * @return The sharedSecret.
    */
@@ -1268,7 +1268,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
    * </pre>
    *
-   * <code>string shared_secret = 381932490;</code>
+   * <code>string shared_secret = 113497034;</code>
    *
    * @return The bytes for sharedSecret.
    */
@@ -1285,7 +1285,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int SHARED_SECRET_HASH_FIELD_NUMBER = 398881891;
+  public static final int SHARED_SECRET_HASH_FIELD_NUMBER = 130446435;
   private volatile java.lang.Object sharedSecretHash_;
   /**
    *
@@ -1294,7 +1294,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>string shared_secret_hash = 130446435;</code>
    *
    * @return The sharedSecretHash.
    */
@@ -1317,7 +1317,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * Hash of the shared secret.
    * </pre>
    *
-   * <code>string shared_secret_hash = 398881891;</code>
+   * <code>string shared_secret_hash = 130446435;</code>
    *
    * @return The bytes for sharedSecretHash.
    */
@@ -1400,7 +1400,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     return result == null ? com.google.cloud.compute.v1.VpnTunnel.Status.UNRECOGNIZED : result;
   }
 
-  public static final int TARGET_VPN_GATEWAY_FIELD_NUMBER = 532512843;
+  public static final int TARGET_VPN_GATEWAY_FIELD_NUMBER = 264077387;
   private volatile java.lang.Object targetVpnGateway_;
   /**
    *
@@ -1409,7 +1409,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>string target_vpn_gateway = 264077387;</code>
    *
    * @return The targetVpnGateway.
    */
@@ -1432,7 +1432,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
    * </pre>
    *
-   * <code>string target_vpn_gateway = 532512843;</code>
+   * <code>string target_vpn_gateway = 264077387;</code>
    *
    * @return The bytes for targetVpnGateway.
    */
@@ -1449,7 +1449,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int VPN_GATEWAY_FIELD_NUMBER = 406684153;
+  public static final int VPN_GATEWAY_FIELD_NUMBER = 138248697;
   private volatile java.lang.Object vpnGateway_;
   /**
    *
@@ -1458,7 +1458,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>string vpn_gateway = 138248697;</code>
    *
    * @return The vpnGateway.
    */
@@ -1481,7 +1481,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
    * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
    * </pre>
    *
-   * <code>string vpn_gateway = 406684153;</code>
+   * <code>string vpn_gateway = 138248697;</code>
    *
    * @return The bytes for vpnGateway.
    */
@@ -1539,11 +1539,40 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
+    if (!getPeerGcpGatewayBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 13431996, peerGcpGateway_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
+    for (int i = 0; i < localTrafficSelector_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 48879157, localTrafficSelector_.getRaw(i));
+    }
+    if (!getDetailedStatusBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 65065569, detailedStatus_);
+    }
+    for (int i = 0; i < remoteTrafficSelector_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 90451642, remoteTrafficSelector_.getRaw(i));
+    }
     if (vpnGatewayInterface_ != 0) {
       output.writeInt32(95979123, vpnGatewayInterface_);
+    }
+    if (!getSharedSecretBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 113497034, sharedSecret_);
+    }
+    if (!getPeerIpBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 114814244, peerIp_);
+    }
+    if (!getPeerExternalGatewayBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 116520717, peerExternalGateway_);
+    }
+    if (!getSharedSecretHashBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 130446435, sharedSecretHash_);
+    }
+    if (!getVpnGatewayBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 138248697, vpnGateway_);
     }
     if (!getRegionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -1551,52 +1580,23 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     if (!getRouterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 148608841, router_);
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 154502140, description_);
+    }
     if (status_ != com.google.cloud.compute.v1.VpnTunnel.Status.UNDEFINED_STATUS.getNumber()) {
       output.writeEnum(181260274, status_);
+    }
+    if (peerExternalGatewayInterface_ != 0) {
+      output.writeInt32(184332935, peerExternalGatewayInterface_);
+    }
+    if (!getSelfLinkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187779341, selfLink_);
     }
     if (ikeVersion_ != 0) {
       output.writeInt32(218376220, ikeVersion_);
     }
-    if (!getPeerGcpGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 281867452, peerGcpGateway_);
-    }
-    for (int i = 0; i < localTrafficSelector_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 317314613, localTrafficSelector_.getRaw(i));
-    }
-    if (!getDetailedStatusBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 333501025, detailedStatus_);
-    }
-    for (int i = 0; i < remoteTrafficSelector_.size(); i++) {
-      com.google.protobuf.GeneratedMessageV3.writeString(
-          output, 358887098, remoteTrafficSelector_.getRaw(i));
-    }
-    if (!getSharedSecretBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 381932490, sharedSecret_);
-    }
-    if (!getPeerIpBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 383249700, peerIp_);
-    }
-    if (!getPeerExternalGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 384956173, peerExternalGateway_);
-    }
-    if (!getSharedSecretHashBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 398881891, sharedSecretHash_);
-    }
-    if (!getVpnGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 406684153, vpnGateway_);
-    }
-    if (!getDescriptionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
-    }
-    if (peerExternalGatewayInterface_ != 0) {
-      output.writeInt32(452768391, peerExternalGatewayInterface_);
-    }
-    if (!getSelfLinkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
-    }
     if (!getTargetVpnGatewayBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 532512843, targetVpnGateway_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264077387, targetVpnGateway_);
     }
     unknownFields.writeTo(output);
   }
@@ -1616,28 +1616,12 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
+    if (!getPeerGcpGatewayBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13431996, peerGcpGateway_);
+    }
     if (!getCreationTimestampBytes().isEmpty()) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
-    }
-    if (vpnGatewayInterface_ != 0) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeInt32Size(95979123, vpnGatewayInterface_);
-    }
-    if (!getRegionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
-    }
-    if (!getRouterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148608841, router_);
-    }
-    if (status_ != com.google.cloud.compute.v1.VpnTunnel.Status.UNDEFINED_STATUS.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
-    }
-    if (ikeVersion_ != 0) {
-      size += com.google.protobuf.CodedOutputStream.computeInt32Size(218376220, ikeVersion_);
-    }
-    if (!getPeerGcpGatewayBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(281867452, peerGcpGateway_);
     }
     {
       int dataSize = 0;
@@ -1648,7 +1632,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       size += 5 * getLocalTrafficSelectorList().size();
     }
     if (!getDetailedStatusBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(333501025, detailedStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(65065569, detailedStatus_);
     }
     {
       int dataSize = 0;
@@ -1658,37 +1642,53 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getRemoteTrafficSelectorList().size();
     }
+    if (vpnGatewayInterface_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(95979123, vpnGatewayInterface_);
+    }
     if (!getSharedSecretBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(381932490, sharedSecret_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(113497034, sharedSecret_);
     }
     if (!getPeerIpBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(383249700, peerIp_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(114814244, peerIp_);
     }
     if (!getPeerExternalGatewayBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(384956173, peerExternalGateway_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(116520717, peerExternalGateway_);
     }
     if (!getSharedSecretHashBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(398881891, sharedSecretHash_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(130446435, sharedSecretHash_);
     }
     if (!getVpnGatewayBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406684153, vpnGateway_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138248697, vpnGateway_);
+    }
+    if (!getRegionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
+    }
+    if (!getRouterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(148608841, router_);
     }
     if (!getDescriptionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(154502140, description_);
+    }
+    if (status_ != com.google.cloud.compute.v1.VpnTunnel.Status.UNDEFINED_STATUS.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(181260274, status_);
     }
     if (peerExternalGatewayInterface_ != 0) {
       size +=
           com.google.protobuf.CodedOutputStream.computeInt32Size(
-              452768391, peerExternalGatewayInterface_);
+              184332935, peerExternalGatewayInterface_);
     }
     if (!getSelfLinkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187779341, selfLink_);
+    }
+    if (ikeVersion_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(218376220, ikeVersion_);
     }
     if (!getTargetVpnGatewayBytes().isEmpty()) {
       size +=
-          com.google.protobuf.GeneratedMessageV3.computeStringSize(532512843, targetVpnGateway_);
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(264077387, targetVpnGateway_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2323,7 +2323,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The description.
      */
@@ -2345,7 +2345,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return The bytes for description.
      */
@@ -2367,7 +2367,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -2388,7 +2388,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @return This builder for chaining.
      */
@@ -2405,7 +2405,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * An optional description of this resource. Provide this property when you create the resource.
      * </pre>
      *
-     * <code>string description = 422937596;</code>
+     * <code>string description = 154502140;</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.
@@ -2429,7 +2429,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>string detailed_status = 65065569;</code>
      *
      * @return The detailedStatus.
      */
@@ -2451,7 +2451,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>string detailed_status = 65065569;</code>
      *
      * @return The bytes for detailedStatus.
      */
@@ -2473,7 +2473,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>string detailed_status = 65065569;</code>
      *
      * @param value The detailedStatus to set.
      * @return This builder for chaining.
@@ -2494,7 +2494,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>string detailed_status = 65065569;</code>
      *
      * @return This builder for chaining.
      */
@@ -2511,7 +2511,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Detailed status message for the VPN tunnel.
      * </pre>
      *
-     * <code>string detailed_status = 333501025;</code>
+     * <code>string detailed_status = 65065569;</code>
      *
      * @param value The bytes for detailedStatus to set.
      * @return This builder for chaining.
@@ -2807,7 +2807,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @return A list containing the localTrafficSelector.
      */
@@ -2821,7 +2821,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @return The count of localTrafficSelector.
      */
@@ -2835,7 +2835,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @param index The index of the element to return.
      * @return The localTrafficSelector at the given index.
@@ -2850,7 +2850,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the localTrafficSelector at the given index.
@@ -2865,7 +2865,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @param index The index to set the value at.
      * @param value The localTrafficSelector to set.
@@ -2887,7 +2887,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @param value The localTrafficSelector to add.
      * @return This builder for chaining.
@@ -2908,7 +2908,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @param values The localTrafficSelector to add.
      * @return This builder for chaining.
@@ -2926,7 +2926,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @return This builder for chaining.
      */
@@ -2943,7 +2943,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string local_traffic_selector = 317314613;</code>
+     * <code>repeated string local_traffic_selector = 48879157;</code>
      *
      * @param value The bytes of the localTrafficSelector to add.
      * @return This builder for chaining.
@@ -3073,7 +3073,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>string peer_external_gateway = 116520717;</code>
      *
      * @return The peerExternalGateway.
      */
@@ -3095,7 +3095,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>string peer_external_gateway = 116520717;</code>
      *
      * @return The bytes for peerExternalGateway.
      */
@@ -3117,7 +3117,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>string peer_external_gateway = 116520717;</code>
      *
      * @param value The peerExternalGateway to set.
      * @return This builder for chaining.
@@ -3138,7 +3138,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>string peer_external_gateway = 116520717;</code>
      *
      * @return This builder for chaining.
      */
@@ -3155,7 +3155,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
      * </pre>
      *
-     * <code>string peer_external_gateway = 384956173;</code>
+     * <code>string peer_external_gateway = 116520717;</code>
      *
      * @param value The bytes for peerExternalGateway to set.
      * @return This builder for chaining.
@@ -3179,7 +3179,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>int32 peer_external_gateway_interface = 184332935;</code>
      *
      * @return The peerExternalGatewayInterface.
      */
@@ -3194,7 +3194,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>int32 peer_external_gateway_interface = 184332935;</code>
      *
      * @param value The peerExternalGatewayInterface to set.
      * @return This builder for chaining.
@@ -3212,7 +3212,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * The interface ID of the external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>int32 peer_external_gateway_interface = 452768391;</code>
+     * <code>int32 peer_external_gateway_interface = 184332935;</code>
      *
      * @return This builder for chaining.
      */
@@ -3231,7 +3231,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>string peer_gcp_gateway = 13431996;</code>
      *
      * @return The peerGcpGateway.
      */
@@ -3253,7 +3253,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>string peer_gcp_gateway = 13431996;</code>
      *
      * @return The bytes for peerGcpGateway.
      */
@@ -3275,7 +3275,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>string peer_gcp_gateway = 13431996;</code>
      *
      * @param value The peerGcpGateway to set.
      * @return This builder for chaining.
@@ -3296,7 +3296,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>string peer_gcp_gateway = 13431996;</code>
      *
      * @return This builder for chaining.
      */
@@ -3313,7 +3313,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the peer side HA GCP VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field can be used when creating highly available VPN from VPC network to VPC network, the field is exclusive with the field peerExternalGateway. If provided, the VPN tunnel will automatically use the same vpnGatewayInterface ID in the peer GCP VPN gateway.
      * </pre>
      *
-     * <code>string peer_gcp_gateway = 281867452;</code>
+     * <code>string peer_gcp_gateway = 13431996;</code>
      *
      * @param value The bytes for peerGcpGateway to set.
      * @return This builder for chaining.
@@ -3337,7 +3337,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>string peer_ip = 114814244;</code>
      *
      * @return The peerIp.
      */
@@ -3359,7 +3359,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>string peer_ip = 114814244;</code>
      *
      * @return The bytes for peerIp.
      */
@@ -3381,7 +3381,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>string peer_ip = 114814244;</code>
      *
      * @param value The peerIp to set.
      * @return This builder for chaining.
@@ -3402,7 +3402,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>string peer_ip = 114814244;</code>
      *
      * @return This builder for chaining.
      */
@@ -3419,7 +3419,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * IP address of the peer VPN gateway. Only IPv4 is supported.
      * </pre>
      *
-     * <code>string peer_ip = 383249700;</code>
+     * <code>string peer_ip = 114814244;</code>
      *
      * @param value The bytes for peerIp to set.
      * @return This builder for chaining.
@@ -3558,7 +3558,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @return A list containing the remoteTrafficSelector.
      */
@@ -3572,7 +3572,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @return The count of remoteTrafficSelector.
      */
@@ -3586,7 +3586,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @param index The index of the element to return.
      * @return The remoteTrafficSelector at the given index.
@@ -3601,7 +3601,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the remoteTrafficSelector at the given index.
@@ -3616,7 +3616,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @param index The index to set the value at.
      * @param value The remoteTrafficSelector to set.
@@ -3638,7 +3638,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @param value The remoteTrafficSelector to add.
      * @return This builder for chaining.
@@ -3659,7 +3659,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @param values The remoteTrafficSelector to add.
      * @return This builder for chaining.
@@ -3677,7 +3677,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @return This builder for chaining.
      */
@@ -3694,7 +3694,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Remote traffic selectors to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges should be disjoint. Only IPv4 is supported.
      * </pre>
      *
-     * <code>repeated string remote_traffic_selector = 358887098;</code>
+     * <code>repeated string remote_traffic_selector = 90451642;</code>
      *
      * @param value The bytes of the remoteTrafficSelector to add.
      * @return This builder for chaining.
@@ -3824,7 +3824,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The selfLink.
      */
@@ -3846,7 +3846,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return The bytes for selfLink.
      */
@@ -3868,7 +3868,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The selfLink to set.
      * @return This builder for chaining.
@@ -3889,7 +3889,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @return This builder for chaining.
      */
@@ -3906,7 +3906,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * [Output Only] Server-defined URL for the resource.
      * </pre>
      *
-     * <code>string self_link = 456214797;</code>
+     * <code>string self_link = 187779341;</code>
      *
      * @param value The bytes for selfLink to set.
      * @return This builder for chaining.
@@ -3930,7 +3930,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>string shared_secret = 113497034;</code>
      *
      * @return The sharedSecret.
      */
@@ -3952,7 +3952,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>string shared_secret = 113497034;</code>
      *
      * @return The bytes for sharedSecret.
      */
@@ -3974,7 +3974,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>string shared_secret = 113497034;</code>
      *
      * @param value The sharedSecret to set.
      * @return This builder for chaining.
@@ -3995,7 +3995,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>string shared_secret = 113497034;</code>
      *
      * @return This builder for chaining.
      */
@@ -4012,7 +4012,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Shared secret used to set the secure session between the Cloud VPN gateway and the peer VPN gateway.
      * </pre>
      *
-     * <code>string shared_secret = 381932490;</code>
+     * <code>string shared_secret = 113497034;</code>
      *
      * @param value The bytes for sharedSecret to set.
      * @return This builder for chaining.
@@ -4036,7 +4036,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>string shared_secret_hash = 130446435;</code>
      *
      * @return The sharedSecretHash.
      */
@@ -4058,7 +4058,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>string shared_secret_hash = 130446435;</code>
      *
      * @return The bytes for sharedSecretHash.
      */
@@ -4080,7 +4080,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>string shared_secret_hash = 130446435;</code>
      *
      * @param value The sharedSecretHash to set.
      * @return This builder for chaining.
@@ -4101,7 +4101,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>string shared_secret_hash = 130446435;</code>
      *
      * @return This builder for chaining.
      */
@@ -4118,7 +4118,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * Hash of the shared secret.
      * </pre>
      *
-     * <code>string shared_secret_hash = 398881891;</code>
+     * <code>string shared_secret_hash = 130446435;</code>
      *
      * @param value The bytes for sharedSecretHash to set.
      * @return This builder for chaining.
@@ -4308,7 +4308,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>string target_vpn_gateway = 264077387;</code>
      *
      * @return The targetVpnGateway.
      */
@@ -4330,7 +4330,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>string target_vpn_gateway = 264077387;</code>
      *
      * @return The bytes for targetVpnGateway.
      */
@@ -4352,7 +4352,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>string target_vpn_gateway = 264077387;</code>
      *
      * @param value The targetVpnGateway to set.
      * @return This builder for chaining.
@@ -4373,7 +4373,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>string target_vpn_gateway = 264077387;</code>
      *
      * @return This builder for chaining.
      */
@@ -4390,7 +4390,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the Target VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created.
      * </pre>
      *
-     * <code>string target_vpn_gateway = 532512843;</code>
+     * <code>string target_vpn_gateway = 264077387;</code>
      *
      * @param value The bytes for targetVpnGateway to set.
      * @return This builder for chaining.
@@ -4414,7 +4414,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>string vpn_gateway = 138248697;</code>
      *
      * @return The vpnGateway.
      */
@@ -4436,7 +4436,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>string vpn_gateway = 138248697;</code>
      *
      * @return The bytes for vpnGateway.
      */
@@ -4458,7 +4458,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>string vpn_gateway = 138248697;</code>
      *
      * @param value The vpnGateway to set.
      * @return This builder for chaining.
@@ -4479,7 +4479,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>string vpn_gateway = 138248697;</code>
      *
      * @return This builder for chaining.
      */
@@ -4496,7 +4496,7 @@ public final class VpnTunnel extends com.google.protobuf.GeneratedMessageV3
      * URL of the VPN gateway with which this VPN tunnel is associated. Provided by the client when the VPN tunnel is created. This must be used (instead of target_vpn_gateway) if a High Availability VPN gateway resource is created.
      * </pre>
      *
-     * <code>string vpn_gateway = 406684153;</code>
+     * <code>string vpn_gateway = 138248697;</code>
      *
      * @param value The bytes for vpnGateway to set.
      * @return This builder for chaining.

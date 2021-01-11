@@ -89,6 +89,13 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
               instance_ = s;
               break;
             }
+          case 801245666:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              queryPath_ = s;
+              break;
+            }
           case 1314918626:
             {
               java.lang.String s = input.readStringRequireUtf8();
@@ -101,13 +108,6 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
               java.lang.String s = input.readStringRequireUtf8();
 
               project_ = s;
-              break;
-            }
-          case -1346237982:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              queryPath_ = s;
               break;
             }
           default:
@@ -242,7 +242,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     }
   }
 
-  public static final int QUERY_PATH_FIELD_NUMBER = 368591164;
+  public static final int QUERY_PATH_FIELD_NUMBER = 100155708;
   private volatile java.lang.Object queryPath_;
   /**
    *
@@ -251,7 +251,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The queryPath.
    */
@@ -274,7 +274,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
    * Specifies the guest attributes path to be queried.
    * </pre>
    *
-   * <code>string query_path = 368591164;</code>
+   * <code>string query_path = 100155708;</code>
    *
    * @return The bytes for queryPath.
    */
@@ -409,14 +409,14 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     if (!getInstanceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
+    if (!getQueryPathBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 100155708, queryPath_);
+    }
     if (!getVariableKeyBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 164364828, variableKey_);
     }
     if (!getProjectBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 227560217, project_);
-    }
-    if (!getQueryPathBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 368591164, queryPath_);
     }
     unknownFields.writeTo(output);
   }
@@ -433,14 +433,14 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
     if (!getInstanceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
+    if (!getQueryPathBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100155708, queryPath_);
+    }
     if (!getVariableKeyBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(164364828, variableKey_);
     }
     if (!getProjectBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227560217, project_);
-    }
-    if (!getQueryPathBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(368591164, queryPath_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -995,7 +995,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @return The queryPath.
      */
@@ -1017,7 +1017,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @return The bytes for queryPath.
      */
@@ -1039,7 +1039,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @param value The queryPath to set.
      * @return This builder for chaining.
@@ -1060,7 +1060,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @return This builder for chaining.
      */
@@ -1077,7 +1077,7 @@ public final class GetGuestAttributesInstanceRequest extends com.google.protobuf
      * Specifies the guest attributes path to be queried.
      * </pre>
      *
-     * <code>string query_path = 368591164;</code>
+     * <code>string query_path = 100155708;</code>
      *
      * @param value The bytes for queryPath to set.
      * @return This builder for chaining.

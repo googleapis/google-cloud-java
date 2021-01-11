@@ -30,7 +30,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>string certificate = 73351575;</code>
    *
    * @return The certificate.
    */
@@ -42,7 +42,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * A local certificate file. The certificate must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
    * </pre>
    *
-   * <code>string certificate = 341787031;</code>
+   * <code>string certificate = 73351575;</code>
    *
    * @return The bytes for certificate.
    */
@@ -55,7 +55,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>string private_key = 92895651;</code>
    *
    * @return The privateKey.
    */
@@ -67,7 +67,7 @@ public interface SslCertificateSelfManagedSslCertificateOrBuilder
    * A write-only private key in PEM format. Only insert requests will include this field.
    * </pre>
    *
-   * <code>string private_key = 361331107;</code>
+   * <code>string private_key = 92895651;</code>
    *
    * @return The bytes for privateKey.
    */

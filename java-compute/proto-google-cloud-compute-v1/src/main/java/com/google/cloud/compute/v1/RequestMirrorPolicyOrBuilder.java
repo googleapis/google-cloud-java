@@ -30,7 +30,7 @@ public interface RequestMirrorPolicyOrBuilder
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The backendService.
    */
@@ -42,7 +42,7 @@ public interface RequestMirrorPolicyOrBuilder
    * The full or partial URL to the BackendService resource being mirrored to.
    * </pre>
    *
-   * <code>string backend_service = 306946058;</code>
+   * <code>string backend_service = 38510602;</code>
    *
    * @return The bytes for backendService.
    */
