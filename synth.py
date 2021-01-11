@@ -37,4 +37,7 @@ for version in versions:
 
 java.common_templates(excludes=[
     'renovate.json' # excluding due to common-lang3 dep added to renovate.json
+    '.kokoro/build.sh',
+    '.kokoro/nightly/samples.cfg',
+    '.kokoro/presubmit/samples.cfg',
 ])

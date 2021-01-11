@@ -78,6 +78,11 @@ samples)
 
     if [[ -f ${SAMPLES_DIR}/pom.xml ]]
     then
+      if [ -f "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerystorage-samples-secrets" ]
+        then
+            source "${KOKORO_GFILE_DIR}/secret_manager/java-bigquerystorage-samples-secrets"
+      fi
+
         pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
