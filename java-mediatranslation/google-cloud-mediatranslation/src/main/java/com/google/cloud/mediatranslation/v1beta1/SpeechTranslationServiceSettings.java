@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  *     speechTranslationServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SpeechTranslationServiceSettings
     extends ClientSettings<SpeechTranslationServiceSettings> {
