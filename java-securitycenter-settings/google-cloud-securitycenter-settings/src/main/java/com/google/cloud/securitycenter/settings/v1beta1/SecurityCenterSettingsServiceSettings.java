@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  *     securityCenterSettingsServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SecurityCenterSettingsServiceSettings
     extends ClientSettings<SecurityCenterSettingsServiceSettings> {
