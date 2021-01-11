@@ -64,6 +64,7 @@ import javax.annotation.Generated;
  *     alphaAnalyticsDataSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AlphaAnalyticsDataSettings extends ClientSettings<AlphaAnalyticsDataSettings> {
 

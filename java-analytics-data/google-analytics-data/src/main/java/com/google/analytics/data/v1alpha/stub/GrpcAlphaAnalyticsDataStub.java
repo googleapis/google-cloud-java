@@ -28,6 +28,7 @@ import com.google.analytics.data.v1alpha.RunRealtimeReportRequest;
 import com.google.analytics.data.v1alpha.RunRealtimeReportResponse;
 import com.google.analytics.data.v1alpha.RunReportRequest;
 import com.google.analytics.data.v1alpha.RunReportResponse;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -50,6 +51,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
   private static final MethodDescriptor<RunReportRequest, RunReportResponse>
