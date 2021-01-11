@@ -74,6 +74,7 @@ import javax.annotation.Generated;
  *     secretManagerServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SecretManagerServiceSettings extends ClientSettings<SecretManagerServiceSettings> {
 

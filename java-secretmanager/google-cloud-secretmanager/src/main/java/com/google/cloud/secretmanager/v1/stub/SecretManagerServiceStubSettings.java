@@ -106,7 +106,6 @@ import org.threeten.bp.Duration;
  *     secretManagerServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class SecretManagerServiceStubSettings
     extends StubSettings<SecretManagerServiceStubSettings> {

@@ -19,6 +19,7 @@ package com.google.cloud.secretmanager.v1beta1.stub;
 import static com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient.ListSecretVersionsPagedResponse;
 import static com.google.cloud.secretmanager.v1beta1.SecretManagerServiceClient.ListSecretsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.secretmanager.v1beta1.AccessSecretVersionRequest;
@@ -52,7 +53,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class SecretManagerServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse> listSecretsPagedCallable() {
