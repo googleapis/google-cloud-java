@@ -84,7 +84,6 @@ import org.threeten.bp.Duration;
  * LanguageServiceStubSettings languageServiceSettings = languageServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class LanguageServiceStubSettings extends StubSettings<LanguageServiceStubSettings> {
   /** The default scopes of the service. */

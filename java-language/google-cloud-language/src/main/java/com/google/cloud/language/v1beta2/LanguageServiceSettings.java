@@ -63,6 +63,7 @@ import javax.annotation.Generated;
  * LanguageServiceSettings languageServiceSettings = languageServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class LanguageServiceSettings extends ClientSettings<LanguageServiceSettings> {
 
