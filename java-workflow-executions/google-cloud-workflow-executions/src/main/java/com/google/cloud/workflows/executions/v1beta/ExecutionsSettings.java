@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * ExecutionsSettings executionsSettings = executionsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
 
