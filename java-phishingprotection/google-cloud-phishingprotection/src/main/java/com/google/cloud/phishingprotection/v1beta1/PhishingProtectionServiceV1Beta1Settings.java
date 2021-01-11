@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  *     phishingProtectionServiceV1Beta1SettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PhishingProtectionServiceV1Beta1Settings
     extends ClientSettings<PhishingProtectionServiceV1Beta1Settings> {
