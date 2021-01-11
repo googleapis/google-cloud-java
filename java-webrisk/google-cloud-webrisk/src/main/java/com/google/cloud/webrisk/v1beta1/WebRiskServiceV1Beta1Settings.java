@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  *     webRiskServiceV1Beta1SettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class WebRiskServiceV1Beta1Settings extends ClientSettings<WebRiskServiceV1Beta1Settings> {
 

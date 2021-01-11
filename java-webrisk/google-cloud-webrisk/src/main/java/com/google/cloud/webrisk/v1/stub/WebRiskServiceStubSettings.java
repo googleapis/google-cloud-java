@@ -80,7 +80,6 @@ import org.threeten.bp.Duration;
  * WebRiskServiceStubSettings webRiskServiceSettings = webRiskServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class WebRiskServiceStubSettings extends StubSettings<WebRiskServiceStubSettings> {
   /** The default scopes of the service. */

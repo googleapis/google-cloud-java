@@ -16,6 +16,7 @@
 
 package com.google.cloud.webrisk.v1beta1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -41,6 +42,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
   private static final MethodDescriptor<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>

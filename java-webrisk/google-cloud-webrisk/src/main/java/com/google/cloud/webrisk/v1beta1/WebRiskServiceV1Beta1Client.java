@@ -92,7 +92,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class WebRiskServiceV1Beta1Client implements BackgroundResource {
   private final WebRiskServiceV1Beta1Settings settings;
   private final WebRiskServiceV1Beta1Stub stub;
