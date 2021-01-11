@@ -65,6 +65,7 @@ import javax.annotation.Generated;
  * PredictionServiceSettings predictionServiceSettings = predictionServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PredictionServiceSettings extends ClientSettings<PredictionServiceSettings> {
 

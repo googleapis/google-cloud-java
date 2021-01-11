@@ -22,6 +22,7 @@ import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsP
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -83,6 +84,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcAutoMlStub extends AutoMlStub {
   private static final MethodDescriptor<CreateDatasetRequest, Dataset>

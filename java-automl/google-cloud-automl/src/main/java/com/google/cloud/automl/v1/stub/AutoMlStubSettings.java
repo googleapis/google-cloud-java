@@ -114,7 +114,6 @@ import org.threeten.bp.Duration;
  * AutoMlStubSettings autoMlSettings = autoMlSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class AutoMlStubSettings extends StubSettings<AutoMlStubSettings> {
   /** The default scopes of the service. */

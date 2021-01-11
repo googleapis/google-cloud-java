@@ -22,6 +22,7 @@ import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelEvaluationsP
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListModelsPagedResponse;
 import static com.google.cloud.automl.v1beta1.AutoMlClient.ListTableSpecsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -72,7 +73,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class AutoMlStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {

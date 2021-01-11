@@ -72,6 +72,7 @@ import javax.annotation.Generated;
  * AutoMlSettings autoMlSettings = autoMlSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AutoMlSettings extends ClientSettings<AutoMlSettings> {
 
