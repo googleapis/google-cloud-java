@@ -82,6 +82,7 @@ import javax.annotation.Generated;
  * TablesServiceSettings tablesServiceSettings = tablesServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class TablesServiceSettings extends ClientSettings<TablesServiceSettings> {
 
