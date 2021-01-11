@@ -86,7 +86,6 @@ import org.threeten.bp.Duration;
  * ProductServiceStubSettings productServiceSettings = productServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ProductServiceStubSettings extends StubSettings<ProductServiceStubSettings> {
   /** The default scopes of the service. */

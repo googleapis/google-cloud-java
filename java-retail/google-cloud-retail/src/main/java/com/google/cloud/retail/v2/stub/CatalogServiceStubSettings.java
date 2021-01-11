@@ -85,7 +85,6 @@ import org.threeten.bp.Duration;
  * CatalogServiceStubSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubSettings> {
   /** The default scopes of the service. */

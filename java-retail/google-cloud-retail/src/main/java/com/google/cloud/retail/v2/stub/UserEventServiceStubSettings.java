@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  * UserEventServiceStubSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class UserEventServiceStubSettings extends StubSettings<UserEventServiceStubSettings> {
   /** The default scopes of the service. */
