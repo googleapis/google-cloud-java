@@ -114,7 +114,6 @@ import org.threeten.bp.Duration;
  * DeviceManagerStubSettings deviceManagerSettings = deviceManagerSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DeviceManagerStubSettings extends StubSettings<DeviceManagerStubSettings> {
   /** The default scopes of the service. */
