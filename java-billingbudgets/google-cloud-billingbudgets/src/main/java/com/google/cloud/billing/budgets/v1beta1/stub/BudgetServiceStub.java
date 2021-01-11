@@ -18,6 +18,7 @@ package com.google.cloud.billing.budgets.v1beta1.stub;
 
 import static com.google.cloud.billing.budgets.v1beta1.BudgetServiceClient.ListBudgetsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.billing.budgets.v1beta1.Budget;
@@ -36,7 +37,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class BudgetServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable() {

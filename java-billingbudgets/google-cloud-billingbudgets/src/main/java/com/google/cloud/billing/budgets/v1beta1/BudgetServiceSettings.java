@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  * BudgetServiceSettings budgetServiceSettings = budgetServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class BudgetServiceSettings extends ClientSettings<BudgetServiceSettings> {
 

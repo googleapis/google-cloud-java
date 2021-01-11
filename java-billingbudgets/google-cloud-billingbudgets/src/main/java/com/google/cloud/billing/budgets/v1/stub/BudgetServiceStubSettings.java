@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  * BudgetServiceStubSettings budgetServiceSettings = budgetServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class BudgetServiceStubSettings extends StubSettings<BudgetServiceStubSettings> {
   /** The default scopes of the service. */
