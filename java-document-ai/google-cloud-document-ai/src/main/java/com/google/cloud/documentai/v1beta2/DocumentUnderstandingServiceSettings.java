@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  *     documentUnderstandingServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class DocumentUnderstandingServiceSettings
     extends ClientSettings<DocumentUnderstandingServiceSettings> {

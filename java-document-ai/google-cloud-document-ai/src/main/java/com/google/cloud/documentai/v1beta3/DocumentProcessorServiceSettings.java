@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  *     documentProcessorServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class DocumentProcessorServiceSettings
     extends ClientSettings<DocumentProcessorServiceSettings> {
