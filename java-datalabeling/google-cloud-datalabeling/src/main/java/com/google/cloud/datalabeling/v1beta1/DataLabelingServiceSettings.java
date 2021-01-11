@@ -78,6 +78,7 @@ import javax.annotation.Generated;
  *     dataLabelingServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class DataLabelingServiceSettings extends ClientSettings<DataLabelingServiceSettings> {
 
