@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  * UserEventServiceSettings userEventServiceSettings = userEventServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class UserEventServiceSettings extends ClientSettings<UserEventServiceSettings> {
 

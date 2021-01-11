@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  *     predictionApiKeyRegistrySettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PredictionApiKeyRegistrySettings
     extends ClientSettings<PredictionApiKeyRegistrySettings> {

@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  * CatalogServiceSettings catalogServiceSettings = catalogServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CatalogServiceSettings extends ClientSettings<CatalogServiceSettings> {
 
