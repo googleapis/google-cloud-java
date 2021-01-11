@@ -115,7 +115,6 @@ import org.threeten.bp.Duration;
  *     reservationServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ReservationServiceStubSettings extends StubSettings<ReservationServiceStubSettings> {
   /** The default scopes of the service. */
