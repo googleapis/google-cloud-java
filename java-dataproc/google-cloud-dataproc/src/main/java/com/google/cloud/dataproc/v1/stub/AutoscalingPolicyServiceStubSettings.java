@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  *     autoscalingPolicyServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class AutoscalingPolicyServiceStubSettings
     extends StubSettings<AutoscalingPolicyServiceStubSettings> {

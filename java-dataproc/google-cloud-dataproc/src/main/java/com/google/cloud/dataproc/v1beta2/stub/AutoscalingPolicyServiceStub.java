@@ -18,6 +18,7 @@ package com.google.cloud.dataproc.v1beta2.stub;
 
 import static com.google.cloud.dataproc.v1beta2.AutoscalingPolicyServiceClient.ListAutoscalingPoliciesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataproc.v1beta2.AutoscalingPolicy;
@@ -36,7 +37,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class AutoscalingPolicyServiceStub implements BackgroundResource {
 
   public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>

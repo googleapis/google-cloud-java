@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * ClusterControllerSettings clusterControllerSettings = clusterControllerSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ClusterControllerSettings extends ClientSettings<ClusterControllerSettings> {
 

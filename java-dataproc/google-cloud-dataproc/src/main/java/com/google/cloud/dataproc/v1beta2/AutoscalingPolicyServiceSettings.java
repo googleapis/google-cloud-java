@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  *     autoscalingPolicyServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AutoscalingPolicyServiceSettings
     extends ClientSettings<AutoscalingPolicyServiceSettings> {

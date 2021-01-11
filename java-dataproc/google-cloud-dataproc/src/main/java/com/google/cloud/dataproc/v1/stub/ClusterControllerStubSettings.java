@@ -98,7 +98,6 @@ import org.threeten.bp.Duration;
  *     clusterControllerSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ClusterControllerStubSettings extends StubSettings<ClusterControllerStubSettings> {
   /** The default scopes of the service. */

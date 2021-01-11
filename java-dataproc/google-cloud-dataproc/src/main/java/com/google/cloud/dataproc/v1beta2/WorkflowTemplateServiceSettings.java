@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  *     workflowTemplateServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class WorkflowTemplateServiceSettings
     extends ClientSettings<WorkflowTemplateServiceSettings> {

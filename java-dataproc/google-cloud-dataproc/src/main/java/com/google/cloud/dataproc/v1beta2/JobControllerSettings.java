@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * JobControllerSettings jobControllerSettings = jobControllerSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class JobControllerSettings extends ClientSettings<JobControllerSettings> {
 

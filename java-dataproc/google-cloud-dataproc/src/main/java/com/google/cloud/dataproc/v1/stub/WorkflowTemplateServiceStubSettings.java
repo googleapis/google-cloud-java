@@ -98,7 +98,6 @@ import org.threeten.bp.Duration;
  *     workflowTemplateServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class WorkflowTemplateServiceStubSettings
     extends StubSettings<WorkflowTemplateServiceStubSettings> {

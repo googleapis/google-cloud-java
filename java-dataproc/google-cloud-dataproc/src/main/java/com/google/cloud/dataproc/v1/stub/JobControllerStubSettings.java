@@ -96,7 +96,6 @@ import org.threeten.bp.Duration;
  * JobControllerStubSettings jobControllerSettings = jobControllerSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class JobControllerStubSettings extends StubSettings<JobControllerStubSettings> {
   /** The default scopes of the service. */
