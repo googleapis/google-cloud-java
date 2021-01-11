@@ -124,7 +124,6 @@ import org.threeten.bp.Duration;
  * ClusterManagerStubSettings clusterManagerSettings = clusterManagerSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ClusterManagerStubSettings extends StubSettings<ClusterManagerStubSettings> {
   /** The default scopes of the service. */
