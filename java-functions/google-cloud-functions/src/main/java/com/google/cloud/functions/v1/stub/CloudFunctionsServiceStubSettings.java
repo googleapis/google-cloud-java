@@ -108,7 +108,6 @@ import org.threeten.bp.Duration;
  *     cloudFunctionsServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudFunctionsServiceStubSettings
     extends StubSettings<CloudFunctionsServiceStubSettings> {
