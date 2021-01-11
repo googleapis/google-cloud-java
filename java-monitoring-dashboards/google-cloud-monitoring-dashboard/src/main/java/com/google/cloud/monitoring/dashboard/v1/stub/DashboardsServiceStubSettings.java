@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  *     dashboardsServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DashboardsServiceStubSettings extends StubSettings<DashboardsServiceStubSettings> {
   /** The default scopes of the service. */
