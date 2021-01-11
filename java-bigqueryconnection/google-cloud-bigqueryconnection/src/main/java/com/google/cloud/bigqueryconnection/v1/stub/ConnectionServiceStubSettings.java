@@ -96,7 +96,6 @@ import org.threeten.bp.Duration;
  *     connectionServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ConnectionServiceStubSettings extends StubSettings<ConnectionServiceStubSettings> {
   /** The default scopes of the service. */

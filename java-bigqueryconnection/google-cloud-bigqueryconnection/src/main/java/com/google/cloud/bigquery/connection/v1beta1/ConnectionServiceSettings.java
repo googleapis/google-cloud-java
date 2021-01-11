@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  * ConnectionServiceSettings connectionServiceSettings = connectionServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ConnectionServiceSettings extends ClientSettings<ConnectionServiceSettings> {
 
