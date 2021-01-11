@@ -98,7 +98,6 @@ import org.threeten.bp.Duration;
  * CloudRedisStubSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudRedisStubSettings extends StubSettings<CloudRedisStubSettings> {
   /** The default scopes of the service. */

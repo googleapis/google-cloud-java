@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * CloudRedisSettings cloudRedisSettings = cloudRedisSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudRedisSettings extends ClientSettings<CloudRedisSettings> {
 
