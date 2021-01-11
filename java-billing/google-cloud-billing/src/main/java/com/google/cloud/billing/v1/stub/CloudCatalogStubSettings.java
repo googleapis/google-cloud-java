@@ -88,7 +88,6 @@ import org.threeten.bp.Duration;
  * CloudCatalogStubSettings cloudCatalogSettings = cloudCatalogSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudCatalogStubSettings extends StubSettings<CloudCatalogStubSettings> {
   /** The default scopes of the service. */

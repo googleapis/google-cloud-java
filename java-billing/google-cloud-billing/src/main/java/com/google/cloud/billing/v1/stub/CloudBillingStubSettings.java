@@ -98,7 +98,6 @@ import org.threeten.bp.Duration;
  * CloudBillingStubSettings cloudBillingSettings = cloudBillingSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudBillingStubSettings extends StubSettings<CloudBillingStubSettings> {
   /** The default scopes of the service. */
