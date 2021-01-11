@@ -96,6 +96,7 @@ public class CompanyServiceClientTest {
             .setCareerSiteUri("careerSiteUri2004228935")
             .setImageUri("imageUri-859610607")
             .addAllKeywordSearchableJobCustomAttributes(new ArrayList<String>())
+            .setDerivedInfo(Company.DerivedInfo.newBuilder().build())
             .setSuspended(true)
             .build();
     mockCompanyService.addResponse(expectedResponse);
@@ -149,6 +150,7 @@ public class CompanyServiceClientTest {
             .setCareerSiteUri("careerSiteUri2004228935")
             .setImageUri("imageUri-859610607")
             .addAllKeywordSearchableJobCustomAttributes(new ArrayList<String>())
+            .setDerivedInfo(Company.DerivedInfo.newBuilder().build())
             .setSuspended(true)
             .build();
     mockCompanyService.addResponse(expectedResponse);
@@ -202,6 +204,7 @@ public class CompanyServiceClientTest {
             .setCareerSiteUri("careerSiteUri2004228935")
             .setImageUri("imageUri-859610607")
             .addAllKeywordSearchableJobCustomAttributes(new ArrayList<String>())
+            .setDerivedInfo(Company.DerivedInfo.newBuilder().build())
             .setSuspended(true)
             .build();
     mockCompanyService.addResponse(expectedResponse);
@@ -255,6 +258,7 @@ public class CompanyServiceClientTest {
             .setCareerSiteUri("careerSiteUri2004228935")
             .setImageUri("imageUri-859610607")
             .addAllKeywordSearchableJobCustomAttributes(new ArrayList<String>())
+            .setDerivedInfo(Company.DerivedInfo.newBuilder().build())
             .setSuspended(true)
             .build();
     mockCompanyService.addResponse(expectedResponse);
@@ -306,6 +310,7 @@ public class CompanyServiceClientTest {
             .setCareerSiteUri("careerSiteUri2004228935")
             .setImageUri("imageUri-859610607")
             .addAllKeywordSearchableJobCustomAttributes(new ArrayList<String>())
+            .setDerivedInfo(Company.DerivedInfo.newBuilder().build())
             .setSuspended(true)
             .build();
     mockCompanyService.addResponse(expectedResponse);
@@ -356,6 +361,7 @@ public class CompanyServiceClientTest {
             .setCareerSiteUri("careerSiteUri2004228935")
             .setImageUri("imageUri-859610607")
             .addAllKeywordSearchableJobCustomAttributes(new ArrayList<String>())
+            .setDerivedInfo(Company.DerivedInfo.newBuilder().build())
             .setSuspended(true)
             .build();
     mockCompanyService.addResponse(expectedResponse);

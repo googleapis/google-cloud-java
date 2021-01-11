@@ -97,6 +97,7 @@ public class JobServiceClientTest {
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
+            .setApplicationInfo(Job.ApplicationInfo.newBuilder().build())
             .addAllJobBenefits(new ArrayList<JobBenefit>())
             .setCompensationInfo(CompensationInfo.newBuilder().build())
             .putAllCustomAttributes(new HashMap<String, CustomAttribute>())
@@ -115,6 +116,8 @@ public class JobServiceClientTest {
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
             .setCompanyDisplayName("companyDisplayName-686915152")
+            .setDerivedInfo(Job.DerivedInfo.newBuilder().build())
+            .setProcessingOptions(Job.ProcessingOptions.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -161,6 +164,7 @@ public class JobServiceClientTest {
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
+            .setApplicationInfo(Job.ApplicationInfo.newBuilder().build())
             .addAllJobBenefits(new ArrayList<JobBenefit>())
             .setCompensationInfo(CompensationInfo.newBuilder().build())
             .putAllCustomAttributes(new HashMap<String, CustomAttribute>())
@@ -179,6 +183,8 @@ public class JobServiceClientTest {
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
             .setCompanyDisplayName("companyDisplayName-686915152")
+            .setDerivedInfo(Job.DerivedInfo.newBuilder().build())
+            .setProcessingOptions(Job.ProcessingOptions.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -319,6 +325,7 @@ public class JobServiceClientTest {
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
+            .setApplicationInfo(Job.ApplicationInfo.newBuilder().build())
             .addAllJobBenefits(new ArrayList<JobBenefit>())
             .setCompensationInfo(CompensationInfo.newBuilder().build())
             .putAllCustomAttributes(new HashMap<String, CustomAttribute>())
@@ -337,6 +344,8 @@ public class JobServiceClientTest {
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
             .setCompanyDisplayName("companyDisplayName-686915152")
+            .setDerivedInfo(Job.DerivedInfo.newBuilder().build())
+            .setProcessingOptions(Job.ProcessingOptions.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -380,6 +389,7 @@ public class JobServiceClientTest {
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
+            .setApplicationInfo(Job.ApplicationInfo.newBuilder().build())
             .addAllJobBenefits(new ArrayList<JobBenefit>())
             .setCompensationInfo(CompensationInfo.newBuilder().build())
             .putAllCustomAttributes(new HashMap<String, CustomAttribute>())
@@ -398,6 +408,8 @@ public class JobServiceClientTest {
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
             .setCompanyDisplayName("companyDisplayName-686915152")
+            .setDerivedInfo(Job.DerivedInfo.newBuilder().build())
+            .setProcessingOptions(Job.ProcessingOptions.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -441,6 +453,7 @@ public class JobServiceClientTest {
             .setTitle("title110371416")
             .setDescription("description-1724546052")
             .addAllAddresses(new ArrayList<String>())
+            .setApplicationInfo(Job.ApplicationInfo.newBuilder().build())
             .addAllJobBenefits(new ArrayList<JobBenefit>())
             .setCompensationInfo(CompensationInfo.newBuilder().build())
             .putAllCustomAttributes(new HashMap<String, CustomAttribute>())
@@ -459,6 +472,8 @@ public class JobServiceClientTest {
             .setPostingCreateTime(Timestamp.newBuilder().build())
             .setPostingUpdateTime(Timestamp.newBuilder().build())
             .setCompanyDisplayName("companyDisplayName-686915152")
+            .setDerivedInfo(Job.DerivedInfo.newBuilder().build())
+            .setProcessingOptions(Job.ProcessingOptions.newBuilder().build())
             .build();
     mockJobService.addResponse(expectedResponse);
 
@@ -871,6 +886,7 @@ public class JobServiceClientTest {
             .setMaxPageSize(524069526)
             .setPageToken("pageToken873572522")
             .setOrderBy("orderBy-1207110587")
+            .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
             .setDisableKeywordMatch(true)
             .build();
 
@@ -918,6 +934,7 @@ public class JobServiceClientTest {
               .setMaxPageSize(524069526)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
               .setDisableKeywordMatch(true)
               .build();
       client.searchJobs(request);
@@ -953,6 +970,7 @@ public class JobServiceClientTest {
             .setMaxPageSize(524069526)
             .setPageToken("pageToken873572522")
             .setOrderBy("orderBy-1207110587")
+            .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
             .setDisableKeywordMatch(true)
             .build();
 
@@ -1000,6 +1018,7 @@ public class JobServiceClientTest {
               .setMaxPageSize(524069526)
               .setPageToken("pageToken873572522")
               .setOrderBy("orderBy-1207110587")
+              .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
               .setDisableKeywordMatch(true)
               .build();
       client.searchJobsForAlert(request);
