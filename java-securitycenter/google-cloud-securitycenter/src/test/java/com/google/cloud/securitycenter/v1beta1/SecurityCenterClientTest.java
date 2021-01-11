@@ -377,6 +377,7 @@ public class SecurityCenterClientTest {
         OrganizationSettings.newBuilder()
             .setName(OrganizationSettingsName.of("[ORGANIZATION]").toString())
             .setEnableAssetDiscovery(true)
+            .setAssetDiscoveryConfig(OrganizationSettings.AssetDiscoveryConfig.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -417,6 +418,7 @@ public class SecurityCenterClientTest {
         OrganizationSettings.newBuilder()
             .setName(OrganizationSettingsName.of("[ORGANIZATION]").toString())
             .setEnableAssetDiscovery(true)
+            .setAssetDiscoveryConfig(OrganizationSettings.AssetDiscoveryConfig.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
@@ -1326,6 +1328,7 @@ public class SecurityCenterClientTest {
         OrganizationSettings.newBuilder()
             .setName(OrganizationSettingsName.of("[ORGANIZATION]").toString())
             .setEnableAssetDiscovery(true)
+            .setAssetDiscoveryConfig(OrganizationSettings.AssetDiscoveryConfig.newBuilder().build())
             .build();
     mockSecurityCenter.addResponse(expectedResponse);
 
