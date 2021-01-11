@@ -91,7 +91,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class CloudSchedulerClient implements BackgroundResource {
   private final CloudSchedulerSettings settings;
   private final CloudSchedulerStub stub;

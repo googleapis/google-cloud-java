@@ -93,7 +93,6 @@ import org.threeten.bp.Duration;
  * CloudSchedulerStubSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudSchedulerStubSettings extends StubSettings<CloudSchedulerStubSettings> {
   /** The default scopes of the service. */

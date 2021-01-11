@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * CloudSchedulerSettings cloudSchedulerSettings = cloudSchedulerSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudSchedulerSettings extends ClientSettings<CloudSchedulerSettings> {
 
