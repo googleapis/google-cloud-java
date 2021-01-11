@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-iamcredentials.git",
-        "sha": "a868e7e36c11f723b10d9c14563c738a3584bc93"
+        "sha": "8434e94e24f28c72109030d13f5b6a7e0a3e1026"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "996775eca5fd934edac3c2ae34b80ff0395b1717"
+        "sha": "16ec872dd898d7de6e1822badfac32484b5d9031"
       }
     }
   ]
