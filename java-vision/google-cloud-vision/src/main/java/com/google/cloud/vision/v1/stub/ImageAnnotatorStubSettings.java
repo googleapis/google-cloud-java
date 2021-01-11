@@ -86,7 +86,6 @@ import org.threeten.bp.Duration;
  * ImageAnnotatorStubSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ImageAnnotatorStubSettings extends StubSettings<ImageAnnotatorStubSettings> {
   /** The default scopes of the service. */

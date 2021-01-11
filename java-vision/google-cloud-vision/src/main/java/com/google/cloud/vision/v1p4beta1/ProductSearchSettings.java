@@ -71,6 +71,7 @@ import javax.annotation.Generated;
  * ProductSearchSettings productSearchSettings = productSearchSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ProductSearchSettings extends ClientSettings<ProductSearchSettings> {
 

@@ -21,6 +21,7 @@ import static com.google.cloud.vision.v1p3beta1.ProductSearchClient.ListProducts
 import static com.google.cloud.vision.v1p3beta1.ProductSearchClient.ListProductsPagedResponse;
 import static com.google.cloud.vision.v1p3beta1.ProductSearchClient.ListReferenceImagesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -73,6 +74,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcProductSearchStub extends ProductSearchStub {
   private static final MethodDescriptor<CreateProductSetRequest, ProductSet>

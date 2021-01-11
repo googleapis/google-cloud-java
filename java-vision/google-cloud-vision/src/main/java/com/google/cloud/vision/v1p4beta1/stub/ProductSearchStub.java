@@ -21,6 +21,7 @@ import static com.google.cloud.vision.v1p4beta1.ProductSearchClient.ListProducts
 import static com.google.cloud.vision.v1p4beta1.ProductSearchClient.ListProductsPagedResponse;
 import static com.google.cloud.vision.v1p4beta1.ProductSearchClient.ListReferenceImagesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -63,7 +64,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class ProductSearchStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {

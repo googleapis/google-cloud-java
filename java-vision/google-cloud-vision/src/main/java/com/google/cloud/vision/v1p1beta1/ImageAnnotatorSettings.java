@@ -63,6 +63,7 @@ import javax.annotation.Generated;
  * ImageAnnotatorSettings imageAnnotatorSettings = imageAnnotatorSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ImageAnnotatorSettings extends ClientSettings<ImageAnnotatorSettings> {
 

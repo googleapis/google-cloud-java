@@ -16,6 +16,7 @@
 
 package com.google.cloud.vision.v1p4beta1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcCallableFactory;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
@@ -41,7 +42,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class GrpcImageAnnotatorCallableFactory implements GrpcStubCallableFactory {
 
   @Override
