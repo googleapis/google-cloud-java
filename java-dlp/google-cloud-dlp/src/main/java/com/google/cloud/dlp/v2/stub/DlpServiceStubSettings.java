@@ -135,7 +135,6 @@ import org.threeten.bp.Duration;
  * DlpServiceStubSettings dlpServiceSettings = dlpServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DlpServiceStubSettings extends StubSettings<DlpServiceStubSettings> {
   /** The default scopes of the service. */
