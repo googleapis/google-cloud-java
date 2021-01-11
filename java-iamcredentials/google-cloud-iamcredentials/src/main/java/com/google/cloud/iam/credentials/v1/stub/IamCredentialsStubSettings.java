@@ -81,7 +81,6 @@ import org.threeten.bp.Duration;
  * IamCredentialsStubSettings iamCredentialsSettings = iamCredentialsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class IamCredentialsStubSettings extends StubSettings<IamCredentialsStubSettings> {
   /** The default scopes of the service. */
