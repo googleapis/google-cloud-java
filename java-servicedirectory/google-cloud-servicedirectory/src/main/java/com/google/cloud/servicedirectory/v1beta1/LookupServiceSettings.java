@@ -63,6 +63,7 @@ import javax.annotation.Generated;
  * LookupServiceSettings lookupServiceSettings = lookupServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class LookupServiceSettings extends ClientSettings<LookupServiceSettings> {
 

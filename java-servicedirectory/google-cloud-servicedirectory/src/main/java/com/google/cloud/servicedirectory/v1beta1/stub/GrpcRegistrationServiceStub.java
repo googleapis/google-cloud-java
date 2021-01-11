@@ -20,6 +20,7 @@ import static com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClien
 import static com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient.ListNamespacesPagedResponse;
 import static com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient.ListServicesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -69,6 +70,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
   private static final MethodDescriptor<CreateNamespaceRequest, Namespace>

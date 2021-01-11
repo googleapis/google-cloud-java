@@ -112,7 +112,6 @@ import org.threeten.bp.Duration;
  *     registrationServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class RegistrationServiceStubSettings extends StubSettings<RegistrationServiceStubSettings> {
   /** The default scopes of the service. */

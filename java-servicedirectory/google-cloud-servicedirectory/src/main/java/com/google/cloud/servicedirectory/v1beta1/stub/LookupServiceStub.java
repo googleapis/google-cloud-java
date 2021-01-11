@@ -16,6 +16,7 @@
 
 package com.google.cloud.servicedirectory.v1beta1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest;
@@ -28,7 +29,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class LookupServiceStub implements BackgroundResource {
 
   public UnaryCallable<ResolveServiceRequest, ResolveServiceResponse> resolveServiceCallable() {

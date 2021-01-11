@@ -76,6 +76,7 @@ import javax.annotation.Generated;
  *     registrationServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class RegistrationServiceSettings extends ClientSettings<RegistrationServiceSettings> {
 

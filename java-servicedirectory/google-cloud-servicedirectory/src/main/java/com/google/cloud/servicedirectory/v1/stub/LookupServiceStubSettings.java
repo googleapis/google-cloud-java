@@ -75,7 +75,6 @@ import org.threeten.bp.Duration;
  * LookupServiceStubSettings lookupServiceSettings = lookupServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class LookupServiceStubSettings extends StubSettings<LookupServiceStubSettings> {
   /** The default scopes of the service. */
