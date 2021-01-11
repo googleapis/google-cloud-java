@@ -62,6 +62,7 @@ import javax.annotation.Generated;
  * TextToSpeechSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class TextToSpeechSettings extends ClientSettings<TextToSpeechSettings> {
 

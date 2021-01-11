@@ -76,7 +76,6 @@ import org.threeten.bp.Duration;
  * TextToSpeechStubSettings textToSpeechSettings = textToSpeechSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class TextToSpeechStubSettings extends StubSettings<TextToSpeechStubSettings> {
   /** The default scopes of the service. */
