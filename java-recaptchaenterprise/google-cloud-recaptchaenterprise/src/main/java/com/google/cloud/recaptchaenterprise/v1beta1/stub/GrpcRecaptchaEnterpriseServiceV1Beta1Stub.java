@@ -18,6 +18,7 @@ package com.google.cloud.recaptchaenterprise.v1beta1.stub;
 
 import static com.google.cloud.recaptchaenterprise.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client.ListKeysPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -52,6 +53,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcRecaptchaEnterpriseServiceV1Beta1Stub
     extends RecaptchaEnterpriseServiceV1Beta1Stub {

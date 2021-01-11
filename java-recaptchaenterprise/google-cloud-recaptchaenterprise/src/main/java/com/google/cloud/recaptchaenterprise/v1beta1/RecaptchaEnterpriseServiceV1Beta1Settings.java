@@ -81,6 +81,7 @@ import javax.annotation.Generated;
  *     recaptchaEnterpriseServiceV1Beta1SettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceV1Beta1Settings
     extends ClientSettings<RecaptchaEnterpriseServiceV1Beta1Settings> {

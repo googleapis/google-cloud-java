@@ -95,7 +95,6 @@ import org.threeten.bp.Duration;
  *     recaptchaEnterpriseServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class RecaptchaEnterpriseServiceStubSettings
     extends StubSettings<RecaptchaEnterpriseServiceStubSettings> {
