@@ -19,6 +19,7 @@ package com.google.cloud.tasks.v2beta3.stub;
 import static com.google.cloud.tasks.v2beta3.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2beta3.CloudTasksClient.ListTasksPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.tasks.v2beta3.CreateQueueRequest;
@@ -52,7 +53,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class CloudTasksStub implements BackgroundResource {
 
   public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {

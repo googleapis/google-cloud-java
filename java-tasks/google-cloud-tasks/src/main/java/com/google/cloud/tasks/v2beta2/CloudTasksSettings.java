@@ -72,6 +72,7 @@ import javax.annotation.Generated;
  * CloudTasksSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
 

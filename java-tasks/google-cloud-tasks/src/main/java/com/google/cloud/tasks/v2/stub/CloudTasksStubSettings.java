@@ -104,7 +104,6 @@ import org.threeten.bp.Duration;
  * CloudTasksStubSettings cloudTasksSettings = cloudTasksSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudTasksStubSettings extends StubSettings<CloudTasksStubSettings> {
   /** The default scopes of the service. */
