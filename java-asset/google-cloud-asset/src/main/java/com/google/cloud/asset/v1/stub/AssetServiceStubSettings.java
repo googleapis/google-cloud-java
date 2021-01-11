@@ -109,7 +109,6 @@ import org.threeten.bp.Duration;
  * AssetServiceStubSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class AssetServiceStubSettings extends StubSettings<AssetServiceStubSettings> {
   /** The default scopes of the service. */

@@ -64,6 +64,7 @@ import javax.annotation.Generated;
  * AssetServiceSettings assetServiceSettings = assetServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AssetServiceSettings extends ClientSettings<AssetServiceSettings> {
 

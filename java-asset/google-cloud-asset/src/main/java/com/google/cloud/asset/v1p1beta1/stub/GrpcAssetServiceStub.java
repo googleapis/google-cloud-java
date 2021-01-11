@@ -19,6 +19,7 @@ package com.google.cloud.asset.v1p1beta1.stub;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllIamPoliciesPagedResponse;
 import static com.google.cloud.asset.v1p1beta1.AssetServiceClient.SearchAllResourcesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -45,6 +46,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcAssetServiceStub extends AssetServiceStub {
   private static final MethodDescriptor<SearchAllResourcesRequest, SearchAllResourcesResponse>
