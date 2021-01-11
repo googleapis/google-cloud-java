@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  *     videoIntelligenceServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class VideoIntelligenceServiceSettings
     extends ClientSettings<VideoIntelligenceServiceSettings> {

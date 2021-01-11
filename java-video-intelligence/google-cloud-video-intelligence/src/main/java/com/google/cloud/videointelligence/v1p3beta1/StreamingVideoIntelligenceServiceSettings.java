@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  *     streamingVideoIntelligenceServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class StreamingVideoIntelligenceServiceSettings
     extends ClientSettings<StreamingVideoIntelligenceServiceSettings> {

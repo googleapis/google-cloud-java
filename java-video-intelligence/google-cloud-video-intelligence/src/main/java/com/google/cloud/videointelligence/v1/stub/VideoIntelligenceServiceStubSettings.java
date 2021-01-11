@@ -82,7 +82,6 @@ import org.threeten.bp.Duration;
  *     videoIntelligenceServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class VideoIntelligenceServiceStubSettings
     extends StubSettings<VideoIntelligenceServiceStubSettings> {

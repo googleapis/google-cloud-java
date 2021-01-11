@@ -16,6 +16,7 @@
 
 package com.google.cloud.videointelligence.v1p3beta1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
@@ -28,7 +29,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class StreamingVideoIntelligenceServiceStub implements BackgroundResource {
 
   public BidiStreamingCallable<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse>

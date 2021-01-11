@@ -16,6 +16,7 @@
 
 package com.google.cloud.videointelligence.v1beta2.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -32,7 +33,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class VideoIntelligenceServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
