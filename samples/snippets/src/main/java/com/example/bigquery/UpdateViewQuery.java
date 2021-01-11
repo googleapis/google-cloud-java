@@ -48,10 +48,10 @@ public class UpdateViewQuery {
 
       // Update view query
       ViewDefinition viewDefinition = viewMetadata.getDefinition();
-      viewDefinition.toBuilder().setQuery(query).build();
+      ViewDefinition updatedViewDefinition = viewDefinition.toBuilder().setQuery(query).build();
 
       // Set metadata
-      bigquery.update(viewMetadata.toBuilder().setDefinition(viewDefinition).build());
+      bigquery.update(viewMetadata.toBuilder().setDefinition(updatedViewDefinition).build());
 
       System.out.println("View query updated successfully");
     } catch (BigQueryException e) {
