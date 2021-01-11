@@ -124,7 +124,6 @@ import org.threeten.bp.Duration;
  * DataCatalogStubSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class DataCatalogStubSettings extends StubSettings<DataCatalogStubSettings> {
   /** The default scopes of the service. */

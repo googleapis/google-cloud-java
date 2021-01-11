@@ -21,6 +21,7 @@ import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListEntryGr
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListTagsPagedResponse;
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.SearchCatalogPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -82,6 +83,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcDataCatalogStub extends DataCatalogStub {
   private static final MethodDescriptor<SearchCatalogRequest, SearchCatalogResponse>

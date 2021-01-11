@@ -64,6 +64,7 @@ import javax.annotation.Generated;
  *     policyTagManagerSerializationSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationSettings
     extends ClientSettings<PolicyTagManagerSerializationSettings> {

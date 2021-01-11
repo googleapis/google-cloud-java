@@ -74,6 +74,7 @@ import javax.annotation.Generated;
  * DataCatalogSettings dataCatalogSettings = dataCatalogSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class DataCatalogSettings extends ClientSettings<DataCatalogSettings> {
 

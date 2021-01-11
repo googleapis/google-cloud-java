@@ -83,7 +83,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationClient implements BackgroundResource {
   private final PolicyTagManagerSerializationSettings settings;
   private final PolicyTagManagerSerializationStub stub;

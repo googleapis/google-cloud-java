@@ -21,6 +21,7 @@ import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListEntryGr
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.ListTagsPagedResponse;
 import static com.google.cloud.datacatalog.v1beta1.DataCatalogClient.SearchCatalogPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1beta1.CreateEntryGroupRequest;
@@ -70,7 +71,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class DataCatalogStub implements BackgroundResource {
 
   public UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>

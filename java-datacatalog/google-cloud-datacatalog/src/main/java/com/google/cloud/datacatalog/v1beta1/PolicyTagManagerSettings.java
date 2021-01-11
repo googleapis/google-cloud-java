@@ -73,6 +73,7 @@ import javax.annotation.Generated;
  * PolicyTagManagerSettings policyTagManagerSettings = policyTagManagerSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSettings extends ClientSettings<PolicyTagManagerSettings> {
 
