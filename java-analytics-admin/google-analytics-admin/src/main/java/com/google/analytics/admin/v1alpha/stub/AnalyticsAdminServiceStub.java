@@ -99,6 +99,7 @@ import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateWebDataStreamRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
 import com.google.analytics.admin.v1alpha.WebDataStream;
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
@@ -110,7 +111,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetAccountRequest, Account> getAccountCallable() {

@@ -77,6 +77,7 @@ import javax.annotation.Generated;
  *     analyticsAdminServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdminServiceSettings> {
 
