@@ -103,7 +103,6 @@ import org.threeten.bp.Duration;
  * GrafeasStubSettings grafeasSettings = grafeasSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class GrafeasStubSettings extends StubSettings<GrafeasStubSettings> {
   /** The default scopes of the service. */
