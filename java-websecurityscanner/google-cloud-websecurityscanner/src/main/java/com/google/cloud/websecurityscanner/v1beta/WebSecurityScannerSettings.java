@@ -72,6 +72,7 @@ import javax.annotation.Generated;
  *     webSecurityScannerSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class WebSecurityScannerSettings extends ClientSettings<WebSecurityScannerSettings> {
 

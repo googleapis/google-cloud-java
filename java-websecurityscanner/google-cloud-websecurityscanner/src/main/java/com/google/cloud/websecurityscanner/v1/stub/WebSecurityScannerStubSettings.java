@@ -109,7 +109,6 @@ import org.threeten.bp.Duration;
  *     webSecurityScannerSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class WebSecurityScannerStubSettings extends StubSettings<WebSecurityScannerStubSettings> {
   /** The default scopes of the service. */
