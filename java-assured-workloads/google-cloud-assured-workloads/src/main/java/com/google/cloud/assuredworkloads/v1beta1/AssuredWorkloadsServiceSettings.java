@@ -71,6 +71,7 @@ import javax.annotation.Generated;
  *     assuredWorkloadsServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AssuredWorkloadsServiceSettings
     extends ClientSettings<AssuredWorkloadsServiceSettings> {
