@@ -93,7 +93,6 @@ import org.threeten.bp.Duration;
  * AccessApprovalStubSettings accessApprovalSettings = accessApprovalSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class AccessApprovalStubSettings extends StubSettings<AccessApprovalStubSettings> {
   /** The default scopes of the service. */
