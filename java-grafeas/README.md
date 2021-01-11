@@ -21,10 +21,11 @@ If you are using Maven, add this to your pom.xml file:
 </dependency>
 ```
 
-If you are using Gradle, add this to your dependencies
+If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
 compile 'io.grafeas:grafeas:1.0.5'
 ```
+
 If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "io.grafeas" % "grafeas" % "1.0.5"
