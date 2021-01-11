@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * RealmsServiceSettings realmsServiceSettings = realmsServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class RealmsServiceSettings extends ClientSettings<RealmsServiceSettings> {
 

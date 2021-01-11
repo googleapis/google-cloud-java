@@ -95,8 +95,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class GameServerConfigsServiceClient implements BackgroundResource {
   private final GameServerConfigsServiceSettings settings;
   private final GameServerConfigsServiceStub stub;

@@ -95,7 +95,6 @@ import org.threeten.bp.Duration;
  *     gameServerConfigsServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class GameServerConfigsServiceStubSettings
     extends StubSettings<GameServerConfigsServiceStubSettings> {

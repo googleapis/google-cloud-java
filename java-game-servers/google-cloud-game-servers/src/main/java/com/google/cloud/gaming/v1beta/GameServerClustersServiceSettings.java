@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  *     gameServerClustersServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GameServerClustersServiceSettings
     extends ClientSettings<GameServerClustersServiceSettings> {

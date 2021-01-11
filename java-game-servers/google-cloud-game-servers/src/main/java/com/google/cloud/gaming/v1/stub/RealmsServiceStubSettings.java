@@ -97,7 +97,6 @@ import org.threeten.bp.Duration;
  * RealmsServiceStubSettings realmsServiceSettings = realmsServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class RealmsServiceStubSettings extends StubSettings<RealmsServiceStubSettings> {
   /** The default scopes of the service. */

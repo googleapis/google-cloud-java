@@ -102,7 +102,6 @@ import org.threeten.bp.Duration;
  *     gameServerClustersServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class GameServerClustersServiceStubSettings
     extends StubSettings<GameServerClustersServiceStubSettings> {
