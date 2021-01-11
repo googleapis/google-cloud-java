@@ -72,6 +72,7 @@ import javax.annotation.Generated;
  *     certificateAuthorityServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CertificateAuthorityServiceSettings
     extends ClientSettings<CertificateAuthorityServiceSettings> {
