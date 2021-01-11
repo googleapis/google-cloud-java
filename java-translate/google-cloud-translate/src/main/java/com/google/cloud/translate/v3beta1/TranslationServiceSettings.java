@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  *     translationServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class TranslationServiceSettings extends ClientSettings<TranslationServiceSettings> {
 

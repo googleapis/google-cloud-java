@@ -105,7 +105,6 @@ import org.threeten.bp.Duration;
  *     translationServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class TranslationServiceStubSettings extends StubSettings<TranslationServiceStubSettings> {
   /** The default scopes of the service. */
