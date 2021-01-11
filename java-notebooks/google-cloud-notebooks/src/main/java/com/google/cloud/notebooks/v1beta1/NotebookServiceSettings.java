@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  * NotebookServiceSettings notebookServiceSettings = notebookServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class NotebookServiceSettings extends ClientSettings<NotebookServiceSettings> {
 
