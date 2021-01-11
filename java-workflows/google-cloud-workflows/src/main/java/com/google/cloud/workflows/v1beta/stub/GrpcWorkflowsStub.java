@@ -18,6 +18,7 @@ package com.google.cloud.workflows.v1beta.stub;
 
 import static com.google.cloud.workflows.v1beta.WorkflowsClient.ListWorkflowsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -51,6 +52,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcWorkflowsStub extends WorkflowsStub {
   private static final MethodDescriptor<ListWorkflowsRequest, ListWorkflowsResponse>

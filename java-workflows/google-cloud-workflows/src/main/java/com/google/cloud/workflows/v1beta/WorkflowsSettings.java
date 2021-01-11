@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * WorkflowsSettings workflowsSettings = workflowsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
 
