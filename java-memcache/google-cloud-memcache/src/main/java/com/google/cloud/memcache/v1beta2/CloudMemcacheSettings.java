@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * CloudMemcacheSettings cloudMemcacheSettings = cloudMemcacheSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings> {
 
