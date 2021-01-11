@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.8.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.0...v1.8.1) (2021-01-11)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson.core:jackson-core to v2.12.1 ([#770](https://www.github.com/googleapis/java-bigquerystorage/issues/770)) ([2f276bd](https://www.github.com/googleapis/java-bigquerystorage/commit/2f276bdf254a06f38a87d9ab93bd73334dd19927))
+
 ## [1.8.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.7.2...v1.8.0) (2021-01-05)
 
 
