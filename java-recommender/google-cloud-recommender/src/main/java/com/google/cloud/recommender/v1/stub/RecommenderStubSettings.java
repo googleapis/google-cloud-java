@@ -94,7 +94,6 @@ import org.threeten.bp.Duration;
  * RecommenderStubSettings recommenderSettings = recommenderSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class RecommenderStubSettings extends StubSettings<RecommenderStubSettings> {
   /** The default scopes of the service. */

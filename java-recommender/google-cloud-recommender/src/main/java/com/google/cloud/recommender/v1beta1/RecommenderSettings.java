@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * RecommenderSettings recommenderSettings = recommenderSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
 
