@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.0.7](https://www.github.com/googleapis/java-grafeas/compare/v1.0.6...v1.0.7) (2021-01-12)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#216](https://www.github.com/googleapis/java-grafeas/issues/216)) ([aeca4b7](https://www.github.com/googleapis/java-grafeas/commit/aeca4b71ef6a0a93bb5f790a6165d4de0cbff017))
+* update dependency com.puppycrawl.tools:checkstyle to v8.39 ([#204](https://www.github.com/googleapis/java-grafeas/issues/204)) ([36b420e](https://www.github.com/googleapis/java-grafeas/commit/36b420e602ce91cd400ebabdac8a6db61dd08c47))
+
 ### [1.0.6](https://www.github.com/googleapis/java-grafeas/compare/v1.0.5...v1.0.6) (2020-12-14)
 
 
