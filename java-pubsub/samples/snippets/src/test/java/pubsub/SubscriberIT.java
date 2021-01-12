@@ -37,6 +37,7 @@ import com.google.pubsub.v1.TopicName;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 import org.junit.After;
@@ -82,6 +83,32 @@ public class SubscriberIT {
       messageIdFutures.add(messageIdFuture);
     }
     ApiFutures.allAsList(messageIdFutures).get();
+  }
+
+  // Helper function to retry synchronous pull attempts until all outstanding messages are received.
+  private void syncPullWithRetries(
+      Integer numOfMessages, Integer maxRetries, CheckedRunnable syncPull) throws Exception {
+    HashSet<String> outstandingMessages = new HashSet<>();
+    for (int i = 0; i < numOfMessages; i++) {
+      outstandingMessages.add("Hello " + i);
+    }
+    int attempt = 1;
+    while ((outstandingMessages.size() > 0) && (attempt <= maxRetries)) {
+      syncPull.run();
+      HashSet<String> clone = (HashSet) outstandingMessages.clone();
+      for (String message : clone) {
+        if (bout.toString().contains(message)) {
+          outstandingMessages.remove(message);
+        }
+      }
+      attempt++;
+    }
+    assertThat(outstandingMessages).isEmpty();
+  }
+
+  @FunctionalInterface
+  public interface CheckedRunnable {
+    void run() throws Exception;
   }
 
   @Rule public Timeout globalTimeout = Timeout.seconds(600); // 10 minute timeout
@@ -168,17 +195,17 @@ public class SubscriberIT {
     publishSomeMessages(3);
     bout.reset();
     // Test subscribe synchronously.
-    SubscribeSyncExample.subscribeSyncExample(projectId, subscriptionId, 10);
-    for (int i = 0; i < 3; i++) {
-      assertThat(bout.toString()).contains("Hello " + i);
-    }
+    syncPullWithRetries(
+        3, 3, () -> SubscribeSyncExample.subscribeSyncExample(projectId, subscriptionId, 3));
 
     publishSomeMessages(3);
     bout.reset();
     // Test subscribe synchronously with lease management.
-    SubscribeSyncWithLeaseExample.subscribeSyncWithLeaseExample(projectId, subscriptionId, 10);
-    for (int i = 0; i < 3; i++) {
-      assertThat(bout.toString()).contains("Hello " + i);
-    }
+    syncPullWithRetries(
+        3,
+        3,
+        () ->
+            SubscribeSyncWithLeaseExample.subscribeSyncWithLeaseExample(
+                projectId, subscriptionId, 10));
   }
 }
