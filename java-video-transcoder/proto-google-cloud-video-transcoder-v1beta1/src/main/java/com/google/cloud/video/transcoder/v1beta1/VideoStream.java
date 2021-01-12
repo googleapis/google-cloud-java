@@ -957,6 +957,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
    * the input FPS, and smaller or equal to the target FPS.
    * The following table shows the computed video FPS given the target FPS (in
    * parenthesis) and input FPS (in the first column):
+   * ```
    * |        | (30)   | (60)   | (25) | (50) |
    * |--------|--------|--------|------|------|
    * | 240    | Fail   | Fail   | Fail | Fail |
@@ -973,6 +974,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
    * | 15     | 15     | 15     | 20   | 30   |
    * | 12     | 12     | 12     | 20   | 30   |
    * | 10     | 10     | 10     | 20   | 30   |
+   * ```
    * </pre>
    *
    * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3389,6 +3391,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * the input FPS, and smaller or equal to the target FPS.
      * The following table shows the computed video FPS given the target FPS (in
      * parenthesis) and input FPS (in the first column):
+     * ```
      * |        | (30)   | (60)   | (25) | (50) |
      * |--------|--------|--------|------|------|
      * | 240    | Fail   | Fail   | Fail | Fail |
@@ -3405,6 +3408,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * | 15     | 15     | 15     | 20   | 30   |
      * | 12     | 12     | 12     | 20   | 30   |
      * | 10     | 10     | 10     | 20   | 30   |
+     * ```
      * </pre>
      *
      * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3425,6 +3429,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * the input FPS, and smaller or equal to the target FPS.
      * The following table shows the computed video FPS given the target FPS (in
      * parenthesis) and input FPS (in the first column):
+     * ```
      * |        | (30)   | (60)   | (25) | (50) |
      * |--------|--------|--------|------|------|
      * | 240    | Fail   | Fail   | Fail | Fail |
@@ -3441,6 +3446,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * | 15     | 15     | 15     | 20   | 30   |
      * | 12     | 12     | 12     | 20   | 30   |
      * | 10     | 10     | 10     | 20   | 30   |
+     * ```
      * </pre>
      *
      * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3464,6 +3470,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * the input FPS, and smaller or equal to the target FPS.
      * The following table shows the computed video FPS given the target FPS (in
      * parenthesis) and input FPS (in the first column):
+     * ```
      * |        | (30)   | (60)   | (25) | (50) |
      * |--------|--------|--------|------|------|
      * | 240    | Fail   | Fail   | Fail | Fail |
@@ -3480,6 +3487,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * | 15     | 15     | 15     | 20   | 30   |
      * | 12     | 12     | 12     | 20   | 30   |
      * | 10     | 10     | 10     | 20   | 30   |
+     * ```
      * </pre>
      *
      * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
