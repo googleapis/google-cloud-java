@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute-bom</artifactId>
-  <version>1.0.0-alpha</version><!-- {x-version-update:google-cloud-compute:current} -->
+  <version>1.0.1-alpha</version><!-- {x-version-update:google-cloud-compute:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,12 +64,12 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-compute</artifactId>
-        <version>1.0.0-alpha</version><!-- {x-version-update:google-cloud-compute:current} -->
+        <version>1.0.1-alpha</version><!-- {x-version-update:google-cloud-compute:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-compute-v1</artifactId>
-        <version>1.0.0-alpha</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
+        <version>1.0.1-alpha</version><!-- {x-version-update:proto-google-cloud-compute-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>

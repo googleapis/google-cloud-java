@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-compute:1.0.0-alpha:1.0.0-alpha
-proto-google-cloud-compute-v1:1.0.0-alpha:1.0.0-alpha
-grpc-google-cloud-compute-v1:1.0.0-alpha:1.0.0-alpha
+google-cloud-compute:1.0.1-alpha:1.0.1-alpha
+proto-google-cloud-compute-v1:1.0.1-alpha:1.0.1-alpha
+grpc-google-cloud-compute-v1:1.0.1-alpha:1.0.1-alpha

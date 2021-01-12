@@ -19,17 +19,17 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>1.0.0-alpha</version>
+  <version>1.0.1-alpha</version>
 </dependency>
 ```
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:1.0.0-alpha'
+compile 'com.google.cloud:google-cloud-compute:1.0.1-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.0.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "1.0.1-alpha"
 ```
 [//]: # ({x-version-update-end})
 
