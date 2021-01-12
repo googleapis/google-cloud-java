@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.17.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.17.0...v0.17.1) (2021-01-12)
+
+
+### Dependencies
+
+* update dependency com.fasterxml.jackson:jackson-bom to v2.12.1 ([#245](https://www.github.com/googleapis/java-shared-dependencies/issues/245)) ([5ffc8a0](https://www.github.com/googleapis/java-shared-dependencies/commit/5ffc8a0d173ea0222ac9610ece0ac2aeb1d17f27))
+
 ## [0.17.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.16.1...v0.17.0) (2020-12-15)
 
 
