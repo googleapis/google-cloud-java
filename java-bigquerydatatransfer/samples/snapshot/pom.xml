@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-      <version>1.0.26-SNAPSHOT</version>
+      <version>1.0.26</version>
     </dependency>
     <!-- {x-version-update-end} -->
 

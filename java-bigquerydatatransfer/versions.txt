@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-proto-google-cloud-bigquerydatatransfer-v1:1.0.25:1.0.26-SNAPSHOT
-grpc-google-cloud-bigquerydatatransfer-v1:1.0.25:1.0.26-SNAPSHOT
-google-cloud-bigquerydatatransfer:1.0.25:1.0.26-SNAPSHOT
+proto-google-cloud-bigquerydatatransfer-v1:1.0.26:1.0.26
+grpc-google-cloud-bigquerydatatransfer-v1:1.0.26:1.0.26
+google-cloud-bigquerydatatransfer:1.0.26:1.0.26
