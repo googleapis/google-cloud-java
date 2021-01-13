@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * TranscoderServiceSettings transcoderServiceSettings = transcoderServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class TranscoderServiceSettings extends ClientSettings<TranscoderServiceSettings> {
 
