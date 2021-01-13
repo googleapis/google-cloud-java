@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-grafeas.git",
-        "sha": "c16417c1a4bd8f8f5658efb2f815c5d991df8cd8"
+        "sha": "77ea10c5bb51a8c7880275be5890cc539f75e476"
       }
     },
     {

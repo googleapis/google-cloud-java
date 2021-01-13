@@ -17,18 +17,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>io.grafeas</groupId>
   <artifactId>grafeas</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'io.grafeas:grafeas:1.0.5'
+compile 'io.grafeas:grafeas:1.0.7'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "io.grafeas" % "grafeas" % "1.0.5"
+libraryDependencies += "io.grafeas" % "grafeas" % "1.0.7"
 ```
 
 ## Authentication
