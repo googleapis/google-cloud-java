@@ -352,8 +352,8 @@ public class ITBigQueryWriteManualClientTest {
       ApiFuture<AppendRowsResponse> response2 = jsonStreamWriter.append(jsonArr2, -1);
       LOG.info("Sending one more message");
       ApiFuture<AppendRowsResponse> response3 = jsonStreamWriter.append(jsonArr3, -1);
-      assertEquals(1, response2.get().getAppendResult().getOffset().getValue());
-      assertEquals(3, response3.get().getAppendResult().getOffset().getValue());
+      Assert.assertFalse(response2.get().getAppendResult().hasOffset());
+      Assert.assertFalse(response3.get().getAppendResult().hasOffset());
 
       TableResult result =
           bigquery.listTableData(
