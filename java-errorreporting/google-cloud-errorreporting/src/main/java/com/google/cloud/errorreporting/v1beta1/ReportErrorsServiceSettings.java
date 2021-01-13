@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  *     reportErrorsServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ReportErrorsServiceSettings extends ClientSettings<ReportErrorsServiceSettings> {
 

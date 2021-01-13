@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  * ErrorGroupServiceSettings errorGroupServiceSettings = errorGroupServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ErrorGroupServiceSettings extends ClientSettings<ErrorGroupServiceSettings> {
 

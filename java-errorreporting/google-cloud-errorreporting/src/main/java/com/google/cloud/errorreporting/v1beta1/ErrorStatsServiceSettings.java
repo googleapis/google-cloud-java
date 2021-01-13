@@ -74,6 +74,7 @@ import javax.annotation.Generated;
  * ErrorStatsServiceSettings errorStatsServiceSettings = errorStatsServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ErrorStatsServiceSettings extends ClientSettings<ErrorStatsServiceSettings> {
 
