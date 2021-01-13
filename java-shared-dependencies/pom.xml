@@ -74,6 +74,7 @@
     <findbugs.version>3.0.2</findbugs.version>
     <errorprone.version>2.5.0</errorprone.version>
     <jackson.version>2.12.1</jackson.version>
+    <codec.version>1.15</codec.version>
   </properties>
 
   <dependencyManagement>
@@ -191,6 +192,11 @@
         <version>${jackson.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${codec.version}</version>
       </dependency>
 
       <!-- TODO: replace with opencensus-bom when available -->
