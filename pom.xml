@@ -61,7 +61,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <project.protobuf-java.version>3.11.4</project.protobuf-java.version>
+    <project.protobuf-java.version>3.14.0</project.protobuf-java.version>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquerystorage-parent</site.installationModule>
     <jackson-core.version>2.12.1</jackson-core.version>
