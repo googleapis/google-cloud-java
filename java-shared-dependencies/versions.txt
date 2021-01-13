@@ -1,4 +1,4 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-shared-dependencies:0.17.1:0.17.2-SNAPSHOT
+google-cloud-shared-dependencies:0.18.0:0.18.0

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.0](https://www.github.com/googleapis/java-shared-dependencies/compare/0.17.1...v0.18.0) (2021-01-13)
+
+
+### Features
+
+* add commons-codec to dependencyManagement ([#251](https://www.github.com/googleapis/java-shared-dependencies/issues/251)) ([4ee990d](https://www.github.com/googleapis/java-shared-dependencies/commit/4ee990d79c9207c81155f6ee9279308a2d4d0f9d))
+
+
+### Dependencies
+
+* update dependency com.google.errorprone:error_prone_annotations to v2.5.0 ([#247](https://www.github.com/googleapis/java-shared-dependencies/issues/247)) ([37c0861](https://www.github.com/googleapis/java-shared-dependencies/commit/37c0861cfb89f13a0682c98067c633b13b30b827))
+
 ### [0.17.1](https://www.github.com/googleapis/java-shared-dependencies/compare/0.17.0...v0.17.1) (2021-01-12)
 
 
