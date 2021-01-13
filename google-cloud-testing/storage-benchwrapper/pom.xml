@@ -76,7 +76,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.8</version><!-- {x-version-update:google-cloud-storage:current} -->
+      <version>1.113.9</version><!-- {x-version-update:google-cloud-storage:current} -->
     </dependency>
 
     <!-- protobuf  -->
