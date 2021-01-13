@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * VersionsSettings versionsSettings = versionsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class VersionsSettings extends ClientSettings<VersionsSettings> {
 

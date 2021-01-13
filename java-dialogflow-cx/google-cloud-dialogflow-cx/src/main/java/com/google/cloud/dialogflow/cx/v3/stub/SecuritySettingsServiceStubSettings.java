@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  *     securitySettingsServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class SecuritySettingsServiceStubSettings
     extends StubSettings<SecuritySettingsServiceStubSettings> {

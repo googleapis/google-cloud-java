@@ -95,7 +95,6 @@ import org.threeten.bp.Duration;
  * FlowsStubSettings flowsSettings = flowsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
   /** The default scopes of the service. */

@@ -88,7 +88,6 @@ import org.threeten.bp.Duration;
  * IntentsStubSettings intentsSettings = intentsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   /** The default scopes of the service. */

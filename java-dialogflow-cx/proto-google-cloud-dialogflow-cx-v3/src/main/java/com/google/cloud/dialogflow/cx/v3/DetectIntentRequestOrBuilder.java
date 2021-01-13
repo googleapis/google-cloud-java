@@ -38,6 +38,9 @@ public interface DetectIntentRequestOrBuilder
    * The length of the `Session ID` must not exceed 36 characters.
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   * Note: Always use agent versions for production traffic.
+   * See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    * </pre>
    *
    * <code>
@@ -62,6 +65,9 @@ public interface DetectIntentRequestOrBuilder
    * The length of the `Session ID` must not exceed 36 characters.
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   * Note: Always use agent versions for production traffic.
+   * See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    * </pre>
    *
    * <code>

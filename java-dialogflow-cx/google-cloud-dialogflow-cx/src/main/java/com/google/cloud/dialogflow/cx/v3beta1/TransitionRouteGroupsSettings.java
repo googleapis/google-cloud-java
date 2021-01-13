@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  *     transitionRouteGroupsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class TransitionRouteGroupsSettings extends ClientSettings<TransitionRouteGroupsSettings> {
 

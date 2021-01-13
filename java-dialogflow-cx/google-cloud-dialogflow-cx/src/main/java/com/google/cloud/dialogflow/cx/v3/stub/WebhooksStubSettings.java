@@ -88,7 +88,6 @@ import org.threeten.bp.Duration;
  * WebhooksStubSettings webhooksSettings = webhooksSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class WebhooksStubSettings extends StubSettings<WebhooksStubSettings> {
   /** The default scopes of the service. */

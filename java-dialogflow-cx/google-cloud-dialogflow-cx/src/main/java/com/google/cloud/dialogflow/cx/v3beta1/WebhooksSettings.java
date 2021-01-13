@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * WebhooksSettings webhooksSettings = webhooksSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class WebhooksSettings extends ClientSettings<WebhooksSettings> {
 

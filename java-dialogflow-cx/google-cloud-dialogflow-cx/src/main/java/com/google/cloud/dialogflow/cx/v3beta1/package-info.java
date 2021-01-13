@@ -37,6 +37,13 @@
  *
  * <p>Sample for EnvironmentsClient:
  *
+ * <p>======================= ExperimentsClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+ *
+ * <p>Sample for ExperimentsClient:
+ *
  * <p>======================= FlowsClient =======================
  *
  * <p>Service Description: Service for managing [Flows][google.cloud.dialogflow.cx.v3beta1.Flow].
@@ -55,6 +62,12 @@
  * <p>Service Description: Service for managing [Pages][google.cloud.dialogflow.cx.v3beta1.Page].
  *
  * <p>Sample for PagesClient:
+ *
+ * <p>======================= SecuritySettingsServiceClient =======================
+ *
+ * <p>Service Description: Service for managing security settings for Dialogflow.
+ *
+ * <p>Sample for SecuritySettingsServiceClient:
  *
  * <p>======================= SessionsClient =======================
  *

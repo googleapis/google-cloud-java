@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  *     sessionEntityTypesSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SessionEntityTypesSettings extends ClientSettings<SessionEntityTypesSettings> {
 

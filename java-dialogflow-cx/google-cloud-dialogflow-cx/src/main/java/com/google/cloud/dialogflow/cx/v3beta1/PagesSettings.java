@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * PagesSettings pagesSettings = pagesSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PagesSettings extends ClientSettings<PagesSettings> {
 

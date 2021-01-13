@@ -460,7 +460,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * -   MapKey value: parameter name
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: string or number, depending on parameter value type
+   *     -   Else: depending on parameter value type, could be one of string,
+   *     number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -490,7 +491,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * -   MapKey value: parameter name
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: string or number, depending on parameter value type
+   *     -   Else: depending on parameter value type, could be one of string,
+   *     number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -520,7 +522,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    * -   MapKey value: parameter name
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: string or number, depending on parameter value type
+   *     -   Else: depending on parameter value type, could be one of string,
+   *     number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -2147,7 +2150,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2176,7 +2180,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2209,7 +2214,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2246,7 +2252,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2280,7 +2287,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2319,7 +2327,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2354,7 +2363,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2383,7 +2393,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values
@@ -2414,7 +2425,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      * -   MapKey value: parameter name
      * -   MapValue type:
      *     -   If parameter's entity type is a composite entity: map
-     *     -   Else: string or number, depending on parameter value type
+     *     -   Else: depending on parameter value type, could be one of string,
+     *     number, boolean, null, list or map
      * -   MapValue value:
      *     -   If parameter's entity type is a composite entity:
      *         map from composite entity property names to property values

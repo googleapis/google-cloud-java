@@ -22,7 +22,8 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
+ * The response message for
+ * [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse}
@@ -168,7 +169,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
-   * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * only if `agent_uri` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
@@ -196,7 +198,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The URI to a file containing the exported agent. This field is populated
-   * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+   * only if `agent_uri` is specified in
+   * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
    * </pre>
    *
    * <code>string agent_uri = 1;</code>
@@ -432,7 +435,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response message for [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
+   * The response message for
+   * [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse}
@@ -626,7 +630,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The URI to a file containing the exported agent. This field is populated
-     * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * only if `agent_uri` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
@@ -655,7 +660,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The URI to a file containing the exported agent. This field is populated
-     * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * only if `agent_uri` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
@@ -684,7 +690,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The URI to a file containing the exported agent. This field is populated
-     * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * only if `agent_uri` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
@@ -706,7 +713,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The URI to a file containing the exported agent. This field is populated
-     * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * only if `agent_uri` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>string agent_uri = 1;</code>
@@ -726,7 +734,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The URI to a file containing the exported agent. This field is populated
-     * only if `agent_uri` is specified in [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
+     * only if `agent_uri` is specified in
+     * [ExportAgentRequest][google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest].
      * </pre>
      *
      * <code>string agent_uri = 1;</code>

@@ -88,8 +88,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class PagesClient implements BackgroundResource {
   private final PagesSettings settings;
   private final PagesStub stub;

@@ -96,7 +96,6 @@ import org.threeten.bp.Duration;
  * VersionsStubSettings versionsSettings = versionsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class VersionsStubSettings extends StubSettings<VersionsStubSettings> {
   /** The default scopes of the service. */

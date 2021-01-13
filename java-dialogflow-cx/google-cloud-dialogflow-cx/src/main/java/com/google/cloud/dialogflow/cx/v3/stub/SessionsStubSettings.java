@@ -80,7 +80,6 @@ import org.threeten.bp.Duration;
  * SessionsStubSettings sessionsSettings = sessionsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class SessionsStubSettings extends StubSettings<SessionsStubSettings> {
   /** The default scopes of the service. */

@@ -88,7 +88,6 @@ import org.threeten.bp.Duration;
  * PagesStubSettings pagesSettings = pagesSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class PagesStubSettings extends StubSettings<PagesStubSettings> {
   /** The default scopes of the service. */

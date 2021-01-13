@@ -63,6 +63,7 @@ import javax.annotation.Generated;
  * SessionsSettings sessionsSettings = sessionsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SessionsSettings extends ClientSettings<SessionsSettings> {
 

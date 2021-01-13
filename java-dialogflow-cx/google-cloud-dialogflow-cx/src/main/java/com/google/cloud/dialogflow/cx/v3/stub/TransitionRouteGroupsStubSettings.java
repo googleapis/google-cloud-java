@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  *     transitionRouteGroupsSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class TransitionRouteGroupsStubSettings
     extends StubSettings<TransitionRouteGroupsStubSettings> {

@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * FlowsSettings flowsSettings = flowsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class FlowsSettings extends ClientSettings<FlowsSettings> {
 

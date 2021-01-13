@@ -210,7 +210,8 @@ public interface QueryParametersOrBuilder
    * -   MapKey value: parameter name
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: string or number, depending on parameter value type
+   *     -   Else: depending on parameter value type, could be one of string,
+   *         number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -237,7 +238,8 @@ public interface QueryParametersOrBuilder
    * -   MapKey value: parameter name
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: string or number, depending on parameter value type
+   *     -   Else: depending on parameter value type, could be one of string,
+   *         number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -264,7 +266,8 @@ public interface QueryParametersOrBuilder
    * -   MapKey value: parameter name
    * -   MapValue type:
    *     -   If parameter's entity type is a composite entity: map
-   *     -   Else: string or number, depending on parameter value type
+   *     -   Else: depending on parameter value type, could be one of string,
+   *         number, boolean, null, list or map
    * -   MapValue value:
    *     -   If parameter's entity type is a composite entity:
    *         map from composite entity property names to property values
@@ -288,4 +291,93 @@ public interface QueryParametersOrBuilder
    * @return The analyzeQueryTextSentiment.
    */
   boolean getAnalyzeQueryTextSentiment();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through Dialogflow web console. The headers defined
+   * within this field will overwrite the headers configured through Dialogflow
+   * console if there is a conflict. Header names are case-insensitive.
+   * Google's specified headers are not allowed. Including: "Host",
+   * "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
+   * "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
+   */
+  int getWebhookHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through Dialogflow web console. The headers defined
+   * within this field will overwrite the headers configured through Dialogflow
+   * console if there is a conflict. Header names are case-insensitive.
+   * Google's specified headers are not allowed. Including: "Host",
+   * "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
+   * "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
+   */
+  boolean containsWebhookHeaders(java.lang.String key);
+  /** Use {@link #getWebhookHeadersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through Dialogflow web console. The headers defined
+   * within this field will overwrite the headers configured through Dialogflow
+   * console if there is a conflict. Header names are case-insensitive.
+   * Google's specified headers are not allowed. Including: "Host",
+   * "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
+   * "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through Dialogflow web console. The headers defined
+   * within this field will overwrite the headers configured through Dialogflow
+   * console if there is a conflict. Header names are case-insensitive.
+   * Google's specified headers are not allowed. Including: "Host",
+   * "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
+   * "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
+   */
+  java.lang.String getWebhookHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through Dialogflow web console. The headers defined
+   * within this field will overwrite the headers configured through Dialogflow
+   * console if there is a conflict. Header names are case-insensitive.
+   * Google's specified headers are not allowed. Including: "Host",
+   * "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
+   * "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 10;</code>
+   */
+  java.lang.String getWebhookHeadersOrThrow(java.lang.String key);
 }

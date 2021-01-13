@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * EntityTypesSettings entityTypesSettings = entityTypesSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
 

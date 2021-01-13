@@ -95,7 +95,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class VersionsClient implements BackgroundResource {
   private final VersionsSettings settings;
   private final VersionsStub stub;

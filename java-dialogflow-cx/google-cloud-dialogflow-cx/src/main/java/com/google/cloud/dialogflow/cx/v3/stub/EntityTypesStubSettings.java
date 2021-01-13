@@ -89,7 +89,6 @@ import org.threeten.bp.Duration;
  * EntityTypesStubSettings entityTypesSettings = entityTypesSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class EntityTypesStubSettings extends StubSettings<EntityTypesStubSettings> {
   /** The default scopes of the service. */

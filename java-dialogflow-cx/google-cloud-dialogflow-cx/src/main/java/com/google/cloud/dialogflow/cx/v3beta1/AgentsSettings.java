@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * AgentsSettings agentsSettings = agentsSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class AgentsSettings extends ClientSettings<AgentsSettings> {
 

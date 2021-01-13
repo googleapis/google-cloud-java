@@ -200,6 +200,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * Note: session must be set in the first request.
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   * Note: Always use agent versions for production traffic.
+   * See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -234,6 +237,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * Note: session must be set in the first request.
    * For more information, see the [sessions
    * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+   * Note: Always use agent versions for production traffic.
+   * See [Versions and
+   * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -848,6 +854,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * Note: session must be set in the first request.
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -881,6 +890,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * Note: session must be set in the first request.
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -914,6 +926,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * Note: session must be set in the first request.
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -946,6 +961,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * Note: session must be set in the first request.
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -974,6 +992,9 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * Note: session must be set in the first request.
      * For more information, see the [sessions
      * guide](https://cloud.google.com/dialogflow/cx/docs/concept/session).
+     * Note: Always use agent versions for production traffic.
+     * See [Versions and
+     * environments](https://cloud.google.com/dialogflow/cx/docs/concept/version).
      * </pre>
      *
      * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>

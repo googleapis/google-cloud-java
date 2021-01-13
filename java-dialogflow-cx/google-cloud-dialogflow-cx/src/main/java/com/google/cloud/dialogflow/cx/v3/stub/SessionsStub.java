@@ -35,7 +35,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public abstract class SessionsStub implements BackgroundResource {
 
   public UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
