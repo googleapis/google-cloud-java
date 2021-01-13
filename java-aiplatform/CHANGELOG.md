@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0](https://www.github.com/googleapis/java-aiplatform/compare/v0.1.0...v0.2.0) (2021-01-07)
+
+
+### Features
+
+* add enhanced types for library ([#74](https://www.github.com/googleapis/java-aiplatform/issues/74)) ([7835807](https://www.github.com/googleapis/java-aiplatform/commit/783580731c9699266ca79b0ed50b035696921abf))
+* adds ValueConverter utility and demo samples ([#108](https://www.github.com/googleapis/java-aiplatform/issues/108)) ([cf0b763](https://www.github.com/googleapis/java-aiplatform/commit/cf0b763ab3c43449090b4621a8f7e9a97ada4bc6))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.0 ([#102](https://www.github.com/googleapis/java-aiplatform/issues/102)) ([f0145cd](https://www.github.com/googleapis/java-aiplatform/commit/f0145cd5c32f961ae2e8c9eb688c37ed5722eaeb))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.16.1 ([#113](https://www.github.com/googleapis/java-aiplatform/issues/113)) ([e2d8e42](https://www.github.com/googleapis/java-aiplatform/commit/e2d8e42b9237f7a7c22826101f05c58bc26e2923))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.0 ([#116](https://www.github.com/googleapis/java-aiplatform/issues/116)) ([f8a115a](https://www.github.com/googleapis/java-aiplatform/commit/f8a115a4ea2423bd9d39e79a6d55d5e253bf763e))
+
 ## 0.1.0 (2020-11-12)
 
 
