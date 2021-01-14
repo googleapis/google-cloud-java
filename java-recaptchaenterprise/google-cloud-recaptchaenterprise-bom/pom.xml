@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recaptchaenterprise-bom</artifactId>
-  <version>1.0.10</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
+  <version>1.0.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,27 +64,27 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-recaptchaenterprise</artifactId>
-        <version>1.0.10</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
+        <version>1.0.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-recaptchaenterprise:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recaptchaenterprise-v1</artifactId>
-        <version>1.0.10</version><!-- {x-version-update:proto-google-cloud-recaptchaenterprise-v1:current} -->
+        <version>1.0.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recaptchaenterprise-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-recaptchaenterprise-v1beta1</artifactId>
-        <version>0.32.10</version><!-- {x-version-update:proto-google-cloud-recaptchaenterprise-v1beta1:current} -->
+        <version>0.32.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-recaptchaenterprise-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recaptchaenterprise-v1</artifactId>
-        <version>1.0.10</version><!-- {x-version-update:grpc-google-cloud-recaptchaenterprise-v1:current} -->
+        <version>1.0.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recaptchaenterprise-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-recaptchaenterprise-v1beta1</artifactId>
-        <version>0.32.10</version><!-- {x-version-update:grpc-google-cloud-recaptchaenterprise-v1beta1:current} -->
+        <version>0.32.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-recaptchaenterprise-v1beta1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
