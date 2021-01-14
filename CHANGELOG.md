@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.5](https://www.github.com/googleapis/java-logging-logback/compare/v0.119.4...v0.119.5) (2021-01-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#291](https://www.github.com/googleapis/java-logging-logback/issues/291)) ([030bf19](https://www.github.com/googleapis/java-logging-logback/commit/030bf1919fb3b3d68ec668c4ae13f4aeaad2ce0e))
+
 ### [0.119.4](https://www.github.com/googleapis/java-logging-logback/compare/v0.119.3...v0.119.4) (2021-01-13)
 
 
