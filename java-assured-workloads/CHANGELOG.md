@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.2.2](https://www.github.com/googleapis/java-assured-workloads/compare/v0.2.1...v0.2.2) (2021-01-14)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#150](https://www.github.com/googleapis/java-assured-workloads/issues/150)) ([08b999a](https://www.github.com/googleapis/java-assured-workloads/commit/08b999a1ad5505dfbd9532528e00e4b823a7b48c))
+
 ### [0.2.1](https://www.github.com/googleapis/java-assured-workloads/compare/v0.2.0...v0.2.1) (2020-12-15)
 
 
