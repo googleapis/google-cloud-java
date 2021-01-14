@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bigqueryreservation-v1</artifactId>
-  <version>1.0.8</version><!-- {x-version-update:grpc-google-cloud-bigqueryreservation-v1:current} -->
+  <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigqueryreservation-v1:current} -->
   <name>grpc-google-cloud-bigqueryreservation-v1</name>
   <description>GRPC library for grpc-google-cloud-bigqueryreservation-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigqueryreservation-parent</artifactId>
-    <version>1.0.8</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
+    <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigqueryreservation:current} -->
   </parent>
   <dependencies>
     <dependency>
