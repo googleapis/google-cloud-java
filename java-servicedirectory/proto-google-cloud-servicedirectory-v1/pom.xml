@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-servicedirectory-v1</artifactId>
-  <version>1.0.3-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-servicedirectory-v1:current} -->
+  <version>1.0.3</version><!-- {x-version-update:proto-google-cloud-servicedirectory-v1:current} -->
   <name>proto-google-cloud-servicedirectory-v1</name>
   <description>PROTO library for proto-google-cloud-servicedirectory-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-servicedirectory-parent</artifactId>
-    <version>1.0.3-SNAPSHOT</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
+    <version>1.0.3</version><!-- {x-version-update:google-cloud-servicedirectory:current} -->
   </parent>
   <dependencies>
     <dependency>
