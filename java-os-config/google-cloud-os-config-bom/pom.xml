@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-os-config-bom</artifactId>
-  <version>1.1.4</version><!-- {x-version-update:google-cloud-os-config:current} -->
+  <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-os-config</artifactId>
-        <version>1.1.4</version><!-- {x-version-update:google-cloud-os-config:current} -->
+        <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:google-cloud-os-config:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-os-config-v1</artifactId>
-        <version>1.1.4</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
+        <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-os-config-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-os-config-v1</artifactId>
-        <version>1.1.4</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
+        <version>1.1.5-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-os-config-v1:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
