@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-securitycenter-settings-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.3.12-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+  <version>0.3.12</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
   <name>Google Security Command Center Settings API Parent</name>
   <url>https://github.com/googleapis/java-securitycenter-settings</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-securitycenter-settings</artifactId>
-        <version>0.3.12-SNAPSHOT</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
+        <version>0.3.12</version><!-- {x-version-update:google-cloud-securitycenter-settings:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-securitycenter-settings-v1beta1</artifactId>
-        <version>0.3.12-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-securitycenter-settings-v1beta1:current} -->
+        <version>0.3.12</version><!-- {x-version-update:proto-google-cloud-securitycenter-settings-v1beta1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-securitycenter-settings-v1beta1</artifactId>
-        <version>0.3.12-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-securitycenter-settings-v1beta1:current} -->
+        <version>0.3.12</version><!-- {x-version-update:grpc-google-cloud-securitycenter-settings-v1beta1:current} -->
       </dependency>
 
       <dependency>
