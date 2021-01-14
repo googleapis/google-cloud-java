@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-billingbudgets</artifactId>
-  <version>1.0.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+  <version>1.0.4</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud billingbudgets</name>
   <url>https://github.com/googleapis/java-billingbudgets</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-billingbudgets-parent</artifactId>
-    <version>1.0.4-SNAPSHOT</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
+    <version>1.0.4</version><!-- {x-version-update:google-cloud-billingbudgets:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-billingbudgets</site.installationModule>
