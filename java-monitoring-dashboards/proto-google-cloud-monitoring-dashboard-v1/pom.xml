@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-monitoring-dashboard-v1</artifactId>
-  <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-dashboard-v1:current} -->
+  <version>1.0.8</version><!-- {x-version-update:proto-google-cloud-monitoring-dashboard-v1:current} -->
   <name>proto-google-cloud-monitoring-dashboard-v1</name>
   <description>PROTO library for proto-google-cloud-monitoring-dashboard-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-monitoring-dashboard-parent</artifactId>
-    <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+    <version>1.0.8</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
   </parent>
   <dependencies>
     <dependency>
