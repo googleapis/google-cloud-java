@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-monitoring</artifactId>
-      <version>2.0.12</version>
+      <version>2.0.13-SNAPSHOT</version>
     </dependency>
     <!-- {x-version-update-end} -->
     <dependency>
