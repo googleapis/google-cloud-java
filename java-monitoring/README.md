@@ -39,7 +39,7 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring</artifactId>
-  <version>2.0.12</version>
+  <version>2.0.13-SNAPSHOT</version>
 </dependency>
 
 ```
