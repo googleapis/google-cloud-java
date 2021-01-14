@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-build-parent</artifactId>
   <packaging>pom</packaging>
-  <version>2.1.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-build:current} -->
+  <version>2.1.10</version><!-- {x-version-update:google-cloud-build:current} -->
   <name>Google Cloud Build Parent</name>
   <url>https://github.com/googleapis/java-cloudbuild</url>
   <description>
@@ -71,12 +71,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-build-v1</artifactId>
-        <version>2.1.10-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-build-v1:current} -->
+        <version>2.1.10</version><!-- {x-version-update:proto-google-cloud-build-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-build-v1</artifactId>
-        <version>2.1.10-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-build-v1:current} -->
+        <version>2.1.10</version><!-- {x-version-update:grpc-google-cloud-build-v1:current} -->
       </dependency>
 
       <dependency>
