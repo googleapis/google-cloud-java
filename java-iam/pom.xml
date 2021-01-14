@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-iam-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.7</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+  <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
   <name>Google IAM Parent</name>
   <url>https://github.com/googleapis/java-iam</url>
   <description>
@@ -77,7 +77,7 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-iam-v1</artifactId>
-        <version>1.0.7</version><!-- {x-version-update:proto-google-iam-v1:current} -->
+        <version>1.0.8-SNAPSHOT</version><!-- {x-version-update:proto-google-iam-v1:current} -->
       </dependency>
 
       <dependency>
