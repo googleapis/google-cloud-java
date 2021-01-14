@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-monitoring-dashboard-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.8</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+  <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
   <name>Google Cloud Monitoring Dashboard Parent</name>
   <url>https://github.com/googleapis/java-monitoring-dashboards</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-monitoring-dashboard-v1</artifactId>
-        <version>1.0.8</version><!-- {x-version-update:proto-google-cloud-monitoring-dashboard-v1:current} -->
+        <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-monitoring-dashboard-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-monitoring-dashboard-v1</artifactId>
-        <version>1.0.8</version><!-- {x-version-update:grpc-google-cloud-monitoring-dashboard-v1:current} -->
+        <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-monitoring-dashboard-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-monitoring-dashboard</artifactId>
-        <version>1.0.8</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
+        <version>1.0.9-SNAPSHOT</version><!-- {x-version-update:google-cloud-monitoring-dashboard:current} -->
       </dependency>
 
       <dependency>
