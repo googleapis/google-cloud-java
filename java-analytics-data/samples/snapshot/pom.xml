@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.analytics</groupId>
       <artifactId>google-analytics-data</artifactId>
-      <version>0.5.4</version>
+      <version>0.5.5-SNAPSHOT</version>
     </dependency>
   <!-- {x-version-update-end} -->
 
