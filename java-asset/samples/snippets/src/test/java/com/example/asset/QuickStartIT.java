@@ -48,6 +48,7 @@ public class QuickStartIT {
   private static final String datasetName = RemoteBigQueryHelper.generateDatasetName();
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private BigQuery bigquery;
 
   private static final void deleteObjects() {
@@ -72,13 +73,15 @@ public class QuickStartIT {
     }
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    String consoleOutput = bout.toString();
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
     deleteObjects();
     DatasetId datasetId = DatasetId.of(bigquery.getOptions().getProjectId(), datasetName);
     bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());

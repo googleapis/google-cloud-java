@@ -50,6 +50,7 @@ public class Analyze {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static final void deleteObjects(String bucketName, String objectName) {
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -70,13 +71,15 @@ public class Analyze {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
-    bout.reset();
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

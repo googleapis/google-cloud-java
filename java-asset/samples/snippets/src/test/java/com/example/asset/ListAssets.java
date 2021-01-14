@@ -33,17 +33,22 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class ListAssets {
   private ByteArrayOutputStream bout;
+  private PrintStream out;
+  private PrintStream originalPrintStream;
 
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
+    out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
-    bout.reset();
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

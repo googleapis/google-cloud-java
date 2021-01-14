@@ -49,6 +49,8 @@ public class RealTimeFeed {
   private final String[] assetNames = {UUID.randomUUID().toString()};
   private static final ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
   private ByteArrayOutputStream bout;
+  private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private String getProjectNumber(String projectId) {
     ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
@@ -71,13 +73,16 @@ public class RealTimeFeed {
   @Before
   public void beforeTest() {
     bout = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bout));
+    out = new PrintStream(bout);
+    originalPrintStream = System.out;
+    System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
-    bout.reset();
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

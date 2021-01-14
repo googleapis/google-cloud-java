@@ -41,6 +41,7 @@ public class Search {
   private static final String datasetName = RemoteBigQueryHelper.generateDatasetName();
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
   private BigQuery bigquery;
 
   @Before
@@ -51,13 +52,15 @@ public class Search {
     }
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
-    bout.reset();
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
     DatasetId datasetId = DatasetId.of(bigquery.getOptions().getProjectId(), datasetName);
     bigquery.delete(datasetId, DatasetDeleteOption.deleteContents());
   }
