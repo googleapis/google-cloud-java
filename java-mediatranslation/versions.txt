@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-mediatranslation:0.2.9:0.2.10-SNAPSHOT
-proto-google-cloud-mediatranslation-v1beta1:0.2.9:0.2.10-SNAPSHOT
-grpc-google-cloud-mediatranslation-v1beta1:0.2.9:0.2.10-SNAPSHOT
+google-cloud-mediatranslation:0.2.10:0.2.10
+proto-google-cloud-mediatranslation-v1beta1:0.2.10:0.2.10
+grpc-google-cloud-mediatranslation-v1beta1:0.2.10:0.2.10
