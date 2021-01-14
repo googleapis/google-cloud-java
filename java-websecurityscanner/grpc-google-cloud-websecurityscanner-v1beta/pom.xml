@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-websecurityscanner-v1beta</artifactId>
-  <version>0.84.10</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
+  <version>0.84.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-websecurityscanner-v1beta:current} -->
   <name>grpc-google-cloud-websecurityscanner-v1beta</name>
   <description>GRPC library for grpc-google-cloud-websecurityscanner-v1beta</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-websecurityscanner-parent</artifactId>
-    <version>1.0.10</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+    <version>1.0.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
   </parent>
   <dependencies>
     <dependency>
