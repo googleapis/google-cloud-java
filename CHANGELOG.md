@@ -1,5 +1,24 @@
 # Changelog
 
+### [1.8.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.3...v1.8.4) (2021-01-14)
+
+
+### Bug Fixes
+
+* default stream integration test failures due to production expected change ([#791](https://www.github.com/googleapis/java-bigquerystorage/issues/791)) ([1c2b5c1](https://www.github.com/googleapis/java-bigquerystorage/commit/1c2b5c1ef478305fe7f3d9f1843750cec18ba9f8))
+
+
+### Documentation
+
+* **samples:** jsonstreamwriter samples ([#756](https://www.github.com/googleapis/java-bigquerystorage/issues/756)) ([929b2ce](https://www.github.com/googleapis/java-bigquerystorage/commit/929b2cea1951bbe45eea596163f9a7a74d0ab041))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.126.6 ([#794](https://www.github.com/googleapis/java-bigquerystorage/issues/794)) ([8e68546](https://www.github.com/googleapis/java-bigquerystorage/commit/8e68546f1e86553919766f9333ad911ba7da8442))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#795](https://www.github.com/googleapis/java-bigquerystorage/issues/795)) ([86036bb](https://www.github.com/googleapis/java-bigquerystorage/commit/86036bb5caca125b38a64bd63acc5486a87b8e35))
+* update protobuf ([#790](https://www.github.com/googleapis/java-bigquerystorage/issues/790)) ([792e925](https://www.github.com/googleapis/java-bigquerystorage/commit/792e925840e99033a1f194b2bfb372dae79d3d0d))
+
 ### [1.8.3](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.2...v1.8.3) (2021-01-12)
 
 
