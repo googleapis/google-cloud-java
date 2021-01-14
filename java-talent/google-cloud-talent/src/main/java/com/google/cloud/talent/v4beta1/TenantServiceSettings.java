@@ -66,6 +66,7 @@ import javax.annotation.Generated;
  * TenantServiceSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class TenantServiceSettings extends ClientSettings<TenantServiceSettings> {
 

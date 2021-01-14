@@ -67,6 +67,7 @@ import javax.annotation.Generated;
  * CompanyServiceSettings companyServiceSettings = companyServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CompanyServiceSettings extends ClientSettings<CompanyServiceSettings> {
 

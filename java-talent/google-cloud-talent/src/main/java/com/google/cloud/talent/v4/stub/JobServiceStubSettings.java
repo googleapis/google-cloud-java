@@ -102,7 +102,6 @@ import org.threeten.bp.Duration;
  * JobServiceStubSettings jobServiceSettings = jobServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class JobServiceStubSettings extends StubSettings<JobServiceStubSettings> {
   /** The default scopes of the service. */

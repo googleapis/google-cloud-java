@@ -19,6 +19,7 @@ package com.google.cloud.talent.v4beta1.stub;
 import static com.google.cloud.talent.v4beta1.ProfileServiceClient.ListProfilesPagedResponse;
 import static com.google.cloud.talent.v4beta1.ProfileServiceClient.SearchProfilesPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4beta1.CreateProfileRequest;
@@ -39,7 +40,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class ProfileServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListProfilesRequest, ListProfilesPagedResponse> listProfilesPagedCallable() {

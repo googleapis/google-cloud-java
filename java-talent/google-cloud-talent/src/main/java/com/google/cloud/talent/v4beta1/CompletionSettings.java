@@ -62,6 +62,7 @@ import javax.annotation.Generated;
  * CompletionSettings completionSettings = completionSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class CompletionSettings extends ClientSettings<CompletionSettings> {
 

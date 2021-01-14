@@ -62,6 +62,7 @@ import javax.annotation.Generated;
  * EventServiceSettings eventServiceSettings = eventServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class EventServiceSettings extends ClientSettings<EventServiceSettings> {
 

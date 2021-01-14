@@ -70,6 +70,7 @@ import javax.annotation.Generated;
  * JobServiceSettings jobServiceSettings = jobServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class JobServiceSettings extends ClientSettings<JobServiceSettings> {
 

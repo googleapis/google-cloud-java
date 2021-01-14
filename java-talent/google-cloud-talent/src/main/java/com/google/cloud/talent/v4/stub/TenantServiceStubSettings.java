@@ -89,7 +89,6 @@ import org.threeten.bp.Duration;
  * TenantServiceStubSettings tenantServiceSettings = tenantServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class TenantServiceStubSettings extends StubSettings<TenantServiceStubSettings> {
   /** The default scopes of the service. */

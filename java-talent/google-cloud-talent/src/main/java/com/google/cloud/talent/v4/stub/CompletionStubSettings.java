@@ -73,7 +73,6 @@ import org.threeten.bp.Duration;
  * CompletionStubSettings completionSettings = completionSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CompletionStubSettings extends StubSettings<CompletionStubSettings> {
   /** The default scopes of the service. */

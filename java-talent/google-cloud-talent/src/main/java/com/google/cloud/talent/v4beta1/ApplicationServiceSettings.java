@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  *     applicationServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ApplicationServiceSettings extends ClientSettings<ApplicationServiceSettings> {
 

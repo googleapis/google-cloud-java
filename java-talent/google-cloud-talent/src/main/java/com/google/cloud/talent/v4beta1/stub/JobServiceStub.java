@@ -20,6 +20,7 @@ import static com.google.cloud.talent.v4beta1.JobServiceClient.ListJobsPagedResp
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsForAlertPagedResponse;
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -48,7 +49,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class JobServiceStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {

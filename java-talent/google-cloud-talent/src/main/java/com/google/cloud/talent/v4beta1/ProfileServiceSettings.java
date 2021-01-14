@@ -68,6 +68,7 @@ import javax.annotation.Generated;
  * ProfileServiceSettings profileServiceSettings = profileServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class ProfileServiceSettings extends ClientSettings<ProfileServiceSettings> {
 

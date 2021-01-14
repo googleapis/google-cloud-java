@@ -20,6 +20,7 @@ import static com.google.cloud.talent.v4beta1.JobServiceClient.ListJobsPagedResp
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsForAlertPagedResponse;
 import static com.google.cloud.talent.v4beta1.JobServiceClient.SearchJobsPagedResponse;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -59,6 +60,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class GrpcJobServiceStub extends JobServiceStub {
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =

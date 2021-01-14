@@ -41,7 +41,7 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage.
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class GrpcEventServiceCallableFactory implements GrpcStubCallableFactory {
 
   @Override
