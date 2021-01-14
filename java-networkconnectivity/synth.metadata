@@ -1,0 +1,37 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": ".",
+        "remote": "sso://devrel/cloud/libraries/java/repo-splitter",
+        "sha": "969e04ee2cb1154fa535e0f2104ad06d36d00667"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "f1b2cc9c37f453c3b15e8945af32812f71634022",
+        "internalRef": "351867503"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "16ec872dd898d7de6e1822badfac32484b5d9031"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "networkconnectivity",
+        "apiVersion": "v1alpha1",
+        "language": "java",
+        "generator": "bazel"
+      }
+    }
+  ]
+}
