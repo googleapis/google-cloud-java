@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dlp-bom</artifactId>
-  <version>2.2.6</version><!-- {x-version-update:google-cloud-dlp:current} -->
+  <version>2.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -64,17 +64,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-dlp-v2</artifactId>
-        <version>2.2.6</version><!-- {x-version-update:grpc-google-cloud-dlp-v2:current} -->
+        <version>2.2.7-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-dlp-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-dlp</artifactId>
-        <version>2.2.6</version><!-- {x-version-update:google-cloud-dlp:current} -->
+        <version>2.2.7-SNAPSHOT</version><!-- {x-version-update:google-cloud-dlp:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-dlp-v2</artifactId>
-        <version>2.2.6</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
+        <version>2.2.7-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-dlp-v2:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
