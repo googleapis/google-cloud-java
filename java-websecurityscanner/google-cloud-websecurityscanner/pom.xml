@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-websecurityscanner</artifactId>
-  <version>1.0.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+  <version>1.0.10</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Web Security Scanner</name>
   <url>https://github.com/googleapis/java-websecurityscanner</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-websecurityscanner-parent</artifactId>
-    <version>1.0.10-SNAPSHOT</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
+    <version>1.0.10</version><!-- {x-version-update:google-cloud-websecurityscanner:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-websecurityscanner</site.installationModule>
