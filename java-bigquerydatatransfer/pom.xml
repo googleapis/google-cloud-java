@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquerydatatransfer-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.27</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+  <version>1.0.28-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
   <name>BigQuery DataTransfer Parent</name>
   <url>https://github.com/googleapis/java-bigquerydatatransfer</url>
   <description>
@@ -77,17 +77,17 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>1.0.27</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>1.0.28-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-bigquerydatatransfer-v1</artifactId>
-        <version>1.0.27</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
+        <version>1.0.28-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerydatatransfer-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerydatatransfer</artifactId>
-        <version>1.0.27</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
+        <version>1.0.28-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerydatatransfer:current} -->
       </dependency>
 
       <!-- Test dependencies -->
