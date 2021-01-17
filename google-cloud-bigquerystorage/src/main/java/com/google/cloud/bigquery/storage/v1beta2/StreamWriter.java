@@ -187,7 +187,14 @@ public class StreamWriter implements AutoCloseable {
       this.onSchemaUpdateRunnable.setStreamWriter(this);
     }
 
-    refreshAppend();
+    bidiStreamingCallable = stub.appendRowsCallable();
+    clientStream = bidiStreamingCallable.splitCall(responseObserver);
+    try {
+      while (!clientStream.isSendReady()) {
+        Thread.sleep(10);
+      }
+    } catch (InterruptedException e) {
+    }
   }
 
   /** Stream name we are writing to. */
@@ -296,9 +303,9 @@ public class StreamWriter implements AutoCloseable {
   /**
    * Re-establishes a stream connection.
    *
-   * @throws IOException
+   * @throws InterruptedException
    */
-  public void refreshAppend() throws IOException, InterruptedException {
+  public void refreshAppend() throws InterruptedException {
     appendAndRefreshAppendLock.lock();
     if (shutdown.get()) {
       LOG.warning("Cannot refresh on a already shutdown writer.");
@@ -313,11 +320,8 @@ public class StreamWriter implements AutoCloseable {
     messagesBatch.resetAttachSchema();
     bidiStreamingCallable = stub.appendRowsCallable();
     clientStream = bidiStreamingCallable.splitCall(responseObserver);
-    try {
-      while (!clientStream.isSendReady()) {
-        Thread.sleep(10);
-      }
-    } catch (InterruptedException expected) {
+    while (!clientStream.isSendReady()) {
+      Thread.sleep(10);
     }
     Thread.sleep(this.retrySettings.getInitialRetryDelay().toMillis());
     // Can only unlock here since need to sleep the full 7 seconds before stream can allow appends.
@@ -922,41 +926,43 @@ public class StreamWriter implements AutoCloseable {
         }
         inflightBatch = this.inflightBatches.poll();
       }
-      try {
-        if (isRecoverableError(t)) {
-          try {
-            if (streamWriter.currentRetries < streamWriter.getRetrySettings().getMaxAttempts()
-                && !streamWriter.shutdown.get()) {
-              streamWriter.refreshAppend();
-              LOG.info("Resending requests on transient error:" + streamWriter.currentRetries);
-              streamWriter.writeBatch(inflightBatch);
-              synchronized (streamWriter.currentRetries) {
-                streamWriter.currentRetries++;
-              }
-            } else {
-              inflightBatch.onFailure(t);
-              abortInflightRequests(t);
-              synchronized (streamWriter.currentRetries) {
-                streamWriter.currentRetries = 0;
-              }
+      streamWriter.messagesWaiter.release(inflightBatch.getByteSize());
+      if (isRecoverableError(t)) {
+        try {
+          if (streamWriter.currentRetries < streamWriter.getRetrySettings().getMaxAttempts()
+              && !streamWriter.shutdown.get()) {
+            synchronized (streamWriter.currentRetries) {
+              streamWriter.currentRetries++;
             }
-          } catch (IOException | InterruptedException e) {
-            LOG.info("Got exception while retrying.");
-            inflightBatch.onFailure(e);
-            abortInflightRequests(e);
+            LOG.info(
+                "Try to reestablish connection due to transient error: "
+                    + t.toString()
+                    + " retry times: "
+                    + streamWriter.currentRetries);
+            streamWriter.refreshAppend();
+            LOG.info("Resending requests on after connection established");
+            streamWriter.writeBatch(inflightBatch);
+          } else {
+            inflightBatch.onFailure(t);
+            abortInflightRequests(t);
             synchronized (streamWriter.currentRetries) {
               streamWriter.currentRetries = 0;
             }
           }
-        } else {
-          inflightBatch.onFailure(t);
-          abortInflightRequests(t);
+        } catch (InterruptedException e) {
+          LOG.info("Got exception while retrying: " + e.toString());
+          inflightBatch.onFailure(new StatusRuntimeException(Status.ABORTED));
+          abortInflightRequests(new StatusRuntimeException(Status.ABORTED));
           synchronized (streamWriter.currentRetries) {
             streamWriter.currentRetries = 0;
           }
         }
-      } finally {
-        streamWriter.messagesWaiter.release(inflightBatch.getByteSize());
+      } else {
+        inflightBatch.onFailure(t);
+        abortInflightRequests(t);
+        synchronized (streamWriter.currentRetries) {
+          streamWriter.currentRetries = 0;
+        }
       }
     }
   };

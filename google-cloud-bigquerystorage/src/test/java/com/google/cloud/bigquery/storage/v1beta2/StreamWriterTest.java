@@ -519,21 +519,30 @@ public class StreamWriterTest {
                     .toBuilder()
                     .setDelayThreshold(Duration.ofSeconds(100000))
                     .setElementCountThreshold(1L)
+                    .setFlowControlSettings(
+                        StreamWriter.Builder.DEFAULT_FLOW_CONTROL_SETTINGS
+                            .toBuilder()
+                            .setMaxOutstandingElementCount(1L)
+                            .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
+                            .build())
                     .build())
             .build();
 
-    StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
-    testBigQueryWrite.addException(transientError);
     testBigQueryWrite.addResponse(
         AppendRowsResponse.newBuilder()
             .setAppendResult(
                 AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
             .build());
+    testBigQueryWrite.addException(new StatusRuntimeException(Status.UNAVAILABLE));
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
+            .build());
     ApiFuture<AppendRowsResponse> future1 = sendTestMessage(writer, new String[] {"m1"});
-    assertEquals(false, future1.isDone());
-    // Retry is scheduled to be 7 seconds later.
+    ApiFuture<AppendRowsResponse> future2 = sendTestMessage(writer, new String[] {"m1"});
     assertEquals(0L, future1.get().getAppendResult().getOffset().getValue());
-    future1.get();
+    assertEquals(1L, future2.get().getAppendResult().getOffset().getValue());
     writer.close();
   }
 
