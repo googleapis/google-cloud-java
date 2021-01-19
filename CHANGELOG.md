@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.8.5](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.4...v1.8.5) (2021-01-17)
+
+
+### Bug Fixes
+
+* StreamWriter hang when we reach the inflight limit control and is doing a retry ([#799](https://www.github.com/googleapis/java-bigquerystorage/issues/799)) ([f8f9770](https://www.github.com/googleapis/java-bigquerystorage/commit/f8f97701e5ca698a170a1d3b6ecb3886e186f9d5))
+
 ### [1.8.4](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.3...v1.8.4) (2021-01-14)
 
 
