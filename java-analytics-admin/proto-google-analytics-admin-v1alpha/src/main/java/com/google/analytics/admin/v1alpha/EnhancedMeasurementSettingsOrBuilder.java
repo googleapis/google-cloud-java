@@ -74,8 +74,8 @@ public interface EnhancedMeasurementSettingsOrBuilder
    *
    *
    * <pre>
-   * Output only. If enabled, capture a page view event each time a page loads
-   * or the website changes the browser history state.
+   * Output only. If enabled, capture a page view event each time a page loads or the
+   * website changes the browser history state.
    * </pre>
    *
    * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -116,20 +116,6 @@ public interface EnhancedMeasurementSettingsOrBuilder
    *
    *
    * <pre>
-   * Capture events when your visitors view content on your site that has
-   * structured data (eg, articles, blog posts, product details screens, etc.).
-   * </pre>
-   *
-   * <code>bool content_views_enabled = 6;</code>
-   *
-   * @return The contentViewsEnabled.
-   */
-  boolean getContentViewsEnabled();
-
-  /**
-   *
-   *
-   * <pre>
    * If enabled, capture a view search results event each time a visitor
    * performs a search on your site (based on a query parameter).
    * </pre>
@@ -139,20 +125,6 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * @return The siteSearchEnabled.
    */
   boolean getSiteSearchEnabled();
-
-  /**
-   *
-   *
-   * <pre>
-   * If enabled, capture a view search results event each time a visitor
-   * interacts with a form on your site.
-   * </pre>
-   *
-   * <code>bool form_interactions_enabled = 8;</code>
-   *
-   * @return The formInteractionsEnabled.
-   */
-  boolean getFormInteractionsEnabled();
 
   /**
    *
@@ -186,24 +158,10 @@ public interface EnhancedMeasurementSettingsOrBuilder
    *
    *
    * <pre>
-   * If enabled, capture a click event each time a visitor clicks a link or
-   * element that has data attributes beginning with "data-ga".
+   * Output only. If enabled, capture a page view event each time a page loads.
    * </pre>
    *
-   * <code>bool data_tagged_element_clicks_enabled = 11;</code>
-   *
-   * @return The dataTaggedElementClicksEnabled.
-   */
-  boolean getDataTaggedElementClicksEnabled();
-
-  /**
-   *
-   *
-   * <pre>
-   * If enabled, capture a page view event each time a page loads.
-   * </pre>
-   *
-   * <code>bool page_loads_enabled = 12;</code>
+   * <code>bool page_loads_enabled = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The pageLoadsEnabled.
    */
@@ -222,34 +180,6 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * @return The pageChangesEnabled.
    */
   boolean getPageChangesEnabled();
-
-  /**
-   *
-   *
-   * <pre>
-   * Capture events when your visitors view content on your site that has
-   * articles or blog posts.
-   * </pre>
-   *
-   * <code>bool articles_and_blogs_enabled = 14;</code>
-   *
-   * @return The articlesAndBlogsEnabled.
-   */
-  boolean getArticlesAndBlogsEnabled();
-
-  /**
-   *
-   *
-   * <pre>
-   * Capture events when your visitors view content on your site that has
-   * product details screens, etc.
-   * </pre>
-   *
-   * <code>bool products_and_ecommerce_enabled = 15;</code>
-   *
-   * @return The productsAndEcommerceEnabled.
-   */
-  boolean getProductsAndEcommerceEnabled();
 
   /**
    *
@@ -286,11 +216,11 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * Max length is 1024 characters.
    * </pre>
    *
-   * <code>string url_query_parameter = 17;</code>
+   * <code>string uri_query_parameter = 17;</code>
    *
-   * @return The urlQueryParameter.
+   * @return The uriQueryParameter.
    */
-  java.lang.String getUrlQueryParameter();
+  java.lang.String getUriQueryParameter();
   /**
    *
    *
@@ -299,34 +229,9 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * Max length is 1024 characters.
    * </pre>
    *
-   * <code>string url_query_parameter = 17;</code>
+   * <code>string uri_query_parameter = 17;</code>
    *
-   * @return The bytes for urlQueryParameter.
+   * @return The bytes for uriQueryParameter.
    */
-  com.google.protobuf.ByteString getUrlQueryParameterBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Domains to exclude from measurement. Max length is 1024 characters.
-   * </pre>
-   *
-   * <code>string excluded_domains = 18;</code>
-   *
-   * @return The excludedDomains.
-   */
-  java.lang.String getExcludedDomains();
-  /**
-   *
-   *
-   * <pre>
-   * Domains to exclude from measurement. Max length is 1024 characters.
-   * </pre>
-   *
-   * <code>string excluded_domains = 18;</code>
-   *
-   * @return The bytes for excludedDomains.
-   */
-  com.google.protobuf.ByteString getExcludedDomainsBytes();
+  com.google.protobuf.ByteString getUriQueryParameterBytes();
 }

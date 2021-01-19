@@ -148,8 +148,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Account. Throws "Target not found" if no such account found, or if caller
-   * does not have permissions to access it.
+   * Lookup for a single Account.
    *
    * @param name Required. The name of the account to lookup. Format: accounts/{account} Example:
    *     "accounts/100"
@@ -163,8 +162,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Account. Throws "Target not found" if no such account found, or if caller
-   * does not have permissions to access it.
+   * Lookup for a single Account.
    *
    * @param name Required. The name of the account to lookup. Format: accounts/{account} Example:
    *     "accounts/100"
@@ -177,8 +175,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Account. Throws "Target not found" if no such account found, or if caller
-   * does not have permissions to access it.
+   * Lookup for a single Account.
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -189,8 +186,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lookup for a single Account. Throws "Target not found" if no such account found, or if caller
-   * does not have permissions to access it.
+   * Lookup for a single Account.
    *
    * <p>Sample code:
    */
@@ -332,7 +328,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param account Required. The account to update. The account's `name` field is used to identify
    *     the account.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Account updateAccount(Account account, FieldMask updateMask) {
@@ -423,9 +421,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single "GA4" Property.
    *
-   * <p>Throws "Target not found" if no such property found, if property is not of the type "GA4",
-   * or if caller does not have permissions to access it.
-   *
    * @param name Required. The name of the property to lookup. Format: properties/{property_id}
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -440,9 +435,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single "GA4" Property.
    *
-   * <p>Throws "Target not found" if no such property found, if property is not of the type "GA4",
-   * or if caller does not have permissions to access it.
-   *
    * @param name Required. The name of the property to lookup. Format: properties/{property_id}
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -456,9 +448,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single "GA4" Property.
    *
-   * <p>Throws "Target not found" if no such property found, if property is not of the type "GA4",
-   * or if caller does not have permissions to access it.
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -469,9 +458,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single "GA4" Property.
-   *
-   * <p>Throws "Target not found" if no such property found, if property is not of the type "GA4",
-   * or if caller does not have permissions to access it.
    *
    * <p>Sample code:
    */
@@ -649,7 +635,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param property Required. The property to update. The property's `name` field is used to
    *     identify the property to be updated.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Property updateProperty(Property property, FieldMask updateMask) {
@@ -1118,9 +1106,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single WebDataStream
    *
-   * <p>Throws "Target not found" if no such web data stream found, or if the caller does not have
-   * permissions to access it.
-   *
    * @param name Required. The name of the web data stream to lookup. Format:
    *     properties/{property_id}/webDataStreams/{stream_id} Example:
    *     "properties/123/webDataStreams/456"
@@ -1136,9 +1121,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single WebDataStream
    *
-   * <p>Throws "Target not found" if no such web data stream found, or if the caller does not have
-   * permissions to access it.
-   *
    * @param name Required. The name of the web data stream to lookup. Format:
    *     properties/{property_id}/webDataStreams/{stream_id} Example:
    *     "properties/123/webDataStreams/456"
@@ -1153,9 +1135,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single WebDataStream
    *
-   * <p>Throws "Target not found" if no such web data stream found, or if the caller does not have
-   * permissions to access it.
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1166,9 +1145,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single WebDataStream
-   *
-   * <p>Throws "Target not found" if no such web data stream found, or if the caller does not have
-   * permissions to access it.
    *
    * <p>Sample code:
    */
@@ -1235,7 +1211,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param webDataStream Required. The web stream to update. The `name` field is used to identify
    *     the web stream to be updated.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final WebDataStream updateWebDataStream(
@@ -1411,9 +1389,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single IosAppDataStream
    *
-   * <p>Throws "Target not found" if no such iOS app data stream found, or if the caller does not
-   * have permissions to access it.
-   *
    * @param name Required. The name of the iOS app data stream to lookup. Format:
    *     properties/{property_id}/iosAppDataStreams/{stream_id} Example:
    *     "properties/123/iosAppDataStreams/456"
@@ -1431,9 +1406,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single IosAppDataStream
    *
-   * <p>Throws "Target not found" if no such iOS app data stream found, or if the caller does not
-   * have permissions to access it.
-   *
    * @param name Required. The name of the iOS app data stream to lookup. Format:
    *     properties/{property_id}/iosAppDataStreams/{stream_id} Example:
    *     "properties/123/iosAppDataStreams/456"
@@ -1449,9 +1421,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single IosAppDataStream
    *
-   * <p>Throws "Target not found" if no such iOS app data stream found, or if the caller does not
-   * have permissions to access it.
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1462,9 +1431,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single IosAppDataStream
-   *
-   * <p>Throws "Target not found" if no such iOS app data stream found, or if the caller does not
-   * have permissions to access it.
    *
    * <p>Sample code:
    */
@@ -1533,7 +1499,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param iosAppDataStream Required. The iOS app stream to update. The `name` field is used to
    *     identify the iOS app stream to be updated.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final IosAppDataStream updateIosAppDataStream(
@@ -1711,9 +1679,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single AndroidAppDataStream
    *
-   * <p>Throws "Target not found" if no such android app data stream found, or if the caller does
-   * not have permissions to access it.
-   *
    * @param name Required. The name of the android app data stream to lookup. Format:
    *     properties/{property_id}/androidAppDataStreams/{stream_id} Example:
    *     "properties/123/androidAppDataStreams/456"
@@ -1731,9 +1696,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single AndroidAppDataStream
    *
-   * <p>Throws "Target not found" if no such android app data stream found, or if the caller does
-   * not have permissions to access it.
-   *
    * @param name Required. The name of the android app data stream to lookup. Format:
    *     properties/{property_id}/androidAppDataStreams/{stream_id} Example:
    *     "properties/123/androidAppDataStreams/456"
@@ -1749,9 +1711,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single AndroidAppDataStream
    *
-   * <p>Throws "Target not found" if no such android app data stream found, or if the caller does
-   * not have permissions to access it.
-   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1763,9 +1722,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single AndroidAppDataStream
-   *
-   * <p>Throws "Target not found" if no such android app data stream found, or if the caller does
-   * not have permissions to access it.
    *
    * <p>Sample code:
    */
@@ -1834,7 +1790,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param androidAppDataStream Required. The android app stream to update. The `name` field is
    *     used to identify the android app stream to be updated.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final AndroidAppDataStream updateAndroidAppDataStream(
@@ -2018,7 +1976,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * must enable enhanced measurement for these settings to take effect.
    *
    * @param name Required. The name of the settings to lookup. Format:
-   *     <p>properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
+   *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
    *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2037,7 +1995,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * must enable enhanced measurement for these settings to take effect.
    *
    * @param name Required. The name of the settings to lookup. Format:
-   *     <p>properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
+   *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
    *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2079,7 +2037,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * @param enhancedMeasurementSettings Required. The settings to update. The `name` field is used
    *     to identify the settings to be updated.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final EnhancedMeasurementSettings updateEnhancedMeasurementSettings(
@@ -2185,7 +2145,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a FirebaseLink on a property
    *
    * @param firebaseLink Required. The Firebase link to update.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final FirebaseLink updateFirebaseLink(FirebaseLink firebaseLink, FieldMask updateMask) {
@@ -2276,7 +2238,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFirebaseLinksResponse listFirebaseLinks(PropertyName parent) {
+  public final ListFirebaseLinksPagedResponse listFirebaseLinks(PropertyName parent) {
     ListFirebaseLinksRequest request =
         ListFirebaseLinksRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2291,7 +2253,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFirebaseLinksResponse listFirebaseLinks(String parent) {
+  public final ListFirebaseLinksPagedResponse listFirebaseLinks(String parent) {
     ListFirebaseLinksRequest request =
         ListFirebaseLinksRequest.newBuilder().setParent(parent).build();
     return listFirebaseLinks(request);
@@ -2304,8 +2266,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final ListFirebaseLinksResponse listFirebaseLinks(ListFirebaseLinksRequest request) {
-    return listFirebaseLinksCallable().call(request);
+  public final ListFirebaseLinksPagedResponse listFirebaseLinks(ListFirebaseLinksRequest request) {
+    return listFirebaseLinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksPagedResponse>
+      listFirebaseLinksPagedCallable() {
+    return stub.listFirebaseLinksPagedCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2432,7 +2405,9 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a GoogleAdsLink on a property
    *
    * @param googleAdsLink The GoogleAdsLink to update
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated. To replace the entire entity, use one path with the string "&#42;" to match all
+   *     fields.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final GoogleAdsLink updateGoogleAdsLink(
@@ -3345,6 +3320,91 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListAndroidAppDataStreamsFixedSizeCollection createCollection(
         List<ListAndroidAppDataStreamsPage> pages, int collectionSize) {
       return new ListAndroidAppDataStreamsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListFirebaseLinksPagedResponse
+      extends AbstractPagedListResponse<
+          ListFirebaseLinksRequest,
+          ListFirebaseLinksResponse,
+          FirebaseLink,
+          ListFirebaseLinksPage,
+          ListFirebaseLinksFixedSizeCollection> {
+
+    public static ApiFuture<ListFirebaseLinksPagedResponse> createAsync(
+        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
+        ApiFuture<ListFirebaseLinksResponse> futureResponse) {
+      ApiFuture<ListFirebaseLinksPage> futurePage =
+          ListFirebaseLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListFirebaseLinksPage, ListFirebaseLinksPagedResponse>() {
+            @Override
+            public ListFirebaseLinksPagedResponse apply(ListFirebaseLinksPage input) {
+              return new ListFirebaseLinksPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListFirebaseLinksPagedResponse(ListFirebaseLinksPage page) {
+      super(page, ListFirebaseLinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListFirebaseLinksPage
+      extends AbstractPage<
+          ListFirebaseLinksRequest,
+          ListFirebaseLinksResponse,
+          FirebaseLink,
+          ListFirebaseLinksPage> {
+
+    private ListFirebaseLinksPage(
+        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
+        ListFirebaseLinksResponse response) {
+      super(context, response);
+    }
+
+    private static ListFirebaseLinksPage createEmptyPage() {
+      return new ListFirebaseLinksPage(null, null);
+    }
+
+    @Override
+    protected ListFirebaseLinksPage createPage(
+        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
+        ListFirebaseLinksResponse response) {
+      return new ListFirebaseLinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListFirebaseLinksPage> createPageAsync(
+        PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink> context,
+        ApiFuture<ListFirebaseLinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListFirebaseLinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListFirebaseLinksRequest,
+          ListFirebaseLinksResponse,
+          FirebaseLink,
+          ListFirebaseLinksPage,
+          ListFirebaseLinksFixedSizeCollection> {
+
+    private ListFirebaseLinksFixedSizeCollection(
+        List<ListFirebaseLinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListFirebaseLinksFixedSizeCollection createEmptyCollection() {
+      return new ListFirebaseLinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListFirebaseLinksFixedSizeCollection createCollection(
+        List<ListFirebaseLinksPage> pages, int collectionSize) {
+      return new ListFirebaseLinksFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -27,8 +27,7 @@ public interface GoogleAdsLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Format:
-   * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+   * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
@@ -41,8 +40,7 @@ public interface GoogleAdsLinkOrBuilder
    *
    *
    * <pre>
-   * Output only. Format:
-   * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+   * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
@@ -51,31 +49,6 @@ public interface GoogleAdsLinkOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Immutable. Format: properties/{propertyId}
-   * </pre>
-   *
-   * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   *
-   * @return The parent.
-   */
-  java.lang.String getParent();
-  /**
-   *
-   *
-   * <pre>
-   * Immutable. Format: properties/{propertyId}
-   * </pre>
-   *
-   * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   *
-   * @return The bytes for parent.
-   */
-  com.google.protobuf.ByteString getParentBytes();
 
   /**
    *

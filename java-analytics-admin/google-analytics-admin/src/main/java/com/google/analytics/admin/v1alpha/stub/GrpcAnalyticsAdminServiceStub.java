@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
@@ -749,6 +750,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable;
   private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
       listFirebaseLinksCallable;
+  private final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksPagedResponse>
+      listFirebaseLinksPagedCallable;
   private final UnaryCallable<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagCallable;
   private final UnaryCallable<CreateGoogleAdsLinkRequest, GoogleAdsLink>
       createGoogleAdsLinkCallable;
@@ -1643,6 +1646,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             listFirebaseLinksTransportSettings,
             settings.listFirebaseLinksSettings(),
             clientContext);
+    this.listFirebaseLinksPagedCallable =
+        callableFactory.createPagedCallable(
+            listFirebaseLinksTransportSettings,
+            settings.listFirebaseLinksSettings(),
+            clientContext);
     this.getGlobalSiteTagCallable =
         callableFactory.createUnaryCallable(
             getGlobalSiteTagTransportSettings, settings.getGlobalSiteTagSettings(), clientContext);
@@ -1907,6 +1915,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
       listFirebaseLinksCallable() {
     return listFirebaseLinksCallable;
+  }
+
+  public UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksPagedResponse>
+      listFirebaseLinksPagedCallable() {
+    return listFirebaseLinksPagedCallable;
   }
 
   public UnaryCallable<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagCallable() {

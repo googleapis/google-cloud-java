@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
@@ -329,7 +330,8 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
   }
 
   /** Returns the object with the settings used for calls to listFirebaseLinks. */
-  public UnaryCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
+  public PagedCallSettings<
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
       listFirebaseLinksSettings() {
     return ((AnalyticsAdminServiceStubSettings) getStubSettings()).listFirebaseLinksSettings();
   }
@@ -720,7 +722,8 @@ public class AnalyticsAdminServiceSettings extends ClientSettings<AnalyticsAdmin
     }
 
     /** Returns the builder for the settings used for calls to listFirebaseLinks. */
-    public UnaryCallSettings.Builder<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
+    public PagedCallSettings.Builder<
+            ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
         listFirebaseLinksSettings() {
       return getStubSettingsBuilder().listFirebaseLinksSettings();
     }

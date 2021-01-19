@@ -39,7 +39,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
 
   private GoogleAdsLink() {
     name_ = "";
-    parent_ = "";
     customerId_ = "";
     emailAddress_ = "";
   }
@@ -78,13 +77,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               name_ = s;
-              break;
-            }
-          case 18:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              parent_ = s;
               break;
             }
           case 26:
@@ -191,8 +183,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Format:
-   * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+   * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
@@ -216,8 +207,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Format:
-   * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+   * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
    * Note: googleAdsLinkId is not the Google Ads customer ID.
    * </pre>
    *
@@ -232,55 +222,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int PARENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object parent_;
-  /**
-   *
-   *
-   * <pre>
-   * Immutable. Format: properties/{propertyId}
-   * </pre>
-   *
-   * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   *
-   * @return The parent.
-   */
-  @java.lang.Override
-  public java.lang.String getParent() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      parent_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Immutable. Format: properties/{propertyId}
-   * </pre>
-   *
-   * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   *
-   * @return The bytes for parent.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getParentBytes() {
-    java.lang.Object ref = parent_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      parent_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -577,9 +518,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!getParentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, parent_);
-    }
     if (!getCustomerIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, customerId_);
     }
@@ -609,9 +547,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
-    }
-    if (!getParentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, parent_);
     }
     if (!getCustomerIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, customerId_);
@@ -650,7 +585,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
         (com.google.analytics.admin.v1alpha.GoogleAdsLink) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (!getParent().equals(other.getParent())) return false;
     if (!getCustomerId().equals(other.getCustomerId())) return false;
     if (getCanManageClients() != other.getCanManageClients()) return false;
     if (hasAdsPersonalizationEnabled() != other.hasAdsPersonalizationEnabled()) return false;
@@ -680,8 +614,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + PARENT_FIELD_NUMBER;
-    hash = (53 * hash) + getParent().hashCode();
     hash = (37 * hash) + CUSTOMER_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCustomerId().hashCode();
     hash = (37 * hash) + CAN_MANAGE_CLIENTS_FIELD_NUMBER;
@@ -847,8 +779,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       name_ = "";
 
-      parent_ = "";
-
       customerId_ = "";
 
       canManageClients_ = false;
@@ -901,7 +831,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       com.google.analytics.admin.v1alpha.GoogleAdsLink result =
           new com.google.analytics.admin.v1alpha.GoogleAdsLink(this);
       result.name_ = name_;
-      result.parent_ = parent_;
       result.customerId_ = customerId_;
       result.canManageClients_ = canManageClients_;
       if (adsPersonalizationEnabledBuilder_ == null) {
@@ -974,10 +903,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
         name_ = other.name_;
         onChanged();
       }
-      if (!other.getParent().isEmpty()) {
-        parent_ = other.parent_;
-        onChanged();
-      }
       if (!other.getCustomerId().isEmpty()) {
         customerId_ = other.customerId_;
         onChanged();
@@ -1032,8 +957,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Format:
-     * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+     * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
@@ -1056,8 +980,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Format:
-     * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+     * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
@@ -1080,8 +1003,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Format:
-     * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+     * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
@@ -1103,8 +1025,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Format:
-     * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+     * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
@@ -1122,8 +1043,7 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Format:
-     * properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
+     * Output only. Format: properties/{propertyId}/googleAdsLinks/{googleAdsLinkId}
      * Note: googleAdsLinkId is not the Google Ads customer ID.
      * </pre>
      *
@@ -1139,112 +1059,6 @@ public final class GoogleAdsLink extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       name_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object parent_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. Format: properties/{propertyId}
-     * </pre>
-     *
-     * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return The parent.
-     */
-    public java.lang.String getParent() {
-      java.lang.Object ref = parent_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        parent_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. Format: properties/{propertyId}
-     * </pre>
-     *
-     * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return The bytes for parent.
-     */
-    public com.google.protobuf.ByteString getParentBytes() {
-      java.lang.Object ref = parent_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        parent_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. Format: properties/{propertyId}
-     * </pre>
-     *
-     * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @param value The parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParent(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      parent_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. Format: properties/{propertyId}
-     * </pre>
-     *
-     * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearParent() {
-
-      parent_ = getDefaultInstance().getParent();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Immutable. Format: properties/{propertyId}
-     * </pre>
-     *
-     * <code>string parent = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
-     *
-     * @param value The bytes for parent to set.
-     * @return This builder for chaining.
-     */
-    public Builder setParentBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      parent_ = value;
       onChanged();
       return this;
     }

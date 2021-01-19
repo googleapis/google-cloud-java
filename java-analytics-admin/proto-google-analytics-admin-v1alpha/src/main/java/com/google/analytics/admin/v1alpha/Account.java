@@ -40,7 +40,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
   private Account() {
     name_ = "";
     displayName_ = "";
-    countryCode_ = "";
+    regionCode_ = "";
   }
 
   @java.lang.Override
@@ -120,7 +120,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              countryCode_ = s;
+              regionCode_ = s;
               break;
             }
           case 48:
@@ -362,31 +362,28 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
-  public static final int COUNTRY_CODE_FIELD_NUMBER = 5;
-  private volatile java.lang.Object countryCode_;
+  public static final int REGION_CODE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object regionCode_;
   /**
    *
    *
    * <pre>
-   * Country of business. Must be a non-deprecated code for a UN M.49 region.
-   * https:
-   * //unicode.org/cldr/charts/latest/supplem
-   * // ental/territory_containment_un_m_49.html
+   * Country of business. Must be a Unicode CLDR region code.
    * </pre>
    *
-   * <code>string country_code = 5;</code>
+   * <code>string region_code = 5;</code>
    *
-   * @return The countryCode.
+   * @return The regionCode.
    */
   @java.lang.Override
-  public java.lang.String getCountryCode() {
-    java.lang.Object ref = countryCode_;
+  public java.lang.String getRegionCode() {
+    java.lang.Object ref = regionCode_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      countryCode_ = s;
+      regionCode_ = s;
       return s;
     }
   }
@@ -394,23 +391,20 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Country of business. Must be a non-deprecated code for a UN M.49 region.
-   * https:
-   * //unicode.org/cldr/charts/latest/supplem
-   * // ental/territory_containment_un_m_49.html
+   * Country of business. Must be a Unicode CLDR region code.
    * </pre>
    *
-   * <code>string country_code = 5;</code>
+   * <code>string region_code = 5;</code>
    *
-   * @return The bytes for countryCode.
+   * @return The bytes for regionCode.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getCountryCodeBytes() {
-    java.lang.Object ref = countryCode_;
+  public com.google.protobuf.ByteString getRegionCodeBytes() {
+    java.lang.Object ref = regionCode_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      countryCode_ = b;
+      regionCode_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -462,8 +456,8 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
     }
-    if (!getCountryCodeBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, countryCode_);
+    if (!getRegionCodeBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, regionCode_);
     }
     if (deleted_ != false) {
       output.writeBool(6, deleted_);
@@ -489,8 +483,8 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
     }
-    if (!getCountryCodeBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, countryCode_);
+    if (!getRegionCodeBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, regionCode_);
     }
     if (deleted_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, deleted_);
@@ -521,7 +515,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (!getCountryCode().equals(other.getCountryCode())) return false;
+    if (!getRegionCode().equals(other.getRegionCode())) return false;
     if (getDeleted() != other.getDeleted()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -546,8 +540,8 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + COUNTRY_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getCountryCode().hashCode();
+    hash = (37 * hash) + REGION_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getRegionCode().hashCode();
     hash = (37 * hash) + DELETED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeleted());
     hash = (29 * hash) + unknownFields.hashCode();
@@ -711,7 +705,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       }
       displayName_ = "";
 
-      countryCode_ = "";
+      regionCode_ = "";
 
       deleted_ = false;
 
@@ -754,7 +748,7 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.displayName_ = displayName_;
-      result.countryCode_ = countryCode_;
+      result.regionCode_ = regionCode_;
       result.deleted_ = deleted_;
       onBuilt();
       return result;
@@ -819,8 +813,8 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
         displayName_ = other.displayName_;
         onChanged();
       }
-      if (!other.getCountryCode().isEmpty()) {
-        countryCode_ = other.countryCode_;
+      if (!other.getRegionCode().isEmpty()) {
+        regionCode_ = other.regionCode_;
         onChanged();
       }
       if (other.getDeleted() != false) {
@@ -1479,27 +1473,24 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.lang.Object countryCode_ = "";
+    private java.lang.Object regionCode_ = "";
     /**
      *
      *
      * <pre>
-     * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https:
-     * //unicode.org/cldr/charts/latest/supplem
-     * // ental/territory_containment_un_m_49.html
+     * Country of business. Must be a Unicode CLDR region code.
      * </pre>
      *
-     * <code>string country_code = 5;</code>
+     * <code>string region_code = 5;</code>
      *
-     * @return The countryCode.
+     * @return The regionCode.
      */
-    public java.lang.String getCountryCode() {
-      java.lang.Object ref = countryCode_;
+    public java.lang.String getRegionCode() {
+      java.lang.Object ref = regionCode_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        countryCode_ = s;
+        regionCode_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -1509,22 +1500,19 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https:
-     * //unicode.org/cldr/charts/latest/supplem
-     * // ental/territory_containment_un_m_49.html
+     * Country of business. Must be a Unicode CLDR region code.
      * </pre>
      *
-     * <code>string country_code = 5;</code>
+     * <code>string region_code = 5;</code>
      *
-     * @return The bytes for countryCode.
+     * @return The bytes for regionCode.
      */
-    public com.google.protobuf.ByteString getCountryCodeBytes() {
-      java.lang.Object ref = countryCode_;
+    public com.google.protobuf.ByteString getRegionCodeBytes() {
+      java.lang.Object ref = regionCode_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        countryCode_ = b;
+        regionCode_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1534,23 +1522,20 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https:
-     * //unicode.org/cldr/charts/latest/supplem
-     * // ental/territory_containment_un_m_49.html
+     * Country of business. Must be a Unicode CLDR region code.
      * </pre>
      *
-     * <code>string country_code = 5;</code>
+     * <code>string region_code = 5;</code>
      *
-     * @param value The countryCode to set.
+     * @param value The regionCode to set.
      * @return This builder for chaining.
      */
-    public Builder setCountryCode(java.lang.String value) {
+    public Builder setRegionCode(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      countryCode_ = value;
+      regionCode_ = value;
       onChanged();
       return this;
     }
@@ -1558,19 +1543,16 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https:
-     * //unicode.org/cldr/charts/latest/supplem
-     * // ental/territory_containment_un_m_49.html
+     * Country of business. Must be a Unicode CLDR region code.
      * </pre>
      *
-     * <code>string country_code = 5;</code>
+     * <code>string region_code = 5;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearCountryCode() {
+    public Builder clearRegionCode() {
 
-      countryCode_ = getDefaultInstance().getCountryCode();
+      regionCode_ = getDefaultInstance().getRegionCode();
       onChanged();
       return this;
     }
@@ -1578,24 +1560,21 @@ public final class Account extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Country of business. Must be a non-deprecated code for a UN M.49 region.
-     * https:
-     * //unicode.org/cldr/charts/latest/supplem
-     * // ental/territory_containment_un_m_49.html
+     * Country of business. Must be a Unicode CLDR region code.
      * </pre>
      *
-     * <code>string country_code = 5;</code>
+     * <code>string region_code = 5;</code>
      *
-     * @param value The bytes for countryCode to set.
+     * @param value The bytes for regionCode to set.
      * @return This builder for chaining.
      */
-    public Builder setCountryCodeBytes(com.google.protobuf.ByteString value) {
+    public Builder setRegionCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      countryCode_ = value;
+      regionCode_ = value;
       onChanged();
       return this;
     }

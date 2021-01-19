@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<differences>
+  <!-- TODO: remove after 0.3.0 is released -->
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceClient</className>
+    <method> com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse listFirebaseLinks(*)</method>
+    <to>com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient$ListFirebaseLinksPagedResponse</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings listFirebaseLinksSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/AnalyticsAdminServiceSettings$Builder</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings$Builder listFirebaseLinksSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings$Builder</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/AnalyticsAdminServiceStubSettings</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings listFirebaseLinksSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings</to>
+  </difference>
+  <difference>
+    <differenceType>7006</differenceType>
+    <className>com/google/analytics/admin/v1alpha/stub/AnalyticsAdminServiceStubSettings$Builder</className>
+    <method>com.google.api.gax.rpc.UnaryCallSettings$Builder listFirebaseLinksSettings()</method>
+    <to>com.google.api.gax.rpc.PagedCallSettings$Builder</to>
+  </difference>
+</differences>

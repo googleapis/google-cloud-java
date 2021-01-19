@@ -16,4 +16,36 @@
     <className>com/google/analytics/admin/v1alpha/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
+
+  <!-- TODO: remove after 0.3.0 is released -->
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink</className>
+    <field>PARENT_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/GoogleAdsLink*</className>
+    <method>* *Parent*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/Account</className>
+    <field>COUNTRY_CODE_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/Account*</className>
+    <method>* *CountryCode*(*)</method>
+  </difference>
+  <difference>
+    <differenceType>6011</differenceType>
+    <className>com/google/analytics/admin/v1alpha/EnhancedMeasurementSettings</className>
+    <field>*_FIELD_NUMBER</field>
+  </difference>
+  <difference>
+    <differenceType>7002</differenceType>
+    <className>com/google/analytics/admin/v1alpha/EnhancedMeasurementSettings*</className>
+    <method>*</method>
+  </difference>
 </differences>

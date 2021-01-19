@@ -72,10 +72,13 @@ public interface UpdateAndroidAppDataStreamRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match
+   * all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -84,10 +87,13 @@ public interface UpdateAndroidAppDataStreamRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match
+   * all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -96,10 +102,13 @@ public interface UpdateAndroidAppDataStreamRequestOrBuilder
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match
+   * all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 }

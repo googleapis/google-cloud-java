@@ -74,4 +74,35 @@ public interface ListFirebaseLinksResponseOrBuilder
    * <code>repeated .google.analytics.admin.v1alpha.FirebaseLink firebase_links = 1;</code>
    */
   com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder getFirebaseLinksOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * Currently, Google Analytics supports only one FirebaseLink per property,
+   * so this will never be populated.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
+   */
+  java.lang.String getNextPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * Currently, Google Analytics supports only one FirebaseLink per property,
+   * so this will never be populated.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
+   */
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -41,8 +41,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
   private EnhancedMeasurementSettings() {
     name_ = "";
     searchQueryParameter_ = "";
-    urlQueryParameter_ = "";
-    excludedDomains_ = "";
+    uriQueryParameter_ = "";
   }
 
   @java.lang.Override
@@ -101,19 +100,9 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
               outboundClicksEnabled_ = input.readBool();
               break;
             }
-          case 48:
-            {
-              contentViewsEnabled_ = input.readBool();
-              break;
-            }
           case 56:
             {
               siteSearchEnabled_ = input.readBool();
-              break;
-            }
-          case 64:
-            {
-              formInteractionsEnabled_ = input.readBool();
               break;
             }
           case 72:
@@ -126,11 +115,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
               fileDownloadsEnabled_ = input.readBool();
               break;
             }
-          case 88:
-            {
-              dataTaggedElementClicksEnabled_ = input.readBool();
-              break;
-            }
           case 96:
             {
               pageLoadsEnabled_ = input.readBool();
@@ -139,16 +123,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
           case 104:
             {
               pageChangesEnabled_ = input.readBool();
-              break;
-            }
-          case 112:
-            {
-              articlesAndBlogsEnabled_ = input.readBool();
-              break;
-            }
-          case 120:
-            {
-              productsAndEcommerceEnabled_ = input.readBool();
               break;
             }
           case 130:
@@ -162,14 +136,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
             {
               java.lang.String s = input.readStringRequireUtf8();
 
-              urlQueryParameter_ = s;
-              break;
-            }
-          case 146:
-            {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              excludedDomains_ = s;
+              uriQueryParameter_ = s;
               break;
             }
           default:
@@ -288,8 +255,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Output only. If enabled, capture a page view event each time a page loads
-   * or the website changes the browser history state.
+   * Output only. If enabled, capture a page view event each time a page loads or the
+   * website changes the browser history state.
    * </pre>
    *
    * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -339,25 +306,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     return outboundClicksEnabled_;
   }
 
-  public static final int CONTENT_VIEWS_ENABLED_FIELD_NUMBER = 6;
-  private boolean contentViewsEnabled_;
-  /**
-   *
-   *
-   * <pre>
-   * Capture events when your visitors view content on your site that has
-   * structured data (eg, articles, blog posts, product details screens, etc.).
-   * </pre>
-   *
-   * <code>bool content_views_enabled = 6;</code>
-   *
-   * @return The contentViewsEnabled.
-   */
-  @java.lang.Override
-  public boolean getContentViewsEnabled() {
-    return contentViewsEnabled_;
-  }
-
   public static final int SITE_SEARCH_ENABLED_FIELD_NUMBER = 7;
   private boolean siteSearchEnabled_;
   /**
@@ -375,25 +323,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean getSiteSearchEnabled() {
     return siteSearchEnabled_;
-  }
-
-  public static final int FORM_INTERACTIONS_ENABLED_FIELD_NUMBER = 8;
-  private boolean formInteractionsEnabled_;
-  /**
-   *
-   *
-   * <pre>
-   * If enabled, capture a view search results event each time a visitor
-   * interacts with a form on your site.
-   * </pre>
-   *
-   * <code>bool form_interactions_enabled = 8;</code>
-   *
-   * @return The formInteractionsEnabled.
-   */
-  @java.lang.Override
-  public boolean getFormInteractionsEnabled() {
-    return formInteractionsEnabled_;
   }
 
   public static final int VIDEO_ENGAGEMENT_ENABLED_FIELD_NUMBER = 9;
@@ -434,35 +363,16 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     return fileDownloadsEnabled_;
   }
 
-  public static final int DATA_TAGGED_ELEMENT_CLICKS_ENABLED_FIELD_NUMBER = 11;
-  private boolean dataTaggedElementClicksEnabled_;
-  /**
-   *
-   *
-   * <pre>
-   * If enabled, capture a click event each time a visitor clicks a link or
-   * element that has data attributes beginning with "data-ga".
-   * </pre>
-   *
-   * <code>bool data_tagged_element_clicks_enabled = 11;</code>
-   *
-   * @return The dataTaggedElementClicksEnabled.
-   */
-  @java.lang.Override
-  public boolean getDataTaggedElementClicksEnabled() {
-    return dataTaggedElementClicksEnabled_;
-  }
-
   public static final int PAGE_LOADS_ENABLED_FIELD_NUMBER = 12;
   private boolean pageLoadsEnabled_;
   /**
    *
    *
    * <pre>
-   * If enabled, capture a page view event each time a page loads.
+   * Output only. If enabled, capture a page view event each time a page loads.
    * </pre>
    *
-   * <code>bool page_loads_enabled = 12;</code>
+   * <code>bool page_loads_enabled = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The pageLoadsEnabled.
    */
@@ -488,44 +398,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
   @java.lang.Override
   public boolean getPageChangesEnabled() {
     return pageChangesEnabled_;
-  }
-
-  public static final int ARTICLES_AND_BLOGS_ENABLED_FIELD_NUMBER = 14;
-  private boolean articlesAndBlogsEnabled_;
-  /**
-   *
-   *
-   * <pre>
-   * Capture events when your visitors view content on your site that has
-   * articles or blog posts.
-   * </pre>
-   *
-   * <code>bool articles_and_blogs_enabled = 14;</code>
-   *
-   * @return The articlesAndBlogsEnabled.
-   */
-  @java.lang.Override
-  public boolean getArticlesAndBlogsEnabled() {
-    return articlesAndBlogsEnabled_;
-  }
-
-  public static final int PRODUCTS_AND_ECOMMERCE_ENABLED_FIELD_NUMBER = 15;
-  private boolean productsAndEcommerceEnabled_;
-  /**
-   *
-   *
-   * <pre>
-   * Capture events when your visitors view content on your site that has
-   * product details screens, etc.
-   * </pre>
-   *
-   * <code>bool products_and_ecommerce_enabled = 15;</code>
-   *
-   * @return The productsAndEcommerceEnabled.
-   */
-  @java.lang.Override
-  public boolean getProductsAndEcommerceEnabled() {
-    return productsAndEcommerceEnabled_;
   }
 
   public static final int SEARCH_QUERY_PARAMETER_FIELD_NUMBER = 16;
@@ -579,8 +451,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     }
   }
 
-  public static final int URL_QUERY_PARAMETER_FIELD_NUMBER = 17;
-  private volatile java.lang.Object urlQueryParameter_;
+  public static final int URI_QUERY_PARAMETER_FIELD_NUMBER = 17;
+  private volatile java.lang.Object uriQueryParameter_;
   /**
    *
    *
@@ -589,19 +461,19 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    * Max length is 1024 characters.
    * </pre>
    *
-   * <code>string url_query_parameter = 17;</code>
+   * <code>string uri_query_parameter = 17;</code>
    *
-   * @return The urlQueryParameter.
+   * @return The uriQueryParameter.
    */
   @java.lang.Override
-  public java.lang.String getUrlQueryParameter() {
-    java.lang.Object ref = urlQueryParameter_;
+  public java.lang.String getUriQueryParameter() {
+    java.lang.Object ref = uriQueryParameter_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      urlQueryParameter_ = s;
+      uriQueryParameter_ = s;
       return s;
     }
   }
@@ -613,66 +485,17 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
    * Max length is 1024 characters.
    * </pre>
    *
-   * <code>string url_query_parameter = 17;</code>
+   * <code>string uri_query_parameter = 17;</code>
    *
-   * @return The bytes for urlQueryParameter.
+   * @return The bytes for uriQueryParameter.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getUrlQueryParameterBytes() {
-    java.lang.Object ref = urlQueryParameter_;
+  public com.google.protobuf.ByteString getUriQueryParameterBytes() {
+    java.lang.Object ref = uriQueryParameter_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      urlQueryParameter_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int EXCLUDED_DOMAINS_FIELD_NUMBER = 18;
-  private volatile java.lang.Object excludedDomains_;
-  /**
-   *
-   *
-   * <pre>
-   * Domains to exclude from measurement. Max length is 1024 characters.
-   * </pre>
-   *
-   * <code>string excluded_domains = 18;</code>
-   *
-   * @return The excludedDomains.
-   */
-  @java.lang.Override
-  public java.lang.String getExcludedDomains() {
-    java.lang.Object ref = excludedDomains_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      excludedDomains_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Domains to exclude from measurement. Max length is 1024 characters.
-   * </pre>
-   *
-   * <code>string excluded_domains = 18;</code>
-   *
-   * @return The bytes for excludedDomains.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getExcludedDomainsBytes() {
-    java.lang.Object ref = excludedDomains_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      excludedDomains_ = b;
+      uriQueryParameter_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -708,14 +531,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     if (outboundClicksEnabled_ != false) {
       output.writeBool(5, outboundClicksEnabled_);
     }
-    if (contentViewsEnabled_ != false) {
-      output.writeBool(6, contentViewsEnabled_);
-    }
     if (siteSearchEnabled_ != false) {
       output.writeBool(7, siteSearchEnabled_);
-    }
-    if (formInteractionsEnabled_ != false) {
-      output.writeBool(8, formInteractionsEnabled_);
     }
     if (videoEngagementEnabled_ != false) {
       output.writeBool(9, videoEngagementEnabled_);
@@ -723,29 +540,17 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     if (fileDownloadsEnabled_ != false) {
       output.writeBool(10, fileDownloadsEnabled_);
     }
-    if (dataTaggedElementClicksEnabled_ != false) {
-      output.writeBool(11, dataTaggedElementClicksEnabled_);
-    }
     if (pageLoadsEnabled_ != false) {
       output.writeBool(12, pageLoadsEnabled_);
     }
     if (pageChangesEnabled_ != false) {
       output.writeBool(13, pageChangesEnabled_);
     }
-    if (articlesAndBlogsEnabled_ != false) {
-      output.writeBool(14, articlesAndBlogsEnabled_);
-    }
-    if (productsAndEcommerceEnabled_ != false) {
-      output.writeBool(15, productsAndEcommerceEnabled_);
-    }
     if (!getSearchQueryParameterBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, searchQueryParameter_);
     }
-    if (!getUrlQueryParameterBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, urlQueryParameter_);
-    }
-    if (!getExcludedDomainsBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, excludedDomains_);
+    if (!getUriQueryParameterBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, uriQueryParameter_);
     }
     unknownFields.writeTo(output);
   }
@@ -771,14 +576,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     if (outboundClicksEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, outboundClicksEnabled_);
     }
-    if (contentViewsEnabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, contentViewsEnabled_);
-    }
     if (siteSearchEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, siteSearchEnabled_);
-    }
-    if (formInteractionsEnabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, formInteractionsEnabled_);
     }
     if (videoEngagementEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, videoEngagementEnabled_);
@@ -786,32 +585,17 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     if (fileDownloadsEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, fileDownloadsEnabled_);
     }
-    if (dataTaggedElementClicksEnabled_ != false) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(
-              11, dataTaggedElementClicksEnabled_);
-    }
     if (pageLoadsEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, pageLoadsEnabled_);
     }
     if (pageChangesEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(13, pageChangesEnabled_);
     }
-    if (articlesAndBlogsEnabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, articlesAndBlogsEnabled_);
-    }
-    if (productsAndEcommerceEnabled_ != false) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeBoolSize(15, productsAndEcommerceEnabled_);
-    }
     if (!getSearchQueryParameterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, searchQueryParameter_);
     }
-    if (!getUrlQueryParameterBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, urlQueryParameter_);
-    }
-    if (!getExcludedDomainsBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, excludedDomains_);
+    if (!getUriQueryParameterBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, uriQueryParameter_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -834,20 +618,13 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     if (getPageViewsEnabled() != other.getPageViewsEnabled()) return false;
     if (getScrollsEnabled() != other.getScrollsEnabled()) return false;
     if (getOutboundClicksEnabled() != other.getOutboundClicksEnabled()) return false;
-    if (getContentViewsEnabled() != other.getContentViewsEnabled()) return false;
     if (getSiteSearchEnabled() != other.getSiteSearchEnabled()) return false;
-    if (getFormInteractionsEnabled() != other.getFormInteractionsEnabled()) return false;
     if (getVideoEngagementEnabled() != other.getVideoEngagementEnabled()) return false;
     if (getFileDownloadsEnabled() != other.getFileDownloadsEnabled()) return false;
-    if (getDataTaggedElementClicksEnabled() != other.getDataTaggedElementClicksEnabled())
-      return false;
     if (getPageLoadsEnabled() != other.getPageLoadsEnabled()) return false;
     if (getPageChangesEnabled() != other.getPageChangesEnabled()) return false;
-    if (getArticlesAndBlogsEnabled() != other.getArticlesAndBlogsEnabled()) return false;
-    if (getProductsAndEcommerceEnabled() != other.getProductsAndEcommerceEnabled()) return false;
     if (!getSearchQueryParameter().equals(other.getSearchQueryParameter())) return false;
-    if (!getUrlQueryParameter().equals(other.getUrlQueryParameter())) return false;
-    if (!getExcludedDomains().equals(other.getExcludedDomains())) return false;
+    if (!getUriQueryParameter().equals(other.getUriQueryParameter())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -869,33 +646,20 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getScrollsEnabled());
     hash = (37 * hash) + OUTBOUND_CLICKS_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getOutboundClicksEnabled());
-    hash = (37 * hash) + CONTENT_VIEWS_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getContentViewsEnabled());
     hash = (37 * hash) + SITE_SEARCH_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSiteSearchEnabled());
-    hash = (37 * hash) + FORM_INTERACTIONS_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFormInteractionsEnabled());
     hash = (37 * hash) + VIDEO_ENGAGEMENT_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getVideoEngagementEnabled());
     hash = (37 * hash) + FILE_DOWNLOADS_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFileDownloadsEnabled());
-    hash = (37 * hash) + DATA_TAGGED_ELEMENT_CLICKS_ENABLED_FIELD_NUMBER;
-    hash =
-        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDataTaggedElementClicksEnabled());
     hash = (37 * hash) + PAGE_LOADS_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPageLoadsEnabled());
     hash = (37 * hash) + PAGE_CHANGES_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPageChangesEnabled());
-    hash = (37 * hash) + ARTICLES_AND_BLOGS_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArticlesAndBlogsEnabled());
-    hash = (37 * hash) + PRODUCTS_AND_ECOMMERCE_ENABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProductsAndEcommerceEnabled());
     hash = (37 * hash) + SEARCH_QUERY_PARAMETER_FIELD_NUMBER;
     hash = (53 * hash) + getSearchQueryParameter().hashCode();
-    hash = (37 * hash) + URL_QUERY_PARAMETER_FIELD_NUMBER;
-    hash = (53 * hash) + getUrlQueryParameter().hashCode();
-    hash = (37 * hash) + EXCLUDED_DOMAINS_FIELD_NUMBER;
-    hash = (53 * hash) + getExcludedDomains().hashCode();
+    hash = (37 * hash) + URI_QUERY_PARAMETER_FIELD_NUMBER;
+    hash = (53 * hash) + getUriQueryParameter().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1053,31 +817,19 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
 
       outboundClicksEnabled_ = false;
 
-      contentViewsEnabled_ = false;
-
       siteSearchEnabled_ = false;
-
-      formInteractionsEnabled_ = false;
 
       videoEngagementEnabled_ = false;
 
       fileDownloadsEnabled_ = false;
 
-      dataTaggedElementClicksEnabled_ = false;
-
       pageLoadsEnabled_ = false;
 
       pageChangesEnabled_ = false;
 
-      articlesAndBlogsEnabled_ = false;
-
-      productsAndEcommerceEnabled_ = false;
-
       searchQueryParameter_ = "";
 
-      urlQueryParameter_ = "";
-
-      excludedDomains_ = "";
+      uriQueryParameter_ = "";
 
       return this;
     }
@@ -1112,19 +864,13 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       result.pageViewsEnabled_ = pageViewsEnabled_;
       result.scrollsEnabled_ = scrollsEnabled_;
       result.outboundClicksEnabled_ = outboundClicksEnabled_;
-      result.contentViewsEnabled_ = contentViewsEnabled_;
       result.siteSearchEnabled_ = siteSearchEnabled_;
-      result.formInteractionsEnabled_ = formInteractionsEnabled_;
       result.videoEngagementEnabled_ = videoEngagementEnabled_;
       result.fileDownloadsEnabled_ = fileDownloadsEnabled_;
-      result.dataTaggedElementClicksEnabled_ = dataTaggedElementClicksEnabled_;
       result.pageLoadsEnabled_ = pageLoadsEnabled_;
       result.pageChangesEnabled_ = pageChangesEnabled_;
-      result.articlesAndBlogsEnabled_ = articlesAndBlogsEnabled_;
-      result.productsAndEcommerceEnabled_ = productsAndEcommerceEnabled_;
       result.searchQueryParameter_ = searchQueryParameter_;
-      result.urlQueryParameter_ = urlQueryParameter_;
-      result.excludedDomains_ = excludedDomains_;
+      result.uriQueryParameter_ = uriQueryParameter_;
       onBuilt();
       return result;
     }
@@ -1192,14 +938,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       if (other.getOutboundClicksEnabled() != false) {
         setOutboundClicksEnabled(other.getOutboundClicksEnabled());
       }
-      if (other.getContentViewsEnabled() != false) {
-        setContentViewsEnabled(other.getContentViewsEnabled());
-      }
       if (other.getSiteSearchEnabled() != false) {
         setSiteSearchEnabled(other.getSiteSearchEnabled());
-      }
-      if (other.getFormInteractionsEnabled() != false) {
-        setFormInteractionsEnabled(other.getFormInteractionsEnabled());
       }
       if (other.getVideoEngagementEnabled() != false) {
         setVideoEngagementEnabled(other.getVideoEngagementEnabled());
@@ -1207,31 +947,18 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       if (other.getFileDownloadsEnabled() != false) {
         setFileDownloadsEnabled(other.getFileDownloadsEnabled());
       }
-      if (other.getDataTaggedElementClicksEnabled() != false) {
-        setDataTaggedElementClicksEnabled(other.getDataTaggedElementClicksEnabled());
-      }
       if (other.getPageLoadsEnabled() != false) {
         setPageLoadsEnabled(other.getPageLoadsEnabled());
       }
       if (other.getPageChangesEnabled() != false) {
         setPageChangesEnabled(other.getPageChangesEnabled());
       }
-      if (other.getArticlesAndBlogsEnabled() != false) {
-        setArticlesAndBlogsEnabled(other.getArticlesAndBlogsEnabled());
-      }
-      if (other.getProductsAndEcommerceEnabled() != false) {
-        setProductsAndEcommerceEnabled(other.getProductsAndEcommerceEnabled());
-      }
       if (!other.getSearchQueryParameter().isEmpty()) {
         searchQueryParameter_ = other.searchQueryParameter_;
         onChanged();
       }
-      if (!other.getUrlQueryParameter().isEmpty()) {
-        urlQueryParameter_ = other.urlQueryParameter_;
-        onChanged();
-      }
-      if (!other.getExcludedDomains().isEmpty()) {
-        excludedDomains_ = other.excludedDomains_;
+      if (!other.getUriQueryParameter().isEmpty()) {
+        uriQueryParameter_ = other.uriQueryParameter_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1452,8 +1179,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. If enabled, capture a page view event each time a page loads
-     * or the website changes the browser history state.
+     * Output only. If enabled, capture a page view event each time a page loads or the
+     * website changes the browser history state.
      * </pre>
      *
      * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1468,8 +1195,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. If enabled, capture a page view event each time a page loads
-     * or the website changes the browser history state.
+     * Output only. If enabled, capture a page view event each time a page loads or the
+     * website changes the browser history state.
      * </pre>
      *
      * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1487,8 +1214,8 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * Output only. If enabled, capture a page view event each time a page loads
-     * or the website changes the browser history state.
+     * Output only. If enabled, capture a page view event each time a page loads or the
+     * website changes the browser history state.
      * </pre>
      *
      * <code>bool page_views_enabled = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1612,61 +1339,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       return this;
     }
 
-    private boolean contentViewsEnabled_;
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * structured data (eg, articles, blog posts, product details screens, etc.).
-     * </pre>
-     *
-     * <code>bool content_views_enabled = 6;</code>
-     *
-     * @return The contentViewsEnabled.
-     */
-    @java.lang.Override
-    public boolean getContentViewsEnabled() {
-      return contentViewsEnabled_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * structured data (eg, articles, blog posts, product details screens, etc.).
-     * </pre>
-     *
-     * <code>bool content_views_enabled = 6;</code>
-     *
-     * @param value The contentViewsEnabled to set.
-     * @return This builder for chaining.
-     */
-    public Builder setContentViewsEnabled(boolean value) {
-
-      contentViewsEnabled_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * structured data (eg, articles, blog posts, product details screens, etc.).
-     * </pre>
-     *
-     * <code>bool content_views_enabled = 6;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearContentViewsEnabled() {
-
-      contentViewsEnabled_ = false;
-      onChanged();
-      return this;
-    }
-
     private boolean siteSearchEnabled_;
     /**
      *
@@ -1718,61 +1390,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public Builder clearSiteSearchEnabled() {
 
       siteSearchEnabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean formInteractionsEnabled_;
-    /**
-     *
-     *
-     * <pre>
-     * If enabled, capture a view search results event each time a visitor
-     * interacts with a form on your site.
-     * </pre>
-     *
-     * <code>bool form_interactions_enabled = 8;</code>
-     *
-     * @return The formInteractionsEnabled.
-     */
-    @java.lang.Override
-    public boolean getFormInteractionsEnabled() {
-      return formInteractionsEnabled_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If enabled, capture a view search results event each time a visitor
-     * interacts with a form on your site.
-     * </pre>
-     *
-     * <code>bool form_interactions_enabled = 8;</code>
-     *
-     * @param value The formInteractionsEnabled to set.
-     * @return This builder for chaining.
-     */
-    public Builder setFormInteractionsEnabled(boolean value) {
-
-      formInteractionsEnabled_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If enabled, capture a view search results event each time a visitor
-     * interacts with a form on your site.
-     * </pre>
-     *
-     * <code>bool form_interactions_enabled = 8;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearFormInteractionsEnabled() {
-
-      formInteractionsEnabled_ = false;
       onChanged();
       return this;
     }
@@ -1887,70 +1504,15 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       return this;
     }
 
-    private boolean dataTaggedElementClicksEnabled_;
-    /**
-     *
-     *
-     * <pre>
-     * If enabled, capture a click event each time a visitor clicks a link or
-     * element that has data attributes beginning with "data-ga".
-     * </pre>
-     *
-     * <code>bool data_tagged_element_clicks_enabled = 11;</code>
-     *
-     * @return The dataTaggedElementClicksEnabled.
-     */
-    @java.lang.Override
-    public boolean getDataTaggedElementClicksEnabled() {
-      return dataTaggedElementClicksEnabled_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If enabled, capture a click event each time a visitor clicks a link or
-     * element that has data attributes beginning with "data-ga".
-     * </pre>
-     *
-     * <code>bool data_tagged_element_clicks_enabled = 11;</code>
-     *
-     * @param value The dataTaggedElementClicksEnabled to set.
-     * @return This builder for chaining.
-     */
-    public Builder setDataTaggedElementClicksEnabled(boolean value) {
-
-      dataTaggedElementClicksEnabled_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * If enabled, capture a click event each time a visitor clicks a link or
-     * element that has data attributes beginning with "data-ga".
-     * </pre>
-     *
-     * <code>bool data_tagged_element_clicks_enabled = 11;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearDataTaggedElementClicksEnabled() {
-
-      dataTaggedElementClicksEnabled_ = false;
-      onChanged();
-      return this;
-    }
-
     private boolean pageLoadsEnabled_;
     /**
      *
      *
      * <pre>
-     * If enabled, capture a page view event each time a page loads.
+     * Output only. If enabled, capture a page view event each time a page loads.
      * </pre>
      *
-     * <code>bool page_loads_enabled = 12;</code>
+     * <code>bool page_loads_enabled = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The pageLoadsEnabled.
      */
@@ -1962,10 +1524,10 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * If enabled, capture a page view event each time a page loads.
+     * Output only. If enabled, capture a page view event each time a page loads.
      * </pre>
      *
-     * <code>bool page_loads_enabled = 12;</code>
+     * <code>bool page_loads_enabled = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The pageLoadsEnabled to set.
      * @return This builder for chaining.
@@ -1980,10 +1542,10 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      *
      *
      * <pre>
-     * If enabled, capture a page view event each time a page loads.
+     * Output only. If enabled, capture a page view event each time a page loads.
      * </pre>
      *
-     * <code>bool page_loads_enabled = 12;</code>
+     * <code>bool page_loads_enabled = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -2045,116 +1607,6 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
     public Builder clearPageChangesEnabled() {
 
       pageChangesEnabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean articlesAndBlogsEnabled_;
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * articles or blog posts.
-     * </pre>
-     *
-     * <code>bool articles_and_blogs_enabled = 14;</code>
-     *
-     * @return The articlesAndBlogsEnabled.
-     */
-    @java.lang.Override
-    public boolean getArticlesAndBlogsEnabled() {
-      return articlesAndBlogsEnabled_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * articles or blog posts.
-     * </pre>
-     *
-     * <code>bool articles_and_blogs_enabled = 14;</code>
-     *
-     * @param value The articlesAndBlogsEnabled to set.
-     * @return This builder for chaining.
-     */
-    public Builder setArticlesAndBlogsEnabled(boolean value) {
-
-      articlesAndBlogsEnabled_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * articles or blog posts.
-     * </pre>
-     *
-     * <code>bool articles_and_blogs_enabled = 14;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearArticlesAndBlogsEnabled() {
-
-      articlesAndBlogsEnabled_ = false;
-      onChanged();
-      return this;
-    }
-
-    private boolean productsAndEcommerceEnabled_;
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * product details screens, etc.
-     * </pre>
-     *
-     * <code>bool products_and_ecommerce_enabled = 15;</code>
-     *
-     * @return The productsAndEcommerceEnabled.
-     */
-    @java.lang.Override
-    public boolean getProductsAndEcommerceEnabled() {
-      return productsAndEcommerceEnabled_;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * product details screens, etc.
-     * </pre>
-     *
-     * <code>bool products_and_ecommerce_enabled = 15;</code>
-     *
-     * @param value The productsAndEcommerceEnabled to set.
-     * @return This builder for chaining.
-     */
-    public Builder setProductsAndEcommerceEnabled(boolean value) {
-
-      productsAndEcommerceEnabled_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Capture events when your visitors view content on your site that has
-     * product details screens, etc.
-     * </pre>
-     *
-     * <code>bool products_and_ecommerce_enabled = 15;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearProductsAndEcommerceEnabled() {
-
-      productsAndEcommerceEnabled_ = false;
       onChanged();
       return this;
     }
@@ -2270,7 +1722,7 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
       return this;
     }
 
-    private java.lang.Object urlQueryParameter_ = "";
+    private java.lang.Object uriQueryParameter_ = "";
     /**
      *
      *
@@ -2279,16 +1731,16 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * Max length is 1024 characters.
      * </pre>
      *
-     * <code>string url_query_parameter = 17;</code>
+     * <code>string uri_query_parameter = 17;</code>
      *
-     * @return The urlQueryParameter.
+     * @return The uriQueryParameter.
      */
-    public java.lang.String getUrlQueryParameter() {
-      java.lang.Object ref = urlQueryParameter_;
+    public java.lang.String getUriQueryParameter() {
+      java.lang.Object ref = uriQueryParameter_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        urlQueryParameter_ = s;
+        uriQueryParameter_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -2302,16 +1754,16 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * Max length is 1024 characters.
      * </pre>
      *
-     * <code>string url_query_parameter = 17;</code>
+     * <code>string uri_query_parameter = 17;</code>
      *
-     * @return The bytes for urlQueryParameter.
+     * @return The bytes for uriQueryParameter.
      */
-    public com.google.protobuf.ByteString getUrlQueryParameterBytes() {
-      java.lang.Object ref = urlQueryParameter_;
+    public com.google.protobuf.ByteString getUriQueryParameterBytes() {
+      java.lang.Object ref = uriQueryParameter_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        urlQueryParameter_ = b;
+        uriQueryParameter_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2325,17 +1777,17 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * Max length is 1024 characters.
      * </pre>
      *
-     * <code>string url_query_parameter = 17;</code>
+     * <code>string uri_query_parameter = 17;</code>
      *
-     * @param value The urlQueryParameter to set.
+     * @param value The uriQueryParameter to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlQueryParameter(java.lang.String value) {
+    public Builder setUriQueryParameter(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
 
-      urlQueryParameter_ = value;
+      uriQueryParameter_ = value;
       onChanged();
       return this;
     }
@@ -2347,13 +1799,13 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * Max length is 1024 characters.
      * </pre>
      *
-     * <code>string url_query_parameter = 17;</code>
+     * <code>string uri_query_parameter = 17;</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearUrlQueryParameter() {
+    public Builder clearUriQueryParameter() {
 
-      urlQueryParameter_ = getDefaultInstance().getUrlQueryParameter();
+      uriQueryParameter_ = getDefaultInstance().getUriQueryParameter();
       onChanged();
       return this;
     }
@@ -2365,124 +1817,18 @@ public final class EnhancedMeasurementSettings extends com.google.protobuf.Gener
      * Max length is 1024 characters.
      * </pre>
      *
-     * <code>string url_query_parameter = 17;</code>
+     * <code>string uri_query_parameter = 17;</code>
      *
-     * @param value The bytes for urlQueryParameter to set.
+     * @param value The bytes for uriQueryParameter to set.
      * @return This builder for chaining.
      */
-    public Builder setUrlQueryParameterBytes(com.google.protobuf.ByteString value) {
+    public Builder setUriQueryParameterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
 
-      urlQueryParameter_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object excludedDomains_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Domains to exclude from measurement. Max length is 1024 characters.
-     * </pre>
-     *
-     * <code>string excluded_domains = 18;</code>
-     *
-     * @return The excludedDomains.
-     */
-    public java.lang.String getExcludedDomains() {
-      java.lang.Object ref = excludedDomains_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        excludedDomains_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Domains to exclude from measurement. Max length is 1024 characters.
-     * </pre>
-     *
-     * <code>string excluded_domains = 18;</code>
-     *
-     * @return The bytes for excludedDomains.
-     */
-    public com.google.protobuf.ByteString getExcludedDomainsBytes() {
-      java.lang.Object ref = excludedDomains_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        excludedDomains_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Domains to exclude from measurement. Max length is 1024 characters.
-     * </pre>
-     *
-     * <code>string excluded_domains = 18;</code>
-     *
-     * @param value The excludedDomains to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExcludedDomains(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-
-      excludedDomains_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Domains to exclude from measurement. Max length is 1024 characters.
-     * </pre>
-     *
-     * <code>string excluded_domains = 18;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearExcludedDomains() {
-
-      excludedDomains_ = getDefaultInstance().getExcludedDomains();
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Domains to exclude from measurement. Max length is 1024 characters.
-     * </pre>
-     *
-     * <code>string excluded_domains = 18;</code>
-     *
-     * @param value The bytes for excludedDomains to set.
-     * @return This builder for chaining.
-     */
-    public Builder setExcludedDomainsBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-
-      excludedDomains_ = value;
+      uriQueryParameter_ = value;
       onChanged();
       return this;
     }

@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
@@ -263,7 +264,8 @@ public class AnalyticsAdminServiceStubSettings
   private final UnaryCallSettings<UpdateFirebaseLinkRequest, FirebaseLink>
       updateFirebaseLinkSettings;
   private final UnaryCallSettings<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkSettings;
-  private final UnaryCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
+  private final PagedCallSettings<
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
       listFirebaseLinksSettings;
   private final UnaryCallSettings<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagSettings;
   private final UnaryCallSettings<CreateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -593,6 +595,46 @@ public class AnalyticsAdminServiceStubSettings
           };
 
   private static final PagedListDescriptor<
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink>
+      LIST_FIREBASE_LINKS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFirebaseLinksRequest injectToken(
+                ListFirebaseLinksRequest payload, String token) {
+              return ListFirebaseLinksRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFirebaseLinksRequest injectPageSize(
+                ListFirebaseLinksRequest payload, int pageSize) {
+              return ListFirebaseLinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFirebaseLinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFirebaseLinksResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FirebaseLink> extractResources(ListFirebaseLinksResponse payload) {
+              return payload.getFirebaseLinksList() == null
+                  ? ImmutableList.<FirebaseLink>of()
+                  : payload.getFirebaseLinksList();
+            }
+          };
+
+  private static final PagedListDescriptor<
           ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse, GoogleAdsLink>
       LIST_GOOGLE_ADS_LINKS_PAGE_STR_DESC =
           new PagedListDescriptor<
@@ -795,6 +837,27 @@ public class AnalyticsAdminServiceStubSettings
                           callable, LIST_ANDROID_APP_DATA_STREAMS_PAGE_STR_DESC, request, context);
               return ListAndroidAppDataStreamsPagedResponse.createAsync(
                   pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
+      LIST_FIREBASE_LINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFirebaseLinksRequest,
+              ListFirebaseLinksResponse,
+              ListFirebaseLinksPagedResponse>() {
+            @Override
+            public ApiFuture<ListFirebaseLinksPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse> callable,
+                ListFirebaseLinksRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFirebaseLinksResponse> futureResponse) {
+              PageContext<ListFirebaseLinksRequest, ListFirebaseLinksResponse, FirebaseLink>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_FIREBASE_LINKS_PAGE_STR_DESC, request, context);
+              return ListFirebaseLinksPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1060,7 +1123,8 @@ public class AnalyticsAdminServiceStubSettings
   }
 
   /** Returns the object with the settings used for calls to listFirebaseLinks. */
-  public UnaryCallSettings<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
+  public PagedCallSettings<
+          ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
       listFirebaseLinksSettings() {
     return listFirebaseLinksSettings;
   }
@@ -1318,7 +1382,8 @@ public class AnalyticsAdminServiceStubSettings
         updateFirebaseLinkSettings;
     private final UnaryCallSettings.Builder<DeleteFirebaseLinkRequest, Empty>
         deleteFirebaseLinkSettings;
-    private final UnaryCallSettings.Builder<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
+    private final PagedCallSettings.Builder<
+            ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
         listFirebaseLinksSettings;
     private final UnaryCallSettings.Builder<GetGlobalSiteTagRequest, GlobalSiteTag>
         getGlobalSiteTagSettings;
@@ -1428,7 +1493,7 @@ public class AnalyticsAdminServiceStubSettings
       createFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteFirebaseLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-      listFirebaseLinksSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listFirebaseLinksSettings = PagedCallSettings.newBuilder(LIST_FIREBASE_LINKS_PAGE_STR_FACT);
       getGlobalSiteTagSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createGoogleAdsLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateGoogleAdsLinkSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -2119,7 +2184,8 @@ public class AnalyticsAdminServiceStubSettings
     }
 
     /** Returns the builder for the settings used for calls to listFirebaseLinks. */
-    public UnaryCallSettings.Builder<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
+    public PagedCallSettings.Builder<
+            ListFirebaseLinksRequest, ListFirebaseLinksResponse, ListFirebaseLinksPagedResponse>
         listFirebaseLinksSettings() {
       return listFirebaseLinksSettings;
     }

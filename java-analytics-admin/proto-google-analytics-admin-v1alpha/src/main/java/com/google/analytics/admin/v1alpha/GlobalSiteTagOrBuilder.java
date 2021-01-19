@@ -27,37 +27,11 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the
-   * head tag of every webpage to measure.
+   * Output only. Resource name for this GlobalSiteTag resource.
+   * Format: properties/{propertyId}/globalSiteTag
    * </pre>
    *
-   * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   *
-   * @return The snippet.
-   */
-  java.lang.String getSnippet();
-  /**
-   *
-   *
-   * <pre>
-   * Immutable. JavaScript code snippet to be pasted as the first item into the
-   * head tag of every webpage to measure.
-   * </pre>
-   *
-   * <code>string snippet = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
-   *
-   * @return The bytes for snippet.
-   */
-  com.google.protobuf.ByteString getSnippetBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * The resource name of this tag.
-   * </pre>
-   *
-   * <code>string name = 2;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The name.
    */
@@ -66,12 +40,40 @@ public interface GlobalSiteTagOrBuilder
    *
    *
    * <pre>
-   * The resource name of this tag.
+   * Output only. Resource name for this GlobalSiteTag resource.
+   * Format: properties/{propertyId}/globalSiteTag
    * </pre>
    *
-   * <code>string name = 2;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
+   * every webpage to measure.
+   * </pre>
+   *
+   * <code>string snippet = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The snippet.
+   */
+  java.lang.String getSnippet();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. JavaScript code snippet to be pasted as the first item into the head tag of
+   * every webpage to measure.
+   * </pre>
+   *
+   * <code>string snippet = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for snippet.
+   */
+  com.google.protobuf.ByteString getSnippetBytes();
 }

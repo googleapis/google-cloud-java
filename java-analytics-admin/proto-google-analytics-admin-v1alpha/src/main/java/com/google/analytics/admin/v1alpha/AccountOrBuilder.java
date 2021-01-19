@@ -157,32 +157,26 @@ public interface AccountOrBuilder
    *
    *
    * <pre>
-   * Country of business. Must be a non-deprecated code for a UN M.49 region.
-   * https:
-   * //unicode.org/cldr/charts/latest/supplem
-   * // ental/territory_containment_un_m_49.html
+   * Country of business. Must be a Unicode CLDR region code.
    * </pre>
    *
-   * <code>string country_code = 5;</code>
+   * <code>string region_code = 5;</code>
    *
-   * @return The countryCode.
+   * @return The regionCode.
    */
-  java.lang.String getCountryCode();
+  java.lang.String getRegionCode();
   /**
    *
    *
    * <pre>
-   * Country of business. Must be a non-deprecated code for a UN M.49 region.
-   * https:
-   * //unicode.org/cldr/charts/latest/supplem
-   * // ental/territory_containment_un_m_49.html
+   * Country of business. Must be a Unicode CLDR region code.
    * </pre>
    *
-   * <code>string country_code = 5;</code>
+   * <code>string region_code = 5;</code>
    *
-   * @return The bytes for countryCode.
+   * @return The bytes for regionCode.
    */
-  com.google.protobuf.ByteString getCountryCodeBytes();
+  com.google.protobuf.ByteString getRegionCodeBytes();
 
   /**
    *

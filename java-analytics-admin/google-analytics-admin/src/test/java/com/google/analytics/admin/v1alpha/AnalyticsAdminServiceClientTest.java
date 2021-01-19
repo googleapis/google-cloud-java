@@ -20,6 +20,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Aud
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountSummariesPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAccountsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListAndroidAppDataStreamsPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListFirebaseLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListIosAppDataStreamsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
@@ -100,7 +101,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
-            .setCountryCode("countryCode-1477067101")
+            .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
@@ -143,7 +144,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
-            .setCountryCode("countryCode-1477067101")
+            .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
@@ -310,7 +311,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setDisplayName("displayName1714148973")
-            .setCountryCode("countryCode-1477067101")
+            .setRegionCode("regionCode-1991004415")
             .setDeleted(true)
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
@@ -2638,19 +2639,13 @@ public class AnalyticsAdminServiceClientTest {
             .setPageViewsEnabled(true)
             .setScrollsEnabled(true)
             .setOutboundClicksEnabled(true)
-            .setContentViewsEnabled(true)
             .setSiteSearchEnabled(true)
-            .setFormInteractionsEnabled(true)
             .setVideoEngagementEnabled(true)
             .setFileDownloadsEnabled(true)
-            .setDataTaggedElementClicksEnabled(true)
             .setPageLoadsEnabled(true)
             .setPageChangesEnabled(true)
-            .setArticlesAndBlogsEnabled(true)
-            .setProductsAndEcommerceEnabled(true)
             .setSearchQueryParameter("searchQueryParameter-2012788855")
-            .setUrlQueryParameter("urlQueryParameter1808531216")
-            .setExcludedDomains("excludedDomains739198725")
+            .setUriQueryParameter("uriQueryParameter1580843085")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2697,19 +2692,13 @@ public class AnalyticsAdminServiceClientTest {
             .setPageViewsEnabled(true)
             .setScrollsEnabled(true)
             .setOutboundClicksEnabled(true)
-            .setContentViewsEnabled(true)
             .setSiteSearchEnabled(true)
-            .setFormInteractionsEnabled(true)
             .setVideoEngagementEnabled(true)
             .setFileDownloadsEnabled(true)
-            .setDataTaggedElementClicksEnabled(true)
             .setPageLoadsEnabled(true)
             .setPageChangesEnabled(true)
-            .setArticlesAndBlogsEnabled(true)
-            .setProductsAndEcommerceEnabled(true)
             .setSearchQueryParameter("searchQueryParameter-2012788855")
-            .setUrlQueryParameter("urlQueryParameter1808531216")
-            .setExcludedDomains("excludedDomains739198725")
+            .setUriQueryParameter("uriQueryParameter1580843085")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2754,19 +2743,13 @@ public class AnalyticsAdminServiceClientTest {
             .setPageViewsEnabled(true)
             .setScrollsEnabled(true)
             .setOutboundClicksEnabled(true)
-            .setContentViewsEnabled(true)
             .setSiteSearchEnabled(true)
-            .setFormInteractionsEnabled(true)
             .setVideoEngagementEnabled(true)
             .setFileDownloadsEnabled(true)
-            .setDataTaggedElementClicksEnabled(true)
             .setPageLoadsEnabled(true)
             .setPageChangesEnabled(true)
-            .setArticlesAndBlogsEnabled(true)
-            .setProductsAndEcommerceEnabled(true)
             .setSearchQueryParameter("searchQueryParameter-2012788855")
-            .setUrlQueryParameter("urlQueryParameter1808531216")
-            .setExcludedDomains("excludedDomains739198725")
+            .setUriQueryParameter("uriQueryParameter1580843085")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -3007,16 +2990,22 @@ public class AnalyticsAdminServiceClientTest {
 
   @Test
   public void listFirebaseLinksTest() throws Exception {
+    FirebaseLink responsesElement = FirebaseLink.newBuilder().build();
     ListFirebaseLinksResponse expectedResponse =
         ListFirebaseLinksResponse.newBuilder()
-            .addAllFirebaseLinks(new ArrayList<FirebaseLink>())
+            .setNextPageToken("")
+            .addAllFirebaseLinks(Arrays.asList(responsesElement))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
     PropertyName parent = PropertyName.of("[PROPERTY]");
 
-    ListFirebaseLinksResponse actualResponse = client.listFirebaseLinks(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListFirebaseLinksPagedResponse pagedListResponse = client.listFirebaseLinks(parent);
+
+    List<FirebaseLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirebaseLinksList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -3045,16 +3034,22 @@ public class AnalyticsAdminServiceClientTest {
 
   @Test
   public void listFirebaseLinksTest2() throws Exception {
+    FirebaseLink responsesElement = FirebaseLink.newBuilder().build();
     ListFirebaseLinksResponse expectedResponse =
         ListFirebaseLinksResponse.newBuilder()
-            .addAllFirebaseLinks(new ArrayList<FirebaseLink>())
+            .setNextPageToken("")
+            .addAllFirebaseLinks(Arrays.asList(responsesElement))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
     String parent = "parent-995424086";
 
-    ListFirebaseLinksResponse actualResponse = client.listFirebaseLinks(parent);
-    Assert.assertEquals(expectedResponse, actualResponse);
+    ListFirebaseLinksPagedResponse pagedListResponse = client.listFirebaseLinks(parent);
+
+    List<FirebaseLink> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirebaseLinksList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -3085,8 +3080,8 @@ public class AnalyticsAdminServiceClientTest {
   public void getGlobalSiteTagTest() throws Exception {
     GlobalSiteTag expectedResponse =
         GlobalSiteTag.newBuilder()
-            .setSnippet("snippet-2061635299")
             .setName(GlobalSiteTagName.of("[PROPERTY]").toString())
+            .setSnippet("snippet-2061635299")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -3124,8 +3119,8 @@ public class AnalyticsAdminServiceClientTest {
   public void getGlobalSiteTagTest2() throws Exception {
     GlobalSiteTag expectedResponse =
         GlobalSiteTag.newBuilder()
-            .setSnippet("snippet-2061635299")
             .setName(GlobalSiteTagName.of("[PROPERTY]").toString())
+            .setSnippet("snippet-2061635299")
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -3164,7 +3159,6 @@ public class AnalyticsAdminServiceClientTest {
     GoogleAdsLink expectedResponse =
         GoogleAdsLink.newBuilder()
             .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
-            .setParent("parent-995424086")
             .setCustomerId("customerId-1581184615")
             .setCanManageClients(true)
             .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
@@ -3212,7 +3206,6 @@ public class AnalyticsAdminServiceClientTest {
     GoogleAdsLink expectedResponse =
         GoogleAdsLink.newBuilder()
             .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
-            .setParent("parent-995424086")
             .setCustomerId("customerId-1581184615")
             .setCanManageClients(true)
             .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())
@@ -3260,7 +3253,6 @@ public class AnalyticsAdminServiceClientTest {
     GoogleAdsLink expectedResponse =
         GoogleAdsLink.newBuilder()
             .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
-            .setParent("parent-995424086")
             .setCustomerId("customerId-1581184615")
             .setCanManageClients(true)
             .setAdsPersonalizationEnabled(BoolValue.newBuilder().build())

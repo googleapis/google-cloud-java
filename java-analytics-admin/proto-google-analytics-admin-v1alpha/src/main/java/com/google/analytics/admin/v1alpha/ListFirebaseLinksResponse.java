@@ -39,6 +39,7 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
 
   private ListFirebaseLinksResponse() {
     firebaseLinks_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -81,6 +82,13 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
               firebaseLinks_.add(
                   input.readMessage(
                       com.google.analytics.admin.v1alpha.FirebaseLink.parser(), extensionRegistry));
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextPageToken_ = s;
               break;
             }
           default:
@@ -190,6 +198,61 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
     return firebaseLinks_.get(index);
   }
 
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * Currently, Google Analytics supports only one FirebaseLink per property,
+   * so this will never be populated.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A token, which can be sent as `page_token` to retrieve the next page.
+   * If this field is omitted, there are no subsequent pages.
+   * Currently, Google Analytics supports only one FirebaseLink per property,
+   * so this will never be populated.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   *
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -207,6 +270,9 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
     for (int i = 0; i < firebaseLinks_.size(); i++) {
       output.writeMessage(1, firebaseLinks_.get(i));
     }
+    if (!getNextPageTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -218,6 +284,9 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
     size = 0;
     for (int i = 0; i < firebaseLinks_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, firebaseLinks_.get(i));
+    }
+    if (!getNextPageTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -236,6 +305,7 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
         (com.google.analytics.admin.v1alpha.ListFirebaseLinksResponse) obj;
 
     if (!getFirebaseLinksList().equals(other.getFirebaseLinksList())) return false;
+    if (!getNextPageToken().equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -251,6 +321,8 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
       hash = (37 * hash) + FIREBASE_LINKS_FIELD_NUMBER;
       hash = (53 * hash) + getFirebaseLinksList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -405,6 +477,8 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
       } else {
         firebaseLinksBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -443,6 +517,7 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
       } else {
         result.firebaseLinks_ = firebaseLinksBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
     }
@@ -520,6 +595,10 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
             firebaseLinksBuilder_.addAllMessages(other.firebaseLinks_);
           }
         }
+      }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -911,6 +990,127 @@ public final class ListFirebaseLinksResponse extends com.google.protobuf.Generat
         firebaseLinks_ = null;
       }
       return firebaseLinksBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * Currently, Google Analytics supports only one FirebaseLink per property,
+     * so this will never be populated.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * Currently, Google Analytics supports only one FirebaseLink per property,
+     * so this will never be populated.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * Currently, Google Analytics supports only one FirebaseLink per property,
+     * so this will never be populated.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * Currently, Google Analytics supports only one FirebaseLink per property,
+     * so this will never be populated.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A token, which can be sent as `page_token` to retrieve the next page.
+     * If this field is omitted, there are no subsequent pages.
+     * Currently, Google Analytics supports only one FirebaseLink per property,
+     * so this will never be populated.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     *
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

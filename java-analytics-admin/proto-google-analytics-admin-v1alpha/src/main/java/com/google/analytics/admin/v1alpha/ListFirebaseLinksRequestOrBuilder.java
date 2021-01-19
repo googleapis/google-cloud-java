@@ -53,4 +53,51 @@ public interface ListFirebaseLinksRequestOrBuilder
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString getParentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The maximum number of resources to return. The service may return
+   * fewer than this value, even if there are additional pages.
+   * If unspecified, at most 50 resources will be returned.
+   * The maximum value is 200; (higher values will be coerced to the maximum)
+   * </pre>
+   *
+   * <code>int32 page_size = 2;</code>
+   *
+   * @return The pageSize.
+   */
+  int getPageSize();
+
+  /**
+   *
+   *
+   * <pre>
+   * A page token, received from a previous `ListFirebaseLinks` call.
+   * Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to `ListProperties` must
+   * match the call that provided the page token.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   *
+   * @return The pageToken.
+   */
+  java.lang.String getPageToken();
+  /**
+   *
+   *
+   * <pre>
+   * A page token, received from a previous `ListFirebaseLinks` call.
+   * Provide this to retrieve the subsequent page.
+   * When paginating, all other parameters provided to `ListProperties` must
+   * match the call that provided the page token.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   *
+   * @return The bytes for pageToken.
+   */
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

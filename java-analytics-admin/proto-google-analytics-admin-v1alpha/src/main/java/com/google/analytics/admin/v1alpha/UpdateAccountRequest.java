@@ -196,10 +196,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match
+   * all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return Whether the updateMask field is set.
    */
@@ -211,10 +214,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match
+   * all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The updateMask.
    */
@@ -226,10 +232,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The list of fields to be updated. Omitted fields will not be updated.
+   * Required. The list of fields to be updated. Omitted fields will not be updated.
+   * To replace the entire entity, use one path with the string "*" to match
+   * all fields.
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -817,10 +826,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return Whether the updateMask field is set.
      */
@@ -831,10 +843,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The updateMask.
      */
@@ -851,10 +866,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -873,10 +891,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
@@ -892,10 +913,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -916,10 +940,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -936,10 +963,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
 
@@ -950,10 +980,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -968,10 +1001,13 @@ public final class UpdateAccountRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * The list of fields to be updated. Omitted fields will not be updated.
+     * Required. The list of fields to be updated. Omitted fields will not be updated.
+     * To replace the entire entity, use one path with the string "*" to match
+     * all fields.
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 2;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.FieldMask,
