@@ -131,7 +131,6 @@ import org.threeten.bp.Duration;
  * SecurityCenterStubSettings securityCenterSettings = securityCenterSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class SecurityCenterStubSettings extends StubSettings<SecurityCenterStubSettings> {
   /** The default scopes of the service. */

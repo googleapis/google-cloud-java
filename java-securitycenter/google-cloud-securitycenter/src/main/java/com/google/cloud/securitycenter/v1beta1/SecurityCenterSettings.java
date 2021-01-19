@@ -79,6 +79,7 @@ import javax.annotation.Generated;
  * SecurityCenterSettings securityCenterSettings = securityCenterSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SecurityCenterSettings extends ClientSettings<SecurityCenterSettings> {
 
