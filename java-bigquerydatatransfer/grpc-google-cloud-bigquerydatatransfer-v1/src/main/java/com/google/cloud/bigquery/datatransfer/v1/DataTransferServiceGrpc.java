@@ -22,7 +22,16 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/** */
+/**
+ *
+ *
+ * <pre>
+ * The Google BigQuery Data Transfer Service API enables BigQuery users to
+ * configure the transfer of their data from other Google Products into
+ * BigQuery. This service contains methods that are end user exposed. It backs
+ * up the frontend.
+ * </pre>
+ */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/bigquery/datatransfer/v1/datatransfer.proto")
@@ -757,10 +766,26 @@ public final class DataTransferServiceGrpc {
     return DataTransferServiceFutureStub.newStub(factory, channel);
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
+   * </pre>
+   */
   public abstract static class DataTransferServiceImplBase implements io.grpc.BindableService {
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public void getDataSource(
         com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.DataSource>
@@ -768,7 +793,14 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getGetDataSourceMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public void listDataSources(
         com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request,
         io.grpc.stub.StreamObserver<
@@ -777,7 +809,13 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getListDataSourcesMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new data transfer configuration.
+     * </pre>
+     */
     public void createTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -785,7 +823,14 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getCreateTransferConfigMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data transfer configuration.
+     * All fields must be set, even if they are not updated.
+     * </pre>
+     */
     public void updateTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -793,14 +838,27 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getUpdateTransferConfigMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
+     * </pre>
+     */
     public void deleteTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteTransferConfigMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a data transfer config.
+     * </pre>
+     */
     public void getTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -808,7 +866,13 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getGetTransferConfigMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about all data transfers in the project.
+     * </pre>
+     */
     public void listTransferConfigs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
         io.grpc.stub.StreamObserver<
@@ -817,7 +881,17 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getListTransferConfigsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates transfer runs for a time range [start_time, end_time].
+     * For each date - or whatever granularity the data source supports - in the
+     * range, one transfer run is created.
+     * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
+     * </pre>
+     */
     @java.lang.Deprecated
     public void scheduleTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request,
@@ -827,7 +901,16 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getScheduleTransferRunsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
     public void startManualTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
@@ -836,7 +919,13 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getStartManualTransferRunsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the particular transfer run.
+     * </pre>
+     */
     public void getTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferRun>
@@ -844,14 +933,26 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getGetTransferRunMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified transfer run.
+     * </pre>
+     */
     public void deleteTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteTransferRunMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about running and completed jobs.
+     * </pre>
+     */
     public void listTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
@@ -860,7 +961,13 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getListTransferRunsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns user facing log messages for the data transfer run.
+     * </pre>
+     */
     public void listTransferLogs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request,
         io.grpc.stub.StreamObserver<
@@ -869,7 +976,18 @@ public final class DataTransferServiceGrpc {
       asyncUnimplementedUnaryCall(getListTransferLogsMethod(), responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns true if valid credentials exist for the given data source and
+     * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
+     * </pre>
+     */
     public void checkValidCreds(
         com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request,
         io.grpc.stub.StreamObserver<
@@ -981,7 +1099,16 @@ public final class DataTransferServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
+   * </pre>
+   */
   public static final class DataTransferServiceStub
       extends io.grpc.stub.AbstractAsyncStub<DataTransferServiceStub> {
     private DataTransferServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -994,7 +1121,14 @@ public final class DataTransferServiceGrpc {
       return new DataTransferServiceStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public void getDataSource(
         com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.DataSource>
@@ -1005,7 +1139,14 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public void listDataSources(
         com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request,
         io.grpc.stub.StreamObserver<
@@ -1017,7 +1158,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new data transfer configuration.
+     * </pre>
+     */
     public void createTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -1028,7 +1175,14 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data transfer configuration.
+     * All fields must be set, even if they are not updated.
+     * </pre>
+     */
     public void updateTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -1039,7 +1193,14 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
+     * </pre>
+     */
     public void deleteTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1049,7 +1210,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a data transfer config.
+     * </pre>
+     */
     public void getTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
@@ -1060,7 +1227,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about all data transfers in the project.
+     * </pre>
+     */
     public void listTransferConfigs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1072,7 +1245,17 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates transfer runs for a time range [start_time, end_time].
+     * For each date - or whatever granularity the data source supports - in the
+     * range, one transfer run is created.
+     * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
+     * </pre>
+     */
     @java.lang.Deprecated
     public void scheduleTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsRequest request,
@@ -1085,7 +1268,16 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
     public void startManualTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1097,7 +1289,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the particular transfer run.
+     * </pre>
+     */
     public void getTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.bigquery.datatransfer.v1.TransferRun>
@@ -1108,7 +1306,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified transfer run.
+     * </pre>
+     */
     public void deleteTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request,
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
@@ -1118,7 +1322,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about running and completed jobs.
+     * </pre>
+     */
     public void listTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1130,7 +1340,13 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns user facing log messages for the data transfer run.
+     * </pre>
+     */
     public void listTransferLogs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1142,7 +1358,18 @@ public final class DataTransferServiceGrpc {
           responseObserver);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns true if valid credentials exist for the given data source and
+     * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
+     * </pre>
+     */
     public void checkValidCreds(
         com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request,
         io.grpc.stub.StreamObserver<
@@ -1155,7 +1382,16 @@ public final class DataTransferServiceGrpc {
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
+   * </pre>
+   */
   public static final class DataTransferServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<DataTransferServiceBlockingStub> {
     private DataTransferServiceBlockingStub(
@@ -1169,47 +1405,93 @@ public final class DataTransferServiceGrpc {
       return new DataTransferServiceBlockingStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource getDataSource(
         com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request) {
       return blockingUnaryCall(getChannel(), getGetDataSourceMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse listDataSources(
         com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request) {
       return blockingUnaryCall(getChannel(), getListDataSourcesMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new data transfer configuration.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig createTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.CreateTransferConfigRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateTransferConfigMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data transfer configuration.
+     * All fields must be set, even if they are not updated.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig updateTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest request) {
       return blockingUnaryCall(
           getChannel(), getUpdateTransferConfigMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteTransferConfigMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a data transfer config.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.TransferConfig getTransferConfig(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferConfigRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetTransferConfigMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about all data transfers in the project.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse
         listTransferConfigs(
             com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request) {
@@ -1217,7 +1499,17 @@ public final class DataTransferServiceGrpc {
           getChannel(), getListTransferConfigsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates transfer runs for a time range [start_time, end_time].
+     * For each date - or whatever granularity the data source supports - in the
+     * range, one transfer run is created.
+     * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
+     * </pre>
+     */
     @java.lang.Deprecated
     public com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse
         scheduleTransferRuns(
@@ -1226,7 +1518,16 @@ public final class DataTransferServiceGrpc {
           getChannel(), getScheduleTransferRunsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse
         startManualTransferRuns(
             com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsRequest request) {
@@ -1234,41 +1535,85 @@ public final class DataTransferServiceGrpc {
           getChannel(), getStartManualTransferRunsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the particular transfer run.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.TransferRun getTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request) {
       return blockingUnaryCall(getChannel(), getGetTransferRunMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified transfer run.
+     * </pre>
+     */
     public com.google.protobuf.Empty deleteTransferRun(
         com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteTransferRunMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about running and completed jobs.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse listTransferRuns(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListTransferRunsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns user facing log messages for the data transfer run.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse listTransferLogs(
         com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListTransferLogsMethod(), getCallOptions(), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns true if valid credentials exist for the given data source and
+     * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
+     * </pre>
+     */
     public com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse checkValidCreds(
         com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {
       return blockingUnaryCall(getChannel(), getCheckValidCredsMethod(), getCallOptions(), request);
     }
   }
 
-  /** */
+  /**
+   *
+   *
+   * <pre>
+   * The Google BigQuery Data Transfer Service API enables BigQuery users to
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
+   * </pre>
+   */
   public static final class DataTransferServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<DataTransferServiceFutureStub> {
     private DataTransferServiceFutureStub(
@@ -1282,7 +1627,14 @@ public final class DataTransferServiceGrpc {
       return new DataTransferServiceFutureStub(channel, callOptions);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a supported data source and returns its settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.DataSource>
         getDataSource(com.google.cloud.bigquery.datatransfer.v1.GetDataSourceRequest request) {
@@ -1290,7 +1642,14 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getGetDataSourceMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Lists supported data sources and returns their settings,
+     * which can be used for UI rendering.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse>
         listDataSources(com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesRequest request) {
@@ -1298,7 +1657,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getListDataSourcesMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new data transfer configuration.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
         createTransferConfig(
@@ -1307,7 +1672,14 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getCreateTransferConfigMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Updates a data transfer configuration.
+     * All fields must be set, even if they are not updated.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
         updateTransferConfig(
@@ -1316,7 +1688,14 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getUpdateTransferConfigMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a data transfer configuration,
+     * including any associated transfer runs and logs.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTransferConfig(
             com.google.cloud.bigquery.datatransfer.v1.DeleteTransferConfigRequest request) {
@@ -1324,7 +1703,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getDeleteTransferConfigMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about a data transfer config.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.TransferConfig>
         getTransferConfig(
@@ -1333,7 +1718,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getGetTransferConfigMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about all data transfers in the project.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse>
         listTransferConfigs(
@@ -1342,7 +1733,17 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getListTransferConfigsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Creates transfer runs for a time range [start_time, end_time].
+     * For each date - or whatever granularity the data source supports - in the
+     * range, one transfer run is created.
+     * Note that runs are created per UTC time in the time range.
+     * DEPRECATED: use StartManualTransferRuns instead.
+     * </pre>
+     */
     @java.lang.Deprecated
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.ScheduleTransferRunsResponse>
@@ -1352,7 +1753,16 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getScheduleTransferRunsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Start manual transfer runs to be executed now with schedule_time equal to
+     * current time. The transfer runs can be created for a time range where the
+     * run_time is between start_time (inclusive) and end_time (exclusive), or for
+     * a specific run_time.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.StartManualTransferRunsResponse>
         startManualTransferRuns(
@@ -1361,7 +1771,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getStartManualTransferRunsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about the particular transfer run.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.TransferRun>
         getTransferRun(com.google.cloud.bigquery.datatransfer.v1.GetTransferRunRequest request) {
@@ -1369,7 +1785,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getGetTransferRunMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified transfer run.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
         deleteTransferRun(
             com.google.cloud.bigquery.datatransfer.v1.DeleteTransferRunRequest request) {
@@ -1377,7 +1799,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getDeleteTransferRunMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns information about running and completed jobs.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.ListTransferRunsResponse>
         listTransferRuns(
@@ -1386,7 +1814,13 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getListTransferRunsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns user facing log messages for the data transfer run.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.ListTransferLogsResponse>
         listTransferLogs(
@@ -1395,7 +1829,18 @@ public final class DataTransferServiceGrpc {
           getChannel().newCall(getListTransferLogsMethod(), getCallOptions()), request);
     }
 
-    /** */
+    /**
+     *
+     *
+     * <pre>
+     * Returns true if valid credentials exist for the given data source and
+     * requesting user.
+     * Some data sources doesn't support service account, so we need to talk to
+     * them on behalf of the end user. This API just checks whether we have OAuth
+     * token for the particular user, which is a pre-requisite before user can
+     * create a transfer config.
+     * </pre>
+     */
     public com.google.common.util.concurrent.ListenableFuture<
             com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsResponse>
         checkValidCreds(com.google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest request) {

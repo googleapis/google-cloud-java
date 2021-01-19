@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,27 +24,43 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class TransferConfigName implements ResourceName {
-
-  @Deprecated
-  protected TransferConfigName() {}
-
-  private static final PathTemplate PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_TRANSFER_CONFIG =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/transferConfigs/{transfer_config}");
-  private static final PathTemplate PROJECT_LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_TRANSFER_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/transferConfigs/{transfer_config}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String transferConfig;
+  private final String location;
 
-  private String project;
-  private String transferConfig;
-  private String location;
+  @Deprecated
+  protected TransferConfigName() {
+    project = null;
+    transferConfig = null;
+    location = null;
+  }
+
+  private TransferConfigName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
+    location = null;
+    pathTemplate = PROJECT_TRANSFER_CONFIG;
+  }
+
+  private TransferConfigName(ProjectLocationTransferConfigBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
+    pathTemplate = PROJECT_LOCATION_TRANSFER_CONFIG;
+  }
 
   public String getProject() {
     return project;
@@ -56,19 +72,6 @@ public class TransferConfigName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private TransferConfigName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
-    pathTemplate = PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE;
-  }
-
-  private TransferConfigName(ProjectLocationTransferConfigBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
-    pathTemplate = PROJECT_LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -90,19 +93,13 @@ public class TransferConfigName implements ResourceName {
   }
 
   public static TransferConfigName of(String project, String transferConfig) {
-    return newProjectTransferConfigBuilder()
-        .setProject(project)
-        .setTransferConfig(transferConfig)
-        .build();
+    return newBuilder().setProject(project).setTransferConfig(transferConfig).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static TransferConfigName ofProjectTransferConfigName(
       String project, String transferConfig) {
-    return newProjectTransferConfigBuilder()
-        .setProject(project)
-        .setTransferConfig(transferConfig)
-        .build();
+    return newBuilder().setProject(project).setTransferConfig(transferConfig).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -139,21 +136,20 @@ public class TransferConfigName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_TRANSFER_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_TRANSFER_CONFIG.match(formattedString);
       return ofProjectTransferConfigName(matchMap.get("project"), matchMap.get("transfer_config"));
-    } else if (PROJECT_LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_TRANSFER_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_TRANSFER_CONFIG.match(formattedString);
       return ofProjectLocationTransferConfigName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("transfer_config"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("TransferConfigName.parse: formattedString not in valid format");
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_TRANSFER_CONFIG_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_TRANSFER_CONFIG.matches(formattedString)
+        || PROJECT_LOCATION_TRANSFER_CONFIG.matches(formattedString);
   }
 
   @Override
@@ -187,9 +183,36 @@ public class TransferConfigName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      TransferConfigName that = ((TransferConfigName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.transferConfig, that.transferConfig)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(transferConfig);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for projects/{project}/transferConfigs/{transfer_config}. */
   public static class Builder {
-
     private String project;
     private String transferConfig;
 
@@ -215,9 +238,8 @@ public class TransferConfigName implements ResourceName {
 
     private Builder(TransferConfigName transferConfigName) {
       Preconditions.checkArgument(
-          transferConfigName.pathTemplate == PROJECT_TRANSFER_CONFIG_PATH_TEMPLATE,
-          "toBuilder is only supported when TransferConfigName has the pattern of "
-              + "projects/{project}/transferConfigs/{transfer_config}.");
+          Objects.equals(transferConfigName.pathTemplate, PROJECT_TRANSFER_CONFIG),
+          "toBuilder is only supported when TransferConfigName has the pattern of projects/{project}/transferConfigs/{transfer_config}");
       project = transferConfigName.project;
       transferConfig = transferConfigName.transferConfig;
     }
@@ -230,12 +252,11 @@ public class TransferConfigName implements ResourceName {
   /** Builder for projects/{project}/locations/{location}/transferConfigs/{transfer_config}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationTransferConfigBuilder {
-
     private String project;
     private String location;
     private String transferConfig;
 
-    private ProjectLocationTransferConfigBuilder() {}
+    protected ProjectLocationTransferConfigBuilder() {}
 
     public String getProject() {
       return project;
@@ -267,33 +288,5 @@ public class TransferConfigName implements ResourceName {
     public TransferConfigName build() {
       return new TransferConfigName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      TransferConfigName that = (TransferConfigName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.transferConfig, that.transferConfig))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(transferConfig);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

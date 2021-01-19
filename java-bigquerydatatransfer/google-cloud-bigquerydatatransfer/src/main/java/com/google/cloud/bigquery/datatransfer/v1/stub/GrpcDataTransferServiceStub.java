@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.datatransfer.v1.stub;
 
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
@@ -20,7 +21,6 @@ import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClien
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferLogsPagedResponse;
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListTransferRunsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -53,6 +53,7 @@ import com.google.cloud.bigquery.datatransfer.v1.TransferConfig;
 import com.google.cloud.bigquery.datatransfer.v1.TransferRun;
 import com.google.cloud.bigquery.datatransfer.v1.UpdateTransferConfigRequest;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -61,16 +62,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for BigQuery Data Transfer API.
+ * gRPC stub implementation for the DataTransferService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
-
   private static final MethodDescriptor<GetDataSourceRequest, DataSource>
       getDataSourceMethodDescriptor =
           MethodDescriptor.<GetDataSourceRequest, DataSource>newBuilder()
@@ -81,6 +80,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(GetDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSource.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
       listDataSourcesMethodDescriptor =
           MethodDescriptor.<ListDataSourcesRequest, ListDataSourcesResponse>newBuilder()
@@ -92,6 +92,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataSourcesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateTransferConfigRequest, TransferConfig>
       createTransferConfigMethodDescriptor =
           MethodDescriptor.<CreateTransferConfigRequest, TransferConfig>newBuilder()
@@ -102,6 +103,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(CreateTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateTransferConfigRequest, TransferConfig>
       updateTransferConfigMethodDescriptor =
           MethodDescriptor.<UpdateTransferConfigRequest, TransferConfig>newBuilder()
@@ -112,6 +114,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(UpdateTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTransferConfigRequest, Empty>
       deleteTransferConfigMethodDescriptor =
           MethodDescriptor.<DeleteTransferConfigRequest, Empty>newBuilder()
@@ -122,6 +125,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(DeleteTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTransferConfigRequest, TransferConfig>
       getTransferConfigMethodDescriptor =
           MethodDescriptor.<GetTransferConfigRequest, TransferConfig>newBuilder()
@@ -132,6 +136,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(GetTransferConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsMethodDescriptor =
           MethodDescriptor.<ListTransferConfigsRequest, ListTransferConfigsResponse>newBuilder()
@@ -143,6 +148,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferConfigsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsMethodDescriptor =
           MethodDescriptor.<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>newBuilder()
@@ -154,6 +160,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ScheduleTransferRunsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           StartManualTransferRunsRequest, StartManualTransferRunsResponse>
       startManualTransferRunsMethodDescriptor =
@@ -167,6 +174,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StartManualTransferRunsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetTransferRunRequest, TransferRun>
       getTransferRunMethodDescriptor =
           MethodDescriptor.<GetTransferRunRequest, TransferRun>newBuilder()
@@ -177,6 +185,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(GetTransferRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TransferRun.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteTransferRunRequest, Empty>
       deleteTransferRunMethodDescriptor =
           MethodDescriptor.<DeleteTransferRunRequest, Empty>newBuilder()
@@ -187,6 +196,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
                   ProtoUtils.marshaller(DeleteTransferRunRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsMethodDescriptor =
           MethodDescriptor.<ListTransferRunsRequest, ListTransferRunsResponse>newBuilder()
@@ -198,6 +208,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferRunsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsMethodDescriptor =
           MethodDescriptor.<ListTransferLogsRequest, ListTransferLogsResponse>newBuilder()
@@ -209,6 +220,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTransferLogsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsMethodDescriptor =
           MethodDescriptor.<CheckValidCredsRequest, CheckValidCredsResponse>newBuilder()
@@ -220,8 +232,6 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckValidCredsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;
   private final UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse>
@@ -255,6 +265,8 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
   private final UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDataTransferServiceStub create(DataTransferServiceStubSettings settings)
@@ -295,6 +307,7 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<GetDataSourceRequest, DataSource> getDataSourceTransportSettings =
         GrpcCallSettings.<GetDataSourceRequest, DataSource>newBuilder()
@@ -564,20 +577,25 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
         callableFactory.createUnaryCallable(
             checkValidCredsTransportSettings, settings.checkValidCredsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+  }
+
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable() {
     return getDataSourceCallable;
   }
 
+  public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
+    return listDataSourcesCallable;
+  }
+
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
       listDataSourcesPagedCallable() {
     return listDataSourcesPagedCallable;
-  }
-
-  public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
-    return listDataSourcesCallable;
   }
 
   public UnaryCallable<CreateTransferConfigRequest, TransferConfig> createTransferConfigCallable() {
@@ -596,14 +614,14 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return getTransferConfigCallable;
   }
 
-  public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsPagedResponse>
-      listTransferConfigsPagedCallable() {
-    return listTransferConfigsPagedCallable;
-  }
-
   public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsCallable() {
     return listTransferConfigsCallable;
+  }
+
+  public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsPagedResponse>
+      listTransferConfigsPagedCallable() {
+    return listTransferConfigsPagedCallable;
   }
 
   public UnaryCallable<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
@@ -624,24 +642,24 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return deleteTransferRunCallable;
   }
 
-  public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
-      listTransferRunsPagedCallable() {
-    return listTransferRunsPagedCallable;
-  }
-
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsCallable() {
     return listTransferRunsCallable;
   }
 
-  public UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
-      listTransferLogsPagedCallable() {
-    return listTransferLogsPagedCallable;
+  public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
+      listTransferRunsPagedCallable() {
+    return listTransferRunsPagedCallable;
   }
 
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsCallable() {
     return listTransferLogsCallable;
+  }
+
+  public UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
+      listTransferLogsPagedCallable() {
+    return listTransferLogsPagedCallable;
   }
 
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {

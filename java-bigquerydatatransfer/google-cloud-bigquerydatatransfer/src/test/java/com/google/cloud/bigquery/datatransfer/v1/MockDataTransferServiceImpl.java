@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.datatransfer.v1;
 
 import com.google.api.core.BetaApi;
@@ -24,9 +25,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -63,10 +65,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof DataSource) {
       requests.add(request);
-      responseObserver.onNext((DataSource) response);
+      responseObserver.onNext(((DataSource) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -78,10 +80,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListDataSourcesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListDataSourcesResponse) response);
+      responseObserver.onNext(((ListDataSourcesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -93,10 +95,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof TransferConfig) {
       requests.add(request);
-      responseObserver.onNext((TransferConfig) response);
+      responseObserver.onNext(((TransferConfig) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -108,10 +110,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof TransferConfig) {
       requests.add(request);
-      responseObserver.onNext((TransferConfig) response);
+      responseObserver.onNext(((TransferConfig) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -123,10 +125,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -138,10 +140,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof TransferConfig) {
       requests.add(request);
-      responseObserver.onNext((TransferConfig) response);
+      responseObserver.onNext(((TransferConfig) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -154,10 +156,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListTransferConfigsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListTransferConfigsResponse) response);
+      responseObserver.onNext(((ListTransferConfigsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -170,10 +172,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ScheduleTransferRunsResponse) {
       requests.add(request);
-      responseObserver.onNext((ScheduleTransferRunsResponse) response);
+      responseObserver.onNext(((ScheduleTransferRunsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -186,10 +188,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof StartManualTransferRunsResponse) {
       requests.add(request);
-      responseObserver.onNext((StartManualTransferRunsResponse) response);
+      responseObserver.onNext(((StartManualTransferRunsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -201,10 +203,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof TransferRun) {
       requests.add(request);
-      responseObserver.onNext((TransferRun) response);
+      responseObserver.onNext(((TransferRun) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -216,10 +218,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -231,10 +233,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListTransferRunsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListTransferRunsResponse) response);
+      responseObserver.onNext(((ListTransferRunsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -246,10 +248,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ListTransferLogsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListTransferLogsResponse) response);
+      responseObserver.onNext(((ListTransferLogsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -261,10 +263,10 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     Object response = responses.remove();
     if (response instanceof CheckValidCredsResponse) {
       requests.add(request);
-      responseObserver.onNext((CheckValidCredsResponse) response);
+      responseObserver.onNext(((CheckValidCredsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

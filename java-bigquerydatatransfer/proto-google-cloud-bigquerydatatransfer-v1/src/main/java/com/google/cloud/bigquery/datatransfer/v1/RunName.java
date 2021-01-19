@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,29 +24,48 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class RunName implements ResourceName {
-
-  @Deprecated
-  protected RunName() {}
-
-  private static final PathTemplate PROJECT_TRANSFER_CONFIG_RUN_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_TRANSFER_CONFIG_RUN =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/transferConfigs/{transfer_config}/runs/{run}");
-  private static final PathTemplate PROJECT_LOCATION_TRANSFER_CONFIG_RUN_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_TRANSFER_CONFIG_RUN =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String transferConfig;
+  private final String run;
+  private final String location;
 
-  private String project;
-  private String transferConfig;
-  private String run;
-  private String location;
+  @Deprecated
+  protected RunName() {
+    project = null;
+    transferConfig = null;
+    run = null;
+    location = null;
+  }
+
+  private RunName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
+    run = Preconditions.checkNotNull(builder.getRun());
+    location = null;
+    pathTemplate = PROJECT_TRANSFER_CONFIG_RUN;
+  }
+
+  private RunName(ProjectLocationTransferConfigRunBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
+    run = Preconditions.checkNotNull(builder.getRun());
+    pathTemplate = PROJECT_LOCATION_TRANSFER_CONFIG_RUN;
+  }
 
   public String getProject() {
     return project;
@@ -62,21 +81,6 @@ public class RunName implements ResourceName {
 
   public String getLocation() {
     return location;
-  }
-
-  private RunName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
-    run = Preconditions.checkNotNull(builder.getRun());
-    pathTemplate = PROJECT_TRANSFER_CONFIG_RUN_PATH_TEMPLATE;
-  }
-
-  private RunName(ProjectLocationTransferConfigRunBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    transferConfig = Preconditions.checkNotNull(builder.getTransferConfig());
-    run = Preconditions.checkNotNull(builder.getRun());
-    pathTemplate = PROJECT_LOCATION_TRANSFER_CONFIG_RUN_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -99,21 +103,13 @@ public class RunName implements ResourceName {
   }
 
   public static RunName of(String project, String transferConfig, String run) {
-    return newProjectTransferConfigRunBuilder()
-        .setProject(project)
-        .setTransferConfig(transferConfig)
-        .setRun(run)
-        .build();
+    return newBuilder().setProject(project).setTransferConfig(transferConfig).setRun(run).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static RunName ofProjectTransferConfigRunName(
       String project, String transferConfig, String run) {
-    return newProjectTransferConfigRunBuilder()
-        .setProject(project)
-        .setTransferConfig(transferConfig)
-        .setRun(run)
-        .build();
+    return newBuilder().setProject(project).setTransferConfig(transferConfig).setRun(run).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -163,26 +159,24 @@ public class RunName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_TRANSFER_CONFIG_RUN_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_TRANSFER_CONFIG_RUN_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_TRANSFER_CONFIG_RUN.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_TRANSFER_CONFIG_RUN.match(formattedString);
       return ofProjectTransferConfigRunName(
           matchMap.get("project"), matchMap.get("transfer_config"), matchMap.get("run"));
-    } else if (PROJECT_LOCATION_TRANSFER_CONFIG_RUN_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_LOCATION_TRANSFER_CONFIG_RUN_PATH_TEMPLATE.match(formattedString);
+    } else if (PROJECT_LOCATION_TRANSFER_CONFIG_RUN.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_TRANSFER_CONFIG_RUN.match(formattedString);
       return ofProjectLocationTransferConfigRunName(
           matchMap.get("project"),
           matchMap.get("location"),
           matchMap.get("transfer_config"),
           matchMap.get("run"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("RunName.parse: formattedString not in valid format");
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_TRANSFER_CONFIG_RUN_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_LOCATION_TRANSFER_CONFIG_RUN_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_TRANSFER_CONFIG_RUN.matches(formattedString)
+        || PROJECT_LOCATION_TRANSFER_CONFIG_RUN.matches(formattedString);
   }
 
   @Override
@@ -219,9 +213,39 @@ public class RunName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      RunName that = ((RunName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.transferConfig, that.transferConfig)
+          && Objects.equals(this.run, that.run)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(transferConfig);
+    h *= 1000003;
+    h ^= Objects.hashCode(run);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
   /** Builder for projects/{project}/transferConfigs/{transfer_config}/runs/{run}. */
   public static class Builder {
-
     private String project;
     private String transferConfig;
     private String run;
@@ -257,9 +281,8 @@ public class RunName implements ResourceName {
 
     private Builder(RunName runName) {
       Preconditions.checkArgument(
-          runName.pathTemplate == PROJECT_TRANSFER_CONFIG_RUN_PATH_TEMPLATE,
-          "toBuilder is only supported when RunName has the pattern of "
-              + "projects/{project}/transferConfigs/{transfer_config}/runs/{run}.");
+          Objects.equals(runName.pathTemplate, PROJECT_TRANSFER_CONFIG_RUN),
+          "toBuilder is only supported when RunName has the pattern of projects/{project}/transferConfigs/{transfer_config}/runs/{run}");
       project = runName.project;
       transferConfig = runName.transferConfig;
       run = runName.run;
@@ -276,13 +299,12 @@ public class RunName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectLocationTransferConfigRunBuilder {
-
     private String project;
     private String location;
     private String transferConfig;
     private String run;
 
-    private ProjectLocationTransferConfigRunBuilder() {}
+    protected ProjectLocationTransferConfigRunBuilder() {}
 
     public String getProject() {
       return project;
@@ -323,36 +345,5 @@ public class RunName implements ResourceName {
     public RunName build() {
       return new RunName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      RunName that = (RunName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.transferConfig, that.transferConfig))
-          && (Objects.equals(this.run, that.run))
-          && (Objects.equals(this.location, that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(transferConfig);
-    h *= 1000003;
-    h ^= Objects.hashCode(run);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    return h;
   }
 }

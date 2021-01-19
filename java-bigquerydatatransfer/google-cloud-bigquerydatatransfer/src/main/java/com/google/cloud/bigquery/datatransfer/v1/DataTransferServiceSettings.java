@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.datatransfer.v1;
 
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
@@ -37,7 +38,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DataTransferServiceClient}.
  *
@@ -55,23 +56,25 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getDataSource to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DataTransferServiceSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceSettings.newBuilder();
  * dataTransferServiceSettingsBuilder
  *     .getDataSourceSettings()
  *     .setRetrySettings(
- *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
+ *         dataTransferServiceSettingsBuilder
+ *             .getDataSourceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * DataTransferServiceSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * DataTransferServiceSettings dataTransferServiceSettings =
+ *     dataTransferServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DataTransferServiceSettings extends ClientSettings<DataTransferServiceSettings> {
+
   /** Returns the object with the settings used for calls to getDataSource. */
   public UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings() {
     return ((DataTransferServiceStubSettings) getStubSettings()).getDataSourceSettings();
@@ -215,16 +218,13 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
 
   /** Builder for DataTransferServiceSettings. */
   public static class Builder extends ClientSettings.Builder<DataTransferServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(DataTransferServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(DataTransferServiceStubSettings.newBuilder());
     }
 
     protected Builder(DataTransferServiceSettings settings) {
@@ -235,11 +235,15 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(DataTransferServiceStubSettings.newBuilder());
+    }
+
     public DataTransferServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((DataTransferServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.bigquery.datatransfer.v1.stub;
 
 import static com.google.cloud.bigquery.datatransfer.v1.DataTransferServiceClient.ListDataSourcesPagedResponse;
@@ -77,7 +78,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link DataTransferServiceStub}.
  *
@@ -95,22 +96,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getDataSource to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * DataTransferServiceStubSettings.Builder dataTransferServiceSettingsBuilder =
  *     DataTransferServiceStubSettings.newBuilder();
  * dataTransferServiceSettingsBuilder
  *     .getDataSourceSettings()
  *     .setRetrySettings(
- *         dataTransferServiceSettingsBuilder.getDataSourceSettings().getRetrySettings().toBuilder()
+ *         dataTransferServiceSettingsBuilder
+ *             .getDataSourceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * DataTransferServiceStubSettings dataTransferServiceSettings = dataTransferServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * DataTransferServiceStubSettings dataTransferServiceSettings =
+ *     dataTransferServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class DataTransferServiceStubSettings extends StubSettings<DataTransferServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -144,6 +146,241 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       listTransferLogsSettings;
   private final UnaryCallSettings<CheckValidCredsRequest, CheckValidCredsResponse>
       checkValidCredsSettings;
+
+  private static final PagedListDescriptor<
+          ListDataSourcesRequest, ListDataSourcesResponse, DataSource>
+      LIST_DATA_SOURCES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDataSourcesRequest, ListDataSourcesResponse, DataSource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDataSourcesRequest injectToken(
+                ListDataSourcesRequest payload, String token) {
+              return ListDataSourcesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDataSourcesRequest injectPageSize(
+                ListDataSourcesRequest payload, int pageSize) {
+              return ListDataSourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDataSourcesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDataSourcesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DataSource> extractResources(ListDataSourcesResponse payload) {
+              return payload.getDataSourcesList() == null
+                  ? ImmutableList.<DataSource>of()
+                  : payload.getDataSourcesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
+      LIST_TRANSFER_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTransferConfigsRequest injectToken(
+                ListTransferConfigsRequest payload, String token) {
+              return ListTransferConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTransferConfigsRequest injectPageSize(
+                ListTransferConfigsRequest payload, int pageSize) {
+              return ListTransferConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTransferConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTransferConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TransferConfig> extractResources(ListTransferConfigsResponse payload) {
+              return payload.getTransferConfigsList() == null
+                  ? ImmutableList.<TransferConfig>of()
+                  : payload.getTransferConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
+      LIST_TRANSFER_RUNS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTransferRunsRequest injectToken(
+                ListTransferRunsRequest payload, String token) {
+              return ListTransferRunsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTransferRunsRequest injectPageSize(
+                ListTransferRunsRequest payload, int pageSize) {
+              return ListTransferRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTransferRunsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTransferRunsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TransferRun> extractResources(ListTransferRunsResponse payload) {
+              return payload.getTransferRunsList() == null
+                  ? ImmutableList.<TransferRun>of()
+                  : payload.getTransferRunsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
+      LIST_TRANSFER_LOGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListTransferLogsRequest injectToken(
+                ListTransferLogsRequest payload, String token) {
+              return ListTransferLogsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListTransferLogsRequest injectPageSize(
+                ListTransferLogsRequest payload, int pageSize) {
+              return ListTransferLogsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTransferLogsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListTransferLogsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<TransferMessage> extractResources(ListTransferLogsResponse payload) {
+              return payload.getTransferMessagesList() == null
+                  ? ImmutableList.<TransferMessage>of()
+                  : payload.getTransferMessagesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
+      LIST_DATA_SOURCES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>() {
+            @Override
+            public ApiFuture<ListDataSourcesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> callable,
+                ListDataSourcesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDataSourcesResponse> futureResponse) {
+              PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> pageContext =
+                  PageContext.create(callable, LIST_DATA_SOURCES_PAGE_STR_DESC, request, context);
+              return ListDataSourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
+      LIST_TRANSFER_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTransferConfigsRequest,
+              ListTransferConfigsResponse,
+              ListTransferConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTransferConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse> callable,
+                ListTransferConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTransferConfigsResponse> futureResponse) {
+              PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRANSFER_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListTransferConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
+      LIST_TRANSFER_RUNS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTransferRunsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse> callable,
+                ListTransferRunsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTransferRunsResponse> futureResponse) {
+              PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRANSFER_RUNS_PAGE_STR_DESC, request, context);
+              return ListTransferRunsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
+      LIST_TRANSFER_LOGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>() {
+            @Override
+            public ApiFuture<ListTransferLogsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse> callable,
+                ListTransferLogsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListTransferLogsResponse> futureResponse) {
+              PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_TRANSFER_LOGS_PAGE_STR_DESC, request, context);
+              return ListTransferLogsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to getDataSource. */
   public UnaryCallSettings<GetDataSourceRequest, DataSource> getDataSourceSettings() {
@@ -234,10 +471,10 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcDataTransferServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -313,246 +550,10 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
     checkValidCredsSettings = settingsBuilder.checkValidCredsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListDataSourcesRequest, ListDataSourcesResponse, DataSource>
-      LIST_DATA_SOURCES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListDataSourcesRequest, ListDataSourcesResponse, DataSource>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListDataSourcesRequest injectToken(
-                ListDataSourcesRequest payload, String token) {
-              return ListDataSourcesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListDataSourcesRequest injectPageSize(
-                ListDataSourcesRequest payload, int pageSize) {
-              return ListDataSourcesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListDataSourcesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListDataSourcesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<DataSource> extractResources(ListDataSourcesResponse payload) {
-              return payload.getDataSourcesList() != null
-                  ? payload.getDataSourcesList()
-                  : ImmutableList.<DataSource>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
-      LIST_TRANSFER_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransferConfigsRequest injectToken(
-                ListTransferConfigsRequest payload, String token) {
-              return ListTransferConfigsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTransferConfigsRequest injectPageSize(
-                ListTransferConfigsRequest payload, int pageSize) {
-              return ListTransferConfigsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransferConfigsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransferConfigsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransferConfig> extractResources(ListTransferConfigsResponse payload) {
-              return payload.getTransferConfigsList() != null
-                  ? payload.getTransferConfigsList()
-                  : ImmutableList.<TransferConfig>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
-      LIST_TRANSFER_RUNS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransferRunsRequest injectToken(
-                ListTransferRunsRequest payload, String token) {
-              return ListTransferRunsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTransferRunsRequest injectPageSize(
-                ListTransferRunsRequest payload, int pageSize) {
-              return ListTransferRunsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransferRunsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransferRunsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransferRun> extractResources(ListTransferRunsResponse payload) {
-              return payload.getTransferRunsList() != null
-                  ? payload.getTransferRunsList()
-                  : ImmutableList.<TransferRun>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
-      LIST_TRANSFER_LOGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListTransferLogsRequest injectToken(
-                ListTransferLogsRequest payload, String token) {
-              return ListTransferLogsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListTransferLogsRequest injectPageSize(
-                ListTransferLogsRequest payload, int pageSize) {
-              return ListTransferLogsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListTransferLogsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListTransferLogsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<TransferMessage> extractResources(ListTransferLogsResponse payload) {
-              return payload.getTransferMessagesList() != null
-                  ? payload.getTransferMessagesList()
-                  : ImmutableList.<TransferMessage>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
-      LIST_DATA_SOURCES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>() {
-            @Override
-            public ApiFuture<ListDataSourcesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> callable,
-                ListDataSourcesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListDataSourcesResponse> futureResponse) {
-              PageContext<ListDataSourcesRequest, ListDataSourcesResponse, DataSource> pageContext =
-                  PageContext.create(callable, LIST_DATA_SOURCES_PAGE_STR_DESC, request, context);
-              return ListDataSourcesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransferConfigsRequest, ListTransferConfigsResponse, ListTransferConfigsPagedResponse>
-      LIST_TRANSFER_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransferConfigsRequest,
-              ListTransferConfigsResponse,
-              ListTransferConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransferConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse> callable,
-                ListTransferConfigsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransferConfigsResponse> futureResponse) {
-              PageContext<ListTransferConfigsRequest, ListTransferConfigsResponse, TransferConfig>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSFER_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListTransferConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>
-      LIST_TRANSFER_RUNS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransferRunsRequest, ListTransferRunsResponse, ListTransferRunsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransferRunsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse> callable,
-                ListTransferRunsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransferRunsResponse> futureResponse) {
-              PageContext<ListTransferRunsRequest, ListTransferRunsResponse, TransferRun>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSFER_RUNS_PAGE_STR_DESC, request, context);
-              return ListTransferRunsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>
-      LIST_TRANSFER_LOGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListTransferLogsRequest, ListTransferLogsResponse, ListTransferLogsPagedResponse>() {
-            @Override
-            public ApiFuture<ListTransferLogsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse> callable,
-                ListTransferLogsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListTransferLogsResponse> futureResponse) {
-              PageContext<ListTransferLogsRequest, ListTransferLogsResponse, TransferMessage>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_TRANSFER_LOGS_PAGE_STR_DESC, request, context);
-              return ListTransferLogsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for DataTransferServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<DataTransferServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<GetDataSourceRequest, DataSource> getDataSourceSettings;
     private final PagedCallSettings.Builder<
             ListDataSourcesRequest, ListDataSourcesResponse, ListDataSourcesPagedResponse>
@@ -588,7 +589,6 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
         listTransferLogsSettings;
     private final UnaryCallSettings.Builder<CheckValidCredsRequest, CheckValidCredsResponse>
         checkValidCredsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -596,13 +596,13 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -621,9 +621,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               .setMaxRpcTimeout(Duration.ofMillis(20000L))
               .setTotalTimeout(Duration.ofMillis(20000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
@@ -632,43 +630,32 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       getDataSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listDataSourcesSettings = PagedCallSettings.newBuilder(LIST_DATA_SOURCES_PAGE_STR_FACT);
-
       createTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getTransferConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTransferConfigsSettings =
           PagedCallSettings.newBuilder(LIST_TRANSFER_CONFIGS_PAGE_STR_FACT);
-
       scheduleTransferRunsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       startManualTransferRunsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteTransferRunSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listTransferRunsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_RUNS_PAGE_STR_FACT);
-
       listTransferLogsSettings = PagedCallSettings.newBuilder(LIST_TRANSFER_LOGS_PAGE_STR_FACT);
-
       checkValidCredsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -687,92 +674,7 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               listTransferRunsSettings,
               listTransferLogsSettings,
               checkValidCredsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .getDataSourceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listDataSourcesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .updateTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .deleteTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getTransferConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listTransferConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .scheduleTransferRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      builder
-          .startManualTransferRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
-
-      builder
-          .getTransferRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteTransferRunSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listTransferRunsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listTransferLogsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .checkValidCredsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(DataTransferServiceStubSettings settings) {
@@ -811,7 +713,92 @@ public class DataTransferServiceStubSettings extends StubSettings<DataTransferSe
               checkValidCredsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .getDataSourceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listDataSourcesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createTransferConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .updateTransferConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .deleteTransferConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getTransferConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTransferConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .scheduleTransferRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .startManualTransferRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getTransferRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteTransferRunSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTransferRunsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listTransferLogsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .checkValidCredsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
