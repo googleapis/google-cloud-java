@@ -1,5 +1,39 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-analytics-admin/compare/v0.2.5...v0.3.0) (2021-01-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* `update_mask` field is required for all Update operations
+* rename `country_code` field to `region_code` in `Account`
+* rename `url_query_parameter` field to `uri_query_parameter` in `EnhancedMeasurementSettings`
+* remove `parent` field from `GoogleAdsLink`
+* remove unused fields from `EnhancedMeasurementSettings` (#137)
+
+### Features
+
+* add pagination support for `ListFirebaseLinks` operation ([6bfa58c](https://www.github.com/googleapis/java-analytics-admin/commit/6bfa58c307adc8a79dd05345299f8e39ddcf32db))
+
+
+### Bug Fixes
+
+* `update_mask` field is required for all Update operations ([6bfa58c](https://www.github.com/googleapis/java-analytics-admin/commit/6bfa58c307adc8a79dd05345299f8e39ddcf32db))
+* remove `parent` field from `GoogleAdsLink` ([6bfa58c](https://www.github.com/googleapis/java-analytics-admin/commit/6bfa58c307adc8a79dd05345299f8e39ddcf32db))
+* remove unused fields from `EnhancedMeasurementSettings` ([#137](https://www.github.com/googleapis/java-analytics-admin/issues/137)) ([6bfa58c](https://www.github.com/googleapis/java-analytics-admin/commit/6bfa58c307adc8a79dd05345299f8e39ddcf32db))
+* rename `country_code` field to `region_code` in `Account` ([6bfa58c](https://www.github.com/googleapis/java-analytics-admin/commit/6bfa58c307adc8a79dd05345299f8e39ddcf32db))
+* rename `url_query_parameter` field to `uri_query_parameter` in `EnhancedMeasurementSettings` ([6bfa58c](https://www.github.com/googleapis/java-analytics-admin/commit/6bfa58c307adc8a79dd05345299f8e39ddcf32db))
+
+
+### Documentation
+
+* put markdown table in a codeblock ([#132](https://www.github.com/googleapis/java-analytics-admin/issues/132)) ([15ccf20](https://www.github.com/googleapis/java-analytics-admin/commit/15ccf20bf20791d2a0192d67302e40a46a5cf432))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#136](https://www.github.com/googleapis/java-analytics-admin/issues/136)) ([6d52546](https://www.github.com/googleapis/java-analytics-admin/commit/6d52546b2fc5703571801d5b8045574ad9985bf1))
+
 ### [0.2.5](https://www.github.com/googleapis/java-analytics-admin/compare/v0.2.4...v0.2.5) (2020-12-15)
 
 
