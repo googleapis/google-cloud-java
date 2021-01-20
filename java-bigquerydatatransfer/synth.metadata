@@ -11,22 +11,22 @@
       "git": {
         "name": ".",
         "remote": "git@github.com:stephaniewang526/java-bigquerydatatransfer.git",
-        "sha": "98e85a2bbeb233a860eb6d0daaf85b08597e0304"
+        "sha": "68f152633e8c1e86532a8ea3bd27dc75b294c4c9"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "9ecdacc9a00e1dd443b11bf10215d6e7648db8a7",
-        "internalRef": "352563582"
+        "sha": "039f113828fc599a8da3b23d056ba2812d3d211d",
+        "internalRef": "352645712"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "ba960d730416fe05c50547e975ce79fcee52c671"
+        "sha": "b259489b06b25f399768b74b8baa943991f38ea7"
       }
     }
   ],

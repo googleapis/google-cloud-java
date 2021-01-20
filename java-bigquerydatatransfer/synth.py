@@ -48,3 +48,4 @@ java.remove_method('proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com
 java.remove_method('proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/TransferConfigName.java', 'public static List<String> toStringList(List<TransferConfigName> values)')
 java.remove_method('proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java', 'public static List<RunName> parseList(List<String> formattedStrings)')
 java.remove_method('proto-google-cloud-bigquerydatatransfer-v1/src/main/java/com/google/cloud/bigquery/datatransfer/v1/RunName.java', 'public static List<String> toStringList(List<RunName> values)')
+java.format_code("proto-google-cloud-bigquerydatatransfer-v1")
