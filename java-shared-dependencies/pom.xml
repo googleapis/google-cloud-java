@@ -72,7 +72,7 @@
     <iam.version>1.0.5</iam.version>
     <opencensus.version>0.24.0</opencensus.version>
     <findbugs.version>3.0.2</findbugs.version>
-    <errorprone.version>2.5.0</errorprone.version>
+    <errorprone.version>2.5.1</errorprone.version>
     <jackson.version>2.12.1</jackson.version>
     <codec.version>1.15</codec.version>
   </properties>
