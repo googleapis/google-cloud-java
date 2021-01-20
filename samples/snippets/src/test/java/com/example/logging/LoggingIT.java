@@ -19,6 +19,7 @@ package com.example.logging;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.logging.HttpRequest;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
@@ -39,6 +40,7 @@ public class LoggingIT {
 
   private static final String QUICKSTART_LOG = "my-log";
   private static final String TEST_WRITE_LOG = "test-log";
+  private static final String STRING_PAYLOAD = "Hello world!";
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
@@ -89,5 +91,30 @@ public class LoggingIT {
       Thread.sleep(5000);
     }
     assertThat(bout.toString().contains("Hello world again")).isTrue();
+  }
+
+  @Test(timeout = 60000)
+  public void testWriteLogHttpRequest() throws Exception {
+    HttpRequest request =
+        HttpRequest.newBuilder()
+            .setRequestUrl("www.example.com")
+            .setRequestMethod(HttpRequest.RequestMethod.GET)
+            .setStatus(200)
+            .build();
+    LogEntryWriteHttpRequest.createLogEntryRequest(TEST_WRITE_LOG, STRING_PAYLOAD, request);
+    String got = bout.toString();
+
+    // Check weather log entry is logged or not
+    assertThat(got).contains(String.format("Logged: %s", STRING_PAYLOAD));
+    bout.reset();
+    // Check if the log is listed yet
+    while (bout.toString().isEmpty()) {
+      ListLogs.main(TEST_WRITE_LOG);
+      Thread.sleep(5000);
+    }
+
+    // check log entry contain request data
+    assertThat(bout.toString().contains(STRING_PAYLOAD)).isTrue();
+    assertThat(bout.toString().contains(request.toString())).isTrue();
   }
 }

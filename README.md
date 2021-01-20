@@ -207,7 +207,7 @@ has instructions for running the samples.
 | Quickstart Sample | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/QuickstartSample.java) |
 | Quickstart | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/Quickstart.java) |
 | Example Enhancer | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/jul/enhancers/ExampleEnhancer.java) |
-
+| Log WriteHttpRequest | [source code](https://github.com/googleapis/java-logging/blob/master/samples/snippets/src/main/java/com/example/logging/LogEntryWriteHttpRequest.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-logging&page=editor&open_in_editor=samples/snippets/src/main/java/com/example/logging/LogEntryWriteHttpRequest.java) |
 
 
 ## Troubleshooting
