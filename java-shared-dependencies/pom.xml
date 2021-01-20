@@ -63,7 +63,7 @@
     <google.common-protos.version>2.0.1</google.common-protos.version>
     <google.core.version>1.94.0</google.core.version>
     <google.auth.version>0.22.2</google.auth.version>
-    <google.http-client.version>1.38.0</google.http-client.version>
+    <google.http-client.version>1.38.1</google.http-client.version>
     <google.api-client.version>1.31.1</google.api-client.version>
     <gson.version>2.8.6</gson.version>
     <threeten.version>1.5.0</threeten.version>
