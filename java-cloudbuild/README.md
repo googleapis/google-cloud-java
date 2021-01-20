@@ -38,25 +38,25 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-build</artifactId>
-  <version>2.1.9</version>
+  <version>2.1.10</version>
 </dependency>
 
 ```
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:16.2.1')
+implementation platform('com.google.cloud:libraries-bom:16.3.0')
 
 compile 'com.google.cloud:google-cloud-build'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-build:2.1.9'
+compile 'com.google.cloud:google-cloud-build:2.1.10'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-build" % "2.1.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-build" % "2.1.10"
 ```
 
 ## Authentication
