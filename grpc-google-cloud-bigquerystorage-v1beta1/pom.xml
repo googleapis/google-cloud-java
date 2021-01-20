@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-bigquerystorage-v1beta1</artifactId>
-  <version>0.108.5</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
+  <version>0.108.6-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-bigquerystorage-v1beta1:current} -->
   <name>grpc-google-cloud-bigquerystorage-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-bigquerystorage-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigquerystorage-parent</artifactId>
-    <version>1.8.5</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
+    <version>1.8.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
   </parent>
   <dependencies>
     <dependency>
