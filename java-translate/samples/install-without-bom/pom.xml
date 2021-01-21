@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-translate</artifactId>
-      <version>1.95.5</version>
+      <version>1.95.6</version>
     </dependency>
     <!-- [END translation_install_without_bom] -->
     <dependency>
