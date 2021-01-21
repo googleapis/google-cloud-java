@@ -653,48 +653,61 @@
     </profile>
 
     <profile>
-      <!-- NOTE - this profile is still in progress and needs work -->
       <id>docFX</id>
       <activation>
         <property>
+          <!-- Activate with -P docFX -->
           <name>docFX</name>
         </property>
       </activation>
-      <build>
+      <reporting>
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>3.2.0</version>
-            <executions>
-              <execution>
-                <phase>site</phase>
-                <goals>
-                  <goal>aggregate</goal>
-                </goals>
-              </execution>
-            </executions>
+            <reportSets>
+              <reportSet>
+                <id>docFX</id>
+                <reports>
+                  <report>javadoc</report>
+                  <report>aggregate</report>
+                  <report>aggregate-jar</report>
+                </reports>
+              </reportSet>
+            </reportSets>
             <configuration>
               <doclet>com.microsoft.doclet.DocFxDoclet</doclet>
-              <docletArtifact>
-                <groupId>com.microsoft</groupId>
-                <artifactId>docfx-doclet</artifactId>
-                <version>1.0-SNAPSHOT</version><!-- this is temporary - NO PRODUCTION USE -->
-              </docletArtifact>
-              <additionalDependencies>
-                <additionalDependency>
-                  <groupId>com.google.j2objc</groupId>
-                  <artifactId>j2objc-annotations</artifactId>
-                  <version>1.3</version>
-                </additionalDependency>
-              </additionalDependencies>
               <useStandardDocletOptions>false</useStandardDocletOptions>
-              <additionalOptions>-outputpath ${project.build.directory}/docfx/</additionalOptions>
-              <!-- Add additional options here when needed -->
+              <docletPath>${env.KOKORO_GFILE_DIR}/docfx-doclet-1.0-SNAPSHOT-jar-with-dependencies-143274.jar</docletPath>
+              <additionalOptions>-outputpath ${project.build.directory}/docfx-yml</additionalOptions>
+              <doclint>none</doclint>
+              <show>protected</show>
+              <nohelp>true</nohelp>
+              <groups>
+                <group>
+                  <title>Test helpers packages</title>
+                  <packages>com.google.cloud.testing</packages>
+                </group>
+                <group>
+                  <title>SPI packages</title>
+                  <packages>com.google.cloud.spi*</packages>
+                </group>
+              </groups>
+              <links>
+                <link>https://googleapis.dev/java/api-common/</link>
+                <link>https://googleapis.dev/java/gax/</link>
+                <link>https://googleapis.dev/java/google-auth-library/</link>
+
+                <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
+                <link>https://googleapis.github.io/common-protos-java/apidocs/</link>
+                <link>https://grpc.io/grpc-java/javadoc/</link>
+              </links>
             </configuration>
+
           </plugin>
         </plugins>
-      </build>
+      </reporting>
     </profile>
 
     <profile>
