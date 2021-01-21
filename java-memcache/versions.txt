@@ -3,4 +3,6 @@
 
 proto-google-cloud-memcache-v1beta2:0.2.11:0.2.12-SNAPSHOT
 grpc-google-cloud-memcache-v1beta2:0.2.11:0.2.12-SNAPSHOT
+proto-google-cloud-memcache-v1:0.2.11:0.2.12-SNAPSHOT
+grpc-google-cloud-memcache-v1:0.2.11:0.2.12-SNAPSHOT
 google-cloud-memcache:0.2.11:0.2.12-SNAPSHOT

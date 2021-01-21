@@ -21,7 +21,7 @@ import synthtool.languages.java as java
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
 service = 'memcache'
-versions = ['v1beta2']
+versions = ['v1beta2', 'v1']
 
 for version in versions:
   java.bazel_library(
