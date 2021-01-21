@@ -42,6 +42,7 @@ GET_IAM_POLICY_TOPIC = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #getIamPolicy(GetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy getIamPolicy(String resource) {
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();   
     return getIamPolicy(request);
@@ -56,9 +57,9 @@ GET_IAM_POLICY_SUBSCRIPTION = """
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriptionAdminClient topicAdminClient = SubscriptionAdminClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   Policy response = topicAdminClient.getIamPolicy(formattedResource);
+   *   Policy response = subscriptionAdminClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
    *
@@ -67,6 +68,7 @@ GET_IAM_POLICY_SUBSCRIPTION = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #getIamPolicy(GetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy getIamPolicy(String resource) {
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();   
     return getIamPolicy(request);
@@ -100,6 +102,7 @@ SET_IAM_POLICY_TOPIC = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #setIamPolicy(SetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy setIamPolicy(String resource, Policy policy) {    
     SetIamPolicyRequest request =   
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();   
@@ -116,10 +119,10 @@ SET_IAM_POLICY_SUBSCRIPTION = """
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriptionAdminClient topicAdminClient = SubscriptionAdminClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = topicAdminClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = subscriptionAdminClient.setIamPolicy(formattedResource, policy);
    * }
    * </code></pre>
    *
@@ -131,6 +134,7 @@ SET_IAM_POLICY_SUBSCRIPTION = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #setIamPolicy(SetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy setIamPolicy(String resource, Policy policy) {    
     SetIamPolicyRequest request =   
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();   
@@ -167,6 +171,7 @@ TEST_IAM_PERMISSIONS_TOPIC = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #testIamPermissions(TestIamPermissionsRequest)} instead.
    */
+  @Deprecated
   public final TestIamPermissionsResponse testIamPermissions(   
       String resource, List<String> permissions) {  
     TestIamPermissionsRequest request = 
@@ -190,10 +195,10 @@ TEST_IAM_PERMISSIONS_SUBSCRIPTION = """
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriptionAdminClient topicAdminClient = SubscriptionAdminClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = topicAdminClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = subscriptionAdminClient.testIamPermissions(formattedResource, permissions);
    * }
    * </code></pre>
    *
@@ -205,6 +210,7 @@ TEST_IAM_PERMISSIONS_SUBSCRIPTION = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #testIamPermissions(TestIamPermissionsRequest)} instead.
    */
+  @Deprecated
   public final TestIamPermissionsResponse testIamPermissions(   
       String resource, List<String> permissions) {  
     TestIamPermissionsRequest request = 
@@ -241,6 +247,7 @@ CREATE_TOPIC = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #createTopic(TopicName)} instead.
    */
+  @Deprecated
   public final Topic createTopic(ProjectTopicName name) {
     Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
     return createTopic(request);
@@ -271,6 +278,7 @@ DELETE_TOPIC = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #deleteTopic(TopicName)} instead.
    */
+  @Deprecated
   public final void deleteTopic(ProjectTopicName topic) {
     DeleteTopicRequest request =
         DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
@@ -299,6 +307,7 @@ GET_TOPIC = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #getTopic(TopicName)} instead.
    */
+  @Deprecated
   public final Topic getTopic(ProjectTopicName topic) {
     GetTopicRequest request =
         GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
@@ -329,6 +338,7 @@ LIST_TOPIC_SUBSCRIPTIONS = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #listTopicSubscriptions(TopicName)} instead.
    */
+  @Deprecated
   public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(ProjectTopicName topic) {
     ListTopicSubscriptionsRequest request =
         ListTopicSubscriptionsRequest.newBuilder()
@@ -397,6 +407,7 @@ CREATE_SUBSCRIPTION = """
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #createSubscription(ProjectSubscriptionName, TopicName, PushConfig, int)} instead.
    */
+  @Deprecated
   public final Subscription createSubscription(
       ProjectSubscriptionName name,
       ProjectTopicName topic,
