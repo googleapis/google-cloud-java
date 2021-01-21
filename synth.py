@@ -18,4 +18,9 @@ import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
-java.common_templates()
+java.common_templates(excludes=[
+    '.gitignore',
+    '.github/CODEOWNERS',
+    '.github/blunderbuss.yml',
+    'CONTRIBUTING.md',
+])
