@@ -27,6 +27,7 @@ package com.google.cloud.bigquery.datatransfer.v1;
  *
  * Protobuf enum {@code google.cloud.bigquery.datatransfer.v1.TransferType}
  */
+@java.lang.Deprecated
 public enum TransferType implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
