@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-shared-config.git",
-        "sha": "82b74087e195cab55dbdbfc1728dbd4ca7871f04"
+        "sha": "3527c47ff413d415f87fccca84358da2c837841d"
       }
     },
     {
