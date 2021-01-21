@@ -206,6 +206,9 @@ public class Publisher implements PublisherInterface {
    * Schedules the publishing of a message. The publishing of the message may occur immediately or
    * be delayed based on the publisher batching options.
    *
+   * <p>This method blocks in the downcall if using LimitExceededBehavior.Block in the flow control
+   * settings.
+   *
    * <p>Example of publishing a message.
    *
    * <pre>{@code

@@ -28,6 +28,8 @@ public interface PublisherInterface {
    * Schedules the publishing of a message. The future will be returned with the message ID on
    * success or an exception on failure.
    *
+   * <p>Some implementations of this method may block in the downcall until allowed by flow control.
+   *
    * <p>Example of publishing a message.
    *
    * <pre>{@code
