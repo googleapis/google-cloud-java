@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://www.github.com/googleapis/java-memcache/compare/v0.2.11...v0.3.0) (2021-01-21)
+
+
+### Features
+
+* add v1 client ([#281](https://www.github.com/googleapis/java-memcache/issues/281)) ([66094bb](https://www.github.com/googleapis/java-memcache/commit/66094bb90200186b65b78ac8cb7d25d24824a2ca))
+
 ### [0.2.11](https://www.github.com/googleapis/java-memcache/compare/v0.2.10...v0.2.11) (2021-01-14)
 
 
