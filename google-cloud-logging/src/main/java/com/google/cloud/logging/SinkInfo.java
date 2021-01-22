@@ -65,7 +65,7 @@ public class SinkInfo implements Serializable {
       TOPIC,
 
       /** Specifies a Logging bucket as destination for the sink. */
-      LOGGING_BUCKET;
+      LOGGING_BUCKET
     }
 
     /** Class for specifying a Google Cloud Storage bucket as destination for the sink. */
