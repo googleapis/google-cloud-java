@@ -46,7 +46,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>com.google.truth</groupId>
     <artifactId>truth</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <scope>test</scope>
   </dependency>
   <!-- END_EXCLUDE -->
