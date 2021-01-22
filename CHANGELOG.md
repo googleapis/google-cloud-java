@@ -1,5 +1,13 @@
 # Changelog
 
+### [2.1.3](https://www.github.com/googleapis/java-logging/compare/v2.1.2...v2.1.3) (2021-01-22)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.17.1 ([#390](https://www.github.com/googleapis/java-logging/issues/390)) ([3054f17](https://www.github.com/googleapis/java-logging/commit/3054f17bb23f9ac99e373d5368f5e18b9668b917))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#392](https://www.github.com/googleapis/java-logging/issues/392)) ([219a7f8](https://www.github.com/googleapis/java-logging/commit/219a7f85d06327fe0bac4b7c1a36bda17bbb3382))
+
 ### [2.1.2](https://www.github.com/googleapis/java-logging/compare/v2.1.1...v2.1.2) (2020-12-15)
 
 
