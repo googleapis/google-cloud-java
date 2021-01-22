@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-datastore'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datastore:1.105.6'
+compile 'com.google.cloud:google-cloud-datastore:1.105.7'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.105.6"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "1.105.7"
 ```
 
 ## Authentication
