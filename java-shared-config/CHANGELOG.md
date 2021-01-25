@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.10.0](https://www.github.com/googleapis/java-shared-config/compare/v0.9.4...v0.10.0) (2021-01-21)
+
+
+### Features
+
+* adding pom profile to generate docfx yml from javadoc ([#213](https://www.github.com/googleapis/java-shared-config/issues/213)) ([3527c47](https://www.github.com/googleapis/java-shared-config/commit/3527c47ff413d415f87fccca84358da2c837841d))
+
+
+### Dependencies
+
+* update dependency com.puppycrawl.tools:checkstyle to v8.39 ([#209](https://www.github.com/googleapis/java-shared-config/issues/209)) ([fb53922](https://www.github.com/googleapis/java-shared-config/commit/fb539226d407001822a56c7fff792922cd85d1fe))
+
 ### [0.9.4](https://www.github.com/googleapis/java-shared-config/compare/v0.9.3...v0.9.4) (2020-10-21)
 
 
