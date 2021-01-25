@@ -30,8 +30,8 @@ import org.junit.Test;
 public class GetModelEvaluationVideoObjectTrackingSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("VIDEO_OBJECT_DETECT_MODEL_ID");
-  private static final String EVALUATION_ID = System.getenv("VIDEO_OBJECT_DETECT_EVALUATION_ID");
+  private static final String MODEL_ID = "8609932509485989888";
+  private static final String EVALUATION_ID = "6016811301190238208";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -46,8 +46,6 @@ public class GetModelEvaluationVideoObjectTrackingSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("VIDEO_OBJECT_DETECT_MODEL_ID");
-    requireEnvVar("VIDEO_OBJECT_DETECT_EVALUATION_ID");
   }
 
   @Before

@@ -33,7 +33,7 @@ import org.junit.runners.JUnit4;
 public class GetModelSampleTest {
 
   private static final String PROJECT_ID = "ucaip-sample-tests";
-  private static final String MODEL_ID = "1478306577684365312";
+  private static final String MODEL_ID = "3512561418744365056";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

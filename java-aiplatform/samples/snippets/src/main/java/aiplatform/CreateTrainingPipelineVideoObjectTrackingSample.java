@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_video_object_tracking_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.FilterSplit;
 import com.google.cloud.aiplatform.v1beta1.FractionSplit;
 import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
@@ -28,8 +29,8 @@ import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoObjectTrackingInputs.ModelType;
 import com.google.rpc.Status;
 import java.io.IOException;
 
@@ -67,9 +68,10 @@ public class CreateTrainingPipelineVideoObjectTrackingSample {
               + "automl_video_object_tracking_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
-      String jsonString = "{\"modelType\": \"CLOUD\"}";
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
+      AutoMlVideoObjectTrackingInputs trainingTaskInputs =
+          AutoMlVideoObjectTrackingInputs.newBuilder()
+              .setModelType(ModelType.CLOUD)
+              .build();
 
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
@@ -78,7 +80,7 @@ public class CreateTrainingPipelineVideoObjectTrackingSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(trainingPipelineVideoObjectTracking)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(trainingTaskInputs))
               .setInputDataConfig(inputDataConfig)
               .setModelToUpload(modelToUpload)
               .build();

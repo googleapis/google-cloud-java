@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_text_entity_extraction_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -73,13 +74,8 @@ public class CreateTrainingPipelineTextEntityExtractionSample {
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
               + "automl_text_extraction_1.0.0.yaml";
-      String jsonString = "{}";
 
       LocationName locationName = LocationName.of(project, location);
-
-      // Training task inputs are empty for text entity extraction
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
 
       InputDataConfig trainingInputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
@@ -88,7 +84,7 @@ public class CreateTrainingPipelineTextEntityExtractionSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(trainingPipelineDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.EMPTY_VALUE)
               .setInputDataConfig(trainingInputDataConfig)
               .setModelToUpload(model)
               .build();

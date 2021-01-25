@@ -33,8 +33,8 @@ import org.junit.runners.JUnit4;
 public class GetModelEvaluationImageClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("IMAGE_CLASS_MODEL_ID");
-  private static final String EVALUATION_ID = System.getenv("IMAGE_CLASS_EVALUATION_ID");
+  private static final String MODEL_ID = "3512561418744365056";
+  private static final String EVALUATION_ID = "9035588644970168320";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -49,8 +49,6 @@ public class GetModelEvaluationImageClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("IMAGE_CLASS_MODEL_ID");
-    requireEnvVar("IMAGE_CLASS_EVALUATION_ID");
   }
 
   @Before

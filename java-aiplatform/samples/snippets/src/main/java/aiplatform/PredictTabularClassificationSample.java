@@ -18,10 +18,12 @@ package aiplatform;
 
 // [START aiplatform_predict_tabular_classification_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TabularClassificationPredictionResult;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
@@ -65,7 +67,16 @@ public class PredictTabularClassificationSample {
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        System.out.format("\tPrediction: %s\n", prediction);
+        TabularClassificationPredictionResult.Builder resultBuilder =
+            TabularClassificationPredictionResult.newBuilder();
+        TabularClassificationPredictionResult result =
+            (TabularClassificationPredictionResult) ValueConverter
+                .fromValue(resultBuilder, prediction);
+
+        for (int i = 0; i < result.getClassesCount(); i++) {
+          System.out.printf("\tClass: %s", result.getClasses(i));
+          System.out.printf("\tScore: %f", result.getScores(i));
+        }
       }
     }
   }

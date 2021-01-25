@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_text_sentiment_analysis_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -38,8 +39,7 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextSentimentInputs;
 import com.google.rpc.Status;
 import java.io.IOException;
 
@@ -74,14 +74,14 @@ public class CreateTrainingPipelineTextSentimentAnalysisSample {
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
               + "automl_text_sentiment_1.0.0.yaml";
 
-      // Sentiment max must be between 1 and 10 inclusive.
-      // Higher value means positive sentiment.
-      String jsonString = "{\"sentimentMax\": 4 }";
-
       LocationName locationName = LocationName.of(project, location);
 
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
+      AutoMlTextSentimentInputs trainingTaskInputs =
+          AutoMlTextSentimentInputs.newBuilder()
+              // Sentiment max must be between 1 and 10 inclusive.
+              // Higher value means positive sentiment.
+              .setSentimentMax(4)
+              .build();
 
       InputDataConfig trainingInputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
@@ -90,7 +90,7 @@ public class CreateTrainingPipelineTextSentimentAnalysisSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(trainingPipelineDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(trainingTaskInputs))
               .setInputDataConfig(trainingInputDataConfig)
               .setModelToUpload(model)
               .build();

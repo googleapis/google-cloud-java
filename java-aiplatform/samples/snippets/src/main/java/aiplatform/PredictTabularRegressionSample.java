@@ -18,10 +18,12 @@ package aiplatform;
 
 // [START aiplatform_predict_tabular_regression_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TabularRegressionPredictionResult;
 import com.google.protobuf.ListValue;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
@@ -65,7 +67,16 @@ public class PredictTabularRegressionSample {
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        System.out.format("\tPrediction: %s\n", prediction);
+        TabularRegressionPredictionResult.Builder resultBuilder =
+            TabularRegressionPredictionResult.newBuilder();
+
+        TabularRegressionPredictionResult result =
+            (TabularRegressionPredictionResult) ValueConverter
+                .fromValue(resultBuilder, prediction);
+
+        System.out.printf("\tUpper bound: %f\n", result.getUpperBound());
+        System.out.printf("\tLower bound: %f\n", result.getLowerBound());
+        System.out.printf("\tValue: %f\n", result.getValue());
       }
     }
   }

@@ -30,10 +30,8 @@ import org.junit.Test;
 public class GetModelEvaluationTabularRegressionSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID =
-      System.getenv("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
-  private static final String EVALUATION_ID =
-      System.getenv("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
+  private static final String MODEL_ID = "8842430840248991744";
+  private static final String EVALUATION_ID = "4944816689650806017";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -48,8 +46,6 @@ public class GetModelEvaluationTabularRegressionSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_MODEL_ID");
-    requireEnvVar("MODEL_EVALUATION_TABLES_REGRESSION_EVALUATION_ID");
   }
 
   @Before

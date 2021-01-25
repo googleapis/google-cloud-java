@@ -18,10 +18,13 @@ package aiplatform;
 
 // [START aiplatform_predict_text_entity_extraction_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.TextExtractionPredictionInstance;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.TextExtractionPredictionResult;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
@@ -56,21 +59,37 @@ public class PredictTextEntityExtractionSample {
 
       EndpointName endpointName = EndpointName.of(project, location, endpointId);
 
-      Value parameter = Value.newBuilder().setNumberValue(0).setNumberValue(5).build();
-      Value.Builder instance = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, instance);
+      TextExtractionPredictionInstance instance =
+          TextExtractionPredictionInstance.newBuilder()
+              .setContent(content)
+              .build();
 
       List<Value> instances = new ArrayList<>();
-      instances.add(instance.build());
+      instances.add(ValueConverter.toValue(instance));
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances, parameter);
+          predictionServiceClient.predict(endpointName, instances, ValueConverter.EMPTY_VALUE);
       System.out.println("Predict Text Entity Extraction Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        System.out.format("\tPrediction: %s\n", prediction);
+        TextExtractionPredictionResult.Builder resultBuilder =
+            TextExtractionPredictionResult.newBuilder();
+
+        TextExtractionPredictionResult result =
+            (TextExtractionPredictionResult) ValueConverter.fromValue(resultBuilder, prediction);
+
+        for (int i = 0; i < result.getIdsCount(); i++) {
+          long textStartOffset = result.getTextSegmentStartOffsets(i);
+          long textEndOffset = result.getTextSegmentEndOffsets(i);
+          String entity = content.substring((int) textStartOffset, (int) textEndOffset);
+
+          System.out.format("\tEntity: %s\n", entity);
+          System.out.format("\tEntity type: %s\n", result.getDisplayNames(i));
+          System.out.format("\tConfidences: %f\n", result.getConfidences(i));
+          System.out.format("\tIDs: %d\n", result.getIds(i));
+        }
       }
     }
   }

@@ -32,8 +32,7 @@ import org.junit.Test;
 public class ExportModelTabularClassificationSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID =
-      System.getenv("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
+  private static final String MODEL_ID = "6036688272397172736";
   private static final String GCS_DESTINATION_URI_PREFIX =
       "gs://ucaip-samples-test-output/tmp/export_model_test";
   private ByteArrayOutputStream bout;
@@ -50,7 +49,6 @@ public class ExportModelTabularClassificationSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("EXPORT_MODEL_TABLES_CLASSIFICATION_MODEL_ID");
   }
 
   @Before

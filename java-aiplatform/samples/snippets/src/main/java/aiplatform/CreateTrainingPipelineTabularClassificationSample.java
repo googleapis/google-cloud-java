@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_tabular_classification_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -37,10 +38,14 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTablesInputs.Transformation.AutoTransformation;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CreateTrainingPipelineTabularClassificationSample {
 
@@ -50,18 +55,15 @@ public class CreateTrainingPipelineTabularClassificationSample {
     String modelDisplayName = "YOUR_DATASET_DISPLAY_NAME";
     String datasetId = "YOUR_DATASET_ID";
     String targetColumn = "TARGET_COLUMN";
-    String transformation =
-        "[{TRANSFORMATION_TYPE: {columnName : COLUMN_NAME, invalidValuesAllowed : TRUE/FALSE }}]";
     createTrainingPipelineTableClassification(
-        project, modelDisplayName, datasetId, targetColumn, transformation);
+        project, modelDisplayName, datasetId, targetColumn);
   }
 
   static void createTrainingPipelineTableClassification(
       String project,
       String modelDisplayName,
       String datasetId,
-      String targetColumn,
-      String transformation)
+      String targetColumn)
       throws IOException {
     PipelineServiceSettings pipelineServiceSettings =
         PipelineServiceSettings.newBuilder()
@@ -77,15 +79,34 @@ public class CreateTrainingPipelineTabularClassificationSample {
       LocationName locationName = LocationName.of(project, location);
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/automl_tables_1.0.0.yaml";
-      String jsonString =
-          "{\"targetColumn\": \""
-              + targetColumn
-              + "\",\"predictionType\": \"classification\",\"transformations\": "
-              + transformation
-              + ",\"trainBudgetMilliNodeHours\": 8000}";
 
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
+      // Set the columns used for training and their data types
+      Transformation transformation1 = Transformation.newBuilder()
+          .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_width").build())
+          .build();
+      Transformation transformation2 = Transformation.newBuilder()
+          .setAuto(AutoTransformation.newBuilder().setColumnName("sepal_length").build())
+          .build();
+      Transformation transformation3 = Transformation.newBuilder()
+          .setAuto(AutoTransformation.newBuilder().setColumnName("petal_length").build())
+          .build();
+      Transformation transformation4 = Transformation.newBuilder()
+          .setAuto(AutoTransformation.newBuilder().setColumnName("petal_width").build())
+          .build();
+
+      ArrayList<Transformation> transformationArrayList = new ArrayList<>();
+      transformationArrayList.add(transformation1);
+      transformationArrayList.add(transformation2);
+      transformationArrayList.add(transformation3);
+      transformationArrayList.add(transformation4);
+
+      AutoMlTablesInputs autoMlTablesInputs =
+          AutoMlTablesInputs.newBuilder()
+              .setTargetColumn(targetColumn)
+              .setPredictionType("classification")
+              .addAllTransformations(transformationArrayList)
+              .setTrainBudgetMilliNodeHours(8000)
+              .build();
 
       FractionSplit fractionSplit =
           FractionSplit.newBuilder()
@@ -105,7 +126,7 @@ public class CreateTrainingPipelineTabularClassificationSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(modelDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(autoMlTablesInputs))
               .setInputDataConfig(inputDataConfig)
               .setModelToUpload(modelToUpload)
               .build();

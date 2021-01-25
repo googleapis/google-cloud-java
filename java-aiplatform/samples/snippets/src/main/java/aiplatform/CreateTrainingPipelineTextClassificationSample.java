@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_text_classification_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -38,8 +39,7 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlTextClassificationInputs;
 import com.google.rpc.Status;
 import java.io.IOException;
 
@@ -73,12 +73,13 @@ public class CreateTrainingPipelineTextClassificationSample {
       String trainingTaskDefinition =
           "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
               + "automl_text_classification_1.0.0.yaml";
-      String jsonString = "{\"multiLabel\": false}";
 
       LocationName locationName = LocationName.of(project, location);
 
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
+      AutoMlTextClassificationInputs trainingTaskInputs =
+          AutoMlTextClassificationInputs.newBuilder()
+              .setMultiLabel(false)
+              .build();
 
       InputDataConfig trainingInputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
@@ -87,7 +88,7 @@ public class CreateTrainingPipelineTextClassificationSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(trainingPipelineDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(trainingTaskInputs))
               .setInputDataConfig(trainingInputDataConfig)
               .setModelToUpload(model)
               .build();

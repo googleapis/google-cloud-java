@@ -33,8 +33,8 @@ import org.junit.runners.JUnit4;
 public class ListModelEvaluationSliceSampleTest {
 
   private static final String PROJECT_ID = "ucaip-sample-tests";
-  private static final String MODEL_ID = "5162251072873431040";
-  private static final String EVALUATION_ID = "5615675837586029221";
+  private static final String MODEL_ID = "3512561418744365056";
+  private static final String EVALUATION_ID = "9035588644970168320";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;

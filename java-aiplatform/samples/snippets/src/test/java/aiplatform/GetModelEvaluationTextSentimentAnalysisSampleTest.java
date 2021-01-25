@@ -33,8 +33,8 @@ import org.junit.runners.JUnit4;
 public class GetModelEvaluationTextSentimentAnalysisSampleTest {
 
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
-  private static final String MODEL_ID = System.getenv("TEXT_SENTI_MODEL_ID");
-  private static final String EVALUATION_ID = System.getenv("TEXT_SENTI_EVALUATION_ID");
+  private static final String MODEL_ID = "4792568875336073216";
+  private static final String EVALUATION_ID = "3347225656252432384";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -49,8 +49,6 @@ public class GetModelEvaluationTextSentimentAnalysisSampleTest {
   public static void checkRequirements() {
     requireEnvVar("GOOGLE_APPLICATION_CREDENTIALS");
     requireEnvVar("UCAIP_PROJECT_ID");
-    requireEnvVar("TEXT_SENTI_MODEL_ID");
-    requireEnvVar("TEXT_SENTI_EVALUATION_ID");
   }
 
   @Before

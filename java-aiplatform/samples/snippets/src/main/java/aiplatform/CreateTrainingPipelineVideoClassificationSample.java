@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_video_classification_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.FilterSplit;
 import com.google.cloud.aiplatform.v1beta1.FractionSplit;
 import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
@@ -28,7 +29,6 @@ import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.PredefinedSplit;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.protobuf.Value;
 import com.google.rpc.Status;
 import java.io.IOException;
 
@@ -75,7 +75,7 @@ public class CreateTrainingPipelineVideoClassificationSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(videoClassificationDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(Value.newBuilder())
+              .setTrainingTaskInputs(ValueConverter.EMPTY_VALUE)
               .setInputDataConfig(inputDataConfig)
               .setModelToUpload(model)
               .build();

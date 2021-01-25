@@ -17,15 +17,15 @@
 package aiplatform;
 
 // [START aiplatform_create_training_pipeline_video_action_recognition_sample]
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.InputDataConfig;
 import com.google.cloud.aiplatform.v1beta1.LocationName;
 import com.google.cloud.aiplatform.v1beta1.Model;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PipelineServiceSettings;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
-import com.google.gson.JsonObject;
-import com.google.protobuf.Value;
-import com.google.protobuf.util.JsonFormat;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlVideoActionRecognitionInputs.ModelType;
 import java.io.IOException;
 
 public class CreateTrainingPipelineVideoActionRecognitionSample {
@@ -36,17 +36,15 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
     String displayName = "DISPLAY_NAME";
     String datasetId = "DATASET_ID";
     String modelDisplayName = "MODEL_DISPLAY_NAME";
-    String modelType = "MODEL_TYPE";
     createTrainingPipelineVideoActionRecognitionSample(
-        project, displayName, datasetId, modelDisplayName, modelType);
+        project, displayName, datasetId, modelDisplayName);
   }
 
   static void createTrainingPipelineVideoActionRecognitionSample(
       String project,
       String displayName,
       String datasetId,
-      String modelDisplayName,
-      String modelType)
+      String modelDisplayName)
       throws IOException {
     PipelineServiceSettings settings =
         PipelineServiceSettings.newBuilder()
@@ -58,11 +56,11 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (PipelineServiceClient client = PipelineServiceClient.create(settings)) {
-      JsonObject jsonTrainingTaskInputs = new JsonObject();
-      jsonTrainingTaskInputs.addProperty("modelType", modelType);
-      Value.Builder trainingTaskInputsBuilder = Value.newBuilder();
-      JsonFormat.parser().merge(jsonTrainingTaskInputs.toString(), trainingTaskInputsBuilder);
-      Value trainingTaskInputs = trainingTaskInputsBuilder.build();
+      AutoMlVideoActionRecognitionInputs trainingTaskInputs =
+          AutoMlVideoActionRecognitionInputs.newBuilder()
+              .setModelType(ModelType.CLOUD)
+              .build();
+
       InputDataConfig inputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
       Model modelToUpload = Model.newBuilder().setDisplayName(modelDisplayName).build();
@@ -72,7 +70,7 @@ public class CreateTrainingPipelineVideoActionRecognitionSample {
               .setTrainingTaskDefinition(
                   "gs://google-cloud-aiplatform/schema/trainingjob/definition/"
                       + "automl_video_action_recognition_1.0.0.yaml")
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(trainingTaskInputs))
               .setInputDataConfig(inputDataConfig)
               .setModelToUpload(modelToUpload)
               .build();

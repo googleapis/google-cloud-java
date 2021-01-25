@@ -18,6 +18,7 @@ package aiplatform;
 
 // [START aiplatform_create_training_pipeline_image_object_detection_sample]
 
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.DeployedModelRef;
 import com.google.cloud.aiplatform.v1beta1.EnvVar;
 import com.google.cloud.aiplatform.v1beta1.ExplanationMetadata;
@@ -38,6 +39,9 @@ import com.google.cloud.aiplatform.v1beta1.PredictSchemata;
 import com.google.cloud.aiplatform.v1beta1.SampledShapleyAttribution;
 import com.google.cloud.aiplatform.v1beta1.TimestampSplit;
 import com.google.cloud.aiplatform.v1beta1.TrainingPipeline;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageClassification;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs;
+import com.google.cloud.aiplatform.v1beta1.schema.trainingjob.definition.AutoMlImageObjectDetectionInputs.ModelType;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import com.google.rpc.Status;
@@ -74,11 +78,12 @@ public class CreateTrainingPipelineImageObjectDetectionSample {
               + "automl_image_object_detection_1.0.0.yaml";
       LocationName locationName = LocationName.of(project, location);
 
-      String jsonString =
-          "{\"modelType\": \"CLOUD_HIGH_ACCURACY_1\", \"budgetMilliNodeHours\": 20000,"
-              + " \"disableEarlyStopping\": false}";
-      Value.Builder trainingTaskInputs = Value.newBuilder();
-      JsonFormat.parser().merge(jsonString, trainingTaskInputs);
+      AutoMlImageObjectDetectionInputs autoMlImageObjectDetectionInputs =
+          AutoMlImageObjectDetectionInputs.newBuilder()
+              .setModelType(ModelType.CLOUD_HIGH_ACCURACY_1)
+              .setBudgetMilliNodeHours(20000)
+              .setDisableEarlyStopping(false)
+              .build();
 
       InputDataConfig trainingInputDataConfig =
           InputDataConfig.newBuilder().setDatasetId(datasetId).build();
@@ -87,7 +92,7 @@ public class CreateTrainingPipelineImageObjectDetectionSample {
           TrainingPipeline.newBuilder()
               .setDisplayName(trainingPipelineDisplayName)
               .setTrainingTaskDefinition(trainingTaskDefinition)
-              .setTrainingTaskInputs(trainingTaskInputs)
+              .setTrainingTaskInputs(ValueConverter.toValue(autoMlImageObjectDetectionInputs))
               .setInputDataConfig(trainingInputDataConfig)
               .setModelToUpload(model)
               .build();

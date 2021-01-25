@@ -35,7 +35,7 @@ import org.junit.runners.JUnit4;
 public class ExportModelSampleTest {
 
   private static final String PROJECT_ID = "ucaip-sample-tests";
-  private static final String MODEL_ID = "5359002081594179584";
+  private static final String MODEL_ID = "3422489426196955136";
   private static final String GCS_DESTINATION_URI_PREFIX =
       "gs://ucaip-samples-test-output/tmp/export_model_test";
   private static final String EXPORT_FORMAT = "tf-saved-model";

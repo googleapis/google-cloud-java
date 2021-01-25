@@ -19,10 +19,14 @@ package aiplatform;
 // [START aiplatform_predict_image_object_detection_sample]
 
 import com.google.api.client.util.Base64;
+import com.google.cloud.aiplatform.util.ValueConverter;
 import com.google.cloud.aiplatform.v1beta1.EndpointName;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceClient;
 import com.google.cloud.aiplatform.v1beta1.PredictionServiceSettings;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.instance.ImageObjectDetectionPredictionInstance;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.params.ImageObjectDetectionPredictionParams;
+import com.google.cloud.aiplatform.v1beta1.schema.predict.prediction.ImageObjectDetectionPredictionResult;
 import com.google.protobuf.Value;
 import com.google.protobuf.util.JsonFormat;
 import java.io.IOException;
@@ -60,23 +64,41 @@ public class PredictImageObjectDetectionSample {
       byte[] contents = Base64.encodeBase64(Files.readAllBytes(Paths.get(fileName)));
       String content = new String(contents, StandardCharsets.UTF_8);
 
-      Value parameter = Value.newBuilder().setNumberValue(0).setNumberValue(5).build();
+      ImageObjectDetectionPredictionParams params =
+          ImageObjectDetectionPredictionParams.newBuilder()
+              .setConfidenceThreshold((float) (0.5))
+              .setMaxPredictions(5)
+              .build();
 
-      String contentDict = "{\"content\": \"" + content + "\"}";
-      Value.Builder instance = Value.newBuilder();
-      JsonFormat.parser().merge(contentDict, instance);
+      ImageObjectDetectionPredictionInstance instance =
+          ImageObjectDetectionPredictionInstance.newBuilder()
+              .setContent(content)
+              .build();
 
       List<Value> instances = new ArrayList<>();
-      instances.add(instance.build());
+      instances.add(ValueConverter.toValue(instance));
 
       PredictResponse predictResponse =
-          predictionServiceClient.predict(endpointName, instances, parameter);
+          predictionServiceClient.predict(endpointName, instances, ValueConverter.toValue(params));
       System.out.println("Predict Image Object Detection Response");
       System.out.format("\tDeployed Model Id: %s\n", predictResponse.getDeployedModelId());
 
       System.out.println("Predictions");
       for (Value prediction : predictResponse.getPredictionsList()) {
-        System.out.format("\tPrediction: %s\n", prediction);
+
+        ImageObjectDetectionPredictionResult.Builder resultBuilder =
+            ImageObjectDetectionPredictionResult.newBuilder();
+
+        ImageObjectDetectionPredictionResult result =
+            (ImageObjectDetectionPredictionResult) ValueConverter
+                .fromValue(resultBuilder, prediction);
+
+        for (int i = 0; i < result.getIdsCount(); i++) {
+          System.out.printf("\tDisplay name: %s\n", result.getDisplayNames(i));
+          System.out.printf("\tConfidences: %f\n", result.getConfidences(i));
+          System.out.printf("\tIDs: %d\n", result.getIds(i));
+          System.out.printf("\tBounding boxes: %s\n", result.getBboxes(i));
+        }
       }
     }
   }

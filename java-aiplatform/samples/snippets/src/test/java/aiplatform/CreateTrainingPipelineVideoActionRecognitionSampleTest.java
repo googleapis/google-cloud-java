@@ -35,7 +35,6 @@ public class CreateTrainingPipelineVideoActionRecognitionSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String DATASET_ID =
       System.getenv("TRAINING_PIPELINE_VIDEO_ACTION_DATASET_ID");
-  private static final String MODEL = "CLOUD";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -98,7 +97,7 @@ public class CreateTrainingPipelineVideoActionRecognitionSampleTest {
 
     CreateTrainingPipelineVideoActionRecognitionSample
         .createTrainingPipelineVideoActionRecognitionSample(
-            PROJECT, trainingPipelineDisplayName, DATASET_ID, modelDisplayName, MODEL);
+            PROJECT, trainingPipelineDisplayName, DATASET_ID, modelDisplayName);
 
     // Assert
     String got = bout.toString();

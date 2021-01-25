@@ -36,24 +36,7 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
   private static final String PROJECT = System.getenv("UCAIP_PROJECT_ID");
   private static final String DATASET_ID =
       System.getenv("TRAINING_PIPELINE_TABLES_CLASSIFICATION_DATASET_ID");
-  private static final String TARGET_COLUMN = "TripType";
-  private static final String TRANSFORMATION =
-      "[{\"numeric\":{\"columnName\":\"Age\",\"invalidValuesAllowed\":false}},"
-          + "{\"categorical\":{\"columnName\":\"Job\"}},"
-          + "{\"categorical\":{\"columnName\":\"MaritalStatus\"}},"
-          + "{\"categorical\":{\"columnName\":\"Default\"}},"
-          + "{\"numeric\":{\"columnName\":\"Balance\",\"invalidValuesAllowed\":false}},"
-          + "{\"categorical\":{\"columnName\":\"Housing\"}},"
-          + "{\"categorical\":{\"columnName\":\"Loan\"}},"
-          + "{\"categorical\":{\"columnName\":\"Contact\"}},"
-          + "{\"numeric\":{\"columnName\":\"Day\",\"invalidValuesAllowed\":false}},"
-          + "{\"categorical\":{\"columnName\":\"Month\"}},"
-          + "{\"numeric\":{\"columnName\":\"Duration\",\"invalidValuesAllowed\":false}},"
-          + "{\"numeric\":{\"columnName\":\"Campaign\",\"invalidValuesAllowed\":false}},"
-          + "{\"numeric\":{\"columnName\":\"PDays\",\"invalidValuesAllowed\":false}},"
-          + "{\"numeric\":{\"columnName\":\"Previous\",\"invalidValuesAllowed\":false}},"
-          + "{\"categorical\":{\"columnName\":\"POutcome\"}},"
-          + "{\"categorical\":{\"columnName\":\"Deposit\"}}]";
+  private static final String TARGET_COLUMN = "species";
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -110,7 +93,7 @@ public class CreateTrainingPipelineTabularClassificationSampleTest {
             UUID.randomUUID().toString().replaceAll("-", "_").substring(0, 26));
 
     CreateTrainingPipelineTabularClassificationSample.createTrainingPipelineTableClassification(
-        PROJECT, modelDisplayName, DATASET_ID, TARGET_COLUMN, TRANSFORMATION);
+        PROJECT, modelDisplayName, DATASET_ID, TARGET_COLUMN);
 
     // Assert
     String got = bout.toString();
