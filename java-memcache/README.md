@@ -54,12 +54,12 @@ compile 'com.google.cloud:google-cloud-memcache'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-memcache:0.2.10'
+compile 'com.google.cloud:google-cloud-memcache:0.3.0'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-memcache" % "0.2.10"
+libraryDependencies += "com.google.cloud" % "google-cloud-memcache" % "0.3.0"
 ```
 
 ## Authentication
