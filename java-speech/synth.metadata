@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c62551667895c73daec0fb232c348f845caddf0f",
-        "internalRef": "316899534"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c62551667895c73daec0fb232c348f845caddf0f",
-        "internalRef": "316899534"
+        "sha": "6d65640b1fcbdf26ea76cb720de0ac138cae9bed",
+        "internalRef": "347036369"
       }
     },
     {
@@ -134,11 +134,9 @@
     "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/MockSpeech.java",
     "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/MockSpeechImpl.java",
     "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechClientTest.java",
-    "google-cloud-speech/src/test/java/com/google/cloud/speech/v1/SpeechSmokeTest.java",
     "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/MockSpeech.java",
     "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/MockSpeechImpl.java",
     "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechClientTest.java",
-    "google-cloud-speech/src/test/java/com/google/cloud/speech/v1p1beta1/SpeechSmokeTest.java",
     "grpc-google-cloud-speech-v1/src/main/java/com/google/cloud/speech/v1/SpeechGrpc.java",
     "grpc-google-cloud-speech-v1p1beta1/src/main/java/com/google/cloud/speech/v1p1beta1/SpeechGrpc.java",
     "java.header",

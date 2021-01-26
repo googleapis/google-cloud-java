@@ -29,20 +29,4 @@ for version in versions:
       bazel_target=f'//google/cloud/{service}/{version}:google-cloud-{service}-{version}-java',
   )
 
-# skip smoke test on VPCSC
-s.replace(
-  'google-cloud-speech/src/test/**/SpeechSmokeTest.java',
-  'import org.junit.Test;',
-  "import org.junit.Assume;\nimport org.junit.Test;"
-)
-vpcsc_skip_code = """
-    // Skip smoke tests if running in VPCSC because our V1 integration tests
-    // cover VPC-SC.
-    Assume.assumeTrue(System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") == null);"""
-s.replace(
-  'google-cloud-speech/src/test/**/SpeechSmokeTest.java',
-  r'(\s+public void run.*)',
-  f'\g<1>{vpcsc_skip_code}'
-)
-
 java.common_templates()

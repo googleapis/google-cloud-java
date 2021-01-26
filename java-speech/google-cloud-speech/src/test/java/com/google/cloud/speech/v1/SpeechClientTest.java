@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.speech.v1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -29,13 +30,15 @@ import com.google.api.gax.rpc.StatusCode;
 import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
-import io.grpc.Status;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -43,31 +46,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class SpeechClientTest {
   private static MockSpeech mockSpeech;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private SpeechClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
     mockSpeech = new MockSpeech();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSpeech));
-    serviceHelper.start();
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     SpeechSettings settings =
         SpeechSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -82,29 +85,22 @@ public class SpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void recognizeTest() {
-    RecognizeResponse expectedResponse = RecognizeResponse.newBuilder().build();
+  public void recognizeTest() throws Exception {
+    RecognizeResponse expectedResponse =
+        RecognizeResponse.newBuilder()
+            .addAllResults(new ArrayList<SpeechRecognitionResult>())
+            .build();
     mockSpeech.addResponse(expectedResponse);
 
-    RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
-    int sampleRateHertz = 44100;
-    String languageCode = "en-US";
-    RecognitionConfig config =
-        RecognitionConfig.newBuilder()
-            .setEncoding(encoding)
-            .setSampleRateHertz(sampleRateHertz)
-            .setLanguageCode(languageCode)
-            .build();
-    String uri = "gs://bucket_name/file_name.flac";
-    RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
+    RecognitionConfig config = RecognitionConfig.newBuilder().build();
+    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
 
     RecognizeResponse actualResponse = client.recognize(config, audio);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    RecognizeRequest actualRequest = (RecognizeRequest) actualRequests.get(0);
+    RecognizeRequest actualRequest = ((RecognizeRequest) actualRequests.get(0));
 
     Assert.assertEquals(config, actualRequest.getConfig());
     Assert.assertEquals(audio, actualRequest.getAudio());
@@ -115,36 +111,26 @@ public class SpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void recognizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSpeech.addException(exception);
 
     try {
-      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
-      int sampleRateHertz = 44100;
-      String languageCode = "en-US";
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(encoding)
-              .setSampleRateHertz(sampleRateHertz)
-              .setLanguageCode(languageCode)
-              .build();
-      String uri = "gs://bucket_name/file_name.flac";
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
-
+      RecognitionConfig config = RecognitionConfig.newBuilder().build();
+      RecognitionAudio audio = RecognitionAudio.newBuilder().build();
       client.recognize(config, audio);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void longRunningRecognizeTest() throws Exception {
     LongRunningRecognizeResponse expectedResponse =
-        LongRunningRecognizeResponse.newBuilder().build();
+        LongRunningRecognizeResponse.newBuilder()
+            .addAllResults(new ArrayList<SpeechRecognitionResult>())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("longRunningRecognizeTest")
@@ -153,17 +139,8 @@ public class SpeechClientTest {
             .build();
     mockSpeech.addResponse(resultOperation);
 
-    RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
-    int sampleRateHertz = 44100;
-    String languageCode = "en-US";
-    RecognitionConfig config =
-        RecognitionConfig.newBuilder()
-            .setEncoding(encoding)
-            .setSampleRateHertz(sampleRateHertz)
-            .setLanguageCode(languageCode)
-            .build();
-    String uri = "gs://bucket_name/file_name.flac";
-    RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
+    RecognitionConfig config = RecognitionConfig.newBuilder().build();
+    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
 
     LongRunningRecognizeResponse actualResponse =
         client.longRunningRecognizeAsync(config, audio).get();
@@ -171,7 +148,8 @@ public class SpeechClientTest {
 
     List<AbstractMessage> actualRequests = mockSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    LongRunningRecognizeRequest actualRequest = (LongRunningRecognizeRequest) actualRequests.get(0);
+    LongRunningRecognizeRequest actualRequest =
+        ((LongRunningRecognizeRequest) actualRequests.get(0));
 
     Assert.assertEquals(config, actualRequest.getConfig());
     Assert.assertEquals(audio, actualRequest.getAudio());
@@ -182,37 +160,29 @@ public class SpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void longRunningRecognizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSpeech.addException(exception);
 
     try {
-      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
-      int sampleRateHertz = 44100;
-      String languageCode = "en-US";
-      RecognitionConfig config =
-          RecognitionConfig.newBuilder()
-              .setEncoding(encoding)
-              .setSampleRateHertz(sampleRateHertz)
-              .setLanguageCode(languageCode)
-              .build();
-      String uri = "gs://bucket_name/file_name.flac";
-      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
-
+      RecognitionConfig config = RecognitionConfig.newBuilder().build();
+      RecognitionAudio audio = RecognitionAudio.newBuilder().build();
       client.longRunningRecognizeAsync(config, audio).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
   public void streamingRecognizeTest() throws Exception {
-    StreamingRecognizeResponse expectedResponse = StreamingRecognizeResponse.newBuilder().build();
+    StreamingRecognizeResponse expectedResponse =
+        StreamingRecognizeResponse.newBuilder()
+            .setError(Status.newBuilder().build())
+            .addAllResults(new ArrayList<StreamingRecognitionResult>())
+            .build();
     mockSpeech.addResponse(expectedResponse);
     StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
 
@@ -232,9 +202,8 @@ public class SpeechClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void streamingRecognizeExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSpeech.addException(exception);
     StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
 
@@ -252,7 +221,7 @@ public class SpeechClientTest {
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

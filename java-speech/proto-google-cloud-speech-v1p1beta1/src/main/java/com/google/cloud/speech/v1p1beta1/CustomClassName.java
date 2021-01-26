@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,20 +23,32 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class CustomClassName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_CUSTOM_CLASS =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/customClasses/{custom_class}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String location;
   private final String customClass;
+
+  @Deprecated
+  protected CustomClassName() {
+    project = null;
+    location = null;
+    customClass = null;
+  }
+
+  private CustomClassName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    customClass = Preconditions.checkNotNull(builder.getCustomClass());
+  }
 
   public String getProject() {
     return project;
@@ -56,12 +68,6 @@ public class CustomClassName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private CustomClassName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    customClass = Preconditions.checkNotNull(builder.getCustomClass());
   }
 
   public static CustomClassName of(String project, String location, String customClass) {
@@ -86,7 +92,7 @@ public class CustomClassName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_LOCATION_CUSTOM_CLASS.validatedMatch(
             formattedString, "CustomClassName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("custom_class"));
   }
@@ -100,7 +106,7 @@ public class CustomClassName implements ResourceName {
   }
 
   public static List<String> toStringList(List<CustomClassName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (CustomClassName value : values) {
       if (value == null) {
         list.add("");
@@ -112,17 +118,24 @@ public class CustomClassName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_CUSTOM_CLASS.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("location", location);
-          fieldMapBuilder.put("customClass", customClass);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
+          if (customClass != null) {
+            fieldMapBuilder.put("custom_class", customClass);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -136,16 +149,43 @@ public class CustomClassName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
+    return PROJECT_LOCATION_CUSTOM_CLASS.instantiate(
         "project", project, "location", location, "custom_class", customClass);
   }
 
-  /** Builder for CustomClassName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      CustomClassName that = ((CustomClassName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.customClass, that.customClass);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(customClass);
+    return h;
+  }
+
+  /** Builder for projects/{project}/locations/{location}/customClasses/{custom_class}. */
+  public static class Builder {
     private String project;
     private String location;
     private String customClass;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -174,8 +214,6 @@ public class CustomClassName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(CustomClassName customClassName) {
       project = customClassName.project;
       location = customClassName.location;
@@ -185,31 +223,5 @@ public class CustomClassName implements ResourceName {
     public CustomClassName build() {
       return new CustomClassName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof CustomClassName) {
-      CustomClassName that = (CustomClassName) o;
-      return (this.project.equals(that.project))
-          && (this.location.equals(that.location))
-          && (this.customClass.equals(that.customClass));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    h *= 1000003;
-    h ^= customClass.hashCode();
-    return h;
   }
 }
