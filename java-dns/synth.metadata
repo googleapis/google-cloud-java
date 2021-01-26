@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dns.git",
-        "sha": "47b687f2aeadc25f24c0c9401be8062b87527580"
+        "sha": "84b13f3c3d26479dc7696c24d3b02d590f084ddc"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "6133907dbb3ddab204a17a15d5c53ec0aae9b033"
+        "sha": "3816b080296d4d52975079fd26c110dd26ba25af"
       }
     }
   ],
