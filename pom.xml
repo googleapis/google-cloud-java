@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>google-cloud-logging-logback</artifactId>
-  <version>0.119.7-alpha-SNAPSHOT</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
+  <version>0.119.7-alpha</version><!-- {x-version-update:google-cloud-logging-logback:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Logging Logback Appender</name>
   <url>https://github.com/googleapis/java-logging-logback</url>

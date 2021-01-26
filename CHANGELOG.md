@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.119.7](https://www.github.com/googleapis/java-logging-logback/compare/v0.119.6...v0.119.7) (2021-01-26)
+
+
+### Dependencies
+
+* update api-commons ([#305](https://www.github.com/googleapis/java-logging-logback/issues/305)) ([8f5b2e5](https://www.github.com/googleapis/java-logging-logback/commit/8f5b2e5bf92c5cc269910decc1d80a738776b2dc))
+
 ### [0.119.6](https://www.github.com/googleapis/java-logging-logback/compare/v0.119.5...v0.119.6) (2021-01-25)
 
 
