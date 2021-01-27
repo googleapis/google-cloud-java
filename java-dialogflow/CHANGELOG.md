@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.4.6](https://www.github.com/googleapis/java-dialogflow/compare/v2.4.5...v2.4.6) (2021-01-27)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#413](https://www.github.com/googleapis/java-dialogflow/issues/413)) ([e0dba45](https://www.github.com/googleapis/java-dialogflow/commit/e0dba452b9da04dcaa5d2d91e233f20c290f10b5))
+
 ### [2.4.5](https://www.github.com/googleapis/java-dialogflow/compare/v2.4.4...v2.4.5) (2020-12-15)
 
 
