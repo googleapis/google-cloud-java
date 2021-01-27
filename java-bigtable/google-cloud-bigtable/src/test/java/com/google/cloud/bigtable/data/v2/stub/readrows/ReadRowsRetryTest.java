@@ -16,8 +16,11 @@
 package com.google.cloud.bigtable.data.v2.stub.readrows;
 
 import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.GrpcStatusCode;
 import com.google.api.gax.grpc.GrpcTransportChannel;
+import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
+import com.google.api.gax.rpc.InternalException;
 import com.google.api.gax.rpc.ServerStream;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.ReadRowsRequest;
@@ -39,6 +42,7 @@ import com.google.protobuf.BytesValue;
 import com.google.protobuf.StringValue;
 import io.grpc.Status;
 import io.grpc.Status.Code;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.grpc.testing.GrpcServerRule;
 import java.io.IOException;
@@ -260,6 +264,30 @@ public class ReadRowsRetryTest {
     Truth.assertThat(actualResults).containsExactly("r7").inOrder();
   }
 
+  @Test
+  public void retryRstStreamExceptionTest() {
+    ApiException exception =
+        new InternalException(
+            new StatusRuntimeException(
+                Status.INTERNAL.withDescription(
+                    "HTTP/2 error code: INTERNAL_ERROR\nReceived Rst stream")),
+            GrpcStatusCode.of(Code.INTERNAL),
+            false);
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest("k1")
+            .expectRequest(Range.closedOpen("r1", "r3"))
+            .respondWithException(Code.INTERNAL, exception));
+    service.expectations.add(
+        RpcExpectation.create()
+            .expectRequest("k1")
+            .expectRequest(Range.closedOpen("r1", "r3"))
+            .respondWith("k1", "r1", "r2"));
+
+    List<String> actualResults = getResults(Query.create(TABLE_ID).rowKey("k1").range("r1", "r3"));
+    Truth.assertThat(actualResults).containsExactly("k1", "r1", "r2").inOrder();
+  }
+
   private List<String> getResults(Query query) {
     ServerStream<Row> actualRows = client.readRows(query);
     List<String> actualValues = Lists.newArrayList();
@@ -292,6 +320,8 @@ public class ReadRowsRetryTest {
       }
       if (expectedRpc.statusCode.toStatus().isOk()) {
         responseObserver.onCompleted();
+      } else if (expectedRpc.exception != null) {
+        responseObserver.onError(expectedRpc.exception);
       } else {
         responseObserver.onError(expectedRpc.statusCode.toStatus().asRuntimeException());
       }
@@ -301,6 +331,7 @@ public class ReadRowsRetryTest {
   private static class RpcExpectation {
     ReadRowsRequest.Builder requestBuilder;
     Status.Code statusCode;
+    ApiException exception;
     List<ReadRowsResponse> responses;
 
     private RpcExpectation() {
@@ -367,6 +398,12 @@ public class ReadRowsRetryTest {
 
     RpcExpectation respondWithStatus(Status.Code code) {
       this.statusCode = code;
+      return this;
+    }
+
+    RpcExpectation respondWithException(Status.Code code, ApiException exception) {
+      this.statusCode = code;
+      this.exception = exception;
       return this;
     }
 
