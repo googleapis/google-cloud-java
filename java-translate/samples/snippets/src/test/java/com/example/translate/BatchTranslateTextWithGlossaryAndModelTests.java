@@ -23,6 +23,7 @@ import com.google.api.gax.paging.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -57,7 +58,6 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
-  @Rule public Retry retry = new Retry(3);
 
   private static final void cleanUpBucket() {
     Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -123,6 +123,9 @@ public class BatchTranslateTextWithGlossaryAndModelTests {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
+
+  @Rule
+  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testBatchTranslateTextWithGlossaryAndModel()
