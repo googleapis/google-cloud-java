@@ -51,11 +51,14 @@ public final class CommonProto {
           + "A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340"
           + "A\003\022\033\n\016status_message\030\005 \001(\tB\003\340A\003\022#\n\026reque"
           + "sted_cancellation\030\006 \001(\010B\003\340A\003\022\030\n\013api_vers"
-          + "ion\030\007 \001(\tB\003\340A\003B\234\001\n-com.google.cloud.netw"
+          + "ion\030\007 \001(\tB\003\340A\003B\243\002\n-com.google.cloud.netw"
           + "orkconnectivity.v1alpha1B\013CommonProtoP\001Z"
           + "\\google.golang.org/genproto/googleapis/c"
           + "loud/networkconnectivity/v1alpha1;networ"
-          + "kconnectivityb\006proto3"
+          + "kconnectivity\252\002)Google.Cloud.NetworkConn"
+          + "ectivity.V1Alpha1\312\002)Google\\Cloud\\Network"
+          + "Connectivity\\V1alpha1\352\002,Google::Cloud::N"
+          + "etworkConnectivity::V1alpha1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
