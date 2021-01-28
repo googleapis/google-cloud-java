@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.NotificationChannelServiceClient.ListNotificationChannelDescriptorsPagedResponse;
@@ -65,7 +66,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link NotificationChannelServiceStub}.
  *
@@ -82,21 +83,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getNotificationChannelDescriptor to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * NotificationChannelServiceStubSettings.Builder notificationChannelServiceSettingsBuilder =
  *     NotificationChannelServiceStubSettings.newBuilder();
  * notificationChannelServiceSettingsBuilder
  *     .getNotificationChannelDescriptorSettings()
  *     .setRetrySettings(
- *         notificationChannelServiceSettingsBuilder.getNotificationChannelDescriptorSettings().getRetrySettings().toBuilder()
+ *         notificationChannelServiceSettingsBuilder
+ *             .getNotificationChannelDescriptorSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * NotificationChannelServiceStubSettings notificationChannelServiceSettings = notificationChannelServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * NotificationChannelServiceStubSettings notificationChannelServiceSettings =
+ *     notificationChannelServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class NotificationChannelServiceStubSettings
     extends StubSettings<NotificationChannelServiceStubSettings> {
   /** The default scopes of the service. */
@@ -105,7 +109,6 @@ public class NotificationChannelServiceStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/monitoring")
           .add("https://www.googleapis.com/auth/monitoring.read")
-          .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
   private final PagedCallSettings<
@@ -137,6 +140,163 @@ public class NotificationChannelServiceStubSettings
       getNotificationChannelVerificationCodeSettings;
   private final UnaryCallSettings<VerifyNotificationChannelRequest, NotificationChannel>
       verifyNotificationChannelSettings;
+
+  private static final PagedListDescriptor<
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
+          NotificationChannelDescriptor>
+      LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListNotificationChannelDescriptorsRequest,
+              ListNotificationChannelDescriptorsResponse,
+              NotificationChannelDescriptor>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNotificationChannelDescriptorsRequest injectToken(
+                ListNotificationChannelDescriptorsRequest payload, String token) {
+              return ListNotificationChannelDescriptorsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListNotificationChannelDescriptorsRequest injectPageSize(
+                ListNotificationChannelDescriptorsRequest payload, int pageSize) {
+              return ListNotificationChannelDescriptorsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNotificationChannelDescriptorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNotificationChannelDescriptorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NotificationChannelDescriptor> extractResources(
+                ListNotificationChannelDescriptorsResponse payload) {
+              return payload.getChannelDescriptorsList() == null
+                  ? ImmutableList.<NotificationChannelDescriptor>of()
+                  : payload.getChannelDescriptorsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListNotificationChannelsRequest, ListNotificationChannelsResponse, NotificationChannel>
+      LIST_NOTIFICATION_CHANNELS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListNotificationChannelsRequest,
+              ListNotificationChannelsResponse,
+              NotificationChannel>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListNotificationChannelsRequest injectToken(
+                ListNotificationChannelsRequest payload, String token) {
+              return ListNotificationChannelsRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListNotificationChannelsRequest injectPageSize(
+                ListNotificationChannelsRequest payload, int pageSize) {
+              return ListNotificationChannelsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListNotificationChannelsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListNotificationChannelsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<NotificationChannel> extractResources(
+                ListNotificationChannelsResponse payload) {
+              return payload.getNotificationChannelsList() == null
+                  ? ImmutableList.<NotificationChannel>of()
+                  : payload.getNotificationChannelsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListNotificationChannelDescriptorsRequest,
+          ListNotificationChannelDescriptorsResponse,
+          ListNotificationChannelDescriptorsPagedResponse>
+      LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNotificationChannelDescriptorsRequest,
+              ListNotificationChannelDescriptorsResponse,
+              ListNotificationChannelDescriptorsPagedResponse>() {
+            @Override
+            public ApiFuture<ListNotificationChannelDescriptorsPagedResponse>
+                getFuturePagedResponse(
+                    UnaryCallable<
+                            ListNotificationChannelDescriptorsRequest,
+                            ListNotificationChannelDescriptorsResponse>
+                        callable,
+                    ListNotificationChannelDescriptorsRequest request,
+                    ApiCallContext context,
+                    ApiFuture<ListNotificationChannelDescriptorsResponse> futureResponse) {
+              PageContext<
+                      ListNotificationChannelDescriptorsRequest,
+                      ListNotificationChannelDescriptorsResponse,
+                      NotificationChannelDescriptor>
+                  pageContext =
+                      PageContext.create(
+                          callable,
+                          LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_DESC,
+                          request,
+                          context);
+              return ListNotificationChannelDescriptorsPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListNotificationChannelsRequest,
+          ListNotificationChannelsResponse,
+          ListNotificationChannelsPagedResponse>
+      LIST_NOTIFICATION_CHANNELS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListNotificationChannelsRequest,
+              ListNotificationChannelsResponse,
+              ListNotificationChannelsPagedResponse>() {
+            @Override
+            public ApiFuture<ListNotificationChannelsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListNotificationChannelsRequest, ListNotificationChannelsResponse>
+                    callable,
+                ListNotificationChannelsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListNotificationChannelsResponse> futureResponse) {
+              PageContext<
+                      ListNotificationChannelsRequest,
+                      ListNotificationChannelsResponse,
+                      NotificationChannel>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_NOTIFICATION_CHANNELS_PAGE_STR_DESC, request, context);
+              return ListNotificationChannelsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listNotificationChannelDescriptors. */
   public PagedCallSettings<
@@ -216,10 +376,10 @@ public class NotificationChannelServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcNotificationChannelServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -295,168 +455,10 @@ public class NotificationChannelServiceStubSettings
     verifyNotificationChannelSettings = settingsBuilder.verifyNotificationChannelSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListNotificationChannelDescriptorsRequest,
-          ListNotificationChannelDescriptorsResponse,
-          NotificationChannelDescriptor>
-      LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListNotificationChannelDescriptorsRequest,
-              ListNotificationChannelDescriptorsResponse,
-              NotificationChannelDescriptor>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListNotificationChannelDescriptorsRequest injectToken(
-                ListNotificationChannelDescriptorsRequest payload, String token) {
-              return ListNotificationChannelDescriptorsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListNotificationChannelDescriptorsRequest injectPageSize(
-                ListNotificationChannelDescriptorsRequest payload, int pageSize) {
-              return ListNotificationChannelDescriptorsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListNotificationChannelDescriptorsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListNotificationChannelDescriptorsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<NotificationChannelDescriptor> extractResources(
-                ListNotificationChannelDescriptorsResponse payload) {
-              return payload.getChannelDescriptorsList() != null
-                  ? payload.getChannelDescriptorsList()
-                  : ImmutableList.<NotificationChannelDescriptor>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListNotificationChannelsRequest, ListNotificationChannelsResponse, NotificationChannel>
-      LIST_NOTIFICATION_CHANNELS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListNotificationChannelsRequest,
-              ListNotificationChannelsResponse,
-              NotificationChannel>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListNotificationChannelsRequest injectToken(
-                ListNotificationChannelsRequest payload, String token) {
-              return ListNotificationChannelsRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListNotificationChannelsRequest injectPageSize(
-                ListNotificationChannelsRequest payload, int pageSize) {
-              return ListNotificationChannelsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListNotificationChannelsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListNotificationChannelsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<NotificationChannel> extractResources(
-                ListNotificationChannelsResponse payload) {
-              return payload.getNotificationChannelsList() != null
-                  ? payload.getNotificationChannelsList()
-                  : ImmutableList.<NotificationChannel>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListNotificationChannelDescriptorsRequest,
-          ListNotificationChannelDescriptorsResponse,
-          ListNotificationChannelDescriptorsPagedResponse>
-      LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListNotificationChannelDescriptorsRequest,
-              ListNotificationChannelDescriptorsResponse,
-              ListNotificationChannelDescriptorsPagedResponse>() {
-            @Override
-            public ApiFuture<ListNotificationChannelDescriptorsPagedResponse>
-                getFuturePagedResponse(
-                    UnaryCallable<
-                            ListNotificationChannelDescriptorsRequest,
-                            ListNotificationChannelDescriptorsResponse>
-                        callable,
-                    ListNotificationChannelDescriptorsRequest request,
-                    ApiCallContext context,
-                    ApiFuture<ListNotificationChannelDescriptorsResponse> futureResponse) {
-              PageContext<
-                      ListNotificationChannelDescriptorsRequest,
-                      ListNotificationChannelDescriptorsResponse,
-                      NotificationChannelDescriptor>
-                  pageContext =
-                      PageContext.create(
-                          callable,
-                          LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_DESC,
-                          request,
-                          context);
-              return ListNotificationChannelDescriptorsPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListNotificationChannelsRequest,
-          ListNotificationChannelsResponse,
-          ListNotificationChannelsPagedResponse>
-      LIST_NOTIFICATION_CHANNELS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListNotificationChannelsRequest,
-              ListNotificationChannelsResponse,
-              ListNotificationChannelsPagedResponse>() {
-            @Override
-            public ApiFuture<ListNotificationChannelsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListNotificationChannelsRequest, ListNotificationChannelsResponse>
-                    callable,
-                ListNotificationChannelsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListNotificationChannelsResponse> futureResponse) {
-              PageContext<
-                      ListNotificationChannelsRequest,
-                      ListNotificationChannelsResponse,
-                      NotificationChannel>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_NOTIFICATION_CHANNELS_PAGE_STR_DESC, request, context);
-              return ListNotificationChannelsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for NotificationChannelServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<NotificationChannelServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListNotificationChannelDescriptorsRequest,
             ListNotificationChannelDescriptorsResponse,
@@ -486,7 +488,6 @@ public class NotificationChannelServiceStubSettings
         getNotificationChannelVerificationCodeSettings;
     private final UnaryCallSettings.Builder<VerifyNotificationChannelRequest, NotificationChannel>
         verifyNotificationChannelSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -494,48 +495,12 @@ public class NotificationChannelServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
           "retry_policy_4_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_10_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -544,111 +509,6 @@ public class NotificationChannelServiceStubSettings
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(12000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(12000L))
-              .setTotalTimeout(Duration.ofMillis(12000L))
-              .build();
-      definitions.put("no_retry_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_6_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -660,11 +520,19 @@ public class NotificationChannelServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
       definitions.put("retry_policy_4_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
+              .build();
+      definitions.put("no_retry_10_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -672,26 +540,17 @@ public class NotificationChannelServiceStubSettings
 
       listNotificationChannelDescriptorsSettings =
           PagedCallSettings.newBuilder(LIST_NOTIFICATION_CHANNEL_DESCRIPTORS_PAGE_STR_FACT);
-
       getNotificationChannelDescriptorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listNotificationChannelsSettings =
           PagedCallSettings.newBuilder(LIST_NOTIFICATION_CHANNELS_PAGE_STR_FACT);
-
       getNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       sendNotificationChannelVerificationCodeSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getNotificationChannelVerificationCodeSettings =
           UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       verifyNotificationChannelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -706,72 +565,7 @@ public class NotificationChannelServiceStubSettings
               sendNotificationChannelVerificationCodeSettings,
               getNotificationChannelVerificationCodeSettings,
               verifyNotificationChannelSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listNotificationChannelDescriptorsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .getNotificationChannelDescriptorSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .listNotificationChannelsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .getNotificationChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .createNotificationChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .updateNotificationChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .deleteNotificationChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .sendNotificationChannelVerificationCodeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
-
-      builder
-          .getNotificationChannelVerificationCodeSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      builder
-          .verifyNotificationChannelSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_2_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_2_params"));
-
-      return builder;
     }
 
     protected Builder(NotificationChannelServiceStubSettings settings) {
@@ -806,7 +600,72 @@ public class NotificationChannelServiceStubSettings
               verifyNotificationChannelSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listNotificationChannelDescriptorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .getNotificationChannelDescriptorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .listNotificationChannelsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .getNotificationChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .createNotificationChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
+
+      builder
+          .updateNotificationChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
+
+      builder
+          .deleteNotificationChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .sendNotificationChannelVerificationCodeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_10_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_10_params"));
+
+      builder
+          .getNotificationChannelVerificationCodeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      builder
+          .verifyNotificationChannelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckConfigsPagedResponse;
 import static com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckIpsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.v3.CreateUptimeCheckConfigRequest;
 import com.google.monitoring.v3.DeleteUptimeCheckConfigRequest;
 import com.google.monitoring.v3.GetUptimeCheckConfigRequest;
@@ -44,16 +45,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Monitoring API.
+ * gRPC stub implementation for the UptimeCheckService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
-
   private static final MethodDescriptor<
           ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
       listUptimeCheckConfigsMethodDescriptor =
@@ -66,6 +65,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUptimeCheckConfigsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetUptimeCheckConfigRequest, UptimeCheckConfig>
       getUptimeCheckConfigMethodDescriptor =
           MethodDescriptor.<GetUptimeCheckConfigRequest, UptimeCheckConfig>newBuilder()
@@ -75,6 +75,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(GetUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateUptimeCheckConfigRequest, UptimeCheckConfig>
       createUptimeCheckConfigMethodDescriptor =
           MethodDescriptor.<CreateUptimeCheckConfigRequest, UptimeCheckConfig>newBuilder()
@@ -84,6 +85,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(CreateUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigMethodDescriptor =
           MethodDescriptor.<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>newBuilder()
@@ -93,6 +95,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(UpdateUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UptimeCheckConfig.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteUptimeCheckConfigRequest, Empty>
       deleteUptimeCheckConfigMethodDescriptor =
           MethodDescriptor.<DeleteUptimeCheckConfigRequest, Empty>newBuilder()
@@ -102,6 +105,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
                   ProtoUtils.marshaller(DeleteUptimeCheckConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
       listUptimeCheckIpsMethodDescriptor =
           MethodDescriptor.<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>newBuilder()
@@ -112,8 +116,6 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUptimeCheckIpsResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
       listUptimeCheckConfigsCallable;
@@ -132,6 +134,8 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
   private final UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>
       listUptimeCheckIpsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcUptimeCheckServiceStub create(UptimeCheckServiceStubSettings settings)
@@ -172,6 +176,7 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
         listUptimeCheckConfigsTransportSettings =
@@ -293,17 +298,22 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
             settings.listUptimeCheckIpsSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsPagedResponse>
-      listUptimeCheckConfigsPagedCallable() {
-    return listUptimeCheckConfigsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
       listUptimeCheckConfigsCallable() {
     return listUptimeCheckConfigsCallable;
+  }
+
+  public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsPagedResponse>
+      listUptimeCheckConfigsPagedCallable() {
+    return listUptimeCheckConfigsPagedCallable;
   }
 
   public UnaryCallable<GetUptimeCheckConfigRequest, UptimeCheckConfig>
@@ -325,14 +335,14 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
     return deleteUptimeCheckConfigCallable;
   }
 
-  public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>
-      listUptimeCheckIpsPagedCallable() {
-    return listUptimeCheckIpsPagedCallable;
-  }
-
   public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
       listUptimeCheckIpsCallable() {
     return listUptimeCheckIpsCallable;
+  }
+
+  public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>
+      listUptimeCheckIpsPagedCallable() {
+    return listUptimeCheckIpsPagedCallable;
   }
 
   @Override

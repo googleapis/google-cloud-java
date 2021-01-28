@@ -28,23 +28,23 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class ProjectName implements ResourceName {
-  private static final PathTemplate PROJECT =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
+public class FolderName implements ResourceName {
+  private static final PathTemplate FOLDER =
+      PathTemplate.createWithoutUrlEncoding("folders/{folder}");
   private volatile Map<String, String> fieldValuesMap;
-  private final String project;
+  private final String folder;
 
   @Deprecated
-  protected ProjectName() {
-    project = null;
+  protected FolderName() {
+    folder = null;
   }
 
-  private ProjectName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
+  private FolderName(Builder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
   }
 
-  public String getProject() {
-    return project;
+  public String getFolder() {
+    return folder;
   }
 
   public static Builder newBuilder() {
@@ -55,35 +55,35 @@ public class ProjectName implements ResourceName {
     return new Builder(this);
   }
 
-  public static ProjectName of(String project) {
-    return newBuilder().setProject(project).build();
+  public static FolderName of(String folder) {
+    return newBuilder().setFolder(folder).build();
   }
 
-  public static String format(String project) {
-    return newBuilder().setProject(project).build().toString();
+  public static String format(String folder) {
+    return newBuilder().setFolder(folder).build().toString();
   }
 
-  public static ProjectName parse(String formattedString) {
+  public static FolderName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT.validatedMatch(
-            formattedString, "ProjectName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"));
+        FOLDER.validatedMatch(
+            formattedString, "FolderName.parse: formattedString not in valid format");
+    return of(matchMap.get("folder"));
   }
 
-  public static List<ProjectName> parseList(List<String> formattedStrings) {
-    List<ProjectName> list = new ArrayList<>(formattedStrings.size());
+  public static List<FolderName> parseList(List<String> formattedStrings) {
+    List<FolderName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<ProjectName> values) {
+  public static List<String> toStringList(List<FolderName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (ProjectName value : values) {
+    for (FolderName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -94,7 +94,7 @@ public class ProjectName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT.matches(formattedString);
+    return FOLDER.matches(formattedString);
   }
 
   @Override
@@ -103,8 +103,8 @@ public class ProjectName implements ResourceName {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (project != null) {
-            fieldMapBuilder.put("project", project);
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +119,7 @@ public class ProjectName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT.instantiate("project", project);
+    return FOLDER.instantiate("folder", folder);
   }
 
   @Override
@@ -128,8 +128,8 @@ public class ProjectName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      ProjectName that = ((ProjectName) o);
-      return Objects.equals(this.project, that.project);
+      FolderName that = ((FolderName) o);
+      return Objects.equals(this.folder, that.folder);
     }
     return false;
   }
@@ -138,31 +138,31 @@ public class ProjectName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= Objects.hashCode(project);
+    h ^= Objects.hashCode(folder);
     return h;
   }
 
-  /** Builder for projects/{project}. */
+  /** Builder for folders/{folder}. */
   public static class Builder {
-    private String project;
+    private String folder;
 
     protected Builder() {}
 
-    public String getProject() {
-      return project;
+    public String getFolder() {
+      return folder;
     }
 
-    public Builder setProject(String project) {
-      this.project = project;
+    public Builder setFolder(String folder) {
+      this.folder = folder;
       return this;
     }
 
-    private Builder(ProjectName projectName) {
-      project = projectName.project;
+    private Builder(FolderName folderName) {
+      folder = folderName.folder;
     }
 
-    public ProjectName build() {
-      return new ProjectName(this);
+    public FolderName build() {
+      return new FolderName(this);
     }
   }
 }

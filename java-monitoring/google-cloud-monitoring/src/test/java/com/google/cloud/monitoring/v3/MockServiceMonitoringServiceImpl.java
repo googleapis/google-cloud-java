@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.BetaApi;
@@ -38,9 +39,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -77,10 +79,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof Service) {
       requests.add(request);
-      responseObserver.onNext((Service) response);
+      responseObserver.onNext(((Service) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -91,10 +93,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof Service) {
       requests.add(request);
-      responseObserver.onNext((Service) response);
+      responseObserver.onNext(((Service) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -106,10 +108,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof ListServicesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListServicesResponse) response);
+      responseObserver.onNext(((ListServicesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -121,10 +123,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof Service) {
       requests.add(request);
-      responseObserver.onNext((Service) response);
+      responseObserver.onNext(((Service) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -135,10 +137,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -151,10 +153,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof ServiceLevelObjective) {
       requests.add(request);
-      responseObserver.onNext((ServiceLevelObjective) response);
+      responseObserver.onNext(((ServiceLevelObjective) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -167,10 +169,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof ServiceLevelObjective) {
       requests.add(request);
-      responseObserver.onNext((ServiceLevelObjective) response);
+      responseObserver.onNext(((ServiceLevelObjective) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -183,10 +185,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof ListServiceLevelObjectivesResponse) {
       requests.add(request);
-      responseObserver.onNext((ListServiceLevelObjectivesResponse) response);
+      responseObserver.onNext(((ListServiceLevelObjectivesResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -199,10 +201,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof ServiceLevelObjective) {
       requests.add(request);
-      responseObserver.onNext((ServiceLevelObjective) response);
+      responseObserver.onNext(((ServiceLevelObjective) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -214,10 +216,10 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

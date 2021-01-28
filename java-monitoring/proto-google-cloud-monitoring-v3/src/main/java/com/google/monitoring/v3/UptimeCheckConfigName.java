@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,32 +26,59 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class UptimeCheckConfigName implements ResourceName {
-
-  @Deprecated
-  protected UptimeCheckConfigName() {}
-
-  private static final PathTemplate PROJECT_UPTIME_CHECK_CONFIG_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_UPTIME_CHECK_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/uptimeCheckConfigs/{uptime_check_config}");
-  private static final PathTemplate ORGANIZATION_UPTIME_CHECK_CONFIG_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_UPTIME_CHECK_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/uptimeCheckConfigs/{uptime_check_config}");
-  private static final PathTemplate FOLDER_UPTIME_CHECK_CONFIG_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_UPTIME_CHECK_CONFIG =
       PathTemplate.createWithoutUrlEncoding(
           "folders/{folder}/uptimeCheckConfigs/{uptime_check_config}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String uptimeCheckConfig;
+  private final String organization;
+  private final String folder;
 
-  private String project;
-  private String uptimeCheckConfig;
-  private String organization;
-  private String folder;
+  @Deprecated
+  protected UptimeCheckConfigName() {
+    project = null;
+    uptimeCheckConfig = null;
+    organization = null;
+    folder = null;
+  }
+
+  private UptimeCheckConfigName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    uptimeCheckConfig = Preconditions.checkNotNull(builder.getUptimeCheckConfig());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_UPTIME_CHECK_CONFIG;
+  }
+
+  private UptimeCheckConfigName(OrganizationUptimeCheckConfigBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    uptimeCheckConfig = Preconditions.checkNotNull(builder.getUptimeCheckConfig());
+    project = null;
+    folder = null;
+    pathTemplate = ORGANIZATION_UPTIME_CHECK_CONFIG;
+  }
+
+  private UptimeCheckConfigName(FolderUptimeCheckConfigBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    uptimeCheckConfig = Preconditions.checkNotNull(builder.getUptimeCheckConfig());
+    project = null;
+    organization = null;
+    pathTemplate = FOLDER_UPTIME_CHECK_CONFIG;
+  }
 
   public String getProject() {
     return project;
@@ -67,24 +94,6 @@ public class UptimeCheckConfigName implements ResourceName {
 
   public String getFolder() {
     return folder;
-  }
-
-  private UptimeCheckConfigName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    uptimeCheckConfig = Preconditions.checkNotNull(builder.getUptimeCheckConfig());
-    pathTemplate = PROJECT_UPTIME_CHECK_CONFIG_PATH_TEMPLATE;
-  }
-
-  private UptimeCheckConfigName(OrganizationUptimeCheckConfigBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    uptimeCheckConfig = Preconditions.checkNotNull(builder.getUptimeCheckConfig());
-    pathTemplate = ORGANIZATION_UPTIME_CHECK_CONFIG_PATH_TEMPLATE;
-  }
-
-  private UptimeCheckConfigName(FolderUptimeCheckConfigBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    uptimeCheckConfig = Preconditions.checkNotNull(builder.getUptimeCheckConfig());
-    pathTemplate = FOLDER_UPTIME_CHECK_CONFIG_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -111,19 +120,13 @@ public class UptimeCheckConfigName implements ResourceName {
   }
 
   public static UptimeCheckConfigName of(String project, String uptimeCheckConfig) {
-    return newProjectUptimeCheckConfigBuilder()
-        .setProject(project)
-        .setUptimeCheckConfig(uptimeCheckConfig)
-        .build();
+    return newBuilder().setProject(project).setUptimeCheckConfig(uptimeCheckConfig).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static UptimeCheckConfigName ofProjectUptimeCheckConfigName(
       String project, String uptimeCheckConfig) {
-    return newProjectUptimeCheckConfigBuilder()
-        .setProject(project)
-        .setUptimeCheckConfig(uptimeCheckConfig)
-        .build();
+    return newBuilder().setProject(project).setUptimeCheckConfig(uptimeCheckConfig).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -185,23 +188,21 @@ public class UptimeCheckConfigName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_UPTIME_CHECK_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_UPTIME_CHECK_CONFIG.match(formattedString);
       return ofProjectUptimeCheckConfigName(
           matchMap.get("project"), matchMap.get("uptime_check_config"));
-    } else if (ORGANIZATION_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_UPTIME_CHECK_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_UPTIME_CHECK_CONFIG.match(formattedString);
       return ofOrganizationUptimeCheckConfigName(
           matchMap.get("organization"), matchMap.get("uptime_check_config"));
-    } else if (FOLDER_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          FOLDER_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_UPTIME_CHECK_CONFIG.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_UPTIME_CHECK_CONFIG.match(formattedString);
       return ofFolderUptimeCheckConfigName(
           matchMap.get("folder"), matchMap.get("uptime_check_config"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "UptimeCheckConfigName.parse: formattedString not in valid format");
   }
 
   public static List<UptimeCheckConfigName> parseList(List<String> formattedStrings) {
@@ -225,9 +226,9 @@ public class UptimeCheckConfigName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_UPTIME_CHECK_CONFIG_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_UPTIME_CHECK_CONFIG.matches(formattedString)
+        || ORGANIZATION_UPTIME_CHECK_CONFIG.matches(formattedString)
+        || FOLDER_UPTIME_CHECK_CONFIG.matches(formattedString);
   }
 
   @Override
@@ -264,9 +265,39 @@ public class UptimeCheckConfigName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      UptimeCheckConfigName that = ((UptimeCheckConfigName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.uptimeCheckConfig, that.uptimeCheckConfig)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(uptimeCheckConfig);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    return h;
+  }
+
   /** Builder for projects/{project}/uptimeCheckConfigs/{uptime_check_config}. */
   public static class Builder {
-
     private String project;
     private String uptimeCheckConfig;
 
@@ -292,9 +323,8 @@ public class UptimeCheckConfigName implements ResourceName {
 
     private Builder(UptimeCheckConfigName uptimeCheckConfigName) {
       Preconditions.checkArgument(
-          uptimeCheckConfigName.pathTemplate == PROJECT_UPTIME_CHECK_CONFIG_PATH_TEMPLATE,
-          "toBuilder is only supported when UptimeCheckConfigName has the pattern of "
-              + "projects/{project}/uptimeCheckConfigs/{uptime_check_config}.");
+          Objects.equals(uptimeCheckConfigName.pathTemplate, PROJECT_UPTIME_CHECK_CONFIG),
+          "toBuilder is only supported when UptimeCheckConfigName has the pattern of projects/{project}/uptimeCheckConfigs/{uptime_check_config}");
       project = uptimeCheckConfigName.project;
       uptimeCheckConfig = uptimeCheckConfigName.uptimeCheckConfig;
     }
@@ -307,11 +337,10 @@ public class UptimeCheckConfigName implements ResourceName {
   /** Builder for organizations/{organization}/uptimeCheckConfigs/{uptime_check_config}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationUptimeCheckConfigBuilder {
-
     private String organization;
     private String uptimeCheckConfig;
 
-    private OrganizationUptimeCheckConfigBuilder() {}
+    protected OrganizationUptimeCheckConfigBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -339,11 +368,10 @@ public class UptimeCheckConfigName implements ResourceName {
   /** Builder for folders/{folder}/uptimeCheckConfigs/{uptime_check_config}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderUptimeCheckConfigBuilder {
-
     private String folder;
     private String uptimeCheckConfig;
 
-    private FolderUptimeCheckConfigBuilder() {}
+    protected FolderUptimeCheckConfigBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -366,36 +394,5 @@ public class UptimeCheckConfigName implements ResourceName {
     public UptimeCheckConfigName build() {
       return new UptimeCheckConfigName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      UptimeCheckConfigName that = (UptimeCheckConfigName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.uptimeCheckConfig, that.uptimeCheckConfig))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(uptimeCheckConfig);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    return h;
   }
 }

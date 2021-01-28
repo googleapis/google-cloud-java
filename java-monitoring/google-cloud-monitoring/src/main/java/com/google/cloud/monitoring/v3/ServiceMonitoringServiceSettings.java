@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3;
 
 import static com.google.cloud.monitoring.v3.ServiceMonitoringServiceClient.ListServiceLevelObjectivesPagedResponse;
@@ -49,7 +50,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ServiceMonitoringServiceClient}.
  *
@@ -66,23 +67,26 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of createService to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ServiceMonitoringServiceSettings.Builder serviceMonitoringServiceSettingsBuilder =
  *     ServiceMonitoringServiceSettings.newBuilder();
  * serviceMonitoringServiceSettingsBuilder
  *     .createServiceSettings()
  *     .setRetrySettings(
- *         serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
+ *         serviceMonitoringServiceSettingsBuilder
+ *             .createServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings = serviceMonitoringServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings =
+ *     serviceMonitoringServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class ServiceMonitoringServiceSettings
     extends ClientSettings<ServiceMonitoringServiceSettings> {
+
   /** Returns the object with the settings used for calls to createService. */
   public UnaryCallSettings<CreateServiceRequest, Service> createServiceSettings() {
     return ((ServiceMonitoringServiceStubSettings) getStubSettings()).createServiceSettings();
@@ -208,16 +212,13 @@ public class ServiceMonitoringServiceSettings
   /** Builder for ServiceMonitoringServiceSettings. */
   public static class Builder
       extends ClientSettings.Builder<ServiceMonitoringServiceSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ServiceMonitoringServiceStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ServiceMonitoringServiceStubSettings.newBuilder());
     }
 
     protected Builder(ServiceMonitoringServiceSettings settings) {
@@ -228,11 +229,15 @@ public class ServiceMonitoringServiceSettings
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ServiceMonitoringServiceStubSettings.newBuilder());
+    }
+
     public ServiceMonitoringServiceStubSettings.Builder getStubSettingsBuilder() {
       return ((ServiceMonitoringServiceStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

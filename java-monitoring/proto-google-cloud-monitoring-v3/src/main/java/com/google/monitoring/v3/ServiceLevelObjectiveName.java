@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,33 +26,64 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ServiceLevelObjectiveName implements ResourceName {
-
-  @Deprecated
-  protected ServiceLevelObjectiveName() {}
-
-  private static final PathTemplate PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}");
-  private static final PathTemplate ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/services/{service}/serviceLevelObjectives/{service_level_objective}");
-  private static final PathTemplate FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE =
       PathTemplate.createWithoutUrlEncoding(
           "folders/{folder}/services/{service}/serviceLevelObjectives/{service_level_objective}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String service;
+  private final String serviceLevelObjective;
+  private final String organization;
+  private final String folder;
 
-  private String project;
-  private String service;
-  private String serviceLevelObjective;
-  private String organization;
-  private String folder;
+  @Deprecated
+  protected ServiceLevelObjectiveName() {
+    project = null;
+    service = null;
+    serviceLevelObjective = null;
+    organization = null;
+    folder = null;
+  }
+
+  private ServiceLevelObjectiveName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    service = Preconditions.checkNotNull(builder.getService());
+    serviceLevelObjective = Preconditions.checkNotNull(builder.getServiceLevelObjective());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE;
+  }
+
+  private ServiceLevelObjectiveName(OrganizationServiceServiceLevelObjectiveBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    service = Preconditions.checkNotNull(builder.getService());
+    serviceLevelObjective = Preconditions.checkNotNull(builder.getServiceLevelObjective());
+    project = null;
+    folder = null;
+    pathTemplate = ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE;
+  }
+
+  private ServiceLevelObjectiveName(FolderServiceServiceLevelObjectiveBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    service = Preconditions.checkNotNull(builder.getService());
+    serviceLevelObjective = Preconditions.checkNotNull(builder.getServiceLevelObjective());
+    project = null;
+    organization = null;
+    pathTemplate = FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE;
+  }
 
   public String getProject() {
     return project;
@@ -72,27 +103,6 @@ public class ServiceLevelObjectiveName implements ResourceName {
 
   public String getFolder() {
     return folder;
-  }
-
-  private ServiceLevelObjectiveName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    service = Preconditions.checkNotNull(builder.getService());
-    serviceLevelObjective = Preconditions.checkNotNull(builder.getServiceLevelObjective());
-    pathTemplate = PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE;
-  }
-
-  private ServiceLevelObjectiveName(OrganizationServiceServiceLevelObjectiveBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    service = Preconditions.checkNotNull(builder.getService());
-    serviceLevelObjective = Preconditions.checkNotNull(builder.getServiceLevelObjective());
-    pathTemplate = ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE;
-  }
-
-  private ServiceLevelObjectiveName(FolderServiceServiceLevelObjectiveBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    service = Preconditions.checkNotNull(builder.getService());
-    serviceLevelObjective = Preconditions.checkNotNull(builder.getServiceLevelObjective());
-    pathTemplate = FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -122,7 +132,7 @@ public class ServiceLevelObjectiveName implements ResourceName {
 
   public static ServiceLevelObjectiveName of(
       String project, String service, String serviceLevelObjective) {
-    return newProjectServiceServiceLevelObjectiveBuilder()
+    return newBuilder()
         .setProject(project)
         .setService(service)
         .setServiceLevelObjective(serviceLevelObjective)
@@ -132,7 +142,7 @@ public class ServiceLevelObjectiveName implements ResourceName {
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static ServiceLevelObjectiveName ofProjectServiceServiceLevelObjectiveName(
       String project, String service, String serviceLevelObjective) {
-    return newProjectServiceServiceLevelObjectiveBuilder()
+    return newBuilder()
         .setProject(project)
         .setService(service)
         .setServiceLevelObjective(serviceLevelObjective)
@@ -205,28 +215,26 @@ public class ServiceLevelObjectiveName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE.match(formattedString);
       return ofProjectServiceServiceLevelObjectiveName(
           matchMap.get("project"),
           matchMap.get("service"),
           matchMap.get("service_level_objective"));
-    } else if (ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.matches(
-        formattedString)) {
+    } else if (ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE.matches(formattedString)) {
       Map<String, String> matchMap =
-          ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.match(formattedString);
+          ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE.match(formattedString);
       return ofOrganizationServiceServiceLevelObjectiveName(
           matchMap.get("organization"),
           matchMap.get("service"),
           matchMap.get("service_level_objective"));
-    } else if (FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE.match(formattedString);
       return ofFolderServiceServiceLevelObjectiveName(
           matchMap.get("folder"), matchMap.get("service"), matchMap.get("service_level_objective"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "ServiceLevelObjectiveName.parse: formattedString not in valid format");
   }
 
   public static List<ServiceLevelObjectiveName> parseList(List<String> formattedStrings) {
@@ -250,9 +258,9 @@ public class ServiceLevelObjectiveName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE.matches(formattedString)
+        || ORGANIZATION_SERVICE_SERVICE_LEVEL_OBJECTIVE.matches(formattedString)
+        || FOLDER_SERVICE_SERVICE_LEVEL_OBJECTIVE.matches(formattedString);
   }
 
   @Override
@@ -292,12 +300,45 @@ public class ServiceLevelObjectiveName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ServiceLevelObjectiveName that = ((ServiceLevelObjectiveName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.service, that.service)
+          && Objects.equals(this.serviceLevelObjective, that.serviceLevelObjective)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(service);
+    h *= 1000003;
+    h ^= Objects.hashCode(serviceLevelObjective);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    return h;
+  }
+
   /**
    * Builder for
    * projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}.
    */
   public static class Builder {
-
     private String project;
     private String service;
     private String serviceLevelObjective;
@@ -333,10 +374,9 @@ public class ServiceLevelObjectiveName implements ResourceName {
 
     private Builder(ServiceLevelObjectiveName serviceLevelObjectiveName) {
       Preconditions.checkArgument(
-          serviceLevelObjectiveName.pathTemplate
-              == PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE_PATH_TEMPLATE,
-          "toBuilder is only supported when ServiceLevelObjectiveName has the pattern of "
-              + "projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}.");
+          Objects.equals(
+              serviceLevelObjectiveName.pathTemplate, PROJECT_SERVICE_SERVICE_LEVEL_OBJECTIVE),
+          "toBuilder is only supported when ServiceLevelObjectiveName has the pattern of projects/{project}/services/{service}/serviceLevelObjectives/{service_level_objective}");
       project = serviceLevelObjectiveName.project;
       service = serviceLevelObjectiveName.service;
       serviceLevelObjective = serviceLevelObjectiveName.serviceLevelObjective;
@@ -353,12 +393,11 @@ public class ServiceLevelObjectiveName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationServiceServiceLevelObjectiveBuilder {
-
     private String organization;
     private String service;
     private String serviceLevelObjective;
 
-    private OrganizationServiceServiceLevelObjectiveBuilder() {}
+    protected OrganizationServiceServiceLevelObjectiveBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -399,12 +438,11 @@ public class ServiceLevelObjectiveName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderServiceServiceLevelObjectiveBuilder {
-
     private String folder;
     private String service;
     private String serviceLevelObjective;
 
-    private FolderServiceServiceLevelObjectiveBuilder() {}
+    protected FolderServiceServiceLevelObjectiveBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -437,39 +475,5 @@ public class ServiceLevelObjectiveName implements ResourceName {
     public ServiceLevelObjectiveName build() {
       return new ServiceLevelObjectiveName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      ServiceLevelObjectiveName that = (ServiceLevelObjectiveName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.service, that.service))
-          && (Objects.equals(this.serviceLevelObjective, that.serviceLevelObjective))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(service);
-    h *= 1000003;
-    h ^= Objects.hashCode(serviceLevelObjective);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    return h;
   }
 }

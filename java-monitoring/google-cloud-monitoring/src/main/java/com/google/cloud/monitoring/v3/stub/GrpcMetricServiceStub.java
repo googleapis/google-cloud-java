@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.MetricServiceClient.ListMetricDescriptorsPagedResponse;
@@ -21,7 +22,6 @@ import static com.google.cloud.monitoring.v3.MetricServiceClient.ListTimeSeriesP
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -30,6 +30,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -49,16 +50,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Monitoring API.
+ * gRPC stub implementation for the MetricService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcMetricServiceStub extends MetricServiceStub {
-
   private static final MethodDescriptor<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsMethodDescriptor =
@@ -75,6 +74,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(
                       ListMonitoredResourceDescriptorsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<
           GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorMethodDescriptor =
@@ -88,6 +88,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MonitoredResourceDescriptor.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsMethodDescriptor =
           MethodDescriptor.<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>newBuilder()
@@ -98,6 +99,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetricDescriptorsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorMethodDescriptor =
           MethodDescriptor.<GetMetricDescriptorRequest, MetricDescriptor>newBuilder()
@@ -107,6 +109,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(GetMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorMethodDescriptor =
           MethodDescriptor.<CreateMetricDescriptorRequest, MetricDescriptor>newBuilder()
@@ -116,6 +119,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(CreateMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MetricDescriptor.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteMetricDescriptorRequest, Empty>
       deleteMetricDescriptorMethodDescriptor =
           MethodDescriptor.<DeleteMetricDescriptorRequest, Empty>newBuilder()
@@ -125,6 +129,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(DeleteMetricDescriptorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse>
       listTimeSeriesMethodDescriptor =
           MethodDescriptor.<ListTimeSeriesRequest, ListTimeSeriesResponse>newBuilder()
@@ -135,6 +140,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTimeSeriesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateTimeSeriesRequest, Empty>
       createTimeSeriesMethodDescriptor =
           MethodDescriptor.<CreateTimeSeriesRequest, Empty>newBuilder()
@@ -144,8 +150,6 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
                   ProtoUtils.marshaller(CreateTimeSeriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
@@ -169,6 +173,8 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
       listTimeSeriesPagedCallable;
   private final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcMetricServiceStub create(MetricServiceStubSettings settings)
@@ -207,6 +213,7 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
@@ -376,13 +383,12 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
         callableFactory.createUnaryCallable(
             createTimeSeriesTransportSettings, settings.createTimeSeriesSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<
-          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
-      listMonitoredResourceDescriptorsPagedCallable() {
-    return listMonitoredResourceDescriptorsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<
@@ -391,19 +397,25 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
     return listMonitoredResourceDescriptorsCallable;
   }
 
+  public UnaryCallable<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
+      listMonitoredResourceDescriptorsPagedCallable() {
+    return listMonitoredResourceDescriptorsPagedCallable;
+  }
+
   public UnaryCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorCallable() {
     return getMonitoredResourceDescriptorCallable;
   }
 
-  public UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsPagedResponse>
-      listMetricDescriptorsPagedCallable() {
-    return listMetricDescriptorsPagedCallable;
-  }
-
   public UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsCallable() {
     return listMetricDescriptorsCallable;
+  }
+
+  public UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsPagedResponse>
+      listMetricDescriptorsPagedCallable() {
+    return listMetricDescriptorsPagedCallable;
   }
 
   public UnaryCallable<GetMetricDescriptorRequest, MetricDescriptor> getMetricDescriptorCallable() {
@@ -419,13 +431,13 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
     return deleteMetricDescriptorCallable;
   }
 
+  public UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> listTimeSeriesCallable() {
+    return listTimeSeriesCallable;
+  }
+
   public UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
       listTimeSeriesPagedCallable() {
     return listTimeSeriesPagedCallable;
-  }
-
-  public UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> listTimeSeriesCallable() {
-    return listTimeSeriesCallable;
   }
 
   public UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {

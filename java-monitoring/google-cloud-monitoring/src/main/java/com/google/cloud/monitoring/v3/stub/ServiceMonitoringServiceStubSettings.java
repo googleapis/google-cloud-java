@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.ServiceMonitoringServiceClient.ListServiceLevelObjectivesPagedResponse;
@@ -64,7 +65,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ServiceMonitoringServiceStub}.
  *
@@ -81,21 +82,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of createService to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ServiceMonitoringServiceStubSettings.Builder serviceMonitoringServiceSettingsBuilder =
  *     ServiceMonitoringServiceStubSettings.newBuilder();
  * serviceMonitoringServiceSettingsBuilder
  *     .createServiceSettings()
  *     .setRetrySettings(
- *         serviceMonitoringServiceSettingsBuilder.createServiceSettings().getRetrySettings().toBuilder()
+ *         serviceMonitoringServiceSettingsBuilder
+ *             .createServiceSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * ServiceMonitoringServiceStubSettings serviceMonitoringServiceSettings = serviceMonitoringServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * ServiceMonitoringServiceStubSettings serviceMonitoringServiceSettings =
+ *     serviceMonitoringServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class ServiceMonitoringServiceStubSettings
     extends StubSettings<ServiceMonitoringServiceStubSettings> {
   /** The default scopes of the service. */
@@ -104,7 +108,6 @@ public class ServiceMonitoringServiceStubSettings
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/monitoring")
           .add("https://www.googleapis.com/auth/monitoring.read")
-          .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
   private final UnaryCallSettings<CreateServiceRequest, Service> createServiceSettings;
@@ -127,6 +130,136 @@ public class ServiceMonitoringServiceStubSettings
       updateServiceLevelObjectiveSettings;
   private final UnaryCallSettings<DeleteServiceLevelObjectiveRequest, Empty>
       deleteServiceLevelObjectiveSettings;
+
+  private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
+      LIST_SERVICES_PAGE_STR_DESC =
+          new PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListServicesRequest injectToken(ListServicesRequest payload, String token) {
+              return ListServicesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListServicesRequest injectPageSize(ListServicesRequest payload, int pageSize) {
+              return ListServicesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListServicesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListServicesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Service> extractResources(ListServicesResponse payload) {
+              return payload.getServicesList() == null
+                  ? ImmutableList.<Service>of()
+                  : payload.getServicesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListServiceLevelObjectivesRequest,
+          ListServiceLevelObjectivesResponse,
+          ServiceLevelObjective>
+      LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListServiceLevelObjectivesRequest,
+              ListServiceLevelObjectivesResponse,
+              ServiceLevelObjective>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListServiceLevelObjectivesRequest injectToken(
+                ListServiceLevelObjectivesRequest payload, String token) {
+              return ListServiceLevelObjectivesRequest.newBuilder(payload)
+                  .setPageToken(token)
+                  .build();
+            }
+
+            @Override
+            public ListServiceLevelObjectivesRequest injectPageSize(
+                ListServiceLevelObjectivesRequest payload, int pageSize) {
+              return ListServiceLevelObjectivesRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListServiceLevelObjectivesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListServiceLevelObjectivesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ServiceLevelObjective> extractResources(
+                ListServiceLevelObjectivesResponse payload) {
+              return payload.getServiceLevelObjectivesList() == null
+                  ? ImmutableList.<ServiceLevelObjective>of()
+                  : payload.getServiceLevelObjectivesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
+      LIST_SERVICES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>() {
+            @Override
+            public ApiFuture<ListServicesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListServicesRequest, ListServicesResponse> callable,
+                ListServicesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListServicesResponse> futureResponse) {
+              PageContext<ListServicesRequest, ListServicesResponse, Service> pageContext =
+                  PageContext.create(callable, LIST_SERVICES_PAGE_STR_DESC, request, context);
+              return ListServicesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListServiceLevelObjectivesRequest,
+          ListServiceLevelObjectivesResponse,
+          ListServiceLevelObjectivesPagedResponse>
+      LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListServiceLevelObjectivesRequest,
+              ListServiceLevelObjectivesResponse,
+              ListServiceLevelObjectivesPagedResponse>() {
+            @Override
+            public ApiFuture<ListServiceLevelObjectivesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>
+                    callable,
+                ListServiceLevelObjectivesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListServiceLevelObjectivesResponse> futureResponse) {
+              PageContext<
+                      ListServiceLevelObjectivesRequest,
+                      ListServiceLevelObjectivesResponse,
+                      ServiceLevelObjective>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_DESC, request, context);
+              return ListServiceLevelObjectivesPagedResponse.createAsync(
+                  pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createService. */
   public UnaryCallSettings<CreateServiceRequest, Service> createServiceSettings() {
@@ -193,10 +326,10 @@ public class ServiceMonitoringServiceStubSettings
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcServiceMonitoringServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -272,141 +405,10 @@ public class ServiceMonitoringServiceStubSettings
         settingsBuilder.deleteServiceLevelObjectiveSettings().build();
   }
 
-  private static final PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>
-      LIST_SERVICES_PAGE_STR_DESC =
-          new PagedListDescriptor<ListServicesRequest, ListServicesResponse, Service>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListServicesRequest injectToken(ListServicesRequest payload, String token) {
-              return ListServicesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListServicesRequest injectPageSize(ListServicesRequest payload, int pageSize) {
-              return ListServicesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListServicesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListServicesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Service> extractResources(ListServicesResponse payload) {
-              return payload.getServicesList() != null
-                  ? payload.getServicesList()
-                  : ImmutableList.<Service>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListServiceLevelObjectivesRequest,
-          ListServiceLevelObjectivesResponse,
-          ServiceLevelObjective>
-      LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListServiceLevelObjectivesRequest,
-              ListServiceLevelObjectivesResponse,
-              ServiceLevelObjective>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListServiceLevelObjectivesRequest injectToken(
-                ListServiceLevelObjectivesRequest payload, String token) {
-              return ListServiceLevelObjectivesRequest.newBuilder(payload)
-                  .setPageToken(token)
-                  .build();
-            }
-
-            @Override
-            public ListServiceLevelObjectivesRequest injectPageSize(
-                ListServiceLevelObjectivesRequest payload, int pageSize) {
-              return ListServiceLevelObjectivesRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListServiceLevelObjectivesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListServiceLevelObjectivesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<ServiceLevelObjective> extractResources(
-                ListServiceLevelObjectivesResponse payload) {
-              return payload.getServiceLevelObjectivesList() != null
-                  ? payload.getServiceLevelObjectivesList()
-                  : ImmutableList.<ServiceLevelObjective>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>
-      LIST_SERVICES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListServicesRequest, ListServicesResponse, ListServicesPagedResponse>() {
-            @Override
-            public ApiFuture<ListServicesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListServicesRequest, ListServicesResponse> callable,
-                ListServicesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListServicesResponse> futureResponse) {
-              PageContext<ListServicesRequest, ListServicesResponse, Service> pageContext =
-                  PageContext.create(callable, LIST_SERVICES_PAGE_STR_DESC, request, context);
-              return ListServicesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListServiceLevelObjectivesRequest,
-          ListServiceLevelObjectivesResponse,
-          ListServiceLevelObjectivesPagedResponse>
-      LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListServiceLevelObjectivesRequest,
-              ListServiceLevelObjectivesResponse,
-              ListServiceLevelObjectivesPagedResponse>() {
-            @Override
-            public ApiFuture<ListServiceLevelObjectivesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>
-                    callable,
-                ListServiceLevelObjectivesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListServiceLevelObjectivesResponse> futureResponse) {
-              PageContext<
-                      ListServiceLevelObjectivesRequest,
-                      ListServiceLevelObjectivesResponse,
-                      ServiceLevelObjective>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_DESC, request, context);
-              return ListServiceLevelObjectivesPagedResponse.createAsync(
-                  pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ServiceMonitoringServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<ServiceMonitoringServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<CreateServiceRequest, Service> createServiceSettings;
     private final UnaryCallSettings.Builder<GetServiceRequest, Service> getServiceSettings;
     private final PagedCallSettings.Builder<
@@ -429,7 +431,6 @@ public class ServiceMonitoringServiceStubSettings
         updateServiceLevelObjectiveSettings;
     private final UnaryCallSettings.Builder<DeleteServiceLevelObjectiveRequest, Empty>
         deleteServiceLevelObjectiveSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -437,48 +438,12 @@ public class ServiceMonitoringServiceStubSettings
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_6_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_4_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -489,12 +454,12 @@ public class ServiceMonitoringServiceStubSettings
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(12000L))
+              .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(12000L))
-              .setTotalTimeout(Duration.ofMillis(12000L))
+              .setMaxRpcTimeout(Duration.ofMillis(30000L))
+              .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("no_retry_3_params", settings);
+      definitions.put("no_retry_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -506,132 +471,26 @@ public class ServiceMonitoringServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
       definitions.put("retry_policy_6_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_4_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       createServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listServicesSettings = PagedCallSettings.newBuilder(LIST_SERVICES_PAGE_STR_FACT);
-
       updateServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteServiceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listServiceLevelObjectivesSettings =
           PagedCallSettings.newBuilder(LIST_SERVICE_LEVEL_OBJECTIVES_PAGE_STR_FACT);
-
       updateServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteServiceLevelObjectiveSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -646,72 +505,7 @@ public class ServiceMonitoringServiceStubSettings
               listServiceLevelObjectivesSettings,
               updateServiceLevelObjectiveSettings,
               deleteServiceLevelObjectiveSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .createServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .getServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .listServicesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .updateServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .deleteServiceSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .createServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .getServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .listServiceLevelObjectivesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      builder
-          .updateServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_4_params"));
-
-      builder
-          .deleteServiceLevelObjectiveSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_3_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_3_params"));
-
-      return builder;
     }
 
     protected Builder(ServiceMonitoringServiceStubSettings settings) {
@@ -745,7 +539,72 @@ public class ServiceMonitoringServiceStubSettings
               deleteServiceLevelObjectiveSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .createServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .getServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listServicesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .updateServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .deleteServiceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .createServiceLevelObjectiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .getServiceLevelObjectiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .listServiceLevelObjectivesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      builder
+          .updateServiceLevelObjectiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_5_params"));
+
+      builder
+          .deleteServiceLevelObjectiveSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_6_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_6_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

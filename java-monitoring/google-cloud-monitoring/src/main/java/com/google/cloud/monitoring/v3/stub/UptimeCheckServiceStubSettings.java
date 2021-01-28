@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.UptimeCheckServiceClient.ListUptimeCheckConfigsPagedResponse;
@@ -60,7 +61,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link UptimeCheckServiceStub}.
  *
@@ -77,21 +78,24 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getUptimeCheckConfig to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * UptimeCheckServiceStubSettings.Builder uptimeCheckServiceSettingsBuilder =
  *     UptimeCheckServiceStubSettings.newBuilder();
  * uptimeCheckServiceSettingsBuilder
  *     .getUptimeCheckConfigSettings()
  *     .setRetrySettings(
- *         uptimeCheckServiceSettingsBuilder.getUptimeCheckConfigSettings().getRetrySettings().toBuilder()
+ *         uptimeCheckServiceSettingsBuilder
+ *             .getUptimeCheckConfigSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * UptimeCheckServiceStubSettings uptimeCheckServiceSettings = uptimeCheckServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * UptimeCheckServiceStubSettings uptimeCheckServiceSettings =
+ *     uptimeCheckServiceSettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -99,7 +103,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/monitoring")
           .add("https://www.googleapis.com/auth/monitoring.read")
-          .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
   private final PagedCallSettings<
@@ -118,6 +121,137 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
   private final PagedCallSettings<
           ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
       listUptimeCheckIpsSettings;
+
+  private static final PagedListDescriptor<
+          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
+      LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUptimeCheckConfigsRequest injectToken(
+                ListUptimeCheckConfigsRequest payload, String token) {
+              return ListUptimeCheckConfigsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUptimeCheckConfigsRequest injectPageSize(
+                ListUptimeCheckConfigsRequest payload, int pageSize) {
+              return ListUptimeCheckConfigsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUptimeCheckConfigsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUptimeCheckConfigsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UptimeCheckConfig> extractResources(
+                ListUptimeCheckConfigsResponse payload) {
+              return payload.getUptimeCheckConfigsList() == null
+                  ? ImmutableList.<UptimeCheckConfig>of()
+                  : payload.getUptimeCheckConfigsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
+      LIST_UPTIME_CHECK_IPS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUptimeCheckIpsRequest injectToken(
+                ListUptimeCheckIpsRequest payload, String token) {
+              return ListUptimeCheckIpsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUptimeCheckIpsRequest injectPageSize(
+                ListUptimeCheckIpsRequest payload, int pageSize) {
+              return ListUptimeCheckIpsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUptimeCheckIpsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUptimeCheckIpsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<UptimeCheckIp> extractResources(ListUptimeCheckIpsResponse payload) {
+              return payload.getUptimeCheckIpsList() == null
+                  ? ImmutableList.<UptimeCheckIp>of()
+                  : payload.getUptimeCheckIpsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUptimeCheckConfigsRequest,
+          ListUptimeCheckConfigsResponse,
+          ListUptimeCheckConfigsPagedResponse>
+      LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUptimeCheckConfigsRequest,
+              ListUptimeCheckConfigsResponse,
+              ListUptimeCheckConfigsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUptimeCheckConfigsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
+                    callable,
+                ListUptimeCheckConfigsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
+              PageContext<
+                      ListUptimeCheckConfigsRequest,
+                      ListUptimeCheckConfigsResponse,
+                      UptimeCheckConfig>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_DESC, request, context);
+              return ListUptimeCheckConfigsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
+      LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUptimeCheckIpsRequest,
+              ListUptimeCheckIpsResponse,
+              ListUptimeCheckIpsPagedResponse>() {
+            @Override
+            public ApiFuture<ListUptimeCheckIpsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse> callable,
+                ListUptimeCheckIpsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUptimeCheckIpsResponse> futureResponse) {
+              PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_UPTIME_CHECK_IPS_PAGE_STR_DESC, request, context);
+              return ListUptimeCheckIpsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listUptimeCheckConfigs. */
   public PagedCallSettings<
@@ -165,10 +299,10 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcUptimeCheckServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -236,142 +370,10 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     listUptimeCheckIpsSettings = settingsBuilder.listUptimeCheckIpsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>
-      LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse, UptimeCheckConfig>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListUptimeCheckConfigsRequest injectToken(
-                ListUptimeCheckConfigsRequest payload, String token) {
-              return ListUptimeCheckConfigsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListUptimeCheckConfigsRequest injectPageSize(
-                ListUptimeCheckConfigsRequest payload, int pageSize) {
-              return ListUptimeCheckConfigsRequest.newBuilder(payload)
-                  .setPageSize(pageSize)
-                  .build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListUptimeCheckConfigsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListUptimeCheckConfigsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<UptimeCheckConfig> extractResources(
-                ListUptimeCheckConfigsResponse payload) {
-              return payload.getUptimeCheckConfigsList() != null
-                  ? payload.getUptimeCheckConfigsList()
-                  : ImmutableList.<UptimeCheckConfig>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
-      LIST_UPTIME_CHECK_IPS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListUptimeCheckIpsRequest injectToken(
-                ListUptimeCheckIpsRequest payload, String token) {
-              return ListUptimeCheckIpsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListUptimeCheckIpsRequest injectPageSize(
-                ListUptimeCheckIpsRequest payload, int pageSize) {
-              return ListUptimeCheckIpsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListUptimeCheckIpsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListUptimeCheckIpsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<UptimeCheckIp> extractResources(ListUptimeCheckIpsResponse payload) {
-              return payload.getUptimeCheckIpsList() != null
-                  ? payload.getUptimeCheckIpsList()
-                  : ImmutableList.<UptimeCheckIp>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListUptimeCheckConfigsRequest,
-          ListUptimeCheckConfigsResponse,
-          ListUptimeCheckConfigsPagedResponse>
-      LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListUptimeCheckConfigsRequest,
-              ListUptimeCheckConfigsResponse,
-              ListUptimeCheckConfigsPagedResponse>() {
-            @Override
-            public ApiFuture<ListUptimeCheckConfigsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
-                    callable,
-                ListUptimeCheckConfigsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListUptimeCheckConfigsResponse> futureResponse) {
-              PageContext<
-                      ListUptimeCheckConfigsRequest,
-                      ListUptimeCheckConfigsResponse,
-                      UptimeCheckConfig>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_DESC, request, context);
-              return ListUptimeCheckConfigsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
-      LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListUptimeCheckIpsRequest,
-              ListUptimeCheckIpsResponse,
-              ListUptimeCheckIpsPagedResponse>() {
-            @Override
-            public ApiFuture<ListUptimeCheckIpsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse> callable,
-                ListUptimeCheckIpsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListUptimeCheckIpsResponse> futureResponse) {
-              PageContext<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, UptimeCheckIp>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_UPTIME_CHECK_IPS_PAGE_STR_DESC, request, context);
-              return ListUptimeCheckIpsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for UptimeCheckServiceStubSettings. */
   public static class Builder
       extends StubSettings.Builder<UptimeCheckServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListUptimeCheckConfigsRequest,
             ListUptimeCheckConfigsResponse,
@@ -388,7 +390,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
     private final PagedCallSettings.Builder<
             ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse, ListUptimeCheckIpsPagedResponse>
         listUptimeCheckIpsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -396,48 +397,12 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_7_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
-          "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_4_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_11_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -448,14 +413,6 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(12000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(12000L))
-              .setTotalTimeout(Duration.ofMillis(12000L))
-              .build();
-      definitions.put("no_retry_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(30000L))
@@ -464,9 +421,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_6_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_7_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
@@ -474,99 +429,12 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_4_params", settings);
+      definitions.put("no_retry_11_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -574,15 +442,10 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
 
       listUptimeCheckConfigsSettings =
           PagedCallSettings.newBuilder(LIST_UPTIME_CHECK_CONFIGS_PAGE_STR_FACT);
-
       getUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteUptimeCheckConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listUptimeCheckIpsSettings =
           PagedCallSettings.newBuilder(LIST_UPTIME_CHECK_IPS_PAGE_STR_FACT);
 
@@ -594,52 +457,7 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               updateUptimeCheckConfigSettings,
               deleteUptimeCheckConfigSettings,
               listUptimeCheckIpsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listUptimeCheckConfigsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .getUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .createUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
-
-      builder
-          .updateUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_6_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_6_params"));
-
-      builder
-          .deleteUptimeCheckConfigSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .listUptimeCheckIpsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      return builder;
     }
 
     protected Builder(UptimeCheckServiceStubSettings settings) {
@@ -662,7 +480,52 @@ public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServ
               listUptimeCheckIpsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listUptimeCheckConfigsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+
+      builder
+          .getUptimeCheckConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+
+      builder
+          .createUptimeCheckConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
+
+      builder
+          .updateUptimeCheckConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_11_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_11_params"));
+
+      builder
+          .deleteUptimeCheckConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+
+      builder
+          .listUptimeCheckIpsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

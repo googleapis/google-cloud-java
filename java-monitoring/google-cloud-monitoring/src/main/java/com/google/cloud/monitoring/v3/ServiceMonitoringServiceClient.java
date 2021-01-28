@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.ApiFunction;
@@ -39,6 +40,8 @@ import com.google.monitoring.v3.ListServiceLevelObjectivesRequest;
 import com.google.monitoring.v3.ListServiceLevelObjectivesResponse;
 import com.google.monitoring.v3.ListServicesRequest;
 import com.google.monitoring.v3.ListServicesResponse;
+import com.google.monitoring.v3.OrganizationName;
+import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.Service;
 import com.google.monitoring.v3.ServiceLevelObjective;
 import com.google.monitoring.v3.ServiceLevelObjectiveName;
@@ -51,7 +54,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
  * managing and querying aspects of a workspace's services. These include the `Service`'s monitored
@@ -60,17 +63,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
- *   ResourceName parent = ProjectName.of("[PROJECT]");
- *   Service service = Service.newBuilder().build();
- *   Service response = serviceMonitoringServiceClient.createService(parent, service);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the serviceMonitoringServiceClient object to clean up
+ * <p>Note: close() needs to be called on the ServiceMonitoringServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
  *
@@ -99,28 +92,27 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings =
  *     ServiceMonitoringServiceSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
  * ServiceMonitoringServiceClient serviceMonitoringServiceClient =
  *     ServiceMonitoringServiceClient.create(serviceMonitoringServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * ServiceMonitoringServiceSettings serviceMonitoringServiceSettings =
  *     ServiceMonitoringServiceSettings.newBuilder().setEndpoint(myEndpoint).build();
  * ServiceMonitoringServiceClient serviceMonitoringServiceClient =
  *     ServiceMonitoringServiceClient.create(serviceMonitoringServiceSettings);
- * </code>
- * </pre>
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
+@BetaApi
 @Generated("by gapic-generator")
 public class ServiceMonitoringServiceClient implements BackgroundResource {
   private final ServiceMonitoringServiceSettings settings;
@@ -143,7 +135,7 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
 
   /**
    * Constructs an instance of ServiceMonitoringServiceClient, using the given stub for making
-   * calls. This is for advanced usage - prefer to use ServiceMonitoringServiceSettings}.
+   * calls. This is for advanced usage - prefer using create(ServiceMonitoringServiceSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final ServiceMonitoringServiceClient create(ServiceMonitoringServiceStub stub) {
@@ -176,19 +168,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   Service service = Service.newBuilder().build();
-   *   Service response = serviceMonitoringServiceClient.createService(parent, service);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent workspace. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -204,19 +186,45 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return createService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `Service`.
    *
-   * <p>Sample code:
+   * @param parent Required. Resource name of the parent workspace. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param service Required. The `Service` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Service createService(OrganizationName parent, Service service) {
+    CreateServiceRequest request =
+        CreateServiceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setService(service)
+            .build();
+    return createService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a `Service`.
    *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   Service service = Service.newBuilder().build();
-   *   Service response = serviceMonitoringServiceClient.createService(parent.toString(), service);
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the parent workspace. The format is:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER]
+   * @param service Required. The `Service` to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Service createService(ProjectName parent, Service service) {
+    CreateServiceRequest request =
+        CreateServiceRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setService(service)
+            .build();
+    return createService(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a `Service`.
    *
    * @param parent Required. Resource name of the parent workspace. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -229,23 +237,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return createService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   Service service = Service.newBuilder().build();
-   *   CreateServiceRequest request = CreateServiceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setService(service)
-   *     .build();
-   *   Service response = serviceMonitoringServiceClient.createService(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -254,42 +248,19 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return createServiceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   Service service = Service.newBuilder().build();
-   *   CreateServiceRequest request = CreateServiceRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setService(service)
-   *     .build();
-   *   ApiFuture&lt;Service&gt; future = serviceMonitoringServiceClient.createServiceCallable().futureCall(request);
-   *   // Do something
-   *   Service response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateServiceRequest, Service> createServiceCallable() {
     return stub.createServiceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get the named `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   Service response = serviceMonitoringServiceClient.getService(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `Service`. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
@@ -301,18 +272,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return getService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get the named `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   Service response = serviceMonitoringServiceClient.getService(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `Service`. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
@@ -323,21 +285,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return getService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get the named `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   GetServiceRequest request = GetServiceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   Service response = serviceMonitoringServiceClient.getService(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -346,42 +296,19 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return getServiceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get the named `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   GetServiceRequest request = GetServiceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Service&gt; future = serviceMonitoringServiceClient.getServiceCallable().futureCall(request);
-   *   // Do something
-   *   Service response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetServiceRequest, Service> getServiceCallable() {
     return stub.getServiceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List `Service`s for this workspace.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   for (Service element : serviceMonitoringServiceClient.listServices(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
    *     project or a Monitoring Workspace. The formats are:
@@ -396,20 +323,43 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return listServices(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List `Service`s for this workspace.
    *
-   * <p>Sample code:
+   * @param parent Required. Resource name of the parent containing the listed services, either a
+   *     project or a Monitoring Workspace. The formats are:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListServicesPagedResponse listServices(OrganizationName parent) {
+    ListServicesRequest request =
+        ListServicesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listServices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List `Service`s for this workspace.
    *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   for (Service element : serviceMonitoringServiceClient.listServices(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
+   * @param parent Required. Resource name of the parent containing the listed services, either a
+   *     project or a Monitoring Workspace. The formats are:
+   *     <p>projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER]
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListServicesPagedResponse listServices(ProjectName parent) {
+    ListServicesRequest request =
+        ListServicesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listServices(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List `Service`s for this workspace.
    *
    * @param parent Required. Resource name of the parent containing the listed services, either a
    *     project or a Monitoring Workspace. The formats are:
@@ -421,23 +371,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return listServices(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List `Service`s for this workspace.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   ListServicesRequest request = ListServicesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Service element : serviceMonitoringServiceClient.listServices(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -446,74 +382,30 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return listServicesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List `Service`s for this workspace.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   ListServicesRequest request = ListServicesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListServicesPagedResponse&gt; future = serviceMonitoringServiceClient.listServicesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Service element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable() {
     return stub.listServicesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List `Service`s for this workspace.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ResourceName parent = ProjectName.of("[PROJECT]");
-   *   ListServicesRequest request = ListServicesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListServicesResponse response = serviceMonitoringServiceClient.listServicesCallable().call(request);
-   *     for (Service element : response.getServicesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return stub.listServicesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   Service service = Service.newBuilder().build();
-   *   Service response = serviceMonitoringServiceClient.updateService(service);
-   * }
-   * </code></pre>
    *
    * @param service Required. The `Service` to draw updates from. The given `name` specifies the
    *     resource to update.
@@ -524,21 +416,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return updateService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   Service service = Service.newBuilder().build();
-   *   UpdateServiceRequest request = UpdateServiceRequest.newBuilder()
-   *     .setService(service)
-   *     .build();
-   *   Service response = serviceMonitoringServiceClient.updateService(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -547,40 +427,19 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return updateServiceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update this `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   Service service = Service.newBuilder().build();
-   *   UpdateServiceRequest request = UpdateServiceRequest.newBuilder()
-   *     .setService(service)
-   *     .build();
-   *   ApiFuture&lt;Service&gt; future = serviceMonitoringServiceClient.updateServiceCallable().futureCall(request);
-   *   // Do something
-   *   Service response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable() {
     return stub.updateServiceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   serviceMonitoringServiceClient.deleteService(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `Service` to delete. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
@@ -592,18 +451,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     deleteService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   serviceMonitoringServiceClient.deleteService(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `Service` to delete. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
@@ -614,21 +464,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     deleteService(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Soft delete this `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   DeleteServiceRequest request = DeleteServiceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   serviceMonitoringServiceClient.deleteService(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -637,41 +475,19 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     deleteServiceCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Soft delete this `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName name = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   DeleteServiceRequest request = DeleteServiceRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = serviceMonitoringServiceClient.deleteServiceCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
     return stub.deleteServiceCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `ServiceLevelObjective` for the given `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.createServiceLevelObjective(parent, serviceLevelObjective);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent `Service`. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
@@ -689,19 +505,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return createServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `ServiceLevelObjective` for the given `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.createServiceLevelObjective(parent.toString(), serviceLevelObjective);
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent `Service`. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]
@@ -719,23 +525,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return createServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `ServiceLevelObjective` for the given `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   CreateServiceLevelObjectiveRequest request = CreateServiceLevelObjectiveRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setServiceLevelObjective(serviceLevelObjective)
-   *     .build();
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.createServiceLevelObjective(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -745,43 +537,20 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return createServiceLevelObjectiveCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create a `ServiceLevelObjective` for the given `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   CreateServiceLevelObjectiveRequest request = CreateServiceLevelObjectiveRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .setServiceLevelObjective(serviceLevelObjective)
-   *     .build();
-   *   ApiFuture&lt;ServiceLevelObjective&gt; future = serviceMonitoringServiceClient.createServiceLevelObjectiveCallable().futureCall(request);
-   *   // Do something
-   *   ServiceLevelObjective response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
       createServiceLevelObjectiveCallable() {
     return stub.createServiceLevelObjectiveCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a `ServiceLevelObjective` by name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.getServiceLevelObjective(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `ServiceLevelObjective` to get. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
@@ -795,18 +564,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return getServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a `ServiceLevelObjective` by name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.getServiceLevelObjective(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `ServiceLevelObjective` to get. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
@@ -818,21 +578,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return getServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a `ServiceLevelObjective` by name.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   GetServiceLevelObjectiveRequest request = GetServiceLevelObjectiveRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.getServiceLevelObjective(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -842,43 +590,20 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return getServiceLevelObjectiveCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a `ServiceLevelObjective` by name.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   GetServiceLevelObjectiveRequest request = GetServiceLevelObjectiveRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;ServiceLevelObjective&gt; future = serviceMonitoringServiceClient.getServiceLevelObjectiveCallable().futureCall(request);
-   *   // Do something
-   *   ServiceLevelObjective response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
       getServiceLevelObjectiveCallable() {
     return stub.getServiceLevelObjectiveCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List the `ServiceLevelObjective`s for the given `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   for (ServiceLevelObjective element : serviceMonitoringServiceClient.listServiceLevelObjectives(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent containing the listed SLOs, either a
    *     project or a Monitoring Workspace. The formats are:
@@ -895,20 +620,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return listServiceLevelObjectives(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List the `ServiceLevelObjective`s for the given `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   for (ServiceLevelObjective element : serviceMonitoringServiceClient.listServiceLevelObjectives(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. Resource name of the parent containing the listed SLOs, either a
    *     project or a Monitoring Workspace. The formats are:
@@ -922,23 +636,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return listServiceLevelObjectives(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List the `ServiceLevelObjective`s for the given `Service`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ListServiceLevelObjectivesRequest request = ListServiceLevelObjectivesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (ServiceLevelObjective element : serviceMonitoringServiceClient.listServiceLevelObjectives(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -948,25 +648,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return listServiceLevelObjectivesPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List the `ServiceLevelObjective`s for the given `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ListServiceLevelObjectivesRequest request = ListServiceLevelObjectivesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListServiceLevelObjectivesPagedResponse&gt; future = serviceMonitoringServiceClient.listServiceLevelObjectivesPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (ServiceLevelObjective element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<
           ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesPagedResponse>
@@ -974,50 +660,20 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return stub.listServiceLevelObjectivesPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * List the `ServiceLevelObjective`s for the given `Service`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceName parent = ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]");
-   *   ListServiceLevelObjectivesRequest request = ListServiceLevelObjectivesRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListServiceLevelObjectivesResponse response = serviceMonitoringServiceClient.listServiceLevelObjectivesCallable().call(request);
-   *     for (ServiceLevelObjective element : response.getServiceLevelObjectivesList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>
       listServiceLevelObjectivesCallable() {
     return stub.listServiceLevelObjectivesCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.updateServiceLevelObjective(serviceLevelObjective);
-   * }
-   * </code></pre>
    *
    * @param serviceLevelObjective Required. The `ServiceLevelObjective` to draw updates from. The
    *     given `name` specifies the resource to update.
@@ -1032,21 +688,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return updateServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   UpdateServiceLevelObjectiveRequest request = UpdateServiceLevelObjectiveRequest.newBuilder()
-   *     .setServiceLevelObjective(serviceLevelObjective)
-   *     .build();
-   *   ServiceLevelObjective response = serviceMonitoringServiceClient.updateServiceLevelObjective(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1056,41 +700,20 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     return updateServiceLevelObjectiveCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Update the given `ServiceLevelObjective`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjective serviceLevelObjective = ServiceLevelObjective.newBuilder().build();
-   *   UpdateServiceLevelObjectiveRequest request = UpdateServiceLevelObjectiveRequest.newBuilder()
-   *     .setServiceLevelObjective(serviceLevelObjective)
-   *     .build();
-   *   ApiFuture&lt;ServiceLevelObjective&gt; future = serviceMonitoringServiceClient.updateServiceLevelObjectiveCallable().futureCall(request);
-   *   // Do something
-   *   ServiceLevelObjective response = future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveCallable() {
     return stub.updateServiceLevelObjectiveCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(name);
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
@@ -1104,18 +727,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     deleteServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(name.toString());
-   * }
-   * </code></pre>
    *
    * @param name Required. Resource name of the `ServiceLevelObjective` to delete. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME]
@@ -1127,21 +741,9 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     deleteServiceLevelObjective(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete the given `ServiceLevelObjective`.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   DeleteServiceLevelObjectiveRequest request = DeleteServiceLevelObjectiveRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   serviceMonitoringServiceClient.deleteServiceLevelObjective(request);
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1150,23 +752,11 @@ public class ServiceMonitoringServiceClient implements BackgroundResource {
     deleteServiceLevelObjectiveCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete the given `ServiceLevelObjective`.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient = ServiceMonitoringServiceClient.create()) {
-   *   ServiceLevelObjectiveName name = ServiceLevelObjectiveName.ofProjectServiceServiceLevelObjectiveName("[PROJECT]", "[SERVICE]", "[SERVICE_LEVEL_OBJECTIVE]");
-   *   DeleteServiceLevelObjectiveRequest request = DeleteServiceLevelObjectiveRequest.newBuilder()
-   *     .setName(name.toString())
-   *     .build();
-   *   ApiFuture&lt;Void&gt; future = serviceMonitoringServiceClient.deleteServiceLevelObjectiveCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
       deleteServiceLevelObjectiveCallable() {

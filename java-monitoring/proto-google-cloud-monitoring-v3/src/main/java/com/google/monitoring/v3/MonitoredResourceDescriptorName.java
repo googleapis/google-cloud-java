@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,32 +26,62 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class MonitoredResourceDescriptorName implements ResourceName {
-
-  @Deprecated
-  protected MonitoredResourceDescriptorName() {}
-
-  private static final PathTemplate PROJECT_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_MONITORED_RESOURCE_DESCRIPTOR =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
-  private static final PathTemplate ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
-  private static final PathTemplate FOLDER_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_MONITORED_RESOURCE_DESCRIPTOR =
       PathTemplate.createWithoutUrlEncoding(
           "folders/{folder}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String monitoredResourceDescriptor;
+  private final String organization;
+  private final String folder;
 
-  private String project;
-  private String monitoredResourceDescriptor;
-  private String organization;
-  private String folder;
+  @Deprecated
+  protected MonitoredResourceDescriptorName() {
+    project = null;
+    monitoredResourceDescriptor = null;
+    organization = null;
+    folder = null;
+  }
+
+  private MonitoredResourceDescriptorName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    monitoredResourceDescriptor =
+        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_MONITORED_RESOURCE_DESCRIPTOR;
+  }
+
+  private MonitoredResourceDescriptorName(OrganizationMonitoredResourceDescriptorBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    monitoredResourceDescriptor =
+        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
+    project = null;
+    folder = null;
+    pathTemplate = ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR;
+  }
+
+  private MonitoredResourceDescriptorName(FolderMonitoredResourceDescriptorBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    monitoredResourceDescriptor =
+        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
+    project = null;
+    organization = null;
+    pathTemplate = FOLDER_MONITORED_RESOURCE_DESCRIPTOR;
+  }
 
   public String getProject() {
     return project;
@@ -67,27 +97,6 @@ public class MonitoredResourceDescriptorName implements ResourceName {
 
   public String getFolder() {
     return folder;
-  }
-
-  private MonitoredResourceDescriptorName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    monitoredResourceDescriptor =
-        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
-    pathTemplate = PROJECT_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE;
-  }
-
-  private MonitoredResourceDescriptorName(OrganizationMonitoredResourceDescriptorBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    monitoredResourceDescriptor =
-        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
-    pathTemplate = ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE;
-  }
-
-  private MonitoredResourceDescriptorName(FolderMonitoredResourceDescriptorBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    monitoredResourceDescriptor =
-        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
-    pathTemplate = FOLDER_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -117,7 +126,7 @@ public class MonitoredResourceDescriptorName implements ResourceName {
 
   public static MonitoredResourceDescriptorName of(
       String project, String monitoredResourceDescriptor) {
-    return newProjectMonitoredResourceDescriptorBuilder()
+    return newBuilder()
         .setProject(project)
         .setMonitoredResourceDescriptor(monitoredResourceDescriptor)
         .build();
@@ -126,7 +135,7 @@ public class MonitoredResourceDescriptorName implements ResourceName {
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static MonitoredResourceDescriptorName ofProjectMonitoredResourceDescriptorName(
       String project, String monitoredResourceDescriptor) {
-    return newProjectMonitoredResourceDescriptorBuilder()
+    return newBuilder()
         .setProject(project)
         .setMonitoredResourceDescriptor(monitoredResourceDescriptor)
         .build();
@@ -192,23 +201,22 @@ public class MonitoredResourceDescriptorName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_MONITORED_RESOURCE_DESCRIPTOR.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_MONITORED_RESOURCE_DESCRIPTOR.match(formattedString);
       return ofProjectMonitoredResourceDescriptorName(
           matchMap.get("project"), matchMap.get("monitored_resource_descriptor"));
-    } else if (ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
+    } else if (ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR.matches(formattedString)) {
       Map<String, String> matchMap =
-          ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+          ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR.match(formattedString);
       return ofOrganizationMonitoredResourceDescriptorName(
           matchMap.get("organization"), matchMap.get("monitored_resource_descriptor"));
-    } else if (FOLDER_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          FOLDER_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_MONITORED_RESOURCE_DESCRIPTOR.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_MONITORED_RESOURCE_DESCRIPTOR.match(formattedString);
       return ofFolderMonitoredResourceDescriptorName(
           matchMap.get("folder"), matchMap.get("monitored_resource_descriptor"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "MonitoredResourceDescriptorName.parse: formattedString not in valid format");
   }
 
   public static List<MonitoredResourceDescriptorName> parseList(List<String> formattedStrings) {
@@ -232,9 +240,9 @@ public class MonitoredResourceDescriptorName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_MONITORED_RESOURCE_DESCRIPTOR.matches(formattedString)
+        || ORGANIZATION_MONITORED_RESOURCE_DESCRIPTOR.matches(formattedString)
+        || FOLDER_MONITORED_RESOURCE_DESCRIPTOR.matches(formattedString);
   }
 
   @Override
@@ -271,11 +279,41 @@ public class MonitoredResourceDescriptorName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      MonitoredResourceDescriptorName that = ((MonitoredResourceDescriptorName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.monitoredResourceDescriptor, that.monitoredResourceDescriptor)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(monitoredResourceDescriptor);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    return h;
+  }
+
   /**
    * Builder for projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}.
    */
   public static class Builder {
-
     private String project;
     private String monitoredResourceDescriptor;
 
@@ -301,10 +339,9 @@ public class MonitoredResourceDescriptorName implements ResourceName {
 
     private Builder(MonitoredResourceDescriptorName monitoredResourceDescriptorName) {
       Preconditions.checkArgument(
-          monitoredResourceDescriptorName.pathTemplate
-              == PROJECT_MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE,
-          "toBuilder is only supported when MonitoredResourceDescriptorName has the pattern of "
-              + "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}.");
+          Objects.equals(
+              monitoredResourceDescriptorName.pathTemplate, PROJECT_MONITORED_RESOURCE_DESCRIPTOR),
+          "toBuilder is only supported when MonitoredResourceDescriptorName has the pattern of projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
       project = monitoredResourceDescriptorName.project;
       monitoredResourceDescriptor = monitoredResourceDescriptorName.monitoredResourceDescriptor;
     }
@@ -320,11 +357,10 @@ public class MonitoredResourceDescriptorName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationMonitoredResourceDescriptorBuilder {
-
     private String organization;
     private String monitoredResourceDescriptor;
 
-    private OrganizationMonitoredResourceDescriptorBuilder() {}
+    protected OrganizationMonitoredResourceDescriptorBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -353,11 +389,10 @@ public class MonitoredResourceDescriptorName implements ResourceName {
   /** Builder for folders/{folder}/monitoredResourceDescriptors/{monitored_resource_descriptor}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderMonitoredResourceDescriptorBuilder {
-
     private String folder;
     private String monitoredResourceDescriptor;
 
-    private FolderMonitoredResourceDescriptorBuilder() {}
+    protected FolderMonitoredResourceDescriptorBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -381,36 +416,5 @@ public class MonitoredResourceDescriptorName implements ResourceName {
     public MonitoredResourceDescriptorName build() {
       return new MonitoredResourceDescriptorName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      MonitoredResourceDescriptorName that = (MonitoredResourceDescriptorName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.monitoredResourceDescriptor, that.monitoredResourceDescriptor))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(monitoredResourceDescriptor);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    return h;
   }
 }

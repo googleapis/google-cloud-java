@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3;
 
 import com.google.api.core.BetaApi;
@@ -39,9 +40,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockNotificationChannelServiceImpl extends NotificationChannelServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -79,10 +81,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof ListNotificationChannelDescriptorsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListNotificationChannelDescriptorsResponse) response);
+      responseObserver.onNext(((ListNotificationChannelDescriptorsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -95,10 +97,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof NotificationChannelDescriptor) {
       requests.add(request);
-      responseObserver.onNext((NotificationChannelDescriptor) response);
+      responseObserver.onNext(((NotificationChannelDescriptor) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -111,10 +113,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof ListNotificationChannelsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListNotificationChannelsResponse) response);
+      responseObserver.onNext(((ListNotificationChannelsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -126,10 +128,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof NotificationChannel) {
       requests.add(request);
-      responseObserver.onNext((NotificationChannel) response);
+      responseObserver.onNext(((NotificationChannel) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -142,10 +144,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof NotificationChannel) {
       requests.add(request);
-      responseObserver.onNext((NotificationChannel) response);
+      responseObserver.onNext(((NotificationChannel) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -158,10 +160,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof NotificationChannel) {
       requests.add(request);
-      responseObserver.onNext((NotificationChannel) response);
+      responseObserver.onNext(((NotificationChannel) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -173,10 +175,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -189,10 +191,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -205,10 +207,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof GetNotificationChannelVerificationCodeResponse) {
       requests.add(request);
-      responseObserver.onNext((GetNotificationChannelVerificationCodeResponse) response);
+      responseObserver.onNext(((GetNotificationChannelVerificationCodeResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -221,10 +223,10 @@ public class MockNotificationChannelServiceImpl extends NotificationChannelServi
     Object response = responses.remove();
     if (response instanceof NotificationChannel) {
       requests.add(request);
-      responseObserver.onNext((NotificationChannel) response);
+      responseObserver.onNext(((NotificationChannel) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

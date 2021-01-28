@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.AlertPolicyServiceClient.ListAlertPoliciesPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.v3.AlertPolicy;
 import com.google.monitoring.v3.CreateAlertPolicyRequest;
 import com.google.monitoring.v3.DeleteAlertPolicyRequest;
@@ -41,16 +42,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Monitoring API.
+ * gRPC stub implementation for the AlertPolicyService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
-
   private static final MethodDescriptor<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
       listAlertPoliciesMethodDescriptor =
           MethodDescriptor.<ListAlertPoliciesRequest, ListAlertPoliciesResponse>newBuilder()
@@ -61,6 +60,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAlertPoliciesResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetAlertPolicyRequest, AlertPolicy>
       getAlertPolicyMethodDescriptor =
           MethodDescriptor.<GetAlertPolicyRequest, AlertPolicy>newBuilder()
@@ -70,6 +70,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   ProtoUtils.marshaller(GetAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateAlertPolicyRequest, AlertPolicy>
       createAlertPolicyMethodDescriptor =
           MethodDescriptor.<CreateAlertPolicyRequest, AlertPolicy>newBuilder()
@@ -79,6 +80,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   ProtoUtils.marshaller(CreateAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteAlertPolicyRequest, Empty>
       deleteAlertPolicyMethodDescriptor =
           MethodDescriptor.<DeleteAlertPolicyRequest, Empty>newBuilder()
@@ -88,6 +90,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   ProtoUtils.marshaller(DeleteAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateAlertPolicyRequest, AlertPolicy>
       updateAlertPolicyMethodDescriptor =
           MethodDescriptor.<UpdateAlertPolicyRequest, AlertPolicy>newBuilder()
@@ -98,8 +101,6 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
       listAlertPoliciesCallable;
   private final UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
@@ -109,6 +110,8 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
   private final UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable;
   private final UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAlertPolicyServiceStub create(AlertPolicyServiceStubSettings settings)
@@ -149,6 +152,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
         listAlertPoliciesTransportSettings =
@@ -247,17 +251,22 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
             settings.updateAlertPolicySettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
-      listAlertPoliciesPagedCallable() {
-    return listAlertPoliciesPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
       listAlertPoliciesCallable() {
     return listAlertPoliciesCallable;
+  }
+
+  public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
+      listAlertPoliciesPagedCallable() {
+    return listAlertPoliciesPagedCallable;
   }
 
   public UnaryCallable<GetAlertPolicyRequest, AlertPolicy> getAlertPolicyCallable() {

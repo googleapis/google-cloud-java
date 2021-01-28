@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupMembersPagedResponse;
 import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -27,6 +27,7 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
@@ -44,16 +45,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Monitoring API.
+ * gRPC stub implementation for the GroupService service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcGroupServiceStub extends GroupServiceStub {
-
   private static final MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
       listGroupsMethodDescriptor =
           MethodDescriptor.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -62,6 +61,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
       MethodDescriptor.<GetGroupRequest, Group>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -69,6 +69,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateGroupRequest, Group> createGroupMethodDescriptor =
       MethodDescriptor.<CreateGroupRequest, Group>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -76,6 +77,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<UpdateGroupRequest, Group> updateGroupMethodDescriptor =
       MethodDescriptor.<UpdateGroupRequest, Group>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -83,6 +85,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteGroupRequest, Empty> deleteGroupMethodDescriptor =
       MethodDescriptor.<DeleteGroupRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -90,6 +93,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersMethodDescriptor =
           MethodDescriptor.<ListGroupMembersRequest, ListGroupMembersResponse>newBuilder()
@@ -100,8 +104,6 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGroupMembersResponse.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
 
   private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
   private final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable;
@@ -114,6 +116,8 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcGroupServiceStub create(GroupServiceStubSettings settings)
@@ -152,6 +156,7 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListGroupsRequest, ListGroupsResponse> listGroupsTransportSettings =
         GrpcCallSettings.<ListGroupsRequest, ListGroupsResponse>newBuilder()
@@ -258,15 +263,20 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
         callableFactory.createPagedCallable(
             listGroupMembersTransportSettings, settings.listGroupMembersSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
-    return listGroupsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
     return listGroupsCallable;
+  }
+
+  public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
+    return listGroupsPagedCallable;
   }
 
   public UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
@@ -285,14 +295,14 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
     return deleteGroupCallable;
   }
 
-  public UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
-      listGroupMembersPagedCallable() {
-    return listGroupMembersPagedCallable;
-  }
-
   public UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersCallable() {
     return listGroupMembersCallable;
+  }
+
+  public UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
+      listGroupMembersPagedCallable() {
+    return listGroupMembersPagedCallable;
   }
 
   @Override

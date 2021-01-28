@@ -14,12 +14,26 @@
 
 """This script is used to synthesize generated parts of this library."""
 
+import synthtool as s
 import synthtool.languages.java as java
 
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
 service = 'monitoring'
 versions = ['v3']
+
+def fix_resource(client, version, name):
+    s.replace(
+        [f'google-cloud-monitoring/**/{version}/{client}.java'],
+        f'import com.google.monitoring.{version}.{name}',
+        'import com.google.api.resourcenames.ResourceName',
+    )
+
+    s.replace(
+        [f'google-cloud-monitoring/**/{version}/{client}.java'],
+        name,
+        'ResourceName',
+    )
 
 for version in versions:
   java.bazel_library(
@@ -28,5 +42,11 @@ for version in versions:
       proto_path=f'google/{service}/{version}',
       bazel_target=f'//google/{service}/{version}:google-cloud-{service}-{version}-java',
   )
+  fix_resource('AlertPolicyServiceClient', version, 'FolderName')
+  fix_resource('GroupServiceClient', version, 'FolderName')
+  fix_resource('MetricServiceClient', version, 'FolderName')
+  fix_resource('NotificationChannelServiceClient', version, 'FolderName')
+  fix_resource('ServiceMonitoringServiceClient', version, 'FolderName')
+  fix_resource('UptimeCheckServiceClient', version, 'FolderName')
 
 java.common_templates()

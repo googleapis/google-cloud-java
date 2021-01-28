@@ -28,23 +28,23 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
-public class ProjectName implements ResourceName {
-  private static final PathTemplate PROJECT =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
+public class OrganizationName implements ResourceName {
+  private static final PathTemplate ORGANIZATION =
+      PathTemplate.createWithoutUrlEncoding("organizations/{organization}");
   private volatile Map<String, String> fieldValuesMap;
-  private final String project;
+  private final String organization;
 
   @Deprecated
-  protected ProjectName() {
-    project = null;
+  protected OrganizationName() {
+    organization = null;
   }
 
-  private ProjectName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
+  private OrganizationName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
   }
 
-  public String getProject() {
-    return project;
+  public String getOrganization() {
+    return organization;
   }
 
   public static Builder newBuilder() {
@@ -55,35 +55,35 @@ public class ProjectName implements ResourceName {
     return new Builder(this);
   }
 
-  public static ProjectName of(String project) {
-    return newBuilder().setProject(project).build();
+  public static OrganizationName of(String organization) {
+    return newBuilder().setOrganization(organization).build();
   }
 
-  public static String format(String project) {
-    return newBuilder().setProject(project).build().toString();
+  public static String format(String organization) {
+    return newBuilder().setOrganization(organization).build().toString();
   }
 
-  public static ProjectName parse(String formattedString) {
+  public static OrganizationName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
     Map<String, String> matchMap =
-        PROJECT.validatedMatch(
-            formattedString, "ProjectName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"));
+        ORGANIZATION.validatedMatch(
+            formattedString, "OrganizationName.parse: formattedString not in valid format");
+    return of(matchMap.get("organization"));
   }
 
-  public static List<ProjectName> parseList(List<String> formattedStrings) {
-    List<ProjectName> list = new ArrayList<>(formattedStrings.size());
+  public static List<OrganizationName> parseList(List<String> formattedStrings) {
+    List<OrganizationName> list = new ArrayList<>(formattedStrings.size());
     for (String formattedString : formattedStrings) {
       list.add(parse(formattedString));
     }
     return list;
   }
 
-  public static List<String> toStringList(List<ProjectName> values) {
+  public static List<String> toStringList(List<OrganizationName> values) {
     List<String> list = new ArrayList<>(values.size());
-    for (ProjectName value : values) {
+    for (OrganizationName value : values) {
       if (value == null) {
         list.add("");
       } else {
@@ -94,7 +94,7 @@ public class ProjectName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT.matches(formattedString);
+    return ORGANIZATION.matches(formattedString);
   }
 
   @Override
@@ -103,8 +103,8 @@ public class ProjectName implements ResourceName {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          if (project != null) {
-            fieldMapBuilder.put("project", project);
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -119,7 +119,7 @@ public class ProjectName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT.instantiate("project", project);
+    return ORGANIZATION.instantiate("organization", organization);
   }
 
   @Override
@@ -128,8 +128,8 @@ public class ProjectName implements ResourceName {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      ProjectName that = ((ProjectName) o);
-      return Objects.equals(this.project, that.project);
+      OrganizationName that = ((OrganizationName) o);
+      return Objects.equals(this.organization, that.organization);
     }
     return false;
   }
@@ -138,31 +138,31 @@ public class ProjectName implements ResourceName {
   public int hashCode() {
     int h = 1;
     h *= 1000003;
-    h ^= Objects.hashCode(project);
+    h ^= Objects.hashCode(organization);
     return h;
   }
 
-  /** Builder for projects/{project}. */
+  /** Builder for organizations/{organization}. */
   public static class Builder {
-    private String project;
+    private String organization;
 
     protected Builder() {}
 
-    public String getProject() {
-      return project;
+    public String getOrganization() {
+      return organization;
     }
 
-    public Builder setProject(String project) {
-      this.project = project;
+    public Builder setOrganization(String organization) {
+      this.organization = organization;
       return this;
     }
 
-    private Builder(ProjectName projectName) {
-      project = projectName.project;
+    private Builder(OrganizationName organizationName) {
+      organization = organizationName.organization;
     }
 
-    public ProjectName build() {
-      return new ProjectName(this);
+    public OrganizationName build() {
+      return new OrganizationName(this);
     }
   }
 }

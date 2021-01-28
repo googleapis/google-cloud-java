@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,29 +26,56 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class GroupName implements ResourceName {
-
-  @Deprecated
-  protected GroupName() {}
-
-  private static final PathTemplate PROJECT_GROUP_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_GROUP =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
-  private static final PathTemplate ORGANIZATION_GROUP_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_GROUP =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/groups/{group}");
-  private static final PathTemplate FOLDER_GROUP_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_GROUP =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/groups/{group}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String group;
+  private final String organization;
+  private final String folder;
 
-  private String project;
-  private String group;
-  private String organization;
-  private String folder;
+  @Deprecated
+  protected GroupName() {
+    project = null;
+    group = null;
+    organization = null;
+    folder = null;
+  }
+
+  private GroupName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    group = Preconditions.checkNotNull(builder.getGroup());
+    organization = null;
+    folder = null;
+    pathTemplate = PROJECT_GROUP;
+  }
+
+  private GroupName(OrganizationGroupBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    group = Preconditions.checkNotNull(builder.getGroup());
+    project = null;
+    folder = null;
+    pathTemplate = ORGANIZATION_GROUP;
+  }
+
+  private GroupName(FolderGroupBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    group = Preconditions.checkNotNull(builder.getGroup());
+    project = null;
+    organization = null;
+    pathTemplate = FOLDER_GROUP;
+  }
 
   public String getProject() {
     return project;
@@ -64,24 +91,6 @@ public class GroupName implements ResourceName {
 
   public String getFolder() {
     return folder;
-  }
-
-  private GroupName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    group = Preconditions.checkNotNull(builder.getGroup());
-    pathTemplate = PROJECT_GROUP_PATH_TEMPLATE;
-  }
-
-  private GroupName(OrganizationGroupBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    group = Preconditions.checkNotNull(builder.getGroup());
-    pathTemplate = ORGANIZATION_GROUP_PATH_TEMPLATE;
-  }
-
-  private GroupName(FolderGroupBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    group = Preconditions.checkNotNull(builder.getGroup());
-    pathTemplate = FOLDER_GROUP_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -108,12 +117,12 @@ public class GroupName implements ResourceName {
   }
 
   public static GroupName of(String project, String group) {
-    return newProjectGroupBuilder().setProject(project).setGroup(group).build();
+    return newBuilder().setProject(project).setGroup(group).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static GroupName ofProjectGroupName(String project, String group) {
-    return newProjectGroupBuilder().setProject(project).setGroup(group).build();
+    return newBuilder().setProject(project).setGroup(group).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -153,17 +162,17 @@ public class GroupName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_GROUP_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_GROUP_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_GROUP.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_GROUP.match(formattedString);
       return ofProjectGroupName(matchMap.get("project"), matchMap.get("group"));
-    } else if (ORGANIZATION_GROUP_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_GROUP_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_GROUP.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_GROUP.match(formattedString);
       return ofOrganizationGroupName(matchMap.get("organization"), matchMap.get("group"));
-    } else if (FOLDER_GROUP_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_GROUP_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_GROUP.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_GROUP.match(formattedString);
       return ofFolderGroupName(matchMap.get("folder"), matchMap.get("group"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("GroupName.parse: formattedString not in valid format");
   }
 
   public static List<GroupName> parseList(List<String> formattedStrings) {
@@ -187,9 +196,9 @@ public class GroupName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_GROUP_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_GROUP_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_GROUP_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_GROUP.matches(formattedString)
+        || ORGANIZATION_GROUP.matches(formattedString)
+        || FOLDER_GROUP.matches(formattedString);
   }
 
   @Override
@@ -226,9 +235,39 @@ public class GroupName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      GroupName that = ((GroupName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.group, that.group)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(group);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    return h;
+  }
+
   /** Builder for projects/{project}/groups/{group}. */
   public static class Builder {
-
     private String project;
     private String group;
 
@@ -254,9 +293,8 @@ public class GroupName implements ResourceName {
 
     private Builder(GroupName groupName) {
       Preconditions.checkArgument(
-          groupName.pathTemplate == PROJECT_GROUP_PATH_TEMPLATE,
-          "toBuilder is only supported when GroupName has the pattern of "
-              + "projects/{project}/groups/{group}.");
+          Objects.equals(groupName.pathTemplate, PROJECT_GROUP),
+          "toBuilder is only supported when GroupName has the pattern of projects/{project}/groups/{group}");
       project = groupName.project;
       group = groupName.group;
     }
@@ -269,11 +307,10 @@ public class GroupName implements ResourceName {
   /** Builder for organizations/{organization}/groups/{group}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationGroupBuilder {
-
     private String organization;
     private String group;
 
-    private OrganizationGroupBuilder() {}
+    protected OrganizationGroupBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -301,11 +338,10 @@ public class GroupName implements ResourceName {
   /** Builder for folders/{folder}/groups/{group}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderGroupBuilder {
-
     private String folder;
     private String group;
 
-    private FolderGroupBuilder() {}
+    protected FolderGroupBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -328,36 +364,5 @@ public class GroupName implements ResourceName {
     public GroupName build() {
       return new GroupName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      GroupName that = (GroupName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.group, that.group))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(group);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    return h;
   }
 }

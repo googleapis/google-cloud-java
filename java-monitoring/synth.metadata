@@ -11,8 +11,8 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7c577e89f1c84545113b393b7d7964473251d123",
-        "internalRef": "318542700"
+        "sha": "857f70daef9f4c38f042fb3dfb7b8423ae18fd19",
+        "internalRef": "346372957"
       }
     },
     {
@@ -140,7 +140,6 @@
     "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/AlertPolicyServiceClientTest.java",
     "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/GroupServiceClientTest.java",
     "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MetricServiceClientTest.java",
-    "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MetricServiceSmokeTest.java",
     "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockAlertPolicyService.java",
     "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockAlertPolicyServiceImpl.java",
     "google-cloud-monitoring/src/test/java/com/google/cloud/monitoring/v3/MockGroupService.java",
@@ -214,6 +213,7 @@
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabels.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsOrBuilder.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/DroppedLabelsProto.java",
+    "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/FolderName.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetAlertPolicyRequest.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetAlertPolicyRequestOrBuilder.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/GetGroupRequest.java",
@@ -309,6 +309,7 @@
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationChannelOrBuilder.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationProto.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/NotificationServiceProto.java",
+    "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/OrganizationName.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/Point.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/PointOrBuilder.java",
     "proto-google-cloud-monitoring-v3/src/main/java/com/google/monitoring/v3/ProjectName.java",

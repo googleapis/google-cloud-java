@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.monitoring.v3.stub;
 
 import static com.google.cloud.monitoring.v3.GroupServiceClient.ListGroupMembersPagedResponse;
@@ -60,7 +61,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link GroupServiceStub}.
  *
@@ -77,21 +78,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getGroup to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * GroupServiceStubSettings.Builder groupServiceSettingsBuilder =
  *     GroupServiceStubSettings.newBuilder();
  * groupServiceSettingsBuilder
  *     .getGroupSettings()
  *     .setRetrySettings(
- *         groupServiceSettingsBuilder.getGroupSettings().getRetrySettings().toBuilder()
+ *         groupServiceSettingsBuilder
+ *             .getGroupSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * GroupServiceStubSettings groupServiceSettings = groupServiceSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -99,7 +102,6 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/monitoring")
           .add("https://www.googleapis.com/auth/monitoring.read")
-          .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
   private final PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
@@ -111,6 +113,118 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
   private final PagedCallSettings<
           ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
       listGroupMembersSettings;
+
+  private static final PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>
+      LIST_GROUPS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGroupsRequest injectToken(ListGroupsRequest payload, String token) {
+              return ListGroupsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGroupsRequest injectPageSize(ListGroupsRequest payload, int pageSize) {
+              return ListGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGroupsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Group> extractResources(ListGroupsResponse payload) {
+              return payload.getGroupList() == null
+                  ? ImmutableList.<Group>of()
+                  : payload.getGroupList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+      LIST_GROUP_MEMBERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListGroupMembersRequest injectToken(
+                ListGroupMembersRequest payload, String token) {
+              return ListGroupMembersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListGroupMembersRequest injectPageSize(
+                ListGroupMembersRequest payload, int pageSize) {
+              return ListGroupMembersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGroupMembersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListGroupMembersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<MonitoredResource> extractResources(ListGroupMembersResponse payload) {
+              return payload.getMembersList() == null
+                  ? ImmutableList.<MonitoredResource>of()
+                  : payload.getMembersList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
+      LIST_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>() {
+            @Override
+            public ApiFuture<ListGroupsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGroupsRequest, ListGroupsResponse> callable,
+                ListGroupsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGroupsResponse> futureResponse) {
+              PageContext<ListGroupsRequest, ListGroupsResponse, Group> pageContext =
+                  PageContext.create(callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
+              return ListGroupsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
+      LIST_GROUP_MEMBERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>() {
+            @Override
+            public ApiFuture<ListGroupMembersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse> callable,
+                ListGroupMembersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListGroupMembersResponse> futureResponse) {
+              PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
+              return ListGroupMembersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listGroups. */
   public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
@@ -151,10 +265,10 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcGroupServiceStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -222,122 +336,9 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     listGroupMembersSettings = settingsBuilder.listGroupMembersSettings().build();
   }
 
-  private static final PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>
-      LIST_GROUPS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListGroupsRequest injectToken(ListGroupsRequest payload, String token) {
-              return ListGroupsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListGroupsRequest injectPageSize(ListGroupsRequest payload, int pageSize) {
-              return ListGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListGroupsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListGroupsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Group> extractResources(ListGroupsResponse payload) {
-              return payload.getGroupList() != null
-                  ? payload.getGroupList()
-                  : ImmutableList.<Group>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
-      LIST_GROUP_MEMBERS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListGroupMembersRequest injectToken(
-                ListGroupMembersRequest payload, String token) {
-              return ListGroupMembersRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListGroupMembersRequest injectPageSize(
-                ListGroupMembersRequest payload, int pageSize) {
-              return ListGroupMembersRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListGroupMembersRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListGroupMembersResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<MonitoredResource> extractResources(ListGroupMembersResponse payload) {
-              return payload.getMembersList() != null
-                  ? payload.getMembersList()
-                  : ImmutableList.<MonitoredResource>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
-      LIST_GROUPS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>() {
-            @Override
-            public ApiFuture<ListGroupsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListGroupsRequest, ListGroupsResponse> callable,
-                ListGroupsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListGroupsResponse> futureResponse) {
-              PageContext<ListGroupsRequest, ListGroupsResponse, Group> pageContext =
-                  PageContext.create(callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
-              return ListGroupsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
-      LIST_GROUP_MEMBERS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>() {
-            @Override
-            public ApiFuture<ListGroupMembersPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse> callable,
-                ListGroupMembersRequest request,
-                ApiCallContext context,
-                ApiFuture<ListGroupMembersResponse> futureResponse) {
-              PageContext<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
-              return ListGroupMembersPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for GroupServiceStubSettings. */
   public static class Builder extends StubSettings.Builder<GroupServiceStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings;
@@ -348,7 +349,6 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     private final PagedCallSettings.Builder<
             ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
         listGroupMembersSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -362,42 +362,6 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_2_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_6_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_3_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_4_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_4_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_6_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_5_codes",
-          ImmutableSet.copyOf(
-              Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_5_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -406,67 +370,6 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
     static {
       ImmutableMap.Builder<String, RetrySettings> definitions = ImmutableMap.builder();
       RetrySettings settings = null;
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(12000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(12000L))
-              .setTotalTimeout(Duration.ofMillis(12000L))
-              .build();
-      definitions.put("no_retry_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_6_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_4_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("no_retry_6_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
@@ -480,68 +383,27 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
       definitions.put("retry_policy_1_params", settings);
       settings =
           RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
               .setInitialRpcTimeout(Duration.ofMillis(30000L))
               .setRpcTimeoutMultiplier(1.0)
               .setMaxRpcTimeout(Duration.ofMillis(30000L))
               .setTotalTimeout(Duration.ofMillis(30000L))
               .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_5_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(30000L))
-              .setInitialRpcTimeout(Duration.ofMillis(30000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(30000L))
-              .setTotalTimeout(Duration.ofMillis(30000L))
-              .build();
-      definitions.put("retry_policy_4_params", settings);
+      definitions.put("no_retry_2_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listGroupsSettings = PagedCallSettings.newBuilder(LIST_GROUPS_PAGE_STR_FACT);
-
       getGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteGroupSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listGroupMembersSettings = PagedCallSettings.newBuilder(LIST_GROUP_MEMBERS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
@@ -552,21 +414,41 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
               updateGroupSettings,
               deleteGroupSettings,
               listGroupMembersSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(GroupServiceStubSettings settings) {
+      super(settings);
+
+      listGroupsSettings = settings.listGroupsSettings.toBuilder();
+      getGroupSettings = settings.getGroupSettings.toBuilder();
+      createGroupSettings = settings.createGroupSettings.toBuilder();
+      updateGroupSettings = settings.updateGroupSettings.toBuilder();
+      deleteGroupSettings = settings.deleteGroupSettings.toBuilder();
+      listGroupMembersSettings = settings.listGroupMembersSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              listGroupsSettings,
+              getGroupSettings,
+              createGroupSettings,
+              updateGroupSettings,
+              deleteGroupSettings,
+              listGroupMembersSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .listGroupsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
@@ -600,27 +482,7 @@ public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSetti
       return builder;
     }
 
-    protected Builder(GroupServiceStubSettings settings) {
-      super(settings);
-
-      listGroupsSettings = settings.listGroupsSettings.toBuilder();
-      getGroupSettings = settings.getGroupSettings.toBuilder();
-      createGroupSettings = settings.createGroupSettings.toBuilder();
-      updateGroupSettings = settings.updateGroupSettings.toBuilder();
-      deleteGroupSettings = settings.deleteGroupSettings.toBuilder();
-      listGroupMembersSettings = settings.listGroupMembersSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listGroupsSettings,
-              getGroupSettings,
-              createGroupSettings,
-              updateGroupSettings,
-              deleteGroupSettings,
-              listGroupMembersSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
