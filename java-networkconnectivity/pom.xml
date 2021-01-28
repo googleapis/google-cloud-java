@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-networkconnectivity-parent</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+  <version>0.1.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
   <name>Google Network Connectivity Center Parent</name>
   <url>https://github.com/googleapis/java-</url>
   <description>
@@ -70,17 +70,17 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-networkconnectivity</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
+        <version>0.1.0</version><!-- {x-version-update:google-cloud-networkconnectivity:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-networkconnectivity-v1alpha1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:proto-google-cloud-networkconnectivity-v1alpha1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-networkconnectivity-v1alpha1</artifactId>
-        <version>0.0.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
+        <version>0.1.0</version><!-- {x-version-update:grpc-google-cloud-networkconnectivity-v1alpha1:current} -->
       </dependency>
 
       <dependency>
