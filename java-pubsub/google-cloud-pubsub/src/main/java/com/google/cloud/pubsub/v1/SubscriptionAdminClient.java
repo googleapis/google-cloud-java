@@ -417,6 +417,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @deprecated Use {@link #createSubscription(ProjectSubscriptionName, TopicName, PushConfig,
    *     int)} instead.
    */
+  @Deprecated
   public final Subscription createSubscription(
       ProjectSubscriptionName name,
       ProjectTopicName topic,
@@ -2118,10 +2119,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriptionAdminClient topicAdminClient = SubscriptionAdminClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = topicAdminClient.setIamPolicy(formattedResource, policy);
+   *   Policy response = subscriptionAdminClient.setIamPolicy(formattedResource, policy);
    * }
    * </code></pre>
    *
@@ -2133,6 +2134,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #setIamPolicy(SetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy setIamPolicy(String resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
@@ -2197,9 +2199,9 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriptionAdminClient topicAdminClient = SubscriptionAdminClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
-   *   Policy response = topicAdminClient.getIamPolicy(formattedResource);
+   *   Policy response = subscriptionAdminClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
    *
@@ -2208,6 +2210,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #getIamPolicy(GetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy getIamPolicy(String resource) {
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
@@ -2278,10 +2281,10 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriptionAdminClient topicAdminClient = SubscriptionAdminClient.create()) {
+   * try (SubscriptionAdminClient subscriptionAdminClient = SubscriptionAdminClient.create()) {
    *   String formattedResource = ProjectTopicName.format("[PROJECT]", "[TOPIC]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = topicAdminClient.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = subscriptionAdminClient.testIamPermissions(formattedResource, permissions);
    * }
    * </code></pre>
    *
@@ -2293,6 +2296,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #testIamPermissions(TestIamPermissionsRequest)} instead.
    */
+  @Deprecated
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
     TestIamPermissionsRequest request =

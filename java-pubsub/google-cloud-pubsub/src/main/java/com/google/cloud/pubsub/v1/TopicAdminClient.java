@@ -255,6 +255,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #createTopic(TopicName)} instead.
    */
+  @Deprecated
   public final Topic createTopic(ProjectTopicName name) {
     Topic request = Topic.newBuilder().setName(name == null ? null : name.toString()).build();
     return createTopic(request);
@@ -538,6 +539,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #getTopic(TopicName)} instead.
    */
+  @Deprecated
   public final Topic getTopic(ProjectTopicName topic) {
     GetTopicRequest request =
         GetTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
@@ -792,6 +794,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #listTopicSubscriptions(TopicName)} instead.
    */
+  @Deprecated
   public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(ProjectTopicName topic) {
     ListTopicSubscriptionsRequest request =
         ListTopicSubscriptionsRequest.newBuilder()
@@ -1106,6 +1109,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #deleteTopic(TopicName)} instead.
    */
+  @Deprecated
   public final void deleteTopic(ProjectTopicName topic) {
     DeleteTopicRequest request =
         DeleteTopicRequest.newBuilder().setTopic(topic == null ? null : topic.toString()).build();
@@ -1214,6 +1218,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #setIamPolicy(SetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy setIamPolicy(String resource, Policy policy) {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
@@ -1289,6 +1294,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #getIamPolicy(GetIamPolicyRequest)} instead.
    */
+  @Deprecated
   public final Policy getIamPolicy(String resource) {
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
@@ -1374,6 +1380,7 @@ public class TopicAdminClient implements BackgroundResource {
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    * @deprecated Use {@link #testIamPermissions(TestIamPermissionsRequest)} instead.
    */
+  @Deprecated
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
     TestIamPermissionsRequest request =
