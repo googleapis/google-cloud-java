@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-trace-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+  <version>1.2.11</version><!-- {x-version-update:google-cloud-trace:current} -->
   <name>Google Cloud Trace Parent</name>
   <url>https://github.com/googleapis/java-core</url>
   <description>
@@ -158,22 +158,22 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v1</artifactId>
-        <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
+        <version>1.2.11</version><!-- {x-version-update:proto-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-trace-v2</artifactId>
-        <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
+        <version>1.2.11</version><!-- {x-version-update:proto-google-cloud-trace-v2:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v1</artifactId>
-        <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
+        <version>1.2.11</version><!-- {x-version-update:grpc-google-cloud-trace-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-trace-v2</artifactId>
-        <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+        <version>1.2.11</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
       </dependency>
 
       <dependency>

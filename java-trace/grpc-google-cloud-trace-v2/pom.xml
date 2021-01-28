@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-trace-v2</artifactId>
-  <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
+  <version>1.2.11</version><!-- {x-version-update:grpc-google-cloud-trace-v2:current} -->
   <name>grpc-google-cloud-trace-v2</name>
   <description>GRPC library for grpc-google-cloud-trace-v2</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-trace-parent</artifactId>
-    <version>1.2.11-SNAPSHOT</version><!-- {x-version-update:google-cloud-trace:current} -->
+    <version>1.2.11</version><!-- {x-version-update:google-cloud-trace:current} -->
   </parent>
   <dependencies>
     <dependency>
