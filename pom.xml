@@ -64,7 +64,6 @@
     <project.protobuf-java.version>3.14.0</project.protobuf-java.version>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-bigquerystorage-parent</site.installationModule>
-    <jackson-core.version>2.12.1</jackson-core.version>
   </properties>
 
   <pluginRepositories>
@@ -143,11 +142,6 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bigquerystorage</artifactId>
         <version>1.8.6-SNAPSHOT</version><!-- {x-version-update:google-cloud-bigquerystorage:current} -->
-      </dependency>
-      <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson-core.version}</version>
       </dependency>
       <dependency>
         <groupId>org.json</groupId>

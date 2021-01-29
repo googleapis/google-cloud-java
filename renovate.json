@@ -68,12 +68,6 @@
         "^com.google.cloud:google-cloud-"
       ],
       "ignoreUnstable": false
-    },
-    {
-      "packagePatterns": [
-        "^com.fasterxml.jackson.core"
-      ],
-      "groupName": "jackson dependencies"
     }
   ],
   "semanticCommits": true,
