@@ -114,8 +114,8 @@ bash .kokoro/coerce_logs.sh
 
 if [[ "${ENABLE_BUILD_COP}" == "true" ]]
 then
-    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/buildcop
-    ${KOKORO_GFILE_DIR}/linux_amd64/buildcop -repo=googleapis/java-aiplatform
+    chmod +x ${KOKORO_GFILE_DIR}/linux_amd64/flakybot
+    ${KOKORO_GFILE_DIR}/linux_amd64/flakybot -repo=googleapis/java-aiplatform
 fi
 
 echo "exiting with ${RETURN_CODE}"
