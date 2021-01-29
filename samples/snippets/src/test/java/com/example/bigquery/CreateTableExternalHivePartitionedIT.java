@@ -29,7 +29,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class SetHivePartitioningOptionsIT {
+public class CreateTableExternalHivePartitionedIT {
 
   private static final String ID = UUID.randomUUID().toString().substring(0, 8);
   private final Logger log = Logger.getLogger(this.getClass().getName());
@@ -74,11 +74,11 @@ public class SetHivePartitioningOptionsIT {
   }
 
   @Test
-  public void testSetHivePartitioningOptions() {
+  public void testCreateTableExternalHivePartitioned() {
     String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/*";
     String sourceUriPrefix =
         "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
-    SetHivePartitioningOptions.setHivePartitioningOptions(
+    CreateTableExternalHivePartitioned.createTableExternalHivePartitioned(
         BIGQUERY_DATASET_NAME, tableName, sourceUriPrefix, sourceUri);
     assertThat(bout.toString()).contains("External table created using hivepartitioningoptions");
   }

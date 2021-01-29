@@ -16,6 +16,7 @@
 
 package com.example.bigquery;
 
+// [START bigquery_create_table_external_hivepartitioned]
 // [START bigquery_set_hivepartitioningoptions]
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
@@ -27,7 +28,7 @@ import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
 // Sample to create external table using hive partitioning
-public class SetHivePartitioningOptions {
+public class CreateTableExternalHivePartitioned {
 
   public static void main(String[] args) {
     // TODO(developer): Replace these variables before running the sample.
@@ -36,10 +37,10 @@ public class SetHivePartitioningOptions {
     String sourceUri = "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/*";
     String sourceUriPrefix =
         "gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/";
-    setHivePartitioningOptions(datasetName, tableName, sourceUriPrefix, sourceUri);
+    createTableExternalHivePartitioned(datasetName, tableName, sourceUriPrefix, sourceUri);
   }
 
-  public static void setHivePartitioningOptions(
+  public static void createTableExternalHivePartitioned(
       String datasetName, String tableName, String sourceUriPrefix, String sourceUri) {
     try {
       // Initialize client that will be used to send requests. This client only needs to be created
@@ -68,3 +69,4 @@ public class SetHivePartitioningOptions {
   }
 }
 // [END bigquery_set_hivepartitioningoptions]
+// [END bigquery_create_table_external_hivepartitioned]
