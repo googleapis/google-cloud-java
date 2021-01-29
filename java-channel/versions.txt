@@ -1,6 +1,6 @@
 # Format:
 # module:released-version:current-version
 
-google-cloud-channel:0.1.0:0.1.0
-proto-google-cloud-channel-v1:0.1.0:0.1.0
-grpc-google-cloud-channel-v1:0.1.0:0.1.0
+google-cloud-channel:0.1.0:0.1.1-SNAPSHOT
+proto-google-cloud-channel-v1:0.1.0:0.1.1-SNAPSHOT
+grpc-google-cloud-channel-v1:0.1.0:0.1.1-SNAPSHOT
