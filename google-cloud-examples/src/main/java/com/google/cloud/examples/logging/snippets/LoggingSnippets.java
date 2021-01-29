@@ -440,12 +440,10 @@ public class LoggingSnippets {
   // [TARGET listLogEntries(EntryListOption...)]
   // [VARIABLE "logName=projects/my_project_id/logs/my_log_name"]
   public Page<LogEntry> listLogEntries(String filter) {
-    // [START logging_list_log_entries]
     Page<LogEntry> entries = logging.listLogEntries(EntryListOption.filter(filter));
     for (LogEntry entry : entries.iterateAll()) {
       // do something with the entry
     }
-    // [END logging_list_log_entries]
     return entries;
   }
 
