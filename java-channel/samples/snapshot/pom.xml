@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-channel</artifactId>
-      <version>0.0.0</version>
+      <version>1.0.0</version>
     </dependency>
   <!-- {x-version-update-end} -->
 
