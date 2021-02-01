@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.24.11](https://www.github.com/googleapis/java-speech/compare/v1.24.10...v1.24.11) (2021-02-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#401](https://www.github.com/googleapis/java-speech/issues/401)) ([79d5432](https://www.github.com/googleapis/java-speech/commit/79d543248fa811c947cee85f471b0d6b74ed1d3c))
+* update dependency com.google.errorprone:error_prone_annotations to v2.5.1 ([#402](https://www.github.com/googleapis/java-speech/issues/402)) ([bcf9362](https://www.github.com/googleapis/java-speech/commit/bcf93626e34e8727b64216858daa70904e60b757))
+
 ### [1.24.10](https://www.github.com/googleapis/java-speech/compare/v1.24.9...v1.24.10) (2020-12-15)
 
 
