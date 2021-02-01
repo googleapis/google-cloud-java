@@ -36,6 +36,7 @@ public class ListMetricDescriptorIT {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -52,15 +53,15 @@ public class ListMetricDescriptorIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
     // restores print statements in the original method
-    bout.reset();
-    out.flush();
     System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

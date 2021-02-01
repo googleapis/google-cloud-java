@@ -41,6 +41,7 @@ public class DeleteNotificationChannelIT {
   private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
   private static String NOTIFICATION_CHANNEL_NAME = "channelname";
   private static NotificationChannel NOTIFICATION_CHANNEL;
+  private PrintStream originalPrintStream;
 
   private static String getProjectId() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
@@ -70,13 +71,16 @@ public class DeleteNotificationChannelIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
     System.setProperty("projectId", DeleteNotificationChannelIT.getProjectId());
   }
 
   @After
   public void tearDown() {
-    System.setOut(null);
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

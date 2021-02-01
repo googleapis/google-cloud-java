@@ -39,6 +39,7 @@ public class CreateAlertPolicyIT {
   private String alertPolicyId;
   private String alertPolicyDisplayName;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -58,6 +59,7 @@ public class CreateAlertPolicyIT {
     alertPolicyDisplayName = "alert_policy_name_" + suffix;
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -66,9 +68,8 @@ public class CreateAlertPolicyIT {
     // delete an alert policy for clean up
     DeleteAlertPolicy.deleteAlertPolicy(alertPolicyId);
     // restores print statements in the original method
-    bout.reset();
-    out.flush();
     System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

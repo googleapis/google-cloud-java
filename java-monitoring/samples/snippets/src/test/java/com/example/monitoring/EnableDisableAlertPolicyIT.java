@@ -36,6 +36,7 @@ public class EnableDisableAlertPolicyIT {
   private String alertPolicyId;
   private String alertPolicyDisplayName;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -62,6 +63,7 @@ public class EnableDisableAlertPolicyIT {
     alertPolicyId = result.substring(result.indexOf(":") + 1);
     bout.reset();
     out.flush();
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
@@ -70,9 +72,8 @@ public class EnableDisableAlertPolicyIT {
     // delete an alert policy for clean up
     DeleteAlertPolicy.deleteAlertPolicy(alertPolicyId);
     // restores print statements in the original method
-    bout.reset();
-    out.flush();
     System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

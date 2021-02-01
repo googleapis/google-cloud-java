@@ -22,8 +22,8 @@ import com.google.monitoring.v3.UptimeCheckConfig;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -37,24 +37,26 @@ import org.junit.runners.MethodSorters;
 public class UptimeIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static UptimeCheckConfig config =
       UptimeCheckConfig.newBuilder()
           .setDisplayName("check-" + UUID.randomUUID().toString().substring(0, 6))
           .build();
 
-  @BeforeClass
-  public static void setUpClass() {
-    ByteArrayOutputStream bout = new ByteArrayOutputStream();
-    PrintStream out = new PrintStream(bout);
-    System.setOut(out);
-  }
-
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
+  }
+
+  @After
+  public void tearDown() {
+    // restores print statements in the original method
+    System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

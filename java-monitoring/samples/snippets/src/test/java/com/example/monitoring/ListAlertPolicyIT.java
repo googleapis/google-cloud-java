@@ -32,6 +32,7 @@ public class ListAlertPolicyIT {
   private static final String PROJECT_ID = requireEnvVar("GOOGLE_CLOUD_PROJECT");
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static String requireEnvVar(String varName) {
     String value = System.getenv(varName);
@@ -50,15 +51,15 @@ public class ListAlertPolicyIT {
   public void setUp() {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
     // restores print statements in the original method
-    bout.reset();
-    out.flush();
     System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test

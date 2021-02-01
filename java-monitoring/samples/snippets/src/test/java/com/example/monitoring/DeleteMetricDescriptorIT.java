@@ -39,6 +39,7 @@ public class DeleteMetricDescriptorIT {
   private static final String METRIC_TYPE = "custom.googleapis.com/invoice/paid/amount" + suffix;
   private ByteArrayOutputStream bout;
   private PrintStream out;
+  private PrintStream originalPrintStream;
 
   private static void requireEnvVar(String varName) {
     assertNotNull(
@@ -53,18 +54,21 @@ public class DeleteMetricDescriptorIT {
 
   @Before
   public void setUp() throws IOException {
-    CreateMetricDescriptor.createMetricDescriptor(PROJECT_ID, METRIC_TYPE);
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
+    System.setOut(out);
+    CreateMetricDescriptor.createMetricDescriptor(PROJECT_ID, METRIC_TYPE);
+    bout.reset();
+    out.flush();
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 
   @After
   public void tearDown() {
     // restores print statements in the original method
-    bout.reset();
-    out.flush();
     System.out.flush();
+    System.setOut(originalPrintStream);
   }
 
   @Test
