@@ -72,7 +72,7 @@ public class ExtractTableToJsonIT {
     String tableName = "shakespeare";
     String destinationUri = "gs://" + GCS_BUCKET + "/extractTest.json";
     // FormatOptions.json() is not "JSON" but "NEWLINE_DELIMITED_JSON"
-    String dataFormat = FormatOptions.json().toString();
+    String dataFormat = FormatOptions.json().getType();
 
     // Extract table content to GCS in JSON format
     ExtractTableToJson.extractTableToJson(
