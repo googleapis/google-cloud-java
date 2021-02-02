@@ -19,7 +19,24 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>================ TopicAdminClient ================
+ * <p>=================== SchemaServiceClient ===================
+ *
+ * <p>Service Description:
+ *
+ * <p>Sample for SchemaServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (SchemaServiceClient schemaServiceClient = SchemaServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Schema schema = Schema.newBuilder().build();
+ *   String schemaId = "";
+ *   Schema response = schemaServiceClient.createSchema(parent, schema, schemaId);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ================ TopicAdminClient ================
  *
  * <p>Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.

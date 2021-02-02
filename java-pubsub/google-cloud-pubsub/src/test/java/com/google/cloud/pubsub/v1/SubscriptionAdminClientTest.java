@@ -86,6 +86,7 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class SubscriptionAdminClientTest {
+  private static MockSchemaService mockSchemaService;
   private static MockPublisher mockPublisher;
   private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
@@ -95,13 +96,15 @@ public class SubscriptionAdminClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockSchemaService = new MockSchemaService();
     mockPublisher = new MockPublisher();
     mockIAMPolicy = new MockIAMPolicy();
     mockSubscriber = new MockSubscriber();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy, mockSubscriber));
+            Arrays.<MockGrpcService>asList(
+                mockSchemaService, mockPublisher, mockIAMPolicy, mockSubscriber));
     serviceHelper.start();
   }
 

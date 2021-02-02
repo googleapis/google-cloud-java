@@ -72,6 +72,7 @@ import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class TopicAdminClientTest {
+  private static MockSchemaService mockSchemaService;
   private static MockPublisher mockPublisher;
   private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
@@ -81,13 +82,15 @@ public class TopicAdminClientTest {
 
   @BeforeClass
   public static void startStaticServer() {
+    mockSchemaService = new MockSchemaService();
     mockPublisher = new MockPublisher();
     mockIAMPolicy = new MockIAMPolicy();
     mockSubscriber = new MockSubscriber();
     serviceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockPublisher, mockIAMPolicy, mockSubscriber));
+            Arrays.<MockGrpcService>asList(
+                mockSchemaService, mockPublisher, mockIAMPolicy, mockSubscriber));
     serviceHelper.start();
   }
 
@@ -118,8 +121,13 @@ public class TopicAdminClientTest {
   public void createTopicTest() {
     TopicName name2 = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
+    boolean satisfiesPzs = false;
     Topic expectedResponse =
-        Topic.newBuilder().setName(name2.toString()).setKmsKeyName(kmsKeyName).build();
+        Topic.newBuilder()
+            .setName(name2.toString())
+            .setKmsKeyName(kmsKeyName)
+            .setSatisfiesPzs(satisfiesPzs)
+            .build();
     mockPublisher.addResponse(expectedResponse);
 
     TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
@@ -159,8 +167,13 @@ public class TopicAdminClientTest {
   public void updateTopicTest() {
     TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
+    boolean satisfiesPzs = false;
     Topic expectedResponse =
-        Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
+        Topic.newBuilder()
+            .setName(name.toString())
+            .setKmsKeyName(kmsKeyName)
+            .setSatisfiesPzs(satisfiesPzs)
+            .build();
     mockPublisher.addResponse(expectedResponse);
 
     Topic topic = Topic.newBuilder().build();
@@ -255,8 +268,13 @@ public class TopicAdminClientTest {
   public void getTopicTest() {
     TopicName name = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");
     String kmsKeyName = "kmsKeyName2094986649";
+    boolean satisfiesPzs = false;
     Topic expectedResponse =
-        Topic.newBuilder().setName(name.toString()).setKmsKeyName(kmsKeyName).build();
+        Topic.newBuilder()
+            .setName(name.toString())
+            .setKmsKeyName(kmsKeyName)
+            .setSatisfiesPzs(satisfiesPzs)
+            .build();
     mockPublisher.addResponse(expectedResponse);
 
     TopicName topic = TopicName.ofProjectTopicName("[PROJECT]", "[TOPIC]");

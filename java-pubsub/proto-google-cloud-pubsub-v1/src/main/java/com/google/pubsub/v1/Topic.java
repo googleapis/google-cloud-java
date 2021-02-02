@@ -115,6 +115,27 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
               kmsKeyName_ = s;
               break;
             }
+          case 50:
+            {
+              com.google.pubsub.v1.SchemaSettings.Builder subBuilder = null;
+              if (schemaSettings_ != null) {
+                subBuilder = schemaSettings_.toBuilder();
+              }
+              schemaSettings_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.SchemaSettings.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(schemaSettings_);
+                schemaSettings_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 56:
+            {
+              satisfiesPzs_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -426,6 +447,76 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SCHEMA_SETTINGS_FIELD_NUMBER = 6;
+  private com.google.pubsub.v1.SchemaSettings schemaSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Settings for validating messages published against a schema.
+   * EXPERIMENTAL: Schema support is in development and may not work yet.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   *
+   * @return Whether the schemaSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasSchemaSettings() {
+    return schemaSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for validating messages published against a schema.
+   * EXPERIMENTAL: Schema support is in development and may not work yet.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   *
+   * @return The schemaSettings.
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.SchemaSettings getSchemaSettings() {
+    return schemaSettings_ == null
+        ? com.google.pubsub.v1.SchemaSettings.getDefaultInstance()
+        : schemaSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for validating messages published against a schema.
+   * EXPERIMENTAL: Schema support is in development and may not work yet.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.pubsub.v1.SchemaSettingsOrBuilder getSchemaSettingsOrBuilder() {
+    return getSchemaSettings();
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 7;
+  private boolean satisfiesPzs_;
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use. This field is set only in responses from the
+   * server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 7;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -450,6 +541,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getKmsKeyNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, kmsKeyName_);
+    }
+    if (schemaSettings_ != null) {
+      output.writeMessage(6, getSchemaSettings());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(7, satisfiesPzs_);
     }
     unknownFields.writeTo(output);
   }
@@ -480,6 +577,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     if (!getKmsKeyNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, kmsKeyName_);
     }
+    if (schemaSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSchemaSettings());
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, satisfiesPzs_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -502,6 +605,11 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       if (!getMessageStoragePolicy().equals(other.getMessageStoragePolicy())) return false;
     }
     if (!getKmsKeyName().equals(other.getKmsKeyName())) return false;
+    if (hasSchemaSettings() != other.hasSchemaSettings()) return false;
+    if (hasSchemaSettings()) {
+      if (!getSchemaSettings().equals(other.getSchemaSettings())) return false;
+    }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -525,6 +633,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + KMS_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKeyName().hashCode();
+    if (hasSchemaSettings()) {
+      hash = (37 * hash) + SCHEMA_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaSettings().hashCode();
+    }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -698,6 +812,14 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       }
       kmsKeyName_ = "";
 
+      if (schemaSettingsBuilder_ == null) {
+        schemaSettings_ = null;
+      } else {
+        schemaSettings_ = null;
+        schemaSettingsBuilder_ = null;
+      }
+      satisfiesPzs_ = false;
+
       return this;
     }
 
@@ -733,6 +855,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
         result.messageStoragePolicy_ = messageStoragePolicyBuilder_.build();
       }
       result.kmsKeyName_ = kmsKeyName_;
+      if (schemaSettingsBuilder_ == null) {
+        result.schemaSettings_ = schemaSettings_;
+      } else {
+        result.schemaSettings_ = schemaSettingsBuilder_.build();
+      }
+      result.satisfiesPzs_ = satisfiesPzs_;
       onBuilt();
       return result;
     }
@@ -793,6 +921,12 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
         onChanged();
+      }
+      if (other.hasSchemaSettings()) {
+        mergeSchemaSettings(other.getSchemaSettings());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1436,6 +1570,255 @@ public final class Topic extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       kmsKeyName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.pubsub.v1.SchemaSettings schemaSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.SchemaSettings,
+            com.google.pubsub.v1.SchemaSettings.Builder,
+            com.google.pubsub.v1.SchemaSettingsOrBuilder>
+        schemaSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     *
+     * @return Whether the schemaSettings field is set.
+     */
+    public boolean hasSchemaSettings() {
+      return schemaSettingsBuilder_ != null || schemaSettings_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     *
+     * @return The schemaSettings.
+     */
+    public com.google.pubsub.v1.SchemaSettings getSchemaSettings() {
+      if (schemaSettingsBuilder_ == null) {
+        return schemaSettings_ == null
+            ? com.google.pubsub.v1.SchemaSettings.getDefaultInstance()
+            : schemaSettings_;
+      } else {
+        return schemaSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    public Builder setSchemaSettings(com.google.pubsub.v1.SchemaSettings value) {
+      if (schemaSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schemaSettings_ = value;
+        onChanged();
+      } else {
+        schemaSettingsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    public Builder setSchemaSettings(com.google.pubsub.v1.SchemaSettings.Builder builderForValue) {
+      if (schemaSettingsBuilder_ == null) {
+        schemaSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        schemaSettingsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    public Builder mergeSchemaSettings(com.google.pubsub.v1.SchemaSettings value) {
+      if (schemaSettingsBuilder_ == null) {
+        if (schemaSettings_ != null) {
+          schemaSettings_ =
+              com.google.pubsub.v1.SchemaSettings.newBuilder(schemaSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          schemaSettings_ = value;
+        }
+        onChanged();
+      } else {
+        schemaSettingsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    public Builder clearSchemaSettings() {
+      if (schemaSettingsBuilder_ == null) {
+        schemaSettings_ = null;
+        onChanged();
+      } else {
+        schemaSettings_ = null;
+        schemaSettingsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    public com.google.pubsub.v1.SchemaSettings.Builder getSchemaSettingsBuilder() {
+
+      onChanged();
+      return getSchemaSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    public com.google.pubsub.v1.SchemaSettingsOrBuilder getSchemaSettingsOrBuilder() {
+      if (schemaSettingsBuilder_ != null) {
+        return schemaSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return schemaSettings_ == null
+            ? com.google.pubsub.v1.SchemaSettings.getDefaultInstance()
+            : schemaSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for validating messages published against a schema.
+     * EXPERIMENTAL: Schema support is in development and may not work yet.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.SchemaSettings,
+            com.google.pubsub.v1.SchemaSettings.Builder,
+            com.google.pubsub.v1.SchemaSettingsOrBuilder>
+        getSchemaSettingsFieldBuilder() {
+      if (schemaSettingsBuilder_ == null) {
+        schemaSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.SchemaSettings,
+                com.google.pubsub.v1.SchemaSettings.Builder,
+                com.google.pubsub.v1.SchemaSettingsOrBuilder>(
+                getSchemaSettings(), getParentForChildren(), isClean());
+        schemaSettings_ = null;
+      }
+      return schemaSettingsBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use. This field is set only in responses from the
+     * server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 7;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use. This field is set only in responses from the
+     * server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 7;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use. This field is set only in responses from the
+     * server; it is ignored if it is set in any requests.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+
+      satisfiesPzs_ = false;
       onChanged();
       return this;
     }

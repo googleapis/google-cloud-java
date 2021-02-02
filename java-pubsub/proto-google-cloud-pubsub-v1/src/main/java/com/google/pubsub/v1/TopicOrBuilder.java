@@ -186,4 +186,56 @@ public interface TopicOrBuilder
    * @return The bytes for kmsKeyName.
    */
   com.google.protobuf.ByteString getKmsKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Settings for validating messages published against a schema.
+   * EXPERIMENTAL: Schema support is in development and may not work yet.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   *
+   * @return Whether the schemaSettings field is set.
+   */
+  boolean hasSchemaSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for validating messages published against a schema.
+   * EXPERIMENTAL: Schema support is in development and may not work yet.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   *
+   * @return The schemaSettings.
+   */
+  com.google.pubsub.v1.SchemaSettings getSchemaSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for validating messages published against a schema.
+   * EXPERIMENTAL: Schema support is in development and may not work yet.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.SchemaSettings schema_settings = 6;</code>
+   */
+  com.google.pubsub.v1.SchemaSettingsOrBuilder getSchemaSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use. This field is set only in responses from the
+   * server; it is ignored if it is set in any requests.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 7;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 }
