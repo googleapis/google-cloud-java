@@ -45,6 +45,7 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -441,9 +442,11 @@ public class ServiceOptionsTest {
   public void testGetServiceAccountProjectId_badJson() throws Exception {
     File credentialsFile = File.createTempFile("credentials", ".json");
     credentialsFile.deleteOnExit();
-    Files.write("asdfghj".getBytes(), credentialsFile);
+    Files.write("asdfghj".getBytes(StandardCharsets.UTF_8), credentialsFile);
 
-    assertNull(ServiceOptions.getValueFromCredentialsFile(credentialsFile.getPath(), "project_id"));
+    String valueFromCredentialsFile =
+        ServiceOptions.getValueFromCredentialsFile(credentialsFile.getPath(), "project_id");
+    assertNull(valueFromCredentialsFile);
   }
 
   @Test

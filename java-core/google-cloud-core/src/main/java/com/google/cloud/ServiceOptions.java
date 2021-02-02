@@ -30,8 +30,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.json.jackson2.JacksonFactory;
-import com.google.api.client.util.Charsets;
+import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.core.ApiClock;
 import com.google.api.core.BetaApi;
 import com.google.api.core.CurrentMillisClock;
@@ -61,6 +60,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
@@ -516,19 +516,18 @@ public abstract class ServiceOptions<
 
   @InternalApi("Visible for testing")
   static String getValueFromCredentialsFile(String credentialsPath, String key) {
-    String value = null;
     if (credentialsPath != null) {
       try (InputStream credentialsStream = new FileInputStream(credentialsPath)) {
-        JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
+        JsonFactory jsonFactory = GsonFactory.getDefaultInstance();
         JsonObjectParser parser = new JsonObjectParser(jsonFactory);
         GenericJson fileContents =
-            parser.parseAndClose(credentialsStream, Charsets.UTF_8, GenericJson.class);
-        value = (String) fileContents.get(key);
-      } catch (IOException e) {
-        // ignore
+            parser.parseAndClose(credentialsStream, StandardCharsets.UTF_8, GenericJson.class);
+        return (String) fileContents.get(key);
+      } catch (IOException | IllegalArgumentException ex) {
+        return null;
       }
     }
-    return value;
+    return null;
   }
 
   /**
