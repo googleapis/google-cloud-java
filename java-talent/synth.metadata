@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "3f3420ab542968a41d568b8113297839d2323def"
+        "sha": "00efc2396e75ca4f1bc5f340fa7854f6240dd970"
       }
     },
     {
@@ -27,7 +27,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3816b080296d4d52975079fd26c110dd26ba25af"
+        "sha": "5de29e9434b63ea6d7e46dc348521c62969af1a1"
       }
     }
   ],
@@ -105,6 +105,8 @@
     ".kokoro/release/promote.sh",
     ".kokoro/release/publish_javadoc.cfg",
     ".kokoro/release/publish_javadoc.sh",
+    ".kokoro/release/publish_javadoc11.cfg",
+    ".kokoro/release/publish_javadoc11.sh",
     ".kokoro/release/snapshot.cfg",
     ".kokoro/release/snapshot.sh",
     ".kokoro/release/stage.cfg",
