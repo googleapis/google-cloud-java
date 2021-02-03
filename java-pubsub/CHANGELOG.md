@@ -1,5 +1,29 @@
 # Changelog
 
+## [1.111.0](https://www.github.com/googleapis/java-pubsub/compare/v1.110.3...v1.111.0) (2021-02-02)
+
+
+### Features
+
+* add schema service to gapic ([#494](https://www.github.com/googleapis/java-pubsub/issues/494)) ([23952bf](https://www.github.com/googleapis/java-pubsub/commit/23952bfb728f64efaeaa2862f2f56f873260ca3e))
+
+
+### Bug Fixes
+
+* adding deprecated tags to deprecated methods ([#472](https://www.github.com/googleapis/java-pubsub/issues/472)) ([91b5152](https://www.github.com/googleapis/java-pubsub/commit/91b5152ba9942e9ce4cfd2051e4b8b358b465601))
+* fix flakiness in subscriberIT integration test ([#476](https://www.github.com/googleapis/java-pubsub/issues/476)) ([d981b4e](https://www.github.com/googleapis/java-pubsub/commit/d981b4ec7ba905898fcc5e17453166d9d995bdb4))
+
+
+### Documentation
+
+* Document potentially unexpected blocking behavior of publish() method ([#370](https://www.github.com/googleapis/java-pubsub/issues/370)) ([18b3a2f](https://www.github.com/googleapis/java-pubsub/commit/18b3a2f77816b55cf605447b382a2f1bd42e0880))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#482](https://www.github.com/googleapis/java-pubsub/issues/482)) ([260eca5](https://www.github.com/googleapis/java-pubsub/commit/260eca5ea34296d3722707ce7199845c6f2e8526))
+* update dependency com.google.errorprone:error_prone_annotations to v2.5.1 ([#484](https://www.github.com/googleapis/java-pubsub/issues/484)) ([44b6780](https://www.github.com/googleapis/java-pubsub/commit/44b6780022bbc2e1cf40be82932a34e5d8e08650))
+
 ### [1.110.3](https://www.github.com/googleapis/java-pubsub/compare/v1.110.2...v1.110.3) (2020-12-15)
 
 
