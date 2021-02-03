@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class PosixAccountName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate USER_PROJECT =
       PathTemplate.createWithoutUrlEncoding("users/{user}/projects/{project}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String user;
   private final String project;
+
+  @Deprecated
+  protected PosixAccountName() {
+    user = null;
+    project = null;
+  }
+
+  private PosixAccountName(Builder builder) {
+    user = Preconditions.checkNotNull(builder.getUser());
+    project = Preconditions.checkNotNull(builder.getProject());
+  }
 
   public String getUser() {
     return user;
@@ -52,11 +62,6 @@ public class PosixAccountName implements ResourceName {
     return new Builder(this);
   }
 
-  private PosixAccountName(Builder builder) {
-    user = Preconditions.checkNotNull(builder.getUser());
-    project = Preconditions.checkNotNull(builder.getProject());
-  }
-
   public static PosixAccountName of(String user, String project) {
     return newBuilder().setUser(user).setProject(project).build();
   }
@@ -70,7 +75,7 @@ public class PosixAccountName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        USER_PROJECT.validatedMatch(
             formattedString, "PosixAccountName.parse: formattedString not in valid format");
     return of(matchMap.get("user"), matchMap.get("project"));
   }
@@ -84,7 +89,7 @@ public class PosixAccountName implements ResourceName {
   }
 
   public static List<String> toStringList(List<PosixAccountName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (PosixAccountName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class PosixAccountName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return USER_PROJECT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("user", user);
-          fieldMapBuilder.put("project", project);
+          if (user != null) {
+            fieldMapBuilder.put("user", user);
+          }
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class PosixAccountName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("user", user, "project", project);
+    return USER_PROJECT.instantiate("user", user, "project", project);
   }
 
-  /** Builder for PosixAccountName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      PosixAccountName that = ((PosixAccountName) o);
+      return Objects.equals(this.user, that.user) && Objects.equals(this.project, that.project);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(user);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    return h;
+  }
+
+  /** Builder for users/{user}/projects/{project}. */
+  public static class Builder {
     private String user;
     private String project;
+
+    protected Builder() {}
 
     public String getUser() {
       return user;
@@ -146,8 +179,6 @@ public class PosixAccountName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(PosixAccountName posixAccountName) {
       user = posixAccountName.user;
       project = posixAccountName.project;
@@ -156,27 +187,5 @@ public class PosixAccountName implements ResourceName {
     public PosixAccountName build() {
       return new PosixAccountName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof PosixAccountName) {
-      PosixAccountName that = (PosixAccountName) o;
-      return (this.user.equals(that.user)) && (this.project.equals(that.project));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= user.hashCode();
-    h *= 1000003;
-    h ^= project.hashCode();
-    return h;
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.oslogin.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey;
+import com.google.cloud.oslogin.common.OsLoginProto;
 import com.google.cloud.oslogin.v1.OsLoginServiceGrpc.OsLoginServiceImplBase;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Empty;
@@ -25,9 +26,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -64,10 +66,10 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -79,10 +81,10 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -94,10 +96,10 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     Object response = responses.remove();
     if (response instanceof LoginProfile) {
       requests.add(request);
-      responseObserver.onNext((LoginProfile) response);
+      responseObserver.onNext(((LoginProfile) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -105,14 +107,14 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
 
   @Override
   public void getSshPublicKey(
-      GetSshPublicKeyRequest request, StreamObserver<SshPublicKey> responseObserver) {
+      GetSshPublicKeyRequest request, StreamObserver<OsLoginProto.SshPublicKey> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof SshPublicKey) {
+    if (response instanceof OsLoginProto.SshPublicKey) {
       requests.add(request);
-      responseObserver.onNext((SshPublicKey) response);
+      responseObserver.onNext(((OsLoginProto.SshPublicKey) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -125,10 +127,10 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     Object response = responses.remove();
     if (response instanceof ImportSshPublicKeyResponse) {
       requests.add(request);
-      responseObserver.onNext((ImportSshPublicKeyResponse) response);
+      responseObserver.onNext(((ImportSshPublicKeyResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -136,14 +138,15 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
 
   @Override
   public void updateSshPublicKey(
-      UpdateSshPublicKeyRequest request, StreamObserver<SshPublicKey> responseObserver) {
+      UpdateSshPublicKeyRequest request,
+      StreamObserver<OsLoginProto.SshPublicKey> responseObserver) {
     Object response = responses.remove();
-    if (response instanceof SshPublicKey) {
+    if (response instanceof OsLoginProto.SshPublicKey) {
       requests.add(request);
-      responseObserver.onNext((SshPublicKey) response);
+      responseObserver.onNext(((OsLoginProto.SshPublicKey) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
