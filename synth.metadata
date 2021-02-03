@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-bigquery.git",
-        "sha": "242cce97d37a5e88d9bfa396f27db62c151e66b4"
+        "sha": "ef669df3c97981664615f0d752f8d988d08c00c9"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "5de29e9434b63ea6d7e46dc348521c62969af1a1"
+        "sha": "e935c9ecb47da0f2e054f5f1845f7cf7c95fa625"
       }
     }
   ],
@@ -40,7 +40,6 @@
     ".kokoro/continuous/java8.cfg",
     ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
-    ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
     ".kokoro/nightly/java11.cfg",
