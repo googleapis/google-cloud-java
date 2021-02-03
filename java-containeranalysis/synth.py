@@ -20,7 +20,7 @@ import synthtool.languages.java as java
 AUTOSYNTH_MULTIPLE_COMMITS = True
 
 service = 'devtools-containeranalysis'
-versions = ['v1beta1', 'v1']
+versions = ['v1']
 
 get_grafeas_code = """
   /**
