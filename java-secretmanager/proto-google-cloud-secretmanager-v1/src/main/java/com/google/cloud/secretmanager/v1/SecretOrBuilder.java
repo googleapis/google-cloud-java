@@ -218,4 +218,82 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+   * always provided on output, regardless of what was sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+   * always provided on output, regardless of what was sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+   * always provided on output, regardless of what was sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  boolean hasTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The ttl.
+   */
+  com.google.protobuf.Duration getTtl();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
+
+  public com.google.cloud.secretmanager.v1.Secret.ExpirationCase getExpirationCase();
 }

@@ -125,6 +125,36 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (expirationCase_ == 6) {
+                subBuilder = ((com.google.protobuf.Timestamp) expiration_).toBuilder();
+              }
+              expiration_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Timestamp) expiration_);
+                expiration_ = subBuilder.buildPartial();
+              }
+              expirationCase_ = 6;
+              break;
+            }
+          case 58:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (expirationCase_ == 7) {
+                subBuilder = ((com.google.protobuf.Duration) expiration_).toBuilder();
+              }
+              expiration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Duration) expiration_);
+                expiration_ = subBuilder.buildPartial();
+              }
+              expirationCase_ = 7;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -168,6 +198,53 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.secretmanager.v1.Secret.class,
             com.google.cloud.secretmanager.v1.Secret.Builder.class);
+  }
+
+  private int expirationCase_ = 0;
+  private java.lang.Object expiration_;
+
+  public enum ExpirationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    EXPIRE_TIME(6),
+    TTL(7),
+    EXPIRATION_NOT_SET(0);
+    private final int value;
+
+    private ExpirationCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExpirationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ExpirationCase forNumber(int value) {
+      switch (value) {
+        case 6:
+          return EXPIRE_TIME;
+        case 7:
+          return TTL;
+        case 0:
+          return EXPIRATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ExpirationCase getExpirationCase() {
+    return ExpirationCase.forNumber(expirationCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -451,6 +528,114 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+   * always provided on output, regardless of what was sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return expirationCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+   * always provided on output, regardless of what was sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    if (expirationCase_ == 6) {
+      return (com.google.protobuf.Timestamp) expiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+   * always provided on output, regardless of what was sent on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    if (expirationCase_ == 6) {
+      return (com.google.protobuf.Timestamp) expiration_;
+    }
+    return com.google.protobuf.Timestamp.getDefaultInstance();
+  }
+
+  public static final int TTL_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  @java.lang.Override
+  public boolean hasTtl() {
+    return expirationCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The ttl.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getTtl() {
+    if (expirationCase_ == 7) {
+      return (com.google.protobuf.Duration) expiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+    if (expirationCase_ == 7) {
+      return (com.google.protobuf.Duration) expiration_;
+    }
+    return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -476,6 +661,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
+    if (expirationCase_ == 6) {
+      output.writeMessage(6, (com.google.protobuf.Timestamp) expiration_);
+    }
+    if (expirationCase_ == 7) {
+      output.writeMessage(7, (com.google.protobuf.Duration) expiration_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -504,6 +695,16 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labels__);
     }
+    if (expirationCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.protobuf.Timestamp) expiration_);
+    }
+    if (expirationCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.protobuf.Duration) expiration_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -529,6 +730,17 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getExpirationCase().equals(other.getExpirationCase())) return false;
+    switch (expirationCase_) {
+      case 6:
+        if (!getExpireTime().equals(other.getExpireTime())) return false;
+        break;
+      case 7:
+        if (!getTtl().equals(other.getTtl())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -553,6 +765,18 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    switch (expirationCase_) {
+      case 6:
+        hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getExpireTime().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + TTL_FIELD_NUMBER;
+        hash = (53 * hash) + getTtl().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -737,6 +961,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      expirationCase_ = 0;
+      expiration_ = null;
       return this;
     }
 
@@ -778,6 +1004,21 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (expirationCase_ == 6) {
+        if (expireTimeBuilder_ == null) {
+          result.expiration_ = expiration_;
+        } else {
+          result.expiration_ = expireTimeBuilder_.build();
+        }
+      }
+      if (expirationCase_ == 7) {
+        if (ttlBuilder_ == null) {
+          result.expiration_ = expiration_;
+        } else {
+          result.expiration_ = ttlBuilder_.build();
+        }
+      }
+      result.expirationCase_ = expirationCase_;
       onBuilt();
       return result;
     }
@@ -838,6 +1079,22 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
         mergeCreateTime(other.getCreateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      switch (other.getExpirationCase()) {
+        case EXPIRE_TIME:
+          {
+            mergeExpireTime(other.getExpireTime());
+            break;
+          }
+        case TTL:
+          {
+            mergeTtl(other.getTtl());
+            break;
+          }
+        case EXPIRATION_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -864,6 +1121,20 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int expirationCase_ = 0;
+    private java.lang.Object expiration_;
+
+    public ExpirationCase getExpirationCase() {
+      return ExpirationCase.forNumber(expirationCase_);
+    }
+
+    public Builder clearExpiration() {
+      expirationCase_ = 0;
+      expiration_ = null;
+      onChanged();
       return this;
     }
 
@@ -1593,6 +1864,434 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpireTime() {
+      return expirationCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 6) {
+          return (com.google.protobuf.Timestamp) expiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      } else {
+        if (expirationCase_ == 6) {
+          return expireTimeBuilder_.getMessage();
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+        onChanged();
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      expirationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      expirationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 6
+            && expiration_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          expiration_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) expiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (expirationCase_ == 6) {
+          expireTimeBuilder_.mergeFrom(value);
+        }
+        expireTimeBuilder_.setMessage(value);
+      }
+      expirationCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        if (expirationCase_ == 6) {
+          expirationCase_ = 0;
+          expiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (expirationCase_ == 6) {
+          expirationCase_ = 0;
+          expiration_ = null;
+        }
+        expireTimeBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if ((expirationCase_ == 6) && (expireTimeBuilder_ != null)) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        if (expirationCase_ == 6) {
+          return (com.google.protobuf.Timestamp) expiration_;
+        }
+        return com.google.protobuf.Timestamp.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Timestamp in UTC when the [Secret][google.cloud.secretmanager.v1.Secret] is scheduled to expire. This is
+     * always provided on output, regardless of what was sent on input.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp expire_time = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        if (!(expirationCase_ == 6)) {
+          expiration_ = com.google.protobuf.Timestamp.getDefaultInstance();
+        }
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) expiration_, getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      expirationCase_ = 6;
+      onChanged();
+      ;
+      return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        ttlBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return Whether the ttl field is set.
+     */
+    @java.lang.Override
+    public boolean hasTtl() {
+      return expirationCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The ttl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getTtl() {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 7) {
+          return (com.google.protobuf.Duration) expiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      } else {
+        if (expirationCase_ == 7) {
+          return ttlBuilder_.getMessage();
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+        onChanged();
+      } else {
+        ttlBuilder_.setMessage(value);
+      }
+      expirationCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder setTtl(com.google.protobuf.Duration.Builder builderForValue) {
+      if (ttlBuilder_ == null) {
+        expiration_ = builderForValue.build();
+        onChanged();
+      } else {
+        ttlBuilder_.setMessage(builderForValue.build());
+      }
+      expirationCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder mergeTtl(com.google.protobuf.Duration value) {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 7
+            && expiration_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          expiration_ =
+              com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) expiration_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expiration_ = value;
+        }
+        onChanged();
+      } else {
+        if (expirationCase_ == 7) {
+          ttlBuilder_.mergeFrom(value);
+        }
+        ttlBuilder_.setMessage(value);
+      }
+      expirationCase_ = 7;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public Builder clearTtl() {
+      if (ttlBuilder_ == null) {
+        if (expirationCase_ == 7) {
+          expirationCase_ = 0;
+          expiration_ = null;
+          onChanged();
+        }
+      } else {
+        if (expirationCase_ == 7) {
+          expirationCase_ = 0;
+          expiration_ = null;
+        }
+        ttlBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Duration.Builder getTtlBuilder() {
+      return getTtlFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getTtlOrBuilder() {
+      if ((expirationCase_ == 7) && (ttlBuilder_ != null)) {
+        return ttlBuilder_.getMessageOrBuilder();
+      } else {
+        if (expirationCase_ == 7) {
+          return (com.google.protobuf.Duration) expiration_;
+        }
+        return com.google.protobuf.Duration.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. The TTL for the [Secret][google.cloud.secretmanager.v1.Secret].
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration ttl = 7 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getTtlFieldBuilder() {
+      if (ttlBuilder_ == null) {
+        if (!(expirationCase_ == 7)) {
+          expiration_ = com.google.protobuf.Duration.getDefaultInstance();
+        }
+        ttlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                (com.google.protobuf.Duration) expiration_, getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      expirationCase_ = 7;
+      onChanged();
+      ;
+      return ttlBuilder_;
     }
 
     @java.lang.Override
