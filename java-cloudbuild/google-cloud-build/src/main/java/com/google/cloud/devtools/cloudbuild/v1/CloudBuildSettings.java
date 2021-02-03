@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.cloudbuild.v1;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
@@ -60,7 +61,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CloudBuildClient}.
  *
@@ -75,35 +76,24 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteBuildTrigger to 30 seconds:
+ * <p>For example, to set the total timeout of getBuild to 30 seconds:
  *
- * <pre>
- * <code>
- * CloudBuildSettings.Builder cloudBuildSettingsBuilder =
- *     CloudBuildSettings.newBuilder();
+ * <pre>{@code
+ * CloudBuildSettings.Builder cloudBuildSettingsBuilder = CloudBuildSettings.newBuilder();
  * cloudBuildSettingsBuilder
- *     .deleteBuildTriggerSettings()
+ *     .getBuildSettings()
  *     .setRetrySettings(
- *         cloudBuildSettingsBuilder.deleteBuildTriggerSettings().getRetrySettings().toBuilder()
+ *         cloudBuildSettingsBuilder
+ *             .getBuildSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudBuildSettings cloudBuildSettings = cloudBuildSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
-  /** Returns the object with the settings used for calls to listBuilds. */
-  public PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-      listBuildsSettings() {
-    return ((CloudBuildStubSettings) getStubSettings()).listBuildsSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteBuildTrigger. */
-  public UnaryCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerSettings() {
-    return ((CloudBuildStubSettings) getStubSettings()).deleteBuildTriggerSettings();
-  }
 
   /** Returns the object with the settings used for calls to createBuild. */
   public UnaryCallSettings<CreateBuildRequest, Operation> createBuildSettings() {
@@ -111,8 +101,6 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   }
 
   /** Returns the object with the settings used for calls to createBuild. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).createBuildOperationSettings();
@@ -121,6 +109,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   /** Returns the object with the settings used for calls to getBuild. */
   public UnaryCallSettings<GetBuildRequest, Build> getBuildSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).getBuildSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listBuilds. */
+  public PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+      listBuildsSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).listBuildsSettings();
   }
 
   /** Returns the object with the settings used for calls to cancelBuild. */
@@ -134,8 +128,6 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   }
 
   /** Returns the object with the settings used for calls to retryBuild. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).retryBuildOperationSettings();
@@ -158,6 +150,11 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     return ((CloudBuildStubSettings) getStubSettings()).listBuildTriggersSettings();
   }
 
+  /** Returns the object with the settings used for calls to deleteBuildTrigger. */
+  public UnaryCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).deleteBuildTriggerSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateBuildTrigger. */
   public UnaryCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).updateBuildTriggerSettings();
@@ -169,8 +166,6 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   }
 
   /** Returns the object with the settings used for calls to runBuildTrigger. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).runBuildTriggerOperationSettings();
@@ -261,16 +256,13 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
 
   /** Builder for CloudBuildSettings. */
   public static class Builder extends ClientSettings.Builder<CloudBuildSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(CloudBuildStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(CloudBuildStubSettings.newBuilder());
     }
 
     protected Builder(CloudBuildSettings settings) {
@@ -281,11 +273,15 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(CloudBuildStubSettings.newBuilder());
+    }
+
     public CloudBuildStubSettings.Builder getStubSettingsBuilder() {
       return ((CloudBuildStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -298,26 +294,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
       return this;
     }
 
-    /** Returns the builder for the settings used for calls to listBuilds. */
-    public PagedCallSettings.Builder<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-        listBuildsSettings() {
-      return getStubSettingsBuilder().listBuildsSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteBuildTrigger. */
-    public UnaryCallSettings.Builder<DeleteBuildTriggerRequest, Empty>
-        deleteBuildTriggerSettings() {
-      return getStubSettingsBuilder().deleteBuildTriggerSettings();
-    }
-
     /** Returns the builder for the settings used for calls to createBuild. */
     public UnaryCallSettings.Builder<CreateBuildRequest, Operation> createBuildSettings() {
       return getStubSettingsBuilder().createBuildSettings();
     }
 
     /** Returns the builder for the settings used for calls to createBuild. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<CreateBuildRequest, Build, BuildOperationMetadata>
         createBuildOperationSettings() {
       return getStubSettingsBuilder().createBuildOperationSettings();
@@ -326,6 +308,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     /** Returns the builder for the settings used for calls to getBuild. */
     public UnaryCallSettings.Builder<GetBuildRequest, Build> getBuildSettings() {
       return getStubSettingsBuilder().getBuildSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listBuilds. */
+    public PagedCallSettings.Builder<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+        listBuildsSettings() {
+      return getStubSettingsBuilder().listBuildsSettings();
     }
 
     /** Returns the builder for the settings used for calls to cancelBuild. */
@@ -339,8 +327,6 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     }
 
     /** Returns the builder for the settings used for calls to retryBuild. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RetryBuildRequest, Build, BuildOperationMetadata>
         retryBuildOperationSettings() {
       return getStubSettingsBuilder().retryBuildOperationSettings();
@@ -365,6 +351,12 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
       return getStubSettingsBuilder().listBuildTriggersSettings();
     }
 
+    /** Returns the builder for the settings used for calls to deleteBuildTrigger. */
+    public UnaryCallSettings.Builder<DeleteBuildTriggerRequest, Empty>
+        deleteBuildTriggerSettings() {
+      return getStubSettingsBuilder().deleteBuildTriggerSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateBuildTrigger. */
     public UnaryCallSettings.Builder<UpdateBuildTriggerRequest, BuildTrigger>
         updateBuildTriggerSettings() {
@@ -377,8 +369,6 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     }
 
     /** Returns the builder for the settings used for calls to runBuildTrigger. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RunBuildTriggerRequest, Build, BuildOperationMetadata>
         runBuildTriggerOperationSettings() {
       return getStubSettingsBuilder().runBuildTriggerOperationSettings();

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class ServiceAccountName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SERVICE_ACCOUNT =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/serviceAccounts/{service_account}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String serviceAccount;
+
+  @Deprecated
+  protected ServiceAccountName() {
+    project = null;
+    serviceAccount = null;
+  }
+
+  private ServiceAccountName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    serviceAccount = Preconditions.checkNotNull(builder.getServiceAccount());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class ServiceAccountName implements ResourceName {
     return new Builder(this);
   }
 
-  private ServiceAccountName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    serviceAccount = Preconditions.checkNotNull(builder.getServiceAccount());
-  }
-
   public static ServiceAccountName of(String project, String serviceAccount) {
     return newBuilder().setProject(project).setServiceAccount(serviceAccount).build();
   }
@@ -70,7 +75,7 @@ public class ServiceAccountName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_SERVICE_ACCOUNT.validatedMatch(
             formattedString, "ServiceAccountName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("service_account"));
   }
@@ -84,7 +89,7 @@ public class ServiceAccountName implements ResourceName {
   }
 
   public static List<String> toStringList(List<ServiceAccountName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (ServiceAccountName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class ServiceAccountName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SERVICE_ACCOUNT.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("serviceAccount", serviceAccount);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (serviceAccount != null) {
+            fieldMapBuilder.put("service_account", serviceAccount);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,39 @@ public class ServiceAccountName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "service_account", serviceAccount);
+    return PROJECT_SERVICE_ACCOUNT.instantiate(
+        "project", project, "service_account", serviceAccount);
   }
 
-  /** Builder for ServiceAccountName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      ServiceAccountName that = ((ServiceAccountName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.serviceAccount, that.serviceAccount);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(serviceAccount);
+    return h;
+  }
+
+  /** Builder for projects/{project}/serviceAccounts/{service_account}. */
+  public static class Builder {
     private String project;
     private String serviceAccount;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,8 +181,6 @@ public class ServiceAccountName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(ServiceAccountName serviceAccountName) {
       project = serviceAccountName.project;
       serviceAccount = serviceAccountName.serviceAccount;
@@ -156,28 +189,5 @@ public class ServiceAccountName implements ResourceName {
     public ServiceAccountName build() {
       return new ServiceAccountName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof ServiceAccountName) {
-      ServiceAccountName that = (ServiceAccountName) o;
-      return (this.project.equals(that.project))
-          && (this.serviceAccount.equals(that.serviceAccount));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= serviceAccount.hashCode();
-    return h;
   }
 }

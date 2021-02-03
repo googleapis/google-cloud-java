@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.cloudbuild.v1.stub;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -61,15 +61,29 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Cloud Build API.
+ * gRPC stub implementation for the CloudBuild service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcCloudBuildStub extends CloudBuildStub {
+  private static final MethodDescriptor<CreateBuildRequest, Operation> createBuildMethodDescriptor =
+      MethodDescriptor.<CreateBuildRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CreateBuild")
+          .setRequestMarshaller(ProtoUtils.marshaller(CreateBuildRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<GetBuildRequest, Build> getBuildMethodDescriptor =
+      MethodDescriptor.<GetBuildRequest, Build>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/GetBuild")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetBuildRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
+          .build();
 
   private static final MethodDescriptor<ListBuildsRequest, ListBuildsResponse>
       listBuildsMethodDescriptor =
@@ -79,29 +93,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBuildsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListBuildsResponse.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<DeleteBuildTriggerRequest, Empty>
-      deleteBuildTriggerMethodDescriptor =
-          MethodDescriptor.<DeleteBuildTriggerRequest, Empty>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/DeleteBuildTrigger")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(DeleteBuildTriggerRequest.getDefaultInstance()))
-              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
-              .build();
-  private static final MethodDescriptor<CreateBuildRequest, Operation> createBuildMethodDescriptor =
-      MethodDescriptor.<CreateBuildRequest, Operation>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/CreateBuild")
-          .setRequestMarshaller(ProtoUtils.marshaller(CreateBuildRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
-          .build();
-  private static final MethodDescriptor<GetBuildRequest, Build> getBuildMethodDescriptor =
-      MethodDescriptor.<GetBuildRequest, Build>newBuilder()
-          .setType(MethodDescriptor.MethodType.UNARY)
-          .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/GetBuild")
-          .setRequestMarshaller(ProtoUtils.marshaller(GetBuildRequest.getDefaultInstance()))
-          .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
-          .build();
+
   private static final MethodDescriptor<CancelBuildRequest, Build> cancelBuildMethodDescriptor =
       MethodDescriptor.<CancelBuildRequest, Build>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -109,6 +101,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setRequestMarshaller(ProtoUtils.marshaller(CancelBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Build.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<RetryBuildRequest, Operation> retryBuildMethodDescriptor =
       MethodDescriptor.<RetryBuildRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -116,6 +109,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
           .setRequestMarshaller(ProtoUtils.marshaller(RetryBuildRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateBuildTriggerRequest, BuildTrigger>
       createBuildTriggerMethodDescriptor =
           MethodDescriptor.<CreateBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -125,6 +119,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(CreateBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetBuildTriggerRequest, BuildTrigger>
       getBuildTriggerMethodDescriptor =
           MethodDescriptor.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -134,6 +129,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(GetBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListBuildTriggersRequest, ListBuildTriggersResponse>
       listBuildTriggersMethodDescriptor =
           MethodDescriptor.<ListBuildTriggersRequest, ListBuildTriggersResponse>newBuilder()
@@ -144,6 +140,17 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBuildTriggersResponse.getDefaultInstance()))
               .build();
+
+  private static final MethodDescriptor<DeleteBuildTriggerRequest, Empty>
+      deleteBuildTriggerMethodDescriptor =
+          MethodDescriptor.<DeleteBuildTriggerRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.devtools.cloudbuild.v1.CloudBuild/DeleteBuildTrigger")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteBuildTriggerRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateBuildTriggerRequest, BuildTrigger>
       updateBuildTriggerMethodDescriptor =
           MethodDescriptor.<UpdateBuildTriggerRequest, BuildTrigger>newBuilder()
@@ -153,6 +160,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(UpdateBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BuildTrigger.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<RunBuildTriggerRequest, Operation>
       runBuildTriggerMethodDescriptor =
           MethodDescriptor.<RunBuildTriggerRequest, Operation>newBuilder()
@@ -162,6 +170,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(RunBuildTriggerRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<CreateWorkerPoolRequest, WorkerPool>
       createWorkerPoolMethodDescriptor =
           MethodDescriptor.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
@@ -171,6 +180,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(CreateWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetWorkerPoolRequest, WorkerPool>
       getWorkerPoolMethodDescriptor =
           MethodDescriptor.<GetWorkerPoolRequest, WorkerPool>newBuilder()
@@ -180,6 +190,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(GetWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteWorkerPoolRequest, Empty>
       deleteWorkerPoolMethodDescriptor =
           MethodDescriptor.<DeleteWorkerPoolRequest, Empty>newBuilder()
@@ -189,6 +200,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(DeleteWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateWorkerPoolRequest, WorkerPool>
       updateWorkerPoolMethodDescriptor =
           MethodDescriptor.<UpdateWorkerPoolRequest, WorkerPool>newBuilder()
@@ -198,6 +210,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(UpdateWorkerPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WorkerPool.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
       listWorkerPoolsMethodDescriptor =
           MethodDescriptor.<ListWorkerPoolsRequest, ListWorkerPoolsResponse>newBuilder()
@@ -209,16 +222,12 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   ProtoUtils.marshaller(ListWorkerPoolsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
-
-  private final UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable;
-  private final UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable;
-  private final UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable;
   private final UnaryCallable<CreateBuildRequest, Operation> createBuildCallable;
   private final OperationCallable<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationCallable;
   private final UnaryCallable<GetBuildRequest, Build> getBuildCallable;
+  private final UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable;
+  private final UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable;
   private final UnaryCallable<CancelBuildRequest, Build> cancelBuildCallable;
   private final UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable;
   private final OperationCallable<RetryBuildRequest, Build, BuildOperationMetadata>
@@ -229,6 +238,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
       listBuildTriggersCallable;
   private final UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersPagedResponse>
       listBuildTriggersPagedCallable;
+  private final UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable;
   private final UnaryCallable<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerCallable;
   private final UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable;
   private final OperationCallable<RunBuildTriggerRequest, Build, BuildOperationMetadata>
@@ -240,6 +250,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
   private final UnaryCallable<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
       listWorkerPoolsCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcCloudBuildStub create(CloudBuildStubSettings settings)
@@ -280,24 +292,6 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     this.callableFactory = callableFactory;
     this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
-    GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
-        GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
-            .setMethodDescriptor(listBuildsMethodDescriptor)
-            .setParamsExtractor(
-                new RequestParamsExtractor<ListBuildsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBuildsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
-                })
-            .build();
-    GrpcCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
-        GrpcCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
-            .setMethodDescriptor(deleteBuildTriggerMethodDescriptor)
-            .build();
     GrpcCallSettings<CreateBuildRequest, Operation> createBuildTransportSettings =
         GrpcCallSettings.<CreateBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(createBuildMethodDescriptor)
@@ -306,8 +300,8 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(CreateBuildRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
                     params.put("parent", String.valueOf(request.getParent()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
                     return params.build();
                   }
                 })
@@ -320,7 +314,23 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(GetBuildRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("id", String.valueOf(request.getId()));
                     params.put("name", String.valueOf(request.getName()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<ListBuildsRequest, ListBuildsResponse> listBuildsTransportSettings =
+        GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
+            .setMethodDescriptor(listBuildsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListBuildsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListBuildsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
                     return params.build();
                   }
                 })
@@ -333,7 +343,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(CancelBuildRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("id", String.valueOf(request.getId()));
                     params.put("name", String.valueOf(request.getName()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
                     return params.build();
                   }
                 })
@@ -346,7 +358,9 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                   @Override
                   public Map<String, String> extract(RetryBuildRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("id", String.valueOf(request.getId()));
                     params.put("name", String.valueOf(request.getName()));
+                    params.put("project_id", String.valueOf(request.getProjectId()));
                     return params.build();
                   }
                 })
@@ -367,6 +381,16 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     GrpcCallSettings<GetBuildTriggerRequest, BuildTrigger> getBuildTriggerTransportSettings =
         GrpcCallSettings.<GetBuildTriggerRequest, BuildTrigger>newBuilder()
             .setMethodDescriptor(getBuildTriggerMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<GetBuildTriggerRequest>() {
+                  @Override
+                  public Map<String, String> extract(GetBuildTriggerRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<ListBuildTriggersRequest, ListBuildTriggersResponse>
         listBuildTriggersTransportSettings =
@@ -382,13 +406,47 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerTransportSettings =
+        GrpcCallSettings.<DeleteBuildTriggerRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteBuildTriggerMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteBuildTriggerRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteBuildTriggerRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerTransportSettings =
         GrpcCallSettings.<UpdateBuildTriggerRequest, BuildTrigger>newBuilder()
             .setMethodDescriptor(updateBuildTriggerMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<UpdateBuildTriggerRequest>() {
+                  @Override
+                  public Map<String, String> extract(UpdateBuildTriggerRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<RunBuildTriggerRequest, Operation> runBuildTriggerTransportSettings =
         GrpcCallSettings.<RunBuildTriggerRequest, Operation>newBuilder()
             .setMethodDescriptor(runBuildTriggerMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<RunBuildTriggerRequest>() {
+                  @Override
+                  public Map<String, String> extract(RunBuildTriggerRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("project_id", String.valueOf(request.getProjectId()));
+                    params.put("trigger_id", String.valueOf(request.getTriggerId()));
+                    return params.build();
+                  }
+                })
             .build();
     GrpcCallSettings<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolTransportSettings =
         GrpcCallSettings.<CreateWorkerPoolRequest, WorkerPool>newBuilder()
@@ -412,17 +470,6 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
                 .setMethodDescriptor(listWorkerPoolsMethodDescriptor)
                 .build();
 
-    this.listBuildsCallable =
-        callableFactory.createUnaryCallable(
-            listBuildsTransportSettings, settings.listBuildsSettings(), clientContext);
-    this.listBuildsPagedCallable =
-        callableFactory.createPagedCallable(
-            listBuildsTransportSettings, settings.listBuildsSettings(), clientContext);
-    this.deleteBuildTriggerCallable =
-        callableFactory.createUnaryCallable(
-            deleteBuildTriggerTransportSettings,
-            settings.deleteBuildTriggerSettings(),
-            clientContext);
     this.createBuildCallable =
         callableFactory.createUnaryCallable(
             createBuildTransportSettings, settings.createBuildSettings(), clientContext);
@@ -431,10 +478,16 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             createBuildTransportSettings,
             settings.createBuildOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getBuildCallable =
         callableFactory.createUnaryCallable(
             getBuildTransportSettings, settings.getBuildSettings(), clientContext);
+    this.listBuildsCallable =
+        callableFactory.createUnaryCallable(
+            listBuildsTransportSettings, settings.listBuildsSettings(), clientContext);
+    this.listBuildsPagedCallable =
+        callableFactory.createPagedCallable(
+            listBuildsTransportSettings, settings.listBuildsSettings(), clientContext);
     this.cancelBuildCallable =
         callableFactory.createUnaryCallable(
             cancelBuildTransportSettings, settings.cancelBuildSettings(), clientContext);
@@ -446,7 +499,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             retryBuildTransportSettings,
             settings.retryBuildOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.createBuildTriggerCallable =
         callableFactory.createUnaryCallable(
             createBuildTriggerTransportSettings,
@@ -465,6 +518,11 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             listBuildTriggersTransportSettings,
             settings.listBuildTriggersSettings(),
             clientContext);
+    this.deleteBuildTriggerCallable =
+        callableFactory.createUnaryCallable(
+            deleteBuildTriggerTransportSettings,
+            settings.deleteBuildTriggerSettings(),
+            clientContext);
     this.updateBuildTriggerCallable =
         callableFactory.createUnaryCallable(
             updateBuildTriggerTransportSettings,
@@ -478,7 +536,7 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
             runBuildTriggerTransportSettings,
             settings.runBuildTriggerOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.createWorkerPoolCallable =
         callableFactory.createUnaryCallable(
             createWorkerPoolTransportSettings, settings.createWorkerPoolSettings(), clientContext);
@@ -495,52 +553,46 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
         callableFactory.createUnaryCallable(
             listWorkerPoolsTransportSettings, settings.listWorkerPoolsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
-  }
-
-  public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
-    return listBuildsPagedCallable;
-  }
-
-  public UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
-    return listBuildsCallable;
-  }
-
-  public UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable() {
-    return deleteBuildTriggerCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateBuildRequest, Build, BuildOperationMetadata>
-      createBuildOperationCallable() {
-    return createBuildOperationCallable;
   }
 
   public UnaryCallable<CreateBuildRequest, Operation> createBuildCallable() {
     return createBuildCallable;
   }
 
+  public OperationCallable<CreateBuildRequest, Build, BuildOperationMetadata>
+      createBuildOperationCallable() {
+    return createBuildOperationCallable;
+  }
+
   public UnaryCallable<GetBuildRequest, Build> getBuildCallable() {
     return getBuildCallable;
+  }
+
+  public UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
+    return listBuildsCallable;
+  }
+
+  public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
+    return listBuildsPagedCallable;
   }
 
   public UnaryCallable<CancelBuildRequest, Build> cancelBuildCallable() {
     return cancelBuildCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
+    return retryBuildCallable;
+  }
+
   public OperationCallable<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationCallable() {
     return retryBuildOperationCallable;
-  }
-
-  public UnaryCallable<RetryBuildRequest, Operation> retryBuildCallable() {
-    return retryBuildCallable;
   }
 
   public UnaryCallable<CreateBuildTriggerRequest, BuildTrigger> createBuildTriggerCallable() {
@@ -551,28 +603,31 @@ public class GrpcCloudBuildStub extends CloudBuildStub {
     return getBuildTriggerCallable;
   }
 
+  public UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersResponse>
+      listBuildTriggersCallable() {
+    return listBuildTriggersCallable;
+  }
+
   public UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersPagedResponse>
       listBuildTriggersPagedCallable() {
     return listBuildTriggersPagedCallable;
   }
 
-  public UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersResponse>
-      listBuildTriggersCallable() {
-    return listBuildTriggersCallable;
+  public UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable() {
+    return deleteBuildTriggerCallable;
   }
 
   public UnaryCallable<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerCallable() {
     return updateBuildTriggerCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
+  public UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable() {
+    return runBuildTriggerCallable;
+  }
+
   public OperationCallable<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationCallable() {
     return runBuildTriggerOperationCallable;
-  }
-
-  public UnaryCallable<RunBuildTriggerRequest, Operation> runBuildTriggerCallable() {
-    return runBuildTriggerCallable;
   }
 
   public UnaryCallable<CreateWorkerPoolRequest, WorkerPool> createWorkerPoolCallable() {

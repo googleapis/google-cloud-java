@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.cloudbuild.v1.stub;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -50,34 +50,19 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Cloud Build API.
+ * Base stub class for the CloudBuild service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class CloudBuildStub implements BackgroundResource {
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
 
-  public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
-    throw new UnsupportedOperationException("Not implemented: listBuildsPagedCallable()");
-  }
-
-  public UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
-    throw new UnsupportedOperationException("Not implemented: listBuildsCallable()");
-  }
-
-  public UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable() {
-    throw new UnsupportedOperationException("Not implemented: deleteBuildTriggerCallable()");
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createBuildOperationCallable()");
@@ -91,11 +76,18 @@ public abstract class CloudBuildStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getBuildCallable()");
   }
 
+  public UnaryCallable<ListBuildsRequest, ListBuildsPagedResponse> listBuildsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBuildsPagedCallable()");
+  }
+
+  public UnaryCallable<ListBuildsRequest, ListBuildsResponse> listBuildsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listBuildsCallable()");
+  }
+
   public UnaryCallable<CancelBuildRequest, Build> cancelBuildCallable() {
     throw new UnsupportedOperationException("Not implemented: cancelBuildCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: retryBuildOperationCallable()");
@@ -123,11 +115,14 @@ public abstract class CloudBuildStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: listBuildTriggersCallable()");
   }
 
+  public UnaryCallable<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteBuildTriggerCallable()");
+  }
+
   public UnaryCallable<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerCallable() {
     throw new UnsupportedOperationException("Not implemented: updateBuildTriggerCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: runBuildTriggerOperationCallable()");

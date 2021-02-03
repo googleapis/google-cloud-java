@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class BuildTriggerName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_TRIGGER =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/triggers/{trigger}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String trigger;
+
+  @Deprecated
+  protected BuildTriggerName() {
+    project = null;
+    trigger = null;
+  }
+
+  private BuildTriggerName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    trigger = Preconditions.checkNotNull(builder.getTrigger());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class BuildTriggerName implements ResourceName {
     return new Builder(this);
   }
 
-  private BuildTriggerName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    trigger = Preconditions.checkNotNull(builder.getTrigger());
-  }
-
   public static BuildTriggerName of(String project, String trigger) {
     return newBuilder().setProject(project).setTrigger(trigger).build();
   }
@@ -70,7 +75,7 @@ public class BuildTriggerName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_TRIGGER.validatedMatch(
             formattedString, "BuildTriggerName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("trigger"));
   }
@@ -84,7 +89,7 @@ public class BuildTriggerName implements ResourceName {
   }
 
   public static List<String> toStringList(List<BuildTriggerName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (BuildTriggerName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class BuildTriggerName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_TRIGGER.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("trigger", trigger);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (trigger != null) {
+            fieldMapBuilder.put("trigger", trigger);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,38 @@ public class BuildTriggerName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "trigger", trigger);
+    return PROJECT_TRIGGER.instantiate("project", project, "trigger", trigger);
   }
 
-  /** Builder for BuildTriggerName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      BuildTriggerName that = ((BuildTriggerName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.trigger, that.trigger);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(trigger);
+    return h;
+  }
+
+  /** Builder for projects/{project}/triggers/{trigger}. */
+  public static class Builder {
     private String project;
     private String trigger;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,8 +180,6 @@ public class BuildTriggerName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(BuildTriggerName buildTriggerName) {
       project = buildTriggerName.project;
       trigger = buildTriggerName.trigger;
@@ -156,27 +188,5 @@ public class BuildTriggerName implements ResourceName {
     public BuildTriggerName build() {
       return new BuildTriggerName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof BuildTriggerName) {
-      BuildTriggerName that = (BuildTriggerName) o;
-      return (this.project.equals(that.project)) && (this.trigger.equals(that.trigger));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= trigger.hashCode();
-    return h;
   }
 }

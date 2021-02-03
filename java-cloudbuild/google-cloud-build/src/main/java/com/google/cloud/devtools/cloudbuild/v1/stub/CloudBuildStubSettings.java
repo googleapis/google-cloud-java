@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.cloudbuild.v1.stub;
 
 import static com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPagedResponse;
@@ -78,7 +79,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link CloudBuildStub}.
  *
@@ -93,36 +94,35 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteBuildTrigger to 30 seconds:
+ * <p>For example, to set the total timeout of getBuild to 30 seconds:
  *
- * <pre>
- * <code>
- * CloudBuildStubSettings.Builder cloudBuildSettingsBuilder =
- *     CloudBuildStubSettings.newBuilder();
+ * <pre>{@code
+ * CloudBuildStubSettings.Builder cloudBuildSettingsBuilder = CloudBuildStubSettings.newBuilder();
  * cloudBuildSettingsBuilder
- *     .deleteBuildTriggerSettings()
+ *     .getBuildSettings()
  *     .setRetrySettings(
- *         cloudBuildSettingsBuilder.deleteBuildTriggerSettings().getRetrySettings().toBuilder()
+ *         cloudBuildSettingsBuilder
+ *             .getBuildSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * CloudBuildStubSettings cloudBuildSettings = cloudBuildSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  private final PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-      listBuildsSettings;
-  private final UnaryCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerSettings;
   private final UnaryCallSettings<CreateBuildRequest, Operation> createBuildSettings;
   private final OperationCallSettings<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationSettings;
   private final UnaryCallSettings<GetBuildRequest, Build> getBuildSettings;
+  private final PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+      listBuildsSettings;
   private final UnaryCallSettings<CancelBuildRequest, Build> cancelBuildSettings;
   private final UnaryCallSettings<RetryBuildRequest, Operation> retryBuildSettings;
   private final OperationCallSettings<RetryBuildRequest, Build, BuildOperationMetadata>
@@ -133,6 +133,7 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   private final PagedCallSettings<
           ListBuildTriggersRequest, ListBuildTriggersResponse, ListBuildTriggersPagedResponse>
       listBuildTriggersSettings;
+  private final UnaryCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerSettings;
   private final UnaryCallSettings<UpdateBuildTriggerRequest, BuildTrigger>
       updateBuildTriggerSettings;
   private final UnaryCallSettings<RunBuildTriggerRequest, Operation> runBuildTriggerSettings;
@@ -145,16 +146,119 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   private final UnaryCallSettings<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
       listWorkerPoolsSettings;
 
-  /** Returns the object with the settings used for calls to listBuilds. */
-  public PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-      listBuildsSettings() {
-    return listBuildsSettings;
-  }
+  private static final PagedListDescriptor<ListBuildsRequest, ListBuildsResponse, Build>
+      LIST_BUILDS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListBuildsRequest, ListBuildsResponse, Build>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-  /** Returns the object with the settings used for calls to deleteBuildTrigger. */
-  public UnaryCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerSettings() {
-    return deleteBuildTriggerSettings;
-  }
+            @Override
+            public ListBuildsRequest injectToken(ListBuildsRequest payload, String token) {
+              return ListBuildsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBuildsRequest injectPageSize(ListBuildsRequest payload, int pageSize) {
+              return ListBuildsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBuildsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBuildsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Build> extractResources(ListBuildsResponse payload) {
+              return payload.getBuildsList() == null
+                  ? ImmutableList.<Build>of()
+                  : payload.getBuildsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
+      LIST_BUILD_TRIGGERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListBuildTriggersRequest injectToken(
+                ListBuildTriggersRequest payload, String token) {
+              return ListBuildTriggersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListBuildTriggersRequest injectPageSize(
+                ListBuildTriggersRequest payload, int pageSize) {
+              return ListBuildTriggersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListBuildTriggersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListBuildTriggersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<BuildTrigger> extractResources(ListBuildTriggersResponse payload) {
+              return payload.getTriggersList() == null
+                  ? ImmutableList.<BuildTrigger>of()
+                  : payload.getTriggersList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+      LIST_BUILDS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>() {
+            @Override
+            public ApiFuture<ListBuildsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBuildsRequest, ListBuildsResponse> callable,
+                ListBuildsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBuildsResponse> futureResponse) {
+              PageContext<ListBuildsRequest, ListBuildsResponse, Build> pageContext =
+                  PageContext.create(callable, LIST_BUILDS_PAGE_STR_DESC, request, context);
+              return ListBuildsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListBuildTriggersRequest, ListBuildTriggersResponse, ListBuildTriggersPagedResponse>
+      LIST_BUILD_TRIGGERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListBuildTriggersRequest,
+              ListBuildTriggersResponse,
+              ListBuildTriggersPagedResponse>() {
+            @Override
+            public ApiFuture<ListBuildTriggersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersResponse> callable,
+                ListBuildTriggersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListBuildTriggersResponse> futureResponse) {
+              PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_BUILD_TRIGGERS_PAGE_STR_DESC, request, context);
+              return ListBuildTriggersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to createBuild. */
   public UnaryCallSettings<CreateBuildRequest, Operation> createBuildSettings() {
@@ -162,7 +266,6 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   }
 
   /** Returns the object with the settings used for calls to createBuild. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<CreateBuildRequest, Build, BuildOperationMetadata>
       createBuildOperationSettings() {
     return createBuildOperationSettings;
@@ -171,6 +274,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   /** Returns the object with the settings used for calls to getBuild. */
   public UnaryCallSettings<GetBuildRequest, Build> getBuildSettings() {
     return getBuildSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listBuilds. */
+  public PagedCallSettings<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+      listBuildsSettings() {
+    return listBuildsSettings;
   }
 
   /** Returns the object with the settings used for calls to cancelBuild. */
@@ -184,7 +293,6 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   }
 
   /** Returns the object with the settings used for calls to retryBuild. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationSettings() {
     return retryBuildOperationSettings;
@@ -207,6 +315,11 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     return listBuildTriggersSettings;
   }
 
+  /** Returns the object with the settings used for calls to deleteBuildTrigger. */
+  public UnaryCallSettings<DeleteBuildTriggerRequest, Empty> deleteBuildTriggerSettings() {
+    return deleteBuildTriggerSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateBuildTrigger. */
   public UnaryCallSettings<UpdateBuildTriggerRequest, BuildTrigger> updateBuildTriggerSettings() {
     return updateBuildTriggerSettings;
@@ -218,7 +331,6 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   }
 
   /** Returns the object with the settings used for calls to runBuildTrigger. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<RunBuildTriggerRequest, Build, BuildOperationMetadata>
       runBuildTriggerOperationSettings() {
     return runBuildTriggerOperationSettings;
@@ -256,10 +368,10 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcCloudBuildStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -319,17 +431,17 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
   protected CloudBuildStubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    listBuildsSettings = settingsBuilder.listBuildsSettings().build();
-    deleteBuildTriggerSettings = settingsBuilder.deleteBuildTriggerSettings().build();
     createBuildSettings = settingsBuilder.createBuildSettings().build();
     createBuildOperationSettings = settingsBuilder.createBuildOperationSettings().build();
     getBuildSettings = settingsBuilder.getBuildSettings().build();
+    listBuildsSettings = settingsBuilder.listBuildsSettings().build();
     cancelBuildSettings = settingsBuilder.cancelBuildSettings().build();
     retryBuildSettings = settingsBuilder.retryBuildSettings().build();
     retryBuildOperationSettings = settingsBuilder.retryBuildOperationSettings().build();
     createBuildTriggerSettings = settingsBuilder.createBuildTriggerSettings().build();
     getBuildTriggerSettings = settingsBuilder.getBuildTriggerSettings().build();
     listBuildTriggersSettings = settingsBuilder.listBuildTriggersSettings().build();
+    deleteBuildTriggerSettings = settingsBuilder.deleteBuildTriggerSettings().build();
     updateBuildTriggerSettings = settingsBuilder.updateBuildTriggerSettings().build();
     runBuildTriggerSettings = settingsBuilder.runBuildTriggerSettings().build();
     runBuildTriggerOperationSettings = settingsBuilder.runBuildTriggerOperationSettings().build();
@@ -340,133 +452,16 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     listWorkerPoolsSettings = settingsBuilder.listWorkerPoolsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListBuildsRequest, ListBuildsResponse, Build>
-      LIST_BUILDS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListBuildsRequest, ListBuildsResponse, Build>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListBuildsRequest injectToken(ListBuildsRequest payload, String token) {
-              return ListBuildsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListBuildsRequest injectPageSize(ListBuildsRequest payload, int pageSize) {
-              return ListBuildsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListBuildsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListBuildsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Build> extractResources(ListBuildsResponse payload) {
-              return payload.getBuildsList() != null
-                  ? payload.getBuildsList()
-                  : ImmutableList.<Build>of();
-            }
-          };
-
-  private static final PagedListDescriptor<
-          ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
-      LIST_BUILD_TRIGGERS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListBuildTriggersRequest injectToken(
-                ListBuildTriggersRequest payload, String token) {
-              return ListBuildTriggersRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListBuildTriggersRequest injectPageSize(
-                ListBuildTriggersRequest payload, int pageSize) {
-              return ListBuildTriggersRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListBuildTriggersRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListBuildTriggersResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<BuildTrigger> extractResources(ListBuildTriggersResponse payload) {
-              return payload.getTriggersList() != null
-                  ? payload.getTriggersList()
-                  : ImmutableList.<BuildTrigger>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-      LIST_BUILDS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>() {
-            @Override
-            public ApiFuture<ListBuildsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListBuildsRequest, ListBuildsResponse> callable,
-                ListBuildsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListBuildsResponse> futureResponse) {
-              PageContext<ListBuildsRequest, ListBuildsResponse, Build> pageContext =
-                  PageContext.create(callable, LIST_BUILDS_PAGE_STR_DESC, request, context);
-              return ListBuildsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListBuildTriggersRequest, ListBuildTriggersResponse, ListBuildTriggersPagedResponse>
-      LIST_BUILD_TRIGGERS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListBuildTriggersRequest,
-              ListBuildTriggersResponse,
-              ListBuildTriggersPagedResponse>() {
-            @Override
-            public ApiFuture<ListBuildTriggersPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListBuildTriggersRequest, ListBuildTriggersResponse> callable,
-                ListBuildTriggersRequest request,
-                ApiCallContext context,
-                ApiFuture<ListBuildTriggersResponse> futureResponse) {
-              PageContext<ListBuildTriggersRequest, ListBuildTriggersResponse, BuildTrigger>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_BUILD_TRIGGERS_PAGE_STR_DESC, request, context);
-              return ListBuildTriggersPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for CloudBuildStubSettings. */
   public static class Builder extends StubSettings.Builder<CloudBuildStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final PagedCallSettings.Builder<
-            ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-        listBuildsSettings;
-    private final UnaryCallSettings.Builder<DeleteBuildTriggerRequest, Empty>
-        deleteBuildTriggerSettings;
     private final UnaryCallSettings.Builder<CreateBuildRequest, Operation> createBuildSettings;
     private final OperationCallSettings.Builder<CreateBuildRequest, Build, BuildOperationMetadata>
         createBuildOperationSettings;
     private final UnaryCallSettings.Builder<GetBuildRequest, Build> getBuildSettings;
+    private final PagedCallSettings.Builder<
+            ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+        listBuildsSettings;
     private final UnaryCallSettings.Builder<CancelBuildRequest, Build> cancelBuildSettings;
     private final UnaryCallSettings.Builder<RetryBuildRequest, Operation> retryBuildSettings;
     private final OperationCallSettings.Builder<RetryBuildRequest, Build, BuildOperationMetadata>
@@ -478,6 +473,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     private final PagedCallSettings.Builder<
             ListBuildTriggersRequest, ListBuildTriggersResponse, ListBuildTriggersPagedResponse>
         listBuildTriggersSettings;
+    private final UnaryCallSettings.Builder<DeleteBuildTriggerRequest, Empty>
+        deleteBuildTriggerSettings;
     private final UnaryCallSettings.Builder<UpdateBuildTriggerRequest, BuildTrigger>
         updateBuildTriggerSettings;
     private final UnaryCallSettings.Builder<RunBuildTriggerRequest, Operation>
@@ -494,7 +491,6 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
         updateWorkerPoolSettings;
     private final UnaryCallSettings.Builder<ListWorkerPoolsRequest, ListWorkerPoolsResponse>
         listWorkerPoolsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -502,13 +498,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.UNAVAILABLE, StatusCode.Code.DEADLINE_EXCEEDED)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -519,6 +514,14 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
       RetrySettings settings = null;
       settings =
           RetrySettings.newBuilder()
+              .setInitialRpcTimeout(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.ofMillis(600000L))
+              .setTotalTimeout(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
+      settings =
+          RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.ofMillis(100L))
               .setRetryDelayMultiplier(1.3)
               .setMaxRetryDelay(Duration.ofMillis(60000L))
@@ -527,76 +530,48 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               .setMaxRpcTimeout(Duration.ofMillis(600000L))
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(600000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(600000L))
-              .setTotalTimeout(Duration.ofMillis(600000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      listBuildsSettings = PagedCallSettings.newBuilder(LIST_BUILDS_PAGE_STR_FACT);
-
-      deleteBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createBuildOperationSettings = OperationCallSettings.newBuilder();
-
       getBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
+      listBuildsSettings = PagedCallSettings.newBuilder(LIST_BUILDS_PAGE_STR_FACT);
       cancelBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       retryBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       retryBuildOperationSettings = OperationCallSettings.newBuilder();
-
       createBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listBuildTriggersSettings = PagedCallSettings.newBuilder(LIST_BUILD_TRIGGERS_PAGE_STR_FACT);
-
+      deleteBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       runBuildTriggerSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       runBuildTriggerOperationSettings = OperationCallSettings.newBuilder();
-
       createWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       getWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateWorkerPoolSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listWorkerPoolsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listBuildsSettings,
-              deleteBuildTriggerSettings,
               createBuildSettings,
               getBuildSettings,
+              listBuildsSettings,
               cancelBuildSettings,
               retryBuildSettings,
               createBuildTriggerSettings,
               getBuildTriggerSettings,
               listBuildTriggersSettings,
+              deleteBuildTriggerSettings,
               updateBuildTriggerSettings,
               runBuildTriggerSettings,
               createWorkerPoolSettings,
@@ -604,31 +579,64 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
               deleteWorkerPoolSettings,
               updateWorkerPoolSettings,
               listWorkerPoolsSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(CloudBuildStubSettings settings) {
+      super(settings);
+
+      createBuildSettings = settings.createBuildSettings.toBuilder();
+      createBuildOperationSettings = settings.createBuildOperationSettings.toBuilder();
+      getBuildSettings = settings.getBuildSettings.toBuilder();
+      listBuildsSettings = settings.listBuildsSettings.toBuilder();
+      cancelBuildSettings = settings.cancelBuildSettings.toBuilder();
+      retryBuildSettings = settings.retryBuildSettings.toBuilder();
+      retryBuildOperationSettings = settings.retryBuildOperationSettings.toBuilder();
+      createBuildTriggerSettings = settings.createBuildTriggerSettings.toBuilder();
+      getBuildTriggerSettings = settings.getBuildTriggerSettings.toBuilder();
+      listBuildTriggersSettings = settings.listBuildTriggersSettings.toBuilder();
+      deleteBuildTriggerSettings = settings.deleteBuildTriggerSettings.toBuilder();
+      updateBuildTriggerSettings = settings.updateBuildTriggerSettings.toBuilder();
+      runBuildTriggerSettings = settings.runBuildTriggerSettings.toBuilder();
+      runBuildTriggerOperationSettings = settings.runBuildTriggerOperationSettings.toBuilder();
+      createWorkerPoolSettings = settings.createWorkerPoolSettings.toBuilder();
+      getWorkerPoolSettings = settings.getWorkerPoolSettings.toBuilder();
+      deleteWorkerPoolSettings = settings.deleteWorkerPoolSettings.toBuilder();
+      updateWorkerPoolSettings = settings.updateWorkerPoolSettings.toBuilder();
+      listWorkerPoolsSettings = settings.listWorkerPoolsSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              createBuildSettings,
+              getBuildSettings,
+              listBuildsSettings,
+              cancelBuildSettings,
+              retryBuildSettings,
+              createBuildTriggerSettings,
+              getBuildTriggerSettings,
+              listBuildTriggersSettings,
+              deleteBuildTriggerSettings,
+              updateBuildTriggerSettings,
+              runBuildTriggerSettings,
+              createWorkerPoolSettings,
+              getWorkerPoolSettings,
+              deleteWorkerPoolSettings,
+              updateWorkerPoolSettings,
+              listWorkerPoolsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listBuildsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteBuildTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
       builder
           .createBuildSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
@@ -636,8 +644,13 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
 
       builder
           .getBuildSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listBuildsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .cancelBuildSettings()
@@ -656,13 +669,18 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
 
       builder
           .getBuildTriggerSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .listBuildTriggersSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteBuildTriggerSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .updateBuildTriggerSettings()
@@ -681,8 +699,8 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
 
       builder
           .getWorkerPoolSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
           .deleteWorkerPoolSettings()
@@ -696,8 +714,9 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
 
       builder
           .listWorkerPoolsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
       builder
           .createBuildOperationSettings()
           .setInitialCallSettings(
@@ -712,14 +731,15 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
+
       builder
           .retryBuildOperationSettings()
           .setInitialCallSettings(
@@ -734,14 +754,15 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
+
       builder
           .runBuildTriggerOperationSettings()
           .setInitialCallSettings(
@@ -757,62 +778,19 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
                       .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
       return builder;
     }
 
-    protected Builder(CloudBuildStubSettings settings) {
-      super(settings);
-
-      listBuildsSettings = settings.listBuildsSettings.toBuilder();
-      deleteBuildTriggerSettings = settings.deleteBuildTriggerSettings.toBuilder();
-      createBuildSettings = settings.createBuildSettings.toBuilder();
-      createBuildOperationSettings = settings.createBuildOperationSettings.toBuilder();
-      getBuildSettings = settings.getBuildSettings.toBuilder();
-      cancelBuildSettings = settings.cancelBuildSettings.toBuilder();
-      retryBuildSettings = settings.retryBuildSettings.toBuilder();
-      retryBuildOperationSettings = settings.retryBuildOperationSettings.toBuilder();
-      createBuildTriggerSettings = settings.createBuildTriggerSettings.toBuilder();
-      getBuildTriggerSettings = settings.getBuildTriggerSettings.toBuilder();
-      listBuildTriggersSettings = settings.listBuildTriggersSettings.toBuilder();
-      updateBuildTriggerSettings = settings.updateBuildTriggerSettings.toBuilder();
-      runBuildTriggerSettings = settings.runBuildTriggerSettings.toBuilder();
-      runBuildTriggerOperationSettings = settings.runBuildTriggerOperationSettings.toBuilder();
-      createWorkerPoolSettings = settings.createWorkerPoolSettings.toBuilder();
-      getWorkerPoolSettings = settings.getWorkerPoolSettings.toBuilder();
-      deleteWorkerPoolSettings = settings.deleteWorkerPoolSettings.toBuilder();
-      updateWorkerPoolSettings = settings.updateWorkerPoolSettings.toBuilder();
-      listWorkerPoolsSettings = settings.listWorkerPoolsSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listBuildsSettings,
-              deleteBuildTriggerSettings,
-              createBuildSettings,
-              getBuildSettings,
-              cancelBuildSettings,
-              retryBuildSettings,
-              createBuildTriggerSettings,
-              getBuildTriggerSettings,
-              listBuildTriggersSettings,
-              updateBuildTriggerSettings,
-              runBuildTriggerSettings,
-              createWorkerPoolSettings,
-              getWorkerPoolSettings,
-              deleteWorkerPoolSettings,
-              updateWorkerPoolSettings,
-              listWorkerPoolsSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -826,18 +804,6 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to listBuilds. */
-    public PagedCallSettings.Builder<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
-        listBuildsSettings() {
-      return listBuildsSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteBuildTrigger. */
-    public UnaryCallSettings.Builder<DeleteBuildTriggerRequest, Empty>
-        deleteBuildTriggerSettings() {
-      return deleteBuildTriggerSettings;
     }
 
     /** Returns the builder for the settings used for calls to createBuild. */
@@ -856,6 +822,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
     /** Returns the builder for the settings used for calls to getBuild. */
     public UnaryCallSettings.Builder<GetBuildRequest, Build> getBuildSettings() {
       return getBuildSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listBuilds. */
+    public PagedCallSettings.Builder<ListBuildsRequest, ListBuildsResponse, ListBuildsPagedResponse>
+        listBuildsSettings() {
+      return listBuildsSettings;
     }
 
     /** Returns the builder for the settings used for calls to cancelBuild. */
@@ -893,6 +865,12 @@ public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings>
             ListBuildTriggersRequest, ListBuildTriggersResponse, ListBuildTriggersPagedResponse>
         listBuildTriggersSettings() {
       return listBuildTriggersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteBuildTrigger. */
+    public UnaryCallSettings.Builder<DeleteBuildTriggerRequest, Empty>
+        deleteBuildTriggerSettings() {
+      return deleteBuildTriggerSettings;
     }
 
     /** Returns the builder for the settings used for calls to updateBuildTrigger. */

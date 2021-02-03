@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.devtools.cloudbuild.v1;
 
 import com.google.api.core.BetaApi;
@@ -47,9 +48,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockCloudBuildImpl extends CloudBuildImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -85,10 +87,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -99,10 +101,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Build) {
       requests.add(request);
-      responseObserver.onNext((Build) response);
+      responseObserver.onNext(((Build) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -114,10 +116,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof ListBuildsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListBuildsResponse) response);
+      responseObserver.onNext(((ListBuildsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -128,10 +130,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Build) {
       requests.add(request);
-      responseObserver.onNext((Build) response);
+      responseObserver.onNext(((Build) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -142,10 +144,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -157,10 +159,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof BuildTrigger) {
       requests.add(request);
-      responseObserver.onNext((BuildTrigger) response);
+      responseObserver.onNext(((BuildTrigger) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -172,10 +174,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof BuildTrigger) {
       requests.add(request);
-      responseObserver.onNext((BuildTrigger) response);
+      responseObserver.onNext(((BuildTrigger) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -188,10 +190,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof ListBuildTriggersResponse) {
       requests.add(request);
-      responseObserver.onNext((ListBuildTriggersResponse) response);
+      responseObserver.onNext(((ListBuildTriggersResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -203,10 +205,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -218,10 +220,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof BuildTrigger) {
       requests.add(request);
-      responseObserver.onNext((BuildTrigger) response);
+      responseObserver.onNext(((BuildTrigger) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -233,10 +235,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -248,10 +250,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof WorkerPool) {
       requests.add(request);
-      responseObserver.onNext((WorkerPool) response);
+      responseObserver.onNext(((WorkerPool) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -263,10 +265,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof WorkerPool) {
       requests.add(request);
-      responseObserver.onNext((WorkerPool) response);
+      responseObserver.onNext(((WorkerPool) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -278,10 +280,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -293,10 +295,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof WorkerPool) {
       requests.add(request);
-      responseObserver.onNext((WorkerPool) response);
+      responseObserver.onNext(((WorkerPool) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -308,10 +310,10 @@ public class MockCloudBuildImpl extends CloudBuildImplBase {
     Object response = responses.remove();
     if (response instanceof ListWorkerPoolsResponse) {
       requests.add(request);
-      responseObserver.onNext((ListWorkerPoolsResponse) response);
+      responseObserver.onNext(((ListWorkerPoolsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
