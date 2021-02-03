@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-shared-dependencies.git",
-        "sha": "1c0b7bd60b3d73c16cc6c19ab90d8ccedece3706"
+        "sha": "9d5061e27d044cba1884065efbdc87bcbbf0440f"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "d1bb9173100f62c0cfc8f3138b62241e7f47ca6a"
+        "sha": "e935c9ecb47da0f2e054f5f1845f7cf7c95fa625"
       }
     }
   ],
@@ -27,7 +27,6 @@
     ".github/snippet-bot.yml",
     ".github/trusted-contribution.yml",
     ".github/workflows/approve-readme.yaml",
-    ".github/workflows/auto-release.yaml",
     ".github/workflows/ci.yaml",
     ".kokoro/build.bat",
     ".kokoro/build.sh",
@@ -38,7 +37,6 @@
     ".kokoro/continuous/java8.cfg",
     ".kokoro/continuous/readme.cfg",
     ".kokoro/dependencies.sh",
-    ".kokoro/linkage-monitor.sh",
     ".kokoro/nightly/common.cfg",
     ".kokoro/nightly/integration.cfg",
     ".kokoro/nightly/java11.cfg",
@@ -70,6 +68,8 @@
     ".kokoro/release/promote.sh",
     ".kokoro/release/publish_javadoc.cfg",
     ".kokoro/release/publish_javadoc.sh",
+    ".kokoro/release/publish_javadoc11.cfg",
+    ".kokoro/release/publish_javadoc11.sh",
     ".kokoro/release/snapshot.cfg",
     ".kokoro/release/snapshot.sh",
     ".kokoro/release/stage.cfg",
