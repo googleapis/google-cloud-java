@@ -43,8 +43,8 @@ public class AssetSnippets {
    *
    * @param organizationName The organization to list assets for.
    */
-   // [START securitycenter_list_all_assets]
-   // [START list_all_assets]
+  // [START securitycenter_list_all_assets]
+  // [START list_all_assets]
   static ImmutableList<ListAssetsResult> listAssets(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to search for all assets in an organization.
@@ -74,8 +74,8 @@ public class AssetSnippets {
    *
    * @param organizationName The organization to list assets for.
    */
-   // [START securitycenter_list_assets_with_filter]
-   // [START list_assets_with_filter]
+  // [START securitycenter_list_assets_with_filter]
+  // [START list_assets_with_filter]
   static ImmutableList<ListAssetsResult> listAssetsWithFilter(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to search for all assets in an organization.
@@ -109,8 +109,8 @@ public class AssetSnippets {
    * @param organizationName The organization to list assets for.
    * @param asOf The snapshot time to query for assets. If null defaults to one day ago.
    */
-   // [START securitycenter_list_assets_as_of_time]
-   // [START list_assets_as_of_time]
+  // [START securitycenter_list_assets_as_of_time]
+  // [START list_assets_as_of_time]
   static ImmutableList<ListAssetsResult> listAssetsAsOfYesterday(
       OrganizationName organizationName, Instant asOf) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -152,8 +152,8 @@ public class AssetSnippets {
    * @param timeSpan The time-range to compare assets over.
    * @param asOf The instant in time to query for. If null, current time is assumed.
    */
-   // [START securitycenter_list_asset_changes_status_changes]
-   // [START list_asset_changes_status_changes]
+  // [START securitycenter_list_asset_changes_status_changes]
+  // [START list_asset_changes_status_changes]
   static ImmutableList<ListAssetsResult> listAssetAndStatusChanges(
       OrganizationName organizationName, Duration timeSpan, Instant asOf) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -196,8 +196,8 @@ public class AssetSnippets {
    *
    * @param organizationName The organization to group assets for.
    */
-   // [START securitycenter_group_all_assets]
-   // [START group_all_assets]
+  // [START securitycenter_group_all_assets]
+  // [START group_all_assets]
   static ImmutableList<GroupResult> groupAssets(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to group all assets by type in an organization.
@@ -230,8 +230,8 @@ public class AssetSnippets {
    *
    * @param organizationName The organization to group assets for.
    */
-   // [START securitycenter_group_all_assets_with_filter]
-   // [START group_all_assets_with_filter]
+  // [START securitycenter_group_all_assets_with_filter]
+  // [START group_all_assets_with_filter]
   static ImmutableList<GroupResult> groupAssetsWithFilter(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
       // Start setting up a request for to filter all assets by type and group them by project in an
@@ -267,8 +267,8 @@ public class AssetSnippets {
    *
    * @param organizationName The organization to group assets for.
    */
-   // [START securitycenter_group_all_assets_with_compare_duration]
-   // [START group_all_assets_with_compare_duration]
+  // [START securitycenter_group_all_assets_with_compare_duration]
+  // [START group_all_assets_with_compare_duration]
   static ImmutableList<GroupResult> groupAssetsWithCompareDuration(
       OrganizationName organizationName, Duration duration) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {

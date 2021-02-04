@@ -88,7 +88,7 @@ public class FindingSnippets {
     }
   }
   // [END create_finding]
-  // [END securitycenter_create_finding] 
+  // [END securitycenter_create_finding]
 
   /**
    * Create a finding with source properties under a source.
@@ -191,7 +191,7 @@ public class FindingSnippets {
     }
   }
   // [END update_finding]
-  // [END securitycenter_update_finding] 
+  // [END securitycenter_update_finding]
 
   /**
    * Updates a finding's state to INACTIVE.
