@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,17 +23,25 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class FolderName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate FOLDER =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String folder;
+
+  @Deprecated
+  protected FolderName() {
+    folder = null;
+  }
+
+  private FolderName(Builder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+  }
 
   public String getFolder() {
     return folder;
@@ -45,10 +53,6 @@ public class FolderName implements ResourceName {
 
   public Builder toBuilder() {
     return new Builder(this);
-  }
-
-  private FolderName(Builder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
   }
 
   public static FolderName of(String folder) {
@@ -64,7 +68,7 @@ public class FolderName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        FOLDER.validatedMatch(
             formattedString, "FolderName.parse: formattedString not in valid format");
     return of(matchMap.get("folder"));
   }
@@ -78,7 +82,7 @@ public class FolderName implements ResourceName {
   }
 
   public static List<String> toStringList(List<FolderName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (FolderName value : values) {
       if (value == null) {
         list.add("");
@@ -90,15 +94,18 @@ public class FolderName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return FOLDER.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("folder", folder);
+          if (folder != null) {
+            fieldMapBuilder.put("folder", folder);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -112,13 +119,34 @@ public class FolderName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("folder", folder);
+    return FOLDER.instantiate("folder", folder);
   }
 
-  /** Builder for FolderName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      FolderName that = ((FolderName) o);
+      return Objects.equals(this.folder, that.folder);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    return h;
+  }
+
+  /** Builder for folders/{folder}. */
+  public static class Builder {
     private String folder;
+
+    protected Builder() {}
 
     public String getFolder() {
       return folder;
@@ -129,8 +157,6 @@ public class FolderName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(FolderName folderName) {
       folder = folderName.folder;
     }
@@ -138,25 +164,5 @@ public class FolderName implements ResourceName {
     public FolderName build() {
       return new FolderName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof FolderName) {
-      FolderName that = (FolderName) o;
-      return (this.folder.equals(that.folder));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= folder.hashCode();
-    return h;
   }
 }

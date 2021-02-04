@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.logging.v2.stub;
 
 import static com.google.cloud.logging.v2.MetricsClient.ListLogMetricsPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link MetricsServiceV2Stub}.
  *
@@ -71,24 +72,25 @@ import org.threeten.bp.Duration;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of updateLogMetric to 30 seconds:
+ * <p>For example, to set the total timeout of getLogMetric to 30 seconds:
  *
- * <pre>
- * <code>
- * MetricsServiceV2StubSettings.Builder metricsSettingsBuilder =
+ * <pre>{@code
+ * MetricsServiceV2StubSettings.Builder metricsServiceV2SettingsBuilder =
  *     MetricsServiceV2StubSettings.newBuilder();
- * metricsSettingsBuilder
- *     .updateLogMetricSettings()
+ * metricsServiceV2SettingsBuilder
+ *     .getLogMetricSettings()
  *     .setRetrySettings(
- *         metricsSettingsBuilder.updateLogMetricSettings().getRetrySettings().toBuilder()
+ *         metricsServiceV2SettingsBuilder
+ *             .getLogMetricSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * MetricsServiceV2StubSettings metricsSettings = metricsSettingsBuilder.build();
- * </code>
- * </pre>
+ * MetricsServiceV2StubSettings metricsServiceV2Settings = metricsServiceV2SettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2StubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -100,23 +102,67 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
-  private final UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
-  private final UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
   private final PagedCallSettings<
           ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
       listLogMetricsSettings;
   private final UnaryCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings;
   private final UnaryCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
+  private final UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
+  private final UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
-  /** Returns the object with the settings used for calls to updateLogMetric. */
-  public UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-    return updateLogMetricSettings;
-  }
+  private static final PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      LIST_LOG_METRICS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
 
-  /** Returns the object with the settings used for calls to deleteLogMetric. */
-  public UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-    return deleteLogMetricSettings;
-  }
+            @Override
+            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, String token) {
+              return ListLogMetricsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLogMetricsRequest injectPageSize(
+                ListLogMetricsRequest payload, int pageSize) {
+              return ListLogMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLogMetricsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLogMetricsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<LogMetric> extractResources(ListLogMetricsResponse payload) {
+              return payload.getMetricsList() == null
+                  ? ImmutableList.<LogMetric>of()
+                  : payload.getMetricsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
+      LIST_LOG_METRICS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLogMetricsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> callable,
+                ListLogMetricsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLogMetricsResponse> futureResponse) {
+              PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> pageContext =
+                  PageContext.create(callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
+              return ListLogMetricsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listLogMetrics. */
   public PagedCallSettings<
@@ -135,16 +181,26 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     return createLogMetricSettings;
   }
 
+  /** Returns the object with the settings used for calls to updateLogMetric. */
+  public UnaryCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+    return updateLogMetricSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteLogMetric. */
+  public UnaryCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+    return deleteLogMetricSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public MetricsServiceV2Stub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcMetricsServiceV2Stub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -204,81 +260,25 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
   protected MetricsServiceV2StubSettings(Builder settingsBuilder) throws IOException {
     super(settingsBuilder);
 
-    updateLogMetricSettings = settingsBuilder.updateLogMetricSettings().build();
-    deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
     listLogMetricsSettings = settingsBuilder.listLogMetricsSettings().build();
     getLogMetricSettings = settingsBuilder.getLogMetricSettings().build();
     createLogMetricSettings = settingsBuilder.createLogMetricSettings().build();
+    updateLogMetricSettings = settingsBuilder.updateLogMetricSettings().build();
+    deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
   }
-
-  private static final PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-      LIST_LOG_METRICS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, String token) {
-              return ListLogMetricsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListLogMetricsRequest injectPageSize(
-                ListLogMetricsRequest payload, int pageSize) {
-              return ListLogMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListLogMetricsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListLogMetricsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<LogMetric> extractResources(ListLogMetricsResponse payload) {
-              return payload.getMetricsList() != null
-                  ? payload.getMetricsList()
-                  : ImmutableList.<LogMetric>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
-      LIST_LOG_METRICS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>() {
-            @Override
-            public ApiFuture<ListLogMetricsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> callable,
-                ListLogMetricsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListLogMetricsResponse> futureResponse) {
-              PageContext<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric> pageContext =
-                  PageContext.create(callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
-              return ListLogMetricsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
 
   /** Builder for MetricsServiceV2StubSettings. */
   public static class Builder extends StubSettings.Builder<MetricsServiceV2StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
-    private final UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric>
-        updateLogMetricSettings;
-    private final UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
     private final PagedCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
         listLogMetricsSettings;
     private final UnaryCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
     private final UnaryCallSettings.Builder<CreateLogMetricRequest, LogMetric>
         createLogMetricSettings;
-
+    private final UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric>
+        updateLogMetricSettings;
+    private final UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -286,15 +286,14 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_4_codes",
+          "retry_policy_5_codes",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+          "no_retry_0_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -313,9 +312,7 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_4_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
+      definitions.put("retry_policy_5_params", settings);
       settings =
           RetrySettings.newBuilder()
               .setInitialRpcTimeout(Duration.ofMillis(60000L))
@@ -323,96 +320,92 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("no_retry_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
-      updateLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      deleteLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       listLogMetricsSettings = PagedCallSettings.newBuilder(LIST_LOG_METRICS_PAGE_STR_FACT);
-
       getLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteLogMetricSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateLogMetricSettings,
-              deleteLogMetricSettings,
               listLogMetricsSettings,
               getLogMetricSettings,
-              createLogMetricSettings);
-
+              createLogMetricSettings,
+              updateLogMetricSettings,
+              deleteLogMetricSettings);
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .updateLogMetricSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .deleteLogMetricSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .listLogMetricsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .getLogMetricSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_4_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_4_params"));
-
-      builder
-          .createLogMetricSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
-
-      return builder;
     }
 
     protected Builder(MetricsServiceV2StubSettings settings) {
       super(settings);
 
-      updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
-      deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
       listLogMetricsSettings = settings.listLogMetricsSettings.toBuilder();
       getLogMetricSettings = settings.getLogMetricSettings.toBuilder();
       createLogMetricSettings = settings.createLogMetricSettings.toBuilder();
+      updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
+      deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              updateLogMetricSettings,
-              deleteLogMetricSettings,
               listLogMetricsSettings,
               getLogMetricSettings,
-              createLogMetricSettings);
+              createLogMetricSettings,
+              updateLogMetricSettings,
+              deleteLogMetricSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listLogMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .getLogMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .createLogMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateLogMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      builder
+          .deleteLogMetricSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_5_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_5_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -426,16 +419,6 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
 
     public ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders() {
       return unaryMethodSettingsBuilders;
-    }
-
-    /** Returns the builder for the settings used for calls to updateLogMetric. */
-    public UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-      return updateLogMetricSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteLogMetric. */
-    public UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-      return deleteLogMetricSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLogMetrics. */
@@ -453,6 +436,16 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
     /** Returns the builder for the settings used for calls to createLogMetric. */
     public UnaryCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
       return createLogMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateLogMetric. */
+    public UnaryCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+      return updateLogMetricSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteLogMetric. */
+    public UnaryCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+      return deleteLogMetricSettings;
     }
 
     @Override

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.ConfigClient.ListBucketsPagedResponse;
@@ -69,7 +70,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ConfigClient}.
  *
@@ -84,39 +85,24 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of deleteSink to 30 seconds:
+ * <p>For example, to set the total timeout of getBucket to 30 seconds:
  *
- * <pre>
- * <code>
- * ConfigSettings.Builder configSettingsBuilder =
- *     ConfigSettings.newBuilder();
+ * <pre>{@code
+ * ConfigSettings.Builder configSettingsBuilder = ConfigSettings.newBuilder();
  * configSettingsBuilder
- *     .deleteSinkSettings()
+ *     .getBucketSettings()
  *     .setRetrySettings(
- *         configSettingsBuilder.deleteSinkSettings().getRetrySettings().toBuilder()
+ *         configSettingsBuilder
+ *             .getBucketSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ConfigSettings configSettings = configSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class ConfigSettings extends ClientSettings<ConfigSettings> {
-  /** Returns the object with the settings used for calls to deleteSink. */
-  public UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
-    return ((ConfigServiceV2StubSettings) getStubSettings()).deleteSinkSettings();
-  }
-
-  /** Returns the object with the settings used for calls to updateSink. */
-  public UnaryCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
-    return ((ConfigServiceV2StubSettings) getStubSettings()).updateSinkSettings();
-  }
-
-  /** Returns the object with the settings used for calls to deleteExclusion. */
-  public UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
-    return ((ConfigServiceV2StubSettings) getStubSettings()).deleteExclusionSettings();
-  }
 
   /** Returns the object with the settings used for calls to listBuckets. */
   public PagedCallSettings<ListBucketsRequest, ListBucketsResponse, ListBucketsPagedResponse>
@@ -191,6 +177,16 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     return ((ConfigServiceV2StubSettings) getStubSettings()).createSinkSettings();
   }
 
+  /** Returns the object with the settings used for calls to updateSink. */
+  public UnaryCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).updateSinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSink. */
+  public UnaryCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).deleteSinkSettings();
+  }
+
   /** Returns the object with the settings used for calls to listExclusions. */
   public PagedCallSettings<
           ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
@@ -211,6 +207,11 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
   /** Returns the object with the settings used for calls to updateExclusion. */
   public UnaryCallSettings<UpdateExclusionRequest, LogExclusion> updateExclusionSettings() {
     return ((ConfigServiceV2StubSettings) getStubSettings()).updateExclusionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteExclusion. */
+  public UnaryCallSettings<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
+    return ((ConfigServiceV2StubSettings) getStubSettings()).deleteExclusionSettings();
   }
 
   /** Returns the object with the settings used for calls to getCmekSettings. */
@@ -282,16 +283,13 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
 
   /** Builder for ConfigSettings. */
   public static class Builder extends ClientSettings.Builder<ConfigSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(ConfigServiceV2StubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(ConfigServiceV2StubSettings.newBuilder());
     }
 
     protected Builder(ConfigSettings settings) {
@@ -302,11 +300,15 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(ConfigServiceV2StubSettings.newBuilder());
+    }
+
     public ConfigServiceV2StubSettings.Builder getStubSettingsBuilder() {
       return ((ConfigServiceV2StubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -317,21 +319,6 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
-    }
-
-    /** Returns the builder for the settings used for calls to deleteSink. */
-    public UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
-      return getStubSettingsBuilder().deleteSinkSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to updateSink. */
-    public UnaryCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
-      return getStubSettingsBuilder().updateSinkSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to deleteExclusion. */
-    public UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
-      return getStubSettingsBuilder().deleteExclusionSettings();
     }
 
     /** Returns the builder for the settings used for calls to listBuckets. */
@@ -408,6 +395,16 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
       return getStubSettingsBuilder().createSinkSettings();
     }
 
+    /** Returns the builder for the settings used for calls to updateSink. */
+    public UnaryCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
+      return getStubSettingsBuilder().updateSinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSink. */
+    public UnaryCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
+      return getStubSettingsBuilder().deleteSinkSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listExclusions. */
     public PagedCallSettings.Builder<
             ListExclusionsRequest, ListExclusionsResponse, ListExclusionsPagedResponse>
@@ -430,6 +427,11 @@ public class ConfigSettings extends ClientSettings<ConfigSettings> {
     public UnaryCallSettings.Builder<UpdateExclusionRequest, LogExclusion>
         updateExclusionSettings() {
       return getStubSettingsBuilder().updateExclusionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteExclusion. */
+    public UnaryCallSettings.Builder<DeleteExclusionRequest, Empty> deleteExclusionSettings() {
+      return getStubSettingsBuilder().deleteExclusionSettings();
     }
 
     /** Returns the builder for the settings used for calls to getCmekSettings. */

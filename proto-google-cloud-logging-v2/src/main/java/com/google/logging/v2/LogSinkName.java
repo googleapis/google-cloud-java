@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,32 +26,72 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class LogSinkName implements ResourceName {
-
-  @Deprecated
-  protected LogSinkName() {}
-
-  private static final PathTemplate PROJECT_SINK_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SINK =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/sinks/{sink}");
-  private static final PathTemplate ORGANIZATION_SINK_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_SINK =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/sinks/{sink}");
-  private static final PathTemplate FOLDER_SINK_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_SINK =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/sinks/{sink}");
-  private static final PathTemplate BILLING_ACCOUNT_SINK_PATH_TEMPLATE =
+  private static final PathTemplate BILLING_ACCOUNT_SINK =
       PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}/sinks/{sink}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String sink;
+  private final String organization;
+  private final String folder;
+  private final String billingAccount;
 
-  private String project;
-  private String sink;
-  private String organization;
-  private String folder;
-  private String billingAccount;
+  @Deprecated
+  protected LogSinkName() {
+    project = null;
+    sink = null;
+    organization = null;
+    folder = null;
+    billingAccount = null;
+  }
+
+  private LogSinkName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    sink = Preconditions.checkNotNull(builder.getSink());
+    organization = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = PROJECT_SINK;
+  }
+
+  private LogSinkName(OrganizationSinkBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    sink = Preconditions.checkNotNull(builder.getSink());
+    project = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = ORGANIZATION_SINK;
+  }
+
+  private LogSinkName(FolderSinkBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    sink = Preconditions.checkNotNull(builder.getSink());
+    project = null;
+    organization = null;
+    billingAccount = null;
+    pathTemplate = FOLDER_SINK;
+  }
+
+  private LogSinkName(BillingAccountSinkBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    sink = Preconditions.checkNotNull(builder.getSink());
+    project = null;
+    organization = null;
+    folder = null;
+    pathTemplate = BILLING_ACCOUNT_SINK;
+  }
 
   public String getProject() {
     return project;
@@ -71,30 +111,6 @@ public class LogSinkName implements ResourceName {
 
   public String getBillingAccount() {
     return billingAccount;
-  }
-
-  private LogSinkName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    sink = Preconditions.checkNotNull(builder.getSink());
-    pathTemplate = PROJECT_SINK_PATH_TEMPLATE;
-  }
-
-  private LogSinkName(OrganizationSinkBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    sink = Preconditions.checkNotNull(builder.getSink());
-    pathTemplate = ORGANIZATION_SINK_PATH_TEMPLATE;
-  }
-
-  private LogSinkName(FolderSinkBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    sink = Preconditions.checkNotNull(builder.getSink());
-    pathTemplate = FOLDER_SINK_PATH_TEMPLATE;
-  }
-
-  private LogSinkName(BillingAccountSinkBuilder builder) {
-    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
-    sink = Preconditions.checkNotNull(builder.getSink());
-    pathTemplate = BILLING_ACCOUNT_SINK_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -126,12 +142,12 @@ public class LogSinkName implements ResourceName {
   }
 
   public static LogSinkName of(String project, String sink) {
-    return newProjectSinkBuilder().setProject(project).setSink(sink).build();
+    return newBuilder().setProject(project).setSink(sink).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogSinkName ofProjectSinkName(String project, String sink) {
-    return newProjectSinkBuilder().setProject(project).setSink(sink).build();
+    return newBuilder().setProject(project).setSink(sink).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -185,20 +201,20 @@ public class LogSinkName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_SINK_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_SINK_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_SINK.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SINK.match(formattedString);
       return ofProjectSinkName(matchMap.get("project"), matchMap.get("sink"));
-    } else if (ORGANIZATION_SINK_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_SINK_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_SINK.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_SINK.match(formattedString);
       return ofOrganizationSinkName(matchMap.get("organization"), matchMap.get("sink"));
-    } else if (FOLDER_SINK_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_SINK_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_SINK.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_SINK.match(formattedString);
       return ofFolderSinkName(matchMap.get("folder"), matchMap.get("sink"));
-    } else if (BILLING_ACCOUNT_SINK_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = BILLING_ACCOUNT_SINK_PATH_TEMPLATE.match(formattedString);
+    } else if (BILLING_ACCOUNT_SINK.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_SINK.match(formattedString);
       return ofBillingAccountSinkName(matchMap.get("billing_account"), matchMap.get("sink"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("LogSinkName.parse: formattedString not in valid format");
   }
 
   public static List<LogSinkName> parseList(List<String> formattedStrings) {
@@ -222,10 +238,10 @@ public class LogSinkName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SINK_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_SINK_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_SINK_PATH_TEMPLATE.matches(formattedString)
-        || BILLING_ACCOUNT_SINK_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SINK.matches(formattedString)
+        || ORGANIZATION_SINK.matches(formattedString)
+        || FOLDER_SINK.matches(formattedString)
+        || BILLING_ACCOUNT_SINK.matches(formattedString);
   }
 
   @Override
@@ -265,9 +281,42 @@ public class LogSinkName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      LogSinkName that = ((LogSinkName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.sink, that.sink)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.billingAccount, that.billingAccount);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(sink);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
+    return h;
+  }
+
   /** Builder for projects/{project}/sinks/{sink}. */
   public static class Builder {
-
     private String project;
     private String sink;
 
@@ -293,9 +342,8 @@ public class LogSinkName implements ResourceName {
 
     private Builder(LogSinkName logSinkName) {
       Preconditions.checkArgument(
-          logSinkName.pathTemplate == PROJECT_SINK_PATH_TEMPLATE,
-          "toBuilder is only supported when LogSinkName has the pattern of "
-              + "projects/{project}/sinks/{sink}.");
+          Objects.equals(logSinkName.pathTemplate, PROJECT_SINK),
+          "toBuilder is only supported when LogSinkName has the pattern of projects/{project}/sinks/{sink}");
       project = logSinkName.project;
       sink = logSinkName.sink;
     }
@@ -308,11 +356,10 @@ public class LogSinkName implements ResourceName {
   /** Builder for organizations/{organization}/sinks/{sink}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationSinkBuilder {
-
     private String organization;
     private String sink;
 
-    private OrganizationSinkBuilder() {}
+    protected OrganizationSinkBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -340,11 +387,10 @@ public class LogSinkName implements ResourceName {
   /** Builder for folders/{folder}/sinks/{sink}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderSinkBuilder {
-
     private String folder;
     private String sink;
 
-    private FolderSinkBuilder() {}
+    protected FolderSinkBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -372,11 +418,10 @@ public class LogSinkName implements ResourceName {
   /** Builder for billingAccounts/{billing_account}/sinks/{sink}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountSinkBuilder {
-
     private String billingAccount;
     private String sink;
 
-    private BillingAccountSinkBuilder() {}
+    protected BillingAccountSinkBuilder() {}
 
     public String getBillingAccount() {
       return billingAccount;
@@ -399,39 +444,5 @@ public class LogSinkName implements ResourceName {
     public LogSinkName build() {
       return new LogSinkName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      LogSinkName that = (LogSinkName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.sink, that.sink))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder))
-          && (Objects.equals(this.billingAccount, that.billingAccount));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(sink);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    h *= 1000003;
-    h ^= Objects.hashCode(billingAccount);
-    return h;
   }
 }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class OrganizationLocationName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_LOCATION =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/locations/{location}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String organization;
   private final String location;
+
+  @Deprecated
+  protected OrganizationLocationName() {
+    organization = null;
+    location = null;
+  }
+
+  private OrganizationLocationName(Builder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+  }
 
   public String getOrganization() {
     return organization;
@@ -52,11 +62,6 @@ public class OrganizationLocationName implements ResourceName {
     return new Builder(this);
   }
 
-  private OrganizationLocationName(Builder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    location = Preconditions.checkNotNull(builder.getLocation());
-  }
-
   public static OrganizationLocationName of(String organization, String location) {
     return newBuilder().setOrganization(organization).setLocation(location).build();
   }
@@ -70,7 +75,7 @@ public class OrganizationLocationName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        ORGANIZATION_LOCATION.validatedMatch(
             formattedString, "OrganizationLocationName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("location"));
   }
@@ -84,7 +89,7 @@ public class OrganizationLocationName implements ResourceName {
   }
 
   public static List<String> toStringList(List<OrganizationLocationName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (OrganizationLocationName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class OrganizationLocationName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return ORGANIZATION_LOCATION.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("organization", organization);
-          fieldMapBuilder.put("location", location);
+          if (organization != null) {
+            fieldMapBuilder.put("organization", organization);
+          }
+          if (location != null) {
+            fieldMapBuilder.put("location", location);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,38 @@ public class OrganizationLocationName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("organization", organization, "location", location);
+    return ORGANIZATION_LOCATION.instantiate("organization", organization, "location", location);
   }
 
-  /** Builder for OrganizationLocationName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      OrganizationLocationName that = ((OrganizationLocationName) o);
+      return Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.location, that.location);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    return h;
+  }
+
+  /** Builder for organizations/{organization}/locations/{location}. */
+  public static class Builder {
     private String organization;
     private String location;
+
+    protected Builder() {}
 
     public String getOrganization() {
       return organization;
@@ -146,8 +180,6 @@ public class OrganizationLocationName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(OrganizationLocationName organizationLocationName) {
       organization = organizationLocationName.organization;
       location = organizationLocationName.location;
@@ -156,27 +188,5 @@ public class OrganizationLocationName implements ResourceName {
     public OrganizationLocationName build() {
       return new OrganizationLocationName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof OrganizationLocationName) {
-      OrganizationLocationName that = (OrganizationLocationName) o;
-      return (this.organization.equals(that.organization)) && (this.location.equals(that.location));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= organization.hashCode();
-    h *= 1000003;
-    h ^= location.hashCode();
-    return h;
   }
 }

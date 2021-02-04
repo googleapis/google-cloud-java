@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,33 +26,73 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class LogExclusionName implements ResourceName {
-
-  @Deprecated
-  protected LogExclusionName() {}
-
-  private static final PathTemplate PROJECT_EXCLUSION_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_EXCLUSION =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/exclusions/{exclusion}");
-  private static final PathTemplate ORGANIZATION_EXCLUSION_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_EXCLUSION =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/exclusions/{exclusion}");
-  private static final PathTemplate FOLDER_EXCLUSION_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_EXCLUSION =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/exclusions/{exclusion}");
-  private static final PathTemplate BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE =
+  private static final PathTemplate BILLING_ACCOUNT_EXCLUSION =
       PathTemplate.createWithoutUrlEncoding(
           "billingAccounts/{billing_account}/exclusions/{exclusion}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String exclusion;
+  private final String organization;
+  private final String folder;
+  private final String billingAccount;
 
-  private String project;
-  private String exclusion;
-  private String organization;
-  private String folder;
-  private String billingAccount;
+  @Deprecated
+  protected LogExclusionName() {
+    project = null;
+    exclusion = null;
+    organization = null;
+    folder = null;
+    billingAccount = null;
+  }
+
+  private LogExclusionName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    organization = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = PROJECT_EXCLUSION;
+  }
+
+  private LogExclusionName(OrganizationExclusionBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    project = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = ORGANIZATION_EXCLUSION;
+  }
+
+  private LogExclusionName(FolderExclusionBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    project = null;
+    organization = null;
+    billingAccount = null;
+    pathTemplate = FOLDER_EXCLUSION;
+  }
+
+  private LogExclusionName(BillingAccountExclusionBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    exclusion = Preconditions.checkNotNull(builder.getExclusion());
+    project = null;
+    organization = null;
+    folder = null;
+    pathTemplate = BILLING_ACCOUNT_EXCLUSION;
+  }
 
   public String getProject() {
     return project;
@@ -72,30 +112,6 @@ public class LogExclusionName implements ResourceName {
 
   public String getBillingAccount() {
     return billingAccount;
-  }
-
-  private LogExclusionName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    exclusion = Preconditions.checkNotNull(builder.getExclusion());
-    pathTemplate = PROJECT_EXCLUSION_PATH_TEMPLATE;
-  }
-
-  private LogExclusionName(OrganizationExclusionBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    exclusion = Preconditions.checkNotNull(builder.getExclusion());
-    pathTemplate = ORGANIZATION_EXCLUSION_PATH_TEMPLATE;
-  }
-
-  private LogExclusionName(FolderExclusionBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    exclusion = Preconditions.checkNotNull(builder.getExclusion());
-    pathTemplate = FOLDER_EXCLUSION_PATH_TEMPLATE;
-  }
-
-  private LogExclusionName(BillingAccountExclusionBuilder builder) {
-    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
-    exclusion = Preconditions.checkNotNull(builder.getExclusion());
-    pathTemplate = BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -127,12 +143,12 @@ public class LogExclusionName implements ResourceName {
   }
 
   public static LogExclusionName of(String project, String exclusion) {
-    return newProjectExclusionBuilder().setProject(project).setExclusion(exclusion).build();
+    return newBuilder().setProject(project).setExclusion(exclusion).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogExclusionName ofProjectExclusionName(String project, String exclusion) {
-    return newProjectExclusionBuilder().setProject(project).setExclusion(exclusion).build();
+    return newBuilder().setProject(project).setExclusion(exclusion).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -194,21 +210,21 @@ public class LogExclusionName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_EXCLUSION.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_EXCLUSION.match(formattedString);
       return ofProjectExclusionName(matchMap.get("project"), matchMap.get("exclusion"));
-    } else if (ORGANIZATION_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_EXCLUSION.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_EXCLUSION.match(formattedString);
       return ofOrganizationExclusionName(matchMap.get("organization"), matchMap.get("exclusion"));
-    } else if (FOLDER_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_EXCLUSION.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_EXCLUSION.match(formattedString);
       return ofFolderExclusionName(matchMap.get("folder"), matchMap.get("exclusion"));
-    } else if (BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE.match(formattedString);
+    } else if (BILLING_ACCOUNT_EXCLUSION.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_EXCLUSION.match(formattedString);
       return ofBillingAccountExclusionName(
           matchMap.get("billing_account"), matchMap.get("exclusion"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("LogExclusionName.parse: formattedString not in valid format");
   }
 
   public static List<LogExclusionName> parseList(List<String> formattedStrings) {
@@ -232,10 +248,10 @@ public class LogExclusionName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_EXCLUSION_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_EXCLUSION_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_EXCLUSION_PATH_TEMPLATE.matches(formattedString)
-        || BILLING_ACCOUNT_EXCLUSION_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_EXCLUSION.matches(formattedString)
+        || ORGANIZATION_EXCLUSION.matches(formattedString)
+        || FOLDER_EXCLUSION.matches(formattedString)
+        || BILLING_ACCOUNT_EXCLUSION.matches(formattedString);
   }
 
   @Override
@@ -275,9 +291,42 @@ public class LogExclusionName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      LogExclusionName that = ((LogExclusionName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.exclusion, that.exclusion)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.billingAccount, that.billingAccount);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(exclusion);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
+    return h;
+  }
+
   /** Builder for projects/{project}/exclusions/{exclusion}. */
   public static class Builder {
-
     private String project;
     private String exclusion;
 
@@ -303,9 +352,8 @@ public class LogExclusionName implements ResourceName {
 
     private Builder(LogExclusionName logExclusionName) {
       Preconditions.checkArgument(
-          logExclusionName.pathTemplate == PROJECT_EXCLUSION_PATH_TEMPLATE,
-          "toBuilder is only supported when LogExclusionName has the pattern of "
-              + "projects/{project}/exclusions/{exclusion}.");
+          Objects.equals(logExclusionName.pathTemplate, PROJECT_EXCLUSION),
+          "toBuilder is only supported when LogExclusionName has the pattern of projects/{project}/exclusions/{exclusion}");
       project = logExclusionName.project;
       exclusion = logExclusionName.exclusion;
     }
@@ -318,11 +366,10 @@ public class LogExclusionName implements ResourceName {
   /** Builder for organizations/{organization}/exclusions/{exclusion}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationExclusionBuilder {
-
     private String organization;
     private String exclusion;
 
-    private OrganizationExclusionBuilder() {}
+    protected OrganizationExclusionBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -350,11 +397,10 @@ public class LogExclusionName implements ResourceName {
   /** Builder for folders/{folder}/exclusions/{exclusion}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderExclusionBuilder {
-
     private String folder;
     private String exclusion;
 
-    private FolderExclusionBuilder() {}
+    protected FolderExclusionBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -382,11 +428,10 @@ public class LogExclusionName implements ResourceName {
   /** Builder for billingAccounts/{billing_account}/exclusions/{exclusion}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountExclusionBuilder {
-
     private String billingAccount;
     private String exclusion;
 
-    private BillingAccountExclusionBuilder() {}
+    protected BillingAccountExclusionBuilder() {}
 
     public String getBillingAccount() {
       return billingAccount;
@@ -409,39 +454,5 @@ public class LogExclusionName implements ResourceName {
     public LogExclusionName build() {
       return new LogExclusionName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      LogExclusionName that = (LogExclusionName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.exclusion, that.exclusion))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder))
-          && (Objects.equals(this.billingAccount, that.billingAccount));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(exclusion);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    h *= 1000003;
-    h ^= Objects.hashCode(billingAccount);
-    return h;
   }
 }

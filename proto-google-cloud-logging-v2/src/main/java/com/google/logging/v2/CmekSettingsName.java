@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,31 +26,66 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class CmekSettingsName implements ResourceName {
-
-  @Deprecated
-  protected CmekSettingsName() {}
-
-  private static final PathTemplate PROJECT_CMEK_SETTINGS_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/cmekSettings");
-  private static final PathTemplate ORGANIZATION_CMEK_SETTINGS_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/cmekSettings");
-  private static final PathTemplate FOLDER_CMEK_SETTINGS_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/cmekSettings");
-  private static final PathTemplate BILLING_ACCOUNT_CMEK_SETTINGS_PATH_TEMPLATE =
+  private static final PathTemplate BILLING_ACCOUNT =
       PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}/cmekSettings");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String organization;
+  private final String folder;
+  private final String billingAccount;
 
-  private String project;
-  private String organization;
-  private String folder;
-  private String billingAccount;
+  @Deprecated
+  protected CmekSettingsName() {
+    project = null;
+    organization = null;
+    folder = null;
+    billingAccount = null;
+  }
+
+  private CmekSettingsName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    organization = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = PROJECT;
+  }
+
+  private CmekSettingsName(OrganizationCmekSettingsBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    project = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = ORGANIZATION;
+  }
+
+  private CmekSettingsName(FolderCmekSettingsBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    project = null;
+    organization = null;
+    billingAccount = null;
+    pathTemplate = FOLDER;
+  }
+
+  private CmekSettingsName(BillingAccountCmekSettingsBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    project = null;
+    organization = null;
+    folder = null;
+    pathTemplate = BILLING_ACCOUNT;
+  }
 
   public String getProject() {
     return project;
@@ -66,26 +101,6 @@ public class CmekSettingsName implements ResourceName {
 
   public String getBillingAccount() {
     return billingAccount;
-  }
-
-  private CmekSettingsName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    pathTemplate = PROJECT_CMEK_SETTINGS_PATH_TEMPLATE;
-  }
-
-  private CmekSettingsName(OrganizationCmekSettingsBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    pathTemplate = ORGANIZATION_CMEK_SETTINGS_PATH_TEMPLATE;
-  }
-
-  private CmekSettingsName(FolderCmekSettingsBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    pathTemplate = FOLDER_CMEK_SETTINGS_PATH_TEMPLATE;
-  }
-
-  private CmekSettingsName(BillingAccountCmekSettingsBuilder builder) {
-    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
-    pathTemplate = BILLING_ACCOUNT_CMEK_SETTINGS_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -117,12 +132,12 @@ public class CmekSettingsName implements ResourceName {
   }
 
   public static CmekSettingsName of(String project) {
-    return newProjectCmekSettingsBuilder().setProject(project).build();
+    return newBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static CmekSettingsName ofProjectCmekSettingsName(String project) {
-    return newProjectCmekSettingsBuilder().setProject(project).build();
+    return newBuilder().setProject(project).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -171,22 +186,20 @@ public class CmekSettingsName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_CMEK_SETTINGS_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT.match(formattedString);
       return ofProjectCmekSettingsName(matchMap.get("project"));
-    } else if (ORGANIZATION_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_CMEK_SETTINGS_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION.match(formattedString);
       return ofOrganizationCmekSettingsName(matchMap.get("organization"));
-    } else if (FOLDER_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_CMEK_SETTINGS_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER.match(formattedString);
       return ofFolderCmekSettingsName(matchMap.get("folder"));
-    } else if (BILLING_ACCOUNT_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          BILLING_ACCOUNT_CMEK_SETTINGS_PATH_TEMPLATE.match(formattedString);
+    } else if (BILLING_ACCOUNT.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT.match(formattedString);
       return ofBillingAccountCmekSettingsName(matchMap.get("billing_account"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("CmekSettingsName.parse: formattedString not in valid format");
   }
 
   public static List<CmekSettingsName> parseList(List<String> formattedStrings) {
@@ -210,10 +223,10 @@ public class CmekSettingsName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString)
-        || BILLING_ACCOUNT_CMEK_SETTINGS_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT.matches(formattedString)
+        || ORGANIZATION.matches(formattedString)
+        || FOLDER.matches(formattedString)
+        || BILLING_ACCOUNT.matches(formattedString);
   }
 
   @Override
@@ -250,112 +263,17 @@ public class CmekSettingsName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
-  /** Builder for projects/{project}/cmekSettings. */
-  public static class Builder {
-
-    private String project;
-
-    protected Builder() {}
-
-    public String getProject() {
-      return project;
-    }
-
-    public Builder setProject(String project) {
-      this.project = project;
-      return this;
-    }
-
-    private Builder(CmekSettingsName cmekSettingsName) {
-      Preconditions.checkArgument(
-          cmekSettingsName.pathTemplate == PROJECT_CMEK_SETTINGS_PATH_TEMPLATE,
-          "toBuilder is only supported when CmekSettingsName has the pattern of "
-              + "projects/{project}/cmekSettings.");
-      project = cmekSettingsName.project;
-    }
-
-    public CmekSettingsName build() {
-      return new CmekSettingsName(this);
-    }
-  }
-
-  /** Builder for organizations/{organization}/cmekSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class OrganizationCmekSettingsBuilder {
-
-    private String organization;
-
-    private OrganizationCmekSettingsBuilder() {}
-
-    public String getOrganization() {
-      return organization;
-    }
-
-    public OrganizationCmekSettingsBuilder setOrganization(String organization) {
-      this.organization = organization;
-      return this;
-    }
-
-    public CmekSettingsName build() {
-      return new CmekSettingsName(this);
-    }
-  }
-
-  /** Builder for folders/{folder}/cmekSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class FolderCmekSettingsBuilder {
-
-    private String folder;
-
-    private FolderCmekSettingsBuilder() {}
-
-    public String getFolder() {
-      return folder;
-    }
-
-    public FolderCmekSettingsBuilder setFolder(String folder) {
-      this.folder = folder;
-      return this;
-    }
-
-    public CmekSettingsName build() {
-      return new CmekSettingsName(this);
-    }
-  }
-
-  /** Builder for billingAccounts/{billing_account}/cmekSettings. */
-  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
-  public static class BillingAccountCmekSettingsBuilder {
-
-    private String billingAccount;
-
-    private BillingAccountCmekSettingsBuilder() {}
-
-    public String getBillingAccount() {
-      return billingAccount;
-    }
-
-    public BillingAccountCmekSettingsBuilder setBillingAccount(String billingAccount) {
-      this.billingAccount = billingAccount;
-      return this;
-    }
-
-    public CmekSettingsName build() {
-      return new CmekSettingsName(this);
-    }
-  }
-
   @Override
   public boolean equals(Object o) {
     if (o == this) {
       return true;
     }
     if (o != null || getClass() == o.getClass()) {
-      CmekSettingsName that = (CmekSettingsName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder))
-          && (Objects.equals(this.billingAccount, that.billingAccount));
+      CmekSettingsName that = ((CmekSettingsName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.billingAccount, that.billingAccount);
     }
     return false;
   }
@@ -374,5 +292,95 @@ public class CmekSettingsName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(billingAccount);
     return h;
+  }
+
+  /** Builder for projects/{project}/cmekSettings. */
+  public static class Builder {
+    private String project;
+
+    protected Builder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public Builder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    private Builder(CmekSettingsName cmekSettingsName) {
+      Preconditions.checkArgument(
+          Objects.equals(cmekSettingsName.pathTemplate, PROJECT),
+          "toBuilder is only supported when CmekSettingsName has the pattern of projects/{project}/cmekSettings");
+      project = cmekSettingsName.project;
+    }
+
+    public CmekSettingsName build() {
+      return new CmekSettingsName(this);
+    }
+  }
+
+  /** Builder for organizations/{organization}/cmekSettings. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class OrganizationCmekSettingsBuilder {
+    private String organization;
+
+    protected OrganizationCmekSettingsBuilder() {}
+
+    public String getOrganization() {
+      return organization;
+    }
+
+    public OrganizationCmekSettingsBuilder setOrganization(String organization) {
+      this.organization = organization;
+      return this;
+    }
+
+    public CmekSettingsName build() {
+      return new CmekSettingsName(this);
+    }
+  }
+
+  /** Builder for folders/{folder}/cmekSettings. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class FolderCmekSettingsBuilder {
+    private String folder;
+
+    protected FolderCmekSettingsBuilder() {}
+
+    public String getFolder() {
+      return folder;
+    }
+
+    public FolderCmekSettingsBuilder setFolder(String folder) {
+      this.folder = folder;
+      return this;
+    }
+
+    public CmekSettingsName build() {
+      return new CmekSettingsName(this);
+    }
+  }
+
+  /** Builder for billingAccounts/{billing_account}/cmekSettings. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class BillingAccountCmekSettingsBuilder {
+    private String billingAccount;
+
+    protected BillingAccountCmekSettingsBuilder() {}
+
+    public String getBillingAccount() {
+      return billingAccount;
+    }
+
+    public BillingAccountCmekSettingsBuilder setBillingAccount(String billingAccount) {
+      this.billingAccount = billingAccount;
+      return this;
+    }
+
+    public CmekSettingsName build() {
+      return new CmekSettingsName(this);
+    }
   }
 }

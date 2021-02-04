@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,32 +26,72 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class LogName implements ResourceName {
-
-  @Deprecated
-  protected LogName() {}
-
-  private static final PathTemplate PROJECT_LOG_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOG =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/logs/{log}");
-  private static final PathTemplate ORGANIZATION_LOG_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_LOG =
       PathTemplate.createWithoutUrlEncoding("organizations/{organization}/logs/{log}");
-  private static final PathTemplate FOLDER_LOG_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_LOG =
       PathTemplate.createWithoutUrlEncoding("folders/{folder}/logs/{log}");
-  private static final PathTemplate BILLING_ACCOUNT_LOG_PATH_TEMPLATE =
+  private static final PathTemplate BILLING_ACCOUNT_LOG =
       PathTemplate.createWithoutUrlEncoding("billingAccounts/{billing_account}/logs/{log}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String log;
+  private final String organization;
+  private final String folder;
+  private final String billingAccount;
 
-  private String project;
-  private String log;
-  private String organization;
-  private String folder;
-  private String billingAccount;
+  @Deprecated
+  protected LogName() {
+    project = null;
+    log = null;
+    organization = null;
+    folder = null;
+    billingAccount = null;
+  }
+
+  private LogName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    log = Preconditions.checkNotNull(builder.getLog());
+    organization = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = PROJECT_LOG;
+  }
+
+  private LogName(OrganizationLogBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    log = Preconditions.checkNotNull(builder.getLog());
+    project = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = ORGANIZATION_LOG;
+  }
+
+  private LogName(FolderLogBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    log = Preconditions.checkNotNull(builder.getLog());
+    project = null;
+    organization = null;
+    billingAccount = null;
+    pathTemplate = FOLDER_LOG;
+  }
+
+  private LogName(BillingAccountLogBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    log = Preconditions.checkNotNull(builder.getLog());
+    project = null;
+    organization = null;
+    folder = null;
+    pathTemplate = BILLING_ACCOUNT_LOG;
+  }
 
   public String getProject() {
     return project;
@@ -71,30 +111,6 @@ public class LogName implements ResourceName {
 
   public String getBillingAccount() {
     return billingAccount;
-  }
-
-  private LogName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    log = Preconditions.checkNotNull(builder.getLog());
-    pathTemplate = PROJECT_LOG_PATH_TEMPLATE;
-  }
-
-  private LogName(OrganizationLogBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    log = Preconditions.checkNotNull(builder.getLog());
-    pathTemplate = ORGANIZATION_LOG_PATH_TEMPLATE;
-  }
-
-  private LogName(FolderLogBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    log = Preconditions.checkNotNull(builder.getLog());
-    pathTemplate = FOLDER_LOG_PATH_TEMPLATE;
-  }
-
-  private LogName(BillingAccountLogBuilder builder) {
-    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
-    log = Preconditions.checkNotNull(builder.getLog());
-    pathTemplate = BILLING_ACCOUNT_LOG_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -126,12 +142,12 @@ public class LogName implements ResourceName {
   }
 
   public static LogName of(String project, String log) {
-    return newProjectLogBuilder().setProject(project).setLog(log).build();
+    return newBuilder().setProject(project).setLog(log).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogName ofProjectLogName(String project, String log) {
-    return newProjectLogBuilder().setProject(project).setLog(log).build();
+    return newBuilder().setProject(project).setLog(log).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -181,20 +197,20 @@ public class LogName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_LOG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_LOG_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_LOG.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOG.match(formattedString);
       return ofProjectLogName(matchMap.get("project"), matchMap.get("log"));
-    } else if (ORGANIZATION_LOG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = ORGANIZATION_LOG_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_LOG.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOG.match(formattedString);
       return ofOrganizationLogName(matchMap.get("organization"), matchMap.get("log"));
-    } else if (FOLDER_LOG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_LOG_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_LOG.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_LOG.match(formattedString);
       return ofFolderLogName(matchMap.get("folder"), matchMap.get("log"));
-    } else if (BILLING_ACCOUNT_LOG_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = BILLING_ACCOUNT_LOG_PATH_TEMPLATE.match(formattedString);
+    } else if (BILLING_ACCOUNT_LOG.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_LOG.match(formattedString);
       return ofBillingAccountLogName(matchMap.get("billing_account"), matchMap.get("log"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("LogName.parse: formattedString not in valid format");
   }
 
   public static List<LogName> parseList(List<String> formattedStrings) {
@@ -218,10 +234,10 @@ public class LogName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOG_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_LOG_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_LOG_PATH_TEMPLATE.matches(formattedString)
-        || BILLING_ACCOUNT_LOG_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOG.matches(formattedString)
+        || ORGANIZATION_LOG.matches(formattedString)
+        || FOLDER_LOG.matches(formattedString)
+        || BILLING_ACCOUNT_LOG.matches(formattedString);
   }
 
   @Override
@@ -261,9 +277,42 @@ public class LogName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      LogName that = ((LogName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.log, that.log)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.billingAccount, that.billingAccount);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(log);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
+    return h;
+  }
+
   /** Builder for projects/{project}/logs/{log}. */
   public static class Builder {
-
     private String project;
     private String log;
 
@@ -289,9 +338,8 @@ public class LogName implements ResourceName {
 
     private Builder(LogName logName) {
       Preconditions.checkArgument(
-          logName.pathTemplate == PROJECT_LOG_PATH_TEMPLATE,
-          "toBuilder is only supported when LogName has the pattern of "
-              + "projects/{project}/logs/{log}.");
+          Objects.equals(logName.pathTemplate, PROJECT_LOG),
+          "toBuilder is only supported when LogName has the pattern of projects/{project}/logs/{log}");
       project = logName.project;
       log = logName.log;
     }
@@ -304,11 +352,10 @@ public class LogName implements ResourceName {
   /** Builder for organizations/{organization}/logs/{log}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLogBuilder {
-
     private String organization;
     private String log;
 
-    private OrganizationLogBuilder() {}
+    protected OrganizationLogBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -336,11 +383,10 @@ public class LogName implements ResourceName {
   /** Builder for folders/{folder}/logs/{log}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLogBuilder {
-
     private String folder;
     private String log;
 
-    private FolderLogBuilder() {}
+    protected FolderLogBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -368,11 +414,10 @@ public class LogName implements ResourceName {
   /** Builder for billingAccounts/{billing_account}/logs/{log}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLogBuilder {
-
     private String billingAccount;
     private String log;
 
-    private BillingAccountLogBuilder() {}
+    protected BillingAccountLogBuilder() {}
 
     public String getBillingAccount() {
       return billingAccount;
@@ -395,39 +440,5 @@ public class LogName implements ResourceName {
     public LogName build() {
       return new LogName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      LogName that = (LogName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.log, that.log))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder))
-          && (Objects.equals(this.billingAccount, that.billingAccount));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(log);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    h *= 1000003;
-    h ^= Objects.hashCode(billingAccount);
-    return h;
   }
 }

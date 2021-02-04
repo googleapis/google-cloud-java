@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.LoggingClient.ListLogEntriesPagedResponse;
@@ -49,7 +50,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link LoggingClient}.
  *
@@ -66,26 +67,32 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of deleteLog to 30 seconds:
  *
- * <pre>
- * <code>
- * LoggingSettings.Builder loggingSettingsBuilder =
- *     LoggingSettings.newBuilder();
+ * <pre>{@code
+ * LoggingSettings.Builder loggingSettingsBuilder = LoggingSettings.newBuilder();
  * loggingSettingsBuilder
  *     .deleteLogSettings()
  *     .setRetrySettings(
- *         loggingSettingsBuilder.deleteLogSettings().getRetrySettings().toBuilder()
+ *         loggingSettingsBuilder
+ *             .deleteLogSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * LoggingSettings loggingSettings = loggingSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class LoggingSettings extends ClientSettings<LoggingSettings> {
+
   /** Returns the object with the settings used for calls to deleteLog. */
   public UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
     return ((LoggingServiceV2StubSettings) getStubSettings()).deleteLogSettings();
+  }
+
+  /** Returns the object with the settings used for calls to writeLogEntries. */
+  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings() {
+    return ((LoggingServiceV2StubSettings) getStubSettings()).writeLogEntriesSettings();
   }
 
   /** Returns the object with the settings used for calls to listLogEntries. */
@@ -93,12 +100,6 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
       listLogEntriesSettings() {
     return ((LoggingServiceV2StubSettings) getStubSettings()).listLogEntriesSettings();
-  }
-
-  /** Returns the object with the settings used for calls to writeLogEntries. */
-  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesSettings() {
-    return ((LoggingServiceV2StubSettings) getStubSettings()).writeLogEntriesSettings();
   }
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
@@ -182,16 +183,13 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
 
   /** Builder for LoggingSettings. */
   public static class Builder extends ClientSettings.Builder<LoggingSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(LoggingServiceV2StubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(LoggingServiceV2StubSettings.newBuilder());
     }
 
     protected Builder(LoggingSettings settings) {
@@ -202,11 +200,15 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(LoggingServiceV2StubSettings.newBuilder());
+    }
+
     public LoggingServiceV2StubSettings.Builder getStubSettingsBuilder() {
       return ((LoggingServiceV2StubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -224,17 +226,17 @@ public class LoggingSettings extends ClientSettings<LoggingSettings> {
       return getStubSettingsBuilder().deleteLogSettings();
     }
 
+    /** Returns the builder for the settings used for calls to writeLogEntries. */
+    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings() {
+      return getStubSettingsBuilder().writeLogEntriesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listLogEntries. */
     public PagedCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
         listLogEntriesSettings() {
       return getStubSettingsBuilder().listLogEntriesSettings();
-    }
-
-    /** Returns the builder for the settings used for calls to writeLogEntries. */
-    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-        writeLogEntriesSettings() {
-      return getStubSettingsBuilder().writeLogEntriesSettings();
     }
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */

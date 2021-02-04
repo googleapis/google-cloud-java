@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -23,18 +23,28 @@ import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class LogMetricName implements ResourceName {
-
-  private static final PathTemplate PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_METRIC =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/metrics/{metric}");
-
   private volatile Map<String, String> fieldValuesMap;
-
   private final String project;
   private final String metric;
+
+  @Deprecated
+  protected LogMetricName() {
+    project = null;
+    metric = null;
+  }
+
+  private LogMetricName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    metric = Preconditions.checkNotNull(builder.getMetric());
+  }
 
   public String getProject() {
     return project;
@@ -52,11 +62,6 @@ public class LogMetricName implements ResourceName {
     return new Builder(this);
   }
 
-  private LogMetricName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    metric = Preconditions.checkNotNull(builder.getMetric());
-  }
-
   public static LogMetricName of(String project, String metric) {
     return newBuilder().setProject(project).setMetric(metric).build();
   }
@@ -70,7 +75,7 @@ public class LogMetricName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(
+        PROJECT_METRIC.validatedMatch(
             formattedString, "LogMetricName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("metric"));
   }
@@ -84,7 +89,7 @@ public class LogMetricName implements ResourceName {
   }
 
   public static List<String> toStringList(List<LogMetricName> values) {
-    List<String> list = new ArrayList<String>(values.size());
+    List<String> list = new ArrayList<>(values.size());
     for (LogMetricName value : values) {
       if (value == null) {
         list.add("");
@@ -96,16 +101,21 @@ public class LogMetricName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_METRIC.matches(formattedString);
   }
 
+  @Override
   public Map<String, String> getFieldValuesMap() {
     if (fieldValuesMap == null) {
       synchronized (this) {
         if (fieldValuesMap == null) {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
-          fieldMapBuilder.put("project", project);
-          fieldMapBuilder.put("metric", metric);
+          if (project != null) {
+            fieldMapBuilder.put("project", project);
+          }
+          if (metric != null) {
+            fieldMapBuilder.put("metric", metric);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -119,14 +129,37 @@ public class LogMetricName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "metric", metric);
+    return PROJECT_METRIC.instantiate("project", project, "metric", metric);
   }
 
-  /** Builder for LogMetricName. */
-  public static class Builder {
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      LogMetricName that = ((LogMetricName) o);
+      return Objects.equals(this.project, that.project) && Objects.equals(this.metric, that.metric);
+    }
+    return false;
+  }
 
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(metric);
+    return h;
+  }
+
+  /** Builder for projects/{project}/metrics/{metric}. */
+  public static class Builder {
     private String project;
     private String metric;
+
+    protected Builder() {}
 
     public String getProject() {
       return project;
@@ -146,8 +179,6 @@ public class LogMetricName implements ResourceName {
       return this;
     }
 
-    private Builder() {}
-
     private Builder(LogMetricName logMetricName) {
       project = logMetricName.project;
       metric = logMetricName.metric;
@@ -156,27 +187,5 @@ public class LogMetricName implements ResourceName {
     public LogMetricName build() {
       return new LogMetricName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o instanceof LogMetricName) {
-      LogMetricName that = (LogMetricName) o;
-      return (this.project.equals(that.project)) && (this.metric.equals(that.metric));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= project.hashCode();
-    h *= 1000003;
-    h ^= metric.hashCode();
-    return h;
   }
 }

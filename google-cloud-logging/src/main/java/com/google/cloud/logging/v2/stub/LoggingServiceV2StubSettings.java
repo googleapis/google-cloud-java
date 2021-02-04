@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.logging.v2.stub;
 
 import static com.google.cloud.logging.v2.LoggingClient.ListLogEntriesPagedResponse;
@@ -25,7 +26,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.core.BetaApi;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.batching.FlowControlSettings;
-import com.google.api.gax.batching.FlowController.LimitExceededBehavior;
+import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.PartitionKey;
 import com.google.api.gax.batching.RequestBuilder;
 import com.google.api.gax.core.GaxProperties;
@@ -74,7 +75,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link LoggingServiceV2Stub}.
  *
@@ -91,22 +92,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of deleteLog to 30 seconds:
  *
- * <pre>
- * <code>
- * LoggingServiceV2StubSettings.Builder loggingSettingsBuilder =
+ * <pre>{@code
+ * LoggingServiceV2StubSettings.Builder loggingServiceV2SettingsBuilder =
  *     LoggingServiceV2StubSettings.newBuilder();
- * loggingSettingsBuilder
+ * loggingServiceV2SettingsBuilder
  *     .deleteLogSettings()
  *     .setRetrySettings(
- *         loggingSettingsBuilder.deleteLogSettings().getRetrySettings().toBuilder()
+ *         loggingServiceV2SettingsBuilder
+ *             .deleteLogSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * LoggingServiceV2StubSettings loggingSettings = loggingSettingsBuilder.build();
- * </code>
- * </pre>
+ * LoggingServiceV2StubSettings loggingServiceV2Settings = loggingServiceV2SettingsBuilder.build();
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2StubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -119,11 +121,11 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
           .build();
 
   private final UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
+  private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings;
   private final PagedCallSettings<
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
       listLogEntriesSettings;
-  private final BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesSettings;
   private final PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest,
           ListMonitoredResourceDescriptorsResponse,
@@ -133,123 +135,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       listLogsSettings;
   private final StreamingCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
       tailLogEntriesSettings;
-
-  /** Returns the object with the settings used for calls to deleteLog. */
-  public UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
-    return deleteLogSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listLogEntries. */
-  public PagedCallSettings<
-          ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
-      listLogEntriesSettings() {
-    return listLogEntriesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to writeLogEntries. */
-  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesSettings() {
-    return writeLogEntriesSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
-  public PagedCallSettings<
-          ListMonitoredResourceDescriptorsRequest,
-          ListMonitoredResourceDescriptorsResponse,
-          ListMonitoredResourceDescriptorsPagedResponse>
-      listMonitoredResourceDescriptorsSettings() {
-    return listMonitoredResourceDescriptorsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to listLogs. */
-  public PagedCallSettings<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
-      listLogsSettings() {
-    return listLogsSettings;
-  }
-
-  /** Returns the object with the settings used for calls to tailLogEntries. */
-  public StreamingCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
-      tailLogEntriesSettings() {
-    return tailLogEntriesSettings;
-  }
-
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
-  public LoggingServiceV2Stub createStub() throws IOException {
-    if (getTransportChannelProvider()
-        .getTransportName()
-        .equals(GrpcTransportChannel.getGrpcTransportName())) {
-      return GrpcLoggingServiceV2Stub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
-    }
-  }
-
-  /** Returns a builder for the default ExecutorProvider for this service. */
-  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
-    return InstantiatingExecutorProvider.newBuilder();
-  }
-
-  /** Returns the default service endpoint. */
-  public static String getDefaultEndpoint() {
-    return "logging.googleapis.com:443";
-  }
-
-  /** Returns the default service scopes. */
-  public static List<String> getDefaultServiceScopes() {
-    return DEFAULT_SERVICE_SCOPES;
-  }
-
-  /** Returns a builder for the default credentials for this service. */
-  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
-    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
-  }
-
-  /** Returns a builder for the default ChannelProvider for this service. */
-  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
-    return InstantiatingGrpcChannelProvider.newBuilder()
-        .setMaxInboundMessageSize(Integer.MAX_VALUE);
-  }
-
-  public static TransportChannelProvider defaultTransportChannelProvider() {
-    return defaultGrpcTransportProviderBuilder().build();
-  }
-
-  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
-  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
-    return ApiClientHeaderProvider.newBuilder()
-        .setGeneratedLibToken(
-            "gapic", GaxProperties.getLibraryVersion(LoggingServiceV2StubSettings.class))
-        .setTransportToken(
-            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder() {
-    return Builder.createDefault();
-  }
-
-  /** Returns a new builder for this class. */
-  public static Builder newBuilder(ClientContext clientContext) {
-    return new Builder(clientContext);
-  }
-
-  /** Returns a builder containing all the values of this settings class. */
-  public Builder toBuilder() {
-    return new Builder(this);
-  }
-
-  protected LoggingServiceV2StubSettings(Builder settingsBuilder) throws IOException {
-    super(settingsBuilder);
-
-    deleteLogSettings = settingsBuilder.deleteLogSettings().build();
-    listLogEntriesSettings = settingsBuilder.listLogEntriesSettings().build();
-    writeLogEntriesSettings = settingsBuilder.writeLogEntriesSettings().build();
-    listMonitoredResourceDescriptorsSettings =
-        settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
-    listLogsSettings = settingsBuilder.listLogsSettings().build();
-    tailLogEntriesSettings = settingsBuilder.tailLogEntriesSettings().build();
-  }
 
   private static final PagedListDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
       LIST_LOG_ENTRIES_PAGE_STR_DESC =
@@ -282,9 +167,9 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
 
             @Override
             public Iterable<LogEntry> extractResources(ListLogEntriesResponse payload) {
-              return payload.getEntriesList() != null
-                  ? payload.getEntriesList()
-                  : ImmutableList.<LogEntry>of();
+              return payload.getEntriesList() == null
+                  ? ImmutableList.<LogEntry>of()
+                  : payload.getEntriesList();
             }
           };
 
@@ -331,9 +216,9 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             @Override
             public Iterable<MonitoredResourceDescriptor> extractResources(
                 ListMonitoredResourceDescriptorsResponse payload) {
-              return payload.getResourceDescriptorsList() != null
-                  ? payload.getResourceDescriptorsList()
-                  : ImmutableList.<MonitoredResourceDescriptor>of();
+              return payload.getResourceDescriptorsList() == null
+                  ? ImmutableList.<MonitoredResourceDescriptor>of()
+                  : payload.getResourceDescriptorsList();
             }
           };
 
@@ -367,9 +252,9 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
 
             @Override
             public Iterable<String> extractResources(ListLogsResponse payload) {
-              return payload.getLogNamesList() != null
-                  ? payload.getLogNamesList()
-                  : ImmutableList.<String>of();
+              return payload.getLogNamesList() == null
+                  ? ImmutableList.<String>of()
+                  : payload.getLogNamesList();
             }
           };
 
@@ -445,7 +330,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             @Override
             public PartitionKey getBatchPartitionKey(WriteLogEntriesRequest request) {
               return new PartitionKey(
-                  request.getLogName(), request.getResource(), request.getLabelsMap());
+                  request.getLogName(), request.getResource(), request.getLabels());
             }
 
             @Override
@@ -473,7 +358,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             public void splitResponse(
                 WriteLogEntriesResponse batchResponse,
                 Collection<? extends BatchedRequestIssuer<WriteLogEntriesResponse>> batch) {
-              int batchMessageIndex = 0;
               for (BatchedRequestIssuer<WriteLogEntriesResponse> responder : batch) {
                 WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
                 responder.setResponse(response);
@@ -500,16 +384,132 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
             }
           };
 
+  /** Returns the object with the settings used for calls to deleteLog. */
+  public UnaryCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
+    return deleteLogSettings;
+  }
+
+  /** Returns the object with the settings used for calls to writeLogEntries. */
+  public BatchingCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings() {
+    return writeLogEntriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLogEntries. */
+  public PagedCallSettings<
+          ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
+      listLogEntriesSettings() {
+    return listLogEntriesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
+  public PagedCallSettings<
+          ListMonitoredResourceDescriptorsRequest,
+          ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsPagedResponse>
+      listMonitoredResourceDescriptorsSettings() {
+    return listMonitoredResourceDescriptorsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLogs. */
+  public PagedCallSettings<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
+      listLogsSettings() {
+    return listLogsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to tailLogEntries. */
+  public StreamingCallSettings<TailLogEntriesRequest, TailLogEntriesResponse>
+      tailLogEntriesSettings() {
+    return tailLogEntriesSettings;
+  }
+
+  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+  public LoggingServiceV2Stub createStub() throws IOException {
+    if (getTransportChannelProvider()
+        .getTransportName()
+        .equals(GrpcTransportChannel.getGrpcTransportName())) {
+      return GrpcLoggingServiceV2Stub.create(this);
+    }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
+  /** Returns the default service endpoint. */
+  public static String getDefaultEndpoint() {
+    return "logging.googleapis.com:443";
+  }
+
+  /** Returns the default service scopes. */
+  public static List<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return InstantiatingGrpcChannelProvider.newBuilder()
+        .setMaxInboundMessageSize(Integer.MAX_VALUE);
+  }
+
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
+  @BetaApi("The surface for customizing headers is not stable yet and may change in the future.")
+  public static ApiClientHeaderProvider.Builder defaultApiClientHeaderProviderBuilder() {
+    return ApiClientHeaderProvider.newBuilder()
+        .setGeneratedLibToken(
+            "gapic", GaxProperties.getLibraryVersion(LoggingServiceV2StubSettings.class))
+        .setTransportToken(
+            GaxGrpcProperties.getGrpcTokenName(), GaxGrpcProperties.getGrpcVersion());
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder() {
+    return Builder.createDefault();
+  }
+
+  /** Returns a new builder for this class. */
+  public static Builder newBuilder(ClientContext clientContext) {
+    return new Builder(clientContext);
+  }
+
+  /** Returns a builder containing all the values of this settings class. */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  protected LoggingServiceV2StubSettings(Builder settingsBuilder) throws IOException {
+    super(settingsBuilder);
+
+    deleteLogSettings = settingsBuilder.deleteLogSettings().build();
+    writeLogEntriesSettings = settingsBuilder.writeLogEntriesSettings().build();
+    listLogEntriesSettings = settingsBuilder.listLogEntriesSettings().build();
+    listMonitoredResourceDescriptorsSettings =
+        settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
+    listLogsSettings = settingsBuilder.listLogsSettings().build();
+    tailLogEntriesSettings = settingsBuilder.tailLogEntriesSettings().build();
+  }
+
   /** Builder for LoggingServiceV2StubSettings. */
   public static class Builder extends StubSettings.Builder<LoggingServiceV2StubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final UnaryCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
+    private final BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings;
     private final PagedCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
         listLogEntriesSettings;
-    private final BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-        writeLogEntriesSettings;
     private final PagedCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest,
             ListMonitoredResourceDescriptorsResponse,
@@ -520,7 +520,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
         listLogsSettings;
     private final StreamingCallSettings.Builder<TailLogEntriesRequest, TailLogEntriesResponse>
         tailLogEntriesSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -534,7 +533,6 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       definitions.put(
           "retry_policy_2_codes",
           ImmutableSet.copyOf(
@@ -572,62 +570,70 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
               .setTotalTimeout(Duration.ofMillis(3600000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       deleteLogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
-      listLogEntriesSettings = PagedCallSettings.newBuilder(LIST_LOG_ENTRIES_PAGE_STR_FACT);
-
       writeLogEntriesSettings =
           BatchingCallSettings.newBuilder(WRITE_LOG_ENTRIES_BATCHING_DESC)
               .setBatchingSettings(BatchingSettings.newBuilder().build());
-
+      listLogEntriesSettings = PagedCallSettings.newBuilder(LIST_LOG_ENTRIES_PAGE_STR_FACT);
       listMonitoredResourceDescriptorsSettings =
           PagedCallSettings.newBuilder(LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
-
       listLogsSettings = PagedCallSettings.newBuilder(LIST_LOGS_PAGE_STR_FACT);
-
       tailLogEntriesSettings = StreamingCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               deleteLogSettings,
-              listLogEntriesSettings,
               writeLogEntriesSettings,
+              listLogEntriesSettings,
               listMonitoredResourceDescriptorsSettings,
               listLogsSettings);
-
       initDefaults(this);
     }
 
+    protected Builder(LoggingServiceV2StubSettings settings) {
+      super(settings);
+
+      deleteLogSettings = settings.deleteLogSettings.toBuilder();
+      writeLogEntriesSettings = settings.writeLogEntriesSettings.toBuilder();
+      listLogEntriesSettings = settings.listLogEntriesSettings.toBuilder();
+      listMonitoredResourceDescriptorsSettings =
+          settings.listMonitoredResourceDescriptorsSettings.toBuilder();
+      listLogsSettings = settings.listLogsSettings.toBuilder();
+      tailLogEntriesSettings = settings.tailLogEntriesSettings.toBuilder();
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              deleteLogSettings,
+              writeLogEntriesSettings,
+              listLogEntriesSettings,
+              listMonitoredResourceDescriptorsSettings,
+              listLogsSettings);
+    }
+
     private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
+      Builder builder = new Builder(((ClientContext) null));
+
       builder.setTransportChannelProvider(defaultTransportChannelProvider());
       builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
       builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
       builder.setEndpoint(getDefaultEndpoint());
+
       return initDefaults(builder);
     }
 
     private static Builder initDefaults(Builder builder) {
-
       builder
           .deleteLogSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .listLogEntriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -637,16 +643,23 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
               BatchingSettings.newBuilder()
                   .setElementCountThreshold(1000L)
                   .setRequestByteThreshold(1048576L)
-                  .setDelayThreshold(Duration.ofMillis(50))
+                  .setDelayThreshold(Duration.ofMillis(50L))
                   .setFlowControlSettings(
                       FlowControlSettings.newBuilder()
                           .setMaxOutstandingElementCount(100000L)
                           .setMaxOutstandingRequestBytes(10485760L)
-                          .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                          .setLimitExceededBehavior(
+                              FlowController.LimitExceededBehavior.ThrowException)
                           .build())
                   .build());
+
       builder
           .writeLogEntriesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .listLogEntriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
 
@@ -663,27 +676,7 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       return builder;
     }
 
-    protected Builder(LoggingServiceV2StubSettings settings) {
-      super(settings);
-
-      deleteLogSettings = settings.deleteLogSettings.toBuilder();
-      listLogEntriesSettings = settings.listLogEntriesSettings.toBuilder();
-      writeLogEntriesSettings = settings.writeLogEntriesSettings.toBuilder();
-      listMonitoredResourceDescriptorsSettings =
-          settings.listMonitoredResourceDescriptorsSettings.toBuilder();
-      listLogsSettings = settings.listLogsSettings.toBuilder();
-      tailLogEntriesSettings = settings.tailLogEntriesSettings.toBuilder();
-
-      unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              deleteLogSettings,
-              listLogEntriesSettings,
-              writeLogEntriesSettings,
-              listMonitoredResourceDescriptorsSettings,
-              listLogsSettings);
-    }
-
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -704,17 +697,17 @@ public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2S
       return deleteLogSettings;
     }
 
+    /** Returns the builder for the settings used for calls to writeLogEntries. */
+    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings() {
+      return writeLogEntriesSettings;
+    }
+
     /** Returns the builder for the settings used for calls to listLogEntries. */
     public PagedCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
         listLogEntriesSettings() {
       return listLogEntriesSettings;
-    }
-
-    /** Returns the builder for the settings used for calls to writeLogEntries. */
-    public BatchingCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-        writeLogEntriesSettings() {
-      return writeLogEntriesSettings;
     }
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */

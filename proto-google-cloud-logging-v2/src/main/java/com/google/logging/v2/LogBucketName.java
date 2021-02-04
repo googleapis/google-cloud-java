@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,37 +26,82 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class LogBucketName implements ResourceName {
-
-  @Deprecated
-  protected LogBucketName() {}
-
-  private static final PathTemplate PROJECT_LOCATION_BUCKET_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_LOCATION_BUCKET =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/buckets/{bucket}");
-  private static final PathTemplate ORGANIZATION_LOCATION_BUCKET_PATH_TEMPLATE =
+  private static final PathTemplate ORGANIZATION_LOCATION_BUCKET =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/buckets/{bucket}");
-  private static final PathTemplate FOLDER_LOCATION_BUCKET_PATH_TEMPLATE =
+  private static final PathTemplate FOLDER_LOCATION_BUCKET =
       PathTemplate.createWithoutUrlEncoding(
           "folders/{folder}/locations/{location}/buckets/{bucket}");
-  private static final PathTemplate BILLING_ACCOUNT_LOCATION_BUCKET_PATH_TEMPLATE =
+  private static final PathTemplate BILLING_ACCOUNT_LOCATION_BUCKET =
       PathTemplate.createWithoutUrlEncoding(
           "billingAccounts/{billing_account}/locations/{location}/buckets/{bucket}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String location;
+  private final String bucket;
+  private final String organization;
+  private final String folder;
+  private final String billingAccount;
 
-  private String project;
-  private String location;
-  private String bucket;
-  private String organization;
-  private String folder;
-  private String billingAccount;
+  @Deprecated
+  protected LogBucketName() {
+    project = null;
+    location = null;
+    bucket = null;
+    organization = null;
+    folder = null;
+    billingAccount = null;
+  }
+
+  private LogBucketName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    bucket = Preconditions.checkNotNull(builder.getBucket());
+    organization = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = PROJECT_LOCATION_BUCKET;
+  }
+
+  private LogBucketName(OrganizationLocationBucketBuilder builder) {
+    organization = Preconditions.checkNotNull(builder.getOrganization());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    bucket = Preconditions.checkNotNull(builder.getBucket());
+    project = null;
+    folder = null;
+    billingAccount = null;
+    pathTemplate = ORGANIZATION_LOCATION_BUCKET;
+  }
+
+  private LogBucketName(FolderLocationBucketBuilder builder) {
+    folder = Preconditions.checkNotNull(builder.getFolder());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    bucket = Preconditions.checkNotNull(builder.getBucket());
+    project = null;
+    organization = null;
+    billingAccount = null;
+    pathTemplate = FOLDER_LOCATION_BUCKET;
+  }
+
+  private LogBucketName(BillingAccountLocationBucketBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    bucket = Preconditions.checkNotNull(builder.getBucket());
+    project = null;
+    organization = null;
+    folder = null;
+    pathTemplate = BILLING_ACCOUNT_LOCATION_BUCKET;
+  }
 
   public String getProject() {
     return project;
@@ -80,34 +125,6 @@ public class LogBucketName implements ResourceName {
 
   public String getBillingAccount() {
     return billingAccount;
-  }
-
-  private LogBucketName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    bucket = Preconditions.checkNotNull(builder.getBucket());
-    pathTemplate = PROJECT_LOCATION_BUCKET_PATH_TEMPLATE;
-  }
-
-  private LogBucketName(OrganizationLocationBucketBuilder builder) {
-    organization = Preconditions.checkNotNull(builder.getOrganization());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    bucket = Preconditions.checkNotNull(builder.getBucket());
-    pathTemplate = ORGANIZATION_LOCATION_BUCKET_PATH_TEMPLATE;
-  }
-
-  private LogBucketName(FolderLocationBucketBuilder builder) {
-    folder = Preconditions.checkNotNull(builder.getFolder());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    bucket = Preconditions.checkNotNull(builder.getBucket());
-    pathTemplate = FOLDER_LOCATION_BUCKET_PATH_TEMPLATE;
-  }
-
-  private LogBucketName(BillingAccountLocationBucketBuilder builder) {
-    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
-    location = Preconditions.checkNotNull(builder.getLocation());
-    bucket = Preconditions.checkNotNull(builder.getBucket());
-    pathTemplate = BILLING_ACCOUNT_LOCATION_BUCKET_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -139,21 +156,13 @@ public class LogBucketName implements ResourceName {
   }
 
   public static LogBucketName of(String project, String location, String bucket) {
-    return newProjectLocationBucketBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setBucket(bucket)
-        .build();
+    return newBuilder().setProject(project).setLocation(location).setBucket(bucket).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static LogBucketName ofProjectLocationBucketName(
       String project, String location, String bucket) {
-    return newProjectLocationBucketBuilder()
-        .setProject(project)
-        .setLocation(location)
-        .setBucket(bucket)
-        .build();
+    return newBuilder().setProject(project).setLocation(location).setBucket(bucket).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -243,26 +252,24 @@ public class LogBucketName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = PROJECT_LOCATION_BUCKET_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_LOCATION_BUCKET.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_BUCKET.match(formattedString);
       return ofProjectLocationBucketName(
           matchMap.get("project"), matchMap.get("location"), matchMap.get("bucket"));
-    } else if (ORGANIZATION_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          ORGANIZATION_LOCATION_BUCKET_PATH_TEMPLATE.match(formattedString);
+    } else if (ORGANIZATION_LOCATION_BUCKET.matches(formattedString)) {
+      Map<String, String> matchMap = ORGANIZATION_LOCATION_BUCKET.match(formattedString);
       return ofOrganizationLocationBucketName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("bucket"));
-    } else if (FOLDER_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap = FOLDER_LOCATION_BUCKET_PATH_TEMPLATE.match(formattedString);
+    } else if (FOLDER_LOCATION_BUCKET.matches(formattedString)) {
+      Map<String, String> matchMap = FOLDER_LOCATION_BUCKET.match(formattedString);
       return ofFolderLocationBucketName(
           matchMap.get("folder"), matchMap.get("location"), matchMap.get("bucket"));
-    } else if (BILLING_ACCOUNT_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          BILLING_ACCOUNT_LOCATION_BUCKET_PATH_TEMPLATE.match(formattedString);
+    } else if (BILLING_ACCOUNT_LOCATION_BUCKET.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_LOCATION_BUCKET.match(formattedString);
       return ofBillingAccountLocationBucketName(
           matchMap.get("billing_account"), matchMap.get("location"), matchMap.get("bucket"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException("LogBucketName.parse: formattedString not in valid format");
   }
 
   public static List<LogBucketName> parseList(List<String> formattedStrings) {
@@ -286,10 +293,10 @@ public class LogBucketName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)
-        || ORGANIZATION_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)
-        || FOLDER_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString)
-        || BILLING_ACCOUNT_LOCATION_BUCKET_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_LOCATION_BUCKET.matches(formattedString)
+        || ORGANIZATION_LOCATION_BUCKET.matches(formattedString)
+        || FOLDER_LOCATION_BUCKET.matches(formattedString)
+        || BILLING_ACCOUNT_LOCATION_BUCKET.matches(formattedString);
   }
 
   @Override
@@ -332,9 +339,45 @@ public class LogBucketName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      LogBucketName that = ((LogBucketName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.location, that.location)
+          && Objects.equals(this.bucket, that.bucket)
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.folder, that.folder)
+          && Objects.equals(this.billingAccount, that.billingAccount);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(location);
+    h *= 1000003;
+    h ^= Objects.hashCode(bucket);
+    h *= 1000003;
+    h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(folder);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
+    return h;
+  }
+
   /** Builder for projects/{project}/locations/{location}/buckets/{bucket}. */
   public static class Builder {
-
     private String project;
     private String location;
     private String bucket;
@@ -370,9 +413,8 @@ public class LogBucketName implements ResourceName {
 
     private Builder(LogBucketName logBucketName) {
       Preconditions.checkArgument(
-          logBucketName.pathTemplate == PROJECT_LOCATION_BUCKET_PATH_TEMPLATE,
-          "toBuilder is only supported when LogBucketName has the pattern of "
-              + "projects/{project}/locations/{location}/buckets/{bucket}.");
+          Objects.equals(logBucketName.pathTemplate, PROJECT_LOCATION_BUCKET),
+          "toBuilder is only supported when LogBucketName has the pattern of projects/{project}/locations/{location}/buckets/{bucket}");
       project = logBucketName.project;
       location = logBucketName.location;
       bucket = logBucketName.bucket;
@@ -386,12 +428,11 @@ public class LogBucketName implements ResourceName {
   /** Builder for organizations/{organization}/locations/{location}/buckets/{bucket}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class OrganizationLocationBucketBuilder {
-
     private String organization;
     private String location;
     private String bucket;
 
-    private OrganizationLocationBucketBuilder() {}
+    protected OrganizationLocationBucketBuilder() {}
 
     public String getOrganization() {
       return organization;
@@ -428,12 +469,11 @@ public class LogBucketName implements ResourceName {
   /** Builder for folders/{folder}/locations/{location}/buckets/{bucket}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class FolderLocationBucketBuilder {
-
     private String folder;
     private String location;
     private String bucket;
 
-    private FolderLocationBucketBuilder() {}
+    protected FolderLocationBucketBuilder() {}
 
     public String getFolder() {
       return folder;
@@ -470,12 +510,11 @@ public class LogBucketName implements ResourceName {
   /** Builder for billingAccounts/{billing_account}/locations/{location}/buckets/{bucket}. */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class BillingAccountLocationBucketBuilder {
-
     private String billingAccount;
     private String location;
     private String bucket;
 
-    private BillingAccountLocationBucketBuilder() {}
+    protected BillingAccountLocationBucketBuilder() {}
 
     public String getBillingAccount() {
       return billingAccount;
@@ -507,42 +546,5 @@ public class LogBucketName implements ResourceName {
     public LogBucketName build() {
       return new LogBucketName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      LogBucketName that = (LogBucketName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.location, that.location))
-          && (Objects.equals(this.bucket, that.bucket))
-          && (Objects.equals(this.organization, that.organization))
-          && (Objects.equals(this.folder, that.folder))
-          && (Objects.equals(this.billingAccount, that.billingAccount));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(location);
-    h *= 1000003;
-    h ^= Objects.hashCode(bucket);
-    h *= 1000003;
-    h ^= Objects.hashCode(organization);
-    h *= 1000003;
-    h ^= Objects.hashCode(folder);
-    h *= 1000003;
-    h ^= Objects.hashCode(billingAccount);
-    return h;
   }
 }
