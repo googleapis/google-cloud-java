@@ -124,6 +124,15 @@ def generate_admin_api(gapic):
   s.copy(library / f'grpc-google-cloud-bigtable-admin-v2-java/src', f'grpc-google-cloud-bigtable-admin-v2/src')
   s.copy(library / f'proto-google-cloud-bigtable-admin-v2-java/src', f'proto-google-cloud-bigtable-admin-v2/src')
 
+  #todo: fix in synthtool removing comments with method
+  java.remove_method(f'./grpc-google-cloud-bigtable-admin-v2/src/main/java/com/google/bigtable/admin/v2/BigtableInstanceAdminGrpc.java', "public UnaryCallSettings<Instance, Instance> updateInstanceSettings()")
+
+  java.remove_method(f'./google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "/** Returns the builder for the settings used for calls to updateInstance. */")
+  java.remove_method(f'./google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "public UnaryCallSettings.Builder<Instance, Instance> updateInstanceSettings()")
+
+  java.remove_method(f'./google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "/** Returns the object with the settings used for calls to updateInstance. */")
+  java.remove_method(f'./google-cloud-bigtable/src/main/java/com/google/cloud/bigtable/admin/v2/BaseBigtableInstanceAdminSettings.java', "public UnaryCallSettings<Instance, Instance> updateInstanceSettings()")
+
   make_internal_only(internal_only)
 
   java.format_code(f'./grpc-google-cloud-bigtable-admin-v2/src')
