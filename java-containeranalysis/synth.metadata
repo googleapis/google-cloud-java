@@ -4,15 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-containeranalysis.git",
-        "sha": "747944fa1ad087c37c13322a563c986ae2f938db"
-      }
-    },
-    {
-      "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "cb7fc620590382a4a2ea6ffdf6f51ae0e77bbbb5",
-        "internalRef": "334682521"
+        "sha": "9d196a9d0c08fa8bf20cabecb8d5baab215c750d"
       }
     },
     {
@@ -27,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "e935c9ecb47da0f2e054f5f1845f7cf7c95fa625"
+        "sha": "140ba24a136c63e7f10a998a63e7898aed63ea7d"
       }
     }
   ],
@@ -119,6 +111,7 @@
     "google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/ContainerAnalysisClientTest.java",
     "google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/MockContainerAnalysis.java",
     "google-cloud-containeranalysis/src/test/java/com/google/cloud/devtools/containeranalysis/v1/MockContainerAnalysisImpl.java",
+    "grpc-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/ContainerAnalysisGrpc.java",
     "java.header",
     "license-checks.xml",
     "proto-google-cloud-containeranalysis-v1/src/main/java/com/google/containeranalysis/v1/Containeranalysis.java",
