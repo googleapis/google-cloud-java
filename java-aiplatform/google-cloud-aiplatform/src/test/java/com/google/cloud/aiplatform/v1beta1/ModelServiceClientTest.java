@@ -823,6 +823,7 @@ public class ModelServiceClientTest {
                 ModelEvaluationSliceName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
                     .toString())
+            .setSlice(ModelEvaluationSlice.Slice.newBuilder().build())
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
@@ -872,6 +873,7 @@ public class ModelServiceClientTest {
                 ModelEvaluationSliceName.of(
                         "[PROJECT]", "[LOCATION]", "[MODEL]", "[EVALUATION]", "[SLICE]")
                     .toString())
+            .setSlice(ModelEvaluationSlice.Slice.newBuilder().build())
             .setMetricsSchemaUri("metricsSchemaUri-182209912")
             .setMetrics(Value.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
