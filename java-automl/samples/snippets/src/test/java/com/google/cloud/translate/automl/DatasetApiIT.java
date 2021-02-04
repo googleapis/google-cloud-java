@@ -18,10 +18,11 @@ package com.google.cloud.translate.automl;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.rpc.NotFoundException;
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import org.junit.After;
 import org.junit.Before;
@@ -40,9 +41,7 @@ public class DatasetApiIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private DatasetApi app;
-  private String datasetId;
-  private String getdatasetId = "TRL3946265060617537378";
+  private String datasetId = "TEN0000000000000000000";
 
   @Before
   public void setUp() {
@@ -61,59 +60,14 @@ public class DatasetApiIT {
 
   @Test
   public void testCreateImportDeleteDataset()
-      throws IOException, ExecutionException, InterruptedException {
-    // Create a random dataset name with a length of 32 characters (max allowed by AutoML)
-    // To prevent name collisions when running tests in multiple java versions at once.
-    // AutoML doesn't allow "-", but accepts "_"
-    String datasetName =
-        String.format("test_%s", UUID.randomUUID().toString().replace("-", "_").substring(0, 26));
-
-    // Act
-    DatasetApi.createDataset(PROJECT_ID, COMPUTE_REGION, datasetName, "en", "ja");
-
-    // Assert
-    String got = bout.toString();
-    datasetId =
-        bout.toString()
-            .split("\n")[0]
-            .split("/")[(bout.toString().split("\n")[0]).split("/").length - 1];
-    assertThat(got).contains("Dataset id:");
-
-    // Act
-    DatasetApi.importData(
-        PROJECT_ID, COMPUTE_REGION, datasetId, "gs://" + BUCKET + "/en-ja-short.csv");
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Dataset id:");
-
-    // Act
-    DatasetApi.deleteDataset(PROJECT_ID, COMPUTE_REGION, datasetId);
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("Dataset deleted.");
-  }
-
-  @Test
-  public void testListDataset() throws IOException {
-    // Act
-    DatasetApi.listDatasets(PROJECT_ID, COMPUTE_REGION, "translation_dataset_metadata:*");
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("Dataset id:");
-  }
-
-  @Test
-  public void testGetDataset() throws IOException {
-
-    // Act
-    DatasetApi.getDataset(PROJECT_ID, COMPUTE_REGION, getdatasetId);
-
-    // Assert
-    String got = bout.toString();
-
-    assertThat(got).contains("Dataset id:");
+      throws IOException, InterruptedException {
+    try {
+      DatasetApi.importData(
+              PROJECT_ID, COMPUTE_REGION, datasetId, "gs://" + BUCKET + "/en-ja-short.csv");
+      String got = bout.toString();
+      assertThat(got).contains("The Dataset doesn't exist ");
+    } catch (NotFoundException | ExecutionException | StatusRuntimeException ex) {
+      assertThat(ex.getMessage()).contains("The Dataset doesn't exist");
+    }
   }
 }

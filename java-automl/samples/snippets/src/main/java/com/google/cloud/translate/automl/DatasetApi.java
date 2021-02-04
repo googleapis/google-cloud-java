@@ -18,13 +18,9 @@ package com.google.cloud.translate.automl;
 
 // Imports the Google Cloud client library
 import com.google.cloud.automl.v1beta1.AutoMlClient;
-import com.google.cloud.automl.v1beta1.Dataset;
 import com.google.cloud.automl.v1beta1.DatasetName;
 import com.google.cloud.automl.v1beta1.GcsSource;
 import com.google.cloud.automl.v1beta1.InputConfig;
-import com.google.cloud.automl.v1beta1.ListDatasetsRequest;
-import com.google.cloud.automl.v1beta1.LocationName;
-import com.google.cloud.automl.v1beta1.TranslationDatasetMetadata;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.io.PrintStream;
@@ -42,156 +38,6 @@ import net.sourceforge.argparse4j.inf.Subparsers;
  * test_dataset'
  */
 public class DatasetApi {
-
-  // [START automl_translate_create_dataset]
-  /**
-   * Demonstrates using the AutoML client to create a dataset
-   *
-   * @param projectId the Google Cloud Project ID.
-   * @param computeRegion the Region name. (e.g., "us-central1").
-   * @param datasetName the name of the dataset to be created.
-   * @param source the Source language
-   * @param target the Target language
-   */
-  public static void createDataset(
-      String projectId, String computeRegion, String datasetName, String source, String target)
-      throws IOException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // A resource that represents Google Cloud Platform location.
-      LocationName projectLocation = LocationName.of(projectId, computeRegion);
-
-      // Specify the source and target language.
-      TranslationDatasetMetadata translationDatasetMetadata =
-          TranslationDatasetMetadata.newBuilder()
-              .setSourceLanguageCode(source)
-              .setTargetLanguageCode(target)
-              .build();
-
-      // Set dataset name and dataset metadata.
-      Dataset myDataset =
-          Dataset.newBuilder()
-              .setDisplayName(datasetName)
-              .setTranslationDatasetMetadata(translationDatasetMetadata)
-              .build();
-
-      // Create a dataset with the dataset metadata in the region.
-      Dataset dataset = client.createDataset(projectLocation, myDataset);
-
-      // Display the dataset information.
-      System.out.println(String.format("Dataset name: %s", dataset.getName()));
-      System.out.println(
-          String.format(
-              "Dataset id: %s",
-              dataset.getName().split("/")[dataset.getName().split("/").length - 1]));
-      System.out.println(String.format("Dataset display name: %s", dataset.getDisplayName()));
-      System.out.println("Translation dataset Metadata:");
-      System.out.println(
-          String.format(
-              "\tSource language code: %s",
-              dataset.getTranslationDatasetMetadata().getSourceLanguageCode()));
-      System.out.println(
-          String.format(
-              "\tTarget language code: %s",
-              dataset.getTranslationDatasetMetadata().getTargetLanguageCode()));
-      System.out.println("Dataset create time:");
-      System.out.println(String.format("\tseconds: %s", dataset.getCreateTime().getSeconds()));
-      System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
-    }
-  }
-  // [END automl_translate_create_dataset]
-
-  // [START automl_translate_list_datasets]
-  /**
-   * Demonstrates using the AutoML client to list all datasets.
-   *
-   * @param projectId the Google Cloud Project ID.
-   * @param computeRegion the Region name. (e.g., "us-central1").
-   * @param filter the Filter expression.
-   */
-  public static void listDatasets(String projectId, String computeRegion, String filter)
-      throws IOException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // A resource that represents Google Cloud Platform location.
-      LocationName projectLocation = LocationName.of(projectId, computeRegion);
-
-      ListDatasetsRequest request =
-          ListDatasetsRequest.newBuilder()
-              .setParent(projectLocation.toString())
-              .setFilter(filter)
-              .build();
-
-      // List all the datasets available in the region by applying filter.
-      System.out.println("List of datasets:");
-      for (Dataset dataset : client.listDatasets(request).iterateAll()) {
-        // Display the dataset information
-        System.out.println(String.format("\nDataset name: %s", dataset.getName()));
-        System.out.println(
-            String.format(
-                "Dataset id: %s",
-                dataset.getName().split("/")[dataset.getName().split("/").length - 1]));
-        System.out.println(String.format("Dataset display name: %s", dataset.getDisplayName()));
-        System.out.println("Translation dataset metadata:");
-        System.out.println(
-            String.format(
-                "\tSource language code: %s",
-                dataset.getTranslationDatasetMetadata().getSourceLanguageCode()));
-        System.out.println(
-            String.format(
-                "\tTarget language code: %s",
-                dataset.getTranslationDatasetMetadata().getTargetLanguageCode()));
-        System.out.println("Dataset create time:");
-        System.out.println(String.format("\tseconds: %s", dataset.getCreateTime().getSeconds()));
-        System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
-      }
-    }
-  }
-  // [END automl_translate_list_datasets]
-
-  // [START automl_translate_get_dataset]
-  /**
-   * Demonstrates using the AutoML client to get a dataset by ID.
-   *
-   * @param projectId the Google Cloud Project ID.
-   * @param computeRegion the Region name. (e.g., "us-central1").
-   * @param datasetId the Id of the dataset.
-   */
-  public static void getDataset(String projectId, String computeRegion, String datasetId)
-      throws IOException {
-    // Instantiates a client
-    try (AutoMlClient client = AutoMlClient.create()) {
-
-      // Get the complete path of the dataset.
-      DatasetName datasetFullId = DatasetName.of(projectId, computeRegion, datasetId);
-
-      // Get all the information about a given dataset.
-      Dataset dataset = client.getDataset(datasetFullId);
-
-      // Display the dataset information
-      System.out.println(String.format("Dataset name: %s", dataset.getName()));
-      System.out.println(
-          String.format(
-              "Dataset id: %s",
-              dataset.getName().split("/")[dataset.getName().split("/").length - 1]));
-      System.out.println(String.format("Dataset display name: %s", dataset.getDisplayName()));
-      System.out.println("Translation dataset metadata:");
-      System.out.println(
-          String.format(
-              "\tSource language code: %s",
-              dataset.getTranslationDatasetMetadata().getSourceLanguageCode()));
-      System.out.println(
-          String.format(
-              "\tTarget language code: %s",
-              dataset.getTranslationDatasetMetadata().getTargetLanguageCode()));
-      System.out.println("Dataset create time:");
-      System.out.println(String.format("\tseconds: %s", dataset.getCreateTime().getSeconds()));
-      System.out.println(String.format("\tnanos: %s", dataset.getCreateTime().getNanos()));
-    }
-  }
-  // [END automl_translate_get_dataset]
 
   // [START automl_translate_import_data]
   /**
@@ -262,17 +108,6 @@ public class DatasetApi {
     ArgumentParser parser = ArgumentParsers.newFor("").build();
     Subparsers subparsers = parser.addSubparsers().dest("command");
 
-    Subparser createDatasetParser = subparsers.addParser("create_dataset");
-    createDatasetParser.addArgument("datasetName");
-    createDatasetParser.addArgument("source");
-    createDatasetParser.addArgument("target");
-
-    Subparser listDatasetParser = subparsers.addParser("list_datasets");
-    listDatasetParser.addArgument("filter").nargs("?").setDefault("translation_dataset_metadata:*");
-
-    Subparser getDatasetParser = subparsers.addParser("get_dataset");
-    getDatasetParser.addArgument("datasetId");
-
     Subparser importDataParser = subparsers.addParser("import_data");
     importDataParser.addArgument("datasetId");
     importDataParser.addArgument("path");
@@ -286,20 +121,6 @@ public class DatasetApi {
     Namespace ns;
     try {
       ns = parser.parseArgs(args);
-      if (ns.get("command").equals("create_dataset")) {
-        createDataset(
-            projectId,
-            computeRegion,
-            ns.getString("datasetName"),
-            ns.getString("source"),
-            ns.getString("target"));
-      }
-      if (ns.get("command").equals("list_datasets")) {
-        listDatasets(projectId, computeRegion, ns.getString("filter"));
-      }
-      if (ns.get("command").equals("get_dataset")) {
-        getDataset(projectId, computeRegion, ns.getString("datasetId"));
-      }
       if (ns.get("command").equals("import_data")) {
         importData(projectId, computeRegion, ns.getString("datasetId"), ns.getString("path"));
       }

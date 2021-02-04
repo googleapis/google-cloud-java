@@ -35,9 +35,7 @@ public class ModelApiIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-  private ModelApi app;
   private String modelId;
-  private String modelEvaluationId;
 
   @Before
   public void setUp() {
@@ -71,20 +69,5 @@ public class ModelApiIT {
     // Assert
     got = bout.toString();
     assertThat(got).contains("Model name:");
-
-    // Act
-    ModelApi.listModelEvaluations(PROJECT_ID, COMPUTE_REGION, modelId, "");
-
-    // Assert
-    got = bout.toString();
-    modelEvaluationId = got.split("List of model evaluations:")[1].split("\"")[1].split("/")[7];
-    assertThat(got).contains("name:");
-
-    // Act
-    ModelApi.getModelEvaluation(PROJECT_ID, COMPUTE_REGION, modelId, modelEvaluationId);
-
-    // Assert
-    got = bout.toString();
-    assertThat(got).contains("name:");
   }
 }
