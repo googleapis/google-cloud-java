@@ -26,6 +26,7 @@ import com.google.cloud.examples.storage.buckets.AddBucketIamMember;
 import com.google.cloud.examples.storage.buckets.AddBucketLabel;
 import com.google.cloud.examples.storage.buckets.ChangeDefaultStorageClass;
 import com.google.cloud.examples.storage.buckets.ConfigureBucketCors;
+import com.google.cloud.examples.storage.buckets.CreateBucket;
 import com.google.cloud.examples.storage.buckets.CreateBucketWithStorageClassAndLocation;
 import com.google.cloud.examples.storage.buckets.DeleteBucket;
 import com.google.cloud.examples.storage.buckets.DisableBucketVersioning;
@@ -170,6 +171,18 @@ public class ITBucketSnippets {
     ChangeDefaultStorageClass.changeDefaultStorageClass(PROJECT_ID, BUCKET);
     remoteBucket = storage.get(BUCKET);
     assertEquals("COLDLINE", remoteBucket.getStorageClass().name());
+  }
+
+  @Test
+  public void testCreateBucket() {
+    String newBucket = RemoteStorageHelper.generateBucketName();
+    CreateBucket.createBucket(PROJECT_ID, newBucket);
+    try {
+      Bucket remoteBucket = storage.get(newBucket);
+      assertNotNull(remoteBucket);
+    } finally {
+      storage.delete(newBucket);
+    }
   }
 
   @Test
