@@ -53,4 +53,51 @@ public interface GetQueueRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read mask is used for a more granular control over what the API returns.
+   * If the mask is not present all fields will be returned except
+   * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+   * specified in the mask.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  boolean hasReadMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read mask is used for a more granular control over what the API returns.
+   * If the mask is not present all fields will be returned except
+   * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+   * specified in the mask.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The readMask.
+   */
+  com.google.protobuf.FieldMask getReadMask();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read mask is used for a more granular control over what the API returns.
+   * If the mask is not present all fields will be returned except
+   * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+   * specified in the mask.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder();
 }

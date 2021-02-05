@@ -28,6 +28,10 @@ public final class TargetProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2beta3_PullMessage_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2beta3_PullMessage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_tasks_v2beta3_HttpRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_tasks_v2beta3_HttpRequest_fieldAccessorTable;
@@ -70,38 +74,39 @@ public final class TargetProto {
     java.lang.String[] descriptorData = {
       "\n\'google/cloud/tasks/v2beta3/target.prot"
           + "o\022\032google.cloud.tasks.v2beta3\032\034google/ap"
-          + "i/annotations.proto\"\360\002\n\013HttpRequest\022\013\n\003u"
-          + "rl\030\001 \001(\t\022;\n\013http_method\030\002 \001(\0162&.google.c"
-          + "loud.tasks.v2beta3.HttpMethod\022E\n\007headers"
-          + "\030\003 \003(\01324.google.cloud.tasks.v2beta3.Http"
-          + "Request.HeadersEntry\022\014\n\004body\030\004 \001(\014\022=\n\013oa"
-          + "uth_token\030\005 \001(\0132&.google.cloud.tasks.v2b"
-          + "eta3.OAuthTokenH\000\022;\n\noidc_token\030\006 \001(\0132%."
-          + "google.cloud.tasks.v2beta3.OidcTokenH\000\032."
-          + "\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001"
-          + "(\t:\0028\001B\026\n\024authorization_header\"g\n\022AppEng"
-          + "ineHttpQueue\022Q\n\033app_engine_routing_overr"
-          + "ide\030\001 \001(\0132,.google.cloud.tasks.v2beta3.A"
-          + "ppEngineRouting\"\301\002\n\024AppEngineHttpRequest"
-          + "\022;\n\013http_method\030\001 \001(\0162&.google.cloud.tas"
-          + "ks.v2beta3.HttpMethod\022H\n\022app_engine_rout"
-          + "ing\030\002 \001(\0132,.google.cloud.tasks.v2beta3.A"
-          + "ppEngineRouting\022\024\n\014relative_uri\030\003 \001(\t\022N\n"
-          + "\007headers\030\004 \003(\0132=.google.cloud.tasks.v2be"
-          + "ta3.AppEngineHttpRequest.HeadersEntry\022\014\n"
-          + "\004body\030\005 \001(\014\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\020AppEngineRouting\022"
-          + "\017\n\007service\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\020\n\010ins"
-          + "tance\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\":\n\nOAuthToken\022"
-          + "\035\n\025service_account_email\030\001 \001(\t\022\r\n\005scope\030"
-          + "\002 \001(\t\"<\n\tOidcToken\022\035\n\025service_account_em"
-          + "ail\030\001 \001(\t\022\020\n\010audience\030\002 \001(\t*s\n\nHttpMetho"
-          + "d\022\033\n\027HTTP_METHOD_UNSPECIFIED\020\000\022\010\n\004POST\020\001"
-          + "\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PUT\020\004\022\n\n\006DELETE\020\005"
-          + "\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS\020\007Bp\n\036com.google.c"
-          + "loud.tasks.v2beta3B\013TargetProtoP\001Z?googl"
-          + "e.golang.org/genproto/googleapis/cloud/t"
-          + "asks/v2beta3;tasksb\006proto3"
+          + "i/annotations.proto\"+\n\013PullMessage\022\017\n\007pa"
+          + "yload\030\001 \001(\014\022\013\n\003tag\030\002 \001(\t\"\360\002\n\013HttpRequest"
+          + "\022\013\n\003url\030\001 \001(\t\022;\n\013http_method\030\002 \001(\0162&.goo"
+          + "gle.cloud.tasks.v2beta3.HttpMethod\022E\n\007he"
+          + "aders\030\003 \003(\01324.google.cloud.tasks.v2beta3"
+          + ".HttpRequest.HeadersEntry\022\014\n\004body\030\004 \001(\014\022"
+          + "=\n\013oauth_token\030\005 \001(\0132&.google.cloud.task"
+          + "s.v2beta3.OAuthTokenH\000\022;\n\noidc_token\030\006 \001"
+          + "(\0132%.google.cloud.tasks.v2beta3.OidcToke"
+          + "nH\000\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001B\026\n\024authorization_header\"g\n\022A"
+          + "ppEngineHttpQueue\022Q\n\033app_engine_routing_"
+          + "override\030\001 \001(\0132,.google.cloud.tasks.v2be"
+          + "ta3.AppEngineRouting\"\301\002\n\024AppEngineHttpRe"
+          + "quest\022;\n\013http_method\030\001 \001(\0162&.google.clou"
+          + "d.tasks.v2beta3.HttpMethod\022H\n\022app_engine"
+          + "_routing\030\002 \001(\0132,.google.cloud.tasks.v2be"
+          + "ta3.AppEngineRouting\022\024\n\014relative_uri\030\003 \001"
+          + "(\t\022N\n\007headers\030\004 \003(\0132=.google.cloud.tasks"
+          + ".v2beta3.AppEngineHttpRequest.HeadersEnt"
+          + "ry\022\014\n\004body\030\005 \001(\014\032.\n\014HeadersEntry\022\013\n\003key\030"
+          + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"T\n\020AppEngineRou"
+          + "ting\022\017\n\007service\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\020"
+          + "\n\010instance\030\003 \001(\t\022\014\n\004host\030\004 \001(\t\":\n\nOAuthT"
+          + "oken\022\035\n\025service_account_email\030\001 \001(\t\022\r\n\005s"
+          + "cope\030\002 \001(\t\"<\n\tOidcToken\022\035\n\025service_accou"
+          + "nt_email\030\001 \001(\t\022\020\n\010audience\030\002 \001(\t*s\n\nHttp"
+          + "Method\022\033\n\027HTTP_METHOD_UNSPECIFIED\020\000\022\010\n\004P"
+          + "OST\020\001\022\007\n\003GET\020\002\022\010\n\004HEAD\020\003\022\007\n\003PUT\020\004\022\n\n\006DEL"
+          + "ETE\020\005\022\t\n\005PATCH\020\006\022\013\n\007OPTIONS\020\007Bp\n\036com.goo"
+          + "gle.cloud.tasks.v2beta3B\013TargetProtoP\001Z?"
+          + "google.golang.org/genproto/googleapis/cl"
+          + "oud/tasks/v2beta3;tasksb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -109,8 +114,16 @@ public final class TargetProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
             });
-    internal_static_google_cloud_tasks_v2beta3_HttpRequest_descriptor =
+    internal_static_google_cloud_tasks_v2beta3_PullMessage_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_tasks_v2beta3_PullMessage_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2beta3_PullMessage_descriptor,
+            new java.lang.String[] {
+              "Payload", "Tag",
+            });
+    internal_static_google_cloud_tasks_v2beta3_HttpRequest_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_tasks_v2beta3_HttpRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta3_HttpRequest_descriptor,
@@ -132,7 +145,7 @@ public final class TargetProto {
               "Key", "Value",
             });
     internal_static_google_cloud_tasks_v2beta3_AppEngineHttpQueue_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_tasks_v2beta3_AppEngineHttpQueue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta3_AppEngineHttpQueue_descriptor,
@@ -140,7 +153,7 @@ public final class TargetProto {
               "AppEngineRoutingOverride",
             });
     internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta3_AppEngineHttpRequest_descriptor,
@@ -158,7 +171,7 @@ public final class TargetProto {
               "Key", "Value",
             });
     internal_static_google_cloud_tasks_v2beta3_AppEngineRouting_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_tasks_v2beta3_AppEngineRouting_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta3_AppEngineRouting_descriptor,
@@ -166,7 +179,7 @@ public final class TargetProto {
               "Service", "Version", "Instance", "Host",
             });
     internal_static_google_cloud_tasks_v2beta3_OAuthToken_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_tasks_v2beta3_OAuthToken_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta3_OAuthToken_descriptor,
@@ -174,7 +187,7 @@ public final class TargetProto {
               "ServiceAccountEmail", "Scope",
             });
     internal_static_google_cloud_tasks_v2beta3_OidcToken_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_tasks_v2beta3_OidcToken_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta3_OidcToken_descriptor,

@@ -209,6 +209,23 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 106:
+            {
+              com.google.cloud.tasks.v2beta3.PullMessage.Builder subBuilder = null;
+              if (payloadTypeCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.tasks.v2beta3.PullMessage) payloadType_).toBuilder();
+              }
+              payloadType_ =
+                  input.readMessage(
+                      com.google.cloud.tasks.v2beta3.PullMessage.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.tasks.v2beta3.PullMessage) payloadType_);
+                payloadType_ = subBuilder.buildPartial();
+              }
+              payloadTypeCase_ = 13;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -432,6 +449,7 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     APP_ENGINE_HTTP_REQUEST(3),
     HTTP_REQUEST(11),
+    PULL_MESSAGE(13),
     PAYLOADTYPE_NOT_SET(0);
     private final int value;
 
@@ -454,6 +472,8 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           return APP_ENGINE_HTTP_REQUEST;
         case 11:
           return HTTP_REQUEST;
+        case 13:
+          return PULL_MESSAGE;
         case 0:
           return PAYLOADTYPE_NOT_SET;
         default:
@@ -658,6 +678,75 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.tasks.v2beta3.HttpRequest) payloadType_;
     }
     return com.google.cloud.tasks.v2beta3.HttpRequest.getDefaultInstance();
+  }
+
+  public static final int PULL_MESSAGE_FIELD_NUMBER = 13;
+  /**
+   *
+   *
+   * <pre>
+   * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+   * payload type cannot be explicitly set through Cloud Tasks API. Its
+   * purpose, currently is to provide backward compatibility with App Engine
+   * Task Queue
+   * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+   * queues to provide a way to inspect contents of pull tasks through the
+   * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+   *
+   * @return Whether the pullMessage field is set.
+   */
+  @java.lang.Override
+  public boolean hasPullMessage() {
+    return payloadTypeCase_ == 13;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+   * payload type cannot be explicitly set through Cloud Tasks API. Its
+   * purpose, currently is to provide backward compatibility with App Engine
+   * Task Queue
+   * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+   * queues to provide a way to inspect contents of pull tasks through the
+   * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+   *
+   * @return The pullMessage.
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.PullMessage getPullMessage() {
+    if (payloadTypeCase_ == 13) {
+      return (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+   * payload type cannot be explicitly set through Cloud Tasks API. Its
+   * purpose, currently is to provide backward compatibility with App Engine
+   * Task Queue
+   * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+   * queues to provide a way to inspect contents of pull tasks through the
+   * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.tasks.v2beta3.PullMessageOrBuilder getPullMessageOrBuilder() {
+    if (payloadTypeCase_ == 13) {
+      return (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_;
+    }
+    return com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance();
   }
 
   public static final int SCHEDULE_TIME_FIELD_NUMBER = 4;
@@ -1111,6 +1200,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     if (dispatchDeadline_ != null) {
       output.writeMessage(12, getDispatchDeadline());
     }
+    if (payloadTypeCase_ == 13) {
+      output.writeMessage(13, (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1156,6 +1248,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
     }
     if (dispatchDeadline_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getDispatchDeadline());
+    }
+    if (payloadTypeCase_ == 13) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1203,6 +1300,9 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         break;
       case 11:
         if (!getHttpRequest().equals(other.getHttpRequest())) return false;
+        break;
+      case 13:
+        if (!getPullMessage().equals(other.getPullMessage())) return false;
         break;
       case 0:
       default:
@@ -1254,6 +1354,10 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       case 11:
         hash = (37 * hash) + HTTP_REQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getHttpRequest().hashCode();
+        break;
+      case 13:
+        hash = (37 * hash) + PULL_MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getPullMessage().hashCode();
         break;
       case 0:
       default:
@@ -1483,6 +1587,13 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
           result.payloadType_ = httpRequestBuilder_.build();
         }
       }
+      if (payloadTypeCase_ == 13) {
+        if (pullMessageBuilder_ == null) {
+          result.payloadType_ = payloadType_;
+        } else {
+          result.payloadType_ = pullMessageBuilder_.build();
+        }
+      }
       if (scheduleTimeBuilder_ == null) {
         result.scheduleTime_ = scheduleTime_;
       } else {
@@ -1598,6 +1709,11 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
         case HTTP_REQUEST:
           {
             mergeHttpRequest(other.getHttpRequest());
+            break;
+          }
+        case PULL_MESSAGE:
+          {
+            mergePullMessage(other.getPullMessage());
             break;
           }
         case PAYLOADTYPE_NOT_SET:
@@ -2273,6 +2389,269 @@ public final class Task extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return httpRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.PullMessage,
+            com.google.cloud.tasks.v2beta3.PullMessage.Builder,
+            com.google.cloud.tasks.v2beta3.PullMessageOrBuilder>
+        pullMessageBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     *
+     * @return Whether the pullMessage field is set.
+     */
+    @java.lang.Override
+    public boolean hasPullMessage() {
+      return payloadTypeCase_ == 13;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     *
+     * @return The pullMessage.
+     */
+    @java.lang.Override
+    public com.google.cloud.tasks.v2beta3.PullMessage getPullMessage() {
+      if (pullMessageBuilder_ == null) {
+        if (payloadTypeCase_ == 13) {
+          return (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance();
+      } else {
+        if (payloadTypeCase_ == 13) {
+          return pullMessageBuilder_.getMessage();
+        }
+        return com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    public Builder setPullMessage(com.google.cloud.tasks.v2beta3.PullMessage value) {
+      if (pullMessageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        payloadType_ = value;
+        onChanged();
+      } else {
+        pullMessageBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    public Builder setPullMessage(
+        com.google.cloud.tasks.v2beta3.PullMessage.Builder builderForValue) {
+      if (pullMessageBuilder_ == null) {
+        payloadType_ = builderForValue.build();
+        onChanged();
+      } else {
+        pullMessageBuilder_.setMessage(builderForValue.build());
+      }
+      payloadTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    public Builder mergePullMessage(com.google.cloud.tasks.v2beta3.PullMessage value) {
+      if (pullMessageBuilder_ == null) {
+        if (payloadTypeCase_ == 13
+            && payloadType_ != com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance()) {
+          payloadType_ =
+              com.google.cloud.tasks.v2beta3.PullMessage.newBuilder(
+                      (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          payloadType_ = value;
+        }
+        onChanged();
+      } else {
+        if (payloadTypeCase_ == 13) {
+          pullMessageBuilder_.mergeFrom(value);
+        }
+        pullMessageBuilder_.setMessage(value);
+      }
+      payloadTypeCase_ = 13;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    public Builder clearPullMessage() {
+      if (pullMessageBuilder_ == null) {
+        if (payloadTypeCase_ == 13) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+          onChanged();
+        }
+      } else {
+        if (payloadTypeCase_ == 13) {
+          payloadTypeCase_ = 0;
+          payloadType_ = null;
+        }
+        pullMessageBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    public com.google.cloud.tasks.v2beta3.PullMessage.Builder getPullMessageBuilder() {
+      return getPullMessageFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.tasks.v2beta3.PullMessageOrBuilder getPullMessageOrBuilder() {
+      if ((payloadTypeCase_ == 13) && (pullMessageBuilder_ != null)) {
+        return pullMessageBuilder_.getMessageOrBuilder();
+      } else {
+        if (payloadTypeCase_ == 13) {
+          return (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_;
+        }
+        return com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+     * payload type cannot be explicitly set through Cloud Tasks API. Its
+     * purpose, currently is to provide backward compatibility with App Engine
+     * Task Queue
+     * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+     * queues to provide a way to inspect contents of pull tasks through the
+     * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+     * </pre>
+     *
+     * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.tasks.v2beta3.PullMessage,
+            com.google.cloud.tasks.v2beta3.PullMessage.Builder,
+            com.google.cloud.tasks.v2beta3.PullMessageOrBuilder>
+        getPullMessageFieldBuilder() {
+      if (pullMessageBuilder_ == null) {
+        if (!(payloadTypeCase_ == 13)) {
+          payloadType_ = com.google.cloud.tasks.v2beta3.PullMessage.getDefaultInstance();
+        }
+        pullMessageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tasks.v2beta3.PullMessage,
+                com.google.cloud.tasks.v2beta3.PullMessage.Builder,
+                com.google.cloud.tasks.v2beta3.PullMessageOrBuilder>(
+                (com.google.cloud.tasks.v2beta3.PullMessage) payloadType_,
+                getParentForChildren(),
+                isClean());
+        payloadType_ = null;
+      }
+      payloadTypeCase_ = 13;
+      onChanged();
+      ;
+      return pullMessageBuilder_;
     }
 
     private com.google.protobuf.Timestamp scheduleTime_;

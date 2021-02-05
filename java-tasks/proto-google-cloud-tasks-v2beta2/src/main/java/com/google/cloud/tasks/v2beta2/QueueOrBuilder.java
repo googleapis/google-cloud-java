@@ -375,5 +375,170 @@ public interface QueueOrBuilder
    */
   com.google.protobuf.TimestampOrBuilder getPurgeTimeOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The maximum amount of time that a task will be retained in
+   * this queue.
+   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+   * After a task has lived for `task_ttl`, the task will be deleted
+   * regardless of whether it was dispatched or not.
+   * The `task_ttl` for queues created via queue.yaml/xml is equal to the
+   * maximum duration because there is a
+   * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
+   * these queues. To view the maximum valid duration, see the documentation for
+   * [Duration][google.protobuf.Duration].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration task_ttl = 9;</code>
+   *
+   * @return Whether the taskTtl field is set.
+   */
+  boolean hasTaskTtl();
+  /**
+   *
+   *
+   * <pre>
+   * The maximum amount of time that a task will be retained in
+   * this queue.
+   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+   * After a task has lived for `task_ttl`, the task will be deleted
+   * regardless of whether it was dispatched or not.
+   * The `task_ttl` for queues created via queue.yaml/xml is equal to the
+   * maximum duration because there is a
+   * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
+   * these queues. To view the maximum valid duration, see the documentation for
+   * [Duration][google.protobuf.Duration].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration task_ttl = 9;</code>
+   *
+   * @return The taskTtl.
+   */
+  com.google.protobuf.Duration getTaskTtl();
+  /**
+   *
+   *
+   * <pre>
+   * The maximum amount of time that a task will be retained in
+   * this queue.
+   * Queues created by Cloud Tasks have a default `task_ttl` of 31 days.
+   * After a task has lived for `task_ttl`, the task will be deleted
+   * regardless of whether it was dispatched or not.
+   * The `task_ttl` for queues created via queue.yaml/xml is equal to the
+   * maximum duration because there is a
+   * [storage quota](https://cloud.google.com/appengine/quotas#Task_Queue) for
+   * these queues. To view the maximum valid duration, see the documentation for
+   * [Duration][google.protobuf.Duration].
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration task_ttl = 9;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTaskTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The task tombstone time to live (TTL).
+   * After a task is deleted or completed, the task's tombstone is
+   * retained for the length of time specified by `tombstone_ttl`.
+   * The tombstone is used by task de-duplication; another task with the same
+   * name can't be created until the tombstone has expired. For more information
+   * about task de-duplication, see the documentation for
+   * [CreateTaskRequest][google.cloud.tasks.v2beta2.CreateTaskRequest.task].
+   * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration tombstone_ttl = 10;</code>
+   *
+   * @return Whether the tombstoneTtl field is set.
+   */
+  boolean hasTombstoneTtl();
+  /**
+   *
+   *
+   * <pre>
+   * The task tombstone time to live (TTL).
+   * After a task is deleted or completed, the task's tombstone is
+   * retained for the length of time specified by `tombstone_ttl`.
+   * The tombstone is used by task de-duplication; another task with the same
+   * name can't be created until the tombstone has expired. For more information
+   * about task de-duplication, see the documentation for
+   * [CreateTaskRequest][google.cloud.tasks.v2beta2.CreateTaskRequest.task].
+   * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration tombstone_ttl = 10;</code>
+   *
+   * @return The tombstoneTtl.
+   */
+  com.google.protobuf.Duration getTombstoneTtl();
+  /**
+   *
+   *
+   * <pre>
+   * The task tombstone time to live (TTL).
+   * After a task is deleted or completed, the task's tombstone is
+   * retained for the length of time specified by `tombstone_ttl`.
+   * The tombstone is used by task de-duplication; another task with the same
+   * name can't be created until the tombstone has expired. For more information
+   * about task de-duplication, see the documentation for
+   * [CreateTaskRequest][google.cloud.tasks.v2beta2.CreateTaskRequest.task].
+   * Queues created by Cloud Tasks have a default `tombstone_ttl` of 1 hour.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration tombstone_ttl = 10;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getTombstoneTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The realtime, informational statistics for a queue. In order
+   * to receive the statistics the caller should include this field in the
+   * FieldMask.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta2.QueueStats stats = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the stats field is set.
+   */
+  boolean hasStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The realtime, informational statistics for a queue. In order
+   * to receive the statistics the caller should include this field in the
+   * FieldMask.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta2.QueueStats stats = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stats.
+   */
+  com.google.cloud.tasks.v2beta2.QueueStats getStats();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The realtime, informational statistics for a queue. In order
+   * to receive the statistics the caller should include this field in the
+   * FieldMask.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tasks.v2beta2.QueueStats stats = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.tasks.v2beta2.QueueStatsOrBuilder getStatsOrBuilder();
+
   public com.google.cloud.tasks.v2beta2.Queue.TargetTypeCase getTargetTypeCase();
 }

@@ -98,6 +98,21 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
               pageToken_ = s;
               break;
             }
+          case 42:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (readMask_ != null) {
+                subBuilder = readMask_.toBuilder();
+              }
+              readMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readMask_);
+                readMask_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -336,6 +351,64 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int READ_MASK_FIELD_NUMBER = 5;
+  private com.google.protobuf.FieldMask readMask_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read mask is used for a more granular control over what the API returns.
+   * If the mask is not present all fields will be returned except
+   * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+   * specified in the mask.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the readMask field is set.
+   */
+  @java.lang.Override
+  public boolean hasReadMask() {
+    return readMask_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read mask is used for a more granular control over what the API returns.
+   * If the mask is not present all fields will be returned except
+   * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+   * specified in the mask.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The readMask.
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMask getReadMask() {
+    return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Read mask is used for a more granular control over what the API returns.
+   * If the mask is not present all fields will be returned except
+   * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+   * specified in the mask.
+   * </pre>
+   *
+   * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+    return getReadMask();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -362,6 +435,9 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     if (!getPageTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pageToken_);
     }
+    if (readMask_ != null) {
+      output.writeMessage(5, getReadMask());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -383,6 +459,9 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
+    if (readMask_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getReadMask());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -403,6 +482,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     if (!getFilter().equals(other.getFilter())) return false;
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
+    if (hasReadMask() != other.hasReadMask()) return false;
+    if (hasReadMask()) {
+      if (!getReadMask().equals(other.getReadMask())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -422,6 +505,10 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
     hash = (53 * hash) + getPageSize();
     hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getPageToken().hashCode();
+    if (hasReadMask()) {
+      hash = (37 * hash) + READ_MASK_FIELD_NUMBER;
+      hash = (53 * hash) + getReadMask().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -575,6 +662,12 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
 
       pageToken_ = "";
 
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
       return this;
     }
 
@@ -606,6 +699,11 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       result.filter_ = filter_;
       result.pageSize_ = pageSize_;
       result.pageToken_ = pageToken_;
+      if (readMaskBuilder_ == null) {
+        result.readMask_ = readMask_;
+      } else {
+        result.readMask_ = readMaskBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -670,6 +768,9 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       if (!other.getPageToken().isEmpty()) {
         pageToken_ = other.pageToken_;
         onChanged();
+      }
+      if (other.hasReadMask()) {
+        mergeReadMask(other.getReadMask());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1168,6 +1269,221 @@ public final class ListQueuesRequest extends com.google.protobuf.GeneratedMessag
       pageToken_ = value;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.FieldMask readMask_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        readMaskBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the readMask field is set.
+     */
+    public boolean hasReadMask() {
+      return readMaskBuilder_ != null || readMask_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The readMask.
+     */
+    public com.google.protobuf.FieldMask getReadMask() {
+      if (readMaskBuilder_ == null) {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      } else {
+        return readMaskBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        readMask_ = value;
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReadMask(com.google.protobuf.FieldMask.Builder builderForValue) {
+      if (readMaskBuilder_ == null) {
+        readMask_ = builderForValue.build();
+        onChanged();
+      } else {
+        readMaskBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeReadMask(com.google.protobuf.FieldMask value) {
+      if (readMaskBuilder_ == null) {
+        if (readMask_ != null) {
+          readMask_ =
+              com.google.protobuf.FieldMask.newBuilder(readMask_).mergeFrom(value).buildPartial();
+        } else {
+          readMask_ = value;
+        }
+        onChanged();
+      } else {
+        readMaskBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReadMask() {
+      if (readMaskBuilder_ == null) {
+        readMask_ = null;
+        onChanged();
+      } else {
+        readMask_ = null;
+        readMaskBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMask.Builder getReadMaskBuilder() {
+
+      onChanged();
+      return getReadMaskFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.FieldMaskOrBuilder getReadMaskOrBuilder() {
+      if (readMaskBuilder_ != null) {
+        return readMaskBuilder_.getMessageOrBuilder();
+      } else {
+        return readMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : readMask_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Read mask is used for a more granular control over what the API returns.
+     * If the mask is not present all fields will be returned except
+     * [Queue.stats]. [Queue.stats] will be returned only if it was  explicitly
+     * specified in the mask.
+     * </pre>
+     *
+     * <code>.google.protobuf.FieldMask read_mask = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        getReadMaskFieldBuilder() {
+      if (readMaskBuilder_ == null) {
+        readMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getReadMask(), getParentForChildren(), isClean());
+        readMask_ = null;
+      }
+      return readMaskBuilder_;
     }
 
     @java.lang.Override

@@ -160,6 +160,59 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
+   * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+   * payload type cannot be explicitly set through Cloud Tasks API. Its
+   * purpose, currently is to provide backward compatibility with App Engine
+   * Task Queue
+   * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+   * queues to provide a way to inspect contents of pull tasks through the
+   * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+   *
+   * @return Whether the pullMessage field is set.
+   */
+  boolean hasPullMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+   * payload type cannot be explicitly set through Cloud Tasks API. Its
+   * purpose, currently is to provide backward compatibility with App Engine
+   * Task Queue
+   * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+   * queues to provide a way to inspect contents of pull tasks through the
+   * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+   *
+   * @return The pullMessage.
+   */
+  com.google.cloud.tasks.v2beta3.PullMessage getPullMessage();
+  /**
+   *
+   *
+   * <pre>
+   * Pull Message contained in a task in a [PULL][google.cloud.tasks.v2beta3.Queue.type] queue type. This
+   * payload type cannot be explicitly set through Cloud Tasks API. Its
+   * purpose, currently is to provide backward compatibility with App Engine
+   * Task Queue
+   * [pull](https://cloud.google.com/appengine/docs/standard/java/taskqueue/pull/)
+   * queues to provide a way to inspect contents of pull tasks through the
+   * [CloudTasks.GetTask][google.cloud.tasks.v2beta3.CloudTasks.GetTask].
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.PullMessage pull_message = 13;</code>
+   */
+  com.google.cloud.tasks.v2beta3.PullMessageOrBuilder getPullMessageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
    * `schedule_time` will be truncated to the nearest microsecond.

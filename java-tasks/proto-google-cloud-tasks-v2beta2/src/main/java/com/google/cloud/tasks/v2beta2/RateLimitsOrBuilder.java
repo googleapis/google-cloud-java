@@ -50,7 +50,7 @@ public interface RateLimitsOrBuilder
    *
    *
    * <pre>
-   * Output only. The max burst size.
+   * The max burst size.
    * Max burst size limits how fast tasks in queue are processed when
    * many tasks are in the queue and the rate is high. This field
    * allows the queue to have a high rate so processing starts shortly
@@ -63,21 +63,20 @@ public interface RateLimitsOrBuilder
    * token is removed from the bucket. Tasks will be dispatched until
    * the queue's bucket runs out of tokens. The bucket will be
    * continuously refilled with new tokens based on
-   * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second].
-   * Cloud Tasks will pick the value of `max_burst_size` based on the
-   * value of
-   * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second].
+   * [max_dispatches_per_second][RateLimits.max_dispatches_per_second].
+   * The default value of `max_burst_size` is picked by Cloud Tasks
+   * based on the value of
+   * [max_dispatches_per_second][RateLimits.max_dispatches_per_second].
+   * The maximum value of `max_burst_size` is 500.
    * For App Engine queues that were created or updated using
    * `queue.yaml/xml`, `max_burst_size` is equal to
    * [bucket_size](https://cloud.google.com/appengine/docs/standard/python/config/queueref#bucket_size).
-   * Since `max_burst_size` is output only, if
-   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue
-   * created by `queue.yaml/xml`, `max_burst_size` will be reset based
-   * on the value of
-   * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second],
-   * regardless of whether
-   * [max_tasks_dispatched_per_second][google.cloud.tasks.v2beta2.RateLimits.max_tasks_dispatched_per_second]
-   * is updated.
+   * If
+   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is called on a queue without
+   * explicitly setting a value for `max_burst_size`,
+   * `max_burst_size` value will get updated if
+   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue] is updating
+   * [max_dispatches_per_second][RateLimits.max_dispatches_per_second].
    * </pre>
    *
    * <code>int32 max_burst_size = 2;</code>

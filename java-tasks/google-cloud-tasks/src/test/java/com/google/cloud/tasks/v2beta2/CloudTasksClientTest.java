@@ -188,6 +188,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -229,6 +232,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -270,6 +276,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -314,6 +323,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -358,6 +370,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -470,6 +485,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -511,6 +529,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -552,6 +573,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -593,6 +617,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -634,6 +661,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 
@@ -675,6 +705,9 @@ public class CloudTasksClientTest {
             .setRateLimits(RateLimits.newBuilder().build())
             .setRetryConfig(RetryConfig.newBuilder().build())
             .setPurgeTime(Timestamp.newBuilder().build())
+            .setTaskTtl(Duration.newBuilder().build())
+            .setTombstoneTtl(Duration.newBuilder().build())
+            .setStats(QueueStats.newBuilder().build())
             .build();
     mockCloudTasks.addResponse(expectedResponse);
 

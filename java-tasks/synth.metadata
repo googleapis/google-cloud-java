@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-tasks.git",
-        "sha": "77bf9dc5d1b625f76cb8a1e1cb195bfbbf3eaa01"
+        "sha": "af2a6dad18df41fab32a56925ead49b769cb394e"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "91e206bcfeaf8948ea03fe3cb1b7616108496cd3",
-        "internalRef": "350949863"
+        "sha": "a0b91c3dfa479290ed8921fea27020ac4c492763",
+        "internalRef": "353032056"
       }
     },
     {
@@ -267,6 +267,8 @@
     "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueName.java",
     "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueOrBuilder.java",
     "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueProto.java",
+    "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueStats.java",
+    "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/QueueStatsOrBuilder.java",
     "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RateLimits.java",
     "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RateLimitsOrBuilder.java",
     "proto-google-cloud-tasks-v2beta2/src/main/java/com/google/cloud/tasks/v2beta2/RenewLeaseRequest.java",
@@ -329,12 +331,16 @@
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/OidcTokenOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequest.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PauseQueueRequestOrBuilder.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PullMessage.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PullMessageOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequest.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/PurgeQueueRequestOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/Queue.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueName.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueProto.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueStats.java",
+    "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/QueueStatsOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimits.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/RateLimitsOrBuilder.java",
     "proto-google-cloud-tasks-v2beta3/src/main/java/com/google/cloud/tasks/v2beta3/ResumeQueueRequest.java",
