@@ -18,6 +18,7 @@ package com.google.cloud.logging.v2;
 
 import static com.google.cloud.logging.v2.MetricsClient.ListLogMetricsPagedResponse;
 
+import com.google.api.Distribution;
 import com.google.api.MetricDescriptor;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
@@ -189,6 +190,7 @@ public class MetricsClientTest {
             .setMetricDescriptor(MetricDescriptor.newBuilder().build())
             .setValueExtractor("valueExtractor-1867420749")
             .putAllLabelExtractors(new HashMap<String, String>())
+            .setBucketOptions(Distribution.BucketOptions.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -234,6 +236,7 @@ public class MetricsClientTest {
             .setMetricDescriptor(MetricDescriptor.newBuilder().build())
             .setValueExtractor("valueExtractor-1867420749")
             .putAllLabelExtractors(new HashMap<String, String>())
+            .setBucketOptions(Distribution.BucketOptions.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -279,6 +282,7 @@ public class MetricsClientTest {
             .setMetricDescriptor(MetricDescriptor.newBuilder().build())
             .setValueExtractor("valueExtractor-1867420749")
             .putAllLabelExtractors(new HashMap<String, String>())
+            .setBucketOptions(Distribution.BucketOptions.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -327,6 +331,7 @@ public class MetricsClientTest {
             .setMetricDescriptor(MetricDescriptor.newBuilder().build())
             .setValueExtractor("valueExtractor-1867420749")
             .putAllLabelExtractors(new HashMap<String, String>())
+            .setBucketOptions(Distribution.BucketOptions.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -375,6 +380,7 @@ public class MetricsClientTest {
             .setMetricDescriptor(MetricDescriptor.newBuilder().build())
             .setValueExtractor("valueExtractor-1867420749")
             .putAllLabelExtractors(new HashMap<String, String>())
+            .setBucketOptions(Distribution.BucketOptions.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();
@@ -423,6 +429,7 @@ public class MetricsClientTest {
             .setMetricDescriptor(MetricDescriptor.newBuilder().build())
             .setValueExtractor("valueExtractor-1867420749")
             .putAllLabelExtractors(new HashMap<String, String>())
+            .setBucketOptions(Distribution.BucketOptions.newBuilder().build())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .build();

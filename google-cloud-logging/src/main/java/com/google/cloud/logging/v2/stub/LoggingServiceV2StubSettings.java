@@ -107,7 +107,6 @@ import org.threeten.bp.Duration;
  * LoggingServiceV2StubSettings loggingServiceV2Settings = loggingServiceV2SettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class LoggingServiceV2StubSettings extends StubSettings<LoggingServiceV2StubSettings> {
   /** The default scopes of the service. */

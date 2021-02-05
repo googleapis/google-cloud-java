@@ -117,7 +117,6 @@ import org.threeten.bp.Duration;
  * ConfigServiceV2StubSettings configServiceV2Settings = configServiceV2SettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ConfigServiceV2StubSettings extends StubSettings<ConfigServiceV2StubSettings> {
   /** The default scopes of the service. */
