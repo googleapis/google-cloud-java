@@ -20,18 +20,18 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.area120</groupId>
   <artifactId>google-area120-tables</artifactId>
-  <version>0.1.8</version>
+  <version>0.1.9</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.area120:google-area120-tables:0.1.8'
+compile 'com.google.area120:google-area120-tables:0.1.9'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.1.8"
+libraryDependencies += "com.google.area120" % "google-area120-tables" % "0.1.9"
 ```
 
 ## Authentication
