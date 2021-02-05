@@ -33,6 +33,8 @@ public interface ListRecommendationsRequestOrBuilder
    * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
+   * RECOMMENDER_ID refers to supported recommenders:
+   * https://cloud.google.com/recommender/docs/recommenders.
    * </pre>
    *
    * <code>
@@ -52,6 +54,8 @@ public interface ListRecommendationsRequestOrBuilder
    * "projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]",
    * LOCATION here refers to GCP Locations:
    * https://cloud.google.com/about/locations/
+   * RECOMMENDER_ID refers to supported recommenders:
+   * https://cloud.google.com/recommender/docs/recommenders.
    * </pre>
    *
    * <code>
