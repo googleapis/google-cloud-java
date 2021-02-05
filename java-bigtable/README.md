@@ -203,7 +203,7 @@ try {
 
 TIP: If you are experiencing version conflicts with gRPC, see [Version Conflicts](#version-conflicts).
 
-## Client request tracing: OpenCensus Tracing
+## OpenCensus Tracing
 
 Cloud Bigtable client supports [OpenCensus Tracing](https://opencensus.io/tracing/),
 which gives insight into the client internals and aids in debugging production issues.
@@ -258,8 +258,6 @@ StackdriverTraceExporter.createAndRegister(
       .setProjectId("YOUR_PROJECT_ID")
       .build());
 ```
-You can view the traces on the Google Cloud Platform Console 
-[Trace](https://console.cloud.google.com/traces) page.
 
 By default traces are [sampled](https://opencensus.io/tracing/sampling) at a rate of about 1/10,000.
 You can configure a higher rate by updating the active tracing params:
@@ -275,7 +273,7 @@ Tracing.getTraceConfig().updateActiveTraceParams(
 );
 ```
 
-## Enabling Cloud Bigtable Metrics: OpenCensus Stats
+## OpenCensus Stats
 
 Cloud Bigtable client supports [Opencensus Metrics](https://opencensus.io/stats/),
 which gives insight into the client internals and aids in debugging production issues.
@@ -376,34 +374,6 @@ StackdriverStatsExporter.createAndRegister(
 BigtableDataSettings.enableOpenCensusStats();
 // Enable GFE metric views
 BigtableDataSettings.enableGfeOpenCensusStats();
-```
-
-You can view the metrics on the Google Cloud Platform Console
-[Metrics explorer](https://console.cloud.google.com/monitoring/metrics-explorer)
-page.
-
-You can configure how frequently metrics are pushed to StackDriver and the
-[Monitored resource type](https://cloud.google.com/monitoring/api/resources) by
-updating `StackdriverStatsConfiguration`:
-
-``` java
-// Example: configuring export interval and monitored resource type
-StackdriverStatsExporter.createAndRegister(
-    StackdriverStatsConfiguration.builder()
-        .setProjectId("YOUR_PROJECT_ID")
-        // Exporting metrics every 10 seconds
-        .setExportInterval(Duration.create(10, 0))
-        // Configure monitored resource type. A common practice is to use the
-        // monitored resource objects that represent the physical resources
-        // where your application code is running. See the full list of
-        // monitored resource type here:
-        // https://cloud.google.com/monitoring/api/resources
-        .setMonitoredResource(MonitoredResource.newBuilder()
-             .setType("global")
-             .putLabels("project_id", "YOUR_PROJECT_ID")
-           .build())
-        .build()
-);
 ```
 
 ## Version Conflicts
