@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-workflow-executions.git",
-        "sha": "c387fd1e2e48d8256d23842de3117ad32eabb05b"
+        "sha": "7d56d439c72df1b3e9ee80d95b619c9607860ca4"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "27b2d4f4674840628d0b75c5941e89c12af4764f"
+        "sha": "692715c0f23a7bb3bfbbaa300f7620ddfa8c47e5"
       }
     }
   ],
