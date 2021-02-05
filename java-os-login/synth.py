@@ -31,8 +31,16 @@ for version in versions:
       destination_name='os-login',
   )
 
+  s.replace('**/OsLoginServiceClient.java', 'PosixAccountName', 'ProjectName')
+  s.replace('**/OsLoginServiceClient.java', 'SshPublicKeyName',
+            'FingerprintName')
+  s.replace('**/OsLoginServiceClientTest.java', 'PosixAccountName',
+            'ProjectName')
+  s.replace('**/OsLoginServiceClientTest.java', 'SshPublicKeyName',
+            'FingerprintName')
+
   # Copy of Resource name helper classes from v1 and import replacements
-  # will be removed before next major release(lines 36 - 60)gi
+  # Todo: remove before next major release(lines 36 - 60)
   shutil.copy(
       'proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/common/UserName.java',
       'proto-google-cloud-os-login-v1/src/main/java/com/google/cloud/oslogin/v1/UserName.java')
@@ -58,14 +66,6 @@ for version in versions:
   s.replace('**/OsLoginServiceClientTest.java',
             'import com.google.cloud.oslogin.common.ProjectName;',
             'import com.google.cloud.oslogin.v1.ProjectName;')
-
-  s.replace('**/OsLoginServiceClient.java', 'PosixAccountName', 'ProjectName')
-  s.replace('**/OsLoginServiceClient.java', 'SshPublicKeyName',
-            'FingerprintName')
-  s.replace('**/OsLoginServiceClientTest.java', 'PosixAccountName',
-            'ProjectName')
-  s.replace('**/OsLoginServiceClientTest.java', 'SshPublicKeyName',
-            'FingerprintName')
 
   java.format_code(f'google-cloud-os-login/src')
   java.format_code(f'grpc-google-cloud-{service}-{version}/src')
