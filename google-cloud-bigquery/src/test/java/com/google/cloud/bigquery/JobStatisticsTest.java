@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
+import com.google.cloud.bigquery.JobStatistics.ReservationUsage;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics;
 import com.google.cloud.bigquery.JobStatistics.ScriptStatistics.ScriptStackFrame;
 import com.google.cloud.bigquery.QueryStage.QueryStep;
@@ -58,6 +59,8 @@ public class JobStatisticsTest {
   private static final Long CREATION_TIME = 10L;
   private static final Long END_TIME = 20L;
   private static final Long START_TIME = 15L;
+  private static final String NAME = "reservation-name";
+  private static final Long SLOTMS = 12545L;
   private static final CopyStatistics COPY_STATISTICS =
       CopyStatistics.newBuilder()
           .setCreationTimestamp(CREATION_TIME)
@@ -200,6 +203,8 @@ public class JobStatisticsTest {
           .setEvaluationKind(EVALUATIONKIND_TYPE_EXPRESSION)
           .setStackFrames(ImmutableList.of(EXPRESSION_STACK_FRAME))
           .build();
+  private static final ReservationUsage RESERVATION_USAGE =
+      ReservationUsage.newBuilder().setName(NAME).setSlotMs(SLOTMS).build();
 
   @Test
   public void testBuilder() {
@@ -268,6 +273,8 @@ public class JobStatisticsTest {
     assertEquals(EVALUATIONKIND_TYPE_EXPRESSION, EXPRESSION_SCRIPT_STATISTICS.getEvaluationKind());
     assertEquals(
         ImmutableList.of(EXPRESSION_STACK_FRAME), EXPRESSION_SCRIPT_STATISTICS.getStackFrames());
+    assertEquals(NAME, RESERVATION_USAGE.getName());
+    assertEquals(SLOTMS, RESERVATION_USAGE.getSlotMs());
   }
 
   @Test
@@ -292,6 +299,7 @@ public class JobStatisticsTest {
     for (ScriptStackFrame stackFrame : EXPRESSION_SCRIPT_STATISTICS.getStackFrames()) {
       compareStackFrames(stackFrame, ScriptStackFrame.fromPb(stackFrame.toPb()));
     }
+    compareReservation(RESERVATION_USAGE, ReservationUsage.fromPb(RESERVATION_USAGE.toPb()));
   }
 
   @Test
@@ -391,5 +399,14 @@ public class JobStatisticsTest {
     assertEquals(expected.getStartColumn(), value.getStartColumn());
     assertEquals(expected.getStartLine(), value.getStartLine());
     assertEquals(expected.getText(), value.getText());
+  }
+
+  private void compareReservation(ReservationUsage expected, ReservationUsage value) {
+    assertEquals(expected, value);
+    assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
+    assertEquals(expected.toPb(), value.toPb());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getSlotMs(), value.getSlotMs());
   }
 }

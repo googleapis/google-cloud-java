@@ -43,6 +43,7 @@ public abstract class JobStatistics implements Serializable {
   private final Long numChildJobs;
   private final String parentJobId;
   private final ScriptStatistics scriptStatistics;
+  private final List<ReservationUsage> reservationUsage;
 
   /** A Google BigQuery Copy Job statistics. */
   public static class CopyStatistics extends JobStatistics {
@@ -1047,6 +1048,118 @@ public abstract class JobStatistics implements Serializable {
     }
   }
 
+  /** ReservationUsage contains information about a job's usage of a single reservation. */
+  public static class ReservationUsage {
+
+    static final Function<
+            com.google.api.services.bigquery.model.JobStatistics.ReservationUsage, ReservationUsage>
+        FROM_PB_FUNCTION =
+            new Function<
+                com.google.api.services.bigquery.model.JobStatistics.ReservationUsage,
+                ReservationUsage>() {
+              @Override
+              public ReservationUsage apply(
+                  com.google.api.services.bigquery.model.JobStatistics.ReservationUsage usage) {
+                return ReservationUsage.fromPb(usage);
+              }
+            };
+
+    static final Function<
+            ReservationUsage, com.google.api.services.bigquery.model.JobStatistics.ReservationUsage>
+        TO_PB_FUNCTION =
+            new Function<
+                ReservationUsage,
+                com.google.api.services.bigquery.model.JobStatistics.ReservationUsage>() {
+              @Override
+              public com.google.api.services.bigquery.model.JobStatistics.ReservationUsage apply(
+                  ReservationUsage usage) {
+                return usage.toPb();
+              }
+            };
+
+    private final String name;
+    private final Long slotMs;
+
+    public static class Builder {
+
+      private String name;
+      private Long slotMs;
+
+      private Builder() {};
+
+      Builder setName(String name) {
+        this.name = name;
+        return this;
+      }
+
+      Builder setSlotMs(Long slotMs) {
+        this.slotMs = slotMs;
+        return this;
+      }
+
+      ReservationUsage build() {
+        return new ReservationUsage(this);
+      }
+    }
+
+    private ReservationUsage(Builder builder) {
+      this.name = builder.name;
+      this.slotMs = builder.slotMs;
+    }
+
+    // Return mame indicates the utilized reservation name, or "unreserved" for ondemand usage.
+    public String getName() {
+      return name;
+    }
+
+    // Returns slotMs reports the slot milliseconds utilized within in the given reservation.
+    public Long getSlotMs() {
+      return slotMs;
+    }
+
+    static Builder newBuilder() {
+      return new Builder();
+    }
+
+    ToStringHelper toStringHelper() {
+      return MoreObjects.toStringHelper(this).add("name", name).add("slotMs", slotMs);
+    }
+
+    @Override
+    public String toString() {
+      return toStringHelper().toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+              && obj.getClass().equals(ReservationUsage.class)
+              && Objects.equals(toPb(), ((ReservationUsage) obj).toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(name, slotMs);
+    }
+
+    com.google.api.services.bigquery.model.JobStatistics.ReservationUsage toPb() {
+      com.google.api.services.bigquery.model.JobStatistics.ReservationUsage usage =
+          new com.google.api.services.bigquery.model.JobStatistics.ReservationUsage();
+      usage.setName(name);
+      usage.setSlotMs(slotMs);
+      return usage;
+    }
+
+    static ReservationUsage fromPb(
+        com.google.api.services.bigquery.model.JobStatistics.ReservationUsage usage) {
+      Builder builder = newBuilder();
+      builder.setName(usage.getName());
+      builder.setSlotMs(usage.getSlotMs());
+      return builder.build();
+    }
+  }
+
   abstract static class Builder<T extends JobStatistics, B extends Builder<T, B>> {
 
     private Long creationTime;
@@ -1055,6 +1168,7 @@ public abstract class JobStatistics implements Serializable {
     private Long numChildJobs;
     private String parentJobId;
     private ScriptStatistics scriptStatistics;
+    private List<ReservationUsage> reservationUsage;
 
     protected Builder() {}
 
@@ -1066,6 +1180,10 @@ public abstract class JobStatistics implements Serializable {
       this.parentJobId = statisticsPb.getParentJobId();
       if (statisticsPb.getScriptStatistics() != null) {
         this.scriptStatistics = ScriptStatistics.fromPb(statisticsPb.getScriptStatistics());
+      }
+      if (reservationUsage != null) {
+        this.reservationUsage =
+            Lists.transform(statisticsPb.getReservationUsage(), ReservationUsage.FROM_PB_FUNCTION);
       }
     }
 
@@ -1099,6 +1217,7 @@ public abstract class JobStatistics implements Serializable {
     this.numChildJobs = builder.numChildJobs;
     this.parentJobId = builder.parentJobId;
     this.scriptStatistics = builder.scriptStatistics;
+    this.reservationUsage = builder.reservationUsage;
   }
 
   /** Returns the creation time of the job in milliseconds since epoch. */
@@ -1137,6 +1256,11 @@ public abstract class JobStatistics implements Serializable {
     return scriptStatistics;
   }
 
+  /** ReservationUsage contains information about a job's usage of a single reservation. */
+  public List<ReservationUsage> getReservationUsage() {
+    return reservationUsage;
+  }
+
   ToStringHelper toStringHelper() {
     return MoreObjects.toStringHelper(this)
         .add("creationTime", creationTime)
@@ -1144,7 +1268,8 @@ public abstract class JobStatistics implements Serializable {
         .add("startTime", startTime)
         .add("numChildJobs", numChildJobs)
         .add("parentJobId", parentJobId)
-        .add("scriptStatistics", scriptStatistics);
+        .add("scriptStatistics", scriptStatistics)
+        .add("reservationUsage", reservationUsage);
   }
 
   @Override
@@ -1154,7 +1279,13 @@ public abstract class JobStatistics implements Serializable {
 
   final int baseHashCode() {
     return Objects.hash(
-        creationTime, endTime, startTime, numChildJobs, parentJobId, scriptStatistics);
+        creationTime,
+        endTime,
+        startTime,
+        numChildJobs,
+        parentJobId,
+        scriptStatistics,
+        reservationUsage);
   }
 
   final boolean baseEquals(JobStatistics jobStatistics) {
@@ -1171,6 +1302,10 @@ public abstract class JobStatistics implements Serializable {
     statistics.setParentJobId(parentJobId);
     if (scriptStatistics != null) {
       statistics.setScriptStatistics(scriptStatistics.toPb());
+    }
+    if (reservationUsage != null) {
+      statistics.setReservationUsage(
+          Lists.transform(reservationUsage, ReservationUsage.TO_PB_FUNCTION));
     }
     return statistics;
   }
