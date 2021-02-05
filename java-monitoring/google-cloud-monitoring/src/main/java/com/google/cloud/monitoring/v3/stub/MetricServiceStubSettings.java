@@ -98,7 +98,6 @@ import org.threeten.bp.Duration;
  * MetricServiceStubSettings metricServiceSettings = metricServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class MetricServiceStubSettings extends StubSettings<MetricServiceStubSettings> {
   /** The default scopes of the service. */

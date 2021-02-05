@@ -99,7 +99,6 @@ import org.threeten.bp.Duration;
  *     notificationChannelServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class NotificationChannelServiceStubSettings
     extends StubSettings<NotificationChannelServiceStubSettings> {

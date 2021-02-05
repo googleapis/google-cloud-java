@@ -49,4 +49,8 @@ for version in versions:
   fix_resource('ServiceMonitoringServiceClient', version, 'FolderName')
   fix_resource('UptimeCheckServiceClient', version, 'FolderName')
 
+  java.format_code(f'google-cloud-{service}/src')
+  java.format_code(f'grpc-google-cloud-{service}-{version}/src')
+  java.format_code(f'proto-google-cloud-{service}-{version}/src')
+
 java.common_templates()

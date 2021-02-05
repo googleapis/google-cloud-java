@@ -93,7 +93,6 @@ import org.threeten.bp.Duration;
  * GroupServiceStubSettings groupServiceSettings = groupServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class GroupServiceStubSettings extends StubSettings<GroupServiceStubSettings> {
   /** The default scopes of the service. */

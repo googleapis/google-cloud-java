@@ -571,6 +571,7 @@ public class MetricServiceClientTest {
             .setUnit("unit3594628")
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
+            .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -617,6 +618,7 @@ public class MetricServiceClientTest {
             .setUnit("unit3594628")
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
+            .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -661,6 +663,7 @@ public class MetricServiceClientTest {
             .setUnit("unit3594628")
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
+            .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -709,6 +712,7 @@ public class MetricServiceClientTest {
             .setUnit("unit3594628")
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
+            .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -757,6 +761,7 @@ public class MetricServiceClientTest {
             .setUnit("unit3594628")
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
+            .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -805,6 +810,7 @@ public class MetricServiceClientTest {
             .setUnit("unit3594628")
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
+            .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);

@@ -98,7 +98,6 @@ import org.threeten.bp.Duration;
  *     serviceMonitoringServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class ServiceMonitoringServiceStubSettings
     extends StubSettings<ServiceMonitoringServiceStubSettings> {

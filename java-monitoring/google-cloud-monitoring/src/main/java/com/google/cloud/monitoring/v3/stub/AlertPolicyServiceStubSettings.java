@@ -90,7 +90,6 @@ import org.threeten.bp.Duration;
  *     alertPolicyServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class AlertPolicyServiceStubSettings extends StubSettings<AlertPolicyServiceStubSettings> {
   /** The default scopes of the service. */

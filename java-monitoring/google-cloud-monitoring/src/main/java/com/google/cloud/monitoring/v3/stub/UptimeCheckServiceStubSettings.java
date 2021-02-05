@@ -94,7 +94,6 @@ import org.threeten.bp.Duration;
  *     uptimeCheckServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class UptimeCheckServiceStubSettings extends StubSettings<UptimeCheckServiceStubSettings> {
   /** The default scopes of the service. */

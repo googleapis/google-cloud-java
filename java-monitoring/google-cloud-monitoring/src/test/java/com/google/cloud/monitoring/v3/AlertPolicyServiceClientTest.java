@@ -279,6 +279,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())
@@ -327,6 +328,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())
@@ -374,6 +376,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())
@@ -424,6 +427,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())
@@ -474,6 +478,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())
@@ -524,6 +529,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())
@@ -643,6 +649,7 @@ public class AlertPolicyServiceClientTest {
             .setName(
                 AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]").toString())
             .setDisplayName("displayName1714148973")
+            .setDocumentation(AlertPolicy.Documentation.newBuilder().build())
             .putAllUserLabels(new HashMap<String, String>())
             .addAllConditions(new ArrayList<AlertPolicy.Condition>())
             .setEnabled(BoolValue.newBuilder().build())

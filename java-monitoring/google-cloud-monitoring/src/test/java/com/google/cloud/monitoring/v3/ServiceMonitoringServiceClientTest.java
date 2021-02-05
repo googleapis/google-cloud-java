@@ -107,6 +107,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -149,6 +150,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -191,6 +193,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -233,6 +236,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -275,6 +279,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -314,6 +319,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 
@@ -529,6 +535,7 @@ public class ServiceMonitoringServiceClientTest {
         Service.newBuilder()
             .setName(ServiceName.ofProjectServiceName("[PROJECT]", "[SERVICE]").toString())
             .setDisplayName("displayName1714148973")
+            .setTelemetry(Service.Telemetry.newBuilder().build())
             .build();
     mockServiceMonitoringService.addResponse(expectedResponse);
 

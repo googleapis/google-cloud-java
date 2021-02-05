@@ -30,6 +30,7 @@ package com.google.monitoring.v3;
  *
  * Protobuf enum {@code google.monitoring.v3.ServiceTier}
  */
+@java.lang.Deprecated
 public enum ServiceTier implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
