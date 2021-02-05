@@ -17,7 +17,7 @@ jobs:
           }
 
           // only approve PRs like "chore: release <release version>"
-          if ( !context.payload.pull_request.title.startsWith("chore: release") ) {
+          if ( !context.payload.pull_request.title.startsWith("chore(master): release") ) {
             return;
           }
 
