@@ -54,7 +54,18 @@ jobs:
       with:
         java-version: 8
     - run: java -version
-    - run: .kokoro/linkage-monitor.sh
+    - name: Install artifacts to local Maven repository
+      run: |
+        source .kokoro/common.sh
+        retry_with_backoff 3 10 \
+            mvn install -B -V \
+                -Dmaven.test.skip -DskipTests=true \
+                -Dclirr.skip=true \
+                -Denforcer.skip=true \
+                -Dmaven.javadoc.skip=true \
+                -Dgcloud.download.skip=true
+      shell: bash
+    - uses: GoogleCloudPlatform/cloud-opensource-java/linkage-monitor@v1-linkagemonitor
   lint:
     runs-on: ubuntu-latest
     steps:
