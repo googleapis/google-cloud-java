@@ -52,12 +52,12 @@ compile 'com.google.cloud:google-cloud-monitoring'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-monitoring:2.0.11'
+compile 'com.google.cloud:google-cloud-monitoring:2.0.12'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "2.0.11"
+libraryDependencies += "com.google.cloud" % "google-cloud-monitoring" % "2.0.12"
 ```
 
 ## Authentication
