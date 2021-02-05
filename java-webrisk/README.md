@@ -51,12 +51,12 @@ compile 'com.google.cloud:google-cloud-webrisk'
 ```
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-webrisk:1.1.7'
+compile 'com.google.cloud:google-cloud-webrisk:1.1.8'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-webrisk" % "1.1.7"
+libraryDependencies += "com.google.cloud" % "google-cloud-webrisk" % "1.1.8"
 ```
 
 ## Authentication
