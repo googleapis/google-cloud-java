@@ -84,7 +84,8 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator-java")
+@BetaApi
+@Generated("by gapic-generator")
 public class OsLoginServiceClient implements BackgroundResource {
   private final OsLoginServiceSettings settings;
   private final OsLoginServiceStub stub;
