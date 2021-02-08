@@ -23,6 +23,15 @@
  * manage their data.
  *
  * <p>Sample for DataCatalogClient:
+ *
+ * <pre>{@code
+ * try (DataCatalogClient dataCatalogClient = DataCatalogClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   String entryGroupId = "entryGroupId1228924712";
+ *   EntryGroup entryGroup = EntryGroup.newBuilder().build();
+ *   EntryGroup response = dataCatalogClient.createEntryGroup(parent, entryGroupId, entryGroup);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.datacatalog.v1;
