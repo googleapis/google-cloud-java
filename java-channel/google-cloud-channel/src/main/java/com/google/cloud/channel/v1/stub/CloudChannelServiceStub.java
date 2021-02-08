@@ -24,6 +24,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProducts
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableSkusPagedResponse;
 
@@ -63,17 +64,23 @@ import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
+import com.google.cloud.channel.v1.ListSubscribersRequest;
+import com.google.cloud.channel.v1.ListSubscribersResponse;
 import com.google.cloud.channel.v1.ListTransferableOffersRequest;
 import com.google.cloud.channel.v1.ListTransferableOffersResponse;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.ListTransferableSkusResponse;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.RegisterSubscriberRequest;
+import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
 import com.google.cloud.channel.v1.SuspendEntitlementRequest;
 import com.google.cloud.channel.v1.TransferEntitlementsRequest;
 import com.google.cloud.channel.v1.TransferEntitlementsResponse;
 import com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest;
+import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
+import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
 import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
 import com.google.longrunning.Operation;
@@ -340,6 +347,25 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
     throw new UnsupportedOperationException("Not implemented: listPurchasableOffersCallable()");
+  }
+
+  public UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberCallable() {
+    throw new UnsupportedOperationException("Not implemented: registerSubscriberCallable()");
+  }
+
+  public UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberCallable() {
+    throw new UnsupportedOperationException("Not implemented: unregisterSubscriberCallable()");
+  }
+
+  public UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
+      listSubscribersPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscribersPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubscribersRequest, ListSubscribersResponse> listSubscribersCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscribersCallable()");
   }
 
   @Override

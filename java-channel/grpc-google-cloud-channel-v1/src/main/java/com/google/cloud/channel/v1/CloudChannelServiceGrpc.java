@@ -1472,6 +1472,152 @@ public final class CloudChannelServiceGrpc {
     return getListPurchasableOffersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.RegisterSubscriberRequest,
+          com.google.cloud.channel.v1.RegisterSubscriberResponse>
+      getRegisterSubscriberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RegisterSubscriber",
+      requestType = com.google.cloud.channel.v1.RegisterSubscriberRequest.class,
+      responseType = com.google.cloud.channel.v1.RegisterSubscriberResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.RegisterSubscriberRequest,
+          com.google.cloud.channel.v1.RegisterSubscriberResponse>
+      getRegisterSubscriberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.RegisterSubscriberRequest,
+            com.google.cloud.channel.v1.RegisterSubscriberResponse>
+        getRegisterSubscriberMethod;
+    if ((getRegisterSubscriberMethod = CloudChannelServiceGrpc.getRegisterSubscriberMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getRegisterSubscriberMethod = CloudChannelServiceGrpc.getRegisterSubscriberMethod)
+            == null) {
+          CloudChannelServiceGrpc.getRegisterSubscriberMethod =
+              getRegisterSubscriberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.RegisterSubscriberRequest,
+                          com.google.cloud.channel.v1.RegisterSubscriberResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RegisterSubscriber"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.RegisterSubscriberRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.RegisterSubscriberResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier("RegisterSubscriber"))
+                      .build();
+        }
+      }
+    }
+    return getRegisterSubscriberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.UnregisterSubscriberRequest,
+          com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+      getUnregisterSubscriberMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UnregisterSubscriber",
+      requestType = com.google.cloud.channel.v1.UnregisterSubscriberRequest.class,
+      responseType = com.google.cloud.channel.v1.UnregisterSubscriberResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.UnregisterSubscriberRequest,
+          com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+      getUnregisterSubscriberMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.UnregisterSubscriberRequest,
+            com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+        getUnregisterSubscriberMethod;
+    if ((getUnregisterSubscriberMethod = CloudChannelServiceGrpc.getUnregisterSubscriberMethod)
+        == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getUnregisterSubscriberMethod = CloudChannelServiceGrpc.getUnregisterSubscriberMethod)
+            == null) {
+          CloudChannelServiceGrpc.getUnregisterSubscriberMethod =
+              getUnregisterSubscriberMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.UnregisterSubscriberRequest,
+                          com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UnregisterSubscriber"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.UnregisterSubscriberRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.UnregisterSubscriberResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier("UnregisterSubscriber"))
+                      .build();
+        }
+      }
+    }
+    return getUnregisterSubscriberMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListSubscribersRequest,
+          com.google.cloud.channel.v1.ListSubscribersResponse>
+      getListSubscribersMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubscribers",
+      requestType = com.google.cloud.channel.v1.ListSubscribersRequest.class,
+      responseType = com.google.cloud.channel.v1.ListSubscribersResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.channel.v1.ListSubscribersRequest,
+          com.google.cloud.channel.v1.ListSubscribersResponse>
+      getListSubscribersMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.channel.v1.ListSubscribersRequest,
+            com.google.cloud.channel.v1.ListSubscribersResponse>
+        getListSubscribersMethod;
+    if ((getListSubscribersMethod = CloudChannelServiceGrpc.getListSubscribersMethod) == null) {
+      synchronized (CloudChannelServiceGrpc.class) {
+        if ((getListSubscribersMethod = CloudChannelServiceGrpc.getListSubscribersMethod) == null) {
+          CloudChannelServiceGrpc.getListSubscribersMethod =
+              getListSubscribersMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.channel.v1.ListSubscribersRequest,
+                          com.google.cloud.channel.v1.ListSubscribersResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSubscribers"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListSubscribersRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.channel.v1.ListSubscribersResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudChannelServiceMethodDescriptorSupplier("ListSubscribers"))
+                      .build();
+        }
+      }
+    }
+    return getListSubscribersMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudChannelServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudChannelServiceStub> factory =
@@ -2403,6 +2549,96 @@ public final class CloudChannelServiceGrpc {
       asyncUnimplementedUnaryCall(getListPurchasableOffersMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Registers a service account with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account. Once you create a
+     * subscriber, you will get the events as per [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name with service email address registered if successful,
+     * otherwise error is returned.
+     * </pre>
+     */
+    public void registerSubscriber(
+        com.google.cloud.channel.v1.RegisterSubscriberRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.RegisterSubscriberResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getRegisterSubscriberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unregisters a service account with subscriber privileges on the Cloud
+     * Pub/Sub topic created for this Channel Services account. If there are no
+     * more service account left with sunbscriber privileges, the topic will be
+     * deleted. You can check this by calling ListSubscribers api.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name from which service email address has been unregistered if
+     * successful, otherwise error is returned. If the service email was already
+     * not associated with the topic, the success response will be returned.
+     * </pre>
+     */
+    public void unregisterSubscriber(
+        com.google.cloud.channel.v1.UnregisterSubscriberRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getUnregisterSubscriberMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists service accounts with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the account is not
+     * a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * List of service email addresses if successful, otherwise error is
+     * returned.
+     * </pre>
+     */
+    public void listSubscribers(
+        com.google.cloud.channel.v1.ListSubscribersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getListSubscribersMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -2599,6 +2835,27 @@ public final class CloudChannelServiceGrpc {
                       com.google.cloud.channel.v1.ListPurchasableOffersRequest,
                       com.google.cloud.channel.v1.ListPurchasableOffersResponse>(
                       this, METHODID_LIST_PURCHASABLE_OFFERS)))
+          .addMethod(
+              getRegisterSubscriberMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.RegisterSubscriberRequest,
+                      com.google.cloud.channel.v1.RegisterSubscriberResponse>(
+                      this, METHODID_REGISTER_SUBSCRIBER)))
+          .addMethod(
+              getUnregisterSubscriberMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.UnregisterSubscriberRequest,
+                      com.google.cloud.channel.v1.UnregisterSubscriberResponse>(
+                      this, METHODID_UNREGISTER_SUBSCRIBER)))
+          .addMethod(
+              getListSubscribersMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.channel.v1.ListSubscribersRequest,
+                      com.google.cloud.channel.v1.ListSubscribersResponse>(
+                      this, METHODID_LIST_SUBSCRIBERS)))
           .build();
     }
   }
@@ -3588,6 +3845,105 @@ public final class CloudChannelServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers a service account with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account. Once you create a
+     * subscriber, you will get the events as per [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name with service email address registered if successful,
+     * otherwise error is returned.
+     * </pre>
+     */
+    public void registerSubscriber(
+        com.google.cloud.channel.v1.RegisterSubscriberRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.RegisterSubscriberResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getRegisterSubscriberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unregisters a service account with subscriber privileges on the Cloud
+     * Pub/Sub topic created for this Channel Services account. If there are no
+     * more service account left with sunbscriber privileges, the topic will be
+     * deleted. You can check this by calling ListSubscribers api.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name from which service email address has been unregistered if
+     * successful, otherwise error is returned. If the service email was already
+     * not associated with the topic, the success response will be returned.
+     * </pre>
+     */
+    public void unregisterSubscriber(
+        com.google.cloud.channel.v1.UnregisterSubscriberRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getUnregisterSubscriberMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists service accounts with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the account is not
+     * a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * List of service email addresses if successful, otherwise error is
+     * returned.
+     * </pre>
+     */
+    public void listSubscribers(
+        com.google.cloud.channel.v1.ListSubscribersRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getListSubscribersMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -4465,6 +4821,92 @@ public final class CloudChannelServiceGrpc {
         com.google.cloud.channel.v1.ListPurchasableOffersRequest request) {
       return blockingUnaryCall(
           getChannel(), getListPurchasableOffersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers a service account with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account. Once you create a
+     * subscriber, you will get the events as per [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name with service email address registered if successful,
+     * otherwise error is returned.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.RegisterSubscriberResponse registerSubscriber(
+        com.google.cloud.channel.v1.RegisterSubscriberRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getRegisterSubscriberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unregisters a service account with subscriber privileges on the Cloud
+     * Pub/Sub topic created for this Channel Services account. If there are no
+     * more service account left with sunbscriber privileges, the topic will be
+     * deleted. You can check this by calling ListSubscribers api.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name from which service email address has been unregistered if
+     * successful, otherwise error is returned. If the service email was already
+     * not associated with the topic, the success response will be returned.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.UnregisterSubscriberResponse unregisterSubscriber(
+        com.google.cloud.channel.v1.UnregisterSubscriberRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getUnregisterSubscriberMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists service accounts with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the account is not
+     * a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * List of service email addresses if successful, otherwise error is
+     * returned.
+     * </pre>
+     */
+    public com.google.cloud.channel.v1.ListSubscribersResponse listSubscribers(
+        com.google.cloud.channel.v1.ListSubscribersRequest request) {
+      return blockingUnaryCall(getChannel(), getListSubscribersMethod(), getCallOptions(), request);
     }
   }
 
@@ -5373,6 +5815,96 @@ public final class CloudChannelServiceGrpc {
       return futureUnaryCall(
           getChannel().newCall(getListPurchasableOffersMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers a service account with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account. Once you create a
+     * subscriber, you will get the events as per [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name with service email address registered if successful,
+     * otherwise error is returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.RegisterSubscriberResponse>
+        registerSubscriber(com.google.cloud.channel.v1.RegisterSubscriberRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getRegisterSubscriberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Unregisters a service account with subscriber privileges on the Cloud
+     * Pub/Sub topic created for this Channel Services account. If there are no
+     * more service account left with sunbscriber privileges, the topic will be
+     * deleted. You can check this by calling ListSubscribers api.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the impersonated user
+     * is not a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * Topic name from which service email address has been unregistered if
+     * successful, otherwise error is returned. If the service email was already
+     * not associated with the topic, the success response will be returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.UnregisterSubscriberResponse>
+        unregisterSubscriber(com.google.cloud.channel.v1.UnregisterSubscriberRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getUnregisterSubscriberMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists service accounts with subscriber privileges on the Cloud Pub/Sub
+     * topic created for this Channel Services account.
+     * Possible Error Codes:
+     * * PERMISSION_DENIED: If the reseller account making the request and the
+     * reseller account being provided are different, or if the account is not
+     * a super admin.
+     * * INVALID_ARGUMENT: Missing or invalid required parameters in the
+     * request.
+     * * NOT_FOUND: If the topic resource doesn't exist.
+     * * INTERNAL: Any non-user error related to a technical issue in the
+     * backend. In this case, contact Cloud Channel support.
+     * * UNKNOWN: Any non-user error related to a technical issue in
+     * the backend. In this case, contact Cloud Channel support.
+     * Return Value:
+     * List of service email addresses if successful, otherwise error is
+     * returned.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.channel.v1.ListSubscribersResponse>
+        listSubscribers(com.google.cloud.channel.v1.ListSubscribersRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getListSubscribersMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CUSTOMERS = 0;
@@ -5405,6 +5937,9 @@ public final class CloudChannelServiceGrpc {
   private static final int METHODID_LIST_OFFERS = 27;
   private static final int METHODID_LIST_PURCHASABLE_SKUS = 28;
   private static final int METHODID_LIST_PURCHASABLE_OFFERS = 29;
+  private static final int METHODID_REGISTER_SUBSCRIBER = 30;
+  private static final int METHODID_UNREGISTER_SUBSCRIBER = 31;
+  private static final int METHODID_LIST_SUBSCRIBERS = 32;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5593,6 +6128,25 @@ public final class CloudChannelServiceGrpc {
                       com.google.cloud.channel.v1.ListPurchasableOffersResponse>)
                   responseObserver);
           break;
+        case METHODID_REGISTER_SUBSCRIBER:
+          serviceImpl.registerSubscriber(
+              (com.google.cloud.channel.v1.RegisterSubscriberRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.RegisterSubscriberResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UNREGISTER_SUBSCRIBER:
+          serviceImpl.unregisterSubscriber(
+              (com.google.cloud.channel.v1.UnregisterSubscriberRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.channel.v1.UnregisterSubscriberResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBSCRIBERS:
+          serviceImpl.listSubscribers(
+              (com.google.cloud.channel.v1.ListSubscribersRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.channel.v1.ListSubscribersResponse>)
+                  responseObserver);
+          break;
         default:
           throw new AssertionError();
       }
@@ -5687,6 +6241,9 @@ public final class CloudChannelServiceGrpc {
                       .addMethod(getListOffersMethod())
                       .addMethod(getListPurchasableSkusMethod())
                       .addMethod(getListPurchasableOffersMethod())
+                      .addMethod(getRegisterSubscriberMethod())
+                      .addMethod(getUnregisterSubscriberMethod())
+                      .addMethod(getListSubscribersMethod())
                       .build();
         }
       }

@@ -2516,6 +2516,204 @@ public class CloudChannelServiceClient implements BackgroundResource {
     return stub.listPurchasableOffersCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers a service account with subscriber privileges on the Cloud Pub/Sub topic created for
+   * this Channel Services account. Once you create a subscriber, you will get the events as per
+   * [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the impersonated user is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: Topic name with service email address registered if successful, otherwise
+   * error is returned.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RegisterSubscriberResponse registerSubscriber(RegisterSubscriberRequest request) {
+    return registerSubscriberCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Registers a service account with subscriber privileges on the Cloud Pub/Sub topic created for
+   * this Channel Services account. Once you create a subscriber, you will get the events as per
+   * [SubscriberEvent][google.cloud.channel.v1.SubscriberEvent]
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the impersonated user is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: Topic name with service email address registered if successful, otherwise
+   * error is returned.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberCallable() {
+    return stub.registerSubscriberCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for
+   * this Channel Services account. If there are no more service account left with sunbscriber
+   * privileges, the topic will be deleted. You can check this by calling ListSubscribers api.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the impersonated user is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>NOT_FOUND: If the topic resource doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: Topic name from which service email address has been unregistered if
+   * successful, otherwise error is returned. If the service email was already not associated with
+   * the topic, the success response will be returned.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final UnregisterSubscriberResponse unregisterSubscriber(
+      UnregisterSubscriberRequest request) {
+    return unregisterSubscriberCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Unregisters a service account with subscriber privileges on the Cloud Pub/Sub topic created for
+   * this Channel Services account. If there are no more service account left with sunbscriber
+   * privileges, the topic will be deleted. You can check this by calling ListSubscribers api.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the impersonated user is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>NOT_FOUND: If the topic resource doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: Topic name from which service email address has been unregistered if
+   * successful, otherwise error is returned. If the service email was already not associated with
+   * the topic, the success response will be returned.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberCallable() {
+    return stub.unregisterSubscriberCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this
+   * Channel Services account.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the account is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>NOT_FOUND: If the topic resource doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: List of service email addresses if successful, otherwise error is returned.
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubscribersPagedResponse listSubscribers(ListSubscribersRequest request) {
+    return listSubscribersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this
+   * Channel Services account.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the account is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>NOT_FOUND: If the topic resource doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: List of service email addresses if successful, otherwise error is returned.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
+      listSubscribersPagedCallable() {
+    return stub.listSubscribersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists service accounts with subscriber privileges on the Cloud Pub/Sub topic created for this
+   * Channel Services account.
+   *
+   * <p>Possible Error Codes:
+   *
+   * <ul>
+   *   <li>PERMISSION_DENIED: If the reseller account making the request and the reseller account
+   *       being provided are different, or if the account is not a super admin.
+   *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
+   *   <li>NOT_FOUND: If the topic resource doesn't exist.
+   *   <li>INTERNAL: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   *   <li>UNKNOWN: Any non-user error related to a technical issue in the backend. In this case,
+   *       contact Cloud Channel support.
+   * </ul>
+   *
+   * <p>Return Value: List of service email addresses if successful, otherwise error is returned.
+   *
+   * <p>Sample code:
+   */
+  public final UnaryCallable<ListSubscribersRequest, ListSubscribersResponse>
+      listSubscribersCallable() {
+    return stub.listSubscribersCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3389,6 +3587,88 @@ public class CloudChannelServiceClient implements BackgroundResource {
     protected ListPurchasableOffersFixedSizeCollection createCollection(
         List<ListPurchasableOffersPage> pages, int collectionSize) {
       return new ListPurchasableOffersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubscribersPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubscribersRequest,
+          ListSubscribersResponse,
+          String,
+          ListSubscribersPage,
+          ListSubscribersFixedSizeCollection> {
+
+    public static ApiFuture<ListSubscribersPagedResponse> createAsync(
+        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        ApiFuture<ListSubscribersResponse> futureResponse) {
+      ApiFuture<ListSubscribersPage> futurePage =
+          ListSubscribersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          new ApiFunction<ListSubscribersPage, ListSubscribersPagedResponse>() {
+            @Override
+            public ListSubscribersPagedResponse apply(ListSubscribersPage input) {
+              return new ListSubscribersPagedResponse(input);
+            }
+          },
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubscribersPagedResponse(ListSubscribersPage page) {
+      super(page, ListSubscribersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubscribersPage
+      extends AbstractPage<
+          ListSubscribersRequest, ListSubscribersResponse, String, ListSubscribersPage> {
+
+    private ListSubscribersPage(
+        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        ListSubscribersResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubscribersPage createEmptyPage() {
+      return new ListSubscribersPage(null, null);
+    }
+
+    @Override
+    protected ListSubscribersPage createPage(
+        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        ListSubscribersResponse response) {
+      return new ListSubscribersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubscribersPage> createPageAsync(
+        PageContext<ListSubscribersRequest, ListSubscribersResponse, String> context,
+        ApiFuture<ListSubscribersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubscribersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubscribersRequest,
+          ListSubscribersResponse,
+          String,
+          ListSubscribersPage,
+          ListSubscribersFixedSizeCollection> {
+
+    private ListSubscribersFixedSizeCollection(
+        List<ListSubscribersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubscribersFixedSizeCollection createEmptyCollection() {
+      return new ListSubscribersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubscribersFixedSizeCollection createCollection(
+        List<ListSubscribersPage> pages, int collectionSize) {
+      return new ListSubscribersFixedSizeCollection(pages, collectionSize);
     }
   }
 }

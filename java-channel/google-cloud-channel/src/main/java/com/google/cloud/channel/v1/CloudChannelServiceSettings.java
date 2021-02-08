@@ -24,6 +24,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProducts
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableSkusPagedResponse;
 
@@ -341,6 +342,25 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings() {
     return ((CloudChannelServiceStubSettings) getStubSettings()).listPurchasableOffersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to registerSubscriber. */
+  public UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).registerSubscriberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to unregisterSubscriber. */
+  public UnaryCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).unregisterSubscriberSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubscribers. */
+  public PagedCallSettings<
+          ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+      listSubscribersSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings()).listSubscribersSettings();
   }
 
   public static final CloudChannelServiceSettings create(CloudChannelServiceStubSettings stub)
@@ -701,6 +721,25 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return getStubSettingsBuilder().listPurchasableOffersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to registerSubscriber. */
+    public UnaryCallSettings.Builder<RegisterSubscriberRequest, RegisterSubscriberResponse>
+        registerSubscriberSettings() {
+      return getStubSettingsBuilder().registerSubscriberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to unregisterSubscriber. */
+    public UnaryCallSettings.Builder<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+        unregisterSubscriberSettings() {
+      return getStubSettingsBuilder().unregisterSubscriberSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscribers. */
+    public PagedCallSettings.Builder<
+            ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+        listSubscribersSettings() {
+      return getStubSettingsBuilder().listSubscribersSettings();
     }
 
     @Override

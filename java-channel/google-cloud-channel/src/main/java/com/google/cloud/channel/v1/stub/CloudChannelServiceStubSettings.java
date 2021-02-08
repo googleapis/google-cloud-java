@@ -24,6 +24,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProducts
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableSkusPagedResponse;
 
@@ -86,6 +87,8 @@ import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
+import com.google.cloud.channel.v1.ListSubscribersRequest;
+import com.google.cloud.channel.v1.ListSubscribersResponse;
 import com.google.cloud.channel.v1.ListTransferableOffersRequest;
 import com.google.cloud.channel.v1.ListTransferableOffersResponse;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
@@ -96,6 +99,8 @@ import com.google.cloud.channel.v1.Product;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
 import com.google.cloud.channel.v1.PurchasableOffer;
 import com.google.cloud.channel.v1.PurchasableSku;
+import com.google.cloud.channel.v1.RegisterSubscriberRequest;
+import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.Sku;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
 import com.google.cloud.channel.v1.SuspendEntitlementRequest;
@@ -104,6 +109,8 @@ import com.google.cloud.channel.v1.TransferEntitlementsResponse;
 import com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest;
 import com.google.cloud.channel.v1.TransferableOffer;
 import com.google.cloud.channel.v1.TransferableSku;
+import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
+import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
 import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
 import com.google.common.collect.ImmutableList;
@@ -245,6 +252,13 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           ListPurchasableOffersResponse,
           ListPurchasableOffersPagedResponse>
       listPurchasableOffersSettings;
+  private final UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberSettings;
+  private final UnaryCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberSettings;
+  private final PagedCallSettings<
+          ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+      listSubscribersSettings;
 
   private static final PagedListDescriptor<ListCustomersRequest, ListCustomersResponse, Customer>
       LIST_CUSTOMERS_PAGE_STR_DESC =
@@ -640,6 +654,44 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             }
           };
 
+  private static final PagedListDescriptor<ListSubscribersRequest, ListSubscribersResponse, String>
+      LIST_SUBSCRIBERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListSubscribersRequest, ListSubscribersResponse, String>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListSubscribersRequest injectToken(
+                ListSubscribersRequest payload, String token) {
+              return ListSubscribersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListSubscribersRequest injectPageSize(
+                ListSubscribersRequest payload, int pageSize) {
+              return ListSubscribersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubscribersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListSubscribersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<String> extractResources(ListSubscribersResponse payload) {
+              return payload.getServiceAccountsList() == null
+                  ? ImmutableList.<String>of()
+                  : payload.getServiceAccountsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListCustomersRequest, ListCustomersResponse, ListCustomersPagedResponse>
       LIST_CUSTOMERS_PAGE_STR_FACT =
@@ -846,6 +898,23 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
                       PageContext.create(
                           callable, LIST_PURCHASABLE_OFFERS_PAGE_STR_DESC, request, context);
               return ListPurchasableOffersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+      LIST_SUBSCRIBERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>() {
+            @Override
+            public ApiFuture<ListSubscribersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListSubscribersRequest, ListSubscribersResponse> callable,
+                ListSubscribersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListSubscribersResponse> futureResponse) {
+              PageContext<ListSubscribersRequest, ListSubscribersResponse, String> pageContext =
+                  PageContext.create(callable, LIST_SUBSCRIBERS_PAGE_STR_DESC, request, context);
+              return ListSubscribersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -1098,6 +1167,25 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     return listPurchasableOffersSettings;
   }
 
+  /** Returns the object with the settings used for calls to registerSubscriber. */
+  public UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberSettings() {
+    return registerSubscriberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to unregisterSubscriber. */
+  public UnaryCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberSettings() {
+    return unregisterSubscriberSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listSubscribers. */
+  public PagedCallSettings<
+          ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+      listSubscribersSettings() {
+    return listSubscribersSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudChannelServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -1218,6 +1306,9 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
     listOffersSettings = settingsBuilder.listOffersSettings().build();
     listPurchasableSkusSettings = settingsBuilder.listPurchasableSkusSettings().build();
     listPurchasableOffersSettings = settingsBuilder.listPurchasableOffersSettings().build();
+    registerSubscriberSettings = settingsBuilder.registerSubscriberSettings().build();
+    unregisterSubscriberSettings = settingsBuilder.unregisterSubscriberSettings().build();
+    listSubscribersSettings = settingsBuilder.listSubscribersSettings().build();
   }
 
   /** Builder for CloudChannelServiceStubSettings. */
@@ -1331,6 +1422,14 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListPurchasableOffersResponse,
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings;
+    private final UnaryCallSettings.Builder<RegisterSubscriberRequest, RegisterSubscriberResponse>
+        registerSubscriberSettings;
+    private final UnaryCallSettings.Builder<
+            UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+        unregisterSubscriberSettings;
+    private final PagedCallSettings.Builder<
+            ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+        listSubscribersSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1425,6 +1524,9 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
           PagedCallSettings.newBuilder(LIST_PURCHASABLE_SKUS_PAGE_STR_FACT);
       listPurchasableOffersSettings =
           PagedCallSettings.newBuilder(LIST_PURCHASABLE_OFFERS_PAGE_STR_FACT);
+      registerSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      unregisterSubscriberSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listSubscribersSettings = PagedCallSettings.newBuilder(LIST_SUBSCRIBERS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1457,7 +1559,10 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               listSkusSettings,
               listOffersSettings,
               listPurchasableSkusSettings,
-              listPurchasableOffersSettings);
+              listPurchasableOffersSettings,
+              registerSubscriberSettings,
+              unregisterSubscriberSettings,
+              listSubscribersSettings);
       initDefaults(this);
     }
 
@@ -1513,6 +1618,9 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
       listOffersSettings = settings.listOffersSettings.toBuilder();
       listPurchasableSkusSettings = settings.listPurchasableSkusSettings.toBuilder();
       listPurchasableOffersSettings = settings.listPurchasableOffersSettings.toBuilder();
+      registerSubscriberSettings = settings.registerSubscriberSettings.toBuilder();
+      unregisterSubscriberSettings = settings.unregisterSubscriberSettings.toBuilder();
+      listSubscribersSettings = settings.listSubscribersSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1545,7 +1653,10 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
               listSkusSettings,
               listOffersSettings,
               listPurchasableSkusSettings,
-              listPurchasableOffersSettings);
+              listPurchasableOffersSettings,
+              registerSubscriberSettings,
+              unregisterSubscriberSettings,
+              listSubscribersSettings);
     }
 
     private static Builder createDefault() {
@@ -1707,6 +1818,21 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
 
       builder
           .listPurchasableOffersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .registerSubscriberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .unregisterSubscriberSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .listSubscribersSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2276,6 +2402,25 @@ public class CloudChannelServiceStubSettings extends StubSettings<CloudChannelSe
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return listPurchasableOffersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to registerSubscriber. */
+    public UnaryCallSettings.Builder<RegisterSubscriberRequest, RegisterSubscriberResponse>
+        registerSubscriberSettings() {
+      return registerSubscriberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to unregisterSubscriber. */
+    public UnaryCallSettings.Builder<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+        unregisterSubscriberSettings() {
+      return unregisterSubscriberSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscribers. */
+    public PagedCallSettings.Builder<
+            ListSubscribersRequest, ListSubscribersResponse, ListSubscribersPagedResponse>
+        listSubscribersSettings() {
+      return listSubscribersSettings;
     }
 
     @Override

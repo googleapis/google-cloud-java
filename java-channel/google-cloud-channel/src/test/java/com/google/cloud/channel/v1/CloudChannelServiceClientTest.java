@@ -24,6 +24,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProducts
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableSkusPagedResponse;
 
@@ -1964,6 +1965,153 @@ public class CloudChannelServiceClientTest {
               .setLanguageCode("languageCode-2092349083")
               .build();
       client.listPurchasableOffers(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void registerSubscriberTest() throws Exception {
+    RegisterSubscriberResponse expectedResponse =
+        RegisterSubscriberResponse.newBuilder().setTopic("topic110546223").build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    RegisterSubscriberRequest request =
+        RegisterSubscriberRequest.newBuilder()
+            .setAccount("account-1177318867")
+            .setServiceAccount("serviceAccount1079137720")
+            .build();
+
+    RegisterSubscriberResponse actualResponse = client.registerSubscriber(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RegisterSubscriberRequest actualRequest = ((RegisterSubscriberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
+    Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void registerSubscriberExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      RegisterSubscriberRequest request =
+          RegisterSubscriberRequest.newBuilder()
+              .setAccount("account-1177318867")
+              .setServiceAccount("serviceAccount1079137720")
+              .build();
+      client.registerSubscriber(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void unregisterSubscriberTest() throws Exception {
+    UnregisterSubscriberResponse expectedResponse =
+        UnregisterSubscriberResponse.newBuilder().setTopic("topic110546223").build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    UnregisterSubscriberRequest request =
+        UnregisterSubscriberRequest.newBuilder()
+            .setAccount("account-1177318867")
+            .setServiceAccount("serviceAccount1079137720")
+            .build();
+
+    UnregisterSubscriberResponse actualResponse = client.unregisterSubscriber(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UnregisterSubscriberRequest actualRequest =
+        ((UnregisterSubscriberRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
+    Assert.assertEquals(request.getServiceAccount(), actualRequest.getServiceAccount());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void unregisterSubscriberExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      UnregisterSubscriberRequest request =
+          UnregisterSubscriberRequest.newBuilder()
+              .setAccount("account-1177318867")
+              .setServiceAccount("serviceAccount1079137720")
+              .build();
+      client.unregisterSubscriber(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscribersTest() throws Exception {
+    String responsesElement = "responsesElement-318365110";
+    ListSubscribersResponse expectedResponse =
+        ListSubscribersResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllServiceAccounts(Arrays.asList(responsesElement))
+            .build();
+    mockCloudChannelService.addResponse(expectedResponse);
+
+    ListSubscribersRequest request =
+        ListSubscribersRequest.newBuilder()
+            .setAccount("account-1177318867")
+            .setPageSize(883849137)
+            .setPageToken("pageToken873572522")
+            .build();
+
+    ListSubscribersPagedResponse pagedListResponse = client.listSubscribers(request);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getServiceAccountsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockCloudChannelService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSubscribersRequest actualRequest = ((ListSubscribersRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getAccount(), actualRequest.getAccount());
+    Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
+    Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSubscribersExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudChannelService.addException(exception);
+
+    try {
+      ListSubscribersRequest request =
+          ListSubscribersRequest.newBuilder()
+              .setAccount("account-1177318867")
+              .setPageSize(883849137)
+              .setPageToken("pageToken873572522")
+              .build();
+      client.listSubscribers(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

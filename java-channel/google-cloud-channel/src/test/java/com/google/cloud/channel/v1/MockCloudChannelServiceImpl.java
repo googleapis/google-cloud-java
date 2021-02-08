@@ -514,4 +514,51 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
   }
+
+  @Override
+  public void registerSubscriber(
+      RegisterSubscriberRequest request,
+      StreamObserver<RegisterSubscriberResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof RegisterSubscriberResponse) {
+      requests.add(request);
+      responseObserver.onNext(((RegisterSubscriberResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void unregisterSubscriber(
+      UnregisterSubscriberRequest request,
+      StreamObserver<UnregisterSubscriberResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof UnregisterSubscriberResponse) {
+      requests.add(request);
+      responseObserver.onNext(((UnregisterSubscriberResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listSubscribers(
+      ListSubscribersRequest request, StreamObserver<ListSubscribersResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListSubscribersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSubscribersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
 }

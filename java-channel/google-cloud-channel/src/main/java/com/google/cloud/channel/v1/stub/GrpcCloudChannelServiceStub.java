@@ -24,6 +24,7 @@ import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListProducts
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListPurchasableSkusPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSkusPagedResponse;
+import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListSubscribersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableOffersPagedResponse;
 import static com.google.cloud.channel.v1.CloudChannelServiceClient.ListTransferableSkusPagedResponse;
 
@@ -68,17 +69,23 @@ import com.google.cloud.channel.v1.ListPurchasableSkusRequest;
 import com.google.cloud.channel.v1.ListPurchasableSkusResponse;
 import com.google.cloud.channel.v1.ListSkusRequest;
 import com.google.cloud.channel.v1.ListSkusResponse;
+import com.google.cloud.channel.v1.ListSubscribersRequest;
+import com.google.cloud.channel.v1.ListSubscribersResponse;
 import com.google.cloud.channel.v1.ListTransferableOffersRequest;
 import com.google.cloud.channel.v1.ListTransferableOffersResponse;
 import com.google.cloud.channel.v1.ListTransferableSkusRequest;
 import com.google.cloud.channel.v1.ListTransferableSkusResponse;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.RegisterSubscriberRequest;
+import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
 import com.google.cloud.channel.v1.SuspendEntitlementRequest;
 import com.google.cloud.channel.v1.TransferEntitlementsRequest;
 import com.google.cloud.channel.v1.TransferEntitlementsResponse;
 import com.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest;
+import com.google.cloud.channel.v1.UnregisterSubscriberRequest;
+import com.google.cloud.channel.v1.UnregisterSubscriberResponse;
 import com.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest;
 import com.google.cloud.channel.v1.UpdateCustomerRequest;
 import com.google.common.collect.ImmutableMap;
@@ -421,6 +428,39 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListPurchasableOffersResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberMethodDescriptor =
+          MethodDescriptor.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.channel.v1.CloudChannelService/RegisterSubscriber")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RegisterSubscriberRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RegisterSubscriberResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberMethodDescriptor =
+          MethodDescriptor.<UnregisterSubscriberRequest, UnregisterSubscriberResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.channel.v1.CloudChannelService/UnregisterSubscriber")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UnregisterSubscriberRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(UnregisterSubscriberResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListSubscribersRequest, ListSubscribersResponse>
+      listSubscribersMethodDescriptor =
+          MethodDescriptor.<ListSubscribersRequest, ListSubscribersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.channel.v1.CloudChannelService/ListSubscribers")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubscribersRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubscribersResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListCustomersRequest, ListCustomersResponse> listCustomersCallable;
   private final UnaryCallable<ListCustomersRequest, ListCustomersPagedResponse>
       listCustomersPagedCallable;
@@ -506,6 +546,14 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       listPurchasableOffersCallable;
   private final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable;
+  private final UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberCallable;
+  private final UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberCallable;
+  private final UnaryCallable<ListSubscribersRequest, ListSubscribersResponse>
+      listSubscribersCallable;
+  private final UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
+      listSubscribersPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -953,6 +1001,48 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       }
                     })
                 .build();
+    GrpcCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
+        registerSubscriberTransportSettings =
+            GrpcCallSettings.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
+                .setMethodDescriptor(registerSubscriberMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<RegisterSubscriberRequest>() {
+                      @Override
+                      public Map<String, String> extract(RegisterSubscriberRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("account", String.valueOf(request.getAccount()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+        unregisterSubscriberTransportSettings =
+            GrpcCallSettings.<UnregisterSubscriberRequest, UnregisterSubscriberResponse>newBuilder()
+                .setMethodDescriptor(unregisterSubscriberMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<UnregisterSubscriberRequest>() {
+                      @Override
+                      public Map<String, String> extract(UnregisterSubscriberRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("account", String.valueOf(request.getAccount()));
+                        return params.build();
+                      }
+                    })
+                .build();
+    GrpcCallSettings<ListSubscribersRequest, ListSubscribersResponse>
+        listSubscribersTransportSettings =
+            GrpcCallSettings.<ListSubscribersRequest, ListSubscribersResponse>newBuilder()
+                .setMethodDescriptor(listSubscribersMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<ListSubscribersRequest>() {
+                      @Override
+                      public Map<String, String> extract(ListSubscribersRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("account", String.valueOf(request.getAccount()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listCustomersCallable =
         callableFactory.createUnaryCallable(
@@ -1184,6 +1274,22 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
             listPurchasableOffersTransportSettings,
             settings.listPurchasableOffersSettings(),
             clientContext);
+    this.registerSubscriberCallable =
+        callableFactory.createUnaryCallable(
+            registerSubscriberTransportSettings,
+            settings.registerSubscriberSettings(),
+            clientContext);
+    this.unregisterSubscriberCallable =
+        callableFactory.createUnaryCallable(
+            unregisterSubscriberTransportSettings,
+            settings.unregisterSubscriberSettings(),
+            clientContext);
+    this.listSubscribersCallable =
+        callableFactory.createUnaryCallable(
+            listSubscribersTransportSettings, settings.listSubscribersSettings(), clientContext);
+    this.listSubscribersPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubscribersTransportSettings, settings.listSubscribersSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1426,6 +1532,25 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable() {
     return listPurchasableOffersPagedCallable;
+  }
+
+  public UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
+      registerSubscriberCallable() {
+    return registerSubscriberCallable;
+  }
+
+  public UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
+      unregisterSubscriberCallable() {
+    return unregisterSubscriberCallable;
+  }
+
+  public UnaryCallable<ListSubscribersRequest, ListSubscribersResponse> listSubscribersCallable() {
+    return listSubscribersCallable;
+  }
+
+  public UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
+      listSubscribersPagedCallable() {
+    return listSubscribersPagedCallable;
   }
 
   @Override
