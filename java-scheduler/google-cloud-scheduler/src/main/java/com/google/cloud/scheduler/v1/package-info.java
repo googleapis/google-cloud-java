@@ -23,6 +23,13 @@
  * asynchronous jobs.
  *
  * <p>Sample for CloudSchedulerClient:
+ *
+ * <pre>{@code
+ * try (CloudSchedulerClient cloudSchedulerClient = CloudSchedulerClient.create()) {
+ *   JobName name = JobName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+ *   Job response = cloudSchedulerClient.getJob(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.scheduler.v1;
