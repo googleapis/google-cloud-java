@@ -26,6 +26,14 @@
  * equalization, content concatenation, and digital ad-stitch ready content generation.
  *
  * <p>Sample for TranscoderServiceClient:
+ *
+ * <pre>{@code
+ * try (TranscoderServiceClient transcoderServiceClient = TranscoderServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Job job = Job.newBuilder().build();
+ *   Job response = transcoderServiceClient.createJob(parent, job);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.video.transcoder.v1beta1;
