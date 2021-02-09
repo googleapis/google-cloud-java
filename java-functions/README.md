@@ -24,12 +24,12 @@ If you are using Maven, add this to your pom.xml file:
 
 If you are using Gradle without BOM, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-functions:1.0.5'
+compile 'com.google.cloud:google-cloud-functions:1.0.6'
 ```
 
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-functions" % "1.0.5"
+libraryDependencies += "com.google.cloud" % "google-cloud-functions" % "1.0.6"
 ```
 
 ## Authentication
