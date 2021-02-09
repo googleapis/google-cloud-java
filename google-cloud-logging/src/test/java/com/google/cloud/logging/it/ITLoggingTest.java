@@ -74,6 +74,7 @@ public class ITLoggingTest extends BaseSystemTest {
             .setResource(CLOUDSQL_RESOURCE)
             .build();
     logging.write(ImmutableList.of(firstEntry));
+    logging.flush();
     logging.write(ImmutableList.of(secondEntry));
     logging.flush();
   }
