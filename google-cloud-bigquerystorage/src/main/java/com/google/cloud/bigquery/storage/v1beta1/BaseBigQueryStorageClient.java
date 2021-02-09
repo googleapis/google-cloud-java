@@ -36,6 +36,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+ *   TableReferenceProto.TableReference tableReference =
+ *       TableReferenceProto.TableReference.newBuilder().build();
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   int requestedStreams = 1017221410;
+ *   Storage.ReadSession response =
+ *       baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BaseBigQueryStorageClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -152,6 +163,19 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
    * clean-up by the caller.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   TableReferenceProto.TableReference tableReference =
+   *       TableReferenceProto.TableReference.newBuilder().build();
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   int requestedStreams = 1017221410;
+   *   Storage.ReadSession response =
+   *       baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
+   * }
+   * }</pre>
+   *
    * @param tableReference Required. Reference to the table to read.
    * @param parent Required. String of the form `projects/{project_id}` indicating the project this
    *     ReadSession is associated with. This is the project that will be billed for usage.
@@ -185,6 +209,19 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    *
    * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
    * clean-up by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   TableReferenceProto.TableReference tableReference =
+   *       TableReferenceProto.TableReference.newBuilder().build();
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   int requestedStreams = 1017221410;
+   *   Storage.ReadSession response =
+   *       baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
+   * }
+   * }</pre>
    *
    * @param tableReference Required. Reference to the table to read.
    * @param parent Required. String of the form `projects/{project_id}` indicating the project this
@@ -220,6 +257,19 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>Read sessions automatically expire 24 hours after they are created and do not require manual
    * clean-up by the caller.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.CreateReadSessionRequest request =
+   *       Storage.CreateReadSessionRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setRequestedStreams(1017221410)
+   *           .build();
+   *   Storage.ReadSession response = baseBigQueryStorageClient.createReadSession(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -241,6 +291,20 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * clean-up by the caller.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.CreateReadSessionRequest request =
+   *       Storage.CreateReadSessionRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setRequestedStreams(1017221410)
+   *           .build();
+   *   ApiFuture<Storage.ReadSession> future =
+   *       baseBigQueryStorageClient.createReadSessionCallable().futureCall(request);
+   *   // Do something.
+   *   Storage.ReadSession response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<Storage.CreateReadSessionRequest, Storage.ReadSession>
       createReadSessionCallable() {
@@ -259,6 +323,17 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * data.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.ReadRowsRequest request = Storage.ReadRowsRequest.newBuilder().build();
+   *   ServerStream<Storage.ReadRowsResponse> stream =
+   *       baseBigQueryStorageClient.readRowsCallable().call(request);
+   *   for (Storage.ReadRowsResponse response : stream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final ServerStreamingCallable<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
       readRowsCallable() {
@@ -269,6 +344,17 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
   /**
    * Creates additional streams for a ReadSession. This API can be used to dynamically adjust the
    * parallelism of a batch processing task upwards by adding additional workers.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.ReadSession session = Storage.ReadSession.newBuilder().build();
+   *   int requestedStreams = 1017221410;
+   *   Storage.BatchCreateReadSessionStreamsResponse response =
+   *       baseBigQueryStorageClient.batchCreateReadSessionStreams(session, requestedStreams);
+   * }
+   * }</pre>
    *
    * @param session Required. Must be a non-expired session obtained from a call to
    *     CreateReadSession. Only the name field needs to be set.
@@ -291,6 +377,19 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * Creates additional streams for a ReadSession. This API can be used to dynamically adjust the
    * parallelism of a batch processing task upwards by adding additional workers.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.BatchCreateReadSessionStreamsRequest request =
+   *       Storage.BatchCreateReadSessionStreamsRequest.newBuilder()
+   *           .setRequestedStreams(1017221410)
+   *           .build();
+   *   Storage.BatchCreateReadSessionStreamsResponse response =
+   *       baseBigQueryStorageClient.batchCreateReadSessionStreams(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -305,6 +404,19 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * parallelism of a batch processing task upwards by adding additional workers.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.BatchCreateReadSessionStreamsRequest request =
+   *       Storage.BatchCreateReadSessionStreamsRequest.newBuilder()
+   *           .setRequestedStreams(1017221410)
+   *           .build();
+   *   ApiFuture<Storage.BatchCreateReadSessionStreamsResponse> future =
+   *       baseBigQueryStorageClient.batchCreateReadSessionStreamsCallable().futureCall(request);
+   *   // Do something.
+   *   Storage.BatchCreateReadSessionStreamsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           Storage.BatchCreateReadSessionStreamsRequest,
@@ -326,6 +438,15 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    *
    * <p>This method will return an error if there are no other live streams in the Session, or if
    * SplitReadStream() has been called on the given Stream.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.Stream stream = Storage.Stream.newBuilder().build();
+   *   baseBigQueryStorageClient.finalizeStream(stream);
+   * }
+   * }</pre>
    *
    * @param stream Required. Stream to finalize.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -350,6 +471,15 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>This method will return an error if there are no other live streams in the Session, or if
    * SplitReadStream() has been called on the given Stream.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.FinalizeStreamRequest request = Storage.FinalizeStreamRequest.newBuilder().build();
+   *   baseBigQueryStorageClient.finalizeStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -372,6 +502,16 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * SplitReadStream() has been called on the given Stream.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.FinalizeStreamRequest request = Storage.FinalizeStreamRequest.newBuilder().build();
+   *   ApiFuture<Empty> future =
+   *       baseBigQueryStorageClient.finalizeStreamCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<Storage.FinalizeStreamRequest, Empty> finalizeStreamCallable() {
     return stub.finalizeStreamCallable();
@@ -390,6 +530,16 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * to completion.
    *
    * <p>This method is guaranteed to be idempotent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.Stream originalStream = Storage.Stream.newBuilder().build();
+   *   Storage.SplitReadStreamResponse response =
+   *       baseBigQueryStorageClient.splitReadStream(originalStream);
+   * }
+   * }</pre>
    *
    * @param originalStream Required. Stream to split.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -414,6 +564,16 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    *
    * <p>This method is guaranteed to be idempotent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.SplitReadStreamRequest request =
+   *       Storage.SplitReadStreamRequest.newBuilder().setFraction(-1653751294).build();
+   *   Storage.SplitReadStreamResponse response = baseBigQueryStorageClient.splitReadStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -437,6 +597,17 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * <p>This method is guaranteed to be idempotent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+   *   Storage.SplitReadStreamRequest request =
+   *       Storage.SplitReadStreamRequest.newBuilder().setFraction(-1653751294).build();
+   *   ApiFuture<Storage.SplitReadStreamResponse> future =
+   *       baseBigQueryStorageClient.splitReadStreamCallable().futureCall(request);
+   *   // Do something.
+   *   Storage.SplitReadStreamResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamCallable() {

@@ -28,6 +28,16 @@
  *
  * <p>Sample for BaseBigQueryReadClient:
  *
+ * <pre>{@code
+ * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   ReadSession readSession = ReadSession.newBuilder().build();
+ *   int maxStreamCount = 940837515;
+ *   ReadSession response =
+ *       baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
+ * }
+ * }</pre>
+ *
  * <p>======================= BigQueryWriteClient =======================
  *
  * <p>Service Description: BigQuery Write API.
@@ -35,6 +45,14 @@
  * <p>The Write API can be used to write data to BigQuery.
  *
  * <p>Sample for BigQueryWriteClient:
+ *
+ * <pre>{@code
+ * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+ *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+ *   WriteStream writeStream = WriteStream.newBuilder().build();
+ *   WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.storage.v1beta2;

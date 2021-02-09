@@ -24,6 +24,16 @@
  * <p>The Read API can be used to read data from BigQuery.
  *
  * <p>Sample for BaseBigQueryReadClient:
+ *
+ * <pre>{@code
+ * try (BaseBigQueryReadClient baseBigQueryReadClient = BaseBigQueryReadClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   ReadSession readSession = ReadSession.newBuilder().build();
+ *   int maxStreamCount = 940837515;
+ *   ReadSession response =
+ *       baseBigQueryReadClient.createReadSession(parent, readSession, maxStreamCount);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.storage.v1;

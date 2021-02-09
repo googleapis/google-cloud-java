@@ -24,6 +24,17 @@
  * <p>The BigQuery storage API can be used to read data stored in BigQuery.
  *
  * <p>Sample for BaseBigQueryStorageClient:
+ *
+ * <pre>{@code
+ * try (BaseBigQueryStorageClient baseBigQueryStorageClient = BaseBigQueryStorageClient.create()) {
+ *   TableReferenceProto.TableReference tableReference =
+ *       TableReferenceProto.TableReference.newBuilder().build();
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   int requestedStreams = 1017221410;
+ *   Storage.ReadSession response =
+ *       baseBigQueryStorageClient.createReadSession(tableReference, parent, requestedStreams);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.storage.v1beta1;

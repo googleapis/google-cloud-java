@@ -24,6 +24,14 @@
  * <p>The Write API can be used to write data to BigQuery.
  *
  * <p>Sample for BigQueryWriteClient:
+ *
+ * <pre>{@code
+ * try (BigQueryWriteClient bigQueryWriteClient = BigQueryWriteClient.create()) {
+ *   TableName parent = TableName.of("[PROJECT]", "[DATASET]", "[TABLE]");
+ *   Stream.WriteStream writeStream = Stream.WriteStream.newBuilder().build();
+ *   Stream.WriteStream response = bigQueryWriteClient.createWriteStream(parent, writeStream);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.storage.v1alpha2;

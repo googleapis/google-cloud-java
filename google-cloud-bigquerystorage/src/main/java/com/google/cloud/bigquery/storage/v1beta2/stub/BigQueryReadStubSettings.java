@@ -66,18 +66,18 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of createReadSession to 30 seconds:
  *
  * <pre>{@code
- * BigQueryReadStubSettings.Builder bigQueryReadSettingsBuilder =
+ * BigQueryReadStubSettings.Builder baseBigQueryReadSettingsBuilder =
  *     BigQueryReadStubSettings.newBuilder();
- * bigQueryReadSettingsBuilder
+ * baseBigQueryReadSettingsBuilder
  *     .createReadSessionSettings()
  *     .setRetrySettings(
- *         bigQueryReadSettingsBuilder
+ *         baseBigQueryReadSettingsBuilder
  *             .createReadSessionSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * BigQueryReadStubSettings bigQueryReadSettings = bigQueryReadSettingsBuilder.build();
+ * BigQueryReadStubSettings baseBigQueryReadSettings = baseBigQueryReadSettingsBuilder.build();
  * }</pre>
  */
 @BetaApi
