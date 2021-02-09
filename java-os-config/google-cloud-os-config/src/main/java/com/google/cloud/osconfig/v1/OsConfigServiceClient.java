@@ -45,6 +45,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+ *   PatchJobs.ExecutePatchJobRequest request =
+ *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
+ *           .setDescription("description-1724546052")
+ *           .setDuration(Duration.newBuilder().build())
+ *           .setDryRun(true)
+ *           .setDisplayName("displayName1714148973")
+ *           .build();
+ *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the OsConfigServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -151,6 +165,22 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Patch VM instances by creating and running a patch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ExecutePatchJobRequest request =
+   *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setDescription("description-1724546052")
+   *           .setDuration(Duration.newBuilder().build())
+   *           .setDryRun(true)
+   *           .setDisplayName("displayName1714148973")
+   *           .build();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -163,6 +193,23 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Patch VM instances by creating and running a patch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ExecutePatchJobRequest request =
+   *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setDescription("description-1724546052")
+   *           .setDuration(Duration.newBuilder().build())
+   *           .setDryRun(true)
+   *           .setDisplayName("displayName1714148973")
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.executePatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   PatchJobs.PatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>
       executePatchJobCallable() {
@@ -173,6 +220,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get the patch job. This can be used to track the progress of an ongoing patch job or review the
    * details of completed jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobName name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
+   *   PatchJobs.PatchJob response = osConfigServiceClient.getPatchJob(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the patch in the form `projects/&#42;/patchJobs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -190,6 +246,15 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get the patch job. This can be used to track the progress of an ongoing patch job or review the
    * details of completed jobs.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.getPatchJob(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the patch in the form `projects/&#42;/patchJobs/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -204,6 +269,18 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get the patch job. This can be used to track the progress of an ongoing patch job or review the
    * details of completed jobs.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.GetPatchJobRequest request =
+   *       PatchJobs.GetPatchJobRequest.newBuilder()
+   *           .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .build();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.getPatchJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -217,6 +294,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * details of completed jobs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.GetPatchJobRequest request =
+   *       PatchJobs.GetPatchJobRequest.newBuilder()
+   *           .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.getPatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   PatchJobs.PatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
       getPatchJobCallable() {
@@ -226,6 +316,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.CancelPatchJobRequest request =
+   *       PatchJobs.CancelPatchJobRequest.newBuilder()
+   *           .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .build();
+   *   PatchJobs.PatchJob response = osConfigServiceClient.cancelPatchJob(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -239,6 +341,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Cancel a patch job. The patch job must be active. Canceled patch jobs cannot be restarted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.CancelPatchJobRequest request =
+   *       PatchJobs.CancelPatchJobRequest.newBuilder()
+   *           .setName(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.cancelPatchJobCallable().futureCall(request);
+   *   // Do something.
+   *   PatchJobs.PatchJob response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
       cancelPatchJobCallable() {
@@ -248,6 +363,17 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a list of patch jobs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (PatchJobs.PatchJob element : osConfigServiceClient.listPatchJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. In the form of `projects/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -264,6 +390,17 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a list of patch jobs.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (PatchJobs.PatchJob element : osConfigServiceClient.listPatchJobs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. In the form of `projects/&#42;`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -277,6 +414,23 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a list of patch jobs.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobsRequest request =
+   *       PatchJobs.ListPatchJobsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (PatchJobs.PatchJob element : osConfigServiceClient.listPatchJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -289,6 +443,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of patch jobs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobsRequest request =
+   *       PatchJobs.ListPatchJobsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJob> future =
+   *       osConfigServiceClient.listPatchJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PatchJobs.PatchJob element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.ListPatchJobsRequest, ListPatchJobsPagedResponse>
       listPatchJobsPagedCallable() {
@@ -300,6 +472,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of patch jobs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     PatchJobs.ListPatchJobsResponse response =
+   *         osConfigServiceClient.listPatchJobsCallable().call(request);
+   *     for (PatchJobs.PatchJob element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
       listPatchJobsCallable() {
@@ -309,6 +499,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a list of instance details for a given patch job.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobName parent = PatchJobName.of("[PROJECT]", "[PATCH_JOB]");
+   *   for (PatchJobs.PatchJobInstanceDetails element :
+   *       osConfigServiceClient.listPatchJobInstanceDetails(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent for the instances are in the form of
    *     `projects/&#42;/patchJobs/&#42;`.
@@ -327,6 +529,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a list of instance details for a given patch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString();
+   *   for (PatchJobs.PatchJobInstanceDetails element :
+   *       osConfigServiceClient.listPatchJobInstanceDetails(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent for the instances are in the form of
    *     `projects/&#42;/patchJobs/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -341,6 +555,24 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a list of instance details for a given patch job.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
+   *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
+   *           .setParent(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (PatchJobs.PatchJobInstanceDetails element :
+   *       osConfigServiceClient.listPatchJobInstanceDetails(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -354,6 +586,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of instance details for a given patch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchJobs.ListPatchJobInstanceDetailsRequest request =
+   *       PatchJobs.ListPatchJobInstanceDetailsRequest.newBuilder()
+   *           .setParent(PatchJobName.of("[PROJECT]", "[PATCH_JOB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<PatchJobs.PatchJobInstanceDetails> future =
+   *       osConfigServiceClient.listPatchJobInstanceDetailsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PatchJobs.PatchJobInstanceDetails element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchJobs.ListPatchJobInstanceDetailsRequest, ListPatchJobInstanceDetailsPagedResponse>
@@ -366,6 +616,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a list of instance details for a given patch job.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     PatchJobs.ListPatchJobInstanceDetailsResponse response =
+   *         osConfigServiceClient.listPatchJobInstanceDetailsCallable().call(request);
+   *     for (PatchJobs.PatchJobInstanceDetails element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchJobs.ListPatchJobInstanceDetailsRequest,
@@ -377,6 +645,19 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   PatchDeployments.PatchDeployment patchDeployment =
+   *       PatchDeployments.PatchDeployment.newBuilder().build();
+   *   String patchDeploymentId = "patchDeploymentId-1180405976";
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.createPatchDeployment(parent, patchDeployment, patchDeploymentId);
+   * }
+   * }</pre>
    *
    * @param parent Required. The project to apply this patch deployment to in the form
    *     `projects/&#42;`.
@@ -410,6 +691,19 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Create an OS Config patch deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   PatchDeployments.PatchDeployment patchDeployment =
+   *       PatchDeployments.PatchDeployment.newBuilder().build();
+   *   String patchDeploymentId = "patchDeploymentId-1180405976";
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.createPatchDeployment(parent, patchDeployment, patchDeploymentId);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The project to apply this patch deployment to in the form
    *     `projects/&#42;`.
    * @param patchDeployment Required. The patch deployment to create.
@@ -440,6 +734,20 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Create an OS Config patch deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.CreatePatchDeploymentRequest request =
+   *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPatchDeploymentId("patchDeploymentId-1180405976")
+   *           .build();
+   *   PatchDeployments.PatchDeployment response =
+   *       osConfigServiceClient.createPatchDeployment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -453,6 +761,20 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Create an OS Config patch deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.CreatePatchDeploymentRequest request =
+   *       PatchDeployments.CreatePatchDeploymentRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPatchDeploymentId("patchDeploymentId-1180405976")
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.createPatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.CreatePatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -463,6 +785,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.getPatchDeployment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the patch deployment in the form
    *     `projects/&#42;/patchDeployments/&#42;`.
@@ -480,6 +811,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get an OS Config patch deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString();
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.getPatchDeployment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the patch deployment in the form
    *     `projects/&#42;/patchDeployments/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -494,6 +834,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get an OS Config patch deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.GetPatchDeploymentRequest request =
+   *       PatchDeployments.GetPatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   PatchDeployments.PatchDeployment response = osConfigServiceClient.getPatchDeployment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -507,6 +859,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get an OS Config patch deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.GetPatchDeploymentRequest request =
+   *       PatchDeployments.GetPatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.getPatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   PatchDeployments.PatchDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -517,6 +882,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a page of OS Config patch deployments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (PatchDeployments.PatchDeployment element :
+   *       osConfigServiceClient.listPatchDeployments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the parent in the form `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -533,6 +910,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Get a page of OS Config patch deployments.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (PatchDeployments.PatchDeployment element :
+   *       osConfigServiceClient.listPatchDeployments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the parent in the form `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -545,6 +934,23 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get a page of OS Config patch deployments.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ListPatchDeploymentsRequest request =
+   *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (PatchDeployments.PatchDeployment element :
+   *       osConfigServiceClient.listPatchDeployments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -559,6 +965,23 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a page of OS Config patch deployments.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.ListPatchDeploymentsRequest request =
+   *       PatchDeployments.ListPatchDeploymentsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<PatchDeployments.PatchDeployment> future =
+   *       osConfigServiceClient.listPatchDeploymentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PatchDeployments.PatchDeployment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.ListPatchDeploymentsRequest, ListPatchDeploymentsPagedResponse>
@@ -571,6 +994,24 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Get a page of OS Config patch deployments.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   while (true) {
+   *     PatchDeployments.ListPatchDeploymentsResponse response =
+   *         osConfigServiceClient.listPatchDeploymentsCallable().call(request);
+   *     for (PatchDeployments.PatchDeployment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PatchDeployments.ListPatchDeploymentsRequest,
@@ -582,6 +1023,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Delete an OS Config patch deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeploymentName name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]");
+   *   osConfigServiceClient.deletePatchDeployment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the patch deployment in the form
    *     `projects/&#42;/patchDeployments/&#42;`.
@@ -599,6 +1049,15 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Delete an OS Config patch deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   String name = PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString();
+   *   osConfigServiceClient.deletePatchDeployment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the patch deployment in the form
    *     `projects/&#42;/patchDeployments/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -613,6 +1072,18 @@ public class OsConfigServiceClient implements BackgroundResource {
   /**
    * Delete an OS Config patch deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.DeletePatchDeploymentRequest request =
+   *       PatchDeployments.DeletePatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   osConfigServiceClient.deletePatchDeployment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -625,6 +1096,19 @@ public class OsConfigServiceClient implements BackgroundResource {
    * Delete an OS Config patch deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+   *   PatchDeployments.DeletePatchDeploymentRequest request =
+   *       PatchDeployments.DeletePatchDeploymentRequest.newBuilder()
+   *           .setName(PatchDeploymentName.of("[PROJECT]", "[PATCH_DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       osConfigServiceClient.deletePatchDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchDeployments.DeletePatchDeploymentRequest, Empty>
       deletePatchDeploymentCallable() {

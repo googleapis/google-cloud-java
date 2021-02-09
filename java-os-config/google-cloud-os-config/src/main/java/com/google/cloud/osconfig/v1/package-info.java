@@ -25,6 +25,20 @@
  * installations and patch jobs for virtual machine instances.
  *
  * <p>Sample for OsConfigServiceClient:
+ *
+ * <pre>{@code
+ * try (OsConfigServiceClient osConfigServiceClient = OsConfigServiceClient.create()) {
+ *   PatchJobs.ExecutePatchJobRequest request =
+ *       PatchJobs.ExecutePatchJobRequest.newBuilder()
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
+ *           .setDescription("description-1724546052")
+ *           .setDuration(Duration.newBuilder().build())
+ *           .setDryRun(true)
+ *           .setDisplayName("displayName1714148973")
+ *           .build();
+ *   PatchJobs.PatchJob response = osConfigServiceClient.executePatchJob(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.osconfig.v1;
