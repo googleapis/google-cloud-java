@@ -22,6 +22,16 @@
  * <p>Service Description: Manages external data source connections and credentials.
  *
  * <p>Sample for ConnectionServiceClient:
+ *
+ * <pre>{@code
+ * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Connection connection = Connection.newBuilder().build();
+ *   String connectionId = "connectionId1923106969";
+ *   Connection response =
+ *       connectionServiceClient.createConnection(parent, connection, connectionId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigqueryconnection.v1;

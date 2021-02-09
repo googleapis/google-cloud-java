@@ -59,6 +59,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Connection connection = Connection.newBuilder().build();
+ *   String connectionId = "connectionId1923106969";
+ *   Connection response =
+ *       connectionServiceClient.createConnection(parent, connection, connectionId);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ConnectionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -165,6 +175,18 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Creates a new connection.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Connection connection = Connection.newBuilder().build();
+   *   String connectionId = "connectionId1923106969";
+   *   Connection response =
+   *       connectionServiceClient.createConnection(parent, connection, connectionId);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Parent resource name. Must be in the format
    *     `projects/{project_id}/locations/{location_id}`
    * @param connection Required. Connection to create.
@@ -185,6 +207,18 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Connection connection = Connection.newBuilder().build();
+   *   String connectionId = "connectionId1923106969";
+   *   Connection response =
+   *       connectionServiceClient.createConnection(parent, connection, connectionId);
+   * }
+   * }</pre>
    *
    * @param parent Required. Parent resource name. Must be in the format
    *     `projects/{project_id}/locations/{location_id}`
@@ -207,6 +241,20 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Creates a new connection.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   CreateConnectionRequest request =
+   *       CreateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConnectionId("connectionId1923106969")
+   *           .setConnection(Connection.newBuilder().build())
+   *           .build();
+   *   Connection response = connectionServiceClient.createConnection(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -219,6 +267,21 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Creates a new connection.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   CreateConnectionRequest request =
+   *       CreateConnectionRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setConnectionId("connectionId1923106969")
+   *           .setConnection(Connection.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       connectionServiceClient.createConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Connection response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
     return stub.createConnectionCallable();
@@ -227,6 +290,15 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns specified connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   Connection response = connectionServiceClient.getConnection(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the requested connection, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
@@ -242,6 +314,15 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Returns specified connection.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   Connection response = connectionServiceClient.getConnection(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the requested connection, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -255,6 +336,18 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Returns specified connection.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   GetConnectionRequest request =
+   *       GetConnectionRequest.newBuilder()
+   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .build();
+   *   Connection response = connectionServiceClient.getConnection(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -267,6 +360,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Returns specified connection.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   GetConnectionRequest request =
+   *       GetConnectionRequest.newBuilder()
+   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       connectionServiceClient.getConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Connection response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
     return stub.getConnectionCallable();
@@ -275,6 +381,17 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of connections in the given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. Parent resource name. Must be in the form:
    *     `projects/{project_id}/locations/{location_id}`
@@ -292,6 +409,17 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Returns a list of connections in the given project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Connection element : connectionServiceClient.listConnections(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Parent resource name. Must be in the form:
    *     `projects/{project_id}/locations/{location_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -305,6 +433,22 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Returns a list of connections in the given project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ListConnectionsRequest request =
+   *       ListConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Connection element : connectionServiceClient.listConnections(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -317,6 +461,23 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Returns a list of connections in the given project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ListConnectionsRequest request =
+   *       ListConnectionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       connectionServiceClient.listConnectionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Connection element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
       listConnectionsPagedCallable() {
@@ -328,6 +489,24 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Returns a list of connections in the given project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   while (true) {
+   *     ListConnectionsResponse response =
+   *         connectionServiceClient.listConnectionsCallable().call(request);
+   *     for (Connection element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
       listConnectionsCallable() {
@@ -338,6 +517,17 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Updates the specified connection. For security reasons, also resets credential if connection
    * properties are in the update field mask.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   Connection connection = Connection.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Connection response = connectionServiceClient.updateConnection(name, connection, updateMask);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the connection to update, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
@@ -361,6 +551,17 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Updates the specified connection. For security reasons, also resets credential if connection
    * properties are in the update field mask.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   Connection connection = Connection.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Connection response = connectionServiceClient.updateConnection(name, connection, updateMask);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the connection to update, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @param connection Required. Connection containing the updated fields.
@@ -383,6 +584,20 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Updates the specified connection. For security reasons, also resets credential if connection
    * properties are in the update field mask.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   UpdateConnectionRequest request =
+   *       UpdateConnectionRequest.newBuilder()
+   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setConnection(Connection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Connection response = connectionServiceClient.updateConnection(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -396,6 +611,21 @@ public class ConnectionServiceClient implements BackgroundResource {
    * properties are in the update field mask.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   UpdateConnectionRequest request =
+   *       UpdateConnectionRequest.newBuilder()
+   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setConnection(Connection.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Connection> future =
+   *       connectionServiceClient.updateConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   Connection response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
     return stub.updateConnectionCallable();
@@ -404,6 +634,15 @@ public class ConnectionServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes connection and associated credential.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ConnectionName name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   connectionServiceClient.deleteConnection(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the deleted connection, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
@@ -419,6 +658,15 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Deletes connection and associated credential.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String name = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   connectionServiceClient.deleteConnection(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the deleted connection, for example:
    *     `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -432,6 +680,18 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Deletes connection and associated credential.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   DeleteConnectionRequest request =
+   *       DeleteConnectionRequest.newBuilder()
+   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .build();
+   *   connectionServiceClient.deleteConnection(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -444,6 +704,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Deletes connection and associated credential.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   DeleteConnectionRequest request =
+   *       DeleteConnectionRequest.newBuilder()
+   *           .setName(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       connectionServiceClient.deleteConnectionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
     return stub.deleteConnectionCallable();
@@ -453,6 +726,16 @@ public class ConnectionServiceClient implements BackgroundResource {
   /**
    * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ResourceName resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   GetPolicyOptions options = GetPolicyOptions.newBuilder().build();
+   *   Policy response = connectionServiceClient.getIamPolicy(resource, options);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -474,6 +757,16 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * and does not have a policy set.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   GetPolicyOptions options = GetPolicyOptions.newBuilder().build();
+   *   Policy response = connectionServiceClient.getIamPolicy(resource, options);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param options OPTIONAL: A `GetPolicyOptions` object for specifying options to `GetIamPolicy`.
@@ -491,6 +784,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Gets the access control policy for a resource. Returns an empty policy if the resource exists
    * and does not have a policy set.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = connectionServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -504,6 +810,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    * and does not have a policy set.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = connectionServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -514,6 +833,16 @@ public class ConnectionServiceClient implements BackgroundResource {
    * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
    * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ResourceName resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = connectionServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -537,6 +866,16 @@ public class ConnectionServiceClient implements BackgroundResource {
    *
    * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = connectionServiceClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
@@ -556,6 +895,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    *
    * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = connectionServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -570,6 +922,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = connectionServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -583,6 +948,17 @@ public class ConnectionServiceClient implements BackgroundResource {
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   ResourceName resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]");
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       connectionServiceClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -610,6 +986,17 @@ public class ConnectionServiceClient implements BackgroundResource {
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   String resource = ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString();
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       connectionServiceClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
@@ -636,6 +1023,19 @@ public class ConnectionServiceClient implements BackgroundResource {
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = connectionServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -653,6 +1053,20 @@ public class ConnectionServiceClient implements BackgroundResource {
    * warning.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ConnectionServiceClient connectionServiceClient = ConnectionServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(ConnectionName.of("[PROJECT]", "[LOCATION]", "[CONNECTION]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       connectionServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
