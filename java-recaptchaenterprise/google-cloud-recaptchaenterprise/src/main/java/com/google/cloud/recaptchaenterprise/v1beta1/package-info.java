@@ -22,6 +22,16 @@
  * <p>Service Description: Service to determine the likelihood an event is legitimate.
  *
  * <p>Sample for RecaptchaEnterpriseServiceV1Beta1Client:
+ *
+ * <pre>{@code
+ * try (RecaptchaEnterpriseServiceV1Beta1Client recaptchaEnterpriseServiceV1Beta1Client =
+ *     RecaptchaEnterpriseServiceV1Beta1Client.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Assessment assessment = Assessment.newBuilder().build();
+ *   Assessment response =
+ *       recaptchaEnterpriseServiceV1Beta1Client.createAssessment(parent, assessment);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.recaptchaenterprise.v1beta1;
