@@ -7,4 +7,4 @@
 *                       @googleapis/yoshi-java
 
 # The java-samples-reviewers team is the default owner for samples changes
-samples/**/*.java       @googleapis/java-samples-reviewers
+samples/**/*.java       @googleapis/api-iot @googleapis/java-samples-reviewers
