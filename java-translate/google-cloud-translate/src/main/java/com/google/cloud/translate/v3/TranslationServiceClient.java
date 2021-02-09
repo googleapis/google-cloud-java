@@ -45,6 +45,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   String targetLanguageCode = "targetLanguageCode-106414698";
+ *   List<String> contents = new ArrayList<>();
+ *   TranslateTextResponse response =
+ *       translationServiceClient.translateText(parent, targetLanguageCode, contents);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the TranslationServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -162,6 +172,18 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Translates input text and returns translated text.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String targetLanguageCode = "targetLanguageCode-106414698";
+   *   List<String> contents = new ArrayList<>();
+   *   TranslateTextResponse response =
+   *       translationServiceClient.translateText(parent, targetLanguageCode, contents);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}` or
    *     `projects/{project-number-or-id}/locations/{location-id}`.
@@ -191,6 +213,18 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Translates input text and returns translated text.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String targetLanguageCode = "targetLanguageCode-106414698";
+   *   List<String> contents = new ArrayList<>();
+   *   TranslateTextResponse response =
+   *       translationServiceClient.translateText(parent, targetLanguageCode, contents);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}` or
    *     `projects/{project-number-or-id}/locations/{location-id}`.
@@ -219,6 +253,22 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Translates input text and returns translated text.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String model = "model104069929";
+   *   String mimeType = "mimeType-1392120434";
+   *   String sourceLanguageCode = "sourceLanguageCode1645917472";
+   *   String targetLanguageCode = "targetLanguageCode-106414698";
+   *   List<String> contents = new ArrayList<>();
+   *   TranslateTextResponse response =
+   *       translationServiceClient.translateText(
+   *           parent, model, mimeType, sourceLanguageCode, targetLanguageCode, contents);
+   * }
+   * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}` or
@@ -273,6 +323,22 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Translates input text and returns translated text.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String model = "model104069929";
+   *   String mimeType = "mimeType-1392120434";
+   *   String sourceLanguageCode = "sourceLanguageCode1645917472";
+   *   String targetLanguageCode = "targetLanguageCode-106414698";
+   *   List<String> contents = new ArrayList<>();
+   *   TranslateTextResponse response =
+   *       translationServiceClient.translateText(
+   *           parent, model, mimeType, sourceLanguageCode, targetLanguageCode, contents);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}` or
    *     `projects/{project-number-or-id}/locations/{location-id}`.
@@ -326,6 +392,25 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Translates input text and returns translated text.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   TranslateTextRequest request =
+   *       TranslateTextRequest.newBuilder()
+   *           .addAllContents(new ArrayList<String>())
+   *           .setMimeType("mimeType-1392120434")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModel("model104069929")
+   *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   TranslateTextResponse response = translationServiceClient.translateText(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -338,6 +423,26 @@ public class TranslationServiceClient implements BackgroundResource {
    * Translates input text and returns translated text.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   TranslateTextRequest request =
+   *       TranslateTextRequest.newBuilder()
+   *           .addAllContents(new ArrayList<String>())
+   *           .setMimeType("mimeType-1392120434")
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .setTargetLanguageCode("targetLanguageCode-106414698")
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModel("model104069929")
+   *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<TranslateTextResponse> future =
+   *       translationServiceClient.translateTextCallable().futureCall(request);
+   *   // Do something.
+   *   TranslateTextResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable() {
     return stub.translateTextCallable();
@@ -346,6 +451,19 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Detects the language of text within a request.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String model = "model104069929";
+   *   String mimeType = "mimeType-1392120434";
+   *   String content = "content951530617";
+   *   DetectLanguageResponse response =
+   *       translationServiceClient.detectLanguage(parent, model, mimeType, content);
+   * }
+   * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}` or
@@ -381,6 +499,19 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Detects the language of text within a request.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String model = "model104069929";
+   *   String mimeType = "mimeType-1392120434";
+   *   String content = "content951530617";
+   *   DetectLanguageResponse response =
+   *       translationServiceClient.detectLanguage(parent, model, mimeType, content);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}/locations/{location-id}` or
    *     `projects/{project-number-or-id}`.
@@ -415,6 +546,21 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Detects the language of text within a request.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DetectLanguageRequest request =
+   *       DetectLanguageRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModel("model104069929")
+   *           .setMimeType("mimeType-1392120434")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   DetectLanguageResponse response = translationServiceClient.detectLanguage(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -427,6 +573,22 @@ public class TranslationServiceClient implements BackgroundResource {
    * Detects the language of text within a request.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DetectLanguageRequest request =
+   *       DetectLanguageRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setModel("model104069929")
+   *           .setMimeType("mimeType-1392120434")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<DetectLanguageResponse> future =
+   *       translationServiceClient.detectLanguageCallable().futureCall(request);
+   *   // Do something.
+   *   DetectLanguageResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DetectLanguageRequest, DetectLanguageResponse>
       detectLanguageCallable() {
@@ -436,6 +598,18 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a list of supported languages for translation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   String model = "model104069929";
+   *   String displayLanguageCode = "displayLanguageCode-1457478841";
+   *   SupportedLanguages response =
+   *       translationServiceClient.getSupportedLanguages(parent, model, displayLanguageCode);
+   * }
+   * }</pre>
    *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}` or
@@ -474,6 +648,18 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Returns a list of supported languages for translation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   String model = "model104069929";
+   *   String displayLanguageCode = "displayLanguageCode-1457478841";
+   *   SupportedLanguages response =
+   *       translationServiceClient.getSupportedLanguages(parent, model, displayLanguageCode);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project or location to make a call. Must refer to a caller's project.
    *     <p>Format: `projects/{project-number-or-id}` or
    *     `projects/{project-number-or-id}/locations/{location-id}`.
@@ -511,6 +697,20 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Returns a list of supported languages for translation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetSupportedLanguagesRequest request =
+   *       GetSupportedLanguagesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDisplayLanguageCode("displayLanguageCode-1457478841")
+   *           .setModel("model104069929")
+   *           .build();
+   *   SupportedLanguages response = translationServiceClient.getSupportedLanguages(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -523,6 +723,21 @@ public class TranslationServiceClient implements BackgroundResource {
    * Returns a list of supported languages for translation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetSupportedLanguagesRequest request =
+   *       GetSupportedLanguagesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setDisplayLanguageCode("displayLanguageCode-1457478841")
+   *           .setModel("model104069929")
+   *           .build();
+   *   ApiFuture<SupportedLanguages> future =
+   *       translationServiceClient.getSupportedLanguagesCallable().futureCall(request);
+   *   // Do something.
+   *   SupportedLanguages response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesCallable() {
@@ -537,6 +752,26 @@ public class TranslationServiceClient implements BackgroundResource {
    *
    * <p>This call returns immediately and you can use google.longrunning.Operation.name to poll the
    * status of the call.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateTextRequest request =
+   *       BatchTranslateTextRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .addAllInputConfigs(new ArrayList<InputConfig>())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   BatchTranslateResponse response =
+   *       translationServiceClient.batchTranslateTextAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -556,6 +791,26 @@ public class TranslationServiceClient implements BackgroundResource {
    * status of the call.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateTextRequest request =
+   *       BatchTranslateTextRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .addAllInputConfigs(new ArrayList<InputConfig>())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   OperationFuture<BatchTranslateResponse, BatchTranslateMetadata> future =
+   *       translationServiceClient.batchTranslateTextOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchTranslateResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
@@ -573,6 +828,26 @@ public class TranslationServiceClient implements BackgroundResource {
    * status of the call.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   BatchTranslateTextRequest request =
+   *       BatchTranslateTextRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+   *           .addAllTargetLanguageCodes(new ArrayList<String>())
+   *           .putAllModels(new HashMap<String, String>())
+   *           .addAllInputConfigs(new ArrayList<InputConfig>())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       translationServiceClient.batchTranslateTextCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
     return stub.batchTranslateTextCallable();
@@ -582,6 +857,16 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project
    * doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Glossary glossary = Glossary.newBuilder().build();
+   *   Glossary response = translationServiceClient.createGlossaryAsync(parent, glossary).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The project name.
    * @param glossary Required. The glossary to create.
@@ -602,6 +887,16 @@ public class TranslationServiceClient implements BackgroundResource {
    * Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project
    * doesn't exist.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Glossary glossary = Glossary.newBuilder().build();
+   *   Glossary response = translationServiceClient.createGlossaryAsync(parent, glossary).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The project name.
    * @param glossary Required. The glossary to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -618,6 +913,19 @@ public class TranslationServiceClient implements BackgroundResource {
    * Creates a glossary and returns the long-running operation. Returns NOT_FOUND, if the project
    * doesn't exist.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   CreateGlossaryRequest request =
+   *       CreateGlossaryRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setGlossary(Glossary.newBuilder().build())
+   *           .build();
+   *   Glossary response = translationServiceClient.createGlossaryAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -632,6 +940,20 @@ public class TranslationServiceClient implements BackgroundResource {
    * doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   CreateGlossaryRequest request =
+   *       CreateGlossaryRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setGlossary(Glossary.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Glossary, CreateGlossaryMetadata> future =
+   *       translationServiceClient.createGlossaryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Glossary response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
       createGlossaryOperationCallable() {
@@ -644,6 +966,20 @@ public class TranslationServiceClient implements BackgroundResource {
    * doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   CreateGlossaryRequest request =
+   *       CreateGlossaryRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setGlossary(Glossary.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       translationServiceClient.createGlossaryCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateGlossaryRequest, Operation> createGlossaryCallable() {
     return stub.createGlossaryCallable();
@@ -652,6 +988,17 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Glossary element : translationServiceClient.listGlossaries(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The name of the project from which to list all of the glossaries.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -668,6 +1015,17 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Glossary element : translationServiceClient.listGlossaries(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the project from which to list all of the glossaries.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -679,6 +1037,23 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListGlossariesRequest request =
+   *       ListGlossariesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Glossary element : translationServiceClient.listGlossaries(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -692,6 +1067,24 @@ public class TranslationServiceClient implements BackgroundResource {
    * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   ListGlossariesRequest request =
+   *       ListGlossariesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Glossary> future =
+   *       translationServiceClient.listGlossariesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Glossary element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListGlossariesRequest, ListGlossariesPagedResponse>
       listGlossariesPagedCallable() {
@@ -703,6 +1096,24 @@ public class TranslationServiceClient implements BackgroundResource {
    * Lists glossaries in a project. Returns NOT_FOUND, if the project doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   while (true) {
+   *     ListGlossariesResponse response =
+   *         translationServiceClient.listGlossariesCallable().call(request);
+   *     for (Glossary element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListGlossariesRequest, ListGlossariesResponse>
       listGlossariesCallable() {
@@ -712,6 +1123,15 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   Glossary response = translationServiceClient.getGlossary(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the glossary to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -726,6 +1146,15 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString();
+   *   Glossary response = translationServiceClient.getGlossary(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the glossary to retrieve.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -737,6 +1166,18 @@ public class TranslationServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetGlossaryRequest request =
+   *       GetGlossaryRequest.newBuilder()
+   *           .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+   *           .build();
+   *   Glossary response = translationServiceClient.getGlossary(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -750,6 +1191,19 @@ public class TranslationServiceClient implements BackgroundResource {
    * Gets a glossary. Returns NOT_FOUND, if the glossary doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GetGlossaryRequest request =
+   *       GetGlossaryRequest.newBuilder()
+   *           .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+   *           .build();
+   *   ApiFuture<Glossary> future =
+   *       translationServiceClient.getGlossaryCallable().futureCall(request);
+   *   // Do something.
+   *   Glossary response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable() {
     return stub.getGlossaryCallable();
@@ -759,6 +1213,15 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
    * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the glossary to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -775,6 +1238,15 @@ public class TranslationServiceClient implements BackgroundResource {
    * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
    * NOT_FOUND, if the glossary doesn't exist.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   String name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString();
+   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the glossary to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -788,6 +1260,18 @@ public class TranslationServiceClient implements BackgroundResource {
   /**
    * Deletes a glossary, or cancels glossary construction if the glossary isn't created yet. Returns
    * NOT_FOUND, if the glossary doesn't exist.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteGlossaryRequest request =
+   *       DeleteGlossaryRequest.newBuilder()
+   *           .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+   *           .build();
+   *   DeleteGlossaryResponse response = translationServiceClient.deleteGlossaryAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -803,6 +1287,19 @@ public class TranslationServiceClient implements BackgroundResource {
    * NOT_FOUND, if the glossary doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteGlossaryRequest request =
+   *       DeleteGlossaryRequest.newBuilder()
+   *           .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+   *           .build();
+   *   OperationFuture<DeleteGlossaryResponse, DeleteGlossaryMetadata> future =
+   *       translationServiceClient.deleteGlossaryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DeleteGlossaryResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
@@ -816,6 +1313,19 @@ public class TranslationServiceClient implements BackgroundResource {
    * NOT_FOUND, if the glossary doesn't exist.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+   *   DeleteGlossaryRequest request =
+   *       DeleteGlossaryRequest.newBuilder()
+   *           .setName(GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       translationServiceClient.deleteGlossaryCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
     return stub.deleteGlossaryCallable();

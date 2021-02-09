@@ -22,6 +22,23 @@
  * <p>Service Description: Provides natural language translation operations.
  *
  * <p>Sample for TranslationServiceClient:
+ *
+ * <pre>{@code
+ * try (TranslationServiceClient translationServiceClient = TranslationServiceClient.create()) {
+ *   TranslateTextRequest request =
+ *       TranslateTextRequest.newBuilder()
+ *           .addAllContents(new ArrayList<String>())
+ *           .setMimeType("mimeType-1392120434")
+ *           .setSourceLanguageCode("sourceLanguageCode1645917472")
+ *           .setTargetLanguageCode("targetLanguageCode-106414698")
+ *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+ *           .setModel("model104069929")
+ *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
+ *           .putAllLabels(new HashMap<String, String>())
+ *           .build();
+ *   TranslateTextResponse response = translationServiceClient.translateText(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.translate.v3beta1;
