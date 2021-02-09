@@ -28,6 +28,14 @@
  *
  * <p>Sample for AlertPolicyServiceClient:
  *
+ * <pre>{@code
+ * try (AlertPolicyServiceClient alertPolicyServiceClient = AlertPolicyServiceClient.create()) {
+ *   AlertPolicyName name =
+ *       AlertPolicyName.ofProjectAlertPolicyName("[PROJECT]", "[ALERT_POLICY]");
+ *   AlertPolicy response = alertPolicyServiceClient.getAlertPolicy(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= GroupServiceClient =======================
  *
  * <p>Service Description: The Group API lets you inspect and manage your
@@ -42,12 +50,29 @@
  *
  * <p>Sample for GroupServiceClient:
  *
+ * <pre>{@code
+ * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+ *   GroupName name = GroupName.ofProjectGroupName("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= MetricServiceClient =======================
  *
  * <p>Service Description: Manages metric descriptors, monitored resource descriptors, and time
  * series data.
  *
  * <p>Sample for MetricServiceClient:
+ *
+ * <pre>{@code
+ * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+ *   MonitoredResourceDescriptorName name =
+ *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+ *           "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptor response =
+ *       metricServiceClient.getMonitoredResourceDescriptor(name);
+ * }
+ * }</pre>
  *
  * <p>======================= NotificationChannelServiceClient =======================
  *
@@ -56,6 +81,17 @@
  *
  * <p>Sample for NotificationChannelServiceClient:
  *
+ * <pre>{@code
+ * try (NotificationChannelServiceClient notificationChannelServiceClient =
+ *     NotificationChannelServiceClient.create()) {
+ *   NotificationChannelDescriptorName name =
+ *       NotificationChannelDescriptorName.ofProjectChannelDescriptorName(
+ *           "[PROJECT]", "[CHANNEL_DESCRIPTOR]");
+ *   NotificationChannelDescriptor response =
+ *       notificationChannelServiceClient.getNotificationChannelDescriptor(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ServiceMonitoringServiceClient =======================
  *
  * <p>Service Description: The Cloud Monitoring Service-Oriented Monitoring API has endpoints for
@@ -63,6 +99,15 @@
  * resources, its Service-Level Objectives, and a taxonomy of categorized Health Metrics.
  *
  * <p>Sample for ServiceMonitoringServiceClient:
+ *
+ * <pre>{@code
+ * try (ServiceMonitoringServiceClient serviceMonitoringServiceClient =
+ *     ServiceMonitoringServiceClient.create()) {
+ *   FolderName parent = FolderName.of("[FOLDER]");
+ *   Service service = Service.newBuilder().build();
+ *   Service response = serviceMonitoringServiceClient.createService(parent, service);
+ * }
+ * }</pre>
  *
  * <p>======================= UptimeCheckServiceClient =======================
  *
@@ -74,6 +119,15 @@
  * the left-hand side to navigate to Stackdriver, and then clicking on "Uptime".
  *
  * <p>Sample for UptimeCheckServiceClient:
+ *
+ * <pre>{@code
+ * try (UptimeCheckServiceClient uptimeCheckServiceClient = UptimeCheckServiceClient.create()) {
+ *   UptimeCheckConfigName name =
+ *       UptimeCheckConfigName.ofProjectUptimeCheckConfigName(
+ *           "[PROJECT]", "[UPTIME_CHECK_CONFIG]");
+ *   UptimeCheckConfig response = uptimeCheckServiceClient.getUptimeCheckConfig(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.monitoring.v3;

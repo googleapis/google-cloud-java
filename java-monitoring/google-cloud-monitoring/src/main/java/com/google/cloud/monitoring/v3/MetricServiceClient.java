@@ -63,6 +63,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+ *   MonitoredResourceDescriptorName name =
+ *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+ *           "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptor response =
+ *       metricServiceClient.getMonitoredResourceDescriptor(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the MetricServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -167,6 +177,18 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists monitored resource descriptors that match a filter. This method does not require a
    * Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ResourceName name = ResourceName.of("[FOLDER]");
+   *   for (MonitoredResourceDescriptor element :
+   *       metricServiceClient.listMonitoredResourceDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -184,6 +206,18 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Lists monitored resource descriptors that match a filter. This method does not require a
    * Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
+   *   for (MonitoredResourceDescriptor element :
+   *       metricServiceClient.listMonitoredResourceDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -203,6 +237,18 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists monitored resource descriptors that match a filter. This method does not require a
    * Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (MonitoredResourceDescriptor element :
+   *       metricServiceClient.listMonitoredResourceDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -221,6 +267,21 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists monitored resource descriptors that match a filter. This method does not require a
    * Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name =
+   *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *               "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *           .toString();
+   *   for (MonitoredResourceDescriptor element :
+   *       metricServiceClient.listMonitoredResourceDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -237,6 +298,27 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists monitored resource descriptors that match a filter. This method does not require a
    * Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListMonitoredResourceDescriptorsRequest request =
+   *       ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MonitoredResourceDescriptor element :
+   *       metricServiceClient.listMonitoredResourceDescriptors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -251,6 +333,27 @@ public class MetricServiceClient implements BackgroundResource {
    * Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListMonitoredResourceDescriptorsRequest request =
+   *       ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MonitoredResourceDescriptor> future =
+   *       metricServiceClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MonitoredResourceDescriptor element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
@@ -264,6 +367,24 @@ public class MetricServiceClient implements BackgroundResource {
    * Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   while (true) {
+   *     ListMonitoredResourceDescriptorsResponse response =
+   *         metricServiceClient.listMonitoredResourceDescriptorsCallable().call(request);
+   *     for (MonitoredResourceDescriptor element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
@@ -274,6 +395,18 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a single monitored resource descriptor. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   MonitoredResourceDescriptorName name =
+   *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *           "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   *   MonitoredResourceDescriptor response =
+   *       metricServiceClient.getMonitoredResourceDescriptor(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The monitored resource descriptor to get. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
@@ -293,6 +426,19 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name =
+   *       MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *               "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *           .toString();
+   *   MonitoredResourceDescriptor response =
+   *       metricServiceClient.getMonitoredResourceDescriptor(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The monitored resource descriptor to get. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE]
    *     <p>The `[RESOURCE_TYPE]` is a predefined type, such as `cloudsql_database`.
@@ -308,6 +454,22 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   GetMonitoredResourceDescriptorRequest request =
+   *       GetMonitoredResourceDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *                   .toString())
+   *           .build();
+   *   MonitoredResourceDescriptor response =
+   *       metricServiceClient.getMonitoredResourceDescriptor(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -321,6 +483,22 @@ public class MetricServiceClient implements BackgroundResource {
    * Gets a single monitored resource descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   GetMonitoredResourceDescriptorRequest request =
+   *       GetMonitoredResourceDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MonitoredResourceDescriptorName.ofProjectMonitoredResourceDescriptorName(
+   *                       "[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MonitoredResourceDescriptor> future =
+   *       metricServiceClient.getMonitoredResourceDescriptorCallable().futureCall(request);
+   *   // Do something.
+   *   MonitoredResourceDescriptor response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorCallable() {
@@ -330,6 +508,18 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ResourceName name = ResourceName.of("[FOLDER]");
+   *   for (MetricDescriptor element :
+   *       metricServiceClient.listMetricDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -347,6 +537,18 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
+   *   for (MetricDescriptor element :
+   *       metricServiceClient.listMetricDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -362,6 +564,18 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   for (MetricDescriptor element :
+   *       metricServiceClient.listMetricDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -379,6 +593,20 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name =
+   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *           .toString();
+   *   for (MetricDescriptor element :
+   *       metricServiceClient.listMetricDescriptors(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -393,6 +621,27 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListMetricDescriptorsRequest request =
+   *       ListMetricDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (MetricDescriptor element :
+   *       metricServiceClient.listMetricDescriptors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -406,6 +655,27 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListMetricDescriptorsRequest request =
+   *       ListMetricDescriptorsRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<MetricDescriptor> future =
+   *       metricServiceClient.listMetricDescriptorsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (MetricDescriptor element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsPagedCallable() {
@@ -417,6 +687,24 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists metric descriptors that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   while (true) {
+   *     ListMetricDescriptorsResponse response =
+   *         metricServiceClient.listMetricDescriptorsCallable().call(request);
+   *     for (MetricDescriptor element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsCallable() {
@@ -426,6 +714,16 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a single metric descriptor. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   MetricDescriptorName name =
+   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The metric descriptor on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
@@ -445,6 +743,17 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Gets a single metric descriptor. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name =
+   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *           .toString();
+   *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The metric descriptor on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
    *     <p>An example value of `[METRIC_ID]` is
@@ -461,6 +770,21 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Gets a single metric descriptor. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   GetMetricDescriptorRequest request =
+   *       GetMetricDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .build();
+   *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -473,6 +797,22 @@ public class MetricServiceClient implements BackgroundResource {
    * Gets a single metric descriptor. This method does not require a Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   GetMetricDescriptorRequest request =
+   *       GetMetricDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<MetricDescriptor> future =
+   *       metricServiceClient.getMetricDescriptorCallable().futureCall(request);
+   *   // Do something.
+   *   MetricDescriptor response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorCallable() {
@@ -483,6 +823,17 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Creates a new metric descriptor. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ResourceName name = ResourceName.of("[FOLDER]");
+   *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
+   *   MetricDescriptor response =
+   *       metricServiceClient.createMetricDescriptor(name, metricDescriptor);
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -505,6 +856,17 @@ public class MetricServiceClient implements BackgroundResource {
    * Creates a new metric descriptor. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   OrganizationName name = OrganizationName.of("[ORGANIZATION]");
+   *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
+   *   MetricDescriptor response =
+   *       metricServiceClient.createMetricDescriptor(name, metricDescriptor);
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param metricDescriptor Required. The new [custom
@@ -525,6 +887,17 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Creates a new metric descriptor. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
+   *   MetricDescriptor response =
+   *       metricServiceClient.createMetricDescriptor(name, metricDescriptor);
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -547,6 +920,19 @@ public class MetricServiceClient implements BackgroundResource {
    * Creates a new metric descriptor. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name =
+   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *           .toString();
+   *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
+   *   MetricDescriptor response =
+   *       metricServiceClient.createMetricDescriptor(name, metricDescriptor);
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param metricDescriptor Required. The new [custom
@@ -568,6 +954,22 @@ public class MetricServiceClient implements BackgroundResource {
    * Creates a new metric descriptor. User-created metric descriptors define [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   CreateMetricDescriptorRequest request =
+   *       CreateMetricDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .setMetricDescriptor(MetricDescriptor.newBuilder().build())
+   *           .build();
+   *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -581,6 +983,23 @@ public class MetricServiceClient implements BackgroundResource {
    * metrics](https://cloud.google.com/monitoring/custom-metrics).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   CreateMetricDescriptorRequest request =
+   *       CreateMetricDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .setMetricDescriptor(MetricDescriptor.newBuilder().build())
+   *           .build();
+   *   ApiFuture<MetricDescriptor> future =
+   *       metricServiceClient.createMetricDescriptorCallable().futureCall(request);
+   *   // Do something.
+   *   MetricDescriptor response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorCallable() {
@@ -591,6 +1010,16 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Deletes a metric descriptor. Only user-created [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   MetricDescriptorName name =
+   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   metricServiceClient.deleteMetricDescriptor(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The metric descriptor on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
@@ -610,6 +1039,17 @@ public class MetricServiceClient implements BackgroundResource {
    * Deletes a metric descriptor. Only user-created [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name =
+   *       MetricDescriptorName.ofProjectMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *           .toString();
+   *   metricServiceClient.deleteMetricDescriptor(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The metric descriptor on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID]
    *     <p>An example of `[METRIC_ID]` is: `"custom.googleapis.com/my_test_metric"`.
@@ -626,6 +1066,21 @@ public class MetricServiceClient implements BackgroundResource {
    * Deletes a metric descriptor. Only user-created [custom
    * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   DeleteMetricDescriptorRequest request =
+   *       DeleteMetricDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .build();
+   *   metricServiceClient.deleteMetricDescriptor(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -639,6 +1094,22 @@ public class MetricServiceClient implements BackgroundResource {
    * metrics](https://cloud.google.com/monitoring/custom-metrics) can be deleted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   DeleteMetricDescriptorRequest request =
+   *       DeleteMetricDescriptorRequest.newBuilder()
+   *           .setName(
+   *               MetricDescriptorName.ofProjectMetricDescriptorName(
+   *                       "[PROJECT]", "[METRIC_DESCRIPTOR]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       metricServiceClient.deleteMetricDescriptorCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteMetricDescriptorRequest, Empty>
       deleteMetricDescriptorCallable() {
@@ -648,6 +1119,21 @@ public class MetricServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists time series that match a filter. This method does not require a Workspace.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   String filter = "filter-1274492040";
+   *   TimeInterval interval = TimeInterval.newBuilder().build();
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+   *   for (TimeSeries element :
+   *       metricServiceClient.listTimeSeries(name, filter, interval, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -681,6 +1167,21 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Lists time series that match a filter. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name = ProjectName.of("[PROJECT]").toString();
+   *   String filter = "filter-1274492040";
+   *   TimeInterval interval = TimeInterval.newBuilder().build();
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.forNumber(0);
+   *   for (TimeSeries element :
+   *       metricServiceClient.listTimeSeries(name, filter, interval, view).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param filter Required. A [monitoring
@@ -713,6 +1214,26 @@ public class MetricServiceClient implements BackgroundResource {
   /**
    * Lists time series that match a filter. This method does not require a Workspace.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListTimeSeriesRequest request =
+   *       ListTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setInterval(TimeInterval.newBuilder().build())
+   *           .setAggregation(Aggregation.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (TimeSeries element : metricServiceClient.listTimeSeries(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -725,6 +1246,27 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ListTimeSeriesRequest request =
+   *       ListTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setInterval(TimeInterval.newBuilder().build())
+   *           .setAggregation(Aggregation.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<TimeSeries> future =
+   *       metricServiceClient.listTimeSeriesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TimeSeries element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
       listTimeSeriesPagedCallable() {
@@ -736,6 +1278,24 @@ public class MetricServiceClient implements BackgroundResource {
    * Lists time series that match a filter. This method does not require a Workspace.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   while (true) {
+   *     ListTimeSeriesResponse response =
+   *         metricServiceClient.listTimeSeriesCallable().call(request);
+   *     for (TimeSeries element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse>
       listTimeSeriesCallable() {
@@ -747,6 +1307,16 @@ public class MetricServiceClient implements BackgroundResource {
    * Creates or adds data to one or more time series. The response is empty if all time series in
    * the request were written. If any time series could not be written, a corresponding failure
    * message is included in the error response.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[PROJECT]");
+   *   List<TimeSeries> timeSeries = new ArrayList<>();
+   *   metricServiceClient.createTimeSeries(name, timeSeries);
+   * }
+   * }</pre>
    *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
@@ -772,6 +1342,16 @@ public class MetricServiceClient implements BackgroundResource {
    * the request were written. If any time series could not be written, a corresponding failure
    * message is included in the error response.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   String name = ProjectName.of("[PROJECT]").toString();
+   *   List<TimeSeries> timeSeries = new ArrayList<>();
+   *   metricServiceClient.createTimeSeries(name, timeSeries);
+   * }
+   * }</pre>
+   *
    * @param name Required. The project on which to execute the request. The format is:
    *     <p>projects/[PROJECT_ID_OR_NUMBER]
    * @param timeSeries Required. The new data to be added to a list of time series. Adds at most one
@@ -793,6 +1373,19 @@ public class MetricServiceClient implements BackgroundResource {
    * the request were written. If any time series could not be written, a corresponding failure
    * message is included in the error response.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   CreateTimeSeriesRequest request =
+   *       CreateTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .addAllTimeSeries(new ArrayList<TimeSeries>())
+   *           .build();
+   *   metricServiceClient.createTimeSeries(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -807,6 +1400,19 @@ public class MetricServiceClient implements BackgroundResource {
    * message is included in the error response.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+   *   CreateTimeSeriesRequest request =
+   *       CreateTimeSeriesRequest.newBuilder()
+   *           .setName(ProjectName.of("[PROJECT]").toString())
+   *           .addAllTimeSeries(new ArrayList<TimeSeries>())
+   *           .build();
+   *   ApiFuture<Empty> future = metricServiceClient.createTimeSeriesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {
     return stub.createTimeSeriesCallable();
