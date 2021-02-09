@@ -40,6 +40,13 @@
  * </ul>
  *
  * <p>Sample for CloudMemcacheClient:
+ *
+ * <pre>{@code
+ * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = cloudMemcacheClient.getInstance(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.memcache.v1beta2;

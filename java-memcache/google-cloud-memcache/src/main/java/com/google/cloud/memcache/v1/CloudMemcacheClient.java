@@ -65,6 +65,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = cloudMemcacheClient.getInstance(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CloudMemcacheClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -179,6 +186,17 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Lists Instances in a given location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Instance element : cloudMemcacheClient.listInstances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -195,6 +213,17 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Lists Instances in a given location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Instance element : cloudMemcacheClient.listInstances(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,6 +237,24 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Lists Instances in a given location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Instance element : cloudMemcacheClient.listInstances(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -220,6 +267,25 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Lists Instances in a given location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Instance> future =
+   *       cloudMemcacheClient.listInstancesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Instance element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
@@ -231,6 +297,23 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Lists Instances in a given location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   while (true) {
+   *     ListInstancesResponse response = cloudMemcacheClient.listInstancesCallable().call(request);
+   *     for (Instance element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return stub.listInstancesCallable();
@@ -239,6 +322,15 @@ public class CloudMemcacheClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   Instance response = cloudMemcacheClient.getInstance(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
@@ -255,6 +347,15 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Gets details of a single Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   Instance response = cloudMemcacheClient.getInstance(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
    *     refers to a GCP region
@@ -269,6 +370,18 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Gets details of a single Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   GetInstanceRequest request =
+   *       GetInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   Instance response = cloudMemcacheClient.getInstance(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -281,6 +394,18 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Gets details of a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   GetInstanceRequest request =
+   *       GetInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Instance> future = cloudMemcacheClient.getInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return stub.getInstanceCallable();
@@ -289,6 +414,18 @@ public class CloudMemcacheClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Instance in a given location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Instance instance = Instance.newBuilder().build();
+   *   String instanceId = "instanceId902024336";
+   *   Instance response =
+   *       cloudMemcacheClient.createInstanceAsync(parent, instance, instanceId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
@@ -320,6 +457,18 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Creates a new Instance in a given location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Instance instance = Instance.newBuilder().build();
+   *   String instanceId = "instanceId902024336";
+   *   Instance response =
+   *       cloudMemcacheClient.createInstanceAsync(parent, instance, instanceId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}` where `location_id` refers to a GCP region
    * @param instance Required. A Memcached Instance
@@ -350,6 +499,20 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Creates a new Instance in a given location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   CreateInstanceRequest request =
+   *       CreateInstanceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setInstanceId("instanceId902024336")
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   Instance response = cloudMemcacheClient.createInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -363,6 +526,21 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Creates a new Instance in a given location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   CreateInstanceRequest request =
+   *       CreateInstanceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setInstanceId("instanceId902024336")
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudMemcacheClient.createInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable() {
@@ -374,6 +552,21 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Creates a new Instance in a given location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   CreateInstanceRequest request =
+   *       CreateInstanceRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setInstanceId("instanceId902024336")
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.createInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return stub.createInstanceCallable();
@@ -382,6 +575,16 @@ public class CloudMemcacheClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an existing Instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   Instance instance = Instance.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Instance response = cloudMemcacheClient.updateInstanceAsync(instance, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param instance Required. A Memcached Instance. Only fields specified in update_mask are
    *     updated.
@@ -399,6 +602,19 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Updates an existing Instance in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   Instance response = cloudMemcacheClient.updateInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -412,6 +628,20 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Updates an existing Instance in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudMemcacheClient.updateInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable() {
@@ -423,6 +653,20 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Updates an existing Instance in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   UpdateInstanceRequest request =
+   *       UpdateInstanceRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.updateInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     return stub.updateInstanceCallable();
@@ -433,6 +677,18 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
    * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
    * Memcached Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MemcacheParameters parameters = MemcacheParameters.newBuilder().build();
+   *   Instance response =
+   *       cloudMemcacheClient.updateParametersAsync(name, updateMask, parameters).get();
+   * }
+   * }</pre>
    *
    * @param name Required. Resource name of the Memcached instance for which the parameters should
    *     be updated.
@@ -457,6 +713,18 @@ public class CloudMemcacheClient implements BackgroundResource {
    * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
    * Memcached Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   MemcacheParameters parameters = MemcacheParameters.newBuilder().build();
+   *   Instance response =
+   *       cloudMemcacheClient.updateParametersAsync(name, updateMask, parameters).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. Resource name of the Memcached instance for which the parameters should
    *     be updated.
    * @param updateMask Required. Mask of fields to update.
@@ -480,6 +748,20 @@ public class CloudMemcacheClient implements BackgroundResource {
    * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
    * Memcached Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   UpdateParametersRequest request =
+   *       UpdateParametersRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setParameters(MemcacheParameters.newBuilder().build())
+   *           .build();
+   *   Instance response = cloudMemcacheClient.updateParametersAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -495,6 +777,21 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Memcached Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   UpdateParametersRequest request =
+   *       UpdateParametersRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setParameters(MemcacheParameters.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudMemcacheClient.updateParametersOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateParametersRequest, Instance, OperationMetadata>
       updateParametersOperationCallable() {
@@ -508,6 +805,21 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Memcached Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   UpdateParametersRequest request =
+   *       UpdateParametersRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setParameters(MemcacheParameters.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.updateParametersCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateParametersRequest, Operation> updateParametersCallable() {
     return stub.updateParametersCallable();
@@ -516,6 +828,15 @@ public class CloudMemcacheClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   cloudMemcacheClient.deleteInstanceAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
@@ -532,6 +853,15 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Deletes a single Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   cloudMemcacheClient.deleteInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
    *     refers to a GCP region
@@ -546,6 +876,18 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * Deletes a single Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   cloudMemcacheClient.deleteInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -559,6 +901,19 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Deletes a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudMemcacheClient.deleteInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
@@ -570,6 +925,19 @@ public class CloudMemcacheClient implements BackgroundResource {
    * Deletes a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.deleteInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
@@ -579,6 +947,17 @@ public class CloudMemcacheClient implements BackgroundResource {
   /**
    * ApplyParameters will restart the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   List<String> nodeIds = new ArrayList<>();
+   *   boolean applyAll = true;
+   *   Instance response = cloudMemcacheClient.applyParametersAsync(name, nodeIds, applyAll).get();
+   * }
+   * }</pre>
    *
    * @param name Required. Resource name of the Memcached instance for which parameter group updates
    *     should be applied.
@@ -604,6 +983,17 @@ public class CloudMemcacheClient implements BackgroundResource {
    * ApplyParameters will restart the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   List<String> nodeIds = new ArrayList<>();
+   *   boolean applyAll = true;
+   *   Instance response = cloudMemcacheClient.applyParametersAsync(name, nodeIds, applyAll).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. Resource name of the Memcached instance for which parameter group updates
    *     should be applied.
    * @param nodeIds Nodes to which we should apply the instance-level parameter group.
@@ -628,6 +1018,20 @@ public class CloudMemcacheClient implements BackgroundResource {
    * ApplyParameters will restart the set of specified nodes in order to update them to the current
    * set of parameters for the Memcached Instance.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ApplyParametersRequest request =
+   *       ApplyParametersRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .addAllNodeIds(new ArrayList<String>())
+   *           .setApplyAll(true)
+   *           .build();
+   *   Instance response = cloudMemcacheClient.applyParametersAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -642,6 +1046,21 @@ public class CloudMemcacheClient implements BackgroundResource {
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ApplyParametersRequest request =
+   *       ApplyParametersRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .addAllNodeIds(new ArrayList<String>())
+   *           .setApplyAll(true)
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudMemcacheClient.applyParametersOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationCallable() {
@@ -654,6 +1073,21 @@ public class CloudMemcacheClient implements BackgroundResource {
    * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ApplyParametersRequest request =
+   *       ApplyParametersRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .addAllNodeIds(new ArrayList<String>())
+   *           .setApplyAll(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.applyParametersCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable() {
     return stub.applyParametersCallable();
