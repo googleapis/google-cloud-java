@@ -30,6 +30,16 @@
  * </ul>
  *
  * <p>Sample for SecretManagerServiceClient:
+ *
+ * <pre>{@code
+ * try (SecretManagerServiceClient secretManagerServiceClient =
+ *     SecretManagerServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   String secretId = "secretId945974251";
+ *   Secret secret = Secret.newBuilder().build();
+ *   Secret response = secretManagerServiceClient.createSecret(parent, secretId, secret);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.secretmanager.v1;

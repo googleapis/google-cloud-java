@@ -56,6 +56,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SecretManagerServiceClient secretManagerServiceClient =
+ *     SecretManagerServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   String secretId = "secretId945974251";
+ *   Secret secret = Secret.newBuilder().build();
+ *   Secret response = secretManagerServiceClient.createSecret(parent, secretId, secret);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SecretManagerServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -162,6 +172,18 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Lists [Secrets][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   for (Secret element : secretManagerServiceClient.listSecrets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the project associated with the
    *     [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -178,6 +200,18 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Lists [Secrets][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   for (Secret element : secretManagerServiceClient.listSecrets(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the project associated with the
    *     [Secrets][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -191,6 +225,23 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Lists [Secrets][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   ListSecretsRequest request =
+   *       ListSecretsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Secret element : secretManagerServiceClient.listSecrets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -203,6 +254,24 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Lists [Secrets][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   ListSecretsRequest request =
+   *       ListSecretsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Secret> future =
+   *       secretManagerServiceClient.listSecretsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Secret element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse>
       listSecretsPagedCallable() {
@@ -214,6 +283,25 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Lists [Secrets][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   while (true) {
+   *     ListSecretsResponse response =
+   *         secretManagerServiceClient.listSecretsCallable().call(request);
+   *     for (Secret element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable() {
     return stub.listSecretsCallable();
@@ -223,6 +311,18 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Creates a new [Secret][google.cloud.secretmanager.v1.Secret] containing no
    * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String secretId = "secretId945974251";
+   *   Secret secret = Secret.newBuilder().build();
+   *   Secret response = secretManagerServiceClient.createSecret(parent, secretId, secret);
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the project to associate with the
    *     [Secret][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
@@ -249,6 +349,18 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Creates a new [Secret][google.cloud.secretmanager.v1.Secret] containing no
    * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String secretId = "secretId945974251";
+   *   Secret secret = Secret.newBuilder().build();
+   *   Secret response = secretManagerServiceClient.createSecret(parent, secretId, secret);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the project to associate with the
    *     [Secret][google.cloud.secretmanager.v1.Secret], in the format `projects/&#42;`.
    * @param secretId Required. This must be unique within the project.
@@ -274,6 +386,21 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Creates a new [Secret][google.cloud.secretmanager.v1.Secret] containing no
    * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   CreateSecretRequest request =
+   *       CreateSecretRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSecretId("secretId945974251")
+   *           .setSecret(Secret.newBuilder().build())
+   *           .build();
+   *   Secret response = secretManagerServiceClient.createSecret(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -287,6 +414,22 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersions][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   CreateSecretRequest request =
+   *       CreateSecretRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setSecretId("secretId945974251")
+   *           .setSecret(Secret.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Secret> future =
+   *       secretManagerServiceClient.createSecretCallable().futureCall(request);
+   *   // Do something.
+   *   Secret response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateSecretRequest, Secret> createSecretCallable() {
     return stub.createSecretCallable();
@@ -296,6 +439,17 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Creates a new [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] containing secret
    * data and attaches it to an existing [Secret][google.cloud.secretmanager.v1.Secret].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+   *   SecretPayload payload = SecretPayload.newBuilder().build();
+   *   SecretVersion response = secretManagerServiceClient.addSecretVersion(parent, payload);
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
    *     to associate with the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
@@ -318,6 +472,17 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Creates a new [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] containing secret
    * data and attaches it to an existing [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String parent = SecretName.of("[PROJECT]", "[SECRET]").toString();
+   *   SecretPayload payload = SecretPayload.newBuilder().build();
+   *   SecretVersion response = secretManagerServiceClient.addSecretVersion(parent, payload);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
    *     to associate with the [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the
    *     format `projects/&#42;/secrets/&#42;`.
@@ -336,6 +501,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Creates a new [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] containing secret
    * data and attaches it to an existing [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   AddSecretVersionRequest request =
+   *       AddSecretVersionRequest.newBuilder()
+   *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPayload(SecretPayload.newBuilder().build())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.addSecretVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -349,6 +528,21 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * data and attaches it to an existing [Secret][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   AddSecretVersionRequest request =
+   *       AddSecretVersionRequest.newBuilder()
+   *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPayload(SecretPayload.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.addSecretVersionCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AddSecretVersionRequest, SecretVersion> addSecretVersionCallable() {
     return stub.addSecretVersionCallable();
@@ -357,6 +551,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets metadata for a given [Secret][google.cloud.secretmanager.v1.Secret].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+   *   Secret response = secretManagerServiceClient.getSecret(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret],
    *     in the format `projects/&#42;/secrets/&#42;`.
@@ -372,6 +576,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets metadata for a given [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretName.of("[PROJECT]", "[SECRET]").toString();
+   *   Secret response = secretManagerServiceClient.getSecret(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret],
    *     in the format `projects/&#42;/secrets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -385,6 +599,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets metadata for a given [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   GetSecretRequest request =
+   *       GetSecretRequest.newBuilder()
+   *           .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   Secret response = secretManagerServiceClient.getSecret(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -397,6 +624,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Gets metadata for a given [Secret][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   GetSecretRequest request =
+   *       GetSecretRequest.newBuilder()
+   *           .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   ApiFuture<Secret> future = secretManagerServiceClient.getSecretCallable().futureCall(request);
+   *   // Do something.
+   *   Secret response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSecretRequest, Secret> getSecretCallable() {
     return stub.getSecretCallable();
@@ -405,6 +645,17 @@ public class SecretManagerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates metadata of an existing [Secret][google.cloud.secretmanager.v1.Secret].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   Secret secret = Secret.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Secret response = secretManagerServiceClient.updateSecret(secret, updateMask);
+   * }
+   * }</pre>
    *
    * @param secret Required. [Secret][google.cloud.secretmanager.v1.Secret] with updated field
    *     values.
@@ -421,6 +672,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Updates metadata of an existing [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   UpdateSecretRequest request =
+   *       UpdateSecretRequest.newBuilder()
+   *           .setSecret(Secret.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Secret response = secretManagerServiceClient.updateSecret(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -433,6 +698,21 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Updates metadata of an existing [Secret][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   UpdateSecretRequest request =
+   *       UpdateSecretRequest.newBuilder()
+   *           .setSecret(Secret.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Secret> future =
+   *       secretManagerServiceClient.updateSecretCallable().futureCall(request);
+   *   // Do something.
+   *   Secret response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateSecretRequest, Secret> updateSecretCallable() {
     return stub.updateSecretCallable();
@@ -441,6 +721,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a [Secret][google.cloud.secretmanager.v1.Secret].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretName name = SecretName.of("[PROJECT]", "[SECRET]");
+   *   secretManagerServiceClient.deleteSecret(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
    *     to delete in the format `projects/&#42;/secrets/&#42;`.
@@ -456,6 +746,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Deletes a [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretName.of("[PROJECT]", "[SECRET]").toString();
+   *   secretManagerServiceClient.deleteSecret(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
    *     to delete in the format `projects/&#42;/secrets/&#42;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -469,6 +769,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Deletes a [Secret][google.cloud.secretmanager.v1.Secret].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   DeleteSecretRequest request =
+   *       DeleteSecretRequest.newBuilder()
+   *           .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   secretManagerServiceClient.deleteSecret(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -481,6 +794,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Deletes a [Secret][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   DeleteSecretRequest request =
+   *       DeleteSecretRequest.newBuilder()
+   *           .setName(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       secretManagerServiceClient.deleteSecretCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteSecretRequest, Empty> deleteSecretCallable() {
     return stub.deleteSecretCallable();
@@ -490,6 +817,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Lists [SecretVersions][google.cloud.secretmanager.v1.SecretVersion]. This call does not return
    * secret data.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretName parent = SecretName.of("[PROJECT]", "[SECRET]");
+   *   for (SecretVersion element :
+   *       secretManagerServiceClient.listSecretVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
    *     associated with the [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] to list,
@@ -509,6 +849,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Lists [SecretVersions][google.cloud.secretmanager.v1.SecretVersion]. This call does not return
    * secret data.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String parent = SecretName.of("[PROJECT]", "[SECRET]").toString();
+   *   for (SecretVersion element :
+   *       secretManagerServiceClient.listSecretVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the [Secret][google.cloud.secretmanager.v1.Secret]
    *     associated with the [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] to list,
    *     in the format `projects/&#42;/secrets/&#42;`.
@@ -525,6 +878,24 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * Lists [SecretVersions][google.cloud.secretmanager.v1.SecretVersion]. This call does not return
    * secret data.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   ListSecretVersionsRequest request =
+   *       ListSecretVersionsRequest.newBuilder()
+   *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SecretVersion element :
+   *       secretManagerServiceClient.listSecretVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -539,6 +910,24 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * secret data.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   ListSecretVersionsRequest request =
+   *       ListSecretVersionsRequest.newBuilder()
+   *           .setParent(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.listSecretVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SecretVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsPagedResponse>
       listSecretVersionsPagedCallable() {
@@ -551,6 +940,25 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * secret data.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   while (true) {
+   *     ListSecretVersionsResponse response =
+   *         secretManagerServiceClient.listSecretVersionsCallable().call(request);
+   *     for (SecretVersion element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsResponse>
       listSecretVersionsCallable() {
@@ -563,6 +971,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *
    * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+   *   SecretVersion response = secretManagerServiceClient.getSecretVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
@@ -584,6 +1002,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
+   *   SecretVersion response = secretManagerServiceClient.getSecretVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
@@ -603,6 +1031,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   GetSecretVersionRequest request =
+   *       GetSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.getSecretVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -618,6 +1059,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   GetSecretVersionRequest request =
+   *       GetSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.getSecretVersionCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSecretVersionRequest, SecretVersion> getSecretVersionCallable() {
     return stub.getSecretVersionCallable();
@@ -630,6 +1085,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *
    * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+   *   AccessSecretVersionResponse response = secretManagerServiceClient.accessSecretVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
@@ -652,6 +1117,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
+   *   AccessSecretVersionResponse response = secretManagerServiceClient.accessSecretVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
@@ -671,6 +1146,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>`projects/&#42;/secrets/&#42;/versions/latest` is an alias to the `latest`
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   AccessSecretVersionRequest request =
+   *       AccessSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   AccessSecretVersionResponse response =
+   *       secretManagerServiceClient.accessSecretVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -687,6 +1176,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   AccessSecretVersionRequest request =
+   *       AccessSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   ApiFuture<AccessSecretVersionResponse> future =
+   *       secretManagerServiceClient.accessSecretVersionCallable().futureCall(request);
+   *   // Do something.
+   *   AccessSecretVersionResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AccessSecretVersionRequest, AccessSecretVersionResponse>
       accessSecretVersionCallable() {
@@ -700,6 +1203,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sets the [state][google.cloud.secretmanager.v1.SecretVersion.state] of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [DISABLED][google.cloud.secretmanager.v1.SecretVersion.State.DISABLED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+   *   SecretVersion response = secretManagerServiceClient.disableSecretVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to disable in the format
@@ -722,6 +1235,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [DISABLED][google.cloud.secretmanager.v1.SecretVersion.State.DISABLED].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
+   *   SecretVersion response = secretManagerServiceClient.disableSecretVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to disable in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
@@ -741,6 +1264,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [DISABLED][google.cloud.secretmanager.v1.SecretVersion.State.DISABLED].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   DisableSecretVersionRequest request =
+   *       DisableSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.disableSecretVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -757,6 +1293,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [DISABLED][google.cloud.secretmanager.v1.SecretVersion.State.DISABLED].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   DisableSecretVersionRequest request =
+   *       DisableSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.disableSecretVersionCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DisableSecretVersionRequest, SecretVersion>
       disableSecretVersionCallable() {
@@ -770,6 +1320,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Sets the [state][google.cloud.secretmanager.v1.SecretVersion.state] of the
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+   *   SecretVersion response = secretManagerServiceClient.enableSecretVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
@@ -792,6 +1352,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
+   *   SecretVersion response = secretManagerServiceClient.enableSecretVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to enable in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
@@ -811,6 +1381,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   EnableSecretVersionRequest request =
+   *       EnableSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.enableSecretVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -827,6 +1410,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [ENABLED][google.cloud.secretmanager.v1.SecretVersion.State.ENABLED].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   EnableSecretVersionRequest request =
+   *       EnableSecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.enableSecretVersionCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<EnableSecretVersionRequest, SecretVersion>
       enableSecretVersionCallable() {
@@ -841,6 +1438,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED] and irrevocably
    * destroys the secret data.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SecretVersionName name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]");
+   *   SecretVersion response = secretManagerServiceClient.destroySecretVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to destroy in the format
@@ -864,6 +1471,16 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED] and irrevocably
    * destroys the secret data.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   String name = SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString();
+   *   SecretVersion response = secretManagerServiceClient.destroySecretVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the
    *     [SecretVersion][google.cloud.secretmanager.v1.SecretVersion] to destroy in the format
    *     `projects/&#42;/secrets/&#42;/versions/&#42;`.
@@ -884,6 +1501,19 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * [DESTROYED][google.cloud.secretmanager.v1.SecretVersion.State.DESTROYED] and irrevocably
    * destroys the secret data.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   DestroySecretVersionRequest request =
+   *       DestroySecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   SecretVersion response = secretManagerServiceClient.destroySecretVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -901,6 +1531,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * destroys the secret data.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   DestroySecretVersionRequest request =
+   *       DestroySecretVersionRequest.newBuilder()
+   *           .setName(SecretVersionName.of("[PROJECT]", "[SECRET]", "[SECRET_VERSION]").toString())
+   *           .build();
+   *   ApiFuture<SecretVersion> future =
+   *       secretManagerServiceClient.destroySecretVersionCallable().futureCall(request);
+   *   // Do something.
+   *   SecretVersion response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DestroySecretVersionRequest, SecretVersion>
       destroySecretVersionCallable() {
@@ -913,6 +1557,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    *
    * <p>Permissions on [SecretVersions][google.cloud.secretmanager.v1.SecretVersion] are enforced
    * according to the policy set on the associated [Secret][google.cloud.secretmanager.v1.Secret].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = secretManagerServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -929,6 +1587,21 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * according to the policy set on the associated [Secret][google.cloud.secretmanager.v1.Secret].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       secretManagerServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -938,6 +1611,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
   /**
    * Gets the access control policy for a secret. Returns empty policy if the secret exists and does
    * not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = secretManagerServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -952,6 +1639,21 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * not have a policy set.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       secretManagerServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -965,6 +1667,20 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = secretManagerServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -983,6 +1699,21 @@ public class SecretManagerServiceClient implements BackgroundResource {
    * warning.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecretManagerServiceClient secretManagerServiceClient =
+   *     SecretManagerServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(SecretName.of("[PROJECT]", "[SECRET]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       secretManagerServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {

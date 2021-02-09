@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-secretmanager.git",
-        "sha": "5822b254a545c0316241b7142fa551ff266daa0b"
+        "sha": "77ecec01eb733b0b1871591dade7743d9f35bb29"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "9ecdacc9a00e1dd443b11bf10215d6e7648db8a7",
-        "internalRef": "352563582"
+        "sha": "8d8c008e56f1af31d57f75561e0f1848ffb29eeb",
+        "internalRef": "356341083"
       }
     },
     {
