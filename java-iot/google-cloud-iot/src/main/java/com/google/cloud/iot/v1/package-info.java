@@ -23,6 +23,14 @@
  * devices.
  *
  * <p>Sample for DeviceManagerClient:
+ *
+ * <pre>{@code
+ * try (DeviceManagerClient deviceManagerClient = DeviceManagerClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   DeviceRegistry deviceRegistry = DeviceRegistry.newBuilder().build();
+ *   DeviceRegistry response = deviceManagerClient.createDeviceRegistry(parent, deviceRegistry);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.iot.v1;
