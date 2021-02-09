@@ -23,6 +23,17 @@
  * and rules to execute as we track spend against that plan.
  *
  * <p>Sample for BudgetServiceClient:
+ *
+ * <pre>{@code
+ * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+ *   CreateBudgetRequest request =
+ *       CreateBudgetRequest.newBuilder()
+ *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+ *           .setBudget(Budget.newBuilder().build())
+ *           .build();
+ *   Budget response = budgetServiceClient.createBudget(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.billing.budgets.v1beta1;

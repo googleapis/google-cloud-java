@@ -43,6 +43,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+ *   CreateBudgetRequest request =
+ *       CreateBudgetRequest.newBuilder()
+ *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+ *           .setBudget(Budget.newBuilder().build())
+ *           .build();
+ *   Budget response = budgetServiceClient.createBudget(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the BudgetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -148,6 +159,19 @@ public class BudgetServiceClient implements BackgroundResource {
    * Creates a new budget. See &lt;a href="https://cloud.google.com/billing/quotas"&gt;Quotas and
    * limits&lt;/a&gt; for more information on the limits of the number of budgets you can create.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   CreateBudgetRequest request =
+   *       CreateBudgetRequest.newBuilder()
+   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setBudget(Budget.newBuilder().build())
+   *           .build();
+   *   Budget response = budgetServiceClient.createBudget(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -161,6 +185,19 @@ public class BudgetServiceClient implements BackgroundResource {
    * limits&lt;/a&gt; for more information on the limits of the number of budgets you can create.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   CreateBudgetRequest request =
+   *       CreateBudgetRequest.newBuilder()
+   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setBudget(Budget.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Budget> future = budgetServiceClient.createBudgetCallable().futureCall(request);
+   *   // Do something.
+   *   Budget response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable() {
     return stub.createBudgetCallable();
@@ -172,6 +209,19 @@ public class BudgetServiceClient implements BackgroundResource {
    *
    * <p>WARNING: There are some fields exposed on the Google Cloud Console that aren't available on
    * this API. Budget fields that are not exposed in this API will not be changed by this method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   UpdateBudgetRequest request =
+   *       UpdateBudgetRequest.newBuilder()
+   *           .setBudget(Budget.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Budget response = budgetServiceClient.updateBudget(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -188,6 +238,19 @@ public class BudgetServiceClient implements BackgroundResource {
    * this API. Budget fields that are not exposed in this API will not be changed by this method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   UpdateBudgetRequest request =
+   *       UpdateBudgetRequest.newBuilder()
+   *           .setBudget(Budget.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Budget> future = budgetServiceClient.updateBudgetCallable().futureCall(request);
+   *   // Do something.
+   *   Budget response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateBudgetRequest, Budget> updateBudgetCallable() {
     return stub.updateBudgetCallable();
@@ -200,6 +263,18 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>WARNING: There are some fields exposed on the Google Cloud Console that aren't available on
    * this API. When reading from the API, you will not see these fields in the return value, though
    * they may have been set in the Cloud Console.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   GetBudgetRequest request =
+   *       GetBudgetRequest.newBuilder()
+   *           .setName(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .build();
+   *   Budget response = budgetServiceClient.getBudget(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -217,6 +292,18 @@ public class BudgetServiceClient implements BackgroundResource {
    * they may have been set in the Cloud Console.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   GetBudgetRequest request =
+   *       GetBudgetRequest.newBuilder()
+   *           .setName(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .build();
+   *   ApiFuture<Budget> future = budgetServiceClient.getBudgetCallable().futureCall(request);
+   *   // Do something.
+   *   Budget response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBudgetRequest, Budget> getBudgetCallable() {
     return stub.getBudgetCallable();
@@ -229,6 +316,22 @@ public class BudgetServiceClient implements BackgroundResource {
    * <p>WARNING: There are some fields exposed on the Google Cloud Console that aren't available on
    * this API. When reading from the API, you will not see these fields in the return value, though
    * they may have been set in the Cloud Console.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   ListBudgetsRequest request =
+   *       ListBudgetsRequest.newBuilder()
+   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Budget element : budgetServiceClient.listBudgets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -246,6 +349,22 @@ public class BudgetServiceClient implements BackgroundResource {
    * they may have been set in the Cloud Console.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   ListBudgetsRequest request =
+   *       ListBudgetsRequest.newBuilder()
+   *           .setParent(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Budget> future = budgetServiceClient.listBudgetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Budget element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBudgetsRequest, ListBudgetsPagedResponse>
       listBudgetsPagedCallable() {
@@ -261,6 +380,23 @@ public class BudgetServiceClient implements BackgroundResource {
    * they may have been set in the Cloud Console.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   while (true) {
+   *     ListBudgetsResponse response = budgetServiceClient.listBudgetsCallable().call(request);
+   *     for (Budget element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBudgetsRequest, ListBudgetsResponse> listBudgetsCallable() {
     return stub.listBudgetsCallable();
@@ -269,6 +405,18 @@ public class BudgetServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a budget. Returns successfully if already deleted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   DeleteBudgetRequest request =
+   *       DeleteBudgetRequest.newBuilder()
+   *           .setName(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .build();
+   *   budgetServiceClient.deleteBudget(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -282,6 +430,18 @@ public class BudgetServiceClient implements BackgroundResource {
    * Deletes a budget. Returns successfully if already deleted.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BudgetServiceClient budgetServiceClient = BudgetServiceClient.create()) {
+   *   DeleteBudgetRequest request =
+   *       DeleteBudgetRequest.newBuilder()
+   *           .setName(BudgetName.of("[BILLING_ACCOUNT]", "[BUDGET]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = budgetServiceClient.deleteBudgetCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteBudgetRequest, Empty> deleteBudgetCallable() {
     return stub.deleteBudgetCallable();
