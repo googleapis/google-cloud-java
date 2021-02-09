@@ -50,6 +50,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+ *   CreateDashboardRequest request =
+ *       CreateDashboardRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setDashboard(Dashboard.newBuilder().build())
+ *           .build();
+ *   Dashboard response = dashboardsServiceClient.createDashboard(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DashboardsServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -159,6 +170,19 @@ public class DashboardsServiceClient implements BackgroundResource {
    * <p>This method requires the `monitoring.dashboards.create` permission on the specified project.
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   CreateDashboardRequest request =
+   *       CreateDashboardRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDashboard(Dashboard.newBuilder().build())
+   *           .build();
+   *   Dashboard response = dashboardsServiceClient.createDashboard(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -174,6 +198,20 @@ public class DashboardsServiceClient implements BackgroundResource {
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   CreateDashboardRequest request =
+   *       CreateDashboardRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDashboard(Dashboard.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Dashboard> future =
+   *       dashboardsServiceClient.createDashboardCallable().futureCall(request);
+   *   // Do something.
+   *   Dashboard response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateDashboardRequest, Dashboard> createDashboardCallable() {
     return stub.createDashboardCallable();
@@ -185,6 +223,22 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <p>This method requires the `monitoring.dashboards.list` permission on the specified project.
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   ListDashboardsRequest request =
+   *       ListDashboardsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Dashboard element : dashboardsServiceClient.listDashboards(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -201,6 +255,23 @@ public class DashboardsServiceClient implements BackgroundResource {
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   ListDashboardsRequest request =
+   *       ListDashboardsRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Dashboard> future =
+   *       dashboardsServiceClient.listDashboardsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Dashboard element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDashboardsRequest, ListDashboardsPagedResponse>
       listDashboardsPagedCallable() {
@@ -215,6 +286,24 @@ public class DashboardsServiceClient implements BackgroundResource {
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   while (true) {
+   *     ListDashboardsResponse response =
+   *         dashboardsServiceClient.listDashboardsCallable().call(request);
+   *     for (Dashboard element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDashboardsRequest, ListDashboardsResponse>
       listDashboardsCallable() {
@@ -227,6 +316,18 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <p>This method requires the `monitoring.dashboards.get` permission on the specified dashboard.
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   GetDashboardRequest request =
+   *       GetDashboardRequest.newBuilder()
+   *           .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+   *           .build();
+   *   Dashboard response = dashboardsServiceClient.getDashboard(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -243,6 +344,19 @@ public class DashboardsServiceClient implements BackgroundResource {
    * For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   GetDashboardRequest request =
+   *       GetDashboardRequest.newBuilder()
+   *           .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+   *           .build();
+   *   ApiFuture<Dashboard> future =
+   *       dashboardsServiceClient.getDashboardCallable().futureCall(request);
+   *   // Do something.
+   *   Dashboard response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDashboardRequest, Dashboard> getDashboardCallable() {
     return stub.getDashboardCallable();
@@ -254,6 +368,18 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <p>This method requires the `monitoring.dashboards.delete` permission on the specified
    * dashboard. For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   DeleteDashboardRequest request =
+   *       DeleteDashboardRequest.newBuilder()
+   *           .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+   *           .build();
+   *   dashboardsServiceClient.deleteDashboard(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -270,6 +396,19 @@ public class DashboardsServiceClient implements BackgroundResource {
    * dashboard. For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   DeleteDashboardRequest request =
+   *       DeleteDashboardRequest.newBuilder()
+   *           .setName(DashboardName.of("[PROJECT]", "[DASHBOARD]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       dashboardsServiceClient.deleteDashboardCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteDashboardRequest, Empty> deleteDashboardCallable() {
     return stub.deleteDashboardCallable();
@@ -281,6 +420,16 @@ public class DashboardsServiceClient implements BackgroundResource {
    *
    * <p>This method requires the `monitoring.dashboards.update` permission on the specified
    * dashboard. For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   UpdateDashboardRequest request =
+   *       UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
+   *   Dashboard response = dashboardsServiceClient.updateDashboard(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -297,6 +446,17 @@ public class DashboardsServiceClient implements BackgroundResource {
    * dashboard. For more information, see [Google Cloud IAM](https://cloud.google.com/iam).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+   *   UpdateDashboardRequest request =
+   *       UpdateDashboardRequest.newBuilder().setDashboard(Dashboard.newBuilder().build()).build();
+   *   ApiFuture<Dashboard> future =
+   *       dashboardsServiceClient.updateDashboardCallable().futureCall(request);
+   *   // Do something.
+   *   Dashboard response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateDashboardRequest, Dashboard> updateDashboardCallable() {
     return stub.updateDashboardCallable();

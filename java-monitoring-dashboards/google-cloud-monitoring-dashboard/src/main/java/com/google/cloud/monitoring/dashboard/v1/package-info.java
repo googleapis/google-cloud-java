@@ -23,6 +23,17 @@
  * display widgets in a specific layout.
  *
  * <p>Sample for DashboardsServiceClient:
+ *
+ * <pre>{@code
+ * try (DashboardsServiceClient dashboardsServiceClient = DashboardsServiceClient.create()) {
+ *   CreateDashboardRequest request =
+ *       CreateDashboardRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setDashboard(Dashboard.newBuilder().build())
+ *           .build();
+ *   Dashboard response = dashboardsServiceClient.createDashboard(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.monitoring.dashboard.v1;
