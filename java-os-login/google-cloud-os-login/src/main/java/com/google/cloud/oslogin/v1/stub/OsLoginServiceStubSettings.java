@@ -82,7 +82,6 @@ import org.threeten.bp.Duration;
  * OsLoginServiceStubSettings osLoginServiceSettings = osLoginServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class OsLoginServiceStubSettings extends StubSettings<OsLoginServiceStubSettings> {
   /** The default scopes of the service. */
