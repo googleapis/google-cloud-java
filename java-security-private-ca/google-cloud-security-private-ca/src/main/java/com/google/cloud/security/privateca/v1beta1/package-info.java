@@ -24,6 +24,18 @@
  * certificate authorities and issued certificates.
  *
  * <p>Sample for CertificateAuthorityServiceClient:
+ *
+ * <pre>{@code
+ * try (CertificateAuthorityServiceClient certificateAuthorityServiceClient =
+ *     CertificateAuthorityServiceClient.create()) {
+ *   CertificateAuthorityName parent =
+ *       CertificateAuthorityName.of("[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]");
+ *   Certificate certificate = Certificate.newBuilder().build();
+ *   String certificateId = "certificateId-644529902";
+ *   Certificate response =
+ *       certificateAuthorityServiceClient.createCertificate(parent, certificate, certificateId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.security.privateca.v1beta1;
