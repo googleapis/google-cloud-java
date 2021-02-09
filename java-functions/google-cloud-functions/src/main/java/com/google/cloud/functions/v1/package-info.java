@@ -22,6 +22,14 @@
  * <p>Service Description: A service that application uses to manipulate triggers and functions.
  *
  * <p>Sample for CloudFunctionsServiceClient:
+ *
+ * <pre>{@code
+ * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+ *     CloudFunctionsServiceClient.create()) {
+ *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+ *   CloudFunction response = cloudFunctionsServiceClient.getFunction(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.functions.v1;

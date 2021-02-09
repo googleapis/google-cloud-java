@@ -51,6 +51,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+ *     CloudFunctionsServiceClient.create()) {
+ *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+ *   CloudFunction response = cloudFunctionsServiceClient.getFunction(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CloudFunctionsServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -168,6 +176,24 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Returns a list of functions that belong to the requested project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   ListFunctionsRequest request =
+   *       ListFunctionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (CloudFunction element :
+   *       cloudFunctionsServiceClient.listFunctions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +206,24 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Returns a list of functions that belong to the requested project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   ListFunctionsRequest request =
+   *       ListFunctionsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<CloudFunction> future =
+   *       cloudFunctionsServiceClient.listFunctionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CloudFunction element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListFunctionsRequest, ListFunctionsPagedResponse>
       listFunctionsPagedCallable() {
@@ -191,6 +235,25 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Returns a list of functions that belong to the requested project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   while (true) {
+   *     ListFunctionsResponse response =
+   *         cloudFunctionsServiceClient.listFunctionsCallable().call(request);
+   *     for (CloudFunction element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListFunctionsRequest, ListFunctionsResponse> listFunctionsCallable() {
     return stub.listFunctionsCallable();
@@ -199,6 +262,16 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a function with the given name from the requested project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   CloudFunction response = cloudFunctionsServiceClient.getFunction(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the function which details should be obtained.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -213,6 +286,16 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Returns a function with the given name from the requested project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   String name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString();
+   *   CloudFunction response = cloudFunctionsServiceClient.getFunction(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the function which details should be obtained.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -224,6 +307,19 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns a function with the given name from the requested project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GetFunctionRequest request =
+   *       GetFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .build();
+   *   CloudFunction response = cloudFunctionsServiceClient.getFunction(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -237,6 +333,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Returns a function with the given name from the requested project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GetFunctionRequest request =
+   *       GetFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .build();
+   *   ApiFuture<CloudFunction> future =
+   *       cloudFunctionsServiceClient.getFunctionCallable().futureCall(request);
+   *   // Do something.
+   *   CloudFunction response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetFunctionRequest, CloudFunction> getFunctionCallable() {
     return stub.getFunctionCallable();
@@ -246,6 +356,18 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Creates a new function. If a function with the given name already exists in the specified
    * project, the long running operation will return `ALREADY_EXISTS` error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   LocationName location = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   CloudFunction function = CloudFunction.newBuilder().build();
+   *   CloudFunction response =
+   *       cloudFunctionsServiceClient.createFunctionAsync(location, function).get();
+   * }
+   * }</pre>
    *
    * @param location Required. The project and location in which the function should be created,
    *     specified in the format `projects/&#42;/locations/&#42;`
@@ -267,6 +389,18 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Creates a new function. If a function with the given name already exists in the specified
    * project, the long running operation will return `ALREADY_EXISTS` error.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   String location = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   CloudFunction function = CloudFunction.newBuilder().build();
+   *   CloudFunction response =
+   *       cloudFunctionsServiceClient.createFunctionAsync(location, function).get();
+   * }
+   * }</pre>
+   *
    * @param location Required. The project and location in which the function should be created,
    *     specified in the format `projects/&#42;/locations/&#42;`
    * @param function Required. Function to be created.
@@ -284,6 +418,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Creates a new function. If a function with the given name already exists in the specified
    * project, the long running operation will return `ALREADY_EXISTS` error.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CreateFunctionRequest request =
+   *       CreateFunctionRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFunction(CloudFunction.newBuilder().build())
+   *           .build();
+   *   CloudFunction response = cloudFunctionsServiceClient.createFunctionAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,6 +446,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CreateFunctionRequest request =
+   *       CreateFunctionRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFunction(CloudFunction.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CloudFunction, OperationMetadataV1> future =
+   *       cloudFunctionsServiceClient.createFunctionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CloudFunction response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateFunctionRequest, CloudFunction, OperationMetadataV1>
       createFunctionOperationCallable() {
@@ -310,6 +473,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * project, the long running operation will return `ALREADY_EXISTS` error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CreateFunctionRequest request =
+   *       CreateFunctionRequest.newBuilder()
+   *           .setLocation(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setFunction(CloudFunction.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFunctionsServiceClient.createFunctionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateFunctionRequest, Operation> createFunctionCallable() {
     return stub.createFunctionCallable();
@@ -318,6 +496,16 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates existing function.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CloudFunction function = CloudFunction.newBuilder().build();
+   *   CloudFunction response = cloudFunctionsServiceClient.updateFunctionAsync(function).get();
+   * }
+   * }</pre>
    *
    * @param function Required. New version of the function.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -333,6 +521,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Updates existing function.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   UpdateFunctionRequest request =
+   *       UpdateFunctionRequest.newBuilder()
+   *           .setFunction(CloudFunction.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CloudFunction response = cloudFunctionsServiceClient.updateFunctionAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -346,6 +548,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Updates existing function.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   UpdateFunctionRequest request =
+   *       UpdateFunctionRequest.newBuilder()
+   *           .setFunction(CloudFunction.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<CloudFunction, OperationMetadataV1> future =
+   *       cloudFunctionsServiceClient.updateFunctionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   CloudFunction response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateFunctionRequest, CloudFunction, OperationMetadataV1>
       updateFunctionOperationCallable() {
@@ -357,6 +574,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Updates existing function.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   UpdateFunctionRequest request =
+   *       UpdateFunctionRequest.newBuilder()
+   *           .setFunction(CloudFunction.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFunctionsServiceClient.updateFunctionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateFunctionRequest, Operation> updateFunctionCallable() {
     return stub.updateFunctionCallable();
@@ -366,6 +598,16 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Deletes a function with the given name from the specified project. If the given function is
    * used by some trigger, the trigger will be updated to remove this function.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   cloudFunctionsServiceClient.deleteFunctionAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the function which should be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -382,6 +624,16 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Deletes a function with the given name from the specified project. If the given function is
    * used by some trigger, the trigger will be updated to remove this function.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   String name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString();
+   *   cloudFunctionsServiceClient.deleteFunctionAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the function which should be deleted.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -394,6 +646,19 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Deletes a function with the given name from the specified project. If the given function is
    * used by some trigger, the trigger will be updated to remove this function.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   DeleteFunctionRequest request =
+   *       DeleteFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .build();
+   *   cloudFunctionsServiceClient.deleteFunctionAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -409,6 +674,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   DeleteFunctionRequest request =
+   *       DeleteFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadataV1> future =
+   *       cloudFunctionsServiceClient.deleteFunctionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteFunctionRequest, Empty, OperationMetadataV1>
       deleteFunctionOperationCallable() {
@@ -421,6 +700,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * used by some trigger, the trigger will be updated to remove this function.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   DeleteFunctionRequest request =
+   *       DeleteFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudFunctionsServiceClient.deleteFunctionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteFunctionRequest, Operation> deleteFunctionCallable() {
     return stub.deleteFunctionCallable();
@@ -431,6 +724,17 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Synchronously invokes a deployed Cloud Function. To be used for testing purposes as very
    * limited traffic is allowed. For more information on the actual limits, refer to [Rate
    * Limits](https://cloud.google.com/functions/quotas#rate_limits).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CloudFunctionName name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]");
+   *   String data = "data3076010";
+   *   CallFunctionResponse response = cloudFunctionsServiceClient.callFunction(name, data);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the function to be called.
    * @param data Required. Input to be passed to the function.
@@ -451,6 +755,17 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * limited traffic is allowed. For more information on the actual limits, refer to [Rate
    * Limits](https://cloud.google.com/functions/quotas#rate_limits).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   String name = CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString();
+   *   String data = "data3076010";
+   *   CallFunctionResponse response = cloudFunctionsServiceClient.callFunction(name, data);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the function to be called.
    * @param data Required. Input to be passed to the function.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -467,6 +782,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * limited traffic is allowed. For more information on the actual limits, refer to [Rate
    * Limits](https://cloud.google.com/functions/quotas#rate_limits).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CallFunctionRequest request =
+   *       CallFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setData("data3076010")
+   *           .build();
+   *   CallFunctionResponse response = cloudFunctionsServiceClient.callFunction(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -481,6 +810,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Limits](https://cloud.google.com/functions/quotas#rate_limits).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   CallFunctionRequest request =
+   *       CallFunctionRequest.newBuilder()
+   *           .setName(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setData("data3076010")
+   *           .build();
+   *   ApiFuture<CallFunctionResponse> future =
+   *       cloudFunctionsServiceClient.callFunctionCallable().futureCall(request);
+   *   // Do something.
+   *   CallFunctionResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CallFunctionRequest, CallFunctionResponse> callFunctionCallable() {
     return stub.callFunctionCallable();
@@ -516,6 +860,17 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * <ul>
    *   <li>`Authorization: Bearer YOUR_TOKEN`
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GenerateUploadUrlRequest request =
+   *       GenerateUploadUrlRequest.newBuilder().setParent("parent-995424086").build();
+   *   GenerateUploadUrlResponse response = cloudFunctionsServiceClient.generateUploadUrl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -556,6 +911,18 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GenerateUploadUrlRequest request =
+   *       GenerateUploadUrlRequest.newBuilder().setParent("parent-995424086").build();
+   *   ApiFuture<GenerateUploadUrlResponse> future =
+   *       cloudFunctionsServiceClient.generateUploadUrlCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateUploadUrlResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
       generateUploadUrlCallable() {
@@ -567,6 +934,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Returns a signed URL for downloading deployed function source code. The URL is only valid for a
    * limited period and should be used within minutes after generation. For more information about
    * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GenerateDownloadUrlRequest request =
+   *       GenerateDownloadUrlRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersionId(-670497310)
+   *           .build();
+   *   GenerateDownloadUrlResponse response =
+   *       cloudFunctionsServiceClient.generateDownloadUrl(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -582,6 +964,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * the signed URL usage see: https://cloud.google.com/storage/docs/access-control/signed-urls
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GenerateDownloadUrlRequest request =
+   *       GenerateDownloadUrlRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVersionId(-670497310)
+   *           .build();
+   *   ApiFuture<GenerateDownloadUrlResponse> future =
+   *       cloudFunctionsServiceClient.generateDownloadUrlCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateDownloadUrlResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
       generateDownloadUrlCallable() {
@@ -591,6 +988,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the IAM access control policy on the specified function. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = cloudFunctionsServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -604,6 +1015,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * Sets the IAM access control policy on the specified function. Replaces any existing policy.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       cloudFunctionsServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -613,6 +1039,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Gets the IAM access control policy for a function. Returns an empty policy if the function
    * exists and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = cloudFunctionsServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -627,6 +1067,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * exists and does not have a policy set.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future =
+   *       cloudFunctionsServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -636,6 +1091,20 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
   /**
    * Tests the specified permissions against the IAM access control policy for a function. If the
    * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = cloudFunctionsServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -650,6 +1119,21 @@ public class CloudFunctionsServiceClient implements BackgroundResource {
    * function does not exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudFunctionsServiceClient cloudFunctionsServiceClient =
+   *     CloudFunctionsServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(CloudFunctionName.of("[PROJECT]", "[LOCATION]", "[FUNCTION]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       cloudFunctionsServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
