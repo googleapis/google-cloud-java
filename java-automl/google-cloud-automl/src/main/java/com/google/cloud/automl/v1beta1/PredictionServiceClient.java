@@ -40,6 +40,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+ *   ExamplePayload payload = ExamplePayload.newBuilder().build();
+ *   Map<String, String> params = new HashMap<>();
+ *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -175,6 +184,17 @@ public class PredictionServiceClient implements BackgroundResource {
    *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
+   *   Map<String, String> params = new HashMap<>();
+   *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
    *     type that the model was trained to solve.
@@ -231,6 +251,17 @@ public class PredictionServiceClient implements BackgroundResource {
    *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   ExamplePayload payload = ExamplePayload.newBuilder().build();
+   *   Map<String, String> params = new HashMap<>();
+   *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the model requested to serve the prediction.
    * @param payload Required. Payload to perform a prediction on. The payload must match the problem
    *     type that the model was trained to solve.
@@ -283,6 +314,20 @@ public class PredictionServiceClient implements BackgroundResource {
    *   <li>Text Sentiment - TextSnippet, content up 500 characters, UTF-8 encoded.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPayload(ExamplePayload.newBuilder().build())
+   *           .putAllParams(new HashMap<String, String>())
+   *           .build();
+   *   PredictResponse response = predictionServiceClient.predict(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -312,6 +357,21 @@ public class PredictionServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setPayload(ExamplePayload.newBuilder().build())
+   *           .putAllParams(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<PredictResponse> future =
+   *       predictionServiceClient.predictCallable().futureCall(request);
+   *   // Do something.
+   *   PredictResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();
@@ -334,6 +394,19 @@ public class PredictionServiceClient implements BackgroundResource {
    *   <li>Video Object Tracking &#42; Text Extraction
    *   <li>Tables
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map<String, String> params = new HashMap<>();
+   *   BatchPredictResult response =
+   *       predictionServiceClient.batchPredictAsync(name, inputConfig, outputConfig, params).get();
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
@@ -432,6 +505,19 @@ public class PredictionServiceClient implements BackgroundResource {
    *   <li>Tables
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString();
+   *   BatchPredictInputConfig inputConfig = BatchPredictInputConfig.newBuilder().build();
+   *   BatchPredictOutputConfig outputConfig = BatchPredictOutputConfig.newBuilder().build();
+   *   Map<String, String> params = new HashMap<>();
+   *   BatchPredictResult response =
+   *       predictionServiceClient.batchPredictAsync(name, inputConfig, outputConfig, params).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the model requested to serve the batch prediction.
    * @param inputConfig Required. The input configuration for batch prediction.
    * @param outputConfig Required. The Configuration specifying where output predictions should be
@@ -529,6 +615,21 @@ public class PredictionServiceClient implements BackgroundResource {
    *   <li>Tables
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BatchPredictRequest request =
+   *       BatchPredictRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setInputConfig(BatchPredictInputConfig.newBuilder().build())
+   *           .setOutputConfig(BatchPredictOutputConfig.newBuilder().build())
+   *           .putAllParams(new HashMap<String, String>())
+   *           .build();
+   *   BatchPredictResult response = predictionServiceClient.batchPredictAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -556,6 +657,22 @@ public class PredictionServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BatchPredictRequest request =
+   *       BatchPredictRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setInputConfig(BatchPredictInputConfig.newBuilder().build())
+   *           .setOutputConfig(BatchPredictOutputConfig.newBuilder().build())
+   *           .putAllParams(new HashMap<String, String>())
+   *           .build();
+   *   OperationFuture<BatchPredictResult, OperationMetadata> future =
+   *       predictionServiceClient.batchPredictOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchPredictResult response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationCallable() {
@@ -581,6 +698,22 @@ public class PredictionServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   BatchPredictRequest request =
+   *       BatchPredictRequest.newBuilder()
+   *           .setName(ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]").toString())
+   *           .setInputConfig(BatchPredictInputConfig.newBuilder().build())
+   *           .setOutputConfig(BatchPredictOutputConfig.newBuilder().build())
+   *           .putAllParams(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       predictionServiceClient.batchPredictCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
     return stub.batchPredictCallable();

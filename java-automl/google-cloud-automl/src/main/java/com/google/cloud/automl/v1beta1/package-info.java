@@ -26,6 +26,15 @@
  *
  * <p>Sample for PredictionServiceClient:
  *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+ *   ExamplePayload payload = ExamplePayload.newBuilder().build();
+ *   Map<String, String> params = new HashMap<>();
+ *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
+ * }
+ * }</pre>
+ *
  * <p>======================= AutoMlClient =======================
  *
  * <p>Service Description: AutoML Server API.
@@ -43,6 +52,14 @@
  * either of those cases is accepted.
  *
  * <p>Sample for AutoMlClient:
+ *
+ * <pre>{@code
+ * try (AutoMlClient autoMlClient = AutoMlClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Dataset dataset = Dataset.newBuilder().build();
+ *   Dataset response = autoMlClient.createDataset(parent, dataset);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.automl.v1beta1;
