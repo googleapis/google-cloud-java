@@ -32,6 +32,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+ *   String languageCode = "languageCode-2092349083";
+ *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the TextToSpeechClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -135,6 +142,15 @@ public class TextToSpeechClient implements BackgroundResource {
   /**
    * Returns a list of Voice supported for synthesis.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   String languageCode = "languageCode-2092349083";
+   *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
+   * }
+   * }</pre>
+   *
    * @param languageCode Optional. Recommended.
    *     [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. If specified, the
    *     ListVoices call will only return voices that can be used to synthesize this language_code.
@@ -154,6 +170,16 @@ public class TextToSpeechClient implements BackgroundResource {
   /**
    * Returns a list of Voice supported for synthesis.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   ListVoicesRequest request =
+   *       ListVoicesRequest.newBuilder().setLanguageCode("languageCode-2092349083").build();
+   *   ListVoicesResponse response = textToSpeechClient.listVoices(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -166,6 +192,17 @@ public class TextToSpeechClient implements BackgroundResource {
    * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   ListVoicesRequest request =
+   *       ListVoicesRequest.newBuilder().setLanguageCode("languageCode-2092349083").build();
+   *   ApiFuture<ListVoicesResponse> future =
+   *       textToSpeechClient.listVoicesCallable().futureCall(request);
+   *   // Do something.
+   *   ListVoicesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
     return stub.listVoicesCallable();
@@ -174,6 +211,18 @@ public class TextToSpeechClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Synthesizes speech synchronously: receive results after all text input has been processed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   SynthesisInput input = SynthesisInput.newBuilder().build();
+   *   VoiceSelectionParams voice = VoiceSelectionParams.newBuilder().build();
+   *   AudioConfig audioConfig = AudioConfig.newBuilder().build();
+   *   SynthesizeSpeechResponse response =
+   *       textToSpeechClient.synthesizeSpeech(input, voice, audioConfig);
+   * }
+   * }</pre>
    *
    * @param input Required. The Synthesizer requires either plain text or SSML as input.
    * @param voice Required. The desired voice of the synthesized audio.
@@ -195,6 +244,21 @@ public class TextToSpeechClient implements BackgroundResource {
   /**
    * Synthesizes speech synchronously: receive results after all text input has been processed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   SynthesizeSpeechRequest request =
+   *       SynthesizeSpeechRequest.newBuilder()
+   *           .setInput(SynthesisInput.newBuilder().build())
+   *           .setVoice(VoiceSelectionParams.newBuilder().build())
+   *           .setAudioConfig(AudioConfig.newBuilder().build())
+   *           .addAllEnableTimePointing(new ArrayList<SynthesizeSpeechRequest.TimepointType>())
+   *           .build();
+   *   SynthesizeSpeechResponse response = textToSpeechClient.synthesizeSpeech(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -207,6 +271,22 @@ public class TextToSpeechClient implements BackgroundResource {
    * Synthesizes speech synchronously: receive results after all text input has been processed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+   *   SynthesizeSpeechRequest request =
+   *       SynthesizeSpeechRequest.newBuilder()
+   *           .setInput(SynthesisInput.newBuilder().build())
+   *           .setVoice(VoiceSelectionParams.newBuilder().build())
+   *           .setAudioConfig(AudioConfig.newBuilder().build())
+   *           .addAllEnableTimePointing(new ArrayList<SynthesizeSpeechRequest.TimepointType>())
+   *           .build();
+   *   ApiFuture<SynthesizeSpeechResponse> future =
+   *       textToSpeechClient.synthesizeSpeechCallable().futureCall(request);
+   *   // Do something.
+   *   SynthesizeSpeechResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {

@@ -22,6 +22,13 @@
  * <p>Service Description: Service that implements Google Cloud Text-to-Speech API.
  *
  * <p>Sample for TextToSpeechClient:
+ *
+ * <pre>{@code
+ * try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
+ *   String languageCode = "languageCode-2092349083";
+ *   ListVoicesResponse response = textToSpeechClient.listVoices(languageCode);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.texttospeech.v1;
