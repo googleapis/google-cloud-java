@@ -42,6 +42,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+ *     WebRiskServiceV1Beta1Client.create()) {
+ *   ThreatType threatType = ThreatType.forNumber(0);
+ *   ByteString versionToken = ByteString.EMPTY;
+ *   ComputeThreatListDiffRequest.Constraints constraints =
+ *       ComputeThreatListDiffRequest.Constraints.newBuilder().build();
+ *   ComputeThreatListDiffResponse response =
+ *       webRiskServiceV1Beta1Client.computeThreatListDiff(threatType, versionToken, constraints);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the WebRiskServiceV1Beta1Client object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -149,6 +161,20 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
   /**
    * Gets the most recent threat list diffs.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   ThreatType threatType = ThreatType.forNumber(0);
+   *   ByteString versionToken = ByteString.EMPTY;
+   *   ComputeThreatListDiffRequest.Constraints constraints =
+   *       ComputeThreatListDiffRequest.Constraints.newBuilder().build();
+   *   ComputeThreatListDiffResponse response =
+   *       webRiskServiceV1Beta1Client.computeThreatListDiff(threatType, versionToken, constraints);
+   * }
+   * }</pre>
+   *
    * @param threatType The ThreatList to update.
    * @param versionToken The current version token of the client for the requested list (the client
    *     version that was received from the last successful diff).
@@ -172,6 +198,21 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
   /**
    * Gets the most recent threat list diffs.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   ComputeThreatListDiffRequest request =
+   *       ComputeThreatListDiffRequest.newBuilder()
+   *           .setVersionToken(ByteString.EMPTY)
+   *           .setConstraints(ComputeThreatListDiffRequest.Constraints.newBuilder().build())
+   *           .build();
+   *   ComputeThreatListDiffResponse response =
+   *       webRiskServiceV1Beta1Client.computeThreatListDiff(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -185,6 +226,21 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * Gets the most recent threat list diffs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   ComputeThreatListDiffRequest request =
+   *       ComputeThreatListDiffRequest.newBuilder()
+   *           .setVersionToken(ByteString.EMPTY)
+   *           .setConstraints(ComputeThreatListDiffRequest.Constraints.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ComputeThreatListDiffResponse> future =
+   *       webRiskServiceV1Beta1Client.computeThreatListDiffCallable().futureCall(request);
+   *   // Do something.
+   *   ComputeThreatListDiffResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffCallable() {
@@ -194,6 +250,17 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * This method is used to check whether a URI is on a given threatList.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   String uri = "uri116076";
+   *   List<ThreatType> threatTypes = new ArrayList<>();
+   *   SearchUrisResponse response = webRiskServiceV1Beta1Client.searchUris(uri, threatTypes);
+   * }
+   * }</pre>
    *
    * @param uri Required. The URI to be checked for matches.
    * @param threatTypes Required. The ThreatLists to search in.
@@ -209,6 +276,20 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
   /**
    * This method is used to check whether a URI is on a given threatList.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   SearchUrisRequest request =
+   *       SearchUrisRequest.newBuilder()
+   *           .setUri("uri116076")
+   *           .addAllThreatTypes(new ArrayList<ThreatType>())
+   *           .build();
+   *   SearchUrisResponse response = webRiskServiceV1Beta1Client.searchUris(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -221,6 +302,21 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * This method is used to check whether a URI is on a given threatList.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   SearchUrisRequest request =
+   *       SearchUrisRequest.newBuilder()
+   *           .setUri("uri116076")
+   *           .addAllThreatTypes(new ArrayList<ThreatType>())
+   *           .build();
+   *   ApiFuture<SearchUrisResponse> future =
+   *       webRiskServiceV1Beta1Client.searchUrisCallable().futureCall(request);
+   *   // Do something.
+   *   SearchUrisResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchUrisRequest, SearchUrisResponse> searchUrisCallable() {
     return stub.searchUrisCallable();
@@ -232,6 +328,18 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * looked up in a threatList and there is a match. The client side threatList only holds partial
    * hashes so the client must query this method to determine if there is a full hash match of a
    * threat.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   ByteString hashPrefix = ByteString.EMPTY;
+   *   List<ThreatType> threatTypes = new ArrayList<>();
+   *   SearchHashesResponse response =
+   *       webRiskServiceV1Beta1Client.searchHashes(hashPrefix, threatTypes);
+   * }
+   * }</pre>
    *
    * @param hashPrefix A hash prefix, consisting of the most significant 4-32 bytes of a SHA256
    *     hash. For JSON requests, this field is base64-encoded.
@@ -255,6 +363,20 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * hashes so the client must query this method to determine if there is a full hash match of a
    * threat.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   SearchHashesRequest request =
+   *       SearchHashesRequest.newBuilder()
+   *           .setHashPrefix(ByteString.EMPTY)
+   *           .addAllThreatTypes(new ArrayList<ThreatType>())
+   *           .build();
+   *   SearchHashesResponse response = webRiskServiceV1Beta1Client.searchHashes(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -270,6 +392,21 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    * threat.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+   *     WebRiskServiceV1Beta1Client.create()) {
+   *   SearchHashesRequest request =
+   *       SearchHashesRequest.newBuilder()
+   *           .setHashPrefix(ByteString.EMPTY)
+   *           .addAllThreatTypes(new ArrayList<ThreatType>())
+   *           .build();
+   *   ApiFuture<SearchHashesResponse> future =
+   *       webRiskServiceV1Beta1Client.searchHashesCallable().futureCall(request);
+   *   // Do something.
+   *   SearchHashesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchHashesRequest, SearchHashesResponse> searchHashesCallable() {
     return stub.searchHashesCallable();

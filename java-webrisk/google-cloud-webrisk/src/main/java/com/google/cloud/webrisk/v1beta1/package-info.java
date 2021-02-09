@@ -23,6 +23,18 @@
  * your website and in client applications.
  *
  * <p>Sample for WebRiskServiceV1Beta1Client:
+ *
+ * <pre>{@code
+ * try (WebRiskServiceV1Beta1Client webRiskServiceV1Beta1Client =
+ *     WebRiskServiceV1Beta1Client.create()) {
+ *   ThreatType threatType = ThreatType.forNumber(0);
+ *   ByteString versionToken = ByteString.EMPTY;
+ *   ComputeThreatListDiffRequest.Constraints constraints =
+ *       ComputeThreatListDiffRequest.Constraints.newBuilder().build();
+ *   ComputeThreatListDiffResponse response =
+ *       webRiskServiceV1Beta1Client.computeThreatListDiff(threatType, versionToken, constraints);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.webrisk.v1beta1;
