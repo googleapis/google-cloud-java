@@ -49,6 +49,13 @@
  * <p>If a request is not approved or dismissed, we call it pending.
  *
  * <p>Sample for AccessApprovalAdminClient:
+ *
+ * <pre>{@code
+ * try (AccessApprovalAdminClient accessApprovalAdminClient = AccessApprovalAdminClient.create()) {
+ *   String name = "name3373707";
+ *   ApprovalRequest response = accessApprovalAdminClient.getApprovalRequest(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.accessapproval.v1;

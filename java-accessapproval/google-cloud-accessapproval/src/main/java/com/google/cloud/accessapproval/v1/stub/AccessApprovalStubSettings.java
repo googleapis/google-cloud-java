@@ -79,18 +79,19 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of getApprovalRequest to 30 seconds:
  *
  * <pre>{@code
- * AccessApprovalStubSettings.Builder accessApprovalSettingsBuilder =
+ * AccessApprovalStubSettings.Builder accessApprovalAdminSettingsBuilder =
  *     AccessApprovalStubSettings.newBuilder();
- * accessApprovalSettingsBuilder
+ * accessApprovalAdminSettingsBuilder
  *     .getApprovalRequestSettings()
  *     .setRetrySettings(
- *         accessApprovalSettingsBuilder
+ *         accessApprovalAdminSettingsBuilder
  *             .getApprovalRequestSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * AccessApprovalStubSettings accessApprovalSettings = accessApprovalSettingsBuilder.build();
+ * AccessApprovalStubSettings accessApprovalAdminSettings =
+ *     accessApprovalAdminSettingsBuilder.build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
