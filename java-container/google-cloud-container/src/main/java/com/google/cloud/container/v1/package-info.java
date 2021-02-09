@@ -22,6 +22,13 @@
  * <p>Service Description: Google Kubernetes Engine Cluster Manager v1
  *
  * <p>Sample for ClusterManagerClient:
+ *
+ * <pre>{@code
+ * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+ *   String parent = "parent-995424086";
+ *   ListClustersResponse response = clusterManagerClient.listClusters(parent);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.container.v1;

@@ -88,6 +88,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+ *   String parent = "parent-995424086";
+ *   ListClustersResponse response = clusterManagerClient.listClusters(parent);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ClusterManagerClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -191,6 +198,15 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Lists all clusters owned by a project in either the specified zone or all zones.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String parent = "parent-995424086";
+   *   ListClustersResponse response = clusterManagerClient.listClusters(parent);
+   * }
+   * }</pre>
+   *
    * @param parent The parent (project and location) where the clusters will be listed. Specified in
    *     the format `projects/&#42;/locations/&#42;`. Location "-" matches all zones and all
    *     regions.
@@ -204,6 +220,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all clusters owned by a project in either the specified zone or all zones.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   ListClustersResponse response = clusterManagerClient.listClusters(projectId, zone);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -223,6 +249,20 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Lists all clusters owned by a project in either the specified zone or all zones.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ListClustersResponse response = clusterManagerClient.listClusters(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -235,6 +275,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * Lists all clusters owned by a project in either the specified zone or all zones.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ApiFuture<ListClustersResponse> future =
+   *       clusterManagerClient.listClustersCallable().futureCall(request);
+   *   // Do something.
+   *   ListClustersResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return stub.listClustersCallable();
@@ -243,6 +298,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the details of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Cluster response = clusterManagerClient.getCluster(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to retrieve. Specified in the
    *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -256,6 +320,17 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the details of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   Cluster response = clusterManagerClient.getCluster(projectId, zone, clusterId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -281,6 +356,21 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Gets the details of a specific cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetClusterRequest request =
+   *       GetClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .build();
+   *   Cluster response = clusterManagerClient.getCluster(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -293,6 +383,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * Gets the details of a specific cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetClusterRequest request =
+   *       GetClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Cluster> future = clusterManagerClient.getClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return stub.getClusterCallable();
@@ -312,6 +417,16 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * <p>Finally, an entry is added to the project's global metadata indicating which CIDR range the
    * cluster is using.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String parent = "parent-995424086";
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   Operation response = clusterManagerClient.createCluster(parent, cluster);
+   * }
+   * }</pre>
    *
    * @param parent The parent (project and location) where the cluster will be created. Specified in
    *     the format `projects/&#42;/locations/&#42;`.
@@ -339,6 +454,17 @@ public class ClusterManagerClient implements BackgroundResource {
    *
    * <p>Finally, an entry is added to the project's global metadata indicating which CIDR range the
    * cluster is using.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   Operation response = clusterManagerClient.createCluster(projectId, zone, cluster);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -375,6 +501,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Finally, an entry is added to the project's global metadata indicating which CIDR range the
    * cluster is using.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   Operation response = clusterManagerClient.createCluster(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -398,6 +539,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * cluster is using.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.createClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
@@ -406,6 +563,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the settings of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   ClusterUpdate update = ClusterUpdate.newBuilder().build();
+   *   Operation response = clusterManagerClient.updateCluster(name, update);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to update. Specified in the
    *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -421,6 +588,18 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the settings of a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   ClusterUpdate update = ClusterUpdate.newBuilder().build();
+   *   Operation response = clusterManagerClient.updateCluster(projectId, zone, clusterId, update);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -449,6 +628,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Updates the settings of a specific cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setUpdate(ClusterUpdate.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.updateCluster(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -461,6 +656,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Updates the settings of a specific cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setUpdate(ClusterUpdate.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.updateClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
@@ -469,6 +681,27 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the version and/or image type for the specified node pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   UpdateNodePoolRequest request =
+   *       UpdateNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setNodeVersion("nodeVersion1155309686")
+   *           .setImageType("imageType-878147787")
+   *           .setName("name3373707")
+   *           .addAllLocations(new ArrayList<String>())
+   *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
+   *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+   *           .build();
+   *   Operation response = clusterManagerClient.updateNodePool(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -482,6 +715,28 @@ public class ClusterManagerClient implements BackgroundResource {
    * Updates the version and/or image type for the specified node pool.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   UpdateNodePoolRequest request =
+   *       UpdateNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setNodeVersion("nodeVersion1155309686")
+   *           .setImageType("imageType-878147787")
+   *           .setName("name3373707")
+   *           .addAllLocations(new ArrayList<String>())
+   *           .setWorkloadMetadataConfig(WorkloadMetadataConfig.newBuilder().build())
+   *           .setUpgradeSettings(NodePool.UpgradeSettings.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.updateNodePoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateNodePoolRequest, Operation> updateNodePoolCallable() {
     return stub.updateNodePoolCallable();
@@ -490,6 +745,23 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the autoscaling settings for the specified node pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNodePoolAutoscalingRequest request =
+   *       SetNodePoolAutoscalingRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setAutoscaling(NodePoolAutoscaling.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setNodePoolAutoscaling(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -503,6 +775,24 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the autoscaling settings for the specified node pool.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNodePoolAutoscalingRequest request =
+   *       SetNodePoolAutoscalingRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setAutoscaling(NodePoolAutoscaling.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setNodePoolAutoscalingCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetNodePoolAutoscalingRequest, Operation>
       setNodePoolAutoscalingCallable() {
@@ -512,6 +802,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the logging service for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   String loggingService = "loggingService1098570326";
+   *   Operation response = clusterManagerClient.setLoggingService(name, loggingService);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set logging. Specified in
    *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -540,6 +840,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the logging service for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   String loggingService = "loggingService1098570326";
+   *   Operation response =
+   *       clusterManagerClient.setLoggingService(projectId, zone, clusterId, loggingService);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -578,6 +891,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Sets the logging service for a specific cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLoggingServiceRequest request =
+   *       SetLoggingServiceRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setLoggingService("loggingService1098570326")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setLoggingService(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -590,6 +919,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the logging service for a specific cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLoggingServiceRequest request =
+   *       SetLoggingServiceRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setLoggingService("loggingService1098570326")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setLoggingServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetLoggingServiceRequest, Operation> setLoggingServiceCallable() {
     return stub.setLoggingServiceCallable();
@@ -598,6 +944,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the monitoring service for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   String monitoringService = "monitoringService-1431578291";
+   *   Operation response = clusterManagerClient.setMonitoringService(name, monitoringService);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set monitoring. Specified
    *     in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -626,6 +982,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the monitoring service for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   String monitoringService = "monitoringService-1431578291";
+   *   Operation response =
+   *       clusterManagerClient.setMonitoringService(projectId, zone, clusterId, monitoringService);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -664,6 +1033,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Sets the monitoring service for a specific cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetMonitoringServiceRequest request =
+   *       SetMonitoringServiceRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setMonitoringService("monitoringService-1431578291")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setMonitoringService(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -676,6 +1061,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the monitoring service for a specific cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetMonitoringServiceRequest request =
+   *       SetMonitoringServiceRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setMonitoringService("monitoringService-1431578291")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setMonitoringServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetMonitoringServiceRequest, Operation>
       setMonitoringServiceCallable() {
@@ -685,6 +1087,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the addons for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   AddonsConfig addonsConfig = AddonsConfig.newBuilder().build();
+   *   Operation response = clusterManagerClient.setAddonsConfig(name, addonsConfig);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set addons. Specified in
    *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -701,6 +1113,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the addons for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   AddonsConfig addonsConfig = AddonsConfig.newBuilder().build();
+   *   Operation response =
+   *       clusterManagerClient.setAddonsConfig(projectId, zone, clusterId, addonsConfig);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -730,6 +1155,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Sets the addons for a specific cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetAddonsConfigRequest request =
+   *       SetAddonsConfigRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setAddonsConfig(AddonsConfig.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setAddonsConfig(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -742,6 +1183,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the addons for a specific cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetAddonsConfigRequest request =
+   *       SetAddonsConfigRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setAddonsConfig(AddonsConfig.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setAddonsConfigCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetAddonsConfigRequest, Operation> setAddonsConfigCallable() {
     return stub.setAddonsConfigCallable();
@@ -752,6 +1210,16 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the locations for a specific cluster. Deprecated. Use
    * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
    * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   List<String> locations = new ArrayList<>();
+   *   Operation response = clusterManagerClient.setLocations(name, locations);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to set locations. Specified in
    *     the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -774,6 +1242,18 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the locations for a specific cluster. Deprecated. Use
    * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
    * instead.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   List<String> locations = new ArrayList<>();
+   *   Operation response = clusterManagerClient.setLocations(projectId, zone, clusterId, locations);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -809,6 +1289,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * [projects.locations.clusters.update](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters/update)
    * instead.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLocationsRequest request =
+   *       SetLocationsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .addAllLocations(new ArrayList<String>())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setLocations(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -823,6 +1319,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * instead.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLocationsRequest request =
+   *       SetLocationsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .addAllLocations(new ArrayList<String>())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future = clusterManagerClient.setLocationsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetLocationsRequest, Operation> setLocationsCallable() {
     return stub.setLocationsCallable();
@@ -831,6 +1343,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the master for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   String masterVersion = "masterVersion1167095830";
+   *   Operation response = clusterManagerClient.updateMaster(name, masterVersion);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to update. Specified in the
    *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -852,6 +1374,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the master for a specific cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   String masterVersion = "masterVersion1167095830";
+   *   Operation response =
+   *       clusterManagerClient.updateMaster(projectId, zone, clusterId, masterVersion);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -886,6 +1421,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Updates the master for a specific cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   UpdateMasterRequest request =
+   *       UpdateMasterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setMasterVersion("masterVersion1167095830")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.updateMaster(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -898,6 +1449,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * Updates the master for a specific cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   UpdateMasterRequest request =
+   *       UpdateMasterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setMasterVersion("masterVersion1167095830")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future = clusterManagerClient.updateMasterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateMasterRequest, Operation> updateMasterCallable() {
     return stub.updateMasterCallable();
@@ -907,6 +1474,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Sets master auth materials. Currently supports changing the admin password or a specific
    * cluster, either via password generation or explicitly setting the password.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetMasterAuthRequest request =
+   *       SetMasterAuthRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setUpdate(MasterAuth.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setMasterAuth(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -921,6 +1504,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * cluster, either via password generation or explicitly setting the password.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetMasterAuthRequest request =
+   *       SetMasterAuthRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setUpdate(MasterAuth.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setMasterAuthCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetMasterAuthRequest, Operation> setMasterAuthCallable() {
     return stub.setMasterAuthCallable();
@@ -935,6 +1535,15 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
    * balancer resources, are not deleted if they weren't present when the cluster was initially
    * created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Operation response = clusterManagerClient.deleteCluster(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster) of the cluster to delete. Specified in the
    *     format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -954,6 +1563,17 @@ public class ClusterManagerClient implements BackgroundResource {
    * <p>Other Google Compute Engine resources that might be in use by the cluster, such as load
    * balancer resources, are not deleted if they weren't present when the cluster was initially
    * created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   Operation response = clusterManagerClient.deleteCluster(projectId, zone, clusterId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -985,6 +1605,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * balancer resources, are not deleted if they weren't present when the cluster was initially
    * created.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.deleteCluster(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1003,6 +1638,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * created.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.deleteClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
@@ -1011,6 +1662,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all operations in a project in a specific zone or all zones.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   ListOperationsResponse response = clusterManagerClient.listOperations(projectId, zone);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -1030,6 +1691,20 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Lists all operations in a project in a specific zone or all zones.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListOperationsRequest request =
+   *       ListOperationsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ListOperationsResponse response = clusterManagerClient.listOperations(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1042,6 +1717,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * Lists all operations in a project in a specific zone or all zones.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListOperationsRequest request =
+   *       ListOperationsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ApiFuture<ListOperationsResponse> future =
+   *       clusterManagerClient.listOperationsCallable().futureCall(request);
+   *   // Do something.
+   *   ListOperationsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListOperationsRequest, ListOperationsResponse>
       listOperationsCallable() {
@@ -1051,6 +1741,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Operation response = clusterManagerClient.getOperation(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, operation id) of the operation to get. Specified in
    *     the format `projects/&#42;/locations/&#42;/operations/&#42;`.
@@ -1064,6 +1763,17 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the specified operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String operationId = "operationId129704162";
+   *   Operation response = clusterManagerClient.getOperation(projectId, zone, operationId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -1089,6 +1799,21 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Gets the specified operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetOperationRequest request =
+   *       GetOperationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setOperationId("operationId129704162")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.getOperation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1101,6 +1826,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * Gets the specified operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetOperationRequest request =
+   *       GetOperationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setOperationId("operationId129704162")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future = clusterManagerClient.getOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetOperationRequest, Operation> getOperationCallable() {
     return stub.getOperationCallable();
@@ -1109,6 +1849,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels the specified operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   clusterManagerClient.cancelOperation(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, operation id) of the operation to cancel. Specified in
    *     the format `projects/&#42;/locations/&#42;/operations/&#42;`.
@@ -1122,6 +1871,17 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels the specified operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String operationId = "operationId129704162";
+   *   clusterManagerClient.cancelOperation(projectId, zone, operationId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -1147,6 +1907,21 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Cancels the specified operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CancelOperationRequest request =
+   *       CancelOperationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setOperationId("operationId129704162")
+   *           .setName("name3373707")
+   *           .build();
+   *   clusterManagerClient.cancelOperation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1159,6 +1934,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * Cancels the specified operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CancelOperationRequest request =
+   *       CancelOperationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setOperationId("operationId129704162")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Empty> future = clusterManagerClient.cancelOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CancelOperationRequest, Empty> cancelOperationCallable() {
     return stub.cancelOperationCallable();
@@ -1167,6 +1957,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns configuration info about the Google Kubernetes Engine service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   ServerConfig response = clusterManagerClient.getServerConfig(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project and location) of the server config to get, specified in the
    *     format `projects/&#42;/locations/&#42;`.
@@ -1180,6 +1979,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns configuration info about the Google Kubernetes Engine service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   ServerConfig response = clusterManagerClient.getServerConfig(projectId, zone);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -1199,6 +2008,20 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Returns configuration info about the Google Kubernetes Engine service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetServerConfigRequest request =
+   *       GetServerConfigRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setName("name3373707")
+   *           .build();
+   *   ServerConfig response = clusterManagerClient.getServerConfig(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1211,6 +2034,21 @@ public class ClusterManagerClient implements BackgroundResource {
    * Returns configuration info about the Google Kubernetes Engine service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetServerConfigRequest request =
+   *       GetServerConfigRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<ServerConfig> future =
+   *       clusterManagerClient.getServerConfigCallable().futureCall(request);
+   *   // Do something.
+   *   ServerConfig response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
     return stub.getServerConfigCallable();
@@ -1220,6 +2058,16 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Gets the public component of the cluster signing keys in JSON Web Key format. This API is not
    * yet intended for general use, and is not available for all clusters.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetJSONWebKeysRequest request =
+   *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
+   *   GetJSONWebKeysResponse response = clusterManagerClient.getJSONWebKeys(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1234,6 +2082,17 @@ public class ClusterManagerClient implements BackgroundResource {
    * yet intended for general use, and is not available for all clusters.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetJSONWebKeysRequest request =
+   *       GetJSONWebKeysRequest.newBuilder().setParent("parent-995424086").build();
+   *   ApiFuture<GetJSONWebKeysResponse> future =
+   *       clusterManagerClient.getJSONWebKeysCallable().futureCall(request);
+   *   // Do something.
+   *   GetJSONWebKeysResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse>
       getJSONWebKeysCallable() {
@@ -1243,6 +2102,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the node pools for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String parent = "parent-995424086";
+   *   ListNodePoolsResponse response = clusterManagerClient.listNodePools(parent);
+   * }
+   * }</pre>
    *
    * @param parent The parent (project, location, cluster id) where the node pools will be listed.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1256,6 +2124,18 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists the node pools for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   ListNodePoolsResponse response =
+   *       clusterManagerClient.listNodePools(projectId, zone, clusterId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1282,6 +2162,21 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Lists the node pools for a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListNodePoolsRequest request =
+   *       ListNodePoolsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ListNodePoolsResponse response = clusterManagerClient.listNodePools(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1294,6 +2189,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * Lists the node pools for a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListNodePoolsRequest request =
+   *       ListNodePoolsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ApiFuture<ListNodePoolsResponse> future =
+   *       clusterManagerClient.listNodePoolsCallable().futureCall(request);
+   *   // Do something.
+   *   ListNodePoolsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
     return stub.listNodePoolsCallable();
@@ -1302,6 +2213,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the requested node pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   NodePool response = clusterManagerClient.getNodePool(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster, node pool id) of the node pool to get.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
@@ -1315,6 +2235,18 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the requested node pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   String nodePoolId = "nodePoolId1121557241";
+   *   NodePool response = clusterManagerClient.getNodePool(projectId, zone, clusterId, nodePoolId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1344,6 +2276,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Retrieves the requested node pool.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetNodePoolRequest request =
+   *       GetNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setName("name3373707")
+   *           .build();
+   *   NodePool response = clusterManagerClient.getNodePool(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1356,6 +2304,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * Retrieves the requested node pool.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   GetNodePoolRequest request =
+   *       GetNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<NodePool> future = clusterManagerClient.getNodePoolCallable().futureCall(request);
+   *   // Do something.
+   *   NodePool response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetNodePoolRequest, NodePool> getNodePoolCallable() {
     return stub.getNodePoolCallable();
@@ -1364,6 +2328,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a node pool for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String parent = "parent-995424086";
+   *   NodePool nodePool = NodePool.newBuilder().build();
+   *   Operation response = clusterManagerClient.createNodePool(parent, nodePool);
+   * }
+   * }</pre>
    *
    * @param parent The parent (project, location, cluster id) where the node pool will be created.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1379,6 +2353,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a node pool for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   NodePool nodePool = NodePool.newBuilder().build();
+   *   Operation response =
+   *       clusterManagerClient.createNodePool(projectId, zone, clusterId, nodePool);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1407,6 +2394,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Creates a node pool for a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CreateNodePoolRequest request =
+   *       CreateNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePool(NodePool.newBuilder().build())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   Operation response = clusterManagerClient.createNodePool(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1419,6 +2422,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Creates a node pool for a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CreateNodePoolRequest request =
+   *       CreateNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePool(NodePool.newBuilder().build())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.createNodePoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable() {
     return stub.createNodePoolCallable();
@@ -1427,6 +2447,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a node pool from a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Operation response = clusterManagerClient.deleteNodePool(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster, node pool id) of the node pool to delete.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;/nodePools/&#42;`.
@@ -1440,6 +2469,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a node pool from a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   String nodePoolId = "nodePoolId1121557241";
+   *   Operation response =
+   *       clusterManagerClient.deleteNodePool(projectId, zone, clusterId, nodePoolId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1469,6 +2511,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Deletes a node pool from a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteNodePoolRequest request =
+   *       DeleteNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.deleteNodePool(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1481,6 +2539,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Deletes a node pool from a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   DeleteNodePoolRequest request =
+   *       DeleteNodePoolRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.deleteNodePoolCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
     return stub.deleteNodePoolCallable();
@@ -1490,6 +2565,15 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last
    * upgrade successfully completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Operation response = clusterManagerClient.rollbackNodePoolUpgrade(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster, node pool id) of the node poll to rollback
    *     upgrade. Specified in the format
@@ -1506,6 +2590,19 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last
    * upgrade successfully completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   String nodePoolId = "nodePoolId1121557241";
+   *   Operation response =
+   *       clusterManagerClient.rollbackNodePoolUpgrade(projectId, zone, clusterId, nodePoolId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -1536,6 +2633,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * Rolls back a previously Aborted or Failed NodePool upgrade. This makes no changes if the last
    * upgrade successfully completed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   RollbackNodePoolUpgradeRequest request =
+   *       RollbackNodePoolUpgradeRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.rollbackNodePoolUpgrade(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1549,6 +2662,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * upgrade successfully completed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   RollbackNodePoolUpgradeRequest request =
+   *       RollbackNodePoolUpgradeRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.rollbackNodePoolUpgradeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeCallable() {
@@ -1558,6 +2688,23 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the NodeManagement options for a node pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNodePoolManagementRequest request =
+   *       SetNodePoolManagementRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setManagement(NodeManagement.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setNodePoolManagement(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1571,6 +2718,24 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the NodeManagement options for a node pool.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNodePoolManagementRequest request =
+   *       SetNodePoolManagementRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setManagement(NodeManagement.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setNodePoolManagementCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetNodePoolManagementRequest, Operation>
       setNodePoolManagementCallable() {
@@ -1580,6 +2745,23 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets labels on a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLabelsRequest request =
+   *       SetLabelsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .putAllResourceLabels(new HashMap<String, String>())
+   *           .setLabelFingerprint("labelFingerprint379449680")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setLabels(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1593,6 +2775,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets labels on a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLabelsRequest request =
+   *       SetLabelsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .putAllResourceLabels(new HashMap<String, String>())
+   *           .setLabelFingerprint("labelFingerprint379449680")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future = clusterManagerClient.setLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetLabelsRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
@@ -1601,6 +2800,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Enables or disables the ABAC authorization mechanism on a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   boolean enabled = true;
+   *   Operation response = clusterManagerClient.setLegacyAbac(name, enabled);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to set legacy abac.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1616,6 +2825,18 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Enables or disables the ABAC authorization mechanism on a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   boolean enabled = true;
+   *   Operation response = clusterManagerClient.setLegacyAbac(projectId, zone, clusterId, enabled);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840). This field has been deprecated
@@ -1644,6 +2865,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Enables or disables the ABAC authorization mechanism on a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLegacyAbacRequest request =
+   *       SetLegacyAbacRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setEnabled(true)
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setLegacyAbac(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1656,6 +2893,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Enables or disables the ABAC authorization mechanism on a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetLegacyAbacRequest request =
+   *       SetLegacyAbacRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setEnabled(true)
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setLegacyAbacCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetLegacyAbacRequest, Operation> setLegacyAbacCallable() {
     return stub.setLegacyAbacCallable();
@@ -1664,6 +2918,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts master IP rotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Operation response = clusterManagerClient.startIPRotation(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to start IP rotation.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1677,6 +2940,17 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts master IP rotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   Operation response = clusterManagerClient.startIPRotation(projectId, zone, clusterId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1702,6 +2976,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Starts master IP rotation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   StartIPRotationRequest request =
+   *       StartIPRotationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .setRotateCredentials(true)
+   *           .build();
+   *   Operation response = clusterManagerClient.startIPRotation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1714,6 +3004,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Starts master IP rotation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   StartIPRotationRequest request =
+   *       StartIPRotationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .setRotateCredentials(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.startIPRotationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StartIPRotationRequest, Operation> startIPRotationCallable() {
     return stub.startIPRotationCallable();
@@ -1722,6 +3029,15 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Completes master IP rotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   Operation response = clusterManagerClient.completeIPRotation(name);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to complete IP rotation.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1736,6 +3052,17 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Completes master IP rotation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   Operation response = clusterManagerClient.completeIPRotation(projectId, zone, clusterId);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1761,6 +3088,21 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Completes master IP rotation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CompleteIPRotationRequest request =
+   *       CompleteIPRotationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.completeIPRotation(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1773,6 +3115,22 @@ public class ClusterManagerClient implements BackgroundResource {
    * Completes master IP rotation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   CompleteIPRotationRequest request =
+   *       CompleteIPRotationRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.completeIPRotationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CompleteIPRotationRequest, Operation> completeIPRotationCallable() {
     return stub.completeIPRotationCallable();
@@ -1781,6 +3139,23 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the size for a specific node pool.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNodePoolSizeRequest request =
+   *       SetNodePoolSizeRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setNodeCount(1539922066)
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setNodePoolSize(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1794,6 +3169,24 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the size for a specific node pool.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNodePoolSizeRequest request =
+   *       SetNodePoolSizeRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNodePoolId("nodePoolId1121557241")
+   *           .setNodeCount(1539922066)
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setNodePoolSizeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetNodePoolSizeRequest, Operation> setNodePoolSizeCallable() {
     return stub.setNodePoolSizeCallable();
@@ -1802,6 +3195,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Enables or disables Network Policy for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   NetworkPolicy networkPolicy = NetworkPolicy.newBuilder().build();
+   *   Operation response = clusterManagerClient.setNetworkPolicy(name, networkPolicy);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to set networking policy.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1817,6 +3220,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Enables or disables Network Policy for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   NetworkPolicy networkPolicy = NetworkPolicy.newBuilder().build();
+   *   Operation response =
+   *       clusterManagerClient.setNetworkPolicy(projectId, zone, clusterId, networkPolicy);
+   * }
+   * }</pre>
    *
    * @param projectId Deprecated. The Google Developers Console [project ID or project
    *     number](https://developers.google.com/console/help/new/#projectnumber). This field has been
@@ -1845,6 +3261,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Enables or disables Network Policy for a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNetworkPolicyRequest request =
+   *       SetNetworkPolicyRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNetworkPolicy(NetworkPolicy.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setNetworkPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1857,6 +3289,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Enables or disables Network Policy for a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetNetworkPolicyRequest request =
+   *       SetNetworkPolicyRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setNetworkPolicy(NetworkPolicy.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setNetworkPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetNetworkPolicyRequest, Operation> setNetworkPolicyCallable() {
     return stub.setNetworkPolicyCallable();
@@ -1865,6 +3314,16 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the maintenance policy for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String name = "name3373707";
+   *   MaintenancePolicy maintenancePolicy = MaintenancePolicy.newBuilder().build();
+   *   Operation response = clusterManagerClient.setMaintenancePolicy(name, maintenancePolicy);
+   * }
+   * }</pre>
    *
    * @param name The name (project, location, cluster id) of the cluster to set maintenance policy.
    *     Specified in the format `projects/&#42;/locations/&#42;/clusters/&#42;`.
@@ -1884,6 +3343,19 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Sets the maintenance policy for a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String zone = "zone3744684";
+   *   String clusterId = "clusterId561939637";
+   *   MaintenancePolicy maintenancePolicy = MaintenancePolicy.newBuilder().build();
+   *   Operation response =
+   *       clusterManagerClient.setMaintenancePolicy(projectId, zone, clusterId, maintenancePolicy);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The Google Developers Console [project ID or project
    *     number](https://support.google.com/cloud/answer/6158840).
@@ -1910,6 +3382,22 @@ public class ClusterManagerClient implements BackgroundResource {
   /**
    * Sets the maintenance policy for a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetMaintenancePolicyRequest request =
+   *       SetMaintenancePolicyRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   Operation response = clusterManagerClient.setMaintenancePolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1922,6 +3410,23 @@ public class ClusterManagerClient implements BackgroundResource {
    * Sets the maintenance policy for a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   SetMaintenancePolicyRequest request =
+   *       SetMaintenancePolicyRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setZone("zone3744684")
+   *           .setClusterId("clusterId561939637")
+   *           .setMaintenancePolicy(MaintenancePolicy.newBuilder().build())
+   *           .setName("name3373707")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterManagerClient.setMaintenancePolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetMaintenancePolicyRequest, Operation>
       setMaintenancePolicyCallable() {
@@ -1931,6 +3436,24 @@ public class ClusterManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists subnetworks that are usable for creating clusters in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListUsableSubnetworksRequest request =
+   *       ListUsableSubnetworksRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (UsableSubnetwork element :
+   *       clusterManagerClient.listUsableSubnetworks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1945,6 +3468,24 @@ public class ClusterManagerClient implements BackgroundResource {
    * Lists subnetworks that are usable for creating clusters in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   ListUsableSubnetworksRequest request =
+   *       ListUsableSubnetworksRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<UsableSubnetwork> future =
+   *       clusterManagerClient.listUsableSubnetworksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (UsableSubnetwork element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksPagedCallable() {
@@ -1956,6 +3497,24 @@ public class ClusterManagerClient implements BackgroundResource {
    * Lists subnetworks that are usable for creating clusters in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterManagerClient clusterManagerClient = ClusterManagerClient.create()) {
+   *   while (true) {
+   *     ListUsableSubnetworksResponse response =
+   *         clusterManagerClient.listUsableSubnetworksCallable().call(request);
+   *     for (UsableSubnetwork element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
       listUsableSubnetworksCallable() {
