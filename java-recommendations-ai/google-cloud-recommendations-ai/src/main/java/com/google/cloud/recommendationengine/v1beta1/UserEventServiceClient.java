@@ -46,6 +46,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+ *   EventStoreName parent =
+ *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+ *   UserEvent userEvent = UserEvent.newBuilder().build();
+ *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the UserEventServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -164,6 +173,17 @@ public class UserEventServiceClient implements BackgroundResource {
   /**
    * Writes a single user event.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   EventStoreName parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   UserEvent userEvent = UserEvent.newBuilder().build();
+   *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * @param userEvent Required. User event to write.
@@ -182,6 +202,17 @@ public class UserEventServiceClient implements BackgroundResource {
   /**
    * Writes a single user event.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   String parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
+   *   UserEvent userEvent = UserEvent.newBuilder().build();
+   *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * @param userEvent Required. User event to write.
@@ -197,6 +228,21 @@ public class UserEventServiceClient implements BackgroundResource {
   /**
    * Writes a single user event.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   WriteUserEventRequest request =
+   *       WriteUserEventRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .build();
+   *   UserEvent response = userEventServiceClient.writeUserEvent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -209,6 +255,22 @@ public class UserEventServiceClient implements BackgroundResource {
    * Writes a single user event.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   WriteUserEventRequest request =
+   *       WriteUserEventRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserEvent> future =
+   *       userEventServiceClient.writeUserEventCallable().futureCall(request);
+   *   // Do something.
+   *   UserEvent response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
     return stub.writeUserEventCallable();
@@ -221,6 +283,19 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * <p>This method is used only by the Recommendations AI JavaScript pixel. Users should not call
    * this method directly.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   EventStoreName parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   String userEvent = "userEvent315571599";
+   *   String uri = "uri116076";
+   *   long ets = 100772;
+   *   HttpBody response = userEventServiceClient.collectUserEvent(parent, userEvent, uri, ets);
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent eventStore name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
@@ -253,6 +328,19 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>This method is used only by the Recommendations AI JavaScript pixel. Users should not call
    * this method directly.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   String parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
+   *   String userEvent = "userEvent315571599";
+   *   String uri = "uri116076";
+   *   long ets = 100772;
+   *   HttpBody response = userEventServiceClient.collectUserEvent(parent, userEvent, uri, ets);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent eventStore name, such as
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store".
    * @param userEvent Required. URL encoded UserEvent proto.
@@ -283,6 +371,23 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>This method is used only by the Recommendations AI JavaScript pixel. Users should not call
    * this method directly.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   CollectUserEventRequest request =
+   *       CollectUserEventRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setUserEvent("userEvent315571599")
+   *           .setUri("uri116076")
+   *           .setEts(100772)
+   *           .build();
+   *   HttpBody response = userEventServiceClient.collectUserEvent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -299,6 +404,24 @@ public class UserEventServiceClient implements BackgroundResource {
    * this method directly.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   CollectUserEventRequest request =
+   *       CollectUserEventRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setUserEvent("userEvent315571599")
+   *           .setUri("uri116076")
+   *           .setEts(100772)
+   *           .build();
+   *   ApiFuture<HttpBody> future =
+   *       userEventServiceClient.collectUserEventCallable().futureCall(request);
+   *   // Do something.
+   *   HttpBody response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return stub.collectUserEventCallable();
@@ -307,6 +430,19 @@ public class UserEventServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of user events within a time range, with potential filtering.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   EventStoreName parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   String filter = "filter-1274492040";
+   *   for (UserEvent element : userEventServiceClient.listUserEvents(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store".
@@ -345,6 +481,19 @@ public class UserEventServiceClient implements BackgroundResource {
   /**
    * Gets a list of user events within a time range, with potential filtering.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   String parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
+   *   String filter = "filter-1274492040";
+   *   for (UserEvent element : userEventServiceClient.listUserEvents(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent eventStore resource name, such as
    *     "projects/&#42;/locations/&#42;/catalogs/default_catalog/eventStores/default_event_store".
    * @param filter Optional. Filtering expression to specify restrictions over returned events. This
@@ -379,6 +528,25 @@ public class UserEventServiceClient implements BackgroundResource {
   /**
    * Gets a list of user events within a time range, with potential filtering.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ListUserEventsRequest request =
+   *       ListUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (UserEvent element : userEventServiceClient.listUserEvents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -391,6 +559,26 @@ public class UserEventServiceClient implements BackgroundResource {
    * Gets a list of user events within a time range, with potential filtering.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ListUserEventsRequest request =
+   *       ListUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<UserEvent> future =
+   *       userEventServiceClient.listUserEventsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (UserEvent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
       listUserEventsPagedCallable() {
@@ -402,6 +590,24 @@ public class UserEventServiceClient implements BackgroundResource {
    * Gets a list of user events within a time range, with potential filtering.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   while (true) {
+   *     ListUserEventsResponse response =
+   *         userEventServiceClient.listUserEventsCallable().call(request);
+   *     for (UserEvent element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListUserEventsRequest, ListUserEventsResponse>
       listUserEventsCallable() {
@@ -413,6 +619,19 @@ public class UserEventServiceClient implements BackgroundResource {
    * Deletes permanently all user events specified by the filter provided. Depending on the number
    * of events specified by the filter, this operation could take hours or days to complete. To test
    * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   EventStoreName parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   String filter = "filter-1274492040";
+   *   boolean force = true;
+   *   PurgeUserEventsResponse response =
+   *       userEventServiceClient.purgeUserEventsAsync(parent, filter, force).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the event_store under which the events are
    *     created. The format is
@@ -455,6 +674,19 @@ public class UserEventServiceClient implements BackgroundResource {
    * of events specified by the filter, this operation could take hours or days to complete. To test
    * a filter, use the list command first.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   String parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
+   *   String filter = "filter-1274492040";
+   *   boolean force = true;
+   *   PurgeUserEventsResponse response =
+   *       userEventServiceClient.purgeUserEventsAsync(parent, filter, force).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the event_store under which the events are
    *     created. The format is
    *     "projects/${projectId}/locations/global/catalogs/${catalogId}/eventStores/${eventStoreId}"
@@ -496,6 +728,22 @@ public class UserEventServiceClient implements BackgroundResource {
    * of events specified by the filter, this operation could take hours or days to complete. To test
    * a filter, use the list command first.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeUserEventsResponse response = userEventServiceClient.purgeUserEventsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -511,6 +759,23 @@ public class UserEventServiceClient implements BackgroundResource {
    * a filter, use the list command first.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeUserEventsResponse, PurgeUserEventsMetadata> future =
+   *       userEventServiceClient.purgeUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeUserEventsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
@@ -525,6 +790,23 @@ public class UserEventServiceClient implements BackgroundResource {
    * a filter, use the list command first.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.purgeUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
     return stub.purgeUserEventsCallable();
@@ -537,6 +819,22 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   EventStoreName parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+   *   String requestId = "requestId693933066";
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+   *   ImportUserEventsResponse response =
+   *       userEventServiceClient
+   *           .importUserEventsAsync(parent, requestId, inputConfig, errorsConfig)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required.
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
@@ -572,6 +870,22 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   String parent =
+   *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]").toString();
+   *   String requestId = "requestId693933066";
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+   *   ImportUserEventsResponse response =
+   *       userEventServiceClient
+   *           .importUserEventsAsync(parent, requestId, inputConfig, errorsConfig)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required.
    *     "projects/1234/locations/global/catalogs/default_catalog/eventStores/default_event_store"
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
@@ -603,6 +917,24 @@ public class UserEventServiceClient implements BackgroundResource {
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ImportUserEventsRequest request =
+   *       ImportUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   ImportUserEventsResponse response =
+   *       userEventServiceClient.importUserEventsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -620,6 +952,24 @@ public class UserEventServiceClient implements BackgroundResource {
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ImportUserEventsRequest request =
+   *       ImportUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportUserEventsResponse, ImportMetadata> future =
+   *       userEventServiceClient.importUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportUserEventsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable() {
@@ -635,6 +985,24 @@ public class UserEventServiceClient implements BackgroundResource {
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ImportUserEventsRequest request =
+   *       ImportUserEventsRequest.newBuilder()
+   *           .setParent(
+   *               EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]")
+   *                   .toString())
+   *           .setRequestId("requestId693933066")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.importUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     return stub.importUserEventsCallable();

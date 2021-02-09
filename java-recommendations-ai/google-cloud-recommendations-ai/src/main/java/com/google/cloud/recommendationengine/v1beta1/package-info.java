@@ -23,6 +23,14 @@
  *
  * <p>Sample for CatalogServiceClient:
  *
+ * <pre>{@code
+ * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+ *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionApiKeyRegistryClient =======================
  *
  * <p>Service Description: Service for registering API keys for use with the `predict` method. If
@@ -32,17 +40,51 @@
  *
  * <p>Sample for PredictionApiKeyRegistryClient:
  *
+ * <pre>{@code
+ * try (PredictionApiKeyRegistryClient predictionApiKeyRegistryClient =
+ *     PredictionApiKeyRegistryClient.create()) {
+ *   EventStoreName parent =
+ *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+ *   PredictionApiKeyRegistration predictionApiKeyRegistration =
+ *       PredictionApiKeyRegistration.newBuilder().build();
+ *   PredictionApiKeyRegistration response =
+ *       predictionApiKeyRegistryClient.createPredictionApiKeyRegistration(
+ *           parent, predictionApiKeyRegistration);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: Service for making recommendation prediction.
  *
  * <p>Sample for PredictionServiceClient:
  *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   PlacementName name =
+ *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+ *   UserEvent userEvent = UserEvent.newBuilder().build();
+ *   for (PredictResponse.PredictionResult element :
+ *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= UserEventServiceClient =======================
  *
  * <p>Service Description: Service for ingesting end user actions on the customer website.
  *
  * <p>Sample for UserEventServiceClient:
+ *
+ * <pre>{@code
+ * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+ *   EventStoreName parent =
+ *       EventStoreName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]");
+ *   UserEvent userEvent = UserEvent.newBuilder().build();
+ *   UserEvent response = userEventServiceClient.writeUserEvent(parent, userEvent);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.recommendationengine.v1beta1;

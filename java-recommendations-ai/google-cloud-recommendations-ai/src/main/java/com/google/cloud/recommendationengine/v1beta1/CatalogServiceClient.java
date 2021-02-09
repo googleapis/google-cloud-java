@@ -47,6 +47,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+ *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+ *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+ *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CatalogServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -162,6 +170,16 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Creates a catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+   *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
    * @param catalogItem Required. The catalog item to create.
@@ -180,6 +198,16 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Creates a catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+   *   CatalogItem response = catalogServiceClient.createCatalogItem(parent, catalogItem);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
    * @param catalogItem Required. The catalog item to create.
@@ -195,6 +223,19 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Creates a catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateCatalogItemRequest request =
+   *       CreateCatalogItemRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setCatalogItem(CatalogItem.newBuilder().build())
+   *           .build();
+   *   CatalogItem response = catalogServiceClient.createCatalogItem(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -207,6 +248,20 @@ public class CatalogServiceClient implements BackgroundResource {
    * Creates a catalog item.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateCatalogItemRequest request =
+   *       CreateCatalogItemRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setCatalogItem(CatalogItem.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CatalogItem> future =
+   *       catalogServiceClient.createCatalogItemCallable().futureCall(request);
+   *   // Do something.
+   *   CatalogItem response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateCatalogItemRequest, CatalogItem> createCatalogItemCallable() {
     return stub.createCatalogItemCallable();
@@ -215,6 +270,16 @@ public class CatalogServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a specific catalog item.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name =
+   *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   CatalogItem response = catalogServiceClient.getCatalogItem(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
@@ -230,6 +295,17 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets a specific catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name =
+   *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *           .toString();
+   *   CatalogItem response = catalogServiceClient.getCatalogItem(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogitems/some_catalog_item_id".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -243,6 +319,21 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets a specific catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetCatalogItemRequest request =
+   *       GetCatalogItemRequest.newBuilder()
+   *           .setName(
+   *               CatalogItemPathName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *                   .toString())
+   *           .build();
+   *   CatalogItem response = catalogServiceClient.getCatalogItem(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -255,6 +346,22 @@ public class CatalogServiceClient implements BackgroundResource {
    * Gets a specific catalog item.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetCatalogItemRequest request =
+   *       GetCatalogItemRequest.newBuilder()
+   *           .setName(
+   *               CatalogItemPathName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<CatalogItem> future =
+   *       catalogServiceClient.getCatalogItemCallable().futureCall(request);
+   *   // Do something.
+   *   CatalogItem response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCatalogItemRequest, CatalogItem> getCatalogItemCallable() {
     return stub.getCatalogItemCallable();
@@ -263,6 +370,19 @@ public class CatalogServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of catalog items.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   String filter = "filter-1274492040";
+   *   for (CatalogItem element :
+   *       catalogServiceClient.listCatalogItems(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
@@ -282,6 +402,19 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets a list of catalog items.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   String filter = "filter-1274492040";
+   *   for (CatalogItem element :
+   *       catalogServiceClient.listCatalogItems(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent catalog resource name, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog".
    * @param filter Optional. A filter to apply on the list results.
@@ -297,6 +430,23 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Gets a list of catalog items.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListCatalogItemsRequest request =
+   *       ListCatalogItemsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (CatalogItem element : catalogServiceClient.listCatalogItems(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -309,6 +459,24 @@ public class CatalogServiceClient implements BackgroundResource {
    * Gets a list of catalog items.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ListCatalogItemsRequest request =
+   *       ListCatalogItemsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<CatalogItem> future =
+   *       catalogServiceClient.listCatalogItemsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (CatalogItem element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsPagedResponse>
       listCatalogItemsPagedCallable() {
@@ -320,6 +488,24 @@ public class CatalogServiceClient implements BackgroundResource {
    * Gets a list of catalog items.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   while (true) {
+   *     ListCatalogItemsResponse response =
+   *         catalogServiceClient.listCatalogItemsCallable().call(request);
+   *     for (CatalogItem element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsResponse>
       listCatalogItemsCallable() {
@@ -329,6 +515,18 @@ public class CatalogServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name =
+   *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CatalogItem response = catalogServiceClient.updateCatalogItem(name, catalogItem, updateMask);
+   * }
+   * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
@@ -353,6 +551,19 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name =
+   *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *           .toString();
+   *   CatalogItem catalogItem = CatalogItem.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   CatalogItem response = catalogServiceClient.updateCatalogItem(name, catalogItem, updateMask);
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
    * @param catalogItem Required. The catalog item to update/create. The 'catalog_item_id' field has
@@ -376,6 +587,23 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateCatalogItemRequest request =
+   *       UpdateCatalogItemRequest.newBuilder()
+   *           .setName(
+   *               CatalogItemPathName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *                   .toString())
+   *           .setCatalogItem(CatalogItem.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   CatalogItem response = catalogServiceClient.updateCatalogItem(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -388,6 +616,24 @@ public class CatalogServiceClient implements BackgroundResource {
    * Updates a catalog item. Partial updating is supported. Non-existing items will be created.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   UpdateCatalogItemRequest request =
+   *       UpdateCatalogItemRequest.newBuilder()
+   *           .setName(
+   *               CatalogItemPathName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *                   .toString())
+   *           .setCatalogItem(CatalogItem.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CatalogItem> future =
+   *       catalogServiceClient.updateCatalogItemCallable().futureCall(request);
+   *   // Do something.
+   *   CatalogItem response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable() {
     return stub.updateCatalogItemCallable();
@@ -396,6 +642,16 @@ public class CatalogServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a catalog item.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogItemPathName name =
+   *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]");
+   *   catalogServiceClient.deleteCatalogItem(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
@@ -413,6 +669,17 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Deletes a catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name =
+   *       CatalogItemPathName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *           .toString();
+   *   catalogServiceClient.deleteCatalogItem(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of catalog item, such as
    *     "projects/&#42;/locations/global/catalogs/default_catalog/catalogItems/some_catalog_item_id".
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -426,6 +693,21 @@ public class CatalogServiceClient implements BackgroundResource {
   /**
    * Deletes a catalog item.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteCatalogItemRequest request =
+   *       DeleteCatalogItemRequest.newBuilder()
+   *           .setName(
+   *               CatalogItemPathName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *                   .toString())
+   *           .build();
+   *   catalogServiceClient.deleteCatalogItem(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -438,6 +720,22 @@ public class CatalogServiceClient implements BackgroundResource {
    * Deletes a catalog item.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteCatalogItemRequest request =
+   *       DeleteCatalogItemRequest.newBuilder()
+   *           .setName(
+   *               CatalogItemPathName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[CATALOG_ITEM_PATH]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       catalogServiceClient.deleteCatalogItemCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
     return stub.deleteCatalogItemCallable();
@@ -450,6 +748,21 @@ public class CatalogServiceClient implements BackgroundResource {
    *
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CatalogName parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]");
+   *   String requestId = "requestId693933066";
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+   *   ImportCatalogItemsResponse response =
+   *       catalogServiceClient
+   *           .importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
@@ -483,6 +796,21 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully updated.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString();
+   *   String requestId = "requestId693933066";
+   *   InputConfig inputConfig = InputConfig.newBuilder().build();
+   *   ImportErrorsConfig errorsConfig = ImportErrorsConfig.newBuilder().build();
+   *   ImportCatalogItemsResponse response =
+   *       catalogServiceClient
+   *           .importCatalogItemsAsync(parent, requestId, inputConfig, errorsConfig)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. "projects/1234/locations/global/catalogs/default_catalog"
    * @param requestId Optional. Unique identifier provided by client, within the ancestor dataset
    *     scope. Ensures idempotency and used for request deduplication. Server-generated if
@@ -512,6 +840,22 @@ public class CatalogServiceClient implements BackgroundResource {
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully updated.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ImportCatalogItemsRequest request =
+   *       ImportCatalogItemsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   ImportCatalogItemsResponse response =
+   *       catalogServiceClient.importCatalogItemsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -529,6 +873,22 @@ public class CatalogServiceClient implements BackgroundResource {
    * items to be successfully updated.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ImportCatalogItemsRequest request =
+   *       ImportCatalogItemsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportCatalogItemsResponse, ImportMetadata> future =
+   *       catalogServiceClient.importCatalogItemsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportCatalogItemsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
@@ -545,6 +905,22 @@ public class CatalogServiceClient implements BackgroundResource {
    * items to be successfully updated.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   ImportCatalogItemsRequest request =
+   *       ImportCatalogItemsRequest.newBuilder()
+   *           .setParent(CatalogName.of("[PROJECT]", "[LOCATION]", "[CATALOG]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       catalogServiceClient.importCatalogItemsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable() {
     return stub.importCatalogItemsCallable();

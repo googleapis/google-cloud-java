@@ -41,6 +41,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   PlacementName name =
+ *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+ *   UserEvent userEvent = UserEvent.newBuilder().build();
+ *   for (PredictResponse.PredictionResult element :
+ *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -151,6 +163,20 @@ public class PredictionServiceClient implements BackgroundResource {
    * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PlacementName name =
+   *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]");
+   *   UserEvent userEvent = UserEvent.newBuilder().build();
+   *   for (PredictResponse.PredictionResult element :
+   *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of the format:
    *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
    *     The id of the recommendation engine placement. This id is used to identify the set of
@@ -201,6 +227,21 @@ public class PredictionServiceClient implements BackgroundResource {
    * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String name =
+   *       PlacementName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]")
+   *           .toString();
+   *   UserEvent userEvent = UserEvent.newBuilder().build();
+   *   for (PredictResponse.PredictionResult element :
+   *       predictionServiceClient.predict(name, userEvent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of the format:
    *     {name=projects/&#42;/locations/global/catalogs/default_catalog/eventStores/default_event_store/placements/&#42;}
    *     The id of the recommendation engine placement. This id is used to identify the set of
@@ -248,6 +289,31 @@ public class PredictionServiceClient implements BackgroundResource {
    * [PredictionApiKeyRegistry][google.cloud.recommendationengine.v1beta1.PredictionApiKeyRegistry]
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setName(
+   *               PlacementName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]")
+   *                   .toString())
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setDryRun(true)
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   for (PredictResponse.PredictionResult element :
+   *       predictionServiceClient.predict(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -263,6 +329,31 @@ public class PredictionServiceClient implements BackgroundResource {
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setName(
+   *               PlacementName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[CATALOG]", "[EVENT_STORE]", "[PLACEMENT]")
+   *                   .toString())
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setDryRun(true)
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<PredictResponse.PredictionResult> future =
+   *       predictionServiceClient.predictPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PredictResponse.PredictionResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PredictRequest, PredictPagedResponse> predictPagedCallable() {
     return stub.predictPagedCallable();
@@ -276,6 +367,23 @@ public class PredictionServiceClient implements BackgroundResource {
    * service. [Learn more](/recommendations-ai/docs/setting-up#register-key).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   while (true) {
+   *     PredictResponse response = predictionServiceClient.predictCallable().call(request);
+   *     for (PredictResponse.PredictionResult element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();
