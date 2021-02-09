@@ -23,6 +23,14 @@
  * [Workflows][google.cloud.workflows.v1beta.Workflow] called executions.
  *
  * <p>Sample for ExecutionsClient:
+ *
+ * <pre>{@code
+ * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+ *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+ *   Execution execution = Execution.newBuilder().build();
+ *   Execution response = executionsClient.createExecution(parent, execution);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.workflows.executions.v1beta;

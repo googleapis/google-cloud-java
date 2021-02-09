@@ -42,6 +42,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+ *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+ *   Execution execution = Execution.newBuilder().build();
+ *   Execution response = executionsClient.createExecution(parent, execution);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ExecutionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -146,6 +154,17 @@ public class ExecutionsClient implements BackgroundResource {
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+   *   for (Execution element : executionsClient.listExecutions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Name of the workflow for which the executions should be listed. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -164,6 +183,17 @@ public class ExecutionsClient implements BackgroundResource {
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   String parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString();
+   *   for (Execution element : executionsClient.listExecutions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Name of the workflow for which the executions should be listed. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -179,6 +209,22 @@ public class ExecutionsClient implements BackgroundResource {
    * returns executions of all workflow revisions. Returned executions are ordered by their start
    * time (newest first).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   ListExecutionsRequest request =
+   *       ListExecutionsRequest.newBuilder()
+   *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Execution element : executionsClient.listExecutions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -193,6 +239,23 @@ public class ExecutionsClient implements BackgroundResource {
    * time (newest first).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   ListExecutionsRequest request =
+   *       ListExecutionsRequest.newBuilder()
+   *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Execution> future =
+   *       executionsClient.listExecutionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Execution element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable() {
@@ -206,6 +269,23 @@ public class ExecutionsClient implements BackgroundResource {
    * time (newest first).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   while (true) {
+   *     ListExecutionsResponse response = executionsClient.listExecutionsCallable().call(request);
+   *     for (Execution element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListExecutionsRequest, ListExecutionsResponse>
       listExecutionsCallable() {
@@ -215,6 +295,16 @@ public class ExecutionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new execution using the latest revision of the given workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   WorkflowName parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+   *   Execution execution = Execution.newBuilder().build();
+   *   Execution response = executionsClient.createExecution(parent, execution);
+   * }
+   * }</pre>
    *
    * @param parent Required. Name of the workflow for which an execution should be created. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow} The latest revision of the
@@ -235,6 +325,16 @@ public class ExecutionsClient implements BackgroundResource {
   /**
    * Creates a new execution using the latest revision of the given workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   String parent = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString();
+   *   Execution execution = Execution.newBuilder().build();
+   *   Execution response = executionsClient.createExecution(parent, execution);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Name of the workflow for which an execution should be created. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow} The latest revision of the
    *     workflow will be used.
@@ -251,6 +351,19 @@ public class ExecutionsClient implements BackgroundResource {
   /**
    * Creates a new execution using the latest revision of the given workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CreateExecutionRequest request =
+   *       CreateExecutionRequest.newBuilder()
+   *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setExecution(Execution.newBuilder().build())
+   *           .build();
+   *   Execution response = executionsClient.createExecution(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -263,6 +376,19 @@ public class ExecutionsClient implements BackgroundResource {
    * Creates a new execution using the latest revision of the given workflow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CreateExecutionRequest request =
+   *       CreateExecutionRequest.newBuilder()
+   *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .setExecution(Execution.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Execution> future = executionsClient.createExecutionCallable().futureCall(request);
+   *   // Do something.
+   *   Execution response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateExecutionRequest, Execution> createExecutionCallable() {
     return stub.createExecutionCallable();
@@ -271,6 +397,15 @@ public class ExecutionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns an execution of the given name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
+   *   Execution response = executionsClient.getExecution(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the execution to be retrieved. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -286,6 +421,16 @@ public class ExecutionsClient implements BackgroundResource {
   /**
    * Returns an execution of the given name.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   String name =
+   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString();
+   *   Execution response = executionsClient.getExecution(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the execution to be retrieved. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -299,6 +444,20 @@ public class ExecutionsClient implements BackgroundResource {
   /**
    * Returns an execution of the given name.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   GetExecutionRequest request =
+   *       GetExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]")
+   *                   .toString())
+   *           .build();
+   *   Execution response = executionsClient.getExecution(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -311,6 +470,20 @@ public class ExecutionsClient implements BackgroundResource {
    * Returns an execution of the given name.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   GetExecutionRequest request =
+   *       GetExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Execution> future = executionsClient.getExecutionCallable().futureCall(request);
+   *   // Do something.
+   *   Execution response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable() {
     return stub.getExecutionCallable();
@@ -319,6 +492,15 @@ public class ExecutionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Cancels an execution of the given name.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]");
+   *   Execution response = executionsClient.cancelExecution(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the execution to be cancelled. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
@@ -334,6 +516,16 @@ public class ExecutionsClient implements BackgroundResource {
   /**
    * Cancels an execution of the given name.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   String name =
+   *       ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]").toString();
+   *   Execution response = executionsClient.cancelExecution(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the execution to be cancelled. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -347,6 +539,20 @@ public class ExecutionsClient implements BackgroundResource {
   /**
    * Cancels an execution of the given name.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CancelExecutionRequest request =
+   *       CancelExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]")
+   *                   .toString())
+   *           .build();
+   *   Execution response = executionsClient.cancelExecution(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -359,6 +565,20 @@ public class ExecutionsClient implements BackgroundResource {
    * Cancels an execution of the given name.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+   *   CancelExecutionRequest request =
+   *       CancelExecutionRequest.newBuilder()
+   *           .setName(
+   *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Execution> future = executionsClient.cancelExecutionCallable().futureCall(request);
+   *   // Do something.
+   *   Execution response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CancelExecutionRequest, Execution> cancelExecutionCallable() {
     return stub.cancelExecutionCallable();
