@@ -22,6 +22,14 @@
  * <p>Service Description: Service for the AI Platform Data Labeling API.
  *
  * <p>Sample for DataLabelingServiceClient:
+ *
+ * <pre>{@code
+ * try (DataLabelingServiceClient dataLabelingServiceClient = DataLabelingServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   Dataset dataset = Dataset.newBuilder().build();
+ *   Dataset response = dataLabelingServiceClient.createDataset(parent, dataset);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.datalabeling.v1beta1;
