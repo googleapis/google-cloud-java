@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.12](https://www.github.com/googleapis/java-iot/compare/v1.1.11...v1.1.12) (2021-02-09)
+
+
+### Bug Fixes
+
+* update repo name ([#355](https://www.github.com/googleapis/java-iot/issues/355)) ([f62acec](https://www.github.com/googleapis/java-iot/commit/f62acec74a9b5ac0455aaaf6b56aadfd8407f40e))
+
 ### [1.1.11](https://www.github.com/googleapis/java-iot/compare/v1.1.10...v1.1.11) (2021-01-14)
 
 
