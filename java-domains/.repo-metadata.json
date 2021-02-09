@@ -1,0 +1,15 @@
+{
+  "name": "domains",
+  "name_pretty": "Cloud Domains",
+  "product_documentation": "https://cloud.google.com/domains",
+  "api_description": "allows you to register and manage domains by using Cloud Domains.",
+  "client_documentation": "https://googleapis.dev/java/google-cloud-domains/latest/index.html",
+  "release_level": "beta",
+  "transport": "grpc",
+  "language": "java",
+  "repo": "googleapis/java-domains",
+  "repo_short": "java-domains",
+  "distribution_name": "com.google.cloud:google-cloud-domains",
+  "api_id": "domains.googleapis.com",
+  "requires_billing": true
+}

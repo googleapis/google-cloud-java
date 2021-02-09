@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "git": {
+        "name": "."
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "7c6c8722fce118e86b404f6b80f797b4cad608b7",
+        "internalRef": "356380191"
+      }
+    },
+    {
+      "git": {
+        "name": "synthtool",
+        "remote": "https://github.com/googleapis/synthtool.git",
+        "sha": "4679e7e415221f03ff2a71e3ffad75b9ec41d87e"
+      }
+    }
+  ]
+}
