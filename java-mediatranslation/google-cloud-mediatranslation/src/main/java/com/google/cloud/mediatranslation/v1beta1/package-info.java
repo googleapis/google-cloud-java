@@ -22,6 +22,20 @@
  * <p>Service Description: Provides translation from/to media types.
  *
  * <p>Sample for SpeechTranslationServiceClient:
+ *
+ * <pre>{@code
+ * try (SpeechTranslationServiceClient speechTranslationServiceClient =
+ *     SpeechTranslationServiceClient.create()) {
+ *   BidiStream<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse> bidiStream =
+ *       speechTranslationServiceClient.streamingTranslateSpeechCallable().call();
+ *   StreamingTranslateSpeechRequest request =
+ *       StreamingTranslateSpeechRequest.newBuilder().build();
+ *   bidiStream.send(request);
+ *   for (StreamingTranslateSpeechResponse response : bidiStream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.mediatranslation.v1beta1;

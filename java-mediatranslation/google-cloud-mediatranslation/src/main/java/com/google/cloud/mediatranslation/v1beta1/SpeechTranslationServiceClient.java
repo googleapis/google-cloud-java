@@ -32,6 +32,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SpeechTranslationServiceClient speechTranslationServiceClient =
+ *     SpeechTranslationServiceClient.create()) {
+ *   BidiStream<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse> bidiStream =
+ *       speechTranslationServiceClient.streamingTranslateSpeechCallable().call();
+ *   StreamingTranslateSpeechRequest request =
+ *       StreamingTranslateSpeechRequest.newBuilder().build();
+ *   bidiStream.send(request);
+ *   for (StreamingTranslateSpeechResponse response : bidiStream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SpeechTranslationServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -143,6 +157,20 @@ public class SpeechTranslationServiceClient implements BackgroundResource {
    * method is only available via the gRPC API (not REST).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechTranslationServiceClient speechTranslationServiceClient =
+   *     SpeechTranslationServiceClient.create()) {
+   *   BidiStream<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse> bidiStream =
+   *       speechTranslationServiceClient.streamingTranslateSpeechCallable().call();
+   *   StreamingTranslateSpeechRequest request =
+   *       StreamingTranslateSpeechRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (StreamingTranslateSpeechResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final BidiStreamingCallable<
           StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>
