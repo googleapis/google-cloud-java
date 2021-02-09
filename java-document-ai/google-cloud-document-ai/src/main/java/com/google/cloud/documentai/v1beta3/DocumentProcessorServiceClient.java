@@ -39,6 +39,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+ *     DocumentProcessorServiceClient.create()) {
+ *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DocumentProcessorServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -159,6 +167,16 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   /**
    * Processes a single document.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -172,6 +190,16 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   /**
    * Processes a single document.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -183,6 +211,21 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a single document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessRequest request =
+   *       ProcessRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .setSkipHumanReview(true)
+   *           .build();
+   *   ProcessResponse response = documentProcessorServiceClient.processDocument(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -196,6 +239,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * Processes a single document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessRequest request =
+   *       ProcessRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .setSkipHumanReview(true)
+   *           .build();
+   *   ApiFuture<ProcessResponse> future =
+   *       documentProcessorServiceClient.processDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   ProcessResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ProcessRequest, ProcessResponse> processDocumentCallable() {
     return stub.processDocumentCallable();
@@ -205,6 +264,17 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   BatchProcessResponse response =
+   *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -221,6 +291,17 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   BatchProcessResponse response =
+   *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The processor resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -234,6 +315,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   /**
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   BatchProcessRequest request =
+   *       BatchProcessRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
+   *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
+   *           .build();
+   *   BatchProcessResponse response =
+   *       documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -249,6 +346,24 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * the [Document] format.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   BatchProcessRequest request =
+   *       BatchProcessRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
+   *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
+   *       documentProcessorServiceClient
+   *           .batchProcessDocumentsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchProcessResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsOperationCallable() {
@@ -261,6 +376,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * the [Document] format.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   BatchProcessRequest request =
+   *       BatchProcessRequest.newBuilder()
+   *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
+   *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchProcessRequest, Operation> batchProcessDocumentsCallable() {
     return stub.batchProcessDocumentsCallable();
@@ -270,6 +401,18 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
   /**
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   HumanReviewConfigName humanReviewConfig =
+   *       HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ReviewDocumentResponse response =
+   *       documentProcessorServiceClient.reviewDocumentAsync(humanReviewConfig).get();
+   * }
+   * }</pre>
    *
    * @param humanReviewConfig Required. The resource name of the HumanReviewConfig that the document
    *     will be reviewed with.
@@ -289,6 +432,18 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   String humanReviewConfig =
+   *       HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   ReviewDocumentResponse response =
+   *       documentProcessorServiceClient.reviewDocumentAsync(humanReviewConfig).get();
+   * }
+   * }</pre>
+   *
    * @param humanReviewConfig Required. The resource name of the HumanReviewConfig that the document
    *     will be reviewed with.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -305,6 +460,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * Send a document for Human Review. The input document should be processed by the specified
    * processor.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ReviewDocumentRequest request =
+   *       ReviewDocumentRequest.newBuilder()
+   *           .setHumanReviewConfig(
+   *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .build();
+   *   ReviewDocumentResponse response =
+   *       documentProcessorServiceClient.reviewDocumentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -319,6 +490,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * processor.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ReviewDocumentRequest request =
+   *       ReviewDocumentRequest.newBuilder()
+   *           .setHumanReviewConfig(
+   *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ReviewDocumentResponse, ReviewDocumentOperationMetadata> future =
+   *       documentProcessorServiceClient.reviewDocumentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ReviewDocumentResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
@@ -332,6 +519,22 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * processor.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+   *     DocumentProcessorServiceClient.create()) {
+   *   ReviewDocumentRequest request =
+   *       ReviewDocumentRequest.newBuilder()
+   *           .setHumanReviewConfig(
+   *               HumanReviewConfigName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocument(Document.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentProcessorServiceClient.reviewDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     return stub.reviewDocumentCallable();

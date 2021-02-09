@@ -24,6 +24,15 @@
  * vision, and translation.
  *
  * <p>Sample for DocumentUnderstandingServiceClient:
+ *
+ * <pre>{@code
+ * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+ *     DocumentUnderstandingServiceClient.create()) {
+ *   List<ProcessDocumentRequest> requests = new ArrayList<>();
+ *   BatchProcessDocumentsResponse response =
+ *       documentUnderstandingServiceClient.batchProcessDocumentsAsync(requests).get();
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.documentai.v1beta1;

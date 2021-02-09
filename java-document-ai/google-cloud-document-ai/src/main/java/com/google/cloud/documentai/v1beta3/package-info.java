@@ -25,6 +25,14 @@
  * semi-structured documents.
  *
  * <p>Sample for DocumentProcessorServiceClient:
+ *
+ * <pre>{@code
+ * try (DocumentProcessorServiceClient documentProcessorServiceClient =
+ *     DocumentProcessorServiceClient.create()) {
+ *   ProcessorName name = ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.documentai.v1beta3;

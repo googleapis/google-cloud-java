@@ -24,6 +24,25 @@
  * vision, and translation.
  *
  * <p>Sample for DocumentUnderstandingServiceClient:
+ *
+ * <pre>{@code
+ * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+ *     DocumentUnderstandingServiceClient.create()) {
+ *   ProcessDocumentRequest request =
+ *       ProcessDocumentRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setInputConfig(InputConfig.newBuilder().build())
+ *           .setOutputConfig(OutputConfig.newBuilder().build())
+ *           .setDocumentType("documentType-1473196299")
+ *           .setTableExtractionParams(TableExtractionParams.newBuilder().build())
+ *           .setFormExtractionParams(FormExtractionParams.newBuilder().build())
+ *           .setEntityExtractionParams(EntityExtractionParams.newBuilder().build())
+ *           .setOcrParams(OcrParams.newBuilder().build())
+ *           .setAutomlParams(AutoMlParams.newBuilder().build())
+ *           .build();
+ *   Document response = documentUnderstandingServiceClient.processDocument(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.documentai.v1beta2;

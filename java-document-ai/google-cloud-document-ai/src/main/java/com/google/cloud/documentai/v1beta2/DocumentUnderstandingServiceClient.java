@@ -39,6 +39,25 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+ *     DocumentUnderstandingServiceClient.create()) {
+ *   ProcessDocumentRequest request =
+ *       ProcessDocumentRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setInputConfig(InputConfig.newBuilder().build())
+ *           .setOutputConfig(OutputConfig.newBuilder().build())
+ *           .setDocumentType("documentType-1473196299")
+ *           .setTableExtractionParams(TableExtractionParams.newBuilder().build())
+ *           .setFormExtractionParams(FormExtractionParams.newBuilder().build())
+ *           .setEntityExtractionParams(EntityExtractionParams.newBuilder().build())
+ *           .setOcrParams(OcrParams.newBuilder().build())
+ *           .setAutomlParams(AutoMlParams.newBuilder().build())
+ *           .build();
+ *   Document response = documentUnderstandingServiceClient.processDocument(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the DocumentUnderstandingServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -162,6 +181,17 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+   *     DocumentUnderstandingServiceClient.create()) {
+   *   List<ProcessDocumentRequest> requests = new ArrayList<>();
+   *   BatchProcessDocumentsResponse response =
+   *       documentUnderstandingServiceClient.batchProcessDocumentsAsync(requests).get();
+   * }
+   * }</pre>
+   *
    * @param requests Required. Individual requests for each document.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -177,6 +207,21 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    * LRO endpoint to batch process many documents. The output is written to Cloud Storage as JSON in
    * the [Document] format.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+   *     DocumentUnderstandingServiceClient.create()) {
+   *   BatchProcessDocumentsRequest request =
+   *       BatchProcessDocumentsRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<ProcessDocumentRequest>())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   BatchProcessDocumentsResponse response =
+   *       documentUnderstandingServiceClient.batchProcessDocumentsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -191,6 +236,23 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    * the [Document] format.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+   *     DocumentUnderstandingServiceClient.create()) {
+   *   BatchProcessDocumentsRequest request =
+   *       BatchProcessDocumentsRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<ProcessDocumentRequest>())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   OperationFuture<BatchProcessDocumentsResponse, OperationMetadata> future =
+   *       documentUnderstandingServiceClient
+   *           .batchProcessDocumentsOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchProcessDocumentsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           BatchProcessDocumentsRequest, BatchProcessDocumentsResponse, OperationMetadata>
@@ -204,6 +266,21 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    * the [Document] format.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+   *     DocumentUnderstandingServiceClient.create()) {
+   *   BatchProcessDocumentsRequest request =
+   *       BatchProcessDocumentsRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<ProcessDocumentRequest>())
+   *           .setParent("parent-995424086")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentUnderstandingServiceClient.batchProcessDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchProcessDocumentsRequest, Operation>
       batchProcessDocumentsCallable() {
@@ -213,6 +290,27 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a single document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+   *     DocumentUnderstandingServiceClient.create()) {
+   *   ProcessDocumentRequest request =
+   *       ProcessDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setDocumentType("documentType-1473196299")
+   *           .setTableExtractionParams(TableExtractionParams.newBuilder().build())
+   *           .setFormExtractionParams(FormExtractionParams.newBuilder().build())
+   *           .setEntityExtractionParams(EntityExtractionParams.newBuilder().build())
+   *           .setOcrParams(OcrParams.newBuilder().build())
+   *           .setAutomlParams(AutoMlParams.newBuilder().build())
+   *           .build();
+   *   Document response = documentUnderstandingServiceClient.processDocument(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -226,6 +324,28 @@ public class DocumentUnderstandingServiceClient implements BackgroundResource {
    * Processes a single document.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (DocumentUnderstandingServiceClient documentUnderstandingServiceClient =
+   *     DocumentUnderstandingServiceClient.create()) {
+   *   ProcessDocumentRequest request =
+   *       ProcessDocumentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(InputConfig.newBuilder().build())
+   *           .setOutputConfig(OutputConfig.newBuilder().build())
+   *           .setDocumentType("documentType-1473196299")
+   *           .setTableExtractionParams(TableExtractionParams.newBuilder().build())
+   *           .setFormExtractionParams(FormExtractionParams.newBuilder().build())
+   *           .setEntityExtractionParams(EntityExtractionParams.newBuilder().build())
+   *           .setOcrParams(OcrParams.newBuilder().build())
+   *           .setAutomlParams(AutoMlParams.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Document> future =
+   *       documentUnderstandingServiceClient.processDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   Document response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ProcessDocumentRequest, Document> processDocumentCallable() {
     return stub.processDocumentCallable();
