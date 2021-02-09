@@ -34,6 +34,16 @@
  * `projects/myproject/locations/US/capacityCommitments/id`.
  *
  * <p>Sample for ReservationServiceClient:
+ *
+ * <pre>{@code
+ * try (ReservationServiceClient reservationServiceClient = ReservationServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Reservation reservation = Reservation.newBuilder().build();
+ *   String reservationId = "reservationId1116965383";
+ *   Reservation response =
+ *       reservationServiceClient.createReservation(parent, reservation, reservationId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.reservation.v1;
