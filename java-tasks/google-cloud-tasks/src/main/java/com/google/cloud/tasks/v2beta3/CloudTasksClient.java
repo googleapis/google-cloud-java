@@ -50,6 +50,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+ *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+ *   Queue response = cloudTasksClient.getQueue(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CloudTasksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -154,6 +161,17 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Queues are returned in lexicographical order.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Queue element : cloudTasksClient.listQueues(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The location name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -170,6 +188,17 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Queues are returned in lexicographical order.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   for (Queue element : cloudTasksClient.listQueues(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The location name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -185,6 +214,24 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Queues are returned in lexicographical order.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ListQueuesRequest request =
+   *       ListQueuesRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   for (Queue element : cloudTasksClient.listQueues(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -199,6 +246,24 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Queues are returned in lexicographical order.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ListQueuesRequest request =
+   *       ListQueuesRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.listQueuesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Queue element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
     return stub.listQueuesPagedCallable();
@@ -211,6 +276,23 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Queues are returned in lexicographical order.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   while (true) {
+   *     ListQueuesResponse response = cloudTasksClient.listQueuesCallable().call(request);
+   *     for (Queue element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable() {
     return stub.listQueuesCallable();
@@ -219,6 +301,15 @@ public class CloudTasksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a queue.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Queue response = cloudTasksClient.getQueue(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the queue. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
@@ -234,6 +325,15 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Gets a queue.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   Queue response = cloudTasksClient.getQueue(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the queue. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -247,6 +347,19 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Gets a queue.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetQueueRequest request =
+   *       GetQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Queue response = cloudTasksClient.getQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -259,6 +372,19 @@ public class CloudTasksClient implements BackgroundResource {
    * Gets a queue.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetQueueRequest request =
+   *       GetQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.getQueueCallable().futureCall(request);
+   *   // Do something.
+   *   Queue response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetQueueRequest, Queue> getQueueCallable() {
     return stub.getQueueCallable();
@@ -274,6 +400,16 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Queue queue = Queue.newBuilder().build();
+   *   Queue response = cloudTasksClient.createQueue(parent, queue);
+   * }
+   * }</pre>
    *
    * @param parent Required. The location name in which the queue will be created. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID`
@@ -304,6 +440,16 @@ public class CloudTasksClient implements BackgroundResource {
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   Queue queue = Queue.newBuilder().build();
+   *   Queue response = cloudTasksClient.createQueue(parent, queue);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The location name in which the queue will be created. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID`
    *     <p>The list of allowed locations can be obtained by calling Cloud Tasks' implementation of
@@ -330,6 +476,19 @@ public class CloudTasksClient implements BackgroundResource {
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   CreateQueueRequest request =
+   *       CreateQueueRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setQueue(Queue.newBuilder().build())
+   *           .build();
+   *   Queue response = cloudTasksClient.createQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -349,6 +508,19 @@ public class CloudTasksClient implements BackgroundResource {
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   CreateQueueRequest request =
+   *       CreateQueueRequest.newBuilder()
+   *           .setParent(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .setQueue(Queue.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.createQueueCallable().futureCall(request);
+   *   // Do something.
+   *   Queue response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateQueueRequest, Queue> createQueueCallable() {
     return stub.createQueueCallable();
@@ -366,6 +538,16 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   Queue queue = Queue.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Queue response = cloudTasksClient.updateQueue(queue, updateMask);
+   * }
+   * }</pre>
    *
    * @param queue Required. The queue to create or update.
    *     <p>The queue's [name][google.cloud.tasks.v2beta3.Queue.name] must be specified.
@@ -395,6 +577,19 @@ public class CloudTasksClient implements BackgroundResource {
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   UpdateQueueRequest request =
+   *       UpdateQueueRequest.newBuilder()
+   *           .setQueue(Queue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Queue response = cloudTasksClient.updateQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -416,6 +611,19 @@ public class CloudTasksClient implements BackgroundResource {
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   UpdateQueueRequest request =
+   *       UpdateQueueRequest.newBuilder()
+   *           .setQueue(Queue.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.updateQueueCallable().futureCall(request);
+   *   // Do something.
+   *   Queue response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateQueueRequest, Queue> updateQueueCallable() {
     return stub.updateQueueCallable();
@@ -432,6 +640,15 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>WARNING: Using this method may have unintended side effects if you are using an App Engine
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   cloudTasksClient.deleteQueue(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
@@ -455,6 +672,15 @@ public class CloudTasksClient implements BackgroundResource {
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   cloudTasksClient.deleteQueue(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -476,6 +702,18 @@ public class CloudTasksClient implements BackgroundResource {
    * `queue.yaml` or `queue.xml` file to manage your queues. Read [Overview of Queue Management and
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   DeleteQueueRequest request =
+   *       DeleteQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   cloudTasksClient.deleteQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -496,6 +734,18 @@ public class CloudTasksClient implements BackgroundResource {
    * queue.yaml](https://cloud.google.com/tasks/docs/queue-yaml) before using this method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   DeleteQueueRequest request =
+   *       DeleteQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = cloudTasksClient.deleteQueueCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteQueueRequest, Empty> deleteQueueCallable() {
     return stub.deleteQueueCallable();
@@ -509,6 +759,15 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>Purge operations can take up to one minute to take effect. Tasks might be dispatched before
    * the purge takes effect. A purge is irreversible.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Queue response = cloudTasksClient.purgeQueue(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
@@ -529,6 +788,15 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Purge operations can take up to one minute to take effect. Tasks might be dispatched before
    * the purge takes effect. A purge is irreversible.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   Queue response = cloudTasksClient.purgeQueue(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -547,6 +815,18 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Purge operations can take up to one minute to take effect. Tasks might be dispatched before
    * the purge takes effect. A purge is irreversible.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   PurgeQueueRequest request =
+   *       PurgeQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   Queue response = cloudTasksClient.purgeQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -564,6 +844,18 @@ public class CloudTasksClient implements BackgroundResource {
    * the purge takes effect. A purge is irreversible.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   PurgeQueueRequest request =
+   *       PurgeQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.purgeQueueCallable().futureCall(request);
+   *   // Do something.
+   *   Queue response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PurgeQueueRequest, Queue> purgeQueueCallable() {
     return stub.purgeQueueCallable();
@@ -578,6 +870,15 @@ public class CloudTasksClient implements BackgroundResource {
    * when the queue is paused. A queue is paused if its
    * [state][google.cloud.tasks.v2beta3.Queue.state] is
    * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Queue response = cloudTasksClient.pauseQueue(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
@@ -599,6 +900,15 @@ public class CloudTasksClient implements BackgroundResource {
    * [state][google.cloud.tasks.v2beta3.Queue.state] is
    * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   Queue response = cloudTasksClient.pauseQueue(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -618,6 +928,18 @@ public class CloudTasksClient implements BackgroundResource {
    * [state][google.cloud.tasks.v2beta3.Queue.state] is
    * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   PauseQueueRequest request =
+   *       PauseQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   Queue response = cloudTasksClient.pauseQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -636,6 +958,18 @@ public class CloudTasksClient implements BackgroundResource {
    * [PAUSED][google.cloud.tasks.v2beta3.Queue.State.PAUSED].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   PauseQueueRequest request =
+   *       PauseQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.pauseQueueCallable().futureCall(request);
+   *   // Do something.
+   *   Queue response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PauseQueueRequest, Queue> pauseQueueCallable() {
     return stub.pauseQueueCallable();
@@ -654,6 +988,15 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>WARNING: Resuming many high-QPS queues at the same time can lead to target overloading. If
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
    * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Queue response = cloudTasksClient.resumeQueue(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
@@ -679,6 +1022,15 @@ public class CloudTasksClient implements BackgroundResource {
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
    * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString();
+   *   Queue response = cloudTasksClient.resumeQueue(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The queue name. For example:
    *     `projects/PROJECT_ID/location/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -702,6 +1054,18 @@ public class CloudTasksClient implements BackgroundResource {
    * you are resuming high-QPS queues, follow the 500/50/5 pattern described in [Managing Cloud
    * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ResumeQueueRequest request =
+   *       ResumeQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   Queue response = cloudTasksClient.resumeQueue(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -724,6 +1088,18 @@ public class CloudTasksClient implements BackgroundResource {
    * Tasks Scaling Risks](https://cloud.google.com/tasks/docs/manage-cloud-task-scaling).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ResumeQueueRequest request =
+   *       ResumeQueueRequest.newBuilder()
+   *           .setName(QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]").toString())
+   *           .build();
+   *   ApiFuture<Queue> future = cloudTasksClient.resumeQueueCallable().futureCall(request);
+   *   // Do something.
+   *   Queue response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResumeQueueRequest, Queue> resumeQueueCallable() {
     return stub.resumeQueueCallable();
@@ -740,6 +1116,15 @@ public class CloudTasksClient implements BackgroundResource {
    * <ul>
    *   <li>`cloudtasks.queues.getIamPolicy`
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Policy response = cloudTasksClient.getIamPolicy(resource);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -765,6 +1150,15 @@ public class CloudTasksClient implements BackgroundResource {
    *   <li>`cloudtasks.queues.getIamPolicy`
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Policy response = cloudTasksClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -785,6 +1179,19 @@ public class CloudTasksClient implements BackgroundResource {
    * <ul>
    *   <li>`cloudtasks.queues.getIamPolicy`
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = cloudTasksClient.getIamPolicy(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -810,6 +1217,19 @@ public class CloudTasksClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = cloudTasksClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -829,6 +1249,16 @@ public class CloudTasksClient implements BackgroundResource {
    * <ul>
    *   <li>`cloudtasks.queues.setIamPolicy`
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -861,6 +1291,16 @@ public class CloudTasksClient implements BackgroundResource {
    *   <li>`cloudtasks.queues.setIamPolicy`
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = cloudTasksClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
@@ -889,6 +1329,19 @@ public class CloudTasksClient implements BackgroundResource {
    *   <li>`cloudtasks.queues.setIamPolicy`
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = cloudTasksClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -916,6 +1369,19 @@ public class CloudTasksClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = cloudTasksClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -930,6 +1396,17 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>Note: This operation is designed to be used for building permission-aware UIs and
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ResourceName resource = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       cloudTasksClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -958,6 +1435,17 @@ public class CloudTasksClient implements BackgroundResource {
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String resource = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       cloudTasksClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
@@ -985,6 +1473,19 @@ public class CloudTasksClient implements BackgroundResource {
    * command-line tools, not for authorization checking. This operation may "fail open" without
    * warning.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = cloudTasksClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1008,6 +1509,20 @@ public class CloudTasksClient implements BackgroundResource {
    * warning.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       cloudTasksClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
@@ -1024,6 +1539,17 @@ public class CloudTasksClient implements BackgroundResource {
    * of information which is returned.
    *
    * <p>The tasks may be returned in any order. The ordering may change at any time.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   for (Task element : cloudTasksClient.listTasks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
@@ -1046,6 +1572,17 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>The tasks may be returned in any order. The ordering may change at any time.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String parent = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   for (Task element : cloudTasksClient.listTasks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1066,6 +1603,22 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>The tasks may be returned in any order. The ordering may change at any time.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ListTasksRequest request =
+   *       ListTasksRequest.newBuilder()
+   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Task element : cloudTasksClient.listTasks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1085,6 +1638,22 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>The tasks may be returned in any order. The ordering may change at any time.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   ListTasksRequest request =
+   *       ListTasksRequest.newBuilder()
+   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Task> future = cloudTasksClient.listTasksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Task element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
     return stub.listTasksPagedCallable();
@@ -1102,6 +1671,23 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>The tasks may be returned in any order. The ordering may change at any time.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   while (true) {
+   *     ListTasksResponse response = cloudTasksClient.listTasksCallable().call(request);
+   *     for (Task element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable() {
     return stub.listTasksCallable();
@@ -1110,6 +1696,15 @@ public class CloudTasksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a task.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]");
+   *   Task response = cloudTasksClient.getTask(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
@@ -1125,6 +1720,15 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Gets a task.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   Task response = cloudTasksClient.getTask(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1138,6 +1742,18 @@ public class CloudTasksClient implements BackgroundResource {
   /**
    * Gets a task.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetTaskRequest request =
+   *       GetTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .build();
+   *   Task response = cloudTasksClient.getTask(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1150,6 +1766,18 @@ public class CloudTasksClient implements BackgroundResource {
    * Gets a task.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   GetTaskRequest request =
+   *       GetTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .build();
+   *   ApiFuture<Task> future = cloudTasksClient.getTaskCallable().futureCall(request);
+   *   // Do something.
+   *   Task response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
     return stub.getTaskCallable();
@@ -1164,6 +1792,16 @@ public class CloudTasksClient implements BackgroundResource {
    * <ul>
    *   <li>The maximum task size is 100KB.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   QueueName parent = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+   *   Task task = Task.newBuilder().build();
+   *   Task response = cloudTasksClient.createTask(parent, task);
+   * }
+   * }</pre>
    *
    * @param parent Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
@@ -1212,6 +1850,16 @@ public class CloudTasksClient implements BackgroundResource {
    *   <li>The maximum task size is 100KB.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String parent = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   Task task = Task.newBuilder().build();
+   *   Task response = cloudTasksClient.createTask(parent, task);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The queue name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID`
    *     <p>The queue must already exist.
@@ -1256,6 +1904,19 @@ public class CloudTasksClient implements BackgroundResource {
    *   <li>The maximum task size is 100KB.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   CreateTaskRequest request =
+   *       CreateTaskRequest.newBuilder()
+   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setTask(Task.newBuilder().build())
+   *           .build();
+   *   Task response = cloudTasksClient.createTask(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1274,6 +1935,19 @@ public class CloudTasksClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   CreateTaskRequest request =
+   *       CreateTaskRequest.newBuilder()
+   *           .setParent(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .setTask(Task.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Task> future = cloudTasksClient.createTaskCallable().futureCall(request);
+   *   // Do something.
+   *   Task response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateTaskRequest, Task> createTaskCallable() {
     return stub.createTaskCallable();
@@ -1285,6 +1959,15 @@ public class CloudTasksClient implements BackgroundResource {
    *
    * <p>A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has
    * executed successfully or permanently failed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]");
+   *   cloudTasksClient.deleteTask(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
@@ -1303,6 +1986,15 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has
    * executed successfully or permanently failed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   cloudTasksClient.deleteTask(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1319,6 +2011,18 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>A task can be deleted if it is scheduled or dispatched. A task cannot be deleted if it has
    * executed successfully or permanently failed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   DeleteTaskRequest request =
+   *       DeleteTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .build();
+   *   cloudTasksClient.deleteTask(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1334,6 +2038,18 @@ public class CloudTasksClient implements BackgroundResource {
    * executed successfully or permanently failed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   DeleteTaskRequest request =
+   *       DeleteTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = cloudTasksClient.deleteTaskCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
     return stub.deleteTaskCallable();
@@ -1364,6 +2080,15 @@ public class CloudTasksClient implements BackgroundResource {
    * <p>[RunTask][google.cloud.tasks.v2beta3.CloudTasks.RunTask] returns
    * [NOT_FOUND][google.rpc.Code.NOT_FOUND] when it is called on a task that has already succeeded
    * or permanently failed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   TaskName name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]");
+   *   Task response = cloudTasksClient.runTask(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
@@ -1401,6 +2126,15 @@ public class CloudTasksClient implements BackgroundResource {
    * [NOT_FOUND][google.rpc.Code.NOT_FOUND] when it is called on a task that has already succeeded
    * or permanently failed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   String name = TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString();
+   *   Task response = cloudTasksClient.runTask(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The task name. For example:
    *     `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1436,6 +2170,18 @@ public class CloudTasksClient implements BackgroundResource {
    * [NOT_FOUND][google.rpc.Code.NOT_FOUND] when it is called on a task that has already succeeded
    * or permanently failed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   RunTaskRequest request =
+   *       RunTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .build();
+   *   Task response = cloudTasksClient.runTask(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1470,6 +2216,18 @@ public class CloudTasksClient implements BackgroundResource {
    * or permanently failed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+   *   RunTaskRequest request =
+   *       RunTaskRequest.newBuilder()
+   *           .setName(TaskName.of("[PROJECT]", "[LOCATION]", "[QUEUE]", "[TASK]").toString())
+   *           .build();
+   *   ApiFuture<Task> future = cloudTasksClient.runTaskCallable().futureCall(request);
+   *   // Do something.
+   *   Task response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return stub.runTaskCallable();

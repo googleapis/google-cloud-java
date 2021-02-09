@@ -23,6 +23,13 @@
  * in their applications.
  *
  * <p>Sample for CloudTasksClient:
+ *
+ * <pre>{@code
+ * try (CloudTasksClient cloudTasksClient = CloudTasksClient.create()) {
+ *   QueueName name = QueueName.of("[PROJECT]", "[LOCATION]", "[QUEUE]");
+ *   Queue response = cloudTasksClient.getQueue(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.tasks.v2beta3;
