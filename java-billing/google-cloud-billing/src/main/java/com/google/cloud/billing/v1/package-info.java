@@ -23,12 +23,27 @@
  *
  * <p>Sample for CloudBillingClient:
  *
+ * <pre>{@code
+ * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+ *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+ *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CloudCatalogClient =======================
  *
  * <p>Service Description: A catalog of Google Cloud Platform services and SKUs. Provides pricing
  * information and metadata on Google Cloud Platform services and SKUs.
  *
  * <p>Sample for CloudCatalogClient:
+ *
+ * <pre>{@code
+ * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+ *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.billing.v1;

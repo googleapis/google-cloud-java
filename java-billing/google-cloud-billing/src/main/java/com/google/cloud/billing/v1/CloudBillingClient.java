@@ -47,6 +47,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+ *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+ *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CloudBillingClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -150,6 +157,15 @@ public class CloudBillingClient implements BackgroundResource {
    * Gets information about a billing account. The current authenticated user must be a [viewer of
    * the billing account](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the billing account to retrieve. For example,
    *     `billingAccounts/012345-567890-ABCDEF`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -167,6 +183,15 @@ public class CloudBillingClient implements BackgroundResource {
    * Gets information about a billing account. The current authenticated user must be a [viewer of
    * the billing account](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   BillingAccount response = cloudBillingClient.getBillingAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the billing account to retrieve. For example,
    *     `billingAccounts/012345-567890-ABCDEF`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -181,6 +206,18 @@ public class CloudBillingClient implements BackgroundResource {
    * Gets information about a billing account. The current authenticated user must be a [viewer of
    * the billing account](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   GetBillingAccountRequest request =
+   *       GetBillingAccountRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .build();
+   *   BillingAccount response = cloudBillingClient.getBillingAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -194,6 +231,19 @@ public class CloudBillingClient implements BackgroundResource {
    * the billing account](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   GetBillingAccountRequest request =
+   *       GetBillingAccountRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .build();
+   *   ApiFuture<BillingAccount> future =
+   *       cloudBillingClient.getBillingAccountCallable().futureCall(request);
+   *   // Do something.
+   *   BillingAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable() {
     return stub.getBillingAccountCallable();
@@ -203,6 +253,16 @@ public class CloudBillingClient implements BackgroundResource {
   /**
    * Lists the billing accounts that the current authenticated user has permission to
    * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   for (BillingAccount element : cloudBillingClient.listBillingAccounts().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -216,6 +276,22 @@ public class CloudBillingClient implements BackgroundResource {
   /**
    * Lists the billing accounts that the current authenticated user has permission to
    * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ListBillingAccountsRequest request =
+   *       ListBillingAccountsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (BillingAccount element : cloudBillingClient.listBillingAccounts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -231,6 +307,23 @@ public class CloudBillingClient implements BackgroundResource {
    * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ListBillingAccountsRequest request =
+   *       ListBillingAccountsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<BillingAccount> future =
+   *       cloudBillingClient.listBillingAccountsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (BillingAccount element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsPagedResponse>
       listBillingAccountsPagedCallable() {
@@ -243,6 +336,24 @@ public class CloudBillingClient implements BackgroundResource {
    * [view](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   while (true) {
+   *     ListBillingAccountsResponse response =
+   *         cloudBillingClient.listBillingAccountsCallable().call(request);
+   *     for (BillingAccount element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsResponse>
       listBillingAccountsCallable() {
@@ -256,6 +367,16 @@ public class CloudBillingClient implements BackgroundResource {
    * permission, which is typically given to the
    * [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing
    * account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   BillingAccount account = BillingAccount.newBuilder().build();
+   *   BillingAccount response = cloudBillingClient.updateBillingAccount(name, account);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the billing account resource to be updated.
    * @param account Required. The billing account resource to replace the resource on the server.
@@ -279,6 +400,16 @@ public class CloudBillingClient implements BackgroundResource {
    * [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing
    * account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   BillingAccount account = BillingAccount.newBuilder().build();
+   *   BillingAccount response = cloudBillingClient.updateBillingAccount(name, account);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the billing account resource to be updated.
    * @param account Required. The billing account resource to replace the resource on the server.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -297,6 +428,20 @@ public class CloudBillingClient implements BackgroundResource {
    * [administrator](https://cloud.google.com/billing/docs/how-to/billing-access) of the billing
    * account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   UpdateBillingAccountRequest request =
+   *       UpdateBillingAccountRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setAccount(BillingAccount.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BillingAccount response = cloudBillingClient.updateBillingAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -313,6 +458,21 @@ public class CloudBillingClient implements BackgroundResource {
    * account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   UpdateBillingAccountRequest request =
+   *       UpdateBillingAccountRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setAccount(BillingAccount.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BillingAccount> future =
+   *       cloudBillingClient.updateBillingAccountCallable().futureCall(request);
+   *   // Do something.
+   *   BillingAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateBillingAccountRequest, BillingAccount>
       updateBillingAccountCallable() {
@@ -327,6 +487,15 @@ public class CloudBillingClient implements BackgroundResource {
    * permission on the master account, which is typically given to billing account
    * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access). This method will
    * return an error if the master account has not been provisioned as a reseller account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   BillingAccount billingAccount = BillingAccount.newBuilder().build();
+   *   BillingAccount response = cloudBillingClient.createBillingAccount(billingAccount);
+   * }
+   * }</pre>
    *
    * @param billingAccount Required. The billing account resource to create. Currently
    *     CreateBillingAccount only supports subaccount creation, so any created billing accounts
@@ -348,6 +517,18 @@ public class CloudBillingClient implements BackgroundResource {
    * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access). This method will
    * return an error if the master account has not been provisioned as a reseller account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   CreateBillingAccountRequest request =
+   *       CreateBillingAccountRequest.newBuilder()
+   *           .setBillingAccount(BillingAccount.newBuilder().build())
+   *           .build();
+   *   BillingAccount response = cloudBillingClient.createBillingAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -365,6 +546,19 @@ public class CloudBillingClient implements BackgroundResource {
    * return an error if the master account has not been provisioned as a reseller account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   CreateBillingAccountRequest request =
+   *       CreateBillingAccountRequest.newBuilder()
+   *           .setBillingAccount(BillingAccount.newBuilder().build())
+   *           .build();
+   *   ApiFuture<BillingAccount> future =
+   *       cloudBillingClient.createBillingAccountCallable().futureCall(request);
+   *   // Do something.
+   *   BillingAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateBillingAccountRequest, BillingAccount>
       createBillingAccountCallable() {
@@ -376,6 +570,18 @@ public class CloudBillingClient implements BackgroundResource {
    * Lists the projects associated with a billing account. The current authenticated user must have
    * the `billing.resourceAssociations.list` IAM permission, which is often given to billing account
    * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   BillingAccountName name = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   for (ProjectBillingInfo element :
+   *       cloudBillingClient.listProjectBillingInfo(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the billing account associated with the projects
    *     that you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
@@ -395,6 +601,18 @@ public class CloudBillingClient implements BackgroundResource {
    * the `billing.resourceAssociations.list` IAM permission, which is often given to billing account
    * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   for (ProjectBillingInfo element :
+   *       cloudBillingClient.listProjectBillingInfo(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the billing account associated with the projects
    *     that you want to list. For example, `billingAccounts/012345-567890-ABCDEF`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -411,6 +629,23 @@ public class CloudBillingClient implements BackgroundResource {
    * the `billing.resourceAssociations.list` IAM permission, which is often given to billing account
    * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ListProjectBillingInfoRequest request =
+   *       ListProjectBillingInfoRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ProjectBillingInfo element :
+   *       cloudBillingClient.listProjectBillingInfo(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -426,6 +661,23 @@ public class CloudBillingClient implements BackgroundResource {
    * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ListProjectBillingInfoRequest request =
+   *       ListProjectBillingInfoRequest.newBuilder()
+   *           .setName(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ProjectBillingInfo> future =
+   *       cloudBillingClient.listProjectBillingInfoPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ProjectBillingInfo element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoPagedResponse>
       listProjectBillingInfoPagedCallable() {
@@ -439,6 +691,24 @@ public class CloudBillingClient implements BackgroundResource {
    * [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   while (true) {
+   *     ListProjectBillingInfoResponse response =
+   *         cloudBillingClient.listProjectBillingInfoCallable().call(request);
+   *     for (ProjectBillingInfo element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>
       listProjectBillingInfoCallable() {
@@ -450,6 +720,15 @@ public class CloudBillingClient implements BackgroundResource {
    * Gets the billing information for a project. The current authenticated user must have
    * [permission to view the
    * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo ).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = "name3373707";
+   *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the project for which billing information is
    *     retrieved. For example, `projects/tokyo-rain-123`.
@@ -467,6 +746,16 @@ public class CloudBillingClient implements BackgroundResource {
    * [permission to view the
    * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo ).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   GetProjectBillingInfoRequest request =
+   *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
+   *   ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -481,6 +770,17 @@ public class CloudBillingClient implements BackgroundResource {
    * project](https://cloud.google.com/docs/permissions-overview#h.bgs0oxofvnoo ).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   GetProjectBillingInfoRequest request =
+   *       GetProjectBillingInfoRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<ProjectBillingInfo> future =
+   *       cloudBillingClient.getProjectBillingInfoCallable().futureCall(request);
+   *   // Do something.
+   *   ProjectBillingInfo response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetProjectBillingInfoRequest, ProjectBillingInfo>
       getProjectBillingInfoCallable() {
@@ -518,6 +818,17 @@ public class CloudBillingClient implements BackgroundResource {
    * <ul>
    *   <li>open&#42; billing account.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String name = "name3373707";
+   *   ProjectBillingInfo projectBillingInfo = ProjectBillingInfo.newBuilder().build();
+   *   ProjectBillingInfo response =
+   *       cloudBillingClient.updateProjectBillingInfo(name, projectBillingInfo);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the project associated with the billing information
    *     that you want to update. For example, `projects/tokyo-rain-123`.
@@ -567,6 +878,19 @@ public class CloudBillingClient implements BackgroundResource {
    *   <li>open&#42; billing account.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   UpdateProjectBillingInfoRequest request =
+   *       UpdateProjectBillingInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setProjectBillingInfo(ProjectBillingInfo.newBuilder().build())
+   *           .build();
+   *   ProjectBillingInfo response = cloudBillingClient.updateProjectBillingInfo(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -608,6 +932,20 @@ public class CloudBillingClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   UpdateProjectBillingInfoRequest request =
+   *       UpdateProjectBillingInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setProjectBillingInfo(ProjectBillingInfo.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ProjectBillingInfo> future =
+   *       cloudBillingClient.updateProjectBillingInfoCallable().futureCall(request);
+   *   // Do something.
+   *   ProjectBillingInfo response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
       updateProjectBillingInfoCallable() {
@@ -619,6 +957,15 @@ public class CloudBillingClient implements BackgroundResource {
    * Gets the access control policy for a billing account. The caller must have the
    * `billing.accounts.getIamPolicy` permission on the account, which is often given to billing
    * account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   Policy response = cloudBillingClient.getIamPolicy(resource);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -638,6 +985,15 @@ public class CloudBillingClient implements BackgroundResource {
    * `billing.accounts.getIamPolicy` permission on the account, which is often given to billing
    * account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   Policy response = cloudBillingClient.getIamPolicy(resource);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -653,6 +1009,19 @@ public class CloudBillingClient implements BackgroundResource {
    * `billing.accounts.getIamPolicy` permission on the account, which is often given to billing
    * account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = cloudBillingClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -667,6 +1036,19 @@ public class CloudBillingClient implements BackgroundResource {
    * account [viewers](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = cloudBillingClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return stub.getIamPolicyCallable();
@@ -678,6 +1060,16 @@ public class CloudBillingClient implements BackgroundResource {
    * must have the `billing.accounts.setIamPolicy` permission on the account, which is often given
    * to billing account
    * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = cloudBillingClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
@@ -702,6 +1094,16 @@ public class CloudBillingClient implements BackgroundResource {
    * to billing account
    * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = cloudBillingClient.setIamPolicy(resource, policy);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy is being specified. See the
    *     operation documentation for the appropriate value for this field.
    * @param policy REQUIRED: The complete policy to be applied to the `resource`. The size of the
@@ -722,6 +1124,19 @@ public class CloudBillingClient implements BackgroundResource {
    * to billing account
    * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   Policy response = cloudBillingClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -737,6 +1152,19 @@ public class CloudBillingClient implements BackgroundResource {
    * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = cloudBillingClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return stub.setIamPolicyCallable();
@@ -747,6 +1175,17 @@ public class CloudBillingClient implements BackgroundResource {
    * Tests the access control policy for a billing account. This method takes the resource and a set
    * of permissions as input and returns the subset of the input permissions that the caller is
    * allowed for that resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   ResourceName resource = BillingAccountName.of("[BILLING_ACCOUNT]");
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       cloudBillingClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
    *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
@@ -771,6 +1210,17 @@ public class CloudBillingClient implements BackgroundResource {
    * of permissions as input and returns the subset of the input permissions that the caller is
    * allowed for that resource.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   String resource = BillingAccountName.of("[BILLING_ACCOUNT]").toString();
+   *   List<String> permissions = new ArrayList<>();
+   *   TestIamPermissionsResponse response =
+   *       cloudBillingClient.testIamPermissions(resource, permissions);
+   * }
+   * }</pre>
+   *
    * @param resource REQUIRED: The resource for which the policy detail is being requested. See the
    *     operation documentation for the appropriate value for this field.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
@@ -794,6 +1244,19 @@ public class CloudBillingClient implements BackgroundResource {
    * of permissions as input and returns the subset of the input permissions that the caller is
    * allowed for that resource.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = cloudBillingClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -808,6 +1271,20 @@ public class CloudBillingClient implements BackgroundResource {
    * allowed for that resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(BillingAccountName.of("[BILLING_ACCOUNT]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       cloudBillingClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {

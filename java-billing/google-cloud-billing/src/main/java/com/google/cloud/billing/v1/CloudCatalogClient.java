@@ -42,6 +42,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+ *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CloudCatalogClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -144,6 +152,16 @@ public class CloudCatalogClient implements BackgroundResource {
   /**
    * Lists all public cloud services.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   for (Service element : cloudCatalogClient.listServices().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -155,6 +173,21 @@ public class CloudCatalogClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all public cloud services.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Service element : cloudCatalogClient.listServices(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -168,6 +201,22 @@ public class CloudCatalogClient implements BackgroundResource {
    * Lists all public cloud services.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ListServicesRequest request =
+   *       ListServicesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Service> future =
+   *       cloudCatalogClient.listServicesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Service element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesPagedResponse>
       listServicesPagedCallable() {
@@ -179,6 +228,23 @@ public class CloudCatalogClient implements BackgroundResource {
    * Lists all public cloud services.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   while (true) {
+   *     ListServicesResponse response = cloudCatalogClient.listServicesCallable().call(request);
+   *     for (Service element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return stub.listServicesCallable();
@@ -187,6 +253,17 @@ public class CloudCatalogClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ServiceName parent = ServiceName.of("[SERVICE]");
+   *   for (Sku element : cloudCatalogClient.listSkus(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The name of the service. Example: "services/DA34-426B-A397"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -201,6 +278,17 @@ public class CloudCatalogClient implements BackgroundResource {
   /**
    * Lists all publicly available SKUs for a given cloud service.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   String parent = ServiceName.of("[SERVICE]").toString();
+   *   for (Sku element : cloudCatalogClient.listSkus(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the service. Example: "services/DA34-426B-A397"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -212,6 +300,25 @@ public class CloudCatalogClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all publicly available SKUs for a given cloud service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ListSkusRequest request =
+   *       ListSkusRequest.newBuilder()
+   *           .setParent(ServiceName.of("[SERVICE]").toString())
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Sku element : cloudCatalogClient.listSkus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -225,6 +332,25 @@ public class CloudCatalogClient implements BackgroundResource {
    * Lists all publicly available SKUs for a given cloud service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   ListSkusRequest request =
+   *       ListSkusRequest.newBuilder()
+   *           .setParent(ServiceName.of("[SERVICE]").toString())
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .setCurrencyCode("currencyCode1004773790")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Sku> future = cloudCatalogClient.listSkusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Sku element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
     return stub.listSkusPagedCallable();
@@ -235,6 +361,23 @@ public class CloudCatalogClient implements BackgroundResource {
    * Lists all publicly available SKUs for a given cloud service.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudCatalogClient cloudCatalogClient = CloudCatalogClient.create()) {
+   *   while (true) {
+   *     ListSkusResponse response = cloudCatalogClient.listSkusCallable().call(request);
+   *     for (Sku element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable() {
     return stub.listSkusCallable();
