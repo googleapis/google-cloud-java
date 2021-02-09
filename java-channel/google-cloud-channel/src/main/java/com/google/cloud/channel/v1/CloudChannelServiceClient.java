@@ -64,6 +64,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+ *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+ *   Customer response = cloudChannelServiceClient.getCustomer(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CloudChannelServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -192,6 +199,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; List of [Customer][google.cloud.channel.v1.Customer]s pertaining
    * to the reseller or empty list if there are none.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListCustomersRequest request =
+   *       ListCustomersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Customer element : cloudChannelServiceClient.listCustomers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -215,6 +238,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * to the reseller or empty list if there are none.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListCustomersRequest request =
+   *       ListCustomersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudChannelServiceClient.listCustomersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Customer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCustomersRequest, ListCustomersPagedResponse>
       listCustomersPagedCallable() {
@@ -237,6 +277,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * to the reseller or empty list if there are none.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListCustomersResponse response =
+   *         cloudChannelServiceClient.listCustomersCallable().call(request);
+   *     for (Customer element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCustomersRequest, ListCustomersResponse> listCustomersCallable() {
     return stub.listCustomersCallable();
@@ -258,6 +316,15 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; [Customer][google.cloud.channel.v1.Customer] resource if found,
    * error otherwise.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+   *   Customer response = cloudChannelServiceClient.getCustomer(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the customer to retrieve. The name takes the format:
    *     accounts/{account_id}/customers/{customer_id}
@@ -286,6 +353,15 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; [Customer][google.cloud.channel.v1.Customer] resource if found,
    * error otherwise.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
+   *   Customer response = cloudChannelServiceClient.getCustomer(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the customer to retrieve. The name takes the format:
    *     accounts/{account_id}/customers/{customer_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -312,6 +388,18 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; [Customer][google.cloud.channel.v1.Customer] resource if found,
    * error otherwise.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetCustomerRequest request =
+   *       GetCustomerRequest.newBuilder()
+   *           .setName(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .build();
+   *   Customer response = cloudChannelServiceClient.getCustomer(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -337,6 +425,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * error otherwise.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetCustomerRequest request =
+   *       GetCustomerRequest.newBuilder()
+   *           .setName(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudChannelServiceClient.getCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCustomerRequest, Customer> getCustomerCallable() {
     return stub.getCustomerCallable();
@@ -362,6 +463,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; List of
    * [CloudIdentityCustomerAccount][google.cloud.channel.v1.CloudIdentityCustomerAccount] resources
    * if any exist for the domain, otherwise an error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CheckCloudIdentityAccountsExistRequest request =
+   *       CheckCloudIdentityAccountsExistRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDomain("domain-1326197564")
+   *           .build();
+   *   CheckCloudIdentityAccountsExistResponse response =
+   *       cloudChannelServiceClient.checkCloudIdentityAccountsExist(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -393,6 +508,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * if any exist for the domain, otherwise an error is returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CheckCloudIdentityAccountsExistRequest request =
+   *       CheckCloudIdentityAccountsExistRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setDomain("domain-1326197564")
+   *           .build();
+   *   ApiFuture<CheckCloudIdentityAccountsExistResponse> future =
+   *       cloudChannelServiceClient.checkCloudIdentityAccountsExistCallable().futureCall(request);
+   *   // Do something.
+   *   CheckCloudIdentityAccountsExistResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           CheckCloudIdentityAccountsExistRequest, CheckCloudIdentityAccountsExistResponse>
@@ -413,6 +542,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; If successful, the newly created
    * [Customer][google.cloud.channel.v1.Customer] resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateCustomerRequest request =
+   *       CreateCustomerRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .build();
+   *   Customer response = cloudChannelServiceClient.createCustomer(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -436,6 +578,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [Customer][google.cloud.channel.v1.Customer] resource, otherwise returns an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateCustomerRequest request =
+   *       CreateCustomerRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudChannelServiceClient.createCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
     return stub.createCustomerCallable();
@@ -458,6 +614,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; If successful, the updated
    * [Customer][google.cloud.channel.v1.Customer] resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateCustomerRequest request =
+   *       UpdateCustomerRequest.newBuilder()
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Customer response = cloudChannelServiceClient.updateCustomer(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -485,6 +654,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [Customer][google.cloud.channel.v1.Customer] resource, otherwise returns an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateCustomerRequest request =
+   *       UpdateCustomerRequest.newBuilder()
+   *           .setCustomer(Customer.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Customer> future =
+   *       cloudChannelServiceClient.updateCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
     return stub.updateCustomerCallable();
@@ -503,6 +686,15 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>NOT_FOUND: No [Customer][google.cloud.channel.v1.Customer] resource found for the name
    *       specified in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+   *   cloudChannelServiceClient.deleteCustomer(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the customer to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -527,6 +719,15 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *       specified in the request.
    * </ul>
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   String name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString();
+   *   cloudChannelServiceClient.deleteCustomer(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the customer to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -548,6 +749,18 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>NOT_FOUND: No [Customer][google.cloud.channel.v1.Customer] resource found for the name
    *       specified in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   DeleteCustomerRequest request =
+   *       DeleteCustomerRequest.newBuilder()
+   *           .setName(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .build();
+   *   cloudChannelServiceClient.deleteCustomer(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -571,6 +784,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   DeleteCustomerRequest request =
+   *       DeleteCustomerRequest.newBuilder()
+   *           .setName(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       cloudChannelServiceClient.deleteCustomerCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
     return stub.deleteCustomerCallable();
@@ -600,6 +826,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ProvisionCloudIdentityRequest request =
+   *       ProvisionCloudIdentityRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
+   *           .setUser(AdminUser.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   Customer response = cloudChannelServiceClient.provisionCloudIdentityAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -635,6 +876,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ProvisionCloudIdentityRequest request =
+   *       ProvisionCloudIdentityRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
+   *           .setUser(AdminUser.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   OperationFuture<Customer, OperationMetadata> future =
+   *       cloudChannelServiceClient.provisionCloudIdentityOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Customer response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
       provisionCloudIdentityOperationCallable() {
@@ -667,6 +924,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ProvisionCloudIdentityRequest request =
+   *       ProvisionCloudIdentityRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setCloudIdentityInfo(CloudIdentityInfo.newBuilder().build())
+   *           .setUser(AdminUser.newBuilder().build())
+   *           .setValidateOnly(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.provisionCloudIdentityCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ProvisionCloudIdentityRequest, Operation>
       provisionCloudIdentityCallable() {
@@ -686,6 +959,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; List of [Entitlement][google.cloud.channel.v1.Entitlement]s
    * belonging to the customer, or empty list if there are none.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListEntitlementsRequest request =
+   *       ListEntitlementsRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Entitlement element : cloudChannelServiceClient.listEntitlements(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -709,6 +998,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * belonging to the customer, or empty list if there are none.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListEntitlementsRequest request =
+   *       ListEntitlementsRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Entitlement> future =
+   *       cloudChannelServiceClient.listEntitlementsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Entitlement element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable() {
@@ -730,6 +1036,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * belonging to the customer, or empty list if there are none.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListEntitlementsResponse response =
+   *         cloudChannelServiceClient.listEntitlementsCallable().call(request);
+   *     for (Entitlement element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsCallable() {
@@ -753,6 +1077,25 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; List of [TransferableSku][google.cloud.channel.v1.TransferableSku]
    * for the given customer.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListTransferableSkusRequest request =
+   *       ListTransferableSkusRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setAuthToken("authToken1450587441")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (TransferableSku element :
+   *       cloudChannelServiceClient.listTransferableSkus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -781,6 +1124,25 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for the given customer.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListTransferableSkusRequest request =
+   *       ListTransferableSkusRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setAuthToken("authToken1450587441")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<TransferableSku> future =
+   *       cloudChannelServiceClient.listTransferableSkusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TransferableSku element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTransferableSkusRequest, ListTransferableSkusPagedResponse>
       listTransferableSkusPagedCallable() {
@@ -806,6 +1168,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * for the given customer.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListTransferableSkusResponse response =
+   *         cloudChannelServiceClient.listTransferableSkusCallable().call(request);
+   *     for (TransferableSku element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTransferableSkusRequest, ListTransferableSkusResponse>
       listTransferableSkusCallable() {
@@ -832,6 +1212,25 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: List of [TransferableOffer][google.cloud.channel.v1.TransferableOffer] for the
    * given customer and SKU.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListTransferableOffersRequest request =
+   *       ListTransferableOffersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSku("sku113949")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (TransferableOffer element :
+   *       cloudChannelServiceClient.listTransferableOffers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -863,6 +1262,25 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * given customer and SKU.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListTransferableOffersRequest request =
+   *       ListTransferableOffersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setSku("sku113949")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<TransferableOffer> future =
+   *       cloudChannelServiceClient.listTransferableOffersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (TransferableOffer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTransferableOffersRequest, ListTransferableOffersPagedResponse>
       listTransferableOffersPagedCallable() {
@@ -891,6 +1309,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * given customer and SKU.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListTransferableOffersResponse response =
+   *         cloudChannelServiceClient.listTransferableOffersCallable().call(request);
+   *     for (TransferableOffer element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTransferableOffersRequest, ListTransferableOffersResponse>
       listTransferableOffersCallable() {
@@ -911,6 +1347,18 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; If found, the requested
    * [Entitlement][google.cloud.channel.v1.Entitlement] resource, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetEntitlementRequest request =
+   *       GetEntitlementRequest.newBuilder()
+   *           .setName(EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.getEntitlement(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -935,6 +1383,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [Entitlement][google.cloud.channel.v1.Entitlement] resource, otherwise returns an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetEntitlementRequest request =
+   *       GetEntitlementRequest.newBuilder()
+   *           .setName(EntitlementName.of("[ACCOUNT]", "[CUSTOMER]", "[ENTITLEMENT]").toString())
+   *           .build();
+   *   ApiFuture<Entitlement> future =
+   *       cloudChannelServiceClient.getEntitlementCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetEntitlementRequest, Entitlement> getEntitlementCallable() {
     return stub.getEntitlementCallable();
@@ -972,6 +1433,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateEntitlementRequest request =
+   *       CreateEntitlementRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setEntitlement(Entitlement.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.createEntitlementAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1015,6 +1490,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateEntitlementRequest request =
+   *       CreateEntitlementRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setEntitlement(Entitlement.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.createEntitlementOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateEntitlementRequest, Entitlement, OperationMetadata>
       createEntitlementOperationCallable() {
@@ -1055,6 +1545,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateEntitlementRequest request =
+   *       CreateEntitlementRequest.newBuilder()
+   *           .setParent(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setEntitlement(Entitlement.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.createEntitlementCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateEntitlementRequest, Operation> createEntitlementCallable() {
     return stub.createEntitlementCallable();
@@ -1086,6 +1591,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeParametersRequest request =
+   *       ChangeParametersRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllParameters(new ArrayList<Parameter>())
+   *           .setRequestId("requestId693933066")
+   *           .setPurchaseOrderId("purchaseOrderId2029917384")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.changeParametersAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1123,6 +1643,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeParametersRequest request =
+   *       ChangeParametersRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllParameters(new ArrayList<Parameter>())
+   *           .setRequestId("requestId693933066")
+   *           .setPurchaseOrderId("purchaseOrderId2029917384")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.changeParametersOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ChangeParametersRequest, Entitlement, OperationMetadata>
       changeParametersOperationCallable() {
@@ -1157,6 +1693,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeParametersRequest request =
+   *       ChangeParametersRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .addAllParameters(new ArrayList<Parameter>())
+   *           .setRequestId("requestId693933066")
+   *           .setPurchaseOrderId("purchaseOrderId2029917384")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.changeParametersCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ChangeParametersRequest, Operation> changeParametersCallable() {
     return stub.changeParametersCallable();
@@ -1188,6 +1740,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeRenewalSettingsRequest request =
+   *       ChangeRenewalSettingsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRenewalSettings(RenewalSettings.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.changeRenewalSettingsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1225,6 +1791,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeRenewalSettingsRequest request =
+   *       ChangeRenewalSettingsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRenewalSettings(RenewalSettings.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.changeRenewalSettingsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ChangeRenewalSettingsRequest, Entitlement, OperationMetadata>
       changeRenewalSettingsOperationCallable() {
@@ -1259,6 +1840,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeRenewalSettingsRequest request =
+   *       ChangeRenewalSettingsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRenewalSettings(RenewalSettings.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.changeRenewalSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ChangeRenewalSettingsRequest, Operation>
       changeRenewalSettingsCallable() {
@@ -1289,6 +1885,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeOfferRequest request =
+   *       ChangeOfferRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOffer(OfferName.of("[ACCOUNT]", "[OFFER]").toString())
+   *           .addAllParameters(new ArrayList<Parameter>())
+   *           .setPurchaseOrderId("purchaseOrderId2029917384")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.changeOfferAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1324,6 +1936,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeOfferRequest request =
+   *       ChangeOfferRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOffer(OfferName.of("[ACCOUNT]", "[OFFER]").toString())
+   *           .addAllParameters(new ArrayList<Parameter>())
+   *           .setPurchaseOrderId("purchaseOrderId2029917384")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.changeOfferOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ChangeOfferRequest, Entitlement, OperationMetadata>
       changeOfferOperationCallable() {
@@ -1356,6 +1985,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ChangeOfferRequest request =
+   *       ChangeOfferRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setOffer(OfferName.of("[ACCOUNT]", "[OFFER]").toString())
+   *           .addAllParameters(new ArrayList<Parameter>())
+   *           .setPurchaseOrderId("purchaseOrderId2029917384")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.changeOfferCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ChangeOfferRequest, Operation> changeOfferCallable() {
     return stub.changeOfferCallable();
@@ -1386,6 +2032,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   StartPaidServiceRequest request =
+   *       StartPaidServiceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.startPaidServiceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1422,6 +2081,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   StartPaidServiceRequest request =
+   *       StartPaidServiceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.startPaidServiceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<StartPaidServiceRequest, Entitlement, OperationMetadata>
       startPaidServiceOperationCallable() {
@@ -1455,6 +2128,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   StartPaidServiceRequest request =
+   *       StartPaidServiceRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.startPaidServiceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StartPaidServiceRequest, Operation> startPaidServiceCallable() {
     return stub.startPaidServiceCallable();
@@ -1483,6 +2170,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   SuspendEntitlementRequest request =
+   *       SuspendEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.suspendEntitlementAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1517,6 +2217,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   SuspendEntitlementRequest request =
+   *       SuspendEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.suspendEntitlementOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<SuspendEntitlementRequest, Entitlement, OperationMetadata>
       suspendEntitlementOperationCallable() {
@@ -1548,6 +2262,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   SuspendEntitlementRequest request =
+   *       SuspendEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.suspendEntitlementCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SuspendEntitlementRequest, Operation> suspendEntitlementCallable() {
     return stub.suspendEntitlementCallable();
@@ -1581,6 +2309,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * CloudChannelOperationsService. The response will contain google.protobuf.Empty on success. The
    * Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CancelEntitlementRequest request =
+   *       CancelEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   cloudChannelServiceClient.cancelEntitlementAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1620,6 +2361,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CancelEntitlementRequest request =
+   *       CancelEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudChannelServiceClient.cancelEntitlementOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CancelEntitlementRequest, Empty, OperationMetadata>
       cancelEntitlementOperationCallable() {
@@ -1656,6 +2411,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CancelEntitlementRequest request =
+   *       CancelEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.cancelEntitlementCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CancelEntitlementRequest, Operation> cancelEntitlementCallable() {
     return stub.cancelEntitlementCallable();
@@ -1690,6 +2459,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ActivateEntitlementRequest request =
+   *       ActivateEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Entitlement response = cloudChannelServiceClient.activateEntitlementAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1730,6 +2512,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ActivateEntitlementRequest request =
+   *       ActivateEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Entitlement, OperationMetadata> future =
+   *       cloudChannelServiceClient.activateEntitlementOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Entitlement response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ActivateEntitlementRequest, Entitlement, OperationMetadata>
       activateEntitlementOperationCallable() {
@@ -1767,6 +2563,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ActivateEntitlementRequest request =
+   *       ActivateEntitlementRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.activateEntitlementCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ActivateEntitlementRequest, Operation> activateEntitlementCallable() {
     return stub.activateEntitlementCallable();
@@ -1799,6 +2609,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>To get the results of the operation, call the GetOperation method of
    * CloudChannelOperationsService. The Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   TransferEntitlementsRequest request =
+   *       TransferEntitlementsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllEntitlements(new ArrayList<Entitlement>())
+   *           .setAuthToken("authToken1450587441")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   TransferEntitlementsResponse response =
+   *       cloudChannelServiceClient.transferEntitlementsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1837,6 +2663,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   TransferEntitlementsRequest request =
+   *       TransferEntitlementsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllEntitlements(new ArrayList<Entitlement>())
+   *           .setAuthToken("authToken1450587441")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<TransferEntitlementsResponse, OperationMetadata> future =
+   *       cloudChannelServiceClient.transferEntitlementsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   TransferEntitlementsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           TransferEntitlementsRequest, TransferEntitlementsResponse, OperationMetadata>
@@ -1873,6 +2715,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   TransferEntitlementsRequest request =
+   *       TransferEntitlementsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllEntitlements(new ArrayList<Entitlement>())
+   *           .setAuthToken("authToken1450587441")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.transferEntitlementsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TransferEntitlementsRequest, Operation>
       transferEntitlementsCallable() {
@@ -1906,6 +2764,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * CloudChannelOperationsService. The response will contain google.protobuf.Empty on success. The
    * Operation metadata will contain an instance of
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   TransferEntitlementsToGoogleRequest request =
+   *       TransferEntitlementsToGoogleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllEntitlements(new ArrayList<Entitlement>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   cloudChannelServiceClient.transferEntitlementsToGoogleAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1944,6 +2816,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   TransferEntitlementsToGoogleRequest request =
+   *       TransferEntitlementsToGoogleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllEntitlements(new ArrayList<Entitlement>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       cloudChannelServiceClient
+   *           .transferEntitlementsToGoogleOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<TransferEntitlementsToGoogleRequest, Empty, OperationMetadata>
       transferEntitlementsToGoogleOperationCallable() {
@@ -1979,6 +2868,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * [OperationMetadata][google.cloud.channel.v1.OperationMetadata].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   TransferEntitlementsToGoogleRequest request =
+   *       TransferEntitlementsToGoogleRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .addAllEntitlements(new ArrayList<Entitlement>())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudChannelServiceClient.transferEntitlementsToGoogleCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<TransferEntitlementsToGoogleRequest, Operation>
       transferEntitlementsToGoogleCallable() {
@@ -2001,6 +2905,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; If successful, returns the list of
    * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resources for the distributor
    * account, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListChannelPartnerLinksRequest request =
+   *       ListChannelPartnerLinksRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (ChannelPartnerLink element :
+   *       cloudChannelServiceClient.listChannelPartnerLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2028,6 +2949,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * account, otherwise returns an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListChannelPartnerLinksRequest request =
+   *       ListChannelPartnerLinksRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<ChannelPartnerLink> future =
+   *       cloudChannelServiceClient.listChannelPartnerLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (ChannelPartnerLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListChannelPartnerLinksRequest, ListChannelPartnerLinksPagedResponse>
       listChannelPartnerLinksPagedCallable() {
@@ -2052,6 +2990,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * account, otherwise returns an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListChannelPartnerLinksResponse response =
+   *         cloudChannelServiceClient.listChannelPartnerLinksCallable().call(request);
+   *     for (ChannelPartnerLink element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse>
       listChannelPartnerLinksCallable() {
@@ -2075,6 +3031,16 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: &lt;br/&gt; [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink]
    * resource if found, otherwise returns an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetChannelPartnerLinkRequest request =
+   *       GetChannelPartnerLinkRequest.newBuilder().setName("name3373707").build();
+   *   ChannelPartnerLink response = cloudChannelServiceClient.getChannelPartnerLink(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2102,6 +3068,17 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * resource if found, otherwise returns an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   GetChannelPartnerLinkRequest request =
+   *       GetChannelPartnerLinkRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<ChannelPartnerLink> future =
+   *       cloudChannelServiceClient.getChannelPartnerLinkCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelPartnerLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetChannelPartnerLinkRequest, ChannelPartnerLink>
       getChannelPartnerLinkCallable() {
@@ -2132,6 +3109,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; Newly created
    * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource if successful,
    * otherwise error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateChannelPartnerLinkRequest request =
+   *       CreateChannelPartnerLinkRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setChannelPartnerLink(ChannelPartnerLink.newBuilder().build())
+   *           .setDomain("domain-1326197564")
+   *           .build();
+   *   ChannelPartnerLink response = cloudChannelServiceClient.createChannelPartnerLink(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2167,6 +3158,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * otherwise error is returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   CreateChannelPartnerLinkRequest request =
+   *       CreateChannelPartnerLinkRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setChannelPartnerLink(ChannelPartnerLink.newBuilder().build())
+   *           .setDomain("domain-1326197564")
+   *           .build();
+   *   ApiFuture<ChannelPartnerLink> future =
+   *       cloudChannelServiceClient.createChannelPartnerLinkCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelPartnerLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateChannelPartnerLinkRequest, ChannelPartnerLink>
       createChannelPartnerLinkCallable() {
@@ -2192,6 +3198,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: &lt;br/&gt; If successful, the updated
    * [ChannelPartnerLink][google.cloud.channel.v1.ChannelPartnerLink] resource, otherwise returns an
    * error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateChannelPartnerLinkRequest request =
+   *       UpdateChannelPartnerLinkRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setChannelPartnerLink(ChannelPartnerLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ChannelPartnerLink response = cloudChannelServiceClient.updateChannelPartnerLink(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2222,6 +3242,21 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UpdateChannelPartnerLinkRequest request =
+   *       UpdateChannelPartnerLinkRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setChannelPartnerLink(ChannelPartnerLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ChannelPartnerLink> future =
+   *       cloudChannelServiceClient.updateChannelPartnerLinkCallable().futureCall(request);
+   *   // Do something.
+   *   ChannelPartnerLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
@@ -2237,6 +3272,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <ul>
    *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (Product element : cloudChannelServiceClient.listProducts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2256,6 +3308,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListProductsRequest request =
+   *       ListProductsRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Product> future =
+   *       cloudChannelServiceClient.listProductsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Product element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
       listProductsPagedCallable() {
@@ -2273,6 +3343,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListProductsResponse response =
+   *         cloudChannelServiceClient.listProductsCallable().call(request);
+   *     for (Product element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
     return stub.listProductsCallable();
@@ -2287,6 +3375,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <ul>
    *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkusRequest request =
+   *       ListSkusRequest.newBuilder()
+   *           .setParent(ProductName.of("[PRODUCT]").toString())
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (Sku element : cloudChannelServiceClient.listSkus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2306,6 +3412,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSkusRequest request =
+   *       ListSkusRequest.newBuilder()
+   *           .setParent(ProductName.of("[PRODUCT]").toString())
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Sku> future = cloudChannelServiceClient.listSkusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Sku element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
     return stub.listSkusPagedCallable();
@@ -2322,6 +3446,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListSkusResponse response = cloudChannelServiceClient.listSkusCallable().call(request);
+   *     for (Sku element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable() {
     return stub.listSkusCallable();
@@ -2336,6 +3477,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <ul>
    *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListOffersRequest request =
+   *       ListOffersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (Offer element : cloudChannelServiceClient.listOffers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2355,6 +3514,25 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListOffersRequest request =
+   *       ListOffersRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Offer> future =
+   *       cloudChannelServiceClient.listOffersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Offer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListOffersRequest, ListOffersPagedResponse> listOffersPagedCallable() {
     return stub.listOffersPagedCallable();
@@ -2371,6 +3549,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListOffersResponse response = cloudChannelServiceClient.listOffersCallable().call(request);
+   *     for (Offer element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListOffersRequest, ListOffersResponse> listOffersCallable() {
     return stub.listOffersCallable();
@@ -2391,6 +3586,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: If the customer doesn't belong to the reseller
    *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListPurchasableSkusRequest request =
+   *       ListPurchasableSkusRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (PurchasableSku element :
+   *       cloudChannelServiceClient.listPurchasableSkus(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2417,6 +3630,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListPurchasableSkusRequest request =
+   *       ListPurchasableSkusRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<PurchasableSku> future =
+   *       cloudChannelServiceClient.listPurchasableSkusPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PurchasableSku element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPurchasableSkusRequest, ListPurchasableSkusPagedResponse>
       listPurchasableSkusPagedCallable() {
@@ -2440,6 +3671,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListPurchasableSkusResponse response =
+   *         cloudChannelServiceClient.listPurchasableSkusCallable().call(request);
+   *     for (PurchasableSku element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPurchasableSkusRequest, ListPurchasableSkusResponse>
       listPurchasableSkusCallable() {
@@ -2461,6 +3710,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *   <li>PERMISSION_DENIED: If the customer doesn't belong to the reseller
    *   <li>INVALID_ARGUMENT: Missing or invalid required parameters in the request.
    * </ul>
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListPurchasableOffersRequest request =
+   *       ListPurchasableOffersRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (PurchasableOffer element :
+   *       cloudChannelServiceClient.listPurchasableOffers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2487,6 +3754,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListPurchasableOffersRequest request =
+   *       ListPurchasableOffersRequest.newBuilder()
+   *           .setCustomer(CustomerName.of("[ACCOUNT]", "[CUSTOMER]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<PurchasableOffer> future =
+   *       cloudChannelServiceClient.listPurchasableOffersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PurchasableOffer element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable() {
@@ -2510,6 +3795,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListPurchasableOffersResponse response =
+   *         cloudChannelServiceClient.listPurchasableOffersCallable().call(request);
+   *     for (PurchasableOffer element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
@@ -2536,6 +3839,19 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *
    * <p>Return Value: Topic name with service email address registered if successful, otherwise
    * error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   RegisterSubscriberRequest request =
+   *       RegisterSubscriberRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setServiceAccount("serviceAccount1079137720")
+   *           .build();
+   *   RegisterSubscriberResponse response = cloudChannelServiceClient.registerSubscriber(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2566,6 +3882,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * error is returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   RegisterSubscriberRequest request =
+   *       RegisterSubscriberRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setServiceAccount("serviceAccount1079137720")
+   *           .build();
+   *   ApiFuture<RegisterSubscriberResponse> future =
+   *       cloudChannelServiceClient.registerSubscriberCallable().futureCall(request);
+   *   // Do something.
+   *   RegisterSubscriberResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberCallable() {
@@ -2594,6 +3924,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: Topic name from which service email address has been unregistered if
    * successful, otherwise error is returned. If the service email was already not associated with
    * the topic, the success response will be returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UnregisterSubscriberRequest request =
+   *       UnregisterSubscriberRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setServiceAccount("serviceAccount1079137720")
+   *           .build();
+   *   UnregisterSubscriberResponse response =
+   *       cloudChannelServiceClient.unregisterSubscriber(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2627,6 +3971,20 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * the topic, the success response will be returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   UnregisterSubscriberRequest request =
+   *       UnregisterSubscriberRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setServiceAccount("serviceAccount1079137720")
+   *           .build();
+   *   ApiFuture<UnregisterSubscriberResponse> future =
+   *       cloudChannelServiceClient.unregisterSubscriberCallable().futureCall(request);
+   *   // Do something.
+   *   UnregisterSubscriberResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
       unregisterSubscriberCallable() {
@@ -2652,6 +4010,22 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * </ul>
    *
    * <p>Return Value: List of service email addresses if successful, otherwise error is returned.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSubscribersRequest request =
+   *       ListSubscribersRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (String element : cloudChannelServiceClient.listSubscribers(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2681,6 +4055,23 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: List of service email addresses if successful, otherwise error is returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   ListSubscribersRequest request =
+   *       ListSubscribersRequest.newBuilder()
+   *           .setAccount("account-1177318867")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<String> future =
+   *       cloudChannelServiceClient.listSubscribersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (String element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
       listSubscribersPagedCallable() {
@@ -2708,6 +4099,24 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <p>Return Value: List of service email addresses if successful, otherwise error is returned.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+   *   while (true) {
+   *     ListSubscribersResponse response =
+   *         cloudChannelServiceClient.listSubscribersCallable().call(request);
+   *     for (String element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSubscribersRequest, ListSubscribersResponse>
       listSubscribersCallable() {

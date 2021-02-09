@@ -40,6 +40,13 @@
  * an entity that identifies links between distributors and their indirect resellers in a channel.
  *
  * <p>Sample for CloudChannelServiceClient:
+ *
+ * <pre>{@code
+ * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
+ *   CustomerName name = CustomerName.of("[ACCOUNT]", "[CUSTOMER]");
+ *   Customer response = cloudChannelServiceClient.getCustomer(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.channel.v1;
