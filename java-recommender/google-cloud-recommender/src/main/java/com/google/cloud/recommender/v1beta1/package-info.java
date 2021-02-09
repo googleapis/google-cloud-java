@@ -25,6 +25,15 @@
  * configuration and monitoring metrics.
  *
  * <p>Sample for RecommenderClient:
+ *
+ * <pre>{@code
+ * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+ *   InsightName name =
+ *       InsightName.ofProjectLocationInsightTypeInsightName(
+ *           "[PROJECT]", "[LOCATION]", "[INSIGHT_TYPE]", "[INSIGHT]");
+ *   Insight response = recommenderClient.getInsight(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.recommender.v1beta1;
