@@ -23,6 +23,13 @@
  * recognition.
  *
  * <p>Sample for LanguageServiceClient:
+ *
+ * <pre>{@code
+ * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+ *   Document document = Document.newBuilder().build();
+ *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.language.v1beta2;
