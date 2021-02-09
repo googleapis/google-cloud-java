@@ -24,6 +24,17 @@
  * user inputs and event handlers as possible.
  *
  * <p>Sample for WebSecurityScannerClient:
+ *
+ * <pre>{@code
+ * try (WebSecurityScannerClient webSecurityScannerClient = WebSecurityScannerClient.create()) {
+ *   CreateScanConfigRequest request =
+ *       CreateScanConfigRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setScanConfig(ScanConfig.newBuilder().build())
+ *           .build();
+ *   ScanConfig response = webSecurityScannerClient.createScanConfig(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.websecurityscanner.v1;
