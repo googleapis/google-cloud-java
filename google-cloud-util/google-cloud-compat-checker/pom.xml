@@ -32,7 +32,7 @@
 	   to not duplicate the logic ourselves -->
       <groupId>kr.motd.maven</groupId>
       <artifactId>os-maven-plugin</artifactId>
-      <version>1.6.2</version>
+      <version>1.7.0</version>
     </dependency>
     <dependency>
       <groupId>org.codehaus.plexus</groupId>
