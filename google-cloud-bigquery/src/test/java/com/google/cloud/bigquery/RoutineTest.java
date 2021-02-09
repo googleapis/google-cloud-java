@@ -38,6 +38,7 @@ import org.mockito.junit.MockitoRule;
 public class RoutineTest {
 
   private static final RoutineId ROUTINE_ID = RoutineId.of("dataset", "routine");
+  private static final String DETERMINISM_LEVEL = "DETERMINISTIC";
   private static final String ETAG = "etag";
   private static final String ROUTINE_TYPE = "SCALAR_FUNCTION";
   private static final Long CREATION_TIME = 10L;
@@ -65,6 +66,7 @@ public class RoutineTest {
           .setEtag(ETAG)
           .setRoutineType(ROUTINE_TYPE)
           .setCreationTime(CREATION_TIME)
+          .setDeterminismLevel(DETERMINISM_LEVEL)
           .setLastModifiedTime(LAST_MODIFIED_TIME)
           .setLanguage(LANGUAGE)
           .setArguments(ARGUMENT_LIST)
@@ -96,6 +98,7 @@ public class RoutineTest {
             .setEtag(ETAG)
             .setRoutineType(ROUTINE_TYPE)
             .setCreationTime(CREATION_TIME)
+            .setDeterminismLevel(DETERMINISM_LEVEL)
             .setLastModifiedTime(LAST_MODIFIED_TIME)
             .setLanguage(LANGUAGE)
             .setArguments(ARGUMENT_LIST)
@@ -104,6 +107,7 @@ public class RoutineTest {
             .setBody(BODY)
             .build();
     assertEquals(ETAG, builtRoutine.getEtag());
+    assertEquals(DETERMINISM_LEVEL, builtRoutine.getDeterminismLevel());
     assertSame(bigquery, builtRoutine.getBigQuery());
   }
 
@@ -191,6 +195,7 @@ public class RoutineTest {
     assertEquals(expected.getEtag(), value.getEtag());
     assertEquals(expected.getRoutineType(), value.getRoutineType());
     assertEquals(expected.getCreationTime(), value.getCreationTime());
+    assertEquals(expected.getDeterminismLevel(), value.getDeterminismLevel());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
     assertEquals(expected.getLanguage(), value.getLanguage());
     assertEquals(expected.getArguments(), value.getArguments());

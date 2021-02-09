@@ -29,6 +29,7 @@ public class RoutineInfoTest {
   private static final String ROUTINE_TYPE = "SCALAR_FUNCTION";
   private static final Long CREATION_TIME = 10L;
   private static final String DESCRIPTION = "description";
+  private static final String DETERMINISM = "DETERMINISTIC";
   private static final Long LAST_MODIFIED_TIME = 20L;
   private static final String LANGUAGE = "SQL";
 
@@ -55,6 +56,7 @@ public class RoutineInfoTest {
           .setRoutineType(ROUTINE_TYPE)
           .setCreationTime(CREATION_TIME)
           .setDescription(DESCRIPTION)
+          .setDeterminismLevel(DETERMINISM)
           .setLastModifiedTime(LAST_MODIFIED_TIME)
           .setLanguage(LANGUAGE)
           .setArguments(ARGUMENT_LIST)
@@ -81,6 +83,7 @@ public class RoutineInfoTest {
     assertEquals(ROUTINE_TYPE, ROUTINE_INFO.getRoutineType());
     assertEquals(CREATION_TIME, ROUTINE_INFO.getCreationTime());
     assertEquals(DESCRIPTION, ROUTINE_INFO.getDescription());
+    assertEquals(DETERMINISM, ROUTINE_INFO.getDeterminismLevel());
     assertEquals(LAST_MODIFIED_TIME, ROUTINE_INFO.getLastModifiedTime());
     assertEquals(LANGUAGE, ROUTINE_INFO.getLanguage());
     assertEquals(ARGUMENT_LIST, ROUTINE_INFO.getArguments());
@@ -97,6 +100,7 @@ public class RoutineInfoTest {
     assertNull(routineInfo.getRoutineType());
     assertNull(routineInfo.getCreationTime());
     assertNull(routineInfo.getDescription());
+    assertNull(routineInfo.getDeterminismLevel());
     assertNull(routineInfo.getLastModifiedTime());
     assertNull(routineInfo.getLanguage());
     assertNull(routineInfo.getArguments());
@@ -121,6 +125,7 @@ public class RoutineInfoTest {
     assertEquals(expected.getRoutineType(), value.getRoutineType());
     assertEquals(expected.getCreationTime(), value.getCreationTime());
     assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getDeterminismLevel(), value.getDeterminismLevel());
     assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
     assertEquals(expected.getLanguage(), value.getLanguage());
     assertEquals(expected.getArguments(), value.getArguments());

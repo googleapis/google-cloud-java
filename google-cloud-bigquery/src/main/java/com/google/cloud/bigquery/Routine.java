@@ -88,6 +88,12 @@ public class Routine extends RoutineInfo {
     }
 
     @Override
+    public Builder setDeterminismLevel(String determinismLevel) {
+      infoBuilder.setDeterminismLevel(determinismLevel);
+      return this;
+    }
+
+    @Override
     public Builder setLanguage(String language) {
       infoBuilder.setLanguage(language);
       return this;

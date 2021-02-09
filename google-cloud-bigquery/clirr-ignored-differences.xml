@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
 <differences>
-  <!-- TODO: REMOVE AFTER RELEASE OF CONNECTION_ID FEAT -->
+  <!-- TODO: REMOVE AFTER RELEASE -->
   <difference>
     <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/ExternalTableDefinition</className>
-    <method>java.lang.String getConnectionId()</method>
-  </difference>
-  <difference>
-    <differenceType>7013</differenceType>
-    <className>com/google/cloud/bigquery/ExternalTableDefinition$Builder</className>
-    <method>com.google.cloud.bigquery.ExternalTableDefinition$Builder setConnectionId(java.lang.String)</method>
+    <className>com/google/cloud/bigquery/RoutineInfo$Builder</className>
+    <method>com.google.cloud.bigquery.RoutineInfo$Builder setDeterminismLevel(java.lang.String)</method>
   </difference>
 </differences>

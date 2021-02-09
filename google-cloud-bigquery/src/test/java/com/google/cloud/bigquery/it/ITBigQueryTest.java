@@ -1522,7 +1522,6 @@ public class ITBigQueryTest {
 
   @Test
   public void testRoutineLifecycle() throws InterruptedException {
-
     String routineName = RemoteBigQueryHelper.generateRoutineName();
     // Create a routine using SQL.
     String sql =
@@ -1585,6 +1584,34 @@ public class ITBigQueryTest {
     Routine routine = bigquery.create(routineInfo);
     assertNotNull(routine);
     assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+  }
+
+  @Test
+  public void testRoutineAPICreationJavascriptUDF() {
+    String routineName = RemoteBigQueryHelper.generateRoutineName();
+    RoutineId routineId = RoutineId.of(ROUTINE_DATASET, routineName);
+    RoutineInfo routineInfo =
+        RoutineInfo.newBuilder(routineId)
+            .setLanguage("JAVASCRIPT")
+            .setRoutineType("SCALAR_FUNCTION")
+            .setDeterminismLevel("DETERMINISTIC")
+            .setArguments(
+                ImmutableList.of(
+                    RoutineArgument.newBuilder()
+                        .setName("instr")
+                        .setKind("FIXED_TYPE")
+                        .setDataType(StandardSQLDataType.newBuilder("STRING").build())
+                        .build()))
+            .setReturnType(StandardSQLDataType.newBuilder("STRING").build())
+            .setBody("return instr.toUpperCase();")
+            .build();
+
+    Routine routine = bigquery.create(routineInfo);
+    assertNotNull(routine);
+    assertEquals(routine.getLanguage(), "JAVASCRIPT");
+    assertEquals(routine.getDeterminismLevel(), "DETERMINISTIC");
+    assertEquals(routine.getRoutineType(), "SCALAR_FUNCTION");
+    assertEquals(routine.getReturnType(), StandardSQLDataType.newBuilder("STRING").build());
   }
 
   @Test

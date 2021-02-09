@@ -62,6 +62,7 @@ public class RoutineInfo implements Serializable {
   private final String routineType;
   private final Long creationTime;
   private final String description;
+  private final String determinismLevel;
   private final Long lastModifiedTime;
   private final String language;
   private final List<RoutineArgument> argumentList;
@@ -88,6 +89,12 @@ public class RoutineInfo implements Serializable {
     abstract Builder setDescription(String description);
 
     abstract Builder setLastModifiedTime(Long lastModifiedMillis);
+
+    /**
+     * Sets the JavaScript UDF determinism levels (e.g. DETERMINISM_LEVEL_UNSPECIFIED,
+     * DETERMINISTIC, NOT_DETERMINISTIC) only applicable to Javascript UDFs.
+     */
+    public abstract Builder setDeterminismLevel(String determinismLevel);
 
     /** Sets the language for the routine (e.g. SQL or JAVASCRIPT) */
     public abstract Builder setLanguage(String language);
@@ -147,6 +154,7 @@ public class RoutineInfo implements Serializable {
     private String routineType;
     private Long creationTime;
     private String description;
+    private String determinismLevel;
     private Long lastModifiedTime;
     private String language;
     private List<RoutineArgument> argumentList;
@@ -162,6 +170,7 @@ public class RoutineInfo implements Serializable {
       this.routineType = routineInfo.routineType;
       this.creationTime = routineInfo.creationTime;
       this.description = routineInfo.description;
+      this.determinismLevel = routineInfo.determinismLevel;
       this.lastModifiedTime = routineInfo.lastModifiedTime;
       this.language = routineInfo.language;
       this.argumentList = routineInfo.argumentList;
@@ -176,6 +185,7 @@ public class RoutineInfo implements Serializable {
       this.routineType = routinePb.getRoutineType();
       this.creationTime = routinePb.getCreationTime();
       this.description = routinePb.getDescription();
+      this.determinismLevel = routinePb.getDeterminismLevel();
       this.lastModifiedTime = routinePb.getLastModifiedTime();
       this.language = routinePb.getLanguage();
       if (routinePb.getArguments() != null) {
@@ -220,6 +230,12 @@ public class RoutineInfo implements Serializable {
     @Override
     public Builder setDescription(String description) {
       this.description = firstNonNull(description, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    public Builder setDeterminismLevel(String determinismLevel) {
+      this.determinismLevel = determinismLevel;
       return this;
     }
 
@@ -271,6 +287,7 @@ public class RoutineInfo implements Serializable {
     this.routineType = builder.routineType;
     this.creationTime = builder.creationTime;
     this.description = builder.description;
+    this.determinismLevel = builder.determinismLevel;
     this.lastModifiedTime = builder.lastModifiedTime;
     this.language = builder.language;
     this.argumentList = builder.argumentList;
@@ -302,6 +319,11 @@ public class RoutineInfo implements Serializable {
   /** Returns the description of the routine. */
   public String getDescription() {
     return description;
+  }
+
+  /** Returns the determinism level of the JavaScript UDF if defined. */
+  public String getDeterminismLevel() {
+    return determinismLevel;
   }
 
   /**
@@ -354,6 +376,7 @@ public class RoutineInfo implements Serializable {
         .add("routineType", routineType)
         .add("creationTime", creationTime)
         .add("description", description)
+        .add("determinismLevel", determinismLevel)
         .add("lastModifiedTime", lastModifiedTime)
         .add("language", language)
         .add("arguments", argumentList)
@@ -371,6 +394,7 @@ public class RoutineInfo implements Serializable {
         routineType,
         creationTime,
         description,
+        determinismLevel,
         lastModifiedTime,
         language,
         argumentList,
@@ -412,6 +436,7 @@ public class RoutineInfo implements Serializable {
             .setDefinitionBody(getBody())
             .setCreationTime(getCreationTime())
             .setDescription(getDescription())
+            .setDeterminismLevel(getDeterminismLevel())
             .setLastModifiedTime(getLastModifiedTime())
             .setLanguage(getLanguage());
     if (getRoutineId() != null) {
@@ -419,6 +444,9 @@ public class RoutineInfo implements Serializable {
     }
     if (getArguments() != null) {
       routinePb.setArguments(Lists.transform(getArguments(), RoutineArgument.TO_PB_FUNCTION));
+    }
+    if (getReturnType() != null) {
+      routinePb.setReturnType(getReturnType().toPb());
     }
     return routinePb;
   }
