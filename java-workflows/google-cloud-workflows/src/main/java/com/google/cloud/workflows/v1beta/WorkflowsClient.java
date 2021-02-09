@@ -48,6 +48,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+ *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+ *   Workflow response = workflowsClient.getWorkflow(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the WorkflowsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -161,6 +168,17 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Lists Workflows in a given project and location. The default order is not specified.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Workflow element : workflowsClient.listWorkflows(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project and location from which the workflows should be listed. Format:
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -177,6 +195,17 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Lists Workflows in a given project and location. The default order is not specified.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Workflow element : workflowsClient.listWorkflows(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project and location from which the workflows should be listed. Format:
    *     projects/{project}/locations/{location}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -190,6 +219,24 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Lists Workflows in a given project and location. The default order is not specified.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   ListWorkflowsRequest request =
+   *       ListWorkflowsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Workflow element : workflowsClient.listWorkflows(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -202,6 +249,24 @@ public class WorkflowsClient implements BackgroundResource {
    * Lists Workflows in a given project and location. The default order is not specified.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   ListWorkflowsRequest request =
+   *       ListWorkflowsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Workflow> future = workflowsClient.listWorkflowsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Workflow element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWorkflowsRequest, ListWorkflowsPagedResponse>
       listWorkflowsPagedCallable() {
@@ -213,6 +278,23 @@ public class WorkflowsClient implements BackgroundResource {
    * Lists Workflows in a given project and location. The default order is not specified.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   while (true) {
+   *     ListWorkflowsResponse response = workflowsClient.listWorkflowsCallable().call(request);
+   *     for (Workflow element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable() {
     return stub.listWorkflowsCallable();
@@ -221,6 +303,15 @@ public class WorkflowsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+   *   Workflow response = workflowsClient.getWorkflow(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the workflow which information should be retrieved. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
@@ -236,6 +327,15 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Gets details of a single Workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   String name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString();
+   *   Workflow response = workflowsClient.getWorkflow(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the workflow which information should be retrieved. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -249,6 +349,18 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Gets details of a single Workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   GetWorkflowRequest request =
+   *       GetWorkflowRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .build();
+   *   Workflow response = workflowsClient.getWorkflow(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -261,6 +373,18 @@ public class WorkflowsClient implements BackgroundResource {
    * Gets details of a single Workflow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   GetWorkflowRequest request =
+   *       GetWorkflowRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .build();
+   *   ApiFuture<Workflow> future = workflowsClient.getWorkflowCallable().futureCall(request);
+   *   // Do something.
+   *   Workflow response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetWorkflowRequest, Workflow> getWorkflowCallable() {
     return stub.getWorkflowCallable();
@@ -271,6 +395,17 @@ public class WorkflowsClient implements BackgroundResource {
    * Creates a new workflow. If a workflow with the specified name already exists in the specified
    * project and location, the long running operation will return
    * [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Workflow workflow = Workflow.newBuilder().build();
+   *   String workflowId = "workflowId-360387270";
+   *   Workflow response = workflowsClient.createWorkflowAsync(parent, workflow, workflowId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. Project and location in which the workflow should be created. Format:
    *     projects/{project}/locations/{location}
@@ -304,6 +439,17 @@ public class WorkflowsClient implements BackgroundResource {
    * project and location, the long running operation will return
    * [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Workflow workflow = Workflow.newBuilder().build();
+   *   String workflowId = "workflowId-360387270";
+   *   Workflow response = workflowsClient.createWorkflowAsync(parent, workflow, workflowId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. Project and location in which the workflow should be created. Format:
    *     projects/{project}/locations/{location}
    * @param workflow Required. Workflow to be created.
@@ -336,6 +482,20 @@ public class WorkflowsClient implements BackgroundResource {
    * project and location, the long running operation will return
    * [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   CreateWorkflowRequest request =
+   *       CreateWorkflowRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setWorkflow(Workflow.newBuilder().build())
+   *           .setWorkflowId("workflowId-360387270")
+   *           .build();
+   *   Workflow response = workflowsClient.createWorkflowAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -351,6 +511,21 @@ public class WorkflowsClient implements BackgroundResource {
    * [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   CreateWorkflowRequest request =
+   *       CreateWorkflowRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setWorkflow(Workflow.newBuilder().build())
+   *           .setWorkflowId("workflowId-360387270")
+   *           .build();
+   *   OperationFuture<Workflow, OperationMetadata> future =
+   *       workflowsClient.createWorkflowOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Workflow response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateWorkflowRequest, Workflow, OperationMetadata>
       createWorkflowOperationCallable() {
@@ -364,6 +539,20 @@ public class WorkflowsClient implements BackgroundResource {
    * [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   CreateWorkflowRequest request =
+   *       CreateWorkflowRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setWorkflow(Workflow.newBuilder().build())
+   *           .setWorkflowId("workflowId-360387270")
+   *           .build();
+   *   ApiFuture<Operation> future = workflowsClient.createWorkflowCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateWorkflowRequest, Operation> createWorkflowCallable() {
     return stub.createWorkflowCallable();
@@ -373,6 +562,15 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Deletes a workflow with the specified name. This method also cancels and deletes all running
    * executions of the workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+   *   workflowsClient.deleteWorkflowAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the workflow to be deleted. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
@@ -389,6 +587,15 @@ public class WorkflowsClient implements BackgroundResource {
    * Deletes a workflow with the specified name. This method also cancels and deletes all running
    * executions of the workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   String name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString();
+   *   workflowsClient.deleteWorkflowAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the workflow to be deleted. Format:
    *     projects/{project}/locations/{location}/workflows/{workflow}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -402,6 +609,18 @@ public class WorkflowsClient implements BackgroundResource {
   /**
    * Deletes a workflow with the specified name. This method also cancels and deletes all running
    * executions of the workflow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   DeleteWorkflowRequest request =
+   *       DeleteWorkflowRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .build();
+   *   workflowsClient.deleteWorkflowAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -417,6 +636,19 @@ public class WorkflowsClient implements BackgroundResource {
    * executions of the workflow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   DeleteWorkflowRequest request =
+   *       DeleteWorkflowRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       workflowsClient.deleteWorkflowOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteWorkflowRequest, Empty, OperationMetadata>
       deleteWorkflowOperationCallable() {
@@ -429,6 +661,18 @@ public class WorkflowsClient implements BackgroundResource {
    * executions of the workflow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   DeleteWorkflowRequest request =
+   *       DeleteWorkflowRequest.newBuilder()
+   *           .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future = workflowsClient.deleteWorkflowCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteWorkflowRequest, Operation> deleteWorkflowCallable() {
     return stub.deleteWorkflowCallable();
@@ -439,6 +683,16 @@ public class WorkflowsClient implements BackgroundResource {
    * Updates an existing workflow. Running this method has no impact on already running executions
    * of the workflow. A new revision of the workflow may be created as a result of a successful
    * update operation. In that case, such revision will be used in new workflow executions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   Workflow workflow = Workflow.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Workflow response = workflowsClient.updateWorkflowAsync(workflow, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param workflow Required. Workflow to be updated.
    * @param updateMask List of fields to be updated. If not present, the entire workflow will be
@@ -458,6 +712,19 @@ public class WorkflowsClient implements BackgroundResource {
    * of the workflow. A new revision of the workflow may be created as a result of a successful
    * update operation. In that case, such revision will be used in new workflow executions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   UpdateWorkflowRequest request =
+   *       UpdateWorkflowRequest.newBuilder()
+   *           .setWorkflow(Workflow.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Workflow response = workflowsClient.updateWorkflowAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -473,6 +740,20 @@ public class WorkflowsClient implements BackgroundResource {
    * update operation. In that case, such revision will be used in new workflow executions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   UpdateWorkflowRequest request =
+   *       UpdateWorkflowRequest.newBuilder()
+   *           .setWorkflow(Workflow.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Workflow, OperationMetadata> future =
+   *       workflowsClient.updateWorkflowOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Workflow response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable() {
@@ -486,6 +767,19 @@ public class WorkflowsClient implements BackgroundResource {
    * update operation. In that case, such revision will be used in new workflow executions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+   *   UpdateWorkflowRequest request =
+   *       UpdateWorkflowRequest.newBuilder()
+   *           .setWorkflow(Workflow.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = workflowsClient.updateWorkflowCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable() {
     return stub.updateWorkflowCallable();

@@ -23,6 +23,13 @@
  * makes sure the program executes reliably, despite hardware and networking interruptions.
  *
  * <p>Sample for WorkflowsClient:
+ *
+ * <pre>{@code
+ * try (WorkflowsClient workflowsClient = WorkflowsClient.create()) {
+ *   WorkflowName name = WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]");
+ *   Workflow response = workflowsClient.getWorkflow(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.workflows.v1beta;
