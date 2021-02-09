@@ -48,6 +48,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String region = "region-934795532";
+ *   String clusterName = "clusterName-1141738587";
+ *   Cluster response = clusterControllerClient.getCluster(projectId, region, clusterName);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ClusterControllerClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -167,6 +176,18 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   Cluster response =
+   *       clusterControllerClient.createClusterAsync(projectId, region, cluster).get();
+   * }
+   * }</pre>
+   *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -190,6 +211,21 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Cluster response = clusterControllerClient.createClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -205,6 +241,22 @@ public class ClusterControllerClient implements BackgroundResource {
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Cluster, ClusterOperationMetadata> future =
+   *       clusterControllerClient.createClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationCallable() {
@@ -218,6 +270,22 @@ public class ClusterControllerClient implements BackgroundResource {
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   CreateClusterRequest request =
+   *       CreateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterControllerClient.createClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return stub.createClusterCallable();
@@ -228,6 +296,22 @@ public class ClusterControllerClient implements BackgroundResource {
    * Updates a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String clusterName = "clusterName-1141738587";
+   *   Cluster cluster = Cluster.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Cluster response =
+   *       clusterControllerClient
+   *           .updateClusterAsync(projectId, region, clusterName, cluster, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project the cluster belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -275,6 +359,24 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setGracefulDecommissionTimeout(Duration.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Cluster response = clusterControllerClient.updateClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -290,6 +392,25 @@ public class ClusterControllerClient implements BackgroundResource {
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setGracefulDecommissionTimeout(Duration.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Cluster, ClusterOperationMetadata> future =
+   *       clusterControllerClient.updateClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
@@ -303,6 +424,25 @@ public class ClusterControllerClient implements BackgroundResource {
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   UpdateClusterRequest request =
+   *       UpdateClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setCluster(Cluster.newBuilder().build())
+   *           .setGracefulDecommissionTimeout(Duration.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterControllerClient.updateClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return stub.updateClusterCallable();
@@ -313,6 +453,17 @@ public class ClusterControllerClient implements BackgroundResource {
    * Deletes a cluster in a project. The returned
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String clusterName = "clusterName-1141738587";
+   *   clusterControllerClient.deleteClusterAsync(projectId, region, clusterName).get();
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -337,6 +488,22 @@ public class ClusterControllerClient implements BackgroundResource {
    * [Operation.metadata][google.longrunning.Operation.metadata] will be
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   clusterControllerClient.deleteClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -352,6 +519,23 @@ public class ClusterControllerClient implements BackgroundResource {
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, ClusterOperationMetadata> future =
+   *       clusterControllerClient.deleteClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable() {
@@ -365,6 +549,23 @@ public class ClusterControllerClient implements BackgroundResource {
    * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#clusteroperationmetadata).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   DeleteClusterRequest request =
+   *       DeleteClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setClusterUuid("clusterUuid-1141510955")
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterControllerClient.deleteClusterCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return stub.deleteClusterCallable();
@@ -373,6 +574,17 @@ public class ClusterControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the resource representation for a cluster in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String clusterName = "clusterName-1141738587";
+   *   Cluster response = clusterControllerClient.getCluster(projectId, region, clusterName);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -394,6 +606,20 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Gets the resource representation for a cluster in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   GetClusterRequest request =
+   *       GetClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .build();
+   *   Cluster response = clusterControllerClient.getCluster(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -406,6 +632,20 @@ public class ClusterControllerClient implements BackgroundResource {
    * Gets the resource representation for a cluster in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   GetClusterRequest request =
+   *       GetClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .build();
+   *   ApiFuture<Cluster> future = clusterControllerClient.getClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Cluster response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return stub.getClusterCallable();
@@ -414,6 +654,18 @@ public class ClusterControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   for (Cluster element : clusterControllerClient.listClusters(projectId, region).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -429,6 +681,20 @@ public class ClusterControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String filter = "filter-1274492040";
+   *   for (Cluster element :
+   *       clusterControllerClient.listClusters(projectId, region, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -464,6 +730,24 @@ public class ClusterControllerClient implements BackgroundResource {
   /**
    * Lists all regions/{region}/clusters in a project alphabetically.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Cluster element : clusterControllerClient.listClusters(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -476,6 +760,25 @@ public class ClusterControllerClient implements BackgroundResource {
    * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   ListClustersRequest request =
+   *       ListClustersRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Cluster> future =
+   *       clusterControllerClient.listClustersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Cluster element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersPagedResponse>
       listClustersPagedCallable() {
@@ -487,6 +790,24 @@ public class ClusterControllerClient implements BackgroundResource {
    * Lists all regions/{region}/clusters in a project alphabetically.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   while (true) {
+   *     ListClustersResponse response =
+   *         clusterControllerClient.listClustersCallable().call(request);
+   *     for (Cluster element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return stub.listClustersCallable();
@@ -500,6 +821,18 @@ public class ClusterControllerClient implements BackgroundResource {
    * After the operation completes, [Operation.response][google.longrunning.Operation.response]
    * contains
    * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String clusterName = "clusterName-1141738587";
+   *   DiagnoseClusterResults response =
+   *       clusterControllerClient.diagnoseClusterAsync(projectId, region, clusterName).get();
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the cluster belongs
    *     to.
@@ -527,6 +860,20 @@ public class ClusterControllerClient implements BackgroundResource {
    * contains
    * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   DiagnoseClusterRequest request =
+   *       DiagnoseClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .build();
+   *   DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -545,6 +892,21 @@ public class ClusterControllerClient implements BackgroundResource {
    * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   DiagnoseClusterRequest request =
+   *       DiagnoseClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .build();
+   *   OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata> future =
+   *       clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DiagnoseClusterResults response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
@@ -562,6 +924,21 @@ public class ClusterControllerClient implements BackgroundResource {
    * [DiagnoseClusterResults](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1#diagnoseclusterresults).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+   *   DiagnoseClusterRequest request =
+   *       DiagnoseClusterRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setClusterName("clusterName-1141738587")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       clusterControllerClient.diagnoseClusterCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
     return stub.diagnoseClusterCallable();

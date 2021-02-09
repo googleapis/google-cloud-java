@@ -46,6 +46,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String region = "region-934795532";
+ *   Job job = Job.newBuilder().build();
+ *   Job response = jobControllerClient.submitJob(projectId, region, job);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the JobControllerClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -161,6 +170,17 @@ public class JobControllerClient implements BackgroundResource {
   /**
    * Submits a job to a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   Job job = Job.newBuilder().build();
+   *   Job response = jobControllerClient.submitJob(projectId, region, job);
+   * }
+   * }</pre>
+   *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
    * @param job Required. The job resource.
@@ -176,6 +196,21 @@ public class JobControllerClient implements BackgroundResource {
   /**
    * Submits a job to a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   SubmitJobRequest request =
+   *       SubmitJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJob(Job.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Job response = jobControllerClient.submitJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -188,6 +223,21 @@ public class JobControllerClient implements BackgroundResource {
    * Submits a job to a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   SubmitJobRequest request =
+   *       SubmitJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJob(Job.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Job> future = jobControllerClient.submitJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SubmitJobRequest, Job> submitJobCallable() {
     return stub.submitJobCallable();
@@ -196,6 +246,17 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Submits job to a cluster.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   Job job = Job.newBuilder().build();
+   *   Job response = jobControllerClient.submitJobAsOperationAsync(projectId, region, job).get();
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -213,6 +274,21 @@ public class JobControllerClient implements BackgroundResource {
   /**
    * Submits job to a cluster.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   SubmitJobRequest request =
+   *       SubmitJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJob(Job.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Job response = jobControllerClient.submitJobAsOperationAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -226,6 +302,22 @@ public class JobControllerClient implements BackgroundResource {
    * Submits job to a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   SubmitJobRequest request =
+   *       SubmitJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJob(Job.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Job, JobMetadata> future =
+   *       jobControllerClient.submitJobAsOperationOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<SubmitJobRequest, Job, JobMetadata>
       submitJobAsOperationOperationCallable() {
@@ -237,6 +329,22 @@ public class JobControllerClient implements BackgroundResource {
    * Submits job to a cluster.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   SubmitJobRequest request =
+   *       SubmitJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJob(Job.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       jobControllerClient.submitJobAsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
     return stub.submitJobAsOperationCallable();
@@ -245,6 +353,17 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the resource representation for a job in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String jobId = "jobId101296568";
+   *   Job response = jobControllerClient.getJob(projectId, region, jobId);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -265,6 +384,20 @@ public class JobControllerClient implements BackgroundResource {
   /**
    * Gets the resource representation for a job in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   GetJobRequest request =
+   *       GetJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   Job response = jobControllerClient.getJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -277,6 +410,20 @@ public class JobControllerClient implements BackgroundResource {
    * Gets the resource representation for a job in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   GetJobRequest request =
+   *       GetJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   ApiFuture<Job> future = jobControllerClient.getJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return stub.getJobCallable();
@@ -285,6 +432,18 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists regions/{region}/jobs in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   for (Job element : jobControllerClient.listJobs(projectId, region).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -299,6 +458,19 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists regions/{region}/jobs in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String filter = "filter-1274492040";
+   *   for (Job element : jobControllerClient.listJobs(projectId, region, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -327,6 +499,25 @@ public class JobControllerClient implements BackgroundResource {
   /**
    * Lists regions/{region}/jobs in a project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   for (Job element : jobControllerClient.listJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -339,6 +530,25 @@ public class JobControllerClient implements BackgroundResource {
    * Lists regions/{region}/jobs in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setClusterName("clusterName-1141738587")
+   *           .setFilter("filter-1274492040")
+   *           .build();
+   *   ApiFuture<Job> future = jobControllerClient.listJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Job element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return stub.listJobsPagedCallable();
@@ -349,6 +559,23 @@ public class JobControllerClient implements BackgroundResource {
    * Lists regions/{region}/jobs in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   while (true) {
+   *     ListJobsResponse response = jobControllerClient.listJobsCallable().call(request);
+   *     for (Job element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return stub.listJobsCallable();
@@ -357,6 +584,22 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a job in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Job response = jobControllerClient.updateJob(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,6 +613,22 @@ public class JobControllerClient implements BackgroundResource {
    * Updates a job in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Job> future = jobControllerClient.updateJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return stub.updateJobCallable();
@@ -381,6 +640,17 @@ public class JobControllerClient implements BackgroundResource {
    * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
    * or
    * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String jobId = "jobId101296568";
+   *   Job response = jobControllerClient.cancelJob(projectId, region, jobId);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -404,6 +674,20 @@ public class JobControllerClient implements BackgroundResource {
    * or
    * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   Job response = jobControllerClient.cancelJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -419,6 +703,20 @@ public class JobControllerClient implements BackgroundResource {
    * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   CancelJobRequest request =
+   *       CancelJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   ApiFuture<Job> future = jobControllerClient.cancelJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CancelJobRequest, Job> cancelJobCallable() {
     return stub.cancelJobCallable();
@@ -428,6 +726,17 @@ public class JobControllerClient implements BackgroundResource {
   /**
    * Deletes the job from the project. If the job is active, the delete fails, and the response
    * returns `FAILED_PRECONDITION`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String region = "region-934795532";
+   *   String jobId = "jobId101296568";
+   *   jobControllerClient.deleteJob(projectId, region, jobId);
+   * }
+   * }</pre>
    *
    * @param projectId Required. The ID of the Google Cloud Platform project that the job belongs to.
    * @param region Required. The Dataproc region in which to handle the request.
@@ -449,6 +758,20 @@ public class JobControllerClient implements BackgroundResource {
    * Deletes the job from the project. If the job is active, the delete fails, and the response
    * returns `FAILED_PRECONDITION`.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   DeleteJobRequest request =
+   *       DeleteJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   jobControllerClient.deleteJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -462,6 +785,20 @@ public class JobControllerClient implements BackgroundResource {
    * returns `FAILED_PRECONDITION`.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobControllerClient jobControllerClient = JobControllerClient.create()) {
+   *   DeleteJobRequest request =
+   *       DeleteJobRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setRegion("region-934795532")
+   *           .setJobId("jobId101296568")
+   *           .build();
+   *   ApiFuture<Empty> future = jobControllerClient.deleteJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return stub.deleteJobCallable();
