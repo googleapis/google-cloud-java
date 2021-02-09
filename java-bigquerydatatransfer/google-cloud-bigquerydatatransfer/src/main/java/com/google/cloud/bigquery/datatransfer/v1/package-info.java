@@ -24,6 +24,13 @@
  * contains methods that are end user exposed. It backs up the frontend.
  *
  * <p>Sample for DataTransferServiceClient:
+ *
+ * <pre>{@code
+ * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+ *   DataSourceName name = DataSourceName.ofProjectDataSourceName("[PROJECT]", "[DATA_SOURCE]");
+ *   DataSource response = dataTransferServiceClient.getDataSource(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.bigquery.datatransfer.v1;
