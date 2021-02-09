@@ -41,6 +41,13 @@
  * </ul>
  *
  * <p>Sample for CloudRedisClient:
+ *
+ * <pre>{@code
+ * try (CloudRedisClient cloudRedisClient = CloudRedisClient.create()) {
+ *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+ *   Instance response = cloudRedisClient.getInstance(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.redis.v1beta1;
