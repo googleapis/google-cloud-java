@@ -76,7 +76,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-pubsub</artifactId>
-      <version>1.110.3</version><!-- {x-version-update:google-cloud-pubsub:current} -->
+      <version>1.111.0</version><!-- {x-version-update:google-cloud-pubsub:current} -->
     </dependency>
 
     <!-- protobuf  -->
