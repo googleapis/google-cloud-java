@@ -47,6 +47,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+ *     SecurityCenterSettingsServiceClient.create()) {
+ *   ServiceAccountName name = ServiceAccountName.of("[ORGANIZATION]");
+ *   ServiceAccount response = securityCenterSettingsServiceClient.getServiceAccount(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SecurityCenterSettingsServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -165,6 +173,16 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * SAs associated with APIs enabled on a project. This API will be called by the UX onboarding
    * workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ServiceAccountName name = ServiceAccountName.of("[ORGANIZATION]");
+   *   ServiceAccount response = securityCenterSettingsServiceClient.getServiceAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The relative resource name of the service account resource. Format: &#42;
    *     `organizations/{organization}/serviceAccount`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -188,6 +206,16 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * SAs associated with APIs enabled on a project. This API will be called by the UX onboarding
    * workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String name = ServiceAccountName.of("[ORGANIZATION]").toString();
+   *   ServiceAccount response = securityCenterSettingsServiceClient.getServiceAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The relative resource name of the service account resource. Format: &#42;
    *     `organizations/{organization}/serviceAccount`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,6 +236,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * SAs associated with APIs enabled on a project. This API will be called by the UX onboarding
    * workflow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   GetServiceAccountRequest request =
+   *       GetServiceAccountRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[ORGANIZATION]").toString())
+   *           .build();
+   *   ServiceAccount response = securityCenterSettingsServiceClient.getServiceAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -227,6 +268,20 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * workflow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   GetServiceAccountRequest request =
+   *       GetServiceAccountRequest.newBuilder()
+   *           .setName(ServiceAccountName.of("[ORGANIZATION]").toString())
+   *           .build();
+   *   ApiFuture<ServiceAccount> future =
+   *       securityCenterSettingsServiceClient.getServiceAccountCallable().futureCall(request);
+   *   // Do something.
+   *   ServiceAccount response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetServiceAccountRequest, ServiceAccount> getServiceAccountCallable() {
     return stub.getServiceAccountCallable();
@@ -235,6 +290,16 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the Settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   Settings response = securityCenterSettingsServiceClient.getSettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the settings to retrieve. Formats: &#42;
    *     `organizations/{organization}/settings` &#42; `folders/{folder}/settings` &#42;
@@ -254,6 +319,16 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Gets the Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String name = SettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+   *   Settings response = securityCenterSettingsServiceClient.getSettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the settings to retrieve. Formats: &#42;
    *     `organizations/{organization}/settings` &#42; `folders/{folder}/settings` &#42;
    *     `projects/{project}/settings` &#42;
@@ -271,6 +346,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Gets the Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   GetSettingsRequest request =
+   *       GetSettingsRequest.newBuilder()
+   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+   *           .build();
+   *   Settings response = securityCenterSettingsServiceClient.getSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -283,6 +371,20 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Gets the Settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   GetSettingsRequest request =
+   *       GetSettingsRequest.newBuilder()
+   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+   *           .build();
+   *   ApiFuture<Settings> future =
+   *       securityCenterSettingsServiceClient.getSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Settings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
     return stub.getSettingsCallable();
@@ -291,6 +393,17 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   Settings settings = Settings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Settings response = securityCenterSettingsServiceClient.updateSettings(settings, updateMask);
+   * }
+   * }</pre>
    *
    * @param settings Required. The settings to update.
    *     <p>The settings' `name` field is used to identify the settings to be updated. Formats:
@@ -312,6 +425,20 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Updates the Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   UpdateSettingsRequest request =
+   *       UpdateSettingsRequest.newBuilder()
+   *           .setSettings(Settings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Settings response = securityCenterSettingsServiceClient.updateSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -324,6 +451,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Updates the Settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   UpdateSettingsRequest request =
+   *       UpdateSettingsRequest.newBuilder()
+   *           .setSettings(Settings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Settings> future =
+   *       securityCenterSettingsServiceClient.updateSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   Settings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     return stub.updateSettingsCallable();
@@ -340,6 +482,20 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    *
    * <p>Using Reset on organization will remove the override that was set and result in default
    * settings being used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ResetSettingsRequest request =
+   *       ResetSettingsRequest.newBuilder()
+   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   securityCenterSettingsServiceClient.resetSettings(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -361,6 +517,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * settings being used.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ResetSettingsRequest request =
+   *       ResetSettingsRequest.newBuilder()
+   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       securityCenterSettingsServiceClient.resetSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResetSettingsRequest, Empty> resetSettingsCallable() {
     return stub.resetSettingsCallable();
@@ -369,6 +540,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   BatchGetSettingsRequest request =
+   *       BatchGetSettingsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchGetSettingsResponse response =
+   *       securityCenterSettingsServiceClient.batchGetSettings(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -382,6 +568,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Gets a list of settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   BatchGetSettingsRequest request =
+   *       BatchGetSettingsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchGetSettingsResponse> future =
+   *       securityCenterSettingsServiceClient.batchGetSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   BatchGetSettingsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchGetSettingsRequest, BatchGetSettingsResponse>
       batchGetSettingsCallable() {
@@ -396,6 +597,16 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * those further away (e.g. folder will override organization level settings). &#42; Product
    * defaults can be overridden at org, folder, project, and cluster levels. &#42; Detectors will be
    * filtered out if they belong to a billing tier the customer has not configured.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   SettingsName name = SettingsName.ofOrganizationName("[ORGANIZATION]");
+   *   Settings response = securityCenterSettingsServiceClient.calculateEffectiveSettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the effective settings to retrieve. Formats: &#42;
    *     `organizations/{organization}/effectiveSettings` &#42; `folders/{folder}/effectiveSettings`
@@ -422,6 +633,16 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * defaults can be overridden at org, folder, project, and cluster levels. &#42; Detectors will be
    * filtered out if they belong to a billing tier the customer has not configured.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String name = SettingsName.ofOrganizationName("[ORGANIZATION]").toString();
+   *   Settings response = securityCenterSettingsServiceClient.calculateEffectiveSettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the effective settings to retrieve. Formats: &#42;
    *     `organizations/{organization}/effectiveSettings` &#42; `folders/{folder}/effectiveSettings`
    *     &#42; `projects/{project}/effectiveSettings` &#42;
@@ -445,6 +666,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * defaults can be overridden at org, folder, project, and cluster levels. &#42; Detectors will be
    * filtered out if they belong to a billing tier the customer has not configured.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   CalculateEffectiveSettingsRequest request =
+   *       CalculateEffectiveSettingsRequest.newBuilder()
+   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+   *           .build();
+   *   Settings response = securityCenterSettingsServiceClient.calculateEffectiveSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -462,6 +696,22 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * filtered out if they belong to a billing tier the customer has not configured.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   CalculateEffectiveSettingsRequest request =
+   *       CalculateEffectiveSettingsRequest.newBuilder()
+   *           .setName(SettingsName.ofOrganizationName("[ORGANIZATION]").toString())
+   *           .build();
+   *   ApiFuture<Settings> future =
+   *       securityCenterSettingsServiceClient
+   *           .calculateEffectiveSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Settings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CalculateEffectiveSettingsRequest, Settings>
       calculateEffectiveSettingsCallable() {
@@ -471,6 +721,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a list of effective settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   BatchCalculateEffectiveSettingsRequest request =
+   *       BatchCalculateEffectiveSettingsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .addAllRequests(new ArrayList<CalculateEffectiveSettingsRequest>())
+   *           .build();
+   *   BatchCalculateEffectiveSettingsResponse response =
+   *       securityCenterSettingsServiceClient.batchCalculateEffectiveSettings(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -485,6 +750,23 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Gets a list of effective settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   BatchCalculateEffectiveSettingsRequest request =
+   *       BatchCalculateEffectiveSettingsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .addAllRequests(new ArrayList<CalculateEffectiveSettingsRequest>())
+   *           .build();
+   *   ApiFuture<BatchCalculateEffectiveSettingsResponse> future =
+   *       securityCenterSettingsServiceClient
+   *           .batchCalculateEffectiveSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   BatchCalculateEffectiveSettingsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           BatchCalculateEffectiveSettingsRequest, BatchCalculateEffectiveSettingsResponse>
@@ -495,6 +777,17 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the Component Settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ComponentSettingsName name =
+   *       ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettings response = securityCenterSettingsServiceClient.getComponentSettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The component settings to retrieve.
    *     <p>Formats: &#42; `organizations/{organization}/components/{component}/settings` &#42;
@@ -518,6 +811,18 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Gets the Component Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String name =
+   *       ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *           .toString();
+   *   ComponentSettings response = securityCenterSettingsServiceClient.getComponentSettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The component settings to retrieve.
    *     <p>Formats: &#42; `organizations/{organization}/components/{component}/settings` &#42;
    *     `folders/{folder}/components/{component}/settings` &#42;
@@ -538,6 +843,22 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Gets the Component Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   GetComponentSettingsRequest request =
+   *       GetComponentSettingsRequest.newBuilder()
+   *           .setName(
+   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *                   .toString())
+   *           .build();
+   *   ComponentSettings response =
+   *       securityCenterSettingsServiceClient.getComponentSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -550,6 +871,22 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Gets the Component Settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   GetComponentSettingsRequest request =
+   *       GetComponentSettingsRequest.newBuilder()
+   *           .setName(
+   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ComponentSettings> future =
+   *       securityCenterSettingsServiceClient.getComponentSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   ComponentSettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetComponentSettingsRequest, ComponentSettings>
       getComponentSettingsCallable() {
@@ -559,6 +896,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the Component Settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ComponentSettings componentSettings = ComponentSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ComponentSettings response =
+   *       securityCenterSettingsServiceClient.updateComponentSettings(
+   *           componentSettings, updateMask);
+   * }
+   * }</pre>
    *
    * @param componentSettings Required. The component settings to update.
    *     <p>The component settings' `name` field is used to identify the component settings to be
@@ -586,6 +936,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Updates the Component Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   UpdateComponentSettingsRequest request =
+   *       UpdateComponentSettingsRequest.newBuilder()
+   *           .setComponentSettings(ComponentSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ComponentSettings response =
+   *       securityCenterSettingsServiceClient.updateComponentSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -598,6 +963,21 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Updates the Component Settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   UpdateComponentSettingsRequest request =
+   *       UpdateComponentSettingsRequest.newBuilder()
+   *           .setComponentSettings(ComponentSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ComponentSettings> future =
+   *       securityCenterSettingsServiceClient.updateComponentSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   ComponentSettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateComponentSettingsRequest, ComponentSettings>
       updateComponentSettingsCallable() {
@@ -610,6 +990,22 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * default. Settings are present at the organization, folder and project levels. Using Reset for a
    * folder or project will remove the override that was set and result in the organization-level
    * settings being used.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ResetComponentSettingsRequest request =
+   *       ResetComponentSettingsRequest.newBuilder()
+   *           .setName(
+   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   securityCenterSettingsServiceClient.resetComponentSettings(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -626,6 +1022,23 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * settings being used.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ResetComponentSettingsRequest request =
+   *       ResetComponentSettingsRequest.newBuilder()
+   *           .setName(
+   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       securityCenterSettingsServiceClient.resetComponentSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResetComponentSettingsRequest, Empty>
       resetComponentSettingsCallable() {
@@ -635,6 +1048,18 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets the Effective Component Settings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ComponentSettingsName name =
+   *       ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]");
+   *   ComponentSettings response =
+   *       securityCenterSettingsServiceClient.calculateEffectiveComponentSettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The effective component settings to retrieve.
    *     <p>Formats: &#42; `organizations/{organization}/components/{component}/settings` &#42;
@@ -658,6 +1083,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Gets the Effective Component Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String name =
+   *       ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *           .toString();
+   *   ComponentSettings response =
+   *       securityCenterSettingsServiceClient.calculateEffectiveComponentSettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The effective component settings to retrieve.
    *     <p>Formats: &#42; `organizations/{organization}/components/{component}/settings` &#42;
    *     `folders/{folder}/components/{component}/settings` &#42;
@@ -678,6 +1116,22 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Gets the Effective Component Settings.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   CalculateEffectiveComponentSettingsRequest request =
+   *       CalculateEffectiveComponentSettingsRequest.newBuilder()
+   *           .setName(
+   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *                   .toString())
+   *           .build();
+   *   ComponentSettings response =
+   *       securityCenterSettingsServiceClient.calculateEffectiveComponentSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -691,6 +1145,24 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Gets the Effective Component Settings.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   CalculateEffectiveComponentSettingsRequest request =
+   *       CalculateEffectiveComponentSettingsRequest.newBuilder()
+   *           .setName(
+   *               ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<ComponentSettings> future =
+   *       securityCenterSettingsServiceClient
+   *           .calculateEffectiveComponentSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ComponentSettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CalculateEffectiveComponentSettingsRequest, ComponentSettings>
       calculateEffectiveComponentSettingsCallable() {
@@ -700,6 +1172,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an unordered list of available detectors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (Detector element :
+   *       securityCenterSettingsServiceClient.listDetectors(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of detectors. Format: &#42;
    *     `organizations/{organization}`
@@ -717,6 +1202,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Retrieves an unordered list of available detectors.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   for (Detector element :
+   *       securityCenterSettingsServiceClient.listDetectors(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent, which owns this collection of detectors. Format: &#42;
    *     `organizations/{organization}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -730,6 +1228,25 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Retrieves an unordered list of available detectors.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ListDetectorsRequest request =
+   *       ListDetectorsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Detector element :
+   *       securityCenterSettingsServiceClient.listDetectors(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -742,6 +1259,25 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Retrieves an unordered list of available detectors.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ListDetectorsRequest request =
+   *       ListDetectorsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Detector> future =
+   *       securityCenterSettingsServiceClient.listDetectorsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Detector element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDetectorsRequest, ListDetectorsPagedResponse>
       listDetectorsPagedCallable() {
@@ -753,6 +1289,25 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Retrieves an unordered list of available detectors.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   while (true) {
+   *     ListDetectorsResponse response =
+   *         securityCenterSettingsServiceClient.listDetectorsCallable().call(request);
+   *     for (Detector element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListDetectorsRequest, ListDetectorsResponse> listDetectorsCallable() {
     return stub.listDetectorsCallable();
@@ -761,6 +1316,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an unordered list of available SCC components.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+   *   for (String element :
+   *       securityCenterSettingsServiceClient.listComponents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent, which owns this collection of components. Format: &#42;
    *     `organizations/{organization}`
@@ -778,6 +1346,19 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Retrieves an unordered list of available SCC components.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   String parent = OrganizationName.of("[ORGANIZATION]").toString();
+   *   for (String element :
+   *       securityCenterSettingsServiceClient.listComponents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent, which owns this collection of components. Format: &#42;
    *     `organizations/{organization}`
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -791,6 +1372,24 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
   /**
    * Retrieves an unordered list of available SCC components.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ListComponentsRequest request =
+   *       ListComponentsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (String element :
+   *       securityCenterSettingsServiceClient.listComponents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -803,6 +1402,24 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Retrieves an unordered list of available SCC components.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   ListComponentsRequest request =
+   *       ListComponentsRequest.newBuilder()
+   *           .setParent(OrganizationName.of("[ORGANIZATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<String> future =
+   *       securityCenterSettingsServiceClient.listComponentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (String element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListComponentsRequest, ListComponentsPagedResponse>
       listComponentsPagedCallable() {
@@ -814,6 +1431,25 @@ public class SecurityCenterSettingsServiceClient implements BackgroundResource {
    * Retrieves an unordered list of available SCC components.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+   *     SecurityCenterSettingsServiceClient.create()) {
+   *   while (true) {
+   *     ListComponentsResponse response =
+   *         securityCenterSettingsServiceClient.listComponentsCallable().call(request);
+   *     for (String element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListComponentsRequest, ListComponentsResponse>
       listComponentsCallable() {

@@ -26,6 +26,14 @@
  * organizations, folders, projects, and clusters.
  *
  * <p>Sample for SecurityCenterSettingsServiceClient:
+ *
+ * <pre>{@code
+ * try (SecurityCenterSettingsServiceClient securityCenterSettingsServiceClient =
+ *     SecurityCenterSettingsServiceClient.create()) {
+ *   ServiceAccountName name = ServiceAccountName.of("[ORGANIZATION]");
+ *   ServiceAccount response = securityCenterSettingsServiceClient.getServiceAccount(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.securitycenter.settings.v1beta1;
