@@ -33,6 +33,13 @@
  * to that note.
  *
  * <p>Sample for GrafeasClient:
+ *
+ * <pre>{@code
+ * try (GrafeasClient grafeasClient = GrafeasClient.create()) {
+ *   OccurrenceName name = OccurrenceName.of("[PROJECT]", "[OCCURRENCE]");
+ *   Occurrence response = grafeasClient.getOccurrence(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package io.grafeas.v1;
