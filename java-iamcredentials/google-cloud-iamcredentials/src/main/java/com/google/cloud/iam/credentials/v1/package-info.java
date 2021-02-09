@@ -29,6 +29,17 @@
  * self-signed JSON Web Tokens (JWTs), and more.
  *
  * <p>Sample for IamCredentialsClient:
+ *
+ * <pre>{@code
+ * try (IamCredentialsClient iamCredentialsClient = IamCredentialsClient.create()) {
+ *   ServiceAccountName name = ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]");
+ *   List<String> delegates = new ArrayList<>();
+ *   List<String> scope = new ArrayList<>();
+ *   Duration lifetime = Duration.newBuilder().build();
+ *   GenerateAccessTokenResponse response =
+ *       iamCredentialsClient.generateAccessToken(name, delegates, scope, lifetime);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.iam.credentials.v1;
