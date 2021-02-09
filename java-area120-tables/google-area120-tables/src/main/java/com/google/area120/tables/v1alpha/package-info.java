@@ -29,6 +29,13 @@
  * `tables/&#42;/rows/&#42;`
  *
  * <p>Sample for TablesServiceClient:
+ *
+ * <pre>{@code
+ * try (TablesServiceClient tablesServiceClient = TablesServiceClient.create()) {
+ *   String name = "name3373707";
+ *   Table response = tablesServiceClient.getTable(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.area120.tables.v1alpha;
