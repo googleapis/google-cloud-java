@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-kms.git",
-        "sha": "2b63b3483fe63dee7ebbfdfb0b37cecacd0c0c13"
+        "sha": "be126a7931b5792959b777a3dedcbc04e5c87e3d"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3816b080296d4d52975079fd26c110dd26ba25af"
+        "sha": "2414b817065726eae0bc525346c7e874f969369d"
       }
     }
   ]
