@@ -135,10 +135,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
-   * [Importing product information](/recommendations-ai/docs/upload-catalog)
+   * [Importing product
+   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -155,10 +156,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
-   * [Importing product information](/recommendations-ai/docs/upload-catalog)
+   * [Importing product
+   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -175,10 +177,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
-   * [Importing product information](/recommendations-ai/docs/upload-catalog)
+   * [Importing product
+   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -196,10 +199,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. Google Cloud Storage URIs to input files. URI can be up to
    * 2000 characters long. URIs can match the full object path (for example,
-   * gs://bucket/directory/object.json) or a pattern matching one or more
-   * files, such as gs://bucket/directory/&#42;.json. A request can
+   * `gs://bucket/directory/object.json`) or a pattern matching one or more
+   * files, such as `gs://bucket/directory/&#42;.json`. A request can
    * contain at most 100 files, and each file can be up to 2 GB. See
-   * [Importing product information](/recommendations-ai/docs/upload-catalog)
+   * [Importing product
+   * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
    * for the expected file format and setup instructions.
    * </pre>
    *
@@ -224,7 +228,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
-   *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+   *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
    * Supported values for user events imports:
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -258,7 +262,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
-   *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+   *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
    * Supported values for user events imports:
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -648,10 +652,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -668,10 +673,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -688,10 +694,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -709,10 +716,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -730,10 +738,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -758,10 +767,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -785,10 +795,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -809,10 +820,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -832,10 +844,11 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. Google Cloud Storage URIs to input files. URI can be up to
      * 2000 characters long. URIs can match the full object path (for example,
-     * gs://bucket/directory/object.json) or a pattern matching one or more
-     * files, such as gs://bucket/directory/&#42;.json. A request can
+     * `gs://bucket/directory/object.json`) or a pattern matching one or more
+     * files, such as `gs://bucket/directory/&#42;.json`. A request can
      * contain at most 100 files, and each file can be up to 2 GB. See
-     * [Importing product information](/recommendations-ai/docs/upload-catalog)
+     * [Importing product
+     * information](https://cloud.google.com/recommendations-ai/docs/upload-catalog)
      * for the expected file format and setup instructions.
      * </pre>
      *
@@ -866,7 +879,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -899,7 +912,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -932,7 +945,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -964,7 +977,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -992,7 +1005,7 @@ public final class GcsSource extends com.google.protobuf.GeneratedMessageV3
      * per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2.UserEvent] per line.

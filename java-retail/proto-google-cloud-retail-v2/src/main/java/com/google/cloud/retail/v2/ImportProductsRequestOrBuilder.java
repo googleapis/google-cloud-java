@@ -28,7 +28,7 @@ public interface ImportProductsRequestOrBuilder
    *
    * <pre>
    * Required.
-   * "projects/1234/locations/global/catalogs/default_catalog/branches/default_branch"
+   * `projects/1234/locations/global/catalogs/default_catalog/branches/default_branch`
    * If no updateMask is specified, requires products.create permission.
    * If updateMask is specified, requires products.update permission.
    * </pre>
@@ -43,7 +43,7 @@ public interface ImportProductsRequestOrBuilder
    *
    * <pre>
    * Required.
-   * "projects/1234/locations/global/catalogs/default_catalog/branches/default_branch"
+   * `projects/1234/locations/global/catalogs/default_catalog/branches/default_branch`
    * If no updateMask is specified, requires products.create permission.
    * If updateMask is specified, requires products.update permission.
    * </pre>

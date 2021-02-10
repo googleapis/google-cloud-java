@@ -141,7 +141,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent catalog resource name, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
    * </pre>
    *
    * <code>
@@ -167,7 +167,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The parent catalog resource name, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
    * </pre>
    *
    * <code>
@@ -676,7 +676,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
      * </pre>
      *
      * <code>
@@ -701,7 +701,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
      * </pre>
      *
      * <code>
@@ -726,7 +726,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
      * </pre>
      *
      * <code>
@@ -750,7 +750,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
      * </pre>
      *
      * <code>
@@ -770,7 +770,7 @@ public final class CreateProductRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The parent catalog resource name, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
      * </pre>
      *
      * <code>

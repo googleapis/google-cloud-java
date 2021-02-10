@@ -154,7 +154,7 @@ public class ProductServiceClient implements BackgroundResource {
    * Creates a [Product][google.cloud.retail.v2.Product].
    *
    * @param parent Required. The parent catalog resource name, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch`.
    * @param product Required. The [Product][google.cloud.retail.v2.Product] to create.
    * @param productId Required. The ID to use for the [Product][google.cloud.retail.v2.Product],
    *     which will become the final component of the
@@ -184,7 +184,7 @@ public class ProductServiceClient implements BackgroundResource {
    * Creates a [Product][google.cloud.retail.v2.Product].
    *
    * @param parent Required. The parent catalog resource name, such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch`.
    * @param product Required. The [Product][google.cloud.retail.v2.Product] to create.
    * @param productId Required. The ID to use for the [Product][google.cloud.retail.v2.Product],
    *     which will become the final component of the
@@ -235,7 +235,7 @@ public class ProductServiceClient implements BackgroundResource {
    * Gets a [Product][google.cloud.retail.v2.Product].
    *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    *     <p>If the caller does not have permission to access the
    *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
    *     PERMISSION_DENIED error is returned.
@@ -254,7 +254,7 @@ public class ProductServiceClient implements BackgroundResource {
    * Gets a [Product][google.cloud.retail.v2.Product].
    *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    *     <p>If the caller does not have permission to access the
    *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
    *     PERMISSION_DENIED error is returned.
@@ -337,7 +337,7 @@ public class ProductServiceClient implements BackgroundResource {
    * Deletes a [Product][google.cloud.retail.v2.Product].
    *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    *     <p>If the caller does not have permission to delete the
    *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
    *     PERMISSION_DENIED error is returned.
@@ -356,7 +356,7 @@ public class ProductServiceClient implements BackgroundResource {
    * Deletes a [Product][google.cloud.retail.v2.Product].
    *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
-   *     "projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    *     <p>If the caller does not have permission to delete the
    *     [Product][google.cloud.retail.v2.Product], regardless of whether or not it exists, a
    *     PERMISSION_DENIED error is returned.

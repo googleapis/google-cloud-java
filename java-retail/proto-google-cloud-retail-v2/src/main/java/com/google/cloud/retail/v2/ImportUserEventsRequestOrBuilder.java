@@ -27,7 +27,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -39,7 +39,7 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

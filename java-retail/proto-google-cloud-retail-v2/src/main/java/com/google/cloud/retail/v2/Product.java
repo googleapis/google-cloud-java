@@ -711,7 +711,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Full resource name of the product, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
    * The branch ID must be "default_branch".
    * </pre>
    *
@@ -736,7 +736,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Immutable. Full resource name of the product, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
    * The branch ID must be "default_branch".
    * </pre>
    *
@@ -767,7 +767,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * the final component of [name][google.cloud.retail.v2.Product.name]. For
    * example, this field is "id_1", if
    * [name][google.cloud.retail.v2.Product.name] is
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -799,7 +799,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
    * the final component of [name][google.cloud.retail.v2.Product.name]. For
    * example, this field is "id_1", if
    * [name][google.cloud.retail.v2.Product.name] is
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
    * This field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -2516,7 +2516,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Full resource name of the product, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
      * The branch ID must be "default_branch".
      * </pre>
      *
@@ -2540,7 +2540,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Full resource name of the product, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
      * The branch ID must be "default_branch".
      * </pre>
      *
@@ -2564,7 +2564,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Full resource name of the product, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
      * The branch ID must be "default_branch".
      * </pre>
      *
@@ -2587,7 +2587,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Full resource name of the product, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
      * The branch ID must be "default_branch".
      * </pre>
      *
@@ -2606,7 +2606,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. Full resource name of the product, such as
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/product_id`.
      * The branch ID must be "default_branch".
      * </pre>
      *
@@ -2635,7 +2635,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * the final component of [name][google.cloud.retail.v2.Product.name]. For
      * example, this field is "id_1", if
      * [name][google.cloud.retail.v2.Product.name] is
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -2666,7 +2666,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * the final component of [name][google.cloud.retail.v2.Product.name]. For
      * example, this field is "id_1", if
      * [name][google.cloud.retail.v2.Product.name] is
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -2697,7 +2697,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * the final component of [name][google.cloud.retail.v2.Product.name]. For
      * example, this field is "id_1", if
      * [name][google.cloud.retail.v2.Product.name] is
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -2727,7 +2727,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * the final component of [name][google.cloud.retail.v2.Product.name]. For
      * example, this field is "id_1", if
      * [name][google.cloud.retail.v2.Product.name] is
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -2753,7 +2753,7 @@ public final class Product extends com.google.protobuf.GeneratedMessageV3
      * the final component of [name][google.cloud.retail.v2.Product.name]. For
      * example, this field is "id_1", if
      * [name][google.cloud.retail.v2.Product.name] is
-     * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1".
+     * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/id_1`.
      * This field must be a UTF-8 encoded string with a length limit of 128
      * characters. Otherwise, an INVALID_ARGUMENT error is returned.
      * Google Merchant Center property

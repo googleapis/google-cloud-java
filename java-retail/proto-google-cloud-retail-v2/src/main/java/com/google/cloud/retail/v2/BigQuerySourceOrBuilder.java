@@ -145,7 +145,7 @@ public interface BigQuerySourceOrBuilder
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
-   *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+   *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
    * Supported values for user events imports:
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
@@ -168,7 +168,7 @@ public interface BigQuerySourceOrBuilder
    * per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
-   *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+   *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
    * Supported values for user events imports:
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2.UserEvent] per line.
