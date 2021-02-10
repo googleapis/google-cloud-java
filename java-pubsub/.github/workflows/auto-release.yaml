@@ -4,7 +4,7 @@ name: auto-release
 jobs:
   approve:
     runs-on: ubuntu-latest
-    if: contains(github.head_ref, 'release-v')
+    if: contains(github.head_ref, 'release-please')
     steps:
     - uses: actions/github-script@v3
       with:
@@ -16,7 +16,7 @@ jobs:
             return;
           }
 
-          // only approve PRs like "chore: release <release version>"
+          // only approve PRs like "chore(master): release <release version>"
           if ( !context.payload.pull_request.title.startsWith("chore(master): release") ) {
             return;
           }
