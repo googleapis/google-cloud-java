@@ -84,7 +84,6 @@ import org.threeten.bp.Duration;
  * SpeechStubSettings speechSettings = speechSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class SpeechStubSettings extends StubSettings<SpeechStubSettings> {
   /** The default scopes of the service. */

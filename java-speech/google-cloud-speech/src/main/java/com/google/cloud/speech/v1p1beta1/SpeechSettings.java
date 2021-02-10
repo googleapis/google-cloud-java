@@ -65,6 +65,7 @@ import javax.annotation.Generated;
  * SpeechSettings speechSettings = speechSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class SpeechSettings extends ClientSettings<SpeechSettings> {
 

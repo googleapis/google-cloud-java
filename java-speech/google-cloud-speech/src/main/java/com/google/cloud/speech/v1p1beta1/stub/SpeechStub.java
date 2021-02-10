@@ -16,6 +16,7 @@
 
 package com.google.cloud.speech.v1p1beta1.stub;
 
+import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.OperationCallable;
@@ -37,7 +38,8 @@ import javax.annotation.Generated;
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
+@BetaApi
+@Generated("by gapic-generator-java")
 public abstract class SpeechStub implements BackgroundResource {
 
   public OperationsStub getOperationsStub() {
