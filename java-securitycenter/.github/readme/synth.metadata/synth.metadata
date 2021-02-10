@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-securitycenter.git",
-        "sha": "036593b194b1b77d7fac912b8a6848cb10671de7"
+        "sha": "839165cbab53ca270289241ea0e877c35ee6fdf2"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "3816b080296d4d52975079fd26c110dd26ba25af"
+        "sha": "2414b817065726eae0bc525346c7e874f969369d"
       }
     }
   ]
