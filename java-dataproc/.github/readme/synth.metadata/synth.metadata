@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-dataproc.git",
-        "sha": "d7503e7c005c240672741fbc5541a7281c55be23"
+        "sha": "03ef38fc67b19c10afcaa7a36cd8489e22b7a65c"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "a38d9dbf2fe5e0352b1dffd7eb15e31809c7fd62"
+        "sha": "2414b817065726eae0bc525346c7e874f969369d"
       }
     }
   ]
