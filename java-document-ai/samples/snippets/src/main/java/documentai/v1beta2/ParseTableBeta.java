@@ -94,23 +94,27 @@ public class ParseTableBeta {
       String text = response.getText();
 
       // Get the first table in the document
-      Document.Page page1 = response.getPages(0);
-      Document.Page.Table table = page1.getTables(0);
+      if (response.getPagesCount() > 0) {
+        Document.Page page1 = response.getPages(0);
+        if (page1.getTablesCount() > 0) {
+          Document.Page.Table table = page1.getTables(0);
 
-      System.out.println("Results from first table processed:");
-      List<Document.Page.DetectedLanguage> detectedLangs = page1.getDetectedLanguagesList();
-      String langCode =
-          detectedLangs.size() > 0 ? detectedLangs.get(0).getLanguageCode() : "NOT_FOUND";
-      System.out.printf("First detected language: : %s", langCode);
+          System.out.println("Results from first table processed:");
+          List<Document.Page.DetectedLanguage> detectedLangs = page1.getDetectedLanguagesList();
+          String langCode =
+              detectedLangs.size() > 0 ? detectedLangs.get(0).getLanguageCode() : "NOT_FOUND";
+          System.out.printf("First detected language: : %s", langCode);
 
-      Document.Page.Table.TableRow headerRow = table.getHeaderRows(0);
-      System.out.println("Header row:");
+          Document.Page.Table.TableRow headerRow = table.getHeaderRows(0);
+          System.out.println("Header row:");
 
-      for (Document.Page.Table.TableCell tableCell : headerRow.getCellsList()) {
-        if (tableCell.getLayout().getTextAnchor().getTextSegmentsList() != null) {
-          // Extract shards from the text field
-          // First shard in document doesn't have startIndex property
-          System.out.printf("\t%s", getText(tableCell.getLayout(), text));
+          for (Document.Page.Table.TableCell tableCell : headerRow.getCellsList()) {
+            if (tableCell.getLayout().getTextAnchor().getTextSegmentsList() != null) {
+              // Extract shards from the text field
+              // First shard in document doesn't have startIndex property
+              System.out.printf("\t%s", getText(tableCell.getLayout(), text));
+            }
+          }
         }
       }
     }

@@ -90,13 +90,15 @@ public class ParseFormBeta {
       String text = response.getText();
 
       // Process the output
-      Document.Page page1 = response.getPages(0);
-      for (Document.Page.FormField field : page1.getFormFieldsList()) {
-        String fieldName = getText(field.getFieldName(), text);
-        String fieldValue = getText(field.getFieldValue(), text);
+      if (response.getPagesCount() > 0) {
+        Document.Page page1 = response.getPages(0);
+        for (Document.Page.FormField field : page1.getFormFieldsList()) {
+          String fieldName = getText(field.getFieldName(), text);
+          String fieldValue = getText(field.getFieldValue(), text);
 
-        System.out.println("Extracted form fields pair:");
-        System.out.printf("\t(%s, %s))", fieldName, fieldValue);
+          System.out.println("Extracted form fields pair:");
+          System.out.printf("\t(%s, %s))", fieldName, fieldValue);
+        }
       }
     }
   }

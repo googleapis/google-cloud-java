@@ -68,8 +68,7 @@ public class BatchParseFormBeta {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
-    try (DocumentUnderstandingServiceClient client =
-        DocumentUnderstandingServiceClient.create()) {
+    try (DocumentUnderstandingServiceClient client = DocumentUnderstandingServiceClient.create()) {
 
       // Configure the request for processing the PDF
       String parent = String.format("projects/%s/locations/%s", projectId, location);
@@ -103,16 +102,15 @@ public class BatchParseFormBeta {
       // mime_type can be application/pdf, image/tiff,
       // and image/gif, or application/json
       InputConfig config =
-          InputConfig.newBuilder().setGcsSource(inputUri)
-                  .setMimeType("application/pdf").build();
+          InputConfig.newBuilder().setGcsSource(inputUri).setMimeType("application/pdf").build();
 
-      GcsDestination gcsDestination = GcsDestination.newBuilder()
-              .setUri(String.format("gs://%s/%s", outputGcsBucketName, outputGcsPrefix)).build();
-
-      OutputConfig outputConfig =  OutputConfig.newBuilder()
-              .setGcsDestination(gcsDestination)
-              .setPagesPerShard(1)
+      GcsDestination gcsDestination =
+          GcsDestination.newBuilder()
+              .setUri(String.format("gs://%s/%s", outputGcsBucketName, outputGcsPrefix))
               .build();
+
+      OutputConfig outputConfig =
+          OutputConfig.newBuilder().setGcsDestination(gcsDestination).setPagesPerShard(1).build();
 
       ProcessDocumentRequest request =
           ProcessDocumentRequest.newBuilder()
@@ -165,13 +163,15 @@ public class BatchParseFormBeta {
           String text = document.getText();
 
           // Process the output.
-          Document.Page page1 = document.getPages(0);
-          for (Document.Page.FormField field : page1.getFormFieldsList()) {
-            String fieldName = getText(field.getFieldName(), text);
-            String fieldValue = getText(field.getFieldValue(), text);
+          if (document.getPagesCount() > 0) {
+            Document.Page page1 = document.getPages(0);
+            for (Document.Page.FormField field : page1.getFormFieldsList()) {
+              String fieldName = getText(field.getFieldName(), text);
+              String fieldValue = getText(field.getFieldValue(), text);
 
-            System.out.println("Extracted form fields pair:");
-            System.out.printf("\t(%s, %s))", fieldName, fieldValue);
+              System.out.println("Extracted form fields pair:");
+              System.out.printf("\t(%s, %s))", fieldName, fieldValue);
+            }
           }
 
           // Clean up temp file.

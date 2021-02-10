@@ -165,24 +165,30 @@ public class BatchParseTableBeta {
           String text = document.getText();
 
           // Process the output.
-          Document.Page page1 = document.getPages(0);
-          Document.Page.Table table = page1.getTables(0);
+          if (document.getPagesCount() > 0) {
+            Document.Page page1 = document.getPages(0);
+            if (page1.getTablesCount() > 0) {
+              Document.Page.Table table = page1.getTables(0);
 
-          System.out.println("Results from first table processed:");
-          System.out.println("Header row:");
+              System.out.println("Results from first table processed:");
+              System.out.println("Header row:");
 
-          Document.Page.Table.TableRow headerRow = table.getHeaderRows(0);
+              if (table.getHeaderRowsCount() > 0) {
+                Document.Page.Table.TableRow headerRow = table.getHeaderRows(0);
 
-          for (Document.Page.Table.TableCell tableCell : headerRow.getCellsList()) {
-            if (!tableCell.getLayout().getTextAnchor().getTextSegmentsList().isEmpty()) {
-              // Extract shards from the text field
-              // First shard in document doesn't have startIndex property
-              List<Document.TextAnchor.TextSegment> textSegments =
-                  tableCell.getLayout().getTextAnchor().getTextSegmentsList();
-              int startIdx =
-                  textSegments.size() > 0 ? (int) textSegments.get(0).getStartIndex() : 0;
-              int endIdx = (int) textSegments.get(0).getEndIndex();
-              System.out.printf("\t%s", text.substring(startIdx, endIdx));
+                for (Document.Page.Table.TableCell tableCell : headerRow.getCellsList()) {
+                  if (!tableCell.getLayout().getTextAnchor().getTextSegmentsList().isEmpty()) {
+                    // Extract shards from the text field
+                    // First shard in document doesn't have startIndex property
+                    List<Document.TextAnchor.TextSegment> textSegments =
+                        tableCell.getLayout().getTextAnchor().getTextSegmentsList();
+                    int startIdx =
+                        textSegments.size() > 0 ? (int) textSegments.get(0).getStartIndex() : 0;
+                    int endIdx = (int) textSegments.get(0).getEndIndex();
+                    System.out.printf("\t%s", text.substring(startIdx, endIdx));
+                  }
+                }
+              }
             }
           }
 
