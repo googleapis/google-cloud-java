@@ -552,15 +552,15 @@ public final class Cloudbuild {
           + "oogle.devtools.cloudbuild.v1.ListWorkerP"
           + "oolsResponse\"\000\032M\312A\031cloudbuild.googleapis"
           + ".com\322A.https://www.googleapis.com/auth/c"
-          + "loud-platformB\263\002\n\030com.google.cloudbuild."
+          + "loud-platformB\320\002\n\030com.google.cloudbuild."
           + "v1P\001ZGgoogle.golang.org/genproto/googlea"
           + "pis/devtools/cloudbuild/v1;cloudbuild\242\002\003"
-          + "GCB\352\002\030Google::Cloud::Build::V1\352AN\n\036compu"
-          + "te.googleapis.com/Network\022,projects/{pro"
-          + "ject}/global/networks/{network}\352AY\n!iam."
-          + "googleapis.com/ServiceAccount\0224projects/"
-          + "{project}/serviceAccounts/{service_accou"
-          + "nt}b\006proto3"
+          + "GCB\252\002\032Google.Cloud.CloudBuild.V1\352\002\030Googl"
+          + "e::Cloud::Build::V1\352AN\n\036compute.googleap"
+          + "is.com/Network\022,projects/{project}/globa"
+          + "l/networks/{network}\352AY\n!iam.googleapis."
+          + "com/ServiceAccount\0224projects/{project}/s"
+          + "erviceAccounts/{service_account}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

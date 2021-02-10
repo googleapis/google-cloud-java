@@ -110,7 +110,6 @@ import org.threeten.bp.Duration;
  * CloudBuildStubSettings cloudBuildSettings = cloudBuildSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class CloudBuildStubSettings extends StubSettings<CloudBuildStubSettings> {
   /** The default scopes of the service. */
