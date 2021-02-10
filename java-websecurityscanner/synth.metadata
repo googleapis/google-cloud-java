@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-websecurityscanner.git",
-        "sha": "5360f6f515659e0b17ed6d6e0ef0359002af8362"
+        "sha": "61ac100f8f8ce7ab8c30bf0450dc7903e9bdb38b"
       }
     },
     {
@@ -35,7 +35,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "692715c0f23a7bb3bfbbaa300f7620ddfa8c47e5"
+        "sha": "2414b817065726eae0bc525346c7e874f969369d"
       }
     }
   ],
