@@ -29,7 +29,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-billingbudgets</artifactId>
-      <version>1.0.3</version>
+      <version>1.0.4</version>
     </dependency>
     <!-- [END billingbudgets_install_without_bom] -->
 
