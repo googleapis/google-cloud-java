@@ -25,6 +25,13 @@
  * logging into virtual machines on Google Cloud Platform.
  *
  * <p>Sample for OsLoginServiceClient:
+ *
+ * <pre>{@code
+ * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+ *   PosixAccountName name = PosixAccountName.of("[USER]", "[PROJECT]");
+ *   osLoginServiceClient.deletePosixAccount(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.oslogin.v1;

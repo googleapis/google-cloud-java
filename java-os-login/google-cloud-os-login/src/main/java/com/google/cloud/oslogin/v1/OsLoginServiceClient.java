@@ -38,6 +38,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+ *   ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
+ *   osLoginServiceClient.deletePosixAccount(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the OsLoginServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -84,8 +91,7 @@ import javax.annotation.Generated;
  *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class OsLoginServiceClient implements BackgroundResource {
   private final OsLoginServiceSettings settings;
   private final OsLoginServiceStub stub;
@@ -142,6 +148,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Deletes a POSIX account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   ProjectName name = ProjectName.of("[USER]", "[PROJECT]");
+   *   osLoginServiceClient.deletePosixAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. A reference to the POSIX account to update. POSIX accounts are identified
    *     by the project ID they are associated with. A reference to the POSIX account is in format
    *     `users/{user}/projects/{project}`.
@@ -159,6 +174,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Deletes a POSIX account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String name = ProjectName.of("[USER]", "[PROJECT]").toString();
+   *   osLoginServiceClient.deletePosixAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. A reference to the POSIX account to update. POSIX accounts are identified
    *     by the project ID they are associated with. A reference to the POSIX account is in format
    *     `users/{user}/projects/{project}`.
@@ -174,6 +198,18 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Deletes a POSIX account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   DeletePosixAccountRequest request =
+   *       DeletePosixAccountRequest.newBuilder()
+   *           .setName(ProjectName.of("[USER]", "[PROJECT]").toString())
+   *           .build();
+   *   osLoginServiceClient.deletePosixAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -186,6 +222,19 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Deletes a POSIX account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   DeletePosixAccountRequest request =
+   *       DeletePosixAccountRequest.newBuilder()
+   *           .setName(ProjectName.of("[USER]", "[PROJECT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       osLoginServiceClient.deletePosixAccountCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeletePosixAccountRequest, Empty> deletePosixAccountCallable() {
     return stub.deletePosixAccountCallable();
@@ -194,6 +243,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an SSH public key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   osLoginServiceClient.deleteSshPublicKey(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The fingerprint of the public key to update. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -212,6 +270,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Deletes an SSH public key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   osLoginServiceClient.deleteSshPublicKey(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The fingerprint of the public key to update. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
@@ -227,6 +294,18 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Deletes an SSH public key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   DeleteSshPublicKeyRequest request =
+   *       DeleteSshPublicKeyRequest.newBuilder()
+   *           .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .build();
+   *   osLoginServiceClient.deleteSshPublicKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -239,6 +318,19 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Deletes an SSH public key.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   DeleteSshPublicKeyRequest request =
+   *       DeleteSshPublicKeyRequest.newBuilder()
+   *           .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       osLoginServiceClient.deleteSshPublicKeyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyCallable() {
     return stub.deleteSshPublicKeyCallable();
@@ -248,6 +340,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Retrieves the profile information used for logging in to a virtual machine on Google Compute
    * Engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName name = UserName.of("[USER]");
+   *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The unique ID for the user in format `users/{user}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -263,6 +364,15 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Retrieves the profile information used for logging in to a virtual machine on Google Compute
    * Engine.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String name = ProjectName.of("[USER]", "[PROJECT]").toString();
+   *   LoginProfile response = osLoginServiceClient.getLoginProfile(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The unique ID for the user in format `users/{user}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -275,6 +385,20 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Retrieves the profile information used for logging in to a virtual machine on Google Compute
    * Engine.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   GetLoginProfileRequest request =
+   *       GetLoginProfileRequest.newBuilder()
+   *           .setName(ProjectName.of("[USER]", "[PROJECT]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .setSystemId("systemId1976085418")
+   *           .build();
+   *   LoginProfile response = osLoginServiceClient.getLoginProfile(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -289,6 +413,21 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Engine.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   GetLoginProfileRequest request =
+   *       GetLoginProfileRequest.newBuilder()
+   *           .setName(ProjectName.of("[USER]", "[PROJECT]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .setSystemId("systemId1976085418")
+   *           .build();
+   *   ApiFuture<LoginProfile> future =
+   *       osLoginServiceClient.getLoginProfileCallable().futureCall(request);
+   *   // Do something.
+   *   LoginProfile response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
     return stub.getLoginProfileCallable();
@@ -297,6 +436,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves an SSH public key.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   OsLoginProto.SshPublicKey response = osLoginServiceClient.getSshPublicKey(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -313,6 +461,15 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Retrieves an SSH public key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   OsLoginProto.SshPublicKey response = osLoginServiceClient.getSshPublicKey(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The fingerprint of the public key to retrieve. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
@@ -327,6 +484,18 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Retrieves an SSH public key.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   GetSshPublicKeyRequest request =
+   *       GetSshPublicKeyRequest.newBuilder()
+   *           .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .build();
+   *   OsLoginProto.SshPublicKey response = osLoginServiceClient.getSshPublicKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -339,6 +508,19 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Retrieves an SSH public key.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   GetSshPublicKeyRequest request =
+   *       GetSshPublicKeyRequest.newBuilder()
+   *           .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .build();
+   *   ApiFuture<OsLoginProto.SshPublicKey> future =
+   *       osLoginServiceClient.getSshPublicKeyCallable().futureCall(request);
+   *   // Do something.
+   *   OsLoginProto.SshPublicKey response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
       getSshPublicKeyCallable() {
@@ -349,6 +531,17 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Adds an SSH public key and returns the profile information. Default POSIX account information
    * is set when no username and UID exist as part of the login profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName parent = UserName.of("[USER]");
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   ImportSshPublicKeyResponse response =
+   *       osLoginServiceClient.importSshPublicKey(parent, sshPublicKey);
+   * }
+   * }</pre>
    *
    * @param parent Required. The unique ID for the user in format `users/{user}`.
    * @param sshPublicKey Optional. The SSH public key and expiration time.
@@ -369,6 +562,17 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Adds an SSH public key and returns the profile information. Default POSIX account information
    * is set when no username and UID exist as part of the login profile.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String parent = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   ImportSshPublicKeyResponse response =
+   *       osLoginServiceClient.importSshPublicKey(parent, sshPublicKey);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The unique ID for the user in format `users/{user}`.
    * @param sshPublicKey Optional. The SSH public key and expiration time.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -387,6 +591,18 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Adds an SSH public key and returns the profile information. Default POSIX account information
    * is set when no username and UID exist as part of the login profile.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UserName parent = UserName.of("[USER]");
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   String projectId = "projectId-894832108";
+   *   ImportSshPublicKeyResponse response =
+   *       osLoginServiceClient.importSshPublicKey(parent, sshPublicKey, projectId);
+   * }
+   * }</pre>
    *
    * @param parent Required. The unique ID for the user in format `users/{user}`.
    * @param sshPublicKey Optional. The SSH public key and expiration time.
@@ -409,6 +625,18 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Adds an SSH public key and returns the profile information. Default POSIX account information
    * is set when no username and UID exist as part of the login profile.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String parent = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   String projectId = "projectId-894832108";
+   *   ImportSshPublicKeyResponse response =
+   *       osLoginServiceClient.importSshPublicKey(parent, sshPublicKey, projectId);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The unique ID for the user in format `users/{user}`.
    * @param sshPublicKey Optional. The SSH public key and expiration time.
    * @param projectId The project ID of the Google Cloud Platform project.
@@ -430,6 +658,19 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Adds an SSH public key and returns the profile information. Default POSIX account information
    * is set when no username and UID exist as part of the login profile.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   ImportSshPublicKeyRequest request =
+   *       ImportSshPublicKeyRequest.newBuilder()
+   *           .setParent(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   ImportSshPublicKeyResponse response = osLoginServiceClient.importSshPublicKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -443,6 +684,20 @@ public class OsLoginServiceClient implements BackgroundResource {
    * is set when no username and UID exist as part of the login profile.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   ImportSshPublicKeyRequest request =
+   *       ImportSshPublicKeyRequest.newBuilder()
+   *           .setParent(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setProjectId("projectId-894832108")
+   *           .build();
+   *   ApiFuture<ImportSshPublicKeyResponse> future =
+   *       osLoginServiceClient.importSshPublicKeyCallable().futureCall(request);
+   *   // Do something.
+   *   ImportSshPublicKeyResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeyCallable() {
@@ -453,6 +708,17 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Updates an SSH public key and returns the profile information. This method supports patch
    * semantics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   OsLoginProto.SshPublicKey response =
+   *       osLoginServiceClient.updateSshPublicKey(name, sshPublicKey);
+   * }
+   * }</pre>
    *
    * @param name Required. The fingerprint of the public key to update. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -475,6 +741,17 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Updates an SSH public key and returns the profile information. This method supports patch
    * semantics.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   OsLoginProto.SshPublicKey response =
+   *       osLoginServiceClient.updateSshPublicKey(name, sshPublicKey);
+   * }
+   * }</pre>
+   *
    * @param name Required. The fingerprint of the public key to update. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
@@ -492,6 +769,18 @@ public class OsLoginServiceClient implements BackgroundResource {
   /**
    * Updates an SSH public key and returns the profile information. This method supports patch
    * semantics.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   FingerprintName name = FingerprintName.of("[USER]", "[FINGERPRINT]");
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   OsLoginProto.SshPublicKey response =
+   *       osLoginServiceClient.updateSshPublicKey(name, sshPublicKey, updateMask);
+   * }
+   * }</pre>
    *
    * @param name Required. The fingerprint of the public key to update. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -516,6 +805,18 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Updates an SSH public key and returns the profile information. This method supports patch
    * semantics.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   String name = FingerprintName.of("[USER]", "[FINGERPRINT]").toString();
+   *   OsLoginProto.SshPublicKey sshPublicKey = OsLoginProto.SshPublicKey.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   OsLoginProto.SshPublicKey response =
+   *       osLoginServiceClient.updateSshPublicKey(name, sshPublicKey, updateMask);
+   * }
+   * }</pre>
+   *
    * @param name Required. The fingerprint of the public key to update. Public keys are identified
    *     by their SHA-256 fingerprint. The fingerprint of the public key is in format
    *     `users/{user}/sshPublicKeys/{fingerprint}`.
@@ -539,6 +840,19 @@ public class OsLoginServiceClient implements BackgroundResource {
    * Updates an SSH public key and returns the profile information. This method supports patch
    * semantics.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UpdateSshPublicKeyRequest request =
+   *       UpdateSshPublicKeyRequest.newBuilder()
+   *           .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OsLoginProto.SshPublicKey response = osLoginServiceClient.updateSshPublicKey(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -552,6 +866,20 @@ public class OsLoginServiceClient implements BackgroundResource {
    * semantics.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (OsLoginServiceClient osLoginServiceClient = OsLoginServiceClient.create()) {
+   *   UpdateSshPublicKeyRequest request =
+   *       UpdateSshPublicKeyRequest.newBuilder()
+   *           .setName(FingerprintName.of("[USER]", "[FINGERPRINT]").toString())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<OsLoginProto.SshPublicKey> future =
+   *       osLoginServiceClient.updateSshPublicKeyCallable().futureCall(request);
+   *   // Do something.
+   *   OsLoginProto.SshPublicKey response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
       updateSshPublicKeyCallable() {
