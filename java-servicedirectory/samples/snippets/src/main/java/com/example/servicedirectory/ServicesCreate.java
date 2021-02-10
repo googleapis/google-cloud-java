@@ -18,9 +18,9 @@ package com.example.servicedirectory;
 
 // [START servicedirectory_create_service]
 
-import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
-import com.google.cloud.servicedirectory.v1beta1.Service;
+import com.google.cloud.servicedirectory.v1.NamespaceName;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
+import com.google.cloud.servicedirectory.v1.Service;
 import java.io.IOException;
 
 public class ServicesCreate {
@@ -49,15 +49,15 @@ public class ServicesCreate {
       NamespaceName parent = NamespaceName.of(projectId, locationId, namespaceId);
 
       // The service object to create.
-      // Optionally add some metadata for the service.
-      Service service = Service.newBuilder().putMetadata("protocol", "tcp").build();
+      // Optionally add some annotations for the service.
+      Service service = Service.newBuilder().putAnnotations("protocol", "tcp").build();
 
       // Send the request to create the namespace.
       Service createdService = client.createService(parent, service, serviceId);
 
       // Process the response.
       System.out.println("Created Service: " + createdService.getName());
-      System.out.println("Metadata: " + createdService.getMetadata());
+      System.out.println("Annotations: " + createdService.getAnnotations());
     }
   }
 }

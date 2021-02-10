@@ -19,11 +19,11 @@ package com.example.servicedirectory;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
-import com.google.cloud.servicedirectory.v1beta1.LocationName;
-import com.google.cloud.servicedirectory.v1beta1.Namespace;
-import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient.ListNamespacesPagedResponse;
+import com.google.cloud.servicedirectory.v1.LocationName;
+import com.google.cloud.servicedirectory.v1.Namespace;
+import com.google.cloud.servicedirectory.v1.NamespaceName;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient.ListNamespacesPagedResponse;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.UUID;

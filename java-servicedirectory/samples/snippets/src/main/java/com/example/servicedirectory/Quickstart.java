@@ -18,10 +18,10 @@ package com.example.servicedirectory;
 
 // [START servicedirectory_quickstart]
 
-import com.google.cloud.servicedirectory.v1beta1.LocationName;
-import com.google.cloud.servicedirectory.v1beta1.Namespace;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient.ListNamespacesPagedResponse;
+import com.google.cloud.servicedirectory.v1.LocationName;
+import com.google.cloud.servicedirectory.v1.Namespace;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient.ListNamespacesPagedResponse;
 import java.io.IOException;
 
 public class Quickstart {

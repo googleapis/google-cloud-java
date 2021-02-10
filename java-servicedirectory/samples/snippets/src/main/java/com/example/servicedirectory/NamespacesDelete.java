@@ -18,8 +18,8 @@ package com.example.servicedirectory;
 
 // [START servicedirectory_delete_namespace]
 
-import com.google.cloud.servicedirectory.v1beta1.NamespaceName;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
+import com.google.cloud.servicedirectory.v1.NamespaceName;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import java.io.IOException;
 
 public class NamespacesDelete {

@@ -18,8 +18,8 @@ package com.example.servicedirectory;
 
 // [START servicedirectory_delete_service]
 
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
-import com.google.cloud.servicedirectory.v1beta1.ServiceName;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
+import com.google.cloud.servicedirectory.v1.ServiceName;
 import java.io.IOException;
 
 public class ServicesDelete {

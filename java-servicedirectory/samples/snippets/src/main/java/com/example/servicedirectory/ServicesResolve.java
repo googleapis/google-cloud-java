@@ -18,11 +18,11 @@ package com.example.servicedirectory;
 
 // [START servicedirectory_resolve_service]
 
-import com.google.cloud.servicedirectory.v1beta1.Endpoint;
-import com.google.cloud.servicedirectory.v1beta1.LookupServiceClient;
-import com.google.cloud.servicedirectory.v1beta1.ResolveServiceRequest;
-import com.google.cloud.servicedirectory.v1beta1.ResolveServiceResponse;
-import com.google.cloud.servicedirectory.v1beta1.ServiceName;
+import com.google.cloud.servicedirectory.v1.Endpoint;
+import com.google.cloud.servicedirectory.v1.LookupServiceClient;
+import com.google.cloud.servicedirectory.v1.ResolveServiceRequest;
+import com.google.cloud.servicedirectory.v1.ResolveServiceResponse;
+import com.google.cloud.servicedirectory.v1.ServiceName;
 import java.io.IOException;
 
 public class ServicesResolve {

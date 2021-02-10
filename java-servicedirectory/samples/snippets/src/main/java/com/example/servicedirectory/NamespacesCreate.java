@@ -18,9 +18,9 @@ package com.example.servicedirectory;
 
 // [START servicedirectory_create_namespace]
 
-import com.google.cloud.servicedirectory.v1beta1.LocationName;
-import com.google.cloud.servicedirectory.v1beta1.Namespace;
-import com.google.cloud.servicedirectory.v1beta1.RegistrationServiceClient;
+import com.google.cloud.servicedirectory.v1.LocationName;
+import com.google.cloud.servicedirectory.v1.Namespace;
+import com.google.cloud.servicedirectory.v1.RegistrationServiceClient;
 import java.io.IOException;
 
 public class NamespacesCreate {
