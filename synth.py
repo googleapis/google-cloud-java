@@ -112,13 +112,29 @@ REPO_EXCLUSION = [
 ]
 
 def allowed_repo(repo) -> bool:
-    return repo['language'] == 'java' and repo['repo'].startswith('googleapis/java-') and repo['repo'] not in REPO_EXCLUSION
+    return repo['language'].lower() == 'java' and repo['full_name'].startswith('googleapis/java-') and repo['full_name'] not in REPO_EXCLUSION
+
+
+def _fetch_repo_list(page):
+    url = "https://api.github.com/search/repositories"
+    response = requests.get(url, params = {
+        'q': 'org:googleapis is:public archived:false language:java',
+        'per_page': 100,
+        'page': page,
+    })
+    return response.json()['items']
 
     
 def all_clients() -> List[CloudClient]:
-    response = requests.get(REPO_LIST_JSON)
-    clients = [client_for_repo(repo['repo']) for repo in response.json()['repos'] if allowed_repo(repo)]
-    # remove empty clients
+    page = 1
+    clients = []
+    while (True):
+        repos = _fetch_repo_list(page)
+        if not repos:
+            break
+        clients.extend([client_for_repo(repo['full_name']) for repo in repos if allowed_repo(repo)])
+        page += 1
+
     return [client for client in clients if client] 
 
 
