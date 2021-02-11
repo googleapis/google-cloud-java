@@ -17,7 +17,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>16.2.1</version>
+      <version>16.4.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -47,12 +47,12 @@ If you are using Maven without BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-automl</artifactId>
-  <version>1.3.3</version>
+  <version>1.3.4</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>1.126.3</version>
+  <version>1.127.0</version>
 </dependency>
 <dependency>
   <groupId>com.google.cloud</groupId>
@@ -64,7 +64,7 @@ If you are using Maven without BOM, add this to your dependencies:
 
 If you are using Gradle 5.x or later, add this to your dependencies
 ```Groovy
-implementation platform('com.google.cloud:libraries-bom:16.2.1')
+implementation platform('com.google.cloud:libraries-bom:16.4.0')
 
 compile 'com.google.cloud:google-cloud-automl'
 ```
@@ -181,7 +181,6 @@ has instructions for running the samples.
 | Classification Deploy Model | [source code](https://github.com/googleapis/java-automl/blob/master/samples/snippets/src/main/java/com/google/cloud/vision/ClassificationDeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/ClassificationDeployModel.java) |
 | Classification Undeploy Model | [source code](https://github.com/googleapis/java-automl/blob/master/samples/snippets/src/main/java/com/google/cloud/vision/ClassificationUndeployModel.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/ClassificationUndeployModel.java) |
 | Model Api | [source code](https://github.com/googleapis/java-automl/blob/master/samples/snippets/src/main/java/com/google/cloud/vision/ModelApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/ModelApi.java) |
-| Object Detection Deploy Model Node Count | [source code](https://github.com/googleapis/java-automl/blob/master/samples/snippets/src/main/java/com/google/cloud/vision/ObjectDetectionDeployModelNodeCount.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/ObjectDetectionDeployModelNodeCount.java) |
 | Prediction Api | [source code](https://github.com/googleapis/java-automl/blob/master/samples/snippets/src/main/java/com/google/cloud/vision/PredictionApi.java) | [![Open in Cloud Shell][shell_img]](https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/googleapis/java-automl&page=editor&open_in_editor=samples/snippets/src/main/java/com/google/cloud/vision/PredictionApi.java) |
 
 
