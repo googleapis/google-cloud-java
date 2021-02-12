@@ -37,6 +37,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+ *   WriteUserEventRequest request =
+ *       WriteUserEventRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .build();
+ *   UserEvent response = userEventServiceClient.writeUserEvent(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the UserEventServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -154,6 +165,19 @@ public class UserEventServiceClient implements BackgroundResource {
   /**
    * Writes a single user event.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   WriteUserEventRequest request =
+   *       WriteUserEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .build();
+   *   UserEvent response = userEventServiceClient.writeUserEvent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -166,6 +190,20 @@ public class UserEventServiceClient implements BackgroundResource {
    * Writes a single user event.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   WriteUserEventRequest request =
+   *       WriteUserEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserEvent> future =
+   *       userEventServiceClient.writeUserEventCallable().futureCall(request);
+   *   // Do something.
+   *   UserEvent response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
     return stub.writeUserEventCallable();
@@ -178,6 +216,21 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * <p>This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users
    * should not call this method directly.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   CollectUserEventRequest request =
+   *       CollectUserEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setUserEvent("userEvent315571599")
+   *           .setUri("uri116076")
+   *           .setEts(100772)
+   *           .build();
+   *   HttpBody response = userEventServiceClient.collectUserEvent(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -195,6 +248,22 @@ public class UserEventServiceClient implements BackgroundResource {
    * should not call this method directly.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   CollectUserEventRequest request =
+   *       CollectUserEventRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setUserEvent("userEvent315571599")
+   *           .setUri("uri116076")
+   *           .setEts(100772)
+   *           .build();
+   *   ApiFuture<HttpBody> future =
+   *       userEventServiceClient.collectUserEventCallable().futureCall(request);
+   *   // Do something.
+   *   HttpBody response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return stub.collectUserEventCallable();
@@ -205,6 +274,20 @@ public class UserEventServiceClient implements BackgroundResource {
    * Deletes permanently all user events specified by the filter provided. Depending on the number
    * of events specified by the filter, this operation could take hours or days to complete. To test
    * a filter, use the list command first.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   PurgeUserEventsResponse response = userEventServiceClient.purgeUserEventsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -221,6 +304,21 @@ public class UserEventServiceClient implements BackgroundResource {
    * a filter, use the list command first.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   OperationFuture<PurgeUserEventsResponse, PurgeMetadata> future =
+   *       userEventServiceClient.purgeUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   PurgeUserEventsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeMetadata>
       purgeUserEventsOperationCallable() {
@@ -234,6 +332,21 @@ public class UserEventServiceClient implements BackgroundResource {
    * a filter, use the list command first.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   PurgeUserEventsRequest request =
+   *       PurgeUserEventsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.purgeUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
     return stub.purgeUserEventsCallable();
@@ -246,6 +359,21 @@ public class UserEventServiceClient implements BackgroundResource {
    *
    * <p>Operation.response is of type ImportResponse. Note that it is possible for a subset of the
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ImportUserEventsRequest request =
+   *       ImportUserEventsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(UserEventInputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   ImportUserEventsResponse response =
+   *       userEventServiceClient.importUserEventsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -264,6 +392,21 @@ public class UserEventServiceClient implements BackgroundResource {
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ImportUserEventsRequest request =
+   *       ImportUserEventsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(UserEventInputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportUserEventsResponse, ImportMetadata> future =
+   *       userEventServiceClient.importUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportUserEventsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable() {
@@ -279,6 +422,21 @@ public class UserEventServiceClient implements BackgroundResource {
    * items to be successfully inserted. Operation.metadata is of type ImportMetadata.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   ImportUserEventsRequest request =
+   *       ImportUserEventsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(UserEventInputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.importUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     return stub.importUserEventsCallable();
@@ -292,6 +450,17 @@ public class UserEventServiceClient implements BackgroundResource {
    * on training and serving. This API can be used to trigger a 'join' operation on specified events
    * with latest version of product catalog. It can also be used to correct events joined with wrong
    * product catalog.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   RejoinUserEventsRequest request =
+   *       RejoinUserEventsRequest.newBuilder().setParent("parent-995424086").build();
+   *   RejoinUserEventsResponse response =
+   *       userEventServiceClient.rejoinUserEventsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -311,6 +480,17 @@ public class UserEventServiceClient implements BackgroundResource {
    * product catalog.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   RejoinUserEventsRequest request =
+   *       RejoinUserEventsRequest.newBuilder().setParent("parent-995424086").build();
+   *   OperationFuture<RejoinUserEventsResponse, RejoinUserEventsMetadata> future =
+   *       userEventServiceClient.rejoinUserEventsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RejoinUserEventsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           RejoinUserEventsRequest, RejoinUserEventsResponse, RejoinUserEventsMetadata>
@@ -328,6 +508,17 @@ public class UserEventServiceClient implements BackgroundResource {
    * product catalog.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+   *   RejoinUserEventsRequest request =
+   *       RejoinUserEventsRequest.newBuilder().setParent("parent-995424086").build();
+   *   ApiFuture<Operation> future =
+   *       userEventServiceClient.rejoinUserEventsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RejoinUserEventsRequest, Operation> rejoinUserEventsCallable() {
     return stub.rejoinUserEventsCallable();

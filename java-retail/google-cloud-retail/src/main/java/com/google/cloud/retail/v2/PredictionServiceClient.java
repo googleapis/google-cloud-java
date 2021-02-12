@@ -32,6 +32,23 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   PredictRequest request =
+ *       PredictRequest.newBuilder()
+ *           .setPlacement("placement1792938725")
+ *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .setFilter("filter-1274492040")
+ *           .setValidateOnly(true)
+ *           .putAllParams(new HashMap<String, Value>())
+ *           .putAllLabels(new HashMap<String, String>())
+ *           .build();
+ *   PredictResponse response = predictionServiceClient.predict(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PredictionServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -138,6 +155,25 @@ public class PredictionServiceClient implements BackgroundResource {
   /**
    * Makes a recommendation prediction.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setPlacement("placement1792938725")
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setValidateOnly(true)
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   PredictResponse response = predictionServiceClient.predict(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -150,6 +186,26 @@ public class PredictionServiceClient implements BackgroundResource {
    * Makes a recommendation prediction.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   PredictRequest request =
+   *       PredictRequest.newBuilder()
+   *           .setPlacement("placement1792938725")
+   *           .setUserEvent(UserEvent.newBuilder().build())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setValidateOnly(true)
+   *           .putAllParams(new HashMap<String, Value>())
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<PredictResponse> future =
+   *       predictionServiceClient.predictCallable().futureCall(request);
+   *   // Do something.
+   *   PredictResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return stub.predictCallable();

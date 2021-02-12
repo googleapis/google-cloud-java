@@ -23,11 +23,36 @@
  *
  * <p>Sample for CatalogServiceClient:
  *
+ * <pre>{@code
+ * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+ *   Catalog catalog = Catalog.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Catalog response = catalogServiceClient.updateCatalog(catalog, updateMask);
+ * }
+ * }</pre>
+ *
  * <p>======================= PredictionServiceClient =======================
  *
  * <p>Service Description: Service for making recommendation prediction.
  *
  * <p>Sample for PredictionServiceClient:
+ *
+ * <pre>{@code
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   PredictRequest request =
+ *       PredictRequest.newBuilder()
+ *           .setPlacement("placement1792938725")
+ *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .setFilter("filter-1274492040")
+ *           .setValidateOnly(true)
+ *           .putAllParams(new HashMap<String, Value>())
+ *           .putAllLabels(new HashMap<String, String>())
+ *           .build();
+ *   PredictResponse response = predictionServiceClient.predict(request);
+ * }
+ * }</pre>
  *
  * <p>======================= ProductServiceClient =======================
  *
@@ -36,11 +61,31 @@
  *
  * <p>Sample for ProductServiceClient:
  *
+ * <pre>{@code
+ * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+ *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
+ *   Product product = Product.newBuilder().build();
+ *   String productId = "productId-1051830678";
+ *   Product response = productServiceClient.createProduct(parent, product, productId);
+ * }
+ * }</pre>
+ *
  * <p>======================= UserEventServiceClient =======================
  *
  * <p>Service Description: Service for ingesting end user actions on the customer website.
  *
  * <p>Sample for UserEventServiceClient:
+ *
+ * <pre>{@code
+ * try (UserEventServiceClient userEventServiceClient = UserEventServiceClient.create()) {
+ *   WriteUserEventRequest request =
+ *       WriteUserEventRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setUserEvent(UserEvent.newBuilder().build())
+ *           .build();
+ *   UserEvent response = userEventServiceClient.writeUserEvent(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.retail.v2;

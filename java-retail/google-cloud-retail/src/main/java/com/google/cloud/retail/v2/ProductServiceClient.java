@@ -39,6 +39,15 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+ *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
+ *   Product product = Product.newBuilder().build();
+ *   String productId = "productId-1051830678";
+ *   Product response = productServiceClient.createProduct(parent, product, productId);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ProductServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -153,6 +162,17 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Creates a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   BranchName parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]");
+   *   Product product = Product.newBuilder().build();
+   *   String productId = "productId-1051830678";
+   *   Product response = productServiceClient.createProduct(parent, product, productId);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent catalog resource name, such as
    *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch`.
    * @param product Required. The [Product][google.cloud.retail.v2.Product] to create.
@@ -182,6 +202,17 @@ public class ProductServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a [Product][google.cloud.retail.v2.Product].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String parent = BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString();
+   *   Product product = Product.newBuilder().build();
+   *   String productId = "productId-1051830678";
+   *   Product response = productServiceClient.createProduct(parent, product, productId);
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent catalog resource name, such as
    *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch`.
@@ -213,6 +244,21 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Creates a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   CreateProductRequest request =
+   *       CreateProductRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setProduct(Product.newBuilder().build())
+   *           .setProductId("productId-1051830678")
+   *           .build();
+   *   Product response = productServiceClient.createProduct(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -225,6 +271,21 @@ public class ProductServiceClient implements BackgroundResource {
    * Creates a [Product][google.cloud.retail.v2.Product].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   CreateProductRequest request =
+   *       CreateProductRequest.newBuilder()
+   *           .setParent(
+   *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+   *           .setProduct(Product.newBuilder().build())
+   *           .setProductId("productId-1051830678")
+   *           .build();
+   *   ApiFuture<Product> future = productServiceClient.createProductCallable().futureCall(request);
+   *   // Do something.
+   *   Product response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     return stub.createProductCallable();
@@ -233,6 +294,16 @@ public class ProductServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a [Product][google.cloud.retail.v2.Product].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ProductName name =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+   *   Product response = productServiceClient.getProduct(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
    *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
@@ -253,6 +324,17 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Gets a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String name =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *           .toString();
+   *   Product response = productServiceClient.getProduct(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
    *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    *     <p>If the caller does not have permission to access the
@@ -271,6 +353,20 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Gets a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   GetProductRequest request =
+   *       GetProductRequest.newBuilder()
+   *           .setName(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .build();
+   *   Product response = productServiceClient.getProduct(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -283,6 +379,20 @@ public class ProductServiceClient implements BackgroundResource {
    * Gets a [Product][google.cloud.retail.v2.Product].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   GetProductRequest request =
+   *       GetProductRequest.newBuilder()
+   *           .setName(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Product> future = productServiceClient.getProductCallable().futureCall(request);
+   *   // Do something.
+   *   Product response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetProductRequest, Product> getProductCallable() {
     return stub.getProductCallable();
@@ -291,6 +401,16 @@ public class ProductServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a [Product][google.cloud.retail.v2.Product].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   Product product = Product.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Product response = productServiceClient.updateProduct(product, updateMask);
+   * }
+   * }</pre>
    *
    * @param product Required. The product to update/create.
    *     <p>If the caller does not have permission to update the
@@ -315,6 +435,19 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Updates a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   UpdateProductRequest request =
+   *       UpdateProductRequest.newBuilder()
+   *           .setProduct(Product.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Product response = productServiceClient.updateProduct(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -327,6 +460,19 @@ public class ProductServiceClient implements BackgroundResource {
    * Updates a [Product][google.cloud.retail.v2.Product].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   UpdateProductRequest request =
+   *       UpdateProductRequest.newBuilder()
+   *           .setProduct(Product.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Product> future = productServiceClient.updateProductCallable().futureCall(request);
+   *   // Do something.
+   *   Product response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     return stub.updateProductCallable();
@@ -335,6 +481,16 @@ public class ProductServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a [Product][google.cloud.retail.v2.Product].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ProductName name =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]");
+   *   productServiceClient.deleteProduct(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
    *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
@@ -355,6 +511,17 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Deletes a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   String name =
+   *       ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *           .toString();
+   *   productServiceClient.deleteProduct(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Full resource name of [Product][google.cloud.retail.v2.Product], such as
    *     `projects/&#42;/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    *     <p>If the caller does not have permission to delete the
@@ -373,6 +540,20 @@ public class ProductServiceClient implements BackgroundResource {
   /**
    * Deletes a [Product][google.cloud.retail.v2.Product].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   DeleteProductRequest request =
+   *       DeleteProductRequest.newBuilder()
+   *           .setName(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .build();
+   *   productServiceClient.deleteProduct(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -385,6 +566,20 @@ public class ProductServiceClient implements BackgroundResource {
    * Deletes a [Product][google.cloud.retail.v2.Product].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   DeleteProductRequest request =
+   *       DeleteProductRequest.newBuilder()
+   *           .setName(
+   *               ProductName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]", "[PRODUCT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = productServiceClient.deleteProductCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     return stub.deleteProductCallable();
@@ -399,6 +594,21 @@ public class ProductServiceClient implements BackgroundResource {
    *
    * <p>Note that it is possible for a subset of the [Product][google.cloud.retail.v2.Product]s to
    * be successfully updated.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ImportProductsRequest request =
+   *       ImportProductsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(ProductInputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ImportProductsResponse response = productServiceClient.importProductsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -419,6 +629,22 @@ public class ProductServiceClient implements BackgroundResource {
    * be successfully updated.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ImportProductsRequest request =
+   *       ImportProductsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(ProductInputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ImportProductsResponse, ImportMetadata> future =
+   *       productServiceClient.importProductsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportProductsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
@@ -436,6 +662,22 @@ public class ProductServiceClient implements BackgroundResource {
    * be successfully updated.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ProductServiceClient productServiceClient = ProductServiceClient.create()) {
+   *   ImportProductsRequest request =
+   *       ImportProductsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInputConfig(ProductInputConfig.newBuilder().build())
+   *           .setErrorsConfig(ImportErrorsConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       productServiceClient.importProductsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     return stub.importProductsCallable();
