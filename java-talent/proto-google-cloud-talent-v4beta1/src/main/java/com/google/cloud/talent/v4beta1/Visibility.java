@@ -28,6 +28,7 @@ package com.google.cloud.talent.v4beta1;
  *
  * Protobuf enum {@code google.cloud.talent.v4beta1.Visibility}
  */
+@java.lang.Deprecated
 public enum Visibility implements com.google.protobuf.ProtocolMessageEnum {
   /**
    *
