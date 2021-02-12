@@ -22,6 +22,14 @@
  * <p>Service Description: V1 APIs for Security Center service.
  *
  * <p>Sample for SecurityCenterClient:
+ *
+ * <pre>{@code
+ * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
+ *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
+ *   Source source = Source.newBuilder().build();
+ *   Source response = securityCenterClient.createSource(parent, source);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.securitycenter.v1;
