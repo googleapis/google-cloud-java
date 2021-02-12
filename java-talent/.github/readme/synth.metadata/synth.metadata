@@ -4,14 +4,14 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-talent.git",
-        "sha": "7ed3fb489c94cdae17cab57ea15ac1a7972a5764"
+        "sha": "e72b198f328d175cd8def4cd126a55708d72acd0"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "b259489b06b25f399768b74b8baa943991f38ea7"
+        "sha": "b32c87d2c087fb2a841acc623ab540105de821af"
       }
     }
   ]
