@@ -993,4 +993,26 @@ public class StreamWriterTest {
 
     writer.close();
   }
+
+  @Test
+  public void testDatasetTraceId() throws Exception {
+    StreamWriter writer =
+        getTestStreamWriterBuilder()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .build())
+            .setDataflowTraceId()
+            .build();
+    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+    testBigQueryWrite.addResponse(AppendRowsResponse.newBuilder().build());
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    appendFuture1.get();
+    appendFuture2.get();
+    assertEquals("Dataflow", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
+    assertEquals("", testBigQueryWrite.getAppendRequests().get(1).getTraceId());
+  }
 }

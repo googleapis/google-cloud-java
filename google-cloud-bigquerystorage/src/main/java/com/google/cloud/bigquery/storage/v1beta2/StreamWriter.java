@@ -91,6 +91,8 @@ public class StreamWriter implements AutoCloseable {
   private final String streamName;
   private final String tableName;
 
+  private final String traceId;
+
   private final BatchingSettings batchingSettings;
   private final RetrySettings retrySettings;
   private BigQueryWriteSettings stubSettings;
@@ -151,6 +153,7 @@ public class StreamWriter implements AutoCloseable {
       tableName = matcher.group(1);
     }
 
+    this.traceId = builder.traceId;
     this.batchingSettings = builder.batchingSettings;
     this.retrySettings = builder.retrySettings;
     this.messagesBatch = new MessagesBatch(batchingSettings, this.streamName, this);
@@ -477,6 +480,11 @@ public class StreamWriter implements AutoCloseable {
               "The first message on the connection must have writer schema set");
         }
         requestBuilder.setWriteStream(streamName);
+        if (!inflightRequests.get(0).message.getTraceId().isEmpty()) {
+          requestBuilder.setTraceId(inflightRequests.get(0).message.getTraceId());
+        } else if (streamWriter.traceId != null) {
+          requestBuilder.setTraceId(streamWriter.traceId);
+        }
       }
       return requestBuilder.setProtoRows(data.build()).build();
     }
@@ -660,6 +668,8 @@ public class StreamWriter implements AutoCloseable {
     private String streamOrTableName;
     private String endpoint = BigQueryWriteSettings.getDefaultEndpoint();
 
+    private String traceId;
+
     private BigQueryWriteClient client = null;
 
     // Batching options
@@ -811,6 +821,12 @@ public class StreamWriter implements AutoCloseable {
     /** If the stream is a default stream. */
     public Builder createDefaultStream() {
       this.createDefaultStream = true;
+      return this;
+    }
+
+    /** Mark the request as coming from Dataflow. */
+    public Builder setDataflowTraceId() {
+      this.traceId = "Dataflow";
       return this;
     }
 
