@@ -53,7 +53,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>1.127.1</version>
+      <version>1.127.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
