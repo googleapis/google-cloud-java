@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.DocumentsClient.ListDocumentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
@@ -35,17 +35,15 @@ import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Base stub class for Dialogflow API.
+ * Base stub class for the Documents service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
 @Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
 public abstract class DocumentsStub implements BackgroundResource {
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationsStub getOperationsStub() {
     throw new UnsupportedOperationException("Not implemented: getOperationsStub()");
   }
@@ -63,7 +61,6 @@ public abstract class DocumentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getDocumentCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
       createDocumentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createDocumentOperationCallable()");
@@ -73,7 +70,6 @@ public abstract class DocumentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createDocumentCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
       deleteDocumentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteDocumentOperationCallable()");
@@ -83,7 +79,6 @@ public abstract class DocumentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteDocumentCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
       updateDocumentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDocumentOperationCallable()");
@@ -93,7 +88,6 @@ public abstract class DocumentsStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: updateDocumentCallable()");
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: reloadDocumentOperationCallable()");

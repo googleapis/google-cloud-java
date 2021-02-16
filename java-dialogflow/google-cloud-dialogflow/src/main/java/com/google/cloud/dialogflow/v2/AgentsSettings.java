@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.AgentsClient.SearchAgentsPagedResponse;
@@ -37,7 +38,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link AgentsClient}.
  *
@@ -54,23 +55,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getAgent to 30 seconds:
  *
- * <pre>
- * <code>
- * AgentsSettings.Builder agentsSettingsBuilder =
- *     AgentsSettings.newBuilder();
+ * <pre>{@code
+ * AgentsSettings.Builder agentsSettingsBuilder = AgentsSettings.newBuilder();
  * agentsSettingsBuilder
  *     .getAgentSettings()
  *     .setRetrySettings(
- *         agentsSettingsBuilder.getAgentSettings().getRetrySettings().toBuilder()
+ *         agentsSettingsBuilder
+ *             .getAgentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * AgentsSettings agentsSettings = agentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class AgentsSettings extends ClientSettings<AgentsSettings> {
+
   /** Returns the object with the settings used for calls to getAgent. */
   public UnaryCallSettings<GetAgentRequest, Agent> getAgentSettings() {
     return ((AgentsStubSettings) getStubSettings()).getAgentSettings();
@@ -98,8 +99,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to trainAgent. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<TrainAgentRequest, Empty, Struct> trainAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).trainAgentOperationSettings();
   }
@@ -110,8 +109,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to exportAgent. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ExportAgentRequest, ExportAgentResponse, Struct>
       exportAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).exportAgentOperationSettings();
@@ -123,8 +120,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to importAgent. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<ImportAgentRequest, Empty, Struct> importAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).importAgentOperationSettings();
   }
@@ -135,8 +130,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
   }
 
   /** Returns the object with the settings used for calls to restoreAgent. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<RestoreAgentRequest, Empty, Struct> restoreAgentOperationSettings() {
     return ((AgentsStubSettings) getStubSettings()).restoreAgentOperationSettings();
   }
@@ -206,16 +199,13 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
 
   /** Builder for AgentsSettings. */
   public static class Builder extends ClientSettings.Builder<AgentsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(AgentsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(AgentsStubSettings.newBuilder());
     }
 
     protected Builder(AgentsSettings settings) {
@@ -226,11 +216,15 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(AgentsStubSettings.newBuilder());
+    }
+
     public AgentsStubSettings.Builder getStubSettingsBuilder() {
       return ((AgentsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -271,8 +265,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to trainAgent. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<TrainAgentRequest, Empty, Struct>
         trainAgentOperationSettings() {
       return getStubSettingsBuilder().trainAgentOperationSettings();
@@ -284,8 +276,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to exportAgent. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ExportAgentRequest, ExportAgentResponse, Struct>
         exportAgentOperationSettings() {
       return getStubSettingsBuilder().exportAgentOperationSettings();
@@ -297,8 +287,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to importAgent. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<ImportAgentRequest, Empty, Struct>
         importAgentOperationSettings() {
       return getStubSettingsBuilder().importAgentOperationSettings();
@@ -310,8 +298,6 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     }
 
     /** Returns the builder for the settings used for calls to restoreAgent. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings() {
       return getStubSettingsBuilder().restoreAgentOperationSettings();

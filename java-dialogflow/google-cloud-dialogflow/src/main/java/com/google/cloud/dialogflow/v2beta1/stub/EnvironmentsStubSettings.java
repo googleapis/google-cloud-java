@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.EnvironmentsClient.ListEnvironmentsPagedResponse;
@@ -51,7 +52,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EnvironmentsStub}.
  *
@@ -68,22 +69,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of listEnvironments to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EnvironmentsStubSettings.Builder environmentsSettingsBuilder =
  *     EnvironmentsStubSettings.newBuilder();
  * environmentsSettingsBuilder
  *     .listEnvironmentsSettings()
  *     .setRetrySettings(
- *         environmentsSettingsBuilder.listEnvironmentsSettings().getRetrySettings().toBuilder()
+ *         environmentsSettingsBuilder
+ *             .listEnvironmentsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EnvironmentsStubSettings environmentsSettings = environmentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -95,6 +97,65 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
   private final PagedCallSettings<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
       listEnvironmentsSettings;
+
+  private static final PagedListDescriptor<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+      LIST_ENVIRONMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListEnvironmentsRequest injectToken(
+                ListEnvironmentsRequest payload, String token) {
+              return ListEnvironmentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListEnvironmentsRequest injectPageSize(
+                ListEnvironmentsRequest payload, int pageSize) {
+              return ListEnvironmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEnvironmentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListEnvironmentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
+              return payload.getEnvironmentsList() == null
+                  ? ImmutableList.<Environment>of()
+                  : payload.getEnvironmentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
+      LIST_ENVIRONMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListEnvironmentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse> callable,
+                ListEnvironmentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListEnvironmentsResponse> futureResponse) {
+              PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
+              return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listEnvironments. */
   public PagedCallSettings<
@@ -109,10 +170,10 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcEnvironmentsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -175,73 +236,12 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
     listEnvironmentsSettings = settingsBuilder.listEnvironmentsSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
-      LIST_ENVIRONMENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListEnvironmentsRequest injectToken(
-                ListEnvironmentsRequest payload, String token) {
-              return ListEnvironmentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListEnvironmentsRequest injectPageSize(
-                ListEnvironmentsRequest payload, int pageSize) {
-              return ListEnvironmentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListEnvironmentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListEnvironmentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Environment> extractResources(ListEnvironmentsResponse payload) {
-              return payload.getEnvironmentsList() != null
-                  ? payload.getEnvironmentsList()
-                  : ImmutableList.<Environment>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
-      LIST_ENVIRONMENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListEnvironmentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse> callable,
-                ListEnvironmentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListEnvironmentsResponse> futureResponse) {
-              PageContext<ListEnvironmentsRequest, ListEnvironmentsResponse, Environment>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_ENVIRONMENTS_PAGE_STR_DESC, request, context);
-              return ListEnvironmentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for EnvironmentsStubSettings. */
   public static class Builder extends StubSettings.Builder<EnvironmentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
         listEnvironmentsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -249,17 +249,8 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -278,44 +269,12 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(180000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(180000L))
-              .setTotalTimeout(Duration.ofMillis(180000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
@@ -325,27 +284,7 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listEnvironmentsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listEnvironmentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(EnvironmentsStubSettings settings) {
@@ -357,7 +296,27 @@ public class EnvironmentsStubSettings extends StubSettings<EnvironmentsStubSetti
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(listEnvironmentsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listEnvironmentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

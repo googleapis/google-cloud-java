@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.AgentsClient.SearchAgentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -51,16 +51,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Agents service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcAgentsStub extends AgentsStub {
-
   private static final MethodDescriptor<GetAgentRequest, Agent> getAgentMethodDescriptor =
       MethodDescriptor.<GetAgentRequest, Agent>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -68,6 +66,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SetAgentRequest, Agent> setAgentMethodDescriptor =
       MethodDescriptor.<SetAgentRequest, Agent>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -75,6 +74,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(SetAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Agent.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<DeleteAgentRequest, Empty> deleteAgentMethodDescriptor =
       MethodDescriptor.<DeleteAgentRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -82,6 +82,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<SearchAgentsRequest, SearchAgentsResponse>
       searchAgentsMethodDescriptor =
           MethodDescriptor.<SearchAgentsRequest, SearchAgentsResponse>newBuilder()
@@ -91,6 +92,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAgentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<TrainAgentRequest, Operation> trainAgentMethodDescriptor =
       MethodDescriptor.<TrainAgentRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -98,6 +100,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(TrainAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ExportAgentRequest, Operation> exportAgentMethodDescriptor =
       MethodDescriptor.<ExportAgentRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -105,6 +108,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExportAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<ImportAgentRequest, Operation> importAgentMethodDescriptor =
       MethodDescriptor.<ImportAgentRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -112,6 +116,7 @@ public class GrpcAgentsStub extends AgentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ImportAgentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<RestoreAgentRequest, Operation>
       restoreAgentMethodDescriptor =
           MethodDescriptor.<RestoreAgentRequest, Operation>newBuilder()
@@ -120,6 +125,7 @@ public class GrpcAgentsStub extends AgentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(RestoreAgentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetValidationResultRequest, ValidationResult>
       getValidationResultMethodDescriptor =
           MethodDescriptor.<GetValidationResultRequest, ValidationResult>newBuilder()
@@ -129,9 +135,6 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(GetValidationResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ValidationResult.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<GetAgentRequest, Agent> getAgentCallable;
   private final UnaryCallable<SetAgentRequest, Agent> setAgentCallable;
@@ -151,6 +154,8 @@ public class GrpcAgentsStub extends AgentsStub {
   private final UnaryCallable<GetValidationResultRequest, ValidationResult>
       getValidationResultCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcAgentsStub create(AgentsStubSettings settings) throws IOException {
@@ -330,7 +335,7 @@ public class GrpcAgentsStub extends AgentsStub {
             trainAgentTransportSettings,
             settings.trainAgentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.exportAgentCallable =
         callableFactory.createUnaryCallable(
             exportAgentTransportSettings, settings.exportAgentSettings(), clientContext);
@@ -339,7 +344,7 @@ public class GrpcAgentsStub extends AgentsStub {
             exportAgentTransportSettings,
             settings.exportAgentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.importAgentCallable =
         callableFactory.createUnaryCallable(
             importAgentTransportSettings, settings.importAgentSettings(), clientContext);
@@ -348,7 +353,7 @@ public class GrpcAgentsStub extends AgentsStub {
             importAgentTransportSettings,
             settings.importAgentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.restoreAgentCallable =
         callableFactory.createUnaryCallable(
             restoreAgentTransportSettings, settings.restoreAgentSettings(), clientContext);
@@ -357,17 +362,17 @@ public class GrpcAgentsStub extends AgentsStub {
             restoreAgentTransportSettings,
             settings.restoreAgentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.getValidationResultCallable =
         callableFactory.createUnaryCallable(
             getValidationResultTransportSettings,
             settings.getValidationResultSettings(),
             clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
   }
@@ -384,49 +389,45 @@ public class GrpcAgentsStub extends AgentsStub {
     return deleteAgentCallable;
   }
 
-  public UnaryCallable<SearchAgentsRequest, SearchAgentsPagedResponse> searchAgentsPagedCallable() {
-    return searchAgentsPagedCallable;
-  }
-
   public UnaryCallable<SearchAgentsRequest, SearchAgentsResponse> searchAgentsCallable() {
     return searchAgentsCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<TrainAgentRequest, Empty, Struct> trainAgentOperationCallable() {
-    return trainAgentOperationCallable;
+  public UnaryCallable<SearchAgentsRequest, SearchAgentsPagedResponse> searchAgentsPagedCallable() {
+    return searchAgentsPagedCallable;
   }
 
   public UnaryCallable<TrainAgentRequest, Operation> trainAgentCallable() {
     return trainAgentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
-      exportAgentOperationCallable() {
-    return exportAgentOperationCallable;
+  public OperationCallable<TrainAgentRequest, Empty, Struct> trainAgentOperationCallable() {
+    return trainAgentOperationCallable;
   }
 
   public UnaryCallable<ExportAgentRequest, Operation> exportAgentCallable() {
     return exportAgentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
-    return importAgentOperationCallable;
+  public OperationCallable<ExportAgentRequest, ExportAgentResponse, Struct>
+      exportAgentOperationCallable() {
+    return exportAgentOperationCallable;
   }
 
   public UnaryCallable<ImportAgentRequest, Operation> importAgentCallable() {
     return importAgentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
-    return restoreAgentOperationCallable;
+  public OperationCallable<ImportAgentRequest, Empty, Struct> importAgentOperationCallable() {
+    return importAgentOperationCallable;
   }
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     return restoreAgentCallable;
+  }
+
+  public OperationCallable<RestoreAgentRequest, Empty, Struct> restoreAgentOperationCallable() {
+    return restoreAgentOperationCallable;
   }
 
   public UnaryCallable<GetValidationResultRequest, ValidationResult> getValidationResultCallable() {

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2.stub;
 
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListEnvironmentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsRequest;
 import com.google.cloud.dialogflow.v2.ListEnvironmentsResponse;
 import com.google.common.collect.ImmutableMap;
+import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
 import java.io.IOException;
@@ -35,16 +36,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Environments service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcEnvironmentsStub extends EnvironmentsStub {
-
   private static final MethodDescriptor<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsMethodDescriptor =
           MethodDescriptor.<ListEnvironmentsRequest, ListEnvironmentsResponse>newBuilder()
@@ -56,13 +55,13 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
                   ProtoUtils.marshaller(ListEnvironmentsResponse.getDefaultInstance()))
               .build();
 
-  private final BackgroundResource backgroundResources;
-
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable;
   private final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcEnvironmentsStub create(EnvironmentsStubSettings settings)
@@ -101,6 +100,7 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
       GrpcStubCallableFactory callableFactory)
       throws IOException {
     this.callableFactory = callableFactory;
+    this.operationsStub = GrpcOperationsStub.create(clientContext, callableFactory);
 
     GrpcCallSettings<ListEnvironmentsRequest, ListEnvironmentsResponse>
         listEnvironmentsTransportSettings =
@@ -124,17 +124,22 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
         callableFactory.createPagedCallable(
             listEnvironmentsTransportSettings, settings.listEnvironmentsSettings(), clientContext);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
-      listEnvironmentsPagedCallable() {
-    return listEnvironmentsPagedCallable;
+  public GrpcOperationsStub getOperationsStub() {
+    return operationsStub;
   }
 
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     return listEnvironmentsCallable;
+  }
+
+  public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
+      listEnvironmentsPagedCallable() {
+    return listEnvironmentsPagedCallable;
   }
 
   @Override

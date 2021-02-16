@@ -843,7 +843,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field can be used to pass HTTP headers for a webhook
-   * call. These headers will be sent to webhook alone with the headers that
+   * call. These headers will be sent to webhook along with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
    * console if there is a conflict. Header names are case-insensitive.
@@ -872,7 +872,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field can be used to pass HTTP headers for a webhook
-   * call. These headers will be sent to webhook alone with the headers that
+   * call. These headers will be sent to webhook along with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
    * console if there is a conflict. Header names are case-insensitive.
@@ -892,7 +892,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field can be used to pass HTTP headers for a webhook
-   * call. These headers will be sent to webhook alone with the headers that
+   * call. These headers will be sent to webhook along with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
    * console if there is a conflict. Header names are case-insensitive.
@@ -917,7 +917,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * This field can be used to pass HTTP headers for a webhook
-   * call. These headers will be sent to webhook alone with the headers that
+   * call. These headers will be sent to webhook along with the headers that
    * have been configured through Dialogflow web console. The headers defined
    * within this field will overwrite the headers configured through Dialogflow
    * console if there is a conflict. Header names are case-insensitive.
@@ -3821,7 +3821,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.
@@ -3850,7 +3850,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.
@@ -3870,7 +3870,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.
@@ -3895,7 +3895,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.
@@ -3927,7 +3927,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.
@@ -3955,7 +3955,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.
@@ -3981,7 +3981,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * This field can be used to pass HTTP headers for a webhook
-     * call. These headers will be sent to webhook alone with the headers that
+     * call. These headers will be sent to webhook along with the headers that
      * have been configured through Dialogflow web console. The headers defined
      * within this field will overwrite the headers configured through Dialogflow
      * console if there is a conflict. Header names are case-insensitive.

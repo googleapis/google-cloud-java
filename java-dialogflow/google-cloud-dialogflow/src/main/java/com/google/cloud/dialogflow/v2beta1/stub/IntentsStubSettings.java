@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListIntentsPagedResponse;
@@ -65,7 +66,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link IntentsStub}.
  *
@@ -82,22 +83,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getIntent to 30 seconds:
  *
- * <pre>
- * <code>
- * IntentsStubSettings.Builder intentsSettingsBuilder =
- *     IntentsStubSettings.newBuilder();
+ * <pre>{@code
+ * IntentsStubSettings.Builder intentsSettingsBuilder = IntentsStubSettings.newBuilder();
  * intentsSettingsBuilder
  *     .getIntentSettings()
  *     .setRetrySettings(
- *         intentsSettingsBuilder.getIntentSettings().getRetrySettings().toBuilder()
+ *         intentsSettingsBuilder
+ *             .getIntentSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * IntentsStubSettings intentsSettings = intentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -118,6 +119,59 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   private final UnaryCallSettings<BatchDeleteIntentsRequest, Operation> batchDeleteIntentsSettings;
   private final OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationSettings;
+
+  private static final PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>
+      LIST_INTENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListIntentsRequest injectToken(ListIntentsRequest payload, String token) {
+              return ListIntentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListIntentsRequest injectPageSize(ListIntentsRequest payload, int pageSize) {
+              return ListIntentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListIntentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListIntentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Intent> extractResources(ListIntentsResponse payload) {
+              return payload.getIntentsList() == null
+                  ? ImmutableList.<Intent>of()
+                  : payload.getIntentsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
+      LIST_INTENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListIntentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListIntentsRequest, ListIntentsResponse> callable,
+                ListIntentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListIntentsResponse> futureResponse) {
+              PageContext<ListIntentsRequest, ListIntentsResponse, Intent> pageContext =
+                  PageContext.create(callable, LIST_INTENTS_PAGE_STR_DESC, request, context);
+              return ListIntentsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listIntents. */
   public PagedCallSettings<ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
@@ -151,7 +205,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchUpdateIntents. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchUpdateIntentsRequest, BatchUpdateIntentsResponse, Struct>
       batchUpdateIntentsOperationSettings() {
     return batchUpdateIntentsOperationSettings;
@@ -163,7 +216,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchDeleteIntents. */
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteIntentsRequest, Empty, Struct>
       batchDeleteIntentsOperationSettings() {
     return batchDeleteIntentsOperationSettings;
@@ -175,10 +227,10 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcIntentsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -250,63 +302,9 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
         settingsBuilder.batchDeleteIntentsOperationSettings().build();
   }
 
-  private static final PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>
-      LIST_INTENTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListIntentsRequest, ListIntentsResponse, Intent>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListIntentsRequest injectToken(ListIntentsRequest payload, String token) {
-              return ListIntentsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListIntentsRequest injectPageSize(ListIntentsRequest payload, int pageSize) {
-              return ListIntentsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListIntentsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListIntentsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Intent> extractResources(ListIntentsResponse payload) {
-              return payload.getIntentsList() != null
-                  ? payload.getIntentsList()
-                  : ImmutableList.<Intent>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
-      LIST_INTENTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>() {
-            @Override
-            public ApiFuture<ListIntentsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListIntentsRequest, ListIntentsResponse> callable,
-                ListIntentsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListIntentsResponse> futureResponse) {
-              PageContext<ListIntentsRequest, ListIntentsResponse, Intent> pageContext =
-                  PageContext.create(callable, LIST_INTENTS_PAGE_STR_DESC, request, context);
-              return ListIntentsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for IntentsStubSettings. */
   public static class Builder extends StubSettings.Builder<IntentsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListIntentsRequest, ListIntentsResponse, ListIntentsPagedResponse>
         listIntentsSettings;
@@ -323,7 +321,6 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
         batchDeleteIntentsSettings;
     private final OperationCallSettings.Builder<BatchDeleteIntentsRequest, Empty, Struct>
         batchDeleteIntentsOperationSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -331,17 +328,8 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -360,65 +348,25 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(180000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(180000L))
-              .setTotalTimeout(Duration.ofMillis(180000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listIntentsSettings = PagedCallSettings.newBuilder(LIST_INTENTS_PAGE_STR_FACT);
-
       getIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteIntentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchUpdateIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchUpdateIntentsOperationSettings = OperationCallSettings.newBuilder();
-
       batchDeleteIntentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       batchDeleteIntentsOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
@@ -430,104 +378,7 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               deleteIntentSettings,
               batchUpdateIntentsSettings,
               batchDeleteIntentsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listIntentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getIntentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createIntentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateIntentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteIntentSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .batchUpdateIntentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .batchDeleteIntentsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-      builder
-          .batchUpdateIntentsOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<BatchUpdateIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(
-                  BatchUpdateIntentsResponse.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-      builder
-          .batchDeleteIntentsOperationSettings()
-          .setInitialCallSettings(
-              UnaryCallSettings
-                  .<BatchDeleteIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
-                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"))
-                  .build())
-          .setResponseTransformer(
-              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
-          .setMetadataTransformer(
-              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
-          .setPollingAlgorithm(
-              OperationTimedPollAlgorithm.create(
-                  RetrySettings.newBuilder()
-                      .setInitialRetryDelay(Duration.ofMillis(500L))
-                      .setRetryDelayMultiplier(1.5)
-                      .setMaxRetryDelay(Duration.ofMillis(5000L))
-                      .setInitialRpcTimeout(Duration.ZERO) // ignored
-                      .setRpcTimeoutMultiplier(1.0) // ignored
-                      .setMaxRpcTimeout(Duration.ZERO) // ignored
-                      .setTotalTimeout(Duration.ofMillis(300000L))
-                      .build()));
-
-      return builder;
     }
 
     protected Builder(IntentsStubSettings settings) {
@@ -556,7 +407,106 @@ public class IntentsStubSettings extends StubSettings<IntentsStubSettings> {
               batchDeleteIntentsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteIntentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchUpdateIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDeleteIntentsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchUpdateIntentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchUpdateIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  BatchUpdateIntentsResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .batchDeleteIntentsOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<BatchDeleteIntentsRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Struct.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

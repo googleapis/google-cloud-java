@@ -139,7 +139,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The knowledge base to list all documents for.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -165,7 +166,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The knowledge base to list all documents for.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -704,7 +706,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The knowledge base to list all documents for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -729,7 +732,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The knowledge base to list all documents for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -754,7 +758,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The knowledge base to list all documents for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -778,7 +783,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The knowledge base to list all documents for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -798,7 +804,8 @@ public final class ListDocumentsRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The knowledge base to list all documents for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>

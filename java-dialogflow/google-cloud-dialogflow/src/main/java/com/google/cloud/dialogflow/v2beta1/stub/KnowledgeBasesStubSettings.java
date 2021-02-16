@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.KnowledgeBasesClient.ListKnowledgeBasesPagedResponse;
@@ -56,7 +57,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link KnowledgeBasesStub}.
  *
@@ -73,22 +74,23 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getKnowledgeBase to 30 seconds:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * KnowledgeBasesStubSettings.Builder knowledgeBasesSettingsBuilder =
  *     KnowledgeBasesStubSettings.newBuilder();
  * knowledgeBasesSettingsBuilder
  *     .getKnowledgeBaseSettings()
  *     .setRetrySettings(
- *         knowledgeBasesSettingsBuilder.getKnowledgeBaseSettings().getRetrySettings().toBuilder()
+ *         knowledgeBasesSettingsBuilder
+ *             .getKnowledgeBaseSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * KnowledgeBasesStubSettings knowledgeBasesSettings = knowledgeBasesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -106,6 +108,67 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
   private final UnaryCallSettings<DeleteKnowledgeBaseRequest, Empty> deleteKnowledgeBaseSettings;
   private final UnaryCallSettings<UpdateKnowledgeBaseRequest, KnowledgeBase>
       updateKnowledgeBaseSettings;
+
+  private static final PagedListDescriptor<
+          ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
+      LIST_KNOWLEDGE_BASES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListKnowledgeBasesRequest injectToken(
+                ListKnowledgeBasesRequest payload, String token) {
+              return ListKnowledgeBasesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListKnowledgeBasesRequest injectPageSize(
+                ListKnowledgeBasesRequest payload, int pageSize) {
+              return ListKnowledgeBasesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListKnowledgeBasesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListKnowledgeBasesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<KnowledgeBase> extractResources(ListKnowledgeBasesResponse payload) {
+              return payload.getKnowledgeBasesList() == null
+                  ? ImmutableList.<KnowledgeBase>of()
+                  : payload.getKnowledgeBasesList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, ListKnowledgeBasesPagedResponse>
+      LIST_KNOWLEDGE_BASES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListKnowledgeBasesRequest,
+              ListKnowledgeBasesResponse,
+              ListKnowledgeBasesPagedResponse>() {
+            @Override
+            public ApiFuture<ListKnowledgeBasesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse> callable,
+                ListKnowledgeBasesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListKnowledgeBasesResponse> futureResponse) {
+              PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_KNOWLEDGE_BASES_PAGE_STR_DESC, request, context);
+              return ListKnowledgeBasesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listKnowledgeBases. */
   public PagedCallSettings<
@@ -142,10 +205,10 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcKnowledgeBasesStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -212,71 +275,9 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
     updateKnowledgeBaseSettings = settingsBuilder.updateKnowledgeBaseSettings().build();
   }
 
-  private static final PagedListDescriptor<
-          ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
-      LIST_KNOWLEDGE_BASES_PAGE_STR_DESC =
-          new PagedListDescriptor<
-              ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListKnowledgeBasesRequest injectToken(
-                ListKnowledgeBasesRequest payload, String token) {
-              return ListKnowledgeBasesRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListKnowledgeBasesRequest injectPageSize(
-                ListKnowledgeBasesRequest payload, int pageSize) {
-              return ListKnowledgeBasesRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListKnowledgeBasesRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListKnowledgeBasesResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<KnowledgeBase> extractResources(ListKnowledgeBasesResponse payload) {
-              return payload.getKnowledgeBasesList() != null
-                  ? payload.getKnowledgeBasesList()
-                  : ImmutableList.<KnowledgeBase>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, ListKnowledgeBasesPagedResponse>
-      LIST_KNOWLEDGE_BASES_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListKnowledgeBasesRequest,
-              ListKnowledgeBasesResponse,
-              ListKnowledgeBasesPagedResponse>() {
-            @Override
-            public ApiFuture<ListKnowledgeBasesPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse> callable,
-                ListKnowledgeBasesRequest request,
-                ApiCallContext context,
-                ApiFuture<ListKnowledgeBasesResponse> futureResponse) {
-              PageContext<ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, KnowledgeBase>
-                  pageContext =
-                      PageContext.create(
-                          callable, LIST_KNOWLEDGE_BASES_PAGE_STR_DESC, request, context);
-              return ListKnowledgeBasesPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for KnowledgeBasesStubSettings. */
   public static class Builder extends StubSettings.Builder<KnowledgeBasesStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListKnowledgeBasesRequest, ListKnowledgeBasesResponse, ListKnowledgeBasesPagedResponse>
         listKnowledgeBasesSettings;
@@ -288,7 +289,6 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
         deleteKnowledgeBaseSettings;
     private final UnaryCallSettings.Builder<UpdateKnowledgeBaseRequest, KnowledgeBase>
         updateKnowledgeBaseSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -296,17 +296,8 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -325,57 +316,21 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(180000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(180000L))
-              .setTotalTimeout(Duration.ofMillis(180000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listKnowledgeBasesSettings = PagedCallSettings.newBuilder(LIST_KNOWLEDGE_BASES_PAGE_STR_FACT);
-
       getKnowledgeBaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createKnowledgeBaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteKnowledgeBaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateKnowledgeBaseSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -385,47 +340,7 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
               createKnowledgeBaseSettings,
               deleteKnowledgeBaseSettings,
               updateKnowledgeBaseSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listKnowledgeBasesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getKnowledgeBaseSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createKnowledgeBaseSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteKnowledgeBaseSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateKnowledgeBaseSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(KnowledgeBasesStubSettings settings) {
@@ -446,7 +361,47 @@ public class KnowledgeBasesStubSettings extends StubSettings<KnowledgeBasesStubS
               updateKnowledgeBaseSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listKnowledgeBasesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getKnowledgeBaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createKnowledgeBaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteKnowledgeBaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateKnowledgeBaseSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

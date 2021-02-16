@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1;
 
 import static com.google.cloud.dialogflow.v2beta1.EntityTypesClient.ListEntityTypesPagedResponse;
@@ -37,7 +38,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EntityTypesClient}.
  *
@@ -54,23 +55,23 @@ import javax.annotation.Generated;
  *
  * <p>For example, to set the total timeout of getEntityType to 30 seconds:
  *
- * <pre>
- * <code>
- * EntityTypesSettings.Builder entityTypesSettingsBuilder =
- *     EntityTypesSettings.newBuilder();
+ * <pre>{@code
+ * EntityTypesSettings.Builder entityTypesSettingsBuilder = EntityTypesSettings.newBuilder();
  * entityTypesSettingsBuilder
  *     .getEntityTypeSettings()
  *     .setRetrySettings(
- *         entityTypesSettingsBuilder.getEntityTypeSettings().getRetrySettings().toBuilder()
+ *         entityTypesSettingsBuilder
+ *             .getEntityTypeSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EntityTypesSettings entityTypesSettings = entityTypesSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
+
   /** Returns the object with the settings used for calls to listEntityTypes. */
   public PagedCallSettings<
           ListEntityTypesRequest, ListEntityTypesResponse, ListEntityTypesPagedResponse>
@@ -105,8 +106,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchUpdateEntityTypes. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<
           BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
       batchUpdateEntityTypesOperationSettings() {
@@ -120,8 +119,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchDeleteEntityTypes. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteEntityTypesRequest, Empty, Struct>
       batchDeleteEntityTypesOperationSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).batchDeleteEntityTypesOperationSettings();
@@ -133,8 +130,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchCreateEntities. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchCreateEntitiesRequest, Empty, Struct>
       batchCreateEntitiesOperationSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).batchCreateEntitiesOperationSettings();
@@ -146,8 +141,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchUpdateEntities. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchUpdateEntitiesRequest, Empty, Struct>
       batchUpdateEntitiesOperationSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).batchUpdateEntitiesOperationSettings();
@@ -159,8 +152,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
   }
 
   /** Returns the object with the settings used for calls to batchDeleteEntities. */
-  @BetaApi(
-      "The surface for long-running operations is not stable yet and may change in the future.")
   public OperationCallSettings<BatchDeleteEntitiesRequest, Empty, Struct>
       batchDeleteEntitiesOperationSettings() {
     return ((EntityTypesStubSettings) getStubSettings()).batchDeleteEntitiesOperationSettings();
@@ -225,16 +216,13 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
 
   /** Builder for EntityTypesSettings. */
   public static class Builder extends ClientSettings.Builder<EntityTypesSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(EntityTypesStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(EntityTypesStubSettings.newBuilder());
     }
 
     protected Builder(EntityTypesSettings settings) {
@@ -245,11 +233,15 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(EntityTypesStubSettings.newBuilder());
+    }
+
     public EntityTypesStubSettings.Builder getStubSettingsBuilder() {
       return ((EntityTypesStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *
@@ -298,8 +290,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateEntityTypes. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<
             BatchUpdateEntityTypesRequest, BatchUpdateEntityTypesResponse, Struct>
         batchUpdateEntityTypesOperationSettings() {
@@ -313,8 +303,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteEntityTypes. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteEntityTypesRequest, Empty, Struct>
         batchDeleteEntityTypesOperationSettings() {
       return getStubSettingsBuilder().batchDeleteEntityTypesOperationSettings();
@@ -327,8 +315,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchCreateEntities. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchCreateEntitiesRequest, Empty, Struct>
         batchCreateEntitiesOperationSettings() {
       return getStubSettingsBuilder().batchCreateEntitiesOperationSettings();
@@ -341,8 +327,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchUpdateEntities. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchUpdateEntitiesRequest, Empty, Struct>
         batchUpdateEntitiesOperationSettings() {
       return getStubSettingsBuilder().batchUpdateEntitiesOperationSettings();
@@ -355,8 +339,6 @@ public class EntityTypesSettings extends ClientSettings<EntityTypesSettings> {
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteEntities. */
-    @BetaApi(
-        "The surface for long-running operations is not stable yet and may change in the future.")
     public OperationCallSettings.Builder<BatchDeleteEntitiesRequest, Empty, Struct>
         batchDeleteEntitiesOperationSettings() {
       return getStubSettingsBuilder().batchDeleteEntitiesOperationSettings();

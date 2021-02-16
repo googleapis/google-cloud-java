@@ -155,6 +155,23 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
 
               break;
             }
+          case 114:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                webhookHeaders_ =
+                    com.google.protobuf.MapField.newMapField(
+                        WebhookHeadersDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> webhookHeaders__ =
+                  input.readMessage(
+                      WebhookHeadersDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              webhookHeaders_
+                  .getMutableMap()
+                  .put(webhookHeaders__.getKey(), webhookHeaders__.getValue());
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -183,6 +200,17 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dialogflow.v2.SessionProto
         .internal_static_google_cloud_dialogflow_v2_QueryParameters_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 14:
+        return internalGetWebhookHeaders();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -588,6 +616,139 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     return getSentimentAnalysisRequestConfig();
   }
 
+  public static final int WEBHOOK_HEADERS_FIELD_NUMBER = 14;
+
+  private static final class WebhookHeadersDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dialogflow.v2.SessionProto
+                .internal_static_google_cloud_dialogflow_v2_QueryParameters_WebhookHeadersEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> webhookHeaders_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetWebhookHeaders() {
+    if (webhookHeaders_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          WebhookHeadersDefaultEntryHolder.defaultEntry);
+    }
+    return webhookHeaders_;
+  }
+
+  public int getWebhookHeadersCount() {
+    return internalGetWebhookHeaders().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  @java.lang.Override
+  public boolean containsWebhookHeaders(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    return internalGetWebhookHeaders().getMap().containsKey(key);
+  }
+  /** Use {@link #getWebhookHeadersMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders() {
+    return getWebhookHeadersMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap() {
+    return internalGetWebhookHeaders().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getWebhookHeadersOrDefault(
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetWebhookHeaders().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getWebhookHeadersOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetWebhookHeaders().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -623,6 +784,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (sentimentAnalysisRequestConfig_ != null) {
       output.writeMessage(10, getSentimentAnalysisRequestConfig());
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetWebhookHeaders(), WebhookHeadersDefaultEntryHolder.defaultEntry, 14);
     unknownFields.writeTo(output);
   }
 
@@ -655,6 +818,16 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               10, getSentimentAnalysisRequestConfig());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetWebhookHeaders().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> webhookHeaders__ =
+          WebhookHeadersDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, webhookHeaders__);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -690,6 +863,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (!getSentimentAnalysisRequestConfig().equals(other.getSentimentAnalysisRequestConfig()))
         return false;
     }
+    if (!internalGetWebhookHeaders().equals(other.internalGetWebhookHeaders())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -724,6 +898,10 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
     if (hasSentimentAnalysisRequestConfig()) {
       hash = (37 * hash) + SENTIMENT_ANALYSIS_REQUEST_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSentimentAnalysisRequestConfig().hashCode();
+    }
+    if (!internalGetWebhookHeaders().getMap().isEmpty()) {
+      hash = (37 * hash) + WEBHOOK_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetWebhookHeaders().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -843,6 +1021,26 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
           .internal_static_google_cloud_dialogflow_v2_QueryParameters_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 14:
+          return internalGetWebhookHeaders();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 14:
+          return internalGetMutableWebhookHeaders();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -907,6 +1105,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sentimentAnalysisRequestConfig_ = null;
         sentimentAnalysisRequestConfigBuilder_ = null;
       }
+      internalGetMutableWebhookHeaders().clear();
       return this;
     }
 
@@ -970,6 +1169,8 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       } else {
         result.sentimentAnalysisRequestConfig_ = sentimentAnalysisRequestConfigBuilder_.build();
       }
+      result.webhookHeaders_ = internalGetWebhookHeaders();
+      result.webhookHeaders_.makeImmutable();
       onBuilt();
       return result;
     }
@@ -1089,6 +1290,7 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
       if (other.hasSentimentAnalysisRequestConfig()) {
         mergeSentimentAnalysisRequestConfig(other.getSentimentAnalysisRequestConfig());
       }
+      internalGetMutableWebhookHeaders().mergeFrom(other.internalGetWebhookHeaders());
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2668,6 +2870,222 @@ public final class QueryParameters extends com.google.protobuf.GeneratedMessageV
         sentimentAnalysisRequestConfig_ = null;
       }
       return sentimentAnalysisRequestConfigBuilder_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> webhookHeaders_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetWebhookHeaders() {
+      if (webhookHeaders_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            WebhookHeadersDefaultEntryHolder.defaultEntry);
+      }
+      return webhookHeaders_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableWebhookHeaders() {
+      onChanged();
+      ;
+      if (webhookHeaders_ == null) {
+        webhookHeaders_ =
+            com.google.protobuf.MapField.newMapField(WebhookHeadersDefaultEntryHolder.defaultEntry);
+      }
+      if (!webhookHeaders_.isMutable()) {
+        webhookHeaders_ = webhookHeaders_.copy();
+      }
+      return webhookHeaders_;
+    }
+
+    public int getWebhookHeadersCount() {
+      return internalGetWebhookHeaders().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    @java.lang.Override
+    public boolean containsWebhookHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      return internalGetWebhookHeaders().getMap().containsKey(key);
+    }
+    /** Use {@link #getWebhookHeadersMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders() {
+      return getWebhookHeadersMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap() {
+      return internalGetWebhookHeaders().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getWebhookHeadersOrDefault(
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetWebhookHeaders().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getWebhookHeadersOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetWebhookHeaders().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearWebhookHeaders() {
+      internalGetMutableWebhookHeaders().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    public Builder removeWebhookHeaders(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableWebhookHeaders().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableWebhookHeaders() {
+      return internalGetMutableWebhookHeaders().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    public Builder putWebhookHeaders(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableWebhookHeaders().getMutableMap().put(key, value);
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field can be used to pass HTTP headers for a webhook
+     * call. These headers will be sent to webhook along with the headers that
+     * have been configured through the Dialogflow web console. The headers
+     * defined within this field will overwrite the headers configured through the
+     * Dialogflow console if there is a conflict. Header names are
+     * case-insensitive. Google's specified headers are not allowed. Including:
+     * "Host", "Content-Length", "Connection", "From", "User-Agent",
+     * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+     * etc.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+     */
+    public Builder putAllWebhookHeaders(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableWebhookHeaders().getMutableMap().putAll(values);
+      return this;
     }
 
     @java.lang.Override

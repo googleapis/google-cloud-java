@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.DocumentsClient.ListDocumentsPagedResponse;
 
-import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
@@ -46,16 +46,14 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * gRPC stub implementation for Dialogflow API.
+ * gRPC stub implementation for the Documents service API.
  *
  * <p>This class is for advanced usage and reflects the underlying API directly.
  */
-@Generated("by gapic-generator")
-@BetaApi("A restructuring of stub classes is planned, so this may break in the future")
+@Generated("by gapic-generator-java")
 public class GrpcDocumentsStub extends DocumentsStub {
-
   private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
       listDocumentsMethodDescriptor =
           MethodDescriptor.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
@@ -66,6 +64,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<GetDocumentRequest, Document> getDocumentMethodDescriptor =
       MethodDescriptor.<GetDocumentRequest, Document>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -73,6 +72,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
           .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
           .build();
+
   private static final MethodDescriptor<CreateDocumentRequest, Operation>
       createDocumentMethodDescriptor =
           MethodDescriptor.<CreateDocumentRequest, Operation>newBuilder()
@@ -82,6 +82,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<DeleteDocumentRequest, Operation>
       deleteDocumentMethodDescriptor =
           MethodDescriptor.<DeleteDocumentRequest, Operation>newBuilder()
@@ -91,6 +92,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<UpdateDocumentRequest, Operation>
       updateDocumentMethodDescriptor =
           MethodDescriptor.<UpdateDocumentRequest, Operation>newBuilder()
@@ -100,6 +102,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
+
   private static final MethodDescriptor<ReloadDocumentRequest, Operation>
       reloadDocumentMethodDescriptor =
           MethodDescriptor.<ReloadDocumentRequest, Operation>newBuilder()
@@ -109,9 +112,6 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   ProtoUtils.marshaller(ReloadDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
-
-  private final BackgroundResource backgroundResources;
-  private final GrpcOperationsStub operationsStub;
 
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -130,6 +130,8 @@ public class GrpcDocumentsStub extends DocumentsStub {
   private final OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationCallable;
 
+  private final BackgroundResource backgroundResources;
+  private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
 
   public static final GrpcDocumentsStub create(DocumentsStubSettings settings) throws IOException {
@@ -265,7 +267,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
             createDocumentTransportSettings,
             settings.createDocumentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.deleteDocumentCallable =
         callableFactory.createUnaryCallable(
             deleteDocumentTransportSettings, settings.deleteDocumentSettings(), clientContext);
@@ -274,7 +276,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
             deleteDocumentTransportSettings,
             settings.deleteDocumentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.updateDocumentCallable =
         callableFactory.createUnaryCallable(
             updateDocumentTransportSettings, settings.updateDocumentSettings(), clientContext);
@@ -283,7 +285,7 @@ public class GrpcDocumentsStub extends DocumentsStub {
             updateDocumentTransportSettings,
             settings.updateDocumentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
     this.reloadDocumentCallable =
         callableFactory.createUnaryCallable(
             reloadDocumentTransportSettings, settings.reloadDocumentSettings(), clientContext);
@@ -292,14 +294,18 @@ public class GrpcDocumentsStub extends DocumentsStub {
             reloadDocumentTransportSettings,
             settings.reloadDocumentOperationSettings(),
             clientContext,
-            this.operationsStub);
+            operationsStub);
 
-    backgroundResources = new BackgroundResourceAggregation(clientContext.getBackgroundResources());
+    this.backgroundResources =
+        new BackgroundResourceAggregation(clientContext.getBackgroundResources());
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
   public GrpcOperationsStub getOperationsStub() {
     return operationsStub;
+  }
+
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
+    return listDocumentsCallable;
   }
 
   public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
@@ -307,52 +313,44 @@ public class GrpcDocumentsStub extends DocumentsStub {
     return listDocumentsPagedCallable;
   }
 
-  public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
-    return listDocumentsCallable;
-  }
-
   public UnaryCallable<GetDocumentRequest, Document> getDocumentCallable() {
     return getDocumentCallable;
-  }
-
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
-      createDocumentOperationCallable() {
-    return createDocumentOperationCallable;
   }
 
   public UnaryCallable<CreateDocumentRequest, Operation> createDocumentCallable() {
     return createDocumentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
-      deleteDocumentOperationCallable() {
-    return deleteDocumentOperationCallable;
+  public OperationCallable<CreateDocumentRequest, Document, KnowledgeOperationMetadata>
+      createDocumentOperationCallable() {
+    return createDocumentOperationCallable;
   }
 
   public UnaryCallable<DeleteDocumentRequest, Operation> deleteDocumentCallable() {
     return deleteDocumentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
-      updateDocumentOperationCallable() {
-    return updateDocumentOperationCallable;
+  public OperationCallable<DeleteDocumentRequest, Empty, KnowledgeOperationMetadata>
+      deleteDocumentOperationCallable() {
+    return deleteDocumentOperationCallable;
   }
 
   public UnaryCallable<UpdateDocumentRequest, Operation> updateDocumentCallable() {
     return updateDocumentCallable;
   }
 
-  @BetaApi("The surface for use by generated code is not stable yet and may change in the future.")
-  public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
-      reloadDocumentOperationCallable() {
-    return reloadDocumentOperationCallable;
+  public OperationCallable<UpdateDocumentRequest, Document, KnowledgeOperationMetadata>
+      updateDocumentOperationCallable() {
+    return updateDocumentOperationCallable;
   }
 
   public UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable() {
     return reloadDocumentCallable;
+  }
+
+  public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
+      reloadDocumentOperationCallable() {
+    return reloadDocumentOperationCallable;
   }
 
   @Override

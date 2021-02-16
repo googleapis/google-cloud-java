@@ -16,10 +16,4 @@
     <className>com/google/cloud/dialogflow/v2beta1/*OrBuilder</className>
     <method>boolean has*(*)</method>
   </difference>
-
-  <!-- TODO: remove after 2.4.0 is released -->
-  <difference>
-    <differenceType>8001</differenceType>
-    <className>com/google/cloud/dialogflow/v2beta1/AutoApproveSmartMessagingEntriesResponse*</className>
-  </difference>
 </differences>

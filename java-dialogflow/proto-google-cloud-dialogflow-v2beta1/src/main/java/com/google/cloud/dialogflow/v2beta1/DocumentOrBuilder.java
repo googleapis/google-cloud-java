@@ -29,8 +29,8 @@ public interface DocumentOrBuilder
    * <pre>
    * Optional. The document resource name.
    * The name must be empty when creating a document.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -44,8 +44,8 @@ public interface DocumentOrBuilder
    * <pre>
    * Optional. The document resource name.
    * The name must be empty when creating a document.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -28,8 +28,8 @@ public interface ReloadDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the document to reload.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
    * </pre>
    *
    * <code>
@@ -44,8 +44,8 @@ public interface ReloadDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the document to reload.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
    * </pre>
    *
    * <code>
@@ -93,6 +93,20 @@ public interface ReloadDocumentRequestOrBuilder
    * <code>.google.cloud.dialogflow.v2beta1.GcsSource gcs_source = 3;</code>
    */
   com.google.cloud.dialogflow.v2beta1.GcsSourceOrBuilder getGcsSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to import custom metadata from Google Cloud Storage.
+   * Only valid when the document source is Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>bool import_gcs_custom_metadata = 4;</code>
+   *
+   * @return The importGcsCustomMetadata.
+   */
+  boolean getImportGcsCustomMetadata();
 
   public com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest.SourceCase getSourceCase();
 }

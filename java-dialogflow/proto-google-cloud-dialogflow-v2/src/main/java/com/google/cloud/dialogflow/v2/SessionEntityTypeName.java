@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,30 +26,52 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.annotation.Generated;
 
-/** AUTO-GENERATED DOCUMENTATION AND CLASS */
-@javax.annotation.Generated("by GAPIC protoc plugin")
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
+@Generated("by gapic-generator-java")
 public class SessionEntityTypeName implements ResourceName {
-
-  @Deprecated
-  protected SessionEntityTypeName() {}
-
-  private static final PathTemplate PROJECT_SESSION_ENTITY_TYPE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_SESSION_ENTITY_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
-  private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE_PATH_TEMPLATE =
+  private static final PathTemplate PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/agent/environments/{environment}/users/{user}/sessions/{session}/entityTypes/{entity_type}");
-
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
+  private final String project;
+  private final String session;
+  private final String entityType;
+  private final String environment;
+  private final String user;
 
-  private String project;
-  private String session;
-  private String entityType;
-  private String environment;
-  private String user;
+  @Deprecated
+  protected SessionEntityTypeName() {
+    project = null;
+    session = null;
+    entityType = null;
+    environment = null;
+    user = null;
+  }
+
+  private SessionEntityTypeName(Builder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    session = Preconditions.checkNotNull(builder.getSession());
+    entityType = Preconditions.checkNotNull(builder.getEntityType());
+    environment = null;
+    user = null;
+    pathTemplate = PROJECT_SESSION_ENTITY_TYPE;
+  }
+
+  private SessionEntityTypeName(ProjectEnvironmentUserSessionEntityTypeBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    environment = Preconditions.checkNotNull(builder.getEnvironment());
+    user = Preconditions.checkNotNull(builder.getUser());
+    session = Preconditions.checkNotNull(builder.getSession());
+    entityType = Preconditions.checkNotNull(builder.getEntityType());
+    pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE;
+  }
 
   public String getProject() {
     return project;
@@ -69,22 +91,6 @@ public class SessionEntityTypeName implements ResourceName {
 
   public String getUser() {
     return user;
-  }
-
-  private SessionEntityTypeName(Builder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    session = Preconditions.checkNotNull(builder.getSession());
-    entityType = Preconditions.checkNotNull(builder.getEntityType());
-    pathTemplate = PROJECT_SESSION_ENTITY_TYPE_PATH_TEMPLATE;
-  }
-
-  private SessionEntityTypeName(ProjectEnvironmentUserSessionEntityTypeBuilder builder) {
-    project = Preconditions.checkNotNull(builder.getProject());
-    environment = Preconditions.checkNotNull(builder.getEnvironment());
-    user = Preconditions.checkNotNull(builder.getUser());
-    session = Preconditions.checkNotNull(builder.getSession());
-    entityType = Preconditions.checkNotNull(builder.getEntityType());
-    pathTemplate = PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE_PATH_TEMPLATE;
   }
 
   public static Builder newBuilder() {
@@ -107,21 +113,13 @@ public class SessionEntityTypeName implements ResourceName {
   }
 
   public static SessionEntityTypeName of(String project, String session, String entityType) {
-    return newProjectSessionEntityTypeBuilder()
-        .setProject(project)
-        .setSession(session)
-        .setEntityType(entityType)
-        .build();
+    return newBuilder().setProject(project).setSession(session).setEntityType(entityType).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
   public static SessionEntityTypeName ofProjectSessionEntityTypeName(
       String project, String session, String entityType) {
-    return newProjectSessionEntityTypeBuilder()
-        .setProject(project)
-        .setSession(session)
-        .setEntityType(entityType)
-        .build();
+    return newBuilder().setProject(project).setSession(session).setEntityType(entityType).build();
   }
 
   @BetaApi("The static create methods are not stable yet and may be changed in the future.")
@@ -173,15 +171,13 @@ public class SessionEntityTypeName implements ResourceName {
     if (formattedString.isEmpty()) {
       return null;
     }
-    if (PROJECT_SESSION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)) {
-      Map<String, String> matchMap =
-          PROJECT_SESSION_ENTITY_TYPE_PATH_TEMPLATE.match(formattedString);
+    if (PROJECT_SESSION_ENTITY_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_SESSION_ENTITY_TYPE.match(formattedString);
       return ofProjectSessionEntityTypeName(
           matchMap.get("project"), matchMap.get("session"), matchMap.get("entity_type"));
-    } else if (PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE_PATH_TEMPLATE.matches(
-        formattedString)) {
+    } else if (PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.matches(formattedString)) {
       Map<String, String> matchMap =
-          PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE_PATH_TEMPLATE.match(formattedString);
+          PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.match(formattedString);
       return ofProjectEnvironmentUserSessionEntityTypeName(
           matchMap.get("project"),
           matchMap.get("environment"),
@@ -189,7 +185,8 @@ public class SessionEntityTypeName implements ResourceName {
           matchMap.get("session"),
           matchMap.get("entity_type"));
     }
-    throw new ValidationException("JobName.parse: formattedString not in valid format");
+    throw new ValidationException(
+        "SessionEntityTypeName.parse: formattedString not in valid format");
   }
 
   public static List<SessionEntityTypeName> parseList(List<String> formattedStrings) {
@@ -213,8 +210,8 @@ public class SessionEntityTypeName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_SESSION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString)
-        || PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE_PATH_TEMPLATE.matches(formattedString);
+    return PROJECT_SESSION_ENTITY_TYPE.matches(formattedString)
+        || PROJECT_ENVIRONMENT_USER_SESSION_ENTITY_TYPE.matches(formattedString);
   }
 
   @Override
@@ -254,9 +251,42 @@ public class SessionEntityTypeName implements ResourceName {
     return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o != null || getClass() == o.getClass()) {
+      SessionEntityTypeName that = ((SessionEntityTypeName) o);
+      return Objects.equals(this.project, that.project)
+          && Objects.equals(this.session, that.session)
+          && Objects.equals(this.entityType, that.entityType)
+          && Objects.equals(this.environment, that.environment)
+          && Objects.equals(this.user, that.user);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
+    h *= 1000003;
+    h ^= Objects.hashCode(project);
+    h *= 1000003;
+    h ^= Objects.hashCode(session);
+    h *= 1000003;
+    h ^= Objects.hashCode(entityType);
+    h *= 1000003;
+    h ^= Objects.hashCode(environment);
+    h *= 1000003;
+    h ^= Objects.hashCode(user);
+    return h;
+  }
+
   /** Builder for projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}. */
   public static class Builder {
-
     private String project;
     private String session;
     private String entityType;
@@ -292,9 +322,8 @@ public class SessionEntityTypeName implements ResourceName {
 
     private Builder(SessionEntityTypeName sessionEntityTypeName) {
       Preconditions.checkArgument(
-          sessionEntityTypeName.pathTemplate == PROJECT_SESSION_ENTITY_TYPE_PATH_TEMPLATE,
-          "toBuilder is only supported when SessionEntityTypeName has the pattern of "
-              + "projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}.");
+          Objects.equals(sessionEntityTypeName.pathTemplate, PROJECT_SESSION_ENTITY_TYPE),
+          "toBuilder is only supported when SessionEntityTypeName has the pattern of projects/{project}/agent/sessions/{session}/entityTypes/{entity_type}");
       project = sessionEntityTypeName.project;
       session = sessionEntityTypeName.session;
       entityType = sessionEntityTypeName.entityType;
@@ -311,14 +340,13 @@ public class SessionEntityTypeName implements ResourceName {
    */
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static class ProjectEnvironmentUserSessionEntityTypeBuilder {
-
     private String project;
     private String environment;
     private String user;
     private String session;
     private String entityType;
 
-    private ProjectEnvironmentUserSessionEntityTypeBuilder() {}
+    protected ProjectEnvironmentUserSessionEntityTypeBuilder() {}
 
     public String getProject() {
       return project;
@@ -368,39 +396,5 @@ public class SessionEntityTypeName implements ResourceName {
     public SessionEntityTypeName build() {
       return new SessionEntityTypeName(this);
     }
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (o == this) {
-      return true;
-    }
-    if (o != null || getClass() == o.getClass()) {
-      SessionEntityTypeName that = (SessionEntityTypeName) o;
-      return (Objects.equals(this.project, that.project))
-          && (Objects.equals(this.session, that.session))
-          && (Objects.equals(this.entityType, that.entityType))
-          && (Objects.equals(this.environment, that.environment))
-          && (Objects.equals(this.user, that.user));
-    }
-    return false;
-  }
-
-  @Override
-  public int hashCode() {
-    int h = 1;
-    h *= 1000003;
-    h ^= Objects.hashCode(fixedValue);
-    h *= 1000003;
-    h ^= Objects.hashCode(project);
-    h *= 1000003;
-    h ^= Objects.hashCode(session);
-    h *= 1000003;
-    h ^= Objects.hashCode(entityType);
-    h *= 1000003;
-    h ^= Objects.hashCode(environment);
-    h *= 1000003;
-    h ^= Objects.hashCode(user);
-    return h;
   }
 }

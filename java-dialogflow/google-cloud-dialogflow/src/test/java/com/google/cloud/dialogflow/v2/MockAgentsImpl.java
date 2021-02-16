@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2;
 
 import com.google.api.core.BetaApi;
@@ -25,9 +26,10 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import javax.annotation.Generated;
 
-@javax.annotation.Generated("by GAPIC")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class MockAgentsImpl extends AgentsImplBase {
   private List<AbstractMessage> requests;
   private Queue<Object> responses;
@@ -63,10 +65,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Agent) {
       requests.add(request);
-      responseObserver.onNext((Agent) response);
+      responseObserver.onNext(((Agent) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -77,10 +79,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Agent) {
       requests.add(request);
-      responseObserver.onNext((Agent) response);
+      responseObserver.onNext(((Agent) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -91,10 +93,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Empty) {
       requests.add(request);
-      responseObserver.onNext((Empty) response);
+      responseObserver.onNext(((Empty) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -106,10 +108,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof SearchAgentsResponse) {
       requests.add(request);
-      responseObserver.onNext((SearchAgentsResponse) response);
+      responseObserver.onNext(((SearchAgentsResponse) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -120,10 +122,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -134,10 +136,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -148,10 +150,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -163,10 +165,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof Operation) {
       requests.add(request);
-      responseObserver.onNext((Operation) response);
+      responseObserver.onNext(((Operation) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
@@ -178,10 +180,10 @@ public class MockAgentsImpl extends AgentsImplBase {
     Object response = responses.remove();
     if (response instanceof ValidationResult) {
       requests.add(request);
-      responseObserver.onNext((ValidationResult) response);
+      responseObserver.onNext(((ValidationResult) response));
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
-      responseObserver.onError((Exception) response);
+      responseObserver.onError(((Exception) response));
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }

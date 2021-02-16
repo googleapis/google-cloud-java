@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1;
 
 import com.google.api.core.ApiFunction;
@@ -33,7 +34,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: Service for managing
  * [Environments][google.cloud.dialogflow.v2beta1.Environment].
@@ -41,18 +42,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
- *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
- *     // doThingsWith(element);
- *   }
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the environmentsClient object to clean up resources such
+ * <p>Note: close() needs to be called on the EnvironmentsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -80,30 +70,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EnvironmentsSettings environmentsSettings =
  *     EnvironmentsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * EnvironmentsClient environmentsClient =
- *     EnvironmentsClient.create(environmentsSettings);
- * </code>
- * </pre>
+ * EnvironmentsClient environmentsClient = EnvironmentsClient.create(environmentsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * EnvironmentsSettings environmentsSettings =
  *     EnvironmentsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * EnvironmentsClient environmentsClient =
- *     EnvironmentsClient.create(environmentsSettings);
- * </code>
- * </pre>
+ * EnvironmentsClient environmentsClient = EnvironmentsClient.create(environmentsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class EnvironmentsClient implements BackgroundResource {
   private final EnvironmentsSettings settings;
   private final EnvironmentsStub stub;
@@ -123,7 +109,7 @@ public class EnvironmentsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of EnvironmentsClient, using the given stub for making calls. This is
-   * for advanced usage - prefer to use EnvironmentsSettings}.
+   * for advanced usage - prefer using create(EnvironmentsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final EnvironmentsClient create(EnvironmentsStub stub) {
@@ -155,20 +141,9 @@ public class EnvironmentsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all non-draft environments of the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-   *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The agent to list all environments from. Format: -
    *     `projects/&lt;Project Number / ID&gt;/agent` - `projects/&lt;Project Number /
@@ -183,20 +158,9 @@ public class EnvironmentsClient implements BackgroundResource {
     return listEnvironments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all non-draft environments of the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-   *   for (Environment element : environmentsClient.listEnvironments(parent.toString()).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param parent Required. The agent to list all environments from. Format: -
    *     `projects/&lt;Project Number / ID&gt;/agent` - `projects/&lt;Project Number /
@@ -209,23 +173,9 @@ public class EnvironmentsClient implements BackgroundResource {
     return listEnvironments(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all non-draft environments of the specified agent.
-   *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-   *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   for (Environment element : environmentsClient.listEnvironments(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -234,57 +184,22 @@ public class EnvironmentsClient implements BackgroundResource {
     return listEnvironmentsPagedCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all non-draft environments of the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-   *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   ApiFuture&lt;ListEnvironmentsPagedResponse&gt; future = environmentsClient.listEnvironmentsPagedCallable().futureCall(request);
-   *   // Do something
-   *   for (Environment element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
     return stub.listEnvironmentsPagedCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all non-draft environments of the specified agent.
    *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
-   *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-   *   ListEnvironmentsRequest request = ListEnvironmentsRequest.newBuilder()
-   *     .setParent(parent.toString())
-   *     .build();
-   *   while (true) {
-   *     ListEnvironmentsResponse response = environmentsClient.listEnvironmentsCallable().call(request);
-   *     for (Environment element : response.getEnvironmentsList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * </code></pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {

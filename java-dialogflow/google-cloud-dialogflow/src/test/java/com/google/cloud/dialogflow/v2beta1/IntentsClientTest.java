@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1;
 
 import static com.google.cloud.dialogflow.v2beta1.IntentsClient.ListIntentsPagedResponse;
@@ -31,7 +32,6 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
-import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +39,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -46,57 +47,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class IntentsClientTest {
-  private static MockEnvironments mockEnvironments;
-  private static MockAgents mockAgents;
-  private static MockContexts mockContexts;
-  private static MockDocuments mockDocuments;
-  private static MockEntityTypes mockEntityTypes;
+  private static MockServiceHelper mockServiceHelper;
   private static MockIntents mockIntents;
-  private static MockKnowledgeBases mockKnowledgeBases;
-  private static MockSessionEntityTypes mockSessionEntityTypes;
-  private static MockSessions mockSessions;
-  private static MockServiceHelper serviceHelper;
   private IntentsClient client;
   private LocalChannelProvider channelProvider;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockEnvironments = new MockEnvironments();
-    mockAgents = new MockAgents();
-    mockContexts = new MockContexts();
-    mockDocuments = new MockDocuments();
-    mockEntityTypes = new MockEntityTypes();
     mockIntents = new MockIntents();
-    mockKnowledgeBases = new MockKnowledgeBases();
-    mockSessionEntityTypes = new MockSessionEntityTypes();
-    mockSessions = new MockSessions();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockEnvironments,
-                mockAgents,
-                mockContexts,
-                mockDocuments,
-                mockEntityTypes,
-                mockIntents,
-                mockKnowledgeBases,
-                mockSessionEntityTypes,
-                mockSessions));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockIntents));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     IntentsSettings settings =
         IntentsSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -111,15 +86,12 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listIntentsTest() {
-    String nextPageToken = "";
-    Intent intentsElement = Intent.newBuilder().build();
-    List<Intent> intents = Arrays.asList(intentsElement);
+  public void listIntentsTest() throws Exception {
+    Intent responsesElement = Intent.newBuilder().build();
     ListIntentsResponse expectedResponse =
         ListIntentsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllIntents(intents)
+            .setNextPageToken("")
+            .addAllIntents(Arrays.asList(responsesElement))
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -128,14 +100,15 @@ public class IntentsClientTest {
     ListIntentsPagedResponse pagedListResponse = client.listIntents(parent);
 
     List<Intent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getIntentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
+    ListIntentsRequest actualRequest = ((ListIntentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -143,48 +116,88 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void listIntentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-
       client.listIntents(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listIntentsTest2() {
-    String nextPageToken = "";
-    Intent intentsElement = Intent.newBuilder().build();
-    List<Intent> intents = Arrays.asList(intentsElement);
+  public void listIntentsTest2() throws Exception {
+    Intent responsesElement = Intent.newBuilder().build();
     ListIntentsResponse expectedResponse =
         ListIntentsResponse.newBuilder()
-            .setNextPageToken(nextPageToken)
-            .addAllIntents(intents)
+            .setNextPageToken("")
+            .addAllIntents(Arrays.asList(responsesElement))
             .build();
     mockIntents.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-    String languageCode = "languageCode-412800396";
+    String parent = "parent-995424086";
 
-    ListIntentsPagedResponse pagedListResponse = client.listIntents(parent, languageCode);
+    ListIntentsPagedResponse pagedListResponse = client.listIntents(parent);
 
     List<Intent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getIntentsList().get(0), resources.get(0));
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListIntentsRequest actualRequest = (ListIntentsRequest) actualRequests.get(0);
+    ListIntentsRequest actualRequest = ((ListIntentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIntentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listIntents(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listIntentsTest3() throws Exception {
+    Intent responsesElement = Intent.newBuilder().build();
+    ListIntentsResponse expectedResponse =
+        ListIntentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntents(Arrays.asList(responsesElement))
+            .build();
+    mockIntents.addResponse(expectedResponse);
+
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+    String languageCode = "languageCode-2092349083";
+
+    ListIntentsPagedResponse pagedListResponse = client.listIntents(parent, languageCode);
+
+    List<Intent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIntentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIntentsRequest actualRequest = ((ListIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -193,49 +206,90 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void listIntentsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void listIntentsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-      String languageCode = "languageCode-412800396";
-
+      String languageCode = "languageCode-2092349083";
       client.listIntents(parent, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getIntentTest() {
-    IntentName name2 = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void listIntentsTest4() throws Exception {
+    Intent responsesElement = Intent.newBuilder().build();
+    ListIntentsResponse expectedResponse =
+        ListIntentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllIntents(Arrays.asList(responsesElement))
+            .build();
+    mockIntents.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    String languageCode = "languageCode-2092349083";
+
+    ListIntentsPagedResponse pagedListResponse = client.listIntents(parent, languageCode);
+
+    List<Intent> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getIntentsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListIntentsRequest actualRequest = ((ListIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listIntentsExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String languageCode = "languageCode-2092349083";
+      client.listIntents(parent, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntentTest() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -246,9 +300,9 @@ public class IntentsClientTest {
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
+    GetIntentRequest actualRequest = ((GetIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -256,62 +310,112 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void getIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-
       client.getIntent(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getIntentTest2() {
-    IntentName name2 = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void getIntentTest2() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name2.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
+            .build();
+    mockIntents.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Intent actualResponse = client.getIntent(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIntentRequest actualRequest = ((GetIntentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIntentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getIntent(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getIntentTest3() throws Exception {
+    Intent expectedResponse =
+        Intent.newBuilder()
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
     IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String languageCode = "languageCode-412800396";
+    String languageCode = "languageCode-2092349083";
 
     Intent actualResponse = client.getIntent(name, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    GetIntentRequest actualRequest = (GetIntentRequest) actualRequests.get(0);
+    GetIntentRequest actualRequest = ((GetIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -320,49 +424,102 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void getIntentExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void getIntentExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-      String languageCode = "languageCode-412800396";
-
+      String languageCode = "languageCode-2092349083";
       client.getIntent(name, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createIntentTest() {
-    IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void getIntentTest4() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
+            .build();
+    mockIntents.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String languageCode = "languageCode-2092349083";
+
+    Intent actualResponse = client.getIntent(name, languageCode);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetIntentRequest actualRequest = ((GetIntentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getIntentExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String languageCode = "languageCode-2092349083";
+      client.getIntent(name, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createIntentTest() throws Exception {
+    Intent expectedResponse =
+        Intent.newBuilder()
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -374,9 +531,9 @@ public class IntentsClientTest {
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateIntentRequest actualRequest = (CreateIntentRequest) actualRequests.get(0);
+    CreateIntentRequest actualRequest = ((CreateIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -385,64 +542,117 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void createIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       Intent intent = Intent.newBuilder().build();
-
       client.createIntent(parent, intent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createIntentTest2() {
-    IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void createIntentTest2() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
+            .build();
+    mockIntents.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    Intent intent = Intent.newBuilder().build();
+
+    Intent actualResponse = client.createIntent(parent, intent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateIntentRequest actualRequest = ((CreateIntentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(intent, actualRequest.getIntent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createIntentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Intent intent = Intent.newBuilder().build();
+      client.createIntent(parent, intent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createIntentTest3() throws Exception {
+    Intent expectedResponse =
+        Intent.newBuilder()
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
     AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     Intent intent = Intent.newBuilder().build();
-    String languageCode = "languageCode-412800396";
+    String languageCode = "languageCode-2092349083";
 
     Intent actualResponse = client.createIntent(parent, intent, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    CreateIntentRequest actualRequest = (CreateIntentRequest) actualRequests.get(0);
+    CreateIntentRequest actualRequest = ((CreateIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
@@ -452,65 +662,61 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void createIntentExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void createIntentExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       Intent intent = Intent.newBuilder().build();
-      String languageCode = "languageCode-412800396";
-
+      String languageCode = "languageCode-2092349083";
       client.createIntent(parent, intent, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateIntentTest() {
-    IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void createIntentTest4() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
+    String parent = "parent-995424086";
     Intent intent = Intent.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
+    String languageCode = "languageCode-2092349083";
 
-    Intent actualResponse = client.updateIntent(intent, updateMask);
+    Intent actualResponse = client.createIntent(parent, intent, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateIntentRequest actualRequest = (UpdateIntentRequest) actualRequests.get(0);
+    CreateIntentRequest actualRequest = ((CreateIntentRequest) actualRequests.get(0));
 
+    Assert.assertEquals(parent, actualRequest.getParent());
     Assert.assertEquals(intent, actualRequest.getIntent());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -518,49 +724,100 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void createIntentExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      Intent intent = Intent.newBuilder().build();
+      String languageCode = "languageCode-2092349083";
+      client.createIntent(parent, intent, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateIntentTest() throws Exception {
+    Intent expectedResponse =
+        Intent.newBuilder()
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
+            .build();
+    mockIntents.addResponse(expectedResponse);
+
+    Intent intent = Intent.newBuilder().build();
+
+    Intent actualResponse = client.updateIntent(intent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateIntentRequest actualRequest = ((UpdateIntentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(intent, actualRequest.getIntent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
   public void updateIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       Intent intent = Intent.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateIntent(intent, updateMask);
+      client.updateIntent(intent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateIntentTest2() {
-    IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void updateIntentTest2() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
@@ -572,7 +829,7 @@ public class IntentsClientTest {
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateIntentRequest actualRequest = (UpdateIntentRequest) actualRequests.get(0);
+    UpdateIntentRequest actualRequest = ((UpdateIntentRequest) actualRequests.get(0));
 
     Assert.assertEquals(intent, actualRequest.getIntent());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
@@ -583,64 +840,58 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateIntentExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       Intent intent = Intent.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
-
       client.updateIntent(intent, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateIntentTest3() {
-    IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void updateIntentTest3() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
     Intent intent = Intent.newBuilder().build();
-    FieldMask updateMask = FieldMask.newBuilder().build();
+    String languageCode = "languageCode-2092349083";
 
-    Intent actualResponse = client.updateIntent(intent, updateMask);
+    Intent actualResponse = client.updateIntent(intent, languageCode);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateIntentRequest actualRequest = (UpdateIntentRequest) actualRequests.get(0);
+    UpdateIntentRequest actualRequest = ((UpdateIntentRequest) actualRequests.get(0));
 
     Assert.assertEquals(intent, actualRequest.getIntent());
-    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -648,63 +899,59 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateIntentExceptionTest3() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       Intent intent = Intent.newBuilder().build();
-      FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateIntent(intent, updateMask);
+      String languageCode = "languageCode-2092349083";
+      client.updateIntent(intent, languageCode);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void updateIntentTest4() {
-    IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-    String displayName = "displayName1615086568";
-    int priority = 1165461084;
-    boolean isFallback = false;
-    boolean mlEnabled = false;
-    boolean mlDisabled = true;
-    boolean endInteraction = true;
-    String action = "action-1422950858";
-    boolean resetContexts = true;
-    String rootFollowupIntentName = "rootFollowupIntentName402253784";
-    String parentFollowupIntentName = "parentFollowupIntentName-1131901680";
+  public void updateIntentTest4() throws Exception {
     Intent expectedResponse =
         Intent.newBuilder()
-            .setName(name.toString())
-            .setDisplayName(displayName)
-            .setPriority(priority)
-            .setIsFallback(isFallback)
-            .setMlEnabled(mlEnabled)
-            .setMlDisabled(mlDisabled)
-            .setEndInteraction(endInteraction)
-            .setAction(action)
-            .setResetContexts(resetContexts)
-            .setRootFollowupIntentName(rootFollowupIntentName)
-            .setParentFollowupIntentName(parentFollowupIntentName)
+            .setName(IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]").toString())
+            .setDisplayName("displayName1714148973")
+            .setPriority(-1165461084)
+            .setIsFallback(true)
+            .setMlEnabled(true)
+            .setMlDisabled(true)
+            .setEndInteraction(true)
+            .addAllInputContextNames(new ArrayList<String>())
+            .addAllEvents(new ArrayList<String>())
+            .addAllTrainingPhrases(new ArrayList<Intent.TrainingPhrase>())
+            .setAction("action-1422950858")
+            .addAllOutputContexts(new ArrayList<Context>())
+            .setResetContexts(true)
+            .addAllParameters(new ArrayList<Intent.Parameter>())
+            .addAllMessages(new ArrayList<Intent.Message>())
+            .addAllDefaultResponsePlatforms(new ArrayList<Intent.Message.Platform>())
+            .setRootFollowupIntentName("rootFollowupIntentName1370087157")
+            .setParentFollowupIntentName("parentFollowupIntentName1233650877")
+            .addAllFollowupIntentInfo(new ArrayList<Intent.FollowupIntentInfo>())
             .build();
     mockIntents.addResponse(expectedResponse);
 
     Intent intent = Intent.newBuilder().build();
+    String languageCode = "languageCode-2092349083";
     FieldMask updateMask = FieldMask.newBuilder().build();
 
-    Intent actualResponse = client.updateIntent(intent, updateMask);
+    Intent actualResponse = client.updateIntent(intent, languageCode, updateMask);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    UpdateIntentRequest actualRequest = (UpdateIntentRequest) actualRequests.get(0);
+    UpdateIntentRequest actualRequest = ((UpdateIntentRequest) actualRequests.get(0));
 
     Assert.assertEquals(intent, actualRequest.getIntent());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
     Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -713,25 +960,23 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void updateIntentExceptionTest4() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       Intent intent = Intent.newBuilder().build();
+      String languageCode = "languageCode-2092349083";
       FieldMask updateMask = FieldMask.newBuilder().build();
-
-      client.updateIntent(intent, updateMask);
+      client.updateIntent(intent, languageCode, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void deleteIntentTest() {
+  public void deleteIntentTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     mockIntents.addResponse(expectedResponse);
 
@@ -741,9 +986,9 @@ public class IntentsClientTest {
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DeleteIntentRequest actualRequest = (DeleteIntentRequest) actualRequests.get(0);
+    DeleteIntentRequest actualRequest = ((DeleteIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(name, IntentName.parse(actualRequest.getName()));
+    Assert.assertEquals(name.toString(), actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -751,46 +996,33 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void deleteIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
-
       client.deleteIntent(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchUpdateIntentsTest() throws Exception {
-    BatchUpdateIntentsResponse expectedResponse = BatchUpdateIntentsResponse.newBuilder().build();
-    Operation resultOperation =
-        Operation.newBuilder()
-            .setName("batchUpdateIntentsTest")
-            .setDone(true)
-            .setResponse(Any.pack(expectedResponse))
-            .build();
-    mockIntents.addResponse(resultOperation);
+  public void deleteIntentTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockIntents.addResponse(expectedResponse);
 
-    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-    String intentBatchUri = "intentBatchUri-969851644";
+    String name = "name3373707";
 
-    BatchUpdateIntentsResponse actualResponse =
-        client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.deleteIntent(name);
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    BatchUpdateIntentsRequest actualRequest = (BatchUpdateIntentsRequest) actualRequests.get(0);
+    DeleteIntentRequest actualRequest = ((DeleteIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
-    Assert.assertEquals(intentBatchUri, actualRequest.getIntentBatchUri());
+    Assert.assertEquals(name, actualRequest.getName());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -798,31 +1030,26 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchUpdateIntentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void deleteIntentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
-      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
-      String intentBatchUri = "intentBatchUri-969851644";
-
-      client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+      String name = "name3373707";
+      client.deleteIntent(name);
       Assert.fail("No exception raised");
-    } catch (ExecutionException e) {
-      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
-      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchUpdateIntentsTest2() throws Exception {
-    BatchUpdateIntentsResponse expectedResponse = BatchUpdateIntentsResponse.newBuilder().build();
+  public void batchUpdateIntentsTest() throws Exception {
+    BatchUpdateIntentsResponse expectedResponse =
+        BatchUpdateIntentsResponse.newBuilder().addAllIntents(new ArrayList<Intent>()).build();
     Operation resultOperation =
         Operation.newBuilder()
-            .setName("batchUpdateIntentsTest2")
+            .setName("batchUpdateIntentsTest")
             .setDone(true)
             .setResponse(Any.pack(expectedResponse))
             .build();
@@ -837,9 +1064,9 @@ public class IntentsClientTest {
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    BatchUpdateIntentsRequest actualRequest = (BatchUpdateIntentsRequest) actualRequests.get(0);
+    BatchUpdateIntentsRequest actualRequest = ((BatchUpdateIntentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(intentBatchInline, actualRequest.getIntentBatchInline());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -848,26 +1075,167 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void batchUpdateIntentsExceptionTest2() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+  public void batchUpdateIntentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
-
       client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 
   @Test
-  @SuppressWarnings("all")
+  public void batchUpdateIntentsTest2() throws Exception {
+    BatchUpdateIntentsResponse expectedResponse =
+        BatchUpdateIntentsResponse.newBuilder().addAllIntents(new ArrayList<Intent>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+    String intentBatchUri = "intentBatchUri544125582";
+
+    BatchUpdateIntentsResponse actualResponse =
+        client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateIntentsRequest actualRequest = ((BatchUpdateIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(intentBatchUri, actualRequest.getIntentBatchUri());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchUpdateIntentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
+      String intentBatchUri = "intentBatchUri544125582";
+      client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchUpdateIntentsTest3() throws Exception {
+    BatchUpdateIntentsResponse expectedResponse =
+        BatchUpdateIntentsResponse.newBuilder().addAllIntents(new ArrayList<Intent>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+
+    BatchUpdateIntentsResponse actualResponse =
+        client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateIntentsRequest actualRequest = ((BatchUpdateIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(intentBatchInline, actualRequest.getIntentBatchInline());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchUpdateIntentsExceptionTest3() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      IntentBatch intentBatchInline = IntentBatch.newBuilder().build();
+      client.batchUpdateIntentsAsync(parent, intentBatchInline).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchUpdateIntentsTest4() throws Exception {
+    BatchUpdateIntentsResponse expectedResponse =
+        BatchUpdateIntentsResponse.newBuilder().addAllIntents(new ArrayList<Intent>()).build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchUpdateIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    String intentBatchUri = "intentBatchUri544125582";
+
+    BatchUpdateIntentsResponse actualResponse =
+        client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateIntentsRequest actualRequest = ((BatchUpdateIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(intentBatchUri, actualRequest.getIntentBatchUri());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchUpdateIntentsExceptionTest4() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      String intentBatchUri = "intentBatchUri544125582";
+      client.batchUpdateIntentsAsync(parent, intentBatchUri).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void batchDeleteIntentsTest() throws Exception {
     Empty expectedResponse = Empty.newBuilder().build();
     Operation resultOperation =
@@ -881,14 +1249,13 @@ public class IntentsClientTest {
     AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
     List<Intent> intents = new ArrayList<>();
 
-    Empty actualResponse = client.batchDeleteIntentsAsync(parent, intents).get();
-    Assert.assertEquals(expectedResponse, actualResponse);
+    client.batchDeleteIntentsAsync(parent, intents).get();
 
     List<AbstractMessage> actualRequests = mockIntents.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    BatchDeleteIntentsRequest actualRequest = (BatchDeleteIntentsRequest) actualRequests.get(0);
+    BatchDeleteIntentsRequest actualRequest = ((BatchDeleteIntentsRequest) actualRequests.get(0));
 
-    Assert.assertEquals(parent, AgentName.parse(actualRequest.getParent()));
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
     Assert.assertEquals(intents, actualRequest.getIntentsList());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -897,20 +1264,63 @@ public class IntentsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void batchDeleteIntentsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockIntents.addException(exception);
 
     try {
       AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
       List<Intent> intents = new ArrayList<>();
-
       client.batchDeleteIntentsAsync(parent, intents).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void batchDeleteIntentsTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    List<Intent> intents = new ArrayList<>();
+
+    client.batchDeleteIntentsAsync(parent, intents).get();
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteIntentsRequest actualRequest = ((BatchDeleteIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(intents, actualRequest.getIntentsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteIntentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      List<Intent> intents = new ArrayList<>();
+      client.batchDeleteIntentsAsync(parent, intents).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

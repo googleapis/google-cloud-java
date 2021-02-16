@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1.stub;
 
 import static com.google.cloud.dialogflow.v2beta1.ContextsClient.ListContextsPagedResponse;
@@ -57,7 +58,7 @@ import java.util.List;
 import javax.annotation.Generated;
 import org.threeten.bp.Duration;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link ContextsStub}.
  *
@@ -74,22 +75,22 @@ import org.threeten.bp.Duration;
  *
  * <p>For example, to set the total timeout of getContext to 30 seconds:
  *
- * <pre>
- * <code>
- * ContextsStubSettings.Builder contextsSettingsBuilder =
- *     ContextsStubSettings.newBuilder();
+ * <pre>{@code
+ * ContextsStubSettings.Builder contextsSettingsBuilder = ContextsStubSettings.newBuilder();
  * contextsSettingsBuilder
  *     .getContextSettings()
  *     .setRetrySettings(
- *         contextsSettingsBuilder.getContextSettings().getRetrySettings().toBuilder()
+ *         contextsSettingsBuilder
+ *             .getContextSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * ContextsStubSettings contextsSettings = contextsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator-java")
 public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
@@ -106,6 +107,59 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
   private final UnaryCallSettings<UpdateContextRequest, Context> updateContextSettings;
   private final UnaryCallSettings<DeleteContextRequest, Empty> deleteContextSettings;
   private final UnaryCallSettings<DeleteAllContextsRequest, Empty> deleteAllContextsSettings;
+
+  private static final PagedListDescriptor<ListContextsRequest, ListContextsResponse, Context>
+      LIST_CONTEXTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListContextsRequest, ListContextsResponse, Context>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListContextsRequest injectToken(ListContextsRequest payload, String token) {
+              return ListContextsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListContextsRequest injectPageSize(ListContextsRequest payload, int pageSize) {
+              return ListContextsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListContextsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListContextsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Context> extractResources(ListContextsResponse payload) {
+              return payload.getContextsList() == null
+                  ? ImmutableList.<Context>of()
+                  : payload.getContextsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
+      LIST_CONTEXTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>() {
+            @Override
+            public ApiFuture<ListContextsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListContextsRequest, ListContextsResponse> callable,
+                ListContextsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListContextsResponse> futureResponse) {
+              PageContext<ListContextsRequest, ListContextsResponse, Context> pageContext =
+                  PageContext.create(callable, LIST_CONTEXTS_PAGE_STR_DESC, request, context);
+              return ListContextsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
 
   /** Returns the object with the settings used for calls to listContexts. */
   public PagedCallSettings<ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
@@ -144,10 +198,10 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
         .getTransportName()
         .equals(GrpcTransportChannel.getGrpcTransportName())) {
       return GrpcContextsStub.create(this);
-    } else {
-      throw new UnsupportedOperationException(
-          "Transport not supported: " + getTransportChannelProvider().getTransportName());
     }
+    throw new UnsupportedOperationException(
+        String.format(
+            "Transport not supported: %s", getTransportChannelProvider().getTransportName()));
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -214,63 +268,9 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     deleteAllContextsSettings = settingsBuilder.deleteAllContextsSettings().build();
   }
 
-  private static final PagedListDescriptor<ListContextsRequest, ListContextsResponse, Context>
-      LIST_CONTEXTS_PAGE_STR_DESC =
-          new PagedListDescriptor<ListContextsRequest, ListContextsResponse, Context>() {
-            @Override
-            public String emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ListContextsRequest injectToken(ListContextsRequest payload, String token) {
-              return ListContextsRequest.newBuilder(payload).setPageToken(token).build();
-            }
-
-            @Override
-            public ListContextsRequest injectPageSize(ListContextsRequest payload, int pageSize) {
-              return ListContextsRequest.newBuilder(payload).setPageSize(pageSize).build();
-            }
-
-            @Override
-            public Integer extractPageSize(ListContextsRequest payload) {
-              return payload.getPageSize();
-            }
-
-            @Override
-            public String extractNextToken(ListContextsResponse payload) {
-              return payload.getNextPageToken();
-            }
-
-            @Override
-            public Iterable<Context> extractResources(ListContextsResponse payload) {
-              return payload.getContextsList() != null
-                  ? payload.getContextsList()
-                  : ImmutableList.<Context>of();
-            }
-          };
-
-  private static final PagedListResponseFactory<
-          ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
-      LIST_CONTEXTS_PAGE_STR_FACT =
-          new PagedListResponseFactory<
-              ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>() {
-            @Override
-            public ApiFuture<ListContextsPagedResponse> getFuturePagedResponse(
-                UnaryCallable<ListContextsRequest, ListContextsResponse> callable,
-                ListContextsRequest request,
-                ApiCallContext context,
-                ApiFuture<ListContextsResponse> futureResponse) {
-              PageContext<ListContextsRequest, ListContextsResponse, Context> pageContext =
-                  PageContext.create(callable, LIST_CONTEXTS_PAGE_STR_DESC, request, context);
-              return ListContextsPagedResponse.createAsync(pageContext, futureResponse);
-            }
-          };
-
   /** Builder for ContextsStubSettings. */
   public static class Builder extends StubSettings.Builder<ContextsStubSettings, Builder> {
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
-
     private final PagedCallSettings.Builder<
             ListContextsRequest, ListContextsResponse, ListContextsPagedResponse>
         listContextsSettings;
@@ -280,7 +280,6 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
     private final UnaryCallSettings.Builder<DeleteContextRequest, Empty> deleteContextSettings;
     private final UnaryCallSettings.Builder<DeleteAllContextsRequest, Empty>
         deleteAllContextsSettings;
-
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -288,17 +287,8 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
       ImmutableMap.Builder<String, ImmutableSet<StatusCode.Code>> definitions =
           ImmutableMap.builder();
       definitions.put(
-          "retry_policy_1_codes",
+          "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
-      definitions.put(
-          "retry_policy_3_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "retry_policy_2_codes",
-          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
-      definitions.put(
-          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -317,59 +307,22 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
               .setMaxRpcTimeout(Duration.ofMillis(60000L))
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
-      definitions.put("retry_policy_1_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("retry_policy_3_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRetryDelay(Duration.ofMillis(100L))
-              .setRetryDelayMultiplier(1.3)
-              .setMaxRetryDelay(Duration.ofMillis(60000L))
-              .setInitialRpcTimeout(Duration.ofMillis(180000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(180000L))
-              .setTotalTimeout(Duration.ofMillis(180000L))
-              .build();
-      definitions.put("retry_policy_2_params", settings);
-      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
-      definitions.put("no_retry_params", settings);
-      settings =
-          RetrySettings.newBuilder()
-              .setInitialRpcTimeout(Duration.ofMillis(220000L))
-              .setRpcTimeoutMultiplier(1.0)
-              .setMaxRpcTimeout(Duration.ofMillis(220000L))
-              .setTotalTimeout(Duration.ofMillis(220000L))
-              .build();
-      definitions.put("no_retry_1_params", settings);
+      definitions.put("retry_policy_0_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
     protected Builder() {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(clientContext);
 
       listContextsSettings = PagedCallSettings.newBuilder(LIST_CONTEXTS_PAGE_STR_FACT);
-
       getContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       createContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       updateContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteContextSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
-
       deleteAllContextsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
@@ -380,52 +333,7 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
               updateContextSettings,
               deleteContextSettings,
               deleteAllContextsSettings);
-
       initDefaults(this);
-    }
-
-    private static Builder createDefault() {
-      Builder builder = new Builder((ClientContext) null);
-      builder.setTransportChannelProvider(defaultTransportChannelProvider());
-      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
-      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
-      builder.setEndpoint(getDefaultEndpoint());
-      return initDefaults(builder);
-    }
-
-    private static Builder initDefaults(Builder builder) {
-
-      builder
-          .listContextsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .getContextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .createContextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .updateContextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteContextSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      builder
-          .deleteAllContextsSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
-          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
-
-      return builder;
     }
 
     protected Builder(ContextsStubSettings settings) {
@@ -448,7 +356,52 @@ public class ContextsStubSettings extends StubSettings<ContextsStubSettings> {
               deleteAllContextsSettings);
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    private static Builder createDefault() {
+      Builder builder = new Builder(((ClientContext) null));
+
+      builder.setTransportChannelProvider(defaultTransportChannelProvider());
+      builder.setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+      builder.setInternalHeaderProvider(defaultApiClientHeaderProviderBuilder().build());
+      builder.setEndpoint(getDefaultEndpoint());
+
+      return initDefaults(builder);
+    }
+
+    private static Builder initDefaults(Builder builder) {
+      builder
+          .listContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .createContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .updateContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteContextSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .deleteAllContextsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      return builder;
+    }
+
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

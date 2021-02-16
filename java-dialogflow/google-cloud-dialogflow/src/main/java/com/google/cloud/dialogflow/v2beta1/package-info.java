@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,136 +15,55 @@
  */
 
 /**
- * A client to Dialogflow API.
+ * The interfaces provided are listed below, along with usage samples.
  *
- * <p>The interfaces provided are listed below, along with usage samples.
- *
- * <p>================== EnvironmentsClient ==================
- *
- * <p>Service Description: Service for managing
- * [Environments][google.cloud.dialogflow.v2beta1.Environment].
- *
- * <p>Sample for EnvironmentsClient:
- *
- * <pre>
- * <code>
- * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
- *   AgentName parent = AgentName.ofProjectAgentName("[PROJECT]");
- *   ListEnvironmentsPagedResponse response = environmentsClient.listEnvironments(parent);
- * }
- * </code>
- * </pre>
- *
- * ============ AgentsClient ============
+ * <p>======================= AgentsClient =======================
  *
  * <p>Service Description: Service for managing [Agents][google.cloud.dialogflow.v2beta1.Agent].
  *
  * <p>Sample for AgentsClient:
  *
- * <pre>
- * <code>
- * try (AgentsClient agentsClient = AgentsClient.create()) {
- *   ProjectName parent = ProjectName.of("[PROJECT]");
- *   Agent response = agentsClient.getAgent(parent);
- * }
- * </code>
- * </pre>
- *
- * ============== ContextsClient ==============
+ * <p>======================= ContextsClient =======================
  *
  * <p>Service Description: Service for managing [Contexts][google.cloud.dialogflow.v2beta1.Context].
  *
  * <p>Sample for ContextsClient:
  *
- * <pre>
- * <code>
- * try (ContextsClient contextsClient = ContextsClient.create()) {
- *   ContextName name = ContextName.ofProjectSessionContextName("[PROJECT]", "[SESSION]", "[CONTEXT]");
- *   Context response = contextsClient.getContext(name);
- * }
- * </code>
- * </pre>
- *
- * =============== DocumentsClient ===============
+ * <p>======================= DocumentsClient =======================
  *
  * <p>Service Description: Service for managing knowledge
  * [Documents][google.cloud.dialogflow.v2beta1.Document].
  *
  * <p>Sample for DocumentsClient:
  *
- * <pre>
- * <code>
- * try (DocumentsClient documentsClient = DocumentsClient.create()) {
- *   DocumentName name = DocumentName.of("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]");
- *   Document response = documentsClient.getDocument(name);
- * }
- * </code>
- * </pre>
- *
- * ================= EntityTypesClient =================
+ * <p>======================= EntityTypesClient =======================
  *
  * <p>Service Description: Service for managing
  * [EntityTypes][google.cloud.dialogflow.v2beta1.EntityType].
  *
  * <p>Sample for EntityTypesClient:
  *
- * <pre>
- * <code>
- * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
- *   EntityTypeName name = EntityTypeName.ofProjectEntityTypeName("[PROJECT]", "[ENTITY_TYPE]");
- *   EntityType response = entityTypesClient.getEntityType(name);
- * }
- * </code>
- * </pre>
+ * <p>======================= EnvironmentsClient =======================
  *
- * ============= IntentsClient =============
+ * <p>Service Description: Service for managing
+ * [Environments][google.cloud.dialogflow.v2beta1.Environment].
+ *
+ * <p>Sample for EnvironmentsClient:
+ *
+ * <p>======================= IntentsClient =======================
  *
  * <p>Service Description: Service for managing [Intents][google.cloud.dialogflow.v2beta1.Intent].
  *
  * <p>Sample for IntentsClient:
  *
- * <pre>
- * <code>
- * try (IntentsClient intentsClient = IntentsClient.create()) {
- *   IntentName name = IntentName.ofProjectIntentName("[PROJECT]", "[INTENT]");
- *   Intent response = intentsClient.getIntent(name);
- * }
- * </code>
- * </pre>
- *
- * ==================== KnowledgeBasesClient ====================
+ * <p>======================= KnowledgeBasesClient =======================
  *
  * <p>Service Description: Service for managing
  * [KnowledgeBases][google.cloud.dialogflow.v2beta1.KnowledgeBase].
  *
  * <p>Sample for KnowledgeBasesClient:
  *
- * <pre>
- * <code>
- * try (KnowledgeBasesClient knowledgeBasesClient = KnowledgeBasesClient.create()) {
- *   KnowledgeBaseName name = KnowledgeBaseName.of("[PROJECT]", "[KNOWLEDGE_BASE]");
- *   KnowledgeBase response = knowledgeBasesClient.getKnowledgeBase(name);
- * }
- * </code>
- * </pre>
- *
- * ======================== SessionEntityTypesClient ========================
- *
- * <p>Service Description: Service for managing
- * [SessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityType].
- *
- * <p>Sample for SessionEntityTypesClient:
- *
- * <pre>
- * <code>
- * try (SessionEntityTypesClient sessionEntityTypesClient = SessionEntityTypesClient.create()) {
- *   SessionEntityTypeName name = SessionEntityTypeName.ofProjectSessionEntityTypeName("[PROJECT]", "[SESSION]", "[ENTITY_TYPE]");
- *   SessionEntityType response = sessionEntityTypesClient.getSessionEntityType(name);
- * }
- * </code>
- * </pre>
- *
- * ============== SessionsClient ==============
+ * <p>======================= SessionsClient =======================
  *
  * <p>Service Description: A service used for session interactions.
  *
@@ -153,17 +72,14 @@
  *
  * <p>Sample for SessionsClient:
  *
- * <pre>
- * <code>
- * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
- *   QueryInput queryInput = QueryInput.newBuilder().build();
- *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
- * }
- * </code>
- * </pre>
+ * <p>======================= SessionEntityTypesClient =======================
+ *
+ * <p>Service Description: Service for managing
+ * [SessionEntityTypes][google.cloud.dialogflow.v2beta1.SessionEntityType].
+ *
+ * <p>Sample for SessionEntityTypesClient:
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.dialogflow.v2beta1;
 
 import javax.annotation.Generated;

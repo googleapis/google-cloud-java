@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2;
 
 import static com.google.cloud.dialogflow.v2.EnvironmentsClient.ListEnvironmentsPagedResponse;
@@ -33,7 +34,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND CLASS
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Settings class to configure an instance of {@link EnvironmentsClient}.
  *
@@ -48,25 +49,25 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of listEnvironmentsPagedCallable to 30 seconds:
+ * <p>For example, to set the total timeout of listEnvironments to 30 seconds:
  *
- * <pre>
- * <code>
- * EnvironmentsSettings.Builder environmentsSettingsBuilder =
- *     EnvironmentsSettings.newBuilder();
+ * <pre>{@code
+ * EnvironmentsSettings.Builder environmentsSettingsBuilder = EnvironmentsSettings.newBuilder();
  * environmentsSettingsBuilder
  *     .listEnvironmentsSettings()
  *     .setRetrySettings(
- *         environmentsSettingsBuilder.listEnvironmentsSettings().getRetrySettings().toBuilder()
+ *         environmentsSettingsBuilder
+ *             .listEnvironmentsSettings()
+ *             .getRetrySettings()
+ *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
  * EnvironmentsSettings environmentsSettings = environmentsSettingsBuilder.build();
- * </code>
- * </pre>
+ * }</pre>
  */
-@Generated("by gapic-generator")
-@BetaApi
+@Generated("by gapic-generator-java")
 public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
+
   /** Returns the object with the settings used for calls to listEnvironments. */
   public PagedCallSettings<
           ListEnvironmentsRequest, ListEnvironmentsResponse, ListEnvironmentsPagedResponse>
@@ -134,16 +135,13 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
 
   /** Builder for EnvironmentsSettings. */
   public static class Builder extends ClientSettings.Builder<EnvironmentsSettings, Builder> {
+
     protected Builder() throws IOException {
-      this((ClientContext) null);
+      this(((ClientContext) null));
     }
 
     protected Builder(ClientContext clientContext) {
       super(EnvironmentsStubSettings.newBuilder(clientContext));
-    }
-
-    private static Builder createDefault() {
-      return new Builder(EnvironmentsStubSettings.newBuilder());
     }
 
     protected Builder(EnvironmentsSettings settings) {
@@ -154,11 +152,15 @@ public class EnvironmentsSettings extends ClientSettings<EnvironmentsSettings> {
       super(stubSettings);
     }
 
+    private static Builder createDefault() {
+      return new Builder(EnvironmentsStubSettings.newBuilder());
+    }
+
     public EnvironmentsStubSettings.Builder getStubSettingsBuilder() {
       return ((EnvironmentsStubSettings.Builder) getStubSettings());
     }
 
-    // NEXT_MAJOR_VER: remove 'throws Exception'
+    // NEXT_MAJOR_VER: remove 'throws Exception'.
     /**
      * Applies the given settings updater function to all of the unary API methods in this service.
      *

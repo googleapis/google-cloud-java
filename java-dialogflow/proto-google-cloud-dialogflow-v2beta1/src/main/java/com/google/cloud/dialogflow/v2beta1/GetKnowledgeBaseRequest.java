@@ -118,7 +118,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the knowledge base to retrieve.
-   * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -144,7 +145,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
    *
    * <pre>
    * Required. The name of the knowledge base to retrieve.
-   * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -491,7 +493,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the knowledge base to retrieve.
-     * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -516,7 +519,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the knowledge base to retrieve.
-     * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -541,7 +545,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the knowledge base to retrieve.
-     * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -565,7 +570,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the knowledge base to retrieve.
-     * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -585,7 +591,8 @@ public final class GetKnowledgeBaseRequest extends com.google.protobuf.Generated
      *
      * <pre>
      * Required. The name of the knowledge base to retrieve.
-     * Format `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>

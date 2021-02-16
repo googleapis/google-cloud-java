@@ -28,7 +28,8 @@ public interface ListDocumentsRequestOrBuilder
    *
    * <pre>
    * Required. The knowledge base to list all documents for.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -43,7 +44,8 @@ public interface ListDocumentsRequestOrBuilder
    *
    * <pre>
    * Required. The knowledge base to list all documents for.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>

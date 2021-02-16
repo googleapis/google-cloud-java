@@ -278,10 +278,12 @@ public interface AgentOrBuilder
    * Optional. Determines how intents are detected from user queries.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
+   * </code>
    *
    * @return The enum numeric value on the wire for matchMode.
    */
+  @java.lang.Deprecated
   int getMatchModeValue();
   /**
    *
@@ -290,10 +292,12 @@ public interface AgentOrBuilder
    * Optional. Determines how intents are detected from user queries.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9;</code>
+   * <code>.google.cloud.dialogflow.v2beta1.Agent.MatchMode match_mode = 9 [deprecated = true];
+   * </code>
    *
    * @return The matchMode.
    */
+  @java.lang.Deprecated
   com.google.cloud.dialogflow.v2beta1.Agent.MatchMode getMatchMode();
 
   /**

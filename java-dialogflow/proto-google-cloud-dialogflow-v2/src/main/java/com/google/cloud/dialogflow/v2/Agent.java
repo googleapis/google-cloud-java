@@ -1145,12 +1145,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for matchMode.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getMatchModeValue() {
     return matchMode_;
   }
@@ -1162,12 +1163,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The matchMode.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
     @SuppressWarnings("deprecation")
     com.google.cloud.dialogflow.v2.Agent.MatchMode result =
@@ -2757,12 +2759,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The enum numeric value on the wire for matchMode.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getMatchModeValue() {
       return matchMode_;
     }
@@ -2774,12 +2777,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The enum numeric value on the wire for matchMode to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setMatchModeValue(int value) {
 
       matchMode_ = value;
@@ -2794,12 +2798,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The matchMode.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode() {
       @SuppressWarnings("deprecation")
       com.google.cloud.dialogflow.v2.Agent.MatchMode result =
@@ -2814,12 +2819,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @param value The matchMode to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setMatchMode(com.google.cloud.dialogflow.v2.Agent.MatchMode value) {
       if (value == null) {
         throw new NullPointerException();
@@ -2837,11 +2843,12 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearMatchMode() {
 
       matchMode_ = 0;

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -28,13 +29,16 @@ import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
-import io.grpc.Status;
+import com.google.protobuf.FieldMask;
+import com.google.rpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -42,57 +46,31 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-@javax.annotation.Generated("by GAPIC")
+@Generated("by gapic-generator-java")
 public class SessionsClientTest {
-  private static MockEnvironments mockEnvironments;
-  private static MockAgents mockAgents;
-  private static MockContexts mockContexts;
-  private static MockDocuments mockDocuments;
-  private static MockEntityTypes mockEntityTypes;
-  private static MockIntents mockIntents;
-  private static MockKnowledgeBases mockKnowledgeBases;
-  private static MockSessionEntityTypes mockSessionEntityTypes;
-  private static MockSessions mockSessions;
-  private static MockServiceHelper serviceHelper;
+  private static MockServiceHelper mockServiceHelper;
   private SessionsClient client;
   private LocalChannelProvider channelProvider;
+  private static MockSessions mockSessions;
 
   @BeforeClass
   public static void startStaticServer() {
-    mockEnvironments = new MockEnvironments();
-    mockAgents = new MockAgents();
-    mockContexts = new MockContexts();
-    mockDocuments = new MockDocuments();
-    mockEntityTypes = new MockEntityTypes();
-    mockIntents = new MockIntents();
-    mockKnowledgeBases = new MockKnowledgeBases();
-    mockSessionEntityTypes = new MockSessionEntityTypes();
     mockSessions = new MockSessions();
-    serviceHelper =
+    mockServiceHelper =
         new MockServiceHelper(
-            UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(
-                mockEnvironments,
-                mockAgents,
-                mockContexts,
-                mockDocuments,
-                mockEntityTypes,
-                mockIntents,
-                mockKnowledgeBases,
-                mockSessionEntityTypes,
-                mockSessions));
-    serviceHelper.start();
+            UUID.randomUUID().toString(), Arrays.<MockGrpcService>asList(mockSessions));
+    mockServiceHelper.start();
   }
 
   @AfterClass
   public static void stopServer() {
-    serviceHelper.stop();
+    mockServiceHelper.stop();
   }
 
   @Before
   public void setUp() throws IOException {
-    serviceHelper.reset();
-    channelProvider = serviceHelper.createChannelProvider();
+    mockServiceHelper.reset();
+    channelProvider = mockServiceHelper.createChannelProvider();
     SessionsSettings settings =
         SessionsSettings.newBuilder()
             .setTransportChannelProvider(channelProvider)
@@ -107,14 +85,15 @@ public class SessionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void detectIntentTest() {
-    String responseId = "responseId1847552473";
-    ByteString outputAudio = ByteString.copyFromUtf8("24");
+  public void detectIntentTest() throws Exception {
     DetectIntentResponse expectedResponse =
         DetectIntentResponse.newBuilder()
-            .setResponseId(responseId)
-            .setOutputAudio(outputAudio)
+            .setResponseId("responseId-633138884")
+            .setQueryResult(QueryResult.newBuilder().build())
+            .addAllAlternativeQueryResults(new ArrayList<QueryResult>())
+            .setWebhookStatus(Status.newBuilder().build())
+            .setOutputAudio(ByteString.EMPTY)
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .build();
     mockSessions.addResponse(expectedResponse);
 
@@ -126,9 +105,9 @@ public class SessionsClientTest {
 
     List<AbstractMessage> actualRequests = mockSessions.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    DetectIntentRequest actualRequest = (DetectIntentRequest) actualRequests.get(0);
+    DetectIntentRequest actualRequest = ((DetectIntentRequest) actualRequests.get(0));
 
-    Assert.assertEquals(session, SessionName.parse(actualRequest.getSession()));
+    Assert.assertEquals(session.toString(), actualRequest.getSession());
     Assert.assertEquals(queryInput, actualRequest.getQueryInput());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
@@ -137,39 +116,88 @@ public class SessionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void detectIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSessions.addException(exception);
 
     try {
       SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
       QueryInput queryInput = QueryInput.newBuilder().build();
-
       client.detectIntent(session, queryInput);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
-      // Expected exception
+      // Expected exception.
     }
   }
 
   @Test
-  @SuppressWarnings("all")
-  public void streamingDetectIntentTest() throws Exception {
-    String responseId = "responseId1847552473";
-    ByteString outputAudio = ByteString.copyFromUtf8("24");
-    StreamingDetectIntentResponse expectedResponse =
-        StreamingDetectIntentResponse.newBuilder()
-            .setResponseId(responseId)
-            .setOutputAudio(outputAudio)
+  public void detectIntentTest2() throws Exception {
+    DetectIntentResponse expectedResponse =
+        DetectIntentResponse.newBuilder()
+            .setResponseId("responseId-633138884")
+            .setQueryResult(QueryResult.newBuilder().build())
+            .addAllAlternativeQueryResults(new ArrayList<QueryResult>())
+            .setWebhookStatus(Status.newBuilder().build())
+            .setOutputAudio(ByteString.EMPTY)
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
             .build();
     mockSessions.addResponse(expectedResponse);
-    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
+
+    String session = "session1984987798";
     QueryInput queryInput = QueryInput.newBuilder().build();
+
+    DetectIntentResponse actualResponse = client.detectIntent(session, queryInput);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockSessions.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DetectIntentRequest actualRequest = ((DetectIntentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(session, actualRequest.getSession());
+    Assert.assertEquals(queryInput, actualRequest.getQueryInput());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void detectIntentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockSessions.addException(exception);
+
+    try {
+      String session = "session1984987798";
+      QueryInput queryInput = QueryInput.newBuilder().build();
+      client.detectIntent(session, queryInput);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void streamingDetectIntentTest() throws Exception {
+    StreamingDetectIntentResponse expectedResponse =
+        StreamingDetectIntentResponse.newBuilder()
+            .setResponseId("responseId-633138884")
+            .setRecognitionResult(StreamingRecognitionResult.newBuilder().build())
+            .setQueryResult(QueryResult.newBuilder().build())
+            .addAllAlternativeQueryResults(new ArrayList<QueryResult>())
+            .setWebhookStatus(Status.newBuilder().build())
+            .setOutputAudio(ByteString.EMPTY)
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .build();
+    mockSessions.addResponse(expectedResponse);
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
-            .setSession(session.toString())
-            .setQueryInput(queryInput)
+            .setSession(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
+            .setQueryParams(QueryParameters.newBuilder().build())
+            .setQueryInput(QueryInput.newBuilder().build())
+            .setSingleUtterance(true)
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setOutputAudioConfigMask(FieldMask.newBuilder().build())
+            .setInputAudio(ByteString.EMPTY)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -188,16 +216,18 @@ public class SessionsClientTest {
   }
 
   @Test
-  @SuppressWarnings("all")
   public void streamingDetectIntentExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INVALID_ARGUMENT);
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockSessions.addException(exception);
-    SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-    QueryInput queryInput = QueryInput.newBuilder().build();
     StreamingDetectIntentRequest request =
         StreamingDetectIntentRequest.newBuilder()
-            .setSession(session.toString())
-            .setQueryInput(queryInput)
+            .setSession(SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]").toString())
+            .setQueryParams(QueryParameters.newBuilder().build())
+            .setQueryInput(QueryInput.newBuilder().build())
+            .setSingleUtterance(true)
+            .setOutputAudioConfig(OutputAudioConfig.newBuilder().build())
+            .setOutputAudioConfigMask(FieldMask.newBuilder().build())
+            .setInputAudio(ByteString.EMPTY)
             .build();
 
     MockStreamObserver<StreamingDetectIntentResponse> responseObserver = new MockStreamObserver<>();
@@ -214,7 +244,7 @@ public class SessionsClientTest {
       Assert.fail("No exception thrown");
     } catch (ExecutionException e) {
       Assert.assertTrue(e.getCause() instanceof InvalidArgumentException);
-      InvalidArgumentException apiException = (InvalidArgumentException) e.getCause();
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }

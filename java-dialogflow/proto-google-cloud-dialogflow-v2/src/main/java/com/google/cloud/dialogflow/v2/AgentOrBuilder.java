@@ -281,11 +281,12 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for matchMode.
    */
+  @java.lang.Deprecated
   int getMatchModeValue();
   /**
    *
@@ -295,11 +296,12 @@ public interface AgentOrBuilder
    * </pre>
    *
    * <code>
-   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.dialogflow.v2.Agent.MatchMode match_mode = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The matchMode.
    */
+  @java.lang.Deprecated
   com.google.cloud.dialogflow.v2.Agent.MatchMode getMatchMode();
 
   /**

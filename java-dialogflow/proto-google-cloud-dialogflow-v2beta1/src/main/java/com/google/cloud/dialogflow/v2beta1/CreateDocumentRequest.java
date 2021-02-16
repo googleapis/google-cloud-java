@@ -93,6 +93,11 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
 
               break;
             }
+          case 24:
+            {
+              importGcsCustomMetadata_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -134,7 +139,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The knowledge base to create a document for.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -160,7 +166,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The knowledge base to create a document for.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
    * </pre>
    *
    * <code>
@@ -236,6 +243,25 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     return getDocument();
   }
 
+  public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 3;
+  private boolean importGcsCustomMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to import custom metadata from Google Cloud Storage.
+   * Only valid when the document source is Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>bool import_gcs_custom_metadata = 3;</code>
+   *
+   * @return The importGcsCustomMetadata.
+   */
+  @java.lang.Override
+  public boolean getImportGcsCustomMetadata() {
+    return importGcsCustomMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -256,6 +282,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     if (document_ != null) {
       output.writeMessage(2, getDocument());
     }
+    if (importGcsCustomMetadata_ != false) {
+      output.writeBool(3, importGcsCustomMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -270,6 +299,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     }
     if (document_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDocument());
+    }
+    if (importGcsCustomMetadata_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, importGcsCustomMetadata_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -292,6 +324,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
     if (hasDocument()) {
       if (!getDocument().equals(other.getDocument())) return false;
     }
+    if (getImportGcsCustomMetadata() != other.getImportGcsCustomMetadata()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -309,6 +342,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
       hash = (53 * hash) + getDocument().hashCode();
     }
+    hash = (37 * hash) + IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportGcsCustomMetadata());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,6 +498,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         document_ = null;
         documentBuilder_ = null;
       }
+      importGcsCustomMetadata_ = false;
+
       return this;
     }
 
@@ -496,6 +533,7 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       } else {
         result.document_ = documentBuilder_.build();
       }
+      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
       onBuilt();
       return result;
     }
@@ -553,6 +591,9 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
       if (other.hasDocument()) {
         mergeDocument(other.getDocument());
       }
+      if (other.getImportGcsCustomMetadata() != false) {
+        setImportGcsCustomMetadata(other.getImportGcsCustomMetadata());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -589,7 +630,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The knowledge base to create a document for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -614,7 +656,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The knowledge base to create a document for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -639,7 +682,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The knowledge base to create a document for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -663,7 +707,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The knowledge base to create a document for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -683,7 +728,8 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The knowledge base to create a document for.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;`.
      * </pre>
      *
      * <code>
@@ -906,6 +952,61 @@ public final class CreateDocumentRequest extends com.google.protobuf.GeneratedMe
         document_ = null;
       }
       return documentBuilder_;
+    }
+
+    private boolean importGcsCustomMetadata_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 3;</code>
+     *
+     * @return The importGcsCustomMetadata.
+     */
+    @java.lang.Override
+    public boolean getImportGcsCustomMetadata() {
+      return importGcsCustomMetadata_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 3;</code>
+     *
+     * @param value The importGcsCustomMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImportGcsCustomMetadata(boolean value) {
+
+      importGcsCustomMetadata_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImportGcsCustomMetadata() {
+
+      importGcsCustomMetadata_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -28,8 +28,8 @@ public interface DeleteDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the document to delete.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
    * <code>
@@ -44,8 +44,8 @@ public interface DeleteDocumentRequestOrBuilder
    *
    * <pre>
    * Required. The name of the document to delete.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`.
    * </pre>
    *
    * <code>

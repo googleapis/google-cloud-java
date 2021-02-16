@@ -93,6 +93,11 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
               sourceCase_ = 3;
               break;
             }
+          case 32:
+            {
+              importGcsCustomMetadata_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -178,8 +183,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the document to reload.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
    * </pre>
    *
    * <code>
@@ -205,8 +210,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The name of the document to reload.
-   * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-   * ID&gt;/documents/&lt;Document ID&gt;`
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
    * </pre>
    *
    * <code>
@@ -282,6 +287,25 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     return com.google.cloud.dialogflow.v2beta1.GcsSource.getDefaultInstance();
   }
 
+  public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
+  private boolean importGcsCustomMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether to import custom metadata from Google Cloud Storage.
+   * Only valid when the document source is Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>bool import_gcs_custom_metadata = 4;</code>
+   *
+   * @return The importGcsCustomMetadata.
+   */
+  @java.lang.Override
+  public boolean getImportGcsCustomMetadata() {
+    return importGcsCustomMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -302,6 +326,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     if (sourceCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.dialogflow.v2beta1.GcsSource) source_);
     }
+    if (importGcsCustomMetadata_ != false) {
+      output.writeBool(4, importGcsCustomMetadata_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -318,6 +345,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.dialogflow.v2beta1.GcsSource) source_);
+    }
+    if (importGcsCustomMetadata_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, importGcsCustomMetadata_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -336,6 +366,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
         (com.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (getImportGcsCustomMetadata() != other.getImportGcsCustomMetadata()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 3:
@@ -357,6 +388,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getImportGcsCustomMetadata());
     switch (sourceCase_) {
       case 3:
         hash = (37 * hash) + GCS_SOURCE_FIELD_NUMBER;
@@ -513,6 +546,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       super.clear();
       name_ = "";
 
+      importGcsCustomMetadata_ = false;
+
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -550,6 +585,7 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
           result.source_ = gcsSourceBuilder_.build();
         }
       }
+      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -604,6 +640,9 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getImportGcsCustomMetadata() != false) {
+        setImportGcsCustomMetadata(other.getImportGcsCustomMetadata());
       }
       switch (other.getSourceCase()) {
         case GCS_SOURCE:
@@ -666,8 +705,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the document to reload.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-     * ID&gt;/documents/&lt;Document ID&gt;`
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
      * <code>
@@ -692,8 +731,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the document to reload.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-     * ID&gt;/documents/&lt;Document ID&gt;`
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
      * <code>
@@ -718,8 +757,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the document to reload.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-     * ID&gt;/documents/&lt;Document ID&gt;`
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
      * <code>
@@ -743,8 +782,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the document to reload.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-     * ID&gt;/documents/&lt;Document ID&gt;`
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
      * <code>
@@ -764,8 +803,8 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The name of the document to reload.
-     * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
-     * ID&gt;/documents/&lt;Document ID&gt;`
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/knowledgeBases/&lt;Knowledge Base ID&gt;/documents/&lt;Document ID&gt;`
      * </pre>
      *
      * <code>
@@ -1002,6 +1041,61 @@ public final class ReloadDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       ;
       return gcsSourceBuilder_;
+    }
+
+    private boolean importGcsCustomMetadata_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 4;</code>
+     *
+     * @return The importGcsCustomMetadata.
+     */
+    @java.lang.Override
+    public boolean getImportGcsCustomMetadata() {
+      return importGcsCustomMetadata_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 4;</code>
+     *
+     * @param value The importGcsCustomMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImportGcsCustomMetadata(boolean value) {
+
+      importGcsCustomMetadata_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearImportGcsCustomMetadata() {
+
+      importGcsCustomMetadata_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

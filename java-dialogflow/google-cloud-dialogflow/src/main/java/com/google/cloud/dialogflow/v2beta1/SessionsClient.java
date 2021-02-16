@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.google.cloud.dialogflow.v2beta1;
 
 import com.google.api.core.BetaApi;
@@ -25,7 +26,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Generated;
 
-// AUTO-GENERATED DOCUMENTATION AND SERVICE
+// AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: A service used for session interactions.
  *
@@ -35,17 +36,7 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
- * <pre>
- * <code>
- * try (SessionsClient sessionsClient = SessionsClient.create()) {
- *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
- *   QueryInput queryInput = QueryInput.newBuilder().build();
- *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
- * }
- * </code>
- * </pre>
- *
- * <p>Note: close() needs to be called on the sessionsClient object to clean up resources such as
+ * <p>Note: close() needs to be called on the SessionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -73,30 +64,26 @@ import javax.annotation.Generated;
  *
  * <p>To customize credentials:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder()
  *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
  *         .build();
- * SessionsClient sessionsClient =
- *     SessionsClient.create(sessionsSettings);
- * </code>
- * </pre>
+ * SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
+ * }</pre>
  *
- * To customize the endpoint:
+ * <p>To customize the endpoint:
  *
- * <pre>
- * <code>
+ * <pre>{@code
  * SessionsSettings sessionsSettings =
  *     SessionsSettings.newBuilder().setEndpoint(myEndpoint).build();
- * SessionsClient sessionsClient =
- *     SessionsClient.create(sessionsSettings);
- * </code>
- * </pre>
+ * SessionsClient sessionsClient = SessionsClient.create(sessionsSettings);
+ * }</pre>
+ *
+ * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
-@Generated("by gapic-generator")
 @BetaApi
+@Generated("by gapic-generator")
 public class SessionsClient implements BackgroundResource {
   private final SessionsSettings settings;
   private final SessionsStub stub;
@@ -116,7 +103,7 @@ public class SessionsClient implements BackgroundResource {
 
   /**
    * Constructs an instance of SessionsClient, using the given stub for making calls. This is for
-   * advanced usage - prefer to use SessionsSettings}.
+   * advanced usage - prefer using create(SessionsSettings).
    */
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final SessionsClient create(SessionsStub stub) {
@@ -147,21 +134,14 @@ public class SessionsClient implements BackgroundResource {
     return stub;
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query and returns structured, actionable data as a result. This
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   DetectIntentResponse response = sessionsClient.detectIntent(session, queryInput);
-   * }
-   * </code></pre>
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * @param session Required. The name of the session this query is sent to. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
@@ -177,6 +157,8 @@ public class SessionsClient implements BackgroundResource {
    *     hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For
    *     more information, see the [API interactions
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *     <p>Note: Always use agent versions for production traffic. See [Versions and
+   *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -193,21 +175,14 @@ public class SessionsClient implements BackgroundResource {
     return detectIntent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query and returns structured, actionable data as a result. This
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   DetectIntentResponse response = sessionsClient.detectIntent(session.toString(), queryInput);
-   * }
-   * </code></pre>
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * @param session Required. The name of the session this query is sent to. Supported formats: -
    *     `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;, - `projects/&lt;Project
@@ -223,6 +198,8 @@ public class SessionsClient implements BackgroundResource {
    *     hashed). The length of the `Session ID` and `User ID` must not exceed 36 characters. For
    *     more information, see the [API interactions
    *     guide](https://cloud.google.com/dialogflow/docs/api-overview).
+   *     <p>Note: Always use agent versions for production traffic. See [Versions and
+   *     environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    * @param queryInput Required. The input specification. It can be set to:
    *     <p>1. an audio config which instructs the speech recognizer how to process the speech
    *     audio,
@@ -236,25 +213,14 @@ public class SessionsClient implements BackgroundResource {
     return detectIntent(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query and returns structured, actionable data as a result. This
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
-   * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   DetectIntentResponse response = sessionsClient.detectIntent(request);
-   * }
-   * </code></pre>
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -263,57 +229,31 @@ public class SessionsClient implements BackgroundResource {
     return detectIntentCallable().call(request);
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query and returns structured, actionable data as a result. This
    * method is not idempotent, because it may cause contexts and session entity types to be updated,
    * which in turn might affect results of future queries.
    *
-   * <p>Sample code:
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
    *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   DetectIntentRequest request = DetectIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   ApiFuture&lt;DetectIntentResponse&gt; future = sessionsClient.detectIntentCallable().futureCall(request);
-   *   // Do something
-   *   DetectIntentResponse response = future.get();
-   * }
-   * </code></pre>
+   * <p>Sample code:
    */
   public final UnaryCallable<DetectIntentRequest, DetectIntentResponse> detectIntentCallable() {
     return stub.detectIntentCallable();
   }
 
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Processes a natural language query in audio format in a streaming fashion and returns
    * structured, actionable data as a result. This method is only available via the gRPC API (not
    * REST).
    *
+   * <p>Note: Always use agent versions for production traffic. See [Versions and
+   * environments](https://cloud.google.com/dialogflow/es/docs/agents-versions).
+   *
    * <p>Sample code:
-   *
-   * <pre><code>
-   * try (SessionsClient sessionsClient = SessionsClient.create()) {
-   *   BidiStream&lt;StreamingDetectIntentRequest, StreamingDetectIntentResponse&gt; bidiStream =
-   *       sessionsClient.streamingDetectIntentCallable().call();
-   *
-   *   SessionName session = SessionName.ofProjectSessionName("[PROJECT]", "[SESSION]");
-   *   QueryInput queryInput = QueryInput.newBuilder().build();
-   *   StreamingDetectIntentRequest request = StreamingDetectIntentRequest.newBuilder()
-   *     .setSession(session.toString())
-   *     .setQueryInput(queryInput)
-   *     .build();
-   *   bidiStream.send(request);
-   *   for (StreamingDetectIntentResponse response : bidiStream) {
-   *     // Do something when receive a response
-   *   }
-   * }
-   * </code></pre>
    */
   public final BidiStreamingCallable<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
       streamingDetectIntentCallable() {

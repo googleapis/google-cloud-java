@@ -314,4 +314,98 @@ public interface QueryParametersOrBuilder
    */
   com.google.cloud.dialogflow.v2.SentimentAnalysisRequestConfigOrBuilder
       getSentimentAnalysisRequestConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  int getWebhookHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  boolean containsWebhookHeaders(java.lang.String key);
+  /** Use {@link #getWebhookHeadersMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getWebhookHeaders();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getWebhookHeadersMap();
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  java.lang.String getWebhookHeadersOrDefault(java.lang.String key, java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * This field can be used to pass HTTP headers for a webhook
+   * call. These headers will be sent to webhook along with the headers that
+   * have been configured through the Dialogflow web console. The headers
+   * defined within this field will overwrite the headers configured through the
+   * Dialogflow console if there is a conflict. Header names are
+   * case-insensitive. Google's specified headers are not allowed. Including:
+   * "Host", "Content-Length", "Connection", "From", "User-Agent",
+   * "Accept-Encoding", "If-Modified-Since", "If-None-Match", "X-Forwarded-For",
+   * etc.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
+   */
+  java.lang.String getWebhookHeadersOrThrow(java.lang.String key);
 }

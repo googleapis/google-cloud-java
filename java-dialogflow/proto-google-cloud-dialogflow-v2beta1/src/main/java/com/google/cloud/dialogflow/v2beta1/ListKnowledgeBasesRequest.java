@@ -139,7 +139,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The project to list of knowledge bases for.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -165,7 +165,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The project to list of knowledge bases for.
-   * Format: `projects/&lt;Project ID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * </pre>
    *
    * <code>
@@ -715,7 +715,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The project to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The project to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -765,7 +765,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The project to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -789,7 +789,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The project to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
@@ -809,7 +809,7 @@ public final class ListKnowledgeBasesRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The project to list of knowledge bases for.
-     * Format: `projects/&lt;Project ID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
      * </pre>
      *
      * <code>
