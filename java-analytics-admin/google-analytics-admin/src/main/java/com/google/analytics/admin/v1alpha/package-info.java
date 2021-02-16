@@ -22,6 +22,14 @@
  * <p>Service Description: Service Interface for the Analytics Admin API (GA4).
  *
  * <p>Sample for AnalyticsAdminServiceClient:
+ *
+ * <pre>{@code
+ * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+ *     AnalyticsAdminServiceClient.create()) {
+ *   AccountName name = AccountName.of("[ACCOUNT]");
+ *   Account response = analyticsAdminServiceClient.getAccount(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.analytics.admin.v1alpha;

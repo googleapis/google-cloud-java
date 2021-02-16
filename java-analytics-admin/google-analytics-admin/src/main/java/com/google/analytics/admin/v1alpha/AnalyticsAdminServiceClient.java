@@ -43,6 +43,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+ *     AnalyticsAdminServiceClient.create()) {
+ *   AccountName name = AccountName.of("[ACCOUNT]");
+ *   Account response = analyticsAdminServiceClient.getAccount(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AnalyticsAdminServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -150,6 +158,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single Account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccountName name = AccountName.of("[ACCOUNT]");
+   *   Account response = analyticsAdminServiceClient.getAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the account to lookup. Format: accounts/{account} Example:
    *     "accounts/100"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -164,6 +182,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single Account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = AccountName.of("[ACCOUNT]").toString();
+   *   Account response = analyticsAdminServiceClient.getAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the account to lookup. Format: accounts/{account} Example:
    *     "accounts/100"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -177,6 +205,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single Account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAccountRequest request =
+   *       GetAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+   *   Account response = analyticsAdminServiceClient.getAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -189,6 +228,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lookup for a single Account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAccountRequest request =
+   *       GetAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+   *   ApiFuture<Account> future =
+   *       analyticsAdminServiceClient.getAccountCallable().futureCall(request);
+   *   // Do something.
+   *   Account response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAccountRequest, Account> getAccountCallable() {
     return stub.getAccountCallable();
@@ -201,6 +252,23 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Note that these accounts might not currently have GA4 properties. Soft-deleted (ie:
    * "trashed") accounts are excluded by default. Returns an empty list if no relevant accounts are
    * found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccountsRequest request =
+   *       ListAccountsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   for (Account element : analyticsAdminServiceClient.listAccounts(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -218,6 +286,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccountsRequest request =
+   *       ListAccountsRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   ApiFuture<Account> future =
+   *       analyticsAdminServiceClient.listAccountsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Account element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAccountsRequest, ListAccountsPagedResponse>
       listAccountsPagedCallable() {
@@ -233,6 +319,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListAccountsResponse response =
+   *         analyticsAdminServiceClient.listAccountsCallable().call(request);
+   *     for (Account element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAccountsRequest, ListAccountsResponse> listAccountsCallable() {
     return stub.listAccountsCallable();
@@ -250,6 +355,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccountName name = AccountName.of("[ACCOUNT]");
+   *   analyticsAdminServiceClient.deleteAccount(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the Account to soft-delete. Format: accounts/{account}
    *     Example: "accounts/100"
@@ -274,6 +389,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Returns an error if the target is not found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = AccountName.of("[ACCOUNT]").toString();
+   *   analyticsAdminServiceClient.deleteAccount(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the Account to soft-delete. Format: accounts/{account}
    *     Example: "accounts/100"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -296,6 +421,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Returns an error if the target is not found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteAccountRequest request =
+   *       DeleteAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+   *   analyticsAdminServiceClient.deleteAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -317,6 +453,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Returns an error if the target is not found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteAccountRequest request =
+   *       DeleteAccountRequest.newBuilder().setName(AccountName.of("[ACCOUNT]").toString()).build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteAccountCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteAccountRequest, Empty> deleteAccountCallable() {
     return stub.deleteAccountCallable();
@@ -325,6 +473,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   Account account = Account.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Account response = analyticsAdminServiceClient.updateAccount(account, updateMask);
+   * }
+   * }</pre>
    *
    * @param account Required. The account to update. The account's `name` field is used to identify
    *     the account.
@@ -343,6 +502,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates an account.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAccountRequest request =
+   *       UpdateAccountRequest.newBuilder()
+   *           .setAccount(Account.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Account response = analyticsAdminServiceClient.updateAccount(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -355,6 +528,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates an account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAccountRequest request =
+   *       UpdateAccountRequest.newBuilder()
+   *           .setAccount(Account.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Account> future =
+   *       analyticsAdminServiceClient.updateAccountCallable().futureCall(request);
+   *   // Do something.
+   *   Account response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateAccountRequest, Account> updateAccountCallable() {
     return stub.updateAccountCallable();
@@ -363,6 +551,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Requests a ticket for creating an account.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ProvisionAccountTicketRequest request =
+   *       ProvisionAccountTicketRequest.newBuilder()
+   *           .setAccount(Account.newBuilder().build())
+   *           .setRedirectUri("redirectUri1970337776")
+   *           .build();
+   *   ProvisionAccountTicketResponse response =
+   *       analyticsAdminServiceClient.provisionAccountTicket(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -377,6 +580,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Requests a ticket for creating an account.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ProvisionAccountTicketRequest request =
+   *       ProvisionAccountTicketRequest.newBuilder()
+   *           .setAccount(Account.newBuilder().build())
+   *           .setRedirectUri("redirectUri1970337776")
+   *           .build();
+   *   ApiFuture<ProvisionAccountTicketResponse> future =
+   *       analyticsAdminServiceClient.provisionAccountTicketCallable().futureCall(request);
+   *   // Do something.
+   *   ProvisionAccountTicketResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ProvisionAccountTicketRequest, ProvisionAccountTicketResponse>
       provisionAccountTicketCallable() {
@@ -386,6 +604,23 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns summaries of all accounts accessible by the caller.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccountSummariesRequest request =
+   *       ListAccountSummariesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AccountSummary element :
+   *       analyticsAdminServiceClient.listAccountSummaries(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -400,6 +635,23 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns summaries of all accounts accessible by the caller.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAccountSummariesRequest request =
+   *       ListAccountSummariesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AccountSummary> future =
+   *       analyticsAdminServiceClient.listAccountSummariesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AccountSummary element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesPagedResponse>
       listAccountSummariesPagedCallable() {
@@ -411,6 +663,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns summaries of all accounts accessible by the caller.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListAccountSummariesResponse response =
+   *         analyticsAdminServiceClient.listAccountSummariesCallable().call(request);
+   *     for (AccountSummary element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAccountSummariesRequest, ListAccountSummariesResponse>
       listAccountSummariesCallable() {
@@ -420,6 +691,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single "GA4" Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName name = PropertyName.of("[PROPERTY]");
+   *   Property response = analyticsAdminServiceClient.getProperty(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the property to lookup. Format: properties/{property_id}
    *     Example: "properties/1000"
@@ -435,6 +716,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single "GA4" Property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = PropertyName.of("[PROPERTY]").toString();
+   *   Property response = analyticsAdminServiceClient.getProperty(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the property to lookup. Format: properties/{property_id}
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -448,6 +739,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single "GA4" Property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetPropertyRequest request =
+   *       GetPropertyRequest.newBuilder().setName(PropertyName.of("[PROPERTY]").toString()).build();
+   *   Property response = analyticsAdminServiceClient.getProperty(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -460,6 +762,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lookup for a single "GA4" Property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetPropertyRequest request =
+   *       GetPropertyRequest.newBuilder().setName(PropertyName.of("[PROPERTY]").toString()).build();
+   *   ApiFuture<Property> future =
+   *       analyticsAdminServiceClient.getPropertyCallable().futureCall(request);
+   *   // Do something.
+   *   Property response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetPropertyRequest, Property> getPropertyCallable() {
     return stub.getPropertyCallable();
@@ -472,6 +786,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Only "GA4" properties will be returned. Properties will be excluded if the caller does not
    * have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty
    * list if no relevant properties are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListPropertiesRequest request =
+   *       ListPropertiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   for (Property element : analyticsAdminServiceClient.listProperties(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -489,6 +821,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * list if no relevant properties are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListPropertiesRequest request =
+   *       ListPropertiesRequest.newBuilder()
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setShowDeleted(true)
+   *           .build();
+   *   ApiFuture<Property> future =
+   *       analyticsAdminServiceClient.listPropertiesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Property element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPropertiesRequest, ListPropertiesPagedResponse>
       listPropertiesPagedCallable() {
@@ -504,6 +855,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * list if no relevant properties are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListPropertiesResponse response =
+   *         analyticsAdminServiceClient.listPropertiesCallable().call(request);
+   *     for (Property element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPropertiesRequest, ListPropertiesResponse>
       listPropertiesCallable() {
@@ -513,6 +883,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an "GA4" property with the specified location and attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   Property property = Property.newBuilder().build();
+   *   Property response = analyticsAdminServiceClient.createProperty(property);
+   * }
+   * }</pre>
    *
    * @param property Required. The property to create. Note: the supplied property must specify its
    *     parent.
@@ -528,6 +908,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates an "GA4" property with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreatePropertyRequest request =
+   *       CreatePropertyRequest.newBuilder().setProperty(Property.newBuilder().build()).build();
+   *   Property response = analyticsAdminServiceClient.createProperty(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -540,6 +931,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates an "GA4" property with the specified location and attributes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreatePropertyRequest request =
+   *       CreatePropertyRequest.newBuilder().setProperty(Property.newBuilder().build()).build();
+   *   ApiFuture<Property> future =
+   *       analyticsAdminServiceClient.createPropertyCallable().futureCall(request);
+   *   // Do something.
+   *   Property response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreatePropertyRequest, Property> createPropertyCallable() {
     return stub.createPropertyCallable();
@@ -557,6 +960,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found, or is not an GA4 Property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName name = PropertyName.of("[PROPERTY]");
+   *   analyticsAdminServiceClient.deleteProperty(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the Property to soft-delete. Format: properties/{property_id}
    *     Example: "properties/1000"
@@ -581,6 +994,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Returns an error if the target is not found, or is not an GA4 Property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = PropertyName.of("[PROPERTY]").toString();
+   *   analyticsAdminServiceClient.deleteProperty(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the Property to soft-delete. Format: properties/{property_id}
    *     Example: "properties/1000"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -603,6 +1026,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Returns an error if the target is not found, or is not an GA4 Property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeletePropertyRequest request =
+   *       DeletePropertyRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteProperty(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -624,6 +1060,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Returns an error if the target is not found, or is not an GA4 Property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeletePropertyRequest request =
+   *       DeletePropertyRequest.newBuilder()
+   *           .setName(PropertyName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deletePropertyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeletePropertyRequest, Empty> deletePropertyCallable() {
     return stub.deletePropertyCallable();
@@ -632,6 +1082,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   Property property = Property.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Property response = analyticsAdminServiceClient.updateProperty(property, updateMask);
+   * }
+   * }</pre>
    *
    * @param property Required. The property to update. The property's `name` field is used to
    *     identify the property to be updated.
@@ -650,6 +1111,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdatePropertyRequest request =
+   *       UpdatePropertyRequest.newBuilder()
+   *           .setProperty(Property.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Property response = analyticsAdminServiceClient.updateProperty(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -662,6 +1137,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdatePropertyRequest request =
+   *       UpdatePropertyRequest.newBuilder()
+   *           .setProperty(Property.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Property> future =
+   *       analyticsAdminServiceClient.updatePropertyCallable().futureCall(request);
+   *   // Do something.
+   *   Property response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable() {
     return stub.updatePropertyCallable();
@@ -670,6 +1160,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information about a user's link to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
+   *   UserLink response = analyticsAdminServiceClient.getUserLink(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Example format: accounts/1234/userLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -684,6 +1184,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Gets information about a user's link to an account or property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
+   *   UserLink response = analyticsAdminServiceClient.getUserLink(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Example format: accounts/1234/userLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -695,6 +1205,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information about a user's link to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetUserLinkRequest request =
+   *       GetUserLinkRequest.newBuilder()
+   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .build();
+   *   UserLink response = analyticsAdminServiceClient.getUserLink(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -708,6 +1231,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Gets information about a user's link to an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetUserLinkRequest request =
+   *       GetUserLinkRequest.newBuilder()
+   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .build();
+   *   ApiFuture<UserLink> future =
+   *       analyticsAdminServiceClient.getUserLinkCallable().futureCall(request);
+   *   // Do something.
+   *   UserLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable() {
     return stub.getUserLinkCallable();
@@ -716,6 +1253,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets information about multiple users' links to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchGetUserLinksRequest request =
+   *       BatchGetUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchGetUserLinksResponse response = analyticsAdminServiceClient.batchGetUserLinks(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -729,6 +1280,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Gets information about multiple users' links to an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchGetUserLinksRequest request =
+   *       BatchGetUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<BatchGetUserLinksResponse> future =
+   *       analyticsAdminServiceClient.batchGetUserLinksCallable().futureCall(request);
+   *   // Do something.
+   *   BatchGetUserLinksResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
       batchGetUserLinksCallable() {
@@ -738,6 +1304,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all user links on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. Example format: accounts/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -754,6 +1332,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lists all user links on an account or property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Example format: accounts/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -769,6 +1359,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lists all user links on an account or property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
+   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Example format: accounts/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -780,6 +1382,23 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all user links on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListUserLinksRequest request =
+   *       ListUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -793,6 +1412,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lists all user links on an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListUserLinksRequest request =
+   *       ListUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<UserLink> future =
+   *       analyticsAdminServiceClient.listUserLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (UserLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
       listUserLinksPagedCallable() {
@@ -804,6 +1441,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lists all user links on an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListUserLinksResponse response =
+   *         analyticsAdminServiceClient.listUserLinksCallable().call(request);
+   *     for (UserLink element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
     return stub.listUserLinksCallable();
@@ -818,6 +1474,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * account or property directly with the DeleteUserLink command. They have to be removed from the
    * group/etc that gives them permissions, which is currently only usable/discoverable in the GA or
    * GMP UIs.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AuditUserLinksRequest request =
+   *       AuditUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AuditUserLink element :
+   *       analyticsAdminServiceClient.auditUserLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -837,6 +1511,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * GMP UIs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AuditUserLinksRequest request =
+   *       AuditUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AuditUserLink> future =
+   *       analyticsAdminServiceClient.auditUserLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AuditUserLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
       auditUserLinksPagedCallable() {
@@ -854,6 +1546,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * GMP UIs.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     AuditUserLinksResponse response =
+   *         analyticsAdminServiceClient.auditUserLinksCallable().call(request);
+   *     for (AuditUserLink element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse>
       auditUserLinksCallable() {
@@ -867,6 +1578,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>If the user with the specified email already has permissions on the account or property,
    * then the user's existing permissions will be unioned with the permissions specified in the new
    * UserLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AccountName parent = AccountName.of("[ACCOUNT]");
+   *   UserLink userLink = UserLink.newBuilder().build();
+   *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
+   * }
+   * }</pre>
    *
    * @param parent Required. Example format: accounts/1234
    * @param userLink Required. The user link to create.
@@ -889,6 +1611,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * then the user's existing permissions will be unioned with the permissions specified in the new
    * UserLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   UserLink userLink = UserLink.newBuilder().build();
+   *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Example format: accounts/1234
    * @param userLink Required. The user link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -910,6 +1643,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * then the user's existing permissions will be unioned with the permissions specified in the new
    * UserLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
+   *   UserLink userLink = UserLink.newBuilder().build();
+   *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Example format: accounts/1234
    * @param userLink Required. The user link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -928,6 +1672,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * then the user's existing permissions will be unioned with the permissions specified in the new
    * UserLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateUserLinkRequest request =
+   *       CreateUserLinkRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setNotifyNewUser(true)
+   *           .setUserLink(UserLink.newBuilder().build())
+   *           .build();
+   *   UserLink response = analyticsAdminServiceClient.createUserLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -944,6 +1703,22 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * UserLink.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateUserLinkRequest request =
+   *       CreateUserLinkRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setNotifyNewUser(true)
+   *           .setUserLink(UserLink.newBuilder().build())
+   *           .build();
+   *   ApiFuture<UserLink> future =
+   *       analyticsAdminServiceClient.createUserLinkCallable().futureCall(request);
+   *   // Do something.
+   *   UserLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable() {
     return stub.createUserLinkCallable();
@@ -955,6 +1730,22 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>This method is transactional. If any UserLink cannot be created, none of the UserLinks will
    * be created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchCreateUserLinksRequest request =
+   *       BatchCreateUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setNotifyNewUsers(true)
+   *           .addAllRequests(new ArrayList<CreateUserLinkRequest>())
+   *           .build();
+   *   BatchCreateUserLinksResponse response =
+   *       analyticsAdminServiceClient.batchCreateUserLinks(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -972,6 +1763,22 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * be created.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchCreateUserLinksRequest request =
+   *       BatchCreateUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .setNotifyNewUsers(true)
+   *           .addAllRequests(new ArrayList<CreateUserLinkRequest>())
+   *           .build();
+   *   ApiFuture<BatchCreateUserLinksResponse> future =
+   *       analyticsAdminServiceClient.batchCreateUserLinksCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateUserLinksResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
       batchCreateUserLinksCallable() {
@@ -981,6 +1788,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a user link on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UserLink userLink = UserLink.newBuilder().build();
+   *   UserLink response = analyticsAdminServiceClient.updateUserLink(userLink);
+   * }
+   * }</pre>
    *
    * @param userLink Required. The user link to update.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -995,6 +1812,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a user link on an account or property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateUserLinkRequest request =
+   *       UpdateUserLinkRequest.newBuilder().setUserLink(UserLink.newBuilder().build()).build();
+   *   UserLink response = analyticsAdminServiceClient.updateUserLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1007,6 +1835,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a user link on an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateUserLinkRequest request =
+   *       UpdateUserLinkRequest.newBuilder().setUserLink(UserLink.newBuilder().build()).build();
+   *   ApiFuture<UserLink> future =
+   *       analyticsAdminServiceClient.updateUserLinkCallable().futureCall(request);
+   *   // Do something.
+   *   UserLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable() {
     return stub.updateUserLinkCallable();
@@ -1015,6 +1855,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates information about multiple users' links to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchUpdateUserLinksRequest request =
+   *       BatchUpdateUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
+   *           .build();
+   *   BatchUpdateUserLinksResponse response =
+   *       analyticsAdminServiceClient.batchUpdateUserLinks(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1029,6 +1884,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates information about multiple users' links to an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchUpdateUserLinksRequest request =
+   *       BatchUpdateUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
+   *           .build();
+   *   ApiFuture<BatchUpdateUserLinksResponse> future =
+   *       analyticsAdminServiceClient.batchUpdateUserLinksCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateUserLinksResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
       batchUpdateUserLinksCallable() {
@@ -1038,6 +1908,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a user link on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
+   *   analyticsAdminServiceClient.deleteUserLink(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Example format: accounts/1234/userLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1052,6 +1932,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a user link on an account or property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
+   *   analyticsAdminServiceClient.deleteUserLink(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Example format: accounts/1234/userLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1063,6 +1953,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a user link on an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteUserLinkRequest request =
+   *       DeleteUserLinkRequest.newBuilder()
+   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteUserLink(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1076,6 +1979,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes a user link on an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteUserLinkRequest request =
+   *       DeleteUserLinkRequest.newBuilder()
+   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteUserLinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable() {
     return stub.deleteUserLinkCallable();
@@ -1084,6 +2001,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes information about multiple users' links to an account or property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchDeleteUserLinksRequest request =
+   *       BatchDeleteUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
+   *           .build();
+   *   analyticsAdminServiceClient.batchDeleteUserLinks(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1097,6 +2028,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes information about multiple users' links to an account or property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   BatchDeleteUserLinksRequest request =
+   *       BatchDeleteUserLinksRequest.newBuilder()
+   *           .setParent(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
+   *           .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.batchDeleteUserLinksCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
     return stub.batchDeleteUserLinksCallable();
@@ -1105,6 +2051,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single WebDataStream
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   WebDataStreamName name = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
+   *   WebDataStream response = analyticsAdminServiceClient.getWebDataStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the web data stream to lookup. Format:
    *     properties/{property_id}/webDataStreams/{stream_id} Example:
@@ -1121,6 +2077,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single WebDataStream
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   WebDataStream response = analyticsAdminServiceClient.getWebDataStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the web data stream to lookup. Format:
    *     properties/{property_id}/webDataStreams/{stream_id} Example:
    *     "properties/123/webDataStreams/456"
@@ -1135,6 +2101,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single WebDataStream
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetWebDataStreamRequest request =
+   *       GetWebDataStreamRequest.newBuilder()
+   *           .setName(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   WebDataStream response = analyticsAdminServiceClient.getWebDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1147,6 +2126,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lookup for a single WebDataStream
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetWebDataStreamRequest request =
+   *       GetWebDataStreamRequest.newBuilder()
+   *           .setName(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<WebDataStream> future =
+   *       analyticsAdminServiceClient.getWebDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   WebDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetWebDataStreamRequest, WebDataStream> getWebDataStreamCallable() {
     return stub.getWebDataStreamCallable();
@@ -1155,6 +2148,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a web stream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   WebDataStreamName name = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
+   *   analyticsAdminServiceClient.deleteWebDataStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the web data stream to delete. Format:
    *     properties/{property_id}/webDataStreams/{stream_id} Example:
@@ -1173,6 +2176,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a web stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   analyticsAdminServiceClient.deleteWebDataStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the web data stream to delete. Format:
    *     properties/{property_id}/webDataStreams/{stream_id} Example:
    *     "properties/123/webDataStreams/456"
@@ -1188,6 +2201,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a web stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteWebDataStreamRequest request =
+   *       DeleteWebDataStreamRequest.newBuilder()
+   *           .setName(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteWebDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1200,6 +2226,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes a web stream on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteWebDataStreamRequest request =
+   *       DeleteWebDataStreamRequest.newBuilder()
+   *           .setName(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteWebDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteWebDataStreamRequest, Empty> deleteWebDataStreamCallable() {
     return stub.deleteWebDataStreamCallable();
@@ -1208,6 +2248,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a web stream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   WebDataStream webDataStream = WebDataStream.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   WebDataStream response =
+   *       analyticsAdminServiceClient.updateWebDataStream(webDataStream, updateMask);
+   * }
+   * }</pre>
    *
    * @param webDataStream Required. The web stream to update. The `name` field is used to identify
    *     the web stream to be updated.
@@ -1230,6 +2282,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a web stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateWebDataStreamRequest request =
+   *       UpdateWebDataStreamRequest.newBuilder()
+   *           .setWebDataStream(WebDataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   WebDataStream response = analyticsAdminServiceClient.updateWebDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1242,6 +2308,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a web stream on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateWebDataStreamRequest request =
+   *       UpdateWebDataStreamRequest.newBuilder()
+   *           .setWebDataStream(WebDataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<WebDataStream> future =
+   *       analyticsAdminServiceClient.updateWebDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   WebDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateWebDataStreamRequest, WebDataStream>
       updateWebDataStreamCallable() {
@@ -1251,6 +2332,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a web stream with the specified location and attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   WebDataStream webDataStream = WebDataStream.newBuilder().build();
+   *   WebDataStream response =
+   *       analyticsAdminServiceClient.createWebDataStream(parent, webDataStream);
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource where this web data stream will be created. Format:
    *     properties/123
@@ -1270,6 +2363,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates a web stream with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   WebDataStream webDataStream = WebDataStream.newBuilder().build();
+   *   WebDataStream response =
+   *       analyticsAdminServiceClient.createWebDataStream(parent, webDataStream);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource where this web data stream will be created. Format:
    *     properties/123
    * @param webDataStream Required. The web stream to create.
@@ -1288,6 +2393,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates a web stream with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateWebDataStreamRequest request =
+   *       CreateWebDataStreamRequest.newBuilder()
+   *           .setWebDataStream(WebDataStream.newBuilder().build())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   WebDataStream response = analyticsAdminServiceClient.createWebDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1300,6 +2419,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates a web stream with the specified location and attributes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateWebDataStreamRequest request =
+   *       CreateWebDataStreamRequest.newBuilder()
+   *           .setWebDataStream(WebDataStream.newBuilder().build())
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<WebDataStream> future =
+   *       analyticsAdminServiceClient.createWebDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   WebDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateWebDataStreamRequest, WebDataStream>
       createWebDataStreamCallable() {
@@ -1312,6 +2446,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Web data streams will be excluded if the caller does not have access. Returns an empty list
    * if no relevant web data streams are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (WebDataStream element :
+   *       analyticsAdminServiceClient.listWebDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The name of the parent property. For example, to list results of web
    *     streams under the property with Id 123: "properties/123"
@@ -1332,6 +2479,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Web data streams will be excluded if the caller does not have access. Returns an empty list
    * if no relevant web data streams are found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   for (WebDataStream element :
+   *       analyticsAdminServiceClient.listWebDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the parent property. For example, to list results of web
    *     streams under the property with Id 123: "properties/123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1349,6 +2509,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Web data streams will be excluded if the caller does not have access. Returns an empty list
    * if no relevant web data streams are found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListWebDataStreamsRequest request =
+   *       ListWebDataStreamsRequest.newBuilder()
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (WebDataStream element :
+   *       analyticsAdminServiceClient.listWebDataStreams(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1365,6 +2543,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * if no relevant web data streams are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListWebDataStreamsRequest request =
+   *       ListWebDataStreamsRequest.newBuilder()
+   *           .setParent(WebDataStreamName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<WebDataStream> future =
+   *       analyticsAdminServiceClient.listWebDataStreamsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (WebDataStream element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsPagedResponse>
       listWebDataStreamsPagedCallable() {
@@ -1379,6 +2575,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * if no relevant web data streams are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListWebDataStreamsResponse response =
+   *         analyticsAdminServiceClient.listWebDataStreamsCallable().call(request);
+   *     for (WebDataStream element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWebDataStreamsRequest, ListWebDataStreamsResponse>
       listWebDataStreamsCallable() {
@@ -1388,6 +2603,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single IosAppDataStream
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   IosAppDataStreamName name = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]");
+   *   IosAppDataStream response = analyticsAdminServiceClient.getIosAppDataStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the iOS app data stream to lookup. Format:
    *     properties/{property_id}/iosAppDataStreams/{stream_id} Example:
@@ -1406,6 +2631,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single IosAppDataStream
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString();
+   *   IosAppDataStream response = analyticsAdminServiceClient.getIosAppDataStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the iOS app data stream to lookup. Format:
    *     properties/{property_id}/iosAppDataStreams/{stream_id} Example:
    *     "properties/123/iosAppDataStreams/456"
@@ -1421,6 +2656,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single IosAppDataStream
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetIosAppDataStreamRequest request =
+   *       GetIosAppDataStreamRequest.newBuilder()
+   *           .setName(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   IosAppDataStream response = analyticsAdminServiceClient.getIosAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1433,6 +2681,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lookup for a single IosAppDataStream
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetIosAppDataStreamRequest request =
+   *       GetIosAppDataStreamRequest.newBuilder()
+   *           .setName(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<IosAppDataStream> future =
+   *       analyticsAdminServiceClient.getIosAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   IosAppDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIosAppDataStreamRequest, IosAppDataStream>
       getIosAppDataStreamCallable() {
@@ -1442,6 +2704,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an iOS app stream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   IosAppDataStreamName name = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]");
+   *   analyticsAdminServiceClient.deleteIosAppDataStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the iOS app data stream to delete. Format:
    *     properties/{property_id}/iosAppDataStreams/{stream_id} Example:
@@ -1460,6 +2732,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes an iOS app stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString();
+   *   analyticsAdminServiceClient.deleteIosAppDataStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the iOS app data stream to delete. Format:
    *     properties/{property_id}/iosAppDataStreams/{stream_id} Example:
    *     "properties/123/iosAppDataStreams/456"
@@ -1475,6 +2757,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes an iOS app stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteIosAppDataStreamRequest request =
+   *       DeleteIosAppDataStreamRequest.newBuilder()
+   *           .setName(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteIosAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1487,6 +2782,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes an iOS app stream on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteIosAppDataStreamRequest request =
+   *       DeleteIosAppDataStreamRequest.newBuilder()
+   *           .setName(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteIosAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteIosAppDataStreamRequest, Empty>
       deleteIosAppDataStreamCallable() {
@@ -1496,6 +2805,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an iOS app stream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   IosAppDataStream response =
+   *       analyticsAdminServiceClient.updateIosAppDataStream(iosAppDataStream, updateMask);
+   * }
+   * }</pre>
    *
    * @param iosAppDataStream Required. The iOS app stream to update. The `name` field is used to
    *     identify the iOS app stream to be updated.
@@ -1518,6 +2839,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates an iOS app stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateIosAppDataStreamRequest request =
+   *       UpdateIosAppDataStreamRequest.newBuilder()
+   *           .setIosAppDataStream(IosAppDataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   IosAppDataStream response = analyticsAdminServiceClient.updateIosAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1530,6 +2865,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates an iOS app stream on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateIosAppDataStreamRequest request =
+   *       UpdateIosAppDataStreamRequest.newBuilder()
+   *           .setIosAppDataStream(IosAppDataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<IosAppDataStream> future =
+   *       analyticsAdminServiceClient.updateIosAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   IosAppDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateIosAppDataStreamRequest, IosAppDataStream>
       updateIosAppDataStreamCallable() {
@@ -1539,6 +2889,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an iOS app data stream with the specified location and attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
+   *   IosAppDataStream response =
+   *       analyticsAdminServiceClient.createIosAppDataStream(parent, iosAppDataStream);
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource where this ios app data stream will be created.
    *     Format: properties/123
@@ -1559,6 +2921,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates an iOS app data stream with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString();
+   *   IosAppDataStream iosAppDataStream = IosAppDataStream.newBuilder().build();
+   *   IosAppDataStream response =
+   *       analyticsAdminServiceClient.createIosAppDataStream(parent, iosAppDataStream);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource where this ios app data stream will be created.
    *     Format: properties/123
    * @param iosAppDataStream Required. The iOS app data stream to create.
@@ -1578,6 +2952,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates an iOS app data stream with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateIosAppDataStreamRequest request =
+   *       CreateIosAppDataStreamRequest.newBuilder()
+   *           .setIosAppDataStream(IosAppDataStream.newBuilder().build())
+   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   IosAppDataStream response = analyticsAdminServiceClient.createIosAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1590,6 +2978,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates an iOS app data stream with the specified location and attributes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateIosAppDataStreamRequest request =
+   *       CreateIosAppDataStreamRequest.newBuilder()
+   *           .setIosAppDataStream(IosAppDataStream.newBuilder().build())
+   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<IosAppDataStream> future =
+   *       analyticsAdminServiceClient.createIosAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   IosAppDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateIosAppDataStreamRequest, IosAppDataStream>
       createIosAppDataStreamCallable() {
@@ -1602,6 +3005,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>iOS app data streams will be excluded if the caller does not have access. Returns an empty
    * list if no relevant iOS app data streams are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (IosAppDataStream element :
+   *       analyticsAdminServiceClient.listIosAppDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The name of the parent property. For example, to list results of app
    *     streams under the property with Id 123: "properties/123"
@@ -1622,6 +3038,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>iOS app data streams will be excluded if the caller does not have access. Returns an empty
    * list if no relevant iOS app data streams are found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString();
+   *   for (IosAppDataStream element :
+   *       analyticsAdminServiceClient.listIosAppDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the parent property. For example, to list results of app
    *     streams under the property with Id 123: "properties/123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1639,6 +3068,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>iOS app data streams will be excluded if the caller does not have access. Returns an empty
    * list if no relevant iOS app data streams are found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListIosAppDataStreamsRequest request =
+   *       ListIosAppDataStreamsRequest.newBuilder()
+   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (IosAppDataStream element :
+   *       analyticsAdminServiceClient.listIosAppDataStreams(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1655,6 +3102,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * list if no relevant iOS app data streams are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListIosAppDataStreamsRequest request =
+   *       ListIosAppDataStreamsRequest.newBuilder()
+   *           .setParent(IosAppDataStreamName.of("[PROPERTY]", "[IOS_APP_DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<IosAppDataStream> future =
+   *       analyticsAdminServiceClient.listIosAppDataStreamsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (IosAppDataStream element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsPagedResponse>
       listIosAppDataStreamsPagedCallable() {
@@ -1669,6 +3134,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * list if no relevant iOS app data streams are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListIosAppDataStreamsResponse response =
+   *         analyticsAdminServiceClient.listIosAppDataStreamsCallable().call(request);
+   *     for (IosAppDataStream element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListIosAppDataStreamsRequest, ListIosAppDataStreamsResponse>
       listIosAppDataStreamsCallable() {
@@ -1678,6 +3162,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lookup for a single AndroidAppDataStream
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AndroidAppDataStreamName name =
+   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]");
+   *   AndroidAppDataStream response = analyticsAdminServiceClient.getAndroidAppDataStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the android app data stream to lookup. Format:
    *     properties/{property_id}/androidAppDataStreams/{stream_id} Example:
@@ -1696,6 +3191,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single AndroidAppDataStream
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString();
+   *   AndroidAppDataStream response = analyticsAdminServiceClient.getAndroidAppDataStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the android app data stream to lookup. Format:
    *     properties/{property_id}/androidAppDataStreams/{stream_id} Example:
    *     "properties/123/androidAppDataStreams/456"
@@ -1711,6 +3217,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lookup for a single AndroidAppDataStream
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAndroidAppDataStreamRequest request =
+   *       GetAndroidAppDataStreamRequest.newBuilder()
+   *           .setName(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   AndroidAppDataStream response = analyticsAdminServiceClient.getAndroidAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1724,6 +3244,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lookup for a single AndroidAppDataStream
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetAndroidAppDataStreamRequest request =
+   *       GetAndroidAppDataStreamRequest.newBuilder()
+   *           .setName(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<AndroidAppDataStream> future =
+   *       analyticsAdminServiceClient.getAndroidAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   AndroidAppDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetAndroidAppDataStreamRequest, AndroidAppDataStream>
       getAndroidAppDataStreamCallable() {
@@ -1733,6 +3268,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes an android app stream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AndroidAppDataStreamName name =
+   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]");
+   *   analyticsAdminServiceClient.deleteAndroidAppDataStream(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the android app data stream to delete. Format:
    *     properties/{property_id}/androidAppDataStreams/{stream_id} Example:
@@ -1751,6 +3297,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes an android app stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString();
+   *   analyticsAdminServiceClient.deleteAndroidAppDataStream(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the android app data stream to delete. Format:
    *     properties/{property_id}/androidAppDataStreams/{stream_id} Example:
    *     "properties/123/androidAppDataStreams/456"
@@ -1766,6 +3323,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes an android app stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteAndroidAppDataStreamRequest request =
+   *       DeleteAndroidAppDataStreamRequest.newBuilder()
+   *           .setName(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteAndroidAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1778,6 +3349,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes an android app stream on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteAndroidAppDataStreamRequest request =
+   *       DeleteAndroidAppDataStreamRequest.newBuilder()
+   *           .setName(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteAndroidAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteAndroidAppDataStreamRequest, Empty>
       deleteAndroidAppDataStreamCallable() {
@@ -1787,6 +3373,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates an android app stream on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   AndroidAppDataStream response =
+   *       analyticsAdminServiceClient.updateAndroidAppDataStream(androidAppDataStream, updateMask);
+   * }
+   * }</pre>
    *
    * @param androidAppDataStream Required. The android app stream to update. The `name` field is
    *     used to identify the android app stream to be updated.
@@ -1809,6 +3407,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates an android app stream on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAndroidAppDataStreamRequest request =
+   *       UpdateAndroidAppDataStreamRequest.newBuilder()
+   *           .setAndroidAppDataStream(AndroidAppDataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   AndroidAppDataStream response =
+   *       analyticsAdminServiceClient.updateAndroidAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1822,6 +3435,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates an android app stream on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateAndroidAppDataStreamRequest request =
+   *       UpdateAndroidAppDataStreamRequest.newBuilder()
+   *           .setAndroidAppDataStream(AndroidAppDataStream.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AndroidAppDataStream> future =
+   *       analyticsAdminServiceClient.updateAndroidAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   AndroidAppDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateAndroidAppDataStreamRequest, AndroidAppDataStream>
       updateAndroidAppDataStreamCallable() {
@@ -1831,6 +3459,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an android app stream with the specified location and attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
+   *   AndroidAppDataStream response =
+   *       analyticsAdminServiceClient.createAndroidAppDataStream(parent, androidAppDataStream);
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource where this android app data stream will be created.
    *     Format: properties/123
@@ -1851,6 +3491,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates an android app stream with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString();
+   *   AndroidAppDataStream androidAppDataStream = AndroidAppDataStream.newBuilder().build();
+   *   AndroidAppDataStream response =
+   *       analyticsAdminServiceClient.createAndroidAppDataStream(parent, androidAppDataStream);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource where this android app data stream will be created.
    *     Format: properties/123
    * @param androidAppDataStream Required. The android app stream to create.
@@ -1870,6 +3523,22 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates an android app stream with the specified location and attributes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateAndroidAppDataStreamRequest request =
+   *       CreateAndroidAppDataStreamRequest.newBuilder()
+   *           .setAndroidAppDataStream(AndroidAppDataStream.newBuilder().build())
+   *           .setParent(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   AndroidAppDataStream response =
+   *       analyticsAdminServiceClient.createAndroidAppDataStream(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1883,6 +3552,22 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates an android app stream with the specified location and attributes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateAndroidAppDataStreamRequest request =
+   *       CreateAndroidAppDataStreamRequest.newBuilder()
+   *           .setAndroidAppDataStream(AndroidAppDataStream.newBuilder().build())
+   *           .setParent(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<AndroidAppDataStream> future =
+   *       analyticsAdminServiceClient.createAndroidAppDataStreamCallable().futureCall(request);
+   *   // Do something.
+   *   AndroidAppDataStream response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateAndroidAppDataStreamRequest, AndroidAppDataStream>
       createAndroidAppDataStreamCallable() {
@@ -1895,6 +3580,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Android app streams will be excluded if the caller does not have access. Returns an empty
    * list if no relevant android app streams are found.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (AndroidAppDataStream element :
+   *       analyticsAdminServiceClient.listAndroidAppDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The name of the parent property. For example, to limit results to app
    *     streams under the property with Id 123: "properties/123"
@@ -1916,6 +3614,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Android app streams will be excluded if the caller does not have access. Returns an empty
    * list if no relevant android app streams are found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent =
+   *       AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString();
+   *   for (AndroidAppDataStream element :
+   *       analyticsAdminServiceClient.listAndroidAppDataStreams(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the parent property. For example, to limit results to app
    *     streams under the property with Id 123: "properties/123"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1933,6 +3645,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Android app streams will be excluded if the caller does not have access. Returns an empty
    * list if no relevant android app streams are found.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAndroidAppDataStreamsRequest request =
+   *       ListAndroidAppDataStreamsRequest.newBuilder()
+   *           .setParent(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (AndroidAppDataStream element :
+   *       analyticsAdminServiceClient.listAndroidAppDataStreams(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1949,6 +3680,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * list if no relevant android app streams are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListAndroidAppDataStreamsRequest request =
+   *       ListAndroidAppDataStreamsRequest.newBuilder()
+   *           .setParent(
+   *               AndroidAppDataStreamName.of("[PROPERTY]", "[ANDROID_APP_DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<AndroidAppDataStream> future =
+   *       analyticsAdminServiceClient.listAndroidAppDataStreamsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (AndroidAppDataStream element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsPagedResponse>
@@ -1964,6 +3714,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * list if no relevant android app streams are found.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListAndroidAppDataStreamsResponse response =
+   *         analyticsAdminServiceClient.listAndroidAppDataStreamsCallable().call(request);
+   *     for (AndroidAppDataStream element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAndroidAppDataStreamsRequest, ListAndroidAppDataStreamsResponse>
       listAndroidAppDataStreamsCallable() {
@@ -1974,6 +3743,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
    * must enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EnhancedMeasurementSettingsName name =
+   *       EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]");
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the settings to lookup. Format:
    *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
@@ -1994,6 +3775,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
    * must enable enhanced measurement for these settings to take effect.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the settings to lookup. Format:
    *     properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings Example:
    *     "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
@@ -2010,6 +3803,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns the singleton enhanced measurement settings for this web stream. Note that the stream
    * must enable enhanced measurement for these settings to take effect.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetEnhancedMeasurementSettingsRequest request =
+   *       GetEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setName(
+   *               EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2024,6 +3832,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * must enable enhanced measurement for these settings to take effect.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetEnhancedMeasurementSettingsRequest request =
+   *       GetEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setName(
+   *               EnhancedMeasurementSettingsName.of("[PROPERTY]", "[WEB_DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<EnhancedMeasurementSettings> future =
+   *       analyticsAdminServiceClient.getEnhancedMeasurementSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   EnhancedMeasurementSettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       getEnhancedMeasurementSettingsCallable() {
@@ -2034,6 +3857,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates the singleton enhanced measurement settings for this web stream. Note that the stream
    * must enable enhanced measurement for these settings to take effect.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   EnhancedMeasurementSettings enhancedMeasurementSettings =
+   *       EnhancedMeasurementSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.updateEnhancedMeasurementSettings(
+   *           enhancedMeasurementSettings, updateMask);
+   * }
+   * }</pre>
    *
    * @param enhancedMeasurementSettings Required. The settings to update. The `name` field is used
    *     to identify the settings to be updated.
@@ -2057,6 +3894,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates the singleton enhanced measurement settings for this web stream. Note that the stream
    * must enable enhanced measurement for these settings to take effect.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateEnhancedMeasurementSettingsRequest request =
+   *       UpdateEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setEnhancedMeasurementSettings(EnhancedMeasurementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   EnhancedMeasurementSettings response =
+   *       analyticsAdminServiceClient.updateEnhancedMeasurementSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2071,6 +3923,23 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * must enable enhanced measurement for these settings to take effect.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateEnhancedMeasurementSettingsRequest request =
+   *       UpdateEnhancedMeasurementSettingsRequest.newBuilder()
+   *           .setEnhancedMeasurementSettings(EnhancedMeasurementSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EnhancedMeasurementSettings> future =
+   *       analyticsAdminServiceClient
+   *           .updateEnhancedMeasurementSettingsCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   EnhancedMeasurementSettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       updateEnhancedMeasurementSettingsCallable() {
@@ -2082,6 +3951,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates a FirebaseLink.
    *
    * <p>Properties can have at most one FirebaseLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
+   *   FirebaseLink response = analyticsAdminServiceClient.createFirebaseLink(parent, firebaseLink);
+   * }
+   * }</pre>
    *
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
    * @param firebaseLink Required. The Firebase link to create.
@@ -2102,6 +3982,17 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Properties can have at most one FirebaseLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString();
+   *   FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
+   *   FirebaseLink response = analyticsAdminServiceClient.createFirebaseLink(parent, firebaseLink);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
    * @param firebaseLink Required. The Firebase link to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2121,6 +4012,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *
    * <p>Properties can have at most one FirebaseLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateFirebaseLinkRequest request =
+   *       CreateFirebaseLinkRequest.newBuilder()
+   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setFirebaseLink(FirebaseLink.newBuilder().build())
+   *           .build();
+   *   FirebaseLink response = analyticsAdminServiceClient.createFirebaseLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2135,6 +4040,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * <p>Properties can have at most one FirebaseLink.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateFirebaseLinkRequest request =
+   *       CreateFirebaseLinkRequest.newBuilder()
+   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setFirebaseLink(FirebaseLink.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FirebaseLink> future =
+   *       analyticsAdminServiceClient.createFirebaseLinkCallable().futureCall(request);
+   *   // Do something.
+   *   FirebaseLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateFirebaseLinkRequest, FirebaseLink> createFirebaseLinkCallable() {
     return stub.createFirebaseLinkCallable();
@@ -2143,6 +4063,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a FirebaseLink on a property
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   FirebaseLink firebaseLink = FirebaseLink.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   FirebaseLink response =
+   *       analyticsAdminServiceClient.updateFirebaseLink(firebaseLink, updateMask);
+   * }
+   * }</pre>
    *
    * @param firebaseLink Required. The Firebase link to update.
    * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
@@ -2163,6 +4095,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a FirebaseLink on a property
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateFirebaseLinkRequest request =
+   *       UpdateFirebaseLinkRequest.newBuilder()
+   *           .setFirebaseLink(FirebaseLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   FirebaseLink response = analyticsAdminServiceClient.updateFirebaseLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2175,6 +4121,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a FirebaseLink on a property
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateFirebaseLinkRequest request =
+   *       UpdateFirebaseLinkRequest.newBuilder()
+   *           .setFirebaseLink(FirebaseLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FirebaseLink> future =
+   *       analyticsAdminServiceClient.updateFirebaseLinkCallable().futureCall(request);
+   *   // Do something.
+   *   FirebaseLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateFirebaseLinkRequest, FirebaseLink> updateFirebaseLinkCallable() {
     return stub.updateFirebaseLinkCallable();
@@ -2183,6 +4144,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a FirebaseLink on a property
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   FirebaseLinkName name = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]");
+   *   analyticsAdminServiceClient.deleteFirebaseLink(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
    *     Example: properties/1234/firebaseLinks/5678
@@ -2200,6 +4171,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a FirebaseLink on a property
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString();
+   *   analyticsAdminServiceClient.deleteFirebaseLink(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id}
    *     Example: properties/1234/firebaseLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2214,6 +4195,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a FirebaseLink on a property
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteFirebaseLinkRequest request =
+   *       DeleteFirebaseLinkRequest.newBuilder()
+   *           .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteFirebaseLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2226,6 +4220,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes a FirebaseLink on a property
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteFirebaseLinkRequest request =
+   *       DeleteFirebaseLinkRequest.newBuilder()
+   *           .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteFirebaseLinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteFirebaseLinkRequest, Empty> deleteFirebaseLinkCallable() {
     return stub.deleteFirebaseLinkCallable();
@@ -2234,6 +4242,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (FirebaseLink element :
+   *       analyticsAdminServiceClient.listFirebaseLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2250,6 +4271,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString();
+   *   for (FirebaseLink element :
+   *       analyticsAdminServiceClient.listFirebaseLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Format: properties/{property_id} Example: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2263,6 +4297,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListFirebaseLinksRequest request =
+   *       ListFirebaseLinksRequest.newBuilder()
+   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (FirebaseLink element :
+   *       analyticsAdminServiceClient.listFirebaseLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2275,6 +4327,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListFirebaseLinksRequest request =
+   *       ListFirebaseLinksRequest.newBuilder()
+   *           .setParent(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<FirebaseLink> future =
+   *       analyticsAdminServiceClient.listFirebaseLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (FirebaseLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksPagedResponse>
       listFirebaseLinksPagedCallable() {
@@ -2286,6 +4356,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lists FirebaseLinks on a property. Properties can have at most one FirebaseLink.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListFirebaseLinksResponse response =
+   *         analyticsAdminServiceClient.listFirebaseLinksCallable().call(request);
+   *     for (FirebaseLink element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
       listFirebaseLinksCallable() {
@@ -2295,6 +4384,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the Site Tag for the specified web stream. Site Tags are immutable singletons.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GlobalSiteTagName name = GlobalSiteTagName.of("[PROPERTY]");
+   *   GlobalSiteTag response = analyticsAdminServiceClient.getGlobalSiteTag(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the site tag to lookup. Note that site tags are singletons
    *     and do not have unique IDs. Format:
@@ -2312,6 +4411,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns the Site Tag for the specified web stream. Site Tags are immutable singletons.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = GlobalSiteTagName.of("[PROPERTY]").toString();
+   *   GlobalSiteTag response = analyticsAdminServiceClient.getGlobalSiteTag(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the site tag to lookup. Note that site tags are singletons
    *     and do not have unique IDs. Format:
    *     properties/{property_id}/webDataStreams/{stream_id}/globalSiteTag Example:
@@ -2327,6 +4436,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Returns the Site Tag for the specified web stream. Site Tags are immutable singletons.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetGlobalSiteTagRequest request =
+   *       GetGlobalSiteTagRequest.newBuilder()
+   *           .setName(GlobalSiteTagName.of("[PROPERTY]").toString())
+   *           .build();
+   *   GlobalSiteTag response = analyticsAdminServiceClient.getGlobalSiteTag(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2339,6 +4461,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Returns the Site Tag for the specified web stream. Site Tags are immutable singletons.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetGlobalSiteTagRequest request =
+   *       GetGlobalSiteTagRequest.newBuilder()
+   *           .setName(GlobalSiteTagName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<GlobalSiteTag> future =
+   *       analyticsAdminServiceClient.getGlobalSiteTagCallable().futureCall(request);
+   *   // Do something.
+   *   GlobalSiteTag response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGlobalSiteTagRequest, GlobalSiteTag> getGlobalSiteTagCallable() {
     return stub.getGlobalSiteTagCallable();
@@ -2347,6 +4483,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a GoogleAdsLink.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
+   *   GoogleAdsLink response =
+   *       analyticsAdminServiceClient.createGoogleAdsLink(parent, googleAdsLink);
+   * }
+   * }</pre>
    *
    * @param parent Required. Example format: properties/1234
    * @param googleAdsLink Required. The GoogleAdsLink to create.
@@ -2365,6 +4513,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates a GoogleAdsLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString();
+   *   GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
+   *   GoogleAdsLink response =
+   *       analyticsAdminServiceClient.createGoogleAdsLink(parent, googleAdsLink);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Example format: properties/1234
    * @param googleAdsLink Required. The GoogleAdsLink to create.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2382,6 +4542,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Creates a GoogleAdsLink.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateGoogleAdsLinkRequest request =
+   *       CreateGoogleAdsLinkRequest.newBuilder()
+   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setGoogleAdsLink(GoogleAdsLink.newBuilder().build())
+   *           .build();
+   *   GoogleAdsLink response = analyticsAdminServiceClient.createGoogleAdsLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2394,6 +4568,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Creates a GoogleAdsLink.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateGoogleAdsLinkRequest request =
+   *       CreateGoogleAdsLinkRequest.newBuilder()
+   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setGoogleAdsLink(GoogleAdsLink.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GoogleAdsLink> future =
+   *       analyticsAdminServiceClient.createGoogleAdsLinkCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleAdsLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateGoogleAdsLinkRequest, GoogleAdsLink>
       createGoogleAdsLinkCallable() {
@@ -2403,6 +4592,18 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates a GoogleAdsLink on a property
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GoogleAdsLink googleAdsLink = GoogleAdsLink.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GoogleAdsLink response =
+   *       analyticsAdminServiceClient.updateGoogleAdsLink(googleAdsLink, updateMask);
+   * }
+   * }</pre>
    *
    * @param googleAdsLink The GoogleAdsLink to update
    * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
@@ -2424,6 +4625,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Updates a GoogleAdsLink on a property
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateGoogleAdsLinkRequest request =
+   *       UpdateGoogleAdsLinkRequest.newBuilder()
+   *           .setGoogleAdsLink(GoogleAdsLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   GoogleAdsLink response = analyticsAdminServiceClient.updateGoogleAdsLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2436,6 +4651,21 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Updates a GoogleAdsLink on a property
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateGoogleAdsLinkRequest request =
+   *       UpdateGoogleAdsLinkRequest.newBuilder()
+   *           .setGoogleAdsLink(GoogleAdsLink.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GoogleAdsLink> future =
+   *       analyticsAdminServiceClient.updateGoogleAdsLinkCallable().futureCall(request);
+   *   // Do something.
+   *   GoogleAdsLink response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
       updateGoogleAdsLinkCallable() {
@@ -2445,6 +4675,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a GoogleAdsLink on a property
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GoogleAdsLinkName name = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]");
+   *   analyticsAdminServiceClient.deleteGoogleAdsLink(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Example format: properties/1234/googleAdsLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2461,6 +4701,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a GoogleAdsLink on a property
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString();
+   *   analyticsAdminServiceClient.deleteGoogleAdsLink(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Example format: properties/1234/googleAdsLinks/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2474,6 +4724,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Deletes a GoogleAdsLink on a property
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteGoogleAdsLinkRequest request =
+   *       DeleteGoogleAdsLinkRequest.newBuilder()
+   *           .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteGoogleAdsLink(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2486,6 +4749,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Deletes a GoogleAdsLink on a property
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteGoogleAdsLinkRequest request =
+   *       DeleteGoogleAdsLinkRequest.newBuilder()
+   *           .setName(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteGoogleAdsLinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteGoogleAdsLinkRequest, Empty> deleteGoogleAdsLinkCallable() {
     return stub.deleteGoogleAdsLinkCallable();
@@ -2494,6 +4771,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists GoogleAdsLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (GoogleAdsLink element :
+   *       analyticsAdminServiceClient.listGoogleAdsLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. Example format: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2510,6 +4800,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Lists GoogleAdsLinks on a property.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString();
+   *   for (GoogleAdsLink element :
+   *       analyticsAdminServiceClient.listGoogleAdsLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Example format: properties/1234
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2522,6 +4825,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists GoogleAdsLinks on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListGoogleAdsLinksRequest request =
+   *       ListGoogleAdsLinksRequest.newBuilder()
+   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (GoogleAdsLink element :
+   *       analyticsAdminServiceClient.listGoogleAdsLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2536,6 +4857,24 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lists GoogleAdsLinks on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListGoogleAdsLinksRequest request =
+   *       ListGoogleAdsLinksRequest.newBuilder()
+   *           .setParent(GoogleAdsLinkName.of("[PROPERTY]", "[GOOGLE_ADS_LINK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<GoogleAdsLink> future =
+   *       analyticsAdminServiceClient.listGoogleAdsLinksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (GoogleAdsLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksPagedResponse>
       listGoogleAdsLinksPagedCallable() {
@@ -2547,6 +4886,25 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Lists GoogleAdsLinks on a property.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   while (true) {
+   *     ListGoogleAdsLinksResponse response =
+   *         analyticsAdminServiceClient.listGoogleAdsLinksCallable().call(request);
+   *     for (GoogleAdsLink element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
       listGoogleAdsLinksCallable() {
@@ -2556,6 +4914,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Get data sharing settings on an account. Data sharing settings are singletons.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataSharingSettingsName name = DataSharingSettingsName.of("[ACCOUNT]");
+   *   DataSharingSettings response = analyticsAdminServiceClient.getDataSharingSettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the settings to lookup. Format:
    *     accounts/{account}/dataSharingSettings Example: "accounts/1000/dataSharingSettings"
@@ -2573,6 +4941,16 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Get data sharing settings on an account. Data sharing settings are singletons.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = DataSharingSettingsName.of("[ACCOUNT]").toString();
+   *   DataSharingSettings response = analyticsAdminServiceClient.getDataSharingSettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the settings to lookup. Format:
    *     accounts/{account}/dataSharingSettings Example: "accounts/1000/dataSharingSettings"
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2587,6 +4965,19 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   /**
    * Get data sharing settings on an account. Data sharing settings are singletons.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataSharingSettingsRequest request =
+   *       GetDataSharingSettingsRequest.newBuilder()
+   *           .setName(DataSharingSettingsName.of("[ACCOUNT]").toString())
+   *           .build();
+   *   DataSharingSettings response = analyticsAdminServiceClient.getDataSharingSettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -2599,6 +4990,20 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * Get data sharing settings on an account. Data sharing settings are singletons.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataSharingSettingsRequest request =
+   *       GetDataSharingSettingsRequest.newBuilder()
+   *           .setName(DataSharingSettingsName.of("[ACCOUNT]").toString())
+   *           .build();
+   *   ApiFuture<DataSharingSettings> future =
+   *       analyticsAdminServiceClient.getDataSharingSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   DataSharingSettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetDataSharingSettingsRequest, DataSharingSettings>
       getDataSharingSettingsCallable() {
