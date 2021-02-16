@@ -103,18 +103,18 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of getBucket to 30 seconds:
  *
  * <pre>{@code
- * ConfigServiceV2StubSettings.Builder configServiceV2SettingsBuilder =
+ * ConfigServiceV2StubSettings.Builder configSettingsBuilder =
  *     ConfigServiceV2StubSettings.newBuilder();
- * configServiceV2SettingsBuilder
+ * configSettingsBuilder
  *     .getBucketSettings()
  *     .setRetrySettings(
- *         configServiceV2SettingsBuilder
+ *         configSettingsBuilder
  *             .getBucketSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * ConfigServiceV2StubSettings configServiceV2Settings = configServiceV2SettingsBuilder.build();
+ * ConfigServiceV2StubSettings configSettings = configSettingsBuilder.build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")

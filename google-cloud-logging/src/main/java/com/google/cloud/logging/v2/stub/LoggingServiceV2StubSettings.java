@@ -93,18 +93,18 @@ import org.threeten.bp.Duration;
  * <p>For example, to set the total timeout of deleteLog to 30 seconds:
  *
  * <pre>{@code
- * LoggingServiceV2StubSettings.Builder loggingServiceV2SettingsBuilder =
+ * LoggingServiceV2StubSettings.Builder loggingSettingsBuilder =
  *     LoggingServiceV2StubSettings.newBuilder();
- * loggingServiceV2SettingsBuilder
+ * loggingSettingsBuilder
  *     .deleteLogSettings()
  *     .setRetrySettings(
- *         loggingServiceV2SettingsBuilder
+ *         loggingSettingsBuilder
  *             .deleteLogSettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
  *             .build());
- * LoggingServiceV2StubSettings loggingServiceV2Settings = loggingServiceV2SettingsBuilder.build();
+ * LoggingServiceV2StubSettings loggingSettings = loggingSettingsBuilder.build();
  * }</pre>
  */
 @Generated("by gapic-generator-java")
