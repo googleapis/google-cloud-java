@@ -28,6 +28,20 @@
  * <p>To learn more about concepts and find how-to guides see https://cloud.google.com/dlp/docs/.
  *
  * <p>Sample for DlpServiceClient:
+ *
+ * <pre>{@code
+ * try (DlpServiceClient dlpServiceClient = DlpServiceClient.create()) {
+ *   InspectContentRequest request =
+ *       InspectContentRequest.newBuilder()
+ *           .setParent(DlpContentName.ofProjectName("[PROJECT]").toString())
+ *           .setInspectConfig(InspectConfig.newBuilder().build())
+ *           .setItem(ContentItem.newBuilder().build())
+ *           .setInspectTemplateName("inspectTemplateName1828857433")
+ *           .setLocationId("locationId1541836720")
+ *           .build();
+ *   InspectContentResponse response = dlpServiceClient.inspectContent(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.dlp.v2;
