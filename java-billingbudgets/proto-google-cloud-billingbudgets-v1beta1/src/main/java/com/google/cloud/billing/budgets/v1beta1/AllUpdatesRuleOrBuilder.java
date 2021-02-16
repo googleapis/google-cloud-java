@@ -72,9 +72,12 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The schema version of the notification sent to `pubsub_topic`.
+   * Optional. Required when
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+   * is set. The schema version of the notification sent to
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
    * Only "1.0" is accepted. It represents the JSON schema as defined in
-   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
+   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
    * </pre>
    *
    * <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86,9 +89,12 @@ public interface AllUpdatesRuleOrBuilder
    *
    *
    * <pre>
-   * Optional. The schema version of the notification sent to `pubsub_topic`.
+   * Optional. Required when
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic]
+   * is set. The schema version of the notification sent to
+   * [AllUpdatesRule.pubsub_topic][google.cloud.billing.budgets.v1beta1.AllUpdatesRule.pubsub_topic].
    * Only "1.0" is accepted. It represents the JSON schema as defined in
-   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format
+   * https://cloud.google.com/billing/docs/how-to/budgets-programmatic-notifications#notification_format.
    * </pre>
    *
    * <code>string schema_version = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
