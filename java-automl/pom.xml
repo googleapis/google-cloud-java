@@ -63,7 +63,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <site.installationModule>google-cloud-automl-parent</site.installationModule>
-    <junit.version>4.13.1</junit.version>
+    <junit.version>4.13.2</junit.version>
   </properties>
 
   <dependencyManagement>
