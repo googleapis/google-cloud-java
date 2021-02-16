@@ -149,7 +149,7 @@ public class FindingSnippets {
    *
    * @param findingName The finding to update.
    */
-  // [START securitycenter_update_finding]
+  // [START securitycenter_update_finding_source_properties]
   // [START update_finding]
   static Finding updateFinding(FindingName findingName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -191,7 +191,7 @@ public class FindingSnippets {
     }
   }
   // [END update_finding]
-  // [END securitycenter_update_finding]
+  // [END securitycenter_update_finding_source_properties]
 
   /**
    * Updates a finding's state to INACTIVE.
@@ -340,7 +340,7 @@ public class FindingSnippets {
    *
    * @param sourceName The source to create a finding for.
    */
-  // [START securitycenter_test_iam_permissions]
+  // [START securitycenter_test_iam]
   // [START test_iam_permissions]
   static TestIamPermissionsResponse testIamPermissions(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -363,7 +363,7 @@ public class FindingSnippets {
     }
   }
   // [END test_iam_permissions]
-  // [END securitycenter_test_iam_permissions]
+  // [END securitycenter_test_iam]
 
   /**
    * Group all findings under an organization across all sources by their specified properties (e.g.

@@ -109,7 +109,7 @@ public class AssetSnippets {
    * @param organizationName The organization to list assets for.
    * @param asOf The snapshot time to query for assets. If null defaults to one day ago.
    */
-  // [START securitycenter_list_assets_as_of_time]
+  // [START securitycenter_list_assets_at_time]
   // [START list_assets_as_of_time]
   static ImmutableList<ListAssetsResult> listAssetsAsOfYesterday(
       OrganizationName organizationName, Instant asOf) {
@@ -143,7 +143,7 @@ public class AssetSnippets {
     }
   }
   // [END list_assets_as_of_time]
-  // [END securitycenter_list_assets_as_of_time]
+  // [END securitycenter_list_assets_at_time]
 
   /**
    * Returns Assets and metadata about assets activity (e.g. added, removed, no change) between
@@ -152,7 +152,7 @@ public class AssetSnippets {
    * @param timeSpan The time-range to compare assets over.
    * @param asOf The instant in time to query for. If null, current time is assumed.
    */
-  // [START securitycenter_list_asset_changes_status_changes]
+  // [START securitycenter_list_assets_and_changes]
   // [START list_asset_changes_status_changes]
   static ImmutableList<ListAssetsResult> listAssetAndStatusChanges(
       OrganizationName organizationName, Duration timeSpan, Instant asOf) {
@@ -189,7 +189,7 @@ public class AssetSnippets {
     }
   }
   // [END list_asset_changes_status_changes]
-  // [END securitycenter_list_asset_changes_status_changes]
+  // [END securitycenter_list_assets_and_changes]
 
   /**
    * Groups all assets by their specified properties (e.g. type) for an organization.

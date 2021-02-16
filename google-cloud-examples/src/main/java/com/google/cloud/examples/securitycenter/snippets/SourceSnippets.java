@@ -73,7 +73,7 @@ public class SourceSnippets {
    *
    * @param organizationName The organization for the source.
    */
-  // [START securitycenter_list_source]
+  // [START securitycenter_list_sources]
   // [START list_source]
   static ImmutableList<Source> listSources(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -97,7 +97,7 @@ public class SourceSnippets {
     }
   }
   // [END list_source]
-  // [END securitycenter_list_source]
+  // [END securitycenter_list_sources]
 
   /**
    * Update a source under an organization.
@@ -165,7 +165,7 @@ public class SourceSnippets {
    *
    * @param sourceName The source to set IAM Policy for.
    */
-  // [START securitycenter_set_source_iam_policy]
+  // [START securitycenter_set_source_iam]
   // [START set_source_iam_policy]
   static Policy setIamPolicySource(SourceName sourceName, String userEmail) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -195,14 +195,14 @@ public class SourceSnippets {
     }
   }
   // [END set_source_iam_policy]
-  // [END securitycenter_set_source_iam_policy]
+  // [END securitycenter_set_source_iam]
 
   /**
    * Get IAM policy for a source.
    *
    * @param sourceName The source to set IAM Policy for.
    */
-  // [START securitycenter_get_source_iam_policy]
+  // [START securitycenter_get_source_iam]
   // [START get_source_iam_policy]
   static Policy getIamPolicySource(SourceName sourceName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -222,6 +222,6 @@ public class SourceSnippets {
     }
   }
   // [END get_source_iam_policy]
-  // [END securitycenter_get_source_iam_policy]
+  // [END securitycenter_get_source_iam]
 
 }

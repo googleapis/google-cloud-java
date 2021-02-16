@@ -33,7 +33,7 @@ public class OrganizationSnippets {
    *
    * @param organizationName The organization to get settings for.
    */
-  // [START securitycenter_get_organization_settings]
+  // [START securitycenter_get_org_settings]
   // [START get_organization_settings]
   static OrganizationSettings getOrganizationSettings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -54,14 +54,14 @@ public class OrganizationSnippets {
     }
   }
   // [END get_organization_settings]
-  // [END securitycenter_get_organization_settings]
+  // [END securitycenter_get_org_settings]
 
   /**
    * Update Asset Discovery OrganizationSettings for an organization
    *
    * @param organizationName The organization to update settings for.
    */
-  // [START securitycenter_update_organization_settings]
+  // [START securitycenter_enable_asset_discovery]
   // [START update_organization_settings]
   static OrganizationSettings updateOrganizationSettings(OrganizationName organizationName) {
     try (SecurityCenterClient client = SecurityCenterClient.create()) {
@@ -90,6 +90,6 @@ public class OrganizationSnippets {
     }
   }
   // [END update_organization_settings]
-  // [END securitycenter_update_organization_settings]
+  // [END securitycenter_enable_asset_discovery]
 
 }
