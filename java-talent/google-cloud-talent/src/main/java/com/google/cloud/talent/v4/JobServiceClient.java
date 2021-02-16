@@ -48,6 +48,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Job job = Job.newBuilder().build();
+ *   Job response = jobServiceClient.createJob(parent, job);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the JobServiceClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -162,6 +170,16 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>Typically, the job becomes searchable within 10 seconds, but it may take up to 5 minutes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   Job job = Job.newBuilder().build();
+   *   Job response = jobServiceClient.createJob(parent, job);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenants/bar".
@@ -183,6 +201,16 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>Typically, the job becomes searchable within 10 seconds, but it may take up to 5 minutes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   Job job = Job.newBuilder().build();
+   *   Job response = jobServiceClient.createJob(parent, job);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenants/bar".
@@ -200,6 +228,19 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>Typically, the job becomes searchable within 10 seconds, but it may take up to 5 minutes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CreateJobRequest request =
+   *       CreateJobRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setJob(Job.newBuilder().build())
+   *           .build();
+   *   Job response = jobServiceClient.createJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -214,6 +255,19 @@ public class JobServiceClient implements BackgroundResource {
    * <p>Typically, the job becomes searchable within 10 seconds, but it may take up to 5 minutes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   CreateJobRequest request =
+   *       CreateJobRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setJob(Job.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Job> future = jobServiceClient.createJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return stub.createJobCallable();
@@ -222,6 +276,16 @@ public class JobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Begins executing a batch create jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   List<Job> jobs = new ArrayList<>();
+   *   BatchCreateJobsResponse response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -243,6 +307,16 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Begins executing a batch create jobs operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   List<Job> jobs = new ArrayList<>();
+   *   BatchCreateJobsResponse response = jobServiceClient.batchCreateJobsAsync(parent, jobs).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenants/bar".
@@ -260,6 +334,19 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Begins executing a batch create jobs operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchCreateJobsRequest request =
+   *       BatchCreateJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .addAllJobs(new ArrayList<Job>())
+   *           .build();
+   *   BatchCreateJobsResponse response = jobServiceClient.batchCreateJobsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -273,6 +360,20 @@ public class JobServiceClient implements BackgroundResource {
    * Begins executing a batch create jobs operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchCreateJobsRequest request =
+   *       BatchCreateJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .addAllJobs(new ArrayList<Job>())
+   *           .build();
+   *   OperationFuture<BatchCreateJobsResponse, BatchOperationMetadata> future =
+   *       jobServiceClient.batchCreateJobsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchCreateJobsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           BatchCreateJobsRequest, BatchCreateJobsResponse, BatchOperationMetadata>
@@ -285,6 +386,19 @@ public class JobServiceClient implements BackgroundResource {
    * Begins executing a batch create jobs operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchCreateJobsRequest request =
+   *       BatchCreateJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .addAllJobs(new ArrayList<Job>())
+   *           .build();
+   *   ApiFuture<Operation> future = jobServiceClient.batchCreateJobsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
     return stub.batchCreateJobsCallable();
@@ -293,6 +407,15 @@ public class JobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified job, whose status is OPEN or recently EXPIRED within the last 90 days.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[TENANT]", "[JOB]");
+   *   Job response = jobServiceClient.getJob(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the job to retrieve.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
@@ -309,6 +432,15 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Retrieves the specified job, whose status is OPEN or recently EXPIRED within the last 90 days.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name = JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   Job response = jobServiceClient.getJob(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the job to retrieve.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
    *     "projects/foo/tenants/bar/jobs/baz".
@@ -323,6 +455,18 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Retrieves the specified job, whose status is OPEN or recently EXPIRED within the last 90 days.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetJobRequest request =
+   *       GetJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .build();
+   *   Job response = jobServiceClient.getJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -335,6 +479,18 @@ public class JobServiceClient implements BackgroundResource {
    * Retrieves the specified job, whose status is OPEN or recently EXPIRED within the last 90 days.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   GetJobRequest request =
+   *       GetJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .build();
+   *   ApiFuture<Job> future = jobServiceClient.getJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return stub.getJobCallable();
@@ -346,6 +502,16 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>Typically, updated contents become visible in search results within 10 seconds, but it may
    * take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   Job job = Job.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Job response = jobServiceClient.updateJob(job, updateMask);
+   * }
+   * }</pre>
    *
    * @param job Required. The Job to be updated.
    * @param updateMask Strongly recommended for the best service experience.
@@ -369,6 +535,19 @@ public class JobServiceClient implements BackgroundResource {
    * <p>Typically, updated contents become visible in search results within 10 seconds, but it may
    * take up to 5 minutes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Job response = jobServiceClient.updateJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -384,6 +563,19 @@ public class JobServiceClient implements BackgroundResource {
    * take up to 5 minutes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   UpdateJobRequest request =
+   *       UpdateJobRequest.newBuilder()
+   *           .setJob(Job.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Job> future = jobServiceClient.updateJobCallable().futureCall(request);
+   *   // Do something.
+   *   Job response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return stub.updateJobCallable();
@@ -392,6 +584,16 @@ public class JobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Begins executing a batch update jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   List<Job> jobs = new ArrayList<>();
+   *   BatchUpdateJobsResponse response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -413,6 +615,16 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Begins executing a batch update jobs operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   List<Job> jobs = new ArrayList<>();
+   *   BatchUpdateJobsResponse response = jobServiceClient.batchUpdateJobsAsync(parent, jobs).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenants/bar".
@@ -430,6 +642,20 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Begins executing a batch update jobs operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchUpdateJobsRequest request =
+   *       BatchUpdateJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .addAllJobs(new ArrayList<Job>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   BatchUpdateJobsResponse response = jobServiceClient.batchUpdateJobsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -443,6 +669,21 @@ public class JobServiceClient implements BackgroundResource {
    * Begins executing a batch update jobs operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchUpdateJobsRequest request =
+   *       BatchUpdateJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .addAllJobs(new ArrayList<Job>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BatchUpdateJobsResponse, BatchOperationMetadata> future =
+   *       jobServiceClient.batchUpdateJobsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchUpdateJobsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           BatchUpdateJobsRequest, BatchUpdateJobsResponse, BatchOperationMetadata>
@@ -455,6 +696,20 @@ public class JobServiceClient implements BackgroundResource {
    * Begins executing a batch update jobs operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchUpdateJobsRequest request =
+   *       BatchUpdateJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .addAllJobs(new ArrayList<Job>())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = jobServiceClient.batchUpdateJobsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
     return stub.batchUpdateJobsCallable();
@@ -465,6 +720,15 @@ public class JobServiceClient implements BackgroundResource {
    * Deletes the specified job.
    *
    * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   JobName name = JobName.of("[PROJECT]", "[TENANT]", "[JOB]");
+   *   jobServiceClient.deleteJob(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the job to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
@@ -483,6 +747,15 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String name = JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   jobServiceClient.deleteJob(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the job to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/jobs/{job_id}". For example,
    *     "projects/foo/tenants/bar/jobs/baz".
@@ -499,6 +772,18 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteJobRequest request =
+   *       DeleteJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .build();
+   *   jobServiceClient.deleteJob(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -513,6 +798,18 @@ public class JobServiceClient implements BackgroundResource {
    * <p>Typically, the job becomes unsearchable within 10 seconds, but it may take up to 5 minutes.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   DeleteJobRequest request =
+   *       DeleteJobRequest.newBuilder()
+   *           .setName(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = jobServiceClient.deleteJobCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return stub.deleteJobCallable();
@@ -521,6 +818,16 @@ public class JobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Begins executing a batch delete jobs operation.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeleteJobsResponse response = jobServiceClient.batchDeleteJobsAsync(parent, names).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -546,6 +853,16 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Begins executing a batch delete jobs operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
+   *   List<String> names = new ArrayList<>();
+   *   BatchDeleteJobsResponse response = jobServiceClient.batchDeleteJobsAsync(parent, names).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenants/bar".
@@ -567,6 +884,19 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Begins executing a batch delete jobs operation.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchDeleteJobsRequest request =
+   *       BatchDeleteJobsRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   BatchDeleteJobsResponse response = jobServiceClient.batchDeleteJobsAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -580,6 +910,20 @@ public class JobServiceClient implements BackgroundResource {
    * Begins executing a batch delete jobs operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchDeleteJobsRequest request =
+   *       BatchDeleteJobsRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   OperationFuture<BatchDeleteJobsResponse, BatchOperationMetadata> future =
+   *       jobServiceClient.batchDeleteJobsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchDeleteJobsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           BatchDeleteJobsRequest, BatchDeleteJobsResponse, BatchOperationMetadata>
@@ -592,6 +936,19 @@ public class JobServiceClient implements BackgroundResource {
    * Begins executing a batch delete jobs operation.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   BatchDeleteJobsRequest request =
+   *       BatchDeleteJobsRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .addAllNames(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<Operation> future = jobServiceClient.batchDeleteJobsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchDeleteJobsRequest, Operation> batchDeleteJobsCallable() {
     return stub.batchDeleteJobsCallable();
@@ -600,6 +957,18 @@ public class JobServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists jobs by filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   String filter = "filter-1274492040";
+   *   for (Job element : jobServiceClient.listJobs(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
@@ -635,6 +1004,18 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Lists jobs by filter.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   String parent = JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString();
+   *   String filter = "filter-1274492040";
+   *   for (Job element : jobServiceClient.listJobs(parent, filter).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The resource name of the tenant under which the job is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}". For example,
    *     "projects/foo/tenants/bar".
@@ -666,6 +1047,23 @@ public class JobServiceClient implements BackgroundResource {
   /**
    * Lists jobs by filter.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   for (Job element : jobServiceClient.listJobs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -678,6 +1076,23 @@ public class JobServiceClient implements BackgroundResource {
    * Lists jobs by filter.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   ListJobsRequest request =
+   *       ListJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .build();
+   *   ApiFuture<Job> future = jobServiceClient.listJobsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Job element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return stub.listJobsPagedCallable();
@@ -688,6 +1103,23 @@ public class JobServiceClient implements BackgroundResource {
    * Lists jobs by filter.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   while (true) {
+   *     ListJobsResponse response = jobServiceClient.listJobsCallable().call(request);
+   *     for (Job element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return stub.listJobsCallable();
@@ -700,6 +1132,28 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>This call constrains the [visibility][google.cloud.talent.v4.Job.visibility] of jobs present
    * in the database, and only returns jobs that the caller has permission to search against.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchJobsRequest request =
+   *       SearchJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setJobQuery(JobQuery.newBuilder().build())
+   *           .setEnableBroadening(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setOffset(-1019779949)
+   *           .setMaxPageSize(524069526)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
+   *           .setDisableKeywordMatch(true)
+   *           .build();
+   *   SearchJobsResponse response = jobServiceClient.searchJobs(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -717,6 +1171,29 @@ public class JobServiceClient implements BackgroundResource {
    * in the database, and only returns jobs that the caller has permission to search against.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchJobsRequest request =
+   *       SearchJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setJobQuery(JobQuery.newBuilder().build())
+   *           .setEnableBroadening(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setOffset(-1019779949)
+   *           .setMaxPageSize(524069526)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
+   *           .setDisableKeywordMatch(true)
+   *           .build();
+   *   ApiFuture<SearchJobsResponse> future =
+   *       jobServiceClient.searchJobsCallable().futureCall(request);
+   *   // Do something.
+   *   SearchJobsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsCallable() {
     return stub.searchJobsCallable();
@@ -734,6 +1211,28 @@ public class JobServiceClient implements BackgroundResource {
    *
    * <p>This call constrains the [visibility][google.cloud.talent.v4.Job.visibility] of jobs present
    * in the database, and only returns jobs the caller has permission to search against.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchJobsRequest request =
+   *       SearchJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setJobQuery(JobQuery.newBuilder().build())
+   *           .setEnableBroadening(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setOffset(-1019779949)
+   *           .setMaxPageSize(524069526)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
+   *           .setDisableKeywordMatch(true)
+   *           .build();
+   *   SearchJobsResponse response = jobServiceClient.searchJobsForAlert(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -756,6 +1255,29 @@ public class JobServiceClient implements BackgroundResource {
    * in the database, and only returns jobs the caller has permission to search against.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (JobServiceClient jobServiceClient = JobServiceClient.create()) {
+   *   SearchJobsRequest request =
+   *       SearchJobsRequest.newBuilder()
+   *           .setParent(JobName.of("[PROJECT]", "[TENANT]", "[JOB]").toString())
+   *           .setRequestMetadata(RequestMetadata.newBuilder().build())
+   *           .setJobQuery(JobQuery.newBuilder().build())
+   *           .setEnableBroadening(true)
+   *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setOffset(-1019779949)
+   *           .setMaxPageSize(524069526)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setCustomRankingInfo(SearchJobsRequest.CustomRankingInfo.newBuilder().build())
+   *           .setDisableKeywordMatch(true)
+   *           .build();
+   *   ApiFuture<SearchJobsResponse> future =
+   *       jobServiceClient.searchJobsForAlertCallable().futureCall(request);
+   *   // Do something.
+   *   SearchJobsResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable() {
     return stub.searchJobsForAlertCallable();

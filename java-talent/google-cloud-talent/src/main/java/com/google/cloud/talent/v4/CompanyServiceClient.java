@@ -43,6 +43,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+ *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+ *   Company company = Company.newBuilder().build();
+ *   Company response = companyServiceClient.createCompany(parent, company);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CompanyServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -146,6 +154,16 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Creates a new company entity.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   Company company = Company.newBuilder().build();
+   *   Company response = companyServiceClient.createCompany(parent, company);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenants/bar".
@@ -165,6 +183,16 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Creates a new company entity.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
+   *   Company company = Company.newBuilder().build();
+   *   Company response = companyServiceClient.createCompany(parent, company);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenants/bar".
@@ -181,6 +209,19 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Creates a new company entity.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CreateCompanyRequest request =
+   *       CreateCompanyRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setCompany(Company.newBuilder().build())
+   *           .build();
+   *   Company response = companyServiceClient.createCompany(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -193,6 +234,19 @@ public class CompanyServiceClient implements BackgroundResource {
    * Creates a new company entity.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CreateCompanyRequest request =
+   *       CreateCompanyRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setCompany(Company.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Company> future = companyServiceClient.createCompanyCallable().futureCall(request);
+   *   // Do something.
+   *   Company response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
     return stub.createCompanyCallable();
@@ -201,6 +255,15 @@ public class CompanyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves specified company.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CompanyName name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+   *   Company response = companyServiceClient.getCompany(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
@@ -217,6 +280,15 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Retrieves specified company.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
+   *   Company response = companyServiceClient.getCompany(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the company to be retrieved.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/api-test-project/tenants/foo/companies/bar".
@@ -231,6 +303,18 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Retrieves specified company.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   GetCompanyRequest request =
+   *       GetCompanyRequest.newBuilder()
+   *           .setName(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+   *           .build();
+   *   Company response = companyServiceClient.getCompany(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -243,6 +327,18 @@ public class CompanyServiceClient implements BackgroundResource {
    * Retrieves specified company.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   GetCompanyRequest request =
+   *       GetCompanyRequest.newBuilder()
+   *           .setName(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+   *           .build();
+   *   ApiFuture<Company> future = companyServiceClient.getCompanyCallable().futureCall(request);
+   *   // Do something.
+   *   Company response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetCompanyRequest, Company> getCompanyCallable() {
     return stub.getCompanyCallable();
@@ -251,6 +347,16 @@ public class CompanyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates specified company.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   Company company = Company.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Company response = companyServiceClient.updateCompany(company, updateMask);
+   * }
+   * }</pre>
    *
    * @param company Required. The company resource to replace the current resource in the system.
    * @param updateMask Strongly recommended for the best service experience.
@@ -271,6 +377,19 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Updates specified company.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   UpdateCompanyRequest request =
+   *       UpdateCompanyRequest.newBuilder()
+   *           .setCompany(Company.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Company response = companyServiceClient.updateCompany(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -283,6 +402,19 @@ public class CompanyServiceClient implements BackgroundResource {
    * Updates specified company.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   UpdateCompanyRequest request =
+   *       UpdateCompanyRequest.newBuilder()
+   *           .setCompany(Company.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Company> future = companyServiceClient.updateCompanyCallable().futureCall(request);
+   *   // Do something.
+   *   Company response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
     return stub.updateCompanyCallable();
@@ -291,6 +423,15 @@ public class CompanyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   CompanyName name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]");
+   *   companyServiceClient.deleteCompany(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
@@ -307,6 +448,15 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String name = CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
+   *   companyServiceClient.deleteCompany(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The resource name of the company to be deleted.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}/companies/{company_id}", for
    *     example, "projects/foo/tenants/bar/companies/baz".
@@ -321,6 +471,18 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   DeleteCompanyRequest request =
+   *       DeleteCompanyRequest.newBuilder()
+   *           .setName(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+   *           .build();
+   *   companyServiceClient.deleteCompany(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -333,6 +495,18 @@ public class CompanyServiceClient implements BackgroundResource {
    * Deletes specified company. Prerequisite: The company has no jobs associated with it.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   DeleteCompanyRequest request =
+   *       DeleteCompanyRequest.newBuilder()
+   *           .setName(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = companyServiceClient.deleteCompanyCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
     return stub.deleteCompanyCallable();
@@ -341,6 +515,17 @@ public class CompanyServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists all companies associated with the project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -359,6 +544,17 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Lists all companies associated with the project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   String parent = TenantName.of("[PROJECT]", "[TENANT]").toString();
+   *   for (Company element : companyServiceClient.listCompanies(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. Resource name of the tenant under which the company is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenants/bar".
@@ -373,6 +569,23 @@ public class CompanyServiceClient implements BackgroundResource {
   /**
    * Lists all companies associated with the project.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   ListCompaniesRequest request =
+   *       ListCompaniesRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setRequireOpenJobs(true)
+   *           .build();
+   *   for (Company element : companyServiceClient.listCompanies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -385,6 +598,24 @@ public class CompanyServiceClient implements BackgroundResource {
    * Lists all companies associated with the project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   ListCompaniesRequest request =
+   *       ListCompaniesRequest.newBuilder()
+   *           .setParent(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setPageToken("pageToken873572522")
+   *           .setPageSize(883849137)
+   *           .setRequireOpenJobs(true)
+   *           .build();
+   *   ApiFuture<Company> future =
+   *       companyServiceClient.listCompaniesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Company element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable() {
@@ -396,6 +627,23 @@ public class CompanyServiceClient implements BackgroundResource {
    * Lists all companies associated with the project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompanyServiceClient companyServiceClient = CompanyServiceClient.create()) {
+   *   while (true) {
+   *     ListCompaniesResponse response = companyServiceClient.listCompaniesCallable().call(request);
+   *     for (Company element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
     return stub.listCompaniesCallable();

@@ -32,6 +32,20 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (CompletionClient completionClient = CompletionClient.create()) {
+ *   CompleteQueryRequest request =
+ *       CompleteQueryRequest.newBuilder()
+ *           .setTenant(TenantName.of("[PROJECT]", "[TENANT]").toString())
+ *           .setQuery("query107944136")
+ *           .addAllLanguageCodes(new ArrayList<String>())
+ *           .setPageSize(883849137)
+ *           .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+ *           .build();
+ *   CompleteQueryResponse response = completionClient.completeQuery(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the CompletionClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -134,6 +148,22 @@ public class CompletionClient implements BackgroundResource {
    * Completes the specified prefix with keyword suggestions. Intended for use by a job search
    * auto-complete search box.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompletionClient completionClient = CompletionClient.create()) {
+   *   CompleteQueryRequest request =
+   *       CompleteQueryRequest.newBuilder()
+   *           .setTenant(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setQuery("query107944136")
+   *           .addAllLanguageCodes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+   *           .build();
+   *   CompleteQueryResponse response = completionClient.completeQuery(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -147,6 +177,23 @@ public class CompletionClient implements BackgroundResource {
    * auto-complete search box.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CompletionClient completionClient = CompletionClient.create()) {
+   *   CompleteQueryRequest request =
+   *       CompleteQueryRequest.newBuilder()
+   *           .setTenant(TenantName.of("[PROJECT]", "[TENANT]").toString())
+   *           .setQuery("query107944136")
+   *           .addAllLanguageCodes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setCompany(CompanyName.of("[PROJECT]", "[TENANT]", "[COMPANY]").toString())
+   *           .build();
+   *   ApiFuture<CompleteQueryResponse> future =
+   *       completionClient.completeQueryCallable().futureCall(request);
+   *   // Do something.
+   *   CompleteQueryResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return stub.completeQueryCallable();

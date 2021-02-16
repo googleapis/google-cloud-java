@@ -32,6 +32,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+ *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the EventServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -138,6 +146,16 @@ public class EventServiceClient implements BackgroundResource {
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+   *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
@@ -161,6 +179,16 @@ public class EventServiceClient implements BackgroundResource {
    * Solution. You may inspect the created events in [self service
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+   *   TenantName parent = TenantName.of("[PROJECT]", "[TENANT]");
+   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+   *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+   * }
+   * }</pre>
    *
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
@@ -186,6 +214,17 @@ public class EventServiceClient implements BackgroundResource {
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+   *   String parent =
+   *       CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]").toString();
+   *   ClientEvent clientEvent = ClientEvent.newBuilder().build();
+   *   ClientEvent response = eventServiceClient.createClientEvent(parent, clientEvent);
+   * }
+   * }</pre>
+   *
    * @param parent Required. Resource name of the tenant under which the event is created.
    *     <p>The format is "projects/{project_id}/tenants/{tenant_id}", for example,
    *     "projects/foo/tenant/bar". If tenant id is unspecified, a default tenant is created, for
@@ -207,6 +246,21 @@ public class EventServiceClient implements BackgroundResource {
    * tools](https://console.cloud.google.com/talent-solution/overview). [Learn
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+   *   CreateClientEventRequest request =
+   *       CreateClientEventRequest.newBuilder()
+   *           .setParent(
+   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
+   *                   .toString())
+   *           .setClientEvent(ClientEvent.newBuilder().build())
+   *           .build();
+   *   ClientEvent response = eventServiceClient.createClientEvent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,6 +276,22 @@ public class EventServiceClient implements BackgroundResource {
    * more](https://cloud.google.com/talent-solution/docs/management-tools) about self service tools.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EventServiceClient eventServiceClient = EventServiceClient.create()) {
+   *   CreateClientEventRequest request =
+   *       CreateClientEventRequest.newBuilder()
+   *           .setParent(
+   *               CompanyName.ofProjectTenantCompanyName("[PROJECT]", "[TENANT]", "[COMPANY]")
+   *                   .toString())
+   *           .setClientEvent(ClientEvent.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ClientEvent> future =
+   *       eventServiceClient.createClientEventCallable().futureCall(request);
+   *   // Do something.
+   *   ClientEvent response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateClientEventRequest, ClientEvent> createClientEventCallable() {
     return stub.createClientEventCallable();
