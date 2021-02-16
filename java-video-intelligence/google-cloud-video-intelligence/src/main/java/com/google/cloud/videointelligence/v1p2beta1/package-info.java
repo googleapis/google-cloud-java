@@ -22,6 +22,16 @@
  * <p>Service Description: Service that implements Google Cloud Video Intelligence API.
  *
  * <p>Sample for VideoIntelligenceServiceClient:
+ *
+ * <pre>{@code
+ * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+ *     VideoIntelligenceServiceClient.create()) {
+ *   String inputUri = "inputUri470706498";
+ *   List<Feature> features = new ArrayList<>();
+ *   AnnotateVideoResponse response =
+ *       videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.videointelligence.v1p2beta1;

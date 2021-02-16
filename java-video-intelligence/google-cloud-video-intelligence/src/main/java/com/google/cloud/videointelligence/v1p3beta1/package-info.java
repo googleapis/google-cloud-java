@@ -23,11 +23,34 @@
  *
  * <p>Sample for VideoIntelligenceServiceClient:
  *
+ * <pre>{@code
+ * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+ *     VideoIntelligenceServiceClient.create()) {
+ *   String inputUri = "inputUri470706498";
+ *   List<Feature> features = new ArrayList<>();
+ *   AnnotateVideoResponse response =
+ *       videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
+ * }
+ * }</pre>
+ *
  * <p>======================= StreamingVideoIntelligenceServiceClient =======================
  *
  * <p>Service Description: Service that implements streaming Video Intelligence API.
  *
  * <p>Sample for StreamingVideoIntelligenceServiceClient:
+ *
+ * <pre>{@code
+ * try (StreamingVideoIntelligenceServiceClient streamingVideoIntelligenceServiceClient =
+ *     StreamingVideoIntelligenceServiceClient.create()) {
+ *   BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> bidiStream =
+ *       streamingVideoIntelligenceServiceClient.streamingAnnotateVideoCallable().call();
+ *   StreamingAnnotateVideoRequest request = StreamingAnnotateVideoRequest.newBuilder().build();
+ *   bidiStream.send(request);
+ *   for (StreamingAnnotateVideoResponse response : bidiStream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.videointelligence.v1p3beta1;

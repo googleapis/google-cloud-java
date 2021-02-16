@@ -37,6 +37,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+ *     VideoIntelligenceServiceClient.create()) {
+ *   String inputUri = "inputUri470706498";
+ *   List<Feature> features = new ArrayList<>();
+ *   AnnotateVideoResponse response =
+ *       videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the VideoIntelligenceServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -160,6 +170,18 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse`
    * (results).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+   *     VideoIntelligenceServiceClient.create()) {
+   *   String inputUri = "inputUri470706498";
+   *   List<Feature> features = new ArrayList<>();
+   *   AnnotateVideoResponse response =
+   *       videoIntelligenceServiceClient.annotateVideoAsync(inputUri, features).get();
+   * }
+   * }</pre>
+   *
    * @param inputUri Input video location. Currently, only [Google Cloud
    *     Storage](https://cloud.google.com/storage/) URIs are supported, which must be specified in
    *     the following format: `gs://bucket-id/object-id` (other URI formats return
@@ -186,6 +208,25 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse`
    * (results).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+   *     VideoIntelligenceServiceClient.create()) {
+   *   AnnotateVideoRequest request =
+   *       AnnotateVideoRequest.newBuilder()
+   *           .setInputUri("inputUri470706498")
+   *           .setInputContent(ByteString.EMPTY)
+   *           .addAllFeatures(new ArrayList<Feature>())
+   *           .setVideoContext(VideoContext.newBuilder().build())
+   *           .setOutputUri("outputUri-2119300949")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
+   *   AnnotateVideoResponse response =
+   *       videoIntelligenceServiceClient.annotateVideoAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -202,6 +243,25 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * (results).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+   *     VideoIntelligenceServiceClient.create()) {
+   *   AnnotateVideoRequest request =
+   *       AnnotateVideoRequest.newBuilder()
+   *           .setInputUri("inputUri470706498")
+   *           .setInputContent(ByteString.EMPTY)
+   *           .addAllFeatures(new ArrayList<Feature>())
+   *           .setVideoContext(VideoContext.newBuilder().build())
+   *           .setOutputUri("outputUri-2119300949")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
+   *   OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
+   *       videoIntelligenceServiceClient.annotateVideoOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AnnotateVideoResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
@@ -216,6 +276,25 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * (results).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
+   *     VideoIntelligenceServiceClient.create()) {
+   *   AnnotateVideoRequest request =
+   *       AnnotateVideoRequest.newBuilder()
+   *           .setInputUri("inputUri470706498")
+   *           .setInputContent(ByteString.EMPTY)
+   *           .addAllFeatures(new ArrayList<Feature>())
+   *           .setVideoContext(VideoContext.newBuilder().build())
+   *           .setOutputUri("outputUri-2119300949")
+   *           .setLocationId("locationId1541836720")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       videoIntelligenceServiceClient.annotateVideoCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
     return stub.annotateVideoCallable();

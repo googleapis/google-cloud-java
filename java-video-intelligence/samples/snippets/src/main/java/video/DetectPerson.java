@@ -101,7 +101,8 @@ public class DetectPerson {
           // posture of the person detected.
           TimestampedObject firstTimestampedObject = track.getTimestampedObjects(0);
 
-          // Attributes include unique pieces of clothing, poses (i.e., body landmarks) of the person detected.
+          // Attributes include unique pieces of clothing, poses (i.e., body landmarks)
+          // of the person detected.
           for (DetectedAttribute attribute : firstTimestampedObject.getAttributesList()) {
             System.out.printf(
                 "\tAttribute: %s; Value: %s\n", attribute.getName(), attribute.getValue());
