@@ -3,9 +3,12 @@
     {
       "git": {
         "name": ".",
-        "remote": "git@github.com:googleapis/google-cloud-java.git",
-        "sha": "3beba59cd0021aa24cb8d81eefc5a7c283104d59"
+        "remote": "https://github.com/googleapis/google-cloud-java.git",
+        "sha": "da9f90b4f0e6a01eac3a4eed28b7b4da3ad7f301"
       }
     }
+  ],
+  "generatedFiles": [
+    "README.md"
   ]
 }
