@@ -35,6 +35,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
+ *     PhishingProtectionServiceV1Beta1Client.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   String uri = "uri116076";
+ *   ReportPhishingResponse response =
+ *       phishingProtectionServiceV1Beta1Client.reportPhishing(parent, uri);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PhishingProtectionServiceV1Beta1Client object to clean
  * up resources such as threads. In the example above, try-with-resources is used, which
  * automatically calls close().
@@ -152,6 +162,18 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
+   *     PhishingProtectionServiceV1Beta1Client.create()) {
+   *   ProjectName parent = ProjectName.of("[PROJECT]");
+   *   String uri = "uri116076";
+   *   ReportPhishingResponse response =
+   *       phishingProtectionServiceV1Beta1Client.reportPhishing(parent, uri);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the project for which the report will be created, in the
    *     format "projects/{project_number}".
    * @param uri Required. The URI that is being reported for phishing content to be analyzed.
@@ -175,6 +197,18 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
+   *     PhishingProtectionServiceV1Beta1Client.create()) {
+   *   String parent = ProjectName.of("[PROJECT]").toString();
+   *   String uri = "uri116076";
+   *   ReportPhishingResponse response =
+   *       phishingProtectionServiceV1Beta1Client.reportPhishing(parent, uri);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The name of the project for which the report will be created, in the
    *     format "projects/{project_number}".
    * @param uri Required. The URI that is being reported for phishing content to be analyzed.
@@ -195,6 +229,21 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * lists](https://support.google.com/webmasters/answer/6350487/) in order to protect users that
    * could get exposed to this threat in the future.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
+   *     PhishingProtectionServiceV1Beta1Client.create()) {
+   *   ReportPhishingRequest request =
+   *       ReportPhishingRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setUri("uri116076")
+   *           .build();
+   *   ReportPhishingResponse response =
+   *       phishingProtectionServiceV1Beta1Client.reportPhishing(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -212,6 +261,21 @@ public class PhishingProtectionServiceV1Beta1Client implements BackgroundResourc
    * could get exposed to this threat in the future.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
+   *     PhishingProtectionServiceV1Beta1Client.create()) {
+   *   ReportPhishingRequest request =
+   *       ReportPhishingRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setUri("uri116076")
+   *           .build();
+   *   ApiFuture<ReportPhishingResponse> future =
+   *       phishingProtectionServiceV1Beta1Client.reportPhishingCallable().futureCall(request);
+   *   // Do something.
+   *   ReportPhishingResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReportPhishingRequest, ReportPhishingResponse>
       reportPhishingCallable() {

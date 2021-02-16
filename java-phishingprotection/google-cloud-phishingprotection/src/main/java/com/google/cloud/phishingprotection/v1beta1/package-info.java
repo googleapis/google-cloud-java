@@ -22,6 +22,16 @@
  * <p>Service Description: Service to report phishing URIs.
  *
  * <p>Sample for PhishingProtectionServiceV1Beta1Client:
+ *
+ * <pre>{@code
+ * try (PhishingProtectionServiceV1Beta1Client phishingProtectionServiceV1Beta1Client =
+ *     PhishingProtectionServiceV1Beta1Client.create()) {
+ *   ProjectName parent = ProjectName.of("[PROJECT]");
+ *   String uri = "uri116076";
+ *   ReportPhishingResponse response =
+ *       phishingProtectionServiceV1Beta1Client.reportPhishing(parent, uri);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.phishingprotection.v1beta1;
