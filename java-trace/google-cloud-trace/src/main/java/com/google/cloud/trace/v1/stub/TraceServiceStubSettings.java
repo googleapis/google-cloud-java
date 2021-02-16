@@ -87,7 +87,6 @@ import org.threeten.bp.Duration;
  * TraceServiceStubSettings traceServiceSettings = traceServiceSettingsBuilder.build();
  * }</pre>
  */
-@BetaApi
 @Generated("by gapic-generator-java")
 public class TraceServiceStubSettings extends StubSettings<TraceServiceStubSettings> {
   /** The default scopes of the service. */
