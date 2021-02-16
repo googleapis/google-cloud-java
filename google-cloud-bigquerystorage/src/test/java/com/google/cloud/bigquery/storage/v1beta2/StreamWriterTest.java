@@ -1015,4 +1015,38 @@ public class StreamWriterTest {
     assertEquals("Dataflow", testBigQueryWrite.getAppendRequests().get(0).getTraceId());
     assertEquals("", testBigQueryWrite.getAppendRequests().get(1).getTraceId());
   }
+
+  @Test
+  public void testShutdownWithConnectionError() throws Exception {
+    StreamWriter writer =
+        getTestStreamWriterBuilder()
+            .setBatchingSettings(
+                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .build())
+            .build();
+    testBigQueryWrite.addResponse(
+        AppendRowsResponse.newBuilder()
+            .setAppendResult(
+                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
+            .build());
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+    testBigQueryWrite.setResponseDelay(Duration.ofSeconds(10));
+
+    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    Thread.sleep(5000L);
+    // Move the needle for responses to be sent.
+    fakeExecutor.advanceTime(Duration.ofSeconds(20));
+    // Shutdown writer immediately and there will be some error happened when flushing the queue.
+    writer.shutdown();
+    assertEquals(1, appendFuture1.get().getAppendResult().getOffset().getValue());
+    try {
+      appendFuture2.get();
+      fail("Should fail with exception");
+    } catch (java.util.concurrent.ExecutionException e) {
+      assertEquals("Request aborted due to previous failures", e.getCause().getMessage());
+    }
+  }
 }

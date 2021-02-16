@@ -932,6 +932,7 @@ public class StreamWriter implements AutoCloseable {
     public void onError(Throwable t) {
       LOG.fine("OnError called");
       if (streamWriter.shutdown.get()) {
+        abortInflightRequests(t);
         return;
       }
       InflightBatch inflightBatch = null;
