@@ -22,6 +22,18 @@
  * <p>Service Description: Asset service definition.
  *
  * <p>Sample for AssetServiceClient:
+ *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   String scope = "scope109264468";
+ *   String query = "query107944136";
+ *   List<String> assetTypes = new ArrayList<>();
+ *   for (StandardResourceMetadata element :
+ *       assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.asset.v1p1beta1;

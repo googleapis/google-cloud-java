@@ -41,6 +41,22 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   ListAssetsRequest request =
+ *       ListAssetsRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setReadTime(Timestamp.newBuilder().build())
+ *           .addAllAssetTypes(new ArrayList<String>())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .build();
+ *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -144,6 +160,24 @@ public class AssetServiceClient implements BackgroundResource {
   /**
    * Lists assets with time and resource types and returns paged results in response.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -156,6 +190,24 @@ public class AssetServiceClient implements BackgroundResource {
    * Lists assets with time and resource types and returns paged results in response.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ListAssetsRequest request =
+   *       ListAssetsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setReadTime(Timestamp.newBuilder().build())
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Asset> future = assetServiceClient.listAssetsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Asset element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return stub.listAssetsPagedCallable();
@@ -166,6 +218,23 @@ public class AssetServiceClient implements BackgroundResource {
    * Lists assets with time and resource types and returns paged results in response.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   while (true) {
+   *     ListAssetsResponse response = assetServiceClient.listAssetsCallable().call(request);
+   *     for (Asset element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return stub.listAssetsCallable();

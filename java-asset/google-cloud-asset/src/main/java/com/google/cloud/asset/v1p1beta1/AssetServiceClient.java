@@ -41,6 +41,18 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   String scope = "scope109264468";
+ *   String query = "query107944136";
+ *   List<String> assetTypes = new ArrayList<>();
+ *   for (StandardResourceMetadata element :
+ *       assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -148,6 +160,20 @@ public class AssetServiceClient implements BackgroundResource {
    * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
    * rejected.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "scope109264468";
+   *   String query = "query107944136";
+   *   List<String> assetTypes = new ArrayList<>();
+   *   for (StandardResourceMetadata element :
+   *       assetServiceClient.searchAllResources(scope, query, assetTypes).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param scope Required. The relative name of an asset. The search is limited to the resources
    *     within the `scope`. The allowed value must be:
    *     <ul>
@@ -181,6 +207,26 @@ public class AssetServiceClient implements BackgroundResource {
    * cloud.assets.SearchAllResources permission on the requested scope, otherwise it will be
    * rejected.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   SearchAllResourcesRequest request =
+   *       SearchAllResourcesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setQuery("query107944136")
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (StandardResourceMetadata element :
+   *       assetServiceClient.searchAllResources(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -198,6 +244,26 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   SearchAllResourcesRequest request =
+   *       SearchAllResourcesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setQuery("query107944136")
+   *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<StandardResourceMetadata> future =
+   *       assetServiceClient.searchAllResourcesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (StandardResourceMetadata element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
       searchAllResourcesPagedCallable() {
@@ -213,6 +279,24 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   while (true) {
+   *     SearchAllResourcesResponse response =
+   *         assetServiceClient.searchAllResourcesCallable().call(request);
+   *     for (StandardResourceMetadata element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable() {
@@ -226,6 +310,19 @@ public class AssetServiceClient implements BackgroundResource {
    * scope, even if they don't have .getIamPolicy permission of all the IAM policies. Callers should
    * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
    * rejected.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   String scope = "scope109264468";
+   *   String query = "query107944136";
+   *   for (IamPolicySearchResult element :
+   *       assetServiceClient.searchAllIamPolicies(scope, query).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param scope Required. The relative name of an asset. The search is limited to the resources
    *     within the `scope`. The allowed value must be:
@@ -258,6 +355,24 @@ public class AssetServiceClient implements BackgroundResource {
    * have cloud.assets.SearchAllIamPolicies permission on the requested scope, otherwise it will be
    * rejected.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   SearchAllIamPoliciesRequest request =
+   *       SearchAllIamPoliciesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (IamPolicySearchResult element :
+   *       assetServiceClient.searchAllIamPolicies(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -275,6 +390,24 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   SearchAllIamPoliciesRequest request =
+   *       SearchAllIamPoliciesRequest.newBuilder()
+   *           .setScope("scope109264468")
+   *           .setQuery("query107944136")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<IamPolicySearchResult> future =
+   *       assetServiceClient.searchAllIamPoliciesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (IamPolicySearchResult element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesPagedCallable() {
@@ -290,6 +423,24 @@ public class AssetServiceClient implements BackgroundResource {
    * rejected.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   while (true) {
+   *     SearchAllIamPoliciesResponse response =
+   *         assetServiceClient.searchAllIamPoliciesCallable().call(request);
+   *     for (IamPolicySearchResult element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {

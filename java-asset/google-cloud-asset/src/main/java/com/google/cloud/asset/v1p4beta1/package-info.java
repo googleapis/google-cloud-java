@@ -22,6 +22,17 @@
  * <p>Service Description: Asset service definition.
  *
  * <p>Sample for AssetServiceClient:
+ *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   AnalyzeIamPolicyRequest request =
+ *       AnalyzeIamPolicyRequest.newBuilder()
+ *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+ *           .setOptions(AnalyzeIamPolicyRequest.Options.newBuilder().build())
+ *           .build();
+ *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.asset.v1p4beta1;

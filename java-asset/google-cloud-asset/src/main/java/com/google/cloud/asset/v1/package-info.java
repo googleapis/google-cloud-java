@@ -22,6 +22,18 @@
  * <p>Service Description: Asset service definition.
  *
  * <p>Sample for AssetServiceClient:
+ *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   BatchGetAssetsHistoryRequest request =
+ *       BatchGetAssetsHistoryRequest.newBuilder()
+ *           .setParent(ProjectName.of("[PROJECT]").toString())
+ *           .addAllAssetNames(new ArrayList<String>())
+ *           .setReadTimeWindow(TimeWindow.newBuilder().build())
+ *           .build();
+ *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.asset.v1;

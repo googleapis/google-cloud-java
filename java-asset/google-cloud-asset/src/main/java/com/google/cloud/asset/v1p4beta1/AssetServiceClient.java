@@ -36,6 +36,17 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   AnalyzeIamPolicyRequest request =
+ *       AnalyzeIamPolicyRequest.newBuilder()
+ *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+ *           .setOptions(AnalyzeIamPolicyRequest.Options.newBuilder().build())
+ *           .build();
+ *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the AssetServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -152,6 +163,19 @@ public class AssetServiceClient implements BackgroundResource {
    * [IamPolicyAnalysisResult][google.cloud.asset.v1p4beta1.IamPolicyAnalysisResult] matching the
    * request.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeIamPolicyRequest request =
+   *       AnalyzeIamPolicyRequest.newBuilder()
+   *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+   *           .setOptions(AnalyzeIamPolicyRequest.Options.newBuilder().build())
+   *           .build();
+   *   AnalyzeIamPolicyResponse response = assetServiceClient.analyzeIamPolicy(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -166,6 +190,20 @@ public class AssetServiceClient implements BackgroundResource {
    * request.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   AnalyzeIamPolicyRequest request =
+   *       AnalyzeIamPolicyRequest.newBuilder()
+   *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+   *           .setOptions(AnalyzeIamPolicyRequest.Options.newBuilder().build())
+   *           .build();
+   *   ApiFuture<AnalyzeIamPolicyResponse> future =
+   *       assetServiceClient.analyzeIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   AnalyzeIamPolicyResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
       analyzeIamPolicyCallable() {
@@ -177,6 +215,21 @@ public class AssetServiceClient implements BackgroundResource {
    * Exports IAM policy analysis based on the specified request. This API implements the
    * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
    * the export. The metadata contains the request to help callers to map responses to requests.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ExportIamPolicyAnalysisRequest request =
+   *       ExportIamPolicyAnalysisRequest.newBuilder()
+   *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+   *           .setOptions(ExportIamPolicyAnalysisRequest.Options.newBuilder().build())
+   *           .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
+   *           .build();
+   *   ExportIamPolicyAnalysisResponse response =
+   *       assetServiceClient.exportIamPolicyAnalysisAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -193,6 +246,21 @@ public class AssetServiceClient implements BackgroundResource {
    * the export. The metadata contains the request to help callers to map responses to requests.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ExportIamPolicyAnalysisRequest request =
+   *       ExportIamPolicyAnalysisRequest.newBuilder()
+   *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+   *           .setOptions(ExportIamPolicyAnalysisRequest.Options.newBuilder().build())
+   *           .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
+   *           .build();
+   *   OperationFuture<ExportIamPolicyAnalysisResponse, ExportIamPolicyAnalysisRequest> future =
+   *       assetServiceClient.exportIamPolicyAnalysisOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ExportIamPolicyAnalysisResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           ExportIamPolicyAnalysisRequest,
@@ -209,6 +277,21 @@ public class AssetServiceClient implements BackgroundResource {
    * the export. The metadata contains the request to help callers to map responses to requests.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+   *   ExportIamPolicyAnalysisRequest request =
+   *       ExportIamPolicyAnalysisRequest.newBuilder()
+   *           .setAnalysisQuery(IamPolicyAnalysisQuery.newBuilder().build())
+   *           .setOptions(ExportIamPolicyAnalysisRequest.Options.newBuilder().build())
+   *           .setOutputConfig(IamPolicyAnalysisOutputConfig.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       assetServiceClient.exportIamPolicyAnalysisCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ExportIamPolicyAnalysisRequest, Operation>
       exportIamPolicyAnalysisCallable() {

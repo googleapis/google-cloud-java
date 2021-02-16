@@ -22,6 +22,22 @@
  * <p>Service Description: Asset service definition.
  *
  * <p>Sample for AssetServiceClient:
+ *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   ListAssetsRequest request =
+ *       ListAssetsRequest.newBuilder()
+ *           .setParent("parent-995424086")
+ *           .setReadTime(Timestamp.newBuilder().build())
+ *           .addAllAssetTypes(new ArrayList<String>())
+ *           .setPageSize(883849137)
+ *           .setPageToken("pageToken873572522")
+ *           .build();
+ *   for (Asset element : assetServiceClient.listAssets(request).iterateAll()) {
+ *     // doThingsWith(element);
+ *   }
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.asset.v1p5beta1;

@@ -22,6 +22,13 @@
  * <p>Service Description: Asset service definition.
  *
  * <p>Sample for AssetServiceClient:
+ *
+ * <pre>{@code
+ * try (AssetServiceClient assetServiceClient = AssetServiceClient.create()) {
+ *   String parent = "parent-995424086";
+ *   Feed response = assetServiceClient.createFeed(parent);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.asset.v1p2beta1;
