@@ -14,20 +14,17 @@
 
 """This script is used to synthesize generated parts of this library."""
 
-import synthtool as s
-import synthtool.gcp as gcp
 import synthtool.languages.java as java
 
 service = 'analytics-data'
 versions = ['v1alpha']
 
 for version in versions:
-  java.bazel_library(
-      service=service,
-      version=version,
-      proto_path=f'google/analytics/data/{version}',
-      bazel_target=f'//google/analytics/data/{version}:google-analytics-data-{version}-java',
-      cloud_api=False,
+  java.pregenerated_library(
+    service=service,
+    version=version,
+    path=f'google/analytics/data/{version}',
+    cloud_api=False,
   )
 
 java.common_templates()
