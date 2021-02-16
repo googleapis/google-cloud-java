@@ -4,33 +4,22 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-data.git",
-        "sha": "0470fd12172a87ff90d279775b1931e48ece51d0"
+        "sha": "5ae06f1ca909e491c75fff24a3a80aa372f32167"
       }
     },
     {
       "git": {
-        "name": "googleapis",
-        "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d8c008e56f1af31d57f75561e0f1848ffb29eeb",
-        "internalRef": "356341083"
+        "name": "googleapis-gen",
+        "remote": "https://github.com/googleapis/googleapis-gen.git",
+        "sha": "c2f406125475d4df75373708747e1d87ba50f345",
+        "internalRef": "357773363"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2414b817065726eae0bc525346c7e874f969369d"
-      }
-    }
-  ],
-  "destinations": [
-    {
-      "client": {
-        "source": "googleapis",
-        "apiName": "analytics-data",
-        "apiVersion": "v1alpha",
-        "language": "java",
-        "generator": "bazel"
+        "sha": "f327d3b657a63ae4a8efd7f011a15eacae36b59c"
       }
     }
   ],
