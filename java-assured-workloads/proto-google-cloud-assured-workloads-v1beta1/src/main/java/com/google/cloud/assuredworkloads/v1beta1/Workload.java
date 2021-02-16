@@ -382,6 +382,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>FEDRAMP_MODERATE = 4;</code>
      */
     FEDRAMP_MODERATE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads For US Regions data protection controls
+     * </pre>
+     *
+     * <code>US_REGIONAL_ACCESS = 5;</code>
+     */
+    US_REGIONAL_ACCESS(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -435,6 +445,16 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
      * <code>FEDRAMP_MODERATE = 4;</code>
      */
     public static final int FEDRAMP_MODERATE_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Assured Workloads For US Regions data protection controls
+     * </pre>
+     *
+     * <code>US_REGIONAL_ACCESS = 5;</code>
+     */
+    public static final int US_REGIONAL_ACCESS_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -470,6 +490,8 @@ public final class Workload extends com.google.protobuf.GeneratedMessageV3
           return FEDRAMP_HIGH;
         case 4:
           return FEDRAMP_MODERATE;
+        case 5:
+          return US_REGIONAL_ACCESS;
         default:
           return null;
       }
