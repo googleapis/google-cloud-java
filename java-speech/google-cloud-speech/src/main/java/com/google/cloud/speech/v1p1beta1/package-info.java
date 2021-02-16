@@ -22,6 +22,14 @@
  * <p>Service Description: Service that implements Google Cloud Speech API.
  *
  * <p>Sample for SpeechClient:
+ *
+ * <pre>{@code
+ * try (SpeechClient speechClient = SpeechClient.create()) {
+ *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+ *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+ *   RecognizeResponse response = speechClient.recognize(config, audio);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.speech.v1p1beta1;

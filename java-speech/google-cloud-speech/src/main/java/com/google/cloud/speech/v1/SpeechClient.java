@@ -37,6 +37,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SpeechClient speechClient = SpeechClient.create()) {
+ *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+ *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+ *   RecognizeResponse response = speechClient.recognize(config, audio);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SpeechClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -149,6 +157,16 @@ public class SpeechClient implements BackgroundResource {
    * Performs synchronous speech recognition: receive results after all audio has been sent and
    * processed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   *   RecognizeResponse response = speechClient.recognize(config, audio);
+   * }
+   * }</pre>
+   *
    * @param config Required. Provides information to the recognizer that specifies how to process
    *     the request.
    * @param audio Required. The audio data to be recognized.
@@ -165,6 +183,19 @@ public class SpeechClient implements BackgroundResource {
    * Performs synchronous speech recognition: receive results after all audio has been sent and
    * processed.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   RecognizeRequest request =
+   *       RecognizeRequest.newBuilder()
+   *           .setConfig(RecognitionConfig.newBuilder().build())
+   *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .build();
+   *   RecognizeResponse response = speechClient.recognize(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -178,6 +209,19 @@ public class SpeechClient implements BackgroundResource {
    * processed.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   RecognizeRequest request =
+   *       RecognizeRequest.newBuilder()
+   *           .setConfig(RecognitionConfig.newBuilder().build())
+   *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RecognizeResponse> future = speechClient.recognizeCallable().futureCall(request);
+   *   // Do something.
+   *   RecognizeResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable() {
     return stub.recognizeCallable();
@@ -189,6 +233,17 @@ public class SpeechClient implements BackgroundResource {
    * interface. Returns either an `Operation.error` or an `Operation.response` which contains a
    * `LongRunningRecognizeResponse` message. For more information on asynchronous speech
    * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   *   LongRunningRecognizeResponse response =
+   *       speechClient.longRunningRecognizeAsync(config, audio).get();
+   * }
+   * }</pre>
    *
    * @param config Required. Provides information to the recognizer that specifies how to process
    *     the request.
@@ -209,6 +264,19 @@ public class SpeechClient implements BackgroundResource {
    * `LongRunningRecognizeResponse` message. For more information on asynchronous speech
    * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   LongRunningRecognizeRequest request =
+   *       LongRunningRecognizeRequest.newBuilder()
+   *           .setConfig(RecognitionConfig.newBuilder().build())
+   *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .build();
+   *   LongRunningRecognizeResponse response = speechClient.longRunningRecognizeAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -225,6 +293,20 @@ public class SpeechClient implements BackgroundResource {
    * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   LongRunningRecognizeRequest request =
+   *       LongRunningRecognizeRequest.newBuilder()
+   *           .setConfig(RecognitionConfig.newBuilder().build())
+   *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .build();
+   *   OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> future =
+   *       speechClient.longRunningRecognizeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   LongRunningRecognizeResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
@@ -240,6 +322,19 @@ public class SpeechClient implements BackgroundResource {
    * recognition, see the [how-to](https://cloud.google.com/speech-to-text/docs/async-recognize).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   LongRunningRecognizeRequest request =
+   *       LongRunningRecognizeRequest.newBuilder()
+   *           .setConfig(RecognitionConfig.newBuilder().build())
+   *           .setAudio(RecognitionAudio.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = speechClient.longRunningRecognizeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<LongRunningRecognizeRequest, Operation>
       longRunningRecognizeCallable() {
@@ -252,6 +347,18 @@ public class SpeechClient implements BackgroundResource {
    * method is only available via the gRPC API (not REST).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   BidiStream<StreamingRecognizeRequest, StreamingRecognizeResponse> bidiStream =
+   *       speechClient.streamingRecognizeCallable().call();
+   *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
+   *   bidiStream.send(request);
+   *   for (StreamingRecognizeResponse response : bidiStream) {
+   *     // Do something when a response is received.
+   *   }
+   * }
+   * }</pre>
    */
   public final BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
