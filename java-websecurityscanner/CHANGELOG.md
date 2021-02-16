@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.0.10...v1.1.0) (2021-02-16)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#360](https://www.github.com/googleapis/java-websecurityscanner/issues/360)) ([61ac100](https://www.github.com/googleapis/java-websecurityscanner/commit/61ac100f8f8ce7ab8c30bf0450dc7903e9bdb38b))
+
 ### [1.0.10](https://www.github.com/googleapis/java-websecurityscanner/compare/v1.0.9...v1.0.10) (2021-01-14)
 
 
