@@ -22,10 +22,10 @@ package com.google.cloud.networkconnectivity.v1alpha1;
  *
  *
  * <pre>
- * The Connectivity Hub is a hub-and-spoke abstraction for network connectivity
- * management in Google Cloud. It aims to reduce operational complexity
- * through a simple, centralized connectivity management model. Here is the
- * resource message of a Hub.
+ * Network Connectivity Center is a hub-and-spoke abstraction for
+ * network connectivity management in Google Cloud. It reduces
+ * operational complexity through a simple, centralized connectivity management
+ * model. Following is the resource message of a hub.
  * </pre>
  *
  * Protobuf type {@code google.cloud.networkconnectivity.v1alpha1.Hub}
@@ -45,6 +45,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     spokes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     uniqueId_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -149,6 +150,13 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
               java.lang.String s = input.readStringRequireUtf8();
 
               uniqueId_ = s;
+              break;
+            }
+          case 72:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
               break;
             }
           default:
@@ -609,6 +617,48 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STATE_FIELD_NUMBER = 9;
+  private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current lifecycle state of this Hub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current lifecycle state of this Hub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1alpha1.State getState() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.networkconnectivity.v1alpha1.State result =
+        com.google.cloud.networkconnectivity.v1alpha1.State.valueOf(state_);
+    return result == null
+        ? com.google.cloud.networkconnectivity.v1alpha1.State.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -642,6 +692,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getUniqueIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, uniqueId_);
+    }
+    if (state_
+        != com.google.cloud.networkconnectivity.v1alpha1.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(9, state_);
     }
     unknownFields.writeTo(output);
   }
@@ -685,6 +739,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (!getUniqueIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, uniqueId_);
     }
+    if (state_
+        != com.google.cloud.networkconnectivity.v1alpha1.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, state_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -714,6 +772,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getSpokesList().equals(other.getSpokesList())) return false;
     if (!getUniqueId().equals(other.getUniqueId())) return false;
+    if (state_ != other.state_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -747,6 +806,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + UNIQUE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUniqueId().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -851,10 +912,10 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The Connectivity Hub is a hub-and-spoke abstraction for network connectivity
-   * management in Google Cloud. It aims to reduce operational complexity
-   * through a simple, centralized connectivity management model. Here is the
-   * resource message of a Hub.
+   * Network Connectivity Center is a hub-and-spoke abstraction for
+   * network connectivity management in Google Cloud. It reduces
+   * operational complexity through a simple, centralized connectivity management
+   * model. Following is the resource message of a hub.
    * </pre>
    *
    * Protobuf type {@code google.cloud.networkconnectivity.v1alpha1.Hub}
@@ -936,6 +997,8 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = (bitField0_ & ~0x00000002);
       uniqueId_ = "";
 
+      state_ = 0;
+
       return this;
     }
 
@@ -984,6 +1047,7 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       }
       result.spokes_ = spokes_;
       result.uniqueId_ = uniqueId_;
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -1062,6 +1126,9 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
         onChanged();
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2128,6 +2195,109 @@ public final class Hub extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       uniqueId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1alpha1.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.networkconnectivity.v1alpha1.State result =
+          com.google.cloud.networkconnectivity.v1alpha1.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1alpha1.State.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.networkconnectivity.v1alpha1.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+
+      state_ = 0;
       onChanged();
       return this;
     }

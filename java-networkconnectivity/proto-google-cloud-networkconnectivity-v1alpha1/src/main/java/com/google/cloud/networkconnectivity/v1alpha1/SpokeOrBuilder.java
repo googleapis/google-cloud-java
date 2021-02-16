@@ -430,4 +430,33 @@ public interface SpokeOrBuilder
    * @return The bytes for uniqueId.
    */
   com.google.protobuf.ByteString getUniqueIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current lifecycle state of this Hub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  int getStateValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current lifecycle state of this Hub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  com.google.cloud.networkconnectivity.v1alpha1.State getState();
 }

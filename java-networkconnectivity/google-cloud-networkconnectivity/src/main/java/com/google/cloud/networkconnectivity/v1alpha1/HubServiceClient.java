@@ -42,8 +42,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Connectivity Hub is a hub-and-spoke abstraction for network connectivity
- * management in Google Cloud. The Hub aims to reduce operational complexity through a simple,
+ * Service Description: Network Connectivity Center is a hub-and-spoke abstraction for network
+ * connectivity management in Google Cloud. It reduces operational complexity through a simple,
  * centralized connectivity management model.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method

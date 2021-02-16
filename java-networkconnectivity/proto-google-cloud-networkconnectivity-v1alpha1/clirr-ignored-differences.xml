@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- see http://www.mojohaus.org/clirr-maven-plugin/examples/ignored-differences.html -->
+<!-- TODO: remove after next major version is released -->
+<differences>
+  <difference>
+    <className>
+      com/google/cloud/networkconnectivity/v1alpha1/HubOrBuilder
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* getState()</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/networkconnectivity/v1alpha1/HubOrBuilder
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* getStateValue()</method>
+  </difference>
+
+  <difference>
+    <className>
+      com/google/cloud/networkconnectivity/v1alpha1/SpokeOrBuilder
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* getState()</method>
+  </difference>
+  <difference>
+    <className>
+      com/google/cloud/networkconnectivity/v1alpha1/SpokeOrBuilder
+    </className>
+    <differenceType>7012</differenceType>
+    <method>* getStateValue()</method>
+  </difference>
+</differences>

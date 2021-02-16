@@ -47,6 +47,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     linkedInterconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     linkedRouterApplianceInstances_ = java.util.Collections.emptyList();
     uniqueId_ = "";
+    state_ = 0;
   }
 
   @java.lang.Override
@@ -183,6 +184,13 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
                       com.google.cloud.networkconnectivity.v1alpha1.RouterApplianceInstance
                           .parser(),
                       extensionRegistry));
+              break;
+            }
+          case 120:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
               break;
             }
           default:
@@ -848,6 +856,48 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int STATE_FIELD_NUMBER = 15;
+  private int state_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current lifecycle state of this Hub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for state.
+   */
+  @java.lang.Override
+  public int getStateValue() {
+    return state_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The current lifecycle state of this Hub.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The state.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkconnectivity.v1alpha1.State getState() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.networkconnectivity.v1alpha1.State result =
+        com.google.cloud.networkconnectivity.v1alpha1.State.valueOf(state_);
+    return result == null
+        ? com.google.cloud.networkconnectivity.v1alpha1.State.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -891,6 +941,10 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < linkedRouterApplianceInstances_.size(); i++) {
       output.writeMessage(14, linkedRouterApplianceInstances_.get(i));
+    }
+    if (state_
+        != com.google.cloud.networkconnectivity.v1alpha1.State.STATE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(15, state_);
     }
     unknownFields.writeTo(output);
   }
@@ -950,6 +1004,10 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               14, linkedRouterApplianceInstances_.get(i));
     }
+    if (state_
+        != com.google.cloud.networkconnectivity.v1alpha1.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, state_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -984,6 +1042,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     if (!getLinkedRouterApplianceInstancesList()
         .equals(other.getLinkedRouterApplianceInstancesList())) return false;
     if (!getUniqueId().equals(other.getUniqueId())) return false;
+    if (state_ != other.state_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1027,6 +1086,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + UNIQUE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUniqueId().hashCode();
+    hash = (37 * hash) + STATE_FIELD_NUMBER;
+    hash = (53 * hash) + state_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1227,6 +1288,8 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       }
       uniqueId_ = "";
 
+      state_ = 0;
+
       return this;
     }
 
@@ -1291,6 +1354,7 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
         result.linkedRouterApplianceInstances_ = linkedRouterApplianceInstancesBuilder_.build();
       }
       result.uniqueId_ = uniqueId_;
+      result.state_ = state_;
       onBuilt();
       return result;
     }
@@ -1411,6 +1475,9 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       if (!other.getUniqueId().isEmpty()) {
         uniqueId_ = other.uniqueId_;
         onChanged();
+      }
+      if (other.state_ != 0) {
+        setStateValue(other.getStateValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3180,6 +3247,109 @@ public final class Spoke extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       uniqueId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int state_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for state.
+     */
+    @java.lang.Override
+    public int getStateValue() {
+      return state_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStateValue(int value) {
+
+      state_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The state.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkconnectivity.v1alpha1.State getState() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.networkconnectivity.v1alpha1.State result =
+          com.google.cloud.networkconnectivity.v1alpha1.State.valueOf(state_);
+      return result == null
+          ? com.google.cloud.networkconnectivity.v1alpha1.State.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The state to set.
+     * @return This builder for chaining.
+     */
+    public Builder setState(com.google.cloud.networkconnectivity.v1alpha1.State value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      state_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The current lifecycle state of this Hub.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkconnectivity.v1alpha1.State state = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearState() {
+
+      state_ = 0;
       onChanged();
       return this;
     }

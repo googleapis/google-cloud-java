@@ -26,9 +26,10 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  *
  * <pre>
- * Connectivity Hub is a hub-and-spoke abstraction for network connectivity
- * management in Google Cloud. The Hub aims to reduce operational complexity
- * through a simple, centralized connectivity management model.
+ * Network Connectivity Center is a hub-and-spoke abstraction for
+ * network connectivity management in Google Cloud. It reduces
+ * operational complexity through a simple, centralized connectivity management
+ * model.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -539,9 +540,10 @@ public final class HubServiceGrpc {
    *
    *
    * <pre>
-   * Connectivity Hub is a hub-and-spoke abstraction for network connectivity
-   * management in Google Cloud. The Hub aims to reduce operational complexity
-   * through a simple, centralized connectivity management model.
+   * Network Connectivity Center is a hub-and-spoke abstraction for
+   * network connectivity management in Google Cloud. It reduces
+   * operational complexity through a simple, centralized connectivity management
+   * model.
    * </pre>
    */
   public abstract static class HubServiceImplBase implements io.grpc.BindableService {
@@ -755,9 +757,10 @@ public final class HubServiceGrpc {
    *
    *
    * <pre>
-   * Connectivity Hub is a hub-and-spoke abstraction for network connectivity
-   * management in Google Cloud. The Hub aims to reduce operational complexity
-   * through a simple, centralized connectivity management model.
+   * Network Connectivity Center is a hub-and-spoke abstraction for
+   * network connectivity management in Google Cloud. It reduces
+   * operational complexity through a simple, centralized connectivity management
+   * model.
    * </pre>
    */
   public static final class HubServiceStub extends io.grpc.stub.AbstractAsyncStub<HubServiceStub> {
@@ -926,9 +929,10 @@ public final class HubServiceGrpc {
    *
    *
    * <pre>
-   * Connectivity Hub is a hub-and-spoke abstraction for network connectivity
-   * management in Google Cloud. The Hub aims to reduce operational complexity
-   * through a simple, centralized connectivity management model.
+   * Network Connectivity Center is a hub-and-spoke abstraction for
+   * network connectivity management in Google Cloud. It reduces
+   * operational complexity through a simple, centralized connectivity management
+   * model.
    * </pre>
    */
   public static final class HubServiceBlockingStub
@@ -1068,9 +1072,10 @@ public final class HubServiceGrpc {
    *
    *
    * <pre>
-   * Connectivity Hub is a hub-and-spoke abstraction for network connectivity
-   * management in Google Cloud. The Hub aims to reduce operational complexity
-   * through a simple, centralized connectivity management model.
+   * Network Connectivity Center is a hub-and-spoke abstraction for
+   * network connectivity management in Google Cloud. It reduces
+   * operational complexity through a simple, centralized connectivity management
+   * model.
    * </pre>
    */
   public static final class HubServiceFutureStub
