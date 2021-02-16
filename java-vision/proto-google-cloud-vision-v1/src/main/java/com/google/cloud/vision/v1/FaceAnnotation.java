@@ -771,6 +771,26 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>CHIN_RIGHT_GONION = 34;</code>
        */
       CHIN_RIGHT_GONION(34),
+      /**
+       *
+       *
+       * <pre>
+       * Left cheek center.
+       * </pre>
+       *
+       * <code>LEFT_CHEEK_CENTER = 35;</code>
+       */
+      LEFT_CHEEK_CENTER(35),
+      /**
+       *
+       *
+       * <pre>
+       * Right cheek center.
+       * </pre>
+       *
+       * <code>RIGHT_CHEEK_CENTER = 36;</code>
+       */
+      RIGHT_CHEEK_CENTER(36),
       UNRECOGNIZED(-1),
       ;
 
@@ -1124,6 +1144,26 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
        * <code>CHIN_RIGHT_GONION = 34;</code>
        */
       public static final int CHIN_RIGHT_GONION_VALUE = 34;
+      /**
+       *
+       *
+       * <pre>
+       * Left cheek center.
+       * </pre>
+       *
+       * <code>LEFT_CHEEK_CENTER = 35;</code>
+       */
+      public static final int LEFT_CHEEK_CENTER_VALUE = 35;
+      /**
+       *
+       *
+       * <pre>
+       * Right cheek center.
+       * </pre>
+       *
+       * <code>RIGHT_CHEEK_CENTER = 36;</code>
+       */
+      public static final int RIGHT_CHEEK_CENTER_VALUE = 36;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -1219,6 +1259,10 @@ public final class FaceAnnotation extends com.google.protobuf.GeneratedMessageV3
             return CHIN_LEFT_GONION;
           case 34:
             return CHIN_RIGHT_GONION;
+          case 35:
+            return LEFT_CHEEK_CENTER;
+          case 36:
+            return RIGHT_CHEEK_CENTER;
           default:
             return null;
         }

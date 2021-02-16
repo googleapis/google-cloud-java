@@ -157,7 +157,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -173,7 +173,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -191,7 +191,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * The bounding polygon around the area of interest in the image.
-   * Optional. If it is not specified, system discretion will be applied.
+   * If it is not specified, system discretion will be applied.
    * </pre>
    *
    * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -807,7 +807,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -822,7 +822,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -843,7 +843,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -866,7 +866,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -887,7 +887,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -914,7 +914,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -935,7 +935,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -950,7 +950,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>
@@ -969,7 +969,7 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The bounding polygon around the area of interest in the image.
-     * Optional. If it is not specified, system discretion will be applied.
+     * If it is not specified, system discretion will be applied.
      * </pre>
      *
      * <code>.google.cloud.vision.v1.BoundingPoly bounding_poly = 9;</code>

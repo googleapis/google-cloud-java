@@ -170,10 +170,11 @@ public interface SafeSearchAnnotationOrBuilder
    * very confident.
    * </pre>
    *
-   * <code>float adult_confidence = 16;</code>
+   * <code>float adult_confidence = 16 [deprecated = true];</code>
    *
    * @return The adultConfidence.
    */
+  @java.lang.Deprecated
   float getAdultConfidence();
 
   /**
@@ -184,10 +185,11 @@ public interface SafeSearchAnnotationOrBuilder
    * very confident.
    * </pre>
    *
-   * <code>float spoof_confidence = 18;</code>
+   * <code>float spoof_confidence = 18 [deprecated = true];</code>
    *
    * @return The spoofConfidence.
    */
+  @java.lang.Deprecated
   float getSpoofConfidence();
 
   /**
@@ -198,10 +200,11 @@ public interface SafeSearchAnnotationOrBuilder
    * very confident.
    * </pre>
    *
-   * <code>float medical_confidence = 20;</code>
+   * <code>float medical_confidence = 20 [deprecated = true];</code>
    *
    * @return The medicalConfidence.
    */
+  @java.lang.Deprecated
   float getMedicalConfidence();
 
   /**
@@ -212,10 +215,11 @@ public interface SafeSearchAnnotationOrBuilder
    * very confident.
    * </pre>
    *
-   * <code>float violence_confidence = 22;</code>
+   * <code>float violence_confidence = 22 [deprecated = true];</code>
    *
    * @return The violenceConfidence.
    */
+  @java.lang.Deprecated
   float getViolenceConfidence();
 
   /**
@@ -226,10 +230,11 @@ public interface SafeSearchAnnotationOrBuilder
    * confident.
    * </pre>
    *
-   * <code>float racy_confidence = 24;</code>
+   * <code>float racy_confidence = 24 [deprecated = true];</code>
    *
    * @return The racyConfidence.
    */
+  @java.lang.Deprecated
   float getRacyConfidence();
 
   /**
@@ -240,9 +245,10 @@ public interface SafeSearchAnnotationOrBuilder
    * confident.
    * </pre>
    *
-   * <code>float nsfw_confidence = 26;</code>
+   * <code>float nsfw_confidence = 26 [deprecated = true];</code>
    *
    * @return The nsfwConfidence.
    */
+  @java.lang.Deprecated
   float getNsfwConfidence();
 }

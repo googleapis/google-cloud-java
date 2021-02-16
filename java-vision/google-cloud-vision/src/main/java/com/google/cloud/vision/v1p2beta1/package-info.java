@@ -24,6 +24,13 @@
  * returns detected entities from the images.
  *
  * <p>Sample for ImageAnnotatorClient:
+ *
+ * <pre>{@code
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+ *   List<AnnotateImageRequest> requests = new ArrayList<>();
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.vision.v1p2beta1;

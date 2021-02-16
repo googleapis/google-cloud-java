@@ -57,12 +57,12 @@ public final class ProductSearchProto {
   static {
     java.lang.String[] descriptorData = {
       "\n+google/cloud/vision/v1/product_search."
-          + "proto\022\026google.cloud.vision.v1\032%google/cl"
-          + "oud/vision/v1/geometry.proto\0323google/clo"
-          + "ud/vision/v1/product_search_service.prot"
-          + "o\032\037google/protobuf/timestamp.proto\032\034goog"
-          + "le/api/annotations.proto\032\031google/api/res"
-          + "ource.proto\"\272\001\n\023ProductSearchParams\022;\n\rb"
+          + "proto\022\026google.cloud.vision.v1\032\031google/ap"
+          + "i/resource.proto\032%google/cloud/vision/v1"
+          + "/geometry.proto\0323google/cloud/vision/v1/"
+          + "product_search_service.proto\032\037google/pro"
+          + "tobuf/timestamp.proto\032\034google/api/annota"
+          + "tions.proto\"\272\001\n\023ProductSearchParams\022;\n\rb"
           + "ounding_poly\030\t \001(\0132$.google.cloud.vision"
           + ".v1.BoundingPoly\022:\n\013product_set\030\006 \001(\tB%\372"
           + "A\"\n vision.googleapis.com/ProductSet\022\032\n\022"
@@ -92,11 +92,11 @@ public final class ProductSearchProto {
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.vision.v1.GeometryProto.getDescriptor(),
               com.google.cloud.vision.v1.ProductSearchServiceProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.api.AnnotationsProto.getDescriptor(),
-              com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_vision_v1_ProductSearchParams_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -149,11 +149,11 @@ public final class ProductSearchProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.vision.v1.GeometryProto.getDescriptor();
     com.google.cloud.vision.v1.ProductSearchServiceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
-    com.google.api.ResourceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

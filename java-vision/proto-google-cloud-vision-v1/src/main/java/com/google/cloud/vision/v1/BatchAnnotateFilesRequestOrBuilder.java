@@ -27,8 +27,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -40,8 +40,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -53,8 +53,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -66,8 +66,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>
@@ -80,8 +80,8 @@ public interface BatchAnnotateFilesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The list of file annotation requests. Right now we support only one
-   * AnnotateFileRequest in BatchAnnotateFilesRequest.
+   * Required. The list of file annotation requests. Right now we support only
+   * one AnnotateFileRequest in BatchAnnotateFilesRequest.
    * </pre>
    *
    * <code>

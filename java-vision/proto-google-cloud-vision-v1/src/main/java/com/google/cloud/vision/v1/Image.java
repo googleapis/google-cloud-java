@@ -133,6 +133,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
    * Image content, represented as a stream of bytes.
    * Note: As with all `bytes` fields, protobuffers use a pure binary
    * representation, whereas JSON representations use base64.
+   * Currently, this field only works for BatchAnnotateImages requests. It does
+   * not work for AsyncBatchAnnotateImages requests.
    * </pre>
    *
    * <code>bytes content = 1;</code>
@@ -544,6 +546,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateImages requests. It does
+     * not work for AsyncBatchAnnotateImages requests.
      * </pre>
      *
      * <code>bytes content = 1;</code>
@@ -561,6 +565,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateImages requests. It does
+     * not work for AsyncBatchAnnotateImages requests.
      * </pre>
      *
      * <code>bytes content = 1;</code>
@@ -584,6 +590,8 @@ public final class Image extends com.google.protobuf.GeneratedMessageV3
      * Image content, represented as a stream of bytes.
      * Note: As with all `bytes` fields, protobuffers use a pure binary
      * representation, whereas JSON representations use base64.
+     * Currently, this field only works for BatchAnnotateImages requests. It does
+     * not work for AsyncBatchAnnotateImages requests.
      * </pre>
      *
      * <code>bytes content = 1;</code>

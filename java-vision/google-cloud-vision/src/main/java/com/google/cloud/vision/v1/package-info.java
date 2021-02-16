@@ -25,6 +25,13 @@
  *
  * <p>Sample for ImageAnnotatorClient:
  *
+ * <pre>{@code
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+ *   List<AnnotateImageRequest> requests = new ArrayList<>();
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+ * }
+ * }</pre>
+ *
  * <p>======================= ProductSearchClient =======================
  *
  * <p>Service Description: Manages Products and ProductSets of reference images for use in product
@@ -44,6 +51,15 @@
  * `projects/&#42;/locations/&#42;/products/&#42;/referenceImages/&#42;`
  *
  * <p>Sample for ProductSearchClient:
+ *
+ * <pre>{@code
+ * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   ProductSet productSet = ProductSet.newBuilder().build();
+ *   String productSetId = "productSetId1003042158";
+ *   ProductSet response = productSearchClient.createProductSet(parent, productSet, productSetId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.vision.v1;

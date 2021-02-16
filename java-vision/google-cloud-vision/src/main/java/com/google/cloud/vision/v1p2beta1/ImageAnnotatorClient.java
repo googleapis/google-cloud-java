@@ -39,6 +39,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+ *   List<AnnotateImageRequest> requests = new ArrayList<>();
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ImageAnnotatorClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -154,6 +161,15 @@ public class ImageAnnotatorClient implements BackgroundResource {
   /**
    * Run image detection and annotation for a batch of images.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List<AnnotateImageRequest> requests = new ArrayList<>();
+   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
+   * }
+   * }</pre>
+   *
    * @param requests Required. Individual image annotation requests for this batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -168,6 +184,18 @@ public class ImageAnnotatorClient implements BackgroundResource {
   /**
    * Run image detection and annotation for a batch of images.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   BatchAnnotateImagesRequest request =
+   *       BatchAnnotateImagesRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
+   *           .build();
+   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -180,6 +208,19 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * Run image detection and annotation for a batch of images.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   BatchAnnotateImagesRequest request =
+   *       BatchAnnotateImagesRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<AnnotateImageRequest>())
+   *           .build();
+   *   ApiFuture<BatchAnnotateImagesResponse> future =
+   *       imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
+   *   // Do something.
+   *   BatchAnnotateImagesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {
@@ -193,6 +234,16 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * through the `google.longrunning.Operations` interface. `Operation.metadata` contains
    * `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse`
    * (results).
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   List<AsyncAnnotateFileRequest> requests = new ArrayList<>();
+   *   AsyncBatchAnnotateFilesResponse response =
+   *       imageAnnotatorClient.asyncBatchAnnotateFilesAsync(requests).get();
+   * }
+   * }</pre>
    *
    * @param requests Required. Individual async file annotation requests for this batch.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -212,6 +263,19 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * `OperationMetadata` (metadata). `Operation.response` contains `AsyncBatchAnnotateFilesResponse`
    * (results).
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   AsyncBatchAnnotateFilesRequest request =
+   *       AsyncBatchAnnotateFilesRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
+   *           .build();
+   *   AsyncBatchAnnotateFilesResponse response =
+   *       imageAnnotatorClient.asyncBatchAnnotateFilesAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -229,6 +293,19 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * (results).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   AsyncBatchAnnotateFilesRequest request =
+   *       AsyncBatchAnnotateFilesRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
+   *           .build();
+   *   OperationFuture<AsyncBatchAnnotateFilesResponse, OperationMetadata> future =
+   *       imageAnnotatorClient.asyncBatchAnnotateFilesOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AsyncBatchAnnotateFilesResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
@@ -245,6 +322,19 @@ public class ImageAnnotatorClient implements BackgroundResource {
    * (results).
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
+   *   AsyncBatchAnnotateFilesRequest request =
+   *       AsyncBatchAnnotateFilesRequest.newBuilder()
+   *           .addAllRequests(new ArrayList<AsyncAnnotateFileRequest>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       imageAnnotatorClient.asyncBatchAnnotateFilesCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
       asyncBatchAnnotateFilesCallable() {
