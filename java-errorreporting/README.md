@@ -40,7 +40,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file
   <dependency>
     <groupId>junit</groupId>
     <artifactId>junit</artifactId>
-    <version>4.13.1</version>
+    <version>4.13.2</version>
     <scope>test</scope>
   </dependency>
   <dependency>
