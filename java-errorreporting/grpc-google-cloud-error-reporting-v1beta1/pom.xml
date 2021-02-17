@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-error-reporting-v1beta1</artifactId>
-  <version>0.86.31-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-errorreporting-v1beta1:current} -->
+  <version>0.86.31</version><!-- {x-version-update:grpc-google-cloud-errorreporting-v1beta1:current} -->
   <name>grpc-google-cloud-error-reporting-v1beta1</name>
   <description>GRPC library for grpc-google-cloud-error-reporting-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-errorreporting-parent</artifactId>
-    <version>0.120.31-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
+    <version>0.120.31-beta</version><!-- {x-version-update:google-cloud-errorreporting:current} -->
   </parent>
   <dependencies>
     <dependency>
