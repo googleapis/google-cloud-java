@@ -218,6 +218,7 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(ExecutionView.forNumber(0))
    *           .build();
    *   for (Execution element : executionsClient.listExecutions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -247,6 +248,7 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setParent(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(ExecutionView.forNumber(0))
    *           .build();
    *   ApiFuture<Execution> future =
    *       executionsClient.listExecutionsPagedCallable().futureCall(request);
@@ -453,6 +455,7 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setName(
    *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]")
    *                   .toString())
+   *           .setView(ExecutionView.forNumber(0))
    *           .build();
    *   Execution response = executionsClient.getExecution(request);
    * }
@@ -478,6 +481,7 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setName(
    *               ExecutionName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]", "[EXECUTION]")
    *                   .toString())
+   *           .setView(ExecutionView.forNumber(0))
    *           .build();
    *   ApiFuture<Execution> future = executionsClient.getExecutionCallable().futureCall(request);
    *   // Do something.

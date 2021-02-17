@@ -220,23 +220,28 @@ public class GrpcExecutionsStub extends ExecutionsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListExecutionsRequest, ListExecutionsResponse> listExecutionsCallable() {
     return listExecutionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable() {
     return listExecutionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateExecutionRequest, Execution> createExecutionCallable() {
     return createExecutionCallable;
   }
 
+  @Override
   public UnaryCallable<GetExecutionRequest, Execution> getExecutionCallable() {
     return getExecutionCallable;
   }
 
+  @Override
   public UnaryCallable<CancelExecutionRequest, Execution> cancelExecutionCallable() {
     return cancelExecutionCallable;
   }
