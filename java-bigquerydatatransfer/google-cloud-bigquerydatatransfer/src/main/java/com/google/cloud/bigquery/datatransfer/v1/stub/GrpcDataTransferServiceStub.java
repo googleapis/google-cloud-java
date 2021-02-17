@@ -585,83 +585,101 @@ public class GrpcDataTransferServiceStub extends DataTransferServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable() {
     return getDataSourceCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesResponse> listDataSourcesCallable() {
     return listDataSourcesCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataSourcesRequest, ListDataSourcesPagedResponse>
       listDataSourcesPagedCallable() {
     return listDataSourcesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTransferConfigRequest, TransferConfig> createTransferConfigCallable() {
     return createTransferConfigCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTransferConfigRequest, TransferConfig> updateTransferConfigCallable() {
     return updateTransferConfigCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTransferConfigRequest, Empty> deleteTransferConfigCallable() {
     return deleteTransferConfigCallable;
   }
 
+  @Override
   public UnaryCallable<GetTransferConfigRequest, TransferConfig> getTransferConfigCallable() {
     return getTransferConfigCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsResponse>
       listTransferConfigsCallable() {
     return listTransferConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferConfigsRequest, ListTransferConfigsPagedResponse>
       listTransferConfigsPagedCallable() {
     return listTransferConfigsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ScheduleTransferRunsRequest, ScheduleTransferRunsResponse>
       scheduleTransferRunsCallable() {
     return scheduleTransferRunsCallable;
   }
 
+  @Override
   public UnaryCallable<StartManualTransferRunsRequest, StartManualTransferRunsResponse>
       startManualTransferRunsCallable() {
     return startManualTransferRunsCallable;
   }
 
+  @Override
   public UnaryCallable<GetTransferRunRequest, TransferRun> getTransferRunCallable() {
     return getTransferRunCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTransferRunRequest, Empty> deleteTransferRunCallable() {
     return deleteTransferRunCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsResponse>
       listTransferRunsCallable() {
     return listTransferRunsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferRunsRequest, ListTransferRunsPagedResponse>
       listTransferRunsPagedCallable() {
     return listTransferRunsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsResponse>
       listTransferLogsCallable() {
     return listTransferLogsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferLogsRequest, ListTransferLogsPagedResponse>
       listTransferLogsPagedCallable() {
     return listTransferLogsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CheckValidCredsRequest, CheckValidCredsResponse> checkValidCredsCallable() {
     return checkValidCredsCallable;
   }

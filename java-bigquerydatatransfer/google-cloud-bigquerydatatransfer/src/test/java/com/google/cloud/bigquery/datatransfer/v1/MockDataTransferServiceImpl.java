@@ -70,7 +70,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataSource, expected %s or %s",
+                  response.getClass().getName(),
+                  DataSource.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDataSources, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDataSourcesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTransferConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  TransferConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTransferConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  TransferConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTransferConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -145,7 +175,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTransferConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  TransferConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -161,7 +197,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTransferConfigs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTransferConfigsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -177,7 +219,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ScheduleTransferRuns, expected %s or %s",
+                  response.getClass().getName(),
+                  ScheduleTransferRunsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -193,7 +241,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartManualTransferRuns, expected %s or %s",
+                  response.getClass().getName(),
+                  StartManualTransferRunsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -208,7 +262,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTransferRun, expected %s or %s",
+                  response.getClass().getName(),
+                  TransferRun.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -223,7 +283,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTransferRun, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -238,7 +304,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTransferRuns, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTransferRunsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -253,7 +325,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTransferLogs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTransferLogsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -268,7 +346,13 @@ public class MockDataTransferServiceImpl extends DataTransferServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CheckValidCreds, expected %s or %s",
+                  response.getClass().getName(),
+                  CheckValidCredsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
