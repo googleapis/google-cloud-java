@@ -71,7 +71,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  ProductSet.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProductSets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListProductSetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  ProductSet.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  ProductSet.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +155,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -146,7 +176,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProduct, expected %s or %s",
+                  response.getClass().getName(),
+                  Product.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -161,7 +197,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProducts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListProductsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -175,7 +217,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProduct, expected %s or %s",
+                  response.getClass().getName(),
+                  Product.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -190,7 +238,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProduct, expected %s or %s",
+                  response.getClass().getName(),
+                  Product.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -204,7 +258,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteProduct, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -219,7 +279,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateReferenceImage, expected %s or %s",
+                  response.getClass().getName(),
+                  ReferenceImage.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -234,7 +300,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteReferenceImage, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -250,7 +322,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListReferenceImages, expected %s or %s",
+                  response.getClass().getName(),
+                  ListReferenceImagesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -265,7 +343,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetReferenceImage, expected %s or %s",
+                  response.getClass().getName(),
+                  ReferenceImage.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -280,7 +364,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddProductToProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -295,7 +385,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RemoveProductFromProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -311,7 +407,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProductsInProductSet, expected %s or %s",
+                  response.getClass().getName(),
+                  ListProductsInProductSetResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -326,7 +428,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportProductSets, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -341,7 +449,13 @@ public class MockProductSearchImpl extends ProductSearchImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PurgeProducts, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

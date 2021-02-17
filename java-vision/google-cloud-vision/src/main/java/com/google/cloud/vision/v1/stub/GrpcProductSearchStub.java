@@ -714,110 +714,135 @@ public class GrpcProductSearchStub extends ProductSearchStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateProductSetRequest, ProductSet> createProductSetCallable() {
     return createProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductSetsRequest, ListProductSetsResponse> listProductSetsCallable() {
     return listProductSetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductSetsRequest, ListProductSetsPagedResponse>
       listProductSetsPagedCallable() {
     return listProductSetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetProductSetRequest, ProductSet> getProductSetCallable() {
     return getProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateProductSetRequest, ProductSet> updateProductSetCallable() {
     return updateProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteProductSetRequest, Empty> deleteProductSetCallable() {
     return deleteProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     return createProductCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
     return listProductsCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
     return listProductsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetProductRequest, Product> getProductCallable() {
     return getProductCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     return updateProductCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     return deleteProductCallable;
   }
 
+  @Override
   public UnaryCallable<CreateReferenceImageRequest, ReferenceImage> createReferenceImageCallable() {
     return createReferenceImageCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteReferenceImageRequest, Empty> deleteReferenceImageCallable() {
     return deleteReferenceImageCallable;
   }
 
+  @Override
   public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesResponse>
       listReferenceImagesCallable() {
     return listReferenceImagesCallable;
   }
 
+  @Override
   public UnaryCallable<ListReferenceImagesRequest, ListReferenceImagesPagedResponse>
       listReferenceImagesPagedCallable() {
     return listReferenceImagesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetReferenceImageRequest, ReferenceImage> getReferenceImageCallable() {
     return getReferenceImageCallable;
   }
 
+  @Override
   public UnaryCallable<AddProductToProductSetRequest, Empty> addProductToProductSetCallable() {
     return addProductToProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<RemoveProductFromProductSetRequest, Empty>
       removeProductFromProductSetCallable() {
     return removeProductFromProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetResponse>
       listProductsInProductSetCallable() {
     return listProductsInProductSetCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductsInProductSetRequest, ListProductsInProductSetPagedResponse>
       listProductsInProductSetPagedCallable() {
     return listProductsInProductSetPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ImportProductSetsRequest, Operation> importProductSetsCallable() {
     return importProductSetsCallable;
   }
 
+  @Override
   public OperationCallable<
           ImportProductSetsRequest, ImportProductSetsResponse, BatchOperationMetadata>
       importProductSetsOperationCallable() {
     return importProductSetsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<PurgeProductsRequest, Operation> purgeProductsCallable() {
     return purgeProductsCallable;
   }
 
+  @Override
   public OperationCallable<PurgeProductsRequest, Empty, BatchOperationMetadata>
       purgeProductsOperationCallable() {
     return purgeProductsOperationCallable;

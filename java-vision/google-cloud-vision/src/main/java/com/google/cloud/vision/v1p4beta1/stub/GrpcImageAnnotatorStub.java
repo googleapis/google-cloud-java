@@ -215,32 +215,38 @@ public class GrpcImageAnnotatorStub extends ImageAnnotatorStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {
     return batchAnnotateImagesCallable;
   }
 
+  @Override
   public UnaryCallable<BatchAnnotateFilesRequest, BatchAnnotateFilesResponse>
       batchAnnotateFilesCallable() {
     return batchAnnotateFilesCallable;
   }
 
+  @Override
   public UnaryCallable<AsyncBatchAnnotateImagesRequest, Operation>
       asyncBatchAnnotateImagesCallable() {
     return asyncBatchAnnotateImagesCallable;
   }
 
+  @Override
   public OperationCallable<
           AsyncBatchAnnotateImagesRequest, AsyncBatchAnnotateImagesResponse, OperationMetadata>
       asyncBatchAnnotateImagesOperationCallable() {
     return asyncBatchAnnotateImagesOperationCallable;
   }
 
+  @Override
   public UnaryCallable<AsyncBatchAnnotateFilesRequest, Operation>
       asyncBatchAnnotateFilesCallable() {
     return asyncBatchAnnotateFilesCallable;
   }
 
+  @Override
   public OperationCallable<
           AsyncBatchAnnotateFilesRequest, AsyncBatchAnnotateFilesResponse, OperationMetadata>
       asyncBatchAnnotateFilesOperationCallable() {
