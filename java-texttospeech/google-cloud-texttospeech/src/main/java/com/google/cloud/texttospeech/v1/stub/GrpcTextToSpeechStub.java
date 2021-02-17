@@ -132,10 +132,12 @@ public class GrpcTextToSpeechStub extends TextToSpeechStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListVoicesRequest, ListVoicesResponse> listVoicesCallable() {
     return listVoicesCallable;
   }
 
+  @Override
   public UnaryCallable<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
       synthesizeSpeechCallable() {
     return synthesizeSpeechCallable;

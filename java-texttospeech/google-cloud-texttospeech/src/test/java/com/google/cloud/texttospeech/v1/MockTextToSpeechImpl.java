@@ -69,7 +69,13 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListVoices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListVoicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockTextToSpeechImpl extends TextToSpeechImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SynthesizeSpeech, expected %s or %s",
+                  response.getClass().getName(),
+                  SynthesizeSpeechResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
