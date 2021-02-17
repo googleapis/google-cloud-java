@@ -70,7 +70,13 @@ public class MockSpeechImpl extends SpeechImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Recognize, expected %s or %s",
+                  response.getClass().getName(),
+                  RecognizeResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockSpeechImpl extends SpeechImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LongRunningRecognize, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -103,7 +115,13 @@ public class MockSpeechImpl extends SpeechImplBase {
             } else if (response instanceof Exception) {
               responseObserver.onError(((Exception) response));
             } else {
-              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method StreamingRecognize, expected %s or %s",
+                          response.getClass().getName(),
+                          StreamingRecognizeResponse.class.getName(),
+                          Exception.class.getName())));
             }
           }
 

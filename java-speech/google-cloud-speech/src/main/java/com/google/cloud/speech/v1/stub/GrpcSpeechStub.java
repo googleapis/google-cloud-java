@@ -166,20 +166,24 @@ public class GrpcSpeechStub extends SpeechStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable() {
     return recognizeCallable;
   }
 
+  @Override
   public UnaryCallable<LongRunningRecognizeRequest, Operation> longRunningRecognizeCallable() {
     return longRunningRecognizeCallable;
   }
 
+  @Override
   public OperationCallable<
           LongRunningRecognizeRequest, LongRunningRecognizeResponse, LongRunningRecognizeMetadata>
       longRunningRecognizeOperationCallable() {
     return longRunningRecognizeOperationCallable;
   }
 
+  @Override
   public BidiStreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
     return streamingRecognizeCallable;
