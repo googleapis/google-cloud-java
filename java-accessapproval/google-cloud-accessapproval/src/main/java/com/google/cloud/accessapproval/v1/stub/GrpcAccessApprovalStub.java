@@ -345,40 +345,48 @@ public class GrpcAccessApprovalStub extends AccessApprovalStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsResponse>
       listApprovalRequestsCallable() {
     return listApprovalRequestsCallable;
   }
 
+  @Override
   public UnaryCallable<ListApprovalRequestsMessage, ListApprovalRequestsPagedResponse>
       listApprovalRequestsPagedCallable() {
     return listApprovalRequestsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetApprovalRequestMessage, ApprovalRequest> getApprovalRequestCallable() {
     return getApprovalRequestCallable;
   }
 
+  @Override
   public UnaryCallable<ApproveApprovalRequestMessage, ApprovalRequest>
       approveApprovalRequestCallable() {
     return approveApprovalRequestCallable;
   }
 
+  @Override
   public UnaryCallable<DismissApprovalRequestMessage, ApprovalRequest>
       dismissApprovalRequestCallable() {
     return dismissApprovalRequestCallable;
   }
 
+  @Override
   public UnaryCallable<GetAccessApprovalSettingsMessage, AccessApprovalSettings>
       getAccessApprovalSettingsCallable() {
     return getAccessApprovalSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAccessApprovalSettingsMessage, AccessApprovalSettings>
       updateAccessApprovalSettingsCallable() {
     return updateAccessApprovalSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAccessApprovalSettingsMessage, Empty>
       deleteAccessApprovalSettingsCallable() {
     return deleteAccessApprovalSettingsCallable;
