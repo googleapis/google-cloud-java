@@ -270,41 +270,50 @@ public class GrpcWorkflowsStub extends WorkflowsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListWorkflowsRequest, ListWorkflowsResponse> listWorkflowsCallable() {
     return listWorkflowsCallable;
   }
 
+  @Override
   public UnaryCallable<ListWorkflowsRequest, ListWorkflowsPagedResponse>
       listWorkflowsPagedCallable() {
     return listWorkflowsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetWorkflowRequest, Workflow> getWorkflowCallable() {
     return getWorkflowCallable;
   }
 
+  @Override
   public UnaryCallable<CreateWorkflowRequest, Operation> createWorkflowCallable() {
     return createWorkflowCallable;
   }
 
+  @Override
   public OperationCallable<CreateWorkflowRequest, Workflow, OperationMetadata>
       createWorkflowOperationCallable() {
     return createWorkflowOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteWorkflowRequest, Operation> deleteWorkflowCallable() {
     return deleteWorkflowCallable;
   }
 
+  @Override
   public OperationCallable<DeleteWorkflowRequest, Empty, OperationMetadata>
       deleteWorkflowOperationCallable() {
     return deleteWorkflowOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateWorkflowRequest, Operation> updateWorkflowCallable() {
     return updateWorkflowCallable;
   }
 
+  @Override
   public OperationCallable<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationCallable() {
     return updateWorkflowOperationCallable;
