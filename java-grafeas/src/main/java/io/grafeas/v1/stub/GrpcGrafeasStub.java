@@ -522,74 +522,91 @@ public class GrpcGrafeasStub extends GrafeasStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetOccurrenceRequest, Occurrence> getOccurrenceCallable() {
     return getOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<ListOccurrencesRequest, ListOccurrencesResponse> listOccurrencesCallable() {
     return listOccurrencesCallable;
   }
 
+  @Override
   public UnaryCallable<ListOccurrencesRequest, ListOccurrencesPagedResponse>
       listOccurrencesPagedCallable() {
     return listOccurrencesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteOccurrenceRequest, Empty> deleteOccurrenceCallable() {
     return deleteOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateOccurrenceRequest, Occurrence> createOccurrenceCallable() {
     return createOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateOccurrencesRequest, BatchCreateOccurrencesResponse>
       batchCreateOccurrencesCallable() {
     return batchCreateOccurrencesCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateOccurrenceRequest, Occurrence> updateOccurrenceCallable() {
     return updateOccurrenceCallable;
   }
 
+  @Override
   public UnaryCallable<GetOccurrenceNoteRequest, Note> getOccurrenceNoteCallable() {
     return getOccurrenceNoteCallable;
   }
 
+  @Override
   public UnaryCallable<GetNoteRequest, Note> getNoteCallable() {
     return getNoteCallable;
   }
 
+  @Override
   public UnaryCallable<ListNotesRequest, ListNotesResponse> listNotesCallable() {
     return listNotesCallable;
   }
 
+  @Override
   public UnaryCallable<ListNotesRequest, ListNotesPagedResponse> listNotesPagedCallable() {
     return listNotesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNoteRequest, Empty> deleteNoteCallable() {
     return deleteNoteCallable;
   }
 
+  @Override
   public UnaryCallable<CreateNoteRequest, Note> createNoteCallable() {
     return createNoteCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateNotesRequest, BatchCreateNotesResponse>
       batchCreateNotesCallable() {
     return batchCreateNotesCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateNoteRequest, Note> updateNoteCallable() {
     return updateNoteCallable;
   }
 
+  @Override
   public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesResponse>
       listNoteOccurrencesCallable() {
     return listNoteOccurrencesCallable;
   }
 
+  @Override
   public UnaryCallable<ListNoteOccurrencesRequest, ListNoteOccurrencesPagedResponse>
       listNoteOccurrencesPagedCallable() {
     return listNoteOccurrencesPagedCallable;

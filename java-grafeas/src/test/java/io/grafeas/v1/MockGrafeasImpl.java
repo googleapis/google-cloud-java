@@ -70,7 +70,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOccurrence, expected %s or %s",
+                  response.getClass().getName(),
+                  Occurrence.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOccurrences, expected %s or %s",
+                  response.getClass().getName(),
+                  ListOccurrencesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteOccurrence, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateOccurrence, expected %s or %s",
+                  response.getClass().getName(),
+                  Occurrence.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +155,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateOccurrences, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchCreateOccurrencesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -146,7 +176,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateOccurrence, expected %s or %s",
+                  response.getClass().getName(),
+                  Occurrence.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -161,7 +197,11 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetOccurrenceNote, expected %s or %s",
+                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -175,7 +215,11 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNote, expected %s or %s",
+                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -190,7 +234,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNotes, expected %s or %s",
+                  response.getClass().getName(),
+                  ListNotesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -204,7 +254,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNote, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -218,7 +274,11 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateNote, expected %s or %s",
+                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -233,7 +293,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateNotes, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchCreateNotesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -247,7 +313,11 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateNote, expected %s or %s",
+                  response.getClass().getName(), Note.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -263,7 +333,13 @@ public class MockGrafeasImpl extends GrafeasImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNoteOccurrences, expected %s or %s",
+                  response.getClass().getName(),
+                  ListNoteOccurrencesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
