@@ -52,6 +52,7 @@ import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
 import com.google.privacy.dlp.v2.DlpContentName;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
+import com.google.privacy.dlp.v2.DlpJobType;
 import com.google.privacy.dlp.v2.Error;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
@@ -2577,6 +2578,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -2628,6 +2630,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -2674,6 +2677,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -2720,6 +2724,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -2766,6 +2771,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -2812,6 +2818,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -2858,6 +2865,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -3036,6 +3044,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())
@@ -3079,6 +3088,7 @@ public class DlpServiceClientTest {
     DlpJob expectedResponse =
         DlpJob.newBuilder()
             .setName(DlpJobName.ofProjectDlpJobName("[PROJECT]", "[DLP_JOB]").toString())
+            .setType(DlpJobType.forNumber(0))
             .setCreateTime(Timestamp.newBuilder().build())
             .setStartTime(Timestamp.newBuilder().build())
             .setEndTime(Timestamp.newBuilder().build())

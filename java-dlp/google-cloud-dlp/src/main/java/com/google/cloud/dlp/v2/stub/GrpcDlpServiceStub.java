@@ -1168,174 +1168,213 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<InspectContentRequest, InspectContentResponse> inspectContentCallable() {
     return inspectContentCallable;
   }
 
+  @Override
   public UnaryCallable<RedactImageRequest, RedactImageResponse> redactImageCallable() {
     return redactImageCallable;
   }
 
+  @Override
   public UnaryCallable<DeidentifyContentRequest, DeidentifyContentResponse>
       deidentifyContentCallable() {
     return deidentifyContentCallable;
   }
 
+  @Override
   public UnaryCallable<ReidentifyContentRequest, ReidentifyContentResponse>
       reidentifyContentCallable() {
     return reidentifyContentCallable;
   }
 
+  @Override
   public UnaryCallable<ListInfoTypesRequest, ListInfoTypesResponse> listInfoTypesCallable() {
     return listInfoTypesCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInspectTemplateRequest, InspectTemplate>
       createInspectTemplateCallable() {
     return createInspectTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateInspectTemplateRequest, InspectTemplate>
       updateInspectTemplateCallable() {
     return updateInspectTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<GetInspectTemplateRequest, InspectTemplate> getInspectTemplateCallable() {
     return getInspectTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesResponse>
       listInspectTemplatesCallable() {
     return listInspectTemplatesCallable;
   }
 
+  @Override
   public UnaryCallable<ListInspectTemplatesRequest, ListInspectTemplatesPagedResponse>
       listInspectTemplatesPagedCallable() {
     return listInspectTemplatesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInspectTemplateRequest, Empty> deleteInspectTemplateCallable() {
     return deleteInspectTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<CreateDeidentifyTemplateRequest, DeidentifyTemplate>
       createDeidentifyTemplateCallable() {
     return createDeidentifyTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDeidentifyTemplateRequest, DeidentifyTemplate>
       updateDeidentifyTemplateCallable() {
     return updateDeidentifyTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<GetDeidentifyTemplateRequest, DeidentifyTemplate>
       getDeidentifyTemplateCallable() {
     return getDeidentifyTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesResponse>
       listDeidentifyTemplatesCallable() {
     return listDeidentifyTemplatesCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeidentifyTemplatesRequest, ListDeidentifyTemplatesPagedResponse>
       listDeidentifyTemplatesPagedCallable() {
     return listDeidentifyTemplatesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDeidentifyTemplateRequest, Empty> deleteDeidentifyTemplateCallable() {
     return deleteDeidentifyTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<CreateJobTriggerRequest, JobTrigger> createJobTriggerCallable() {
     return createJobTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateJobTriggerRequest, JobTrigger> updateJobTriggerCallable() {
     return updateJobTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<HybridInspectJobTriggerRequest, HybridInspectResponse>
       hybridInspectJobTriggerCallable() {
     return hybridInspectJobTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<GetJobTriggerRequest, JobTrigger> getJobTriggerCallable() {
     return getJobTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobTriggersRequest, ListJobTriggersResponse> listJobTriggersCallable() {
     return listJobTriggersCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobTriggersRequest, ListJobTriggersPagedResponse>
       listJobTriggersPagedCallable() {
     return listJobTriggersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable() {
     return deleteJobTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable() {
     return activateJobTriggerCallable;
   }
 
+  @Override
   public UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable() {
     return createDlpJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsCallable() {
     return listDlpJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse> listDlpJobsPagedCallable() {
     return listDlpJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetDlpJobRequest, DlpJob> getDlpJobCallable() {
     return getDlpJobCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDlpJobRequest, Empty> deleteDlpJobCallable() {
     return deleteDlpJobCallable;
   }
 
+  @Override
   public UnaryCallable<CancelDlpJobRequest, Empty> cancelDlpJobCallable() {
     return cancelDlpJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateStoredInfoTypeRequest, StoredInfoType> createStoredInfoTypeCallable() {
     return createStoredInfoTypeCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateStoredInfoTypeRequest, StoredInfoType> updateStoredInfoTypeCallable() {
     return updateStoredInfoTypeCallable;
   }
 
+  @Override
   public UnaryCallable<GetStoredInfoTypeRequest, StoredInfoType> getStoredInfoTypeCallable() {
     return getStoredInfoTypeCallable;
   }
 
+  @Override
   public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesResponse>
       listStoredInfoTypesCallable() {
     return listStoredInfoTypesCallable;
   }
 
+  @Override
   public UnaryCallable<ListStoredInfoTypesRequest, ListStoredInfoTypesPagedResponse>
       listStoredInfoTypesPagedCallable() {
     return listStoredInfoTypesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteStoredInfoTypeRequest, Empty> deleteStoredInfoTypeCallable() {
     return deleteStoredInfoTypeCallable;
   }
 
+  @Override
   public UnaryCallable<HybridInspectDlpJobRequest, HybridInspectResponse>
       hybridInspectDlpJobCallable() {
     return hybridInspectDlpJobCallable;
   }
 
+  @Override
   public UnaryCallable<FinishDlpJobRequest, Empty> finishDlpJobCallable() {
     return finishDlpJobCallable;
   }

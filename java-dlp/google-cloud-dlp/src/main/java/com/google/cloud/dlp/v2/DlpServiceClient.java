@@ -3728,6 +3728,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setType(DlpJobType.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLocationId("locationId1541836720")
    *           .build();
@@ -3760,6 +3761,7 @@ public class DlpServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setType(DlpJobType.forNumber(0))
    *           .setOrderBy("orderBy-1207110587")
    *           .setLocationId("locationId1541836720")
    *           .build();
