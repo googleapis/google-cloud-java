@@ -404,44 +404,53 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>
       createConnectionCallable() {
     return createConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
       getConnectionCallable() {
     return getConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<
           ConnectionProto.ListConnectionsRequest, ConnectionProto.ListConnectionsResponse>
       listConnectionsCallable() {
     return listConnectionsCallable;
   }
 
+  @Override
   public UnaryCallable<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
       updateConnectionCallable() {
     return updateConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
       updateConnectionCredentialCallable() {
     return updateConnectionCredentialCallable;
   }
 
+  @Override
   public UnaryCallable<ConnectionProto.DeleteConnectionRequest, Empty> deleteConnectionCallable() {
     return deleteConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

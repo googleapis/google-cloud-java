@@ -341,39 +341,48 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable() {
     return createConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<GetConnectionRequest, Connection> getConnectionCallable() {
     return getConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<ListConnectionsRequest, ListConnectionsResponse> listConnectionsCallable() {
     return listConnectionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListConnectionsRequest, ListConnectionsPagedResponse>
       listConnectionsPagedCallable() {
     return listConnectionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateConnectionRequest, Connection> updateConnectionCallable() {
     return updateConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteConnectionRequest, Empty> deleteConnectionCallable() {
     return deleteConnectionCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
