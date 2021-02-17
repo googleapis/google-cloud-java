@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-containeranalysis</artifactId>
-  <version>1.2.16</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+  <version>1.2.17-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Container Analysis</name>
   <url>https://github.com/googleapis/java-containeranalysis</url>
@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-containeranalysis-parent</artifactId>
-    <version>1.2.16</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+    <version>1.2.17-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-containeranalysis</site.installationModule>
