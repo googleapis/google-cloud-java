@@ -77,7 +77,13 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDashboard, expected %s or %s",
+                  response.getClass().getName(),
+                  Dashboard.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -92,7 +98,13 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDashboards, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDashboardsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -107,7 +119,13 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDashboard, expected %s or %s",
+                  response.getClass().getName(),
+                  Dashboard.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -122,7 +140,13 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDashboard, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -137,7 +161,13 @@ public class MockDashboardsServiceImpl extends DashboardsServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDashboard, expected %s or %s",
+                  response.getClass().getName(),
+                  Dashboard.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

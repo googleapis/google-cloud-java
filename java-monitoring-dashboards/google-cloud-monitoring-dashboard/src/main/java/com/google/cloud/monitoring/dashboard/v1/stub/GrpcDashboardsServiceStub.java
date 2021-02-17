@@ -246,27 +246,33 @@ public class GrpcDashboardsServiceStub extends DashboardsServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateDashboardRequest, Dashboard> createDashboardCallable() {
     return createDashboardCallable;
   }
 
+  @Override
   public UnaryCallable<ListDashboardsRequest, ListDashboardsResponse> listDashboardsCallable() {
     return listDashboardsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDashboardsRequest, ListDashboardsPagedResponse>
       listDashboardsPagedCallable() {
     return listDashboardsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetDashboardRequest, Dashboard> getDashboardCallable() {
     return getDashboardCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDashboardRequest, Empty> deleteDashboardCallable() {
     return deleteDashboardCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDashboardRequest, Dashboard> updateDashboardCallable() {
     return updateDashboardCallable;
   }
