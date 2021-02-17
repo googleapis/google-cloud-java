@@ -128,10 +128,12 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable() {
     return annotateVideoCallable;
   }
 
+  @Override
   public OperationCallable<AnnotateVideoRequest, AnnotateVideoResponse, AnnotateVideoProgress>
       annotateVideoOperationCallable() {
     return annotateVideoOperationCallable;

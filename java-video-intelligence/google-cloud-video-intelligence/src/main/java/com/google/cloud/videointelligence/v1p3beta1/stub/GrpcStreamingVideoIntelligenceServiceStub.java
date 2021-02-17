@@ -127,6 +127,7 @@ public class GrpcStreamingVideoIntelligenceServiceStub
     return operationsStub;
   }
 
+  @Override
   public BidiStreamingCallable<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse>
       streamingAnnotateVideoCallable() {
     return streamingAnnotateVideoCallable;
