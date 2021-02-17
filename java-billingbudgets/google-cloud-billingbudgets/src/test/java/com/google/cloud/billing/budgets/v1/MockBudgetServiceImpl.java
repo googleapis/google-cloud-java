@@ -69,7 +69,13 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBudget, expected %s or %s",
+                  response.getClass().getName(),
+                  Budget.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -83,7 +89,13 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBudget, expected %s or %s",
+                  response.getClass().getName(),
+                  Budget.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -97,7 +109,13 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBudget, expected %s or %s",
+                  response.getClass().getName(),
+                  Budget.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -112,7 +130,13 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBudgets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBudgetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -126,7 +150,13 @@ public class MockBudgetServiceImpl extends BudgetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteBudget, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

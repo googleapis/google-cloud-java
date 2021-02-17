@@ -237,26 +237,32 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable() {
     return createBudgetCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBudgetRequest, Budget> updateBudgetCallable() {
     return updateBudgetCallable;
   }
 
+  @Override
   public UnaryCallable<GetBudgetRequest, Budget> getBudgetCallable() {
     return getBudgetCallable;
   }
 
+  @Override
   public UnaryCallable<ListBudgetsRequest, ListBudgetsResponse> listBudgetsCallable() {
     return listBudgetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBudgetsRequest, ListBudgetsPagedResponse> listBudgetsPagedCallable() {
     return listBudgetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBudgetRequest, Empty> deleteBudgetCallable() {
     return deleteBudgetCallable;
   }
