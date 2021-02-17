@@ -543,70 +543,85 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetServiceAccountRequest, ServiceAccount> getServiceAccountCallable() {
     return getServiceAccountCallable;
   }
 
+  @Override
   public UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
     return getSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
     return updateSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<ResetSettingsRequest, Empty> resetSettingsCallable() {
     return resetSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<BatchGetSettingsRequest, BatchGetSettingsResponse>
       batchGetSettingsCallable() {
     return batchGetSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<CalculateEffectiveSettingsRequest, Settings>
       calculateEffectiveSettingsCallable() {
     return calculateEffectiveSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<
           BatchCalculateEffectiveSettingsRequest, BatchCalculateEffectiveSettingsResponse>
       batchCalculateEffectiveSettingsCallable() {
     return batchCalculateEffectiveSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<GetComponentSettingsRequest, ComponentSettings>
       getComponentSettingsCallable() {
     return getComponentSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateComponentSettingsRequest, ComponentSettings>
       updateComponentSettingsCallable() {
     return updateComponentSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<ResetComponentSettingsRequest, Empty> resetComponentSettingsCallable() {
     return resetComponentSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<CalculateEffectiveComponentSettingsRequest, ComponentSettings>
       calculateEffectiveComponentSettingsCallable() {
     return calculateEffectiveComponentSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDetectorsRequest, ListDetectorsResponse> listDetectorsCallable() {
     return listDetectorsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDetectorsRequest, ListDetectorsPagedResponse>
       listDetectorsPagedCallable() {
     return listDetectorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListComponentsRequest, ListComponentsResponse> listComponentsCallable() {
     return listComponentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListComponentsRequest, ListComponentsPagedResponse>
       listComponentsPagedCallable() {
     return listComponentsPagedCallable;

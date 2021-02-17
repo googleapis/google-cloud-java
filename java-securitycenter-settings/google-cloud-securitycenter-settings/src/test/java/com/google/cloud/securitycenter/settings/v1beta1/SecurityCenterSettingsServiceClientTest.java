@@ -537,6 +537,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .setName(
                 ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
                     .toString())
+            .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())
             .setEtag("etag3123477")
@@ -584,6 +585,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .setName(
                 ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
                     .toString())
+            .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())
             .setEtag("etag3123477")
@@ -629,6 +631,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .setName(
                 ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
                     .toString())
+            .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())
             .setEtag("etag3123477")
@@ -726,6 +729,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .setName(
                 ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
                     .toString())
+            .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())
             .setEtag("etag3123477")
@@ -773,6 +777,7 @@ public class SecurityCenterSettingsServiceClientTest {
             .setName(
                 ComponentSettingsName.ofOrganizationComponentName("[ORGANIZATION]", "[COMPONENT]")
                     .toString())
+            .setState(ComponentEnablementState.forNumber(0))
             .setProjectServiceAccount("projectServiceAccount79138097")
             .putAllDetectorSettings(new HashMap<String, ComponentSettings.DetectorSettings>())
             .setEtag("etag3123477")
