@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>proto-google-cloud-containeranalysis-v1beta1</artifactId>
-  <version>0.88.21</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
+  <version>0.88.22-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-containeranalysis-v1beta1:current} -->
   <name>proto-google-cloud-containeranalysis-v1beta1</name>
   <description>PROTO library for proto-google-cloud-containeranalysis-v1beta1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-containeranalysis-parent</artifactId>
-    <version>1.2.21</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+    <version>1.2.22-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   </parent>
   <dependencies>
     <dependency>
