@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-networkconnectivity.git",
-        "sha": "07a3c70e8eb7fb79bc5c6d3f2929a10851f837f2"
+        "sha": "e00b4f1a24dab451215cb4b7ff3df5f5a03662ca"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2414b817065726eae0bc525346c7e874f969369d"
+        "sha": "f327d3b657a63ae4a8efd7f011a15eacae36b59c"
       }
     }
   ],
