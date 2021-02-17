@@ -459,68 +459,83 @@ public class GrpcCloudFunctionsServiceStub extends CloudFunctionsServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListFunctionsRequest, ListFunctionsResponse> listFunctionsCallable() {
     return listFunctionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListFunctionsRequest, ListFunctionsPagedResponse>
       listFunctionsPagedCallable() {
     return listFunctionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFunctionRequest, CloudFunction> getFunctionCallable() {
     return getFunctionCallable;
   }
 
+  @Override
   public UnaryCallable<CreateFunctionRequest, Operation> createFunctionCallable() {
     return createFunctionCallable;
   }
 
+  @Override
   public OperationCallable<CreateFunctionRequest, CloudFunction, OperationMetadataV1>
       createFunctionOperationCallable() {
     return createFunctionOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateFunctionRequest, Operation> updateFunctionCallable() {
     return updateFunctionCallable;
   }
 
+  @Override
   public OperationCallable<UpdateFunctionRequest, CloudFunction, OperationMetadataV1>
       updateFunctionOperationCallable() {
     return updateFunctionOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteFunctionRequest, Operation> deleteFunctionCallable() {
     return deleteFunctionCallable;
   }
 
+  @Override
   public OperationCallable<DeleteFunctionRequest, Empty, OperationMetadataV1>
       deleteFunctionOperationCallable() {
     return deleteFunctionOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CallFunctionRequest, CallFunctionResponse> callFunctionCallable() {
     return callFunctionCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
       generateUploadUrlCallable() {
     return generateUploadUrlCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
       generateDownloadUrlCallable() {
     return generateDownloadUrlCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
