@@ -279,31 +279,37 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>
       createAutoscalingPolicyCallable() {
     return createAutoscalingPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
       updateAutoscalingPolicyCallable() {
     return updateAutoscalingPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetAutoscalingPolicyRequest, AutoscalingPolicy>
       getAutoscalingPolicyCallable() {
     return getAutoscalingPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse>
       listAutoscalingPoliciesCallable() {
     return listAutoscalingPoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesPagedResponse>
       listAutoscalingPoliciesPagedCallable() {
     return listAutoscalingPoliciesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAutoscalingPolicyRequest, Empty> deleteAutoscalingPolicyCallable() {
     return deleteAutoscalingPolicyCallable;
   }

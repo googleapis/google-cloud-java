@@ -309,39 +309,48 @@ public class GrpcJobControllerStub extends JobControllerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SubmitJobRequest, Job> submitJobCallable() {
     return submitJobCallable;
   }
 
+  @Override
   public UnaryCallable<SubmitJobRequest, Operation> submitJobAsOperationCallable() {
     return submitJobAsOperationCallable;
   }
 
+  @Override
   public OperationCallable<SubmitJobRequest, Job, JobMetadata>
       submitJobAsOperationOperationCallable() {
     return submitJobAsOperationOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return getJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return listJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return updateJobCallable;
   }
 
+  @Override
   public UnaryCallable<CancelJobRequest, Job> cancelJobCallable() {
     return cancelJobCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return deleteJobCallable;
   }

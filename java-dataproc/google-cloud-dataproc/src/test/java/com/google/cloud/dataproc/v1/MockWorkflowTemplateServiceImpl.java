@@ -71,7 +71,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWorkflowTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkflowTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWorkflowTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkflowTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InstantiateWorkflowTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -117,7 +135,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method InstantiateInlineWorkflowTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -132,7 +156,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWorkflowTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  WorkflowTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -148,7 +178,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWorkflowTemplates, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWorkflowTemplatesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -163,7 +199,13 @@ public class MockWorkflowTemplateServiceImpl extends WorkflowTemplateServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWorkflowTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

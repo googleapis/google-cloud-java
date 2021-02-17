@@ -318,49 +318,60 @@ public class GrpcClusterControllerStub extends ClusterControllerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
 
+  @Override
   public OperationCallable<CreateClusterRequest, Cluster, ClusterOperationMetadata>
       createClusterOperationCallable() {
     return createClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return updateClusterCallable;
   }
 
+  @Override
   public OperationCallable<UpdateClusterRequest, Cluster, ClusterOperationMetadata>
       updateClusterOperationCallable() {
     return updateClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
 
+  @Override
   public OperationCallable<DeleteClusterRequest, Empty, ClusterOperationMetadata>
       deleteClusterOperationCallable() {
     return deleteClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
   }
 
+  @Override
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return listClustersCallable;
   }
 
+  @Override
   public UnaryCallable<ListClustersRequest, ListClustersPagedResponse> listClustersPagedCallable() {
     return listClustersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DiagnoseClusterRequest, Operation> diagnoseClusterCallable() {
     return diagnoseClusterCallable;
   }
 
+  @Override
   public OperationCallable<DiagnoseClusterRequest, DiagnoseClusterResults, ClusterOperationMetadata>
       diagnoseClusterOperationCallable() {
     return diagnoseClusterOperationCallable;

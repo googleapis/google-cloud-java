@@ -70,7 +70,11 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitJob, expected %s or %s",
+                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -85,7 +89,13 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitJobAsOperation, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +109,11 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetJob, expected %s or %s",
+                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -113,7 +127,13 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListJobs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -127,7 +147,11 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateJob, expected %s or %s",
+                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -141,7 +165,11 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelJob, expected %s or %s",
+                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -155,7 +183,13 @@ public class MockJobControllerImpl extends JobControllerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

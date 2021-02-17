@@ -362,50 +362,60 @@ public class GrpcWorkflowTemplateServiceStub extends WorkflowTemplateServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateWorkflowTemplateRequest, WorkflowTemplate>
       createWorkflowTemplateCallable() {
     return createWorkflowTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<GetWorkflowTemplateRequest, WorkflowTemplate> getWorkflowTemplateCallable() {
     return getWorkflowTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<InstantiateWorkflowTemplateRequest, Operation>
       instantiateWorkflowTemplateCallable() {
     return instantiateWorkflowTemplateCallable;
   }
 
+  @Override
   public OperationCallable<InstantiateWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateWorkflowTemplateOperationCallable() {
     return instantiateWorkflowTemplateOperationCallable;
   }
 
+  @Override
   public UnaryCallable<InstantiateInlineWorkflowTemplateRequest, Operation>
       instantiateInlineWorkflowTemplateCallable() {
     return instantiateInlineWorkflowTemplateCallable;
   }
 
+  @Override
   public OperationCallable<InstantiateInlineWorkflowTemplateRequest, Empty, WorkflowMetadata>
       instantiateInlineWorkflowTemplateOperationCallable() {
     return instantiateInlineWorkflowTemplateOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateWorkflowTemplateRequest, WorkflowTemplate>
       updateWorkflowTemplateCallable() {
     return updateWorkflowTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<ListWorkflowTemplatesRequest, ListWorkflowTemplatesResponse>
       listWorkflowTemplatesCallable() {
     return listWorkflowTemplatesCallable;
   }
 
+  @Override
   public UnaryCallable<ListWorkflowTemplatesRequest, ListWorkflowTemplatesPagedResponse>
       listWorkflowTemplatesPagedCallable() {
     return listWorkflowTemplatesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteWorkflowTemplateRequest, Empty> deleteWorkflowTemplateCallable() {
     return deleteWorkflowTemplateCallable;
   }
