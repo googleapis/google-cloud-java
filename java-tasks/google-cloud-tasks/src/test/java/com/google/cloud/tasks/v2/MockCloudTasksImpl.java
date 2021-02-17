@@ -75,7 +75,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListQueues, expected %s or %s",
+                  response.getClass().getName(),
+                  ListQueuesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -90,7 +96,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  com.google.cloud.tasks.v2.Queue.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -106,7 +118,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  com.google.cloud.tasks.v2.Queue.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -122,7 +140,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  com.google.cloud.tasks.v2.Queue.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -136,7 +160,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -151,7 +181,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PurgeQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  com.google.cloud.tasks.v2.Queue.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -166,7 +202,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PauseQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  com.google.cloud.tasks.v2.Queue.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -182,7 +224,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResumeQueue, expected %s or %s",
+                  response.getClass().getName(),
+                  com.google.cloud.tasks.v2.Queue.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -196,7 +244,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -210,7 +264,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -226,7 +286,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -241,7 +307,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTasks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTasksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -255,7 +327,11 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTask, expected %s or %s",
+                  response.getClass().getName(), Task.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -269,7 +345,11 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTask, expected %s or %s",
+                  response.getClass().getName(), Task.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -283,7 +363,13 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTask, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -297,7 +383,11 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RunTask, expected %s or %s",
+                  response.getClass().getName(), Task.class.getName(), Exception.class.getName())));
     }
   }
 }

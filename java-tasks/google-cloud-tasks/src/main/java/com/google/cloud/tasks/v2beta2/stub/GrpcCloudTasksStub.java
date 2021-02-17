@@ -646,91 +646,113 @@ public class GrpcCloudTasksStub extends CloudTasksStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable() {
     return listQueuesCallable;
   }
 
+  @Override
   public UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable() {
     return listQueuesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetQueueRequest, Queue> getQueueCallable() {
     return getQueueCallable;
   }
 
+  @Override
   public UnaryCallable<CreateQueueRequest, Queue> createQueueCallable() {
     return createQueueCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateQueueRequest, Queue> updateQueueCallable() {
     return updateQueueCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteQueueRequest, Empty> deleteQueueCallable() {
     return deleteQueueCallable;
   }
 
+  @Override
   public UnaryCallable<PurgeQueueRequest, Queue> purgeQueueCallable() {
     return purgeQueueCallable;
   }
 
+  @Override
   public UnaryCallable<PauseQueueRequest, Queue> pauseQueueCallable() {
     return pauseQueueCallable;
   }
 
+  @Override
   public UnaryCallable<ResumeQueueRequest, Queue> resumeQueueCallable() {
     return resumeQueueCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTasksRequest, ListTasksResponse> listTasksCallable() {
     return listTasksCallable;
   }
 
+  @Override
   public UnaryCallable<ListTasksRequest, ListTasksPagedResponse> listTasksPagedCallable() {
     return listTasksPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetTaskRequest, Task> getTaskCallable() {
     return getTaskCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTaskRequest, Task> createTaskCallable() {
     return createTaskCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTaskRequest, Empty> deleteTaskCallable() {
     return deleteTaskCallable;
   }
 
+  @Override
   public UnaryCallable<LeaseTasksRequest, LeaseTasksResponse> leaseTasksCallable() {
     return leaseTasksCallable;
   }
 
+  @Override
   public UnaryCallable<AcknowledgeTaskRequest, Empty> acknowledgeTaskCallable() {
     return acknowledgeTaskCallable;
   }
 
+  @Override
   public UnaryCallable<RenewLeaseRequest, Task> renewLeaseCallable() {
     return renewLeaseCallable;
   }
 
+  @Override
   public UnaryCallable<CancelLeaseRequest, Task> cancelLeaseCallable() {
     return cancelLeaseCallable;
   }
 
+  @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
   }
