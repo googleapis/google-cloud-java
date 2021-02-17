@@ -32,6 +32,7 @@ import com.google.cloud.translate.testing.RemoteTranslateHelper;
 import com.google.common.collect.ImmutableList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Set;
 import org.junit.Test;
 
@@ -104,10 +105,10 @@ public class ITTranslateTest {
   public void testTranslateTextList() {
     List<Translation> translations = TRANSLATE.translate(ImmutableList.of("ocho", "acht"));
     Translation translation = translations.get(0);
-    assertEquals("eight", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("es", translation.getSourceLanguage());
     translation = translations.get(1);
-    assertEquals("eight", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("de", translation.getSourceLanguage());
   }
 
@@ -116,11 +117,11 @@ public class ITTranslateTest {
     List<Translation> translations =
         TRANSLATE.translate(ImmutableList.of("ocho", "acht"), TranslateOption.model("nmt"));
     Translation translation = translations.get(0);
-    assertEquals("eight", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("es", translation.getSourceLanguage());
     assertEquals("nmt", translation.getModel());
     translation = translations.get(1);
-    assertEquals("eight", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("de", translation.getSourceLanguage());
     assertEquals("nmt", translation.getModel());
   }
@@ -128,7 +129,7 @@ public class ITTranslateTest {
   @Test
   public void testTranslateText() {
     Translation translation = TRANSLATE.translate("ocho");
-    assertEquals("eight", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("es", translation.getSourceLanguage());
   }
 
@@ -159,7 +160,7 @@ public class ITTranslateTest {
   public void testTranslateTextWithApiKey() {
     Translate translate = RemoteTranslateHelper.create().getOptions().getService();
     Translation translation = translate.translate("ocho");
-    assertEquals("eight", translation.getTranslatedText());
+    assertEquals("eight", translation.getTranslatedText().toLowerCase(Locale.ENGLISH));
     assertEquals("es", translation.getSourceLanguage());
   }
 }
