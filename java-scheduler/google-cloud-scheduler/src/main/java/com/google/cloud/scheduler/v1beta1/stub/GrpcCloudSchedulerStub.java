@@ -315,38 +315,47 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return listJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return getJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return createJobCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return updateJobCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return deleteJobCallable;
   }
 
+  @Override
   public UnaryCallable<PauseJobRequest, Job> pauseJobCallable() {
     return pauseJobCallable;
   }
 
+  @Override
   public UnaryCallable<ResumeJobRequest, Job> resumeJobCallable() {
     return resumeJobCallable;
   }
 
+  @Override
   public UnaryCallable<RunJobRequest, Job> runJobCallable() {
     return runJobCallable;
   }
