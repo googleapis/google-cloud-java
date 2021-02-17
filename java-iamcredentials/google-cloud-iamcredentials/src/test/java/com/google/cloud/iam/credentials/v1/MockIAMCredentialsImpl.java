@@ -70,7 +70,13 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateAccessToken, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateAccessTokenResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateIdToken, expected %s or %s",
+                  response.getClass().getName(),
+                  GenerateIdTokenResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +111,13 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SignBlob, expected %s or %s",
+                  response.getClass().getName(),
+                  SignBlobResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +131,13 @@ public class MockIAMCredentialsImpl extends IAMCredentialsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SignJwt, expected %s or %s",
+                  response.getClass().getName(),
+                  SignJwtResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

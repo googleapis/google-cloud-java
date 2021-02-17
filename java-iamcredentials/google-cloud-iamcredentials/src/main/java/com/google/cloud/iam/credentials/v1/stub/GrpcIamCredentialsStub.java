@@ -216,19 +216,23 @@ public class GrpcIamCredentialsStub extends IamCredentialsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GenerateAccessTokenRequest, GenerateAccessTokenResponse>
       generateAccessTokenCallable() {
     return generateAccessTokenCallable;
   }
 
+  @Override
   public UnaryCallable<GenerateIdTokenRequest, GenerateIdTokenResponse> generateIdTokenCallable() {
     return generateIdTokenCallable;
   }
 
+  @Override
   public UnaryCallable<SignBlobRequest, SignBlobResponse> signBlobCallable() {
     return signBlobCallable;
   }
 
+  @Override
   public UnaryCallable<SignJwtRequest, SignJwtResponse> signJwtCallable() {
     return signJwtCallable;
   }
