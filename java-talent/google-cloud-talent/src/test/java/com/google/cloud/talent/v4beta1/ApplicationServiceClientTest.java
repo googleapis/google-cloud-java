@@ -102,6 +102,7 @@ public class ApplicationServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOutcomeNotes("outcomeNotes-1412621681")
+            .setOutcome(Outcome.forNumber(0))
             .setIsMatch(BoolValue.newBuilder().build())
             .setJobTitleSnippet("jobTitleSnippet748146690")
             .build();
@@ -159,6 +160,7 @@ public class ApplicationServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOutcomeNotes("outcomeNotes-1412621681")
+            .setOutcome(Outcome.forNumber(0))
             .setIsMatch(BoolValue.newBuilder().build())
             .setJobTitleSnippet("jobTitleSnippet748146690")
             .build();
@@ -216,6 +218,7 @@ public class ApplicationServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOutcomeNotes("outcomeNotes-1412621681")
+            .setOutcome(Outcome.forNumber(0))
             .setIsMatch(BoolValue.newBuilder().build())
             .setJobTitleSnippet("jobTitleSnippet748146690")
             .build();
@@ -272,6 +275,7 @@ public class ApplicationServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOutcomeNotes("outcomeNotes-1412621681")
+            .setOutcome(Outcome.forNumber(0))
             .setIsMatch(BoolValue.newBuilder().build())
             .setJobTitleSnippet("jobTitleSnippet748146690")
             .build();
@@ -326,6 +330,7 @@ public class ApplicationServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setOutcomeNotes("outcomeNotes-1412621681")
+            .setOutcome(Outcome.forNumber(0))
             .setIsMatch(BoolValue.newBuilder().build())
             .setJobTitleSnippet("jobTitleSnippet748146690")
             .build();

@@ -257,27 +257,33 @@ public class GrpcApplicationServiceStub extends ApplicationServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateApplicationRequest, Application> createApplicationCallable() {
     return createApplicationCallable;
   }
 
+  @Override
   public UnaryCallable<GetApplicationRequest, Application> getApplicationCallable() {
     return getApplicationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateApplicationRequest, Application> updateApplicationCallable() {
     return updateApplicationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteApplicationRequest, Empty> deleteApplicationCallable() {
     return deleteApplicationCallable;
   }
 
+  @Override
   public UnaryCallable<ListApplicationsRequest, ListApplicationsResponse>
       listApplicationsCallable() {
     return listApplicationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListApplicationsRequest, ListApplicationsPagedResponse>
       listApplicationsPagedCallable() {
     return listApplicationsPagedCallable;

@@ -126,6 +126,7 @@ public class GrpcEventServiceStub extends EventServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateClientEventRequest, ClientEvent> createClientEventCallable() {
     return createClientEventCallable;
   }

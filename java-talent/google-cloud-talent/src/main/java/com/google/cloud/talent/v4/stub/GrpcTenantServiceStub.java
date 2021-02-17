@@ -235,26 +235,32 @@ public class GrpcTenantServiceStub extends TenantServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateTenantRequest, Tenant> createTenantCallable() {
     return createTenantCallable;
   }
 
+  @Override
   public UnaryCallable<GetTenantRequest, Tenant> getTenantCallable() {
     return getTenantCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTenantRequest, Tenant> updateTenantCallable() {
     return updateTenantCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTenantRequest, Empty> deleteTenantCallable() {
     return deleteTenantCallable;
   }
 
+  @Override
   public UnaryCallable<ListTenantsRequest, ListTenantsResponse> listTenantsCallable() {
     return listTenantsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTenantsRequest, ListTenantsPagedResponse> listTenantsPagedCallable() {
     return listTenantsPagedCallable;
   }

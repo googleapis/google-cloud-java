@@ -1057,6 +1057,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
+   *           .setJobView(JobView.forNumber(0))
    *           .build();
    *   for (Job element : jobServiceClient.listJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1085,6 +1086,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .setFilter("filter-1274492040")
    *           .setPageToken("pageToken873572522")
    *           .setPageSize(883849137)
+   *           .setJobView(JobView.forNumber(0))
    *           .build();
    *   ApiFuture<Job> future = jobServiceClient.listJobsPagedCallable().futureCall(request);
    *   // Do something.
@@ -1144,6 +1146,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
    *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setJobView(JobView.forNumber(0))
    *           .setOffset(-1019779949)
    *           .setMaxPageSize(524069526)
    *           .setPageToken("pageToken873572522")
@@ -1181,6 +1184,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
    *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setJobView(JobView.forNumber(0))
    *           .setOffset(-1019779949)
    *           .setMaxPageSize(524069526)
    *           .setPageToken("pageToken873572522")
@@ -1223,6 +1227,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
    *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setJobView(JobView.forNumber(0))
    *           .setOffset(-1019779949)
    *           .setMaxPageSize(524069526)
    *           .setPageToken("pageToken873572522")
@@ -1265,6 +1270,7 @@ public class JobServiceClient implements BackgroundResource {
    *           .setJobQuery(JobQuery.newBuilder().build())
    *           .setEnableBroadening(true)
    *           .addAllHistogramQueries(new ArrayList<HistogramQuery>())
+   *           .setJobView(JobView.forNumber(0))
    *           .setOffset(-1019779949)
    *           .setMaxPageSize(524069526)
    *           .setPageToken("pageToken873572522")

@@ -123,6 +123,7 @@ public class GrpcCompletionStub extends CompletionStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable() {
     return completeQueryCallable;
   }

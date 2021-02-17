@@ -242,26 +242,32 @@ public class GrpcCompanyServiceStub extends CompanyServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateCompanyRequest, Company> createCompanyCallable() {
     return createCompanyCallable;
   }
 
+  @Override
   public UnaryCallable<GetCompanyRequest, Company> getCompanyCallable() {
     return getCompanyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCompanyRequest, Company> updateCompanyCallable() {
     return updateCompanyCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteCompanyRequest, Empty> deleteCompanyCallable() {
     return deleteCompanyCallable;
   }
 
+  @Override
   public UnaryCallable<ListCompaniesRequest, ListCompaniesResponse> listCompaniesCallable() {
     return listCompaniesCallable;
   }
 
+  @Override
   public UnaryCallable<ListCompaniesRequest, ListCompaniesPagedResponse>
       listCompaniesPagedCallable() {
     return listCompaniesPagedCallable;

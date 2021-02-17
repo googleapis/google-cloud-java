@@ -410,64 +410,79 @@ public class GrpcJobServiceStub extends JobServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return createJobCallable;
   }
 
+  @Override
   public UnaryCallable<BatchCreateJobsRequest, Operation> batchCreateJobsCallable() {
     return batchCreateJobsCallable;
   }
 
+  @Override
   public OperationCallable<BatchCreateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchCreateJobsOperationCallable() {
     return batchCreateJobsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return getJobCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateJobRequest, Job> updateJobCallable() {
     return updateJobCallable;
   }
 
+  @Override
   public UnaryCallable<BatchUpdateJobsRequest, Operation> batchUpdateJobsCallable() {
     return batchUpdateJobsCallable;
   }
 
+  @Override
   public OperationCallable<BatchUpdateJobsRequest, JobOperationResult, BatchOperationMetadata>
       batchUpdateJobsOperationCallable() {
     return batchUpdateJobsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return deleteJobCallable;
   }
 
+  @Override
   public UnaryCallable<BatchDeleteJobsRequest, Empty> batchDeleteJobsCallable() {
     return batchDeleteJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return listJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsCallable() {
     return searchJobsCallable;
   }
 
+  @Override
   public UnaryCallable<SearchJobsRequest, SearchJobsPagedResponse> searchJobsPagedCallable() {
     return searchJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<SearchJobsRequest, SearchJobsResponse> searchJobsForAlertCallable() {
     return searchJobsForAlertCallable;
   }
 
+  @Override
   public UnaryCallable<SearchJobsRequest, SearchJobsForAlertPagedResponse>
       searchJobsForAlertPagedCallable() {
     return searchJobsForAlertPagedCallable;

@@ -280,34 +280,42 @@ public class GrpcProfileServiceStub extends ProfileServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListProfilesRequest, ListProfilesResponse> listProfilesCallable() {
     return listProfilesCallable;
   }
 
+  @Override
   public UnaryCallable<ListProfilesRequest, ListProfilesPagedResponse> listProfilesPagedCallable() {
     return listProfilesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateProfileRequest, Profile> createProfileCallable() {
     return createProfileCallable;
   }
 
+  @Override
   public UnaryCallable<GetProfileRequest, Profile> getProfileCallable() {
     return getProfileCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateProfileRequest, Profile> updateProfileCallable() {
     return updateProfileCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteProfileRequest, Empty> deleteProfileCallable() {
     return deleteProfileCallable;
   }
 
+  @Override
   public UnaryCallable<SearchProfilesRequest, SearchProfilesResponse> searchProfilesCallable() {
     return searchProfilesCallable;
   }
 
+  @Override
   public UnaryCallable<SearchProfilesRequest, SearchProfilesPagedResponse>
       searchProfilesPagedCallable() {
     return searchProfilesPagedCallable;

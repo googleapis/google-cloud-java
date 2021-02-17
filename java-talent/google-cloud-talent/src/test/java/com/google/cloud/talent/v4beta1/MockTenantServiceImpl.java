@@ -69,7 +69,13 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTenant, expected %s or %s",
+                  response.getClass().getName(),
+                  Tenant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -83,7 +89,13 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTenant, expected %s or %s",
+                  response.getClass().getName(),
+                  Tenant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -97,7 +109,13 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTenant, expected %s or %s",
+                  response.getClass().getName(),
+                  Tenant.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -111,7 +129,13 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTenant, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -126,7 +150,13 @@ public class MockTenantServiceImpl extends TenantServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTenants, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTenantsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
