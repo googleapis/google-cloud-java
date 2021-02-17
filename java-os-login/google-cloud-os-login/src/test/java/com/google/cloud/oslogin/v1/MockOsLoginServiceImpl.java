@@ -71,7 +71,13 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePosixAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSshPublicKey, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLoginProfile, expected %s or %s",
+                  response.getClass().getName(),
+                  LoginProfile.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSshPublicKey, expected %s or %s",
+                  response.getClass().getName(),
+                  OsLoginProto.SshPublicKey.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -132,7 +156,13 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportSshPublicKey, expected %s or %s",
+                  response.getClass().getName(),
+                  ImportSshPublicKeyResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -148,7 +178,13 @@ public class MockOsLoginServiceImpl extends OsLoginServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSshPublicKey, expected %s or %s",
+                  response.getClass().getName(),
+                  OsLoginProto.SshPublicKey.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -284,28 +284,34 @@ public class GrpcOsLoginServiceStub extends OsLoginServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<DeletePosixAccountRequest, Empty> deletePosixAccountCallable() {
     return deletePosixAccountCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSshPublicKeyRequest, Empty> deleteSshPublicKeyCallable() {
     return deleteSshPublicKeyCallable;
   }
 
+  @Override
   public UnaryCallable<GetLoginProfileRequest, LoginProfile> getLoginProfileCallable() {
     return getLoginProfileCallable;
   }
 
+  @Override
   public UnaryCallable<GetSshPublicKeyRequest, OsLoginProto.SshPublicKey>
       getSshPublicKeyCallable() {
     return getSshPublicKeyCallable;
   }
 
+  @Override
   public UnaryCallable<ImportSshPublicKeyRequest, ImportSshPublicKeyResponse>
       importSshPublicKeyCallable() {
     return importSshPublicKeyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSshPublicKeyRequest, OsLoginProto.SshPublicKey>
       updateSshPublicKeyCallable() {
     return updateSshPublicKeyCallable;
