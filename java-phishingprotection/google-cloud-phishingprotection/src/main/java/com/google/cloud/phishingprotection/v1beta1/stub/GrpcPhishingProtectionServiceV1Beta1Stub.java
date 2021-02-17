@@ -132,6 +132,7 @@ public class GrpcPhishingProtectionServiceV1Beta1Stub extends PhishingProtection
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ReportPhishingRequest, ReportPhishingResponse> reportPhishingCallable() {
     return reportPhishingCallable;
   }
