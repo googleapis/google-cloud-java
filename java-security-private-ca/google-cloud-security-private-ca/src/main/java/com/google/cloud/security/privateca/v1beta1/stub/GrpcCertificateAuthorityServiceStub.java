@@ -908,166 +908,198 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateCertificateRequest, Certificate> createCertificateCallable() {
     return createCertificateCallable;
   }
 
+  @Override
   public UnaryCallable<GetCertificateRequest, Certificate> getCertificateCallable() {
     return getCertificateCallable;
   }
 
+  @Override
   public UnaryCallable<ListCertificatesRequest, ListCertificatesResponse>
       listCertificatesCallable() {
     return listCertificatesCallable;
   }
 
+  @Override
   public UnaryCallable<ListCertificatesRequest, ListCertificatesPagedResponse>
       listCertificatesPagedCallable() {
     return listCertificatesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RevokeCertificateRequest, Certificate> revokeCertificateCallable() {
     return revokeCertificateCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCertificateRequest, Certificate> updateCertificateCallable() {
     return updateCertificateCallable;
   }
 
+  @Override
   public UnaryCallable<ActivateCertificateAuthorityRequest, Operation>
       activateCertificateAuthorityCallable() {
     return activateCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           ActivateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       activateCertificateAuthorityOperationCallable() {
     return activateCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CreateCertificateAuthorityRequest, Operation>
       createCertificateAuthorityCallable() {
     return createCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           CreateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       createCertificateAuthorityOperationCallable() {
     return createCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DisableCertificateAuthorityRequest, Operation>
       disableCertificateAuthorityCallable() {
     return disableCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           DisableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       disableCertificateAuthorityOperationCallable() {
     return disableCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<EnableCertificateAuthorityRequest, Operation>
       enableCertificateAuthorityCallable() {
     return enableCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           EnableCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       enableCertificateAuthorityOperationCallable() {
     return enableCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<FetchCertificateAuthorityCsrRequest, FetchCertificateAuthorityCsrResponse>
       fetchCertificateAuthorityCsrCallable() {
     return fetchCertificateAuthorityCsrCallable;
   }
 
+  @Override
   public UnaryCallable<GetCertificateAuthorityRequest, CertificateAuthority>
       getCertificateAuthorityCallable() {
     return getCertificateAuthorityCallable;
   }
 
+  @Override
   public UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
       listCertificateAuthoritiesCallable() {
     return listCertificateAuthoritiesCallable;
   }
 
+  @Override
   public UnaryCallable<ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesPagedResponse>
       listCertificateAuthoritiesPagedCallable() {
     return listCertificateAuthoritiesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RestoreCertificateAuthorityRequest, Operation>
       restoreCertificateAuthorityCallable() {
     return restoreCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           RestoreCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       restoreCertificateAuthorityOperationCallable() {
     return restoreCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ScheduleDeleteCertificateAuthorityRequest, Operation>
       scheduleDeleteCertificateAuthorityCallable() {
     return scheduleDeleteCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           ScheduleDeleteCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       scheduleDeleteCertificateAuthorityOperationCallable() {
     return scheduleDeleteCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCertificateAuthorityRequest, Operation>
       updateCertificateAuthorityCallable() {
     return updateCertificateAuthorityCallable;
   }
 
+  @Override
   public OperationCallable<
           UpdateCertificateAuthorityRequest, CertificateAuthority, OperationMetadata>
       updateCertificateAuthorityOperationCallable() {
     return updateCertificateAuthorityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetCertificateRevocationListRequest, CertificateRevocationList>
       getCertificateRevocationListCallable() {
     return getCertificateRevocationListCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListCertificateRevocationListsRequest, ListCertificateRevocationListsResponse>
       listCertificateRevocationListsCallable() {
     return listCertificateRevocationListsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListCertificateRevocationListsRequest, ListCertificateRevocationListsPagedResponse>
       listCertificateRevocationListsPagedCallable() {
     return listCertificateRevocationListsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCertificateRevocationListRequest, Operation>
       updateCertificateRevocationListCallable() {
     return updateCertificateRevocationListCallable;
   }
 
+  @Override
   public OperationCallable<
           UpdateCertificateRevocationListRequest, CertificateRevocationList, OperationMetadata>
       updateCertificateRevocationListOperationCallable() {
     return updateCertificateRevocationListOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetReusableConfigRequest, ReusableConfig> getReusableConfigCallable() {
     return getReusableConfigCallable;
   }
 
+  @Override
   public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsResponse>
       listReusableConfigsCallable() {
     return listReusableConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListReusableConfigsRequest, ListReusableConfigsPagedResponse>
       listReusableConfigsPagedCallable() {
     return listReusableConfigsPagedCallable;

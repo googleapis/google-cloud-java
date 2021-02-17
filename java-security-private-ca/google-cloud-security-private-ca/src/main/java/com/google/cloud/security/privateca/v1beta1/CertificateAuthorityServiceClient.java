@@ -662,6 +662,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *               CertificateName.of(
    *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]", "[CERTIFICATE]")
    *                   .toString())
+   *           .setReason(RevocationReason.forNumber(0))
    *           .setRequestId("requestId693933066")
    *           .build();
    *   Certificate response = certificateAuthorityServiceClient.revokeCertificate(request);
@@ -690,6 +691,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
    *               CertificateName.of(
    *                       "[PROJECT]", "[LOCATION]", "[CERTIFICATE_AUTHORITY]", "[CERTIFICATE]")
    *                   .toString())
+   *           .setReason(RevocationReason.forNumber(0))
    *           .setRequestId("requestId693933066")
    *           .build();
    *   ApiFuture<Certificate> future =
