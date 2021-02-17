@@ -675,103 +675,127 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateSourceRequest, Source> createSourceCallable() {
     return createSourceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateFindingRequest, Finding> createFindingCallable() {
     return createFindingCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetOrganizationSettingsRequest, OrganizationSettings>
       getOrganizationSettingsCallable() {
     return getOrganizationSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<GetSourceRequest, Source> getSourceCallable() {
     return getSourceCallable;
   }
 
+  @Override
   public UnaryCallable<GroupAssetsRequest, GroupAssetsResponse> groupAssetsCallable() {
     return groupAssetsCallable;
   }
 
+  @Override
   public UnaryCallable<GroupAssetsRequest, GroupAssetsPagedResponse> groupAssetsPagedCallable() {
     return groupAssetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GroupFindingsRequest, GroupFindingsResponse> groupFindingsCallable() {
     return groupFindingsCallable;
   }
 
+  @Override
   public UnaryCallable<GroupFindingsRequest, GroupFindingsPagedResponse>
       groupFindingsPagedCallable() {
     return groupFindingsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return listAssetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return listAssetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
   }
 
+  @Override
   public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
     return listFindingsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable() {
     return listSourcesCallable;
   }
 
+  @Override
   public UnaryCallable<ListSourcesRequest, ListSourcesPagedResponse> listSourcesPagedCallable() {
     return listSourcesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RunAssetDiscoveryRequest, Operation> runAssetDiscoveryCallable() {
     return runAssetDiscoveryCallable;
   }
 
+  @Override
   public OperationCallable<RunAssetDiscoveryRequest, Empty, Empty>
       runAssetDiscoveryOperationCallable() {
     return runAssetDiscoveryOperationCallable;
   }
 
+  @Override
   public UnaryCallable<SetFindingStateRequest, Finding> setFindingStateCallable() {
     return setFindingStateCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateFindingRequest, Finding> updateFindingCallable() {
     return updateFindingCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateOrganizationSettingsRequest, OrganizationSettings>
       updateOrganizationSettingsCallable() {
     return updateOrganizationSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSourceRequest, Source> updateSourceCallable() {
     return updateSourceCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSecurityMarksRequest, SecurityMarks> updateSecurityMarksCallable() {
     return updateSecurityMarksCallable;
   }
