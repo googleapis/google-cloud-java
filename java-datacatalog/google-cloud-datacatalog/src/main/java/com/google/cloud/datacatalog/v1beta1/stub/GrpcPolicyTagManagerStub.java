@@ -487,64 +487,79 @@ public class GrpcPolicyTagManagerStub extends PolicyTagManagerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateTaxonomyRequest, Taxonomy> createTaxonomyCallable() {
     return createTaxonomyCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTaxonomyRequest, Empty> deleteTaxonomyCallable() {
     return deleteTaxonomyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTaxonomyRequest, Taxonomy> updateTaxonomyCallable() {
     return updateTaxonomyCallable;
   }
 
+  @Override
   public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesResponse> listTaxonomiesCallable() {
     return listTaxonomiesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTaxonomiesRequest, ListTaxonomiesPagedResponse>
       listTaxonomiesPagedCallable() {
     return listTaxonomiesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetTaxonomyRequest, Taxonomy> getTaxonomyCallable() {
     return getTaxonomyCallable;
   }
 
+  @Override
   public UnaryCallable<CreatePolicyTagRequest, PolicyTag> createPolicyTagCallable() {
     return createPolicyTagCallable;
   }
 
+  @Override
   public UnaryCallable<DeletePolicyTagRequest, Empty> deletePolicyTagCallable() {
     return deletePolicyTagCallable;
   }
 
+  @Override
   public UnaryCallable<UpdatePolicyTagRequest, PolicyTag> updatePolicyTagCallable() {
     return updatePolicyTagCallable;
   }
 
+  @Override
   public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsResponse> listPolicyTagsCallable() {
     return listPolicyTagsCallable;
   }
 
+  @Override
   public UnaryCallable<ListPolicyTagsRequest, ListPolicyTagsPagedResponse>
       listPolicyTagsPagedCallable() {
     return listPolicyTagsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetPolicyTagRequest, PolicyTag> getPolicyTagCallable() {
     return getPolicyTagCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

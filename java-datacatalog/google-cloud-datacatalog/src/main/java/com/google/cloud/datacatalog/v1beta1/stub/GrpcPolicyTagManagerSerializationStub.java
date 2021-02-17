@@ -166,11 +166,13 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
       importTaxonomiesCallable() {
     return importTaxonomiesCallable;
   }
 
+  @Override
   public UnaryCallable<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
       exportTaxonomiesCallable() {
     return exportTaxonomiesCallable;

@@ -75,7 +75,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTaxonomy, expected %s or %s",
+                  response.getClass().getName(),
+                  Taxonomy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -90,7 +96,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTaxonomy, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTaxonomy, expected %s or %s",
+                  response.getClass().getName(),
+                  Taxonomy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -120,7 +138,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTaxonomies, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTaxonomiesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -134,7 +158,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTaxonomy, expected %s or %s",
+                  response.getClass().getName(),
+                  Taxonomy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -149,7 +179,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePolicyTag, expected %s or %s",
+                  response.getClass().getName(),
+                  PolicyTag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -164,7 +200,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePolicyTag, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -179,7 +221,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePolicyTag, expected %s or %s",
+                  response.getClass().getName(),
+                  PolicyTag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -194,7 +242,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPolicyTags, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPolicyTagsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -209,7 +263,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPolicyTag, expected %s or %s",
+                  response.getClass().getName(),
+                  PolicyTag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -223,7 +283,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -237,7 +303,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -253,7 +325,13 @@ public class MockPolicyTagManagerImpl extends PolicyTagManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

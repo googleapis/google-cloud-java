@@ -75,7 +75,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchCatalog, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchCatalogResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -90,7 +96,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntryGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  EntryGroup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEntryGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  EntryGroup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -120,7 +138,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEntryGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  EntryGroup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -135,7 +159,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEntryGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -150,7 +180,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEntryGroups, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEntryGroupsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -164,7 +200,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntry, expected %s or %s",
+                  response.getClass().getName(),
+                  Entry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -178,7 +220,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEntry, expected %s or %s",
+                  response.getClass().getName(),
+                  Entry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -192,7 +240,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEntry, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -206,7 +260,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEntry, expected %s or %s",
+                  response.getClass().getName(),
+                  Entry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -220,7 +280,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LookupEntry, expected %s or %s",
+                  response.getClass().getName(),
+                  Entry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -235,7 +301,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEntries, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEntriesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -250,7 +322,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTagTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  TagTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -265,7 +343,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTagTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  TagTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -280,7 +364,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTagTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  TagTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -295,7 +385,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTagTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -310,7 +406,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTagTemplateField, expected %s or %s",
+                  response.getClass().getName(),
+                  TagTemplateField.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -325,7 +427,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTagTemplateField, expected %s or %s",
+                  response.getClass().getName(),
+                  TagTemplateField.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -340,7 +448,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RenameTagTemplateField, expected %s or %s",
+                  response.getClass().getName(),
+                  TagTemplateField.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -355,7 +469,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTagTemplateField, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -369,7 +489,11 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTag, expected %s or %s",
+                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -383,7 +507,11 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTag, expected %s or %s",
+                  response.getClass().getName(), Tag.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -397,7 +525,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTag, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -411,7 +545,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTags, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTagsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -425,7 +565,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -439,7 +585,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -455,7 +607,13 @@ public class MockDataCatalogImpl extends DataCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

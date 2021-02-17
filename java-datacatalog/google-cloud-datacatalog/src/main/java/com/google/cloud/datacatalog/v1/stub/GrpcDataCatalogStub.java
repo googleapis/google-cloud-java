@@ -877,131 +877,162 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable() {
     return searchCatalogCallable;
   }
 
+  @Override
   public UnaryCallable<SearchCatalogRequest, SearchCatalogPagedResponse>
       searchCatalogPagedCallable() {
     return searchCatalogPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEntryGroupRequest, EntryGroup> createEntryGroupCallable() {
     return createEntryGroupCallable;
   }
 
+  @Override
   public UnaryCallable<GetEntryGroupRequest, EntryGroup> getEntryGroupCallable() {
     return getEntryGroupCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEntryGroupRequest, EntryGroup> updateEntryGroupCallable() {
     return updateEntryGroupCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEntryGroupRequest, Empty> deleteEntryGroupCallable() {
     return deleteEntryGroupCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsResponse> listEntryGroupsCallable() {
     return listEntryGroupsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntryGroupsRequest, ListEntryGroupsPagedResponse>
       listEntryGroupsPagedCallable() {
     return listEntryGroupsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEntryRequest, Entry> createEntryCallable() {
     return createEntryCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEntryRequest, Entry> updateEntryCallable() {
     return updateEntryCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEntryRequest, Empty> deleteEntryCallable() {
     return deleteEntryCallable;
   }
 
+  @Override
   public UnaryCallable<GetEntryRequest, Entry> getEntryCallable() {
     return getEntryCallable;
   }
 
+  @Override
   public UnaryCallable<LookupEntryRequest, Entry> lookupEntryCallable() {
     return lookupEntryCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntriesRequest, ListEntriesResponse> listEntriesCallable() {
     return listEntriesCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntriesRequest, ListEntriesPagedResponse> listEntriesPagedCallable() {
     return listEntriesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTagTemplateRequest, TagTemplate> createTagTemplateCallable() {
     return createTagTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<GetTagTemplateRequest, TagTemplate> getTagTemplateCallable() {
     return getTagTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTagTemplateRequest, TagTemplate> updateTagTemplateCallable() {
     return updateTagTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTagTemplateRequest, Empty> deleteTagTemplateCallable() {
     return deleteTagTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTagTemplateFieldRequest, TagTemplateField>
       createTagTemplateFieldCallable() {
     return createTagTemplateFieldCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTagTemplateFieldRequest, TagTemplateField>
       updateTagTemplateFieldCallable() {
     return updateTagTemplateFieldCallable;
   }
 
+  @Override
   public UnaryCallable<RenameTagTemplateFieldRequest, TagTemplateField>
       renameTagTemplateFieldCallable() {
     return renameTagTemplateFieldCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTagTemplateFieldRequest, Empty> deleteTagTemplateFieldCallable() {
     return deleteTagTemplateFieldCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTagRequest, Tag> createTagCallable() {
     return createTagCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTagRequest, Tag> updateTagCallable() {
     return updateTagCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTagRequest, Empty> deleteTagCallable() {
     return deleteTagCallable;
   }
 
+  @Override
   public UnaryCallable<ListTagsRequest, ListTagsResponse> listTagsCallable() {
     return listTagsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTagsRequest, ListTagsPagedResponse> listTagsPagedCallable() {
     return listTagsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
