@@ -415,73 +415,90 @@ public class GrpcCloudRedisStub extends CloudRedisStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return listInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     return listInstancesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return createInstanceCallable;
   }
 
+  @Override
   public OperationCallable<CreateInstanceRequest, Instance, Any> createInstanceOperationCallable() {
     return createInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     return updateInstanceCallable;
   }
 
+  @Override
   public OperationCallable<UpdateInstanceRequest, Instance, Any> updateInstanceOperationCallable() {
     return updateInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
     return upgradeInstanceCallable;
   }
 
+  @Override
   public OperationCallable<UpgradeInstanceRequest, Instance, Any>
       upgradeInstanceOperationCallable() {
     return upgradeInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ImportInstanceRequest, Operation> importInstanceCallable() {
     return importInstanceCallable;
   }
 
+  @Override
   public OperationCallable<ImportInstanceRequest, Instance, Any> importInstanceOperationCallable() {
     return importInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportInstanceRequest, Operation> exportInstanceCallable() {
     return exportInstanceCallable;
   }
 
+  @Override
   public OperationCallable<ExportInstanceRequest, Instance, Any> exportInstanceOperationCallable() {
     return exportInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<FailoverInstanceRequest, Operation> failoverInstanceCallable() {
     return failoverInstanceCallable;
   }
 
+  @Override
   public OperationCallable<FailoverInstanceRequest, Instance, Any>
       failoverInstanceOperationCallable() {
     return failoverInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
 
+  @Override
   public OperationCallable<DeleteInstanceRequest, Empty, Any> deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
   }
