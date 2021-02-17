@@ -305,36 +305,44 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateCatalogItemRequest, CatalogItem> createCatalogItemCallable() {
     return createCatalogItemCallable;
   }
 
+  @Override
   public UnaryCallable<GetCatalogItemRequest, CatalogItem> getCatalogItemCallable() {
     return getCatalogItemCallable;
   }
 
+  @Override
   public UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsResponse>
       listCatalogItemsCallable() {
     return listCatalogItemsCallable;
   }
 
+  @Override
   public UnaryCallable<ListCatalogItemsRequest, ListCatalogItemsPagedResponse>
       listCatalogItemsPagedCallable() {
     return listCatalogItemsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCatalogItemRequest, CatalogItem> updateCatalogItemCallable() {
     return updateCatalogItemCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteCatalogItemRequest, Empty> deleteCatalogItemCallable() {
     return deleteCatalogItemCallable;
   }
 
+  @Override
   public UnaryCallable<ImportCatalogItemsRequest, Operation> importCatalogItemsCallable() {
     return importCatalogItemsCallable;
   }
 
+  @Override
   public OperationCallable<ImportCatalogItemsRequest, ImportCatalogItemsResponse, ImportMetadata>
       importCatalogItemsOperationCallable() {
     return importCatalogItemsOperationCallable;

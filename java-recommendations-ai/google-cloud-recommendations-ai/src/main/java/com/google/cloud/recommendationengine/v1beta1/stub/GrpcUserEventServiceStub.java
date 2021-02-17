@@ -277,36 +277,44 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable() {
     return writeUserEventCallable;
   }
 
+  @Override
   public UnaryCallable<CollectUserEventRequest, HttpBody> collectUserEventCallable() {
     return collectUserEventCallable;
   }
 
+  @Override
   public UnaryCallable<ListUserEventsRequest, ListUserEventsResponse> listUserEventsCallable() {
     return listUserEventsCallable;
   }
 
+  @Override
   public UnaryCallable<ListUserEventsRequest, ListUserEventsPagedResponse>
       listUserEventsPagedCallable() {
     return listUserEventsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<PurgeUserEventsRequest, Operation> purgeUserEventsCallable() {
     return purgeUserEventsCallable;
   }
 
+  @Override
   public OperationCallable<PurgeUserEventsRequest, PurgeUserEventsResponse, PurgeUserEventsMetadata>
       purgeUserEventsOperationCallable() {
     return purgeUserEventsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ImportUserEventsRequest, Operation> importUserEventsCallable() {
     return importUserEventsCallable;
   }
 
+  @Override
   public OperationCallable<ImportUserEventsRequest, ImportUserEventsResponse, ImportMetadata>
       importUserEventsOperationCallable() {
     return importUserEventsOperationCallable;

@@ -232,23 +232,27 @@ public class GrpcPredictionApiKeyRegistryStub extends PredictionApiKeyRegistrySt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreatePredictionApiKeyRegistrationRequest, PredictionApiKeyRegistration>
       createPredictionApiKeyRegistrationCallable() {
     return createPredictionApiKeyRegistrationCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsResponse>
       listPredictionApiKeyRegistrationsCallable() {
     return listPredictionApiKeyRegistrationsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListPredictionApiKeyRegistrationsRequest, ListPredictionApiKeyRegistrationsPagedResponse>
       listPredictionApiKeyRegistrationsPagedCallable() {
     return listPredictionApiKeyRegistrationsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeletePredictionApiKeyRegistrationRequest, Empty>
       deletePredictionApiKeyRegistrationCallable() {
     return deletePredictionApiKeyRegistrationCallable;
