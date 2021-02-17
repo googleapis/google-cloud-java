@@ -695,13 +695,14 @@
                 </group>
               </groups>
               <links>
-                <link>https://googleapis.dev/java/api-common/</link>
-                <link>https://googleapis.dev/java/gax/</link>
-                <link>https://googleapis.dev/java/google-auth-library/</link>
-
+                <link>https://googleapis.dev/java/api-common/latest/</link>
+                <link>https://googleapis.dev/java/gax/latest/</link>
+                <link>https://googleapis.dev/java/google-auth-library/latest/</link>
                 <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
                 <link>https://googleapis.github.io/common-protos-java/apidocs/</link>
+                <link>https://googleapis.github.io/api-common-java/apidocs/</link>
                 <link>https://grpc.io/grpc-java/javadoc/</link>
+                <link>https://docs.oracle.com/javase/8/docs/api/</link>
               </links>
             </configuration>
 
