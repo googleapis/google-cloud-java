@@ -361,46 +361,56 @@ public class GrpcRecommenderStub extends RecommenderStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable() {
     return listInsightsCallable;
   }
 
+  @Override
   public UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse> listInsightsPagedCallable() {
     return listInsightsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetInsightRequest, Insight> getInsightCallable() {
     return getInsightCallable;
   }
 
+  @Override
   public UnaryCallable<MarkInsightAcceptedRequest, Insight> markInsightAcceptedCallable() {
     return markInsightAcceptedCallable;
   }
 
+  @Override
   public UnaryCallable<ListRecommendationsRequest, ListRecommendationsResponse>
       listRecommendationsCallable() {
     return listRecommendationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
       listRecommendationsPagedCallable() {
     return listRecommendationsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return getRecommendationCallable;
   }
 
+  @Override
   public UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedCallable() {
     return markRecommendationClaimedCallable;
   }
 
+  @Override
   public UnaryCallable<MarkRecommendationSucceededRequest, Recommendation>
       markRecommendationSucceededCallable() {
     return markRecommendationSucceededCallable;
   }
 
+  @Override
   public UnaryCallable<MarkRecommendationFailedRequest, Recommendation>
       markRecommendationFailedCallable() {
     return markRecommendationFailedCallable;

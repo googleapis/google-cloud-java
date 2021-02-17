@@ -69,7 +69,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListInsights, expected %s or %s",
+                  response.getClass().getName(),
+                  ListInsightsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -83,7 +89,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetInsight, expected %s or %s",
+                  response.getClass().getName(),
+                  Insight.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -98,7 +110,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkInsightAccepted, expected %s or %s",
+                  response.getClass().getName(),
+                  Insight.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -114,7 +132,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRecommendations, expected %s or %s",
+                  response.getClass().getName(),
+                  ListRecommendationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -129,7 +153,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRecommendation, expected %s or %s",
+                  response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -144,7 +174,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkRecommendationClaimed, expected %s or %s",
+                  response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -159,7 +195,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkRecommendationSucceeded, expected %s or %s",
+                  response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -174,7 +216,13 @@ public class MockRecommenderImpl extends RecommenderImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkRecommendationFailed, expected %s or %s",
+                  response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
