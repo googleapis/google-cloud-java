@@ -342,44 +342,54 @@ public class GrpcTranscoderServiceStub extends TranscoderServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateJobRequest, Job> createJobCallable() {
     return createJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable() {
     return listJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobsRequest, ListJobsPagedResponse> listJobsPagedCallable() {
     return listJobsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetJobRequest, Job> getJobCallable() {
     return getJobCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteJobRequest, Empty> deleteJobCallable() {
     return deleteJobCallable;
   }
 
+  @Override
   public UnaryCallable<CreateJobTemplateRequest, JobTemplate> createJobTemplateCallable() {
     return createJobTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesResponse>
       listJobTemplatesCallable() {
     return listJobTemplatesCallable;
   }
 
+  @Override
   public UnaryCallable<ListJobTemplatesRequest, ListJobTemplatesPagedResponse>
       listJobTemplatesPagedCallable() {
     return listJobTemplatesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetJobTemplateRequest, JobTemplate> getJobTemplateCallable() {
     return getJobTemplateCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteJobTemplateRequest, Empty> deleteJobTemplateCallable() {
     return deleteJobTemplateCallable;
   }

@@ -69,7 +69,11 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateJob, expected %s or %s",
+                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -83,7 +87,13 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListJobs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -97,7 +107,11 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetJob, expected %s or %s",
+                  response.getClass().getName(), Job.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -111,7 +125,13 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -126,7 +146,13 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateJobTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  JobTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -141,7 +167,13 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListJobTemplates, expected %s or %s",
+                  response.getClass().getName(),
+                  ListJobTemplatesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -156,7 +188,13 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetJobTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  JobTemplate.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -171,7 +209,13 @@ public class MockTranscoderServiceImpl extends TranscoderServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteJobTemplate, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
