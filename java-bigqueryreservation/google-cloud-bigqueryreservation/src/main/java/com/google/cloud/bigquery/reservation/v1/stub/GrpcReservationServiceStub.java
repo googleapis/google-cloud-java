@@ -747,106 +747,129 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable() {
     return createReservationCallable;
   }
 
+  @Override
   public UnaryCallable<ListReservationsRequest, ListReservationsResponse>
       listReservationsCallable() {
     return listReservationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListReservationsRequest, ListReservationsPagedResponse>
       listReservationsPagedCallable() {
     return listReservationsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetReservationRequest, Reservation> getReservationCallable() {
     return getReservationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteReservationRequest, Empty> deleteReservationCallable() {
     return deleteReservationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateReservationRequest, Reservation> updateReservationCallable() {
     return updateReservationCallable;
   }
 
+  @Override
   public UnaryCallable<CreateCapacityCommitmentRequest, CapacityCommitment>
       createCapacityCommitmentCallable() {
     return createCapacityCommitmentCallable;
   }
 
+  @Override
   public UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsResponse>
       listCapacityCommitmentsCallable() {
     return listCapacityCommitmentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListCapacityCommitmentsRequest, ListCapacityCommitmentsPagedResponse>
       listCapacityCommitmentsPagedCallable() {
     return listCapacityCommitmentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetCapacityCommitmentRequest, CapacityCommitment>
       getCapacityCommitmentCallable() {
     return getCapacityCommitmentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteCapacityCommitmentRequest, Empty> deleteCapacityCommitmentCallable() {
     return deleteCapacityCommitmentCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCapacityCommitmentRequest, CapacityCommitment>
       updateCapacityCommitmentCallable() {
     return updateCapacityCommitmentCallable;
   }
 
+  @Override
   public UnaryCallable<SplitCapacityCommitmentRequest, SplitCapacityCommitmentResponse>
       splitCapacityCommitmentCallable() {
     return splitCapacityCommitmentCallable;
   }
 
+  @Override
   public UnaryCallable<MergeCapacityCommitmentsRequest, CapacityCommitment>
       mergeCapacityCommitmentsCallable() {
     return mergeCapacityCommitmentsCallable;
   }
 
+  @Override
   public UnaryCallable<CreateAssignmentRequest, Assignment> createAssignmentCallable() {
     return createAssignmentCallable;
   }
 
+  @Override
   public UnaryCallable<ListAssignmentsRequest, ListAssignmentsResponse> listAssignmentsCallable() {
     return listAssignmentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAssignmentsRequest, ListAssignmentsPagedResponse>
       listAssignmentsPagedCallable() {
     return listAssignmentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAssignmentRequest, Empty> deleteAssignmentCallable() {
     return deleteAssignmentCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsResponse>
       searchAssignmentsCallable() {
     return searchAssignmentsCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAssignmentsRequest, SearchAssignmentsPagedResponse>
       searchAssignmentsPagedCallable() {
     return searchAssignmentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<MoveAssignmentRequest, Assignment> moveAssignmentCallable() {
     return moveAssignmentCallable;
   }
 
+  @Override
   public UnaryCallable<GetBiReservationRequest, BiReservation> getBiReservationCallable() {
     return getBiReservationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBiReservationRequest, BiReservation> updateBiReservationCallable() {
     return updateBiReservationCallable;
   }
