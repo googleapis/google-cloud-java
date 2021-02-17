@@ -82,7 +82,13 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAssessment, expected %s or %s",
+                  response.getClass().getName(),
+                  Assessment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -98,7 +104,13 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AnnotateAssessment, expected %s or %s",
+                  response.getClass().getName(),
+                  AnnotateAssessmentResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -112,7 +124,11 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateKey, expected %s or %s",
+                  response.getClass().getName(), Key.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -126,7 +142,13 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListKeys, expected %s or %s",
+                  response.getClass().getName(),
+                  ListKeysResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -140,7 +162,11 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetKey, expected %s or %s",
+                  response.getClass().getName(), Key.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -154,7 +180,11 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateKey, expected %s or %s",
+                  response.getClass().getName(), Key.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -168,7 +198,13 @@ public class MockRecaptchaEnterpriseServiceV1Beta1Impl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteKey, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

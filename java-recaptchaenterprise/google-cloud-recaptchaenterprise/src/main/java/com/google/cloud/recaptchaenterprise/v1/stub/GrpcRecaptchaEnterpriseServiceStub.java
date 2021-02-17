@@ -308,35 +308,43 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable() {
     return createAssessmentCallable;
   }
 
+  @Override
   public UnaryCallable<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
       annotateAssessmentCallable() {
     return annotateAssessmentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateKeyRequest, Key> createKeyCallable() {
     return createKeyCallable;
   }
 
+  @Override
   public UnaryCallable<ListKeysRequest, ListKeysResponse> listKeysCallable() {
     return listKeysCallable;
   }
 
+  @Override
   public UnaryCallable<ListKeysRequest, ListKeysPagedResponse> listKeysPagedCallable() {
     return listKeysPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetKeyRequest, Key> getKeyCallable() {
     return getKeyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateKeyRequest, Key> updateKeyCallable() {
     return updateKeyCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteKeyRequest, Empty> deleteKeyCallable() {
     return deleteKeyCallable;
   }
