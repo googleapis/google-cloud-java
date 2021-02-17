@@ -160,14 +160,17 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListCatalogsRequest, ListCatalogsResponse> listCatalogsCallable() {
     return listCatalogsCallable;
   }
 
+  @Override
   public UnaryCallable<ListCatalogsRequest, ListCatalogsPagedResponse> listCatalogsPagedCallable() {
     return listCatalogsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCatalogRequest, Catalog> updateCatalogCallable() {
     return updateCatalogCallable;
   }

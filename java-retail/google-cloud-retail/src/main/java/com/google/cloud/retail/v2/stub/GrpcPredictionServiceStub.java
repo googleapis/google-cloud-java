@@ -122,6 +122,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return predictCallable;
   }

@@ -69,7 +69,13 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCatalogs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListCatalogsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockCatalogServiceImpl extends CatalogServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCatalog, expected %s or %s",
+                  response.getClass().getName(),
+                  Catalog.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

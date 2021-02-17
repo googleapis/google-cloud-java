@@ -245,26 +245,32 @@ public class GrpcProductServiceStub extends ProductServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateProductRequest, Product> createProductCallable() {
     return createProductCallable;
   }
 
+  @Override
   public UnaryCallable<GetProductRequest, Product> getProductCallable() {
     return getProductCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     return updateProductCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable() {
     return deleteProductCallable;
   }
 
+  @Override
   public UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     return importProductsCallable;
   }
 
+  @Override
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
     return importProductsOperationCallable;
