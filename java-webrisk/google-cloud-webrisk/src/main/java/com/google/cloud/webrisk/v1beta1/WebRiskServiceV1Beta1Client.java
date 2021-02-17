@@ -205,6 +205,7 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    *     WebRiskServiceV1Beta1Client.create()) {
    *   ComputeThreatListDiffRequest request =
    *       ComputeThreatListDiffRequest.newBuilder()
+   *           .setThreatType(ThreatType.forNumber(0))
    *           .setVersionToken(ByteString.EMPTY)
    *           .setConstraints(ComputeThreatListDiffRequest.Constraints.newBuilder().build())
    *           .build();
@@ -232,6 +233,7 @@ public class WebRiskServiceV1Beta1Client implements BackgroundResource {
    *     WebRiskServiceV1Beta1Client.create()) {
    *   ComputeThreatListDiffRequest request =
    *       ComputeThreatListDiffRequest.newBuilder()
+   *           .setThreatType(ThreatType.forNumber(0))
    *           .setVersionToken(ByteString.EMPTY)
    *           .setConstraints(ComputeThreatListDiffRequest.Constraints.newBuilder().build())
    *           .build();

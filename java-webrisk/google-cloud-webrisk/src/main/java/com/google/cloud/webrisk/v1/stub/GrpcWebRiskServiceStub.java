@@ -189,19 +189,23 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffCallable() {
     return computeThreatListDiffCallable;
   }
 
+  @Override
   public UnaryCallable<SearchUrisRequest, SearchUrisResponse> searchUrisCallable() {
     return searchUrisCallable;
   }
 
+  @Override
   public UnaryCallable<SearchHashesRequest, SearchHashesResponse> searchHashesCallable() {
     return searchHashesCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSubmissionRequest, Submission> createSubmissionCallable() {
     return createSubmissionCallable;
   }

@@ -76,7 +76,13 @@ public class MockWebRiskServiceV1Beta1Impl extends WebRiskServiceV1Beta1ImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ComputeThreatListDiff, expected %s or %s",
+                  response.getClass().getName(),
+                  ComputeThreatListDiffResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -91,7 +97,13 @@ public class MockWebRiskServiceV1Beta1Impl extends WebRiskServiceV1Beta1ImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchUris, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchUrisResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -106,7 +118,13 @@ public class MockWebRiskServiceV1Beta1Impl extends WebRiskServiceV1Beta1ImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchHashes, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchHashesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

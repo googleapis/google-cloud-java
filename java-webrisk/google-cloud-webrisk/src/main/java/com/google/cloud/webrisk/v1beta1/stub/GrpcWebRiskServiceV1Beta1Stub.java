@@ -160,15 +160,18 @@ public class GrpcWebRiskServiceV1Beta1Stub extends WebRiskServiceV1Beta1Stub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>
       computeThreatListDiffCallable() {
     return computeThreatListDiffCallable;
   }
 
+  @Override
   public UnaryCallable<SearchUrisRequest, SearchUrisResponse> searchUrisCallable() {
     return searchUrisCallable;
   }
 
+  @Override
   public UnaryCallable<SearchHashesRequest, SearchHashesResponse> searchHashesCallable() {
     return searchHashesCallable;
   }
