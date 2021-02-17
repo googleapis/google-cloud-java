@@ -302,31 +302,37 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<Storage.CreateWriteStreamRequest, Stream.WriteStream>
       createWriteStreamCallable() {
     return createWriteStreamCallable;
   }
 
+  @Override
   public BidiStreamingCallable<Storage.AppendRowsRequest, Storage.AppendRowsResponse>
       appendRowsCallable() {
     return appendRowsCallable;
   }
 
+  @Override
   public UnaryCallable<Storage.GetWriteStreamRequest, Stream.WriteStream> getWriteStreamCallable() {
     return getWriteStreamCallable;
   }
 
+  @Override
   public UnaryCallable<Storage.FinalizeWriteStreamRequest, Storage.FinalizeWriteStreamResponse>
       finalizeWriteStreamCallable() {
     return finalizeWriteStreamCallable;
   }
 
+  @Override
   public UnaryCallable<
           Storage.BatchCommitWriteStreamsRequest, Storage.BatchCommitWriteStreamsResponse>
       batchCommitWriteStreamsCallable() {
     return batchCommitWriteStreamsCallable;
   }
 
+  @Override
   public UnaryCallable<Storage.FlushRowsRequest, Storage.FlushRowsResponse> flushRowsCallable() {
     return flushRowsCallable;
   }

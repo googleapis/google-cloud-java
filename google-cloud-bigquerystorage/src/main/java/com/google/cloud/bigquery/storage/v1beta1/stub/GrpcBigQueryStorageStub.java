@@ -281,16 +281,19 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<Storage.CreateReadSessionRequest, Storage.ReadSession>
       createReadSessionCallable() {
     return createReadSessionCallable;
   }
 
+  @Override
   public ServerStreamingCallable<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
       readRowsCallable() {
     return readRowsCallable;
   }
 
+  @Override
   public UnaryCallable<
           Storage.BatchCreateReadSessionStreamsRequest,
           Storage.BatchCreateReadSessionStreamsResponse>
@@ -298,10 +301,12 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
     return batchCreateReadSessionStreamsCallable;
   }
 
+  @Override
   public UnaryCallable<Storage.FinalizeStreamRequest, Empty> finalizeStreamCallable() {
     return finalizeStreamCallable;
   }
 
+  @Override
   public UnaryCallable<Storage.SplitReadStreamRequest, Storage.SplitReadStreamResponse>
       splitReadStreamCallable() {
     return splitReadStreamCallable;

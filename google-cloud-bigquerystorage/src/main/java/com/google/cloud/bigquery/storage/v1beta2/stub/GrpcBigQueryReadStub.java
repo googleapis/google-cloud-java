@@ -190,14 +190,17 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable() {
     return createReadSessionCallable;
   }
 
+  @Override
   public ServerStreamingCallable<ReadRowsRequest, ReadRowsResponse> readRowsCallable() {
     return readRowsCallable;
   }
 
+  @Override
   public UnaryCallable<SplitReadStreamRequest, SplitReadStreamResponse> splitReadStreamCallable() {
     return splitReadStreamCallable;
   }

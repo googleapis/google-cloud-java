@@ -69,7 +69,13 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWriteStream, expected %s or %s",
+                  response.getClass().getName(),
+                  WriteStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
             } else if (response instanceof Exception) {
               responseObserver.onError(((Exception) response));
             } else {
-              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+              responseObserver.onError(
+                  new IllegalArgumentException(
+                      String.format(
+                          "Unrecognized response type %s for method AppendRows, expected %s or %s",
+                          response.getClass().getName(),
+                          AppendRowsResponse.class.getName(),
+                          Exception.class.getName())));
             }
           }
 
@@ -115,7 +127,13 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWriteStream, expected %s or %s",
+                  response.getClass().getName(),
+                  WriteStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +149,13 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FinalizeWriteStream, expected %s or %s",
+                  response.getClass().getName(),
+                  FinalizeWriteStreamResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -147,7 +171,13 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCommitWriteStreams, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchCommitWriteStreamsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -162,7 +192,13 @@ public class MockBigQueryWriteImpl extends BigQueryWriteImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FlushRows, expected %s or %s",
+                  response.getClass().getName(),
+                  FlushRowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
