@@ -163,14 +163,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<PredictRequest, PredictResponse> predictCallable() {
     return predictCallable;
   }
 
+  @Override
   public UnaryCallable<BatchPredictRequest, Operation> batchPredictCallable() {
     return batchPredictCallable;
   }
 
+  @Override
   public OperationCallable<BatchPredictRequest, BatchPredictResult, OperationMetadata>
       batchPredictOperationCallable() {
     return batchPredictOperationCallable;

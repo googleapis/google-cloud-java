@@ -689,132 +689,162 @@ public class GrpcAutoMlStub extends AutoMlStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateDatasetRequest, Operation> createDatasetCallable() {
     return createDatasetCallable;
   }
 
+  @Override
   public OperationCallable<CreateDatasetRequest, Dataset, OperationMetadata>
       createDatasetOperationCallable() {
     return createDatasetOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return getDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return listDatasetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
     return listDatasetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDatasetRequest, Dataset> updateDatasetCallable() {
     return updateDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDatasetRequest, Operation> deleteDatasetCallable() {
     return deleteDatasetCallable;
   }
 
+  @Override
   public OperationCallable<DeleteDatasetRequest, Empty, OperationMetadata>
       deleteDatasetOperationCallable() {
     return deleteDatasetOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
 
+  @Override
   public OperationCallable<ImportDataRequest, Empty, OperationMetadata>
       importDataOperationCallable() {
     return importDataOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     return exportDataCallable;
   }
 
+  @Override
   public OperationCallable<ExportDataRequest, Empty, OperationMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {
     return getAnnotationSpecCallable;
   }
 
+  @Override
   public UnaryCallable<CreateModelRequest, Operation> createModelCallable() {
     return createModelCallable;
   }
 
+  @Override
   public OperationCallable<CreateModelRequest, Model, OperationMetadata>
       createModelOperationCallable() {
     return createModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetModelRequest, Model> getModelCallable() {
     return getModelCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelsRequest, ListModelsResponse> listModelsCallable() {
     return listModelsCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelsRequest, ListModelsPagedResponse> listModelsPagedCallable() {
     return listModelsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteModelRequest, Operation> deleteModelCallable() {
     return deleteModelCallable;
   }
 
+  @Override
   public OperationCallable<DeleteModelRequest, Empty, OperationMetadata>
       deleteModelOperationCallable() {
     return deleteModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateModelRequest, Model> updateModelCallable() {
     return updateModelCallable;
   }
 
+  @Override
   public UnaryCallable<DeployModelRequest, Operation> deployModelCallable() {
     return deployModelCallable;
   }
 
+  @Override
   public OperationCallable<DeployModelRequest, Empty, OperationMetadata>
       deployModelOperationCallable() {
     return deployModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UndeployModelRequest, Operation> undeployModelCallable() {
     return undeployModelCallable;
   }
 
+  @Override
   public OperationCallable<UndeployModelRequest, Empty, OperationMetadata>
       undeployModelOperationCallable() {
     return undeployModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportModelRequest, Operation> exportModelCallable() {
     return exportModelCallable;
   }
 
+  @Override
   public OperationCallable<ExportModelRequest, Empty, OperationMetadata>
       exportModelOperationCallable() {
     return exportModelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetModelEvaluationRequest, ModelEvaluation> getModelEvaluationCallable() {
     return getModelEvaluationCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
       listModelEvaluationsCallable() {
     return listModelEvaluationsCallable;
   }
 
+  @Override
   public UnaryCallable<ListModelEvaluationsRequest, ListModelEvaluationsPagedResponse>
       listModelEvaluationsPagedCallable() {
     return listModelEvaluationsPagedCallable;
