@@ -84,7 +84,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateService, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -98,7 +104,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetService, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +125,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -128,7 +146,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateService, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -142,7 +166,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteService, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -158,7 +188,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateServiceLevelObjective, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceLevelObjective.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -174,7 +210,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetServiceLevelObjective, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceLevelObjective.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -190,7 +232,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServiceLevelObjectives, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServiceLevelObjectivesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -206,7 +254,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateServiceLevelObjective, expected %s or %s",
+                  response.getClass().getName(),
+                  ServiceLevelObjective.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -221,7 +275,13 @@ public class MockServiceMonitoringServiceImpl extends ServiceMonitoringServiceIm
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteServiceLevelObjective, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

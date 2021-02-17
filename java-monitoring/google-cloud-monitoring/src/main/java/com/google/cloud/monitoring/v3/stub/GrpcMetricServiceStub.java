@@ -391,55 +391,66 @@ public class GrpcMetricServiceStub extends MetricServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
     return listMonitoredResourceDescriptorsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorCallable() {
     return getMonitoredResourceDescriptorCallable;
   }
 
+  @Override
   public UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsCallable() {
     return listMetricDescriptorsCallable;
   }
 
+  @Override
   public UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsPagedCallable() {
     return listMetricDescriptorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetMetricDescriptorRequest, MetricDescriptor> getMetricDescriptorCallable() {
     return getMetricDescriptorCallable;
   }
 
+  @Override
   public UnaryCallable<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorCallable() {
     return createMetricDescriptorCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorCallable() {
     return deleteMetricDescriptorCallable;
   }
 
+  @Override
   public UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> listTimeSeriesCallable() {
     return listTimeSeriesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
       listTimeSeriesPagedCallable() {
     return listTimeSeriesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable() {
     return createTimeSeriesCallable;
   }

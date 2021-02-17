@@ -80,7 +80,13 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUptimeCheckConfigs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListUptimeCheckConfigsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -95,7 +101,13 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUptimeCheckConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  UptimeCheckConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -110,7 +122,13 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUptimeCheckConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  UptimeCheckConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -125,7 +143,13 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUptimeCheckConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  UptimeCheckConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -140,7 +164,13 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUptimeCheckConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -156,7 +186,13 @@ public class MockUptimeCheckServiceImpl extends UptimeCheckServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUptimeCheckIps, expected %s or %s",
+                  response.getClass().getName(),
+                  ListUptimeCheckIpsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

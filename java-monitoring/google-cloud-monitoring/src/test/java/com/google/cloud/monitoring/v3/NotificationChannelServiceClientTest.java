@@ -20,6 +20,7 @@ import static com.google.cloud.monitoring.v3.NotificationChannelServiceClient.Li
 import static com.google.cloud.monitoring.v3.NotificationChannelServiceClient.ListNotificationChannelsPagedResponse;
 
 import com.google.api.LabelDescriptor;
+import com.google.api.LaunchStage;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -313,6 +314,7 @@ public class NotificationChannelServiceClientTest {
             .setDescription("description-1724546052")
             .addAllLabels(new ArrayList<LabelDescriptor>())
             .addAllSupportedTiers(new ArrayList<ServiceTier>())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 
@@ -364,6 +366,7 @@ public class NotificationChannelServiceClientTest {
             .setDescription("description-1724546052")
             .addAllLabels(new ArrayList<LabelDescriptor>())
             .addAllSupportedTiers(new ArrayList<ServiceTier>())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .build();
     mockNotificationChannelService.addResponse(expectedResponse);
 

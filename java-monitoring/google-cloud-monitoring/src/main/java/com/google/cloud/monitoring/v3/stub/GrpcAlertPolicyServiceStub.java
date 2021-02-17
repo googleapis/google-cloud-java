@@ -259,28 +259,34 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesResponse>
       listAlertPoliciesCallable() {
     return listAlertPoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesPagedResponse>
       listAlertPoliciesPagedCallable() {
     return listAlertPoliciesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetAlertPolicyRequest, AlertPolicy> getAlertPolicyCallable() {
     return getAlertPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<CreateAlertPolicyRequest, AlertPolicy> createAlertPolicyCallable() {
     return createAlertPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAlertPolicyRequest, Empty> deleteAlertPolicyCallable() {
     return deleteAlertPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateAlertPolicyRequest, AlertPolicy> updateAlertPolicyCallable() {
     return updateAlertPolicyCallable;
   }

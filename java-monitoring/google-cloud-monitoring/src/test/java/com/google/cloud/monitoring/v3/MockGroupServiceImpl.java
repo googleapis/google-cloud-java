@@ -79,7 +79,13 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGroups, expected %s or %s",
+                  response.getClass().getName(),
+                  ListGroupsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -93,7 +99,13 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  Group.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -107,7 +119,13 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  Group.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -121,7 +139,13 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  Group.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -135,7 +159,13 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -150,7 +180,13 @@ public class MockGroupServiceImpl extends GroupServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGroupMembers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListGroupMembersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

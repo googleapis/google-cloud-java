@@ -21,6 +21,7 @@ import static com.google.cloud.monitoring.v3.MetricServiceClient.ListMonitoredRe
 import static com.google.cloud.monitoring.v3.MetricServiceClient.ListTimeSeriesPagedResponse;
 
 import com.google.api.LabelDescriptor;
+import com.google.api.LaunchStage;
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -300,6 +301,7 @@ public class MetricServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllLabels(new ArrayList<LabelDescriptor>())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .build();
     mockMetricService.addResponse(expectedResponse);
 
@@ -347,6 +349,7 @@ public class MetricServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .addAllLabels(new ArrayList<LabelDescriptor>())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .build();
     mockMetricService.addResponse(expectedResponse);
 
@@ -572,6 +575,7 @@ public class MetricServiceClientTest {
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
             .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -619,6 +623,7 @@ public class MetricServiceClientTest {
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
             .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -664,6 +669,7 @@ public class MetricServiceClientTest {
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
             .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -713,6 +719,7 @@ public class MetricServiceClientTest {
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
             .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -762,6 +769,7 @@ public class MetricServiceClientTest {
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
             .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);
@@ -811,6 +819,7 @@ public class MetricServiceClientTest {
             .setDescription("description-1724546052")
             .setDisplayName("displayName1714148973")
             .setMetadata(MetricDescriptor.MetricDescriptorMetadata.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
             .addAllMonitoredResourceTypes(new ArrayList<String>())
             .build();
     mockMetricService.addResponse(expectedResponse);

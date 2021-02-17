@@ -306,40 +306,48 @@ public class GrpcUptimeCheckServiceStub extends UptimeCheckServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsResponse>
       listUptimeCheckConfigsCallable() {
     return listUptimeCheckConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListUptimeCheckConfigsRequest, ListUptimeCheckConfigsPagedResponse>
       listUptimeCheckConfigsPagedCallable() {
     return listUptimeCheckConfigsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetUptimeCheckConfigRequest, UptimeCheckConfig>
       getUptimeCheckConfigCallable() {
     return getUptimeCheckConfigCallable;
   }
 
+  @Override
   public UnaryCallable<CreateUptimeCheckConfigRequest, UptimeCheckConfig>
       createUptimeCheckConfigCallable() {
     return createUptimeCheckConfigCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateUptimeCheckConfigRequest, UptimeCheckConfig>
       updateUptimeCheckConfigCallable() {
     return updateUptimeCheckConfigCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteUptimeCheckConfigRequest, Empty> deleteUptimeCheckConfigCallable() {
     return deleteUptimeCheckConfigCallable;
   }
 
+  @Override
   public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsResponse>
       listUptimeCheckIpsCallable() {
     return listUptimeCheckIpsCallable;
   }
 
+  @Override
   public UnaryCallable<ListUptimeCheckIpsRequest, ListUptimeCheckIpsPagedResponse>
       listUptimeCheckIpsPagedCallable() {
     return listUptimeCheckIpsPagedCallable;

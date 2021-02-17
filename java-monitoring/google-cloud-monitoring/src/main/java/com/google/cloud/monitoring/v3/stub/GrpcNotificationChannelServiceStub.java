@@ -503,12 +503,14 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<
           ListNotificationChannelDescriptorsRequest, ListNotificationChannelDescriptorsResponse>
       listNotificationChannelDescriptorsCallable() {
     return listNotificationChannelDescriptorsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListNotificationChannelDescriptorsRequest,
           ListNotificationChannelDescriptorsPagedResponse>
@@ -516,46 +518,55 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
     return listNotificationChannelDescriptorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetNotificationChannelDescriptorRequest, NotificationChannelDescriptor>
       getNotificationChannelDescriptorCallable() {
     return getNotificationChannelDescriptorCallable;
   }
 
+  @Override
   public UnaryCallable<ListNotificationChannelsRequest, ListNotificationChannelsResponse>
       listNotificationChannelsCallable() {
     return listNotificationChannelsCallable;
   }
 
+  @Override
   public UnaryCallable<ListNotificationChannelsRequest, ListNotificationChannelsPagedResponse>
       listNotificationChannelsPagedCallable() {
     return listNotificationChannelsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetNotificationChannelRequest, NotificationChannel>
       getNotificationChannelCallable() {
     return getNotificationChannelCallable;
   }
 
+  @Override
   public UnaryCallable<CreateNotificationChannelRequest, NotificationChannel>
       createNotificationChannelCallable() {
     return createNotificationChannelCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateNotificationChannelRequest, NotificationChannel>
       updateNotificationChannelCallable() {
     return updateNotificationChannelCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNotificationChannelRequest, Empty>
       deleteNotificationChannelCallable() {
     return deleteNotificationChannelCallable;
   }
 
+  @Override
   public UnaryCallable<SendNotificationChannelVerificationCodeRequest, Empty>
       sendNotificationChannelVerificationCodeCallable() {
     return sendNotificationChannelVerificationCodeCallable;
   }
 
+  @Override
   public UnaryCallable<
           GetNotificationChannelVerificationCodeRequest,
           GetNotificationChannelVerificationCodeResponse>
@@ -563,6 +574,7 @@ public class GrpcNotificationChannelServiceStub extends NotificationChannelServi
     return getNotificationChannelVerificationCodeCallable;
   }
 
+  @Override
   public UnaryCallable<VerifyNotificationChannelRequest, NotificationChannel>
       verifyNotificationChannelCallable() {
     return verifyNotificationChannelCallable;

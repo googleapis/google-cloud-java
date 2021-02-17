@@ -431,55 +431,67 @@ public class GrpcServiceMonitoringServiceStub extends ServiceMonitoringServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateServiceRequest, Service> createServiceCallable() {
     return createServiceCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceRequest, Service> getServiceCallable() {
     return getServiceCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
     return listServicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable() {
     return updateServiceCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
     return deleteServiceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceLevelObjectiveRequest, ServiceLevelObjective>
       createServiceLevelObjectiveCallable() {
     return createServiceLevelObjectiveCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceLevelObjectiveRequest, ServiceLevelObjective>
       getServiceLevelObjectiveCallable() {
     return getServiceLevelObjectiveCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesResponse>
       listServiceLevelObjectivesCallable() {
     return listServiceLevelObjectivesCallable;
   }
 
+  @Override
   public UnaryCallable<ListServiceLevelObjectivesRequest, ListServiceLevelObjectivesPagedResponse>
       listServiceLevelObjectivesPagedCallable() {
     return listServiceLevelObjectivesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateServiceLevelObjectiveRequest, ServiceLevelObjective>
       updateServiceLevelObjectiveCallable() {
     return updateServiceLevelObjectiveCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceLevelObjectiveRequest, Empty>
       deleteServiceLevelObjectiveCallable() {
     return deleteServiceLevelObjectiveCallable;

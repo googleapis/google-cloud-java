@@ -271,35 +271,43 @@ public class GrpcGroupServiceStub extends GroupServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
     return listGroupsCallable;
   }
 
+  @Override
   public UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
     return listGroupsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
     return getGroupCallable;
   }
 
+  @Override
   public UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
     return createGroupCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
     return updateGroupCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
     return deleteGroupCallable;
   }
 
+  @Override
   public UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersCallable() {
     return listGroupMembersCallable;
   }
 
+  @Override
   public UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable() {
     return listGroupMembersPagedCallable;

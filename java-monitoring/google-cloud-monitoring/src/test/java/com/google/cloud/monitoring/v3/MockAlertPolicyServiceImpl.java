@@ -78,7 +78,13 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAlertPolicies, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAlertPoliciesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -93,7 +99,13 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAlertPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  AlertPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -108,7 +120,13 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAlertPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  AlertPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -123,7 +141,13 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAlertPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -138,7 +162,13 @@ public class MockAlertPolicyServiceImpl extends AlertPolicyServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAlertPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  AlertPolicy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
