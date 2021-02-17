@@ -246,27 +246,33 @@ public class GrpcMetricsServiceV2Stub extends MetricsServiceV2Stub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable() {
     return listLogMetricsCallable;
   }
 
+  @Override
   public UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
       listLogMetricsPagedCallable() {
     return listLogMetricsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable() {
     return getLogMetricCallable;
   }
 
+  @Override
   public UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
     return createLogMetricCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
     return updateLogMetricCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
     return deleteLogMetricCallable;
   }

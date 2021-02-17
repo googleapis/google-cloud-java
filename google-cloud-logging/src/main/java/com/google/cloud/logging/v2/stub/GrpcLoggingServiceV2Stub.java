@@ -275,43 +275,52 @@ public class GrpcLoggingServiceV2Stub extends LoggingServiceV2Stub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable() {
     return deleteLogCallable;
   }
 
+  @Override
   public UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse> writeLogEntriesCallable() {
     return writeLogEntriesCallable;
   }
 
+  @Override
   public UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable() {
     return listLogEntriesCallable;
   }
 
+  @Override
   public UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
       listLogEntriesPagedCallable() {
     return listLogEntriesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
     return listMonitoredResourceDescriptorsCallable;
   }
 
+  @Override
   public UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
     return listLogsCallable;
   }
 
+  @Override
   public UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable() {
     return listLogsPagedCallable;
   }
 
+  @Override
   public BidiStreamingCallable<TailLogEntriesRequest, TailLogEntriesResponse>
       tailLogEntriesCallable() {
     return tailLogEntriesCallable;

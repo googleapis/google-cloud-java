@@ -751,111 +751,138 @@ public class GrpcConfigServiceV2Stub extends ConfigServiceV2Stub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListBucketsRequest, ListBucketsResponse> listBucketsCallable() {
     return listBucketsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBucketsRequest, ListBucketsPagedResponse> listBucketsPagedCallable() {
     return listBucketsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetBucketRequest, LogBucket> getBucketCallable() {
     return getBucketCallable;
   }
 
+  @Override
   public UnaryCallable<CreateBucketRequest, LogBucket> createBucketCallable() {
     return createBucketCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBucketRequest, LogBucket> updateBucketCallable() {
     return updateBucketCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteBucketRequest, Empty> deleteBucketCallable() {
     return deleteBucketCallable;
   }
 
+  @Override
   public UnaryCallable<UndeleteBucketRequest, Empty> undeleteBucketCallable() {
     return undeleteBucketCallable;
   }
 
+  @Override
   public UnaryCallable<ListViewsRequest, ListViewsResponse> listViewsCallable() {
     return listViewsCallable;
   }
 
+  @Override
   public UnaryCallable<ListViewsRequest, ListViewsPagedResponse> listViewsPagedCallable() {
     return listViewsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetViewRequest, LogView> getViewCallable() {
     return getViewCallable;
   }
 
+  @Override
   public UnaryCallable<CreateViewRequest, LogView> createViewCallable() {
     return createViewCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateViewRequest, LogView> updateViewCallable() {
     return updateViewCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteViewRequest, Empty> deleteViewCallable() {
     return deleteViewCallable;
   }
 
+  @Override
   public UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
     return listSinksCallable;
   }
 
+  @Override
   public UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
     return listSinksPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetSinkRequest, LogSink> getSinkCallable() {
     return getSinkCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
     return createSinkCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
     return updateSinkCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return deleteSinkCallable;
   }
 
+  @Override
   public UnaryCallable<ListExclusionsRequest, ListExclusionsResponse> listExclusionsCallable() {
     return listExclusionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListExclusionsRequest, ListExclusionsPagedResponse>
       listExclusionsPagedCallable() {
     return listExclusionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetExclusionRequest, LogExclusion> getExclusionCallable() {
     return getExclusionCallable;
   }
 
+  @Override
   public UnaryCallable<CreateExclusionRequest, LogExclusion> createExclusionCallable() {
     return createExclusionCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateExclusionRequest, LogExclusion> updateExclusionCallable() {
     return updateExclusionCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteExclusionRequest, Empty> deleteExclusionCallable() {
     return deleteExclusionCallable;
   }
 
+  @Override
   public UnaryCallable<GetCmekSettingsRequest, CmekSettings> getCmekSettingsCallable() {
     return getCmekSettingsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCmekSettingsRequest, CmekSettings> updateCmekSettingsCallable() {
     return updateCmekSettingsCallable;
   }

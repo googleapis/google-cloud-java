@@ -77,7 +77,13 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListLogMetrics, expected %s or %s",
+                  response.getClass().getName(),
+                  ListLogMetricsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -92,7 +98,13 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetLogMetric, expected %s or %s",
+                  response.getClass().getName(),
+                  LogMetric.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -107,7 +119,13 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateLogMetric, expected %s or %s",
+                  response.getClass().getName(),
+                  LogMetric.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -122,7 +140,13 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateLogMetric, expected %s or %s",
+                  response.getClass().getName(),
+                  LogMetric.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -137,7 +161,13 @@ public class MockMetricsServiceV2Impl extends MetricsServiceV2ImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteLogMetric, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

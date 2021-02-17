@@ -48,6 +48,7 @@ import com.google.logging.v2.GetCmekSettingsRequest;
 import com.google.logging.v2.GetExclusionRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.GetViewRequest;
+import com.google.logging.v2.LifecycleState;
 import com.google.logging.v2.ListBucketsRequest;
 import com.google.logging.v2.ListBucketsResponse;
 import com.google.logging.v2.ListExclusionsRequest;
@@ -364,6 +365,7 @@ public class ConfigClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRetentionDays(1544391896)
             .setLocked(true)
+            .setLifecycleState(LifecycleState.forNumber(0))
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -419,6 +421,7 @@ public class ConfigClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRetentionDays(1544391896)
             .setLocked(true)
+            .setLifecycleState(LifecycleState.forNumber(0))
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
@@ -480,6 +483,7 @@ public class ConfigClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setRetentionDays(1544391896)
             .setLocked(true)
+            .setLifecycleState(LifecycleState.forNumber(0))
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
