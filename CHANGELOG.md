@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.9.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.5...v1.9.0) (2021-02-17)
+
+
+### Features
+
+* generate sample code in the Java microgenerator ([#821](https://www.github.com/googleapis/java-bigquerystorage/issues/821)) ([3ab9a30](https://www.github.com/googleapis/java-bigquerystorage/commit/3ab9a309441a681e8adec88f8b8af1298a89cd74))
+
+
+### Bug Fixes
+
+* add dataflow trace id support ([#827](https://www.github.com/googleapis/java-bigquerystorage/issues/827)) ([8d22c58](https://www.github.com/googleapis/java-bigquerystorage/commit/8d22c586ed8a265558b84619297f5bd5b5ec4cb4))
+* shutdown stuck when there is error on the flush path ([#831](https://www.github.com/googleapis/java-bigquerystorage/issues/831)) ([c2fd750](https://www.github.com/googleapis/java-bigquerystorage/commit/c2fd750e1309fb7b6eb862dea1ad8546dcd78bef))
+* update repo name ([#818](https://www.github.com/googleapis/java-bigquerystorage/issues/818)) ([ba4b1a2](https://www.github.com/googleapis/java-bigquerystorage/commit/ba4b1a2d8eaa8f5408e476a3b570cb508aa94f57))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.0 ([#825](https://www.github.com/googleapis/java-bigquerystorage/issues/825)) ([36322fb](https://www.github.com/googleapis/java-bigquerystorage/commit/36322fb1f3d3d286cf8fc6b66f5aa1b97e754d72))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.1 ([#828](https://www.github.com/googleapis/java-bigquerystorage/issues/828)) ([c24a6ae](https://www.github.com/googleapis/java-bigquerystorage/commit/c24a6ae3d5a091b5276036d1d7f01e2777bbfd82))
+* update dependency com.google.cloud:google-cloud-bigquery to v1.127.2 ([#830](https://www.github.com/googleapis/java-bigquerystorage/issues/830)) ([94c7848](https://www.github.com/googleapis/java-bigquerystorage/commit/94c78485baa383cd41ee7001206d5bc19f7746bf))
+* update dependency junit:junit to v4.13.2 ([#829](https://www.github.com/googleapis/java-bigquerystorage/issues/829)) ([c2e429a](https://www.github.com/googleapis/java-bigquerystorage/commit/c2e429a591131cd2c89982c746f860a8fd0c7aef))
+
 ### [1.8.5](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.4...v1.8.5) (2021-01-17)
 
 
