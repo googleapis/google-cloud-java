@@ -563,73 +563,90 @@ public class GrpcSecretManagerServiceStub extends SecretManagerServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListSecretsRequest, ListSecretsResponse> listSecretsCallable() {
     return listSecretsCallable;
   }
 
+  @Override
   public UnaryCallable<ListSecretsRequest, ListSecretsPagedResponse> listSecretsPagedCallable() {
     return listSecretsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSecretRequest, Secret> createSecretCallable() {
     return createSecretCallable;
   }
 
+  @Override
   public UnaryCallable<AddSecretVersionRequest, SecretVersion> addSecretVersionCallable() {
     return addSecretVersionCallable;
   }
 
+  @Override
   public UnaryCallable<GetSecretRequest, Secret> getSecretCallable() {
     return getSecretCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSecretRequest, Secret> updateSecretCallable() {
     return updateSecretCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSecretRequest, Empty> deleteSecretCallable() {
     return deleteSecretCallable;
   }
 
+  @Override
   public UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsResponse>
       listSecretVersionsCallable() {
     return listSecretVersionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListSecretVersionsRequest, ListSecretVersionsPagedResponse>
       listSecretVersionsPagedCallable() {
     return listSecretVersionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetSecretVersionRequest, SecretVersion> getSecretVersionCallable() {
     return getSecretVersionCallable;
   }
 
+  @Override
   public UnaryCallable<AccessSecretVersionRequest, AccessSecretVersionResponse>
       accessSecretVersionCallable() {
     return accessSecretVersionCallable;
   }
 
+  @Override
   public UnaryCallable<DisableSecretVersionRequest, SecretVersion> disableSecretVersionCallable() {
     return disableSecretVersionCallable;
   }
 
+  @Override
   public UnaryCallable<EnableSecretVersionRequest, SecretVersion> enableSecretVersionCallable() {
     return enableSecretVersionCallable;
   }
 
+  @Override
   public UnaryCallable<DestroySecretVersionRequest, SecretVersion> destroySecretVersionCallable() {
     return destroySecretVersionCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

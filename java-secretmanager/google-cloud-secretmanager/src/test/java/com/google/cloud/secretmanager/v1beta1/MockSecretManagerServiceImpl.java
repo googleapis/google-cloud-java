@@ -75,7 +75,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSecrets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSecretsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -89,7 +95,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSecret, expected %s or %s",
+                  response.getClass().getName(),
+                  Secret.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -104,7 +116,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AddSecretVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -118,7 +136,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSecret, expected %s or %s",
+                  response.getClass().getName(),
+                  Secret.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -132,7 +156,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSecret, expected %s or %s",
+                  response.getClass().getName(),
+                  Secret.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -146,7 +176,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSecret, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -162,7 +198,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSecretVersions, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSecretVersionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -177,7 +219,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSecretVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -193,7 +241,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AccessSecretVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  AccessSecretVersionResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -208,7 +262,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DisableSecretVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -223,7 +283,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method EnableSecretVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -238,7 +304,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DestroySecretVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  SecretVersion.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -252,7 +324,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -266,7 +344,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -282,7 +366,13 @@ public class MockSecretManagerServiceImpl extends SecretManagerServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
