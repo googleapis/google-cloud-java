@@ -176,16 +176,19 @@ public class GrpcDocumentUnderstandingServiceStub extends DocumentUnderstandingS
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<BatchProcessDocumentsRequest, Operation> batchProcessDocumentsCallable() {
     return batchProcessDocumentsCallable;
   }
 
+  @Override
   public OperationCallable<
           BatchProcessDocumentsRequest, BatchProcessDocumentsResponse, OperationMetadata>
       batchProcessDocumentsOperationCallable() {
     return batchProcessDocumentsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ProcessDocumentRequest, Document> processDocumentCallable() {
     return processDocumentCallable;
   }

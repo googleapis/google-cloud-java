@@ -70,7 +70,13 @@ public class MockDocumentUnderstandingServiceImpl extends DocumentUnderstandingS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchProcessDocuments, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockDocumentUnderstandingServiceImpl extends DocumentUnderstandingS
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ProcessDocument, expected %s or %s",
+                  response.getClass().getName(),
+                  Document.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

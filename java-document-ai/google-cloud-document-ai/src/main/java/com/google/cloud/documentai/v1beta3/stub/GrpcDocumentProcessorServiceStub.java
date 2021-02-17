@@ -210,23 +210,28 @@ public class GrpcDocumentProcessorServiceStub extends DocumentProcessorServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ProcessRequest, ProcessResponse> processDocumentCallable() {
     return processDocumentCallable;
   }
 
+  @Override
   public UnaryCallable<BatchProcessRequest, Operation> batchProcessDocumentsCallable() {
     return batchProcessDocumentsCallable;
   }
 
+  @Override
   public OperationCallable<BatchProcessRequest, BatchProcessResponse, BatchProcessMetadata>
       batchProcessDocumentsOperationCallable() {
     return batchProcessDocumentsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ReviewDocumentRequest, Operation> reviewDocumentCallable() {
     return reviewDocumentCallable;
   }
 
+  @Override
   public OperationCallable<
           ReviewDocumentRequest, ReviewDocumentResponse, ReviewDocumentOperationMetadata>
       reviewDocumentOperationCallable() {
