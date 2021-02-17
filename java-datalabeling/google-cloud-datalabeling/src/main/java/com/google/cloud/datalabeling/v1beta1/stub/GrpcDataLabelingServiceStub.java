@@ -1272,220 +1272,269 @@ public class GrpcDataLabelingServiceStub extends DataLabelingServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable() {
     return createDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<GetDatasetRequest, Dataset> getDatasetCallable() {
     return getDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<ListDatasetsRequest, ListDatasetsResponse> listDatasetsCallable() {
     return listDatasetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDatasetsRequest, ListDatasetsPagedResponse> listDatasetsPagedCallable() {
     return listDatasetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDatasetRequest, Empty> deleteDatasetCallable() {
     return deleteDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<ImportDataRequest, Operation> importDataCallable() {
     return importDataCallable;
   }
 
+  @Override
   public OperationCallable<
           ImportDataRequest, ImportDataOperationResponse, ImportDataOperationMetadata>
       importDataOperationCallable() {
     return importDataOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ExportDataRequest, Operation> exportDataCallable() {
     return exportDataCallable;
   }
 
+  @Override
   public OperationCallable<
           ExportDataRequest, ExportDataOperationResponse, ExportDataOperationMetadata>
       exportDataOperationCallable() {
     return exportDataOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetDataItemRequest, DataItem> getDataItemCallable() {
     return getDataItemCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataItemsRequest, ListDataItemsResponse> listDataItemsCallable() {
     return listDataItemsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable() {
     return listDataItemsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetAnnotatedDatasetRequest, AnnotatedDataset> getAnnotatedDatasetCallable() {
     return getAnnotatedDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsResponse>
       listAnnotatedDatasetsCallable() {
     return listAnnotatedDatasetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAnnotatedDatasetsRequest, ListAnnotatedDatasetsPagedResponse>
       listAnnotatedDatasetsPagedCallable() {
     return listAnnotatedDatasetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAnnotatedDatasetRequest, Empty> deleteAnnotatedDatasetCallable() {
     return deleteAnnotatedDatasetCallable;
   }
 
+  @Override
   public UnaryCallable<LabelImageRequest, Operation> labelImageCallable() {
     return labelImageCallable;
   }
 
+  @Override
   public OperationCallable<LabelImageRequest, AnnotatedDataset, LabelOperationMetadata>
       labelImageOperationCallable() {
     return labelImageOperationCallable;
   }
 
+  @Override
   public UnaryCallable<LabelVideoRequest, Operation> labelVideoCallable() {
     return labelVideoCallable;
   }
 
+  @Override
   public OperationCallable<LabelVideoRequest, AnnotatedDataset, LabelOperationMetadata>
       labelVideoOperationCallable() {
     return labelVideoOperationCallable;
   }
 
+  @Override
   public UnaryCallable<LabelTextRequest, Operation> labelTextCallable() {
     return labelTextCallable;
   }
 
+  @Override
   public OperationCallable<LabelTextRequest, AnnotatedDataset, LabelOperationMetadata>
       labelTextOperationCallable() {
     return labelTextOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetExampleRequest, Example> getExampleCallable() {
     return getExampleCallable;
   }
 
+  @Override
   public UnaryCallable<ListExamplesRequest, ListExamplesResponse> listExamplesCallable() {
     return listExamplesCallable;
   }
 
+  @Override
   public UnaryCallable<ListExamplesRequest, ListExamplesPagedResponse> listExamplesPagedCallable() {
     return listExamplesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateAnnotationSpecSetRequest, AnnotationSpecSet>
       createAnnotationSpecSetCallable() {
     return createAnnotationSpecSetCallable;
   }
 
+  @Override
   public UnaryCallable<GetAnnotationSpecSetRequest, AnnotationSpecSet>
       getAnnotationSpecSetCallable() {
     return getAnnotationSpecSetCallable;
   }
 
+  @Override
   public UnaryCallable<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsResponse>
       listAnnotationSpecSetsCallable() {
     return listAnnotationSpecSetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAnnotationSpecSetsRequest, ListAnnotationSpecSetsPagedResponse>
       listAnnotationSpecSetsPagedCallable() {
     return listAnnotationSpecSetsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteAnnotationSpecSetRequest, Empty> deleteAnnotationSpecSetCallable() {
     return deleteAnnotationSpecSetCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInstructionRequest, Operation> createInstructionCallable() {
     return createInstructionCallable;
   }
 
+  @Override
   public OperationCallable<CreateInstructionRequest, Instruction, CreateInstructionMetadata>
       createInstructionOperationCallable() {
     return createInstructionOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstructionRequest, Instruction> getInstructionCallable() {
     return getInstructionCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstructionsRequest, ListInstructionsResponse>
       listInstructionsCallable() {
     return listInstructionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstructionsRequest, ListInstructionsPagedResponse>
       listInstructionsPagedCallable() {
     return listInstructionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstructionRequest, Empty> deleteInstructionCallable() {
     return deleteInstructionCallable;
   }
 
+  @Override
   public UnaryCallable<GetEvaluationRequest, Evaluation> getEvaluationCallable() {
     return getEvaluationCallable;
   }
 
+  @Override
   public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsResponse>
       searchEvaluationsCallable() {
     return searchEvaluationsCallable;
   }
 
+  @Override
   public UnaryCallable<SearchEvaluationsRequest, SearchEvaluationsPagedResponse>
       searchEvaluationsPagedCallable() {
     return searchEvaluationsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsResponse>
       searchExampleComparisonsCallable() {
     return searchExampleComparisonsCallable;
   }
 
+  @Override
   public UnaryCallable<SearchExampleComparisonsRequest, SearchExampleComparisonsPagedResponse>
       searchExampleComparisonsPagedCallable() {
     return searchExampleComparisonsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEvaluationJobRequest, EvaluationJob> createEvaluationJobCallable() {
     return createEvaluationJobCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEvaluationJobRequest, EvaluationJob> updateEvaluationJobCallable() {
     return updateEvaluationJobCallable;
   }
 
+  @Override
   public UnaryCallable<GetEvaluationJobRequest, EvaluationJob> getEvaluationJobCallable() {
     return getEvaluationJobCallable;
   }
 
+  @Override
   public UnaryCallable<PauseEvaluationJobRequest, Empty> pauseEvaluationJobCallable() {
     return pauseEvaluationJobCallable;
   }
 
+  @Override
   public UnaryCallable<ResumeEvaluationJobRequest, Empty> resumeEvaluationJobCallable() {
     return resumeEvaluationJobCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEvaluationJobRequest, Empty> deleteEvaluationJobCallable() {
     return deleteEvaluationJobCallable;
   }
 
+  @Override
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsResponse>
       listEvaluationJobsCallable() {
     return listEvaluationJobsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEvaluationJobsRequest, ListEvaluationJobsPagedResponse>
       listEvaluationJobsPagedCallable() {
     return listEvaluationJobsPagedCallable;

@@ -71,7 +71,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDataset, expected %s or %s",
+                  response.getClass().getName(),
+                  Dataset.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataset, expected %s or %s",
+                  response.getClass().getName(),
+                  Dataset.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDatasets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDatasetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -114,7 +132,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDataset, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -128,7 +152,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ImportData, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -142,7 +172,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportData, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -156,7 +192,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataItem, expected %s or %s",
+                  response.getClass().getName(),
+                  DataItem.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -171,7 +213,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDataItems, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDataItemsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -186,7 +234,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAnnotatedDataset, expected %s or %s",
+                  response.getClass().getName(),
+                  AnnotatedDataset.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -202,7 +256,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAnnotatedDatasets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAnnotatedDatasetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -217,7 +277,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAnnotatedDataset, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -231,7 +297,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LabelImage, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -245,7 +317,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LabelVideo, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -259,7 +337,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LabelText, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -273,7 +357,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExample, expected %s or %s",
+                  response.getClass().getName(),
+                  Example.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -288,7 +378,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExamples, expected %s or %s",
+                  response.getClass().getName(),
+                  ListExamplesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -303,7 +399,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAnnotationSpecSet, expected %s or %s",
+                  response.getClass().getName(),
+                  AnnotationSpecSet.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -318,7 +420,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAnnotationSpecSet, expected %s or %s",
+                  response.getClass().getName(),
+                  AnnotationSpecSet.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -334,7 +442,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAnnotationSpecSets, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAnnotationSpecSetsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -349,7 +463,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAnnotationSpecSet, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -364,7 +484,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateInstruction, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -379,7 +505,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetInstruction, expected %s or %s",
+                  response.getClass().getName(),
+                  Instruction.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -394,7 +526,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListInstructions, expected %s or %s",
+                  response.getClass().getName(),
+                  ListInstructionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -409,7 +547,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteInstruction, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -424,7 +568,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEvaluation, expected %s or %s",
+                  response.getClass().getName(),
+                  Evaluation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -440,7 +590,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchEvaluations, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchEvaluationsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -456,7 +612,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SearchExampleComparisons, expected %s or %s",
+                  response.getClass().getName(),
+                  SearchExampleComparisonsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -471,7 +633,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEvaluationJob, expected %s or %s",
+                  response.getClass().getName(),
+                  EvaluationJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -486,7 +654,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEvaluationJob, expected %s or %s",
+                  response.getClass().getName(),
+                  EvaluationJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -501,7 +675,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEvaluationJob, expected %s or %s",
+                  response.getClass().getName(),
+                  EvaluationJob.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -516,7 +696,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PauseEvaluationJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -531,7 +717,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ResumeEvaluationJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -546,7 +738,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEvaluationJob, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -562,7 +760,13 @@ public class MockDataLabelingServiceImpl extends DataLabelingServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEvaluationJobs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEvaluationJobsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
