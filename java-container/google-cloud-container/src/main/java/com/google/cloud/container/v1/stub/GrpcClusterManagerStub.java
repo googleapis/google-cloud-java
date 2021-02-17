@@ -1125,136 +1125,169 @@ public class GrpcClusterManagerStub extends ClusterManagerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListClustersRequest, ListClustersResponse> listClustersCallable() {
     return listClustersCallable;
   }
 
+  @Override
   public UnaryCallable<GetClusterRequest, Cluster> getClusterCallable() {
     return getClusterCallable;
   }
 
+  @Override
   public UnaryCallable<CreateClusterRequest, Operation> createClusterCallable() {
     return createClusterCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateClusterRequest, Operation> updateClusterCallable() {
     return updateClusterCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateNodePoolRequest, Operation> updateNodePoolCallable() {
     return updateNodePoolCallable;
   }
 
+  @Override
   public UnaryCallable<SetNodePoolAutoscalingRequest, Operation> setNodePoolAutoscalingCallable() {
     return setNodePoolAutoscalingCallable;
   }
 
+  @Override
   public UnaryCallable<SetLoggingServiceRequest, Operation> setLoggingServiceCallable() {
     return setLoggingServiceCallable;
   }
 
+  @Override
   public UnaryCallable<SetMonitoringServiceRequest, Operation> setMonitoringServiceCallable() {
     return setMonitoringServiceCallable;
   }
 
+  @Override
   public UnaryCallable<SetAddonsConfigRequest, Operation> setAddonsConfigCallable() {
     return setAddonsConfigCallable;
   }
 
+  @Override
   public UnaryCallable<SetLocationsRequest, Operation> setLocationsCallable() {
     return setLocationsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateMasterRequest, Operation> updateMasterCallable() {
     return updateMasterCallable;
   }
 
+  @Override
   public UnaryCallable<SetMasterAuthRequest, Operation> setMasterAuthCallable() {
     return setMasterAuthCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteClusterRequest, Operation> deleteClusterCallable() {
     return deleteClusterCallable;
   }
 
+  @Override
   public UnaryCallable<ListOperationsRequest, ListOperationsResponse> listOperationsCallable() {
     return listOperationsCallable;
   }
 
+  @Override
   public UnaryCallable<GetOperationRequest, Operation> getOperationCallable() {
     return getOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelOperationRequest, Empty> cancelOperationCallable() {
     return cancelOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetServerConfigRequest, ServerConfig> getServerConfigCallable() {
     return getServerConfigCallable;
   }
 
+  @Override
   public UnaryCallable<GetJSONWebKeysRequest, GetJSONWebKeysResponse> getJSONWebKeysCallable() {
     return getJSONWebKeysCallable;
   }
 
+  @Override
   public UnaryCallable<ListNodePoolsRequest, ListNodePoolsResponse> listNodePoolsCallable() {
     return listNodePoolsCallable;
   }
 
+  @Override
   public UnaryCallable<GetNodePoolRequest, NodePool> getNodePoolCallable() {
     return getNodePoolCallable;
   }
 
+  @Override
   public UnaryCallable<CreateNodePoolRequest, Operation> createNodePoolCallable() {
     return createNodePoolCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNodePoolRequest, Operation> deleteNodePoolCallable() {
     return deleteNodePoolCallable;
   }
 
+  @Override
   public UnaryCallable<RollbackNodePoolUpgradeRequest, Operation>
       rollbackNodePoolUpgradeCallable() {
     return rollbackNodePoolUpgradeCallable;
   }
 
+  @Override
   public UnaryCallable<SetNodePoolManagementRequest, Operation> setNodePoolManagementCallable() {
     return setNodePoolManagementCallable;
   }
 
+  @Override
   public UnaryCallable<SetLabelsRequest, Operation> setLabelsCallable() {
     return setLabelsCallable;
   }
 
+  @Override
   public UnaryCallable<SetLegacyAbacRequest, Operation> setLegacyAbacCallable() {
     return setLegacyAbacCallable;
   }
 
+  @Override
   public UnaryCallable<StartIPRotationRequest, Operation> startIPRotationCallable() {
     return startIPRotationCallable;
   }
 
+  @Override
   public UnaryCallable<CompleteIPRotationRequest, Operation> completeIPRotationCallable() {
     return completeIPRotationCallable;
   }
 
+  @Override
   public UnaryCallable<SetNodePoolSizeRequest, Operation> setNodePoolSizeCallable() {
     return setNodePoolSizeCallable;
   }
 
+  @Override
   public UnaryCallable<SetNetworkPolicyRequest, Operation> setNetworkPolicyCallable() {
     return setNetworkPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetMaintenancePolicyRequest, Operation> setMaintenancePolicyCallable() {
     return setMaintenancePolicyCallable;
   }
 
+  @Override
   public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksResponse>
       listUsableSubnetworksCallable() {
     return listUsableSubnetworksCallable;
   }
 
+  @Override
   public UnaryCallable<ListUsableSubnetworksRequest, ListUsableSubnetworksPagedResponse>
       listUsableSubnetworksPagedCallable() {
     return listUsableSubnetworksPagedCallable;
