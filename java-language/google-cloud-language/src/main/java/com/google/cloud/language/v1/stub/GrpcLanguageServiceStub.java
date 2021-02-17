@@ -227,28 +227,34 @@ public class GrpcLanguageServiceStub extends LanguageServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentCallable() {
     return analyzeSentimentCallable;
   }
 
+  @Override
   public UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse> analyzeEntitiesCallable() {
     return analyzeEntitiesCallable;
   }
 
+  @Override
   public UnaryCallable<AnalyzeEntitySentimentRequest, AnalyzeEntitySentimentResponse>
       analyzeEntitySentimentCallable() {
     return analyzeEntitySentimentCallable;
   }
 
+  @Override
   public UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
     return analyzeSyntaxCallable;
   }
 
+  @Override
   public UnaryCallable<ClassifyTextRequest, ClassifyTextResponse> classifyTextCallable() {
     return classifyTextCallable;
   }
 
+  @Override
   public UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {
     return annotateTextCallable;
   }

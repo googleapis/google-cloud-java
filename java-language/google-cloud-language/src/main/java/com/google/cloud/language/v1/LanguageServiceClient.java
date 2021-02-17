@@ -202,7 +202,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSentimentRequest request =
-   *       AnalyzeSentimentRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       AnalyzeSentimentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
+   *           .build();
    *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(request);
    * }
    * }</pre>
@@ -223,7 +226,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSentimentRequest request =
-   *       AnalyzeSentimentRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       AnalyzeSentimentRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
+   *           .build();
    *   ApiFuture<AnalyzeSentimentResponse> future =
    *       languageServiceClient.analyzeSentimentCallable().futureCall(request);
    *   // Do something.
@@ -299,7 +305,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeEntitiesRequest request =
-   *       AnalyzeEntitiesRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       AnalyzeEntitiesRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
+   *           .build();
    *   AnalyzeEntitiesResponse response = languageServiceClient.analyzeEntities(request);
    * }
    * }</pre>
@@ -321,7 +330,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeEntitiesRequest request =
-   *       AnalyzeEntitiesRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       AnalyzeEntitiesRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
+   *           .build();
    *   ApiFuture<AnalyzeEntitiesResponse> future =
    *       languageServiceClient.analyzeEntitiesCallable().futureCall(request);
    *   // Do something.
@@ -403,6 +415,7 @@ public class LanguageServiceClient implements BackgroundResource {
    *   AnalyzeEntitySentimentRequest request =
    *       AnalyzeEntitySentimentRequest.newBuilder()
    *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
    *           .build();
    *   AnalyzeEntitySentimentResponse response =
    *       languageServiceClient.analyzeEntitySentiment(request);
@@ -430,6 +443,7 @@ public class LanguageServiceClient implements BackgroundResource {
    *   AnalyzeEntitySentimentRequest request =
    *       AnalyzeEntitySentimentRequest.newBuilder()
    *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
    *           .build();
    *   ApiFuture<AnalyzeEntitySentimentResponse> future =
    *       languageServiceClient.analyzeEntitySentimentCallable().futureCall(request);
@@ -503,7 +517,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSyntaxRequest request =
-   *       AnalyzeSyntaxRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       AnalyzeSyntaxRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
+   *           .build();
    *   AnalyzeSyntaxResponse response = languageServiceClient.analyzeSyntax(request);
    * }
    * }</pre>
@@ -525,7 +542,10 @@ public class LanguageServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   AnalyzeSyntaxRequest request =
-   *       AnalyzeSyntaxRequest.newBuilder().setDocument(Document.newBuilder().build()).build();
+   *       AnalyzeSyntaxRequest.newBuilder()
+   *           .setDocument(Document.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
+   *           .build();
    *   ApiFuture<AnalyzeSyntaxResponse> future =
    *       languageServiceClient.analyzeSyntaxCallable().futureCall(request);
    *   // Do something.
@@ -672,6 +692,7 @@ public class LanguageServiceClient implements BackgroundResource {
    *       AnnotateTextRequest.newBuilder()
    *           .setDocument(Document.newBuilder().build())
    *           .setFeatures(AnnotateTextRequest.Features.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
    *           .build();
    *   AnnotateTextResponse response = languageServiceClient.annotateText(request);
    * }
@@ -697,6 +718,7 @@ public class LanguageServiceClient implements BackgroundResource {
    *       AnnotateTextRequest.newBuilder()
    *           .setDocument(Document.newBuilder().build())
    *           .setFeatures(AnnotateTextRequest.Features.newBuilder().build())
+   *           .setEncodingType(EncodingType.forNumber(0))
    *           .build();
    *   ApiFuture<AnnotateTextResponse> future =
    *       languageServiceClient.annotateTextCallable().futureCall(request);
