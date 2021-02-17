@@ -125,6 +125,7 @@ public class GrpcSpeechTranslationServiceStub extends SpeechTranslationServiceSt
     return operationsStub;
   }
 
+  @Override
   public BidiStreamingCallable<StreamingTranslateSpeechRequest, StreamingTranslateSpeechResponse>
       streamingTranslateSpeechCallable() {
     return streamingTranslateSpeechCallable;
