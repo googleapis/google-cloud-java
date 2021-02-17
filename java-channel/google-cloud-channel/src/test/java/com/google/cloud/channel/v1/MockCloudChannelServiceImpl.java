@@ -71,7 +71,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCustomers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListCustomersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetCustomer, expected %s or %s",
+                  response.getClass().getName(),
+                  Customer.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CheckCloudIdentityAccountsExist, expected %s or %s",
+                  response.getClass().getName(),
+                  CheckCloudIdentityAccountsExistResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateCustomer, expected %s or %s",
+                  response.getClass().getName(),
+                  Customer.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +155,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateCustomer, expected %s or %s",
+                  response.getClass().getName(),
+                  Customer.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -146,7 +176,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteCustomer, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -161,7 +197,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ProvisionCloudIdentity, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -176,7 +218,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEntitlements, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEntitlementsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -192,7 +240,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTransferableSkus, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTransferableSkusResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -208,7 +262,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTransferableOffers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTransferableOffersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -223,7 +283,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEntitlement, expected %s or %s",
+                  response.getClass().getName(),
+                  Entitlement.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -238,7 +304,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntitlement, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -253,7 +325,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ChangeParameters, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -268,7 +346,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ChangeRenewalSettings, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -282,7 +366,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ChangeOffer, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -297,7 +387,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartPaidService, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -312,7 +408,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SuspendEntitlement, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -327,7 +429,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CancelEntitlement, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -342,7 +450,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ActivateEntitlement, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -357,7 +471,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TransferEntitlements, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -372,7 +492,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TransferEntitlementsToGoogle, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -388,7 +514,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListChannelPartnerLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListChannelPartnerLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -403,7 +535,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetChannelPartnerLink, expected %s or %s",
+                  response.getClass().getName(),
+                  ChannelPartnerLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -419,7 +557,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateChannelPartnerLink, expected %s or %s",
+                  response.getClass().getName(),
+                  ChannelPartnerLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -435,7 +579,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateChannelPartnerLink, expected %s or %s",
+                  response.getClass().getName(),
+                  ChannelPartnerLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -450,7 +600,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProducts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListProductsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -464,7 +620,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSkus, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSkusResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -479,7 +641,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListOffers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListOffersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -495,7 +663,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPurchasableSkus, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPurchasableSkusResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -511,7 +685,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPurchasableOffers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPurchasableOffersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -527,7 +707,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RegisterSubscriber, expected %s or %s",
+                  response.getClass().getName(),
+                  RegisterSubscriberResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -543,7 +729,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UnregisterSubscriber, expected %s or %s",
+                  response.getClass().getName(),
+                  UnregisterSubscriberResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -558,7 +750,13 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSubscribers, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSubscribersResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

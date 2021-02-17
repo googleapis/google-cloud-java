@@ -1457,6 +1457,7 @@ public class CloudChannelServiceClientTest {
             .setParent("parent-995424086")
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
+            .setView(ChannelPartnerLinkView.forNumber(0))
             .build();
 
     ListChannelPartnerLinksPagedResponse pagedListResponse =
@@ -1493,6 +1494,7 @@ public class CloudChannelServiceClientTest {
               .setParent("parent-995424086")
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setView(ChannelPartnerLinkView.forNumber(0))
               .build();
       client.listChannelPartnerLinks(request);
       Assert.fail("No exception raised");
@@ -1507,6 +1509,7 @@ public class CloudChannelServiceClientTest {
         ChannelPartnerLink.newBuilder()
             .setName("name3373707")
             .setResellerCloudIdentityId("resellerCloudIdentityId478410940")
+            .setLinkState(ChannelPartnerLinkState.forNumber(0))
             .setInviteLinkUri("inviteLinkUri-1908670519")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1516,7 +1519,10 @@ public class CloudChannelServiceClientTest {
     mockCloudChannelService.addResponse(expectedResponse);
 
     GetChannelPartnerLinkRequest request =
-        GetChannelPartnerLinkRequest.newBuilder().setName("name3373707").build();
+        GetChannelPartnerLinkRequest.newBuilder()
+            .setName("name3373707")
+            .setView(ChannelPartnerLinkView.forNumber(0))
+            .build();
 
     ChannelPartnerLink actualResponse = client.getChannelPartnerLink(request);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -1541,7 +1547,10 @@ public class CloudChannelServiceClientTest {
 
     try {
       GetChannelPartnerLinkRequest request =
-          GetChannelPartnerLinkRequest.newBuilder().setName("name3373707").build();
+          GetChannelPartnerLinkRequest.newBuilder()
+              .setName("name3373707")
+              .setView(ChannelPartnerLinkView.forNumber(0))
+              .build();
       client.getChannelPartnerLink(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -1555,6 +1564,7 @@ public class CloudChannelServiceClientTest {
         ChannelPartnerLink.newBuilder()
             .setName("name3373707")
             .setResellerCloudIdentityId("resellerCloudIdentityId478410940")
+            .setLinkState(ChannelPartnerLinkState.forNumber(0))
             .setInviteLinkUri("inviteLinkUri-1908670519")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
@@ -1612,6 +1622,7 @@ public class CloudChannelServiceClientTest {
         ChannelPartnerLink.newBuilder()
             .setName("name3373707")
             .setResellerCloudIdentityId("resellerCloudIdentityId478410940")
+            .setLinkState(ChannelPartnerLinkState.forNumber(0))
             .setInviteLinkUri("inviteLinkUri-1908670519")
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())

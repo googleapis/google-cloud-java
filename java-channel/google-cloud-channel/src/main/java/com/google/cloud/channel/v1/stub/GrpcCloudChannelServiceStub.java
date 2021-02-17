@@ -1299,255 +1299,310 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListCustomersRequest, ListCustomersResponse> listCustomersCallable() {
     return listCustomersCallable;
   }
 
+  @Override
   public UnaryCallable<ListCustomersRequest, ListCustomersPagedResponse>
       listCustomersPagedCallable() {
     return listCustomersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetCustomerRequest, Customer> getCustomerCallable() {
     return getCustomerCallable;
   }
 
+  @Override
   public UnaryCallable<
           CheckCloudIdentityAccountsExistRequest, CheckCloudIdentityAccountsExistResponse>
       checkCloudIdentityAccountsExistCallable() {
     return checkCloudIdentityAccountsExistCallable;
   }
 
+  @Override
   public UnaryCallable<CreateCustomerRequest, Customer> createCustomerCallable() {
     return createCustomerCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateCustomerRequest, Customer> updateCustomerCallable() {
     return updateCustomerCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteCustomerRequest, Empty> deleteCustomerCallable() {
     return deleteCustomerCallable;
   }
 
+  @Override
   public UnaryCallable<ProvisionCloudIdentityRequest, Operation> provisionCloudIdentityCallable() {
     return provisionCloudIdentityCallable;
   }
 
+  @Override
   public OperationCallable<ProvisionCloudIdentityRequest, Customer, OperationMetadata>
       provisionCloudIdentityOperationCallable() {
     return provisionCloudIdentityOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntitlementsRequest, ListEntitlementsResponse>
       listEntitlementsCallable() {
     return listEntitlementsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntitlementsRequest, ListEntitlementsPagedResponse>
       listEntitlementsPagedCallable() {
     return listEntitlementsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferableSkusRequest, ListTransferableSkusResponse>
       listTransferableSkusCallable() {
     return listTransferableSkusCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferableSkusRequest, ListTransferableSkusPagedResponse>
       listTransferableSkusPagedCallable() {
     return listTransferableSkusPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferableOffersRequest, ListTransferableOffersResponse>
       listTransferableOffersCallable() {
     return listTransferableOffersCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransferableOffersRequest, ListTransferableOffersPagedResponse>
       listTransferableOffersPagedCallable() {
     return listTransferableOffersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetEntitlementRequest, Entitlement> getEntitlementCallable() {
     return getEntitlementCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEntitlementRequest, Operation> createEntitlementCallable() {
     return createEntitlementCallable;
   }
 
+  @Override
   public OperationCallable<CreateEntitlementRequest, Entitlement, OperationMetadata>
       createEntitlementOperationCallable() {
     return createEntitlementOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ChangeParametersRequest, Operation> changeParametersCallable() {
     return changeParametersCallable;
   }
 
+  @Override
   public OperationCallable<ChangeParametersRequest, Entitlement, OperationMetadata>
       changeParametersOperationCallable() {
     return changeParametersOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ChangeRenewalSettingsRequest, Operation> changeRenewalSettingsCallable() {
     return changeRenewalSettingsCallable;
   }
 
+  @Override
   public OperationCallable<ChangeRenewalSettingsRequest, Entitlement, OperationMetadata>
       changeRenewalSettingsOperationCallable() {
     return changeRenewalSettingsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ChangeOfferRequest, Operation> changeOfferCallable() {
     return changeOfferCallable;
   }
 
+  @Override
   public OperationCallable<ChangeOfferRequest, Entitlement, OperationMetadata>
       changeOfferOperationCallable() {
     return changeOfferOperationCallable;
   }
 
+  @Override
   public UnaryCallable<StartPaidServiceRequest, Operation> startPaidServiceCallable() {
     return startPaidServiceCallable;
   }
 
+  @Override
   public OperationCallable<StartPaidServiceRequest, Entitlement, OperationMetadata>
       startPaidServiceOperationCallable() {
     return startPaidServiceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<SuspendEntitlementRequest, Operation> suspendEntitlementCallable() {
     return suspendEntitlementCallable;
   }
 
+  @Override
   public OperationCallable<SuspendEntitlementRequest, Entitlement, OperationMetadata>
       suspendEntitlementOperationCallable() {
     return suspendEntitlementOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CancelEntitlementRequest, Operation> cancelEntitlementCallable() {
     return cancelEntitlementCallable;
   }
 
+  @Override
   public OperationCallable<CancelEntitlementRequest, Empty, OperationMetadata>
       cancelEntitlementOperationCallable() {
     return cancelEntitlementOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ActivateEntitlementRequest, Operation> activateEntitlementCallable() {
     return activateEntitlementCallable;
   }
 
+  @Override
   public OperationCallable<ActivateEntitlementRequest, Entitlement, OperationMetadata>
       activateEntitlementOperationCallable() {
     return activateEntitlementOperationCallable;
   }
 
+  @Override
   public UnaryCallable<TransferEntitlementsRequest, Operation> transferEntitlementsCallable() {
     return transferEntitlementsCallable;
   }
 
+  @Override
   public OperationCallable<
           TransferEntitlementsRequest, TransferEntitlementsResponse, OperationMetadata>
       transferEntitlementsOperationCallable() {
     return transferEntitlementsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<TransferEntitlementsToGoogleRequest, Operation>
       transferEntitlementsToGoogleCallable() {
     return transferEntitlementsToGoogleCallable;
   }
 
+  @Override
   public OperationCallable<TransferEntitlementsToGoogleRequest, Empty, OperationMetadata>
       transferEntitlementsToGoogleOperationCallable() {
     return transferEntitlementsToGoogleOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListChannelPartnerLinksRequest, ListChannelPartnerLinksResponse>
       listChannelPartnerLinksCallable() {
     return listChannelPartnerLinksCallable;
   }
 
+  @Override
   public UnaryCallable<ListChannelPartnerLinksRequest, ListChannelPartnerLinksPagedResponse>
       listChannelPartnerLinksPagedCallable() {
     return listChannelPartnerLinksPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetChannelPartnerLinkRequest, ChannelPartnerLink>
       getChannelPartnerLinkCallable() {
     return getChannelPartnerLinkCallable;
   }
 
+  @Override
   public UnaryCallable<CreateChannelPartnerLinkRequest, ChannelPartnerLink>
       createChannelPartnerLinkCallable() {
     return createChannelPartnerLinkCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateChannelPartnerLinkRequest, ChannelPartnerLink>
       updateChannelPartnerLinkCallable() {
     return updateChannelPartnerLinkCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
     return listProductsCallable;
   }
 
+  @Override
   public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
     return listProductsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable() {
     return listSkusCallable;
   }
 
+  @Override
   public UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
     return listSkusPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListOffersRequest, ListOffersResponse> listOffersCallable() {
     return listOffersCallable;
   }
 
+  @Override
   public UnaryCallable<ListOffersRequest, ListOffersPagedResponse> listOffersPagedCallable() {
     return listOffersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListPurchasableSkusRequest, ListPurchasableSkusResponse>
       listPurchasableSkusCallable() {
     return listPurchasableSkusCallable;
   }
 
+  @Override
   public UnaryCallable<ListPurchasableSkusRequest, ListPurchasableSkusPagedResponse>
       listPurchasableSkusPagedCallable() {
     return listPurchasableSkusPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
     return listPurchasableOffersCallable;
   }
 
+  @Override
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable() {
     return listPurchasableOffersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberCallable() {
     return registerSubscriberCallable;
   }
 
+  @Override
   public UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
       unregisterSubscriberCallable() {
     return unregisterSubscriberCallable;
   }
 
+  @Override
   public UnaryCallable<ListSubscribersRequest, ListSubscribersResponse> listSubscribersCallable() {
     return listSubscribersCallable;
   }
 
+  @Override
   public UnaryCallable<ListSubscribersRequest, ListSubscribersPagedResponse>
       listSubscribersPagedCallable() {
     return listSubscribersPagedCallable;

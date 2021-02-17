@@ -2915,6 +2915,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(ChannelPartnerLinkView.forNumber(0))
    *           .build();
    *   for (ChannelPartnerLink element :
    *       cloudChannelServiceClient.listChannelPartnerLinks(request).iterateAll()) {
@@ -2957,6 +2958,7 @@ public class CloudChannelServiceClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setView(ChannelPartnerLinkView.forNumber(0))
    *           .build();
    *   ApiFuture<ChannelPartnerLink> future =
    *       cloudChannelServiceClient.listChannelPartnerLinksPagedCallable().futureCall(request);
@@ -3037,7 +3039,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetChannelPartnerLinkRequest request =
-   *       GetChannelPartnerLinkRequest.newBuilder().setName("name3373707").build();
+   *       GetChannelPartnerLinkRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setView(ChannelPartnerLinkView.forNumber(0))
+   *           .build();
    *   ChannelPartnerLink response = cloudChannelServiceClient.getChannelPartnerLink(request);
    * }
    * }</pre>
@@ -3072,7 +3077,10 @@ public class CloudChannelServiceClient implements BackgroundResource {
    * <pre>{@code
    * try (CloudChannelServiceClient cloudChannelServiceClient = CloudChannelServiceClient.create()) {
    *   GetChannelPartnerLinkRequest request =
-   *       GetChannelPartnerLinkRequest.newBuilder().setName("name3373707").build();
+   *       GetChannelPartnerLinkRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setView(ChannelPartnerLinkView.forNumber(0))
+   *           .build();
    *   ApiFuture<ChannelPartnerLink> future =
    *       cloudChannelServiceClient.getChannelPartnerLinkCallable().futureCall(request);
    *   // Do something.
