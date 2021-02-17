@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-containeranalysis-v1</artifactId>
-  <version>1.2.28-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
+  <version>1.2.28</version><!-- {x-version-update:grpc-google-cloud-containeranalysis-v1:current} -->
   <name>grpc-google-cloud-containeranalysis-v1</name>
   <description>GRPC library for grpc-google-cloud-containeranalysis-v1</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-containeranalysis-parent</artifactId>
-    <version>1.2.28-SNAPSHOT</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
+    <version>1.2.28</version><!-- {x-version-update:google-cloud-containeranalysis:current} -->
   </parent>
   <dependencies>
     <dependency>
