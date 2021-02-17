@@ -70,7 +70,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateScanConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteScanConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetScanConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListScanConfigs, expected %s or %s",
+                  response.getClass().getName(),
+                  ListScanConfigsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateScanConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -144,7 +174,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartScanRun, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanRun.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -158,7 +194,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetScanRun, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanRun.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -173,7 +215,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListScanRuns, expected %s or %s",
+                  response.getClass().getName(),
+                  ListScanRunsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -187,7 +235,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StopScanRun, expected %s or %s",
+                  response.getClass().getName(),
+                  ScanRun.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -202,7 +256,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListCrawledUrls, expected %s or %s",
+                  response.getClass().getName(),
+                  ListCrawledUrlsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -216,7 +276,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFinding, expected %s or %s",
+                  response.getClass().getName(),
+                  Finding.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -231,7 +297,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFindings, expected %s or %s",
+                  response.getClass().getName(),
+                  ListFindingsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -247,7 +319,13 @@ public class MockWebSecurityScannerImpl extends WebSecurityScannerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFindingTypeStats, expected %s or %s",
+                  response.getClass().getName(),
+                  ListFindingTypeStatsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

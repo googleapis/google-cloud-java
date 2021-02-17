@@ -512,72 +512,89 @@ public class GrpcWebSecurityScannerStub extends WebSecurityScannerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateScanConfigRequest, ScanConfig> createScanConfigCallable() {
     return createScanConfigCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteScanConfigRequest, Empty> deleteScanConfigCallable() {
     return deleteScanConfigCallable;
   }
 
+  @Override
   public UnaryCallable<GetScanConfigRequest, ScanConfig> getScanConfigCallable() {
     return getScanConfigCallable;
   }
 
+  @Override
   public UnaryCallable<ListScanConfigsRequest, ListScanConfigsResponse> listScanConfigsCallable() {
     return listScanConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListScanConfigsRequest, ListScanConfigsPagedResponse>
       listScanConfigsPagedCallable() {
     return listScanConfigsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateScanConfigRequest, ScanConfig> updateScanConfigCallable() {
     return updateScanConfigCallable;
   }
 
+  @Override
   public UnaryCallable<StartScanRunRequest, ScanRun> startScanRunCallable() {
     return startScanRunCallable;
   }
 
+  @Override
   public UnaryCallable<GetScanRunRequest, ScanRun> getScanRunCallable() {
     return getScanRunCallable;
   }
 
+  @Override
   public UnaryCallable<ListScanRunsRequest, ListScanRunsResponse> listScanRunsCallable() {
     return listScanRunsCallable;
   }
 
+  @Override
   public UnaryCallable<ListScanRunsRequest, ListScanRunsPagedResponse> listScanRunsPagedCallable() {
     return listScanRunsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<StopScanRunRequest, ScanRun> stopScanRunCallable() {
     return stopScanRunCallable;
   }
 
+  @Override
   public UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsResponse> listCrawledUrlsCallable() {
     return listCrawledUrlsCallable;
   }
 
+  @Override
   public UnaryCallable<ListCrawledUrlsRequest, ListCrawledUrlsPagedResponse>
       listCrawledUrlsPagedCallable() {
     return listCrawledUrlsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFindingRequest, Finding> getFindingCallable() {
     return getFindingCallable;
   }
 
+  @Override
   public UnaryCallable<ListFindingsRequest, ListFindingsResponse> listFindingsCallable() {
     return listFindingsCallable;
   }
 
+  @Override
   public UnaryCallable<ListFindingsRequest, ListFindingsPagedResponse> listFindingsPagedCallable() {
     return listFindingsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListFindingTypeStatsRequest, ListFindingTypeStatsResponse>
       listFindingTypeStatsCallable() {
     return listFindingTypeStatsCallable;
