@@ -84,6 +84,7 @@ public class AssetServiceClientTest {
             .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
             .addAllAssetNames(new ArrayList<String>())
             .addAllAssetTypes(new ArrayList<String>())
+            .setContentType(ContentType.forNumber(0))
             .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
             .build();
     mockAssetService.addResponse(expectedResponse);
@@ -125,6 +126,7 @@ public class AssetServiceClientTest {
             .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
             .addAllAssetNames(new ArrayList<String>())
             .addAllAssetTypes(new ArrayList<String>())
+            .setContentType(ContentType.forNumber(0))
             .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
             .build();
     mockAssetService.addResponse(expectedResponse);
@@ -166,6 +168,7 @@ public class AssetServiceClientTest {
             .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
             .addAllAssetNames(new ArrayList<String>())
             .addAllAssetTypes(new ArrayList<String>())
+            .setContentType(ContentType.forNumber(0))
             .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
             .build();
     mockAssetService.addResponse(expectedResponse);
@@ -243,6 +246,7 @@ public class AssetServiceClientTest {
             .setName(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
             .addAllAssetNames(new ArrayList<String>())
             .addAllAssetTypes(new ArrayList<String>())
+            .setContentType(ContentType.forNumber(0))
             .setFeedOutputConfig(FeedOutputConfig.newBuilder().build())
             .build();
     mockAssetService.addResponse(expectedResponse);

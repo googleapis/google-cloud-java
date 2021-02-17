@@ -29,6 +29,7 @@
  *       BatchGetAssetsHistoryRequest.newBuilder()
  *           .setParent(ProjectName.of("[PROJECT]").toString())
  *           .addAllAssetNames(new ArrayList<String>())
+ *           .setContentType(ContentType.forNumber(0))
  *           .setReadTimeWindow(TimeWindow.newBuilder().build())
  *           .build();
  *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);

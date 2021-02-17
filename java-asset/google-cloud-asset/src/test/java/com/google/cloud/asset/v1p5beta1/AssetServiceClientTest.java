@@ -95,6 +95,7 @@ public class AssetServiceClientTest {
             .setParent("parent-995424086")
             .setReadTime(Timestamp.newBuilder().build())
             .addAllAssetTypes(new ArrayList<String>())
+            .setContentType(ContentType.forNumber(0))
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .build();
@@ -133,6 +134,7 @@ public class AssetServiceClientTest {
               .setParent("parent-995424086")
               .setReadTime(Timestamp.newBuilder().build())
               .addAllAssetTypes(new ArrayList<String>())
+              .setContentType(ContentType.forNumber(0))
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .build();

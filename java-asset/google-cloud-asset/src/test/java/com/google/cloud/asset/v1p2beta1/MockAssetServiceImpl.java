@@ -69,7 +69,11 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFeed, expected %s or %s",
+                  response.getClass().getName(), Feed.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -83,7 +87,11 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFeed, expected %s or %s",
+                  response.getClass().getName(), Feed.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -98,7 +106,13 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFeeds, expected %s or %s",
+                  response.getClass().getName(),
+                  ListFeedsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -112,7 +126,11 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFeed, expected %s or %s",
+                  response.getClass().getName(), Feed.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -126,7 +144,13 @@ public class MockAssetServiceImpl extends AssetServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFeed, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

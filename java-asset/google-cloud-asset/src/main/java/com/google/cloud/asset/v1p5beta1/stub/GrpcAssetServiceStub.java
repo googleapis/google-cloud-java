@@ -129,10 +129,12 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
     return listAssetsCallable;
   }
 
+  @Override
   public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
     return listAssetsPagedCallable;
   }

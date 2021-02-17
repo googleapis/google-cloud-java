@@ -180,21 +180,25 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable() {
     return searchAllResourcesCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
       searchAllResourcesPagedCallable() {
     return searchAllResourcesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {
     return searchAllIamPoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesPagedCallable() {
     return searchAllIamPoliciesPagedCallable;

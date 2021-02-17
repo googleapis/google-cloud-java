@@ -229,22 +229,27 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
     return createFeedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFeedRequest, Feed> getFeedCallable() {
     return getFeedCallable;
   }
 
+  @Override
   public UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable() {
     return listFeedsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return updateFeedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
     return deleteFeedCallable;
   }

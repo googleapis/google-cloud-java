@@ -52,6 +52,7 @@ import javax.annotation.Generated;
  *       BatchGetAssetsHistoryRequest.newBuilder()
  *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
  *           .addAllAssetNames(new ArrayList<String>())
+ *           .setContentType(ContentType.forNumber(0))
  *           .setReadTimeWindow(TimeWindow.newBuilder().build())
  *           .build();
  *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
@@ -187,6 +188,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .build();
    *   ExportAssetsResponse response = assetServiceClient.exportAssetsAsync(request).get();
@@ -221,6 +223,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<ExportAssetsResponse, ExportAssetsRequest> future =
@@ -255,6 +258,7 @@ public class AssetServiceClient implements BackgroundResource {
    *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
    *           .setReadTime(Timestamp.newBuilder().build())
    *           .addAllAssetTypes(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
    *           .setOutputConfig(OutputConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = assetServiceClient.exportAssetsCallable().futureCall(request);
@@ -283,6 +287,7 @@ public class AssetServiceClient implements BackgroundResource {
    *       BatchGetAssetsHistoryRequest.newBuilder()
    *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
    *           .addAllAssetNames(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
    *           .setReadTimeWindow(TimeWindow.newBuilder().build())
    *           .build();
    *   BatchGetAssetsHistoryResponse response = assetServiceClient.batchGetAssetsHistory(request);
@@ -313,6 +318,7 @@ public class AssetServiceClient implements BackgroundResource {
    *       BatchGetAssetsHistoryRequest.newBuilder()
    *           .setParent(FeedName.ofProjectFeedName("[PROJECT]", "[FEED]").toString())
    *           .addAllAssetNames(new ArrayList<String>())
+   *           .setContentType(ContentType.forNumber(0))
    *           .setReadTimeWindow(TimeWindow.newBuilder().build())
    *           .build();
    *   ApiFuture<BatchGetAssetsHistoryResponse> future =

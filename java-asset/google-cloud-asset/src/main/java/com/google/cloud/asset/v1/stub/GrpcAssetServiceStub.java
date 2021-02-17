@@ -466,70 +466,85 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable() {
     return exportAssetsCallable;
   }
 
+  @Override
   public OperationCallable<ExportAssetsRequest, ExportAssetsResponse, ExportAssetsRequest>
       exportAssetsOperationCallable() {
     return exportAssetsOperationCallable;
   }
 
+  @Override
   public UnaryCallable<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
       batchGetAssetsHistoryCallable() {
     return batchGetAssetsHistoryCallable;
   }
 
+  @Override
   public UnaryCallable<CreateFeedRequest, Feed> createFeedCallable() {
     return createFeedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFeedRequest, Feed> getFeedCallable() {
     return getFeedCallable;
   }
 
+  @Override
   public UnaryCallable<ListFeedsRequest, ListFeedsResponse> listFeedsCallable() {
     return listFeedsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateFeedRequest, Feed> updateFeedCallable() {
     return updateFeedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteFeedRequest, Empty> deleteFeedCallable() {
     return deleteFeedCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesResponse>
       searchAllResourcesCallable() {
     return searchAllResourcesCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllResourcesRequest, SearchAllResourcesPagedResponse>
       searchAllResourcesPagedCallable() {
     return searchAllResourcesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
       searchAllIamPoliciesCallable() {
     return searchAllIamPoliciesCallable;
   }
 
+  @Override
   public UnaryCallable<SearchAllIamPoliciesRequest, SearchAllIamPoliciesPagedResponse>
       searchAllIamPoliciesPagedCallable() {
     return searchAllIamPoliciesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
       analyzeIamPolicyCallable() {
     return analyzeIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<AnalyzeIamPolicyLongrunningRequest, Operation>
       analyzeIamPolicyLongrunningCallable() {
     return analyzeIamPolicyLongrunningCallable;
   }
 
+  @Override
   public OperationCallable<
           AnalyzeIamPolicyLongrunningRequest,
           AnalyzeIamPolicyLongrunningResponse,
