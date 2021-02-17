@@ -698,94 +698,115 @@ public class GrpcDeviceManagerStub extends DeviceManagerStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateDeviceRegistryRequest, DeviceRegistry> createDeviceRegistryCallable() {
     return createDeviceRegistryCallable;
   }
 
+  @Override
   public UnaryCallable<GetDeviceRegistryRequest, DeviceRegistry> getDeviceRegistryCallable() {
     return getDeviceRegistryCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDeviceRegistryRequest, DeviceRegistry> updateDeviceRegistryCallable() {
     return updateDeviceRegistryCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDeviceRegistryRequest, Empty> deleteDeviceRegistryCallable() {
     return deleteDeviceRegistryCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesResponse>
       listDeviceRegistriesCallable() {
     return listDeviceRegistriesCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeviceRegistriesRequest, ListDeviceRegistriesPagedResponse>
       listDeviceRegistriesPagedCallable() {
     return listDeviceRegistriesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<CreateDeviceRequest, Device> createDeviceCallable() {
     return createDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<GetDeviceRequest, Device> getDeviceCallable() {
     return getDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateDeviceRequest, Device> updateDeviceCallable() {
     return updateDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteDeviceRequest, Empty> deleteDeviceCallable() {
     return deleteDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<ListDevicesRequest, ListDevicesResponse> listDevicesCallable() {
     return listDevicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListDevicesRequest, ListDevicesPagedResponse> listDevicesPagedCallable() {
     return listDevicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ModifyCloudToDeviceConfigRequest, DeviceConfig>
       modifyCloudToDeviceConfigCallable() {
     return modifyCloudToDeviceConfigCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeviceConfigVersionsRequest, ListDeviceConfigVersionsResponse>
       listDeviceConfigVersionsCallable() {
     return listDeviceConfigVersionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListDeviceStatesRequest, ListDeviceStatesResponse>
       listDeviceStatesCallable() {
     return listDeviceStatesCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }
 
+  @Override
   public UnaryCallable<SendCommandToDeviceRequest, SendCommandToDeviceResponse>
       sendCommandToDeviceCallable() {
     return sendCommandToDeviceCallable;
   }
 
+  @Override
   public UnaryCallable<BindDeviceToGatewayRequest, BindDeviceToGatewayResponse>
       bindDeviceToGatewayCallable() {
     return bindDeviceToGatewayCallable;
   }
 
+  @Override
   public UnaryCallable<UnbindDeviceFromGatewayRequest, UnbindDeviceFromGatewayResponse>
       unbindDeviceFromGatewayCallable() {
     return unbindDeviceFromGatewayCallable;

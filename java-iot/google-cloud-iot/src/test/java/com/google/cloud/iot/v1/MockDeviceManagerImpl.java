@@ -75,7 +75,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDeviceRegistry, expected %s or %s",
+                  response.getClass().getName(),
+                  DeviceRegistry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -90,7 +96,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDeviceRegistry, expected %s or %s",
+                  response.getClass().getName(),
+                  DeviceRegistry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDeviceRegistry, expected %s or %s",
+                  response.getClass().getName(),
+                  DeviceRegistry.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -120,7 +138,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDeviceRegistry, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -136,7 +160,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeviceRegistries, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDeviceRegistriesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -150,7 +180,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateDevice, expected %s or %s",
+                  response.getClass().getName(),
+                  Device.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -164,7 +200,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDevice, expected %s or %s",
+                  response.getClass().getName(),
+                  Device.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -178,7 +220,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDevice, expected %s or %s",
+                  response.getClass().getName(),
+                  Device.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -192,7 +240,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteDevice, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -207,7 +261,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDevices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDevicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -222,7 +282,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ModifyCloudToDeviceConfig, expected %s or %s",
+                  response.getClass().getName(),
+                  DeviceConfig.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -238,7 +304,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeviceConfigVersions, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDeviceConfigVersionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -253,7 +325,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListDeviceStates, expected %s or %s",
+                  response.getClass().getName(),
+                  ListDeviceStatesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -267,7 +345,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -281,7 +365,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -297,7 +387,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -313,7 +409,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SendCommandToDevice, expected %s or %s",
+                  response.getClass().getName(),
+                  SendCommandToDeviceResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -329,7 +431,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BindDeviceToGateway, expected %s or %s",
+                  response.getClass().getName(),
+                  BindDeviceToGatewayResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -345,7 +453,13 @@ public class MockDeviceManagerImpl extends DeviceManagerImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UnbindDeviceFromGateway, expected %s or %s",
+                  response.getClass().getName(),
+                  UnbindDeviceFromGatewayResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

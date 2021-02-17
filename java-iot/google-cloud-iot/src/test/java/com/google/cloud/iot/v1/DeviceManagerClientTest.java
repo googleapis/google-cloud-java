@@ -103,6 +103,7 @@ public class DeviceManagerClientTest {
             .setStateNotificationConfig(StateNotificationConfig.newBuilder().build())
             .setMqttConfig(MqttConfig.newBuilder().build())
             .setHttpConfig(HttpConfig.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .addAllCredentials(new ArrayList<RegistryCredential>())
             .build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -151,6 +152,7 @@ public class DeviceManagerClientTest {
             .setStateNotificationConfig(StateNotificationConfig.newBuilder().build())
             .setMqttConfig(MqttConfig.newBuilder().build())
             .setHttpConfig(HttpConfig.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .addAllCredentials(new ArrayList<RegistryCredential>())
             .build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -199,6 +201,7 @@ public class DeviceManagerClientTest {
             .setStateNotificationConfig(StateNotificationConfig.newBuilder().build())
             .setMqttConfig(MqttConfig.newBuilder().build())
             .setHttpConfig(HttpConfig.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .addAllCredentials(new ArrayList<RegistryCredential>())
             .build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -243,6 +246,7 @@ public class DeviceManagerClientTest {
             .setStateNotificationConfig(StateNotificationConfig.newBuilder().build())
             .setMqttConfig(MqttConfig.newBuilder().build())
             .setHttpConfig(HttpConfig.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .addAllCredentials(new ArrayList<RegistryCredential>())
             .build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -287,6 +291,7 @@ public class DeviceManagerClientTest {
             .setStateNotificationConfig(StateNotificationConfig.newBuilder().build())
             .setMqttConfig(MqttConfig.newBuilder().build())
             .setHttpConfig(HttpConfig.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .addAllCredentials(new ArrayList<RegistryCredential>())
             .build();
     mockDeviceManager.addResponse(expectedResponse);
@@ -503,6 +508,7 @@ public class DeviceManagerClientTest {
             .setLastErrorStatus(Status.newBuilder().build())
             .setConfig(DeviceConfig.newBuilder().build())
             .setState(DeviceState.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .putAllMetadata(new HashMap<String, String>())
             .setGatewayConfig(GatewayConfig.newBuilder().build())
             .build();
@@ -559,6 +565,7 @@ public class DeviceManagerClientTest {
             .setLastErrorStatus(Status.newBuilder().build())
             .setConfig(DeviceConfig.newBuilder().build())
             .setState(DeviceState.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .putAllMetadata(new HashMap<String, String>())
             .setGatewayConfig(GatewayConfig.newBuilder().build())
             .build();
@@ -615,6 +622,7 @@ public class DeviceManagerClientTest {
             .setLastErrorStatus(Status.newBuilder().build())
             .setConfig(DeviceConfig.newBuilder().build())
             .setState(DeviceState.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .putAllMetadata(new HashMap<String, String>())
             .setGatewayConfig(GatewayConfig.newBuilder().build())
             .build();
@@ -668,6 +676,7 @@ public class DeviceManagerClientTest {
             .setLastErrorStatus(Status.newBuilder().build())
             .setConfig(DeviceConfig.newBuilder().build())
             .setState(DeviceState.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .putAllMetadata(new HashMap<String, String>())
             .setGatewayConfig(GatewayConfig.newBuilder().build())
             .build();
@@ -721,6 +730,7 @@ public class DeviceManagerClientTest {
             .setLastErrorStatus(Status.newBuilder().build())
             .setConfig(DeviceConfig.newBuilder().build())
             .setState(DeviceState.newBuilder().build())
+            .setLogLevel(LogLevel.forNumber(0))
             .putAllMetadata(new HashMap<String, String>())
             .setGatewayConfig(GatewayConfig.newBuilder().build())
             .build();
