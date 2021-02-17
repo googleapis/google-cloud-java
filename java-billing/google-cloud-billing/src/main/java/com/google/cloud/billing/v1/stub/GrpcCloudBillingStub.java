@@ -410,56 +410,68 @@ public class GrpcCloudBillingStub extends CloudBillingStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<GetBillingAccountRequest, BillingAccount> getBillingAccountCallable() {
     return getBillingAccountCallable;
   }
 
+  @Override
   public UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsResponse>
       listBillingAccountsCallable() {
     return listBillingAccountsCallable;
   }
 
+  @Override
   public UnaryCallable<ListBillingAccountsRequest, ListBillingAccountsPagedResponse>
       listBillingAccountsPagedCallable() {
     return listBillingAccountsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateBillingAccountRequest, BillingAccount> updateBillingAccountCallable() {
     return updateBillingAccountCallable;
   }
 
+  @Override
   public UnaryCallable<CreateBillingAccountRequest, BillingAccount> createBillingAccountCallable() {
     return createBillingAccountCallable;
   }
 
+  @Override
   public UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoResponse>
       listProjectBillingInfoCallable() {
     return listProjectBillingInfoCallable;
   }
 
+  @Override
   public UnaryCallable<ListProjectBillingInfoRequest, ListProjectBillingInfoPagedResponse>
       listProjectBillingInfoPagedCallable() {
     return listProjectBillingInfoPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetProjectBillingInfoRequest, ProjectBillingInfo>
       getProjectBillingInfoCallable() {
     return getProjectBillingInfoCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateProjectBillingInfoRequest, ProjectBillingInfo>
       updateProjectBillingInfoCallable() {
     return updateProjectBillingInfoCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

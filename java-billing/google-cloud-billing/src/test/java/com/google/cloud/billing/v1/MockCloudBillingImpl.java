@@ -74,7 +74,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetBillingAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  BillingAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -90,7 +96,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListBillingAccounts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListBillingAccountsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateBillingAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  BillingAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -120,7 +138,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateBillingAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  BillingAccount.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -136,7 +160,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProjectBillingInfo, expected %s or %s",
+                  response.getClass().getName(),
+                  ListProjectBillingInfoResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -151,7 +181,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProjectBillingInfo, expected %s or %s",
+                  response.getClass().getName(),
+                  ProjectBillingInfo.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -167,7 +203,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProjectBillingInfo, expected %s or %s",
+                  response.getClass().getName(),
+                  ProjectBillingInfo.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -181,7 +223,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -195,7 +243,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -211,7 +265,13 @@ public class MockCloudBillingImpl extends CloudBillingImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

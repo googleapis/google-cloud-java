@@ -69,7 +69,13 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -83,7 +89,13 @@ public class MockCloudCatalogImpl extends CloudCatalogImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSkus, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSkusResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

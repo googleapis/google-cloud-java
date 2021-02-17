@@ -153,18 +153,22 @@ public class GrpcCloudCatalogStub extends CloudCatalogStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
     return listServicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<ListSkusRequest, ListSkusResponse> listSkusCallable() {
     return listSkusCallable;
   }
 
+  @Override
   public UnaryCallable<ListSkusRequest, ListSkusPagedResponse> listSkusPagedCallable() {
     return listSkusPagedCallable;
   }
