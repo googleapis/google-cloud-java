@@ -35,7 +35,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>1.113.9</version>
+      <version>1.113.10</version>
     </dependency>
     <dependency>
       <groupId>com.google.protobuf</groupId>
