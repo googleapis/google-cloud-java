@@ -331,11 +331,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return Whether the machineSpec field is set.
@@ -348,11 +348,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The machineSpec.
@@ -367,11 +367,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The specification of a single machine.
+   * Optional. Immutable. The specification of a single machine.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
    * </code>
    */
   @java.lang.Override
@@ -385,10 +385,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The number of worker replicas to use for this worker pool.
+   * Optional. The number of worker replicas to use for this worker pool.
    * </pre>
    *
-   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The replicaCount.
    */
@@ -1337,11 +1337,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return Whether the machineSpec field is set.
@@ -1353,11 +1353,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The machineSpec.
@@ -1375,11 +1375,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
@@ -1399,11 +1399,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder setMachineSpec(
@@ -1421,11 +1421,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder mergeMachineSpec(com.google.cloud.aiplatform.v1beta1.MachineSpec value) {
@@ -1449,11 +1449,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public Builder clearMachineSpec() {
@@ -1471,11 +1471,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder getMachineSpecBuilder() {
@@ -1487,11 +1487,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder getMachineSpecOrBuilder() {
@@ -1507,11 +1507,11 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The specification of a single machine.
+     * Optional. Immutable. The specification of a single machine.
      * </pre>
      *
      * <code>
-     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.cloud.aiplatform.v1beta1.MachineSpec machine_spec = 1 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1536,10 +1536,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      * </pre>
      *
-     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The replicaCount.
      */
@@ -1551,10 +1551,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      * </pre>
      *
-     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The replicaCount to set.
      * @return This builder for chaining.
@@ -1569,10 +1569,10 @@ public final class WorkerPoolSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The number of worker replicas to use for this worker pool.
+     * Optional. The number of worker replicas to use for this worker pool.
      * </pre>
      *
-     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>int64 replica_count = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */

@@ -256,6 +256,23 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
               break;
             }
+          case 146:
+            {
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder subBuilder = null;
+              if (encryptionSpec_ != null) {
+                subBuilder = encryptionSpec_.toBuilder();
+              }
+              encryptionSpec_ =
+                  input.readMessage(
+                      com.google.cloud.aiplatform.v1beta1.EncryptionSpec.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(encryptionSpec_);
+                encryptionSpec_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -655,7 +672,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
    * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
    * description should be populated, and if there are any special requirements
@@ -683,7 +700,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
    * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
    * description should be populated, and if there are any special requirements
@@ -713,7 +730,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+   * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
    * by this TrainingPipeline. The TrainingPipeline's
    * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
    * description should be populated, and if there are any special requirements
@@ -1144,6 +1161,63 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     return map.get(key);
   }
 
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 18;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+   * TrainingPipeline will be secured by this key.
+   * Note: Model trained by this TrainingPipeline is also secured by this key if
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return encryptionSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+   * TrainingPipeline will be secured by this key.
+   * Note: Model trained by this TrainingPipeline is also secured by this key if
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+   * TrainingPipeline will be secured by this key.
+   * Note: Model trained by this TrainingPipeline is also secured by this key if
+   * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return getEncryptionSpec();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1201,6 +1275,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 15);
+    if (encryptionSpec_ != null) {
+      output.writeMessage(18, getEncryptionSpec());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1262,6 +1339,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, labels__);
     }
+    if (encryptionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getEncryptionSpec());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1319,6 +1399,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -1377,6 +1461,10 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1610,6 +1698,12 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         updateTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1689,6 +1783,11 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (encryptionSpecBuilder_ == null) {
+        result.encryptionSpec_ = encryptionSpec_;
+      } else {
+        result.encryptionSpec_ = encryptionSpecBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -1782,6 +1881,9 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
         mergeUpdateTime(other.getUpdateTime());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -2860,7 +2962,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -2887,7 +2989,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -2920,7 +3022,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -2955,7 +3057,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -2988,7 +3090,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -3027,7 +3129,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -3060,7 +3162,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -3087,7 +3189,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -3118,7 +3220,7 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Describes the Model that may be uploaded (via [ModelService.UploadMode][])
+     * Describes the Model that may be uploaded (via [ModelService.UploadModel][google.cloud.aiplatform.v1beta1.ModelService.UploadModel])
      * by this TrainingPipeline. The TrainingPipeline's
      * [training_task_definition][google.cloud.aiplatform.v1beta1.TrainingPipeline.training_task_definition] should make clear whether this Model
      * description should be populated, and if there are any special requirements
@@ -4435,6 +4537,220 @@ public final class TrainingPipeline extends com.google.protobuf.GeneratedMessage
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return encryptionSpecBuilder_ != null || encryptionSpec_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (encryptionSpec_ != null) {
+          encryptionSpec_ =
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpec.newBuilder(encryptionSpec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          encryptionSpec_ = value;
+        }
+        onChanged();
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = null;
+        onChanged();
+      } else {
+        encryptionSpec_ = null;
+        encryptionSpecBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a TrainingPipeline. If set, this
+     * TrainingPipeline will be secured by this key.
+     * Note: Model trained by this TrainingPipeline is also secured by this key if
+     * [model_to_upload][google.cloud.aiplatform.v1beta1.TrainingPipeline.encryption_spec] is not set separately.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 18;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override

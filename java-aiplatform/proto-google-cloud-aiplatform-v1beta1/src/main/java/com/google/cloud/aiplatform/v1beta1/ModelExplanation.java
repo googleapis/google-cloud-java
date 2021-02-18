@@ -126,7 +126,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -155,7 +155,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -185,7 +185,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -214,7 +214,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -243,7 +243,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+   * Output only. Aggregated attributions explaining the Model's prediction outputs over the
    * set of instances. The attributions are grouped by outputs.
    * For Models that predict only one output, such as regression Models that
    * predict only one score, there is only one attibution that explains the
@@ -652,7 +652,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -685,7 +685,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -717,7 +717,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -749,7 +749,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -788,7 +788,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -824,7 +824,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -862,7 +862,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -901,7 +901,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -937,7 +937,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -973,7 +973,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1009,7 +1009,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1044,7 +1044,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1079,7 +1079,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1108,7 +1108,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1141,7 +1141,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1174,7 +1174,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1203,7 +1203,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the
@@ -1233,7 +1233,7 @@ public final class ModelExplanation extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Output only. Aggregated attributions explaning the Model's prediction outputs over the
+     * Output only. Aggregated attributions explaining the Model's prediction outputs over the
      * set of instances. The attributions are grouped by outputs.
      * For Models that predict only one output, such as regression Models that
      * predict only one score, there is only one attibution that explains the

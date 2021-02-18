@@ -130,25 +130,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The type of the machine.
-   * Following machine types are supported:
-   * * `n1-standard-2`
-   * * `n1-standard-4`
-   * * `n1-standard-8`
-   * * `n1-standard-16`
-   * * `n1-standard-32`
-   * * `n1-highmem-2`
-   * * `n1-highmem-4`
-   * * `n1-highmem-8`
-   * * `n1-highmem-16`
-   * * `n1-highmem-32`
-   * * `n1-highcpu-2`
-   * * `n1-highcpu-4`
-   * * `n1-highcpu-8`
-   * * `n1-highcpu-16`
-   * * `n1-highcpu-32`
-   * When used for [DeployedMode][] this field is optional and the default value
-   * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+   * Immutable. The type of the machine. For the machine types supported for prediction,
+   * see https://tinyurl.com/aip-docs/predictions/machine-types.
+   * For machine types supported for creating a custom training job, see
+   * https://tinyurl.com/aip-docs/training/configure-compute.
+   * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+   * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
    * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
    * </pre>
    *
@@ -172,25 +159,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. The type of the machine.
-   * Following machine types are supported:
-   * * `n1-standard-2`
-   * * `n1-standard-4`
-   * * `n1-standard-8`
-   * * `n1-standard-16`
-   * * `n1-standard-32`
-   * * `n1-highmem-2`
-   * * `n1-highmem-4`
-   * * `n1-highmem-8`
-   * * `n1-highmem-16`
-   * * `n1-highmem-32`
-   * * `n1-highcpu-2`
-   * * `n1-highcpu-4`
-   * * `n1-highcpu-8`
-   * * `n1-highcpu-16`
-   * * `n1-highcpu-32`
-   * When used for [DeployedMode][] this field is optional and the default value
-   * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+   * Immutable. The type of the machine. For the machine types supported for prediction,
+   * see https://tinyurl.com/aip-docs/predictions/machine-types.
+   * For machine types supported for creating a custom training job, see
+   * https://tinyurl.com/aip-docs/training/configure-compute.
+   * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+   * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
    * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
    * </pre>
    *
@@ -629,25 +603,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the machine.
-     * Following machine types are supported:
-     * * `n1-standard-2`
-     * * `n1-standard-4`
-     * * `n1-standard-8`
-     * * `n1-standard-16`
-     * * `n1-standard-32`
-     * * `n1-highmem-2`
-     * * `n1-highmem-4`
-     * * `n1-highmem-8`
-     * * `n1-highmem-16`
-     * * `n1-highmem-32`
-     * * `n1-highcpu-2`
-     * * `n1-highcpu-4`
-     * * `n1-highcpu-8`
-     * * `n1-highcpu-16`
-     * * `n1-highcpu-32`
-     * When used for [DeployedMode][] this field is optional and the default value
-     * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+     * Immutable. The type of the machine. For the machine types supported for prediction,
+     * see https://tinyurl.com/aip-docs/predictions/machine-types.
+     * For machine types supported for creating a custom training job, see
+     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+     * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
      * </pre>
      *
@@ -670,25 +631,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the machine.
-     * Following machine types are supported:
-     * * `n1-standard-2`
-     * * `n1-standard-4`
-     * * `n1-standard-8`
-     * * `n1-standard-16`
-     * * `n1-standard-32`
-     * * `n1-highmem-2`
-     * * `n1-highmem-4`
-     * * `n1-highmem-8`
-     * * `n1-highmem-16`
-     * * `n1-highmem-32`
-     * * `n1-highcpu-2`
-     * * `n1-highcpu-4`
-     * * `n1-highcpu-8`
-     * * `n1-highcpu-16`
-     * * `n1-highcpu-32`
-     * When used for [DeployedMode][] this field is optional and the default value
-     * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+     * Immutable. The type of the machine. For the machine types supported for prediction,
+     * see https://tinyurl.com/aip-docs/predictions/machine-types.
+     * For machine types supported for creating a custom training job, see
+     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+     * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
      * </pre>
      *
@@ -711,25 +659,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the machine.
-     * Following machine types are supported:
-     * * `n1-standard-2`
-     * * `n1-standard-4`
-     * * `n1-standard-8`
-     * * `n1-standard-16`
-     * * `n1-standard-32`
-     * * `n1-highmem-2`
-     * * `n1-highmem-4`
-     * * `n1-highmem-8`
-     * * `n1-highmem-16`
-     * * `n1-highmem-32`
-     * * `n1-highcpu-2`
-     * * `n1-highcpu-4`
-     * * `n1-highcpu-8`
-     * * `n1-highcpu-16`
-     * * `n1-highcpu-32`
-     * When used for [DeployedMode][] this field is optional and the default value
-     * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+     * Immutable. The type of the machine. For the machine types supported for prediction,
+     * see https://tinyurl.com/aip-docs/predictions/machine-types.
+     * For machine types supported for creating a custom training job, see
+     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+     * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
      * </pre>
      *
@@ -751,25 +686,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the machine.
-     * Following machine types are supported:
-     * * `n1-standard-2`
-     * * `n1-standard-4`
-     * * `n1-standard-8`
-     * * `n1-standard-16`
-     * * `n1-standard-32`
-     * * `n1-highmem-2`
-     * * `n1-highmem-4`
-     * * `n1-highmem-8`
-     * * `n1-highmem-16`
-     * * `n1-highmem-32`
-     * * `n1-highcpu-2`
-     * * `n1-highcpu-4`
-     * * `n1-highcpu-8`
-     * * `n1-highcpu-16`
-     * * `n1-highcpu-32`
-     * When used for [DeployedMode][] this field is optional and the default value
-     * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+     * Immutable. The type of the machine. For the machine types supported for prediction,
+     * see https://tinyurl.com/aip-docs/predictions/machine-types.
+     * For machine types supported for creating a custom training job, see
+     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+     * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
      * </pre>
      *
@@ -787,25 +709,12 @@ public final class MachineSpec extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. The type of the machine.
-     * Following machine types are supported:
-     * * `n1-standard-2`
-     * * `n1-standard-4`
-     * * `n1-standard-8`
-     * * `n1-standard-16`
-     * * `n1-standard-32`
-     * * `n1-highmem-2`
-     * * `n1-highmem-4`
-     * * `n1-highmem-8`
-     * * `n1-highmem-16`
-     * * `n1-highmem-32`
-     * * `n1-highcpu-2`
-     * * `n1-highcpu-4`
-     * * `n1-highcpu-8`
-     * * `n1-highcpu-16`
-     * * `n1-highcpu-32`
-     * When used for [DeployedMode][] this field is optional and the default value
-     * is `n1-standard-2`. If used for [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
+     * Immutable. The type of the machine. For the machine types supported for prediction,
+     * see https://tinyurl.com/aip-docs/predictions/machine-types.
+     * For machine types supported for creating a custom training job, see
+     * https://tinyurl.com/aip-docs/training/configure-compute.
+     * For [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] this field is optional, and the default
+     * value is `n1-standard-2`. For [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] or as part of
      * [WorkerPoolSpec][google.cloud.aiplatform.v1beta1.WorkerPoolSpec] this field is required.
      * </pre>
      *

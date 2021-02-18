@@ -94,7 +94,7 @@ import javax.annotation.Generated;
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 public class ModelServiceClient implements BackgroundResource {
   private final ModelServiceSettings settings;
   private final ModelServiceStub stub;
@@ -338,9 +338,7 @@ public class ModelServiceClient implements BackgroundResource {
    *
    * @param model Required. The Model which replaces the resource on the server.
    * @param updateMask Required. The update mask applies to the resource. For the `FieldMask`
-   *     definition, see
-   *     <p>[FieldMask](https: //developers.google.com/protocol-buffers //
-   *     /docs/reference/google.protobuf#fieldmask).
+   *     definition, see [FieldMask](https://tinyurl.com/protobufs/google.protobuf#fieldmask).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Model updateModel(Model model, FieldMask updateMask) {

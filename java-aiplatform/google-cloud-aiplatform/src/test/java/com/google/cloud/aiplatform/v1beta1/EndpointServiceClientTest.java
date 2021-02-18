@@ -101,6 +101,7 @@ public class EndpointServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -158,6 +159,7 @@ public class EndpointServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -215,6 +217,7 @@ public class EndpointServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -261,6 +264,7 @@ public class EndpointServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 
@@ -395,6 +399,7 @@ public class EndpointServiceClientTest {
             .putAllLabels(new HashMap<String, String>())
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockEndpointService.addResponse(expectedResponse);
 

@@ -127,6 +127,8 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
+   * If unspecified, the AI Platform Custom Code Service Agent for the
+   * CustomJob's project is used.
    * </pre>
    *
    * <code>string service_account = 4;</code>
@@ -140,6 +142,8 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * Specifies the service account for workload run-as account.
    * Users submitting jobs must have act-as permission on this run-as account.
+   * If unspecified, the AI Platform Custom Code Service Agent for the
+   * CustomJob's project is used.
    * </pre>
    *
    * <code>string service_account = 4;</code>
@@ -154,11 +158,10 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * The full name of the Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-   * should be peered. For example, projects/12345/global/networks/myVPC.
-   * [Format](https:
-   * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
-   * is of the form projects/{project}/global/networks/{network}.
-   * Where {project} is a project number, as in '12345', and {network} is
+   * should be peered. For example, `projects/12345/global/networks/myVPC`.
+   * [Format](/compute/docs/reference/rest/v1/networks/insert)
+   * is of the form `projects/{project}/global/networks/{network}`.
+   * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
    * Private services access must already be configured for the network. If left
    * unspecified, the job is not peered with any network.
@@ -175,11 +178,10 @@ public interface CustomJobSpecOrBuilder
    * <pre>
    * The full name of the Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the Job
-   * should be peered. For example, projects/12345/global/networks/myVPC.
-   * [Format](https:
-   * //cloud.google.com/compute/docs/reference/rest/v1/networks/insert)
-   * is of the form projects/{project}/global/networks/{network}.
-   * Where {project} is a project number, as in '12345', and {network} is
+   * should be peered. For example, `projects/12345/global/networks/myVPC`.
+   * [Format](/compute/docs/reference/rest/v1/networks/insert)
+   * is of the form `projects/{project}/global/networks/{network}`.
+   * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
    * Private services access must already be configured for the network. If left
    * unspecified, the job is not peered with any network.
@@ -195,14 +197,14 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location to store the output of this CustomJob or
+   * The Cloud Storage location to store the output of this CustomJob or
    * HyperparameterTuningJob. For HyperparameterTuningJob,
-   * [base_output_directory][CustomJob.job_spec.base_output_directory] of
+   * the baseOutputDirectory of
    * each child CustomJob backing a Trial is set to a subdirectory of name
-   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under parent HyperparameterTuningJob's
-   * [base_output_directory][HyperparameterTuningJob.trial_job_spec.base_output_directory].
-   * Following AI Platform environment variables will be passed to containers or
-   * python modules when this field is set:
+   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
+   * baseOutputDirectory.
+   * The following AI Platform environment variables will be passed to
+   * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
@@ -222,14 +224,14 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location to store the output of this CustomJob or
+   * The Cloud Storage location to store the output of this CustomJob or
    * HyperparameterTuningJob. For HyperparameterTuningJob,
-   * [base_output_directory][CustomJob.job_spec.base_output_directory] of
+   * the baseOutputDirectory of
    * each child CustomJob backing a Trial is set to a subdirectory of name
-   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under parent HyperparameterTuningJob's
-   * [base_output_directory][HyperparameterTuningJob.trial_job_spec.base_output_directory].
-   * Following AI Platform environment variables will be passed to containers or
-   * python modules when this field is set:
+   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
+   * baseOutputDirectory.
+   * The following AI Platform environment variables will be passed to
+   * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`
@@ -249,14 +251,14 @@ public interface CustomJobSpecOrBuilder
    *
    *
    * <pre>
-   * The Google Cloud Storage location to store the output of this CustomJob or
+   * The Cloud Storage location to store the output of this CustomJob or
    * HyperparameterTuningJob. For HyperparameterTuningJob,
-   * [base_output_directory][CustomJob.job_spec.base_output_directory] of
+   * the baseOutputDirectory of
    * each child CustomJob backing a Trial is set to a subdirectory of name
-   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under parent HyperparameterTuningJob's
-   * [base_output_directory][HyperparameterTuningJob.trial_job_spec.base_output_directory].
-   * Following AI Platform environment variables will be passed to containers or
-   * python modules when this field is set:
+   * [id][google.cloud.aiplatform.v1beta1.Trial.id] under its parent HyperparameterTuningJob's
+   * baseOutputDirectory.
+   * The following AI Platform environment variables will be passed to
+   * containers or python modules when this field is set:
    *   For CustomJob:
    *   * AIP_MODEL_DIR = `&lt;base_output_directory&gt;/model/`
    *   * AIP_CHECKPOINT_DIR = `&lt;base_output_directory&gt;/checkpoints/`

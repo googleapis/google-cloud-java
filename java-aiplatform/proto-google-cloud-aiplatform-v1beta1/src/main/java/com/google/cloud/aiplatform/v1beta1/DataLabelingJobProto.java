@@ -65,59 +65,62 @@ public final class DataLabelingJobProto {
           + "rm.v1beta1\032\037google/api/field_behavior.pr"
           + "oto\032\031google/api/resource.proto\0326google/c"
           + "loud/aiplatform/v1beta1/accelerator_type"
-          + ".proto\032/google/cloud/aiplatform/v1beta1/"
-          + "job_state.proto\0325google/cloud/aiplatform"
-          + "/v1beta1/specialist_pool.proto\032\034google/p"
-          + "rotobuf/struct.proto\032\037google/protobuf/ti"
-          + "mestamp.proto\032\027google/rpc/status.proto\032\027"
-          + "google/type/money.proto\032\034google/api/anno"
-          + "tations.proto\"\256\010\n\017DataLabelingJob\022\021\n\004nam"
-          + "e\030\001 \001(\tB\003\340A\003\022\031\n\014display_name\030\002 \001(\tB\003\340A\002\022"
-          + ";\n\010datasets\030\003 \003(\tB)\340A\002\372A#\n!aiplatform.go"
-          + "ogleapis.com/Dataset\022a\n\021annotation_label"
-          + "s\030\014 \003(\0132F.google.cloud.aiplatform.v1beta"
-          + "1.DataLabelingJob.AnnotationLabelsEntry\022"
-          + "\032\n\rlabeler_count\030\004 \001(\005B\003\340A\002\022\034\n\017instructi"
-          + "on_uri\030\005 \001(\tB\003\340A\002\022\036\n\021inputs_schema_uri\030\006"
-          + " \001(\tB\003\340A\002\022+\n\006inputs\030\007 \001(\0132\026.google.proto"
-          + "buf.ValueB\003\340A\002\022=\n\005state\030\010 \001(\0162).google.c"
-          + "loud.aiplatform.v1beta1.JobStateB\003\340A\003\022\036\n"
-          + "\021labeling_progress\030\r \001(\005B\003\340A\003\022.\n\rcurrent"
-          + "_spend\030\016 \001(\0132\022.google.type.MoneyB\003\340A\003\0224\n"
-          + "\013create_time\030\t \001(\0132\032.google.protobuf.Tim"
-          + "estampB\003\340A\003\0224\n\013update_time\030\n \001(\0132\032.googl"
-          + "e.protobuf.TimestampB\003\340A\003\022&\n\005error\030\026 \001(\013"
-          + "2\022.google.rpc.StatusB\003\340A\003\022L\n\006labels\030\013 \003("
-          + "\0132<.google.cloud.aiplatform.v1beta1.Data"
-          + "LabelingJob.LabelsEntry\022\030\n\020specialist_po"
-          + "ols\030\020 \003(\t\022U\n\026active_learning_config\030\025 \001("
-          + "\01325.google.cloud.aiplatform.v1beta1.Acti"
-          + "veLearningConfig\0327\n\025AnnotationLabelsEntr"
-          + "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032-\n\013Lab"
-          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + ":|\352Ay\n)aiplatform.googleapis.com/DataLab"
-          + "elingJob\022Lprojects/{project}/locations/{"
-          + "location}/dataLabelingJobs/{data_labelin"
-          + "g_job}\"\202\002\n\024ActiveLearningConfig\022\035\n\023max_d"
-          + "ata_item_count\030\001 \001(\003H\000\022\"\n\030max_data_item_"
-          + "percentage\030\002 \001(\005H\000\022D\n\rsample_config\030\003 \001("
-          + "\0132-.google.cloud.aiplatform.v1beta1.Samp"
-          + "leConfig\022H\n\017training_config\030\004 \001(\0132/.goog"
-          + "le.cloud.aiplatform.v1beta1.TrainingConf"
-          + "igB\027\n\025human_labeling_budget\"\275\002\n\014SampleCo"
-          + "nfig\022)\n\037initial_batch_sample_percentage\030"
-          + "\001 \001(\005H\000\022+\n!following_batch_sample_percen"
-          + "tage\030\003 \001(\005H\001\022U\n\017sample_strategy\030\005 \001(\0162<."
-          + "google.cloud.aiplatform.v1beta1.SampleCo"
-          + "nfig.SampleStrategy\"B\n\016SampleStrategy\022\037\n"
-          + "\033SAMPLE_STRATEGY_UNSPECIFIED\020\000\022\017\n\013UNCERT"
-          + "AINTY\020\001B\033\n\031initial_batch_sample_sizeB\035\n\033"
-          + "following_batch_sample_size\"6\n\016TrainingC"
-          + "onfig\022$\n\034timeout_training_milli_hours\030\001 "
-          + "\001(\003B\210\001\n#com.google.cloud.aiplatform.v1be"
-          + "ta1B\024DataLabelingJobProtoP\001ZIgoogle.gola"
-          + "ng.org/genproto/googleapis/cloud/aiplatf"
-          + "orm/v1beta1;aiplatformb\006proto3"
+          + ".proto\0325google/cloud/aiplatform/v1beta1/"
+          + "encryption_spec.proto\032/google/cloud/aipl"
+          + "atform/v1beta1/job_state.proto\0325google/c"
+          + "loud/aiplatform/v1beta1/specialist_pool."
+          + "proto\032\034google/protobuf/struct.proto\032\037goo"
+          + "gle/protobuf/timestamp.proto\032\027google/rpc"
+          + "/status.proto\032\027google/type/money.proto\032\034"
+          + "google/api/annotations.proto\"\370\010\n\017DataLab"
+          + "elingJob\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\031\n\014display_n"
+          + "ame\030\002 \001(\tB\003\340A\002\022;\n\010datasets\030\003 \003(\tB)\340A\002\372A#"
+          + "\n!aiplatform.googleapis.com/Dataset\022a\n\021a"
+          + "nnotation_labels\030\014 \003(\0132F.google.cloud.ai"
+          + "platform.v1beta1.DataLabelingJob.Annotat"
+          + "ionLabelsEntry\022\032\n\rlabeler_count\030\004 \001(\005B\003\340"
+          + "A\002\022\034\n\017instruction_uri\030\005 \001(\tB\003\340A\002\022\036\n\021inpu"
+          + "ts_schema_uri\030\006 \001(\tB\003\340A\002\022+\n\006inputs\030\007 \001(\013"
+          + "2\026.google.protobuf.ValueB\003\340A\002\022=\n\005state\030\010"
+          + " \001(\0162).google.cloud.aiplatform.v1beta1.J"
+          + "obStateB\003\340A\003\022\036\n\021labeling_progress\030\r \001(\005B"
+          + "\003\340A\003\022.\n\rcurrent_spend\030\016 \001(\0132\022.google.typ"
+          + "e.MoneyB\003\340A\003\0224\n\013create_time\030\t \001(\0132\032.goog"
+          + "le.protobuf.TimestampB\003\340A\003\0224\n\013update_tim"
+          + "e\030\n \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
+          + "\022&\n\005error\030\026 \001(\0132\022.google.rpc.StatusB\003\340A\003"
+          + "\022L\n\006labels\030\013 \003(\0132<.google.cloud.aiplatfo"
+          + "rm.v1beta1.DataLabelingJob.LabelsEntry\022\030"
+          + "\n\020specialist_pools\030\020 \003(\t\022H\n\017encryption_s"
+          + "pec\030\024 \001(\0132/.google.cloud.aiplatform.v1be"
+          + "ta1.EncryptionSpec\022U\n\026active_learning_co"
+          + "nfig\030\025 \001(\01325.google.cloud.aiplatform.v1b"
+          + "eta1.ActiveLearningConfig\0327\n\025AnnotationL"
+          + "abelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002"
+          + "8\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001:|\352Ay\n)aiplatform.googleapis.co"
+          + "m/DataLabelingJob\022Lprojects/{project}/lo"
+          + "cations/{location}/dataLabelingJobs/{dat"
+          + "a_labeling_job}\"\202\002\n\024ActiveLearningConfig"
+          + "\022\035\n\023max_data_item_count\030\001 \001(\003H\000\022\"\n\030max_d"
+          + "ata_item_percentage\030\002 \001(\005H\000\022D\n\rsample_co"
+          + "nfig\030\003 \001(\0132-.google.cloud.aiplatform.v1b"
+          + "eta1.SampleConfig\022H\n\017training_config\030\004 \001"
+          + "(\0132/.google.cloud.aiplatform.v1beta1.Tra"
+          + "iningConfigB\027\n\025human_labeling_budget\"\275\002\n"
+          + "\014SampleConfig\022)\n\037initial_batch_sample_pe"
+          + "rcentage\030\001 \001(\005H\000\022+\n!following_batch_samp"
+          + "le_percentage\030\003 \001(\005H\001\022U\n\017sample_strategy"
+          + "\030\005 \001(\0162<.google.cloud.aiplatform.v1beta1"
+          + ".SampleConfig.SampleStrategy\"B\n\016SampleSt"
+          + "rategy\022\037\n\033SAMPLE_STRATEGY_UNSPECIFIED\020\000\022"
+          + "\017\n\013UNCERTAINTY\020\001B\033\n\031initial_batch_sample"
+          + "_sizeB\035\n\033following_batch_sample_size\"6\n\016"
+          + "TrainingConfig\022$\n\034timeout_training_milli"
+          + "_hours\030\001 \001(\003B\210\001\n#com.google.cloud.aiplat"
+          + "form.v1beta1B\024DataLabelingJobProtoP\001ZIgo"
+          + "ogle.golang.org/genproto/googleapis/clou"
+          + "d/aiplatform/v1beta1;aiplatformb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -126,6 +129,7 @@ public final class DataLabelingJobProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.AcceleratorTypeProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.JobStateProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.SpecialistPoolProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
@@ -156,6 +160,7 @@ public final class DataLabelingJobProto {
               "Error",
               "Labels",
               "SpecialistPools",
+              "EncryptionSpec",
               "ActiveLearningConfig",
             });
     internal_static_google_cloud_aiplatform_v1beta1_DataLabelingJob_AnnotationLabelsEntry_descriptor =
@@ -220,6 +225,7 @@ public final class DataLabelingJobProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.AcceleratorTypeProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.JobStateProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.SpecialistPoolProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();

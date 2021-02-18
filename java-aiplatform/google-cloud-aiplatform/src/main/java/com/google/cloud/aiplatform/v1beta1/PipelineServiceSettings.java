@@ -69,6 +69,7 @@ import javax.annotation.Generated;
  * PipelineServiceSettings pipelineServiceSettings = pipelineServiceSettingsBuilder.build();
  * }</pre>
  */
+@BetaApi
 @Generated("by gapic-generator-java")
 public class PipelineServiceSettings extends ClientSettings<PipelineServiceSettings> {
 

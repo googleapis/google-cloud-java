@@ -22,7 +22,7 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Paramaters that configure active learning pipeline. Active learning will
+ * Parameters that configure active learning pipeline. Active learning will
  *  label the data incrementally by several iterations. For every iteration, it
  *  will select a batch of data based on the sampling strategy.
  * </pre>
@@ -563,7 +563,7 @@ public final class ActiveLearningConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Paramaters that configure active learning pipeline. Active learning will
+   * Parameters that configure active learning pipeline. Active learning will
    *  label the data incrementally by several iterations. For every iteration, it
    *  will select a batch of data based on the sampling strategy.
    * </pre>

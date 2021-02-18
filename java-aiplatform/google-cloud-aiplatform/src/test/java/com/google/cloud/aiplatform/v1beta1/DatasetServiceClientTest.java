@@ -102,6 +102,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -158,6 +159,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -214,6 +216,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -259,6 +262,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
@@ -304,6 +308,7 @@ public class DatasetServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockDatasetService.addResponse(expectedResponse);
 
