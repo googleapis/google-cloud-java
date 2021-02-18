@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.9.1](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.9.0...v1.9.1) (2021-02-18)
+
+
+### Bug Fixes
+
+* remove reconnection feature from client library ([#849](https://www.github.com/googleapis/java-bigquerystorage/issues/849)) ([86dfc3a](https://www.github.com/googleapis/java-bigquerystorage/commit/86dfc3a1b1e3429a1e0932919a300a3bbbcb1ceb))
+
 ## [1.9.0](https://www.github.com/googleapis/java-bigquerystorage/compare/v1.8.5...v1.9.0) (2021-02-17)
 
 
