@@ -382,55 +382,67 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable() {
     return translateTextCallable;
   }
 
+  @Override
   public UnaryCallable<DetectLanguageRequest, DetectLanguageResponse> detectLanguageCallable() {
     return detectLanguageCallable;
   }
 
+  @Override
   public UnaryCallable<GetSupportedLanguagesRequest, SupportedLanguages>
       getSupportedLanguagesCallable() {
     return getSupportedLanguagesCallable;
   }
 
+  @Override
   public UnaryCallable<BatchTranslateTextRequest, Operation> batchTranslateTextCallable() {
     return batchTranslateTextCallable;
   }
 
+  @Override
   public OperationCallable<
           BatchTranslateTextRequest, BatchTranslateResponse, BatchTranslateMetadata>
       batchTranslateTextOperationCallable() {
     return batchTranslateTextOperationCallable;
   }
 
+  @Override
   public UnaryCallable<CreateGlossaryRequest, Operation> createGlossaryCallable() {
     return createGlossaryCallable;
   }
 
+  @Override
   public OperationCallable<CreateGlossaryRequest, Glossary, CreateGlossaryMetadata>
       createGlossaryOperationCallable() {
     return createGlossaryOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListGlossariesRequest, ListGlossariesResponse> listGlossariesCallable() {
     return listGlossariesCallable;
   }
 
+  @Override
   public UnaryCallable<ListGlossariesRequest, ListGlossariesPagedResponse>
       listGlossariesPagedCallable() {
     return listGlossariesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetGlossaryRequest, Glossary> getGlossaryCallable() {
     return getGlossaryCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteGlossaryRequest, Operation> deleteGlossaryCallable() {
     return deleteGlossaryCallable;
   }
 
+  @Override
   public OperationCallable<DeleteGlossaryRequest, DeleteGlossaryResponse, DeleteGlossaryMetadata>
       deleteGlossaryOperationCallable() {
     return deleteGlossaryOperationCallable;
