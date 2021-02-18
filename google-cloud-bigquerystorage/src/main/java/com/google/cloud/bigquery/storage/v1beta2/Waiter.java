@@ -64,10 +64,16 @@ class Waiter {
     }
   }
 
-  public synchronized void release(long messageSize) {
+  public synchronized void release(long messageSize) throws IllegalStateException {
     lock.lock();
     --pendingCount;
+    if (pendingCount < 0) {
+      throw new IllegalStateException("pendingCount cannot be less than 0");
+    }
     pendingSize -= messageSize;
+    if (pendingSize < 0) {
+      throw new IllegalStateException("pendingSize cannot be less than 0");
+    }
     notifyNextAcquires();
     lock.unlock();
     notifyAll();

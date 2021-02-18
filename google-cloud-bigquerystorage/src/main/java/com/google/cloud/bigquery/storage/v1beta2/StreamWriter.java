@@ -65,8 +65,8 @@ import org.threeten.bp.Duration;
  * without offset, please use a simpler writer {@code DirectWriter}.
  *
  * <p>A {@link StreamWrier} provides built-in capabilities to: handle batching of messages;
- * controlling memory utilization (through flow control); automatic connection re-establishment and
- * request cleanup (only keeps write schema on first request in the stream).
+ * controlling memory utilization (through flow control) and request cleanup (only keeps write
+ * schema on first request in the stream).
  *
  * <p>With customizable options that control:
  *
@@ -863,14 +863,20 @@ public class StreamWriter implements AutoCloseable {
 
     private void abortInflightRequests(Throwable t) {
       synchronized (this.inflightBatches) {
+        boolean first_error = true;
         while (!this.inflightBatches.isEmpty()) {
           InflightBatch inflightBatch = this.inflightBatches.poll();
-          inflightBatch.onFailure(
-              new AbortedException(
-                  "Request aborted due to previous failures",
-                  t,
-                  GrpcStatusCode.of(Status.Code.ABORTED),
-                  true));
+          if (first_error) {
+            inflightBatch.onFailure(t);
+            first_error = false;
+          } else {
+            inflightBatch.onFailure(
+                new AbortedException(
+                    "Request aborted due to previous failures",
+                    t,
+                    GrpcStatusCode.of(Status.Code.ABORTED),
+                    true));
+          }
           streamWriter.messagesWaiter.release(inflightBatch.getByteSize());
         }
       }
@@ -913,7 +919,12 @@ public class StreamWriter implements AutoCloseable {
                         response.getAppendResult().getOffset().getValue(),
                         inflightBatch.getExpectedOffset()));
             inflightBatch.onFailure(exception);
-            abortInflightRequests(exception);
+            abortInflightRequests(
+                new AbortedException(
+                    "Request aborted due to previous failures",
+                    exception,
+                    GrpcStatusCode.of(Status.Code.ABORTED),
+                    true));
           } else {
             inflightBatch.onSuccess(response);
           }
@@ -931,56 +942,7 @@ public class StreamWriter implements AutoCloseable {
     @Override
     public void onError(Throwable t) {
       LOG.fine("OnError called");
-      if (streamWriter.shutdown.get()) {
-        abortInflightRequests(t);
-        return;
-      }
-      InflightBatch inflightBatch = null;
-      synchronized (this.inflightBatches) {
-        if (inflightBatches.isEmpty()) {
-          // The batches could have been aborted.
-          return;
-        }
-        inflightBatch = this.inflightBatches.poll();
-      }
-      streamWriter.messagesWaiter.release(inflightBatch.getByteSize());
-      if (isRecoverableError(t)) {
-        try {
-          if (streamWriter.currentRetries < streamWriter.getRetrySettings().getMaxAttempts()
-              && !streamWriter.shutdown.get()) {
-            synchronized (streamWriter.currentRetries) {
-              streamWriter.currentRetries++;
-            }
-            LOG.info(
-                "Try to reestablish connection due to transient error: "
-                    + t.toString()
-                    + " retry times: "
-                    + streamWriter.currentRetries);
-            streamWriter.refreshAppend();
-            LOG.info("Resending requests on after connection established");
-            streamWriter.writeBatch(inflightBatch);
-          } else {
-            inflightBatch.onFailure(t);
-            abortInflightRequests(t);
-            synchronized (streamWriter.currentRetries) {
-              streamWriter.currentRetries = 0;
-            }
-          }
-        } catch (InterruptedException e) {
-          LOG.info("Got exception while retrying: " + e.toString());
-          inflightBatch.onFailure(new StatusRuntimeException(Status.ABORTED));
-          abortInflightRequests(new StatusRuntimeException(Status.ABORTED));
-          synchronized (streamWriter.currentRetries) {
-            streamWriter.currentRetries = 0;
-          }
-        }
-      } else {
-        inflightBatch.onFailure(t);
-        abortInflightRequests(t);
-        synchronized (streamWriter.currentRetries) {
-          streamWriter.currentRetries = 0;
-        }
-      }
+      abortInflightRequests(t);
     }
   };
 

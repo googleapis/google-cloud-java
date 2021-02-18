@@ -32,7 +32,7 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
-import com.google.api.gax.retrying.RetrySettings;
+import com.google.api.gax.rpc.AbortedException;
 import com.google.api.gax.rpc.DataLossException;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.common.base.Strings;
@@ -511,42 +511,6 @@ public class StreamWriterTest {
   }
 
   @Test
-  public void testStreamReconnectionTransient() throws Exception {
-    StreamWriter writer =
-        getTestStreamWriterBuilder()
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setDelayThreshold(Duration.ofSeconds(100000))
-                    .setElementCountThreshold(1L)
-                    .setFlowControlSettings(
-                        StreamWriter.Builder.DEFAULT_FLOW_CONTROL_SETTINGS
-                            .toBuilder()
-                            .setMaxOutstandingElementCount(1L)
-                            .setLimitExceededBehavior(FlowController.LimitExceededBehavior.Block)
-                            .build())
-                    .build())
-            .build();
-
-    testBigQueryWrite.addResponse(
-        AppendRowsResponse.newBuilder()
-            .setAppendResult(
-                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
-            .build());
-    testBigQueryWrite.addException(new StatusRuntimeException(Status.UNAVAILABLE));
-    testBigQueryWrite.addResponse(
-        AppendRowsResponse.newBuilder()
-            .setAppendResult(
-                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
-            .build());
-    ApiFuture<AppendRowsResponse> future1 = sendTestMessage(writer, new String[] {"m1"});
-    ApiFuture<AppendRowsResponse> future2 = sendTestMessage(writer, new String[] {"m1"});
-    assertEquals(0L, future1.get().getAppendResult().getOffset().getValue());
-    assertEquals(1L, future2.get().getAppendResult().getOffset().getValue());
-    writer.close();
-  }
-
-  @Test
   public void testStreamReconnectionPermanant() throws Exception {
     StreamWriter writer =
         getTestStreamWriterBuilder()
@@ -565,36 +529,6 @@ public class StreamWriterTest {
       Assert.fail("This should fail.");
     } catch (ExecutionException e) {
       assertEquals(permanentError.toString(), e.getCause().getCause().toString());
-    }
-    writer.close();
-  }
-
-  @Test
-  public void testStreamReconnectionExceedRetry() throws Exception {
-    StreamWriter writer =
-        getTestStreamWriterBuilder()
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setDelayThreshold(Duration.ofSeconds(100000))
-                    .setElementCountThreshold(1L)
-                    .build())
-            .setRetrySettings(
-                RetrySettings.newBuilder()
-                    .setMaxRetryDelay(Duration.ofMillis(100))
-                    .setMaxAttempts(1)
-                    .build())
-            .build();
-    assertEquals(1, writer.getRetrySettings().getMaxAttempts());
-    StatusRuntimeException transientError = new StatusRuntimeException(Status.UNAVAILABLE);
-    testBigQueryWrite.addException(transientError);
-    testBigQueryWrite.addException(transientError);
-    ApiFuture<AppendRowsResponse> future3 = sendTestMessage(writer, new String[] {"toomanyretry"});
-    try {
-      future3.get();
-      Assert.fail("This should fail.");
-    } catch (ExecutionException e) {
-      assertEquals(transientError.toString(), e.getCause().getCause().toString());
     }
     writer.close();
   }
@@ -665,7 +599,7 @@ public class StreamWriterTest {
 
   @Test
   public void testErrorPropagation() throws Exception {
-    try (StreamWriter writer =
+    StreamWriter writer =
         getTestStreamWriterBuilder()
             .setExecutorProvider(SINGLE_THREAD_EXECUTOR)
             .setBatchingSettings(
@@ -674,12 +608,22 @@ public class StreamWriterTest {
                     .setElementCountThreshold(1L)
                     .setDelayThreshold(Duration.ofSeconds(5))
                     .build())
-            .build()) {
-      testBigQueryWrite.addException(Status.DATA_LOSS.asException());
-      sendTestMessage(writer, new String[] {"A"}).get();
+            .build();
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+    ApiFuture<AppendRowsResponse> future1 = sendTestMessage(writer, new String[] {"A"});
+    ApiFuture<AppendRowsResponse> future2 = sendTestMessage(writer, new String[] {"B"});
+    try {
+      future1.get();
       fail("should throw exception");
     } catch (ExecutionException e) {
       assertThat(e.getCause()).isInstanceOf(DataLossException.class);
+    }
+    try {
+      future2.get();
+      fail("should throw exception");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(AbortedException.class);
     }
   }
 
@@ -958,43 +902,6 @@ public class StreamWriterTest {
   }
 
   @Test
-  public void testFlushAllFailed() throws Exception {
-    StreamWriter writer =
-        getTestStreamWriterBuilder()
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(100000))
-                    .build())
-            .build();
-
-    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
-    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
-    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
-
-    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
-    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
-    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
-
-    assertFalse(appendFuture3.isDone());
-    try {
-      writer.flushAll(100000);
-      fail("Should have thrown an Exception");
-    } catch (Exception expected) {
-      if (expected.getCause() instanceof com.google.api.gax.rpc.DataLossException) {
-        LOG.info("got: " + expected.toString());
-      } else {
-        fail("Unexpected exception:" + expected.toString());
-      }
-    }
-
-    assertTrue(appendFuture3.isDone());
-
-    writer.close();
-  }
-
-  @Test
   public void testDatasetTraceId() throws Exception {
     StreamWriter writer =
         getTestStreamWriterBuilder()
@@ -1032,10 +939,12 @@ public class StreamWriterTest {
                 AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(1)).build())
             .build());
     testBigQueryWrite.addException(Status.DATA_LOSS.asException());
+    testBigQueryWrite.addException(Status.DATA_LOSS.asException());
     testBigQueryWrite.setResponseDelay(Duration.ofSeconds(10));
 
     ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
     ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
+    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"B"});
     Thread.sleep(5000L);
     // Move the needle for responses to be sent.
     fakeExecutor.advanceTime(Duration.ofSeconds(20));
@@ -1044,9 +953,15 @@ public class StreamWriterTest {
     assertEquals(1, appendFuture1.get().getAppendResult().getOffset().getValue());
     try {
       appendFuture2.get();
-      fail("Should fail with exception");
-    } catch (java.util.concurrent.ExecutionException e) {
-      assertEquals("Request aborted due to previous failures", e.getCause().getMessage());
+      fail("Should fail with exception future2");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(DataLossException.class);
+    }
+    try {
+      appendFuture3.get();
+      fail("Should fail with exception future3");
+    } catch (ExecutionException e) {
+      assertThat(e.getCause()).isInstanceOf(AbortedException.class);
     }
   }
 }
