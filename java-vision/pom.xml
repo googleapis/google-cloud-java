@@ -234,7 +234,7 @@
             <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
             <link>https://googleapis.dev/java/google-auth-library/latest/</link>
             <link>https://googleapis.dev/java/gax/latest/</link>
-            <link>https://googleapis.github.io/api-common-java/</link>
+            <link>https://googleapis.github.io/api-common-java/apidocs/</link>
           </links>
         </configuration>
       </plugin>
