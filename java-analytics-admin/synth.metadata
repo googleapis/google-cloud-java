@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/java-analytics-admin.git",
-        "sha": "f04c1ac78d431b424d7279afae1173ea63708474"
+        "sha": "ef894b9b12420d4053f6ea1559da3fff376dad25"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "f327d3b657a63ae4a8efd7f011a15eacae36b59c"
+        "sha": "d17674372e27fb8f23013935e794aa37502071aa"
       }
     }
   ],
