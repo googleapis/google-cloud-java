@@ -22,6 +22,15 @@
  * <p>Service Description: Service to manage AssuredWorkloads.
  *
  * <p>Sample for AssuredWorkloadsServiceClient:
+ *
+ * <pre>{@code
+ * try (AssuredWorkloadsServiceClient assuredWorkloadsServiceClient =
+ *     AssuredWorkloadsServiceClient.create()) {
+ *   Workload workload = Workload.newBuilder().build();
+ *   FieldMask updateMask = FieldMask.newBuilder().build();
+ *   Workload response = assuredWorkloadsServiceClient.updateWorkload(workload, updateMask);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.assuredworkloads.v1beta1;

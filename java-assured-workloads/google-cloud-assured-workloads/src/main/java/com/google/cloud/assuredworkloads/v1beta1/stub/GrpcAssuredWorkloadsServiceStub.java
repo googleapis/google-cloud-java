@@ -263,31 +263,38 @@ public class GrpcAssuredWorkloadsServiceStub extends AssuredWorkloadsServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateWorkloadRequest, Operation> createWorkloadCallable() {
     return createWorkloadCallable;
   }
 
+  @Override
   public OperationCallable<CreateWorkloadRequest, Workload, CreateWorkloadOperationMetadata>
       createWorkloadOperationCallable() {
     return createWorkloadOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateWorkloadRequest, Workload> updateWorkloadCallable() {
     return updateWorkloadCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteWorkloadRequest, Empty> deleteWorkloadCallable() {
     return deleteWorkloadCallable;
   }
 
+  @Override
   public UnaryCallable<GetWorkloadRequest, Workload> getWorkloadCallable() {
     return getWorkloadCallable;
   }
 
+  @Override
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsResponse> listWorkloadsCallable() {
     return listWorkloadsCallable;
   }
 
+  @Override
   public UnaryCallable<ListWorkloadsRequest, ListWorkloadsPagedResponse>
       listWorkloadsPagedCallable() {
     return listWorkloadsPagedCallable;
