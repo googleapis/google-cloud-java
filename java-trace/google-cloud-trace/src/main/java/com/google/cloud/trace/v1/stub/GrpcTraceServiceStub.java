@@ -182,18 +182,22 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     return listTracesCallable;
   }
 
+  @Override
   public UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable() {
     return listTracesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
     return getTraceCallable;
   }
 
+  @Override
   public UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
     return patchTracesCallable;
   }

@@ -51,6 +51,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String traceId = "traceId-1067401920";
+ *   Trace response = traceServiceClient.getTrace(projectId, traceId);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the TraceServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -153,6 +161,17 @@ public class TraceServiceClient implements BackgroundResource {
   /**
    * Returns of a list of traces that match the specified filter conditions.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   for (Trace element : traceServiceClient.listTraces(projectId).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param projectId Required. ID of the Cloud project where the trace data is stored.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -164,6 +183,26 @@ public class TraceServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns of a list of traces that match the specified filter conditions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   ListTracesRequest request =
+   *       ListTracesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Trace element : traceServiceClient.listTraces(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -177,6 +216,26 @@ public class TraceServiceClient implements BackgroundResource {
    * Returns of a list of traces that match the specified filter conditions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   ListTracesRequest request =
+   *       ListTracesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setStartTime(Timestamp.newBuilder().build())
+   *           .setEndTime(Timestamp.newBuilder().build())
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Trace> future = traceServiceClient.listTracesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Trace element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable() {
     return stub.listTracesPagedCallable();
@@ -187,6 +246,23 @@ public class TraceServiceClient implements BackgroundResource {
    * Returns of a list of traces that match the specified filter conditions.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   while (true) {
+   *     ListTracesResponse response = traceServiceClient.listTracesCallable().call(request);
+   *     for (Trace element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     return stub.listTracesCallable();
@@ -195,6 +271,16 @@ public class TraceServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets a single trace by its ID.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   String traceId = "traceId-1067401920";
+   *   Trace response = traceServiceClient.getTrace(projectId, traceId);
+   * }
+   * }</pre>
    *
    * @param projectId Required. ID of the Cloud project where the trace data is stored.
    * @param traceId Required. ID of the trace to return.
@@ -210,6 +296,19 @@ public class TraceServiceClient implements BackgroundResource {
   /**
    * Gets a single trace by its ID.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   GetTraceRequest request =
+   *       GetTraceRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTraceId("traceId-1067401920")
+   *           .build();
+   *   Trace response = traceServiceClient.getTrace(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -222,6 +321,19 @@ public class TraceServiceClient implements BackgroundResource {
    * Gets a single trace by its ID.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   GetTraceRequest request =
+   *       GetTraceRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTraceId("traceId-1067401920")
+   *           .build();
+   *   ApiFuture<Trace> future = traceServiceClient.getTraceCallable().futureCall(request);
+   *   // Do something.
+   *   Trace response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
     return stub.getTraceCallable();
@@ -233,6 +345,16 @@ public class TraceServiceClient implements BackgroundResource {
    * send matches that of an existing trace, any fields in the existing trace and its spans are
    * overwritten by the provided values, and any new fields provided are merged with the existing
    * trace data. If the ID does not match, a new trace is created.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   String projectId = "projectId-894832108";
+   *   Traces traces = Traces.newBuilder().build();
+   *   traceServiceClient.patchTraces(projectId, traces);
+   * }
+   * }</pre>
    *
    * @param projectId Required. ID of the Cloud project where the trace data is stored.
    * @param traces Required. The body of the message.
@@ -251,6 +373,19 @@ public class TraceServiceClient implements BackgroundResource {
    * overwritten by the provided values, and any new fields provided are merged with the existing
    * trace data. If the ID does not match, a new trace is created.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   PatchTracesRequest request =
+   *       PatchTracesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTraces(Traces.newBuilder().build())
+   *           .build();
+   *   traceServiceClient.patchTraces(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -266,6 +401,19 @@ public class TraceServiceClient implements BackgroundResource {
    * trace data. If the ID does not match, a new trace is created.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+   *   PatchTracesRequest request =
+   *       PatchTracesRequest.newBuilder()
+   *           .setProjectId("projectId-894832108")
+   *           .setTraces(Traces.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Empty> future = traceServiceClient.patchTracesCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
     return stub.patchTracesCallable();

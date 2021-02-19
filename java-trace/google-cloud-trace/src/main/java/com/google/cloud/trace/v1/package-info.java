@@ -25,6 +25,14 @@
  * trace tree. Spans for a single trace may span multiple services.
  *
  * <p>Sample for TraceServiceClient:
+ *
+ * <pre>{@code
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+ *   String projectId = "projectId-894832108";
+ *   String traceId = "traceId-1067401920";
+ *   Trace response = traceServiceClient.getTrace(projectId, traceId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.trace.v1;

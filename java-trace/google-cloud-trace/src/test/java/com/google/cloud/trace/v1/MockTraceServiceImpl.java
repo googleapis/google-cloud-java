@@ -75,7 +75,13 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTraces, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTracesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -89,7 +95,13 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTrace, expected %s or %s",
+                  response.getClass().getName(),
+                  Trace.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -103,7 +115,13 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method PatchTraces, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

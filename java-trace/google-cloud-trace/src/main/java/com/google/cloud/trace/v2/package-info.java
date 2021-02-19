@@ -25,6 +25,14 @@
  * trace tree. A single trace may contain span(s) from multiple services.
  *
  * <p>Sample for TraceServiceClient:
+ *
+ * <pre>{@code
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
+ *   ProjectName name = ProjectName.of("[PROJECT]");
+ *   List<Span> spans = new ArrayList<>();
+ *   traceServiceClient.batchWriteSpans(name, spans);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.trace.v2;

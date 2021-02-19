@@ -148,10 +148,12 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable() {
     return batchWriteSpansCallable;
   }
 
+  @Override
   public UnaryCallable<Span, Span> createSpanCallable() {
     return createSpanCallable;
   }
