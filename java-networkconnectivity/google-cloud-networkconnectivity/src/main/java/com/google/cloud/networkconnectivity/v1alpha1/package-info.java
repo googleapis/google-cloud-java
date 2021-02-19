@@ -24,6 +24,13 @@
  * centralized connectivity management model.
  *
  * <p>Sample for HubServiceClient:
+ *
+ * <pre>{@code
+ * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+ *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+ *   Hub response = hubServiceClient.getHub(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.networkconnectivity.v1alpha1;

@@ -49,6 +49,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+ *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+ *   Hub response = hubServiceClient.getHub(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the HubServiceClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -162,6 +169,17 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Lists Hubs in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Hub element : hubServiceClient.listHubs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -175,6 +193,17 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Lists Hubs in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Hub element : hubServiceClient.listHubs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource's name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -186,6 +215,24 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Hubs in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListHubsRequest request =
+   *       ListHubsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Hub element : hubServiceClient.listHubs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -199,6 +246,24 @@ public class HubServiceClient implements BackgroundResource {
    * Lists Hubs in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListHubsRequest request =
+   *       ListHubsRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Hub> future = hubServiceClient.listHubsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Hub element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListHubsRequest, ListHubsPagedResponse> listHubsPagedCallable() {
     return stub.listHubsPagedCallable();
@@ -209,6 +274,23 @@ public class HubServiceClient implements BackgroundResource {
    * Lists Hubs in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   while (true) {
+   *     ListHubsResponse response = hubServiceClient.listHubsCallable().call(request);
+   *     for (Hub element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListHubsRequest, ListHubsResponse> listHubsCallable() {
     return stub.listHubsCallable();
@@ -217,6 +299,15 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   Hub response = hubServiceClient.getHub(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Name of the Hub resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -231,6 +322,15 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Gets details of a single Hub.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   Hub response = hubServiceClient.getHub(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Name of the Hub resource to get.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -242,6 +342,16 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetHubRequest request =
+   *       GetHubRequest.newBuilder().setName(HubName.of("[PROJECT]", "[HUB]").toString()).build();
+   *   Hub response = hubServiceClient.getHub(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -255,6 +365,16 @@ public class HubServiceClient implements BackgroundResource {
    * Gets details of a single Hub.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetHubRequest request =
+   *       GetHubRequest.newBuilder().setName(HubName.of("[PROJECT]", "[HUB]").toString()).build();
+   *   ApiFuture<Hub> future = hubServiceClient.getHubCallable().futureCall(request);
+   *   // Do something.
+   *   Hub response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetHubRequest, Hub> getHubCallable() {
     return stub.getHubCallable();
@@ -263,6 +383,17 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Hub in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Hub hub = Hub.newBuilder().build();
+   *   String hubId = "hubId99628272";
+   *   Hub response = hubServiceClient.createHubAsync(parent, hub, hubId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource's name of the Hub.
    * @param hub Required. Initial values for a new Hub.
@@ -284,6 +415,17 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Creates a new Hub in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Hub hub = Hub.newBuilder().build();
+   *   String hubId = "hubId99628272";
+   *   Hub response = hubServiceClient.createHubAsync(parent, hub, hubId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource's name of the Hub.
    * @param hub Required. Initial values for a new Hub.
    * @param hubId Optional. Unique id for the Hub to create.
@@ -300,6 +442,21 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Creates a new Hub in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateHubRequest request =
+   *       CreateHubRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHubId("hubId99628272")
+   *           .setHub(Hub.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Hub response = hubServiceClient.createHubAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -312,6 +469,22 @@ public class HubServiceClient implements BackgroundResource {
    * Creates a new Hub in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateHubRequest request =
+   *       CreateHubRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHubId("hubId99628272")
+   *           .setHub(Hub.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Hub, OperationMetadata> future =
+   *       hubServiceClient.createHubOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Hub response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateHubRequest, Hub, OperationMetadata>
       createHubOperationCallable() {
@@ -323,6 +496,21 @@ public class HubServiceClient implements BackgroundResource {
    * Creates a new Hub in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateHubRequest request =
+   *       CreateHubRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setHubId("hubId99628272")
+   *           .setHub(Hub.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.createHubCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateHubRequest, Operation> createHubCallable() {
     return stub.createHubCallable();
@@ -331,6 +519,16 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the parameters of a single Hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   Hub hub = Hub.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Hub response = hubServiceClient.updateHubAsync(hub, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param hub Required. The state that the Hub should be in after the update.
    * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
@@ -350,6 +548,20 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Updates the parameters of a single Hub.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateHubRequest request =
+   *       UpdateHubRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setHub(Hub.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Hub response = hubServiceClient.updateHubAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -362,6 +574,21 @@ public class HubServiceClient implements BackgroundResource {
    * Updates the parameters of a single Hub.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateHubRequest request =
+   *       UpdateHubRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setHub(Hub.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Hub, OperationMetadata> future =
+   *       hubServiceClient.updateHubOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Hub response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateHubRequest, Hub, OperationMetadata>
       updateHubOperationCallable() {
@@ -373,6 +600,20 @@ public class HubServiceClient implements BackgroundResource {
    * Updates the parameters of a single Hub.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateHubRequest request =
+   *       UpdateHubRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setHub(Hub.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.updateHubCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateHubRequest, Operation> updateHubCallable() {
     return stub.updateHubCallable();
@@ -381,6 +622,15 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   hubServiceClient.deleteHubAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the Hub to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -395,6 +645,15 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Deletes a single Hub.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   hubServiceClient.deleteHubAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the Hub to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -406,6 +665,19 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteHubRequest request =
+   *       DeleteHubRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   hubServiceClient.deleteHubAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -419,6 +691,20 @@ public class HubServiceClient implements BackgroundResource {
    * Deletes a single Hub.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteHubRequest request =
+   *       DeleteHubRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       hubServiceClient.deleteHubOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteHubRequest, Empty, OperationMetadata>
       deleteHubOperationCallable() {
@@ -430,6 +716,19 @@ public class HubServiceClient implements BackgroundResource {
    * Deletes a single Hub.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteHubRequest request =
+   *       DeleteHubRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.deleteHubCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteHubRequest, Operation> deleteHubCallable() {
     return stub.deleteHubCallable();
@@ -438,6 +737,17 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Spokes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (Spoke element : hubServiceClient.listSpokes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent's resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -452,6 +762,17 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Lists Spokes in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   for (Spoke element : hubServiceClient.listSpokes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent's resource name.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -463,6 +784,24 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists Spokes in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListSpokesRequest request =
+   *       ListSpokesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Spoke element : hubServiceClient.listSpokes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -476,6 +815,24 @@ public class HubServiceClient implements BackgroundResource {
    * Lists Spokes in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListSpokesRequest request =
+   *       ListSpokesRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Spoke> future = hubServiceClient.listSpokesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Spoke element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSpokesRequest, ListSpokesPagedResponse> listSpokesPagedCallable() {
     return stub.listSpokesPagedCallable();
@@ -486,6 +843,23 @@ public class HubServiceClient implements BackgroundResource {
    * Lists Spokes in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   while (true) {
+   *     ListSpokesResponse response = hubServiceClient.listSpokesCallable().call(request);
+   *     for (Spoke element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSpokesRequest, ListSpokesResponse> listSpokesCallable() {
     return stub.listSpokesCallable();
@@ -494,6 +868,15 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Spoke.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   Spoke response = hubServiceClient.getSpoke(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of Spoke resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -508,6 +891,15 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Gets details of a single Spoke.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   Spoke response = hubServiceClient.getSpoke(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of Spoke resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -519,6 +911,18 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Spoke.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetSpokeRequest request =
+   *       GetSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .build();
+   *   Spoke response = hubServiceClient.getSpoke(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -532,6 +936,18 @@ public class HubServiceClient implements BackgroundResource {
    * Gets details of a single Spoke.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetSpokeRequest request =
+   *       GetSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .build();
+   *   ApiFuture<Spoke> future = hubServiceClient.getSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Spoke response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSpokeRequest, Spoke> getSpokeCallable() {
     return stub.getSpokeCallable();
@@ -540,6 +956,17 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Spoke in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   Spoke spoke = Spoke.newBuilder().build();
+   *   String spokeId = "spokeId-1998996281";
+   *   Spoke response = hubServiceClient.createSpokeAsync(parent, spoke, spokeId).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent's resource name of the Spoke.
    * @param spoke Required. Initial values for a new Hub.
@@ -561,6 +988,17 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Creates a new Spoke in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
+   *   Spoke spoke = Spoke.newBuilder().build();
+   *   String spokeId = "spokeId-1998996281";
+   *   Spoke response = hubServiceClient.createSpokeAsync(parent, spoke, spokeId).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent's resource name of the Spoke.
    * @param spoke Required. Initial values for a new Hub.
    * @param spokeId Optional. Unique id for the Spoke to create.
@@ -581,6 +1019,21 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Creates a new Spoke in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateSpokeRequest request =
+   *       CreateSpokeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSpokeId("spokeId-1998996281")
+   *           .setSpoke(Spoke.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Spoke response = hubServiceClient.createSpokeAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -594,6 +1047,22 @@ public class HubServiceClient implements BackgroundResource {
    * Creates a new Spoke in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateSpokeRequest request =
+   *       CreateSpokeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSpokeId("spokeId-1998996281")
+   *           .setSpoke(Spoke.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Spoke, OperationMetadata> future =
+   *       hubServiceClient.createSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Spoke response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateSpokeRequest, Spoke, OperationMetadata>
       createSpokeOperationCallable() {
@@ -605,6 +1074,21 @@ public class HubServiceClient implements BackgroundResource {
    * Creates a new Spoke in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   CreateSpokeRequest request =
+   *       CreateSpokeRequest.newBuilder()
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+   *           .setSpokeId("spokeId-1998996281")
+   *           .setSpoke(Spoke.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.createSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateSpokeRequest, Operation> createSpokeCallable() {
     return stub.createSpokeCallable();
@@ -613,6 +1097,16 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the parameters of a single Spoke.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   Spoke spoke = Spoke.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Spoke response = hubServiceClient.updateSpokeAsync(spoke, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param spoke Required. The state that the Spoke should be in after the update.
    * @param updateMask Optional. Field mask is used to specify the fields to be overwritten in the
@@ -632,6 +1126,20 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Updates the parameters of a single Spoke.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateSpokeRequest request =
+   *       UpdateSpokeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSpoke(Spoke.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Spoke response = hubServiceClient.updateSpokeAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -645,6 +1153,21 @@ public class HubServiceClient implements BackgroundResource {
    * Updates the parameters of a single Spoke.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateSpokeRequest request =
+   *       UpdateSpokeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSpoke(Spoke.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Spoke, OperationMetadata> future =
+   *       hubServiceClient.updateSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Spoke response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationCallable() {
@@ -656,6 +1179,20 @@ public class HubServiceClient implements BackgroundResource {
    * Updates the parameters of a single Spoke.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   UpdateSpokeRequest request =
+   *       UpdateSpokeRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setSpoke(Spoke.newBuilder().build())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.updateSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateSpokeRequest, Operation> updateSpokeCallable() {
     return stub.updateSpokeCallable();
@@ -664,6 +1201,15 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Spoke.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SpokeName name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   hubServiceClient.deleteSpokeAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the Spoke to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -678,6 +1224,15 @@ public class HubServiceClient implements BackgroundResource {
   /**
    * Deletes a single Spoke.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   hubServiceClient.deleteSpokeAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the Spoke to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -689,6 +1244,19 @@ public class HubServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Spoke.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteSpokeRequest request =
+   *       DeleteSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   hubServiceClient.deleteSpokeAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -703,6 +1271,20 @@ public class HubServiceClient implements BackgroundResource {
    * Deletes a single Spoke.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteSpokeRequest request =
+   *       DeleteSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       hubServiceClient.deleteSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable() {
@@ -714,6 +1296,19 @@ public class HubServiceClient implements BackgroundResource {
    * Deletes a single Spoke.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   DeleteSpokeRequest request =
+   *       DeleteSpokeRequest.newBuilder()
+   *           .setName(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.deleteSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable() {
     return stub.deleteSpokeCallable();

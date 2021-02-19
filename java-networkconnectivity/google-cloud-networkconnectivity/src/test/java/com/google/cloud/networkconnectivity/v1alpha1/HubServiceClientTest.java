@@ -187,6 +187,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .addAllSpokes(new ArrayList<String>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -231,6 +232,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .addAllSpokes(new ArrayList<String>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -275,6 +277,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .addAllSpokes(new ArrayList<String>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -333,6 +336,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .addAllSpokes(new ArrayList<String>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -391,6 +395,7 @@ public class HubServiceClientTest {
             .setDescription("description-1724546052")
             .addAllSpokes(new ArrayList<String>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -621,6 +626,7 @@ public class HubServiceClientTest {
             .addAllLinkedInterconnectAttachments(new ArrayList<String>())
             .addAllLinkedRouterApplianceInstances(new ArrayList<RouterApplianceInstance>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -668,6 +674,7 @@ public class HubServiceClientTest {
             .addAllLinkedInterconnectAttachments(new ArrayList<String>())
             .addAllLinkedRouterApplianceInstances(new ArrayList<RouterApplianceInstance>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     mockHubService.addResponse(expectedResponse);
 
@@ -715,6 +722,7 @@ public class HubServiceClientTest {
             .addAllLinkedInterconnectAttachments(new ArrayList<String>())
             .addAllLinkedRouterApplianceInstances(new ArrayList<RouterApplianceInstance>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -776,6 +784,7 @@ public class HubServiceClientTest {
             .addAllLinkedInterconnectAttachments(new ArrayList<String>())
             .addAllLinkedRouterApplianceInstances(new ArrayList<RouterApplianceInstance>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -837,6 +846,7 @@ public class HubServiceClientTest {
             .addAllLinkedInterconnectAttachments(new ArrayList<String>())
             .addAllLinkedRouterApplianceInstances(new ArrayList<RouterApplianceInstance>())
             .setUniqueId("uniqueId-294460212")
+            .setState(State.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()

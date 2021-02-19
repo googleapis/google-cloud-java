@@ -424,77 +424,95 @@ public class GrpcHubServiceStub extends HubServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListHubsRequest, ListHubsResponse> listHubsCallable() {
     return listHubsCallable;
   }
 
+  @Override
   public UnaryCallable<ListHubsRequest, ListHubsPagedResponse> listHubsPagedCallable() {
     return listHubsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetHubRequest, Hub> getHubCallable() {
     return getHubCallable;
   }
 
+  @Override
   public UnaryCallable<CreateHubRequest, Operation> createHubCallable() {
     return createHubCallable;
   }
 
+  @Override
   public OperationCallable<CreateHubRequest, Hub, OperationMetadata> createHubOperationCallable() {
     return createHubOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateHubRequest, Operation> updateHubCallable() {
     return updateHubCallable;
   }
 
+  @Override
   public OperationCallable<UpdateHubRequest, Hub, OperationMetadata> updateHubOperationCallable() {
     return updateHubOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteHubRequest, Operation> deleteHubCallable() {
     return deleteHubCallable;
   }
 
+  @Override
   public OperationCallable<DeleteHubRequest, Empty, OperationMetadata>
       deleteHubOperationCallable() {
     return deleteHubOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ListSpokesRequest, ListSpokesResponse> listSpokesCallable() {
     return listSpokesCallable;
   }
 
+  @Override
   public UnaryCallable<ListSpokesRequest, ListSpokesPagedResponse> listSpokesPagedCallable() {
     return listSpokesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetSpokeRequest, Spoke> getSpokeCallable() {
     return getSpokeCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSpokeRequest, Operation> createSpokeCallable() {
     return createSpokeCallable;
   }
 
+  @Override
   public OperationCallable<CreateSpokeRequest, Spoke, OperationMetadata>
       createSpokeOperationCallable() {
     return createSpokeOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSpokeRequest, Operation> updateSpokeCallable() {
     return updateSpokeCallable;
   }
 
+  @Override
   public OperationCallable<UpdateSpokeRequest, Spoke, OperationMetadata>
       updateSpokeOperationCallable() {
     return updateSpokeOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSpokeRequest, Operation> deleteSpokeCallable() {
     return deleteSpokeCallable;
   }
 
+  @Override
   public OperationCallable<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationCallable() {
     return deleteSpokeOperationCallable;
