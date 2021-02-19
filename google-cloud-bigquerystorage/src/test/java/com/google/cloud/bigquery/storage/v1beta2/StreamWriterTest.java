@@ -864,44 +864,6 @@ public class StreamWriterTest {
   }
 
   @Test
-  public void testFlushAll() throws Exception {
-    StreamWriter writer =
-        getTestStreamWriterBuilder()
-            .setBatchingSettings(
-                StreamWriter.Builder.DEFAULT_BATCHING_SETTINGS
-                    .toBuilder()
-                    .setElementCountThreshold(2L)
-                    .setDelayThreshold(Duration.ofSeconds(100000))
-                    .build())
-            .build();
-
-    testBigQueryWrite.addResponse(
-        AppendRowsResponse.newBuilder()
-            .setAppendResult(
-                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(0)).build())
-            .build());
-    testBigQueryWrite.addResponse(
-        AppendRowsResponse.newBuilder()
-            .setAppendResult(
-                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(2)).build())
-            .build());
-    testBigQueryWrite.addResponse(
-        AppendRowsResponse.newBuilder()
-            .setAppendResult(
-                AppendRowsResponse.AppendResult.newBuilder().setOffset(Int64Value.of(3)).build())
-            .build());
-
-    ApiFuture<AppendRowsResponse> appendFuture1 = sendTestMessage(writer, new String[] {"A"});
-    ApiFuture<AppendRowsResponse> appendFuture2 = sendTestMessage(writer, new String[] {"B"});
-    ApiFuture<AppendRowsResponse> appendFuture3 = sendTestMessage(writer, new String[] {"C"});
-    assertFalse(appendFuture3.isDone());
-    writer.flushAll(100000);
-    assertTrue(appendFuture3.isDone());
-
-    writer.close();
-  }
-
-  @Test
   public void testDatasetTraceId() throws Exception {
     StreamWriter writer =
         getTestStreamWriterBuilder()

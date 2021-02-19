@@ -272,35 +272,7 @@ public class StreamWriter implements AutoCloseable {
       messagesBatchLock.unlock();
       appendAndRefreshAppendLock.unlock();
     }
-
     return outstandingAppend.appendResult;
-  }
-
-  /**
-   * This is the general flush method for asynchronise append operation. When you have outstanding
-   * append requests, calling flush will make sure all outstanding append requests completed and
-   * successful. Otherwise there will be an exception thrown.
-   *
-   * @throws Exception
-   */
-  public void flushAll(long timeoutMillis) throws Exception {
-    appendAndRefreshAppendLock.lock();
-    try {
-      writeAllOutstanding();
-      synchronized (messagesWaiter) {
-        messagesWaiter.waitComplete(timeoutMillis);
-      }
-    } finally {
-      appendAndRefreshAppendLock.unlock();
-    }
-    exceptionLock.lock();
-    try {
-      if (streamException != null) {
-        throw new Exception(streamException);
-      }
-    } finally {
-      exceptionLock.unlock();
-    }
   }
 
   /**
