@@ -22,6 +22,13 @@
  * <p>Service Description: API v1beta1 service for Cloud AI Platform Notebooks.
  *
  * <p>Sample for NotebookServiceClient:
+ *
+ * <pre>{@code
+ * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+ *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+ *   Instance response = notebookServiceClient.getInstance(request);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.notebooks.v1beta1;

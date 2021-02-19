@@ -46,6 +46,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+ *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+ *   Instance response = notebookServiceClient.getInstance(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the NotebookServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
@@ -164,6 +171,22 @@ public class NotebookServiceClient implements BackgroundResource {
   /**
    * Lists instances in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Instance element : notebookServiceClient.listInstances(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -176,6 +199,23 @@ public class NotebookServiceClient implements BackgroundResource {
    * Lists instances in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListInstancesRequest request =
+   *       ListInstancesRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Instance> future =
+   *       notebookServiceClient.listInstancesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Instance element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
@@ -187,6 +227,24 @@ public class NotebookServiceClient implements BackgroundResource {
    * Lists instances in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   while (true) {
+   *     ListInstancesResponse response =
+   *         notebookServiceClient.listInstancesCallable().call(request);
+   *     for (Instance element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return stub.listInstancesCallable();
@@ -195,6 +253,15 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   Instance response = notebookServiceClient.getInstance(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -208,6 +275,15 @@ public class NotebookServiceClient implements BackgroundResource {
    * Gets details of a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   GetInstanceRequest request = GetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Instance> future = notebookServiceClient.getInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return stub.getInstanceCallable();
@@ -216,6 +292,20 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Instance in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateInstanceRequest request =
+   *       CreateInstanceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInstanceId("instanceId902024336")
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   Instance response = notebookServiceClient.createInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -230,6 +320,21 @@ public class NotebookServiceClient implements BackgroundResource {
    * Creates a new Instance in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateInstanceRequest request =
+   *       CreateInstanceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInstanceId("instanceId902024336")
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.createInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable() {
@@ -241,6 +346,21 @@ public class NotebookServiceClient implements BackgroundResource {
    * Creates a new Instance in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateInstanceRequest request =
+   *       CreateInstanceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInstanceId("instanceId902024336")
+   *           .setInstance(Instance.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.createInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return stub.createInstanceCallable();
@@ -251,6 +371,19 @@ public class NotebookServiceClient implements BackgroundResource {
    * Registers an existing legacy notebook instance to the Notebooks API server. Legacy instances
    * are instances created with the legacy Compute Engine calls. They are not manageable by the
    * Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   RegisterInstanceRequest request =
+   *       RegisterInstanceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInstanceId("instanceId902024336")
+   *           .build();
+   *   Instance response = notebookServiceClient.registerInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -267,6 +400,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   RegisterInstanceRequest request =
+   *       RegisterInstanceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInstanceId("instanceId902024336")
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.registerInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<RegisterInstanceRequest, Instance, OperationMetadata>
       registerInstanceOperationCallable() {
@@ -280,6 +427,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Notebooks API out of the box. This call makes these instances manageable by the Notebooks API.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   RegisterInstanceRequest request =
+   *       RegisterInstanceRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setInstanceId("instanceId902024336")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.registerInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<RegisterInstanceRequest, Operation> registerInstanceCallable() {
     return stub.registerInstanceCallable();
@@ -288,6 +449,19 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the guest accelerators of a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceAcceleratorRequest request =
+   *       SetInstanceAcceleratorRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCoreCount(-1963855761)
+   *           .build();
+   *   Instance response = notebookServiceClient.setInstanceAcceleratorAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -302,6 +476,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Updates the guest accelerators of a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceAcceleratorRequest request =
+   *       SetInstanceAcceleratorRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCoreCount(-1963855761)
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.setInstanceAcceleratorOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<SetInstanceAcceleratorRequest, Instance, OperationMetadata>
       setInstanceAcceleratorOperationCallable() {
@@ -313,6 +501,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Updates the guest accelerators of a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceAcceleratorRequest request =
+   *       SetInstanceAcceleratorRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setCoreCount(-1963855761)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.setInstanceAcceleratorCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetInstanceAcceleratorRequest, Operation>
       setInstanceAcceleratorCallable() {
@@ -322,6 +524,19 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the machine type of a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceMachineTypeRequest request =
+   *       SetInstanceMachineTypeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setMachineType("machineType-218117087")
+   *           .build();
+   *   Instance response = notebookServiceClient.setInstanceMachineTypeAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -336,6 +551,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Updates the machine type of a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceMachineTypeRequest request =
+   *       SetInstanceMachineTypeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setMachineType("machineType-218117087")
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.setInstanceMachineTypeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<SetInstanceMachineTypeRequest, Instance, OperationMetadata>
       setInstanceMachineTypeOperationCallable() {
@@ -347,6 +576,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Updates the machine type of a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceMachineTypeRequest request =
+   *       SetInstanceMachineTypeRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setMachineType("machineType-218117087")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.setInstanceMachineTypeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetInstanceMachineTypeRequest, Operation>
       setInstanceMachineTypeCallable() {
@@ -356,6 +599,19 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the labels of an Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceLabelsRequest request =
+   *       SetInstanceLabelsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   Instance response = notebookServiceClient.setInstanceLabelsAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,6 +626,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Updates the labels of an Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceLabelsRequest request =
+   *       SetInstanceLabelsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.setInstanceLabelsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<SetInstanceLabelsRequest, Instance, OperationMetadata>
       setInstanceLabelsOperationCallable() {
@@ -381,6 +651,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Updates the labels of an Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   SetInstanceLabelsRequest request =
+   *       SetInstanceLabelsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .putAllLabels(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.setInstanceLabelsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<SetInstanceLabelsRequest, Operation> setInstanceLabelsCallable() {
     return stub.setInstanceLabelsCallable();
@@ -389,6 +673,16 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *   notebookServiceClient.deleteInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -403,6 +697,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Deletes a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       notebookServiceClient.deleteInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
@@ -414,6 +719,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Deletes a single Instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteInstanceRequest request =
+   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.deleteInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return stub.deleteInstanceCallable();
@@ -422,6 +738,16 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a notebook instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder().setName("name3373707").build();
+   *   Instance response = notebookServiceClient.startInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -436,6 +762,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Starts a notebook instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.startInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<StartInstanceRequest, Instance, OperationMetadata>
       startInstanceOperationCallable() {
@@ -447,6 +784,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Starts a notebook instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StartInstanceRequest request =
+   *       StartInstanceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.startInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StartInstanceRequest, Operation> startInstanceCallable() {
     return stub.startInstanceCallable();
@@ -455,6 +803,15 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Stops a notebook instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
+   *   Instance response = notebookServiceClient.stopInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -469,6 +826,16 @@ public class NotebookServiceClient implements BackgroundResource {
    * Stops a notebook instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.stopInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<StopInstanceRequest, Instance, OperationMetadata>
       stopInstanceOperationCallable() {
@@ -480,6 +847,16 @@ public class NotebookServiceClient implements BackgroundResource {
    * Stops a notebook instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   StopInstanceRequest request = StopInstanceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.stopInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StopInstanceRequest, Operation> stopInstanceCallable() {
     return stub.stopInstanceCallable();
@@ -488,6 +865,16 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Resets a notebook instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ResetInstanceRequest request =
+   *       ResetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   Instance response = notebookServiceClient.resetInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -502,6 +889,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Resets a notebook instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ResetInstanceRequest request =
+   *       ResetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.resetInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ResetInstanceRequest, Instance, OperationMetadata>
       resetInstanceOperationCallable() {
@@ -513,6 +911,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Resets a notebook instance.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ResetInstanceRequest request =
+   *       ResetInstanceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.resetInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResetInstanceRequest, Operation> resetInstanceCallable() {
     return stub.resetInstanceCallable();
@@ -523,6 +932,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * Allows notebook instances to report their latest instance information to the Notebooks API
    * server. The server will merge the reported information to the instance metadata store. Do not
    * use this method directly.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ReportInstanceInfoRequest request =
+   *       ReportInstanceInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVmId("vmId3622450")
+   *           .putAllMetadata(new HashMap<String, String>())
+   *           .build();
+   *   Instance response = notebookServiceClient.reportInstanceInfoAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -539,6 +962,21 @@ public class NotebookServiceClient implements BackgroundResource {
    * use this method directly.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ReportInstanceInfoRequest request =
+   *       ReportInstanceInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVmId("vmId3622450")
+   *           .putAllMetadata(new HashMap<String, String>())
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.reportInstanceInfoOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<ReportInstanceInfoRequest, Instance, OperationMetadata>
       reportInstanceInfoOperationCallable() {
@@ -552,6 +990,21 @@ public class NotebookServiceClient implements BackgroundResource {
    * use this method directly.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ReportInstanceInfoRequest request =
+   *       ReportInstanceInfoRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVmId("vmId3622450")
+   *           .putAllMetadata(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.reportInstanceInfoCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ReportInstanceInfoRequest, Operation> reportInstanceInfoCallable() {
     return stub.reportInstanceInfoCallable();
@@ -560,6 +1013,18 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Check if a notebook instance is upgradable.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   IsInstanceUpgradeableRequest request =
+   *       IsInstanceUpgradeableRequest.newBuilder()
+   *           .setNotebookInstance("notebookInstance-544239728")
+   *           .build();
+   *   IsInstanceUpgradeableResponse response = notebookServiceClient.isInstanceUpgradeable(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -574,6 +1039,19 @@ public class NotebookServiceClient implements BackgroundResource {
    * Check if a notebook instance is upgradable.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   IsInstanceUpgradeableRequest request =
+   *       IsInstanceUpgradeableRequest.newBuilder()
+   *           .setNotebookInstance("notebookInstance-544239728")
+   *           .build();
+   *   ApiFuture<IsInstanceUpgradeableResponse> future =
+   *       notebookServiceClient.isInstanceUpgradeableCallable().futureCall(request);
+   *   // Do something.
+   *   IsInstanceUpgradeableResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<IsInstanceUpgradeableRequest, IsInstanceUpgradeableResponse>
       isInstanceUpgradeableCallable() {
@@ -583,6 +1061,16 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Upgrades a notebook instance to the latest version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpgradeInstanceRequest request =
+   *       UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+   *   Instance response = notebookServiceClient.upgradeInstanceAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -597,6 +1085,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Upgrades a notebook instance to the latest version.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpgradeInstanceRequest request =
+   *       UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.upgradeInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpgradeInstanceRequest, Instance, OperationMetadata>
       upgradeInstanceOperationCallable() {
@@ -608,6 +1107,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Upgrades a notebook instance to the latest version.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpgradeInstanceRequest request =
+   *       UpgradeInstanceRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.upgradeInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpgradeInstanceRequest, Operation> upgradeInstanceCallable() {
     return stub.upgradeInstanceCallable();
@@ -617,6 +1127,19 @@ public class NotebookServiceClient implements BackgroundResource {
   /**
    * Allows notebook instances to call this endpoint to upgrade themselves. Do not use this method
    * directly.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpgradeInstanceInternalRequest request =
+   *       UpgradeInstanceInternalRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVmId("vmId3622450")
+   *           .build();
+   *   Instance response = notebookServiceClient.upgradeInstanceInternalAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -632,6 +1155,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * directly.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpgradeInstanceInternalRequest request =
+   *       UpgradeInstanceInternalRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVmId("vmId3622450")
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       notebookServiceClient.upgradeInstanceInternalOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpgradeInstanceInternalRequest, Instance, OperationMetadata>
       upgradeInstanceInternalOperationCallable() {
@@ -644,6 +1181,20 @@ public class NotebookServiceClient implements BackgroundResource {
    * directly.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   UpgradeInstanceInternalRequest request =
+   *       UpgradeInstanceInternalRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setVmId("vmId3622450")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.upgradeInstanceInternalCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpgradeInstanceInternalRequest, Operation>
       upgradeInstanceInternalCallable() {
@@ -653,6 +1204,22 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Lists environments in a project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Environment element : notebookServiceClient.listEnvironments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -666,6 +1233,23 @@ public class NotebookServiceClient implements BackgroundResource {
    * Lists environments in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       notebookServiceClient.listEnvironmentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Environment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
@@ -677,6 +1261,24 @@ public class NotebookServiceClient implements BackgroundResource {
    * Lists environments in a project.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   while (true) {
+   *     ListEnvironmentsResponse response =
+   *         notebookServiceClient.listEnvironmentsCallable().call(request);
+   *     for (Environment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
@@ -686,6 +1288,16 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single Environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   GetEnvironmentRequest request =
+   *       GetEnvironmentRequest.newBuilder().setName("name3373707").build();
+   *   Environment response = notebookServiceClient.getEnvironment(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -699,6 +1311,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Gets details of a single Environment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   GetEnvironmentRequest request =
+   *       GetEnvironmentRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Environment> future =
+   *       notebookServiceClient.getEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
     return stub.getEnvironmentCallable();
@@ -707,6 +1330,20 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new Environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setEnvironmentId("environmentId-950205810")
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .build();
+   *   Environment response = notebookServiceClient.createEnvironmentAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -721,6 +1358,21 @@ public class NotebookServiceClient implements BackgroundResource {
    * Creates a new Environment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setEnvironmentId("environmentId-950205810")
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Environment, OperationMetadata> future =
+   *       notebookServiceClient.createEnvironmentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateEnvironmentRequest, Environment, OperationMetadata>
       createEnvironmentOperationCallable() {
@@ -732,6 +1384,21 @@ public class NotebookServiceClient implements BackgroundResource {
    * Creates a new Environment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setEnvironmentId("environmentId-950205810")
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.createEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return stub.createEnvironmentCallable();
@@ -740,6 +1407,16 @@ public class NotebookServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single Environment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
+   *   notebookServiceClient.deleteEnvironmentAsync(request).get();
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -754,6 +1431,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Deletes a single Environment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       notebookServiceClient.deleteEnvironmentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteEnvironmentRequest, Empty, OperationMetadata>
       deleteEnvironmentOperationCallable() {
@@ -765,6 +1453,17 @@ public class NotebookServiceClient implements BackgroundResource {
    * Deletes a single Environment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (NotebookServiceClient notebookServiceClient = NotebookServiceClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Operation> future =
+   *       notebookServiceClient.deleteEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteEnvironmentRequest, Operation> deleteEnvironmentCallable() {
     return stub.deleteEnvironmentCallable();
