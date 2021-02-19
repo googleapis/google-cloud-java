@@ -127,6 +127,7 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ResolveServiceRequest, ResolveServiceResponse> resolveServiceCallable() {
     return resolveServiceCallable;
   }

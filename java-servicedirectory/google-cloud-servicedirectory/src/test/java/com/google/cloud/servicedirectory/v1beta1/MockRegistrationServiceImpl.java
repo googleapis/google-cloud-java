@@ -75,7 +75,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateNamespace, expected %s or %s",
+                  response.getClass().getName(),
+                  Namespace.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -90,7 +96,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListNamespaces, expected %s or %s",
+                  response.getClass().getName(),
+                  ListNamespacesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -105,7 +117,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetNamespace, expected %s or %s",
+                  response.getClass().getName(),
+                  Namespace.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -120,7 +138,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateNamespace, expected %s or %s",
+                  response.getClass().getName(),
+                  Namespace.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -135,7 +159,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteNamespace, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -150,7 +180,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateService, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -165,7 +201,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListServices, expected %s or %s",
+                  response.getClass().getName(),
+                  ListServicesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -179,7 +221,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetService, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -194,7 +242,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateService, expected %s or %s",
+                  response.getClass().getName(),
+                  Service.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -208,7 +262,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteService, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -223,7 +283,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEndpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  Endpoint.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -238,7 +304,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEndpoints, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEndpointsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -252,7 +324,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEndpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  Endpoint.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -267,7 +345,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEndpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  Endpoint.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -282,7 +366,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEndpoint, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -296,7 +386,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -310,7 +406,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SetIamPolicy, expected %s or %s",
+                  response.getClass().getName(),
+                  Policy.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -326,7 +428,13 @@ public class MockRegistrationServiceImpl extends RegistrationServiceImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TestIamPermissions, expected %s or %s",
+                  response.getClass().getName(),
+                  TestIamPermissionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

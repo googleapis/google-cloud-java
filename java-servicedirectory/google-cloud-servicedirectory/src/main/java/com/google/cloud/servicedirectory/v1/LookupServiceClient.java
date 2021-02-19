@@ -32,6 +32,19 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (LookupServiceClient lookupServiceClient = LookupServiceClient.create()) {
+ *   ResolveServiceRequest request =
+ *       ResolveServiceRequest.newBuilder()
+ *           .setName(
+ *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
+ *           .setMaxEndpoints(2074789987)
+ *           .setEndpointFilter("endpointFilter-1834249875")
+ *           .build();
+ *   ResolveServiceResponse response = lookupServiceClient.resolveService(request);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the LookupServiceClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -136,6 +149,21 @@ public class LookupServiceClient implements BackgroundResource {
    * Returns a [service][google.cloud.servicedirectory.v1.Service] and its associated endpoints.
    * Resolving a service is not considered an active developer method.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LookupServiceClient lookupServiceClient = LookupServiceClient.create()) {
+   *   ResolveServiceRequest request =
+   *       ResolveServiceRequest.newBuilder()
+   *           .setName(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
+   *           .setMaxEndpoints(2074789987)
+   *           .setEndpointFilter("endpointFilter-1834249875")
+   *           .build();
+   *   ResolveServiceResponse response = lookupServiceClient.resolveService(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -149,6 +177,22 @@ public class LookupServiceClient implements BackgroundResource {
    * Resolving a service is not considered an active developer method.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (LookupServiceClient lookupServiceClient = LookupServiceClient.create()) {
+   *   ResolveServiceRequest request =
+   *       ResolveServiceRequest.newBuilder()
+   *           .setName(
+   *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
+   *           .setMaxEndpoints(2074789987)
+   *           .setEndpointFilter("endpointFilter-1834249875")
+   *           .build();
+   *   ApiFuture<ResolveServiceResponse> future =
+   *       lookupServiceClient.resolveServiceCallable().futureCall(request);
+   *   // Do something.
+   *   ResolveServiceResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ResolveServiceRequest, ResolveServiceResponse>
       resolveServiceCallable() {

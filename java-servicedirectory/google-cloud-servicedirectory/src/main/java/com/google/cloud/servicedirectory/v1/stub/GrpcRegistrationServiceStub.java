@@ -637,88 +637,109 @@ public class GrpcRegistrationServiceStub extends RegistrationServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateNamespaceRequest, Namespace> createNamespaceCallable() {
     return createNamespaceCallable;
   }
 
+  @Override
   public UnaryCallable<ListNamespacesRequest, ListNamespacesResponse> listNamespacesCallable() {
     return listNamespacesCallable;
   }
 
+  @Override
   public UnaryCallable<ListNamespacesRequest, ListNamespacesPagedResponse>
       listNamespacesPagedCallable() {
     return listNamespacesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetNamespaceRequest, Namespace> getNamespaceCallable() {
     return getNamespaceCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateNamespaceRequest, Namespace> updateNamespaceCallable() {
     return updateNamespaceCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteNamespaceRequest, Empty> deleteNamespaceCallable() {
     return deleteNamespaceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateServiceRequest, Service> createServiceCallable() {
     return createServiceCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable() {
     return listServicesCallable;
   }
 
+  @Override
   public UnaryCallable<ListServicesRequest, ListServicesPagedResponse> listServicesPagedCallable() {
     return listServicesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetServiceRequest, Service> getServiceCallable() {
     return getServiceCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateServiceRequest, Service> updateServiceCallable() {
     return updateServiceCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteServiceRequest, Empty> deleteServiceCallable() {
     return deleteServiceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEndpointRequest, Endpoint> createEndpointCallable() {
     return createEndpointCallable;
   }
 
+  @Override
   public UnaryCallable<ListEndpointsRequest, ListEndpointsResponse> listEndpointsCallable() {
     return listEndpointsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEndpointsRequest, ListEndpointsPagedResponse>
       listEndpointsPagedCallable() {
     return listEndpointsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetEndpointRequest, Endpoint> getEndpointCallable() {
     return getEndpointCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEndpointRequest, Endpoint> updateEndpointCallable() {
     return updateEndpointCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEndpointRequest, Empty> deleteEndpointCallable() {
     return deleteEndpointCallable;
   }
 
+  @Override
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
+  @Override
   public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;

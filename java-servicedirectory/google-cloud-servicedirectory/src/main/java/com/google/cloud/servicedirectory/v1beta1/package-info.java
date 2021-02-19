@@ -23,6 +23,19 @@
  *
  * <p>Sample for LookupServiceClient:
  *
+ * <pre>{@code
+ * try (LookupServiceClient lookupServiceClient = LookupServiceClient.create()) {
+ *   ResolveServiceRequest request =
+ *       ResolveServiceRequest.newBuilder()
+ *           .setName(
+ *               ServiceName.of("[PROJECT]", "[LOCATION]", "[NAMESPACE]", "[SERVICE]").toString())
+ *           .setMaxEndpoints(2074789987)
+ *           .setEndpointFilter("endpointFilter-1834249875")
+ *           .build();
+ *   ResolveServiceResponse response = lookupServiceClient.resolveService(request);
+ * }
+ * }</pre>
+ *
  * <p>======================= RegistrationServiceClient =======================
  *
  * <p>Service Description: Service Directory API for registering services. It defines the following
@@ -39,6 +52,16 @@
  * `projects/&#42;/locations/&#42;/namespaces/&#42;/services/&#42;/endpoints/&#42;`.
  *
  * <p>Sample for RegistrationServiceClient:
+ *
+ * <pre>{@code
+ * try (RegistrationServiceClient registrationServiceClient = RegistrationServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   Namespace namespace = Namespace.newBuilder().build();
+ *   String namespaceId = "namespaceId790852566";
+ *   Namespace response =
+ *       registrationServiceClient.createNamespace(parent, namespace, namespaceId);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.servicedirectory.v1beta1;
