@@ -157,7 +157,7 @@ public class SecurityMarkSnippets {
    *
    * @param findingName The finding resource path to add the security mark for.
    */
-  // [START securitycenter_add_security_marks]
+  // [START securitycenter_add_finding_security_marks]
   // [START add_to_finding]
   static SecurityMarks addToFinding(FindingName findingName) {
     // FindingName findingName = FindingName.of(/*organization=*/"123234324",
@@ -192,7 +192,7 @@ public class SecurityMarkSnippets {
     }
   }
   // [END add_to_finding]
-  // [END securitycenter_add_security_marks]
+  // [END securitycenter_add_finding_security_marks]
 
   /**
    * Lists all assets with a filter on security marks.
