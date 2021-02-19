@@ -35,6 +35,7 @@ import com.google.api.gax.rpc.ClientStream;
 import com.google.api.gax.rpc.ResponseObserver;
 import com.google.api.gax.rpc.StreamController;
 import com.google.api.gax.rpc.TransportChannelProvider;
+import com.google.api.gax.rpc.UnimplementedException;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Preconditions;
 import com.google.protobuf.Int64Value;
@@ -281,27 +282,7 @@ public class StreamWriter implements AutoCloseable {
    * @throws InterruptedException
    */
   public void refreshAppend() throws InterruptedException {
-    appendAndRefreshAppendLock.lock();
-    if (shutdown.get()) {
-      LOG.warning("Cannot refresh on a already shutdown writer.");
-      appendAndRefreshAppendLock.unlock();
-      return;
-    }
-    // There could be a moment, stub is not yet initialized.
-    if (clientStream != null) {
-      LOG.info("Closing the stream " + streamName);
-      clientStream.closeSend();
-    }
-    messagesBatch.resetAttachSchema();
-    bidiStreamingCallable = stub.appendRowsCallable();
-    clientStream = bidiStreamingCallable.splitCall(responseObserver);
-    while (!clientStream.isSendReady()) {
-      Thread.sleep(10);
-    }
-    Thread.sleep(this.retrySettings.getInitialRetryDelay().toMillis());
-    // Can only unlock here since need to sleep the full 7 seconds before stream can allow appends.
-    appendAndRefreshAppendLock.unlock();
-    LOG.info("Write Stream " + streamName + " connection established");
+    throw new UnimplementedException(null, GrpcStatusCode.of(Status.Code.UNIMPLEMENTED), false);
   }
 
   private void setupAlarm() {
