@@ -341,59 +341,72 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable() {
     return listInstancesCallable;
   }
 
+  @Override
   public UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable() {
     return listInstancesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable() {
     return getInstanceCallable;
   }
 
+  @Override
   public UnaryCallable<CreateInstanceRequest, Operation> createInstanceCallable() {
     return createInstanceCallable;
   }
 
+  @Override
   public OperationCallable<CreateInstanceRequest, Instance, OperationMetadata>
       createInstanceOperationCallable() {
     return createInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateInstanceRequest, Operation> updateInstanceCallable() {
     return updateInstanceCallable;
   }
 
+  @Override
   public OperationCallable<UpdateInstanceRequest, Instance, OperationMetadata>
       updateInstanceOperationCallable() {
     return updateInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateParametersRequest, Operation> updateParametersCallable() {
     return updateParametersCallable;
   }
 
+  @Override
   public OperationCallable<UpdateParametersRequest, Instance, OperationMetadata>
       updateParametersOperationCallable() {
     return updateParametersOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteInstanceRequest, Operation> deleteInstanceCallable() {
     return deleteInstanceCallable;
   }
 
+  @Override
   public OperationCallable<DeleteInstanceRequest, Empty, OperationMetadata>
       deleteInstanceOperationCallable() {
     return deleteInstanceOperationCallable;
   }
 
+  @Override
   public UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable() {
     return applyParametersCallable;
   }
 
+  @Override
   public OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationCallable() {
     return applyParametersOperationCallable;
