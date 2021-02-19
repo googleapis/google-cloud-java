@@ -48,6 +48,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+ *     GameServerDeploymentsServiceClient.create()) {
+ *   GameServerDeploymentName name =
+ *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
+ *   GameServerDeployment response =
+ *       gameServerDeploymentsServiceClient.getGameServerDeployment(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the GameServerDeploymentsServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -170,6 +180,19 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Lists game server deployments in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (GameServerDeployment element :
+   *       gameServerDeploymentsServiceClient.listGameServerDeployments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -187,6 +210,20 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Lists game server deployments in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   String parent =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   for (GameServerDeployment element :
+   *       gameServerDeploymentsServiceClient.listGameServerDeployments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -201,6 +238,27 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Lists game server deployments in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   ListGameServerDeploymentsRequest request =
+   *       ListGameServerDeploymentsRequest.newBuilder()
+   *           .setParent(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (GameServerDeployment element :
+   *       gameServerDeploymentsServiceClient.listGameServerDeployments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -214,6 +272,29 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Lists game server deployments in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   ListGameServerDeploymentsRequest request =
+   *       ListGameServerDeploymentsRequest.newBuilder()
+   *           .setParent(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<GameServerDeployment> future =
+   *       gameServerDeploymentsServiceClient
+   *           .listGameServerDeploymentsPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (GameServerDeployment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           ListGameServerDeploymentsRequest, ListGameServerDeploymentsPagedResponse>
@@ -226,6 +307,25 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Lists game server deployments in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   while (true) {
+   *     ListGameServerDeploymentsResponse response =
+   *         gameServerDeploymentsServiceClient.listGameServerDeploymentsCallable().call(request);
+   *     for (GameServerDeployment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
       listGameServerDeploymentsCallable() {
@@ -235,6 +335,18 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details of a single game server deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GameServerDeploymentName name =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient.getGameServerDeployment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
@@ -252,6 +364,18 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Gets details of a single game server deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   String name =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient.getGameServerDeployment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -266,6 +390,21 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Gets details of a single game server deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GetGameServerDeploymentRequest request =
+   *       GetGameServerDeploymentRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient.getGameServerDeployment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -279,6 +418,21 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Gets details of a single game server deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GetGameServerDeploymentRequest request =
+   *       GetGameServerDeploymentRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<GameServerDeployment> future =
+   *       gameServerDeploymentsServiceClient.getGameServerDeploymentCallable().futureCall(request);
+   *   // Do something.
+   *   GameServerDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGameServerDeploymentRequest, GameServerDeployment>
       getGameServerDeploymentCallable() {
@@ -288,6 +442,20 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a new game server deployment in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   GameServerDeployment gameServerDeployment = GameServerDeployment.newBuilder().build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient
+   *           .createGameServerDeploymentAsync(parent, gameServerDeployment)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
@@ -309,6 +477,21 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Creates a new game server deployment in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   String parent =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   GameServerDeployment gameServerDeployment = GameServerDeployment.newBuilder().build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient
+   *           .createGameServerDeploymentAsync(parent, gameServerDeployment)
+   *           .get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The parent resource name. Uses the form:
    *     `projects/{project}/locations/{location}`.
    * @param gameServerDeployment Required. The game server delpoyment resource to be created.
@@ -328,6 +511,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Creates a new game server deployment in a given project and location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   CreateGameServerDeploymentRequest request =
+   *       CreateGameServerDeploymentRequest.newBuilder()
+   *           .setParent(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setDeploymentId("deploymentId-136894784")
+   *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
+   *           .build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient.createGameServerDeploymentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -341,6 +541,25 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Creates a new game server deployment in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   CreateGameServerDeploymentRequest request =
+   *       CreateGameServerDeploymentRequest.newBuilder()
+   *           .setParent(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setDeploymentId("deploymentId-136894784")
+   *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
+   *           .build();
+   *   OperationFuture<GameServerDeployment, OperationMetadata> future =
+   *       gameServerDeploymentsServiceClient
+   *           .createGameServerDeploymentOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   GameServerDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
@@ -353,6 +572,25 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Creates a new game server deployment in a given project and location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   CreateGameServerDeploymentRequest request =
+   *       CreateGameServerDeploymentRequest.newBuilder()
+   *           .setParent(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .setDeploymentId("deploymentId-136894784")
+   *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gameServerDeploymentsServiceClient
+   *           .createGameServerDeploymentCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateGameServerDeploymentRequest, Operation>
       createGameServerDeploymentCallable() {
@@ -362,6 +600,17 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes a single game server deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GameServerDeploymentName name =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
+   *   gameServerDeploymentsServiceClient.deleteGameServerDeploymentAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the game server delpoyment to delete. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
@@ -380,6 +629,17 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Deletes a single game server deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   String name =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   gameServerDeploymentsServiceClient.deleteGameServerDeploymentAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the game server delpoyment to delete. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -395,6 +655,20 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Deletes a single game server deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   DeleteGameServerDeploymentRequest request =
+   *       DeleteGameServerDeploymentRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   gameServerDeploymentsServiceClient.deleteGameServerDeploymentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -408,6 +682,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Deletes a single game server deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   DeleteGameServerDeploymentRequest request =
+   *       DeleteGameServerDeploymentRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       gameServerDeploymentsServiceClient
+   *           .deleteGameServerDeploymentOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
       deleteGameServerDeploymentOperationCallable() {
@@ -419,6 +710,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Deletes a single game server deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   DeleteGameServerDeploymentRequest request =
+   *       DeleteGameServerDeploymentRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gameServerDeploymentsServiceClient
+   *           .deleteGameServerDeploymentCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteGameServerDeploymentRequest, Operation>
       deleteGameServerDeploymentCallable() {
@@ -428,6 +736,20 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Patches a game server deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GameServerDeployment gameServerDeployment = GameServerDeployment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient
+   *           .updateGameServerDeploymentAsync(gameServerDeployment, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param gameServerDeployment Required. The game server delpoyment to be updated. Only fields
    *     specified in update_mask are updated.
@@ -452,6 +774,21 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Patches a game server deployment.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRequest request =
+   *       UpdateGameServerDeploymentRequest.newBuilder()
+   *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient.updateGameServerDeploymentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -465,6 +802,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Patches a game server deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRequest request =
+   *       UpdateGameServerDeploymentRequest.newBuilder()
+   *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<GameServerDeployment, OperationMetadata> future =
+   *       gameServerDeploymentsServiceClient
+   *           .updateGameServerDeploymentOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   GameServerDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
@@ -477,6 +831,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Patches a game server deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRequest request =
+   *       UpdateGameServerDeploymentRequest.newBuilder()
+   *           .setGameServerDeployment(GameServerDeployment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gameServerDeploymentsServiceClient
+   *           .updateGameServerDeploymentCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateGameServerDeploymentRequest, Operation>
       updateGameServerDeploymentCallable() {
@@ -486,6 +857,18 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Gets details a single game server deployment rollout.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GameServerDeploymentName name =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
+   *   GameServerDeploymentRollout response =
+   *       gameServerDeploymentsServiceClient.getGameServerDeploymentRollout(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
@@ -504,6 +887,18 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Gets details a single game server deployment rollout.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   String name =
+   *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString();
+   *   GameServerDeploymentRollout response =
+   *       gameServerDeploymentsServiceClient.getGameServerDeploymentRollout(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the game server delpoyment to retrieve. Uses the form:
    *     <p>`projects/{project}/locations/{location}/gameServerDeployments/{deployment}/rollout`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -518,6 +913,21 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   /**
    * Gets details a single game server deployment rollout.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GetGameServerDeploymentRolloutRequest request =
+   *       GetGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   GameServerDeploymentRollout response =
+   *       gameServerDeploymentsServiceClient.getGameServerDeploymentRollout(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -531,6 +941,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Gets details a single game server deployment rollout.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GetGameServerDeploymentRolloutRequest request =
+   *       GetGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setName(
+   *               GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+   *           .build();
+   *   ApiFuture<GameServerDeploymentRollout> future =
+   *       gameServerDeploymentsServiceClient
+   *           .getGameServerDeploymentRolloutCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   GameServerDeploymentRollout response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
       getGameServerDeploymentRolloutCallable() {
@@ -544,6 +971,20 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * changed but all existing realms use the override, that is valid. Similarly, if a non existing
    * realm is explicitly called out in game_server_config_overrides field, that will also not result
    * in an error.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   GameServerDeploymentRollout rollout = GameServerDeploymentRollout.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient
+   *           .updateGameServerDeploymentRolloutAsync(rollout, updateMask)
+   *           .get();
+   * }
+   * }</pre>
    *
    * @param rollout Required. The game server delpoyment rollout to be updated. Only fields
    *     specified in update_mask are updated.
@@ -572,6 +1013,21 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * realm is explicitly called out in game_server_config_overrides field, that will also not result
    * in an error.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRolloutRequest request =
+   *       UpdateGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setRollout(GameServerDeploymentRollout.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   GameServerDeployment response =
+   *       gameServerDeploymentsServiceClient.updateGameServerDeploymentRolloutAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -589,6 +1045,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * in an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRolloutRequest request =
+   *       UpdateGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setRollout(GameServerDeploymentRollout.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<GameServerDeployment, OperationMetadata> future =
+   *       gameServerDeploymentsServiceClient
+   *           .updateGameServerDeploymentRolloutOperationCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   GameServerDeployment response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<
           UpdateGameServerDeploymentRolloutRequest, GameServerDeployment, OperationMetadata>
@@ -605,6 +1078,23 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * in an error.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   UpdateGameServerDeploymentRolloutRequest request =
+   *       UpdateGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setRollout(GameServerDeploymentRollout.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gameServerDeploymentsServiceClient
+   *           .updateGameServerDeploymentRolloutCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
       updateGameServerDeploymentRolloutCallable() {
@@ -614,6 +1104,22 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Previews the game server deployment rollout. This API does not mutate the rollout resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   PreviewGameServerDeploymentRolloutRequest request =
+   *       PreviewGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setRollout(GameServerDeploymentRollout.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setPreviewTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   PreviewGameServerDeploymentRolloutResponse response =
+   *       gameServerDeploymentsServiceClient.previewGameServerDeploymentRollout(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -628,6 +1134,24 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Previews the game server deployment rollout. This API does not mutate the rollout resource.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   PreviewGameServerDeploymentRolloutRequest request =
+   *       PreviewGameServerDeploymentRolloutRequest.newBuilder()
+   *           .setRollout(GameServerDeploymentRollout.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setPreviewTime(Timestamp.newBuilder().build())
+   *           .build();
+   *   ApiFuture<PreviewGameServerDeploymentRolloutResponse> future =
+   *       gameServerDeploymentsServiceClient
+   *           .previewGameServerDeploymentRolloutCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   PreviewGameServerDeploymentRolloutResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<
           PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
@@ -640,6 +1164,18 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * Retrieves information about the current state of the game server deployment. Gathers all the
    * Agones fleets and Agones autoscalers, including fleets running an older version of the game
    * server deployment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   FetchDeploymentStateRequest request =
+   *       FetchDeploymentStateRequest.newBuilder().setName("name3373707").build();
+   *   FetchDeploymentStateResponse response =
+   *       gameServerDeploymentsServiceClient.fetchDeploymentState(request);
+   * }
+   * }</pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -656,6 +1192,18 @@ public class GameServerDeploymentsServiceClient implements BackgroundResource {
    * server deployment.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+   *     GameServerDeploymentsServiceClient.create()) {
+   *   FetchDeploymentStateRequest request =
+   *       FetchDeploymentStateRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<FetchDeploymentStateResponse> future =
+   *       gameServerDeploymentsServiceClient.fetchDeploymentStateCallable().futureCall(request);
+   *   // Do something.
+   *   FetchDeploymentStateResponse response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
       fetchDeploymentStateCallable() {

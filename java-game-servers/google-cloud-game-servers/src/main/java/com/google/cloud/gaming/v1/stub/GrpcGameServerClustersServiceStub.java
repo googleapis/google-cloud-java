@@ -439,63 +439,75 @@ public class GrpcGameServerClustersServiceStub extends GameServerClustersService
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersResponse>
       listGameServerClustersCallable() {
     return listGameServerClustersCallable;
   }
 
+  @Override
   public UnaryCallable<ListGameServerClustersRequest, ListGameServerClustersPagedResponse>
       listGameServerClustersPagedCallable() {
     return listGameServerClustersPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetGameServerClusterRequest, GameServerCluster>
       getGameServerClusterCallable() {
     return getGameServerClusterCallable;
   }
 
+  @Override
   public UnaryCallable<CreateGameServerClusterRequest, Operation>
       createGameServerClusterCallable() {
     return createGameServerClusterCallable;
   }
 
+  @Override
   public OperationCallable<CreateGameServerClusterRequest, GameServerCluster, OperationMetadata>
       createGameServerClusterOperationCallable() {
     return createGameServerClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<
           PreviewCreateGameServerClusterRequest, PreviewCreateGameServerClusterResponse>
       previewCreateGameServerClusterCallable() {
     return previewCreateGameServerClusterCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteGameServerClusterRequest, Operation>
       deleteGameServerClusterCallable() {
     return deleteGameServerClusterCallable;
   }
 
+  @Override
   public OperationCallable<DeleteGameServerClusterRequest, Empty, OperationMetadata>
       deleteGameServerClusterOperationCallable() {
     return deleteGameServerClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<
           PreviewDeleteGameServerClusterRequest, PreviewDeleteGameServerClusterResponse>
       previewDeleteGameServerClusterCallable() {
     return previewDeleteGameServerClusterCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateGameServerClusterRequest, Operation>
       updateGameServerClusterCallable() {
     return updateGameServerClusterCallable;
   }
 
+  @Override
   public OperationCallable<UpdateGameServerClusterRequest, GameServerCluster, OperationMetadata>
       updateGameServerClusterOperationCallable() {
     return updateGameServerClusterOperationCallable;
   }
 
+  @Override
   public UnaryCallable<
           PreviewUpdateGameServerClusterRequest, PreviewUpdateGameServerClusterResponse>
       previewUpdateGameServerClusterCallable() {

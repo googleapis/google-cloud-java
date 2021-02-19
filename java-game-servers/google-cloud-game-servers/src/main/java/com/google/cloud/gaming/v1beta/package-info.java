@@ -24,11 +24,29 @@
  *
  * <p>Sample for GameServerClustersServiceClient:
  *
+ * <pre>{@code
+ * try (GameServerClustersServiceClient gameServerClustersServiceClient =
+ *     GameServerClustersServiceClient.create()) {
+ *   GameServerClusterName name =
+ *       GameServerClusterName.of("[PROJECT]", "[LOCATION]", "[REALM]", "[CLUSTER]");
+ *   GameServerCluster response = gameServerClustersServiceClient.getGameServerCluster(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= GameServerConfigsServiceClient =======================
  *
  * <p>Service Description: The game server config configures the game servers in an Agones fleet.
  *
  * <p>Sample for GameServerConfigsServiceClient:
+ *
+ * <pre>{@code
+ * try (GameServerConfigsServiceClient gameServerConfigsServiceClient =
+ *     GameServerConfigsServiceClient.create()) {
+ *   GameServerConfigName name =
+ *       GameServerConfigName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]", "[CONFIG]");
+ *   GameServerConfig response = gameServerConfigsServiceClient.getGameServerConfig(name);
+ * }
+ * }</pre>
  *
  * <p>======================= GameServerDeploymentsServiceClient =======================
  *
@@ -37,12 +55,29 @@
  *
  * <p>Sample for GameServerDeploymentsServiceClient:
  *
+ * <pre>{@code
+ * try (GameServerDeploymentsServiceClient gameServerDeploymentsServiceClient =
+ *     GameServerDeploymentsServiceClient.create()) {
+ *   GameServerDeploymentName name =
+ *       GameServerDeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]");
+ *   GameServerDeployment response =
+ *       gameServerDeploymentsServiceClient.getGameServerDeployment(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= RealmsServiceClient =======================
  *
  * <p>Service Description: A realm is a grouping of game server clusters that are considered
  * interchangeable.
  *
  * <p>Sample for RealmsServiceClient:
+ *
+ * <pre>{@code
+ * try (RealmsServiceClient realmsServiceClient = RealmsServiceClient.create()) {
+ *   RealmName name = RealmName.of("[PROJECT]", "[LOCATION]", "[REALM]");
+ *   Realm response = realmsServiceClient.getRealm(name);
+ * }
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 package com.google.cloud.gaming.v1beta;

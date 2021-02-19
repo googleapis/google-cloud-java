@@ -294,45 +294,55 @@ public class GrpcRealmsServiceStub extends RealmsServiceStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListRealmsRequest, ListRealmsResponse> listRealmsCallable() {
     return listRealmsCallable;
   }
 
+  @Override
   public UnaryCallable<ListRealmsRequest, ListRealmsPagedResponse> listRealmsPagedCallable() {
     return listRealmsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetRealmRequest, Realm> getRealmCallable() {
     return getRealmCallable;
   }
 
+  @Override
   public UnaryCallable<CreateRealmRequest, Operation> createRealmCallable() {
     return createRealmCallable;
   }
 
+  @Override
   public OperationCallable<CreateRealmRequest, Realm, OperationMetadata>
       createRealmOperationCallable() {
     return createRealmOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteRealmRequest, Operation> deleteRealmCallable() {
     return deleteRealmCallable;
   }
 
+  @Override
   public OperationCallable<DeleteRealmRequest, Empty, OperationMetadata>
       deleteRealmOperationCallable() {
     return deleteRealmOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateRealmRequest, Operation> updateRealmCallable() {
     return updateRealmCallable;
   }
 
+  @Override
   public OperationCallable<UpdateRealmRequest, Realm, OperationMetadata>
       updateRealmOperationCallable() {
     return updateRealmOperationCallable;
   }
 
+  @Override
   public UnaryCallable<PreviewRealmUpdateRequest, PreviewRealmUpdateResponse>
       previewRealmUpdateCallable() {
     return previewRealmUpdateCallable;

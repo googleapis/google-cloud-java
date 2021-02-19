@@ -480,75 +480,89 @@ public class GrpcGameServerDeploymentsServiceStub extends GameServerDeploymentsS
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsResponse>
       listGameServerDeploymentsCallable() {
     return listGameServerDeploymentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListGameServerDeploymentsRequest, ListGameServerDeploymentsPagedResponse>
       listGameServerDeploymentsPagedCallable() {
     return listGameServerDeploymentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetGameServerDeploymentRequest, GameServerDeployment>
       getGameServerDeploymentCallable() {
     return getGameServerDeploymentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateGameServerDeploymentRequest, Operation>
       createGameServerDeploymentCallable() {
     return createGameServerDeploymentCallable;
   }
 
+  @Override
   public OperationCallable<
           CreateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
       createGameServerDeploymentOperationCallable() {
     return createGameServerDeploymentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteGameServerDeploymentRequest, Operation>
       deleteGameServerDeploymentCallable() {
     return deleteGameServerDeploymentCallable;
   }
 
+  @Override
   public OperationCallable<DeleteGameServerDeploymentRequest, Empty, OperationMetadata>
       deleteGameServerDeploymentOperationCallable() {
     return deleteGameServerDeploymentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateGameServerDeploymentRequest, Operation>
       updateGameServerDeploymentCallable() {
     return updateGameServerDeploymentCallable;
   }
 
+  @Override
   public OperationCallable<
           UpdateGameServerDeploymentRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentOperationCallable() {
     return updateGameServerDeploymentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<GetGameServerDeploymentRolloutRequest, GameServerDeploymentRollout>
       getGameServerDeploymentRolloutCallable() {
     return getGameServerDeploymentRolloutCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateGameServerDeploymentRolloutRequest, Operation>
       updateGameServerDeploymentRolloutCallable() {
     return updateGameServerDeploymentRolloutCallable;
   }
 
+  @Override
   public OperationCallable<
           UpdateGameServerDeploymentRolloutRequest, GameServerDeployment, OperationMetadata>
       updateGameServerDeploymentRolloutOperationCallable() {
     return updateGameServerDeploymentRolloutOperationCallable;
   }
 
+  @Override
   public UnaryCallable<
           PreviewGameServerDeploymentRolloutRequest, PreviewGameServerDeploymentRolloutResponse>
       previewGameServerDeploymentRolloutCallable() {
     return previewGameServerDeploymentRolloutCallable;
   }
 
+  @Override
   public UnaryCallable<FetchDeploymentStateRequest, FetchDeploymentStateResponse>
       fetchDeploymentStateCallable() {
     return fetchDeploymentStateCallable;

@@ -262,33 +262,40 @@ public class GrpcGameServerConfigsServiceStub extends GameServerConfigsServiceSt
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsResponse>
       listGameServerConfigsCallable() {
     return listGameServerConfigsCallable;
   }
 
+  @Override
   public UnaryCallable<ListGameServerConfigsRequest, ListGameServerConfigsPagedResponse>
       listGameServerConfigsPagedCallable() {
     return listGameServerConfigsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetGameServerConfigRequest, GameServerConfig> getGameServerConfigCallable() {
     return getGameServerConfigCallable;
   }
 
+  @Override
   public UnaryCallable<CreateGameServerConfigRequest, Operation> createGameServerConfigCallable() {
     return createGameServerConfigCallable;
   }
 
+  @Override
   public OperationCallable<CreateGameServerConfigRequest, GameServerConfig, OperationMetadata>
       createGameServerConfigOperationCallable() {
     return createGameServerConfigOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteGameServerConfigRequest, Operation> deleteGameServerConfigCallable() {
     return deleteGameServerConfigCallable;
   }
 
+  @Override
   public OperationCallable<DeleteGameServerConfigRequest, Empty, OperationMetadata>
       deleteGameServerConfigOperationCallable() {
     return deleteGameServerConfigOperationCallable;
