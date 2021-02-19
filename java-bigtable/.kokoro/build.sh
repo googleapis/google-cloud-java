@@ -60,6 +60,7 @@ javadoc)
     ;;
 integration)
     mvn -B ${INTEGRATION_TEST_ARGS} \
+      -ntp \
       -Penable-integration-tests \
       -DtrimStackTrace=false \
       -Dclirr.skip=true \
@@ -81,6 +82,7 @@ samples)
         pushd ${SAMPLES_DIR}
         mvn -B \
           -Penable-samples \
+          -ntp \
           -DtrimStackTrace=false \
           -Dclirr.skip=true \
           -Denforcer.skip=true \
