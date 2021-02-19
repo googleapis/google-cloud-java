@@ -86,6 +86,7 @@ public class DocumentProcessorServiceClientTest {
         ProcessResponse.newBuilder()
             .setDocument(Document.newBuilder().build())
             .setHumanReviewOperation("humanReviewOperation1807415298")
+            .setHumanReviewStatus(HumanReviewStatus.newBuilder().build())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 
@@ -125,6 +126,7 @@ public class DocumentProcessorServiceClientTest {
         ProcessResponse.newBuilder()
             .setDocument(Document.newBuilder().build())
             .setHumanReviewOperation("humanReviewOperation1807415298")
+            .setHumanReviewStatus(HumanReviewStatus.newBuilder().build())
             .build();
     mockDocumentProcessorService.addResponse(expectedResponse);
 

@@ -27,6 +27,76 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   *
+   * @return Whether the inlineDocument field is set.
+   */
+  boolean hasInlineDocument();
+  /**
+   *
+   *
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   *
+   * @return The inlineDocument.
+   */
+  com.google.cloud.documentai.v1beta3.Document getInlineDocument();
+  /**
+   *
+   *
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   */
+  com.google.cloud.documentai.v1beta3.DocumentOrBuilder getInlineDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A raw document content (bytes).
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+   *
+   * @return Whether the rawDocument field is set.
+   */
+  boolean hasRawDocument();
+  /**
+   *
+   *
+   * <pre>
+   * A raw document content (bytes).
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+   *
+   * @return The rawDocument.
+   */
+  com.google.cloud.documentai.v1beta3.RawDocument getRawDocument();
+  /**
+   *
+   *
+   * <pre>
+   * A raw document content (bytes).
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+   */
+  com.google.cloud.documentai.v1beta3.RawDocumentOrBuilder getRawDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The processor resource name.
    * </pre>
    *
@@ -59,10 +129,11 @@ public interface ProcessRequestOrBuilder
    * The document payload, the [content] and [mime_type] fields must be set.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @return Whether the document field is set.
    */
+  @java.lang.Deprecated
   boolean hasDocument();
   /**
    *
@@ -71,10 +142,11 @@ public interface ProcessRequestOrBuilder
    * The document payload, the [content] and [mime_type] fields must be set.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @return The document.
    */
+  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.Document getDocument();
   /**
    *
@@ -83,8 +155,9 @@ public interface ProcessRequestOrBuilder
    * The document payload, the [content] and [mime_type] fields must be set.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder();
 
   /**
@@ -100,4 +173,6 @@ public interface ProcessRequestOrBuilder
    * @return The skipHumanReview.
    */
   boolean getSkipHumanReview();
+
+  public com.google.cloud.documentai.v1beta3.ProcessRequest.SourceCase getSourceCase();
 }

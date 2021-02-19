@@ -526,10 +526,11 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * returned by ReviewDocument method.
      * </pre>
      *
-     * <code>string human_review_operation = 4;</code>
+     * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
      * @return The humanReviewOperation.
      */
+    @java.lang.Deprecated
     java.lang.String getHumanReviewOperation();
     /**
      *
@@ -541,11 +542,47 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * returned by ReviewDocument method.
      * </pre>
      *
-     * <code>string human_review_operation = 4;</code>
+     * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
      * @return The bytes for humanReviewOperation.
      */
+    @java.lang.Deprecated
     com.google.protobuf.ByteString getHumanReviewOperationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of human review on the processed document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+     *
+     * @return Whether the humanReviewStatus field is set.
+     */
+    boolean hasHumanReviewStatus();
+    /**
+     *
+     *
+     * <pre>
+     * The status of human review on the processed document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+     *
+     * @return The humanReviewStatus.
+     */
+    com.google.cloud.documentai.v1beta3.HumanReviewStatus getHumanReviewStatus();
+    /**
+     *
+     *
+     * <pre>
+     * The status of human review on the processed document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+     */
+    com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder getHumanReviewStatusOrBuilder();
   }
   /**
    *
@@ -635,6 +672,23 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
                 java.lang.String s = input.readStringRequireUtf8();
 
                 humanReviewOperation_ = s;
+                break;
+              }
+            case 42:
+              {
+                com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder subBuilder = null;
+                if (humanReviewStatus_ != null) {
+                  subBuilder = humanReviewStatus_.toBuilder();
+                }
+                humanReviewStatus_ =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta3.HumanReviewStatus.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(humanReviewStatus_);
+                  humanReviewStatus_ = subBuilder.buildPartial();
+                }
+
                 break;
               }
             default:
@@ -837,11 +891,12 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * returned by ReviewDocument method.
      * </pre>
      *
-     * <code>string human_review_operation = 4;</code>
+     * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
      * @return The humanReviewOperation.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public java.lang.String getHumanReviewOperation() {
       java.lang.Object ref = humanReviewOperation_;
       if (ref instanceof java.lang.String) {
@@ -863,11 +918,12 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * returned by ReviewDocument method.
      * </pre>
      *
-     * <code>string human_review_operation = 4;</code>
+     * <code>string human_review_operation = 4 [deprecated = true];</code>
      *
      * @return The bytes for humanReviewOperation.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getHumanReviewOperationBytes() {
       java.lang.Object ref = humanReviewOperation_;
       if (ref instanceof java.lang.String) {
@@ -878,6 +934,55 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int HUMAN_REVIEW_STATUS_FIELD_NUMBER = 5;
+    private com.google.cloud.documentai.v1beta3.HumanReviewStatus humanReviewStatus_;
+    /**
+     *
+     *
+     * <pre>
+     * The status of human review on the processed document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+     *
+     * @return Whether the humanReviewStatus field is set.
+     */
+    @java.lang.Override
+    public boolean hasHumanReviewStatus() {
+      return humanReviewStatus_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of human review on the processed document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+     *
+     * @return The humanReviewStatus.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.HumanReviewStatus getHumanReviewStatus() {
+      return humanReviewStatus_ == null
+          ? com.google.cloud.documentai.v1beta3.HumanReviewStatus.getDefaultInstance()
+          : humanReviewStatus_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The status of human review on the processed document.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder
+        getHumanReviewStatusOrBuilder() {
+      return getHumanReviewStatus();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -906,6 +1011,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       if (!getHumanReviewOperationBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, humanReviewOperation_);
       }
+      if (humanReviewStatus_ != null) {
+        output.writeMessage(5, getHumanReviewStatus());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -926,6 +1034,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       if (!getHumanReviewOperationBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, humanReviewOperation_);
+      }
+      if (humanReviewStatus_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getHumanReviewStatus());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -952,6 +1063,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       if (!getOutputGcsDestination().equals(other.getOutputGcsDestination())) return false;
       if (!getHumanReviewOperation().equals(other.getHumanReviewOperation())) return false;
+      if (hasHumanReviewStatus() != other.hasHumanReviewStatus()) return false;
+      if (hasHumanReviewStatus()) {
+        if (!getHumanReviewStatus().equals(other.getHumanReviewStatus())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -973,6 +1088,10 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       hash = (53 * hash) + getOutputGcsDestination().hashCode();
       hash = (37 * hash) + HUMAN_REVIEW_OPERATION_FIELD_NUMBER;
       hash = (53 * hash) + getHumanReviewOperation().hashCode();
+      if (hasHumanReviewStatus()) {
+        hash = (37 * hash) + HUMAN_REVIEW_STATUS_FIELD_NUMBER;
+        hash = (53 * hash) + getHumanReviewStatus().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1144,6 +1263,12 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
         humanReviewOperation_ = "";
 
+        if (humanReviewStatusBuilder_ == null) {
+          humanReviewStatus_ = null;
+        } else {
+          humanReviewStatus_ = null;
+          humanReviewStatusBuilder_ = null;
+        }
         return this;
       }
 
@@ -1185,6 +1310,11 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         }
         result.outputGcsDestination_ = outputGcsDestination_;
         result.humanReviewOperation_ = humanReviewOperation_;
+        if (humanReviewStatusBuilder_ == null) {
+          result.humanReviewStatus_ = humanReviewStatus_;
+        } else {
+          result.humanReviewStatus_ = humanReviewStatusBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -1257,6 +1387,9 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         if (!other.getHumanReviewOperation().isEmpty()) {
           humanReviewOperation_ = other.humanReviewOperation_;
           onChanged();
+        }
+        if (other.hasHumanReviewStatus()) {
+          mergeHumanReviewStatus(other.getHumanReviewStatus());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1706,10 +1839,11 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * returned by ReviewDocument method.
        * </pre>
        *
-       * <code>string human_review_operation = 4;</code>
+       * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
        * @return The humanReviewOperation.
        */
+      @java.lang.Deprecated
       public java.lang.String getHumanReviewOperation() {
         java.lang.Object ref = humanReviewOperation_;
         if (!(ref instanceof java.lang.String)) {
@@ -1731,10 +1865,11 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * returned by ReviewDocument method.
        * </pre>
        *
-       * <code>string human_review_operation = 4;</code>
+       * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
        * @return The bytes for humanReviewOperation.
        */
+      @java.lang.Deprecated
       public com.google.protobuf.ByteString getHumanReviewOperationBytes() {
         java.lang.Object ref = humanReviewOperation_;
         if (ref instanceof String) {
@@ -1756,11 +1891,12 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * returned by ReviewDocument method.
        * </pre>
        *
-       * <code>string human_review_operation = 4;</code>
+       * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
        * @param value The humanReviewOperation to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setHumanReviewOperation(java.lang.String value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1780,10 +1916,11 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * returned by ReviewDocument method.
        * </pre>
        *
-       * <code>string human_review_operation = 4;</code>
+       * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearHumanReviewOperation() {
 
         humanReviewOperation_ = getDefaultInstance().getHumanReviewOperation();
@@ -1800,11 +1937,12 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
        * returned by ReviewDocument method.
        * </pre>
        *
-       * <code>string human_review_operation = 4;</code>
+       * <code>string human_review_operation = 4 [deprecated = true];</code>
        *
        * @param value The bytes for humanReviewOperation to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setHumanReviewOperationBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
           throw new NullPointerException();
@@ -1814,6 +1952,196 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         humanReviewOperation_ = value;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.documentai.v1beta3.HumanReviewStatus humanReviewStatus_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.HumanReviewStatus,
+              com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder,
+              com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder>
+          humanReviewStatusBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       *
+       * @return Whether the humanReviewStatus field is set.
+       */
+      public boolean hasHumanReviewStatus() {
+        return humanReviewStatusBuilder_ != null || humanReviewStatus_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       *
+       * @return The humanReviewStatus.
+       */
+      public com.google.cloud.documentai.v1beta3.HumanReviewStatus getHumanReviewStatus() {
+        if (humanReviewStatusBuilder_ == null) {
+          return humanReviewStatus_ == null
+              ? com.google.cloud.documentai.v1beta3.HumanReviewStatus.getDefaultInstance()
+              : humanReviewStatus_;
+        } else {
+          return humanReviewStatusBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      public Builder setHumanReviewStatus(
+          com.google.cloud.documentai.v1beta3.HumanReviewStatus value) {
+        if (humanReviewStatusBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          humanReviewStatus_ = value;
+          onChanged();
+        } else {
+          humanReviewStatusBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      public Builder setHumanReviewStatus(
+          com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder builderForValue) {
+        if (humanReviewStatusBuilder_ == null) {
+          humanReviewStatus_ = builderForValue.build();
+          onChanged();
+        } else {
+          humanReviewStatusBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      public Builder mergeHumanReviewStatus(
+          com.google.cloud.documentai.v1beta3.HumanReviewStatus value) {
+        if (humanReviewStatusBuilder_ == null) {
+          if (humanReviewStatus_ != null) {
+            humanReviewStatus_ =
+                com.google.cloud.documentai.v1beta3.HumanReviewStatus.newBuilder(humanReviewStatus_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            humanReviewStatus_ = value;
+          }
+          onChanged();
+        } else {
+          humanReviewStatusBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      public Builder clearHumanReviewStatus() {
+        if (humanReviewStatusBuilder_ == null) {
+          humanReviewStatus_ = null;
+          onChanged();
+        } else {
+          humanReviewStatus_ = null;
+          humanReviewStatusBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      public com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder
+          getHumanReviewStatusBuilder() {
+
+        onChanged();
+        return getHumanReviewStatusFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      public com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder
+          getHumanReviewStatusOrBuilder() {
+        if (humanReviewStatusBuilder_ != null) {
+          return humanReviewStatusBuilder_.getMessageOrBuilder();
+        } else {
+          return humanReviewStatus_ == null
+              ? com.google.cloud.documentai.v1beta3.HumanReviewStatus.getDefaultInstance()
+              : humanReviewStatus_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The status of human review on the processed document.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1beta3.HumanReviewStatus human_review_status = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.documentai.v1beta3.HumanReviewStatus,
+              com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder,
+              com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder>
+          getHumanReviewStatusFieldBuilder() {
+        if (humanReviewStatusBuilder_ == null) {
+          humanReviewStatusBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.documentai.v1beta3.HumanReviewStatus,
+                  com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder,
+                  com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder>(
+                  getHumanReviewStatus(), getParentForChildren(), isClean());
+          humanReviewStatus_ = null;
+        }
+        return humanReviewStatusBuilder_;
       }
 
       @java.lang.Override

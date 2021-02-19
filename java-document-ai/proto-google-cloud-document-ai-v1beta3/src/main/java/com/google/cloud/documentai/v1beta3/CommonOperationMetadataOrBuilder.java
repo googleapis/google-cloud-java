@@ -18,19 +18,19 @@
 
 package com.google.cloud.documentai.v1beta3;
 
-public interface ReviewDocumentOperationMetadataOrBuilder
+public interface CommonOperationMetadataOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)
+    // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.CommonOperationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Used only when Operation.done is false.
+   * The state of the operation.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;</code>
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -39,21 +39,20 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Used only when Operation.done is false.
+   * The state of the operation.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;</code>
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
    *
    * @return The state.
    */
-  com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State getState();
+  com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State getState();
 
   /**
    *
    *
    * <pre>
    * A message providing more details about the current state of processing.
-   * For example, the error message if the operation is failed.
    * </pre>
    *
    * <code>string state_message = 2;</code>
@@ -66,7 +65,6 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    *
    * <pre>
    * A message providing more details about the current state of processing.
-   * For example, the error message if the operation is failed.
    * </pre>
    *
    * <code>string state_message = 2;</code>
@@ -144,39 +142,4 @@ public interface ReviewDocumentOperationMetadataOrBuilder
    * <code>.google.protobuf.Timestamp update_time = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
-
-  /**
-   *
-   *
-   * <pre>
-   * The basic metadata of the long running operation.
-   * </pre>
-   *
-   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-   *
-   * @return Whether the commonMetadata field is set.
-   */
-  boolean hasCommonMetadata();
-  /**
-   *
-   *
-   * <pre>
-   * The basic metadata of the long running operation.
-   * </pre>
-   *
-   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-   *
-   * @return The commonMetadata.
-   */
-  com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata();
-  /**
-   *
-   *
-   * <pre>
-   * The basic metadata of the long running operation.
-   * </pre>
-   *
-   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-   */
-  com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder getCommonMetadataOrBuilder();
 }

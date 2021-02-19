@@ -113,6 +113,46 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
 
               break;
             }
+          case 32:
+            {
+              skipHumanReview_ = input.readBool();
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder subBuilder =
+                  null;
+              if (inputDocuments_ != null) {
+                subBuilder = inputDocuments_.toBuilder();
+              }
+              inputDocuments_ =
+                  input.readMessage(
+                      com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inputDocuments_);
+                inputDocuments_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder subBuilder = null;
+              if (documentOutputConfig_ != null) {
+                subBuilder = documentOutputConfig_.toBuilder();
+              }
+              documentOutputConfig_ =
+                  input.readMessage(
+                      com.google.cloud.documentai.v1beta3.DocumentOutputConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(documentOutputConfig_);
+                documentOutputConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -150,6 +190,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.documentai.v1beta3.BatchProcessRequest.Builder.class);
   }
 
+  @java.lang.Deprecated
   public interface BatchInputConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig)
@@ -218,6 +259,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig}
    */
+  @java.lang.Deprecated
   public static final class BatchInputConfig extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig)
@@ -1049,6 +1091,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
   }
 
+  @java.lang.Deprecated
   public interface BatchOutputConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig)
@@ -1088,6 +1131,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig}
    */
+  @java.lang.Deprecated
   public static final class BatchOutputConfig extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig)
@@ -1790,10 +1834,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>
       getInputConfigsList() {
     return inputConfigs_;
@@ -1806,10 +1851,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.util.List<
           ? extends
               com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder>
@@ -1824,10 +1870,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getInputConfigsCount() {
     return inputConfigs_.size();
   }
@@ -1839,10 +1886,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig getInputConfigs(
       int index) {
     return inputConfigs_.get(index);
@@ -1855,10 +1903,11 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder
       getInputConfigsOrBuilder(int index) {
     return inputConfigs_.get(index);
@@ -1873,12 +1922,14 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * The overall output config for batch process.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    *
    * @return Whether the outputConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasOutputConfig() {
     return outputConfig_ != null;
   }
@@ -1889,12 +1940,14 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * The overall output config for batch process.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    *
    * @return The outputConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig
       getOutputConfig() {
     return outputConfig_ == null
@@ -1909,13 +1962,132 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
    * The overall output config for batch process.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfigOrBuilder
       getOutputConfigOrBuilder() {
     return getOutputConfig();
+  }
+
+  public static final int INPUT_DOCUMENTS_FIELD_NUMBER = 5;
+  private com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig inputDocuments_;
+  /**
+   *
+   *
+   * <pre>
+   * The input documents for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+   *
+   * @return Whether the inputDocuments field is set.
+   */
+  @java.lang.Override
+  public boolean hasInputDocuments() {
+    return inputDocuments_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The input documents for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+   *
+   * @return The inputDocuments.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig getInputDocuments() {
+    return inputDocuments_ == null
+        ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+        : inputDocuments_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The input documents for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
+      getInputDocumentsOrBuilder() {
+    return getInputDocuments();
+  }
+
+  public static final int DOCUMENT_OUTPUT_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.documentai.v1beta3.DocumentOutputConfig documentOutputConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * The overall output config for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+   *
+   * @return Whether the documentOutputConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentOutputConfig() {
+    return documentOutputConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The overall output config for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+   *
+   * @return The documentOutputConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentOutputConfig getDocumentOutputConfig() {
+    return documentOutputConfig_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentOutputConfig.getDefaultInstance()
+        : documentOutputConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The overall output config for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder
+      getDocumentOutputConfigOrBuilder() {
+    return getDocumentOutputConfig();
+  }
+
+  public static final int SKIP_HUMAN_REVIEW_FIELD_NUMBER = 4;
+  private boolean skipHumanReview_;
+  /**
+   *
+   *
+   * <pre>
+   * Whether Human Review feature should be skipped for this request. Default to
+   * false.
+   * </pre>
+   *
+   * <code>bool skip_human_review = 4;</code>
+   *
+   * @return The skipHumanReview.
+   */
+  @java.lang.Override
+  public boolean getSkipHumanReview() {
+    return skipHumanReview_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1941,6 +2113,15 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (outputConfig_ != null) {
       output.writeMessage(3, getOutputConfig());
     }
+    if (skipHumanReview_ != false) {
+      output.writeBool(4, skipHumanReview_);
+    }
+    if (inputDocuments_ != null) {
+      output.writeMessage(5, getInputDocuments());
+    }
+    if (documentOutputConfig_ != null) {
+      output.writeMessage(6, getDocumentOutputConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1958,6 +2139,16 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     }
     if (outputConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOutputConfig());
+    }
+    if (skipHumanReview_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, skipHumanReview_);
+    }
+    if (inputDocuments_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getInputDocuments());
+    }
+    if (documentOutputConfig_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getDocumentOutputConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1981,6 +2172,15 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
     if (hasOutputConfig()) {
       if (!getOutputConfig().equals(other.getOutputConfig())) return false;
     }
+    if (hasInputDocuments() != other.hasInputDocuments()) return false;
+    if (hasInputDocuments()) {
+      if (!getInputDocuments().equals(other.getInputDocuments())) return false;
+    }
+    if (hasDocumentOutputConfig() != other.hasDocumentOutputConfig()) return false;
+    if (hasDocumentOutputConfig()) {
+      if (!getDocumentOutputConfig().equals(other.getDocumentOutputConfig())) return false;
+    }
+    if (getSkipHumanReview() != other.getSkipHumanReview()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2002,6 +2202,16 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + OUTPUT_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOutputConfig().hashCode();
     }
+    if (hasInputDocuments()) {
+      hash = (37 * hash) + INPUT_DOCUMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getInputDocuments().hashCode();
+    }
+    if (hasDocumentOutputConfig()) {
+      hash = (37 * hash) + DOCUMENT_OUTPUT_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentOutputConfig().hashCode();
+    }
+    hash = (37 * hash) + SKIP_HUMAN_REVIEW_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHumanReview());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2164,6 +2374,20 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         outputConfig_ = null;
         outputConfigBuilder_ = null;
       }
+      if (inputDocumentsBuilder_ == null) {
+        inputDocuments_ = null;
+      } else {
+        inputDocuments_ = null;
+        inputDocumentsBuilder_ = null;
+      }
+      if (documentOutputConfigBuilder_ == null) {
+        documentOutputConfig_ = null;
+      } else {
+        documentOutputConfig_ = null;
+        documentOutputConfigBuilder_ = null;
+      }
+      skipHumanReview_ = false;
+
       return this;
     }
 
@@ -2207,6 +2431,17 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       } else {
         result.outputConfig_ = outputConfigBuilder_.build();
       }
+      if (inputDocumentsBuilder_ == null) {
+        result.inputDocuments_ = inputDocuments_;
+      } else {
+        result.inputDocuments_ = inputDocumentsBuilder_.build();
+      }
+      if (documentOutputConfigBuilder_ == null) {
+        result.documentOutputConfig_ = documentOutputConfig_;
+      } else {
+        result.documentOutputConfig_ = documentOutputConfigBuilder_.build();
+      }
+      result.skipHumanReview_ = skipHumanReview_;
       onBuilt();
       return result;
     }
@@ -2290,6 +2525,15 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
       }
       if (other.hasOutputConfig()) {
         mergeOutputConfig(other.getOutputConfig());
+      }
+      if (other.hasInputDocuments()) {
+        mergeInputDocuments(other.getInputDocuments());
+      }
+      if (other.hasDocumentOutputConfig()) {
+        mergeDocumentOutputConfig(other.getDocumentOutputConfig());
+      }
+      if (other.getSkipHumanReview() != false) {
+        setSkipHumanReview(other.getSkipHumanReview());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2466,9 +2710,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>
         getInputConfigsList() {
       if (inputConfigsBuilder_ == null) {
@@ -2485,9 +2730,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public int getInputConfigsCount() {
       if (inputConfigsBuilder_ == null) {
         return inputConfigs_.size();
@@ -2503,9 +2749,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig getInputConfigs(
         int index) {
       if (inputConfigsBuilder_ == null) {
@@ -2522,9 +2769,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setInputConfigs(
         int index, com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig value) {
       if (inputConfigsBuilder_ == null) {
@@ -2547,9 +2795,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setInputConfigs(
         int index,
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder
@@ -2571,9 +2820,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addInputConfigs(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig value) {
       if (inputConfigsBuilder_ == null) {
@@ -2596,9 +2846,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addInputConfigs(
         int index, com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig value) {
       if (inputConfigsBuilder_ == null) {
@@ -2621,9 +2872,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addInputConfigs(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder
             builderForValue) {
@@ -2644,9 +2896,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addInputConfigs(
         int index,
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder
@@ -2668,9 +2921,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder addAllInputConfigs(
         java.lang.Iterable<
                 ? extends com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>
@@ -2692,9 +2946,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearInputConfigs() {
       if (inputConfigsBuilder_ == null) {
         inputConfigs_ = java.util.Collections.emptyList();
@@ -2713,9 +2968,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder removeInputConfigs(int index) {
       if (inputConfigsBuilder_ == null) {
         ensureInputConfigsIsMutable();
@@ -2734,9 +2990,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder
         getInputConfigsBuilder(int index) {
       return getInputConfigsFieldBuilder().getBuilder(index);
@@ -2749,9 +3006,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder
         getInputConfigsOrBuilder(int index) {
       if (inputConfigsBuilder_ == null) {
@@ -2768,9 +3026,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<
             ? extends
                 com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder>
@@ -2789,9 +3048,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder
         addInputConfigsBuilder() {
       return getInputConfigsFieldBuilder()
@@ -2807,9 +3067,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder
         addInputConfigsBuilder(int index) {
       return getInputConfigsFieldBuilder()
@@ -2826,9 +3087,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+     * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public java.util.List<
             com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig.Builder>
         getInputConfigsBuilderList() {
@@ -2866,11 +3128,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      *
      * @return Whether the outputConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasOutputConfig() {
       return outputConfigBuilder_ != null || outputConfig_ != null;
     }
@@ -2882,11 +3145,12 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      *
      * @return The outputConfig.
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig
         getOutputConfig() {
       if (outputConfigBuilder_ == null) {
@@ -2906,9 +3170,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setOutputConfig(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -2931,9 +3196,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setOutputConfig(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig.Builder
             builderForValue) {
@@ -2954,9 +3220,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeOutputConfig(
         com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig value) {
       if (outputConfigBuilder_ == null) {
@@ -2984,9 +3251,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearOutputConfig() {
       if (outputConfigBuilder_ == null) {
         outputConfig_ = null;
@@ -3006,9 +3274,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig.Builder
         getOutputConfigBuilder() {
 
@@ -3023,9 +3292,10 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfigOrBuilder
         getOutputConfigOrBuilder() {
       if (outputConfigBuilder_ != null) {
@@ -3045,7 +3315,7 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
      * </pre>
      *
      * <code>
-     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+     * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3063,6 +3333,452 @@ public final class BatchProcessRequest extends com.google.protobuf.GeneratedMess
         outputConfig_ = null;
       }
       return outputConfigBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig inputDocuments_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig,
+            com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder,
+            com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder>
+        inputDocumentsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     *
+     * @return Whether the inputDocuments field is set.
+     */
+    public boolean hasInputDocuments() {
+      return inputDocumentsBuilder_ != null || inputDocuments_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     *
+     * @return The inputDocuments.
+     */
+    public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig getInputDocuments() {
+      if (inputDocumentsBuilder_ == null) {
+        return inputDocuments_ == null
+            ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+            : inputDocuments_;
+      } else {
+        return inputDocumentsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    public Builder setInputDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig value) {
+      if (inputDocumentsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputDocuments_ = value;
+        onChanged();
+      } else {
+        inputDocumentsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    public Builder setInputDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder builderForValue) {
+      if (inputDocumentsBuilder_ == null) {
+        inputDocuments_ = builderForValue.build();
+        onChanged();
+      } else {
+        inputDocumentsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    public Builder mergeInputDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig value) {
+      if (inputDocumentsBuilder_ == null) {
+        if (inputDocuments_ != null) {
+          inputDocuments_ =
+              com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.newBuilder(
+                      inputDocuments_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          inputDocuments_ = value;
+        }
+        onChanged();
+      } else {
+        inputDocumentsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    public Builder clearInputDocuments() {
+      if (inputDocumentsBuilder_ == null) {
+        inputDocuments_ = null;
+        onChanged();
+      } else {
+        inputDocuments_ = null;
+        inputDocumentsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder
+        getInputDocumentsBuilder() {
+
+      onChanged();
+      return getInputDocumentsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
+        getInputDocumentsOrBuilder() {
+      if (inputDocumentsBuilder_ != null) {
+        return inputDocumentsBuilder_.getMessageOrBuilder();
+      } else {
+        return inputDocuments_ == null
+            ? com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.getDefaultInstance()
+            : inputDocuments_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The input documents for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig,
+            com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder,
+            com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder>
+        getInputDocumentsFieldBuilder() {
+      if (inputDocumentsBuilder_ == null) {
+        inputDocumentsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig,
+                com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig.Builder,
+                com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder>(
+                getInputDocuments(), getParentForChildren(), isClean());
+        inputDocuments_ = null;
+      }
+      return inputDocumentsBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.DocumentOutputConfig documentOutputConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.DocumentOutputConfig,
+            com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder>
+        documentOutputConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     *
+     * @return Whether the documentOutputConfig field is set.
+     */
+    public boolean hasDocumentOutputConfig() {
+      return documentOutputConfigBuilder_ != null || documentOutputConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     *
+     * @return The documentOutputConfig.
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentOutputConfig getDocumentOutputConfig() {
+      if (documentOutputConfigBuilder_ == null) {
+        return documentOutputConfig_ == null
+            ? com.google.cloud.documentai.v1beta3.DocumentOutputConfig.getDefaultInstance()
+            : documentOutputConfig_;
+      } else {
+        return documentOutputConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    public Builder setDocumentOutputConfig(
+        com.google.cloud.documentai.v1beta3.DocumentOutputConfig value) {
+      if (documentOutputConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentOutputConfig_ = value;
+        onChanged();
+      } else {
+        documentOutputConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    public Builder setDocumentOutputConfig(
+        com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder builderForValue) {
+      if (documentOutputConfigBuilder_ == null) {
+        documentOutputConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        documentOutputConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    public Builder mergeDocumentOutputConfig(
+        com.google.cloud.documentai.v1beta3.DocumentOutputConfig value) {
+      if (documentOutputConfigBuilder_ == null) {
+        if (documentOutputConfig_ != null) {
+          documentOutputConfig_ =
+              com.google.cloud.documentai.v1beta3.DocumentOutputConfig.newBuilder(
+                      documentOutputConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          documentOutputConfig_ = value;
+        }
+        onChanged();
+      } else {
+        documentOutputConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    public Builder clearDocumentOutputConfig() {
+      if (documentOutputConfigBuilder_ == null) {
+        documentOutputConfig_ = null;
+        onChanged();
+      } else {
+        documentOutputConfig_ = null;
+        documentOutputConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder
+        getDocumentOutputConfigBuilder() {
+
+      onChanged();
+      return getDocumentOutputConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder
+        getDocumentOutputConfigOrBuilder() {
+      if (documentOutputConfigBuilder_ != null) {
+        return documentOutputConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return documentOutputConfig_ == null
+            ? com.google.cloud.documentai.v1beta3.DocumentOutputConfig.getDefaultInstance()
+            : documentOutputConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The overall output config for batch process.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.DocumentOutputConfig,
+            com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder>
+        getDocumentOutputConfigFieldBuilder() {
+      if (documentOutputConfigBuilder_ == null) {
+        documentOutputConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.DocumentOutputConfig,
+                com.google.cloud.documentai.v1beta3.DocumentOutputConfig.Builder,
+                com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder>(
+                getDocumentOutputConfig(), getParentForChildren(), isClean());
+        documentOutputConfig_ = null;
+      }
+      return documentOutputConfigBuilder_;
+    }
+
+    private boolean skipHumanReview_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether Human Review feature should be skipped for this request. Default to
+     * false.
+     * </pre>
+     *
+     * <code>bool skip_human_review = 4;</code>
+     *
+     * @return The skipHumanReview.
+     */
+    @java.lang.Override
+    public boolean getSkipHumanReview() {
+      return skipHumanReview_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether Human Review feature should be skipped for this request. Default to
+     * false.
+     * </pre>
+     *
+     * <code>bool skip_human_review = 4;</code>
+     *
+     * @param value The skipHumanReview to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipHumanReview(boolean value) {
+
+      skipHumanReview_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether Human Review feature should be skipped for this request. Default to
+     * false.
+     * </pre>
+     *
+     * <code>bool skip_human_review = 4;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipHumanReview() {
+
+      skipHumanReview_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

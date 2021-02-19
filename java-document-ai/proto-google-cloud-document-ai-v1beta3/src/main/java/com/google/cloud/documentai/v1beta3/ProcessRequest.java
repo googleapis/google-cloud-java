@@ -98,6 +98,39 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
               skipHumanReview_ = input.readBool();
               break;
             }
+          case 34:
+            {
+              com.google.cloud.documentai.v1beta3.Document.Builder subBuilder = null;
+              if (sourceCase_ == 4) {
+                subBuilder = ((com.google.cloud.documentai.v1beta3.Document) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.cloud.documentai.v1beta3.Document.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.documentai.v1beta3.Document) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 4;
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.documentai.v1beta3.RawDocument.Builder subBuilder = null;
+              if (sourceCase_ == 5) {
+                subBuilder =
+                    ((com.google.cloud.documentai.v1beta3.RawDocument) source_).toBuilder();
+              }
+              source_ =
+                  input.readMessage(
+                      com.google.cloud.documentai.v1beta3.RawDocument.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.documentai.v1beta3.RawDocument) source_);
+                source_ = subBuilder.buildPartial();
+              }
+              sourceCase_ = 5;
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -130,6 +163,155 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.documentai.v1beta3.ProcessRequest.class,
             com.google.cloud.documentai.v1beta3.ProcessRequest.Builder.class);
+  }
+
+  private int sourceCase_ = 0;
+  private java.lang.Object source_;
+
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    INLINE_DOCUMENT(4),
+    RAW_DOCUMENT(5),
+    SOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 4:
+          return INLINE_DOCUMENT;
+        case 5:
+          return RAW_DOCUMENT;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
+  }
+
+  public static final int INLINE_DOCUMENT_FIELD_NUMBER = 4;
+  /**
+   *
+   *
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   *
+   * @return Whether the inlineDocument field is set.
+   */
+  @java.lang.Override
+  public boolean hasInlineDocument() {
+    return sourceCase_ == 4;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   *
+   * @return The inlineDocument.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.Document getInlineDocument() {
+    if (sourceCase_ == 4) {
+      return (com.google.cloud.documentai.v1beta3.Document) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An inline document proto.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getInlineDocumentOrBuilder() {
+    if (sourceCase_ == 4) {
+      return (com.google.cloud.documentai.v1beta3.Document) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+  }
+
+  public static final int RAW_DOCUMENT_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * A raw document content (bytes).
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+   *
+   * @return Whether the rawDocument field is set.
+   */
+  @java.lang.Override
+  public boolean hasRawDocument() {
+    return sourceCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A raw document content (bytes).
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+   *
+   * @return The rawDocument.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.RawDocument getRawDocument() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.documentai.v1beta3.RawDocument) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A raw document content (bytes).
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.RawDocumentOrBuilder getRawDocumentOrBuilder() {
+    if (sourceCase_ == 5) {
+      return (com.google.cloud.documentai.v1beta3.RawDocument) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -194,11 +376,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * The document payload, the [content] and [mime_type] fields must be set.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @return Whether the document field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDocument() {
     return document_ != null;
   }
@@ -209,11 +392,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * The document payload, the [content] and [mime_type] fields must be set.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @return The document.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.Document getDocument() {
     return document_ == null
         ? com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()
@@ -226,9 +410,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * The document payload, the [content] and [mime_type] fields must be set.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+   * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
     return getDocument();
   }
@@ -275,6 +460,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (skipHumanReview_ != false) {
       output.writeBool(3, skipHumanReview_);
     }
+    if (sourceCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.documentai.v1beta3.Document) source_);
+    }
+    if (sourceCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.documentai.v1beta3.RawDocument) source_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -292,6 +483,16 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (skipHumanReview_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, skipHumanReview_);
+    }
+    if (sourceCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.documentai.v1beta3.Document) source_);
+    }
+    if (sourceCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.documentai.v1beta3.RawDocument) source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -315,6 +516,17 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (!getDocument().equals(other.getDocument())) return false;
     }
     if (getSkipHumanReview() != other.getSkipHumanReview()) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 4:
+        if (!getInlineDocument().equals(other.getInlineDocument())) return false;
+        break;
+      case 5:
+        if (!getRawDocument().equals(other.getRawDocument())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -334,6 +546,18 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SKIP_HUMAN_REVIEW_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipHumanReview());
+    switch (sourceCase_) {
+      case 4:
+        hash = (37 * hash) + INLINE_DOCUMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getInlineDocument().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + RAW_DOCUMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getRawDocument().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,6 +713,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       skipHumanReview_ = false;
 
+      sourceCase_ = 0;
+      source_ = null;
       return this;
     }
 
@@ -516,6 +742,20 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.ProcessRequest buildPartial() {
       com.google.cloud.documentai.v1beta3.ProcessRequest result =
           new com.google.cloud.documentai.v1beta3.ProcessRequest(this);
+      if (sourceCase_ == 4) {
+        if (inlineDocumentBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = inlineDocumentBuilder_.build();
+        }
+      }
+      if (sourceCase_ == 5) {
+        if (rawDocumentBuilder_ == null) {
+          result.source_ = source_;
+        } else {
+          result.source_ = rawDocumentBuilder_.build();
+        }
+      }
       result.name_ = name_;
       if (documentBuilder_ == null) {
         result.document_ = document_;
@@ -523,6 +763,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         result.document_ = documentBuilder_.build();
       }
       result.skipHumanReview_ = skipHumanReview_;
+      result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
     }
@@ -583,6 +824,22 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.getSkipHumanReview() != false) {
         setSkipHumanReview(other.getSkipHumanReview());
       }
+      switch (other.getSourceCase()) {
+        case INLINE_DOCUMENT:
+          {
+            mergeInlineDocument(other.getInlineDocument());
+            break;
+          }
+        case RAW_DOCUMENT:
+          {
+            mergeRawDocument(other.getRawDocument());
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -611,6 +868,438 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         }
       }
       return this;
+    }
+
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document,
+            com.google.cloud.documentai.v1beta3.Document.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentOrBuilder>
+        inlineDocumentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     *
+     * @return Whether the inlineDocument field is set.
+     */
+    @java.lang.Override
+    public boolean hasInlineDocument() {
+      return sourceCase_ == 4;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     *
+     * @return The inlineDocument.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.Document getInlineDocument() {
+      if (inlineDocumentBuilder_ == null) {
+        if (sourceCase_ == 4) {
+          return (com.google.cloud.documentai.v1beta3.Document) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 4) {
+          return inlineDocumentBuilder_.getMessage();
+        }
+        return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder setInlineDocument(com.google.cloud.documentai.v1beta3.Document value) {
+      if (inlineDocumentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        inlineDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder setInlineDocument(
+        com.google.cloud.documentai.v1beta3.Document.Builder builderForValue) {
+      if (inlineDocumentBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        inlineDocumentBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder mergeInlineDocument(com.google.cloud.documentai.v1beta3.Document value) {
+      if (inlineDocumentBuilder_ == null) {
+        if (sourceCase_ == 4
+            && source_ != com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.documentai.v1beta3.Document.newBuilder(
+                      (com.google.cloud.documentai.v1beta3.Document) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 4) {
+          inlineDocumentBuilder_.mergeFrom(value);
+        }
+        inlineDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 4;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public Builder clearInlineDocument() {
+      if (inlineDocumentBuilder_ == null) {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 4) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        inlineDocumentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.Document.Builder getInlineDocumentBuilder() {
+      return getInlineDocumentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getInlineDocumentOrBuilder() {
+      if ((sourceCase_ == 4) && (inlineDocumentBuilder_ != null)) {
+        return inlineDocumentBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 4) {
+          return (com.google.cloud.documentai.v1beta3.Document) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An inline document proto.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.Document inline_document = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.Document,
+            com.google.cloud.documentai.v1beta3.Document.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentOrBuilder>
+        getInlineDocumentFieldBuilder() {
+      if (inlineDocumentBuilder_ == null) {
+        if (!(sourceCase_ == 4)) {
+          source_ = com.google.cloud.documentai.v1beta3.Document.getDefaultInstance();
+        }
+        inlineDocumentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.Document,
+                com.google.cloud.documentai.v1beta3.Document.Builder,
+                com.google.cloud.documentai.v1beta3.DocumentOrBuilder>(
+                (com.google.cloud.documentai.v1beta3.Document) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 4;
+      onChanged();
+      ;
+      return inlineDocumentBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.RawDocument,
+            com.google.cloud.documentai.v1beta3.RawDocument.Builder,
+            com.google.cloud.documentai.v1beta3.RawDocumentOrBuilder>
+        rawDocumentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     *
+     * @return Whether the rawDocument field is set.
+     */
+    @java.lang.Override
+    public boolean hasRawDocument() {
+      return sourceCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     *
+     * @return The rawDocument.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.RawDocument getRawDocument() {
+      if (rawDocumentBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.documentai.v1beta3.RawDocument) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 5) {
+          return rawDocumentBuilder_.getMessage();
+        }
+        return com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    public Builder setRawDocument(com.google.cloud.documentai.v1beta3.RawDocument value) {
+      if (rawDocumentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        rawDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    public Builder setRawDocument(
+        com.google.cloud.documentai.v1beta3.RawDocument.Builder builderForValue) {
+      if (rawDocumentBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        rawDocumentBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    public Builder mergeRawDocument(com.google.cloud.documentai.v1beta3.RawDocument value) {
+      if (rawDocumentBuilder_ == null) {
+        if (sourceCase_ == 5
+            && source_ != com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.documentai.v1beta3.RawDocument.newBuilder(
+                      (com.google.cloud.documentai.v1beta3.RawDocument) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 5) {
+          rawDocumentBuilder_.mergeFrom(value);
+        }
+        rawDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    public Builder clearRawDocument() {
+      if (rawDocumentBuilder_ == null) {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 5) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        rawDocumentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.RawDocument.Builder getRawDocumentBuilder() {
+      return getRawDocumentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.RawDocumentOrBuilder getRawDocumentOrBuilder() {
+      if ((sourceCase_ == 5) && (rawDocumentBuilder_ != null)) {
+        return rawDocumentBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 5) {
+          return (com.google.cloud.documentai.v1beta3.RawDocument) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document content (bytes).
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.RawDocument raw_document = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.RawDocument,
+            com.google.cloud.documentai.v1beta3.RawDocument.Builder,
+            com.google.cloud.documentai.v1beta3.RawDocumentOrBuilder>
+        getRawDocumentFieldBuilder() {
+      if (rawDocumentBuilder_ == null) {
+        if (!(sourceCase_ == 5)) {
+          source_ = com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
+        }
+        rawDocumentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.RawDocument,
+                com.google.cloud.documentai.v1beta3.RawDocument.Builder,
+                com.google.cloud.documentai.v1beta3.RawDocumentOrBuilder>(
+                (com.google.cloud.documentai.v1beta3.RawDocument) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 5;
+      onChanged();
+      ;
+      return rawDocumentBuilder_;
     }
 
     private java.lang.Object name_ = "";
@@ -742,10 +1431,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @return Whether the document field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDocument() {
       return documentBuilder_ != null || document_ != null;
     }
@@ -756,10 +1446,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @return The document.
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document getDocument() {
       if (documentBuilder_ == null) {
         return document_ == null
@@ -776,8 +1467,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
         if (value == null) {
@@ -798,8 +1490,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder setDocument(
         com.google.cloud.documentai.v1beta3.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
@@ -818,8 +1511,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder mergeDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
         if (document_ != null) {
@@ -844,8 +1538,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
         document_ = null;
@@ -864,8 +1559,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.Builder getDocumentBuilder() {
 
       onChanged();
@@ -878,8 +1574,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.DocumentOrBuilder getDocumentOrBuilder() {
       if (documentBuilder_ != null) {
         return documentBuilder_.getMessageOrBuilder();
@@ -896,7 +1593,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * The document payload, the [content] and [mime_type] fields must be set.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.Document document = 2;</code>
+     * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.documentai.v1beta3.Document,

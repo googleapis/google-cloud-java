@@ -32,6 +32,10 @@ public final class DocumentAiProcessorService {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_ProcessRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_HumanReviewStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_HumanReviewStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1beta3_ProcessResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_ProcessResponse_fieldAccessorTable;
@@ -71,6 +75,10 @@ public final class DocumentAiProcessorService {
       internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -86,92 +94,126 @@ public final class DocumentAiProcessorService {
           + "ons.proto\032\027google/api/client.proto\032\037goog"
           + "le/api/field_behavior.proto\032\031google/api/"
           + "resource.proto\032.google/cloud/documentai/"
-          + "v1beta3/document.proto\032#google/longrunni"
-          + "ng/operations.proto\032 google/protobuf/fie"
-          + "ld_mask.proto\032\037google/protobuf/timestamp"
-          + ".proto\032\027google/rpc/status.proto\"\243\001\n\016Proc"
-          + "essRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#docume"
-          + "ntai.googleapis.com/Processor\022;\n\010documen"
-          + "t\030\002 \001(\0132).google.cloud.documentai.v1beta"
-          + "3.Document\022\031\n\021skip_human_review\030\003 \001(\010\"n\n"
-          + "\017ProcessResponse\022;\n\010document\030\001 \001(\0132).goo"
-          + "gle.cloud.documentai.v1beta3.Document\022\036\n"
-          + "\026human_review_operation\030\002 \001(\t\"\366\002\n\023BatchP"
-          + "rocessRequest\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#doc"
-          + "umentai.googleapis.com/Processor\022\\\n\rinpu"
-          + "t_configs\030\002 \003(\0132E.google.cloud.documenta"
-          + "i.v1beta3.BatchProcessRequest.BatchInput"
-          + "Config\022]\n\routput_config\030\003 \001(\0132F.google.c"
-          + "loud.documentai.v1beta3.BatchProcessRequ"
-          + "est.BatchOutputConfig\0329\n\020BatchInputConfi"
-          + "g\022\022\n\ngcs_source\030\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t"
-          + "\032,\n\021BatchOutputConfig\022\027\n\017gcs_destination"
-          + "\030\001 \001(\t\"\026\n\024BatchProcessResponse\"\335\004\n\024Batch"
-          + "ProcessMetadata\022J\n\005state\030\001 \001(\0162;.google."
-          + "cloud.documentai.v1beta3.BatchProcessMet"
-          + "adata.State\022\025\n\rstate_message\030\002 \001(\t\022/\n\013cr"
-          + "eate_time\030\003 \001(\0132\032.google.protobuf.Timest"
-          + "amp\022/\n\013update_time\030\004 \001(\0132\032.google.protob"
-          + "uf.Timestamp\022r\n\033individual_process_statu"
-          + "ses\030\005 \003(\0132M.google.cloud.documentai.v1be"
-          + "ta3.BatchProcessMetadata.IndividualProce"
-          + "ssStatus\032\227\001\n\027IndividualProcessStatus\022\030\n\020"
-          + "input_gcs_source\030\001 \001(\t\022\"\n\006status\030\002 \001(\0132\022"
-          + ".google.rpc.Status\022\036\n\026output_gcs_destina"
-          + "tion\030\003 \001(\t\022\036\n\026human_review_operation\030\004 \001"
-          + "(\t\"r\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007WA"
-          + "ITING\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\016\n\nC"
-          + "ANCELLING\020\004\022\r\n\tCANCELLED\020\005\022\n\n\006FAILED\020\006\"\246"
-          + "\001\n\025ReviewDocumentRequest\022P\n\023human_review"
-          + "_config\030\001 \001(\tB3\340A\002\372A-\n+documentai.google"
-          + "apis.com/HumanReviewConfig\022;\n\010document\030\002"
-          + " \001(\0132).google.cloud.documentai.v1beta3.D"
-          + "ocument\"1\n\026ReviewDocumentResponse\022\027\n\017gcs"
-          + "_destination\030\001 \001(\t\"\330\002\n\037ReviewDocumentOpe"
-          + "rationMetadata\022U\n\005state\030\001 \001(\0162F.google.c"
-          + "loud.documentai.v1beta3.ReviewDocumentOp"
-          + "erationMetadata.State\022\025\n\rstate_message\030\002"
-          + " \001(\t\022/\n\013create_time\030\003 \001(\0132\032.google.proto"
-          + "buf.Timestamp\022/\n\013update_time\030\004 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\"e\n\005State\022\025\n\021STATE"
-          + "_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCELLIN"
-          + "G\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCANCEL"
-          + "LED\020\0052\322\006\n\030DocumentProcessorService\022\303\001\n\017P"
-          + "rocessDocument\022/.google.cloud.documentai"
-          + ".v1beta3.ProcessRequest\0320.google.cloud.d"
-          + "ocumentai.v1beta3.ProcessResponse\"M\202\323\344\223\002"
-          + "@\";/v1beta3/{name=projects/*/locations/*"
-          + "/processors/*}:process:\001*\332A\004name\022\360\001\n\025Bat"
-          + "chProcessDocuments\0224.google.cloud.docume"
-          + "ntai.v1beta3.BatchProcessRequest\032\035.googl"
-          + "e.longrunning.Operation\"\201\001\202\323\344\223\002E\"@/v1bet"
-          + "a3/{name=projects/*/locations/*/processo"
-          + "rs/*}:batchProcess:\001*\332A\004name\312A,\n\024BatchPr"
-          + "ocessResponse\022\024BatchProcessMetadata\022\252\002\n\016"
-          + "ReviewDocument\0226.google.cloud.documentai"
-          + ".v1beta3.ReviewDocumentRequest\032\035.google."
-          + "longrunning.Operation\"\300\001\202\323\344\223\002h\"c/v1beta3"
-          + "/{human_review_config=projects/*/locatio"
-          + "ns/*/processors/*/humanReviewConfig}:rev"
-          + "iewDocument:\001*\332A\023human_review_config\312A9\n"
-          + "\026ReviewDocumentResponse\022\037ReviewDocumentO"
-          + "perationMetadata\032P\312A\034us-documentai.googl"
-          + "eapis.com\322A.https://www.googleapis.com/a"
-          + "uth/cloud-platformB\261\004\n#com.google.cloud."
-          + "documentai.v1beta3B\032DocumentAiProcessorS"
-          + "erviceP\001ZIgoogle.golang.org/genproto/goo"
-          + "gleapis/cloud/documentai/v1beta3;documen"
-          + "tai\252\002\037Google.Cloud.DocumentAI.V1Beta3\312\002\037"
-          + "Google\\Cloud\\DocumentAI\\V1beta3\352\002\"Google"
-          + "::Cloud::DocumentAI::V1beta3\352AM\n\"documen"
-          + "tai.googleapis.com/Location\022\'projects/{p"
-          + "roject}/locations/{location}\352Ae\n#documen"
-          + "tai.googleapis.com/Processor\022>projects/{"
-          + "project}/locations/{location}/processors"
-          + "/{processor}\352A\177\n+documentai.googleapis.c"
-          + "om/HumanReviewConfig\022Pprojects/{project}"
-          + "/locations/{location}/processors/{proces"
-          + "sor}/humanReviewConfigb\006proto3"
+          + "v1beta3/document.proto\0321google/cloud/doc"
+          + "umentai/v1beta3/document_io.proto\032#googl"
+          + "e/longrunning/operations.proto\032 google/p"
+          + "rotobuf/field_mask.proto\032\037google/protobu"
+          + "f/timestamp.proto\032\027google/rpc/status.pro"
+          + "to\"\275\002\n\016ProcessRequest\022D\n\017inline_document"
+          + "\030\004 \001(\0132).google.cloud.documentai.v1beta3"
+          + ".DocumentH\000\022D\n\014raw_document\030\005 \001(\0132,.goog"
+          + "le.cloud.documentai.v1beta3.RawDocumentH"
+          + "\000\0229\n\004name\030\001 \001(\tB+\340A\002\372A%\n#documentai.goog"
+          + "leapis.com/Processor\022?\n\010document\030\002 \001(\0132)"
+          + ".google.cloud.documentai.v1beta3.Documen"
+          + "tB\002\030\001\022\031\n\021skip_human_review\030\003 \001(\010B\010\n\006sour"
+          + "ce\"\363\001\n\021HumanReviewStatus\022G\n\005state\030\001 \001(\0162"
+          + "8.google.cloud.documentai.v1beta3.HumanR"
+          + "eviewStatus.State\022\025\n\rstate_message\030\002 \001(\t"
+          + "\022\036\n\026human_review_operation\030\003 \001(\t\"^\n\005Stat"
+          + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007SKIPPED\020\001\022\025\n"
+          + "\021VALIDATION_PASSED\020\002\022\017\n\013IN_PROGRESS\020\003\022\t\n"
+          + "\005ERROR\020\004\"\303\001\n\017ProcessResponse\022;\n\010document"
+          + "\030\001 \001(\0132).google.cloud.documentai.v1beta3"
+          + ".Document\022\"\n\026human_review_operation\030\002 \001("
+          + "\tB\002\030\001\022O\n\023human_review_status\030\003 \001(\01322.goo"
+          + "gle.cloud.documentai.v1beta3.HumanReview"
+          + "Status\"\315\004\n\023BatchProcessRequest\0229\n\004name\030\001"
+          + " \001(\tB+\340A\002\372A%\n#documentai.googleapis.com/"
+          + "Processor\022`\n\rinput_configs\030\002 \003(\0132E.googl"
+          + "e.cloud.documentai.v1beta3.BatchProcessR"
+          + "equest.BatchInputConfigB\002\030\001\022a\n\routput_co"
+          + "nfig\030\003 \001(\0132F.google.cloud.documentai.v1b"
+          + "eta3.BatchProcessRequest.BatchOutputConf"
+          + "igB\002\030\001\022S\n\017input_documents\030\005 \001(\0132:.google"
+          + ".cloud.documentai.v1beta3.BatchDocuments"
+          + "InputConfig\022U\n\026document_output_config\030\006 "
+          + "\001(\01325.google.cloud.documentai.v1beta3.Do"
+          + "cumentOutputConfig\022\031\n\021skip_human_review\030"
+          + "\004 \001(\010\032=\n\020BatchInputConfig\022\022\n\ngcs_source\030"
+          + "\001 \001(\t\022\021\n\tmime_type\030\002 \001(\t:\002\030\001\0320\n\021BatchOut"
+          + "putConfig\022\027\n\017gcs_destination\030\001 \001(\t:\002\030\001\"\026"
+          + "\n\024BatchProcessResponse\"\262\005\n\024BatchProcessM"
+          + "etadata\022J\n\005state\030\001 \001(\0162;.google.cloud.do"
+          + "cumentai.v1beta3.BatchProcessMetadata.St"
+          + "ate\022\025\n\rstate_message\030\002 \001(\t\022/\n\013create_tim"
+          + "e\030\003 \001(\0132\032.google.protobuf.Timestamp\022/\n\013u"
+          + "pdate_time\030\004 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022r\n\033individual_process_statuses\030\005 \003("
+          + "\0132M.google.cloud.documentai.v1beta3.Batc"
+          + "hProcessMetadata.IndividualProcessStatus"
+          + "\032\354\001\n\027IndividualProcessStatus\022\030\n\020input_gc"
+          + "s_source\030\001 \001(\t\022\"\n\006status\030\002 \001(\0132\022.google."
+          + "rpc.Status\022\036\n\026output_gcs_destination\030\003 \001"
+          + "(\t\022\"\n\026human_review_operation\030\004 \001(\tB\002\030\001\022O"
+          + "\n\023human_review_status\030\005 \001(\01322.google.clo"
+          + "ud.documentai.v1beta3.HumanReviewStatus\""
+          + "r\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007WAITI"
+          + "NG\020\001\022\013\n\007RUNNING\020\002\022\r\n\tSUCCEEDED\020\003\022\016\n\nCANC"
+          + "ELLING\020\004\022\r\n\tCANCELLED\020\005\022\n\n\006FAILED\020\006\"\372\001\n\025"
+          + "ReviewDocumentRequest\022D\n\017inline_document"
+          + "\030\004 \001(\0132).google.cloud.documentai.v1beta3"
+          + ".DocumentH\000\022P\n\023human_review_config\030\001 \001(\t"
+          + "B3\340A\002\372A-\n+documentai.googleapis.com/Huma"
+          + "nReviewConfig\022?\n\010document\030\002 \001(\0132).google"
+          + ".cloud.documentai.v1beta3.DocumentB\002\030\001B\010"
+          + "\n\006source\"1\n\026ReviewDocumentResponse\022\027\n\017gc"
+          + "s_destination\030\001 \001(\t\"\253\003\n\037ReviewDocumentOp"
+          + "erationMetadata\022U\n\005state\030\001 \001(\0162F.google."
+          + "cloud.documentai.v1beta3.ReviewDocumentO"
+          + "perationMetadata.State\022\025\n\rstate_message\030"
+          + "\002 \001(\t\022/\n\013create_time\030\003 \001(\0132\032.google.prot"
+          + "obuf.Timestamp\022/\n\013update_time\030\004 \001(\0132\032.go"
+          + "ogle.protobuf.Timestamp\022Q\n\017common_metada"
+          + "ta\030\005 \001(\01328.google.cloud.documentai.v1bet"
+          + "a3.CommonOperationMetadata\"e\n\005State\022\025\n\021S"
+          + "TATE_UNSPECIFIED\020\000\022\013\n\007RUNNING\020\001\022\016\n\nCANCE"
+          + "LLING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\tCA"
+          + "NCELLED\020\005\"\310\002\n\027CommonOperationMetadata\022M\n"
+          + "\005state\030\001 \001(\0162>.google.cloud.documentai.v"
+          + "1beta3.CommonOperationMetadata.State\022\025\n\r"
+          + "state_message\030\002 \001(\t\022/\n\013create_time\030\003 \001(\013"
+          + "2\032.google.protobuf.Timestamp\022/\n\013update_t"
+          + "ime\030\004 \001(\0132\032.google.protobuf.Timestamp\"e\n"
+          + "\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007RUNNING"
+          + "\020\001\022\016\n\nCANCELLING\020\002\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAI"
+          + "LED\020\004\022\r\n\tCANCELLED\020\0052\322\006\n\030DocumentProcess"
+          + "orService\022\303\001\n\017ProcessDocument\022/.google.c"
+          + "loud.documentai.v1beta3.ProcessRequest\0320"
+          + ".google.cloud.documentai.v1beta3.Process"
+          + "Response\"M\202\323\344\223\002@\";/v1beta3/{name=project"
+          + "s/*/locations/*/processors/*}:process:\001*"
+          + "\332A\004name\022\360\001\n\025BatchProcessDocuments\0224.goog"
+          + "le.cloud.documentai.v1beta3.BatchProcess"
+          + "Request\032\035.google.longrunning.Operation\"\201"
+          + "\001\202\323\344\223\002E\"@/v1beta3/{name=projects/*/locat"
+          + "ions/*/processors/*}:batchProcess:\001*\332A\004n"
+          + "ame\312A,\n\024BatchProcessResponse\022\024BatchProce"
+          + "ssMetadata\022\252\002\n\016ReviewDocument\0226.google.c"
+          + "loud.documentai.v1beta3.ReviewDocumentRe"
+          + "quest\032\035.google.longrunning.Operation\"\300\001\202"
+          + "\323\344\223\002h\"c/v1beta3/{human_review_config=pro"
+          + "jects/*/locations/*/processors/*/humanRe"
+          + "viewConfig}:reviewDocument:\001*\332A\023human_re"
+          + "view_config\312A9\n\026ReviewDocumentResponse\022\037"
+          + "ReviewDocumentOperationMetadata\032P\312A\034us-d"
+          + "ocumentai.googleapis.com\322A.https://www.g"
+          + "oogleapis.com/auth/cloud-platformB\261\004\n#co"
+          + "m.google.cloud.documentai.v1beta3B\032Docum"
+          + "entAiProcessorServiceP\001ZIgoogle.golang.o"
+          + "rg/genproto/googleapis/cloud/documentai/"
+          + "v1beta3;documentai\252\002\037Google.Cloud.Docume"
+          + "ntAI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V"
+          + "1beta3\352\002\"Google::Cloud::DocumentAI::V1be"
+          + "ta3\352AM\n\"documentai.googleapis.com/Locati"
+          + "on\022\'projects/{project}/locations/{locati"
+          + "on}\352Ae\n#documentai.googleapis.com/Proces"
+          + "sor\022>projects/{project}/locations/{locat"
+          + "ion}/processors/{processor}\352A\177\n+document"
+          + "ai.googleapis.com/HumanReviewConfig\022Ppro"
+          + "jects/{project}/locations/{location}/pro"
+          + "cessors/{processor}/humanReviewConfigb\006p"
+          + "roto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -182,6 +224,7 @@ public final class DocumentAiProcessorService {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.documentai.v1beta3.DocumentProto.getDescriptor(),
+              com.google.cloud.documentai.v1beta3.DocumentIoProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
@@ -193,23 +236,36 @@ public final class DocumentAiProcessorService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ProcessRequest_descriptor,
             new java.lang.String[] {
-              "Name", "Document", "SkipHumanReview",
+              "InlineDocument", "RawDocument", "Name", "Document", "SkipHumanReview", "Source",
+            });
+    internal_static_google_cloud_documentai_v1beta3_HumanReviewStatus_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_documentai_v1beta3_HumanReviewStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_HumanReviewStatus_descriptor,
+            new java.lang.String[] {
+              "State", "StateMessage", "HumanReviewOperation",
             });
     internal_static_google_cloud_documentai_v1beta3_ProcessResponse_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_documentai_v1beta3_ProcessResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ProcessResponse_descriptor,
             new java.lang.String[] {
-              "Document", "HumanReviewOperation",
+              "Document", "HumanReviewOperation", "HumanReviewStatus",
             });
     internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_descriptor,
             new java.lang.String[] {
-              "Name", "InputConfigs", "OutputConfig",
+              "Name",
+              "InputConfigs",
+              "OutputConfig",
+              "InputDocuments",
+              "DocumentOutputConfig",
+              "SkipHumanReview",
             });
     internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_BatchInputConfig_descriptor =
         internal_static_google_cloud_documentai_v1beta3_BatchProcessRequest_descriptor
@@ -232,13 +288,13 @@ public final class DocumentAiProcessorService {
               "GcsDestination",
             });
     internal_static_google_cloud_documentai_v1beta3_BatchProcessResponse_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_documentai_v1beta3_BatchProcessResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_BatchProcessResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_documentai_v1beta3_BatchProcessMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_documentai_v1beta3_BatchProcessMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_BatchProcessMetadata_descriptor,
@@ -253,18 +309,22 @@ public final class DocumentAiProcessorService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_BatchProcessMetadata_IndividualProcessStatus_descriptor,
             new java.lang.String[] {
-              "InputGcsSource", "Status", "OutputGcsDestination", "HumanReviewOperation",
+              "InputGcsSource",
+              "Status",
+              "OutputGcsDestination",
+              "HumanReviewOperation",
+              "HumanReviewStatus",
             });
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ReviewDocumentRequest_descriptor,
             new java.lang.String[] {
-              "HumanReviewConfig", "Document",
+              "InlineDocument", "HumanReviewConfig", "Document", "Source",
             });
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentResponse_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ReviewDocumentResponse_descriptor,
@@ -272,10 +332,18 @@ public final class DocumentAiProcessorService {
               "GcsDestination",
             });
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor,
+            new java.lang.String[] {
+              "State", "StateMessage", "CreateTime", "UpdateTime", "CommonMetadata",
+            });
+    internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor,
             new java.lang.String[] {
               "State", "StateMessage", "CreateTime", "UpdateTime",
             });
@@ -296,6 +364,7 @@ public final class DocumentAiProcessorService {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.documentai.v1beta3.DocumentProto.getDescriptor();
+    com.google.cloud.documentai.v1beta3.DocumentIoProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();

@@ -22,23 +22,22 @@ package com.google.cloud.documentai.v1beta3;
  *
  *
  * <pre>
- * The long running operation metadata for review document method.
+ * The common metadata for long running operations.
  * </pre>
  *
- * Protobuf type {@code google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata}
+ * Protobuf type {@code google.cloud.documentai.v1beta3.CommonOperationMetadata}
  */
-public final class ReviewDocumentOperationMetadata extends com.google.protobuf.GeneratedMessageV3
+public final class CommonOperationMetadata extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)
-    ReviewDocumentOperationMetadataOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.CommonOperationMetadata)
+    CommonOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use ReviewDocumentOperationMetadata.newBuilder() to construct.
-  private ReviewDocumentOperationMetadata(
-      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CommonOperationMetadata.newBuilder() to construct.
+  private CommonOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private ReviewDocumentOperationMetadata() {
+  private CommonOperationMetadata() {
     state_ = 0;
     stateMessage_ = "";
   }
@@ -46,7 +45,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new ReviewDocumentOperationMetadata();
+    return new CommonOperationMetadata();
   }
 
   @java.lang.Override
@@ -54,7 +53,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     return this.unknownFields;
   }
 
-  private ReviewDocumentOperationMetadata(
+  private CommonOperationMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -116,23 +115,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
 
               break;
             }
-          case 42:
-            {
-              com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder subBuilder = null;
-              if (commonMetadata_ != null) {
-                subBuilder = commonMetadata_.toBuilder();
-              }
-              commonMetadata_ =
-                  input.readMessage(
-                      com.google.cloud.documentai.v1beta3.CommonOperationMetadata.parser(),
-                      extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(commonMetadata_);
-                commonMetadata_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -154,17 +136,17 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
-        .internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor;
+        .internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
-        .internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_fieldAccessorTable
+        .internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.class,
-            com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.Builder.class);
+            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.class,
+            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder.class);
   }
 
   /**
@@ -174,7 +156,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    * State of the longrunning operation.
    * </pre>
    *
-   * Protobuf enum {@code google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State}
+   * Protobuf enum {@code google.cloud.documentai.v1beta3.CommonOperationMetadata.State}
    */
   public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
@@ -366,7 +348,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.getDescriptor()
+      return com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDescriptor()
           .getEnumTypes()
           .get(0);
     }
@@ -389,7 +371,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State)
+    // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1beta3.CommonOperationMetadata.State)
   }
 
   public static final int STATE_FIELD_NUMBER = 1;
@@ -398,10 +380,10 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Used only when Operation.done is false.
+   * The state of the operation.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;</code>
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -413,20 +395,20 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Used only when Operation.done is false.
+   * The state of the operation.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;</code>
+   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
    *
    * @return The state.
    */
   @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State getState() {
+  public com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State getState() {
     @SuppressWarnings("deprecation")
-    com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State result =
-        com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State.valueOf(state_);
+    com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State result =
+        com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State.valueOf(state_);
     return result == null
-        ? com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State.UNRECOGNIZED
+        ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State.UNRECOGNIZED
         : result;
   }
 
@@ -437,7 +419,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    * <pre>
    * A message providing more details about the current state of processing.
-   * For example, the error message if the operation is failed.
    * </pre>
    *
    * <code>string state_message = 2;</code>
@@ -461,7 +442,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    * <pre>
    * A message providing more details about the current state of processing.
-   * For example, the error message if the operation is failed.
    * </pre>
    *
    * <code>string state_message = 2;</code>
@@ -573,55 +553,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     return getUpdateTime();
   }
 
-  public static final int COMMON_METADATA_FIELD_NUMBER = 5;
-  private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
-  /**
-   *
-   *
-   * <pre>
-   * The basic metadata of the long running operation.
-   * </pre>
-   *
-   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-   *
-   * @return Whether the commonMetadata field is set.
-   */
-  @java.lang.Override
-  public boolean hasCommonMetadata() {
-    return commonMetadata_ != null;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The basic metadata of the long running operation.
-   * </pre>
-   *
-   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-   *
-   * @return The commonMetadata.
-   */
-  @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata() {
-    return commonMetadata_ == null
-        ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
-        : commonMetadata_;
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The basic metadata of the long running operation.
-   * </pre>
-   *
-   * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-   */
-  @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder
-      getCommonMetadataOrBuilder() {
-    return getCommonMetadata();
-  }
-
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -637,8 +568,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (state_
-        != com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State
-            .STATE_UNSPECIFIED
+        != com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State.STATE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(1, state_);
     }
@@ -651,9 +581,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     if (updateTime_ != null) {
       output.writeMessage(4, getUpdateTime());
     }
-    if (commonMetadata_ != null) {
-      output.writeMessage(5, getCommonMetadata());
-    }
     unknownFields.writeTo(output);
   }
 
@@ -664,8 +591,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
 
     size = 0;
     if (state_
-        != com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State
-            .STATE_UNSPECIFIED
+        != com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State.STATE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
     }
@@ -678,9 +604,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     if (updateTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
-    if (commonMetadata_ != null) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCommonMetadata());
-    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -691,11 +614,11 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)) {
+    if (!(obj instanceof com.google.cloud.documentai.v1beta3.CommonOperationMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata other =
-        (com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata) obj;
+    com.google.cloud.documentai.v1beta3.CommonOperationMetadata other =
+        (com.google.cloud.documentai.v1beta3.CommonOperationMetadata) obj;
 
     if (state_ != other.state_) return false;
     if (!getStateMessage().equals(other.getStateMessage())) return false;
@@ -706,10 +629,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
-    }
-    if (hasCommonMetadata() != other.hasCommonMetadata()) return false;
-    if (hasCommonMetadata()) {
-      if (!getCommonMetadata().equals(other.getCommonMetadata())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -734,81 +653,76 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
-    if (hasCommonMetadata()) {
-      hash = (37 * hash) + COMMON_METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + getCommonMetadata().hashCode();
-    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
-      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(byte[] data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-      parseDelimitedFrom(
-          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parseFrom(
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -826,7 +740,7 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
   }
 
   public static Builder newBuilder(
-      com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata prototype) {
+      com.google.cloud.documentai.v1beta3.CommonOperationMetadata prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -844,32 +758,31 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The long running operation metadata for review document method.
+   * The common metadata for long running operations.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata}
+   * Protobuf type {@code google.cloud.documentai.v1beta3.CommonOperationMetadata}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)
-      com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadataOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.documentai.v1beta3.CommonOperationMetadata)
+      com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
-          .internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor;
+          .internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
-          .internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_fieldAccessorTable
+          .internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.class,
-              com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.Builder.class);
+              com.google.cloud.documentai.v1beta3.CommonOperationMetadata.class,
+              com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder.class);
     }
 
-    // Construct using
-    // com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.newBuilder()
+    // Construct using com.google.cloud.documentai.v1beta3.CommonOperationMetadata.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -902,31 +815,23 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-      } else {
-        commonMetadata_ = null;
-        commonMetadataBuilder_ = null;
-      }
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.documentai.v1beta3.DocumentAiProcessorService
-          .internal_static_google_cloud_documentai_v1beta3_ReviewDocumentOperationMetadata_descriptor;
+          .internal_static_google_cloud_documentai_v1beta3_CommonOperationMetadata_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-        getDefaultInstanceForType() {
-      return com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-          .getDefaultInstance();
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata getDefaultInstanceForType() {
+      return com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata build() {
-      com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata result = buildPartial();
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata build() {
+      com.google.cloud.documentai.v1beta3.CommonOperationMetadata result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -934,9 +839,9 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
     }
 
     @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata buildPartial() {
-      com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata result =
-          new com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata(this);
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata buildPartial() {
+      com.google.cloud.documentai.v1beta3.CommonOperationMetadata result =
+          new com.google.cloud.documentai.v1beta3.CommonOperationMetadata(this);
       result.state_ = state_;
       result.stateMessage_ = stateMessage_;
       if (createTimeBuilder_ == null) {
@@ -948,11 +853,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
-      }
-      if (commonMetadataBuilder_ == null) {
-        result.commonMetadata_ = commonMetadata_;
-      } else {
-        result.commonMetadata_ = commonMetadataBuilder_.build();
       }
       onBuilt();
       return result;
@@ -993,20 +893,17 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata) {
-        return mergeFrom(
-            (com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata) other);
+      if (other instanceof com.google.cloud.documentai.v1beta3.CommonOperationMetadata) {
+        return mergeFrom((com.google.cloud.documentai.v1beta3.CommonOperationMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(
-        com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata other) {
-      if (other
-          == com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-              .getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.documentai.v1beta3.CommonOperationMetadata other) {
+      if (other == com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance())
+        return this;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
@@ -1019,9 +916,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
-      }
-      if (other.hasCommonMetadata()) {
-        mergeCommonMetadata(other.getCommonMetadata());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1038,13 +932,12 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata parsedMessage = null;
+      com.google.cloud.documentai.v1beta3.CommonOperationMetadata parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         parsedMessage =
-            (com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)
-                e.getUnfinishedMessage();
+            (com.google.cloud.documentai.v1beta3.CommonOperationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1059,11 +952,10 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Used only when Operation.done is false.
+     * The state of the operation.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;
-     * </code>
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -1075,11 +967,10 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Used only when Operation.done is false.
+     * The state of the operation.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;
-     * </code>
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
@@ -1094,38 +985,36 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Used only when Operation.done is false.
+     * The state of the operation.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;
-     * </code>
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
      *
      * @return The state.
      */
     @java.lang.Override
-    public com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State getState() {
+    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State getState() {
       @SuppressWarnings("deprecation")
-      com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State result =
-          com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State.valueOf(state_);
+      com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State result =
+          com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State.valueOf(state_);
       return result == null
-          ? com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State.UNRECOGNIZED
+          ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State.UNRECOGNIZED
           : result;
     }
     /**
      *
      *
      * <pre>
-     * Used only when Operation.done is false.
+     * The state of the operation.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;
-     * </code>
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
      */
     public Builder setState(
-        com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State value) {
+        com.google.cloud.documentai.v1beta3.CommonOperationMetadata.State value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1138,11 +1027,10 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Used only when Operation.done is false.
+     * The state of the operation.
      * </pre>
      *
-     * <code>.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata.State state = 1;
-     * </code>
+     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata.State state = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -1159,7 +1047,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      * <pre>
      * A message providing more details about the current state of processing.
-     * For example, the error message if the operation is failed.
      * </pre>
      *
      * <code>string state_message = 2;</code>
@@ -1182,7 +1069,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      * <pre>
      * A message providing more details about the current state of processing.
-     * For example, the error message if the operation is failed.
      * </pre>
      *
      * <code>string state_message = 2;</code>
@@ -1205,7 +1091,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      * <pre>
      * A message providing more details about the current state of processing.
-     * For example, the error message if the operation is failed.
      * </pre>
      *
      * <code>string state_message = 2;</code>
@@ -1227,7 +1112,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      * <pre>
      * A message providing more details about the current state of processing.
-     * For example, the error message if the operation is failed.
      * </pre>
      *
      * <code>string state_message = 2;</code>
@@ -1245,7 +1129,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
      *
      * <pre>
      * A message providing more details about the current state of processing.
-     * For example, the error message if the operation is failed.
      * </pre>
      *
      * <code>string state_message = 2;</code>
@@ -1630,197 +1513,6 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       return updateTimeBuilder_;
     }
 
-    private com.google.cloud.documentai.v1beta3.CommonOperationMetadata commonMetadata_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.documentai.v1beta3.CommonOperationMetadata,
-            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
-            com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>
-        commonMetadataBuilder_;
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     *
-     * @return Whether the commonMetadata field is set.
-     */
-    public boolean hasCommonMetadata() {
-      return commonMetadataBuilder_ != null || commonMetadata_ != null;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     *
-     * @return The commonMetadata.
-     */
-    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata getCommonMetadata() {
-      if (commonMetadataBuilder_ == null) {
-        return commonMetadata_ == null
-            ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
-            : commonMetadata_;
-      } else {
-        return commonMetadataBuilder_.getMessage();
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    public Builder setCommonMetadata(
-        com.google.cloud.documentai.v1beta3.CommonOperationMetadata value) {
-      if (commonMetadataBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        commonMetadata_ = value;
-        onChanged();
-      } else {
-        commonMetadataBuilder_.setMessage(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    public Builder setCommonMetadata(
-        com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder builderForValue) {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = builderForValue.build();
-        onChanged();
-      } else {
-        commonMetadataBuilder_.setMessage(builderForValue.build());
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    public Builder mergeCommonMetadata(
-        com.google.cloud.documentai.v1beta3.CommonOperationMetadata value) {
-      if (commonMetadataBuilder_ == null) {
-        if (commonMetadata_ != null) {
-          commonMetadata_ =
-              com.google.cloud.documentai.v1beta3.CommonOperationMetadata.newBuilder(
-                      commonMetadata_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          commonMetadata_ = value;
-        }
-        onChanged();
-      } else {
-        commonMetadataBuilder_.mergeFrom(value);
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    public Builder clearCommonMetadata() {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadata_ = null;
-        onChanged();
-      } else {
-        commonMetadata_ = null;
-        commonMetadataBuilder_ = null;
-      }
-
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    public com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder
-        getCommonMetadataBuilder() {
-
-      onChanged();
-      return getCommonMetadataFieldBuilder().getBuilder();
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    public com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder
-        getCommonMetadataOrBuilder() {
-      if (commonMetadataBuilder_ != null) {
-        return commonMetadataBuilder_.getMessageOrBuilder();
-      } else {
-        return commonMetadata_ == null
-            ? com.google.cloud.documentai.v1beta3.CommonOperationMetadata.getDefaultInstance()
-            : commonMetadata_;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The basic metadata of the long running operation.
-     * </pre>
-     *
-     * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.documentai.v1beta3.CommonOperationMetadata,
-            com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
-            com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>
-        getCommonMetadataFieldBuilder() {
-      if (commonMetadataBuilder_ == null) {
-        commonMetadataBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.documentai.v1beta3.CommonOperationMetadata,
-                com.google.cloud.documentai.v1beta3.CommonOperationMetadata.Builder,
-                com.google.cloud.documentai.v1beta3.CommonOperationMetadataOrBuilder>(
-                getCommonMetadata(), getParentForChildren(), isClean());
-        commonMetadata_ = null;
-      }
-      return commonMetadataBuilder_;
-    }
-
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -1832,45 +1524,42 @@ public final class ReviewDocumentOperationMetadata extends com.google.protobuf.G
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)
+    // @@protoc_insertion_point(builder_scope:google.cloud.documentai.v1beta3.CommonOperationMetadata)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata)
-  private static final com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-      DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.documentai.v1beta3.CommonOperationMetadata)
+  private static final com.google.cloud.documentai.v1beta3.CommonOperationMetadata DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata();
+    DEFAULT_INSTANCE = new com.google.cloud.documentai.v1beta3.CommonOperationMetadata();
   }
 
-  public static com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-      getDefaultInstance() {
+  public static com.google.cloud.documentai.v1beta3.CommonOperationMetadata getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ReviewDocumentOperationMetadata> PARSER =
-      new com.google.protobuf.AbstractParser<ReviewDocumentOperationMetadata>() {
+  private static final com.google.protobuf.Parser<CommonOperationMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<CommonOperationMetadata>() {
         @java.lang.Override
-        public ReviewDocumentOperationMetadata parsePartialFrom(
+        public CommonOperationMetadata parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ReviewDocumentOperationMetadata(input, extensionRegistry);
+          return new CommonOperationMetadata(input, extensionRegistry);
         }
       };
 
-  public static com.google.protobuf.Parser<ReviewDocumentOperationMetadata> parser() {
+  public static com.google.protobuf.Parser<CommonOperationMetadata> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ReviewDocumentOperationMetadata> getParserForType() {
+  public com.google.protobuf.Parser<CommonOperationMetadata> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.documentai.v1beta3.ReviewDocumentOperationMetadata
-      getDefaultInstanceForType() {
+  public com.google.cloud.documentai.v1beta3.CommonOperationMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

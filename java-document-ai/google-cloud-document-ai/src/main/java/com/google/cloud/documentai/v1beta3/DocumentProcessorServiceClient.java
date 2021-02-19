@@ -326,6 +326,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
    *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
+   *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setSkipHumanReview(true)
    *           .build();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(request).get();
@@ -355,6 +358,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
    *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
+   *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setSkipHumanReview(true)
    *           .build();
    *   OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
    *       documentProcessorServiceClient
@@ -385,6 +391,9 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    *           .setName(ProcessorName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
    *           .addAllInputConfigs(new ArrayList<BatchProcessRequest.BatchInputConfig>())
    *           .setOutputConfig(BatchProcessRequest.BatchOutputConfig.newBuilder().build())
+   *           .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
+   *           .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
+   *           .setSkipHumanReview(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       documentProcessorServiceClient.batchProcessDocumentsCallable().futureCall(request);

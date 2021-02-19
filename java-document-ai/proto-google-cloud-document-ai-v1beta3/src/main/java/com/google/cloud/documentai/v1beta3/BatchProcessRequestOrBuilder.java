@@ -60,9 +60,10 @@ public interface BatchProcessRequestOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig>
       getInputConfigsList();
   /**
@@ -73,9 +74,10 @@ public interface BatchProcessRequestOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig getInputConfigs(
       int index);
   /**
@@ -86,9 +88,10 @@ public interface BatchProcessRequestOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   int getInputConfigsCount();
   /**
    *
@@ -98,9 +101,10 @@ public interface BatchProcessRequestOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   java.util.List<
           ? extends
               com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder>
@@ -113,9 +117,10 @@ public interface BatchProcessRequestOrBuilder
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2;
+   * repeated .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfig input_configs = 2 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchInputConfigOrBuilder
       getInputConfigsOrBuilder(int index);
 
@@ -126,11 +131,13 @@ public interface BatchProcessRequestOrBuilder
    * The overall output config for batch process.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    *
    * @return Whether the outputConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasOutputConfig();
   /**
    *
@@ -139,11 +146,13 @@ public interface BatchProcessRequestOrBuilder
    * The overall output config for batch process.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    *
    * @return The outputConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig getOutputConfig();
   /**
    *
@@ -152,9 +161,97 @@ public interface BatchProcessRequestOrBuilder
    * The overall output config for batch process.
    * </pre>
    *
-   * <code>.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3;
+   * <code>
+   * .google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfig output_config = 3 [deprecated = true];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.BatchProcessRequest.BatchOutputConfigOrBuilder
       getOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The input documents for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+   *
+   * @return Whether the inputDocuments field is set.
+   */
+  boolean hasInputDocuments();
+  /**
+   *
+   *
+   * <pre>
+   * The input documents for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+   *
+   * @return The inputDocuments.
+   */
+  com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig getInputDocuments();
+  /**
+   *
+   *
+   * <pre>
+   * The input documents for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.BatchDocumentsInputConfig input_documents = 5;</code>
+   */
+  com.google.cloud.documentai.v1beta3.BatchDocumentsInputConfigOrBuilder
+      getInputDocumentsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The overall output config for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+   *
+   * @return Whether the documentOutputConfig field is set.
+   */
+  boolean hasDocumentOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The overall output config for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+   *
+   * @return The documentOutputConfig.
+   */
+  com.google.cloud.documentai.v1beta3.DocumentOutputConfig getDocumentOutputConfig();
+  /**
+   *
+   *
+   * <pre>
+   * The overall output config for batch process.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.DocumentOutputConfig document_output_config = 6;</code>
+   */
+  com.google.cloud.documentai.v1beta3.DocumentOutputConfigOrBuilder
+      getDocumentOutputConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether Human Review feature should be skipped for this request. Default to
+   * false.
+   * </pre>
+   *
+   * <code>bool skip_human_review = 4;</code>
+   *
+   * @return The skipHumanReview.
+   */
+  boolean getSkipHumanReview();
 }
