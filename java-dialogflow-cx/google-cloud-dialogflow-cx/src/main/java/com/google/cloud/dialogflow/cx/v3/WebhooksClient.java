@@ -43,6 +43,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+ *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
+ *   Webhook response = webhooksClient.getWebhook(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the WebhooksClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -144,6 +151,17 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Returns the list of all webhooks in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   for (Webhook element : webhooksClient.listWebhooks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to list all webhooks for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -160,6 +178,17 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Returns the list of all webhooks in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   String parent = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
+   *   for (Webhook element : webhooksClient.listWebhooks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to list all webhooks for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -173,6 +202,23 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Returns the list of all webhooks in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   ListWebhooksRequest request =
+   *       ListWebhooksRequest.newBuilder()
+   *           .setParent(
+   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Webhook element : webhooksClient.listWebhooks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -185,6 +231,23 @@ public class WebhooksClient implements BackgroundResource {
    * Returns the list of all webhooks in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   ListWebhooksRequest request =
+   *       ListWebhooksRequest.newBuilder()
+   *           .setParent(
+   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Webhook> future = webhooksClient.listWebhooksPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Webhook element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWebhooksRequest, ListWebhooksPagedResponse>
       listWebhooksPagedCallable() {
@@ -196,6 +259,23 @@ public class WebhooksClient implements BackgroundResource {
    * Returns the list of all webhooks in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   while (true) {
+   *     ListWebhooksResponse response = webhooksClient.listWebhooksCallable().call(request);
+   *     for (Webhook element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListWebhooksRequest, ListWebhooksResponse> listWebhooksCallable() {
     return stub.listWebhooksCallable();
@@ -204,6 +284,15 @@ public class WebhooksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified webhook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
+   *   Webhook response = webhooksClient.getWebhook(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the webhook. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/webhooks/&lt;Webhook ID&gt;`.
@@ -219,6 +308,15 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Retrieves the specified webhook.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   String name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
+   *   Webhook response = webhooksClient.getWebhook(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the webhook. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/webhooks/&lt;Webhook ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -232,6 +330,18 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Retrieves the specified webhook.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   GetWebhookRequest request =
+   *       GetWebhookRequest.newBuilder()
+   *           .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .build();
+   *   Webhook response = webhooksClient.getWebhook(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -244,6 +354,18 @@ public class WebhooksClient implements BackgroundResource {
    * Retrieves the specified webhook.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   GetWebhookRequest request =
+   *       GetWebhookRequest.newBuilder()
+   *           .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .build();
+   *   ApiFuture<Webhook> future = webhooksClient.getWebhookCallable().futureCall(request);
+   *   // Do something.
+   *   Webhook response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetWebhookRequest, Webhook> getWebhookCallable() {
     return stub.getWebhookCallable();
@@ -252,6 +374,16 @@ public class WebhooksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a webhook in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   Webhook webhook = Webhook.newBuilder().build();
+   *   Webhook response = webhooksClient.createWebhook(parent, webhook);
+   * }
+   * }</pre>
    *
    * @param parent Required. The agent to create a webhook for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -271,6 +403,16 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Creates a webhook in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   String parent = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
+   *   Webhook webhook = Webhook.newBuilder().build();
+   *   Webhook response = webhooksClient.createWebhook(parent, webhook);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to create a webhook for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @param webhook Required. The webhook to create.
@@ -286,6 +428,20 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Creates a webhook in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   CreateWebhookRequest request =
+   *       CreateWebhookRequest.newBuilder()
+   *           .setParent(
+   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setWebhook(Webhook.newBuilder().build())
+   *           .build();
+   *   Webhook response = webhooksClient.createWebhook(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,6 +454,20 @@ public class WebhooksClient implements BackgroundResource {
    * Creates a webhook in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   CreateWebhookRequest request =
+   *       CreateWebhookRequest.newBuilder()
+   *           .setParent(
+   *               WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setWebhook(Webhook.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Webhook> future = webhooksClient.createWebhookCallable().futureCall(request);
+   *   // Do something.
+   *   Webhook response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateWebhookRequest, Webhook> createWebhookCallable() {
     return stub.createWebhookCallable();
@@ -306,6 +476,16 @@ public class WebhooksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified webhook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   Webhook webhook = Webhook.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Webhook response = webhooksClient.updateWebhook(webhook, updateMask);
+   * }
+   * }</pre>
    *
    * @param webhook Required. The webhook to update.
    * @param updateMask The mask to control which fields get updated. If the mask is not present, all
@@ -322,6 +502,19 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Updates the specified webhook.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   UpdateWebhookRequest request =
+   *       UpdateWebhookRequest.newBuilder()
+   *           .setWebhook(Webhook.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Webhook response = webhooksClient.updateWebhook(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -334,6 +527,19 @@ public class WebhooksClient implements BackgroundResource {
    * Updates the specified webhook.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   UpdateWebhookRequest request =
+   *       UpdateWebhookRequest.newBuilder()
+   *           .setWebhook(Webhook.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Webhook> future = webhooksClient.updateWebhookCallable().futureCall(request);
+   *   // Do something.
+   *   Webhook response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateWebhookRequest, Webhook> updateWebhookCallable() {
     return stub.updateWebhookCallable();
@@ -342,6 +548,15 @@ public class WebhooksClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified webhook.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   WebhookName name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]");
+   *   webhooksClient.deleteWebhook(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the webhook to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/webhooks/&lt;Webhook ID&gt;`.
@@ -357,6 +572,15 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Deletes the specified webhook.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   String name = WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString();
+   *   webhooksClient.deleteWebhook(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the webhook to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/webhooks/&lt;Webhook ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,6 +594,19 @@ public class WebhooksClient implements BackgroundResource {
   /**
    * Deletes the specified webhook.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   DeleteWebhookRequest request =
+   *       DeleteWebhookRequest.newBuilder()
+   *           .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   webhooksClient.deleteWebhook(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -382,6 +619,19 @@ public class WebhooksClient implements BackgroundResource {
    * Deletes the specified webhook.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (WebhooksClient webhooksClient = WebhooksClient.create()) {
+   *   DeleteWebhookRequest request =
+   *       DeleteWebhookRequest.newBuilder()
+   *           .setName(WebhookName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[WEBHOOK]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Empty> future = webhooksClient.deleteWebhookCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteWebhookRequest, Empty> deleteWebhookCallable() {
     return stub.deleteWebhookCallable();

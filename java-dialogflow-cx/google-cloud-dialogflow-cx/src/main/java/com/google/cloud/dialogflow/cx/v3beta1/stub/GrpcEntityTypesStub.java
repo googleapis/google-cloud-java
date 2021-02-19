@@ -249,27 +249,33 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse> listEntityTypesCallable() {
     return listEntityTypesCallable;
   }
 
+  @Override
   public UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
       listEntityTypesPagedCallable() {
     return listEntityTypesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable() {
     return getEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEntityTypeRequest, EntityType> createEntityTypeCallable() {
     return createEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEntityTypeRequest, EntityType> updateEntityTypeCallable() {
     return updateEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     return deleteEntityTypeCallable;
   }

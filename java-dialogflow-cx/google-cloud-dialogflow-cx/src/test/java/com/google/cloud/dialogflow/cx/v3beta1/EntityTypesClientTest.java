@@ -179,6 +179,7 @@ public class EntityTypesClientTest {
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
+            .setRedact(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -223,6 +224,7 @@ public class EntityTypesClientTest {
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
+            .setRedact(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -266,6 +268,7 @@ public class EntityTypesClientTest {
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
+            .setRedact(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -312,6 +315,7 @@ public class EntityTypesClientTest {
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
+            .setRedact(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 
@@ -358,6 +362,7 @@ public class EntityTypesClientTest {
             .addAllEntities(new ArrayList<EntityType.Entity>())
             .addAllExcludedPhrases(new ArrayList<EntityType.ExcludedPhrase>())
             .setEnableFuzzyExtraction(true)
+            .setRedact(true)
             .build();
     mockEntityTypes.addResponse(expectedResponse);
 

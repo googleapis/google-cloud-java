@@ -71,7 +71,13 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAgents, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAgentsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  Agent.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +111,13 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  Agent.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +131,13 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  Agent.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -127,7 +151,13 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -141,7 +171,13 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ExportAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -156,7 +192,56 @@ public class MockAgentsImpl extends AgentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method RestoreAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void validateAgent(
+      ValidateAgentRequest request, StreamObserver<AgentValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AgentValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((AgentValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ValidateAgent, expected %s or %s",
+                  response.getClass().getName(),
+                  AgentValidationResult.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAgentValidationResult(
+      GetAgentValidationResultRequest request,
+      StreamObserver<AgentValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof AgentValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((AgentValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAgentValidationResult, expected %s or %s",
+                  response.getClass().getName(),
+                  AgentValidationResult.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

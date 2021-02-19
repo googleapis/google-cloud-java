@@ -28,10 +28,7 @@ public interface AgentOrBuilder
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
-   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -46,10 +43,7 @@ public interface AgentOrBuilder
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
-   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -93,9 +87,7 @@ public interface AgentOrBuilder
    * See [Language
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
+   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
    * </pre>
    *
    * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -111,9 +103,7 @@ public interface AgentOrBuilder
    * See [Language
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
+   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
    * </pre>
    *
    * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -252,10 +242,11 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting the
+   * agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -269,10 +260,11 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting the
+   * agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -282,6 +274,35 @@ public interface AgentOrBuilder
    * @return The bytes for startFlow.
    */
   com.google.protobuf.ByteString getStartFlowBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The securitySettings.
+   */
+  java.lang.String getSecuritySettings();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for securitySettings.
+   */
+  com.google.protobuf.ByteString getSecuritySettingsBytes();
 
   /**
    *

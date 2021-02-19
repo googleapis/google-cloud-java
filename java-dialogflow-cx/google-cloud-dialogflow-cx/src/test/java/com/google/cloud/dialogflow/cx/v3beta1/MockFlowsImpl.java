@@ -70,7 +70,11 @@ public class MockFlowsImpl extends FlowsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFlow, expected %s or %s",
+                  response.getClass().getName(), Flow.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -84,7 +88,13 @@ public class MockFlowsImpl extends FlowsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFlow, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +109,13 @@ public class MockFlowsImpl extends FlowsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFlows, expected %s or %s",
+                  response.getClass().getName(),
+                  ListFlowsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +129,11 @@ public class MockFlowsImpl extends FlowsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFlow, expected %s or %s",
+                  response.getClass().getName(), Flow.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -127,7 +147,11 @@ public class MockFlowsImpl extends FlowsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFlow, expected %s or %s",
+                  response.getClass().getName(), Flow.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -141,7 +165,56 @@ public class MockFlowsImpl extends FlowsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method TrainFlow, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void validateFlow(
+      ValidateFlowRequest request, StreamObserver<FlowValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof FlowValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((FlowValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ValidateFlow, expected %s or %s",
+                  response.getClass().getName(),
+                  FlowValidationResult.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getFlowValidationResult(
+      GetFlowValidationResultRequest request,
+      StreamObserver<FlowValidationResult> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof FlowValidationResult) {
+      requests.add(request);
+      responseObserver.onNext(((FlowValidationResult) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetFlowValidationResult, expected %s or %s",
+                  response.getClass().getName(),
+                  FlowValidationResult.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

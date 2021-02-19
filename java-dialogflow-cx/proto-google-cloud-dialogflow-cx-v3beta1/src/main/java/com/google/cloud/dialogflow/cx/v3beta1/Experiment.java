@@ -23,7 +23,6 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  * <pre>
  * Represents an experiment in an environment.
- * Next ID: 13
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Experiment}
@@ -525,7 +524,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Definition of the experiment.
-   * Next ID: 3
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Experiment.Definition}
@@ -975,7 +973,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Definition of the experiment.
-     * Next ID: 3
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Experiment.Definition}
@@ -1797,7 +1794,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Types of metric for Dialogflow experiment.
+     * Types of ratio-based metric for Dialogflow experiment.
      * </pre>
      *
      * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType}
@@ -2018,6 +2015,187 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       }
 
       // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType)
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * types of count-based metric for Dialogflow experiment.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType}
+     */
+    public enum CountType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Count type unspecified.
+       * </pre>
+       *
+       * <code>COUNT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      COUNT_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Total number of occurrences of a 'NO_MATCH'.
+       * </pre>
+       *
+       * <code>TOTAL_NO_MATCH_COUNT = 1;</code>
+       */
+      TOTAL_NO_MATCH_COUNT(1),
+      /**
+       *
+       *
+       * <pre>
+       * Total number of turn counts.
+       * </pre>
+       *
+       * <code>TOTAL_TURN_COUNT = 2;</code>
+       */
+      TOTAL_TURN_COUNT(2),
+      /**
+       *
+       *
+       * <pre>
+       * Average turn count in a session.
+       * </pre>
+       *
+       * <code>AVERAGE_TURN_COUNT = 3;</code>
+       */
+      AVERAGE_TURN_COUNT(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Count type unspecified.
+       * </pre>
+       *
+       * <code>COUNT_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int COUNT_TYPE_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Total number of occurrences of a 'NO_MATCH'.
+       * </pre>
+       *
+       * <code>TOTAL_NO_MATCH_COUNT = 1;</code>
+       */
+      public static final int TOTAL_NO_MATCH_COUNT_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Total number of turn counts.
+       * </pre>
+       *
+       * <code>TOTAL_TURN_COUNT = 2;</code>
+       */
+      public static final int TOTAL_TURN_COUNT_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Average turn count in a session.
+       * </pre>
+       *
+       * <code>AVERAGE_TURN_COUNT = 3;</code>
+       */
+      public static final int AVERAGE_TURN_COUNT_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static CountType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static CountType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return COUNT_TYPE_UNSPECIFIED;
+          case 1:
+            return TOTAL_NO_MATCH_COUNT;
+          case 2:
+            return TOTAL_TURN_COUNT;
+          case 3:
+            return AVERAGE_TURN_COUNT;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<CountType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<CountType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<CountType>() {
+            public CountType findValueByNumber(int number) {
+              return CountType.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.getDescriptor()
+            .getEnumTypes()
+            .get(1);
+      }
+
+      private static final CountType[] VALUES = values();
+
+      public static CountType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private CountType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType)
     }
 
     public interface ConfidenceIntervalOrBuilder
@@ -2949,7 +3127,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the metric.
+       * Ratio-based metric type. Only one of type or count_type is specified in
+       * each Metric.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -2961,7 +3140,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the metric.
+       * Ratio-based metric type. Only one of type or count_type is specified in
+       * each Metric.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -2969,6 +3149,35 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        * @return The type.
        */
       com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType getType();
+
+      /**
+       *
+       *
+       * <pre>
+       * Count-based metric type. Only one of type or count_type is specified in
+       * each Metric.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for countType.
+       */
+      int getCountTypeValue();
+      /**
+       *
+       *
+       * <pre>
+       * Count-based metric type. Only one of type or count_type is specified in
+       * each Metric.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+       * </code>
+       *
+       * @return The countType.
+       */
+      com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType getCountType();
 
       /**
        *
@@ -2982,6 +3191,19 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        * @return The ratio.
        */
       double getRatio();
+
+      /**
+       *
+       *
+       * <pre>
+       * Count value of a metric.
+       * </pre>
+       *
+       * <code>double count = 4;</code>
+       *
+       * @return The count.
+       */
+      double getCount();
 
       /**
        *
@@ -3053,6 +3275,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
 
       private Metric() {
         type_ = 0;
+        countType_ = 0;
       }
 
       @java.lang.Override
@@ -3117,6 +3340,19 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
 
                   break;
                 }
+              case 33:
+                {
+                  valueCase_ = 4;
+                  value_ = input.readDouble();
+                  break;
+                }
+              case 40:
+                {
+                  int rawValue = input.readEnum();
+
+                  countType_ = rawValue;
+                  break;
+                }
               default:
                 {
                   if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -3160,6 +3396,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Internal.EnumLite,
               com.google.protobuf.AbstractMessage.InternalOneOfEnum {
         RATIO(2),
+        COUNT(4),
         VALUE_NOT_SET(0);
         private final int value;
 
@@ -3180,6 +3417,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           switch (value) {
             case 2:
               return RATIO;
+            case 4:
+              return COUNT;
             case 0:
               return VALUE_NOT_SET;
             default:
@@ -3202,7 +3441,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the metric.
+       * Ratio-based metric type. Only one of type or count_type is specified in
+       * each Metric.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3217,7 +3457,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The type of the metric.
+       * Ratio-based metric type. Only one of type or count_type is specified in
+       * each Metric.
        * </pre>
        *
        * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3231,6 +3472,48 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType.valueOf(type_);
         return result == null
             ? com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int COUNT_TYPE_FIELD_NUMBER = 5;
+      private int countType_;
+      /**
+       *
+       *
+       * <pre>
+       * Count-based metric type. Only one of type or count_type is specified in
+       * each Metric.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for countType.
+       */
+      @java.lang.Override
+      public int getCountTypeValue() {
+        return countType_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count-based metric type. Only one of type or count_type is specified in
+       * each Metric.
+       * </pre>
+       *
+       * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+       * </code>
+       *
+       * @return The countType.
+       */
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType getCountType() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType result =
+            com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType.valueOf(countType_);
+        return result == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType.UNRECOGNIZED
             : result;
       }
 
@@ -3249,6 +3532,26 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public double getRatio() {
         if (valueCase_ == 2) {
+          return (java.lang.Double) value_;
+        }
+        return 0D;
+      }
+
+      public static final int COUNT_FIELD_NUMBER = 4;
+      /**
+       *
+       *
+       * <pre>
+       * Count value of a metric.
+       * </pre>
+       *
+       * <code>double count = 4;</code>
+       *
+       * @return The count.
+       */
+      @java.lang.Override
+      public double getCount() {
+        if (valueCase_ == 4) {
           return (java.lang.Double) value_;
         }
         return 0D;
@@ -3341,6 +3644,15 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         if (confidenceInterval_ != null) {
           output.writeMessage(3, getConfidenceInterval());
         }
+        if (valueCase_ == 4) {
+          output.writeDouble(4, (double) ((java.lang.Double) value_));
+        }
+        if (countType_
+            != com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType
+                .COUNT_TYPE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(5, countType_);
+        }
         unknownFields.writeTo(output);
       }
 
@@ -3365,6 +3677,17 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeMessageSize(3, getConfidenceInterval());
         }
+        if (valueCase_ == 4) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeDoubleSize(
+                  4, (double) ((java.lang.Double) value_));
+        }
+        if (countType_
+            != com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType
+                .COUNT_TYPE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, countType_);
+        }
         size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
@@ -3382,6 +3705,7 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
             (com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.Metric) obj;
 
         if (type_ != other.type_) return false;
+        if (countType_ != other.countType_) return false;
         if (hasConfidenceInterval() != other.hasConfidenceInterval()) return false;
         if (hasConfidenceInterval()) {
           if (!getConfidenceInterval().equals(other.getConfidenceInterval())) return false;
@@ -3391,6 +3715,10 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           case 2:
             if (java.lang.Double.doubleToLongBits(getRatio())
                 != java.lang.Double.doubleToLongBits(other.getRatio())) return false;
+            break;
+          case 4:
+            if (java.lang.Double.doubleToLongBits(getCount())
+                != java.lang.Double.doubleToLongBits(other.getCount())) return false;
             break;
           case 0:
           default:
@@ -3408,6 +3736,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + TYPE_FIELD_NUMBER;
         hash = (53 * hash) + type_;
+        hash = (37 * hash) + COUNT_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + countType_;
         if (hasConfidenceInterval()) {
           hash = (37 * hash) + CONFIDENCE_INTERVAL_FIELD_NUMBER;
           hash = (53 * hash) + getConfidenceInterval().hashCode();
@@ -3419,6 +3749,13 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
                 (53 * hash)
                     + com.google.protobuf.Internal.hashLong(
                         java.lang.Double.doubleToLongBits(getRatio()));
+            break;
+          case 4:
+            hash = (37 * hash) + COUNT_FIELD_NUMBER;
+            hash =
+                (53 * hash)
+                    + com.google.protobuf.Internal.hashLong(
+                        java.lang.Double.doubleToLongBits(getCount()));
             break;
           case 0:
           default:
@@ -3576,6 +3913,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           super.clear();
           type_ = 0;
 
+          countType_ = 0;
+
           if (confidenceIntervalBuilder_ == null) {
             confidenceInterval_ = null;
           } else {
@@ -3614,7 +3953,11 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.Metric result =
               new com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.Metric(this);
           result.type_ = type_;
+          result.countType_ = countType_;
           if (valueCase_ == 2) {
+            result.value_ = value_;
+          }
+          if (valueCase_ == 4) {
             result.value_ = value_;
           }
           if (confidenceIntervalBuilder_ == null) {
@@ -3681,6 +4024,9 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
           if (other.type_ != 0) {
             setTypeValue(other.getTypeValue());
           }
+          if (other.countType_ != 0) {
+            setCountTypeValue(other.getCountTypeValue());
+          }
           if (other.hasConfidenceInterval()) {
             mergeConfidenceInterval(other.getConfidenceInterval());
           }
@@ -3688,6 +4034,11 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
             case RATIO:
               {
                 setRatio(other.getRatio());
+                break;
+              }
+            case COUNT:
+              {
+                setCount(other.getCount());
                 break;
               }
             case VALUE_NOT_SET:
@@ -3745,7 +4096,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The type of the metric.
+         * Ratio-based metric type. Only one of type or count_type is specified in
+         * each Metric.
          * </pre>
          *
          * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3760,7 +4112,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The type of the metric.
+         * Ratio-based metric type. Only one of type or count_type is specified in
+         * each Metric.
          * </pre>
          *
          * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3778,7 +4131,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The type of the metric.
+         * Ratio-based metric type. Only one of type or count_type is specified in
+         * each Metric.
          * </pre>
          *
          * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3798,7 +4152,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The type of the metric.
+         * Ratio-based metric type. Only one of type or count_type is specified in
+         * each Metric.
          * </pre>
          *
          * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3820,7 +4175,8 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          *
          *
          * <pre>
-         * The type of the metric.
+         * Ratio-based metric type. Only one of type or count_type is specified in
+         * each Metric.
          * </pre>
          *
          * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.MetricType type = 1;</code>
@@ -3830,6 +4186,111 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
         public Builder clearType() {
 
           type_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int countType_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Count-based metric type. Only one of type or count_type is specified in
+         * each Metric.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for countType.
+         */
+        @java.lang.Override
+        public int getCountTypeValue() {
+          return countType_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Count-based metric type. Only one of type or count_type is specified in
+         * each Metric.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for countType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCountTypeValue(int value) {
+
+          countType_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Count-based metric type. Only one of type or count_type is specified in
+         * each Metric.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+         * </code>
+         *
+         * @return The countType.
+         */
+        @java.lang.Override
+        public com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType getCountType() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType result =
+              com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType.valueOf(
+                  countType_);
+          return result == null
+              ? com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Count-based metric type. Only one of type or count_type is specified in
+         * each Metric.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+         * </code>
+         *
+         * @param value The countType to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCountType(
+            com.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+
+          countType_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Count-based metric type. Only one of type or count_type is specified in
+         * each Metric.
+         * </pre>
+         *
+         * <code>.google.cloud.dialogflow.cx.v3beta1.Experiment.Result.CountType count_type = 5;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCountType() {
+
+          countType_ = 0;
           onChanged();
           return this;
         }
@@ -3882,6 +4343,61 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearRatio() {
           if (valueCase_ == 2) {
+            valueCase_ = 0;
+            value_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Count value of a metric.
+         * </pre>
+         *
+         * <code>double count = 4;</code>
+         *
+         * @return The count.
+         */
+        public double getCount() {
+          if (valueCase_ == 4) {
+            return (java.lang.Double) value_;
+          }
+          return 0D;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Count value of a metric.
+         * </pre>
+         *
+         * <code>double count = 4;</code>
+         *
+         * @param value The count to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCount(double value) {
+          valueCase_ = 4;
+          value_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Count value of a metric.
+         * </pre>
+         *
+         * <code>double count = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCount() {
+          if (valueCase_ == 4) {
             valueCase_ = 0;
             value_ = null;
             onChanged();
@@ -7709,7 +8225,6 @@ public final class Experiment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Represents an experiment in an environment.
-   * Next ID: 13
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Experiment}

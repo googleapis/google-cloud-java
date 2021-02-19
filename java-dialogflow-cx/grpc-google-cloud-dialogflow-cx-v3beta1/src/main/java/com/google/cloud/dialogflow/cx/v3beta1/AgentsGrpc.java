@@ -352,6 +352,102 @@ public final class AgentsGrpc {
     return getRestoreAgentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+      getValidateAgentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidateAgent",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+      getValidateAgentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+        getValidateAgentMethod;
+    if ((getValidateAgentMethod = AgentsGrpc.getValidateAgentMethod) == null) {
+      synchronized (AgentsGrpc.class) {
+        if ((getValidateAgentMethod = AgentsGrpc.getValidateAgentMethod) == null) {
+          AgentsGrpc.getValidateAgentMethod =
+              getValidateAgentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ValidateAgent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new AgentsMethodDescriptorSupplier("ValidateAgent"))
+                      .build();
+        }
+      }
+    }
+    return getValidateAgentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+      getGetAgentValidationResultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetAgentValidationResult",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+      getGetAgentValidationResultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+        getGetAgentValidationResultMethod;
+    if ((getGetAgentValidationResultMethod = AgentsGrpc.getGetAgentValidationResultMethod)
+        == null) {
+      synchronized (AgentsGrpc.class) {
+        if ((getGetAgentValidationResultMethod = AgentsGrpc.getGetAgentValidationResultMethod)
+            == null) {
+          AgentsGrpc.getGetAgentValidationResultMethod =
+              getGetAgentValidationResultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetAgentValidationResult"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentsMethodDescriptorSupplier("GetAgentValidationResult"))
+                      .build();
+        }
+      }
+    }
+    return getGetAgentValidationResultMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AgentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AgentsStub> factory =
@@ -498,6 +594,37 @@ public final class AgentsGrpc {
       asyncUnimplementedUnaryCall(getRestoreAgentMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified agent and creates or updates validation results.
+     * The agent in draft version is validated. Please call this API after the
+     * training is completed to get the complete validation results.
+     * </pre>
+     */
+    public void validateAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getValidateAgentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest agent validation result. Agent validation is performed
+     * when ValidateAgent is called.
+     * </pre>
+     */
+    public void getAgentValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAgentValidationResultMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -544,6 +671,20 @@ public final class AgentsGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest,
                       com.google.longrunning.Operation>(this, METHODID_RESTORE_AGENT)))
+          .addMethod(
+              getValidateAgentMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest,
+                      com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>(
+                      this, METHODID_VALIDATE_AGENT)))
+          .addMethod(
+              getGetAgentValidationResultMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest,
+                      com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>(
+                      this, METHODID_GET_AGENT_VALIDATION_RESULT)))
           .build();
     }
   }
@@ -678,6 +819,43 @@ public final class AgentsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified agent and creates or updates validation results.
+     * The agent in draft version is validated. Please call this API after the
+     * training is completed to get the complete validation results.
+     * </pre>
+     */
+    public void validateAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getValidateAgentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest agent validation result. Agent validation is performed
+     * when ValidateAgent is called.
+     * </pre>
+     */
+    public void getAgentValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAgentValidationResultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -782,6 +960,34 @@ public final class AgentsGrpc {
     public com.google.longrunning.Operation restoreAgent(
         com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest request) {
       return blockingUnaryCall(getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified agent and creates or updates validation results.
+     * The agent in draft version is validated. Please call this API after the
+     * training is completed to get the complete validation results.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult validateAgent(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest request) {
+      return blockingUnaryCall(getChannel(), getValidateAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest agent validation result. Agent validation is performed
+     * when ValidateAgent is called.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult getAgentValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAgentValidationResultMethod(), getCallOptions(), request);
     }
   }
 
@@ -898,6 +1104,38 @@ public final class AgentsGrpc {
       return futureUnaryCall(
           getChannel().newCall(getRestoreAgentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified agent and creates or updates validation results.
+     * The agent in draft version is validated. Please call this API after the
+     * training is completed to get the complete validation results.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+        validateAgent(com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getValidateAgentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest agent validation result. Agent validation is performed
+     * when ValidateAgent is called.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>
+        getAgentValidationResult(
+            com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetAgentValidationResultMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_AGENTS = 0;
@@ -907,6 +1145,8 @@ public final class AgentsGrpc {
   private static final int METHODID_DELETE_AGENT = 4;
   private static final int METHODID_EXPORT_AGENT = 5;
   private static final int METHODID_RESTORE_AGENT = 6;
+  private static final int METHODID_VALIDATE_AGENT = 7;
+  private static final int METHODID_GET_AGENT_VALIDATION_RESULT = 8;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -964,6 +1204,20 @@ public final class AgentsGrpc {
           serviceImpl.restoreAgent(
               (com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_VALIDATE_AGENT:
+          serviceImpl.validateAgent(
+              (com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>)
+                  responseObserver);
+          break;
+        case METHODID_GET_AGENT_VALIDATION_RESULT:
+          serviceImpl.getAgentValidationResult(
+              (com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1034,6 +1288,8 @@ public final class AgentsGrpc {
                       .addMethod(getDeleteAgentMethod())
                       .addMethod(getExportAgentMethod())
                       .addMethod(getRestoreAgentMethod())
+                      .addMethod(getValidateAgentMethod())
+                      .addMethod(getGetAgentValidationResultMethod())
                       .build();
         }
       }

@@ -109,6 +109,17 @@ public class FlowsSettings extends ClientSettings<FlowsSettings> {
     return ((FlowsStubSettings) getStubSettings()).trainFlowOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to validateFlow. */
+  public UnaryCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowSettings() {
+    return ((FlowsStubSettings) getStubSettings()).validateFlowSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getFlowValidationResult. */
+  public UnaryCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultSettings() {
+    return ((FlowsStubSettings) getStubSettings()).getFlowValidationResultSettings();
+  }
+
   public static final FlowsSettings create(FlowsStubSettings stub) throws IOException {
     return new FlowsSettings.Builder(stub.toBuilder()).build();
   }
@@ -241,6 +252,18 @@ public class FlowsSettings extends ClientSettings<FlowsSettings> {
     public OperationCallSettings.Builder<TrainFlowRequest, Empty, Struct>
         trainFlowOperationSettings() {
       return getStubSettingsBuilder().trainFlowOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateFlow. */
+    public UnaryCallSettings.Builder<ValidateFlowRequest, FlowValidationResult>
+        validateFlowSettings() {
+      return getStubSettingsBuilder().validateFlowSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getFlowValidationResult. */
+    public UnaryCallSettings.Builder<GetFlowValidationResultRequest, FlowValidationResult>
+        getFlowValidationResultSettings() {
+      return getStubSettingsBuilder().getFlowValidationResultSettings();
     }
 
     @Override

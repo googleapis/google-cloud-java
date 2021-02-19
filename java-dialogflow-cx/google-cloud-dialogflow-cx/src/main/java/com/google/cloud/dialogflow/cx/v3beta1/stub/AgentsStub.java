@@ -23,15 +23,18 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.Agent;
+import com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -91,6 +94,15 @@ public abstract class AgentsStub implements BackgroundResource {
 
   public UnaryCallable<RestoreAgentRequest, Operation> restoreAgentCallable() {
     throw new UnsupportedOperationException("Not implemented: restoreAgentCallable()");
+  }
+
+  public UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable() {
+    throw new UnsupportedOperationException("Not implemented: validateAgentCallable()");
+  }
+
+  public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAgentValidationResultCallable()");
   }
 
   @Override

@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The response message for
- * [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
+ * The response message for [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse}
@@ -428,8 +427,7 @@ public final class ListAgentsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The response message for
-   * [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
+   * The response message for [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse}

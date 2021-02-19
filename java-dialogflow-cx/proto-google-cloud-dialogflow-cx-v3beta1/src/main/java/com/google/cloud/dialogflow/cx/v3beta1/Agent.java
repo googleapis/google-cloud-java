@@ -26,13 +26,9 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  * that transform user requests into actionable data. You can include agents
  * in your app, product, or service to determine user intent and respond to the
  * user in a natural way.
- * After you create an agent, you can add
- * [Intents][google.cloud.dialogflow.cx.v3beta1.Intent], [Entity
- * Types][google.cloud.dialogflow.cx.v3beta1.EntityType],
- * [Flows][google.cloud.dialogflow.cx.v3beta1.Flow],
- * [Fulfillments][google.cloud.dialogflow.cx.v3beta1.Fulfillment],
- * [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook], and so on to manage
- * the conversation flows..
+ * After you create an agent, you can add [Intents][google.cloud.dialogflow.cx.v3beta1.Intent],
+ * [Entity Types][google.cloud.dialogflow.cx.v3beta1.EntityType], [Flows][google.cloud.dialogflow.cx.v3beta1.Flow], [Fulfillments][google.cloud.dialogflow.cx.v3beta1.Fulfillment],
+ * [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook], and so on to manage the conversation flows..
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent}
@@ -55,6 +51,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     avatarUri_ = "";
     startFlow_ = "";
+    securitySettings_ = "";
   }
 
   @java.lang.Override
@@ -152,6 +149,13 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
               startFlow_ = s;
               break;
             }
+          case 138:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              securitySettings_ = s;
+              break;
+            }
           case 144:
             {
               enableStackdriverLogging_ = input.readBool();
@@ -203,10 +207,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
-   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -232,10 +233,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The unique identifier of the agent.
-   * Required for the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
-   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+   * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
    * populates the name automatically.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * </pre>
@@ -316,9 +314,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * See [Language
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
+   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
    * </pre>
    *
    * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -345,9 +341,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * See [Language
    * Support](https://cloud.google.com/dialogflow/docs/reference/language)
    * for a list of the currently supported language codes.
-   * This field cannot be set by the
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-   * method.
+   * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
    * </pre>
    *
    * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -584,10 +578,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting the
+   * agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -612,10 +607,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Immutable. Name of the start flow in this agent. A start flow will be
-   * automatically created when the agent is created, and can only be deleted by
-   * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+   * Immutable. Name of the start flow in this agent. A start flow will be automatically
+   * created when the agent is created, and can only be deleted by deleting the
+   * agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;`.
    * </pre>
    *
    * <code>
@@ -631,6 +627,59 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       startFlow_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SECURITY_SETTINGS_FIELD_NUMBER = 17;
+  private volatile java.lang.Object securitySettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The securitySettings.
+   */
+  @java.lang.Override
+  public java.lang.String getSecuritySettings() {
+    java.lang.Object ref = securitySettings_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      securitySettings_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for securitySettings.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSecuritySettingsBytes() {
+    java.lang.Object ref = securitySettings_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      securitySettings_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -712,6 +761,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (!getStartFlowBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, startFlow_);
     }
+    if (!getSecuritySettingsBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, securitySettings_);
+    }
     if (enableStackdriverLogging_ != false) {
       output.writeBool(18, enableStackdriverLogging_);
     }
@@ -752,6 +804,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     if (!getStartFlowBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, startFlow_);
     }
+    if (!getSecuritySettingsBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, securitySettings_);
+    }
     if (enableStackdriverLogging_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, enableStackdriverLogging_);
     }
@@ -785,6 +840,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       if (!getSpeechToTextSettings().equals(other.getSpeechToTextSettings())) return false;
     }
     if (!getStartFlow().equals(other.getStartFlow())) return false;
+    if (!getSecuritySettings().equals(other.getSecuritySettings())) return false;
     if (getEnableStackdriverLogging() != other.getEnableStackdriverLogging()) return false;
     if (getEnableSpellCorrection() != other.getEnableSpellCorrection()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -816,6 +872,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + START_FLOW_FIELD_NUMBER;
     hash = (53 * hash) + getStartFlow().hashCode();
+    hash = (37 * hash) + SECURITY_SETTINGS_FIELD_NUMBER;
+    hash = (53 * hash) + getSecuritySettings().hashCode();
     hash = (37 * hash) + ENABLE_STACKDRIVER_LOGGING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableStackdriverLogging());
     hash = (37 * hash) + ENABLE_SPELL_CORRECTION_FIELD_NUMBER;
@@ -928,13 +986,9 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
    * that transform user requests into actionable data. You can include agents
    * in your app, product, or service to determine user intent and respond to the
    * user in a natural way.
-   * After you create an agent, you can add
-   * [Intents][google.cloud.dialogflow.cx.v3beta1.Intent], [Entity
-   * Types][google.cloud.dialogflow.cx.v3beta1.EntityType],
-   * [Flows][google.cloud.dialogflow.cx.v3beta1.Flow],
-   * [Fulfillments][google.cloud.dialogflow.cx.v3beta1.Fulfillment],
-   * [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook], and so on to manage
-   * the conversation flows..
+   * After you create an agent, you can add [Intents][google.cloud.dialogflow.cx.v3beta1.Intent],
+   * [Entity Types][google.cloud.dialogflow.cx.v3beta1.EntityType], [Flows][google.cloud.dialogflow.cx.v3beta1.Flow], [Fulfillments][google.cloud.dialogflow.cx.v3beta1.Fulfillment],
+   * [Webhooks][google.cloud.dialogflow.cx.v3beta1.Webhook], and so on to manage the conversation flows..
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.Agent}
@@ -995,6 +1049,8 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       }
       startFlow_ = "";
 
+      securitySettings_ = "";
+
       enableStackdriverLogging_ = false;
 
       enableSpellCorrection_ = false;
@@ -1038,6 +1094,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         result.speechToTextSettings_ = speechToTextSettingsBuilder_.build();
       }
       result.startFlow_ = startFlow_;
+      result.securitySettings_ = securitySettings_;
       result.enableStackdriverLogging_ = enableStackdriverLogging_;
       result.enableSpellCorrection_ = enableSpellCorrection_;
       onBuilt();
@@ -1120,6 +1177,10 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
         startFlow_ = other.startFlow_;
         onChanged();
       }
+      if (!other.getSecuritySettings().isEmpty()) {
+        securitySettings_ = other.securitySettings_;
+        onChanged();
+      }
       if (other.getEnableStackdriverLogging() != false) {
         setEnableStackdriverLogging(other.getEnableStackdriverLogging());
       }
@@ -1161,10 +1222,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
-     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1189,10 +1247,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
-     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1217,10 +1272,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
-     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1244,10 +1296,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
-     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1267,10 +1316,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The unique identifier of the agent.
-     * Required for the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
-     * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
+     * Required for the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method. [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent]
      * populates the name automatically.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
      * </pre>
@@ -1406,9 +1452,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
+     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
      * </pre>
      *
      * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1434,9 +1478,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
+     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
      * </pre>
      *
      * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1462,9 +1504,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
+     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
      * </pre>
      *
      * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1489,9 +1529,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
+     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
      * </pre>
      *
      * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1512,9 +1550,7 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      * See [Language
      * Support](https://cloud.google.com/dialogflow/docs/reference/language)
      * for a list of the currently supported language codes.
-     * This field cannot be set by the
-     * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent]
-     * method.
+     * This field cannot be set by the [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent] method.
      * </pre>
      *
      * <code>string default_language_code = 3 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2086,10 +2122,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting the
+     * agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2113,10 +2150,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting the
+     * agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2140,10 +2178,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting the
+     * agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2166,10 +2205,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting the
+     * agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2188,10 +2228,11 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Immutable. Name of the start flow in this agent. A start flow will be
-     * automatically created when the agent is created, and can only be deleted by
-     * deleting the agent. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
-     * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
+     * Immutable. Name of the start flow in this agent. A start flow will be automatically
+     * created when the agent is created, and can only be deleted by deleting the
+     * agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;`.
      * </pre>
      *
      * <code>
@@ -2208,6 +2249,122 @@ public final class Agent extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
 
       startFlow_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object securitySettings_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The securitySettings.
+     */
+    public java.lang.String getSecuritySettings() {
+      java.lang.Object ref = securitySettings_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        securitySettings_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return The bytes for securitySettings.
+     */
+    public com.google.protobuf.ByteString getSecuritySettingsBytes() {
+      java.lang.Object ref = securitySettings_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        securitySettings_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The securitySettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecuritySettings(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      securitySettings_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSecuritySettings() {
+
+      securitySettings_ = getDefaultInstance().getSecuritySettings();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] reference for the agent.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+     * </pre>
+     *
+     * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+     *
+     * @param value The bytes for securitySettings to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSecuritySettingsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      securitySettings_ = value;
       onChanged();
       return this;
     }

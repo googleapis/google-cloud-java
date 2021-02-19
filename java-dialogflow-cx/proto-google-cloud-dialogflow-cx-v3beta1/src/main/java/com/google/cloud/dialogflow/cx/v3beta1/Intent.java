@@ -2912,9 +2912,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the parameter content is logged in text and audio. If
-     * it is set to true, the parameter content will be replaced to parameter
-     * id in both request and response. The default value is false.
+     * Indicates whether the parameter content should be redacted in log. If
+     * redaction is enabled, the parameter content will be replaced by parameter
+     * name during logging.
+     * Note: the parameter content is subject to redaction if either parameter
+     * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+     * enabled.
      * </pre>
      *
      * <code>bool redact = 4;</code>
@@ -3174,9 +3177,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates whether the parameter content is logged in text and audio. If
-     * it is set to true, the parameter content will be replaced to parameter
-     * id in both request and response. The default value is false.
+     * Indicates whether the parameter content should be redacted in log. If
+     * redaction is enabled, the parameter content will be replaced by parameter
+     * name during logging.
+     * Note: the parameter content is subject to redaction if either parameter
+     * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+     * enabled.
      * </pre>
      *
      * <code>bool redact = 4;</code>
@@ -3871,9 +3877,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether the parameter content is logged in text and audio. If
-       * it is set to true, the parameter content will be replaced to parameter
-       * id in both request and response. The default value is false.
+       * Indicates whether the parameter content should be redacted in log. If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
+       * Note: the parameter content is subject to redaction if either parameter
+       * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+       * enabled.
        * </pre>
        *
        * <code>bool redact = 4;</code>
@@ -3888,9 +3897,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether the parameter content is logged in text and audio. If
-       * it is set to true, the parameter content will be replaced to parameter
-       * id in both request and response. The default value is false.
+       * Indicates whether the parameter content should be redacted in log. If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
+       * Note: the parameter content is subject to redaction if either parameter
+       * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+       * enabled.
        * </pre>
        *
        * <code>bool redact = 4;</code>
@@ -3908,9 +3920,12 @@ public final class Intent extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Indicates whether the parameter content is logged in text and audio. If
-       * it is set to true, the parameter content will be replaced to parameter
-       * id in both request and response. The default value is false.
+       * Indicates whether the parameter content should be redacted in log. If
+       * redaction is enabled, the parameter content will be replaced by parameter
+       * name during logging.
+       * Note: the parameter content is subject to redaction if either parameter
+       * level redaction or [entity type level redaction][google.cloud.dialogflow.cx.v3beta1.EntityType.redact] is
+       * enabled.
        * </pre>
        *
        * <code>bool redact = 4;</code>

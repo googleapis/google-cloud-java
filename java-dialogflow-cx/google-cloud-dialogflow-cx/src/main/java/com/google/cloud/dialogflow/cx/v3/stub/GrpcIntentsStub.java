@@ -232,26 +232,32 @@ public class GrpcIntentsStub extends IntentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable() {
     return listIntentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
     return listIntentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetIntentRequest, Intent> getIntentCallable() {
     return getIntentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateIntentRequest, Intent> createIntentCallable() {
     return createIntentCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable() {
     return updateIntentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     return deleteIntentCallable;
   }

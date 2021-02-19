@@ -305,6 +305,101 @@ public final class FlowsGrpc {
     return getTrainFlowMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+      getValidateFlowMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ValidateFlow",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+      getValidateFlowMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+        getValidateFlowMethod;
+    if ((getValidateFlowMethod = FlowsGrpc.getValidateFlowMethod) == null) {
+      synchronized (FlowsGrpc.class) {
+        if ((getValidateFlowMethod = FlowsGrpc.getValidateFlowMethod) == null) {
+          FlowsGrpc.getValidateFlowMethod =
+              getValidateFlowMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ValidateFlow"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new FlowsMethodDescriptorSupplier("ValidateFlow"))
+                      .build();
+        }
+      }
+    }
+    return getValidateFlowMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+      getGetFlowValidationResultMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetFlowValidationResult",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+      getGetFlowValidationResultMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+        getGetFlowValidationResultMethod;
+    if ((getGetFlowValidationResultMethod = FlowsGrpc.getGetFlowValidationResultMethod) == null) {
+      synchronized (FlowsGrpc.class) {
+        if ((getGetFlowValidationResultMethod = FlowsGrpc.getGetFlowValidationResultMethod)
+            == null) {
+          FlowsGrpc.getGetFlowValidationResultMethod =
+              getGetFlowValidationResultMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetFlowValidationResult"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FlowsMethodDescriptorSupplier("GetFlowValidationResult"))
+                      .build();
+        }
+      }
+    }
+    return getGetFlowValidationResultMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FlowsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FlowsStub> factory =
@@ -433,6 +528,37 @@ public final class FlowsGrpc {
       asyncUnimplementedUnaryCall(getTrainFlowMethod(), responseObserver);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified flow and creates or updates validation results.
+     * Please call this API after the training is completed to get the complete
+     * validation results.
+     * </pre>
+     */
+    public void validateFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getValidateFlowMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest flow validation result. Flow validation is performed
+     * when ValidateFlow is called.
+     * </pre>
+     */
+    public void getFlowValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+            responseObserver) {
+      asyncUnimplementedUnaryCall(getGetFlowValidationResultMethod(), responseObserver);
+    }
+
     @java.lang.Override
     public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
@@ -473,6 +599,20 @@ public final class FlowsGrpc {
                   new MethodHandlers<
                       com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest,
                       com.google.longrunning.Operation>(this, METHODID_TRAIN_FLOW)))
+          .addMethod(
+              getValidateFlowMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest,
+                      com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>(
+                      this, METHODID_VALIDATE_FLOW)))
+          .addMethod(
+              getGetFlowValidationResultMethod(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest,
+                      com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>(
+                      this, METHODID_GET_FLOW_VALIDATION_RESULT)))
           .build();
     }
   }
@@ -579,6 +719,43 @@ public final class FlowsGrpc {
       asyncUnaryCall(
           getChannel().newCall(getTrainFlowMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified flow and creates or updates validation results.
+     * Please call this API after the training is completed to get the complete
+     * validation results.
+     * </pre>
+     */
+    public void validateFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getValidateFlowMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest flow validation result. Flow validation is performed
+     * when ValidateFlow is called.
+     * </pre>
+     */
+    public void getFlowValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+            responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetFlowValidationResultMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -670,6 +847,34 @@ public final class FlowsGrpc {
     public com.google.longrunning.Operation trainFlow(
         com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request) {
       return blockingUnaryCall(getChannel(), getTrainFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified flow and creates or updates validation results.
+     * Please call this API after the training is completed to get the complete
+     * validation results.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult validateFlow(
+        com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest request) {
+      return blockingUnaryCall(getChannel(), getValidateFlowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest flow validation result. Flow validation is performed
+     * when ValidateFlow is called.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult getFlowValidationResult(
+        com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetFlowValidationResultMethod(), getCallOptions(), request);
     }
   }
 
@@ -770,6 +975,38 @@ public final class FlowsGrpc {
         trainFlow(com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest request) {
       return futureUnaryCall(getChannel().newCall(getTrainFlowMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Validates the specified flow and creates or updates validation results.
+     * Please call this API after the training is completed to get the complete
+     * validation results.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+        validateFlow(com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getValidateFlowMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the latest flow validation result. Flow validation is performed
+     * when ValidateFlow is called.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>
+        getFlowValidationResult(
+            com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetFlowValidationResultMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_FLOW = 0;
@@ -778,6 +1015,8 @@ public final class FlowsGrpc {
   private static final int METHODID_GET_FLOW = 3;
   private static final int METHODID_UPDATE_FLOW = 4;
   private static final int METHODID_TRAIN_FLOW = 5;
+  private static final int METHODID_VALIDATE_FLOW = 6;
+  private static final int METHODID_GET_FLOW_VALIDATION_RESULT = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -830,6 +1069,20 @@ public final class FlowsGrpc {
           serviceImpl.trainFlow(
               (com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_VALIDATE_FLOW:
+          serviceImpl.validateFlow(
+              (com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>)
+                  responseObserver);
+          break;
+        case METHODID_GET_FLOW_VALIDATION_RESULT:
+          serviceImpl.getFlowValidationResult(
+              (com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -899,6 +1152,8 @@ public final class FlowsGrpc {
                       .addMethod(getGetFlowMethod())
                       .addMethod(getUpdateFlowMethod())
                       .addMethod(getTrainFlowMethod())
+                      .addMethod(getValidateFlowMethod())
+                      .addMethod(getGetFlowValidationResultMethod())
                       .build();
         }
       }

@@ -71,7 +71,13 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListTransitionRouteGroups, expected %s or %s",
+                  response.getClass().getName(),
+                  ListTransitionRouteGroupsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -87,7 +93,13 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetTransitionRouteGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  TransitionRouteGroup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -103,7 +115,13 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateTransitionRouteGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  TransitionRouteGroup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -119,7 +137,13 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateTransitionRouteGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  TransitionRouteGroup.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -134,7 +158,13 @@ public class MockTransitionRouteGroupsImpl extends TransitionRouteGroupsImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteTransitionRouteGroup, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

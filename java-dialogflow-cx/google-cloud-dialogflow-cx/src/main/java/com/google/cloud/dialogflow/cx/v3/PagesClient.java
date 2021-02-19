@@ -43,6 +43,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (PagesClient pagesClient = PagesClient.create()) {
+ *   PageName name = PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
+ *   Page response = pagesClient.getPage(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the PagesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -143,6 +150,17 @@ public class PagesClient implements BackgroundResource {
   /**
    * Returns the list of all pages in the specified flow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+   *   for (Page element : pagesClient.listPages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The flow to list all pages for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -157,6 +175,18 @@ public class PagesClient implements BackgroundResource {
   /**
    * Returns the list of all pages in the specified flow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   String parent =
+   *       PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString();
+   *   for (Page element : pagesClient.listPages(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The flow to list all pages for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -170,6 +200,24 @@ public class PagesClient implements BackgroundResource {
   /**
    * Returns the list of all pages in the specified flow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   ListPagesRequest request =
+   *       ListPagesRequest.newBuilder()
+   *           .setParent(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Page element : pagesClient.listPages(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -182,6 +230,24 @@ public class PagesClient implements BackgroundResource {
    * Returns the list of all pages in the specified flow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   ListPagesRequest request =
+   *       ListPagesRequest.newBuilder()
+   *           .setParent(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Page> future = pagesClient.listPagesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Page element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPagesRequest, ListPagesPagedResponse> listPagesPagedCallable() {
     return stub.listPagesPagedCallable();
@@ -192,6 +258,23 @@ public class PagesClient implements BackgroundResource {
    * Returns the list of all pages in the specified flow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   while (true) {
+   *     ListPagesResponse response = pagesClient.listPagesCallable().call(request);
+   *     for (Page element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListPagesRequest, ListPagesResponse> listPagesCallable() {
     return stub.listPagesCallable();
@@ -200,6 +283,15 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified page.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   PageName name = PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
+   *   Page response = pagesClient.getPage(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the page. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
@@ -216,6 +308,16 @@ public class PagesClient implements BackgroundResource {
   /**
    * Retrieves the specified page.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   String name =
+   *       PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString();
+   *   Page response = pagesClient.getPage(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the page. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
    *     ID&gt;/pages/&lt;Page ID&gt;`.
@@ -230,6 +332,20 @@ public class PagesClient implements BackgroundResource {
   /**
    * Retrieves the specified page.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   GetPageRequest request =
+   *       GetPageRequest.newBuilder()
+   *           .setName(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   Page response = pagesClient.getPage(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -242,6 +358,20 @@ public class PagesClient implements BackgroundResource {
    * Retrieves the specified page.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   GetPageRequest request =
+   *       GetPageRequest.newBuilder()
+   *           .setName(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Page> future = pagesClient.getPageCallable().futureCall(request);
+   *   // Do something.
+   *   Page response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetPageRequest, Page> getPageCallable() {
     return stub.getPageCallable();
@@ -250,6 +380,16 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates a page in the specified flow.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+   *   Page page = Page.newBuilder().build();
+   *   Page response = pagesClient.createPage(parent, page);
+   * }
+   * }</pre>
    *
    * @param parent Required. The flow to create a page for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -269,6 +409,17 @@ public class PagesClient implements BackgroundResource {
   /**
    * Creates a page in the specified flow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   String parent =
+   *       PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString();
+   *   Page page = Page.newBuilder().build();
+   *   Page response = pagesClient.createPage(parent, page);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The flow to create a page for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
    * @param page Required. The page to create.
@@ -284,6 +435,21 @@ public class PagesClient implements BackgroundResource {
   /**
    * Creates a page in the specified flow.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   CreatePageRequest request =
+   *       CreatePageRequest.newBuilder()
+   *           .setParent(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setPage(Page.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   Page response = pagesClient.createPage(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -296,6 +462,21 @@ public class PagesClient implements BackgroundResource {
    * Creates a page in the specified flow.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   CreatePageRequest request =
+   *       CreatePageRequest.newBuilder()
+   *           .setParent(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setPage(Page.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Page> future = pagesClient.createPageCallable().futureCall(request);
+   *   // Do something.
+   *   Page response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreatePageRequest, Page> createPageCallable() {
     return stub.createPageCallable();
@@ -304,6 +485,16 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified page.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   Page page = Page.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Page response = pagesClient.updatePage(page, updateMask);
+   * }
+   * }</pre>
    *
    * @param page Required. The page to update.
    * @param updateMask The mask to control which fields get updated. If the mask is not present, all
@@ -320,6 +511,20 @@ public class PagesClient implements BackgroundResource {
   /**
    * Updates the specified page.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   UpdatePageRequest request =
+   *       UpdatePageRequest.newBuilder()
+   *           .setPage(Page.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Page response = pagesClient.updatePage(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -332,6 +537,20 @@ public class PagesClient implements BackgroundResource {
    * Updates the specified page.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   UpdatePageRequest request =
+   *       UpdatePageRequest.newBuilder()
+   *           .setPage(Page.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Page> future = pagesClient.updatePageCallable().futureCall(request);
+   *   // Do something.
+   *   Page response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdatePageRequest, Page> updatePageCallable() {
     return stub.updatePageCallable();
@@ -340,6 +559,15 @@ public class PagesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified page.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   PageName name = PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]");
+   *   pagesClient.deletePage(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the page to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/Flows/&lt;flow
@@ -356,6 +584,16 @@ public class PagesClient implements BackgroundResource {
   /**
    * Deletes the specified page.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   String name =
+   *       PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString();
+   *   pagesClient.deletePage(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the page to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/Flows/&lt;flow
    *     ID&gt;/pages/&lt;Page ID&gt;`.
@@ -370,6 +608,20 @@ public class PagesClient implements BackgroundResource {
   /**
    * Deletes the specified page.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   DeletePageRequest request =
+   *       DeletePageRequest.newBuilder()
+   *           .setName(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   pagesClient.deletePage(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -382,6 +634,20 @@ public class PagesClient implements BackgroundResource {
    * Deletes the specified page.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (PagesClient pagesClient = PagesClient.create()) {
+   *   DeletePageRequest request =
+   *       DeletePageRequest.newBuilder()
+   *           .setName(
+   *               PageName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[PAGE]").toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Empty> future = pagesClient.deletePageCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeletePageRequest, Empty> deletePageCallable() {
     return stub.deletePageCallable();

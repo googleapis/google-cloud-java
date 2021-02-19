@@ -70,7 +70,13 @@ public class MockWebhooksImpl extends WebhooksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWebhooks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWebhooksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockWebhooksImpl extends WebhooksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWebhook, expected %s or %s",
+                  response.getClass().getName(),
+                  Webhook.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -99,7 +111,13 @@ public class MockWebhooksImpl extends WebhooksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWebhook, expected %s or %s",
+                  response.getClass().getName(),
+                  Webhook.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -114,7 +132,13 @@ public class MockWebhooksImpl extends WebhooksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWebhook, expected %s or %s",
+                  response.getClass().getName(),
+                  Webhook.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -128,7 +152,13 @@ public class MockWebhooksImpl extends WebhooksImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWebhook, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

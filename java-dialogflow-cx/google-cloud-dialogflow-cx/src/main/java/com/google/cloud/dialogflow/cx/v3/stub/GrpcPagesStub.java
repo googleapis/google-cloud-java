@@ -230,26 +230,32 @@ public class GrpcPagesStub extends PagesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListPagesRequest, ListPagesResponse> listPagesCallable() {
     return listPagesCallable;
   }
 
+  @Override
   public UnaryCallable<ListPagesRequest, ListPagesPagedResponse> listPagesPagedCallable() {
     return listPagesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetPageRequest, Page> getPageCallable() {
     return getPageCallable;
   }
 
+  @Override
   public UnaryCallable<CreatePageRequest, Page> createPageCallable() {
     return createPageCallable;
   }
 
+  @Override
   public UnaryCallable<UpdatePageRequest, Page> updatePageCallable() {
     return updatePageCallable;
   }
 
+  @Override
   public UnaryCallable<DeletePageRequest, Empty> deletePageCallable() {
     return deletePageCallable;
   }

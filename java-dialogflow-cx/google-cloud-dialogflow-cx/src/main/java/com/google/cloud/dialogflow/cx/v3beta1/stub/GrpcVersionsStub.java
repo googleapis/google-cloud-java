@@ -283,39 +283,48 @@ public class GrpcVersionsStub extends VersionsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable() {
     return listVersionsCallable;
   }
 
+  @Override
   public UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse> listVersionsPagedCallable() {
     return listVersionsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetVersionRequest, Version> getVersionCallable() {
     return getVersionCallable;
   }
 
+  @Override
   public UnaryCallable<CreateVersionRequest, Operation> createVersionCallable() {
     return createVersionCallable;
   }
 
+  @Override
   public OperationCallable<CreateVersionRequest, Version, CreateVersionOperationMetadata>
       createVersionOperationCallable() {
     return createVersionOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
     return updateVersionCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteVersionRequest, Empty> deleteVersionCallable() {
     return deleteVersionCallable;
   }
 
+  @Override
   public UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable() {
     return loadVersionCallable;
   }
 
+  @Override
   public OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable() {
     return loadVersionOperationCallable;
   }

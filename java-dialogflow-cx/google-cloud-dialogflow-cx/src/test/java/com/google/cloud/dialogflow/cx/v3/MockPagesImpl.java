@@ -70,7 +70,13 @@ public class MockPagesImpl extends PagesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListPages, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPagesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,11 @@ public class MockPagesImpl extends PagesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetPage, expected %s or %s",
+                  response.getClass().getName(), Page.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -98,7 +108,11 @@ public class MockPagesImpl extends PagesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreatePage, expected %s or %s",
+                  response.getClass().getName(), Page.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -112,7 +126,11 @@ public class MockPagesImpl extends PagesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdatePage, expected %s or %s",
+                  response.getClass().getName(), Page.class.getName(), Exception.class.getName())));
     }
   }
 
@@ -126,7 +144,13 @@ public class MockPagesImpl extends PagesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeletePage, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -48,14 +48,6 @@ public final class ResponseMessageProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_OutputAudioText_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_Segment_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_Segment_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable;
@@ -63,6 +55,14 @@ public final class ResponseMessageProto {
       internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_Segment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_Segment_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -102,14 +102,14 @@ public final class ResponseMessageProto {
           + "\027.google.protobuf.Struct\032e\n\017OutputAudioT"
           + "ext\022\016\n\004text\030\001 \001(\tH\000\022\016\n\004ssml\030\002 \001(\tH\000\022(\n\033a"
           + "llow_playback_interruption\030\003 \001(\010B\003\340A\003B\010\n"
-          + "\006source\032\306\001\n\nMixedAudio\022X\n\010segments\030\001 \003(\013"
-          + "2F.google.cloud.dialogflow.cx.v3beta1.Re"
-          + "sponseMessage.MixedAudio.Segment\032^\n\007Segm"
-          + "ent\022\017\n\005audio\030\001 \001(\014H\000\022\r\n\003uri\030\002 \001(\tH\000\022(\n\033a"
-          + "llow_playback_interruption\030\003 \001(\010B\003\340A\003B\t\n"
-          + "\007content\032\020\n\016EndInteraction\032M\n\tPlayAudio\022"
-          + "\026\n\taudio_uri\030\001 \001(\tB\003\340A\002\022(\n\033allow_playbac"
-          + "k_interruption\030\002 \001(\010B\003\340A\003B\t\n\007messageB\263\001\n"
+          + "\006source\032\020\n\016EndInteraction\032M\n\tPlayAudio\022\026"
+          + "\n\taudio_uri\030\001 \001(\tB\003\340A\002\022(\n\033allow_playback"
+          + "_interruption\030\002 \001(\010B\003\340A\003\032\306\001\n\nMixedAudio\022"
+          + "X\n\010segments\030\001 \003(\0132F.google.cloud.dialogf"
+          + "low.cx.v3beta1.ResponseMessage.MixedAudi"
+          + "o.Segment\032^\n\007Segment\022\017\n\005audio\030\001 \001(\014H\000\022\r\n"
+          + "\003uri\030\002 \001(\tH\000\022(\n\033allow_playback_interrupt"
+          + "ion\030\003 \001(\010B\003\340A\003B\t\n\007contentB\t\n\007messageB\263\001\n"
           + "&com.google.cloud.dialogflow.cx.v3beta1B"
           + "\024ResponseMessageProtoP\001ZDgoogle.golang.o"
           + "rg/genproto/googleapis/cloud/dialogflow/"
@@ -180,10 +180,28 @@ public final class ResponseMessageProto {
             new java.lang.String[] {
               "Text", "Ssml", "AllowPlaybackInterruption", "Source",
             });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_descriptor =
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_descriptor
             .getNestedTypes()
             .get(4);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_descriptor
+            .getNestedTypes()
+            .get(5);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor,
+            new java.lang.String[] {
+              "AudioUri", "AllowPlaybackInterruption",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_descriptor
+            .getNestedTypes()
+            .get(6);
     internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_descriptor,
@@ -199,24 +217,6 @@ public final class ResponseMessageProto {
             internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_MixedAudio_Segment_descriptor,
             new java.lang.String[] {
               "Audio", "Uri", "AllowPlaybackInterruption", "Content",
-            });
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor =
-        internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_descriptor
-            .getNestedTypes()
-            .get(5);
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_EndInteraction_descriptor,
-            new java.lang.String[] {});
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor =
-        internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_descriptor
-            .getNestedTypes()
-            .get(6);
-    internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_PlayAudio_descriptor,
-            new java.lang.String[] {
-              "AudioUri", "AllowPlaybackInterruption",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

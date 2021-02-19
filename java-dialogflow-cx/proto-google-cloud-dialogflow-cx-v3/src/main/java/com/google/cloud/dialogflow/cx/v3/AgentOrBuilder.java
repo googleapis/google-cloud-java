@@ -276,6 +276,35 @@ public interface AgentOrBuilder
    *
    *
    * <pre>
+   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The securitySettings.
+   */
+  java.lang.String getSecuritySettings();
+  /**
+   *
+   *
+   * <pre>
+   * Name of the [SecuritySettings][google.cloud.dialogflow.cx.v3.SecuritySettings] reference for the agent.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/securitySettings/&lt;Security Settings ID&gt;`.
+   * </pre>
+   *
+   * <code>string security_settings = 17 [(.google.api.resource_reference) = { ... }</code>
+   *
+   * @return The bytes for securitySettings.
+   */
+  com.google.protobuf.ByteString getSecuritySettingsBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Indicates if stackdriver logging is enabled for the agent.
    * </pre>
    *

@@ -45,15 +45,18 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.Agent;
+import com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -119,6 +122,10 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
   private final UnaryCallSettings<RestoreAgentRequest, Operation> restoreAgentSettings;
   private final OperationCallSettings<RestoreAgentRequest, Empty, Struct>
       restoreAgentOperationSettings;
+  private final UnaryCallSettings<ValidateAgentRequest, AgentValidationResult>
+      validateAgentSettings;
+  private final UnaryCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultSettings;
 
   private static final PagedListDescriptor<ListAgentsRequest, ListAgentsResponse, Agent>
       LIST_AGENTS_PAGE_STR_DESC =
@@ -220,6 +227,17 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     return restoreAgentOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to validateAgent. */
+  public UnaryCallSettings<ValidateAgentRequest, AgentValidationResult> validateAgentSettings() {
+    return validateAgentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAgentValidationResult. */
+  public UnaryCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultSettings() {
+    return getAgentValidationResultSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public AgentsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -297,6 +315,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     exportAgentOperationSettings = settingsBuilder.exportAgentOperationSettings().build();
     restoreAgentSettings = settingsBuilder.restoreAgentSettings().build();
     restoreAgentOperationSettings = settingsBuilder.restoreAgentOperationSettings().build();
+    validateAgentSettings = settingsBuilder.validateAgentSettings().build();
+    getAgentValidationResultSettings = settingsBuilder.getAgentValidationResultSettings().build();
   }
 
   /** Builder for AgentsStubSettings. */
@@ -315,6 +335,10 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     private final UnaryCallSettings.Builder<RestoreAgentRequest, Operation> restoreAgentSettings;
     private final OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings;
+    private final UnaryCallSettings.Builder<ValidateAgentRequest, AgentValidationResult>
+        validateAgentSettings;
+    private final UnaryCallSettings.Builder<GetAgentValidationResultRequest, AgentValidationResult>
+        getAgentValidationResultSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -362,6 +386,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       exportAgentOperationSettings = OperationCallSettings.newBuilder();
       restoreAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       restoreAgentOperationSettings = OperationCallSettings.newBuilder();
+      validateAgentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getAgentValidationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -371,7 +397,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               updateAgentSettings,
               deleteAgentSettings,
               exportAgentSettings,
-              restoreAgentSettings);
+              restoreAgentSettings,
+              validateAgentSettings,
+              getAgentValidationResultSettings);
       initDefaults(this);
     }
 
@@ -387,6 +415,8 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
       exportAgentOperationSettings = settings.exportAgentOperationSettings.toBuilder();
       restoreAgentSettings = settings.restoreAgentSettings.toBuilder();
       restoreAgentOperationSettings = settings.restoreAgentOperationSettings.toBuilder();
+      validateAgentSettings = settings.validateAgentSettings.toBuilder();
+      getAgentValidationResultSettings = settings.getAgentValidationResultSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -396,7 +426,9 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
               updateAgentSettings,
               deleteAgentSettings,
               exportAgentSettings,
-              restoreAgentSettings);
+              restoreAgentSettings,
+              validateAgentSettings,
+              getAgentValidationResultSettings);
     }
 
     private static Builder createDefault() {
@@ -443,6 +475,16 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
 
       builder
           .restoreAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .validateAgentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getAgentValidationResultSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -562,6 +604,18 @@ public class AgentsStubSettings extends StubSettings<AgentsStubSettings> {
     public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings() {
       return restoreAgentOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to validateAgent. */
+    public UnaryCallSettings.Builder<ValidateAgentRequest, AgentValidationResult>
+        validateAgentSettings() {
+      return validateAgentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAgentValidationResult. */
+    public UnaryCallSettings.Builder<GetAgentValidationResultRequest, AgentValidationResult>
+        getAgentValidationResultSettings() {
+      return getAgentValidationResultSettings;
     }
 
     @Override

@@ -84,6 +84,10 @@ public final class WebhookProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_IntentInfo_ParametersEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookResponse_fieldAccessorTable;
@@ -161,7 +165,7 @@ public final class WebhookProto {
           + "\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protobuf"
           + ".FieldMask\"^\n\024DeleteWebhookRequest\0227\n\004na"
           + "me\030\001 \001(\tB)\340A\002\372A#\n!dialogflow.googleapis."
-          + "com/Webhook\022\r\n\005force\030\002 \001(\010\"\234\007\n\016WebhookRe"
+          + "com/Webhook\022\r\n\005force\030\002 \001(\010\"\362\010\n\016WebhookRe"
           + "quest\022!\n\031detect_intent_response_id\030\001 \001(\t"
           + "\022\\\n\020fulfillment_info\030\006 \001(\0132B.google.clou"
           + "d.dialogflow.cx.v3beta1.WebhookRequest.F"
@@ -173,89 +177,98 @@ public final class WebhookProto {
           + ".dialogflow.cx.v3beta1.SessionInfo\022E\n\010me"
           + "ssages\030\007 \003(\01323.google.cloud.dialogflow.c"
           + "x.v3beta1.ResponseMessage\022(\n\007payload\030\010 \001"
-          + "(\0132\027.google.protobuf.Struct\032\036\n\017Fulfillme"
-          + "ntInfo\022\013\n\003tag\030\001 \001(\t\032\233\003\n\nIntentInfo\022B\n\023la"
-          + "st_matched_intent\030\001 \001(\tB%\372A\"\n dialogflow"
-          + ".googleapis.com/Intent\022a\n\nparameters\030\002 \003"
-          + "(\0132M.google.cloud.dialogflow.cx.v3beta1."
-          + "WebhookRequest.IntentInfo.ParametersEntr"
-          + "y\032^\n\024IntentParameterValue\022\026\n\016original_va"
-          + "lue\030\001 \001(\t\022.\n\016resolved_value\030\002 \001(\0132\026.goog"
-          + "le.protobuf.Value\032\205\001\n\017ParametersEntry\022\013\n"
-          + "\003key\030\001 \001(\t\022a\n\005value\030\002 \001(\0132R.google.cloud"
-          + ".dialogflow.cx.v3beta1.WebhookRequest.In"
-          + "tentInfo.IntentParameterValue:\0028\001\"\310\005\n\017We"
-          + "bhookResponse\022e\n\024fulfillment_response\030\001 "
-          + "\001(\0132G.google.cloud.dialogflow.cx.v3beta1"
-          + ".WebhookResponse.FulfillmentResponse\022?\n\t"
-          + "page_info\030\002 \001(\0132,.google.cloud.dialogflo"
-          + "w.cx.v3beta1.PageInfo\022E\n\014session_info\030\003 "
-          + "\001(\0132/.google.cloud.dialogflow.cx.v3beta1"
-          + ".SessionInfo\022(\n\007payload\030\004 \001(\0132\027.google.p"
-          + "rotobuf.Struct\022:\n\013target_page\030\005 \001(\tB#\372A "
-          + "\n\036dialogflow.googleapis.com/PageH\000\022:\n\013ta"
-          + "rget_flow\030\006 \001(\tB#\372A \n\036dialogflow.googlea"
-          + "pis.com/FlowH\000\032\225\002\n\023FulfillmentResponse\022E"
-          + "\n\010messages\030\001 \003(\01323.google.cloud.dialogfl"
-          + "ow.cx.v3beta1.ResponseMessage\022m\n\016merge_b"
-          + "ehavior\030\002 \001(\0162U.google.cloud.dialogflow."
-          + "cx.v3beta1.WebhookResponse.FulfillmentRe"
-          + "sponse.MergeBehavior\"H\n\rMergeBehavior\022\036\n"
-          + "\032MERGE_BEHAVIOR_UNSPECIFIED\020\000\022\n\n\006APPEND\020"
-          + "\001\022\013\n\007REPLACE\020\002B\014\n\ntransition\"\254\004\n\010PageInf"
-          + "o\0229\n\014current_page\030\001 \001(\tB#\372A \n\036dialogflow"
-          + ".googleapis.com/Page\022H\n\tform_info\030\003 \001(\0132"
-          + "5.google.cloud.dialogflow.cx.v3beta1.Pag"
-          + "eInfo.FormInfo\032\232\003\n\010FormInfo\022[\n\016parameter"
-          + "_info\030\002 \003(\0132C.google.cloud.dialogflow.cx"
-          + ".v3beta1.PageInfo.FormInfo.ParameterInfo"
-          + "\032\260\002\n\rParameterInfo\022\024\n\014display_name\030\001 \001(\t"
-          + "\022\020\n\010required\030\002 \001(\010\022a\n\005state\030\003 \001(\0162R.goog"
-          + "le.cloud.dialogflow.cx.v3beta1.PageInfo."
-          + "FormInfo.ParameterInfo.ParameterState\022%\n"
-          + "\005value\030\004 \001(\0132\026.google.protobuf.Value\022\026\n\016"
-          + "just_collected\030\005 \001(\010\"U\n\016ParameterState\022\037"
-          + "\n\033PARAMETER_STATE_UNSPECIFIED\020\000\022\t\n\005EMPTY"
-          + "\020\001\022\013\n\007INVALID\020\002\022\n\n\006FILLED\020\003\"\346\001\n\013SessionI"
-          + "nfo\0227\n\007session\030\001 \001(\tB&\372A#\n!dialogflow.go"
-          + "ogleapis.com/Session\022S\n\nparameters\030\002 \003(\013"
-          + "2?.google.cloud.dialogflow.cx.v3beta1.Se"
-          + "ssionInfo.ParametersEntry\032I\n\017ParametersE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.googl"
-          + "e.protobuf.Value:\0028\0012\375\010\n\010Webhooks\022\316\001\n\014Li"
-          + "stWebhooks\0227.google.cloud.dialogflow.cx."
-          + "v3beta1.ListWebhooksRequest\0328.google.clo"
-          + "ud.dialogflow.cx.v3beta1.ListWebhooksRes"
-          + "ponse\"K\202\323\344\223\002<\022:/v3beta1/{parent=projects"
-          + "/*/locations/*/agents/*}/webhooks\332A\006pare"
-          + "nt\022\273\001\n\nGetWebhook\0225.google.cloud.dialogf"
-          + "low.cx.v3beta1.GetWebhookRequest\032+.googl"
-          + "e.cloud.dialogflow.cx.v3beta1.Webhook\"I\202"
-          + "\323\344\223\002<\022:/v3beta1/{name=projects/*/locatio"
-          + "ns/*/agents/*/webhooks/*}\332A\004name\022\324\001\n\rCre"
-          + "ateWebhook\0228.google.cloud.dialogflow.cx."
-          + "v3beta1.CreateWebhookRequest\032+.google.cl"
-          + "oud.dialogflow.cx.v3beta1.Webhook\"\\\202\323\344\223\002"
-          + "E\":/v3beta1/{parent=projects/*/locations"
-          + "/*/agents/*}/webhooks:\007webhook\332A\016parent,"
-          + "webhook\022\341\001\n\rUpdateWebhook\0228.google.cloud"
-          + ".dialogflow.cx.v3beta1.UpdateWebhookRequ"
-          + "est\032+.google.cloud.dialogflow.cx.v3beta1"
-          + ".Webhook\"i\202\323\344\223\002M2B/v3beta1/{webhook.name"
-          + "=projects/*/locations/*/agents/*/webhook"
-          + "s/*}:\007webhook\332A\023webhook,update_mask\022\254\001\n\r"
-          + "DeleteWebhook\0228.google.cloud.dialogflow."
-          + "cx.v3beta1.DeleteWebhookRequest\032\026.google"
-          + ".protobuf.Empty\"I\202\323\344\223\002<*:/v3beta1/{name="
-          + "projects/*/locations/*/agents/*/webhooks"
-          + "/*}\332A\004name\032x\312A\031dialogflow.googleapis.com"
-          + "\322AYhttps://www.googleapis.com/auth/cloud"
-          + "-platform,https://www.googleapis.com/aut"
-          + "h/dialogflowB\253\001\n&com.google.cloud.dialog"
-          + "flow.cx.v3beta1B\014WebhookProtoP\001ZDgoogle."
-          + "golang.org/genproto/googleapis/cloud/dia"
-          + "logflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.C"
-          + "loud.Dialogflow.Cx.V3Beta1b\006proto3"
+          + "(\0132\027.google.protobuf.Struct\022m\n\031sentiment"
+          + "_analysis_result\030\t \001(\0132J.google.cloud.di"
+          + "alogflow.cx.v3beta1.WebhookRequest.Senti"
+          + "mentAnalysisResult\032\036\n\017FulfillmentInfo\022\013\n"
+          + "\003tag\030\001 \001(\t\032\305\003\n\nIntentInfo\022B\n\023last_matche"
+          + "d_intent\030\001 \001(\tB%\372A\"\n dialogflow.googleap"
+          + "is.com/Intent\022\024\n\014display_name\030\003 \001(\t\022a\n\np"
+          + "arameters\030\002 \003(\0132M.google.cloud.dialogflo"
+          + "w.cx.v3beta1.WebhookRequest.IntentInfo.P"
+          + "arametersEntry\022\022\n\nconfidence\030\004 \001(\002\032^\n\024In"
+          + "tentParameterValue\022\026\n\016original_value\030\001 \001"
+          + "(\t\022.\n\016resolved_value\030\002 \001(\0132\026.google.prot"
+          + "obuf.Value\032\205\001\n\017ParametersEntry\022\013\n\003key\030\001 "
+          + "\001(\t\022a\n\005value\030\002 \001(\0132R.google.cloud.dialog"
+          + "flow.cx.v3beta1.WebhookRequest.IntentInf"
+          + "o.IntentParameterValue:\0028\001\032;\n\027SentimentA"
+          + "nalysisResult\022\r\n\005score\030\001 \001(\002\022\021\n\tmagnitud"
+          + "e\030\002 \001(\002\"\310\005\n\017WebhookResponse\022e\n\024fulfillme"
+          + "nt_response\030\001 \001(\0132G.google.cloud.dialogf"
+          + "low.cx.v3beta1.WebhookResponse.Fulfillme"
+          + "ntResponse\022?\n\tpage_info\030\002 \001(\0132,.google.c"
+          + "loud.dialogflow.cx.v3beta1.PageInfo\022E\n\014s"
+          + "ession_info\030\003 \001(\0132/.google.cloud.dialogf"
+          + "low.cx.v3beta1.SessionInfo\022(\n\007payload\030\004 "
+          + "\001(\0132\027.google.protobuf.Struct\022:\n\013target_p"
+          + "age\030\005 \001(\tB#\372A \n\036dialogflow.googleapis.co"
+          + "m/PageH\000\022:\n\013target_flow\030\006 \001(\tB#\372A \n\036dial"
+          + "ogflow.googleapis.com/FlowH\000\032\225\002\n\023Fulfill"
+          + "mentResponse\022E\n\010messages\030\001 \003(\01323.google."
+          + "cloud.dialogflow.cx.v3beta1.ResponseMess"
+          + "age\022m\n\016merge_behavior\030\002 \001(\0162U.google.clo"
+          + "ud.dialogflow.cx.v3beta1.WebhookResponse"
+          + ".FulfillmentResponse.MergeBehavior\"H\n\rMe"
+          + "rgeBehavior\022\036\n\032MERGE_BEHAVIOR_UNSPECIFIE"
+          + "D\020\000\022\n\n\006APPEND\020\001\022\013\n\007REPLACE\020\002B\014\n\ntransiti"
+          + "on\"\254\004\n\010PageInfo\0229\n\014current_page\030\001 \001(\tB#\372"
+          + "A \n\036dialogflow.googleapis.com/Page\022H\n\tfo"
+          + "rm_info\030\003 \001(\01325.google.cloud.dialogflow."
+          + "cx.v3beta1.PageInfo.FormInfo\032\232\003\n\010FormInf"
+          + "o\022[\n\016parameter_info\030\002 \003(\0132C.google.cloud"
+          + ".dialogflow.cx.v3beta1.PageInfo.FormInfo"
+          + ".ParameterInfo\032\260\002\n\rParameterInfo\022\024\n\014disp"
+          + "lay_name\030\001 \001(\t\022\020\n\010required\030\002 \001(\010\022a\n\005stat"
+          + "e\030\003 \001(\0162R.google.cloud.dialogflow.cx.v3b"
+          + "eta1.PageInfo.FormInfo.ParameterInfo.Par"
+          + "ameterState\022%\n\005value\030\004 \001(\0132\026.google.prot"
+          + "obuf.Value\022\026\n\016just_collected\030\005 \001(\010\"U\n\016Pa"
+          + "rameterState\022\037\n\033PARAMETER_STATE_UNSPECIF"
+          + "IED\020\000\022\t\n\005EMPTY\020\001\022\013\n\007INVALID\020\002\022\n\n\006FILLED\020"
+          + "\003\"\346\001\n\013SessionInfo\0227\n\007session\030\001 \001(\tB&\372A#\n"
+          + "!dialogflow.googleapis.com/Session\022S\n\npa"
+          + "rameters\030\002 \003(\0132?.google.cloud.dialogflow"
+          + ".cx.v3beta1.SessionInfo.ParametersEntry\032"
+          + "I\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022%\n\005value"
+          + "\030\002 \001(\0132\026.google.protobuf.Value:\0028\0012\375\010\n\010W"
+          + "ebhooks\022\316\001\n\014ListWebhooks\0227.google.cloud."
+          + "dialogflow.cx.v3beta1.ListWebhooksReques"
+          + "t\0328.google.cloud.dialogflow.cx.v3beta1.L"
+          + "istWebhooksResponse\"K\202\323\344\223\002<\022:/v3beta1/{p"
+          + "arent=projects/*/locations/*/agents/*}/w"
+          + "ebhooks\332A\006parent\022\273\001\n\nGetWebhook\0225.google"
+          + ".cloud.dialogflow.cx.v3beta1.GetWebhookR"
+          + "equest\032+.google.cloud.dialogflow.cx.v3be"
+          + "ta1.Webhook\"I\202\323\344\223\002<\022:/v3beta1/{name=proj"
+          + "ects/*/locations/*/agents/*/webhooks/*}\332"
+          + "A\004name\022\324\001\n\rCreateWebhook\0228.google.cloud."
+          + "dialogflow.cx.v3beta1.CreateWebhookReque"
+          + "st\032+.google.cloud.dialogflow.cx.v3beta1."
+          + "Webhook\"\\\202\323\344\223\002E\":/v3beta1/{parent=projec"
+          + "ts/*/locations/*/agents/*}/webhooks:\007web"
+          + "hook\332A\016parent,webhook\022\341\001\n\rUpdateWebhook\022"
+          + "8.google.cloud.dialogflow.cx.v3beta1.Upd"
+          + "ateWebhookRequest\032+.google.cloud.dialogf"
+          + "low.cx.v3beta1.Webhook\"i\202\323\344\223\002M2B/v3beta1"
+          + "/{webhook.name=projects/*/locations/*/ag"
+          + "ents/*/webhooks/*}:\007webhook\332A\023webhook,up"
+          + "date_mask\022\254\001\n\rDeleteWebhook\0228.google.clo"
+          + "ud.dialogflow.cx.v3beta1.DeleteWebhookRe"
+          + "quest\032\026.google.protobuf.Empty\"I\202\323\344\223\002<*:/"
+          + "v3beta1/{name=projects/*/locations/*/age"
+          + "nts/*/webhooks/*}\332A\004name\032x\312A\031dialogflow."
+          + "googleapis.com\322AYhttps://www.googleapis."
+          + "com/auth/cloud-platform,https://www.goog"
+          + "leapis.com/auth/dialogflowB\252\002\n&com.googl"
+          + "e.cloud.dialogflow.cx.v3beta1B\014WebhookPr"
+          + "otoP\001ZDgoogle.golang.org/genproto/google"
+          + "apis/cloud/dialogflow/cx/v3beta1;cx\370\001\001\242\002"
+          + "\002DF\252\002\"Google.Cloud.Dialogflow.Cx.V3Beta1"
+          + "\352A|\n\'servicedirectory.googleapis.com/Ser"
+          + "vice\022Qprojects/{project}/locations/{loca"
+          + "tion}/namespaces/{namespace}/services/{s"
+          + "ervice}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -360,6 +373,7 @@ public final class WebhookProto {
               "SessionInfo",
               "Messages",
               "Payload",
+              "SentimentAnalysisResult",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_FulfillmentInfo_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_descriptor
@@ -379,7 +393,7 @@ public final class WebhookProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_IntentInfo_descriptor,
             new java.lang.String[] {
-              "LastMatchedIntent", "Parameters",
+              "LastMatchedIntent", "DisplayName", "Parameters", "Confidence",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_IntentInfo_IntentParameterValue_descriptor =
         internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_IntentInfo_descriptor
@@ -400,6 +414,16 @@ public final class WebhookProto {
             internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_IntentInfo_ParametersEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor =
+        internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor,
+            new java.lang.String[] {
+              "Score", "Magnitude",
             });
     internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookResponse_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -479,6 +503,7 @@ public final class WebhookProto {
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);

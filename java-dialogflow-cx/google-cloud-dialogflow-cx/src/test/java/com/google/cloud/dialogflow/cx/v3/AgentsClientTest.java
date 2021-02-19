@@ -34,6 +34,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -184,6 +185,9 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setSecuritySettings(
+                SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+                    .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
             .build();
@@ -231,6 +235,9 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setSecuritySettings(
+                SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+                    .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
             .build();
@@ -278,6 +285,9 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setSecuritySettings(
+                SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+                    .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
             .build();
@@ -328,6 +338,9 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setSecuritySettings(
+                SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+                    .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
             .build();
@@ -378,6 +391,9 @@ public class AgentsClientTest {
             .setAvatarUri("avatarUri-428646061")
             .setSpeechToTextSettings(SpeechToTextSettings.newBuilder().build())
             .setStartFlow(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setSecuritySettings(
+                SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+                    .toString())
             .setEnableStackdriverLogging(true)
             .setEnableSpellCorrection(true)
             .build();
@@ -583,6 +599,136 @@ public class AgentsClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void validateAgentTest() throws Exception {
+    AgentValidationResult expectedResponse =
+        AgentValidationResult.newBuilder()
+            .setName(AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .addAllFlowValidationResults(new ArrayList<FlowValidationResult>())
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    ValidateAgentRequest request =
+        ValidateAgentRequest.newBuilder()
+            .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+
+    AgentValidationResult actualResponse = client.validateAgent(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ValidateAgentRequest actualRequest = ((ValidateAgentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void validateAgentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      ValidateAgentRequest request =
+          ValidateAgentRequest.newBuilder()
+              .setName(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setLanguageCode("languageCode-2092349083")
+              .build();
+      client.validateAgent(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAgentValidationResultTest() throws Exception {
+    AgentValidationResult expectedResponse =
+        AgentValidationResult.newBuilder()
+            .setName(AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .addAllFlowValidationResults(new ArrayList<FlowValidationResult>())
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    AgentValidationResultName name =
+        AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+
+    AgentValidationResult actualResponse = client.getAgentValidationResult(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAgentValidationResultRequest actualRequest =
+        ((GetAgentValidationResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAgentValidationResultExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      AgentValidationResultName name =
+          AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      client.getAgentValidationResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getAgentValidationResultTest2() throws Exception {
+    AgentValidationResult expectedResponse =
+        AgentValidationResult.newBuilder()
+            .setName(AgentValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .addAllFlowValidationResults(new ArrayList<FlowValidationResult>())
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    AgentValidationResult actualResponse = client.getAgentValidationResult(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetAgentValidationResultRequest actualRequest =
+        ((GetAgentValidationResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getAgentValidationResultExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getAgentValidationResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

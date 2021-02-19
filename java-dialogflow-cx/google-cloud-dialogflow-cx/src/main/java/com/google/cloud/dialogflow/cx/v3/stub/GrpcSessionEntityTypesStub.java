@@ -278,31 +278,37 @@ public class GrpcSessionEntityTypesStub extends SessionEntityTypesStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesResponse>
       listSessionEntityTypesCallable() {
     return listSessionEntityTypesCallable;
   }
 
+  @Override
   public UnaryCallable<ListSessionEntityTypesRequest, ListSessionEntityTypesPagedResponse>
       listSessionEntityTypesPagedCallable() {
     return listSessionEntityTypesPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetSessionEntityTypeRequest, SessionEntityType>
       getSessionEntityTypeCallable() {
     return getSessionEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<CreateSessionEntityTypeRequest, SessionEntityType>
       createSessionEntityTypeCallable() {
     return createSessionEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSessionEntityTypeRequest, SessionEntityType>
       updateSessionEntityTypeCallable() {
     return updateSessionEntityTypeCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSessionEntityTypeRequest, Empty> deleteSessionEntityTypeCallable() {
     return deleteSessionEntityTypeCallable;
   }

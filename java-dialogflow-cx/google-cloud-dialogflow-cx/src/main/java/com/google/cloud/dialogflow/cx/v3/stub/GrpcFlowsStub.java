@@ -29,11 +29,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.Flow;
+import com.google.cloud.dialogflow.cx.v3.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3.GetFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3.TrainFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.UpdateFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ValidateFlowRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -103,6 +106,27 @@ public class GrpcFlowsStub extends FlowsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ValidateFlowRequest, FlowValidationResult>
+      validateFlowMethodDescriptor =
+          MethodDescriptor.<ValidateFlowRequest, FlowValidationResult>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Flows/ValidateFlow")
+              .setRequestMarshaller(ProtoUtils.marshaller(ValidateFlowRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FlowValidationResult.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultMethodDescriptor =
+          MethodDescriptor.<GetFlowValidationResultRequest, FlowValidationResult>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Flows/GetFlowValidationResult")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetFlowValidationResultRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FlowValidationResult.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateFlowRequest, Flow> createFlowCallable;
   private final UnaryCallable<DeleteFlowRequest, Empty> deleteFlowCallable;
   private final UnaryCallable<ListFlowsRequest, ListFlowsResponse> listFlowsCallable;
@@ -111,6 +135,9 @@ public class GrpcFlowsStub extends FlowsStub {
   private final UnaryCallable<UpdateFlowRequest, Flow> updateFlowCallable;
   private final UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable;
   private final OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable;
+  private final UnaryCallable<ValidateFlowRequest, FlowValidationResult> validateFlowCallable;
+  private final UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -229,6 +256,33 @@ public class GrpcFlowsStub extends FlowsStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowTransportSettings =
+        GrpcCallSettings.<ValidateFlowRequest, FlowValidationResult>newBuilder()
+            .setMethodDescriptor(validateFlowMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ValidateFlowRequest>() {
+                  @Override
+                  public Map<String, String> extract(ValidateFlowRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
+        getFlowValidationResultTransportSettings =
+            GrpcCallSettings.<GetFlowValidationResultRequest, FlowValidationResult>newBuilder()
+                .setMethodDescriptor(getFlowValidationResultMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<GetFlowValidationResultRequest>() {
+                      @Override
+                      public Map<String, String> extract(GetFlowValidationResultRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("name", String.valueOf(request.getName()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.createFlowCallable =
         callableFactory.createUnaryCallable(
@@ -257,6 +311,14 @@ public class GrpcFlowsStub extends FlowsStub {
             settings.trainFlowOperationSettings(),
             clientContext,
             operationsStub);
+    this.validateFlowCallable =
+        callableFactory.createUnaryCallable(
+            validateFlowTransportSettings, settings.validateFlowSettings(), clientContext);
+    this.getFlowValidationResultCallable =
+        callableFactory.createUnaryCallable(
+            getFlowValidationResultTransportSettings,
+            settings.getFlowValidationResultSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -266,36 +328,55 @@ public class GrpcFlowsStub extends FlowsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateFlowRequest, Flow> createFlowCallable() {
     return createFlowCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteFlowRequest, Empty> deleteFlowCallable() {
     return deleteFlowCallable;
   }
 
+  @Override
   public UnaryCallable<ListFlowsRequest, ListFlowsResponse> listFlowsCallable() {
     return listFlowsCallable;
   }
 
+  @Override
   public UnaryCallable<ListFlowsRequest, ListFlowsPagedResponse> listFlowsPagedCallable() {
     return listFlowsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetFlowRequest, Flow> getFlowCallable() {
     return getFlowCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateFlowRequest, Flow> updateFlowCallable() {
     return updateFlowCallable;
   }
 
+  @Override
   public UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable() {
     return trainFlowCallable;
   }
 
+  @Override
   public OperationCallable<TrainFlowRequest, Empty, Struct> trainFlowOperationCallable() {
     return trainFlowOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ValidateFlowRequest, FlowValidationResult> validateFlowCallable() {
+    return validateFlowCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultCallable() {
+    return getFlowValidationResultCallable;
   }
 
   @Override

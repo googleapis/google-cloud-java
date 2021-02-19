@@ -43,6 +43,13 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (IntentsClient intentsClient = IntentsClient.create()) {
+ *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
+ *   Intent response = intentsClient.getIntent(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the IntentsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -144,6 +151,17 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Returns the list of all intents in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to list all intents for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -160,6 +178,17 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Returns the list of all intents in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   String parent = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
+   *   for (Intent element : intentsClient.listIntents(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to list all intents for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -173,6 +202,24 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Returns the list of all intents in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ListIntentsRequest request =
+   *       ListIntentsRequest.newBuilder()
+   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Intent element : intentsClient.listIntents(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -185,6 +232,24 @@ public class IntentsClient implements BackgroundResource {
    * Returns the list of all intents in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   ListIntentsRequest request =
+   *       ListIntentsRequest.newBuilder()
+   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setIntentView(IntentView.forNumber(0))
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Intent> future = intentsClient.listIntentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Intent element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse>
       listIntentsPagedCallable() {
@@ -196,6 +261,23 @@ public class IntentsClient implements BackgroundResource {
    * Returns the list of all intents in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   while (true) {
+   *     ListIntentsResponse response = intentsClient.listIntentsCallable().call(request);
+   *     for (Intent element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListIntentsRequest, ListIntentsResponse> listIntentsCallable() {
     return stub.listIntentsCallable();
@@ -204,6 +286,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified intent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
+   *   Intent response = intentsClient.getIntent(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the intent. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
@@ -219,6 +310,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Retrieves the specified intent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   String name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
+   *   Intent response = intentsClient.getIntent(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the intent. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -232,6 +332,19 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Retrieves the specified intent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   GetIntentRequest request =
+   *       GetIntentRequest.newBuilder()
+   *           .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   Intent response = intentsClient.getIntent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -244,6 +357,19 @@ public class IntentsClient implements BackgroundResource {
    * Retrieves the specified intent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   GetIntentRequest request =
+   *       GetIntentRequest.newBuilder()
+   *           .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Intent> future = intentsClient.getIntentCallable().futureCall(request);
+   *   // Do something.
+   *   Intent response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetIntentRequest, Intent> getIntentCallable() {
     return stub.getIntentCallable();
@@ -252,6 +378,16 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an intent in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   Intent intent = Intent.newBuilder().build();
+   *   Intent response = intentsClient.createIntent(parent, intent);
+   * }
+   * }</pre>
    *
    * @param parent Required. The agent to create an intent for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -271,6 +407,16 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Creates an intent in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   String parent = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
+   *   Intent intent = Intent.newBuilder().build();
+   *   Intent response = intentsClient.createIntent(parent, intent);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to create an intent for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @param intent Required. The intent to create.
@@ -286,6 +432,20 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Creates an intent in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   CreateIntentRequest request =
+   *       CreateIntentRequest.newBuilder()
+   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setIntent(Intent.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   Intent response = intentsClient.createIntent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -298,6 +458,20 @@ public class IntentsClient implements BackgroundResource {
    * Creates an intent in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   CreateIntentRequest request =
+   *       CreateIntentRequest.newBuilder()
+   *           .setParent(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .setIntent(Intent.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<Intent> future = intentsClient.createIntentCallable().futureCall(request);
+   *   // Do something.
+   *   Intent response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateIntentRequest, Intent> createIntentCallable() {
     return stub.createIntentCallable();
@@ -306,6 +480,16 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified intent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   Intent intent = Intent.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Intent response = intentsClient.updateIntent(intent, updateMask);
+   * }
+   * }</pre>
    *
    * @param intent Required. The intent to update.
    * @param updateMask The mask to control which fields get updated. If the mask is not present, all
@@ -322,6 +506,20 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Updates the specified intent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   UpdateIntentRequest request =
+   *       UpdateIntentRequest.newBuilder()
+   *           .setIntent(Intent.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Intent response = intentsClient.updateIntent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -334,6 +532,20 @@ public class IntentsClient implements BackgroundResource {
    * Updates the specified intent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   UpdateIntentRequest request =
+   *       UpdateIntentRequest.newBuilder()
+   *           .setIntent(Intent.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Intent> future = intentsClient.updateIntentCallable().futureCall(request);
+   *   // Do something.
+   *   Intent response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable() {
     return stub.updateIntentCallable();
@@ -342,6 +554,15 @@ public class IntentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified intent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   IntentName name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]");
+   *   intentsClient.deleteIntent(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
@@ -357,6 +578,15 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes the specified intent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   String name = IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString();
+   *   intentsClient.deleteIntent(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the intent to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/intents/&lt;Intent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -370,6 +600,18 @@ public class IntentsClient implements BackgroundResource {
   /**
    * Deletes the specified intent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   DeleteIntentRequest request =
+   *       DeleteIntentRequest.newBuilder()
+   *           .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .build();
+   *   intentsClient.deleteIntent(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -382,6 +624,18 @@ public class IntentsClient implements BackgroundResource {
    * Deletes the specified intent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (IntentsClient intentsClient = IntentsClient.create()) {
+   *   DeleteIntentRequest request =
+   *       DeleteIntentRequest.newBuilder()
+   *           .setName(IntentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[INTENT]").toString())
+   *           .build();
+   *   ApiFuture<Empty> future = intentsClient.deleteIntentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     return stub.deleteIntentCallable();

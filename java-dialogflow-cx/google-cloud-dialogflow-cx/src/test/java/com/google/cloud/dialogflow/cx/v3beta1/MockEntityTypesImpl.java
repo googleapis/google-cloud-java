@@ -70,7 +70,13 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListEntityTypes, expected %s or %s",
+                  response.getClass().getName(),
+                  ListEntityTypesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  EntityType.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  EntityType.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  EntityType.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockEntityTypesImpl extends EntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

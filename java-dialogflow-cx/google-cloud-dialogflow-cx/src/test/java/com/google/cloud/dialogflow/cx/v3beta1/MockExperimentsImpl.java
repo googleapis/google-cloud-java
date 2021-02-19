@@ -70,7 +70,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListExperiments, expected %s or %s",
+                  response.getClass().getName(),
+                  ListExperimentsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Experiment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Experiment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Experiment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -130,7 +154,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -145,7 +175,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StartExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Experiment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -160,7 +196,13 @@ public class MockExperimentsImpl extends ExperimentsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method StopExperiment, expected %s or %s",
+                  response.getClass().getName(),
+                  Experiment.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

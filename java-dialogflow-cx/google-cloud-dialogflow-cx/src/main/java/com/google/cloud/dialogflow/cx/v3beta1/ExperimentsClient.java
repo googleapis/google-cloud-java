@@ -44,6 +44,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+ *   ExperimentName name =
+ *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
+ *   Experiment response = experimentsClient.getExperiment(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the ExperimentsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -148,6 +156,18 @@ public class ExperimentsClient implements BackgroundResource {
    * Returns the list of all experiments in the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   EnvironmentName parent =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+   *   for (Experiment element : experimentsClient.listExperiments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to
    *     list all environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
@@ -166,6 +186,19 @@ public class ExperimentsClient implements BackgroundResource {
    * Returns the list of all experiments in the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   String parent =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *           .toString();
+   *   for (Experiment element : experimentsClient.listExperiments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to
    *     list all environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;`.
@@ -181,6 +214,25 @@ public class ExperimentsClient implements BackgroundResource {
    * Returns the list of all experiments in the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ListExperimentsRequest request =
+   *       ListExperimentsRequest.newBuilder()
+   *           .setParent(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Experiment element : experimentsClient.listExperiments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -194,6 +246,26 @@ public class ExperimentsClient implements BackgroundResource {
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ListExperimentsRequest request =
+   *       ListExperimentsRequest.newBuilder()
+   *           .setParent(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Experiment> future =
+   *       experimentsClient.listExperimentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Experiment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListExperimentsRequest, ListExperimentsPagedResponse>
       listExperimentsPagedCallable() {
@@ -206,6 +278,24 @@ public class ExperimentsClient implements BackgroundResource {
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   while (true) {
+   *     ListExperimentsResponse response =
+   *         experimentsClient.listExperimentsCallable().call(request);
+   *     for (Experiment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListExperimentsRequest, ListExperimentsResponse>
       listExperimentsCallable() {
@@ -215,6 +305,16 @@ public class ExperimentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ExperimentName name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
+   *   Experiment response = experimentsClient.getExperiment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
@@ -232,6 +332,17 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   String name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *           .toString();
+   *   Experiment response = experimentsClient.getExperiment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -247,6 +358,21 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   GetExperimentRequest request =
+   *       GetExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   Experiment response = experimentsClient.getExperiment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -259,6 +385,21 @@ public class ExperimentsClient implements BackgroundResource {
    * Retrieves the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   GetExperimentRequest request =
+   *       GetExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Experiment> future = experimentsClient.getExperimentCallable().futureCall(request);
+   *   // Do something.
+   *   Experiment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetExperimentRequest, Experiment> getExperimentCallable() {
     return stub.getExperimentCallable();
@@ -268,6 +409,17 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   EnvironmentName parent =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+   *   Experiment experiment = Experiment.newBuilder().build();
+   *   Experiment response = experimentsClient.createExperiment(parent, experiment);
+   * }
+   * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for. Format:
@@ -290,6 +442,18 @@ public class ExperimentsClient implements BackgroundResource {
    * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   String parent =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *           .toString();
+   *   Experiment experiment = Experiment.newBuilder().build();
+   *   Experiment response = experimentsClient.createExperiment(parent, experiment);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -308,6 +472,22 @@ public class ExperimentsClient implements BackgroundResource {
    * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   CreateExperimentRequest request =
+   *       CreateExperimentRequest.newBuilder()
+   *           .setParent(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .setExperiment(Experiment.newBuilder().build())
+   *           .build();
+   *   Experiment response = experimentsClient.createExperiment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -321,6 +501,23 @@ public class ExperimentsClient implements BackgroundResource {
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   CreateExperimentRequest request =
+   *       CreateExperimentRequest.newBuilder()
+   *           .setParent(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .setExperiment(Experiment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Experiment> future =
+   *       experimentsClient.createExperimentCallable().futureCall(request);
+   *   // Do something.
+   *   Experiment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateExperimentRequest, Experiment> createExperimentCallable() {
     return stub.createExperimentCallable();
@@ -329,6 +526,16 @@ public class ExperimentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   Experiment experiment = Experiment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Experiment response = experimentsClient.updateExperiment(experiment, updateMask);
+   * }
+   * }</pre>
    *
    * @param experiment Required. The experiment to update.
    * @param updateMask Required. The mask to control which fields get updated.
@@ -347,6 +554,19 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   UpdateExperimentRequest request =
+   *       UpdateExperimentRequest.newBuilder()
+   *           .setExperiment(Experiment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Experiment response = experimentsClient.updateExperiment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -359,6 +579,20 @@ public class ExperimentsClient implements BackgroundResource {
    * Updates the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   UpdateExperimentRequest request =
+   *       UpdateExperimentRequest.newBuilder()
+   *           .setExperiment(Experiment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Experiment> future =
+   *       experimentsClient.updateExperimentCallable().futureCall(request);
+   *   // Do something.
+   *   Experiment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateExperimentRequest, Experiment> updateExperimentCallable() {
     return stub.updateExperimentCallable();
@@ -367,6 +601,16 @@ public class ExperimentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ExperimentName name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
+   *   experimentsClient.deleteExperiment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete. Format:
@@ -384,6 +628,17 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   String name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *           .toString();
+   *   experimentsClient.deleteExperiment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -399,6 +654,21 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   DeleteExperimentRequest request =
+   *       DeleteExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   experimentsClient.deleteExperiment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -411,6 +681,21 @@ public class ExperimentsClient implements BackgroundResource {
    * Deletes the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   DeleteExperimentRequest request =
+   *       DeleteExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = experimentsClient.deleteExperimentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteExperimentRequest, Empty> deleteExperimentCallable() {
     return stub.deleteExperimentCallable();
@@ -420,6 +705,16 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
    * changes the state of experiment from PENDING to RUNNING.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ExperimentName name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
+   *   Experiment response = experimentsClient.startExperiment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Resource name of the experiment to start. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
@@ -437,6 +732,17 @@ public class ExperimentsClient implements BackgroundResource {
    * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
    * changes the state of experiment from PENDING to RUNNING.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   String name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *           .toString();
+   *   Experiment response = experimentsClient.startExperiment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Resource name of the experiment to start. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
    *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
@@ -452,6 +758,21 @@ public class ExperimentsClient implements BackgroundResource {
    * Starts the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
    * changes the state of experiment from PENDING to RUNNING.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   StartExperimentRequest request =
+   *       StartExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   Experiment response = experimentsClient.startExperiment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -465,6 +786,22 @@ public class ExperimentsClient implements BackgroundResource {
    * changes the state of experiment from PENDING to RUNNING.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   StartExperimentRequest request =
+   *       StartExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Experiment> future =
+   *       experimentsClient.startExperimentCallable().futureCall(request);
+   *   // Do something.
+   *   Experiment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StartExperimentRequest, Experiment> startExperimentCallable() {
     return stub.startExperimentCallable();
@@ -474,6 +811,16 @@ public class ExperimentsClient implements BackgroundResource {
   /**
    * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
    * changes the state of experiment from RUNNING to DONE.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   ExperimentName name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]");
+   *   Experiment response = experimentsClient.stopExperiment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Resource name of the experiment to stop. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
@@ -491,6 +838,17 @@ public class ExperimentsClient implements BackgroundResource {
    * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
    * changes the state of experiment from RUNNING to DONE.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   String name =
+   *       ExperimentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *           .toString();
+   *   Experiment response = experimentsClient.stopExperiment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Resource name of the experiment to stop. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment
    *     ID&gt;/experiments/&lt;Experiment ID&gt;`.
@@ -506,6 +864,21 @@ public class ExperimentsClient implements BackgroundResource {
    * Stops the specified [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
    * changes the state of experiment from RUNNING to DONE.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   StopExperimentRequest request =
+   *       StopExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   Experiment response = experimentsClient.stopExperiment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -519,6 +892,21 @@ public class ExperimentsClient implements BackgroundResource {
    * changes the state of experiment from RUNNING to DONE.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (ExperimentsClient experimentsClient = ExperimentsClient.create()) {
+   *   StopExperimentRequest request =
+   *       StopExperimentRequest.newBuilder()
+   *           .setName(
+   *               ExperimentName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]", "[EXPERIMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Experiment> future = experimentsClient.stopExperimentCallable().futureCall(request);
+   *   // Do something.
+   *   Experiment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<StopExperimentRequest, Experiment> stopExperimentCallable() {
     return stub.stopExperimentCallable();

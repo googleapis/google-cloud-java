@@ -305,35 +305,43 @@ public class GrpcExperimentsStub extends ExperimentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListExperimentsRequest, ListExperimentsResponse> listExperimentsCallable() {
     return listExperimentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListExperimentsRequest, ListExperimentsPagedResponse>
       listExperimentsPagedCallable() {
     return listExperimentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetExperimentRequest, Experiment> getExperimentCallable() {
     return getExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateExperimentRequest, Experiment> createExperimentCallable() {
     return createExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateExperimentRequest, Experiment> updateExperimentCallable() {
     return updateExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteExperimentRequest, Empty> deleteExperimentCallable() {
     return deleteExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<StartExperimentRequest, Experiment> startExperimentCallable() {
     return startExperimentCallable;
   }
 
+  @Override
   public UnaryCallable<StopExperimentRequest, Experiment> stopExperimentCallable() {
     return stopExperimentCallable;
   }

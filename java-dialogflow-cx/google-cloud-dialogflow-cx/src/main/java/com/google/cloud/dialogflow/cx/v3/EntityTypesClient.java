@@ -44,6 +44,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+ *   EntityTypeName name =
+ *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
+ *   EntityType response = entityTypesClient.getEntityType(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the EntityTypesClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -146,6 +154,17 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Returns the list of all entity types in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -162,6 +181,18 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Returns the list of all entity types in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   String parent =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString();
+   *   for (EntityType element : entityTypesClient.listEntityTypes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to list all entity types for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -175,6 +206,25 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Returns the list of all entity types in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ListEntityTypesRequest request =
+   *       ListEntityTypesRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (EntityType element : entityTypesClient.listEntityTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -187,6 +237,26 @@ public class EntityTypesClient implements BackgroundResource {
    * Returns the list of all entity types in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   ListEntityTypesRequest request =
+   *       ListEntityTypesRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<EntityType> future =
+   *       entityTypesClient.listEntityTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (EntityType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEntityTypesRequest, ListEntityTypesPagedResponse>
       listEntityTypesPagedCallable() {
@@ -198,6 +268,24 @@ public class EntityTypesClient implements BackgroundResource {
    * Returns the list of all entity types in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   while (true) {
+   *     ListEntityTypesResponse response =
+   *         entityTypesClient.listEntityTypesCallable().call(request);
+   *     for (EntityType element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>
       listEntityTypesCallable() {
@@ -207,6 +295,16 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
+   *   EntityType response = entityTypesClient.getEntityType(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the entity type. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
@@ -223,6 +321,16 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Retrieves the specified entity type.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   String name =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString();
+   *   EntityType response = entityTypesClient.getEntityType(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the entity type. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
    *     ID&gt;`.
@@ -237,6 +345,21 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Retrieves the specified entity type.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   GetEntityTypeRequest request =
+   *       GetEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   EntityType response = entityTypesClient.getEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -249,6 +372,21 @@ public class EntityTypesClient implements BackgroundResource {
    * Retrieves the specified entity type.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   GetEntityTypeRequest request =
+   *       GetEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<EntityType> future = entityTypesClient.getEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   EntityType response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable() {
     return stub.getEntityTypeCallable();
@@ -257,6 +395,16 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Creates an entity type in the specified agent.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   EntityType response = entityTypesClient.createEntityType(parent, entityType);
+   * }
+   * }</pre>
    *
    * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -276,6 +424,17 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates an entity type in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   String parent =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString();
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   EntityType response = entityTypesClient.createEntityType(parent, entityType);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The agent to create a entity type for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
    * @param entityType Required. The entity type to create.
@@ -291,6 +450,22 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Creates an entity type in the specified agent.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   CreateEntityTypeRequest request =
+   *       CreateEntityTypeRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setEntityType(EntityType.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   EntityType response = entityTypesClient.createEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -303,6 +478,23 @@ public class EntityTypesClient implements BackgroundResource {
    * Creates an entity type in the specified agent.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   CreateEntityTypeRequest request =
+   *       CreateEntityTypeRequest.newBuilder()
+   *           .setParent(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setEntityType(EntityType.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<EntityType> future =
+   *       entityTypesClient.createEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   EntityType response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateEntityTypeRequest, EntityType> createEntityTypeCallable() {
     return stub.createEntityTypeCallable();
@@ -311,6 +503,16 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityType entityType = EntityType.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   EntityType response = entityTypesClient.updateEntityType(entityType, updateMask);
+   * }
+   * }</pre>
    *
    * @param entityType Required. The entity type to update.
    * @param updateMask The mask to control which fields get updated.
@@ -329,6 +531,20 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Updates the specified entity type.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   UpdateEntityTypeRequest request =
+   *       UpdateEntityTypeRequest.newBuilder()
+   *           .setEntityType(EntityType.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   EntityType response = entityTypesClient.updateEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -341,6 +557,21 @@ public class EntityTypesClient implements BackgroundResource {
    * Updates the specified entity type.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   UpdateEntityTypeRequest request =
+   *       UpdateEntityTypeRequest.newBuilder()
+   *           .setEntityType(EntityType.newBuilder().build())
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EntityType> future =
+   *       entityTypesClient.updateEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   EntityType response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateEntityTypeRequest, EntityType> updateEntityTypeCallable() {
     return stub.updateEntityTypeCallable();
@@ -349,6 +580,16 @@ public class EntityTypesClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified entity type.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   EntityTypeName name =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]");
+   *   entityTypesClient.deleteEntityType(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
@@ -365,6 +606,16 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   String name =
+   *       EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]").toString();
+   *   entityTypesClient.deleteEntityType(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the entity type to delete. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/entityTypes/&lt;Entity Type
    *     ID&gt;`.
@@ -379,6 +630,21 @@ public class EntityTypesClient implements BackgroundResource {
   /**
    * Deletes the specified entity type.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   DeleteEntityTypeRequest request =
+   *       DeleteEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   entityTypesClient.deleteEntityType(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -391,6 +657,21 @@ public class EntityTypesClient implements BackgroundResource {
    * Deletes the specified entity type.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
+   *   DeleteEntityTypeRequest request =
+   *       DeleteEntityTypeRequest.newBuilder()
+   *           .setName(
+   *               EntityTypeName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENTITY_TYPE]")
+   *                   .toString())
+   *           .setForce(true)
+   *           .build();
+   *   ApiFuture<Empty> future = entityTypesClient.deleteEntityTypeCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteEntityTypeRequest, Empty> deleteEntityTypeCallable() {
     return stub.deleteEntityTypeCallable();

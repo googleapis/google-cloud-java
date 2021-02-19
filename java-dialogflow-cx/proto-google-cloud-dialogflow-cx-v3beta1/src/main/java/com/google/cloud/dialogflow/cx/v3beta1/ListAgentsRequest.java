@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
+ * The request message for [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest}
@@ -430,8 +429,7 @@ public final class ListAgentsRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for
-   * [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
+   * The request message for [Agents.ListAgents][google.cloud.dialogflow.cx.v3beta1.Agents.ListAgents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest}

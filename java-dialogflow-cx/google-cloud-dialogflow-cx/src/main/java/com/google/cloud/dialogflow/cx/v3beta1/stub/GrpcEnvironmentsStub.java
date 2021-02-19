@@ -324,47 +324,57 @@ public class GrpcEnvironmentsStub extends EnvironmentsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
     return listEnvironmentsCallable;
   }
 
+  @Override
   public UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
     return listEnvironmentsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
     return getEnvironmentCallable;
   }
 
+  @Override
   public UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return createEnvironmentCallable;
   }
 
+  @Override
   public OperationCallable<CreateEnvironmentRequest, Environment, Struct>
       createEnvironmentOperationCallable() {
     return createEnvironmentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
     return updateEnvironmentCallable;
   }
 
+  @Override
   public OperationCallable<UpdateEnvironmentRequest, Environment, Struct>
       updateEnvironmentOperationCallable() {
     return updateEnvironmentOperationCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
     return deleteEnvironmentCallable;
   }
 
+  @Override
   public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
       lookupEnvironmentHistoryCallable() {
     return lookupEnvironmentHistoryCallable;
   }
 
+  @Override
   public UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistoryPagedCallable() {
     return lookupEnvironmentHistoryPagedCallable;

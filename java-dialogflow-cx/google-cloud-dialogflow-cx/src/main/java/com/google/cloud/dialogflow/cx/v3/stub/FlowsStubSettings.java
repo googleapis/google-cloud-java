@@ -47,11 +47,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.Flow;
+import com.google.cloud.dialogflow.cx.v3.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3.GetFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.GetFlowValidationResultRequest;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3.TrainFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.UpdateFlowRequest;
+import com.google.cloud.dialogflow.cx.v3.ValidateFlowRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -112,6 +115,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
   private final UnaryCallSettings<UpdateFlowRequest, Flow> updateFlowSettings;
   private final UnaryCallSettings<TrainFlowRequest, Operation> trainFlowSettings;
   private final OperationCallSettings<TrainFlowRequest, Empty, Struct> trainFlowOperationSettings;
+  private final UnaryCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowSettings;
+  private final UnaryCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultSettings;
 
   private static final PagedListDescriptor<ListFlowsRequest, ListFlowsResponse, Flow>
       LIST_FLOWS_PAGE_STR_DESC =
@@ -202,6 +208,17 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     return trainFlowOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to validateFlow. */
+  public UnaryCallSettings<ValidateFlowRequest, FlowValidationResult> validateFlowSettings() {
+    return validateFlowSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFlowValidationResult. */
+  public UnaryCallSettings<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultSettings() {
+    return getFlowValidationResultSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public FlowsStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -277,6 +294,8 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     updateFlowSettings = settingsBuilder.updateFlowSettings().build();
     trainFlowSettings = settingsBuilder.trainFlowSettings().build();
     trainFlowOperationSettings = settingsBuilder.trainFlowOperationSettings().build();
+    validateFlowSettings = settingsBuilder.validateFlowSettings().build();
+    getFlowValidationResultSettings = settingsBuilder.getFlowValidationResultSettings().build();
   }
 
   /** Builder for FlowsStubSettings. */
@@ -292,6 +311,10 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     private final UnaryCallSettings.Builder<TrainFlowRequest, Operation> trainFlowSettings;
     private final OperationCallSettings.Builder<TrainFlowRequest, Empty, Struct>
         trainFlowOperationSettings;
+    private final UnaryCallSettings.Builder<ValidateFlowRequest, FlowValidationResult>
+        validateFlowSettings;
+    private final UnaryCallSettings.Builder<GetFlowValidationResultRequest, FlowValidationResult>
+        getFlowValidationResultSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -337,6 +360,8 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
       updateFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       trainFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       trainFlowOperationSettings = OperationCallSettings.newBuilder();
+      validateFlowSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getFlowValidationResultSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -345,7 +370,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               listFlowsSettings,
               getFlowSettings,
               updateFlowSettings,
-              trainFlowSettings);
+              trainFlowSettings,
+              validateFlowSettings,
+              getFlowValidationResultSettings);
       initDefaults(this);
     }
 
@@ -359,6 +386,8 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
       updateFlowSettings = settings.updateFlowSettings.toBuilder();
       trainFlowSettings = settings.trainFlowSettings.toBuilder();
       trainFlowOperationSettings = settings.trainFlowOperationSettings.toBuilder();
+      validateFlowSettings = settings.validateFlowSettings.toBuilder();
+      getFlowValidationResultSettings = settings.getFlowValidationResultSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -367,7 +396,9 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
               listFlowsSettings,
               getFlowSettings,
               updateFlowSettings,
-              trainFlowSettings);
+              trainFlowSettings,
+              validateFlowSettings,
+              getFlowValidationResultSettings);
     }
 
     private static Builder createDefault() {
@@ -409,6 +440,16 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
 
       builder
           .trainFlowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .validateFlowSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getFlowValidationResultSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -491,6 +532,18 @@ public class FlowsStubSettings extends StubSettings<FlowsStubSettings> {
     public OperationCallSettings.Builder<TrainFlowRequest, Empty, Struct>
         trainFlowOperationSettings() {
       return trainFlowOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to validateFlow. */
+    public UnaryCallSettings.Builder<ValidateFlowRequest, FlowValidationResult>
+        validateFlowSettings() {
+      return validateFlowSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFlowValidationResult. */
+    public UnaryCallSettings.Builder<GetFlowValidationResultRequest, FlowValidationResult>
+        getFlowValidationResultSettings() {
+      return getFlowValidationResultSettings;
     }
 
     @Override

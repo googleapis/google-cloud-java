@@ -88,10 +88,6 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-   * Duplicate transition routes (i.e. using the same
-   * [`intent`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.intent]) are not allowed.
-   * Note that the [`name`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.name] field is not used in the
-   * transition route group scope.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_routes = 5;
@@ -103,10 +99,6 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-   * Duplicate transition routes (i.e. using the same
-   * [`intent`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.intent]) are not allowed.
-   * Note that the [`name`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.name] field is not used in the
-   * transition route group scope.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_routes = 5;
@@ -118,10 +110,6 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-   * Duplicate transition routes (i.e. using the same
-   * [`intent`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.intent]) are not allowed.
-   * Note that the [`name`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.name] field is not used in the
-   * transition route group scope.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_routes = 5;
@@ -133,10 +121,6 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-   * Duplicate transition routes (i.e. using the same
-   * [`intent`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.intent]) are not allowed.
-   * Note that the [`name`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.name] field is not used in the
-   * transition route group scope.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_routes = 5;
@@ -149,10 +133,6 @@ public interface TransitionRouteGroupOrBuilder
    *
    * <pre>
    * Transition routes associated with the [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup].
-   * Duplicate transition routes (i.e. using the same
-   * [`intent`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.intent]) are not allowed.
-   * Note that the [`name`][google.cloud.dialogflow.cx.v3beta1.TransitionRoute.name] field is not used in the
-   * transition route group scope.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.cx.v3beta1.TransitionRoute transition_routes = 5;

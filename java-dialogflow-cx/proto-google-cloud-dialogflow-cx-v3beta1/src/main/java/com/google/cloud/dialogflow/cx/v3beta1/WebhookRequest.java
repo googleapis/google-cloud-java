@@ -177,6 +177,25 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 74:
+            {
+              com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.Builder
+                  subBuilder = null;
+              if (sentimentAnalysisResult_ != null) {
+                subBuilder = sentimentAnalysisResult_.toBuilder();
+              }
+              sentimentAnalysisResult_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sentimentAnalysisResult_);
+                sentimentAnalysisResult_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -929,6 +948,31 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
+     */
+    java.lang.String getDisplayName();
+    /**
+     *
+     *
+     * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    com.google.protobuf.ByteString getDisplayNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
      * Parameters identified as a result of intent matching. This is a map of
      * the name of the identified parameter to the value of the parameter
      * identified from the user's utterance. All parameters defined in the
@@ -1014,6 +1058,20 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo.IntentParameterValue
         getParametersOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * The confidence of the matched intent. Values range from 0.0 (completely
+     * uncertain) to 1.0 (completely certain).
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
+     */
+    float getConfidence();
   }
   /**
    *
@@ -1036,6 +1094,7 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
     private IntentInfo() {
       lastMatchedIntent_ = "";
+      displayName_ = "";
     }
 
     @java.lang.Override
@@ -1092,6 +1151,18 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                             ParametersDefaultEntryHolder.defaultEntry.getParserForType(),
                             extensionRegistry);
                 parameters_.getMutableMap().put(parameters__.getKey(), parameters__.getValue());
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                displayName_ = s;
+                break;
+              }
+            case 37:
+              {
+                confidence_ = input.readFloat();
                 break;
               }
             default:
@@ -2233,6 +2304,55 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object displayName_;
+    /**
+     *
+     *
+     * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
+     */
+    @java.lang.Override
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     public static final int PARAMETERS_FIELD_NUMBER = 2;
 
     private static final class ParametersDefaultEntryHolder {
@@ -2383,6 +2503,25 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int CONFIDENCE_FIELD_NUMBER = 4;
+    private float confidence_;
+    /**
+     *
+     *
+     * <pre>
+     * The confidence of the matched intent. Values range from 0.0 (completely
+     * uncertain) to 1.0 (completely certain).
+     * </pre>
+     *
+     * <code>float confidence = 4;</code>
+     *
+     * @return The confidence.
+     */
+    @java.lang.Override
+    public float getConfidence() {
+      return confidence_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2402,6 +2541,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetParameters(), ParametersDefaultEntryHolder.defaultEntry, 2);
+      if (!getDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
+      }
+      if (confidence_ != 0F) {
+        output.writeFloat(4, confidence_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2430,6 +2575,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, parameters__);
       }
+      if (!getDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
+      }
+      if (confidence_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, confidence_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2447,7 +2598,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo) obj;
 
       if (!getLastMatchedIntent().equals(other.getLastMatchedIntent())) return false;
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
       if (!internalGetParameters().equals(other.internalGetParameters())) return false;
+      if (java.lang.Float.floatToIntBits(getConfidence())
+          != java.lang.Float.floatToIntBits(other.getConfidence())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2461,10 +2615,14 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LAST_MATCHED_INTENT_FIELD_NUMBER;
       hash = (53 * hash) + getLastMatchedIntent().hashCode();
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
       if (!internalGetParameters().getMap().isEmpty()) {
         hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetParameters().hashCode();
       }
+      hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2637,7 +2795,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         lastMatchedIntent_ = "";
 
+        displayName_ = "";
+
         internalGetMutableParameters().clear();
+        confidence_ = 0F;
+
         return this;
       }
 
@@ -2669,8 +2831,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
             new com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo(this);
         int from_bitField0_ = bitField0_;
         result.lastMatchedIntent_ = lastMatchedIntent_;
+        result.displayName_ = displayName_;
         result.parameters_ = internalGetParameters();
         result.parameters_.makeImmutable();
+        result.confidence_ = confidence_;
         onBuilt();
         return result;
       }
@@ -2730,7 +2894,14 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
           lastMatchedIntent_ = other.lastMatchedIntent_;
           onChanged();
         }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
+          onChanged();
+        }
         internalGetMutableParameters().mergeFrom(other.internalGetParameters());
+        if (other.getConfidence() != 0F) {
+          setConfidence(other.getConfidence());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2876,6 +3047,112 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
 
         lastMatchedIntent_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       *
+       * @return The displayName.
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       *
+       * @return The bytes for displayName.
+       */
+      public com.google.protobuf.ByteString getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       *
+       * @param value The displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisplayName() {
+
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3beta1.Intent].
+       * </pre>
+       *
+       * <code>string display_name = 3;</code>
+       *
+       * @param value The bytes for displayName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        displayName_ = value;
         onChanged();
         return this;
       }
@@ -3111,6 +3388,61 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private float confidence_;
+      /**
+       *
+       *
+       * <pre>
+       * The confidence of the matched intent. Values range from 0.0 (completely
+       * uncertain) to 1.0 (completely certain).
+       * </pre>
+       *
+       * <code>float confidence = 4;</code>
+       *
+       * @return The confidence.
+       */
+      @java.lang.Override
+      public float getConfidence() {
+        return confidence_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The confidence of the matched intent. Values range from 0.0 (completely
+       * uncertain) to 1.0 (completely certain).
+       * </pre>
+       *
+       * <code>float confidence = 4;</code>
+       *
+       * @param value The confidence to set.
+       * @return This builder for chaining.
+       */
+      public Builder setConfidence(float value) {
+
+        confidence_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The confidence of the matched intent. Values range from 0.0 (completely
+       * uncertain) to 1.0 (completely certain).
+       * </pre>
+       *
+       * <code>float confidence = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearConfidence() {
+
+        confidence_ = 0F;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3161,6 +3493,706 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.IntentInfo
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SentimentAnalysisResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+     * sentiment).
+     * </pre>
+     *
+     * <code>float score = 1;</code>
+     *
+     * @return The score.
+     */
+    float getScore();
+
+    /**
+     *
+     *
+     * <pre>
+     * A non-negative number in the [0, +inf) range, which represents the
+     * absolute magnitude of sentiment, regardless of score (positive or
+     * negative).
+     * </pre>
+     *
+     * <code>float magnitude = 2;</code>
+     *
+     * @return The magnitude.
+     */
+    float getMagnitude();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the result of sentiment analysis.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult}
+   */
+  public static final class SentimentAnalysisResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+      SentimentAnalysisResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SentimentAnalysisResult.newBuilder() to construct.
+    private SentimentAnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SentimentAnalysisResult() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SentimentAnalysisResult();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private SentimentAnalysisResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 13:
+              {
+                score_ = input.readFloat();
+                break;
+              }
+            case 21:
+              {
+                magnitude_ = input.readFloat();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.class,
+              com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.Builder
+                  .class);
+    }
+
+    public static final int SCORE_FIELD_NUMBER = 1;
+    private float score_;
+    /**
+     *
+     *
+     * <pre>
+     * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+     * sentiment).
+     * </pre>
+     *
+     * <code>float score = 1;</code>
+     *
+     * @return The score.
+     */
+    @java.lang.Override
+    public float getScore() {
+      return score_;
+    }
+
+    public static final int MAGNITUDE_FIELD_NUMBER = 2;
+    private float magnitude_;
+    /**
+     *
+     *
+     * <pre>
+     * A non-negative number in the [0, +inf) range, which represents the
+     * absolute magnitude of sentiment, regardless of score (positive or
+     * negative).
+     * </pre>
+     *
+     * <code>float magnitude = 2;</code>
+     *
+     * @return The magnitude.
+     */
+    @java.lang.Override
+    public float getMagnitude() {
+      return magnitude_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (score_ != 0F) {
+        output.writeFloat(1, score_);
+      }
+      if (magnitude_ != 0F) {
+        output.writeFloat(2, magnitude_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (score_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, score_);
+      }
+      if (magnitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, magnitude_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult other =
+          (com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult) obj;
+
+      if (java.lang.Float.floatToIntBits(getScore())
+          != java.lang.Float.floatToIntBits(other.getScore())) return false;
+      if (java.lang.Float.floatToIntBits(getMagnitude())
+          != java.lang.Float.floatToIntBits(other.getMagnitude())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SCORE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+      hash = (37 * hash) + MAGNITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getMagnitude());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the result of sentiment analysis.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.class,
+                com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        score_ = 0F;
+
+        magnitude_ = 0F;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_WebhookRequest_SentimentAnalysisResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult build() {
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult result =
+            new com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult(this);
+        result.score_ = score_;
+        result.magnitude_ = magnitude_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                .getDefaultInstance()) return this;
+        if (other.getScore() != 0F) {
+          setScore(other.getScore());
+        }
+        if (other.getMagnitude() != 0F) {
+          setMagnitude(other.getMagnitude());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+            parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage =
+              (com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+                  e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private float score_;
+      /**
+       *
+       *
+       * <pre>
+       * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+       * sentiment).
+       * </pre>
+       *
+       * <code>float score = 1;</code>
+       *
+       * @return The score.
+       */
+      @java.lang.Override
+      public float getScore() {
+        return score_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+       * sentiment).
+       * </pre>
+       *
+       * <code>float score = 1;</code>
+       *
+       * @param value The score to set.
+       * @return This builder for chaining.
+       */
+      public Builder setScore(float value) {
+
+        score_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sentiment score between -1.0 (negative sentiment) and 1.0 (positive
+       * sentiment).
+       * </pre>
+       *
+       * <code>float score = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearScore() {
+
+        score_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float magnitude_;
+      /**
+       *
+       *
+       * <pre>
+       * A non-negative number in the [0, +inf) range, which represents the
+       * absolute magnitude of sentiment, regardless of score (positive or
+       * negative).
+       * </pre>
+       *
+       * <code>float magnitude = 2;</code>
+       *
+       * @return The magnitude.
+       */
+      @java.lang.Override
+      public float getMagnitude() {
+        return magnitude_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A non-negative number in the [0, +inf) range, which represents the
+       * absolute magnitude of sentiment, regardless of score (positive or
+       * negative).
+       * </pre>
+       *
+       * <code>float magnitude = 2;</code>
+       *
+       * @param value The magnitude to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMagnitude(float value) {
+
+        magnitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A non-negative number in the [0, +inf) range, which represents the
+       * absolute magnitude of sentiment, regardless of score (positive or
+       * negative).
+       * </pre>
+       *
+       * <code>float magnitude = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMagnitude() {
+
+        magnitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest
+            .SentimentAnalysisResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SentimentAnalysisResult> PARSER =
+        new com.google.protobuf.AbstractParser<SentimentAnalysisResult>() {
+          @java.lang.Override
+          public SentimentAnalysisResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new SentimentAnalysisResult(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<SentimentAnalysisResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SentimentAnalysisResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3544,6 +4576,67 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     return getPayload();
   }
 
+  public static final int SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER = 9;
+  private com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+      sentimentAnalysisResult_;
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result of the current user request. The field is
+   * filled when sentiment analysis is configured to be enabled for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+   * </code>
+   *
+   * @return Whether the sentimentAnalysisResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result of the current user request. The field is
+   * filled when sentiment analysis is configured to be enabled for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+   * </code>
+   *
+   * @return The sentimentAnalysisResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+      getSentimentAnalysisResult() {
+    return sentimentAnalysisResult_ == null
+        ? com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+            .getDefaultInstance()
+        : sentimentAnalysisResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result of the current user request. The field is
+   * filled when sentiment analysis is configured to be enabled for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder
+      getSentimentAnalysisResultOrBuilder() {
+    return getSentimentAnalysisResult();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3579,6 +4672,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (payload_ != null) {
       output.writeMessage(8, getPayload());
     }
+    if (sentimentAnalysisResult_ != null) {
+      output.writeMessage(9, getSentimentAnalysisResult());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -3608,6 +4704,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (payload_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getPayload());
+    }
+    if (sentimentAnalysisResult_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(9, getSentimentAnalysisResult());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3647,6 +4747,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasPayload()) {
       if (!getPayload().equals(other.getPayload())) return false;
     }
+    if (hasSentimentAnalysisResult() != other.hasSentimentAnalysisResult()) return false;
+    if (hasSentimentAnalysisResult()) {
+      if (!getSentimentAnalysisResult().equals(other.getSentimentAnalysisResult())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -3683,6 +4787,10 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasPayload()) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayload().hashCode();
+    }
+    if (hasSentimentAnalysisResult()) {
+      hash = (37 * hash) + SENTIMENT_ANALYSIS_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getSentimentAnalysisResult().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3870,6 +4978,12 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         payload_ = null;
         payloadBuilder_ = null;
       }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
       return this;
     }
 
@@ -3932,6 +5046,11 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         result.payload_ = payload_;
       } else {
         result.payload_ = payloadBuilder_.build();
+      }
+      if (sentimentAnalysisResultBuilder_ == null) {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResult_;
+      } else {
+        result.sentimentAnalysisResult_ = sentimentAnalysisResultBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4028,6 +5147,9 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPayload()) {
         mergePayload(other.getPayload());
+      }
+      if (other.hasSentimentAnalysisResult()) {
+        mergeSentimentAnalysisResult(other.getSentimentAnalysisResult());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -5530,6 +6652,231 @@ public final class WebhookRequest extends com.google.protobuf.GeneratedMessageV3
         payload_ = null;
       }
       return payloadBuilder_;
+    }
+
+    private com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        sentimentAnalysisResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder>
+        sentimentAnalysisResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     *
+     * @return Whether the sentimentAnalysisResult field is set.
+     */
+    public boolean hasSentimentAnalysisResult() {
+      return sentimentAnalysisResultBuilder_ != null || sentimentAnalysisResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     *
+     * @return The sentimentAnalysisResult.
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+        getSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        return sentimentAnalysisResult_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                .getDefaultInstance()
+            : sentimentAnalysisResult_;
+      } else {
+        return sentimentAnalysisResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sentimentAnalysisResult_ = value;
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    public Builder setSentimentAnalysisResult(
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.Builder
+            builderForValue) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = builderForValue.build();
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    public Builder mergeSentimentAnalysisResult(
+        com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult value) {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        if (sentimentAnalysisResult_ != null) {
+          sentimentAnalysisResult_ =
+              com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                  .newBuilder(sentimentAnalysisResult_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sentimentAnalysisResult_ = value;
+        }
+        onChanged();
+      } else {
+        sentimentAnalysisResultBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    public Builder clearSentimentAnalysisResult() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResult_ = null;
+        onChanged();
+      } else {
+        sentimentAnalysisResult_ = null;
+        sentimentAnalysisResultBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.Builder
+        getSentimentAnalysisResultBuilder() {
+
+      onChanged();
+      return getSentimentAnalysisResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder
+        getSentimentAnalysisResultOrBuilder() {
+      if (sentimentAnalysisResultBuilder_ != null) {
+        return sentimentAnalysisResultBuilder_.getMessageOrBuilder();
+      } else {
+        return sentimentAnalysisResult_ == null
+            ? com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                .getDefaultInstance()
+            : sentimentAnalysisResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The sentiment analysis result of the current user request. The field is
+     * filled when sentiment analysis is configured to be enabled for the request.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult,
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResultOrBuilder>
+        getSentimentAnalysisResultFieldBuilder() {
+      if (sentimentAnalysisResultBuilder_ == null) {
+        sentimentAnalysisResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult,
+                com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest.SentimentAnalysisResult
+                    .Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.WebhookRequest
+                    .SentimentAnalysisResultOrBuilder>(
+                getSentimentAnalysisResult(), getParentForChildren(), isClean());
+        sentimentAnalysisResult_ = null;
+      }
+      return sentimentAnalysisResultBuilder_;
     }
 
     @java.lang.Override

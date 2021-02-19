@@ -120,6 +120,17 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return ((AgentsStubSettings) getStubSettings()).restoreAgentOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to validateAgent. */
+  public UnaryCallSettings<ValidateAgentRequest, AgentValidationResult> validateAgentSettings() {
+    return ((AgentsStubSettings) getStubSettings()).validateAgentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getAgentValidationResult. */
+  public UnaryCallSettings<GetAgentValidationResultRequest, AgentValidationResult>
+      getAgentValidationResultSettings() {
+    return ((AgentsStubSettings) getStubSettings()).getAgentValidationResultSettings();
+  }
+
   public static final AgentsSettings create(AgentsStubSettings stub) throws IOException {
     return new AgentsSettings.Builder(stub.toBuilder()).build();
   }
@@ -263,6 +274,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public OperationCallSettings.Builder<RestoreAgentRequest, Empty, Struct>
         restoreAgentOperationSettings() {
       return getStubSettingsBuilder().restoreAgentOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to validateAgent. */
+    public UnaryCallSettings.Builder<ValidateAgentRequest, AgentValidationResult>
+        validateAgentSettings() {
+      return getStubSettingsBuilder().validateAgentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getAgentValidationResult. */
+    public UnaryCallSettings.Builder<GetAgentValidationResultRequest, AgentValidationResult>
+        getAgentValidationResultSettings() {
+      return getStubSettingsBuilder().getAgentValidationResultSettings();
     }
 
     @Override

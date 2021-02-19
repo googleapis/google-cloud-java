@@ -25,11 +25,14 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.Flow;
+import com.google.cloud.dialogflow.cx.v3beta1.FlowValidationResult;
 import com.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListFlowsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -80,6 +83,15 @@ public abstract class FlowsStub implements BackgroundResource {
 
   public UnaryCallable<TrainFlowRequest, Operation> trainFlowCallable() {
     throw new UnsupportedOperationException("Not implemented: trainFlowCallable()");
+  }
+
+  public UnaryCallable<ValidateFlowRequest, FlowValidationResult> validateFlowCallable() {
+    throw new UnsupportedOperationException("Not implemented: validateFlowCallable()");
+  }
+
+  public UnaryCallable<GetFlowValidationResultRequest, FlowValidationResult>
+      getFlowValidationResultCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFlowValidationResultCallable()");
   }
 
   @Override

@@ -71,7 +71,13 @@ public class MockVersionsImpl extends VersionsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListVersions, expected %s or %s",
+                  response.getClass().getName(),
+                  ListVersionsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockVersionsImpl extends VersionsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Version.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockVersionsImpl extends VersionsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -115,7 +133,13 @@ public class MockVersionsImpl extends VersionsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Version.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -129,7 +153,13 @@ public class MockVersionsImpl extends VersionsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -143,7 +173,13 @@ public class MockVersionsImpl extends VersionsImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method LoadVersion, expected %s or %s",
+                  response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

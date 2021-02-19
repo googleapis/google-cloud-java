@@ -32,6 +32,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -546,6 +547,145 @@ public class FlowsClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void validateFlowTest() throws Exception {
+    FlowValidationResult expectedResponse =
+        FlowValidationResult.newBuilder()
+            .setName(
+                FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]")
+                    .toString())
+            .addAllValidationMessages(new ArrayList<ValidationMessage>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockFlows.addResponse(expectedResponse);
+
+    ValidateFlowRequest request =
+        ValidateFlowRequest.newBuilder()
+            .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+
+    FlowValidationResult actualResponse = client.validateFlow(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFlows.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ValidateFlowRequest actualRequest = ((ValidateFlowRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getLanguageCode(), actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void validateFlowExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFlows.addException(exception);
+
+    try {
+      ValidateFlowRequest request =
+          ValidateFlowRequest.newBuilder()
+              .setName(FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]").toString())
+              .setLanguageCode("languageCode-2092349083")
+              .build();
+      client.validateFlow(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFlowValidationResultTest() throws Exception {
+    FlowValidationResult expectedResponse =
+        FlowValidationResult.newBuilder()
+            .setName(
+                FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]")
+                    .toString())
+            .addAllValidationMessages(new ArrayList<ValidationMessage>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockFlows.addResponse(expectedResponse);
+
+    FlowValidationResultName name =
+        FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+
+    FlowValidationResult actualResponse = client.getFlowValidationResult(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFlows.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFlowValidationResultRequest actualRequest =
+        ((GetFlowValidationResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFlowValidationResultExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFlows.addException(exception);
+
+    try {
+      FlowValidationResultName name =
+          FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+      client.getFlowValidationResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFlowValidationResultTest2() throws Exception {
+    FlowValidationResult expectedResponse =
+        FlowValidationResult.newBuilder()
+            .setName(
+                FlowValidationResultName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]")
+                    .toString())
+            .addAllValidationMessages(new ArrayList<ValidationMessage>())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockFlows.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FlowValidationResult actualResponse = client.getFlowValidationResult(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFlows.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFlowValidationResultRequest actualRequest =
+        ((GetFlowValidationResultRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFlowValidationResultExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFlows.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFlowValidationResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 }

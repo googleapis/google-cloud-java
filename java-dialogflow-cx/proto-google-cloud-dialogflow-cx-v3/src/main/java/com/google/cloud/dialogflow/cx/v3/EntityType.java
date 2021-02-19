@@ -156,6 +156,11 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
               enableFuzzyExtraction_ = input.readBool();
               break;
             }
+          case 72:
+            {
+              redact_ = input.readBool();
+              break;
+            }
           default:
             {
               if (!parseUnknownField(input, unknownFields, extensionRegistry, tag)) {
@@ -641,7 +646,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An **entity entry** for an associated entity type.
-   * Next Id = 8
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.EntityType.Entity}
@@ -1067,7 +1071,6 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * An **entity entry** for an associated entity type.
-     * Next Id = 8
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.cx.v3.EntityType.Entity}
@@ -2669,6 +2672,26 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     return enableFuzzyExtraction_;
   }
 
+  public static final int REDACT_FIELD_NUMBER = 9;
+  private boolean redact_;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates whether parameters of the entity type should be redacted in log.
+   * If redaction is enabled, page parameters and intent parameters referring to
+   * the entity type will be replaced by parameter name when logging.
+   * </pre>
+   *
+   * <code>bool redact = 9;</code>
+   *
+   * @return The redact.
+   */
+  @java.lang.Override
+  public boolean getRedact() {
+    return redact_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2707,6 +2730,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     if (enableFuzzyExtraction_ != false) {
       output.writeBool(7, enableFuzzyExtraction_);
     }
+    if (redact_ != false) {
+      output.writeBool(9, redact_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -2740,6 +2766,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     if (enableFuzzyExtraction_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, enableFuzzyExtraction_);
     }
+    if (redact_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, redact_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2763,6 +2792,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     if (!getEntitiesList().equals(other.getEntitiesList())) return false;
     if (!getExcludedPhrasesList().equals(other.getExcludedPhrasesList())) return false;
     if (getEnableFuzzyExtraction() != other.getEnableFuzzyExtraction()) return false;
+    if (getRedact() != other.getRedact()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -2792,6 +2822,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ENABLE_FUZZY_EXTRACTION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableFuzzyExtraction());
+    hash = (37 * hash) + REDACT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRedact());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2982,6 +3014,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       }
       enableFuzzyExtraction_ = false;
 
+      redact_ = false;
+
       return this;
     }
 
@@ -3033,6 +3067,7 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
         result.excludedPhrases_ = excludedPhrasesBuilder_.build();
       }
       result.enableFuzzyExtraction_ = enableFuzzyExtraction_;
+      result.redact_ = redact_;
       onBuilt();
       return result;
     }
@@ -3152,6 +3187,9 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getEnableFuzzyExtraction() != false) {
         setEnableFuzzyExtraction(other.getEnableFuzzyExtraction());
+      }
+      if (other.getRedact() != false) {
+        setRedact(other.getRedact());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4480,6 +4518,64 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEnableFuzzyExtraction() {
 
       enableFuzzyExtraction_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean redact_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether parameters of the entity type should be redacted in log.
+     * If redaction is enabled, page parameters and intent parameters referring to
+     * the entity type will be replaced by parameter name when logging.
+     * </pre>
+     *
+     * <code>bool redact = 9;</code>
+     *
+     * @return The redact.
+     */
+    @java.lang.Override
+    public boolean getRedact() {
+      return redact_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether parameters of the entity type should be redacted in log.
+     * If redaction is enabled, page parameters and intent parameters referring to
+     * the entity type will be replaced by parameter name when logging.
+     * </pre>
+     *
+     * <code>bool redact = 9;</code>
+     *
+     * @param value The redact to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRedact(boolean value) {
+
+      redact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates whether parameters of the entity type should be redacted in log.
+     * If redaction is enabled, page parameters and intent parameters referring to
+     * the entity type will be replaced by parameter name when logging.
+     * </pre>
+     *
+     * <code>bool redact = 9;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRedact() {
+
+      redact_ = false;
       onChanged();
       return this;
     }

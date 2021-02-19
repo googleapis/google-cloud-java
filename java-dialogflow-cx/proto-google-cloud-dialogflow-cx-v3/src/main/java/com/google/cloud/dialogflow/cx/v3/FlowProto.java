@@ -63,6 +63,18 @@ public final class FlowProto {
       internal_static_google_cloud_dialogflow_cx_v3_TrainFlowRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3_TrainFlowRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_ValidateFlowRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_ValidateFlowRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_GetFlowValidationResultRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_GetFlowValidationResultRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dialogflow_cx_v3_FlowValidationResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3_FlowValidationResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -77,86 +89,111 @@ public final class FlowProto {
           + "e/api/annotations.proto\032\027google/api/clie"
           + "nt.proto\032\037google/api/field_behavior.prot"
           + "o\032\031google/api/resource.proto\032(google/clo"
-          + "ud/dialogflow/cx/v3/page.proto\032#google/l"
-          + "ongrunning/operations.proto\032\033google/prot"
-          + "obuf/empty.proto\032 google/protobuf/field_"
-          + "mask.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\254\003\n\013NluSettings\022H\n\nmodel_type\030\001 \001(\0162"
-          + "4.google.cloud.dialogflow.cx.v3.NluSetti"
-          + "ngs.ModelType\022 \n\030classification_threshol"
-          + "d\030\003 \001(\002\022Y\n\023model_training_mode\030\004 \001(\0162<.g"
-          + "oogle.cloud.dialogflow.cx.v3.NluSettings"
-          + ".ModelTrainingMode\"Y\n\tModelType\022\032\n\026MODEL"
-          + "_TYPE_UNSPECIFIED\020\000\022\027\n\023MODEL_TYPE_STANDA"
-          + "RD\020\001\022\027\n\023MODEL_TYPE_ADVANCED\020\003\"{\n\021ModelTr"
-          + "ainingMode\022#\n\037MODEL_TRAINING_MODE_UNSPEC"
-          + "IFIED\020\000\022!\n\035MODEL_TRAINING_MODE_AUTOMATIC"
-          + "\020\001\022\036\n\032MODEL_TRAINING_MODE_MANUAL\020\002\"\200\003\n\004F"
-          + "low\022\014\n\004name\030\001 \001(\t\022\031\n\014display_name\030\002 \001(\tB"
-          + "\003\340A\002\022\023\n\013description\030\003 \001(\t\022I\n\021transition_"
-          + "routes\030\004 \003(\0132..google.cloud.dialogflow.c"
-          + "x.v3.TransitionRoute\022C\n\016event_handlers\030\n"
-          + " \003(\0132+.google.cloud.dialogflow.cx.v3.Eve"
-          + "ntHandler\022@\n\014nlu_settings\030\013 \001(\0132*.google"
-          + ".cloud.dialogflow.cx.v3.NluSettings:h\352Ae"
-          + "\n\036dialogflow.googleapis.com/Flow\022Cprojec"
-          + "ts/{project}/locations/{location}/agents"
-          + "/{agent}/flows/{flow}\"\232\001\n\021CreateFlowRequ"
-          + "est\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036dialogflow."
-          + "googleapis.com/Flow\0226\n\004flow\030\002 \001(\0132#.goog"
-          + "le.cloud.dialogflow.cx.v3.FlowB\003\340A\002\022\025\n\rl"
-          + "anguage_code\030\003 \001(\t\"X\n\021DeleteFlowRequest\022"
-          + "4\n\004name\030\001 \001(\tB&\340A\002\372A \n\036dialogflow.google"
-          + "apis.com/Flow\022\r\n\005force\030\002 \001(\010\"\210\001\n\020ListFlo"
-          + "wsRequest\0226\n\006parent\030\001 \001(\tB&\340A\002\372A \022\036dialo"
-          + "gflow.googleapis.com/Flow\022\021\n\tpage_size\030\002"
-          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\025\n\rlanguage_cod"
-          + "e\030\004 \001(\t\"`\n\021ListFlowsResponse\0222\n\005flows\030\001 "
-          + "\003(\0132#.google.cloud.dialogflow.cx.v3.Flow"
-          + "\022\027\n\017next_page_token\030\002 \001(\t\"]\n\016GetFlowRequ"
-          + "est\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036dialogflow.go"
-          + "ogleapis.com/Flow\022\025\n\rlanguage_code\030\002 \001(\t"
-          + "\"\230\001\n\021UpdateFlowRequest\0226\n\004flow\030\001 \001(\0132#.g"
-          + "oogle.cloud.dialogflow.cx.v3.FlowB\003\340A\002\0224"
-          + "\n\013update_mask\030\002 \001(\0132\032.google.protobuf.Fi"
-          + "eldMaskB\003\340A\002\022\025\n\rlanguage_code\030\003 \001(\t\"H\n\020T"
-          + "rainFlowRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036d"
-          + "ialogflow.googleapis.com/Flow2\310\t\n\005Flows\022"
-          + "\263\001\n\nCreateFlow\0220.google.cloud.dialogflow"
-          + ".cx.v3.CreateFlowRequest\032#.google.cloud."
-          + "dialogflow.cx.v3.Flow\"N\202\323\344\223\002:\"2/v3/{pare"
-          + "nt=projects/*/locations/*/agents/*}/flow"
-          + "s:\004flow\332A\013parent,flow\022\231\001\n\nDeleteFlow\0220.g"
-          + "oogle.cloud.dialogflow.cx.v3.DeleteFlowR"
-          + "equest\032\026.google.protobuf.Empty\"A\202\323\344\223\0024*2"
-          + "/v3/{name=projects/*/locations/*/agents/"
-          + "*/flows/*}\332A\004name\022\263\001\n\tListFlows\022/.google"
-          + ".cloud.dialogflow.cx.v3.ListFlowsRequest"
-          + "\0320.google.cloud.dialogflow.cx.v3.ListFlo"
-          + "wsResponse\"C\202\323\344\223\0024\0222/v3/{parent=projects"
-          + "/*/locations/*/agents/*}/flows\332A\006parent\022"
-          + "\240\001\n\007GetFlow\022-.google.cloud.dialogflow.cx"
-          + ".v3.GetFlowRequest\032#.google.cloud.dialog"
-          + "flow.cx.v3.Flow\"A\202\323\344\223\0024\0222/v3/{name=proje"
-          + "cts/*/locations/*/agents/*/flows/*}\332A\004na"
-          + "me\022\275\001\n\nUpdateFlow\0220.google.cloud.dialogf"
-          + "low.cx.v3.UpdateFlowRequest\032#.google.clo"
-          + "ud.dialogflow.cx.v3.Flow\"X\202\323\344\223\002?27/v3/{f"
-          + "low.name=projects/*/locations/*/agents/*"
-          + "/flows/*}:\004flow\332A\020flow,update_mask\022\331\001\n\tT"
-          + "rainFlow\022/.google.cloud.dialogflow.cx.v3"
-          + ".TrainFlowRequest\032\035.google.longrunning.O"
-          + "peration\"|\202\323\344\223\002=\"8/v3/{name=projects/*/l"
-          + "ocations/*/agents/*/flows/*}:train:\001*\332A\004"
-          + "name\312A/\n\025google.protobuf.Empty\022\026google.p"
-          + "rotobuf.Struct\032x\312A\031dialogflow.googleapis"
-          + ".com\322AYhttps://www.googleapis.com/auth/c"
-          + "loud-platform,https://www.googleapis.com"
-          + "/auth/dialogflowB\231\001\n!com.google.cloud.di"
-          + "alogflow.cx.v3B\tFlowProtoP\001Z?google.gola"
-          + "ng.org/genproto/googleapis/cloud/dialogf"
-          + "low/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Google.Cloud.Dial"
-          + "ogflow.Cx.V3b\006proto3"
+          + "ud/dialogflow/cx/v3/page.proto\0326google/c"
+          + "loud/dialogflow/cx/v3/validation_message"
+          + ".proto\032#google/longrunning/operations.pr"
+          + "oto\032\033google/protobuf/empty.proto\032 google"
+          + "/protobuf/field_mask.proto\032\037google/proto"
+          + "buf/timestamp.proto\"\254\003\n\013NluSettings\022H\n\nm"
+          + "odel_type\030\001 \001(\01624.google.cloud.dialogflo"
+          + "w.cx.v3.NluSettings.ModelType\022 \n\030classif"
+          + "ication_threshold\030\003 \001(\002\022Y\n\023model_trainin"
+          + "g_mode\030\004 \001(\0162<.google.cloud.dialogflow.c"
+          + "x.v3.NluSettings.ModelTrainingMode\"Y\n\tMo"
+          + "delType\022\032\n\026MODEL_TYPE_UNSPECIFIED\020\000\022\027\n\023M"
+          + "ODEL_TYPE_STANDARD\020\001\022\027\n\023MODEL_TYPE_ADVAN"
+          + "CED\020\003\"{\n\021ModelTrainingMode\022#\n\037MODEL_TRAI"
+          + "NING_MODE_UNSPECIFIED\020\000\022!\n\035MODEL_TRAININ"
+          + "G_MODE_AUTOMATIC\020\001\022\036\n\032MODEL_TRAINING_MOD"
+          + "E_MANUAL\020\002\"\200\003\n\004Flow\022\014\n\004name\030\001 \001(\t\022\031\n\014dis"
+          + "play_name\030\002 \001(\tB\003\340A\002\022\023\n\013description\030\003 \001("
+          + "\t\022I\n\021transition_routes\030\004 \003(\0132..google.cl"
+          + "oud.dialogflow.cx.v3.TransitionRoute\022C\n\016"
+          + "event_handlers\030\n \003(\0132+.google.cloud.dial"
+          + "ogflow.cx.v3.EventHandler\022@\n\014nlu_setting"
+          + "s\030\013 \001(\0132*.google.cloud.dialogflow.cx.v3."
+          + "NluSettings:h\352Ae\n\036dialogflow.googleapis."
+          + "com/Flow\022Cprojects/{project}/locations/{"
+          + "location}/agents/{agent}/flows/{flow}\"\232\001"
+          + "\n\021CreateFlowRequest\0226\n\006parent\030\001 \001(\tB&\340A\002"
+          + "\372A \022\036dialogflow.googleapis.com/Flow\0226\n\004f"
+          + "low\030\002 \001(\0132#.google.cloud.dialogflow.cx.v"
+          + "3.FlowB\003\340A\002\022\025\n\rlanguage_code\030\003 \001(\t\"X\n\021De"
+          + "leteFlowRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A \n\036d"
+          + "ialogflow.googleapis.com/Flow\022\r\n\005force\030\002"
+          + " \001(\010\"\210\001\n\020ListFlowsRequest\0226\n\006parent\030\001 \001("
+          + "\tB&\340A\002\372A \022\036dialogflow.googleapis.com/Flo"
+          + "w\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
+          + "\022\025\n\rlanguage_code\030\004 \001(\t\"`\n\021ListFlowsResp"
+          + "onse\0222\n\005flows\030\001 \003(\0132#.google.cloud.dialo"
+          + "gflow.cx.v3.Flow\022\027\n\017next_page_token\030\002 \001("
+          + "\t\"]\n\016GetFlowRequest\0224\n\004name\030\001 \001(\tB&\340A\002\372A"
+          + " \n\036dialogflow.googleapis.com/Flow\022\025\n\rlan"
+          + "guage_code\030\002 \001(\t\"\230\001\n\021UpdateFlowRequest\0226"
+          + "\n\004flow\030\001 \001(\0132#.google.cloud.dialogflow.c"
+          + "x.v3.FlowB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032.go"
+          + "ogle.protobuf.FieldMaskB\003\340A\002\022\025\n\rlanguage"
+          + "_code\030\003 \001(\t\"H\n\020TrainFlowRequest\0224\n\004name\030"
+          + "\001 \001(\tB&\340A\002\372A \n\036dialogflow.googleapis.com"
+          + "/Flow\"b\n\023ValidateFlowRequest\0224\n\004name\030\001 \001"
+          + "(\tB&\340A\002\372A \n\036dialogflow.googleapis.com/Fl"
+          + "ow\022\025\n\rlanguage_code\030\002 \001(\t\"}\n\036GetFlowVali"
+          + "dationResultRequest\022D\n\004name\030\001 \001(\tB6\340A\002\372A"
+          + "0\n.dialogflow.googleapis.com/FlowValidat"
+          + "ionResult\022\025\n\rlanguage_code\030\002 \001(\t\"\261\002\n\024Flo"
+          + "wValidationResult\022\014\n\004name\030\001 \001(\t\022M\n\023valid"
+          + "ation_messages\030\002 \003(\01320.google.cloud.dial"
+          + "ogflow.cx.v3.ValidationMessage\022/\n\013update"
+          + "_time\030\003 \001(\0132\032.google.protobuf.Timestamp:"
+          + "\212\001\352A\206\001\n.dialogflow.googleapis.com/FlowVa"
+          + "lidationResult\022Tprojects/{project}/locat"
+          + "ions/{location}/agents/{agent}/flows/{fl"
+          + "ow}/validationResult2\356\014\n\005Flows\022\263\001\n\nCreat"
+          + "eFlow\0220.google.cloud.dialogflow.cx.v3.Cr"
+          + "eateFlowRequest\032#.google.cloud.dialogflo"
+          + "w.cx.v3.Flow\"N\202\323\344\223\002:\"2/v3/{parent=projec"
+          + "ts/*/locations/*/agents/*}/flows:\004flow\332A"
+          + "\013parent,flow\022\231\001\n\nDeleteFlow\0220.google.clo"
+          + "ud.dialogflow.cx.v3.DeleteFlowRequest\032\026."
+          + "google.protobuf.Empty\"A\202\323\344\223\0024*2/v3/{name"
+          + "=projects/*/locations/*/agents/*/flows/*"
+          + "}\332A\004name\022\263\001\n\tListFlows\022/.google.cloud.di"
+          + "alogflow.cx.v3.ListFlowsRequest\0320.google"
+          + ".cloud.dialogflow.cx.v3.ListFlowsRespons"
+          + "e\"C\202\323\344\223\0024\0222/v3/{parent=projects/*/locati"
+          + "ons/*/agents/*}/flows\332A\006parent\022\240\001\n\007GetFl"
+          + "ow\022-.google.cloud.dialogflow.cx.v3.GetFl"
+          + "owRequest\032#.google.cloud.dialogflow.cx.v"
+          + "3.Flow\"A\202\323\344\223\0024\0222/v3/{name=projects/*/loc"
+          + "ations/*/agents/*/flows/*}\332A\004name\022\275\001\n\nUp"
+          + "dateFlow\0220.google.cloud.dialogflow.cx.v3"
+          + ".UpdateFlowRequest\032#.google.cloud.dialog"
+          + "flow.cx.v3.Flow\"X\202\323\344\223\002?27/v3/{flow.name="
+          + "projects/*/locations/*/agents/*/flows/*}"
+          + ":\004flow\332A\020flow,update_mask\022\331\001\n\tTrainFlow\022"
+          + "/.google.cloud.dialogflow.cx.v3.TrainFlo"
+          + "wRequest\032\035.google.longrunning.Operation\""
+          + "|\202\323\344\223\002=\"8/v3/{name=projects/*/locations/"
+          + "*/agents/*/flows/*}:train:\001*\332A\004name\312A/\n\025"
+          + "google.protobuf.Empty\022\026google.protobuf.S"
+          + "truct\022\277\001\n\014ValidateFlow\0222.google.cloud.di"
+          + "alogflow.cx.v3.ValidateFlowRequest\0323.goo"
+          + "gle.cloud.dialogflow.cx.v3.FlowValidatio"
+          + "nResult\"F\202\323\344\223\002@\";/v3/{name=projects/*/lo"
+          + "cations/*/agents/*/flows/*}:validate:\001*\022"
+          + "\341\001\n\027GetFlowValidationResult\022=.google.clo"
+          + "ud.dialogflow.cx.v3.GetFlowValidationRes"
+          + "ultRequest\0323.google.cloud.dialogflow.cx."
+          + "v3.FlowValidationResult\"R\202\323\344\223\002E\022C/v3/{na"
+          + "me=projects/*/locations/*/agents/*/flows"
+          + "/*/validationResult}\332A\004name\032x\312A\031dialogfl"
+          + "ow.googleapis.com\322AYhttps://www.googleap"
+          + "is.com/auth/cloud-platform,https://www.g"
+          + "oogleapis.com/auth/dialogflowB\231\001\n!com.go"
+          + "ogle.cloud.dialogflow.cx.v3B\tFlowProtoP\001"
+          + "Z?google.golang.org/genproto/googleapis/"
+          + "cloud/dialogflow/cx/v3;cx\370\001\001\242\002\002DF\252\002\035Goog"
+          + "le.Cloud.Dialogflow.Cx.V3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -167,6 +204,7 @@ public final class FlowProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.dialogflow.cx.v3.PageProto.getDescriptor(),
+              com.google.cloud.dialogflow.cx.v3.ValidationMessageProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -249,6 +287,30 @@ public final class FlowProto {
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_dialogflow_cx_v3_ValidateFlowRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_dialogflow_cx_v3_ValidateFlowRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_ValidateFlowRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "LanguageCode",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_GetFlowValidationResultRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_dialogflow_cx_v3_GetFlowValidationResultRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_GetFlowValidationResultRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "LanguageCode",
+            });
+    internal_static_google_cloud_dialogflow_cx_v3_FlowValidationResult_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_dialogflow_cx_v3_FlowValidationResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dialogflow_cx_v3_FlowValidationResult_descriptor,
+            new java.lang.String[] {
+              "Name", "ValidationMessages", "UpdateTime",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
@@ -266,6 +328,7 @@ public final class FlowProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.dialogflow.cx.v3.PageProto.getDescriptor();
+    com.google.cloud.dialogflow.cx.v3.ValidationMessageProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

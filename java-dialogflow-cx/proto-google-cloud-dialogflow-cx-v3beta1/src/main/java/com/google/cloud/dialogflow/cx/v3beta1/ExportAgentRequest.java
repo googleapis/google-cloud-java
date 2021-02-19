@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
+ * The request message for [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest}
@@ -181,10 +180,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The [Google Cloud
-   * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-   * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-   * left unspecified, the serialized agent is returned inline.
+   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   * export the agent to. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
    * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -207,10 +206,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. The [Google Cloud
-   * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-   * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-   * left unspecified, the serialized agent is returned inline.
+   * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+   * export the agent to. The format of this URI must be
+   * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+   * If left unspecified, the serialized agent is returned inline.
    * </pre>
    *
    * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -403,8 +402,7 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for
-   * [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
+   * The request message for [Agents.ExportAgent][google.cloud.dialogflow.cx.v3beta1.Agents.ExportAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest}
@@ -692,10 +690,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud
-     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-     * left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     * export the agent to. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -717,10 +715,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud
-     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-     * left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     * export the agent to. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -742,10 +740,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud
-     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-     * left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     * export the agent to. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -766,10 +764,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud
-     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-     * left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     * export the agent to. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -786,10 +784,10 @@ public final class ExportAgentRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. The [Google Cloud
-     * Storage](https://cloud.google.com/storage/docs/) URI to export the agent
-     * to. The format of this URI must be `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`. If
-     * left unspecified, the serialized agent is returned inline.
+     * Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to
+     * export the agent to. The format of this URI must be
+     * `gs://&lt;bucket-name&gt;/&lt;object-name&gt;`.
+     * If left unspecified, the serialized agent is returned inline.
      * </pre>
      *
      * <code>string agent_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

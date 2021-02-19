@@ -43,6 +43,16 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+ *     SecuritySettingsServiceClient.create()) {
+ *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+ *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+ *   SecuritySettings response =
+ *       securitySettingsServiceClient.createSecuritySettings(parent, securitySettings);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the SecuritySettingsServiceClient object to clean up
  * resources such as threads. In the example above, try-with-resources is used, which automatically
  * calls close().
@@ -151,6 +161,18 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Create security settings in the specified location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+   *   SecuritySettings response =
+   *       securitySettingsServiceClient.createSecuritySettings(parent, securitySettings);
+   * }
+   * }</pre>
+   *
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
@@ -170,6 +192,19 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Create security settings in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   String parent =
+   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]").toString();
+   *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+   *   SecuritySettings response =
+   *       securitySettingsServiceClient.createSecuritySettings(parent, securitySettings);
+   * }
+   * }</pre>
    *
    * @param parent Required. The location to create an
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] for. Format:
@@ -191,6 +226,22 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Create security settings in the specified location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   CreateSecuritySettingsRequest request =
+   *       CreateSecuritySettingsRequest.newBuilder()
+   *           .setParent(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .setSecuritySettings(SecuritySettings.newBuilder().build())
+   *           .build();
+   *   SecuritySettings response = securitySettingsServiceClient.createSecuritySettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -203,6 +254,23 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Create security settings in the specified location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   CreateSecuritySettingsRequest request =
+   *       CreateSecuritySettingsRequest.newBuilder()
+   *           .setParent(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .setSecuritySettings(SecuritySettings.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SecuritySettings> future =
+   *       securitySettingsServiceClient.createSecuritySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   SecuritySettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateSecuritySettingsRequest, SecuritySettings>
       createSecuritySettingsCallable() {
@@ -214,6 +282,17 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Retrieves the specified
    * [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]. The returned settings
    * may be stale by up to 1 minute.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   SecuritySettingsName name =
+   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]");
+   *   SecuritySettings response = securitySettingsServiceClient.getSecuritySettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. Resource name of the settings. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;security settings ID&gt;`.
@@ -233,6 +312,17 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]. The returned settings
    * may be stale by up to 1 minute.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   String name =
+   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]").toString();
+   *   SecuritySettings response = securitySettingsServiceClient.getSecuritySettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. Resource name of the settings. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;security settings ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -249,6 +339,21 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings]. The returned settings
    * may be stale by up to 1 minute.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   GetSecuritySettingsRequest request =
+   *       GetSecuritySettingsRequest.newBuilder()
+   *           .setName(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .build();
+   *   SecuritySettings response = securitySettingsServiceClient.getSecuritySettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -263,6 +368,22 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * may be stale by up to 1 minute.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   GetSecuritySettingsRequest request =
+   *       GetSecuritySettingsRequest.newBuilder()
+   *           .setName(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SecuritySettings> future =
+   *       securitySettingsServiceClient.getSecuritySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   SecuritySettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetSecuritySettingsRequest, SecuritySettings>
       getSecuritySettingsCallable() {
@@ -272,6 +393,18 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   SecuritySettings securitySettings = SecuritySettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SecuritySettings response =
+   *       securitySettingsServiceClient.updateSecuritySettings(securitySettings, updateMask);
+   * }
+   * }</pre>
    *
    * @param securitySettings Required. [SecuritySettings] object that contains values for each of
    *     the fields to update.
@@ -293,6 +426,20 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   UpdateSecuritySettingsRequest request =
+   *       UpdateSecuritySettingsRequest.newBuilder()
+   *           .setSecuritySettings(SecuritySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SecuritySettings response = securitySettingsServiceClient.updateSecuritySettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -305,6 +452,21 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Updates the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   UpdateSecuritySettingsRequest request =
+   *       UpdateSecuritySettingsRequest.newBuilder()
+   *           .setSecuritySettings(SecuritySettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SecuritySettings> future =
+   *       securitySettingsServiceClient.updateSecuritySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   SecuritySettings response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
       updateSecuritySettingsCallable() {
@@ -314,6 +476,19 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Returns the list of all security settings in the specified location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+   *   for (SecuritySettings element :
+   *       securitySettingsServiceClient.listSecuritySettings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param parent Required. The location to list all security settings for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
@@ -331,6 +506,20 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Returns the list of all security settings in the specified location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   String parent =
+   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]").toString();
+   *   for (SecuritySettings element :
+   *       securitySettingsServiceClient.listSecuritySettings(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The location to list all security settings for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -345,6 +534,26 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Returns the list of all security settings in the specified location.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   ListSecuritySettingsRequest request =
+   *       ListSecuritySettingsRequest.newBuilder()
+   *           .setParent(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SecuritySettings element :
+   *       securitySettingsServiceClient.listSecuritySettings(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -358,6 +567,26 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Returns the list of all security settings in the specified location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   ListSecuritySettingsRequest request =
+   *       ListSecuritySettingsRequest.newBuilder()
+   *           .setParent(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SecuritySettings> future =
+   *       securitySettingsServiceClient.listSecuritySettingsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SecuritySettings element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsPagedResponse>
       listSecuritySettingsPagedCallable() {
@@ -369,6 +598,25 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Returns the list of all security settings in the specified location.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   while (true) {
+   *     ListSecuritySettingsResponse response =
+   *         securitySettingsServiceClient.listSecuritySettingsCallable().call(request);
+   *     for (SecuritySettings element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsResponse>
       listSecuritySettingsCallable() {
@@ -378,6 +626,17 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   SecuritySettingsName name =
+   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]");
+   *   securitySettingsServiceClient.deleteSecuritySettings(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] to delete. Format:
@@ -397,6 +656,17 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   String name =
+   *       SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]").toString();
+   *   securitySettingsServiceClient.deleteSecuritySettings(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the
    *     [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings] to delete. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/securitySettings/&lt;Security
@@ -413,6 +683,21 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
   /**
    * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   DeleteSecuritySettingsRequest request =
+   *       DeleteSecuritySettingsRequest.newBuilder()
+   *           .setName(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .build();
+   *   securitySettingsServiceClient.deleteSecuritySettings(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -425,6 +710,22 @@ public class SecuritySettingsServiceClient implements BackgroundResource {
    * Deletes the specified [SecuritySettings][google.cloud.dialogflow.cx.v3beta1.SecuritySettings].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (SecuritySettingsServiceClient securitySettingsServiceClient =
+   *     SecuritySettingsServiceClient.create()) {
+   *   DeleteSecuritySettingsRequest request =
+   *       DeleteSecuritySettingsRequest.newBuilder()
+   *           .setName(
+   *               SecuritySettingsName.of("[PROJECT]", "[LOCATION]", "[SECURITY_SETTINGS]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       securitySettingsServiceClient.deleteSecuritySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteSecuritySettingsRequest, Empty>
       deleteSecuritySettingsCallable() {

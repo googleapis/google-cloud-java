@@ -49,6 +49,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+ *   EnvironmentName name =
+ *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+ *   Environment response = environmentsClient.getEnvironment(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the EnvironmentsClient object to clean up resources such
  * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -164,6 +172,17 @@ public class EnvironmentsClient implements BackgroundResource {
    * Returns the list of all environments in the specified
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to list all
    *     environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -182,6 +201,18 @@ public class EnvironmentsClient implements BackgroundResource {
    * Returns the list of all environments in the specified
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   for (Environment element : environmentsClient.listEnvironments(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to list all
    *     environments for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -198,6 +229,24 @@ public class EnvironmentsClient implements BackgroundResource {
    * Returns the list of all environments in the specified
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Environment element : environmentsClient.listEnvironments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -211,6 +260,25 @@ public class EnvironmentsClient implements BackgroundResource {
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   ListEnvironmentsRequest request =
+   *       ListEnvironmentsRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.listEnvironmentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Environment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsPagedResponse>
       listEnvironmentsPagedCallable() {
@@ -223,6 +291,24 @@ public class EnvironmentsClient implements BackgroundResource {
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   while (true) {
+   *     ListEnvironmentsResponse response =
+   *         environmentsClient.listEnvironmentsCallable().call(request);
+   *     for (Environment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListEnvironmentsRequest, ListEnvironmentsResponse>
       listEnvironmentsCallable() {
@@ -232,6 +318,16 @@ public class EnvironmentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName name =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+   *   Environment response = environmentsClient.getEnvironment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
@@ -249,6 +345,16 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   Environment response = environmentsClient.getEnvironment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment]. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -264,6 +370,20 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentRequest request =
+   *       GetEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   Environment response = environmentsClient.getEnvironment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -276,6 +396,21 @@ public class EnvironmentsClient implements BackgroundResource {
    * Retrieves the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   GetEnvironmentRequest request =
+   *       GetEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.getEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetEnvironmentRequest, Environment> getEnvironmentCallable() {
     return stub.getEnvironmentCallable();
@@ -285,6 +420,16 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   AgentName parent = AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+   *   Environment environment = Environment.newBuilder().build();
+   *   Environment response = environmentsClient.createEnvironmentAsync(parent, environment).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for. Format:
@@ -307,6 +452,17 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String parent =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   Environment environment = Environment.newBuilder().build();
+   *   Environment response = environmentsClient.createEnvironmentAsync(parent, environment).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Agent][google.cloud.dialogflow.cx.v3beta1.Agent] to create an
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`.
@@ -325,6 +481,21 @@ public class EnvironmentsClient implements BackgroundResource {
    * Creates an [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] in the specified
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .build();
+   *   Environment response = environmentsClient.createEnvironmentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -339,6 +510,22 @@ public class EnvironmentsClient implements BackgroundResource {
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Environment, Struct> future =
+   *       environmentsClient.createEnvironmentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateEnvironmentRequest, Environment, Struct>
       createEnvironmentOperationCallable() {
@@ -351,6 +538,22 @@ public class EnvironmentsClient implements BackgroundResource {
    * [Agent][google.cloud.dialogflow.cx.v3beta1.Agent].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   CreateEnvironmentRequest request =
+   *       CreateEnvironmentRequest.newBuilder()
+   *           .setParent(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       environmentsClient.createEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateEnvironmentRequest, Operation> createEnvironmentCallable() {
     return stub.createEnvironmentCallable();
@@ -359,6 +562,17 @@ public class EnvironmentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   Environment environment = Environment.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Environment response =
+   *       environmentsClient.updateEnvironmentAsync(environment, updateMask).get();
+   * }
+   * }</pre>
    *
    * @param environment Required. The environment to update.
    * @param updateMask Required. The mask to control which fields get updated.
@@ -378,6 +592,19 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateEnvironmentRequest request =
+   *       UpdateEnvironmentRequest.newBuilder()
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Environment response = environmentsClient.updateEnvironmentAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -391,6 +618,20 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateEnvironmentRequest request =
+   *       UpdateEnvironmentRequest.newBuilder()
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Environment, Struct> future =
+   *       environmentsClient.updateEnvironmentOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Environment response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<UpdateEnvironmentRequest, Environment, Struct>
       updateEnvironmentOperationCallable() {
@@ -402,6 +643,20 @@ public class EnvironmentsClient implements BackgroundResource {
    * Updates the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   UpdateEnvironmentRequest request =
+   *       UpdateEnvironmentRequest.newBuilder()
+   *           .setEnvironment(Environment.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       environmentsClient.updateEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateEnvironmentRequest, Operation> updateEnvironmentCallable() {
     return stub.updateEnvironmentCallable();
@@ -410,6 +665,16 @@ public class EnvironmentsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName name =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+   *   environmentsClient.deleteEnvironment(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete. Format:
@@ -429,6 +694,16 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   environmentsClient.deleteEnvironment(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the
    *     [Environment][google.cloud.dialogflow.cx.v3beta1.Environment] to delete. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -444,6 +719,20 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   environmentsClient.deleteEnvironment(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -456,6 +745,20 @@ public class EnvironmentsClient implements BackgroundResource {
    * Deletes the specified [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   DeleteEnvironmentRequest request =
+   *       DeleteEnvironmentRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = environmentsClient.deleteEnvironmentCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteEnvironmentRequest, Empty> deleteEnvironmentCallable() {
     return stub.deleteEnvironmentCallable();
@@ -465,6 +768,18 @@ public class EnvironmentsClient implements BackgroundResource {
   /**
    * Looks up the history of the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   EnvironmentName name =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]");
+   *   for (Environment element : environmentsClient.lookupEnvironmentHistory(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    *
    * @param name Required. Resource name of the environment to look up the history for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -485,6 +800,18 @@ public class EnvironmentsClient implements BackgroundResource {
    * Looks up the history of the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   String name =
+   *       EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]").toString();
+   *   for (Environment element : environmentsClient.lookupEnvironmentHistory(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param name Required. Resource name of the environment to look up the history for. Format:
    *     `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/environments/&lt;Environment ID&gt;`.
@@ -501,6 +828,25 @@ public class EnvironmentsClient implements BackgroundResource {
    * Looks up the history of the specified
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   LookupEnvironmentHistoryRequest request =
+   *       LookupEnvironmentHistoryRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Environment element :
+   *       environmentsClient.lookupEnvironmentHistory(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -515,6 +861,25 @@ public class EnvironmentsClient implements BackgroundResource {
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   LookupEnvironmentHistoryRequest request =
+   *       LookupEnvironmentHistoryRequest.newBuilder()
+   *           .setName(
+   *               EnvironmentName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[ENVIRONMENT]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Environment> future =
+   *       environmentsClient.lookupEnvironmentHistoryPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Environment element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryPagedResponse>
       lookupEnvironmentHistoryPagedCallable() {
@@ -527,6 +892,24 @@ public class EnvironmentsClient implements BackgroundResource {
    * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (EnvironmentsClient environmentsClient = EnvironmentsClient.create()) {
+   *   while (true) {
+   *     LookupEnvironmentHistoryResponse response =
+   *         environmentsClient.lookupEnvironmentHistoryCallable().call(request);
+   *     for (Environment element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<LookupEnvironmentHistoryRequest, LookupEnvironmentHistoryResponse>
       lookupEnvironmentHistoryCallable() {

@@ -48,6 +48,14 @@ import javax.annotation.Generated;
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
+ * <pre>{@code
+ * try (VersionsClient versionsClient = VersionsClient.create()) {
+ *   VersionName name =
+ *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+ *   Version response = versionsClient.getVersion(name);
+ * }
+ * }</pre>
+ *
  * <p>Note: close() needs to be called on the VersionsClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
@@ -162,6 +170,17 @@ public class VersionsClient implements BackgroundResource {
    * Returns the list of all versions in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+   *   for (Version element : versionsClient.listVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
    *     versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -180,6 +199,18 @@ public class VersionsClient implements BackgroundResource {
    * Returns the list of all versions in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String parent =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   for (Version element : versionsClient.listVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to list all
    *     versions for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -195,6 +226,24 @@ public class VersionsClient implements BackgroundResource {
    * Returns the list of all versions in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   ListVersionsRequest request =
+   *       ListVersionsRequest.newBuilder()
+   *           .setParent(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Version element : versionsClient.listVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -208,6 +257,24 @@ public class VersionsClient implements BackgroundResource {
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   ListVersionsRequest request =
+   *       ListVersionsRequest.newBuilder()
+   *           .setParent(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Version> future = versionsClient.listVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Version element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListVersionsRequest, ListVersionsPagedResponse>
       listVersionsPagedCallable() {
@@ -220,6 +287,23 @@ public class VersionsClient implements BackgroundResource {
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   while (true) {
+   *     ListVersionsResponse response = versionsClient.listVersionsCallable().call(request);
+   *     for (Version element : response.getResponsesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
    */
   public final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable() {
     return stub.listVersionsCallable();
@@ -228,6 +312,16 @@ public class VersionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   VersionName name =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+   *   Version response = versionsClient.getVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -244,6 +338,16 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String name =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   Version response = versionsClient.getVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *     Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
@@ -258,6 +362,20 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   GetVersionRequest request =
+   *       GetVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   Version response = versionsClient.getVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -270,6 +388,20 @@ public class VersionsClient implements BackgroundResource {
    * Retrieves the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   GetVersionRequest request =
+   *       GetVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Version> future = versionsClient.getVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Version response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<GetVersionRequest, Version> getVersionCallable() {
     return stub.getVersionCallable();
@@ -279,6 +411,16 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   FlowName parent = FlowName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]");
+   *   Version version = Version.newBuilder().build();
+   *   Version response = versionsClient.createVersionAsync(parent, version).get();
+   * }
+   * }</pre>
    *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
    *     [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format: `projects/&lt;Project
@@ -301,6 +443,17 @@ public class VersionsClient implements BackgroundResource {
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String parent =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   Version version = Version.newBuilder().build();
+   *   Version response = versionsClient.createVersionAsync(parent, version).get();
+   * }
+   * }</pre>
+   *
    * @param parent Required. The [Flow][google.cloud.dialogflow.cx.v3beta1.Flow] to create an
    *     [Version][google.cloud.dialogflow.cx.v3beta1.Version] for. Format: `projects/&lt;Project
    *     ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;`.
@@ -319,6 +472,21 @@ public class VersionsClient implements BackgroundResource {
    * Creates a [Version][google.cloud.dialogflow.cx.v3beta1.Version] in the specified
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CreateVersionRequest request =
+   *       CreateVersionRequest.newBuilder()
+   *           .setParent(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setVersion(Version.newBuilder().build())
+   *           .build();
+   *   Version response = versionsClient.createVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -333,6 +501,22 @@ public class VersionsClient implements BackgroundResource {
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CreateVersionRequest request =
+   *       CreateVersionRequest.newBuilder()
+   *           .setParent(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setVersion(Version.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Version, CreateVersionOperationMetadata> future =
+   *       versionsClient.createVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Version response = future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<CreateVersionRequest, Version, CreateVersionOperationMetadata>
       createVersionOperationCallable() {
@@ -345,6 +529,21 @@ public class VersionsClient implements BackgroundResource {
    * [Flow][google.cloud.dialogflow.cx.v3beta1.Flow].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   CreateVersionRequest request =
+   *       CreateVersionRequest.newBuilder()
+   *           .setParent(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setVersion(Version.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future = versionsClient.createVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<CreateVersionRequest, Operation> createVersionCallable() {
     return stub.createVersionCallable();
@@ -353,6 +552,16 @@ public class VersionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   Version version = Version.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   Version response = versionsClient.updateVersion(version, updateMask);
+   * }
+   * }</pre>
    *
    * @param version Required. The version to update.
    * @param updateMask Required. The mask to control which fields get updated. Currently only
@@ -369,6 +578,19 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   UpdateVersionRequest request =
+   *       UpdateVersionRequest.newBuilder()
+   *           .setVersion(Version.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Version response = versionsClient.updateVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -381,6 +603,19 @@ public class VersionsClient implements BackgroundResource {
    * Updates the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   UpdateVersionRequest request =
+   *       UpdateVersionRequest.newBuilder()
+   *           .setVersion(Version.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Version> future = versionsClient.updateVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Version response = future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<UpdateVersionRequest, Version> updateVersionCallable() {
     return stub.updateVersionCallable();
@@ -389,6 +624,16 @@ public class VersionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   VersionName name =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+   *   versionsClient.deleteVersion(name);
+   * }
+   * }</pre>
    *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to
    *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
@@ -405,6 +650,16 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String name =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   versionsClient.deleteVersion(name);
+   * }
+   * }</pre>
+   *
    * @param name Required. The name of the [Version][google.cloud.dialogflow.cx.v3beta1.Version] to
    *     delete. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    *     ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
@@ -419,6 +674,20 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   DeleteVersionRequest request =
+   *       DeleteVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   versionsClient.deleteVersion(request);
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -431,6 +700,20 @@ public class VersionsClient implements BackgroundResource {
    * Deletes the specified [Version][google.cloud.dialogflow.cx.v3beta1.Version].
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   DeleteVersionRequest request =
+   *       DeleteVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = versionsClient.deleteVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<DeleteVersionRequest, Empty> deleteVersionCallable() {
     return stub.deleteVersionCallable();
@@ -439,6 +722,16 @@ public class VersionsClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Loads a specified version to draft version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   VersionName name =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]");
+   *   versionsClient.loadVersionAsync(name).get();
+   * }
+   * }</pre>
    *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to
    *     draft version. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
@@ -455,6 +748,16 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Loads a specified version to draft version.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   String name =
+   *       VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]").toString();
+   *   versionsClient.loadVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
    * @param name Required. The [Version][google.cloud.dialogflow.cx.v3beta1.Version] to be loaded to
    *     draft version. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
    *     ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
@@ -469,6 +772,21 @@ public class VersionsClient implements BackgroundResource {
   /**
    * Loads a specified version to draft version.
    *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   LoadVersionRequest request =
+   *       LoadVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setAllowOverrideAgentResources(true)
+   *           .build();
+   *   versionsClient.loadVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -481,6 +799,22 @@ public class VersionsClient implements BackgroundResource {
    * Loads a specified version to draft version.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   LoadVersionRequest request =
+   *       LoadVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setAllowOverrideAgentResources(true)
+   *           .build();
+   *   OperationFuture<Empty, Struct> future =
+   *       versionsClient.loadVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final OperationCallable<LoadVersionRequest, Empty, Struct> loadVersionOperationCallable() {
     return stub.loadVersionOperationCallable();
@@ -491,6 +825,21 @@ public class VersionsClient implements BackgroundResource {
    * Loads a specified version to draft version.
    *
    * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (VersionsClient versionsClient = VersionsClient.create()) {
+   *   LoadVersionRequest request =
+   *       LoadVersionRequest.newBuilder()
+   *           .setName(
+   *               VersionName.of("[PROJECT]", "[LOCATION]", "[AGENT]", "[FLOW]", "[VERSION]")
+   *                   .toString())
+   *           .setAllowOverrideAgentResources(true)
+   *           .build();
+   *   ApiFuture<Operation> future = versionsClient.loadVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
    */
   public final UnaryCallable<LoadVersionRequest, Operation> loadVersionCallable() {
     return stub.loadVersionCallable();

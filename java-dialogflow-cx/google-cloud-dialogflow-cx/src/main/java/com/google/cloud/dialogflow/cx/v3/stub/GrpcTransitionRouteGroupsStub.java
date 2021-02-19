@@ -285,31 +285,37 @@ public class GrpcTransitionRouteGroupsStub extends TransitionRouteGroupsStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsResponse>
       listTransitionRouteGroupsCallable() {
     return listTransitionRouteGroupsCallable;
   }
 
+  @Override
   public UnaryCallable<ListTransitionRouteGroupsRequest, ListTransitionRouteGroupsPagedResponse>
       listTransitionRouteGroupsPagedCallable() {
     return listTransitionRouteGroupsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetTransitionRouteGroupRequest, TransitionRouteGroup>
       getTransitionRouteGroupCallable() {
     return getTransitionRouteGroupCallable;
   }
 
+  @Override
   public UnaryCallable<CreateTransitionRouteGroupRequest, TransitionRouteGroup>
       createTransitionRouteGroupCallable() {
     return createTransitionRouteGroupCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateTransitionRouteGroupRequest, TransitionRouteGroup>
       updateTransitionRouteGroupCallable() {
     return updateTransitionRouteGroupCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteTransitionRouteGroupRequest, Empty>
       deleteTransitionRouteGroupCallable() {
     return deleteTransitionRouteGroupCallable;

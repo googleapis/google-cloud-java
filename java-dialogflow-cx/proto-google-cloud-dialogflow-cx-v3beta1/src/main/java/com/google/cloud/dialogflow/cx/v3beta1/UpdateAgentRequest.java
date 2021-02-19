@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent].
+ * The request message for [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest}
@@ -420,8 +419,7 @@ public final class UpdateAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for
-   * [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent].
+   * The request message for [Agents.UpdateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.UpdateAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest}

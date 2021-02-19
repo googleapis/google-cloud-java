@@ -29,9 +29,11 @@ public interface SessionInfoOrBuilder
    * <pre>
    * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
    * The unique identifier of the [session][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.session]. This
-   * field can be used by the webhook to identify a user.
+   * field can be used by the webhook to identify a session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`
+   * if environment is specified.
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -45,9 +47,11 @@ public interface SessionInfoOrBuilder
    * <pre>
    * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
    * The unique identifier of the [session][google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest.session]. This
-   * field can be used by the webhook to identify a user.
+   * field can be used by the webhook to identify a session.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/sessions/&lt;Session ID&gt;`.
+   * ID&gt;/sessions/&lt;Session ID&gt;` or `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/environments/&lt;Environment ID&gt;/sessions/&lt;Session ID&gt;`
+   * if environment is specified.
    * </pre>
    *
    * <code>string session = 1 [(.google.api.resource_reference) = { ... }</code>

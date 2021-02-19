@@ -293,4 +293,50 @@ public interface WebhookRequestOrBuilder
    * <code>.google.protobuf.Struct payload = 8;</code>
    */
   com.google.protobuf.StructOrBuilder getPayloadOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result of the current user request. The field is
+   * filled when sentiment analysis is configured to be enabled for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+   * </code>
+   *
+   * @return Whether the sentimentAnalysisResult field is set.
+   */
+  boolean hasSentimentAnalysisResult();
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result of the current user request. The field is
+   * filled when sentiment analysis is configured to be enabled for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+   * </code>
+   *
+   * @return The sentimentAnalysisResult.
+   */
+  com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult
+      getSentimentAnalysisResult();
+  /**
+   *
+   *
+   * <pre>
+   * The sentiment analysis result of the current user request. The field is
+   * filled when sentiment analysis is configured to be enabled for the request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResult sentiment_analysis_result = 9;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.WebhookRequest.SentimentAnalysisResultOrBuilder
+      getSentimentAnalysisResultOrBuilder();
 }

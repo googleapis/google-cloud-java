@@ -236,26 +236,32 @@ public class GrpcWebhooksStub extends WebhooksStub {
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<ListWebhooksRequest, ListWebhooksResponse> listWebhooksCallable() {
     return listWebhooksCallable;
   }
 
+  @Override
   public UnaryCallable<ListWebhooksRequest, ListWebhooksPagedResponse> listWebhooksPagedCallable() {
     return listWebhooksPagedCallable;
   }
 
+  @Override
   public UnaryCallable<GetWebhookRequest, Webhook> getWebhookCallable() {
     return getWebhookCallable;
   }
 
+  @Override
   public UnaryCallable<CreateWebhookRequest, Webhook> createWebhookCallable() {
     return createWebhookCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateWebhookRequest, Webhook> updateWebhookCallable() {
     return updateWebhookCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteWebhookRequest, Empty> deleteWebhookCallable() {
     return deleteWebhookCallable;
   }

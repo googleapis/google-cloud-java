@@ -70,7 +70,13 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSecuritySettings, expected %s or %s",
+                  response.getClass().getName(),
+                  SecuritySettings.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -85,7 +91,13 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSecuritySettings, expected %s or %s",
+                  response.getClass().getName(),
+                  SecuritySettings.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -100,7 +112,13 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSecuritySettings, expected %s or %s",
+                  response.getClass().getName(),
+                  SecuritySettings.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSecuritySettings, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSecuritySettingsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +155,13 @@ public class MockSecuritySettingsServiceImpl extends SecuritySettingsServiceImpl
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSecuritySettings, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

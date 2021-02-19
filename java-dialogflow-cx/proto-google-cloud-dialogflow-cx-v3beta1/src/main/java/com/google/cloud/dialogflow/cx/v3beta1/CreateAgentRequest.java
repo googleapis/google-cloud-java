@@ -22,8 +22,7 @@ package com.google.cloud.dialogflow.cx.v3beta1;
  *
  *
  * <pre>
- * The request message for
- * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent].
+ * The request message for [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest}
@@ -415,8 +414,7 @@ public final class CreateAgentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request message for
-   * [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent].
+   * The request message for [Agents.CreateAgent][google.cloud.dialogflow.cx.v3beta1.Agents.CreateAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest}

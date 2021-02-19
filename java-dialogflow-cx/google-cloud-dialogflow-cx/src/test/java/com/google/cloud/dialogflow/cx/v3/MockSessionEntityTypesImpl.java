@@ -71,7 +71,13 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSessionEntityTypes, expected %s or %s",
+                  response.getClass().getName(),
+                  ListSessionEntityTypesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -86,7 +92,13 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSessionEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  SessionEntityType.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -101,7 +113,13 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSessionEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  SessionEntityType.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -116,7 +134,13 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSessionEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  SessionEntityType.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -131,7 +155,13 @@ public class MockSessionEntityTypesImpl extends SessionEntityTypesImplBase {
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSessionEntityType, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }

@@ -274,30 +274,36 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
     return operationsStub;
   }
 
+  @Override
   public UnaryCallable<CreateSecuritySettingsRequest, SecuritySettings>
       createSecuritySettingsCallable() {
     return createSecuritySettingsCallable;
   }
 
+  @Override
   public UnaryCallable<GetSecuritySettingsRequest, SecuritySettings> getSecuritySettingsCallable() {
     return getSecuritySettingsCallable;
   }
 
+  @Override
   public UnaryCallable<UpdateSecuritySettingsRequest, SecuritySettings>
       updateSecuritySettingsCallable() {
     return updateSecuritySettingsCallable;
   }
 
+  @Override
   public UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsResponse>
       listSecuritySettingsCallable() {
     return listSecuritySettingsCallable;
   }
 
+  @Override
   public UnaryCallable<ListSecuritySettingsRequest, ListSecuritySettingsPagedResponse>
       listSecuritySettingsPagedCallable() {
     return listSecuritySettingsPagedCallable;
   }
 
+  @Override
   public UnaryCallable<DeleteSecuritySettingsRequest, Empty> deleteSecuritySettingsCallable() {
     return deleteSecuritySettingsCallable;
   }
