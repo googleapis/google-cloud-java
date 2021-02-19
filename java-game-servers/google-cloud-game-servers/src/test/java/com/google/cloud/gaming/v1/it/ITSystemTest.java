@@ -17,6 +17,7 @@ package com.google.cloud.gaming.v1.it;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.gaming.v1.CreateGameServerConfigRequest;
@@ -159,12 +160,18 @@ public class ITSystemTest {
   @Test
   public void listRealmsTest() {
     List<Realm> realms = Lists.newArrayList(realmsServiceClient.listRealms(PARENT).iterateAll());
-    assertEquals(1, realms.size());
-    assertEquals(REALM_NAME.toString(), realms.get(0).getName());
-    assertEquals(TIME_ZONE, realms.get(0).getTimeZone());
-    assertEquals(DESCRIPTION, realms.get(0).getDescription());
-    assertNotNull(realms.get(0).getCreateTime());
-    assertNotNull(realms.get(0).getEtag());
+    assertTrue(realms.size() > 0);
+    boolean found = false;
+    for (Realm realm : realms) {
+      if (REALM_NAME.toString().equals(realm.getName())) {
+        found = true;
+        assertEquals(TIME_ZONE, realm.getTimeZone());
+        assertEquals(DESCRIPTION, realm.getDescription());
+        assertNotNull(realm.getCreateTime());
+        assertNotNull(realm.getEtag());
+      }
+    }
+    assertTrue("expected to find realm by resource name", found);
   }
 
   @Test
@@ -258,9 +265,14 @@ public class ITSystemTest {
             .build();
     List<GameServerConfig> gameServerConfigs =
         Lists.newArrayList(configsServiceClient.listGameServerConfigs(request).iterateAll());
-    assertEquals(1, gameServerConfigs.size());
-    assertNotNull(gameServerConfigs.get(0).getCreateTime());
-    assertEquals(GAME_SERVER_CONFIG_NAME.toString(), gameServerConfigs.get(0).getName());
-    assertEquals(DESCRIPTION, gameServerConfigs.get(0).getDescription());
+    boolean found = false;
+    for (GameServerConfig gameServerConfig : gameServerConfigs) {
+      assertNotNull(gameServerConfig.getCreateTime());
+      if (GAME_SERVER_CONFIG_NAME.toString().equals(gameServerConfig.getName())) {
+        found = true;
+        assertEquals(DESCRIPTION, gameServerConfig.getDescription());
+      }
+    }
+    assertTrue("expected to find game servcer config by resource name", found);
   }
 }

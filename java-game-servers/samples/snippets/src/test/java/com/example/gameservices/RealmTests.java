@@ -44,7 +44,7 @@ public class RealmTests {
   private static String parentName =
       String.format("projects/%s/locations/%s", PROJECT_ID, REGION_ID);
 
-  private static String realmId = "realm-1";
+  private static String realmId = "realm-" + GameServicesTestUtil.UID;
   private static String realmName = String.format("%s/realms/%s", parentName, realmId);
 
   private final PrintStream originalOut = System.out;

@@ -41,7 +41,7 @@ public class DeploymentTests {
   private static final String PROJECT_ID = System.getenv("GOOGLE_CLOUD_PROJECT");
 
   private static String parentName = String.format("projects/%s/locations/global", PROJECT_ID);
-  private static String deploymentId = "deployment-1";
+  private static String deploymentId = "deployment-" + GameServicesTestUtil.UID;
   private static String deploymentName =
       String.format("%s/gameServerDeployments/%s", parentName, deploymentId);
 

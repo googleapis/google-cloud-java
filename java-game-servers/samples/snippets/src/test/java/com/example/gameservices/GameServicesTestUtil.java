@@ -27,12 +27,14 @@ import com.google.cloud.gaming.v1.Realm;
 import com.google.cloud.gaming.v1.RealmsServiceClient;
 import com.google.cloud.gaming.v1.RealmsServiceClient.ListRealmsPagedResponse;
 import java.io.IOException;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 class GameServicesTestUtil {
   private static GameServerClustersServiceClient clustersClient;
   private static GameServerDeploymentsServiceClient deploymentsClient;
   private static RealmsServiceClient realmsClient;
+  static String UID = UUID.randomUUID().toString().substring(0, 8);
 
   private static GameServerClustersServiceClient getClustersClient() throws IOException {
     if (clustersClient == null) {
