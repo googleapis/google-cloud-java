@@ -20,7 +20,7 @@ If you are using Maven, add this to your pom.xml file:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-retail</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 
 ```
