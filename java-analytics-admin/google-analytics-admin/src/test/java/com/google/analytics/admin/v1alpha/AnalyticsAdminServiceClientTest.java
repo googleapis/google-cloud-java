@@ -460,6 +460,7 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
             .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
             .setDeleted(true)
@@ -505,6 +506,7 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
             .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
             .setDeleted(true)
@@ -609,6 +611,7 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
             .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
             .setDeleted(true)
@@ -722,6 +725,7 @@ public class AnalyticsAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setParent("parent-995424086")
             .setDisplayName("displayName1714148973")
+            .setIndustryCategory(IndustryCategory.forNumber(0))
             .setTimeZone("timeZone-2077180903")
             .setCurrencyCode("currencyCode1004773790")
             .setDeleted(true)
@@ -2798,6 +2802,7 @@ public class AnalyticsAdminServiceClientTest {
             .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMaximumUserAccess(MaximumUserAccess.forNumber(0))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2841,6 +2846,7 @@ public class AnalyticsAdminServiceClientTest {
             .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMaximumUserAccess(MaximumUserAccess.forNumber(0))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 
@@ -2884,6 +2890,7 @@ public class AnalyticsAdminServiceClientTest {
             .setName(FirebaseLinkName.of("[PROPERTY]", "[FIREBASE_LINK]").toString())
             .setProject("project-309310695")
             .setCreateTime(Timestamp.newBuilder().build())
+            .setMaximumUserAccess(MaximumUserAccess.forNumber(0))
             .build();
     mockAnalyticsAdminService.addResponse(expectedResponse);
 

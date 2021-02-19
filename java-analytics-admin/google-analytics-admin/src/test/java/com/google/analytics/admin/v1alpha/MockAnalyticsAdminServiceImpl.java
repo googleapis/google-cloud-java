@@ -69,7 +69,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  Account.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -84,7 +90,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAccounts, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAccountsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -98,7 +110,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -113,7 +131,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAccount, expected %s or %s",
+                  response.getClass().getName(),
+                  Account.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -129,7 +153,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ProvisionAccountTicket, expected %s or %s",
+                  response.getClass().getName(),
+                  ProvisionAccountTicketResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -145,7 +175,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAccountSummaries, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAccountSummariesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -159,7 +195,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetProperty, expected %s or %s",
+                  response.getClass().getName(),
+                  Property.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -174,7 +216,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListProperties, expected %s or %s",
+                  response.getClass().getName(),
+                  ListPropertiesResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -189,7 +237,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateProperty, expected %s or %s",
+                  response.getClass().getName(),
+                  Property.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -204,7 +258,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteProperty, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -219,7 +279,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateProperty, expected %s or %s",
+                  response.getClass().getName(),
+                  Property.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -233,7 +299,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetUserLink, expected %s or %s",
+                  response.getClass().getName(),
+                  UserLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -249,7 +321,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchGetUserLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchGetUserLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -264,7 +342,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListUserLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListUserLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -279,7 +363,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AuditUserLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  AuditUserLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -294,7 +384,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateUserLink, expected %s or %s",
+                  response.getClass().getName(),
+                  UserLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -310,7 +406,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateUserLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchCreateUserLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -325,7 +427,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateUserLink, expected %s or %s",
+                  response.getClass().getName(),
+                  UserLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -341,7 +449,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchUpdateUserLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  BatchUpdateUserLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -356,7 +470,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteUserLink, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -371,7 +491,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteUserLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -386,7 +512,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetWebDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  WebDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -401,7 +533,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteWebDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -416,7 +554,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateWebDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  WebDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -431,7 +575,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateWebDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  WebDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -447,7 +597,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListWebDataStreams, expected %s or %s",
+                  response.getClass().getName(),
+                  ListWebDataStreamsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -462,7 +618,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetIosAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  IosAppDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -477,7 +639,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteIosAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -492,7 +660,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateIosAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  IosAppDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -507,7 +681,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateIosAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  IosAppDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -523,7 +703,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListIosAppDataStreams, expected %s or %s",
+                  response.getClass().getName(),
+                  ListIosAppDataStreamsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -539,7 +725,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAndroidAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  AndroidAppDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -554,7 +746,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAndroidAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -570,7 +768,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAndroidAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  AndroidAppDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -586,7 +790,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAndroidAppDataStream, expected %s or %s",
+                  response.getClass().getName(),
+                  AndroidAppDataStream.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -602,7 +812,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAndroidAppDataStreams, expected %s or %s",
+                  response.getClass().getName(),
+                  ListAndroidAppDataStreamsResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -618,7 +834,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetEnhancedMeasurementSettings, expected %s or %s",
+                  response.getClass().getName(),
+                  EnhancedMeasurementSettings.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -634,7 +856,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateEnhancedMeasurementSettings, expected %s or %s",
+                  response.getClass().getName(),
+                  EnhancedMeasurementSettings.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -649,7 +877,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateFirebaseLink, expected %s or %s",
+                  response.getClass().getName(),
+                  FirebaseLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -664,7 +898,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateFirebaseLink, expected %s or %s",
+                  response.getClass().getName(),
+                  FirebaseLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -679,7 +919,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteFirebaseLink, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -695,7 +941,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListFirebaseLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListFirebaseLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -710,7 +962,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetGlobalSiteTag, expected %s or %s",
+                  response.getClass().getName(),
+                  GlobalSiteTag.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -725,7 +983,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateGoogleAdsLink, expected %s or %s",
+                  response.getClass().getName(),
+                  GoogleAdsLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -740,7 +1004,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateGoogleAdsLink, expected %s or %s",
+                  response.getClass().getName(),
+                  GoogleAdsLink.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -755,7 +1025,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteGoogleAdsLink, expected %s or %s",
+                  response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -771,7 +1047,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListGoogleAdsLinks, expected %s or %s",
+                  response.getClass().getName(),
+                  ListGoogleAdsLinksResponse.class.getName(),
+                  Exception.class.getName())));
     }
   }
 
@@ -786,7 +1068,13 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
     } else if (response instanceof Exception) {
       responseObserver.onError(((Exception) response));
     } else {
-      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataSharingSettings, expected %s or %s",
+                  response.getClass().getName(),
+                  DataSharingSettings.class.getName(),
+                  Exception.class.getName())));
     }
   }
 }
