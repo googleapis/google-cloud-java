@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.4.0](https://www.github.com/googleapis/java-recommender/compare/v1.3.0...v1.4.0) (2021-02-19)
+
+
+### Features
+
+* Add support for "billingAccounts" as another parent resource name for recommendations and insights APIs. ([#383](https://www.github.com/googleapis/java-recommender/issues/383)) ([2145cee](https://www.github.com/googleapis/java-recommender/commit/2145cee790f5f0640b2d926af33558025700ec69))
+* **v1:** add bindings for folder/org type resources, insights and recommender_service for folder/org ([#418](https://www.github.com/googleapis/java-recommender/issues/418)) ([aafb260](https://www.github.com/googleapis/java-recommender/commit/aafb2604f6189be4f7c6526cda6233924a4a27c7))
+* **v1beta1:** enable folder/org APIs for integration tests ([aafb260](https://www.github.com/googleapis/java-recommender/commit/aafb2604f6189be4f7c6526cda6233924a4a27c7))
+
+
+### Reverts
+
+* Add support for "billingAccounts" as another parent resource name for recommendations and insights APIs. ([#386](https://www.github.com/googleapis/java-recommender/issues/386)) ([c867009](https://www.github.com/googleapis/java-recommender/commit/c8670091791bd58922198789a65f7070dc014b3c))
+
+
+### Documentation
+
+* generate sample code in the Java microgenerator ([#408](https://www.github.com/googleapis/java-recommender/issues/408)) ([66db4bc](https://www.github.com/googleapis/java-recommender/commit/66db4bc3ada2506507bde7513b500c25e9b76101))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.18.0 ([#393](https://www.github.com/googleapis/java-recommender/issues/393)) ([27b0b4f](https://www.github.com/googleapis/java-recommender/commit/27b0b4f863fe844f0d322c3f71f653adb36304dc))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#419](https://www.github.com/googleapis/java-recommender/issues/419)) ([b667832](https://www.github.com/googleapis/java-recommender/commit/b667832b7e4b5b2716e4b6215d3c8b84ad0544cd))
+
 ## [1.3.0](https://www.github.com/googleapis/java-recommender/compare/v1.2.9...v1.3.0) (2020-12-16)
 
 
