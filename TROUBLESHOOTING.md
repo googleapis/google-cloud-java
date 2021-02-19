@@ -23,13 +23,13 @@ There may be multiple sources for classpath conflicts:
 - Your runtime classpath has different versions of dependencies than what you specified in the build
 
 For example, if you have a direct or a transitive dependency on Guava version 19.0, 
-and `google-cloud-java` uses Guava version 29.0, 
+and `google-cloud-java` uses Guava version 30.0, 
 then `google-cloud-java` could be using Guava methods that don't exist in Guava 19.0,
 and cause `NoSuchMethodError`.
 
 Similarily, if your classpath has an older version of `protobuf-java`, 
 but `google-cloud-java` requires a newer version,
- then you may see `NoClassDefFoundError` that fails to initialize `google-cloud-java` classes, e.g.:
+ then you might see `NoClassDefFoundError` that fails to initialize `google-cloud-java` classes. For example:
 
 ```
 java.lang.NoClassDefFoundError: Could not initialize class com.google.pubsub.v1.PubsubMessage$AttributesDefaultEntryHolder
@@ -94,12 +94,13 @@ as every server environment is different.
 ### Resolving the conflict
 
 There are different strategies to resolve conflicts, but you must understand the root cause of the conflicts. For example:
-- If you have control over the dependency tree, you can upgrade
-  offending dependencies (e.g., upgrading Guava version). This is the 
-  least hackish approach but it is a lot of work that can require multiple releases
+
+- If you have control over the dependency tree, upgrade
+  offending dependencies (for example, upgrading Guava version). This is the 
+  least hackish approach, but it is a lot of work that can require multiple releases
    of multiple libraries to sync everything up. 
 - If you can't modify and push new versions of your dependencies, import
-  `com.google.cloud:libraries-bom:16.1.0` (or a more recent version) and use that to
+  `com.google.cloud:libraries-bom:16.4.0` (or a more recent version) and use that to
   select consistent dependency versions. This is the easiest route. 
   For example, this is how you can depend on consistent versions of Guava and 
   `com.google.cloud:google-cloud-storage` without explicitly setting the version of either one:
@@ -111,7 +112,7 @@ There are different strategies to resolve conflicts, but you must understand the
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>libraries-bom</artifactId>
-        <version>16.1.0</version>
+        <version>16.4.0</version>
         <type>pom</type>
         <scope>import</scope>
        </dependency>

@@ -30,14 +30,14 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
-        <version>0.145.0</version>
+        <version>0.147.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-core</artifactId>
-        <version>1.94.0</version>
+        <version>1.94.1</version>
         <type>test-jar</type>
       </dependency>
       <dependency>
@@ -61,7 +61,7 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.13.1</version>
+        <version>4.13.2</version>
       </dependency>
       <dependency>
         <groupId>org.objenesis</groupId>
@@ -71,7 +71,7 @@
       <dependency>
         <groupId>com.google.truth</groupId>
         <artifactId>truth</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.2</version>
       </dependency>
       <dependency>
         <groupId>org.easymock</groupId>
