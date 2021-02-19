@@ -28,7 +28,7 @@
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-notebooks</artifactId>
-      <version>0.2.1</version>
+      <version>0.2.4</version>
     </dependency>
 
     <dependency>
