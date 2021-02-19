@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,9 +15,7 @@
  */
 
 /**
- * A client to Container Analysis API.
- *
- * <p>The interfaces provided are listed below, along with usage samples.
+ * The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= ContainerAnalysisClient =======================
  *
@@ -34,18 +32,8 @@
  * to that note.
  *
  * <p>Sample for ContainerAnalysisClient:
- *
- * <pre>
- * <code>
- * try (ContainerAnalysisClient containerAnalysisClient = ContainerAnalysisClient.create()) {
- *   ResourceName resource = ProjectName.of("[PROJECT]");
- *   Policy policy = Policy.newBuilder().build();
- *   Policy response = containerAnalysisClient.setIamPolicy(resource, policy);
- * }
- * </code>
- * </pre>
  */
-@Generated("by gapic-generator")
+@Generated("by gapic-generator-java")
 package com.google.cloud.devtools.containeranalysis.v1;
 
 import javax.annotation.Generated;
