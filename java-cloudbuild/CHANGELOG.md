@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.1.11](https://www.github.com/googleapis/java-cloudbuild/compare/v2.1.10...v2.1.11) (2021-02-19)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v0.19.0 ([#396](https://www.github.com/googleapis/java-cloudbuild/issues/396)) ([3f1d74d](https://www.github.com/googleapis/java-cloudbuild/commit/3f1d74dd73eab829bdff0cdd710ec6c033029649))
+
 ### [2.1.10](https://www.github.com/googleapis/java-cloudbuild/compare/v2.1.9...v2.1.10) (2021-01-14)
 
 
