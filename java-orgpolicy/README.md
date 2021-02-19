@@ -25,11 +25,11 @@ If you are using Maven, add this to your pom.xml file:
 
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.api.grpc:proto-google-cloud-orgpolicy-v1:1.0.10'
+compile 'com.google.api.grpc:proto-google-cloud-orgpolicy-v1:1.0.11'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.api.grpc" % "proto-google-cloud-orgpolicy-v1" % "1.0.10"
+libraryDependencies += "com.google.api.grpc" % "proto-google-cloud-orgpolicy-v1" % "1.0.11"
 ```
 [//]: # ({x-version-update-end})
 
