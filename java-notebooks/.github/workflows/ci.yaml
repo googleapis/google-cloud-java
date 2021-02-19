@@ -54,7 +54,11 @@ jobs:
       with:
         java-version: 8
     - run: java -version
-    - run: .kokoro/linkage-monitor.sh
+    - name: Install artifacts to local Maven repository
+      run: .kokoro/build.sh
+      shell: bash
+    - name: Validate any conflicts with regard to com.google.cloud:libraries-bom (latest release)
+      uses: GoogleCloudPlatform/cloud-opensource-java/linkage-monitor@v1-linkagemonitor
   lint:
     runs-on: ubuntu-latest
     steps:
