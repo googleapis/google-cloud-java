@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-recommender</artifactId>
-  <version>1.4.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
+  <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Recommender</name>
   <url>https://github.com/googleapis/java-recommender</url>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-recommender-parent</artifactId>
-    <version>1.4.0</version><!-- {x-version-update:google-cloud-recommender:current} -->
+    <version>1.4.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-recommender:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-recommender</site.installationModule>
