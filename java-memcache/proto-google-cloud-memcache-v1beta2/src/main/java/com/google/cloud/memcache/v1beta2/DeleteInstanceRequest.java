@@ -117,12 +117,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Memcached instance resource name in the format:
+   * Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    * where `location_id` refers to a GCP region
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The name.
    */
@@ -142,12 +144,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Memcached instance resource name in the format:
+   * Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
    * where `location_id` refers to a GCP region
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for name.
    */
@@ -488,12 +492,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Memcached instance resource name in the format:
+     * Required. Memcached instance resource name in the format:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * where `location_id` refers to a GCP region
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The name.
      */
@@ -512,12 +518,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Memcached instance resource name in the format:
+     * Required. Memcached instance resource name in the format:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * where `location_id` refers to a GCP region
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for name.
      */
@@ -536,12 +544,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Memcached instance resource name in the format:
+     * Required. Memcached instance resource name in the format:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * where `location_id` refers to a GCP region
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -559,12 +569,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Memcached instance resource name in the format:
+     * Required. Memcached instance resource name in the format:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * where `location_id` refers to a GCP region
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -578,12 +590,14 @@ public final class DeleteInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Memcached instance resource name in the format:
+     * Required. Memcached instance resource name in the format:
      *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
      * where `location_id` refers to a GCP region
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>
+     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

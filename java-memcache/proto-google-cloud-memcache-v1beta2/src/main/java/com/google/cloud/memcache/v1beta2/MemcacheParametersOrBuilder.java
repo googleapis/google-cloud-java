@@ -27,10 +27,7 @@ public interface MemcacheParametersOrBuilder
    *
    *
    * <pre>
-   * Output only. The unique ID associated with this set of parameters. Users
-   * can use this id to determine if the parameters associated with the instance
-   * differ from the parameters associated with the nodes and any action needs
-   * to be taken to apply parameters on nodes.
+   * Output only.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,10 +39,7 @@ public interface MemcacheParametersOrBuilder
    *
    *
    * <pre>
-   * Output only. The unique ID associated with this set of parameters. Users
-   * can use this id to determine if the parameters associated with the instance
-   * differ from the parameters associated with the nodes and any action needs
-   * to be taken to apply parameters on nodes.
+   * Output only.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

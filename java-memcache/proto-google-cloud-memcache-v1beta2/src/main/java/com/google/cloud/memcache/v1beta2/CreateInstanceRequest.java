@@ -204,7 +204,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * * Must start with a letter.
    * * Must be between 1-40 characters.
    * * Must end with a number or a letter.
-   * * Must be unique within the user project / location
+   * * Must be unique within the user project / location.
+   * If any of the above are not met, the API raises an invalid argument error.
    * </pre>
    *
    * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -233,7 +234,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    * * Must start with a letter.
    * * Must be between 1-40 characters.
    * * Must end with a number or a letter.
-   * * Must be unique within the user project / location
+   * * Must be unique within the user project / location.
+   * If any of the above are not met, the API raises an invalid argument error.
    * </pre>
    *
    * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -807,7 +809,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * * Must start with a letter.
      * * Must be between 1-40 characters.
      * * Must end with a number or a letter.
-     * * Must be unique within the user project / location
+     * * Must be unique within the user project / location.
+     * If any of the above are not met, the API raises an invalid argument error.
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -835,7 +838,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * * Must start with a letter.
      * * Must be between 1-40 characters.
      * * Must end with a number or a letter.
-     * * Must be unique within the user project / location
+     * * Must be unique within the user project / location.
+     * If any of the above are not met, the API raises an invalid argument error.
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -863,7 +867,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * * Must start with a letter.
      * * Must be between 1-40 characters.
      * * Must end with a number or a letter.
-     * * Must be unique within the user project / location
+     * * Must be unique within the user project / location.
+     * If any of the above are not met, the API raises an invalid argument error.
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -890,7 +895,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * * Must start with a letter.
      * * Must be between 1-40 characters.
      * * Must end with a number or a letter.
-     * * Must be unique within the user project / location
+     * * Must be unique within the user project / location.
+     * If any of the above are not met, the API raises an invalid argument error.
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -913,7 +919,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
      * * Must start with a letter.
      * * Must be between 1-40 characters.
      * * Must end with a number or a letter.
-     * * Must be unique within the user project / location
+     * * Must be unique within the user project / location.
+     * If any of the above are not met, the API raises an invalid argument error.
      * </pre>
      *
      * <code>string instance_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

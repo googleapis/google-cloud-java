@@ -56,7 +56,7 @@ import javax.annotation.Generated;
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  * </ul>
  *
- * <p>Note that location_id must be refering to a GCP `region`; for example:
+ * <p>Note that location_id must be a GCP `region`; for example:
  *
  * <ul>
  *   <li>`projects/my-memcached-project/locations/us-central1/instances/my-memcached`
@@ -185,7 +185,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists Instances in a given location.
    *
    * <p>Sample code:
    *
@@ -212,7 +212,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists Instances in a given location.
    *
    * <p>Sample code:
    *
@@ -236,7 +236,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists Instances in a given location.
    *
    * <p>Sample code:
    *
@@ -265,7 +265,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists Instances in a given location.
    *
    * <p>Sample code:
    *
@@ -295,7 +295,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Instances in a given project and location.
+   * Lists Instances in a given location.
    *
    * <p>Sample code:
    *
@@ -414,7 +414,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Instance in a given project and location.
+   * Creates a new Instance in a given location.
    *
    * <p>Sample code:
    *
@@ -437,9 +437,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    *       <li>Must start with a letter.
    *       <li>Must be between 1-40 characters.
    *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the user project / location
+   *       <li>Must be unique within the user project / location.
    *     </ul>
-   *
+   *     <p>If any of the above are not met, the API raises an invalid argument error.
    * @param resource Required. A Memcached [Instance] resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -456,7 +456,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Instance in a given project and location.
+   * Creates a new Instance in a given location.
    *
    * <p>Sample code:
    *
@@ -479,9 +479,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    *       <li>Must start with a letter.
    *       <li>Must be between 1-40 characters.
    *       <li>Must end with a number or a letter.
-   *       <li>Must be unique within the user project / location
+   *       <li>Must be unique within the user project / location.
    *     </ul>
-   *
+   *     <p>If any of the above are not met, the API raises an invalid argument error.
    * @param resource Required. A Memcached [Instance] resource
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -498,7 +498,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Instance in a given project and location.
+   * Creates a new Instance in a given location.
    *
    * <p>Sample code:
    *
@@ -524,7 +524,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Instance in a given project and location.
+   * Creates a new Instance in a given location.
    *
    * <p>Sample code:
    *
@@ -550,7 +550,7 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new Instance in a given project and location.
+   * Creates a new Instance in a given location.
    *
    * <p>Sample code:
    *
@@ -675,9 +675,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -710,9 +710,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -745,9 +745,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -773,9 +773,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -801,9 +801,9 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates the defined Memcached Parameters for an existing Instance. This method only stages the
-   * parameters, it must be followed by ApplyParameters to apply the parameters to nodes of the
-   * Memcached Instance.
+   * Updates the defined Memcached parameters for an existing instance. This method only stages the
+   * parameters, it must be followed by `ApplyParameters` to apply the parameters to nodes of the
+   * Memcached instance.
    *
    * <p>Sample code:
    *
@@ -834,12 +834,36 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
-   *   String name = "name3373707";
+   *   InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
    *   cloudMemcacheClient.deleteInstanceAsync(name).get();
    * }
    * }</pre>
    *
-   * @param name Memcached instance resource name in the format:
+   * @param name Required. Memcached instance resource name in the format:
+   *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
+   *     refers to a GCP region
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteInstanceAsync(InstanceName name) {
+    DeleteInstanceRequest request =
+        DeleteInstanceRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a single Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   cloudMemcacheClient.deleteInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Memcached instance resource name in the format:
    *     `projects/{project_id}/locations/{location_id}/instances/{instance_id}` where `location_id`
    *     refers to a GCP region
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -858,7 +882,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <pre>{@code
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   DeleteInstanceRequest request =
-   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   cloudMemcacheClient.deleteInstanceAsync(request).get();
    * }
    * }</pre>
@@ -880,7 +906,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <pre>{@code
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   DeleteInstanceRequest request =
-   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   OperationFuture<Empty, OperationMetadata> future =
    *       cloudMemcacheClient.deleteInstanceOperationCallable().futureCall(request);
    *   // Do something.
@@ -902,7 +930,9 @@ public class CloudMemcacheClient implements BackgroundResource {
    * <pre>{@code
    * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
    *   DeleteInstanceRequest request =
-   *       DeleteInstanceRequest.newBuilder().setName("name3373707").build();
+   *       DeleteInstanceRequest.newBuilder()
+   *           .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .build();
    *   ApiFuture<Operation> future =
    *       cloudMemcacheClient.deleteInstanceCallable().futureCall(request);
    *   // Do something.
@@ -916,8 +946,8 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will update current set of Parameters to the set of specified nodes of the
-   * Memcached Instance.
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
+   * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
    *
@@ -932,10 +962,10 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * @param name Required. Resource name of the Memcached instance for which parameter group updates
    *     should be applied.
-   * @param nodeIds Nodes to which we should apply the instance-level parameter group.
+   * @param nodeIds Nodes to which the instance-level parameter group is applied.
    * @param applyAll Whether to apply instance-level parameter group to all nodes. If set to true,
-   *     will explicitly restrict users from specifying any nodes, and apply parameter group updates
-   *     to all nodes within the instance.
+   *     users are restricted from specifying individual nodes, and `ApplyParameters` updates all
+   *     nodes within the instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> applyParametersAsync(
@@ -951,8 +981,8 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will update current set of Parameters to the set of specified nodes of the
-   * Memcached Instance.
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
+   * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
    *
@@ -967,10 +997,10 @@ public class CloudMemcacheClient implements BackgroundResource {
    *
    * @param name Required. Resource name of the Memcached instance for which parameter group updates
    *     should be applied.
-   * @param nodeIds Nodes to which we should apply the instance-level parameter group.
+   * @param nodeIds Nodes to which the instance-level parameter group is applied.
    * @param applyAll Whether to apply instance-level parameter group to all nodes. If set to true,
-   *     will explicitly restrict users from specifying any nodes, and apply parameter group updates
-   *     to all nodes within the instance.
+   *     users are restricted from specifying individual nodes, and `ApplyParameters` updates all
+   *     nodes within the instance.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Instance, OperationMetadata> applyParametersAsync(
@@ -986,8 +1016,8 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will update current set of Parameters to the set of specified nodes of the
-   * Memcached Instance.
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
+   * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
    *
@@ -1013,8 +1043,8 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will update current set of Parameters to the set of specified nodes of the
-   * Memcached Instance.
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
+   * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
    *
@@ -1040,8 +1070,8 @@ public class CloudMemcacheClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * ApplyParameters will update current set of Parameters to the set of specified nodes of the
-   * Memcached Instance.
+   * `ApplyParameters` restarts the set of specified nodes in order to update them to the current
+   * set of parameters for the Memcached Instance.
    *
    * <p>Sample code:
    *
@@ -1062,6 +1092,155 @@ public class CloudMemcacheClient implements BackgroundResource {
    */
   public final UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable() {
     return stub.applyParametersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates software on the selected nodes of the Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+   *   List<String> nodeIds = new ArrayList<>();
+   *   boolean applyAll = true;
+   *   Instance response =
+   *       cloudMemcacheClient.applySoftwareUpdateAsync(instance, nodeIds, applyAll).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Resource name of the Memcached instance for which software update
+   *     should be applied.
+   * @param nodeIds Nodes to which we should apply the update to. Note all the selected nodes are
+   *     updated in parallel.
+   * @param applyAll Whether to apply the update to all nodes. If set to true, will explicitly
+   *     restrict users from specifying any nodes, and apply software update to all nodes (where
+   *     applicable) within the instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> applySoftwareUpdateAsync(
+      InstanceName instance, List<String> nodeIds, boolean applyAll) {
+    ApplySoftwareUpdateRequest request =
+        ApplySoftwareUpdateRequest.newBuilder()
+            .setInstance(instance == null ? null : instance.toString())
+            .addAllNodeIds(nodeIds)
+            .setApplyAll(applyAll)
+            .build();
+    return applySoftwareUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates software on the selected nodes of the Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   String instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString();
+   *   List<String> nodeIds = new ArrayList<>();
+   *   boolean applyAll = true;
+   *   Instance response =
+   *       cloudMemcacheClient.applySoftwareUpdateAsync(instance, nodeIds, applyAll).get();
+   * }
+   * }</pre>
+   *
+   * @param instance Required. Resource name of the Memcached instance for which software update
+   *     should be applied.
+   * @param nodeIds Nodes to which we should apply the update to. Note all the selected nodes are
+   *     updated in parallel.
+   * @param applyAll Whether to apply the update to all nodes. If set to true, will explicitly
+   *     restrict users from specifying any nodes, and apply software update to all nodes (where
+   *     applicable) within the instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> applySoftwareUpdateAsync(
+      String instance, List<String> nodeIds, boolean applyAll) {
+    ApplySoftwareUpdateRequest request =
+        ApplySoftwareUpdateRequest.newBuilder()
+            .setInstance(instance)
+            .addAllNodeIds(nodeIds)
+            .setApplyAll(applyAll)
+            .build();
+    return applySoftwareUpdateAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates software on the selected nodes of the Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ApplySoftwareUpdateRequest request =
+   *       ApplySoftwareUpdateRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .addAllNodeIds(new ArrayList<String>())
+   *           .setApplyAll(true)
+   *           .build();
+   *   Instance response = cloudMemcacheClient.applySoftwareUpdateAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Instance, OperationMetadata> applySoftwareUpdateAsync(
+      ApplySoftwareUpdateRequest request) {
+    return applySoftwareUpdateOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates software on the selected nodes of the Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ApplySoftwareUpdateRequest request =
+   *       ApplySoftwareUpdateRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .addAllNodeIds(new ArrayList<String>())
+   *           .setApplyAll(true)
+   *           .build();
+   *   OperationFuture<Instance, OperationMetadata> future =
+   *       cloudMemcacheClient.applySoftwareUpdateOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Instance response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationCallable() {
+    return stub.applySoftwareUpdateOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates software on the selected nodes of the Instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (CloudMemcacheClient cloudMemcacheClient = CloudMemcacheClient.create()) {
+   *   ApplySoftwareUpdateRequest request =
+   *       ApplySoftwareUpdateRequest.newBuilder()
+   *           .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+   *           .addAllNodeIds(new ArrayList<String>())
+   *           .setApplyAll(true)
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       cloudMemcacheClient.applySoftwareUpdateCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateCallable() {
+    return stub.applySoftwareUpdateCallable();
   }
 
   @Override

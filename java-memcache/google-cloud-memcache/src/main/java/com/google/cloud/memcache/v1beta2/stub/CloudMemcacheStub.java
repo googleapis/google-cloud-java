@@ -23,6 +23,7 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.memcache.v1beta2.ApplyParametersRequest;
+import com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest;
 import com.google.cloud.memcache.v1beta2.CreateInstanceRequest;
 import com.google.cloud.memcache.v1beta2.DeleteInstanceRequest;
 import com.google.cloud.memcache.v1beta2.GetInstanceRequest;
@@ -107,6 +108,16 @@ public abstract class CloudMemcacheStub implements BackgroundResource {
 
   public UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable() {
     throw new UnsupportedOperationException("Not implemented: applyParametersCallable()");
+  }
+
+  public OperationCallable<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: applySoftwareUpdateOperationCallable()");
+  }
+
+  public UnaryCallable<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateCallable() {
+    throw new UnsupportedOperationException("Not implemented: applySoftwareUpdateCallable()");
   }
 
   @Override

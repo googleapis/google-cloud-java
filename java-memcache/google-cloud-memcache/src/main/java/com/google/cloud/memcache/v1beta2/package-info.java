@@ -33,7 +33,7 @@
  *       `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
  * </ul>
  *
- * <p>Note that location_id must be refering to a GCP `region`; for example:
+ * <p>Note that location_id must be a GCP `region`; for example:
  *
  * <ul>
  *   <li>`projects/my-memcached-project/locations/us-central1/instances/my-memcached`

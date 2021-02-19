@@ -193,6 +193,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     mockCloudMemcache.addResponse(expectedResponse);
 
@@ -244,6 +245,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     mockCloudMemcache.addResponse(expectedResponse);
 
@@ -295,6 +297,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -360,6 +363,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -425,6 +429,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -487,6 +492,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -552,6 +558,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -610,6 +617,48 @@ public class CloudMemcacheClientTest {
             .build();
     mockCloudMemcache.addResponse(resultOperation);
 
+    InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+
+    client.deleteInstanceAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockCloudMemcache.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteInstanceRequest actualRequest = ((DeleteInstanceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteInstanceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudMemcache.addException(exception);
+
+    try {
+      InstanceName name = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      client.deleteInstanceAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteInstanceTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteInstanceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudMemcache.addResponse(resultOperation);
+
     String name = "name3373707";
 
     client.deleteInstanceAsync(name).get();
@@ -626,7 +675,7 @@ public class CloudMemcacheClientTest {
   }
 
   @Test
-  public void deleteInstanceExceptionTest() throws Exception {
+  public void deleteInstanceExceptionTest2() throws Exception {
     StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
     mockCloudMemcache.addException(exception);
 
@@ -659,6 +708,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -724,6 +774,7 @@ public class CloudMemcacheClientTest {
             .setMemcacheFullVersion("memcacheFullVersion976507452")
             .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
             .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -763,6 +814,138 @@ public class CloudMemcacheClientTest {
       List<String> nodeIds = new ArrayList<>();
       boolean applyAll = true;
       client.applyParametersAsync(name, nodeIds, applyAll).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void applySoftwareUpdateTest() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setAuthorizedNetwork("authorizedNetwork1515554835")
+            .addAllZones(new ArrayList<String>())
+            .setNodeCount(1539922066)
+            .setNodeConfig(Instance.NodeConfig.newBuilder().build())
+            .setParameters(MemcacheParameters.newBuilder().build())
+            .addAllMemcacheNodes(new ArrayList<Instance.Node>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMemcacheFullVersion("memcacheFullVersion976507452")
+            .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
+            .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("applySoftwareUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudMemcache.addResponse(resultOperation);
+
+    InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+    List<String> nodeIds = new ArrayList<>();
+    boolean applyAll = true;
+
+    Instance actualResponse = client.applySoftwareUpdateAsync(instance, nodeIds, applyAll).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudMemcache.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ApplySoftwareUpdateRequest actualRequest = ((ApplySoftwareUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance.toString(), actualRequest.getInstance());
+    Assert.assertEquals(nodeIds, actualRequest.getNodeIdsList());
+    Assert.assertEquals(applyAll, actualRequest.getApplyAll());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void applySoftwareUpdateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudMemcache.addException(exception);
+
+    try {
+      InstanceName instance = InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]");
+      List<String> nodeIds = new ArrayList<>();
+      boolean applyAll = true;
+      client.applySoftwareUpdateAsync(instance, nodeIds, applyAll).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void applySoftwareUpdateTest2() throws Exception {
+    Instance expectedResponse =
+        Instance.newBuilder()
+            .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
+            .setDisplayName("displayName1714148973")
+            .putAllLabels(new HashMap<String, String>())
+            .setAuthorizedNetwork("authorizedNetwork1515554835")
+            .addAllZones(new ArrayList<String>())
+            .setNodeCount(1539922066)
+            .setNodeConfig(Instance.NodeConfig.newBuilder().build())
+            .setParameters(MemcacheParameters.newBuilder().build())
+            .addAllMemcacheNodes(new ArrayList<Instance.Node>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setMemcacheFullVersion("memcacheFullVersion976507452")
+            .addAllInstanceMessages(new ArrayList<Instance.InstanceMessage>())
+            .setDiscoveryEndpoint("discoveryEndpoint-1155573915")
+            .setUpdateAvailable(true)
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("applySoftwareUpdateTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockCloudMemcache.addResponse(resultOperation);
+
+    String instance = "instance555127957";
+    List<String> nodeIds = new ArrayList<>();
+    boolean applyAll = true;
+
+    Instance actualResponse = client.applySoftwareUpdateAsync(instance, nodeIds, applyAll).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCloudMemcache.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ApplySoftwareUpdateRequest actualRequest = ((ApplySoftwareUpdateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(instance, actualRequest.getInstance());
+    Assert.assertEquals(nodeIds, actualRequest.getNodeIdsList());
+    Assert.assertEquals(applyAll, actualRequest.getApplyAll());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void applySoftwareUpdateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCloudMemcache.addException(exception);
+
+    try {
+      String instance = "instance555127957";
+      List<String> nodeIds = new ArrayList<>();
+      boolean applyAll = true;
+      client.applySoftwareUpdateAsync(instance, nodeIds, applyAll).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

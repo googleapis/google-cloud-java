@@ -27,10 +27,11 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Time when the operation was created.
+   * Output only. Time when the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the createTime field is set.
    */
@@ -39,10 +40,11 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Time when the operation was created.
+   * Output only. Time when the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The createTime.
    */
@@ -51,10 +53,11 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Time when the operation was created.
+   * Output only. Time when the operation was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 1;</code>
+   * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -62,10 +65,11 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Time when the operation finished running.
+   * Output only. Time when the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the endTime field is set.
    */
@@ -74,10 +78,11 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Time when the operation finished running.
+   * Output only. Time when the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The endTime.
    */
@@ -86,10 +91,11 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Time when the operation finished running.
+   * Output only. Time when the operation finished running.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 2;</code>
+   * <code>.google.protobuf.Timestamp end_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
@@ -97,10 +103,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Server-defined resource path for the target of the operation.
+   * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The target.
    */
@@ -109,10 +115,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Server-defined resource path for the target of the operation.
+   * Output only. Server-defined resource path for the target of the operation.
    * </pre>
    *
-   * <code>string target = 3;</code>
+   * <code>string target = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for target.
    */
@@ -122,10 +128,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Name of the verb executed by the operation.
+   * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The verb.
    */
@@ -134,10 +140,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Name of the verb executed by the operation.
+   * Output only. Name of the verb executed by the operation.
    * </pre>
    *
-   * <code>string verb = 4;</code>
+   * <code>string verb = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for verb.
    */
@@ -147,10 +153,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Human-readable status of the operation, if any.
+   * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_detail = 5;</code>
+   * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The statusDetail.
    */
@@ -159,10 +165,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Human-readable status of the operation, if any.
+   * Output only. Human-readable status of the operation, if any.
    * </pre>
    *
-   * <code>string status_detail = 5;</code>
+   * <code>string status_detail = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for statusDetail.
    */
@@ -172,13 +178,13 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * Identifies whether the user has requested cancellation
+   * Output only. Identifies whether the user has requested cancellation
    * of the operation. Operations that have successfully been cancelled
    * have [Operation.error][] value with a [google.rpc.Status.code][google.rpc.Status.code] of 1,
    * corresponding to `Code.CANCELLED`.
    * </pre>
    *
-   * <code>bool cancel_requested = 6;</code>
+   * <code>bool cancel_requested = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The cancelRequested.
    */
@@ -188,10 +194,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * API version used to start the operation.
+   * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The apiVersion.
    */
@@ -200,10 +206,10 @@ public interface OperationMetadataOrBuilder
    *
    *
    * <pre>
-   * API version used to start the operation.
+   * Output only. API version used to start the operation.
    * </pre>
    *
-   * <code>string api_version = 7;</code>
+   * <code>string api_version = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for apiVersion.
    */

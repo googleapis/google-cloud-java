@@ -11,16 +11,16 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d8c008e56f1af31d57f75561e0f1848ffb29eeb",
-        "internalRef": "356341083"
+        "sha": "84cf54e45ed5970980ae868e0a1e5ad1266a8830",
+        "internalRef": "356380191"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "8d8c008e56f1af31d57f75561e0f1848ffb29eeb",
-        "internalRef": "356341083"
+        "sha": "84cf54e45ed5970980ae868e0a1e5ad1266a8830",
+        "internalRef": "356380191"
       }
     },
     {
@@ -171,6 +171,8 @@
     "proto-google-cloud-memcache-v1/src/main/proto/google/cloud/memcache/v1/cloud_memcache.proto",
     "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/ApplyParametersRequest.java",
     "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/ApplyParametersRequestOrBuilder.java",
+    "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/ApplySoftwareUpdateRequest.java",
+    "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/ApplySoftwareUpdateRequestOrBuilder.java",
     "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/CloudMemcacheProto.java",
     "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/CreateInstanceRequest.java",
     "proto-google-cloud-memcache-v1beta2/src/main/java/com/google/cloud/memcache/v1beta2/CreateInstanceRequestOrBuilder.java",

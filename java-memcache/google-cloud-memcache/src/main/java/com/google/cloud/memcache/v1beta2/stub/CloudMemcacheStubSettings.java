@@ -45,6 +45,7 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.memcache.v1beta2.ApplyParametersRequest;
+import com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest;
 import com.google.cloud.memcache.v1beta2.CreateInstanceRequest;
 import com.google.cloud.memcache.v1beta2.DeleteInstanceRequest;
 import com.google.cloud.memcache.v1beta2.GetInstanceRequest;
@@ -123,6 +124,10 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
   private final UnaryCallSettings<ApplyParametersRequest, Operation> applyParametersSettings;
   private final OperationCallSettings<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationSettings;
+  private final UnaryCallSettings<ApplySoftwareUpdateRequest, Operation>
+      applySoftwareUpdateSettings;
+  private final OperationCallSettings<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationSettings;
 
   private static final PagedListDescriptor<ListInstancesRequest, ListInstancesResponse, Instance>
       LIST_INSTANCES_PAGE_STR_DESC =
@@ -243,6 +248,17 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     return applyParametersOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to applySoftwareUpdate. */
+  public UnaryCallSettings<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateSettings() {
+    return applySoftwareUpdateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to applySoftwareUpdate. */
+  public OperationCallSettings<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationSettings() {
+    return applySoftwareUpdateOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public CloudMemcacheStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -324,6 +340,9 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     deleteInstanceOperationSettings = settingsBuilder.deleteInstanceOperationSettings().build();
     applyParametersSettings = settingsBuilder.applyParametersSettings().build();
     applyParametersOperationSettings = settingsBuilder.applyParametersOperationSettings().build();
+    applySoftwareUpdateSettings = settingsBuilder.applySoftwareUpdateSettings().build();
+    applySoftwareUpdateOperationSettings =
+        settingsBuilder.applySoftwareUpdateOperationSettings().build();
   }
 
   /** Builder for CloudMemcacheStubSettings. */
@@ -354,6 +373,11 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
         applyParametersSettings;
     private final OperationCallSettings.Builder<ApplyParametersRequest, Instance, OperationMetadata>
         applyParametersOperationSettings;
+    private final UnaryCallSettings.Builder<ApplySoftwareUpdateRequest, Operation>
+        applySoftwareUpdateSettings;
+    private final OperationCallSettings.Builder<
+            ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+        applySoftwareUpdateOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -400,6 +424,8 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
       deleteInstanceOperationSettings = OperationCallSettings.newBuilder();
       applyParametersSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       applyParametersOperationSettings = OperationCallSettings.newBuilder();
+      applySoftwareUpdateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      applySoftwareUpdateOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -409,7 +435,8 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
               updateInstanceSettings,
               updateParametersSettings,
               deleteInstanceSettings,
-              applyParametersSettings);
+              applyParametersSettings,
+              applySoftwareUpdateSettings);
       initDefaults(this);
     }
 
@@ -428,6 +455,9 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
       deleteInstanceOperationSettings = settings.deleteInstanceOperationSettings.toBuilder();
       applyParametersSettings = settings.applyParametersSettings.toBuilder();
       applyParametersOperationSettings = settings.applyParametersOperationSettings.toBuilder();
+      applySoftwareUpdateSettings = settings.applySoftwareUpdateSettings.toBuilder();
+      applySoftwareUpdateOperationSettings =
+          settings.applySoftwareUpdateOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -437,7 +467,8 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
               updateInstanceSettings,
               updateParametersSettings,
               deleteInstanceSettings,
-              applyParametersSettings);
+              applyParametersSettings,
+              applySoftwareUpdateSettings);
     }
 
     private static Builder createDefault() {
@@ -484,6 +515,11 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
 
       builder
           .applyParametersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .applySoftwareUpdateSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -607,6 +643,30 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
                       .setTotalTimeout(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .applySoftwareUpdateOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ApplySoftwareUpdateRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Instance.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -702,6 +762,20 @@ public class CloudMemcacheStubSettings extends StubSettings<CloudMemcacheStubSet
     public OperationCallSettings.Builder<ApplyParametersRequest, Instance, OperationMetadata>
         applyParametersOperationSettings() {
       return applyParametersOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to applySoftwareUpdate. */
+    public UnaryCallSettings.Builder<ApplySoftwareUpdateRequest, Operation>
+        applySoftwareUpdateSettings() {
+      return applySoftwareUpdateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to applySoftwareUpdate. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+        applySoftwareUpdateOperationSettings() {
+      return applySoftwareUpdateOperationSettings;
     }
 
     @Override

@@ -18,47 +18,48 @@
 
 package com.google.cloud.memcache.v1beta2;
 
-public interface ApplyParametersRequestOrBuilder
+public interface ApplySoftwareUpdateRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.memcache.v1beta2.ApplyParametersRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. Resource name of the Memcached instance for which parameter group updates
-   * should be applied.
+   * Required. Resource name of the Memcached instance for which software update should be
+   * applied.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The name.
+   * @return The instance.
    */
-  java.lang.String getName();
+  java.lang.String getInstance();
   /**
    *
    *
    * <pre>
-   * Required. Resource name of the Memcached instance for which parameter group updates
-   * should be applied.
+   * Required. Resource name of the Memcached instance for which software update should be
+   * applied.
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string instance = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
-   * @return The bytes for name.
+   * @return The bytes for instance.
    */
-  com.google.protobuf.ByteString getNameBytes();
+  com.google.protobuf.ByteString getInstanceBytes();
 
   /**
    *
    *
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -70,7 +71,8 @@ public interface ApplyParametersRequestOrBuilder
    *
    *
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -82,7 +84,8 @@ public interface ApplyParametersRequestOrBuilder
    *
    *
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -95,7 +98,8 @@ public interface ApplyParametersRequestOrBuilder
    *
    *
    * <pre>
-   * Nodes to which the instance-level parameter group is applied.
+   * Nodes to which we should apply the update to. Note all the selected nodes
+   * are updated in parallel.
    * </pre>
    *
    * <code>repeated string node_ids = 2;</code>
@@ -109,9 +113,9 @@ public interface ApplyParametersRequestOrBuilder
    *
    *
    * <pre>
-   * Whether to apply instance-level parameter group to all nodes. If set to
-   * true, users are restricted from specifying individual nodes, and
-   * `ApplyParameters` updates all nodes within the instance.
+   * Whether to apply the update to all nodes. If set to
+   * true, will explicitly restrict users from specifying any nodes, and apply
+   * software update to all nodes (where applicable) within the instance.
    * </pre>
    *
    * <code>bool apply_all = 3;</code>

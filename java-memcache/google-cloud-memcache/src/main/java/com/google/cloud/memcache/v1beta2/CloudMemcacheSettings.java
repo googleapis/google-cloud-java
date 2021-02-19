@@ -138,6 +138,17 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     return ((CloudMemcacheStubSettings) getStubSettings()).applyParametersOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to applySoftwareUpdate. */
+  public UnaryCallSettings<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateSettings() {
+    return ((CloudMemcacheStubSettings) getStubSettings()).applySoftwareUpdateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to applySoftwareUpdate. */
+  public OperationCallSettings<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationSettings() {
+    return ((CloudMemcacheStubSettings) getStubSettings()).applySoftwareUpdateOperationSettings();
+  }
+
   public static final CloudMemcacheSettings create(CloudMemcacheStubSettings stub)
       throws IOException {
     return new CloudMemcacheSettings.Builder(stub.toBuilder()).build();
@@ -302,6 +313,18 @@ public class CloudMemcacheSettings extends ClientSettings<CloudMemcacheSettings>
     public OperationCallSettings.Builder<ApplyParametersRequest, Instance, OperationMetadata>
         applyParametersOperationSettings() {
       return getStubSettingsBuilder().applyParametersOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to applySoftwareUpdate. */
+    public UnaryCallSettings.Builder<ApplySoftwareUpdateRequest, Operation>
+        applySoftwareUpdateSettings() {
+      return getStubSettingsBuilder().applySoftwareUpdateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to applySoftwareUpdate. */
+    public OperationCallSettings.Builder<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+        applySoftwareUpdateOperationSettings() {
+      return getStubSettingsBuilder().applySoftwareUpdateOperationSettings();
     }
 
     @Override

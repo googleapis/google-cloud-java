@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.memcache.v1beta2.ApplyParametersRequest;
+import com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest;
 import com.google.cloud.memcache.v1beta2.CreateInstanceRequest;
 import com.google.cloud.memcache.v1beta2.DeleteInstanceRequest;
 import com.google.cloud.memcache.v1beta2.GetInstanceRequest;
@@ -126,6 +127,16 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ApplySoftwareUpdateRequest, Operation>
+      applySoftwareUpdateMethodDescriptor =
+          MethodDescriptor.<ApplySoftwareUpdateRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.memcache.v1beta2.CloudMemcache/ApplySoftwareUpdate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ApplySoftwareUpdateRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;
   private final UnaryCallable<ListInstancesRequest, ListInstancesPagedResponse>
       listInstancesPagedCallable;
@@ -145,6 +156,9 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
   private final UnaryCallable<ApplyParametersRequest, Operation> applyParametersCallable;
   private final OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationCallable;
+  private final UnaryCallable<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateCallable;
+  private final OperationCallable<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -279,6 +293,19 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateTransportSettings =
+        GrpcCallSettings.<ApplySoftwareUpdateRequest, Operation>newBuilder()
+            .setMethodDescriptor(applySoftwareUpdateMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ApplySoftwareUpdateRequest>() {
+                  @Override
+                  public Map<String, String> extract(ApplySoftwareUpdateRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("instance", String.valueOf(request.getInstance()));
+                    return params.build();
+                  }
+                })
+            .build();
 
     this.listInstancesCallable =
         callableFactory.createUnaryCallable(
@@ -332,6 +359,17 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
         callableFactory.createOperationCallable(
             applyParametersTransportSettings,
             settings.applyParametersOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.applySoftwareUpdateCallable =
+        callableFactory.createUnaryCallable(
+            applySoftwareUpdateTransportSettings,
+            settings.applySoftwareUpdateSettings(),
+            clientContext);
+    this.applySoftwareUpdateOperationCallable =
+        callableFactory.createOperationCallable(
+            applySoftwareUpdateTransportSettings,
+            settings.applySoftwareUpdateOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -399,6 +437,15 @@ public class GrpcCloudMemcacheStub extends CloudMemcacheStub {
   public OperationCallable<ApplyParametersRequest, Instance, OperationMetadata>
       applyParametersOperationCallable() {
     return applyParametersOperationCallable;
+  }
+
+  public UnaryCallable<ApplySoftwareUpdateRequest, Operation> applySoftwareUpdateCallable() {
+    return applySoftwareUpdateCallable;
+  }
+
+  public OperationCallable<ApplySoftwareUpdateRequest, Instance, OperationMetadata>
+      applySoftwareUpdateOperationCallable() {
+    return applySoftwareUpdateOperationCallable;
   }
 
   @Override
